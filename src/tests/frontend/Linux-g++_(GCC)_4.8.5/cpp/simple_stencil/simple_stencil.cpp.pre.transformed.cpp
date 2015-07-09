@@ -2223,9 +2223,7 @@ extern void register_custom_init_handler(const char *obj_name,
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(460194934375909885UL)) ; int *tmp;
-# 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-int *next;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(460194934375909885UL)) ; int *next;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 int *curr;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
@@ -2235,11 +2233,9 @@ int N;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 int iter;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-int i;
-# 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
- register_stack_vars(7, "main|tmp|0", (int *)0x0, "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(5, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-      ;
+    int i; ;
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
        N = (1024) ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
@@ -2267,7 +2263,7 @@ int i;
 # 21 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
         }
 # 22 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-           tmp = (curr) ;
+         int *tmp; tmp = (curr) ;
 # 23 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
         curr = next;
 # 24 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
@@ -2298,9 +2294,7 @@ int i;
 # 38 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(460194934375909885UL)) ; int *tmp;
-# 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-int *next;
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(460194934375909885UL)) ; int *next;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 int *curr;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
@@ -2310,11 +2304,9 @@ int N;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 int iter;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-int i;
-# 6 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
- register_stack_vars(7, "main|tmp|0", (int *)0x0, "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ; ;
+ register_stack_vars(5, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0); ; ;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-      ;
+    int i; ;
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
        N = (1024) ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
@@ -2342,7 +2334,7 @@ int i;
 # 21 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
         }
 # 22 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-           tmp = (curr) ;
+         int *tmp; tmp = (curr) ;
 # 23 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
         curr = next;
 # 24 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"

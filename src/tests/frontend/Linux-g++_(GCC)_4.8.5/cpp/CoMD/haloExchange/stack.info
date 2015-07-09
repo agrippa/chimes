@@ -1,10 +1,10 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|domain|0 " %struct.DomainSt* " 64 1 0 1 initHaloExchange mkAtomCellList
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 initHaloExchange mkAtomCellList
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|hh|0 " %struct.HaloExchangeSt* " 64 1 0 1 mkAtomCellList
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|size0|0 " i32 " 32 0 0 1 mkAtomCellList
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|size1|0 " i32 " 32 0 0 1 mkAtomCellList
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|size2|0 " i32 " 32 0 0 1 mkAtomCellList
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|maxSize|0 " i32 " 32 0 0 1 mkAtomCellList
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|size0|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|size1|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|size2|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|maxSize|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|parms|0 " %struct.AtomExchangeParmsSt* " 64 1 0 1 mkAtomCellList
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|ii|0 " i32 " 32 0 0 1 mkAtomCellList
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initAtomHaloExchange|ii|1 " i32 " 32 0 0 0
@@ -42,14 +42,14 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|buf|0 " %struct.AtomMsgSt* " 64 1 0 1 putAtomInBox
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|nBuf|0 " i32 " 32 0 0 1 putAtomInBox
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|ii|0 " i32 " 32 0 0 1 putAtomInBox
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|gid|0 " i32 " 32 0 0 1 putAtomInBox
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|type|0 " i32 " 32 0 0 1 putAtomInBox
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|rx|0 " double " 64 0 0 1 putAtomInBox
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|ry|0 " double " 64 0 0 1 putAtomInBox
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|rz|0 " double " 64 0 0 1 putAtomInBox
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|px|0 " double " 64 0 0 1 putAtomInBox
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|py|0 " double " 64 0 0 1 putAtomInBox
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|pz|0 " double " 64 0 0 1 putAtomInBox
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|gid|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|type|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|rx|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|ry|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|rz|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|px|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|py|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c unloadAtomsBuffer|pz|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c destroyAtomsExchange|vparms|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c destroyAtomsExchange|parms|0 " %struct.AtomExchangeParmsSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c destroyAtomsExchange|ii|0 " i32 " 32 0 0 0
@@ -71,10 +71,10 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|domain|0 " %struct.DomainSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 initHaloExchange mkForceRecvCellList mkForceSendCellList
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|hh|0 " %struct.HaloExchangeSt* " 64 1 0 1 mkForceRecvCellList mkForceSendCellList
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|size0|0 " i32 " 32 0 0 1 mkForceRecvCellList mkForceSendCellList
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|size1|0 " i32 " 32 0 0 1 mkForceRecvCellList mkForceSendCellList
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|size2|0 " i32 " 32 0 0 1 mkForceRecvCellList mkForceSendCellList
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|maxSize|0 " i32 " 32 0 0 1 mkForceRecvCellList mkForceSendCellList
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|size0|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|size1|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|size2|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|maxSize|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|parms|0 " %struct.ForceExchangeParmsSt* " 64 1 0 1 mkForceRecvCellList mkForceSendCellList
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|ii|0 " i32 " 32 0 0 1 mkForceRecvCellList mkForceSendCellList
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c initForceHaloExchange|____chimes_ret_var_1|0 " %struct.HaloExchangeSt* " 64 1 0 0
@@ -161,10 +161,10 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|recvBufM|0 " i8* " 64 1 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|recvBufP|0 " i8* " 64 1 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nSendM|0 " i32 " 32 0 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nSendP|0 " i32 " 32 0 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nbrRankM|0 " i32 " 32 0 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nbrRankP|0 " i32 " 32 0 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nRecvM|0 " i32 " 32 0 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nSendP|0 " i32 " 32 0 0 1 profileStart sendReceiveParallel
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nbrRankM|0 " i32 " 32 0 0 1 profileStart sendReceiveParallel
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nbrRankP|0 " i32 " 32 0 0 1 profileStart sendReceiveParallel
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nRecvM|0 " i32 " 32 0 0 1 profileStop
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nRecvP|0 " i32 " 32 0 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c sortAtomsInCell|atoms|0 " %struct.AtomsSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c sortAtomsInCell|boxes|0 " %struct.LinkCellSt* " 64 1 0 0

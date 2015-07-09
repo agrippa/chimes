@@ -8,13 +8,13 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "file.c.pre.transformed.cpp"
-static int ____chimes_does_checkpoint_write_npm = 1;
-static int ____chimes_does_checkpoint_read_npm = 1;
+static int ____chimes_does_checkpoint_myocyte_write_npm = 1;
+static int ____chimes_does_checkpoint_myocyte_read_npm = 1;
 
-static int ____must_checkpoint_read_temp_0 = 2;
+static int ____must_checkpoint_myocyte_read_temp_0 = 2;
 
-static int ____must_manage_write = 2;
-static int ____must_manage_read = 2;
+static int ____must_manage_myocyte_write = 2;
+static int ____must_manage_myocyte_read = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
@@ -2557,13 +2557,13 @@ extern int solver( float** y,
      float* params,
      int mode);
 
-extern void read( char* filename,
+extern void myocyte_read( char* filename,
      float* input,
      int data_rows,
      int data_cols,
      int major);
 
-extern void write( char* filename,
+extern void myocyte_write( char* filename,
      float* input,
      int data_rows,
      int data_cols,
@@ -3390,9 +3390,9 @@ ferror_unlocked (FILE *__stream) throw ()
 # 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c" 2
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-void write_npm( char* filename, float* input, int data_rows, int data_cols, int major, int data_range);
-void write_quick( char* filename, float* input, int data_rows, int data_cols, int major, int data_range); void write( char* filename, float* input, int data_rows, int data_cols, int major, int data_range);
-void write_resumable( char* filename,
+void myocyte_write_npm( char* filename, float* input, int data_rows, int data_cols, int major, int data_range);
+void myocyte_write_quick( char* filename, float* input, int data_rows, int data_cols, int major, int data_range); void myocyte_write( char* filename, float* input, int data_rows, int data_cols, int major, int data_range);
+void myocyte_write_resumable( char* filename,
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      float* input,
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3402,7 +3402,7 @@ void write_resumable( char* filename,
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      int major,
 # 25 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&write), "write", &____must_manage_write, 6, 0, (size_t)(3544992386570270565UL), (size_t)(3544992386570270566UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+     int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&myocyte_write), "myocyte_write", &____must_manage_myocyte_write, 6, 0, (size_t)(3544992386570270565UL), (size_t)(3544992386570270566UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3424,7 +3424,7 @@ void write_resumable( char* filename,
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
   printf( "The file was not created/opened for writing\n" );
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-  rm_stack(false, 0UL, "write", &____must_manage_write, ____alias_loc_id_0, ____chimes_did_disable0, false); return;
+  rm_stack(false, 0UL, "myocyte_write", &____must_manage_myocyte_write, ____alias_loc_id_0, ____chimes_did_disable0, false); return;
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
  }
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3475,16 +3475,16 @@ void write_resumable( char* filename,
  fclose(fid);
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-rm_stack(false, 0UL, "write", &____must_manage_write, ____alias_loc_id_0, ____chimes_did_disable0, false); }
+rm_stack(false, 0UL, "myocyte_write", &____must_manage_myocyte_write, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-void read_npm( char* filename, float* input, int data_rows, int data_cols, int major);
-void read_quick( char* filename, float* input, int data_rows, int data_cols, int major); void read( char* filename, float* input, int data_rows, int data_cols, int major);
-void read_resumable( char* filename,
+void myocyte_read_npm( char* filename, float* input, int data_rows, int data_cols, int major);
+void myocyte_read_quick( char* filename, float* input, int data_rows, int data_cols, int major); void myocyte_read( char* filename, float* input, int data_rows, int data_cols, int major);
+void myocyte_read_resumable( char* filename,
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      float* input,
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3492,9 +3492,9 @@ void read_resumable( char* filename,
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      int data_cols,
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int major){const int ____chimes_did_disable1 = new_stack((void *)(&read), "read", &____must_manage_read, 5, 0, (size_t)(3544992386570270689UL), (size_t)(3544992386570270690UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; float temp;
+     int major){const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(3544992386570270689UL), (size_t)(3544992386570270690UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; float temp;
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
- if (____must_checkpoint_read_temp_0) { register_stack_vars(1, "read|temp|0", &____must_checkpoint_read_temp_0, "float", (void *)(&temp), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_myocyte_read_temp_0) { register_stack_vars(1, "myocyte_read|temp|0", &____must_checkpoint_myocyte_read_temp_0, "float", (void *)(&temp), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3520,7 +3520,7 @@ void read_resumable( char* filename,
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
   printf( "The file was not opened for reading\n" );
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-  rm_stack(false, 0UL, "read", &____must_manage_read, ____alias_loc_id_1, ____chimes_did_disable1, false); return;
+  rm_stack(false, 0UL, "myocyte_read", &____must_manage_myocyte_read, ____alias_loc_id_1, ____chimes_did_disable1, false); return;
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
  }
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3569,9 +3569,9 @@ void read_resumable( char* filename,
  fclose(fid);
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-rm_stack(false, 0UL, "read", &____must_manage_read, ____alias_loc_id_1, ____chimes_did_disable1, false); }
+rm_stack(false, 0UL, "myocyte_read", &____must_manage_myocyte_read, ____alias_loc_id_1, ____chimes_did_disable1, false); }
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-void write_quick( char* filename,
+void myocyte_write_quick( char* filename,
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      float* input,
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3581,7 +3581,7 @@ void write_quick( char* filename,
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      int major,
 # 25 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&write), "write", &____must_manage_write, 6, 0, (size_t)(3544992386570270565UL), (size_t)(3544992386570270566UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+     int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&myocyte_write), "myocyte_write", &____must_manage_myocyte_write, 6, 0, (size_t)(3544992386570270565UL), (size_t)(3544992386570270566UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3603,7 +3603,7 @@ void write_quick( char* filename,
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
   printf( "The file was not created/opened for writing\n" );
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-  rm_stack(false, 0UL, "write", &____must_manage_write, ____alias_loc_id_0, ____chimes_did_disable0, false); return;
+  rm_stack(false, 0UL, "myocyte_write", &____must_manage_myocyte_write, ____alias_loc_id_0, ____chimes_did_disable0, false); return;
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
  }
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3654,9 +3654,9 @@ void write_quick( char* filename,
  fclose(fid);
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-rm_stack(false, 0UL, "write", &____must_manage_write, ____alias_loc_id_0, ____chimes_did_disable0, false); }
+rm_stack(false, 0UL, "myocyte_write", &____must_manage_myocyte_write, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
-void write( char* filename,
+void myocyte_write( char* filename,
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      float* input,
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3666,9 +3666,9 @@ void write( char* filename,
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      int major,
 # 25 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int data_range) { (____chimes_replaying ? write_resumable(filename, input, data_rows, data_cols, major, data_range) : write_quick(filename, input, data_rows, data_cols, major, data_range)); }
+     int data_range) { (____chimes_replaying ? myocyte_write_resumable(filename, input, data_rows, data_cols, major, data_range) : myocyte_write_quick(filename, input, data_rows, data_cols, major, data_range)); }
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-void read_quick( char* filename,
+void myocyte_read_quick( char* filename,
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      float* input,
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3676,9 +3676,9 @@ void read_quick( char* filename,
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      int data_cols,
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int major){const int ____chimes_did_disable1 = new_stack((void *)(&read), "read", &____must_manage_read, 5, 0, (size_t)(3544992386570270689UL), (size_t)(3544992386570270690UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; float temp;
+     int major){const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(3544992386570270689UL), (size_t)(3544992386570270690UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; float temp;
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
- if (____must_checkpoint_read_temp_0) { register_stack_vars(1, "read|temp|0", &____must_checkpoint_read_temp_0, "float", (void *)(&temp), (size_t)4, 0, 0, 0); } ; ;
+ if (____must_checkpoint_myocyte_read_temp_0) { register_stack_vars(1, "myocyte_read|temp|0", &____must_checkpoint_myocyte_read_temp_0, "float", (void *)(&temp), (size_t)4, 0, 0, 0); } ; ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3704,7 +3704,7 @@ void read_quick( char* filename,
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
   printf( "The file was not opened for reading\n" );
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-  rm_stack(false, 0UL, "read", &____must_manage_read, ____alias_loc_id_1, ____chimes_did_disable1, false); return;
+  rm_stack(false, 0UL, "myocyte_read", &____must_manage_myocyte_read, ____alias_loc_id_1, ____chimes_did_disable1, false); return;
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
  }
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3753,9 +3753,9 @@ void read_quick( char* filename,
  fclose(fid);
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-rm_stack(false, 0UL, "read", &____must_manage_read, ____alias_loc_id_1, ____chimes_did_disable1, false); }
+rm_stack(false, 0UL, "myocyte_read", &____must_manage_myocyte_read, ____alias_loc_id_1, ____chimes_did_disable1, false); }
 
-void read( char* filename,
+void myocyte_read( char* filename,
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      float* input,
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3763,9 +3763,9 @@ void read( char* filename,
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      int data_cols,
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int major) { (____chimes_replaying ? read_resumable(filename, input, data_rows, data_cols, major) : read_quick(filename, input, data_rows, data_cols, major)); }
+     int major) { (____chimes_replaying ? myocyte_read_resumable(filename, input, data_rows, data_cols, major) : myocyte_read_quick(filename, input, data_rows, data_cols, major)); }
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-void write_npm( char* filename,
+void myocyte_write_npm( char* filename,
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      float* input,
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3850,7 +3850,7 @@ void write_npm( char* filename,
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 }
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-void read_npm( char* filename,
+void myocyte_read_npm( char* filename,
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      float* input,
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3943,10 +3943,10 @@ static int module_init() {
     init_module(3544992386570270451UL, 6, 2, 1, 2, 2, 0, 2, 0, 0, 2,
                            &____alias_loc_id_0, (unsigned)10, (unsigned)0, (unsigned)0, (3544992386570270451UL + 1UL), (3544992386570270451UL + 2UL), (3544992386570270451UL + 3UL), (3544992386570270451UL + 4UL), (3544992386570270451UL + 5UL), (3544992386570270451UL + 6UL), (3544992386570270451UL + 7UL), (3544992386570270451UL + 8UL), (3544992386570270451UL + 9UL), (3544992386570270451UL + 26UL),
                            &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (3544992386570270451UL + 128UL), (3544992386570270451UL + 129UL), (3544992386570270451UL + 130UL), (3544992386570270451UL + 131UL), (3544992386570270451UL + 132UL), (3544992386570270451UL + 133UL), (3544992386570270451UL + 134UL), (3544992386570270451UL + 135UL), (3544992386570270451UL + 154UL), (3544992386570270451UL + 239UL),
-                            "write", 0, "_Z5writePcPfiiii", "_Z9write_npmPcPfiiii", 0, 6, (3544992386570270451UL + 114UL), (3544992386570270451UL + 115UL), 0UL, 0UL, 0UL, 0UL, 0UL, 7, "fopen", 2, (3544992386570270451UL + 114UL), (3544992386570270451UL + 245UL), (3544992386570270451UL + 26UL), "printf", 1, (3544992386570270451UL + 246UL), 0UL, "fprintf", 3, (3544992386570270451UL + 26UL), (3544992386570270451UL + 247UL), 0UL, 0UL, "fprintf", 2, (3544992386570270451UL + 26UL), (3544992386570270451UL + 245UL), 0UL, "fprintf", 3, (3544992386570270451UL + 26UL), (3544992386570270451UL + 247UL), 0UL, 0UL, "fprintf", 2, (3544992386570270451UL + 26UL), (3544992386570270451UL + 245UL), 0UL, "fclose", 1, (3544992386570270451UL + 26UL), 0UL,
-                            "read", 0, "_Z4readPcPfiii", "_Z8read_npmPcPfiii", 0, 5, (3544992386570270451UL + 238UL), (3544992386570270451UL + 239UL), 0UL, 0UL, 0UL, 0UL, 5, "fopen", 2, (3544992386570270451UL + 238UL), (3544992386570270451UL + 245UL), (3544992386570270451UL + 154UL), "printf", 1, (3544992386570270451UL + 250UL), 0UL, "fscanf", 3, (3544992386570270451UL + 154UL), (3544992386570270451UL + 251UL), (3544992386570270451UL + 137UL), 0UL, "fscanf", 3, (3544992386570270451UL + 154UL), (3544992386570270451UL + 251UL), (3544992386570270451UL + 137UL), 0UL, "fclose", 1, (3544992386570270451UL + 154UL), 0UL,
-                           "write", &(____chimes_does_checkpoint_write_npm),
-                           "read", &(____chimes_does_checkpoint_read_npm),
+                            "myocyte_write", 0, "_Z13myocyte_writePcPfiiii", "_Z17myocyte_write_npmPcPfiiii", 0, 6, (3544992386570270451UL + 114UL), (3544992386570270451UL + 115UL), 0UL, 0UL, 0UL, 0UL, 0UL, 7, "fopen", 2, (3544992386570270451UL + 114UL), (3544992386570270451UL + 245UL), (3544992386570270451UL + 26UL), "printf", 1, (3544992386570270451UL + 246UL), 0UL, "fprintf", 3, (3544992386570270451UL + 26UL), (3544992386570270451UL + 247UL), 0UL, 0UL, "fprintf", 2, (3544992386570270451UL + 26UL), (3544992386570270451UL + 245UL), 0UL, "fprintf", 3, (3544992386570270451UL + 26UL), (3544992386570270451UL + 247UL), 0UL, 0UL, "fprintf", 2, (3544992386570270451UL + 26UL), (3544992386570270451UL + 245UL), 0UL, "fclose", 1, (3544992386570270451UL + 26UL), 0UL,
+                            "myocyte_read", 0, "_Z12myocyte_readPcPfiii", "_Z16myocyte_read_npmPcPfiii", 0, 5, (3544992386570270451UL + 238UL), (3544992386570270451UL + 239UL), 0UL, 0UL, 0UL, 0UL, 5, "fopen", 2, (3544992386570270451UL + 238UL), (3544992386570270451UL + 245UL), (3544992386570270451UL + 154UL), "printf", 1, (3544992386570270451UL + 250UL), 0UL, "fscanf", 3, (3544992386570270451UL + 154UL), (3544992386570270451UL + 251UL), (3544992386570270451UL + 137UL), 0UL, "fscanf", 3, (3544992386570270451UL + 154UL), (3544992386570270451UL + 251UL), (3544992386570270451UL + 137UL), 0UL, "fclose", 1, (3544992386570270451UL + 154UL), 0UL,
+                           "myocyte_write", &(____chimes_does_checkpoint_myocyte_write_npm),
+                           "myocyte_read", &(____chimes_does_checkpoint_myocyte_read_npm),
                              (3544992386570270451UL + 133UL), (3544992386570270451UL + 154UL),
                              (3544992386570270451UL + 1UL), (3544992386570270451UL + 114UL),
                              (3544992386570270451UL + 2UL), (3544992386570270451UL + 115UL),
@@ -3955,9 +3955,9 @@ static int module_init() {
                              (3544992386570270451UL + 129UL), (3544992386570270451UL + 239UL),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
-                             "write", "_Z5writePcPfiiii", 0,
-                             "read", "_Z4readPcPfiii", 0,
-                        "read|temp|0", 1, "read");
+                             "myocyte_write", "_Z13myocyte_writePcPfiiii", 0,
+                             "myocyte_read", "_Z12myocyte_readPcPfiii", 0,
+                        "myocyte_read|temp|0", 1, "myocyte_read");
     return 0;
 }
 

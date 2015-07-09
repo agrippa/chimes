@@ -527,7 +527,7 @@ InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1913 66 rm_stack(false
 InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2017 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_97, ____chimes_did_disable77, false); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2144 62 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_97, ____chimes_did_disable77, false); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2448 59 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_97, ____chimes_did_disable77, false); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1858 1 const int ____chimes_did_disable77 = new_stack((void *)(&main), "main", (int *)0x0, 2, 2, (size_t)(0UL), (size_t)(10498980943454494320UL), "main|argc|0", (int *)0x0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0x0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1858 1 const int ____chimes_did_disable77 = new_stack((void *)(&main), "main", (int *)0x0, 2, 2, (size_t)(0UL), (size_t)(10498980943454494320UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2450 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_97, ____chimes_did_disable77, false); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 144 19 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 144 127 
@@ -1021,8 +1021,8 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1842 2 const int
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1842 160 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1844 3 node *____chimes_ret_var_57; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1844 31 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1858 2 const int ____chimes_did_disable77 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(10498980943454494320UL), "main|argc|0", (int *)0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1858 283 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1858 2 const int ____chimes_did_disable77 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(10498980943454494320UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1858 327 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1860 2 int cur_arg; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1860 13 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1861 2  int cores_arg;  cores_arg = (1) ;
@@ -1210,13 +1210,9 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 181 18  ({  call
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 181 55 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 175 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 175 18 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 175 20 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 175 36 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 173 265  ; list_item_t *del;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 173 265  ; list_item_t *li;
 # 173
-list_item_t *li;
-# 173
- if (____must_checkpoint_list_delete_del_0 || ____must_checkpoint_list_delete_li_0) { register_stack_vars(2, "list_delete|del|0", &____must_checkpoint_list_delete_del_0, "%struct.list_item*", (void *)(&del), (size_t)8, 1, 0, 0, "list_delete|li|0", &____must_checkpoint_list_delete_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0);  }  
+ if (____must_checkpoint_list_delete_li_0) { register_stack_vars(1, "list_delete|li|0", &____must_checkpoint_list_delete_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 189 1 len=10 list_reset_quick
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 191 16  ({  calling((void*)list_delete, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(10498980943454487672UL)); (list_delete)(l); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 191 29 
@@ -1352,13 +1348,9 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 144 ((void (
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 175 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 528 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 528 18 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 45 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 74 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 527 314  ; void *____chimes_unroll_var_6;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 527 314  ; list_item_t *li;
 # 527
-list_item_t *li;
-# 527
- if (____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0 || ____must_checkpoint_list_visit_items_li_0) { register_stack_vars(2, "list_visit_items|____chimes_unroll_var_6|0", &____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0, "i8*", (void *)(&____chimes_unroll_var_6), (size_t)8, 1, 0, 0, "list_visit_items|li|0", &____must_checkpoint_list_visit_items_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0);  }  
+ if (____must_checkpoint_list_visit_items_li_0) { register_stack_vars(1, "list_visit_items|li|0", &____must_checkpoint_list_visit_items_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 535 1 len=14 list_item_init_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 537 199  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 543 1 len=16 list_item_delete_quick
@@ -1640,22 +1632,12 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1863 3
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1863 21 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1864 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1864 15 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1865 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1865 13 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1925 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1925 23 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1926 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1926 16 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1927 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1927 25 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1928 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1928 19 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1972 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1972 20 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1973 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1973 12 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1975 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1975 11 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1976 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1976 11 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1977 2 
@@ -1668,16 +1650,10 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2032 3
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2032 23 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2037 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2037 23 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2168 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2168 21 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2192 5 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2192 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2273 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2273 20 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2275 7 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2275 39 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2294 5 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2294 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2325 5 
@@ -1688,94 +1664,37 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2353 5
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2353 18 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2355 5 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2355 19 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 33  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 43  register_stack_var("main|_tmp|0", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 43 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2155 5  lbl_1: 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2155 5  lbl_0: 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2155 14  register_stack_var("main|count|0", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2155 14 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2174 6  lbl_2: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2174 19  register_stack_var("main|knodes|0", (int *)0x0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2174 19 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2175 6  lbl_3: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2175 22  register_stack_var("main|knodes_elem|0", (int *)0x0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2175 22 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 5  lbl_4: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 20  register_stack_var("main|currKnode|0", (int *)0x0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 5  lbl_1: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 20  if (____must_checkpoint_main_currKnode_0 != 0) { register_stack_var("main|currKnode|0", &____must_checkpoint_main_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 20 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 28  lbl_5: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 38  register_stack_var("main|_tmp|1", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 38 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 5  lbl_6: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 17  register_stack_var("main|offset|0", (int *)0x0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 5  lbl_2: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 17  if (____must_checkpoint_main_offset_0 != 0) { register_stack_var("main|offset|0", &____must_checkpoint_main_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 17 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 25  lbl_7: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 35  register_stack_var("main|_tmp|2", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 35 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 22  lbl_8: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 32  register_stack_var("main|_tmp|3", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 32 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2195 5  lbl_9: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2195 10  register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2195 10 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2202 5  lbl_10: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2202 15  register_stack_var("main|_tmp|4", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2202 15 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 5  lbl_11: 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 5  lbl_3: 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 14  register_stack_var("main|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 14 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 16  lbl_12: 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 16  lbl_4: 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 23  register_stack_var("main|end|0", (int *)0x0, "i32", (void *)(&end), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 23 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2289 5  lbl_13: 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2289 5  lbl_5: 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2289 14  register_stack_var("main|count|1", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2289 14 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2307 6  lbl_14: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2307 19  register_stack_var("main|knodes|1", (int *)0x0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2307 19 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2308 6  lbl_15: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2308 22  register_stack_var("main|knodes_elem|1", (int *)0x0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2308 22 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 5  lbl_16: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 20  register_stack_var("main|currKnode|1", (int *)0x0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 5  lbl_6: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 20  if (____must_checkpoint_main_currKnode_1 != 0) { register_stack_var("main|currKnode|1", &____must_checkpoint_main_currKnode_1, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 20 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 28  lbl_17: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 38  register_stack_var("main|_tmp|5", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 38 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 5  lbl_18: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 17  register_stack_var("main|offset|1", (int *)0x0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 5  lbl_7: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 17  if (____must_checkpoint_main_offset_1 != 0) { register_stack_var("main|offset|1", &____must_checkpoint_main_offset_1, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 17 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 25  lbl_19: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 35  register_stack_var("main|_tmp|6", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 35 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 28  lbl_20: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 38  register_stack_var("main|_tmp|7", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 38 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 27  lbl_21: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 37  register_stack_var("main|_tmp|8", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 37 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 5  lbl_22: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 15  register_stack_var("main|start|1", (int *)0x0, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 5  lbl_8: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 15  if (____must_checkpoint_main_start_1 != 0) { register_stack_var("main|start|1", &____must_checkpoint_main_start_1, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 15 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 23  lbl_23: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 33  register_stack_var("main|_tmp|9", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 33 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 5  lbl_24: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 13  register_stack_var("main|end|1", (int *)0x0, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 5  lbl_9: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 13  if (____must_checkpoint_main_end_1 != 0) { register_stack_var("main|end|1", &____must_checkpoint_main_end_1, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 13 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 21  lbl_25: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 31  register_stack_var("main|_tmp|10", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 31 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2342 5  lbl_26: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2342 10  register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2342 10 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 26  lbl_27: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 36  register_stack_var("main|_tmp|11", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 36 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 27  lbl_28: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 37  register_stack_var("main|_tmp|12", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 37 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1858 276  ; int *reclength;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1858 324  ; int *reclength;
 # 1858
 int *recstart;
 # 1858
@@ -1785,15 +1704,9 @@ long *lastKnode;
 # 1858
 int rSize;
 # 1858
-uint32_t ____chimes_unroll_var_7;
-# 1858
-list_t *ansList;
-# 1858
 record *ans;
 # 1858
 int *keys;
-# 1858
-record *records;
 # 1858
 double start_time;
 # 1858
@@ -1807,21 +1720,11 @@ char instruction;
 # 1858
 int input;
 # 1858
-record *r;
-# 1858
 node *root;
-# 1858
-FILE *file_pointer;
-# 1858
-size_t result;
-# 1858
-char *commandBuffer;
 # 1858
 long lSize;
 # 1858
 FILE *commandFile;
-# 1858
-FILE *pFile;
 # 1858
 char *output;
 # 1858
@@ -1833,7 +1736,7 @@ int cores_arg;
 # 1858
 int cur_arg;
 # 1858
- register_stack_vars(29, "main|reclength|0", (int *)0x0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0, "main|recstart|0", (int *)0x0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "main|offset_2|0", (int *)0x0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "main|lastKnode|0", (int *)0x0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "main|rSize|0", (int *)0x0, "i32", (void *)(&rSize), (size_t)4, 0, 0, 0, "main|____chimes_unroll_var_7|0", (int *)0x0, "i32", (void *)(&____chimes_unroll_var_7), (size_t)4, 0, 0, 0, "main|ansList|0", (int *)0x0, "%struct.list_t*", (void *)(&ansList), (size_t)8, 1, 0, 0, "main|ans|0", (int *)0x0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0, "main|keys|0", (int *)0x0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "main|records|0", (int *)0x0, "%struct.record*", (void *)(&records), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|commandPointer|0", (int *)0x0, "i8*", (void *)(&commandPointer), (size_t)8, 1, 0, 0, "main|rootLoc|0", (int *)0x0, "i64", (void *)(&rootLoc), (size_t)8, 0, 0, 0, "main|mem_used|0", (int *)0x0, "i64", (void *)(&mem_used), (size_t)8, 0, 0, 0, "main|instruction|0", (int *)0x0, "i8", (void *)(&instruction), (size_t)1, 0, 0, 0, "main|input|0", (int *)0x0, "i32", (void *)(&input), (size_t)4, 0, 0, 0, "main|r|0", (int *)0x0, "%struct.record*", (void *)(&r), (size_t)8, 1, 0, 0, "main|root|0", (int *)0x0, "%struct.node*", (void *)(&root), (size_t)8, 1, 0, 0, "main|file_pointer|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&file_pointer), (size_t)8, 1, 0, 0, "main|result|0", (int *)0x0, "i64", (void *)(&result), (size_t)8, 0, 0, 0, "main|commandBuffer|0", (int *)0x0, "i8*", (void *)(&commandBuffer), (size_t)8, 1, 0, 0, "main|lSize|0", (int *)0x0, "i64", (void *)(&lSize), (size_t)8, 0, 0, 0, "main|commandFile|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&commandFile), (size_t)8, 1, 0, 0, "main|pFile|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&pFile), (size_t)8, 1, 0, 0, "main|output|0", (int *)0x0, "i8*", (void *)(&output), (size_t)8, 1, 0, 0, "main|command_file|0", (int *)0x0, "i8*", (void *)(&command_file), (size_t)8, 1, 0, 0, "main|input_file|0", (int *)0x0, "i8*", (void *)(&input_file), (size_t)8, 1, 0, 0, "main|cores_arg|0", (int *)0x0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "main|cur_arg|0", (int *)0x0, "i32", (void *)(&cur_arg), (size_t)4, 0, 0, 0);  
+ register_stack_vars(21, "main|reclength|0", &____must_checkpoint_main_reclength_0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0, "main|recstart|0", &____must_checkpoint_main_recstart_0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "main|offset_2|0", &____must_checkpoint_main_offset_2_0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "main|lastKnode|0", &____must_checkpoint_main_lastKnode_0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "main|rSize|0", (int *)0x0, "i32", (void *)(&rSize), (size_t)4, 0, 0, 0, "main|ans|0", &____must_checkpoint_main_ans_0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0, "main|keys|0", &____must_checkpoint_main_keys_0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|commandPointer|0", (int *)0x0, "i8*", (void *)(&commandPointer), (size_t)8, 1, 0, 0, "main|rootLoc|0", (int *)0x0, "i64", (void *)(&rootLoc), (size_t)8, 0, 0, 0, "main|mem_used|0", (int *)0x0, "i64", (void *)(&mem_used), (size_t)8, 0, 0, 0, "main|instruction|0", (int *)0x0, "i8", (void *)(&instruction), (size_t)1, 0, 0, 0, "main|input|0", (int *)0x0, "i32", (void *)(&input), (size_t)4, 0, 0, 0, "main|root|0", (int *)0x0, "%struct.node*", (void *)(&root), (size_t)8, 1, 0, 0, "main|lSize|0", &____must_checkpoint_main_lSize_0, "i64", (void *)(&lSize), (size_t)8, 0, 0, 0, "main|commandFile|0", &____must_checkpoint_main_commandFile_0, "%struct._IO_FILE*", (void *)(&commandFile), (size_t)8, 1, 0, 0, "main|output|0", (int *)0x0, "i8*", (void *)(&output), (size_t)8, 1, 0, 0, "main|command_file|0", &____must_checkpoint_main_command_file_0, "i8*", (void *)(&command_file), (size_t)8, 1, 0, 0, "main|input_file|0", &____must_checkpoint_main_input_file_0, "i8*", (void *)(&input_file), (size_t)8, 1, 0, 0, "main|cores_arg|0", (int *)0x0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "main|cur_arg|0", &____must_checkpoint_main_cur_arg_0, "i32", (void *)(&cur_arg), (size_t)4, 0, 0, 0);  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 144 8 len=7 seconds_resumable
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 145 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 145 23 
@@ -1847,13 +1750,9 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 181 18  ({  void
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 181 55 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 175 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 175 18 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 175 20 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 175 36 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 173 265  ; list_item_t *del;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 173 265  ; list_item_t *li;
 # 173
-list_item_t *li;
-# 173
- if (____must_checkpoint_list_delete_del_0 || ____must_checkpoint_list_delete_li_0) { register_stack_vars(2, "list_delete|del|0", &____must_checkpoint_list_delete_del_0, "%struct.list_item*", (void *)(&del), (size_t)8, 1, 0, 0, "list_delete|li|0", &____must_checkpoint_list_delete_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_list_delete_li_0) { register_stack_vars(1, "list_delete|li|0", &____must_checkpoint_list_delete_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 189 1 len=10 list_reset_resumable
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 191 16  ({  calling((void*)list_delete, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(10498980943454487672UL)); (list_delete)(l); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 191 29 
@@ -1989,13 +1888,9 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 144 ((void (
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 175 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 528 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 528 18 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 45 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 74 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 527 314  ; void *____chimes_unroll_var_6;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 527 314  ; list_item_t *li;
 # 527
-list_item_t *li;
-# 527
- if (____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0 || ____must_checkpoint_list_visit_items_li_0) { register_stack_vars(2, "list_visit_items|____chimes_unroll_var_6|0", &____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0, "i8*", (void *)(&____chimes_unroll_var_6), (size_t)8, 1, 0, 0, "list_visit_items|li|0", &____must_checkpoint_list_visit_items_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_list_visit_items_li_0) { register_stack_vars(1, "list_visit_items|li|0", &____must_checkpoint_list_visit_items_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 535 1 len=14 list_item_init_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 537 199  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 543 1 len=16 list_item_delete_resumable
@@ -2277,22 +2172,12 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1863 3
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1863 21 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1864 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1864 15 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1865 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1865 13 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1925 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1925 23 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1926 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1926 16 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1927 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1927 25 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1928 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1928 19 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1972 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1972 20 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1973 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1973 12 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1975 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1975 11 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1976 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1976 11 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1977 2 
@@ -2305,16 +2190,10 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2032 3
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2032 23 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2037 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2037 23 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2168 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2168 21 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2192 5 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2192 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2273 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2273 20 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2275 7 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2275 39 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2294 5 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2294 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2325 5 
@@ -2325,94 +2204,37 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2353 5
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2353 18 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2355 5 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2355 19 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 33  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 43  register_stack_var("main|_tmp|0", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 43  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2155 5  lbl_1: 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2155 5  lbl_0: 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2155 14  register_stack_var("main|count|0", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2155 14  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2174 6  lbl_2: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2174 19  register_stack_var("main|knodes|0", (int *)0x0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2174 19  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2175 6  lbl_3: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2175 22  register_stack_var("main|knodes_elem|0", (int *)0x0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2175 22  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 5  lbl_4: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 20  register_stack_var("main|currKnode|0", (int *)0x0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 20  if (____chimes_replaying) { goto lbl_5; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 28  lbl_5: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 38  register_stack_var("main|_tmp|1", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 38  if (____chimes_replaying) { goto lbl_6; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 5  lbl_6: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 17  register_stack_var("main|offset|0", (int *)0x0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 17  if (____chimes_replaying) { goto lbl_7; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 25  lbl_7: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 35  register_stack_var("main|_tmp|2", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 35  if (____chimes_replaying) { goto lbl_8; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 22  lbl_8: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 32  register_stack_var("main|_tmp|3", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 32  if (____chimes_replaying) { goto lbl_9; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2195 5  lbl_9: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2195 10  register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2195 10  if (____chimes_replaying) { goto lbl_10; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2202 5  lbl_10: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2202 15  register_stack_var("main|_tmp|4", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2202 15  if (____chimes_replaying) { goto lbl_11; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 5  lbl_11: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2155 14  if (____chimes_replaying) { goto lbl_1; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 5  lbl_1: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 20  if (____must_checkpoint_main_currKnode_0 != 0) { register_stack_var("main|currKnode|0", &____must_checkpoint_main_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 20  if (____chimes_replaying) { goto lbl_2; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 5  lbl_2: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 17  if (____must_checkpoint_main_offset_0 != 0) { register_stack_var("main|offset|0", &____must_checkpoint_main_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 17  if (____chimes_replaying) { goto lbl_3; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 5  lbl_3: 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 14  register_stack_var("main|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 14  if (____chimes_replaying) { goto lbl_12; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 16  lbl_12: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 14  if (____chimes_replaying) { goto lbl_4; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 16  lbl_4: 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 23  register_stack_var("main|end|0", (int *)0x0, "i32", (void *)(&end), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 23  if (____chimes_replaying) { goto lbl_13; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2289 5  lbl_13: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 23  if (____chimes_replaying) { goto lbl_5; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2289 5  lbl_5: 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2289 14  register_stack_var("main|count|1", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2289 14  if (____chimes_replaying) { goto lbl_14; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2307 6  lbl_14: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2307 19  register_stack_var("main|knodes|1", (int *)0x0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2307 19  if (____chimes_replaying) { goto lbl_15; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2308 6  lbl_15: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2308 22  register_stack_var("main|knodes_elem|1", (int *)0x0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2308 22  if (____chimes_replaying) { goto lbl_16; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 5  lbl_16: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 20  register_stack_var("main|currKnode|1", (int *)0x0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 20  if (____chimes_replaying) { goto lbl_17; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 28  lbl_17: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 38  register_stack_var("main|_tmp|5", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 38  if (____chimes_replaying) { goto lbl_18; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 5  lbl_18: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 17  register_stack_var("main|offset|1", (int *)0x0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 17  if (____chimes_replaying) { goto lbl_19; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 25  lbl_19: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 35  register_stack_var("main|_tmp|6", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 35  if (____chimes_replaying) { goto lbl_20; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 28  lbl_20: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 38  register_stack_var("main|_tmp|7", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 38  if (____chimes_replaying) { goto lbl_21; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 27  lbl_21: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 37  register_stack_var("main|_tmp|8", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 37  if (____chimes_replaying) { goto lbl_22; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 5  lbl_22: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 15  register_stack_var("main|start|1", (int *)0x0, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 15  if (____chimes_replaying) { goto lbl_23; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 23  lbl_23: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 33  register_stack_var("main|_tmp|9", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 33  if (____chimes_replaying) { goto lbl_24; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 5  lbl_24: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 13  register_stack_var("main|end|1", (int *)0x0, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 13  if (____chimes_replaying) { goto lbl_25; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 21  lbl_25: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 31  register_stack_var("main|_tmp|10", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 31  if (____chimes_replaying) { goto lbl_26; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2342 5  lbl_26: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2342 10  register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2342 10  if (____chimes_replaying) { goto lbl_27; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 26  lbl_27: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 36  register_stack_var("main|_tmp|11", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 36  if (____chimes_replaying) { goto lbl_28; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 27  lbl_28: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 37  register_stack_var("main|_tmp|12", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 37  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(23): { goto call_lbl_23; } case(54): { goto call_lbl_54; } case(55): { goto call_lbl_55; } case(56): { goto call_lbl_56; } case(57): { goto call_lbl_57; } case(60): { goto call_lbl_60; } case(61): { goto call_lbl_61; } case(63): { goto call_lbl_63; } case(65): { goto call_lbl_65; } case(67): { goto call_lbl_67; } case(69): { goto call_lbl_69; } case(71): { goto call_lbl_71; } case(92): { goto call_lbl_92; } case(104): { goto call_lbl_104; } case(105): { goto call_lbl_105; } case(143): { goto call_lbl_143; } case(160): { goto call_lbl_160; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1858 276  ; int *reclength;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2289 14  if (____chimes_replaying) { goto lbl_6; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 5  lbl_6: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 20  if (____must_checkpoint_main_currKnode_1 != 0) { register_stack_var("main|currKnode|1", &____must_checkpoint_main_currKnode_1, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 20  if (____chimes_replaying) { goto lbl_7; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 5  lbl_7: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 17  if (____must_checkpoint_main_offset_1 != 0) { register_stack_var("main|offset|1", &____must_checkpoint_main_offset_1, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 17  if (____chimes_replaying) { goto lbl_8; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 5  lbl_8: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 15  if (____must_checkpoint_main_start_1 != 0) { register_stack_var("main|start|1", &____must_checkpoint_main_start_1, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 15  if (____chimes_replaying) { goto lbl_9; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 5  lbl_9: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 13  if (____must_checkpoint_main_end_1 != 0) { register_stack_var("main|end|1", &____must_checkpoint_main_end_1, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 13  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(23): { goto call_lbl_23; } case(54): { goto call_lbl_54; } case(55): { goto call_lbl_55; } case(56): { goto call_lbl_56; } case(57): { goto call_lbl_57; } case(60): { goto call_lbl_60; } case(61): { goto call_lbl_61; } case(63): { goto call_lbl_63; } case(65): { goto call_lbl_65; } case(67): { goto call_lbl_67; } case(69): { goto call_lbl_69; } case(71): { goto call_lbl_71; } case(92): { goto call_lbl_92; } case(104): { goto call_lbl_104; } case(105): { goto call_lbl_105; } case(143): { goto call_lbl_143; } case(160): { goto call_lbl_160; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1858 324  ; int *reclength;
 # 1858
 int *recstart;
 # 1858
@@ -2422,15 +2244,9 @@ long *lastKnode;
 # 1858
 int rSize;
 # 1858
-uint32_t ____chimes_unroll_var_7;
-# 1858
-list_t *ansList;
-# 1858
 record *ans;
 # 1858
 int *keys;
-# 1858
-record *records;
 # 1858
 double start_time;
 # 1858
@@ -2444,21 +2260,11 @@ char instruction;
 # 1858
 int input;
 # 1858
-record *r;
-# 1858
 node *root;
-# 1858
-FILE *file_pointer;
-# 1858
-size_t result;
-# 1858
-char *commandBuffer;
 # 1858
 long lSize;
 # 1858
 FILE *commandFile;
-# 1858
-FILE *pFile;
 # 1858
 char *output;
 # 1858
@@ -2470,4 +2276,4 @@ int cores_arg;
 # 1858
 int cur_arg;
 # 1858
- register_stack_vars(29, "main|reclength|0", (int *)0x0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0, "main|recstart|0", (int *)0x0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "main|offset_2|0", (int *)0x0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "main|lastKnode|0", (int *)0x0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "main|rSize|0", (int *)0x0, "i32", (void *)(&rSize), (size_t)4, 0, 0, 0, "main|____chimes_unroll_var_7|0", (int *)0x0, "i32", (void *)(&____chimes_unroll_var_7), (size_t)4, 0, 0, 0, "main|ansList|0", (int *)0x0, "%struct.list_t*", (void *)(&ansList), (size_t)8, 1, 0, 0, "main|ans|0", (int *)0x0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0, "main|keys|0", (int *)0x0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "main|records|0", (int *)0x0, "%struct.record*", (void *)(&records), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|commandPointer|0", (int *)0x0, "i8*", (void *)(&commandPointer), (size_t)8, 1, 0, 0, "main|rootLoc|0", (int *)0x0, "i64", (void *)(&rootLoc), (size_t)8, 0, 0, 0, "main|mem_used|0", (int *)0x0, "i64", (void *)(&mem_used), (size_t)8, 0, 0, 0, "main|instruction|0", (int *)0x0, "i8", (void *)(&instruction), (size_t)1, 0, 0, 0, "main|input|0", (int *)0x0, "i32", (void *)(&input), (size_t)4, 0, 0, 0, "main|r|0", (int *)0x0, "%struct.record*", (void *)(&r), (size_t)8, 1, 0, 0, "main|root|0", (int *)0x0, "%struct.node*", (void *)(&root), (size_t)8, 1, 0, 0, "main|file_pointer|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&file_pointer), (size_t)8, 1, 0, 0, "main|result|0", (int *)0x0, "i64", (void *)(&result), (size_t)8, 0, 0, 0, "main|commandBuffer|0", (int *)0x0, "i8*", (void *)(&commandBuffer), (size_t)8, 1, 0, 0, "main|lSize|0", (int *)0x0, "i64", (void *)(&lSize), (size_t)8, 0, 0, 0, "main|commandFile|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&commandFile), (size_t)8, 1, 0, 0, "main|pFile|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&pFile), (size_t)8, 1, 0, 0, "main|output|0", (int *)0x0, "i8*", (void *)(&output), (size_t)8, 1, 0, 0, "main|command_file|0", (int *)0x0, "i8*", (void *)(&command_file), (size_t)8, 1, 0, 0, "main|input_file|0", (int *)0x0, "i8*", (void *)(&input_file), (size_t)8, 1, 0, 0, "main|cores_arg|0", (int *)0x0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "main|cur_arg|0", (int *)0x0, "i32", (void *)(&cur_arg), (size_t)4, 0, 0, 0);  if (____chimes_replaying) { goto lbl_0; }  
+ register_stack_vars(21, "main|reclength|0", &____must_checkpoint_main_reclength_0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0, "main|recstart|0", &____must_checkpoint_main_recstart_0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "main|offset_2|0", &____must_checkpoint_main_offset_2_0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "main|lastKnode|0", &____must_checkpoint_main_lastKnode_0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "main|rSize|0", (int *)0x0, "i32", (void *)(&rSize), (size_t)4, 0, 0, 0, "main|ans|0", &____must_checkpoint_main_ans_0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0, "main|keys|0", &____must_checkpoint_main_keys_0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|commandPointer|0", (int *)0x0, "i8*", (void *)(&commandPointer), (size_t)8, 1, 0, 0, "main|rootLoc|0", (int *)0x0, "i64", (void *)(&rootLoc), (size_t)8, 0, 0, 0, "main|mem_used|0", (int *)0x0, "i64", (void *)(&mem_used), (size_t)8, 0, 0, 0, "main|instruction|0", (int *)0x0, "i8", (void *)(&instruction), (size_t)1, 0, 0, 0, "main|input|0", (int *)0x0, "i32", (void *)(&input), (size_t)4, 0, 0, 0, "main|root|0", (int *)0x0, "%struct.node*", (void *)(&root), (size_t)8, 1, 0, 0, "main|lSize|0", &____must_checkpoint_main_lSize_0, "i64", (void *)(&lSize), (size_t)8, 0, 0, 0, "main|commandFile|0", &____must_checkpoint_main_commandFile_0, "%struct._IO_FILE*", (void *)(&commandFile), (size_t)8, 1, 0, 0, "main|output|0", (int *)0x0, "i8*", (void *)(&output), (size_t)8, 1, 0, 0, "main|command_file|0", &____must_checkpoint_main_command_file_0, "i8*", (void *)(&command_file), (size_t)8, 1, 0, 0, "main|input_file|0", &____must_checkpoint_main_input_file_0, "i8*", (void *)(&input_file), (size_t)8, 1, 0, 0, "main|cores_arg|0", (int *)0x0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "main|cur_arg|0", &____must_checkpoint_main_cur_arg_0, "i32", (void *)(&cur_arg), (size_t)4, 0, 0, 0);  if (____chimes_replaying) { goto lbl_0; }  

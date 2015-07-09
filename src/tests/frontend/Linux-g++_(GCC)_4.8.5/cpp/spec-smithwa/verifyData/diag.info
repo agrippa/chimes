@@ -19,13 +19,25 @@ RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 37 31 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 43 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 52 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 35 624  ; int myRow;
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 54 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 63 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 65 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 74 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 76 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 85 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 35 624  ; int npCol;
+# 35
+int npRow;
+# 35
+int myCol;
+# 35
+int myRow;
 # 35
 int matchLimit;
 # 35
 int myTaskID;
 # 35
- if (____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(3, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0);  }  
+ if (____must_checkpoint_verifyData_npCol_0 || ____must_checkpoint_verifyData_npRow_0 || ____must_checkpoint_verifyData_myCol_0 || ____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(6, "verifyData|npCol|0", &____must_checkpoint_verifyData_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "verifyData|npRow|0", &____must_checkpoint_verifyData_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "verifyData|myCol|0", &____must_checkpoint_verifyData_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 34 6 len=10 verifyData_resumable
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 57 18  ({  calling((void*)gridInfo, 1, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 57 57 
@@ -35,10 +47,22 @@ RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 37 31 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 43 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 52 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 35 624  ; int myRow;
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 54 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 63 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 65 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 74 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 76 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 85 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 35 624  ; int npCol;
+# 35
+int npRow;
+# 35
+int myCol;
+# 35
+int myRow;
 # 35
 int matchLimit;
 # 35
 int myTaskID;
 # 35
- if (____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(3, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_verifyData_npCol_0 || ____must_checkpoint_verifyData_npRow_0 || ____must_checkpoint_verifyData_myCol_0 || ____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(6, "verifyData|npCol|0", &____must_checkpoint_verifyData_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "verifyData|npRow|0", &____must_checkpoint_verifyData_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "verifyData|myCol|0", &____must_checkpoint_verifyData_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

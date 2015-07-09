@@ -17,6 +17,9 @@ static int ____must_checkpoint_verifyData_minScore_0 = 2;
 static int ____must_checkpoint_verifyData_myTaskID_0 = 2;
 static int ____must_checkpoint_verifyData_matchLimit_0 = 2;
 static int ____must_checkpoint_verifyData_myRow_0 = 2;
+static int ____must_checkpoint_verifyData_myCol_0 = 2;
+static int ____must_checkpoint_verifyData_npRow_0 = 2;
+static int ____must_checkpoint_verifyData_npCol_0 = 2;
 
 static int ____must_manage_verifyData = 2;
 
@@ -2329,18 +2332,24 @@ void verifyData_npm(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData, int minScore, in
 void verifyData_quick(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData, int minScore, int minSeparation); void verifyData(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData, int minScore, int minSeparation);
 void verifyData_resumable(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  int minScore, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(8188620330301190673UL), (size_t)(8188620330301190674UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0) ; int myRow;
+  int minScore, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(8188620330301190673UL), (size_t)(8188620330301190674UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0) ; int npCol;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+int npRow;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+int myCol;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+int myRow;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int matchLimit;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int myTaskID;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
- if (____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(3, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_verifyData_npCol_0 || ____must_checkpoint_verifyData_npRow_0 || ____must_checkpoint_verifyData_myCol_0 || ____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(6, "verifyData|npCol|0", &____must_checkpoint_verifyData_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "verifyData|npRow|0", &____must_checkpoint_verifyData_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "verifyData|myCol|0", &____must_checkpoint_verifyData_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 36 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 37 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     int globalNpRow; int globalNpCol; ;
 # 38 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  int iBeg; int iEnd; int jBeg; int jEnd; int myCol; int npRow; int npCol; int n; int m; ;
+  int iBeg; int iEnd; int jBeg; int jEnd; int n; int m; ;
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   unsigned long long comparisons; unsigned long long reduced_comparisons; ;
 # 40 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
@@ -2459,18 +2468,24 @@ rm_stack(false, 0UL, "verifyData", &____must_manage_verifyData, ____alias_loc_id
 # 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 void verifyData_quick(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  int minScore, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(8188620330301190673UL), (size_t)(8188620330301190674UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0) ; int myRow;
+  int minScore, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(8188620330301190673UL), (size_t)(8188620330301190674UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0) ; int npCol;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+int npRow;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+int myCol;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+int myRow;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int matchLimit;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int myTaskID;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
- if (____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(3, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); } ; ;
+ if (____must_checkpoint_verifyData_npCol_0 || ____must_checkpoint_verifyData_npRow_0 || ____must_checkpoint_verifyData_myCol_0 || ____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(6, "verifyData|npCol|0", &____must_checkpoint_verifyData_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "verifyData|npRow|0", &____must_checkpoint_verifyData_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "verifyData|myCol|0", &____must_checkpoint_verifyData_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); } ; ;
 # 36 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 37 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     int globalNpRow; int globalNpCol; ;
 # 38 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  int iBeg; int iEnd; int jBeg; int jEnd; int myCol; int npRow; int npCol; int n; int m; ;
+  int iBeg; int iEnd; int jBeg; int jEnd; int n; int m; ;
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   unsigned long long comparisons; unsigned long long reduced_comparisons; ;
 # 40 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
@@ -2720,7 +2735,7 @@ void verifyData_npm(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
 
 
 static int module_init() {
-    init_module(8188620330301190487UL, 2, 1, 6, 2, 1, 1, 2, 0, 0, 2,
+    init_module(8188620330301190487UL, 2, 1, 9, 2, 1, 1, 2, 0, 0, 2,
                            &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)1, (8188620330301190487UL + 1UL), (8188620330301190487UL + 2UL), (8188620330301190487UL + 3UL), (8188620330301190487UL + 4UL), (8188620330301190487UL + 5UL), (8188620330301190487UL + 6UL), (8188620330301190487UL + 19UL), "gridInfo", (unsigned)4, (8188620330301190487UL + 13UL), (8188620330301190487UL + 14UL), (8188620330301190487UL + 15UL), (8188620330301190487UL + 16UL),
                            &____alias_loc_id_1, (unsigned)9, (unsigned)0, (unsigned)0, (8188620330301190487UL + 7UL), (8188620330301190487UL + 8UL), (8188620330301190487UL + 9UL), (8188620330301190487UL + 10UL), (8188620330301190487UL + 11UL), (8188620330301190487UL + 12UL), (8188620330301190487UL + 17UL), (8188620330301190487UL + 18UL), (8188620330301190487UL + 19UL),
                             "verifyData", 0, "_Z10verifyDataP6simmatP6seqdatii", "_Z14verifyData_npmP6simmatP6seqdatii", 1, &____alias_loc_id_0, 4, (8188620330301190487UL + 186UL), (8188620330301190487UL + 187UL), 0UL, 0UL, 0UL, 11, "gridInfo", 4, (8188620330301190487UL + 15UL), (8188620330301190487UL + 16UL), (8188620330301190487UL + 13UL), (8188620330301190487UL + 14UL), 0UL, "printf", 1, (8188620330301190487UL + 197UL), 0UL, "printf", 2, (8188620330301190487UL + 198UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 198UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 198UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 198UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 198UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 198UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 198UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 198UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 198UL), 0UL, 0UL,
@@ -2737,7 +2752,10 @@ static int module_init() {
                         "verifyData|minScore|0", 1, "gridInfo",
                         "verifyData|myTaskID|0", 1, "gridInfo",
                         "verifyData|matchLimit|0", 1, "gridInfo",
-                        "verifyData|myRow|0", 1, "verifyData");
+                        "verifyData|myRow|0", 1, "verifyData",
+                        "verifyData|myCol|0", 1, "gridInfo",
+                        "verifyData|npRow|0", 1, "gridInfo",
+                        "verifyData|npCol|0", 1, "gridInfo");
     return 0;
 }
 

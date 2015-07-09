@@ -24,23 +24,7 @@ static int ____must_checkpoint_ljForce_eShift_0 = 2;
 static int ____must_checkpoint_ljForce_nbrBoxes_0 = 2;
 static int ____must_checkpoint_ljForce_iBox_0 = 2;
 static int ____must_checkpoint_ljForce_nIBox_0 = 2;
-static int ____must_checkpoint_ljForce_nNbrBoxes_0 = 2;
-static int ____must_checkpoint_ljForce_jTmp_0 = 2;
-static int ____must_checkpoint_ljForce_jBox_0 = 2;
-static int ____must_checkpoint_ljForce_nJBox_0 = 2;
-static int ____must_checkpoint_ljForce_iOff_0 = 2;
-static int ____must_checkpoint_ljForce_ii_0 = 2;
-static int ____must_checkpoint_ljForce_iId_0 = 2;
-static int ____must_checkpoint_ljForce_jOff_0 = 2;
-static int ____must_checkpoint_ljForce_ij_0 = 2;
 static int ____must_checkpoint_ljForce_dr_0 = 2;
-static int ____must_checkpoint_ljForce_jId_0 = 2;
-static int ____must_checkpoint_ljForce_r2_0 = 2;
-static int ____must_checkpoint_ljForce_m1_0 = 2;
-static int ____must_checkpoint_ljForce_r6_0 = 2;
-static int ____must_checkpoint_ljForce_eLocal_0 = 2;
-static int ____must_checkpoint_ljForce_fr_0 = 2;
-static int ____must_checkpoint_ljForce_m2_0 = 2;
 
 static int ____must_manage_initLjPot = 2;
 static int ____must_manage_ljPrint = 2;
@@ -3213,39 +3197,7 @@ int ljForce_npm(SimFlat* s);static int (*____chimes_extern_func_getNeighborBoxes
 int ljForce_quick(SimFlat* s); int ljForce(SimFlat* s);
 int ljForce_resumable(SimFlat* s)
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(15692222973149251136UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int m2;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-real_t fr;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-real_t eLocal;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-real_t r6;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int m1;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-real_t r2;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int jId;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-real_t dr[3];
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int ij;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int jOff;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int iId;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int ii;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int iOff;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int nJBox;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int jBox;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int jTmp;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int nNbrBoxes;
+{const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(15692222973149251136UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; real_t dr[3];
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nIBox;
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3263,7 +3215,7 @@ real_t rCut2;
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t epsilon;
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- if (____must_checkpoint_ljForce_m2_0 || ____must_checkpoint_ljForce_fr_0 || ____must_checkpoint_ljForce_eLocal_0 || ____must_checkpoint_ljForce_r6_0 || ____must_checkpoint_ljForce_m1_0 || ____must_checkpoint_ljForce_r2_0 || ____must_checkpoint_ljForce_jId_0 || ____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_ij_0 || ____must_checkpoint_ljForce_jOff_0 || ____must_checkpoint_ljForce_iId_0 || ____must_checkpoint_ljForce_ii_0 || ____must_checkpoint_ljForce_iOff_0 || ____must_checkpoint_ljForce_nJBox_0 || ____must_checkpoint_ljForce_jBox_0 || ____must_checkpoint_ljForce_jTmp_0 || ____must_checkpoint_ljForce_nNbrBoxes_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(25, "ljForce|m2|0", &____must_checkpoint_ljForce_m2_0, "i32", (void *)(&m2), (size_t)4, 0, 0, 0, "ljForce|fr|0", &____must_checkpoint_ljForce_fr_0, "double", (void *)(&fr), (size_t)8, 0, 0, 0, "ljForce|eLocal|0", &____must_checkpoint_ljForce_eLocal_0, "double", (void *)(&eLocal), (size_t)8, 0, 0, 0, "ljForce|r6|0", &____must_checkpoint_ljForce_r6_0, "double", (void *)(&r6), (size_t)8, 0, 0, 0, "ljForce|m1|0", &____must_checkpoint_ljForce_m1_0, "i32", (void *)(&m1), (size_t)4, 0, 0, 0, "ljForce|r2|0", &____must_checkpoint_ljForce_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0, "ljForce|jId|0", &____must_checkpoint_ljForce_jId_0, "i32", (void *)(&jId), (size_t)4, 0, 0, 0, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|ij|0", &____must_checkpoint_ljForce_ij_0, "i32", (void *)(&ij), (size_t)4, 0, 0, 0, "ljForce|jOff|0", &____must_checkpoint_ljForce_jOff_0, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0, "ljForce|iId|0", &____must_checkpoint_ljForce_iId_0, "i32", (void *)(&iId), (size_t)4, 0, 0, 0, "ljForce|ii|0", &____must_checkpoint_ljForce_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "ljForce|iOff|0", &____must_checkpoint_ljForce_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0, "ljForce|nJBox|0", &____must_checkpoint_ljForce_nJBox_0, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0, "ljForce|jBox|0", &____must_checkpoint_ljForce_jBox_0, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0, "ljForce|jTmp|0", &____must_checkpoint_ljForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0, "ljForce|nNbrBoxes|0", &____must_checkpoint_ljForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(9, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)s->pot) ;
 # 146 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3313,45 +3265,45 @@ real_t epsilon;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       if (nIBox == 0) {continue; };
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-          call_lbl_1: nNbrBoxes = ( ({ LinkCell * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes); } calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15692222973149251138UL), (size_t)(0UL), (size_t)(15692222973149250956UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) ) ;
+       int nNbrBoxes; call_lbl_1: nNbrBoxes = ( ({ LinkCell * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes); } calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15692222973149251138UL), (size_t)(0UL), (size_t)(15692222973149250956UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) ) ;
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 174 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      { for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
+      { int jTmp; for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
 # 175 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       {
 # 176 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-            jBox = (nbrBoxes[jTmp]) ;
+          int jBox; jBox = (nbrBoxes[jTmp]) ;
 # 177 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 178 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          ((jBox>=0) ? static_cast<void> (0) : __assert_fail ("jBox>=0", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c", 178, __PRETTY_FUNCTION__));
 # 179 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-            nJBox = (s->boxes->nAtoms[jBox]) ;
+          int nJBox; nJBox = (s->boxes->nAtoms[jBox]) ;
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          if (nJBox == 0) {continue; };
 # 182 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 184 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-         { for ( iOff = (iBox * 64) , ii = (0) ; ii<nIBox; ii++,iOff++)
+         { int iOff; int ii; for ( iOff = (iBox * 64) , ii = (0) ; ii<nIBox; ii++,iOff++)
 # 185 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          {
 # 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               iId = (s->atoms->gid[iOff]) ;
+             int iId; iId = (s->atoms->gid[iOff]) ;
 # 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-            { for ( jOff = (64 * jBox) , ij = (0) ; ij<nJBox; ij++,jOff++)
+            { int jOff; int ij; for ( jOff = (64 * jBox) , ij = (0) ; ij<nJBox; ij++,jOff++)
 # 189 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             {
 # 190 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 ;
 # 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                  jId = (s->atoms->gid[jOff]) ;
+                int jId; jId = (s->atoms->gid[jOff]) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue; };
 # 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                  r2 = (0.) ;
+                real_t r2; r2 = (0.) ;
 # 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               { for ( m1 = (0) ; m1<3; m1++)
+               { int m1; for ( m1 = (0) ; m1<3; m1++)
 # 196 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                {
 # 197 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3369,9 +3321,9 @@ real_t epsilon;
 # 205 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                r2 = 1.0/r2;
 # 206 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                  r6 = (s6 * (r2 * r2 * r2)) ;
+                real_t r6; r6 = (s6 * (r2 * r2 * r2)) ;
 # 207 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                  eLocal = (r6 * (r6 - 1.) - eShift) ;
+                real_t eLocal; eLocal = (r6 * (r6 - 1.) - eShift) ;
 # 208 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                s->atoms->U[iOff] += 0.5*eLocal;
 # 209 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3384,9 +3336,9 @@ real_t epsilon;
 # 217 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 218 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 219 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                  fr = (-4. * epsilon * r6 * r2 * (12. * r6 - 6.)) ;
+                real_t fr; fr = (-4. * epsilon * r6 * r2 * (12. * r6 - 6.)) ;
 # 220 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               { for ( m2 = (0) ; m2<3; m2++)
+               { int m2; for ( m2 = (0) ; m2<3; m2++)
 # 221 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                {
 # 222 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3502,39 +3454,7 @@ void ljPrint(FILE* file, BasePotential* pot) { (____chimes_replaying ? ljPrint_r
 # 143 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ljForce_quick(SimFlat* s)
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(15692222973149251136UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int m2;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-real_t fr;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-real_t eLocal;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-real_t r6;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int m1;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-real_t r2;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int jId;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-real_t dr[3];
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int ij;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int jOff;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int iId;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int ii;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int iOff;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int nJBox;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int jBox;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int jTmp;
-# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-int nNbrBoxes;
+{const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(15692222973149251136UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; real_t dr[3];
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nIBox;
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3552,7 +3472,7 @@ real_t rCut2;
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t epsilon;
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- if (____must_checkpoint_ljForce_m2_0 || ____must_checkpoint_ljForce_fr_0 || ____must_checkpoint_ljForce_eLocal_0 || ____must_checkpoint_ljForce_r6_0 || ____must_checkpoint_ljForce_m1_0 || ____must_checkpoint_ljForce_r2_0 || ____must_checkpoint_ljForce_jId_0 || ____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_ij_0 || ____must_checkpoint_ljForce_jOff_0 || ____must_checkpoint_ljForce_iId_0 || ____must_checkpoint_ljForce_ii_0 || ____must_checkpoint_ljForce_iOff_0 || ____must_checkpoint_ljForce_nJBox_0 || ____must_checkpoint_ljForce_jBox_0 || ____must_checkpoint_ljForce_jTmp_0 || ____must_checkpoint_ljForce_nNbrBoxes_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(25, "ljForce|m2|0", &____must_checkpoint_ljForce_m2_0, "i32", (void *)(&m2), (size_t)4, 0, 0, 0, "ljForce|fr|0", &____must_checkpoint_ljForce_fr_0, "double", (void *)(&fr), (size_t)8, 0, 0, 0, "ljForce|eLocal|0", &____must_checkpoint_ljForce_eLocal_0, "double", (void *)(&eLocal), (size_t)8, 0, 0, 0, "ljForce|r6|0", &____must_checkpoint_ljForce_r6_0, "double", (void *)(&r6), (size_t)8, 0, 0, 0, "ljForce|m1|0", &____must_checkpoint_ljForce_m1_0, "i32", (void *)(&m1), (size_t)4, 0, 0, 0, "ljForce|r2|0", &____must_checkpoint_ljForce_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0, "ljForce|jId|0", &____must_checkpoint_ljForce_jId_0, "i32", (void *)(&jId), (size_t)4, 0, 0, 0, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|ij|0", &____must_checkpoint_ljForce_ij_0, "i32", (void *)(&ij), (size_t)4, 0, 0, 0, "ljForce|jOff|0", &____must_checkpoint_ljForce_jOff_0, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0, "ljForce|iId|0", &____must_checkpoint_ljForce_iId_0, "i32", (void *)(&iId), (size_t)4, 0, 0, 0, "ljForce|ii|0", &____must_checkpoint_ljForce_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "ljForce|iOff|0", &____must_checkpoint_ljForce_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0, "ljForce|nJBox|0", &____must_checkpoint_ljForce_nJBox_0, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0, "ljForce|jBox|0", &____must_checkpoint_ljForce_jBox_0, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0, "ljForce|jTmp|0", &____must_checkpoint_ljForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0, "ljForce|nNbrBoxes|0", &____must_checkpoint_ljForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } ; ;
+ if (____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(9, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } ; ;
 # 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)s->pot) ;
 # 146 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3602,45 +3522,45 @@ real_t epsilon;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       if (nIBox == 0) {continue; };
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-          call_lbl_1: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15692222973149251138UL), (size_t)(0UL), (size_t)(15692222973149250956UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
+       int nNbrBoxes; call_lbl_1: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15692222973149251138UL), (size_t)(0UL), (size_t)(15692222973149250956UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 174 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      { for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
+      { int jTmp; for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
 # 175 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       {
 # 176 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-            jBox = (nbrBoxes[jTmp]) ;
+          int jBox; jBox = (nbrBoxes[jTmp]) ;
 # 177 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 178 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          ((jBox>=0) ? static_cast<void> (0) : __assert_fail ("jBox>=0", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c", 178, __PRETTY_FUNCTION__));
 # 179 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-            nJBox = (s->boxes->nAtoms[jBox]) ;
+          int nJBox; nJBox = (s->boxes->nAtoms[jBox]) ;
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          if (nJBox == 0) {continue; };
 # 182 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 184 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-         { for ( iOff = (iBox * 64) , ii = (0) ; ii<nIBox; ii++,iOff++)
+         { int iOff; int ii; for ( iOff = (iBox * 64) , ii = (0) ; ii<nIBox; ii++,iOff++)
 # 185 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          {
 # 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               iId = (s->atoms->gid[iOff]) ;
+             int iId; iId = (s->atoms->gid[iOff]) ;
 # 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-            { for ( jOff = (64 * jBox) , ij = (0) ; ij<nJBox; ij++,jOff++)
+            { int jOff; int ij; for ( jOff = (64 * jBox) , ij = (0) ; ij<nJBox; ij++,jOff++)
 # 189 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             {
 # 190 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 ;
 # 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                  jId = (s->atoms->gid[jOff]) ;
+                int jId; jId = (s->atoms->gid[jOff]) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue; };
 # 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                  r2 = (0.) ;
+                real_t r2; r2 = (0.) ;
 # 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               { for ( m1 = (0) ; m1<3; m1++)
+               { int m1; for ( m1 = (0) ; m1<3; m1++)
 # 196 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                {
 # 197 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3658,9 +3578,9 @@ real_t epsilon;
 # 205 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                r2 = 1.0/r2;
 # 206 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                  r6 = (s6 * (r2 * r2 * r2)) ;
+                real_t r6; r6 = (s6 * (r2 * r2 * r2)) ;
 # 207 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                  eLocal = (r6 * (r6 - 1.) - eShift) ;
+                real_t eLocal; eLocal = (r6 * (r6 - 1.) - eShift) ;
 # 208 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                s->atoms->U[iOff] += 0.5*eLocal;
 # 209 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3673,9 +3593,9 @@ real_t epsilon;
 # 217 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 218 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 219 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                  fr = (-4. * epsilon * r6 * r2 * (12. * r6 - 6.)) ;
+                real_t fr; fr = (-4. * epsilon * r6 * r2 * (12. * r6 - 6.)) ;
 # 220 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               { for ( m2 = (0) ; m2<3; m2++)
+               { int m2; for ( m2 = (0) ; m2<3; m2++)
 # 221 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                {
 # 222 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3943,7 +3863,7 @@ int ljForce_npm(SimFlat* s)
 
 
 static int module_init() {
-    init_module(15692222973149250863UL, 14, 5, 26, 6, 4, 2, 6, 0, 0, 10,
+    init_module(15692222973149250863UL, 14, 5, 10, 6, 4, 2, 6, 0, 0, 10,
                            &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (15692222973149250863UL + 95UL), "getNeighborBoxes", (unsigned)2, (15692222973149250863UL + 93UL), (15692222973149250863UL + 275UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (15692222973149250863UL + 1UL), (15692222973149250863UL + 2UL), (15692222973149250863UL + 25UL),
                            &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (15692222973149250863UL + 29UL), (15692222973149250863UL + 30UL), (15692222973149250863UL + 32UL),
@@ -4000,23 +3920,7 @@ static int module_init() {
                         "ljForce|nbrBoxes|0", 1, "ljForce",
                         "ljForce|iBox|0", 1, "getNeighborBoxes",
                         "ljForce|nIBox|0", 1, "getNeighborBoxes",
-                        "ljForce|nNbrBoxes|0", 1, "getNeighborBoxes",
-                        "ljForce|jTmp|0", 1, "getNeighborBoxes",
-                        "ljForce|jBox|0", 1, "getNeighborBoxes",
-                        "ljForce|nJBox|0", 1, "getNeighborBoxes",
-                        "ljForce|iOff|0", 1, "getNeighborBoxes",
-                        "ljForce|ii|0", 1, "getNeighborBoxes",
-                        "ljForce|iId|0", 1, "getNeighborBoxes",
-                        "ljForce|jOff|0", 1, "getNeighborBoxes",
-                        "ljForce|ij|0", 1, "getNeighborBoxes",
-                        "ljForce|dr|0", 1, "getNeighborBoxes",
-                        "ljForce|jId|0", 1, "getNeighborBoxes",
-                        "ljForce|r2|0", 1, "getNeighborBoxes",
-                        "ljForce|m1|0", 1, "getNeighborBoxes",
-                        "ljForce|r6|0", 1, "getNeighborBoxes",
-                        "ljForce|eLocal|0", 1, "getNeighborBoxes",
-                        "ljForce|fr|0", 1, "getNeighborBoxes",
-                        "ljForce|m2|0", 1, "getNeighborBoxes");
+                        "ljForce|dr|0", 1, "getNeighborBoxes");
     return 0;
 }
 

@@ -26,8 +26,8 @@
 /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp BFSGraph|h_cost|0 " i32* " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp BFSGraph|i|2 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp BFSGraph|k|0 " i32 " 32 0 0 1 checkpoint
-/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp BFSGraph|tid|0 " i32 " 32 0 0 1 checkpoint
-/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp BFSGraph|i|3 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp BFSGraph|tid|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp BFSGraph|i|3 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp BFSGraph|stop|0 " i8 " 8 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp BFSGraph|count_iters|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp BFSGraph|start_time|0 " double " 64 0 0 1 checkpoint

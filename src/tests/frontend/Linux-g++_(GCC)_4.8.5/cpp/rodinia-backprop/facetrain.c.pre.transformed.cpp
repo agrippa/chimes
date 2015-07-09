@@ -3765,7 +3765,7 @@ static int module_init() {
                              "setup", "_Z5setupiPPc", 2, "bpnn_initialize", "backprop_face",
                              "backprop_face", "_Z13backprop_facev", 6, "seconds", "bpnn_create", "load", "bpnn_train_kernel", "bpnn_free", "seconds",
                         "seconds|tp|0", 1, "seconds",
-                        "backprop_face|net|0", 3, "load", "bpnn_train_kernel", "bpnn_free",
+                        "backprop_face|net|0", 2, "load", "bpnn_train_kernel",
                         "backprop_face|out_err|0", 1, "backprop_face",
                         "backprop_face|start|0", 4, "load", "bpnn_train_kernel", "bpnn_free", "bpnn_create",
         "seconds", 0UL, (int)0,

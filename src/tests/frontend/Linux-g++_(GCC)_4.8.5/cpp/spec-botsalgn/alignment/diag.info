@@ -361,77 +361,35 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 545 89 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 555 20 checkpoint_transformed(3, ____alias_loc_id_1)
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 555 31 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 4 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 9 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 11 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 16 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 18 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 23 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 25 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 31 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 33 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 39 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 504 4 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 504 12 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 504 14 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 504 22 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 505 4 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 505 13 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 505 15 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 505 30 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 16 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 23 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 25 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 32 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 34 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 41 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 66 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 74 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 76 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 84 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 86 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 91 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 93 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 99 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 43 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 50 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 52 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 64 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 523 16 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 523 32 
-InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 516 14  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 516 20  register_stack_var("pairalign_seq|c|0", (int *)0x0, "i8", (void *)(&c), (size_t)1, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 516 20 
-InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 527 20  lbl_1: 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 527 26  register_stack_var("pairalign_seq|c|1", (int *)0x0, "i8", (void *)(&c), (size_t)1, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 527 26 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 502 165  ; int displ[10001];
 # 502
-int gh;
+int maxscore;
 # 502
-int g;
-# 502
-int seq2;
-# 502
-int seq1;
+int sb2;
 # 502
 int sb1;
 # 502
+int se2;
+# 502
 int se1;
-# 502
-double mm_score;
-# 502
-double gg;
-# 502
-int len2;
-# 502
-int len1;
-# 502
-int sj;
 # 502
 int si;
 # 502
-int m;
-# 502
-int n;
-# 502
-int i;
-# 502
- register_stack_vars(16, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|gh|0", (int *)0x0, "i32", (void *)(&gh), (size_t)4, 0, 0, 0, "pairalign_seq|g|0", (int *)0x0, "i32", (void *)(&g), (size_t)4, 0, 0, 0, "pairalign_seq|seq2|0", (int *)0x0, "i32", (void *)(&seq2), (size_t)4, 0, 0, 0, "pairalign_seq|seq1|0", (int *)0x0, "i32", (void *)(&seq1), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|mm_score|0", (int *)0x0, "double", (void *)(&mm_score), (size_t)8, 0, 0, 0, "pairalign_seq|gg|0", (int *)0x0, "double", (void *)(&gg), (size_t)8, 0, 0, 0, "pairalign_seq|len2|0", (int *)0x0, "i32", (void *)(&len2), (size_t)4, 0, 0, 0, "pairalign_seq|len1|0", (int *)0x0, "i32", (void *)(&len1), (size_t)4, 0, 0, 0, "pairalign_seq|sj|0", (int *)0x0, "i32", (void *)(&sj), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0, "pairalign_seq|m|0", (int *)0x0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "pairalign_seq|n|0", (int *)0x0, "i32", (void *)(&n), (size_t)4, 0, 0, 0, "pairalign_seq|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  
+ register_stack_vars(7, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|maxscore|0", (int *)0x0, "i32", (void *)(&maxscore), (size_t)4, 0, 0, 0, "pairalign_seq|sb2|0", (int *)0x0, "i32", (void *)(&sb2), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se2|0", (int *)0x0, "i32", (void *)(&se2), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0);  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 565 6 len=11 init_matrix_quick
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 566 122  ; 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 581 6 len=14 pairalign_init_quick
@@ -573,77 +531,35 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 545 89 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 555 20 checkpoint_transformed(3, ____alias_loc_id_1)
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 555 31 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 4 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 9 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 11 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 16 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 18 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 23 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 25 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 31 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 33 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 503 39 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 504 4 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 504 12 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 504 14 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 504 22 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 505 4 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 505 13 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 505 15 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 505 30 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 16 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 23 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 25 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 32 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 34 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 41 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 66 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 74 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 76 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 84 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 86 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 91 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 93 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 99 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 43 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 50 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 52 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 522 64 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 523 16 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 523 32 
-InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 516 14  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 516 20  register_stack_var("pairalign_seq|c|0", (int *)0x0, "i8", (void *)(&c), (size_t)1, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 516 20  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 527 20  lbl_1: 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 527 26  register_stack_var("pairalign_seq|c|1", (int *)0x0, "i8", (void *)(&c), (size_t)1, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 527 26  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 502 165  ; int displ[10001];
 # 502
-int gh;
+int maxscore;
 # 502
-int g;
-# 502
-int seq2;
-# 502
-int seq1;
+int sb2;
 # 502
 int sb1;
 # 502
+int se2;
+# 502
 int se1;
-# 502
-double mm_score;
-# 502
-double gg;
-# 502
-int len2;
-# 502
-int len1;
-# 502
-int sj;
 # 502
 int si;
 # 502
-int m;
-# 502
-int n;
-# 502
-int i;
-# 502
- register_stack_vars(16, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|gh|0", (int *)0x0, "i32", (void *)(&gh), (size_t)4, 0, 0, 0, "pairalign_seq|g|0", (int *)0x0, "i32", (void *)(&g), (size_t)4, 0, 0, 0, "pairalign_seq|seq2|0", (int *)0x0, "i32", (void *)(&seq2), (size_t)4, 0, 0, 0, "pairalign_seq|seq1|0", (int *)0x0, "i32", (void *)(&seq1), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|mm_score|0", (int *)0x0, "double", (void *)(&mm_score), (size_t)8, 0, 0, 0, "pairalign_seq|gg|0", (int *)0x0, "double", (void *)(&gg), (size_t)8, 0, 0, 0, "pairalign_seq|len2|0", (int *)0x0, "i32", (void *)(&len2), (size_t)4, 0, 0, 0, "pairalign_seq|len1|0", (int *)0x0, "i32", (void *)(&len1), (size_t)4, 0, 0, 0, "pairalign_seq|sj|0", (int *)0x0, "i32", (void *)(&sj), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0, "pairalign_seq|m|0", (int *)0x0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "pairalign_seq|n|0", (int *)0x0, "i32", (void *)(&n), (size_t)4, 0, 0, 0, "pairalign_seq|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  if (____chimes_replaying) { goto lbl_0; }  
+ register_stack_vars(7, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|maxscore|0", (int *)0x0, "i32", (void *)(&maxscore), (size_t)4, 0, 0, 0, "pairalign_seq|sb2|0", (int *)0x0, "i32", (void *)(&sb2), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se2|0", (int *)0x0, "i32", (void *)(&se2), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 565 6 len=11 init_matrix_resumable
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 566 122  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 581 6 len=14 pairalign_init_resumable

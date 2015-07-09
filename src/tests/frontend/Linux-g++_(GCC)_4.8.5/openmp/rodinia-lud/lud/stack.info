@@ -3,10 +3,10 @@
 /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|matrix_dim|0 " i32 " 32 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|opt|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|option_index|0 " i32 " 32 0 0 1 main
-/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|ret|0 " i32 " 32 0 0 1 get_interval_by_sec lud_base lud_verify matrix_duplicate print_matrix stopwatch_start stopwatch_stop
-/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|input_file|0 " i8* " 64 1 0 1 create_matrix_from_file get_interval_by_sec lud_base lud_verify matrix_duplicate print_matrix stopwatch_start stopwatch_stop
-/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|m|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|ret|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|input_file|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|m|0 " float* " 64 1 0 1 create_matrix_from_file get_interval_by_sec lud_base lud_verify matrix_duplicate print_matrix stopwatch_start stopwatch_stop
 /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|mm|0 " float* " 64 1 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|sw|0 " %struct.__stopwatch_t = type { %struct.timeval, %struct.timeval } " 256 0 1 __stopwatch_t 0 1 main
-/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|____chimes_unroll_var_0|0 " double " 64 0 0 1 lud_verify print_matrix
+/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|____chimes_unroll_var_0|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|____chimes_ret_var_0|0 " i32 " 32 0 0 0

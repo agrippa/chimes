@@ -69,7 +69,7 @@ InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 652 88 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 613 1 const int ____chimes_did_disable7 = new_stack((void *)(&sweepkdtree), "sweepkdtree", &____must_manage_sweepkdtree, 6, 0, (size_t)(339782406926630066UL), (size_t)(339782406926630067UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 653 1 rm_stack(false, 0UL, "sweepkdtree", &____must_manage_sweepkdtree, ____alias_loc_id_19, ____chimes_did_disable7, false); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 947 59 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable8, false); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 666 1 const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", (int *)0x0, 2, 1, (size_t)(0UL), (size_t)(339782406926630474UL), "main|argv|0", (int *)0x0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 666 1 const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", (int *)0x0, 2, 1, (size_t)(0UL), (size_t)(339782406926630474UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 948 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable8, false); 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 63 25 const int ____chimes_did_disable0 = new_stack((void *)(&empty_kdnode), "empty_kdnode", &____must_manage_empty_kdnode, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 63 148 
@@ -113,8 +113,8 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 6
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 614 34 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 652 4 long long ____chimes_ret_var_3; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 652 34 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 666 2 const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(339782406926630474UL), "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 666 209 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 666 2 const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(339782406926630474UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 666 231 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 667 3 int **xyzw; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 667 13 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 668 3 long long i; long long n; long long maxdepth; long long cutoff; long long cutoff2; long long count; ;
@@ -266,13 +266,10 @@ RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 67
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 671 29 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 671 32 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 671 55 
-InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 814 9  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 814 14  register_stack_var("main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 814 14 
-InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 824 9  lbl_1: 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 824 14  register_stack_var("main|j|1", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); 
+InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 824 9  lbl_0: 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 824 14  if (____must_checkpoint_main_j_1 != 0) { register_stack_var("main|j|1", &____must_checkpoint_main_j_1, "i32", (void *)(&j), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 824 14 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 666 204  ; struct timespec endTime;
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 666 228  ; struct timespec endTime;
 # 666
 struct timespec startTime;
 # 666
@@ -302,7 +299,7 @@ long long i;
 # 666
 int **xyzw;
 # 666
- register_stack_vars(15, "main|endTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&endTime), (size_t)16, 0, 1, 0, "main|startTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&startTime), (size_t)16, 0, 1, 0, "main|root|0", (int *)0x0, "%struct.kdnode*", (void *)(&root), (size_t)8, 1, 0, 0, "main|ti|0", (int *)0x0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", (int *)0x0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", (int *)0x0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", (int *)0x0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", (int *)0x0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|count|0", (int *)0x0, "i64", (void *)(&count), (size_t)8, 0, 0, 0, "main|cutoff2|0", (int *)0x0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", (int *)0x0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", (int *)0x0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", (int *)0x0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", (int *)0x0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", (int *)0x0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0);  
+ register_stack_vars(15, "main|endTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&endTime), (size_t)16, 0, 1, 0, "main|startTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&startTime), (size_t)16, 0, 1, 0, "main|root|0", (int *)0x0, "%struct.kdnode*", (void *)(&root), (size_t)8, 1, 0, 0, "main|ti|0", (int *)0x0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", (int *)0x0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", (int *)0x0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", (int *)0x0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", (int *)0x0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|count|0", (int *)0x0, "i64", (void *)(&count), (size_t)8, 0, 0, 0, "main|cutoff2|0", (int *)0x0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", (int *)0x0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", (int *)0x0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", (int *)0x0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", (int *)0x0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0);  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 63 9 len=12 empty_kdnode_resumable
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 63 147  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 73 9 len=11 init_kdnode_resumable
@@ -420,13 +417,10 @@ RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 67
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 671 29 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 671 32 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 671 55 
-InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 814 9  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 814 14  register_stack_var("main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 814 14  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 824 9  lbl_1: 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 824 14  register_stack_var("main|j|1", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); 
+InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 824 9  lbl_0: 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 824 14  if (____must_checkpoint_main_j_1 != 0) { register_stack_var("main|j|1", &____must_checkpoint_main_j_1, "i32", (void *)(&j), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 824 14  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(8): { goto call_lbl_8; } case(12): { goto call_lbl_12; } case(16): { goto call_lbl_16; } case(20): { goto call_lbl_20; } case(44): { goto call_lbl_44; } case(49): { goto call_lbl_49; } case(50): { goto call_lbl_50; } case(51): { goto call_lbl_51; } case(52): { goto call_lbl_52; } case(53): { goto call_lbl_53; } case(54): { goto call_lbl_54; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 666 204  ; struct timespec endTime;
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc 666 228  ; struct timespec endTime;
 # 666
 struct timespec startTime;
 # 666
@@ -456,4 +450,4 @@ long long i;
 # 666
 int **xyzw;
 # 666
- register_stack_vars(15, "main|endTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&endTime), (size_t)16, 0, 1, 0, "main|startTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&startTime), (size_t)16, 0, 1, 0, "main|root|0", (int *)0x0, "%struct.kdnode*", (void *)(&root), (size_t)8, 1, 0, 0, "main|ti|0", (int *)0x0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", (int *)0x0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", (int *)0x0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", (int *)0x0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", (int *)0x0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|count|0", (int *)0x0, "i64", (void *)(&count), (size_t)8, 0, 0, 0, "main|cutoff2|0", (int *)0x0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", (int *)0x0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", (int *)0x0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", (int *)0x0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", (int *)0x0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", (int *)0x0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0);  if (____chimes_replaying) { goto lbl_0; }  
+ register_stack_vars(15, "main|endTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&endTime), (size_t)16, 0, 1, 0, "main|startTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&startTime), (size_t)16, 0, 1, 0, "main|root|0", (int *)0x0, "%struct.kdnode*", (void *)(&root), (size_t)8, 1, 0, 0, "main|ti|0", (int *)0x0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", (int *)0x0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", (int *)0x0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", (int *)0x0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", (int *)0x0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|count|0", (int *)0x0, "i64", (void *)(&count), (size_t)8, 0, 0, 0, "main|cutoff2|0", (int *)0x0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", (int *)0x0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", (int *)0x0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", (int *)0x0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", (int *)0x0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0);  if (____chimes_replaying) { goto lbl_0; }  

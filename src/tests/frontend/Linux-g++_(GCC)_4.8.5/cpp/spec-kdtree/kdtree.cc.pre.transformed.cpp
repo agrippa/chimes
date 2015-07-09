@@ -21,8 +21,11 @@ static int ____chimes_does_checkpoint_clock_gettime_npm = 1;
 static int ____chimes_does_checkpoint_spec_genrand_int32_npm = 1;
 static int ____chimes_does_checkpoint_spec_init_genrand_npm = 1;
 
+static int ____must_checkpoint_main_argv_0 = 2;
+static int ____must_checkpoint_main_i_0 = 2;
 static int ____must_checkpoint_main_startTime_0 = 2;
 static int ____must_checkpoint_main_endTime_0 = 2;
+static int ____must_checkpoint_main_j_1 = 2;
 
 static int ____must_manage_downheap = 2;
 static int ____must_manage_heapsort = 2;
@@ -4571,7 +4574,7 @@ int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv)
 # 665 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(339782406926630474UL), "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; struct timespec endTime;
+{const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(339782406926630474UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; struct timespec endTime;
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 struct timespec startTime;
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4601,7 +4604,7 @@ long long i;
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 int **xyzw;
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- register_stack_vars(15, "main|endTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&endTime), (size_t)16, 0, 1, 0, "main|startTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&startTime), (size_t)16, 0, 1, 0, "main|root|0", (int *)0x0, "%struct.kdnode*", (void *)(&root), (size_t)8, 1, 0, 0, "main|ti|0", (int *)0x0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", (int *)0x0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", (int *)0x0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", (int *)0x0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", (int *)0x0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|count|0", (int *)0x0, "i64", (void *)(&count), (size_t)8, 0, 0, 0, "main|cutoff2|0", (int *)0x0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", (int *)0x0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", (int *)0x0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", (int *)0x0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", (int *)0x0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", (int *)0x0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
+ register_stack_vars(15, "main|endTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&endTime), (size_t)16, 0, 1, 0, "main|startTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&startTime), (size_t)16, 0, 1, 0, "main|root|0", (int *)0x0, "%struct.kdnode*", (void *)(&root), (size_t)8, 1, 0, 0, "main|ti|0", (int *)0x0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", (int *)0x0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", (int *)0x0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", (int *)0x0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", (int *)0x0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|count|0", (int *)0x0, "i64", (void *)(&count), (size_t)8, 0, 0, 0, "main|cutoff2|0", (int *)0x0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", (int *)0x0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", (int *)0x0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", (int *)0x0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", (int *)0x0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
 # 667 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    ;
 # 668 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4834,7 +4837,7 @@ int **xyzw;
 # 813 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      }
 # 814 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     { lbl_0: int j; register_stack_var("main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( j = (0) ; j<(3); j++) {
+     { int j; for ( j = (0) ; j<(3); j++) {
 # 815 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 816 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        xyzw[i][j] = -1;
@@ -4849,7 +4852,7 @@ int **xyzw;
 # 823 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    for (i=0L; i<n; i++) {
 # 824 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     { lbl_1: int j; register_stack_var("main|j|1", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(8): { goto call_lbl_8; } case(12): { goto call_lbl_12; } case(16): { goto call_lbl_16; } case(20): { goto call_lbl_20; } case(44): { goto call_lbl_44; } case(49): { goto call_lbl_49; } case(50): { goto call_lbl_50; } case(51): { goto call_lbl_51; } case(52): { goto call_lbl_52; } case(53): { goto call_lbl_53; } case(54): { goto call_lbl_54; } default: { chimes_error(); } } } for ( j = (0) ; j<(3); j++) {
+     { lbl_0: int j; if (____must_checkpoint_main_j_1 != 0) { register_stack_var("main|j|1", &____must_checkpoint_main_j_1, "i32", (void *)(&j), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(8): { goto call_lbl_8; } case(12): { goto call_lbl_12; } case(16): { goto call_lbl_16; } case(20): { goto call_lbl_20; } case(44): { goto call_lbl_44; } case(49): { goto call_lbl_49; } case(50): { goto call_lbl_50; } case(51): { goto call_lbl_51; } case(52): { goto call_lbl_52; } case(53): { goto call_lbl_53; } case(54): { goto call_lbl_54; } default: { chimes_error(); } } } for ( j = (0) ; j<(3); j++) {
 # 825 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 826 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        alias_group_changed(____alias_loc_id_6); call_lbl_49: xyzw[i][j] = (int) ((____chimes_does_checkpoint_spec_genrand_int32_npm ? ( ({ calling((void*)spec_genrand_int32, 49, ____alias_loc_id_6, 0UL, 0); (spec_genrand_int32)(); }) ) : (({ calling_npm("spec_genrand_int32", ____alias_loc_id_6); (*____chimes_extern_func_spec_genrand_int32)(); }))) >> 17);
@@ -5492,7 +5495,7 @@ long long sweepkdtree(kdnode *curr, kdnode *r, long long cut, long long cut2,
 int main_quick(int argc, char **argv)
 # 665 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(339782406926630474UL), "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; struct timespec endTime;
+{const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(339782406926630474UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; struct timespec endTime;
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 struct timespec startTime;
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5522,7 +5525,7 @@ long long i;
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 int **xyzw;
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- register_stack_vars(15, "main|endTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&endTime), (size_t)16, 0, 1, 0, "main|startTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&startTime), (size_t)16, 0, 1, 0, "main|root|0", (int *)0x0, "%struct.kdnode*", (void *)(&root), (size_t)8, 1, 0, 0, "main|ti|0", (int *)0x0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", (int *)0x0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", (int *)0x0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", (int *)0x0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", (int *)0x0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|count|0", (int *)0x0, "i64", (void *)(&count), (size_t)8, 0, 0, 0, "main|cutoff2|0", (int *)0x0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", (int *)0x0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", (int *)0x0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", (int *)0x0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", (int *)0x0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", (int *)0x0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0); ; ;
+ register_stack_vars(15, "main|endTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&endTime), (size_t)16, 0, 1, 0, "main|startTime|0", (int *)0x0, "%struct.timespec = type { i64, i64 }", (void *)(&startTime), (size_t)16, 0, 1, 0, "main|root|0", (int *)0x0, "%struct.kdnode*", (void *)(&root), (size_t)8, 1, 0, 0, "main|ti|0", (int *)0x0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", (int *)0x0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", (int *)0x0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", (int *)0x0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", (int *)0x0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|count|0", (int *)0x0, "i64", (void *)(&count), (size_t)8, 0, 0, 0, "main|cutoff2|0", (int *)0x0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", (int *)0x0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", (int *)0x0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", (int *)0x0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", (int *)0x0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0); ; ;
 # 667 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    ;
 # 668 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5755,7 +5758,7 @@ int **xyzw;
 # 813 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      }
 # 814 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     { lbl_0: int j; register_stack_var("main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); for ( j = (0) ; j<(3); j++) {
+     { int j; for ( j = (0) ; j<(3); j++) {
 # 815 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 816 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        xyzw[i][j] = -1;
@@ -5770,7 +5773,7 @@ int **xyzw;
 # 823 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    for (i=0L; i<n; i++) {
 # 824 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     { lbl_1: int j; register_stack_var("main|j|1", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); for ( j = (0) ; j<(3); j++) {
+     { lbl_0: int j; if (____must_checkpoint_main_j_1 != 0) { register_stack_var("main|j|1", &____must_checkpoint_main_j_1, "i32", (void *)(&j), (size_t)4, 0, 0, 0); } for ( j = (0) ; j<(3); j++) {
 # 825 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 826 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        alias_group_changed(____alias_loc_id_6); call_lbl_49: xyzw[i][j] = (int) ((____chimes_does_checkpoint_spec_genrand_int32_npm ? ( ({ calling((void*)spec_genrand_int32, 49, ____alias_loc_id_6, 0UL, 0); (spec_genrand_int32)(); }) ) : (({ calling_npm("spec_genrand_int32", ____alias_loc_id_6); (*____chimes_extern_func_spec_genrand_int32)(); }))) >> 17);
@@ -6389,7 +6392,7 @@ long long sweepkdtree_npm(kdnode *curr, kdnode *r, long long cut, long long cut2
 
 
 static int module_init() {
-    init_module(339782406926629100UL, 39, 9, 2, 21, 8, 4, 12, 23, 9, 2,
+    init_module(339782406926629100UL, 39, 9, 5, 21, 8, 4, 12, 23, 9, 2,
                            &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "clock_gettime", (unsigned)1, (339782406926629100UL + 990UL),
                            &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (339782406926629100UL + 981UL),
                            &____alias_loc_id_2, (unsigned)0, (unsigned)0, (unsigned)1, "clock_gettime", (unsigned)1, (339782406926629100UL + 989UL),
@@ -6485,8 +6488,11 @@ static int module_init() {
                              "main", "main", 19, "atol", "atol", "atol", "atol", "atol", "spec_init_genrand", "spec_genrand_int32", "heapsort", "heapsort", "heapsort", "checkpoint", "empty_kdnode", "buildkdtree", "checkpoint", "coordkdtree", "clock_gettime", "sweepkdtree", "checkpoint", "clock_gettime",
                              "coordkdtree", "_Z11coordkdtreeP6kdnodePPi", 2, "coordkdtree", "coordkdtree",
                              "init_kdnode", "_Z11init_kdnodex", 0,
+                        "main|argv|0", 1, "atol",
+                        "main|i|0", 1, "spec_genrand_int32",
                         "main|startTime|0", 1, "main",
                         "main|endTime|0", 1, "main",
+                        "main|j|1", 1, "spec_genrand_int32",
         "downheap", 0UL, (int)5, 339782406926629326UL, 0UL, 0UL, 339782406926629328UL, 0UL,
         "downheap", 0UL, (int)5, 339782406926629326UL, 0UL, 0UL, 339782406926629328UL, 0UL,
         "init_kdnode", 339782406926629481UL, (int)1, 0UL,

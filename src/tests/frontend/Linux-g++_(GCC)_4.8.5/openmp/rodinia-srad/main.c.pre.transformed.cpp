@@ -13,9 +13,13 @@ static int ____chimes_does_checkpoint_read_graphics_npm = 1;
 static int ____chimes_does_checkpoint_resize_npm = 1;
 static int ____chimes_does_checkpoint_write_graphics_npm = 1;
 
+static int ____must_checkpoint_main_argc_0 = 2;
+static int ____must_checkpoint_main_argv_0 = 2;
 static int ____must_checkpoint_main_time7_0 = 2;
 static int ____must_checkpoint_main_time8_0 = 2;
 static int ____must_checkpoint_main_time9_0 = 2;
+static int ____must_checkpoint_main_image_ori_rows_0 = 2;
+static int ____must_checkpoint_main_image_ori_cols_0 = 2;
 
 
 static unsigned ____alias_loc_id_0;
@@ -3832,43 +3836,9 @@ extern void resize( float* input,
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 static long long (*____chimes_extern_func_get_time)(void) = get_time;static void (*____chimes_extern_func_read_graphics)(char *, float *, int, int, int) = read_graphics;static void (*____chimes_extern_func_resize)(float *, int, int, float *, int, int, int) = resize;static void (*____chimes_extern_func_write_graphics)(char *, float *, int, int, int, int) = write_graphics;
 int main_quick(int argc, char *argv []); int main(int argc, char *argv []);
-int main_resumable(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(7677405821689735836UL), "main|argc|0", (int *)0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int threads;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-long k;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-long j;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-long i;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-int iter;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float cE;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float cW;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float cS;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float cN;
+int main_resumable(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(7677405821689735836UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int iter;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 float *c;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float D;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float qsqr;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float den;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float num;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float L;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float G2;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float sum2;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float sum;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float tmp;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 float *dE;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -3878,8 +3848,6 @@ float *dS;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 float *dN;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float Jc;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 int *jW;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 int *jE;
@@ -3887,12 +3855,6 @@ int *jE;
 int *iS;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 int *iN;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float q0sqr;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float varROI;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float meanROI;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 long NeROI;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -3915,8 +3877,6 @@ long Nc;
 long Nr;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 float *image;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-long image_ori_elem;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 int image_ori_cols;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -3944,7 +3904,7 @@ long long time1;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 long long time0;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- register_stack_vars(56, "main|threads|0", (int *)0x0, "i32", (void *)(&threads), (size_t)4, 0, 0, 0, "main|k|0", (int *)0x0, "i64", (void *)(&k), (size_t)8, 0, 0, 0, "main|j|0", (int *)0x0, "i64", (void *)(&j), (size_t)8, 0, 0, 0, "main|i|0", (int *)0x0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|cE|0", (int *)0x0, "float", (void *)(&cE), (size_t)4, 0, 0, 0, "main|cW|0", (int *)0x0, "float", (void *)(&cW), (size_t)4, 0, 0, 0, "main|cS|0", (int *)0x0, "float", (void *)(&cS), (size_t)4, 0, 0, 0, "main|cN|0", (int *)0x0, "float", (void *)(&cN), (size_t)4, 0, 0, 0, "main|c|0", (int *)0x0, "float*", (void *)(&c), (size_t)8, 1, 0, 0, "main|D|0", (int *)0x0, "float", (void *)(&D), (size_t)4, 0, 0, 0, "main|qsqr|0", (int *)0x0, "float", (void *)(&qsqr), (size_t)4, 0, 0, 0, "main|den|0", (int *)0x0, "float", (void *)(&den), (size_t)4, 0, 0, 0, "main|num|0", (int *)0x0, "float", (void *)(&num), (size_t)4, 0, 0, 0, "main|L|0", (int *)0x0, "float", (void *)(&L), (size_t)4, 0, 0, 0, "main|G2|0", (int *)0x0, "float", (void *)(&G2), (size_t)4, 0, 0, 0, "main|sum2|0", (int *)0x0, "float", (void *)(&sum2), (size_t)4, 0, 0, 0, "main|sum|0", (int *)0x0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "main|tmp|0", (int *)0x0, "float", (void *)(&tmp), (size_t)4, 0, 0, 0, "main|dE|0", (int *)0x0, "float*", (void *)(&dE), (size_t)8, 1, 0, 0, "main|dW|0", (int *)0x0, "float*", (void *)(&dW), (size_t)8, 1, 0, 0, "main|dS|0", (int *)0x0, "float*", (void *)(&dS), (size_t)8, 1, 0, 0, "main|dN|0", (int *)0x0, "float*", (void *)(&dN), (size_t)8, 1, 0, 0, "main|Jc|0", (int *)0x0, "float", (void *)(&Jc), (size_t)4, 0, 0, 0, "main|jW|0", (int *)0x0, "i32*", (void *)(&jW), (size_t)8, 1, 0, 0, "main|jE|0", (int *)0x0, "i32*", (void *)(&jE), (size_t)8, 1, 0, 0, "main|iS|0", (int *)0x0, "i32*", (void *)(&iS), (size_t)8, 1, 0, 0, "main|iN|0", (int *)0x0, "i32*", (void *)(&iN), (size_t)8, 1, 0, 0, "main|q0sqr|0", (int *)0x0, "float", (void *)(&q0sqr), (size_t)4, 0, 0, 0, "main|varROI|0", (int *)0x0, "float", (void *)(&varROI), (size_t)4, 0, 0, 0, "main|meanROI|0", (int *)0x0, "float", (void *)(&meanROI), (size_t)4, 0, 0, 0, "main|NeROI|0", (int *)0x0, "i64", (void *)(&NeROI), (size_t)8, 0, 0, 0, "main|c2|0", (int *)0x0, "i32", (void *)(&c2), (size_t)4, 0, 0, 0, "main|c1|0", (int *)0x0, "i32", (void *)(&c1), (size_t)4, 0, 0, 0, "main|r2|0", (int *)0x0, "i32", (void *)(&r2), (size_t)4, 0, 0, 0, "main|r1|0", (int *)0x0, "i32", (void *)(&r1), (size_t)4, 0, 0, 0, "main|lambda|0", (int *)0x0, "float", (void *)(&lambda), (size_t)4, 0, 0, 0, "main|niter|0", (int *)0x0, "i32", (void *)(&niter), (size_t)4, 0, 0, 0, "main|Ne|0", (int *)0x0, "i64", (void *)(&Ne), (size_t)8, 0, 0, 0, "main|Nc|0", (int *)0x0, "i64", (void *)(&Nc), (size_t)8, 0, 0, 0, "main|Nr|0", (int *)0x0, "i64", (void *)(&Nr), (size_t)8, 0, 0, 0, "main|image|0", (int *)0x0, "float*", (void *)(&image), (size_t)8, 1, 0, 0, "main|image_ori_elem|0", (int *)0x0, "i64", (void *)(&image_ori_elem), (size_t)8, 0, 0, 0, "main|image_ori_cols|0", (int *)0x0, "i32", (void *)(&image_ori_cols), (size_t)4, 0, 0, 0, "main|image_ori_rows|0", (int *)0x0, "i32", (void *)(&image_ori_rows), (size_t)4, 0, 0, 0, "main|image_ori|0", (int *)0x0, "float*", (void *)(&image_ori), (size_t)8, 1, 0, 0, "main|time9|0", &____must_checkpoint_main_time9_0, "i64", (void *)(&time9), (size_t)8, 0, 0, 0, "main|time8|0", &____must_checkpoint_main_time8_0, "i64", (void *)(&time8), (size_t)8, 0, 0, 0, "main|time7|0", &____must_checkpoint_main_time7_0, "i64", (void *)(&time7), (size_t)8, 0, 0, 0, "main|time6|0", (int *)0x0, "i64", (void *)(&time6), (size_t)8, 0, 0, 0, "main|time5|0", (int *)0x0, "i64", (void *)(&time5), (size_t)8, 0, 0, 0, "main|time4|0", (int *)0x0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", (int *)0x0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", (int *)0x0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", (int *)0x0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", (int *)0x0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(27): { goto call_lbl_27; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(47): { goto call_lbl_47; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(34, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|c|0", (int *)0x0, "float*", (void *)(&c), (size_t)8, 1, 0, 0, "main|dE|0", (int *)0x0, "float*", (void *)(&dE), (size_t)8, 1, 0, 0, "main|dW|0", (int *)0x0, "float*", (void *)(&dW), (size_t)8, 1, 0, 0, "main|dS|0", (int *)0x0, "float*", (void *)(&dS), (size_t)8, 1, 0, 0, "main|dN|0", (int *)0x0, "float*", (void *)(&dN), (size_t)8, 1, 0, 0, "main|jW|0", (int *)0x0, "i32*", (void *)(&jW), (size_t)8, 1, 0, 0, "main|jE|0", (int *)0x0, "i32*", (void *)(&jE), (size_t)8, 1, 0, 0, "main|iS|0", (int *)0x0, "i32*", (void *)(&iS), (size_t)8, 1, 0, 0, "main|iN|0", (int *)0x0, "i32*", (void *)(&iN), (size_t)8, 1, 0, 0, "main|NeROI|0", (int *)0x0, "i64", (void *)(&NeROI), (size_t)8, 0, 0, 0, "main|c2|0", (int *)0x0, "i32", (void *)(&c2), (size_t)4, 0, 0, 0, "main|c1|0", (int *)0x0, "i32", (void *)(&c1), (size_t)4, 0, 0, 0, "main|r2|0", (int *)0x0, "i32", (void *)(&r2), (size_t)4, 0, 0, 0, "main|r1|0", (int *)0x0, "i32", (void *)(&r1), (size_t)4, 0, 0, 0, "main|lambda|0", (int *)0x0, "float", (void *)(&lambda), (size_t)4, 0, 0, 0, "main|niter|0", (int *)0x0, "i32", (void *)(&niter), (size_t)4, 0, 0, 0, "main|Ne|0", (int *)0x0, "i64", (void *)(&Ne), (size_t)8, 0, 0, 0, "main|Nc|0", (int *)0x0, "i64", (void *)(&Nc), (size_t)8, 0, 0, 0, "main|Nr|0", (int *)0x0, "i64", (void *)(&Nr), (size_t)8, 0, 0, 0, "main|image|0", (int *)0x0, "float*", (void *)(&image), (size_t)8, 1, 0, 0, "main|image_ori_cols|0", &____must_checkpoint_main_image_ori_cols_0, "i32", (void *)(&image_ori_cols), (size_t)4, 0, 0, 0, "main|image_ori_rows|0", &____must_checkpoint_main_image_ori_rows_0, "i32", (void *)(&image_ori_rows), (size_t)4, 0, 0, 0, "main|image_ori|0", (int *)0x0, "float*", (void *)(&image_ori), (size_t)8, 1, 0, 0, "main|time9|0", &____must_checkpoint_main_time9_0, "i64", (void *)(&time9), (size_t)8, 0, 0, 0, "main|time8|0", &____must_checkpoint_main_time8_0, "i64", (void *)(&time8), (size_t)8, 0, 0, 0, "main|time7|0", &____must_checkpoint_main_time7_0, "i64", (void *)(&time7), (size_t)8, 0, 0, 0, "main|time6|0", (int *)0x0, "i64", (void *)(&time6), (size_t)8, 0, 0, 0, "main|time5|0", (int *)0x0, "i64", (void *)(&time5), (size_t)8, 0, 0, 0, "main|time4|0", (int *)0x0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", (int *)0x0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", (int *)0x0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", (int *)0x0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", (int *)0x0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(27): { goto call_lbl_27; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(47): { goto call_lbl_47; } default: { chimes_error(); } } } ; ;
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -3985,7 +3945,7 @@ long long time0;
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   ;
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
+ long image_ori_elem; ;
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4009,7 +3969,7 @@ long long time0;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-       ;
+    float meanROI; float varROI; float q0sqr; ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4017,7 +3977,7 @@ long long time0;
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+    float Jc; ;
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4025,27 +3985,27 @@ long long time0;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-       ;
+    float tmp; float sum; float sum2; ;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-          ;
+    float G2; float L; float num; float den; float qsqr; float D; ;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+ float cN; float cS; float cW; float cE; ;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-      ;
+    long i; long j; ;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+    long k; ;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
+ int threads; ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
@@ -4448,43 +4408,9 @@ long long time0;
 # 394 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable0, false); }
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-int main_quick(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(7677405821689735836UL), "main|argc|0", (int *)0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int threads;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-long k;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-long j;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-long i;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-int iter;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float cE;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float cW;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float cS;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float cN;
+int main_quick(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(7677405821689735836UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int iter;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 float *c;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float D;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float qsqr;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float den;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float num;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float L;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float G2;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float sum2;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float sum;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float tmp;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 float *dE;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4494,8 +4420,6 @@ float *dS;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 float *dN;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float Jc;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 int *jW;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 int *jE;
@@ -4503,12 +4427,6 @@ int *jE;
 int *iS;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 int *iN;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float q0sqr;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float varROI;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-float meanROI;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 long NeROI;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4531,8 +4449,6 @@ long Nc;
 long Nr;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 float *image;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-long image_ori_elem;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 int image_ori_cols;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4560,7 +4476,7 @@ long long time1;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 long long time0;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- register_stack_vars(56, "main|threads|0", (int *)0x0, "i32", (void *)(&threads), (size_t)4, 0, 0, 0, "main|k|0", (int *)0x0, "i64", (void *)(&k), (size_t)8, 0, 0, 0, "main|j|0", (int *)0x0, "i64", (void *)(&j), (size_t)8, 0, 0, 0, "main|i|0", (int *)0x0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|cE|0", (int *)0x0, "float", (void *)(&cE), (size_t)4, 0, 0, 0, "main|cW|0", (int *)0x0, "float", (void *)(&cW), (size_t)4, 0, 0, 0, "main|cS|0", (int *)0x0, "float", (void *)(&cS), (size_t)4, 0, 0, 0, "main|cN|0", (int *)0x0, "float", (void *)(&cN), (size_t)4, 0, 0, 0, "main|c|0", (int *)0x0, "float*", (void *)(&c), (size_t)8, 1, 0, 0, "main|D|0", (int *)0x0, "float", (void *)(&D), (size_t)4, 0, 0, 0, "main|qsqr|0", (int *)0x0, "float", (void *)(&qsqr), (size_t)4, 0, 0, 0, "main|den|0", (int *)0x0, "float", (void *)(&den), (size_t)4, 0, 0, 0, "main|num|0", (int *)0x0, "float", (void *)(&num), (size_t)4, 0, 0, 0, "main|L|0", (int *)0x0, "float", (void *)(&L), (size_t)4, 0, 0, 0, "main|G2|0", (int *)0x0, "float", (void *)(&G2), (size_t)4, 0, 0, 0, "main|sum2|0", (int *)0x0, "float", (void *)(&sum2), (size_t)4, 0, 0, 0, "main|sum|0", (int *)0x0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "main|tmp|0", (int *)0x0, "float", (void *)(&tmp), (size_t)4, 0, 0, 0, "main|dE|0", (int *)0x0, "float*", (void *)(&dE), (size_t)8, 1, 0, 0, "main|dW|0", (int *)0x0, "float*", (void *)(&dW), (size_t)8, 1, 0, 0, "main|dS|0", (int *)0x0, "float*", (void *)(&dS), (size_t)8, 1, 0, 0, "main|dN|0", (int *)0x0, "float*", (void *)(&dN), (size_t)8, 1, 0, 0, "main|Jc|0", (int *)0x0, "float", (void *)(&Jc), (size_t)4, 0, 0, 0, "main|jW|0", (int *)0x0, "i32*", (void *)(&jW), (size_t)8, 1, 0, 0, "main|jE|0", (int *)0x0, "i32*", (void *)(&jE), (size_t)8, 1, 0, 0, "main|iS|0", (int *)0x0, "i32*", (void *)(&iS), (size_t)8, 1, 0, 0, "main|iN|0", (int *)0x0, "i32*", (void *)(&iN), (size_t)8, 1, 0, 0, "main|q0sqr|0", (int *)0x0, "float", (void *)(&q0sqr), (size_t)4, 0, 0, 0, "main|varROI|0", (int *)0x0, "float", (void *)(&varROI), (size_t)4, 0, 0, 0, "main|meanROI|0", (int *)0x0, "float", (void *)(&meanROI), (size_t)4, 0, 0, 0, "main|NeROI|0", (int *)0x0, "i64", (void *)(&NeROI), (size_t)8, 0, 0, 0, "main|c2|0", (int *)0x0, "i32", (void *)(&c2), (size_t)4, 0, 0, 0, "main|c1|0", (int *)0x0, "i32", (void *)(&c1), (size_t)4, 0, 0, 0, "main|r2|0", (int *)0x0, "i32", (void *)(&r2), (size_t)4, 0, 0, 0, "main|r1|0", (int *)0x0, "i32", (void *)(&r1), (size_t)4, 0, 0, 0, "main|lambda|0", (int *)0x0, "float", (void *)(&lambda), (size_t)4, 0, 0, 0, "main|niter|0", (int *)0x0, "i32", (void *)(&niter), (size_t)4, 0, 0, 0, "main|Ne|0", (int *)0x0, "i64", (void *)(&Ne), (size_t)8, 0, 0, 0, "main|Nc|0", (int *)0x0, "i64", (void *)(&Nc), (size_t)8, 0, 0, 0, "main|Nr|0", (int *)0x0, "i64", (void *)(&Nr), (size_t)8, 0, 0, 0, "main|image|0", (int *)0x0, "float*", (void *)(&image), (size_t)8, 1, 0, 0, "main|image_ori_elem|0", (int *)0x0, "i64", (void *)(&image_ori_elem), (size_t)8, 0, 0, 0, "main|image_ori_cols|0", (int *)0x0, "i32", (void *)(&image_ori_cols), (size_t)4, 0, 0, 0, "main|image_ori_rows|0", (int *)0x0, "i32", (void *)(&image_ori_rows), (size_t)4, 0, 0, 0, "main|image_ori|0", (int *)0x0, "float*", (void *)(&image_ori), (size_t)8, 1, 0, 0, "main|time9|0", &____must_checkpoint_main_time9_0, "i64", (void *)(&time9), (size_t)8, 0, 0, 0, "main|time8|0", &____must_checkpoint_main_time8_0, "i64", (void *)(&time8), (size_t)8, 0, 0, 0, "main|time7|0", &____must_checkpoint_main_time7_0, "i64", (void *)(&time7), (size_t)8, 0, 0, 0, "main|time6|0", (int *)0x0, "i64", (void *)(&time6), (size_t)8, 0, 0, 0, "main|time5|0", (int *)0x0, "i64", (void *)(&time5), (size_t)8, 0, 0, 0, "main|time4|0", (int *)0x0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", (int *)0x0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", (int *)0x0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", (int *)0x0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", (int *)0x0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); ; ;
+ register_stack_vars(34, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|c|0", (int *)0x0, "float*", (void *)(&c), (size_t)8, 1, 0, 0, "main|dE|0", (int *)0x0, "float*", (void *)(&dE), (size_t)8, 1, 0, 0, "main|dW|0", (int *)0x0, "float*", (void *)(&dW), (size_t)8, 1, 0, 0, "main|dS|0", (int *)0x0, "float*", (void *)(&dS), (size_t)8, 1, 0, 0, "main|dN|0", (int *)0x0, "float*", (void *)(&dN), (size_t)8, 1, 0, 0, "main|jW|0", (int *)0x0, "i32*", (void *)(&jW), (size_t)8, 1, 0, 0, "main|jE|0", (int *)0x0, "i32*", (void *)(&jE), (size_t)8, 1, 0, 0, "main|iS|0", (int *)0x0, "i32*", (void *)(&iS), (size_t)8, 1, 0, 0, "main|iN|0", (int *)0x0, "i32*", (void *)(&iN), (size_t)8, 1, 0, 0, "main|NeROI|0", (int *)0x0, "i64", (void *)(&NeROI), (size_t)8, 0, 0, 0, "main|c2|0", (int *)0x0, "i32", (void *)(&c2), (size_t)4, 0, 0, 0, "main|c1|0", (int *)0x0, "i32", (void *)(&c1), (size_t)4, 0, 0, 0, "main|r2|0", (int *)0x0, "i32", (void *)(&r2), (size_t)4, 0, 0, 0, "main|r1|0", (int *)0x0, "i32", (void *)(&r1), (size_t)4, 0, 0, 0, "main|lambda|0", (int *)0x0, "float", (void *)(&lambda), (size_t)4, 0, 0, 0, "main|niter|0", (int *)0x0, "i32", (void *)(&niter), (size_t)4, 0, 0, 0, "main|Ne|0", (int *)0x0, "i64", (void *)(&Ne), (size_t)8, 0, 0, 0, "main|Nc|0", (int *)0x0, "i64", (void *)(&Nc), (size_t)8, 0, 0, 0, "main|Nr|0", (int *)0x0, "i64", (void *)(&Nr), (size_t)8, 0, 0, 0, "main|image|0", (int *)0x0, "float*", (void *)(&image), (size_t)8, 1, 0, 0, "main|image_ori_cols|0", &____must_checkpoint_main_image_ori_cols_0, "i32", (void *)(&image_ori_cols), (size_t)4, 0, 0, 0, "main|image_ori_rows|0", &____must_checkpoint_main_image_ori_rows_0, "i32", (void *)(&image_ori_rows), (size_t)4, 0, 0, 0, "main|image_ori|0", (int *)0x0, "float*", (void *)(&image_ori), (size_t)8, 1, 0, 0, "main|time9|0", &____must_checkpoint_main_time9_0, "i64", (void *)(&time9), (size_t)8, 0, 0, 0, "main|time8|0", &____must_checkpoint_main_time8_0, "i64", (void *)(&time8), (size_t)8, 0, 0, 0, "main|time7|0", &____must_checkpoint_main_time7_0, "i64", (void *)(&time7), (size_t)8, 0, 0, 0, "main|time6|0", (int *)0x0, "i64", (void *)(&time6), (size_t)8, 0, 0, 0, "main|time5|0", (int *)0x0, "i64", (void *)(&time5), (size_t)8, 0, 0, 0, "main|time4|0", (int *)0x0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", (int *)0x0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", (int *)0x0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", (int *)0x0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", (int *)0x0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); ; ;
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4601,7 +4517,7 @@ long long time0;
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   ;
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
+ long image_ori_elem; ;
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4625,7 +4541,7 @@ long long time0;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-       ;
+    float meanROI; float varROI; float q0sqr; ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4633,7 +4549,7 @@ long long time0;
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+    float Jc; ;
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4641,27 +4557,27 @@ long long time0;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-       ;
+    float tmp; float sum; float sum2; ;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-          ;
+    float G2; float L; float num; float den; float qsqr; float D; ;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+ float cN; float cS; float cW; float cE; ;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-      ;
+    long i; long j; ;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+    long k; ;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
+ int threads; ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
@@ -5073,7 +4989,7 @@ int main(int argc, char *argv []) { init_chimes(argc, argv); return (____chimes_
 
 
 static int module_init() {
-    init_module(7677405821689734771UL, 13, 1, 3, 13, 0, 4, 4, 0, 14, 0,
+    init_module(7677405821689734771UL, 13, 1, 7, 13, 0, 4, 4, 0, 14, 0,
                            &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (7677405821689734771UL + 4UL),
                            &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (7677405821689734771UL + 13UL),
                            &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 1UL), (7677405821689734771UL + 2UL), (7677405821689734771UL + 3UL),
@@ -5109,9 +5025,13 @@ static int module_init() {
                              (7677405821689734771UL + 40UL), (7677405821689734771UL + 523UL),
                              (7677405821689734771UL + 41UL), (7677405821689734771UL + 541UL),
                              "main", "main", 15, "get_time", "get_time", "get_time", "read_graphics", "get_time", "resize", "get_time", "get_time", "get_time", "checkpoint", "get_time", "get_time", "write_graphics", "get_time", "get_time",
+                        "main|argc|0", 1, "get_time",
+                        "main|argv|0", 1, "get_time",
                         "main|time7|0", 2, "write_graphics", "get_time",
                         "main|time8|0", 2, "write_graphics", "get_time",
                         "main|time9|0", 1, "get_time",
+                        "main|image_ori_rows|0", 2, "read_graphics", "get_time",
+                        "main|image_ori_cols|0", 2, "read_graphics", "get_time",
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,

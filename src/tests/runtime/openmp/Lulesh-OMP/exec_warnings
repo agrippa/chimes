@@ -13,6 +13,7 @@ WARNING: Unable to load address of function CalcLagrangeElements, likely because
 WARNING: Unable to load address of function VoluDer, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function CalcElemFBHourglassForce, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function UpdateVolumesForElems, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
+WARNING: Unable to load address of function get_num_threads, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function CalcElemShapeFunctionDerivatives, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function CBRT, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function CalcMonotonicQRegionForElems, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.

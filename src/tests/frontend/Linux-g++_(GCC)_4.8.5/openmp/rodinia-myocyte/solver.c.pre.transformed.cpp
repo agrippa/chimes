@@ -23,11 +23,9 @@ static int ____must_checkpoint_solver_h_0 = 2;
 static int ____must_checkpoint_solver_h_init_0 = 2;
 static int ____must_checkpoint_solver_tolerance_0 = 2;
 static int ____must_checkpoint_solver_scale_min_0 = 2;
-static int ____must_checkpoint_solver_scale_fina_0 = 2;
 static int ____must_checkpoint_solver_err_0 = 2;
 static int ____must_checkpoint_solver_scale_0 = 2;
 static int ____must_checkpoint_solver_yy_0 = 2;
-static int ____must_checkpoint_solver_i_0 = 2;
 static int ____must_checkpoint_solver_j_0 = 2;
 static int ____must_checkpoint_solver_k_0 = 2;
 
@@ -2574,13 +2572,13 @@ extern int solver( float** y,
      float* params,
      int mode);
 
-extern void read( char* filename,
+extern void myocyte_read( char* filename,
      float* input,
      int data_rows,
      int data_cols,
      int major);
 
-extern void write( char* filename,
+extern void myocyte_write( char* filename,
      float* input,
      int data_rows,
      int data_cols,
@@ -2605,15 +2603,11 @@ int solver_resumable( float** y,
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 int j;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-int i;
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 float *yy;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 float *scale;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 float *err;
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-float scale_fina;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 float scale_min;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
@@ -2629,7 +2623,7 @@ int error;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 float err_exponent;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
- if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_i_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_scale_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_fina_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(14, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|i|0", &____must_checkpoint_solver_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "float*", (void *)(&yy), (size_t)8, 1, 0, 0, "solver|scale|0", &____must_checkpoint_solver_scale_0, "float*", (void *)(&scale), (size_t)8, 1, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "float*", (void *)(&err), (size_t)8, 1, 0, 0, "solver|scale_fina|0", &____must_checkpoint_solver_scale_fina_0, "float", (void *)(&scale_fina), (size_t)4, 0, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_scale_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(12, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "float*", (void *)(&yy), (size_t)8, 1, 0, 0, "solver|scale|0", &____must_checkpoint_solver_scale_0, "float*", (void *)(&scale), (size_t)8, 1, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "float*", (void *)(&err), (size_t)8, 1, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
@@ -2657,7 +2651,7 @@ float err_exponent;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
   ;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-  ;
+ float scale_fina; ;
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
     err = ((float *)malloc_wrapper(91 * sizeof(float), 6850351079512197190UL, 0, 0)) ;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
@@ -2667,7 +2661,7 @@ float err_exponent;
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-    ;
+ int i; ;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
@@ -2932,15 +2926,11 @@ int solver_quick( float** y,
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 int j;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-int i;
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 float *yy;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 float *scale;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 float *err;
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-float scale_fina;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 float scale_min;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
@@ -2956,7 +2946,7 @@ int error;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 float err_exponent;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
- if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_i_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_scale_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_fina_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(14, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|i|0", &____must_checkpoint_solver_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "float*", (void *)(&yy), (size_t)8, 1, 0, 0, "solver|scale|0", &____must_checkpoint_solver_scale_0, "float*", (void *)(&scale), (size_t)8, 1, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "float*", (void *)(&err), (size_t)8, 1, 0, 0, "solver|scale_fina|0", &____must_checkpoint_solver_scale_fina_0, "float", (void *)(&scale_fina), (size_t)4, 0, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0); } ; ;
+ if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_scale_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(12, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "float*", (void *)(&yy), (size_t)8, 1, 0, 0, "solver|scale|0", &____must_checkpoint_solver_scale_0, "float*", (void *)(&scale), (size_t)8, 1, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "float*", (void *)(&err), (size_t)8, 1, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0); } ; ;
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
@@ -2984,7 +2974,7 @@ float err_exponent;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
   ;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-  ;
+ float scale_fina; ;
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
     err = ((float *)malloc_wrapper(91 * sizeof(float), 6850351079512197190UL, 0, 0)) ;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
@@ -2994,7 +2984,7 @@ float err_exponent;
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-    ;
+ int i; ;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
@@ -3561,7 +3551,7 @@ int solver_npm( float** y,
 
 
 static int module_init() {
-    init_module(6850351079512197142UL, 7, 1, 19, 2, 1, 1, 2, 0, 0, 0,
+    init_module(6850351079512197142UL, 7, 1, 17, 2, 1, 1, 2, 0, 0, 0,
                            &____alias_loc_id_0, (unsigned)10, (unsigned)0, (unsigned)1, (6850351079512197142UL + 9UL), (6850351079512197142UL + 10UL), (6850351079512197142UL + 11UL), (6850351079512197142UL + 15UL), (6850351079512197142UL + 16UL), (6850351079512197142UL + 20UL), (6850351079512197142UL + 21UL), (6850351079512197142UL + 52UL), (6850351079512197142UL + 56UL), (6850351079512197142UL + 429UL), "embedded_fehlberg_7_8", (unsigned)3, (6850351079512197142UL + 48UL), (6850351079512197142UL + 150UL), (6850351079512197142UL + 431UL),
                            &____alias_loc_id_1, (unsigned)29, (unsigned)0, (unsigned)0, (6850351079512197142UL + 1UL), (6850351079512197142UL + 2UL), (6850351079512197142UL + 3UL), (6850351079512197142UL + 4UL), (6850351079512197142UL + 5UL), (6850351079512197142UL + 6UL), (6850351079512197142UL + 7UL), (6850351079512197142UL + 8UL), (6850351079512197142UL + 9UL), (6850351079512197142UL + 10UL), (6850351079512197142UL + 11UL), (6850351079512197142UL + 12UL), (6850351079512197142UL + 13UL), (6850351079512197142UL + 14UL), (6850351079512197142UL + 15UL), (6850351079512197142UL + 16UL), (6850351079512197142UL + 17UL), (6850351079512197142UL + 18UL), (6850351079512197142UL + 19UL), (6850351079512197142UL + 20UL), (6850351079512197142UL + 21UL), (6850351079512197142UL + 22UL), (6850351079512197142UL + 23UL), (6850351079512197142UL + 24UL), (6850351079512197142UL + 25UL), (6850351079512197142UL + 26UL), (6850351079512197142UL + 52UL), (6850351079512197142UL + 56UL), (6850351079512197142UL + 429UL),
                             "solver", 0, "_Z6solverPPfS_iS_i", "_Z10solver_npmPPfS_iS_i", 1, &____alias_loc_id_0, 5, (6850351079512197142UL + 428UL), (6850351079512197142UL + 429UL), 0UL, (6850351079512197142UL + 431UL), 0UL, 0UL, 9, "malloc", 1, 0UL, (6850351079512197142UL + 48UL), "malloc", 1, 0UL, (6850351079512197142UL + 52UL), "malloc", 1, 0UL, (6850351079512197142UL + 56UL), "embedded_fehlberg_7_8", 7, 0UL, 0UL, (6850351079512197142UL + 150UL), (6850351079512197142UL + 150UL), (6850351079512197142UL + 48UL), (6850351079512197142UL + 431UL), 0UL, 0UL, "fabs", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "free", 1, (6850351079512197142UL + 48UL), 0UL, "free", 1, (6850351079512197142UL + 52UL), 0UL, "free", 1, (6850351079512197142UL + 56UL), 0UL,
@@ -3588,11 +3578,9 @@ static int module_init() {
                         "solver|h_init|0", 1, "embedded_fehlberg_7_8",
                         "solver|tolerance|0", 1, "embedded_fehlberg_7_8",
                         "solver|scale_min|0", 1, "embedded_fehlberg_7_8",
-                        "solver|scale_fina|0", 1, "embedded_fehlberg_7_8",
                         "solver|err|0", 1, "embedded_fehlberg_7_8",
                         "solver|scale|0", 1, "embedded_fehlberg_7_8",
                         "solver|yy|0", 1, "embedded_fehlberg_7_8",
-                        "solver|i|0", 1, "embedded_fehlberg_7_8",
                         "solver|j|0", 1, "embedded_fehlberg_7_8",
                         "solver|k|0", 1, "embedded_fehlberg_7_8");
     return 0;

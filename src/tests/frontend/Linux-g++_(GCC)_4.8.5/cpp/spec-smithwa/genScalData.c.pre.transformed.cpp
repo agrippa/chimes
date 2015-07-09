@@ -23,16 +23,12 @@ static int ____must_checkpoint_genScalData_seqData_0 = 2;
 static int ____must_checkpoint_genScalData_i_0 = 2;
 static int ____must_checkpoint_genScalData_mainSelect_0 = 2;
 static int ____must_checkpoint_genScalData_matchSelect_0 = 2;
-static int ____must_checkpoint_genScalData_____chimes_unroll_var_1_0 = 2;
-static int ____must_checkpoint_genScalData_____chimes_unroll_var_2_0 = 2;
 static int ____must_checkpoint_insertValidation_oldSeq_0 = 2;
 static int ____must_checkpoint_insertValidation_seqLen_0 = 2;
 static int ____must_checkpoint_insertValidation_insertionStrings_0 = 2;
 static int ____must_checkpoint_insertValidation_simMatrix_0 = 2;
 static int ____must_checkpoint_insertValidation_firstLastSelect_0 = 2;
 static int ____must_checkpoint_insertValidation_i_0 = 2;
-static int ____must_checkpoint_insertValidation_startArray_0 = 2;
-static int ____must_checkpoint_insertValidation_____chimes_unroll_var_0_0 = 2;
 
 static int ____must_manage_freeSeqData = 2;
 static int ____must_manage_genScalData = 2;
@@ -3884,13 +3880,11 @@ unsigned char *insertValidation_resumable(unsigned char *oldSeq, int *seqLen,
 # 43 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     SIMMATRIX_T *simMatrix,
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-    int firstLastSelect[]) {const int ____chimes_did_disable0 = new_stack((void *)(&insertValidation), "insertValidation", &____must_manage_insertValidation, 5, 5, (size_t)(17825452166587959276UL), (size_t)(17825452166587959277UL), (size_t)(17825452166587959278UL), (size_t)(17825452166587959279UL), (size_t)(17825452166587959280UL), "insertValidation|oldSeq|0", &____must_checkpoint_insertValidation_oldSeq_0, "i8*", (void *)(&oldSeq), (size_t)8, 1, 0, 0, "insertValidation|seqLen|0", &____must_checkpoint_insertValidation_seqLen_0, "i32*", (void *)(&seqLen), (size_t)8, 1, 0, 0, "insertValidation|insertionStrings|0", &____must_checkpoint_insertValidation_insertionStrings_0, "i8**", (void *)(&insertionStrings), (size_t)8, 1, 0, 0, "insertValidation|simMatrix|0", &____must_checkpoint_insertValidation_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "insertValidation|firstLastSelect|0", &____must_checkpoint_insertValidation_firstLastSelect_0, "i32*", (void *)(&firstLastSelect), (size_t)8, 1, 0, 0) ; unsigned long ____chimes_unroll_var_0;
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-int startArray[7];
+    int firstLastSelect[]) {const int ____chimes_did_disable0 = new_stack((void *)(&insertValidation), "insertValidation", &____must_manage_insertValidation, 5, 5, (size_t)(17825452166587959276UL), (size_t)(17825452166587959277UL), (size_t)(17825452166587959278UL), (size_t)(17825452166587959279UL), (size_t)(17825452166587959280UL), "insertValidation|oldSeq|0", &____must_checkpoint_insertValidation_oldSeq_0, "i8*", (void *)(&oldSeq), (size_t)8, 1, 0, 0, "insertValidation|seqLen|0", &____must_checkpoint_insertValidation_seqLen_0, "i32*", (void *)(&seqLen), (size_t)8, 1, 0, 0, "insertValidation|insertionStrings|0", &____must_checkpoint_insertValidation_insertionStrings_0, "i8**", (void *)(&insertionStrings), (size_t)8, 1, 0, 0, "insertValidation|simMatrix|0", &____must_checkpoint_insertValidation_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "insertValidation|firstLastSelect|0", &____must_checkpoint_insertValidation_firstLastSelect_0, "i32*", (void *)(&firstLastSelect), (size_t)8, 1, 0, 0) ; int startArray[7];
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 int i;
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- if (____must_checkpoint_insertValidation_____chimes_unroll_var_0_0 || ____must_checkpoint_insertValidation_startArray_0 || ____must_checkpoint_insertValidation_i_0) { register_stack_vars(3, "insertValidation|____chimes_unroll_var_0|0", &____must_checkpoint_insertValidation_____chimes_unroll_var_0_0, "i64", (void *)(&____chimes_unroll_var_0), (size_t)8, 0, 0, 0, "insertValidation|startArray|0", &____must_checkpoint_insertValidation_startArray_0, "[7 x i32]", (void *)(startArray), (size_t)28, 0, 0, 0, "insertValidation|i|0", &____must_checkpoint_insertValidation_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_insertValidation_i_0) { register_stack_vars(1, "insertValidation|i|0", &____must_checkpoint_insertValidation_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 45 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
    int j; int k; int len; int start; ;
@@ -3906,7 +3900,7 @@ int i;
   for (i = 1; i < (7); i++) {
 # 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-         call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)spec_genrand_int32, 1, ____alias_loc_id_6, 0UL, 0); (spec_genrand_int32)(); }) ) ; startArray[i] = (int)ceil( (double)(*seqLen + 1) *
+      unsigned long ____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)spec_genrand_int32, 1, ____alias_loc_id_6, 0UL, 0); (spec_genrand_int32)(); }) ) ; startArray[i] = (int)ceil( (double)(*seqLen + 1) *
 # 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
          (double) ((unsigned long) ____chimes_unroll_var_0 >> (17))
 # 58 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4086,11 +4080,7 @@ SEQDATA_T *genScalData_resumable(unsigned int randomSeed,
 # 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
          int mainLen, int matchLen,
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-         int simSize) {const int ____chimes_did_disable1 = new_stack((void *)(&genScalData), "genScalData", &____must_manage_genScalData, 5, 5, (size_t)(0UL), (size_t)(17825452166587958958UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "genScalData|randomSeed|0", &____must_checkpoint_genScalData_randomSeed_0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "genScalData|simMatrix|0", &____must_checkpoint_genScalData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "genScalData|mainLen|0", &____must_checkpoint_genScalData_mainLen_0, "i32", (void *)(&mainLen), (size_t)4, 0, 0, 0, "genScalData|matchLen|0", &____must_checkpoint_genScalData_matchLen_0, "i32", (void *)(&matchLen), (size_t)4, 0, 0, 0, "genScalData|simSize|0", &____must_checkpoint_genScalData_simSize_0, "i32", (void *)(&simSize), (size_t)4, 0, 0, 0) ; unsigned long ____chimes_unroll_var_2;
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-unsigned long ____chimes_unroll_var_1;
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-int matchSelect[7] = { 0, 1, 1, 0, 0, 0, 1 };
+         int simSize) {const int ____chimes_did_disable1 = new_stack((void *)(&genScalData), "genScalData", &____must_manage_genScalData, 5, 5, (size_t)(0UL), (size_t)(17825452166587958958UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "genScalData|randomSeed|0", &____must_checkpoint_genScalData_randomSeed_0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "genScalData|simMatrix|0", &____must_checkpoint_genScalData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "genScalData|mainLen|0", &____must_checkpoint_genScalData_mainLen_0, "i32", (void *)(&mainLen), (size_t)4, 0, 0, 0, "genScalData|matchLen|0", &____must_checkpoint_genScalData_matchLen_0, "i32", (void *)(&matchLen), (size_t)4, 0, 0, 0, "genScalData|simSize|0", &____must_checkpoint_genScalData_simSize_0, "i32", (void *)(&simSize), (size_t)4, 0, 0, 0) ; int matchSelect[7] = { 0, 1, 1, 0, 0, 0, 1 };
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 int mainSelect[7] = { 0, 0, 0, 0, 0, 0, 0 };
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4098,7 +4088,7 @@ int i;
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 SEQDATA_T *seqData;
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- if (____must_checkpoint_genScalData_____chimes_unroll_var_2_0 || ____must_checkpoint_genScalData_____chimes_unroll_var_1_0 || ____must_checkpoint_genScalData_matchSelect_0 || ____must_checkpoint_genScalData_mainSelect_0 || ____must_checkpoint_genScalData_i_0 || ____must_checkpoint_genScalData_seqData_0) { register_stack_vars(6, "genScalData|____chimes_unroll_var_2|0", &____must_checkpoint_genScalData_____chimes_unroll_var_2_0, "i64", (void *)(&____chimes_unroll_var_2), (size_t)8, 0, 0, 0, "genScalData|____chimes_unroll_var_1|0", &____must_checkpoint_genScalData_____chimes_unroll_var_1_0, "i64", (void *)(&____chimes_unroll_var_1), (size_t)8, 0, 0, 0, "genScalData|matchSelect|0", &____must_checkpoint_genScalData_matchSelect_0, "[7 x i32]", (void *)(matchSelect), (size_t)28, 0, 0, 0, "genScalData|mainSelect|0", &____must_checkpoint_genScalData_mainSelect_0, "[7 x i32]", (void *)(mainSelect), (size_t)28, 0, 0, 0, "genScalData|i|0", &____must_checkpoint_genScalData_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "genScalData|seqData|0", &____must_checkpoint_genScalData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(28): { goto call_lbl_28; } case(29): { goto call_lbl_29; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_genScalData_matchSelect_0 || ____must_checkpoint_genScalData_mainSelect_0 || ____must_checkpoint_genScalData_i_0 || ____must_checkpoint_genScalData_seqData_0) { register_stack_vars(4, "genScalData|matchSelect|0", &____must_checkpoint_genScalData_matchSelect_0, "[7 x i32]", (void *)(matchSelect), (size_t)28, 0, 0, 0, "genScalData|mainSelect|0", &____must_checkpoint_genScalData_mainSelect_0, "[7 x i32]", (void *)(mainSelect), (size_t)28, 0, 0, 0, "genScalData|i|0", &____must_checkpoint_genScalData_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "genScalData|seqData|0", &____must_checkpoint_genScalData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(28): { goto call_lbl_28; } case(29): { goto call_lbl_29; } default: { chimes_error(); } } } ; ;
 # 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
      seqData = (__null) ;
@@ -4196,7 +4186,7 @@ SEQDATA_T *seqData;
   for (i = 1; i <= mainLen; i++) {
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-         call_lbl_19: ____chimes_unroll_var_1 = ( ({ calling((void*)spec_genrand_int32, 19, ____alias_loc_id_5, 0UL, 0); (spec_genrand_int32)(); }) ) ; seqData->main[i] =
+      unsigned long ____chimes_unroll_var_1; call_lbl_19: ____chimes_unroll_var_1 = ( ({ calling((void*)spec_genrand_int32, 19, ____alias_loc_id_5, 0UL, 0); (spec_genrand_int32)(); }) ) ; seqData->main[i] =
 # 280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       (unsigned char)(ceil( (double)(simSize - 2) *
 # 281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4235,7 +4225,7 @@ SEQDATA_T *seqData;
   for (i = 1; i <= matchLen; i++) {
 # 304 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 305 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-         call_lbl_24: ____chimes_unroll_var_2 = ( ({ calling((void*)spec_genrand_int32, 24, ____alias_loc_id_3, 0UL, 0); (spec_genrand_int32)(); }) ) ; seqData->match[i] =
+      unsigned long ____chimes_unroll_var_2; call_lbl_24: ____chimes_unroll_var_2 = ( ({ calling((void*)spec_genrand_int32, 24, ____alias_loc_id_3, 0UL, 0); (spec_genrand_int32)(); }) ) ; seqData->match[i] =
 # 306 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       (unsigned char)(ceil( (double)(simSize - 2) *
 # 307 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4353,13 +4343,11 @@ unsigned char *insertValidation_quick(unsigned char *oldSeq, int *seqLen,
 # 43 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     SIMMATRIX_T *simMatrix,
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-    int firstLastSelect[]) {const int ____chimes_did_disable0 = new_stack((void *)(&insertValidation), "insertValidation", &____must_manage_insertValidation, 5, 5, (size_t)(17825452166587959276UL), (size_t)(17825452166587959277UL), (size_t)(17825452166587959278UL), (size_t)(17825452166587959279UL), (size_t)(17825452166587959280UL), "insertValidation|oldSeq|0", &____must_checkpoint_insertValidation_oldSeq_0, "i8*", (void *)(&oldSeq), (size_t)8, 1, 0, 0, "insertValidation|seqLen|0", &____must_checkpoint_insertValidation_seqLen_0, "i32*", (void *)(&seqLen), (size_t)8, 1, 0, 0, "insertValidation|insertionStrings|0", &____must_checkpoint_insertValidation_insertionStrings_0, "i8**", (void *)(&insertionStrings), (size_t)8, 1, 0, 0, "insertValidation|simMatrix|0", &____must_checkpoint_insertValidation_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "insertValidation|firstLastSelect|0", &____must_checkpoint_insertValidation_firstLastSelect_0, "i32*", (void *)(&firstLastSelect), (size_t)8, 1, 0, 0) ; unsigned long ____chimes_unroll_var_0;
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-int startArray[7];
+    int firstLastSelect[]) {const int ____chimes_did_disable0 = new_stack((void *)(&insertValidation), "insertValidation", &____must_manage_insertValidation, 5, 5, (size_t)(17825452166587959276UL), (size_t)(17825452166587959277UL), (size_t)(17825452166587959278UL), (size_t)(17825452166587959279UL), (size_t)(17825452166587959280UL), "insertValidation|oldSeq|0", &____must_checkpoint_insertValidation_oldSeq_0, "i8*", (void *)(&oldSeq), (size_t)8, 1, 0, 0, "insertValidation|seqLen|0", &____must_checkpoint_insertValidation_seqLen_0, "i32*", (void *)(&seqLen), (size_t)8, 1, 0, 0, "insertValidation|insertionStrings|0", &____must_checkpoint_insertValidation_insertionStrings_0, "i8**", (void *)(&insertionStrings), (size_t)8, 1, 0, 0, "insertValidation|simMatrix|0", &____must_checkpoint_insertValidation_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "insertValidation|firstLastSelect|0", &____must_checkpoint_insertValidation_firstLastSelect_0, "i32*", (void *)(&firstLastSelect), (size_t)8, 1, 0, 0) ; int startArray[7];
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 int i;
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- if (____must_checkpoint_insertValidation_____chimes_unroll_var_0_0 || ____must_checkpoint_insertValidation_startArray_0 || ____must_checkpoint_insertValidation_i_0) { register_stack_vars(3, "insertValidation|____chimes_unroll_var_0|0", &____must_checkpoint_insertValidation_____chimes_unroll_var_0_0, "i64", (void *)(&____chimes_unroll_var_0), (size_t)8, 0, 0, 0, "insertValidation|startArray|0", &____must_checkpoint_insertValidation_startArray_0, "[7 x i32]", (void *)(startArray), (size_t)28, 0, 0, 0, "insertValidation|i|0", &____must_checkpoint_insertValidation_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ; ;
+ if (____must_checkpoint_insertValidation_i_0) { register_stack_vars(1, "insertValidation|i|0", &____must_checkpoint_insertValidation_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ; ;
 # 45 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
    int j; int k; int len; int start; ;
@@ -4375,7 +4363,7 @@ int i;
   for (i = 1; i < (7); i++) {
 # 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-         call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)spec_genrand_int32, 1, ____alias_loc_id_6, 0UL, 0); (spec_genrand_int32)(); }) ) ; startArray[i] = (int)ceil( (double)(*seqLen + 1) *
+      unsigned long ____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)spec_genrand_int32, 1, ____alias_loc_id_6, 0UL, 0); (spec_genrand_int32)(); }) ) ; startArray[i] = (int)ceil( (double)(*seqLen + 1) *
 # 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
          (double) ((unsigned long) ____chimes_unroll_var_0 >> (17))
 # 58 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4523,11 +4511,7 @@ SEQDATA_T *genScalData_quick(unsigned int randomSeed,
 # 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
          int mainLen, int matchLen,
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-         int simSize) {const int ____chimes_did_disable1 = new_stack((void *)(&genScalData), "genScalData", &____must_manage_genScalData, 5, 5, (size_t)(0UL), (size_t)(17825452166587958958UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "genScalData|randomSeed|0", &____must_checkpoint_genScalData_randomSeed_0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "genScalData|simMatrix|0", &____must_checkpoint_genScalData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "genScalData|mainLen|0", &____must_checkpoint_genScalData_mainLen_0, "i32", (void *)(&mainLen), (size_t)4, 0, 0, 0, "genScalData|matchLen|0", &____must_checkpoint_genScalData_matchLen_0, "i32", (void *)(&matchLen), (size_t)4, 0, 0, 0, "genScalData|simSize|0", &____must_checkpoint_genScalData_simSize_0, "i32", (void *)(&simSize), (size_t)4, 0, 0, 0) ; unsigned long ____chimes_unroll_var_2;
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-unsigned long ____chimes_unroll_var_1;
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-int matchSelect[7] = { 0, 1, 1, 0, 0, 0, 1 };
+         int simSize) {const int ____chimes_did_disable1 = new_stack((void *)(&genScalData), "genScalData", &____must_manage_genScalData, 5, 5, (size_t)(0UL), (size_t)(17825452166587958958UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "genScalData|randomSeed|0", &____must_checkpoint_genScalData_randomSeed_0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "genScalData|simMatrix|0", &____must_checkpoint_genScalData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "genScalData|mainLen|0", &____must_checkpoint_genScalData_mainLen_0, "i32", (void *)(&mainLen), (size_t)4, 0, 0, 0, "genScalData|matchLen|0", &____must_checkpoint_genScalData_matchLen_0, "i32", (void *)(&matchLen), (size_t)4, 0, 0, 0, "genScalData|simSize|0", &____must_checkpoint_genScalData_simSize_0, "i32", (void *)(&simSize), (size_t)4, 0, 0, 0) ; int matchSelect[7] = { 0, 1, 1, 0, 0, 0, 1 };
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 int mainSelect[7] = { 0, 0, 0, 0, 0, 0, 0 };
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4535,7 +4519,7 @@ int i;
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 SEQDATA_T *seqData;
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- if (____must_checkpoint_genScalData_____chimes_unroll_var_2_0 || ____must_checkpoint_genScalData_____chimes_unroll_var_1_0 || ____must_checkpoint_genScalData_matchSelect_0 || ____must_checkpoint_genScalData_mainSelect_0 || ____must_checkpoint_genScalData_i_0 || ____must_checkpoint_genScalData_seqData_0) { register_stack_vars(6, "genScalData|____chimes_unroll_var_2|0", &____must_checkpoint_genScalData_____chimes_unroll_var_2_0, "i64", (void *)(&____chimes_unroll_var_2), (size_t)8, 0, 0, 0, "genScalData|____chimes_unroll_var_1|0", &____must_checkpoint_genScalData_____chimes_unroll_var_1_0, "i64", (void *)(&____chimes_unroll_var_1), (size_t)8, 0, 0, 0, "genScalData|matchSelect|0", &____must_checkpoint_genScalData_matchSelect_0, "[7 x i32]", (void *)(matchSelect), (size_t)28, 0, 0, 0, "genScalData|mainSelect|0", &____must_checkpoint_genScalData_mainSelect_0, "[7 x i32]", (void *)(mainSelect), (size_t)28, 0, 0, 0, "genScalData|i|0", &____must_checkpoint_genScalData_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "genScalData|seqData|0", &____must_checkpoint_genScalData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0); } ; ;
+ if (____must_checkpoint_genScalData_matchSelect_0 || ____must_checkpoint_genScalData_mainSelect_0 || ____must_checkpoint_genScalData_i_0 || ____must_checkpoint_genScalData_seqData_0) { register_stack_vars(4, "genScalData|matchSelect|0", &____must_checkpoint_genScalData_matchSelect_0, "[7 x i32]", (void *)(matchSelect), (size_t)28, 0, 0, 0, "genScalData|mainSelect|0", &____must_checkpoint_genScalData_mainSelect_0, "[7 x i32]", (void *)(mainSelect), (size_t)28, 0, 0, 0, "genScalData|i|0", &____must_checkpoint_genScalData_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "genScalData|seqData|0", &____must_checkpoint_genScalData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0); } ; ;
 # 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
      seqData = (__null) ;
@@ -4633,7 +4617,7 @@ SEQDATA_T *seqData;
   for (i = 1; i <= mainLen; i++) {
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-         call_lbl_19: ____chimes_unroll_var_1 = ( ({ calling((void*)spec_genrand_int32, 19, ____alias_loc_id_5, 0UL, 0); (spec_genrand_int32)(); }) ) ; seqData->main[i] =
+      unsigned long ____chimes_unroll_var_1; call_lbl_19: ____chimes_unroll_var_1 = ( ({ calling((void*)spec_genrand_int32, 19, ____alias_loc_id_5, 0UL, 0); (spec_genrand_int32)(); }) ) ; seqData->main[i] =
 # 280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       (unsigned char)(ceil( (double)(simSize - 2) *
 # 281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4672,7 +4656,7 @@ SEQDATA_T *seqData;
   for (i = 1; i <= matchLen; i++) {
 # 304 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 305 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-         call_lbl_24: ____chimes_unroll_var_2 = ( ({ calling((void*)spec_genrand_int32, 24, ____alias_loc_id_3, 0UL, 0); (spec_genrand_int32)(); }) ) ; seqData->match[i] =
+      unsigned long ____chimes_unroll_var_2; call_lbl_24: ____chimes_unroll_var_2 = ( ({ calling((void*)spec_genrand_int32, 24, ____alias_loc_id_3, 0UL, 0); (spec_genrand_int32)(); }) ) ; seqData->match[i] =
 # 306 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       (unsigned char)(ceil( (double)(simSize - 2) *
 # 307 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5196,7 +5180,7 @@ SEQDATA_T *freeSeqData_npm(SEQDATA_T *S) {
 
 
 static int module_init() {
-    init_module(17825452166587958503UL, 17, 3, 19, 10, 3, 2, 5, 0, 0, 4,
+    init_module(17825452166587958503UL, 17, 3, 15, 10, 3, 2, 5, 0, 0, 4,
                            &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (17825452166587958503UL + 846UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (17825452166587958503UL + 8UL), (17825452166587958503UL + 14UL), (17825452166587958503UL + 268UL),
                            &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (17825452166587958503UL + 8UL), (17825452166587958503UL + 13UL), (17825452166587958503UL + 268UL),
@@ -5241,25 +5225,21 @@ static int module_init() {
                              "freeSeqData", "_Z11freeSeqDataP6seqdat", 0,
                              "genScalData", "_Z11genScalDatajP6simmatiii", 6, "spec_init_genrand", "spec_genrand_int32", "spec_init_genrand", "spec_genrand_int32", "insertValidation", "insertValidation",
                              "insertValidation", "_ZL16insertValidationPhPiPPcP6simmatS0_", 1, "spec_genrand_int32",
-                        "genScalData|randomSeed|0", 3, "spec_init_genrand", "spec_genrand_int32", "insertValidation",
+                        "genScalData|randomSeed|0", 2, "spec_init_genrand", "spec_genrand_int32",
                         "genScalData|simMatrix|0", 3, "spec_init_genrand", "spec_genrand_int32", "insertValidation",
                         "genScalData|mainLen|0", 3, "spec_init_genrand", "spec_genrand_int32", "insertValidation",
                         "genScalData|matchLen|0", 3, "spec_init_genrand", "spec_genrand_int32", "insertValidation",
                         "genScalData|simSize|0", 3, "spec_init_genrand", "spec_genrand_int32", "insertValidation",
                         "genScalData|seqData|0", 3, "spec_init_genrand", "spec_genrand_int32", "insertValidation",
-                        "genScalData|i|0", 3, "spec_init_genrand", "spec_genrand_int32", "insertValidation",
+                        "genScalData|i|0", 1, "spec_genrand_int32",
                         "genScalData|mainSelect|0", 1, "genScalData",
                         "genScalData|matchSelect|0", 1, "genScalData",
-                        "genScalData|____chimes_unroll_var_1|0", 3, "spec_init_genrand", "spec_genrand_int32", "insertValidation",
-                        "genScalData|____chimes_unroll_var_2|0", 2, "spec_genrand_int32", "insertValidation",
                         "insertValidation|oldSeq|0", 1, "spec_genrand_int32",
                         "insertValidation|seqLen|0", 1, "spec_genrand_int32",
                         "insertValidation|insertionStrings|0", 1, "spec_genrand_int32",
                         "insertValidation|simMatrix|0", 1, "spec_genrand_int32",
                         "insertValidation|firstLastSelect|0", 1, "spec_genrand_int32",
-                        "insertValidation|i|0", 1, "spec_genrand_int32",
-                        "insertValidation|startArray|0", 1, "spec_genrand_int32",
-                        "insertValidation|____chimes_unroll_var_0|0", 1, "spec_genrand_int32");
+                        "insertValidation|i|0", 1, "spec_genrand_int32");
     register_global_var("global|mainValidations", "[7 x i8*]", (void *)(&mainValidations), 56, 0, 0, 0UL, 0);
     register_global_var("global|matchValidations", "[7 x i8*]", (void *)(&matchValidations), 56, 0, 0, 0UL, 0);
     register_constant(17825452166587958503UL + 0UL, (void *)((matchValidations)[0]), 1);

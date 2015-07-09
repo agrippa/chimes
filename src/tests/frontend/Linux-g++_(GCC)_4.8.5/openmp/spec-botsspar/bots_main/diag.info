@@ -113,8 +113,6 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bo
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 542 37 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 493 4 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 493 21 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 494 4 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 494 19 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 498 4 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 498 15 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 498 17 
@@ -123,11 +121,9 @@ InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/commo
 # 491
 float **SEQ;
 # 491
-long bots_t_end;
-# 491
 long bots_t_start;
 # 491
- if (____must_checkpoint_main_BENCH_0 || ____must_checkpoint_main_SEQ_0 || ____must_checkpoint_main_bots_t_end_0 || ____must_checkpoint_main_bots_t_start_0) { register_stack_vars(4, "main|BENCH|0", &____must_checkpoint_main_BENCH_0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0, "main|SEQ|0", &____must_checkpoint_main_SEQ_0, "float**", (void *)(&SEQ), (size_t)8, 1, 0, 0, "main|bots_t_end|0", &____must_checkpoint_main_bots_t_end_0, "i64", (void *)(&bots_t_end), (size_t)8, 0, 0, 0, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0);  }  
+ if (____must_checkpoint_main_BENCH_0 || ____must_checkpoint_main_SEQ_0 || ____must_checkpoint_main_bots_t_start_0) { register_stack_vars(3, "main|BENCH|0", &____must_checkpoint_main_BENCH_0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0, "main|SEQ|0", &____must_checkpoint_main_SEQ_0, "float**", (void *)(&SEQ), (size_t)8, 1, 0, 0, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 224 6 len=16 bots_print_usage_resumable
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 225 136  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 288 1 len=22 bots_get_params_common_resumable
@@ -189,8 +185,6 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bo
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 542 37 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 493 4 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 493 21 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 494 4 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 494 19 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 498 4 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 498 15 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 498 17 
@@ -199,8 +193,6 @@ InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/commo
 # 491
 float **SEQ;
 # 491
-long bots_t_end;
-# 491
 long bots_t_start;
 # 491
- if (____must_checkpoint_main_BENCH_0 || ____must_checkpoint_main_SEQ_0 || ____must_checkpoint_main_bots_t_end_0 || ____must_checkpoint_main_bots_t_start_0) { register_stack_vars(4, "main|BENCH|0", &____must_checkpoint_main_BENCH_0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0, "main|SEQ|0", &____must_checkpoint_main_SEQ_0, "float**", (void *)(&SEQ), (size_t)8, 1, 0, 0, "main|bots_t_end|0", &____must_checkpoint_main_bots_t_end_0, "i64", (void *)(&bots_t_end), (size_t)8, 0, 0, 0, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_main_BENCH_0 || ____must_checkpoint_main_SEQ_0 || ____must_checkpoint_main_bots_t_start_0) { register_stack_vars(3, "main|BENCH|0", &____must_checkpoint_main_BENCH_0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0, "main|SEQ|0", &____must_checkpoint_main_SEQ_0, "float**", (void *)(&SEQ), (size_t)8, 1, 0, 0, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } default: { chimes_error(); } }  }  

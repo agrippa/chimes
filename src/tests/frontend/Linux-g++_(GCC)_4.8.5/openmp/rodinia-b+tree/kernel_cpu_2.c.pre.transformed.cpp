@@ -28,10 +28,7 @@ static int ____must_checkpoint_kernel_cpu_2_recstart_0 = 2;
 static int ____must_checkpoint_kernel_cpu_2_reclength_0 = 2;
 static int ____must_checkpoint_kernel_cpu_2_time0_0 = 2;
 static int ____must_checkpoint_kernel_cpu_2_time1_0 = 2;
-static int ____must_checkpoint_kernel_cpu_2_i_0 = 2;
 static int ____must_checkpoint_kernel_cpu_2_threadsPerBlock_0 = 2;
-static int ____must_checkpoint_kernel_cpu_2_thid_0 = 2;
-static int ____must_checkpoint_kernel_cpu_2_bid_0 = 2;
 
 static int ____must_manage_kernel_cpu_2 = 2;
 
@@ -2820,19 +2817,13 @@ kernel_cpu_2_resumable( int cores_arg,
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
     int *reclength)
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu_2), "kernel_cpu_2", &____must_manage_kernel_cpu_2, 14, 14, (size_t)(0UL), (size_t)(13240270965678849410UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13240270965678849415UL), (size_t)(13240270965678849416UL), (size_t)(13240270965678849417UL), (size_t)(13240270965678849418UL), (size_t)(13240270965678849419UL), (size_t)(13240270965678849420UL), (size_t)(13240270965678849421UL), (size_t)(13240270965678849422UL), "kernel_cpu_2|cores_arg|0", &____must_checkpoint_kernel_cpu_2_cores_arg_0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "kernel_cpu_2|knodes|0", &____must_checkpoint_kernel_cpu_2_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0, "kernel_cpu_2|knodes_elem|0", &____must_checkpoint_kernel_cpu_2_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0, "kernel_cpu_2|order|0", &____must_checkpoint_kernel_cpu_2_order_0, "i32", (void *)(&order), (size_t)4, 0, 0, 0, "kernel_cpu_2|maxheight|0", &____must_checkpoint_kernel_cpu_2_maxheight_0, "i64", (void *)(&maxheight), (size_t)8, 0, 0, 0, "kernel_cpu_2|count|0", &____must_checkpoint_kernel_cpu_2_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "kernel_cpu_2|currKnode|0", &____must_checkpoint_kernel_cpu_2_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0, "kernel_cpu_2|offset|0", &____must_checkpoint_kernel_cpu_2_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0, "kernel_cpu_2|lastKnode|0", &____must_checkpoint_kernel_cpu_2_lastKnode_0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "kernel_cpu_2|offset_2|0", &____must_checkpoint_kernel_cpu_2_offset_2_0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "kernel_cpu_2|start|0", &____must_checkpoint_kernel_cpu_2_start_0, "i32*", (void *)(&start), (size_t)8, 1, 0, 0, "kernel_cpu_2|end|0", &____must_checkpoint_kernel_cpu_2_end_0, "i32*", (void *)(&end), (size_t)8, 1, 0, 0, "kernel_cpu_2|recstart|0", &____must_checkpoint_kernel_cpu_2_recstart_0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "kernel_cpu_2|reclength|0", &____must_checkpoint_kernel_cpu_2_reclength_0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0) ; int bid;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-int thid;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-int threadsPerBlock;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-int i;
+{const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu_2), "kernel_cpu_2", &____must_manage_kernel_cpu_2, 14, 14, (size_t)(0UL), (size_t)(13240270965678849410UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13240270965678849415UL), (size_t)(13240270965678849416UL), (size_t)(13240270965678849417UL), (size_t)(13240270965678849418UL), (size_t)(13240270965678849419UL), (size_t)(13240270965678849420UL), (size_t)(13240270965678849421UL), (size_t)(13240270965678849422UL), "kernel_cpu_2|cores_arg|0", &____must_checkpoint_kernel_cpu_2_cores_arg_0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "kernel_cpu_2|knodes|0", &____must_checkpoint_kernel_cpu_2_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0, "kernel_cpu_2|knodes_elem|0", &____must_checkpoint_kernel_cpu_2_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0, "kernel_cpu_2|order|0", &____must_checkpoint_kernel_cpu_2_order_0, "i32", (void *)(&order), (size_t)4, 0, 0, 0, "kernel_cpu_2|maxheight|0", &____must_checkpoint_kernel_cpu_2_maxheight_0, "i64", (void *)(&maxheight), (size_t)8, 0, 0, 0, "kernel_cpu_2|count|0", &____must_checkpoint_kernel_cpu_2_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "kernel_cpu_2|currKnode|0", &____must_checkpoint_kernel_cpu_2_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0, "kernel_cpu_2|offset|0", &____must_checkpoint_kernel_cpu_2_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0, "kernel_cpu_2|lastKnode|0", &____must_checkpoint_kernel_cpu_2_lastKnode_0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "kernel_cpu_2|offset_2|0", &____must_checkpoint_kernel_cpu_2_offset_2_0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "kernel_cpu_2|start|0", &____must_checkpoint_kernel_cpu_2_start_0, "i32*", (void *)(&start), (size_t)8, 1, 0, 0, "kernel_cpu_2|end|0", &____must_checkpoint_kernel_cpu_2_end_0, "i32*", (void *)(&end), (size_t)8, 1, 0, 0, "kernel_cpu_2|recstart|0", &____must_checkpoint_kernel_cpu_2_recstart_0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "kernel_cpu_2|reclength|0", &____must_checkpoint_kernel_cpu_2_reclength_0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0) ; int threadsPerBlock;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 long long time1;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 long long time0;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
- if (____must_checkpoint_kernel_cpu_2_bid_0 || ____must_checkpoint_kernel_cpu_2_thid_0 || ____must_checkpoint_kernel_cpu_2_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_2_i_0 || ____must_checkpoint_kernel_cpu_2_time1_0 || ____must_checkpoint_kernel_cpu_2_time0_0) { register_stack_vars(6, "kernel_cpu_2|bid|0", &____must_checkpoint_kernel_cpu_2_bid_0, "i32", (void *)(&bid), (size_t)4, 0, 0, 0, "kernel_cpu_2|thid|0", &____must_checkpoint_kernel_cpu_2_thid_0, "i32", (void *)(&thid), (size_t)4, 0, 0, 0, "kernel_cpu_2|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_2_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu_2|i|0", &____must_checkpoint_kernel_cpu_2_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "kernel_cpu_2|time1|0", &____must_checkpoint_kernel_cpu_2_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu_2|time0|0", &____must_checkpoint_kernel_cpu_2_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_kernel_cpu_2_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_2_time1_0 || ____must_checkpoint_kernel_cpu_2_time0_0) { register_stack_vars(3, "kernel_cpu_2|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_2_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu_2|time1|0", &____must_checkpoint_kernel_cpu_2_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu_2|time0|0", &____must_checkpoint_kernel_cpu_2_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
@@ -2848,7 +2839,7 @@ long long time0;
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-  ;
+ int i; ;
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
   call_lbl_1: time0 = ({ calling((void*)get_time, 1, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ;
@@ -2886,9 +2877,9 @@ long long time0;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-  ;
+ int thid; ;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-  ;
+ int bid; ;
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
@@ -3038,19 +3029,13 @@ kernel_cpu_2_quick( int cores_arg,
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
     int *reclength)
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu_2), "kernel_cpu_2", &____must_manage_kernel_cpu_2, 14, 14, (size_t)(0UL), (size_t)(13240270965678849410UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13240270965678849415UL), (size_t)(13240270965678849416UL), (size_t)(13240270965678849417UL), (size_t)(13240270965678849418UL), (size_t)(13240270965678849419UL), (size_t)(13240270965678849420UL), (size_t)(13240270965678849421UL), (size_t)(13240270965678849422UL), "kernel_cpu_2|cores_arg|0", &____must_checkpoint_kernel_cpu_2_cores_arg_0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "kernel_cpu_2|knodes|0", &____must_checkpoint_kernel_cpu_2_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0, "kernel_cpu_2|knodes_elem|0", &____must_checkpoint_kernel_cpu_2_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0, "kernel_cpu_2|order|0", &____must_checkpoint_kernel_cpu_2_order_0, "i32", (void *)(&order), (size_t)4, 0, 0, 0, "kernel_cpu_2|maxheight|0", &____must_checkpoint_kernel_cpu_2_maxheight_0, "i64", (void *)(&maxheight), (size_t)8, 0, 0, 0, "kernel_cpu_2|count|0", &____must_checkpoint_kernel_cpu_2_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "kernel_cpu_2|currKnode|0", &____must_checkpoint_kernel_cpu_2_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0, "kernel_cpu_2|offset|0", &____must_checkpoint_kernel_cpu_2_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0, "kernel_cpu_2|lastKnode|0", &____must_checkpoint_kernel_cpu_2_lastKnode_0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "kernel_cpu_2|offset_2|0", &____must_checkpoint_kernel_cpu_2_offset_2_0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "kernel_cpu_2|start|0", &____must_checkpoint_kernel_cpu_2_start_0, "i32*", (void *)(&start), (size_t)8, 1, 0, 0, "kernel_cpu_2|end|0", &____must_checkpoint_kernel_cpu_2_end_0, "i32*", (void *)(&end), (size_t)8, 1, 0, 0, "kernel_cpu_2|recstart|0", &____must_checkpoint_kernel_cpu_2_recstart_0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "kernel_cpu_2|reclength|0", &____must_checkpoint_kernel_cpu_2_reclength_0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0) ; int bid;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-int thid;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-int threadsPerBlock;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-int i;
+{const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu_2), "kernel_cpu_2", &____must_manage_kernel_cpu_2, 14, 14, (size_t)(0UL), (size_t)(13240270965678849410UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13240270965678849415UL), (size_t)(13240270965678849416UL), (size_t)(13240270965678849417UL), (size_t)(13240270965678849418UL), (size_t)(13240270965678849419UL), (size_t)(13240270965678849420UL), (size_t)(13240270965678849421UL), (size_t)(13240270965678849422UL), "kernel_cpu_2|cores_arg|0", &____must_checkpoint_kernel_cpu_2_cores_arg_0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "kernel_cpu_2|knodes|0", &____must_checkpoint_kernel_cpu_2_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0, "kernel_cpu_2|knodes_elem|0", &____must_checkpoint_kernel_cpu_2_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0, "kernel_cpu_2|order|0", &____must_checkpoint_kernel_cpu_2_order_0, "i32", (void *)(&order), (size_t)4, 0, 0, 0, "kernel_cpu_2|maxheight|0", &____must_checkpoint_kernel_cpu_2_maxheight_0, "i64", (void *)(&maxheight), (size_t)8, 0, 0, 0, "kernel_cpu_2|count|0", &____must_checkpoint_kernel_cpu_2_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "kernel_cpu_2|currKnode|0", &____must_checkpoint_kernel_cpu_2_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0, "kernel_cpu_2|offset|0", &____must_checkpoint_kernel_cpu_2_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0, "kernel_cpu_2|lastKnode|0", &____must_checkpoint_kernel_cpu_2_lastKnode_0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "kernel_cpu_2|offset_2|0", &____must_checkpoint_kernel_cpu_2_offset_2_0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "kernel_cpu_2|start|0", &____must_checkpoint_kernel_cpu_2_start_0, "i32*", (void *)(&start), (size_t)8, 1, 0, 0, "kernel_cpu_2|end|0", &____must_checkpoint_kernel_cpu_2_end_0, "i32*", (void *)(&end), (size_t)8, 1, 0, 0, "kernel_cpu_2|recstart|0", &____must_checkpoint_kernel_cpu_2_recstart_0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "kernel_cpu_2|reclength|0", &____must_checkpoint_kernel_cpu_2_reclength_0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0) ; int threadsPerBlock;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 long long time1;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 long long time0;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
- if (____must_checkpoint_kernel_cpu_2_bid_0 || ____must_checkpoint_kernel_cpu_2_thid_0 || ____must_checkpoint_kernel_cpu_2_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_2_i_0 || ____must_checkpoint_kernel_cpu_2_time1_0 || ____must_checkpoint_kernel_cpu_2_time0_0) { register_stack_vars(6, "kernel_cpu_2|bid|0", &____must_checkpoint_kernel_cpu_2_bid_0, "i32", (void *)(&bid), (size_t)4, 0, 0, 0, "kernel_cpu_2|thid|0", &____must_checkpoint_kernel_cpu_2_thid_0, "i32", (void *)(&thid), (size_t)4, 0, 0, 0, "kernel_cpu_2|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_2_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu_2|i|0", &____must_checkpoint_kernel_cpu_2_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "kernel_cpu_2|time1|0", &____must_checkpoint_kernel_cpu_2_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu_2|time0|0", &____must_checkpoint_kernel_cpu_2_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } ; ;
+ if (____must_checkpoint_kernel_cpu_2_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_2_time1_0 || ____must_checkpoint_kernel_cpu_2_time0_0) { register_stack_vars(3, "kernel_cpu_2|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_2_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu_2|time1|0", &____must_checkpoint_kernel_cpu_2_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu_2|time0|0", &____must_checkpoint_kernel_cpu_2_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } ; ;
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
@@ -3066,7 +3051,7 @@ long long time0;
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-  ;
+ int i; ;
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
   call_lbl_1: time0 = ({ calling((void*)get_time, 1, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ;
@@ -3104,9 +3089,9 @@ long long time0;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-  ;
+ int thid; ;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
-  ;
+ int bid; ;
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c"
@@ -3465,7 +3450,7 @@ kernel_cpu_2_npm( int cores_arg,
 
 
 static int module_init() {
-    init_module(13240270965678848979UL, 9, 1, 20, 5, 1, 2, 3, 0, 0, 1,
+    init_module(13240270965678848979UL, 9, 1, 17, 5, 1, 2, 3, 0, 0, 1,
                            &____alias_loc_id_0, (unsigned)10, (unsigned)0, (unsigned)0, (13240270965678848979UL + 16UL), (13240270965678848979UL + 18UL), (13240270965678848979UL + 21UL), (13240270965678848979UL + 22UL), (13240270965678848979UL + 436UL), (13240270965678848979UL + 437UL), (13240270965678848979UL + 438UL), (13240270965678848979UL + 439UL), (13240270965678848979UL + 442UL), (13240270965678848979UL + 443UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (13240270965678848979UL + 19UL), (13240270965678848979UL + 20UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (13240270965678848979UL + 15UL),
@@ -3504,10 +3489,7 @@ static int module_init() {
                         "kernel_cpu_2|reclength|0", 2, "omp_get_max_threads", "get_time",
                         "kernel_cpu_2|time0|0", 2, "omp_get_max_threads", "get_time",
                         "kernel_cpu_2|time1|0", 1, "get_time",
-                        "kernel_cpu_2|i|0", 1, "get_time",
-                        "kernel_cpu_2|threadsPerBlock|0", 1, "get_time",
-                        "kernel_cpu_2|thid|0", 1, "get_time",
-                        "kernel_cpu_2|bid|0", 1, "get_time");
+                        "kernel_cpu_2|threadsPerBlock|0", 1, "get_time");
     return 0;
 }
 

@@ -14,6 +14,6 @@
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c kernel_cpu|time2|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c kernel_cpu|max_nthreads|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c kernel_cpu|threadsPerBlock|0 " i32 " 32 0 0 1 get_time
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c kernel_cpu|thid|0 " i32 " 32 0 0 1 get_time
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c kernel_cpu|bid|0 " i32 " 32 0 0 1 get_time
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c kernel_cpu|i|0 " i32 " 32 0 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c kernel_cpu|thid|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c kernel_cpu|bid|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c kernel_cpu|i|0 " i32 " 32 0 0 0

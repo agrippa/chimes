@@ -178,16 +178,12 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 1
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 129 23 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 13 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 28 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 19 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 48 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 23 
 InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 9  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21  register_stack_var("main|infile|1", (int *)0x0, "%struct._IO_FILE*", (void *)(&infile), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21  if (____must_checkpoint_main_infile_1 != 0) { register_stack_var("main|infile|1", &____must_checkpoint_main_infile_1, "%struct._IO_FILE*", (void *)(&infile), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 168  ; double start_time;
-# 114
-char *____chimes_unroll_var_0;
 # 114
 float threshold;
 # 114
@@ -211,7 +207,7 @@ float *buf;
 # 114
 int nclusters;
 # 114
- register_stack_vars(13, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|____chimes_unroll_var_0|0", (int *)0x0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0, "main|threshold|0", (int *)0x0, "float", (void *)(&threshold), (size_t)4, 0, 0, 0, "main|nloops|0", (int *)0x0, "i32", (void *)(&nloops), (size_t)4, 0, 0, 0, "main|line|0", (int *)0x0, "[1024 x i8]", (void *)(line), (size_t)1024, 0, 0, 0, "main|numObjects|0", (int *)0x0, "i32", (void *)(&numObjects), (size_t)4, 0, 0, 0, "main|numAttributes|0", (int *)0x0, "i32", (void *)(&numAttributes), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|cluster_centres|0", (int *)0x0, "float**", (void *)(&cluster_centres), (size_t)8, 1, 0, 0, "main|attributes|0", (int *)0x0, "float**", (void *)(&attributes), (size_t)8, 1, 0, 0, "main|buf|0", (int *)0x0, "float*", (void *)(&buf), (size_t)8, 1, 0, 0, "main|nclusters|0", (int *)0x0, "i32", (void *)(&nclusters), (size_t)4, 0, 0, 0);  
+ register_stack_vars(12, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|threshold|0", (int *)0x0, "float", (void *)(&threshold), (size_t)4, 0, 0, 0, "main|nloops|0", (int *)0x0, "i32", (void *)(&nloops), (size_t)4, 0, 0, 0, "main|line|0", (int *)0x0, "[1024 x i8]", (void *)(line), (size_t)1024, 0, 0, 0, "main|numObjects|0", (int *)0x0, "i32", (void *)(&numObjects), (size_t)4, 0, 0, 0, "main|numAttributes|0", (int *)0x0, "i32", (void *)(&numAttributes), (size_t)4, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|cluster_centres|0", (int *)0x0, "float**", (void *)(&cluster_centres), (size_t)8, 1, 0, 0, "main|attributes|0", (int *)0x0, "float**", (void *)(&attributes), (size_t)8, 1, 0, 0, "main|buf|0", (int *)0x0, "float*", (void *)(&buf), (size_t)8, 1, 0, 0, "main|nclusters|0", (int *)0x0, "i32", (void *)(&nclusters), (size_t)4, 0, 0, 0);  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 6 len=5 usage_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 161  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 8 len=7 seconds_resumable
@@ -271,16 +267,12 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 1
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 129 23 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 13 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 28 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 19 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 48 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 23 
 InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 9  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21  register_stack_var("main|infile|1", (int *)0x0, "%struct._IO_FILE*", (void *)(&infile), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21  if (____must_checkpoint_main_infile_1 != 0) { register_stack_var("main|infile|1", &____must_checkpoint_main_infile_1, "%struct._IO_FILE*", (void *)(&infile), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21  if (____chimes_replaying) {  switch(get_next_call()) { case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } case(30): { goto call_lbl_30; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(39): { goto call_lbl_39; } case(40): { goto call_lbl_40; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 168  ; double start_time;
-# 114
-char *____chimes_unroll_var_0;
 # 114
 float threshold;
 # 114
@@ -304,4 +296,4 @@ float *buf;
 # 114
 int nclusters;
 # 114
- register_stack_vars(13, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|____chimes_unroll_var_0|0", (int *)0x0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0, "main|threshold|0", (int *)0x0, "float", (void *)(&threshold), (size_t)4, 0, 0, 0, "main|nloops|0", (int *)0x0, "i32", (void *)(&nloops), (size_t)4, 0, 0, 0, "main|line|0", (int *)0x0, "[1024 x i8]", (void *)(line), (size_t)1024, 0, 0, 0, "main|numObjects|0", (int *)0x0, "i32", (void *)(&numObjects), (size_t)4, 0, 0, 0, "main|numAttributes|0", (int *)0x0, "i32", (void *)(&numAttributes), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|cluster_centres|0", (int *)0x0, "float**", (void *)(&cluster_centres), (size_t)8, 1, 0, 0, "main|attributes|0", (int *)0x0, "float**", (void *)(&attributes), (size_t)8, 1, 0, 0, "main|buf|0", (int *)0x0, "float*", (void *)(&buf), (size_t)8, 1, 0, 0, "main|nclusters|0", (int *)0x0, "i32", (void *)(&nclusters), (size_t)4, 0, 0, 0);  if (____chimes_replaying) { goto lbl_0; }  
+ register_stack_vars(12, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|threshold|0", (int *)0x0, "float", (void *)(&threshold), (size_t)4, 0, 0, 0, "main|nloops|0", (int *)0x0, "i32", (void *)(&nloops), (size_t)4, 0, 0, 0, "main|line|0", (int *)0x0, "[1024 x i8]", (void *)(line), (size_t)1024, 0, 0, 0, "main|numObjects|0", (int *)0x0, "i32", (void *)(&numObjects), (size_t)4, 0, 0, 0, "main|numAttributes|0", (int *)0x0, "i32", (void *)(&numAttributes), (size_t)4, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|cluster_centres|0", (int *)0x0, "float**", (void *)(&cluster_centres), (size_t)8, 1, 0, 0, "main|attributes|0", (int *)0x0, "float**", (void *)(&attributes), (size_t)8, 1, 0, 0, "main|buf|0", (int *)0x0, "float*", (void *)(&buf), (size_t)8, 1, 0, 0, "main|nclusters|0", (int *)0x0, "i32", (void *)(&nclusters), (size_t)4, 0, 0, 0);  if (____chimes_replaying) { goto lbl_0; }  

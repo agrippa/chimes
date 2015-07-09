@@ -4817,43 +4817,25 @@ int pairalign_seq_resumable(int istart, int iend, int jstart, int jend)
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&pairalign_seq), "pairalign_seq", (int *)0, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int displ[10001];
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int gh;
+int maxscore;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int g;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int seq2;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int seq1;
+int sb2;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int sb1;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+int se2;
+# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int se1;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-double mm_score;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-double gg;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int len2;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int len1;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int sj;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int si;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int m;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int n;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int i;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
- register_stack_vars(16, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|gh|0", (int *)0x0, "i32", (void *)(&gh), (size_t)4, 0, 0, 0, "pairalign_seq|g|0", (int *)0x0, "i32", (void *)(&g), (size_t)4, 0, 0, 0, "pairalign_seq|seq2|0", (int *)0x0, "i32", (void *)(&seq2), (size_t)4, 0, 0, 0, "pairalign_seq|seq1|0", (int *)0x0, "i32", (void *)(&seq1), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|mm_score|0", (int *)0x0, "double", (void *)(&mm_score), (size_t)8, 0, 0, 0, "pairalign_seq|gg|0", (int *)0x0, "double", (void *)(&gg), (size_t)8, 0, 0, 0, "pairalign_seq|len2|0", (int *)0x0, "i32", (void *)(&len2), (size_t)4, 0, 0, 0, "pairalign_seq|len1|0", (int *)0x0, "i32", (void *)(&len1), (size_t)4, 0, 0, 0, "pairalign_seq|sj|0", (int *)0x0, "i32", (void *)(&sj), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0, "pairalign_seq|m|0", (int *)0x0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "pairalign_seq|n|0", (int *)0x0, "i32", (void *)(&n), (size_t)4, 0, 0, 0, "pairalign_seq|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
+ register_stack_vars(7, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|maxscore|0", (int *)0x0, "i32", (void *)(&maxscore), (size_t)4, 0, 0, 0, "pairalign_seq|sb2|0", (int *)0x0, "i32", (void *)(&sb2), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se2|0", (int *)0x0, "i32", (void *)(&se2), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 503 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-        ;
+   int i; int n; int m; int sj; ;
 # 504 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-     int maxres; ;
+   int len1; int len2; int maxres; ;
 # 505 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-     ;
+   double gg; double mm_score; ;
 # 506 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int *mat_xref; int *matptr; ;
 # 507 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4873,7 +4855,7 @@ int i;
 # 515 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          for (i = 1, len1 = 0; i <= n; i++) {
 # 516 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-              lbl_0: char c; register_stack_var("pairalign_seq|c|0", (int *)0x0, "i8", (void *)(&c), (size_t)1, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } c = (seq_array[si + 1][i]) ;
+             char c; c = (seq_array[si + 1][i]) ;
 # 517 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if ((c != gap_pos1) && (c != gap_pos2)) {len1++; };
 # 518 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4884,7 +4866,7 @@ int i;
 # 521 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if ((m = seqlen_array[sj+1]) != 0){
 # 522 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                int se2; int sb2; int maxscore; ;
+                    int seq1; int seq2; int g; int gh; ;
 # 523 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 ;
 # 524 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4893,7 +4875,7 @@ int i;
 # 526 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                for (i = 1, len2 = 0; i <= m; i++) {
 # 527 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                    lbl_1: char c; register_stack_var("pairalign_seq|c|1", (int *)0x0, "i8", (void *)(&c), (size_t)1, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } c = (seq_array[sj + 1][i]) ;
+                   char c; c = (seq_array[sj + 1][i]) ;
 # 528 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   if ((c != gap_pos1) && (c != gap_pos2)) {len2++; };
 # 529 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5887,43 +5869,25 @@ int pairalign_seq_quick(int istart, int iend, int jstart, int jend)
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&pairalign_seq), "pairalign_seq", (int *)0, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int displ[10001];
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int gh;
+int maxscore;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int g;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int seq2;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int seq1;
+int sb2;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int sb1;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+int se2;
+# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int se1;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-double mm_score;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-double gg;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int len2;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int len1;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int sj;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int si;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int m;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int n;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-int i;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
- register_stack_vars(16, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|gh|0", (int *)0x0, "i32", (void *)(&gh), (size_t)4, 0, 0, 0, "pairalign_seq|g|0", (int *)0x0, "i32", (void *)(&g), (size_t)4, 0, 0, 0, "pairalign_seq|seq2|0", (int *)0x0, "i32", (void *)(&seq2), (size_t)4, 0, 0, 0, "pairalign_seq|seq1|0", (int *)0x0, "i32", (void *)(&seq1), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|mm_score|0", (int *)0x0, "double", (void *)(&mm_score), (size_t)8, 0, 0, 0, "pairalign_seq|gg|0", (int *)0x0, "double", (void *)(&gg), (size_t)8, 0, 0, 0, "pairalign_seq|len2|0", (int *)0x0, "i32", (void *)(&len2), (size_t)4, 0, 0, 0, "pairalign_seq|len1|0", (int *)0x0, "i32", (void *)(&len1), (size_t)4, 0, 0, 0, "pairalign_seq|sj|0", (int *)0x0, "i32", (void *)(&sj), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0, "pairalign_seq|m|0", (int *)0x0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "pairalign_seq|n|0", (int *)0x0, "i32", (void *)(&n), (size_t)4, 0, 0, 0, "pairalign_seq|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ; ;
+ register_stack_vars(7, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|maxscore|0", (int *)0x0, "i32", (void *)(&maxscore), (size_t)4, 0, 0, 0, "pairalign_seq|sb2|0", (int *)0x0, "i32", (void *)(&sb2), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se2|0", (int *)0x0, "i32", (void *)(&se2), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0); ; ;
 # 503 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-        ;
+   int i; int n; int m; int sj; ;
 # 504 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-     int maxres; ;
+   int len1; int len2; int maxres; ;
 # 505 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-     ;
+   double gg; double mm_score; ;
 # 506 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int *mat_xref; int *matptr; ;
 # 507 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5943,7 +5907,7 @@ int i;
 # 515 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          for (i = 1, len1 = 0; i <= n; i++) {
 # 516 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-              lbl_0: char c; register_stack_var("pairalign_seq|c|0", (int *)0x0, "i8", (void *)(&c), (size_t)1, 0, 0, 0); c = (seq_array[si + 1][i]) ;
+             char c; c = (seq_array[si + 1][i]) ;
 # 517 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if ((c != gap_pos1) && (c != gap_pos2)) {len1++; };
 # 518 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5954,7 +5918,7 @@ int i;
 # 521 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if ((m = seqlen_array[sj+1]) != 0){
 # 522 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                int se2; int sb2; int maxscore; ;
+                    int seq1; int seq2; int g; int gh; ;
 # 523 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 ;
 # 524 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5963,7 +5927,7 @@ int i;
 # 526 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                for (i = 1, len2 = 0; i <= m; i++) {
 # 527 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                    lbl_1: char c; register_stack_var("pairalign_seq|c|1", (int *)0x0, "i8", (void *)(&c), (size_t)1, 0, 0, 0); c = (seq_array[sj + 1][i]) ;
+                   char c; c = (seq_array[sj + 1][i]) ;
 # 528 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   if ((c != gap_pos1) && (c != gap_pos2)) {len2++; };
 # 529 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -7000,7 +6964,7 @@ static int module_init() {
                         "pairalign_seq|se1|0", 1, "pairalign_seq",
                         "pairalign_seq|sb1|0", 1, "pairalign_seq",
                         "pairalign_seq|displ|0", 1, "pairalign_seq",
-                        "pairalign_init|filename|0", 2, "readseqs", "bots_error",
+                        "pairalign_init|filename|0", 1, "bots_error",
         "del", 0UL, (int)4, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL,
         "add", 0UL, (int)4, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL,
         "calc_score", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,

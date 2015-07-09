@@ -70,11 +70,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 121
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 121 27 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 126 37  ({  calling((void*)getNumCUDADevices, 13, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 126 55 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 75 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 75 10 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 74 597  ; int c;
-# 74
- if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0);  }  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 74 597  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 7 6 len=15 save_layer_text_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 8 355  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 26 6 len=9 init_data_resumable
@@ -92,8 +88,4 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 121
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 121 27 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 126 37  ({  calling((void*)getNumCUDADevices, 13, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 126 55 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 75 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 75 10 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 74 597  ; int c;
-# 74
- if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(8): { goto call_lbl_8; } case(13): { goto call_lbl_13; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 74 597  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(8): { goto call_lbl_8; } case(13): { goto call_lbl_13; } default: { chimes_error(); } }  }  

@@ -1,12 +1,12 @@
-fopen write 38 8 26 114 245
-printf write 40 3 0 246
-fprintf write 52 5 0 26 247 0
-fprintf write 54 4 0 26 245
-fprintf write 61 5 0 26 247 0
-fprintf write 63 4 0 26 245
-fclose write 71 2 0 26
-fopen read 98 8 154 238 245
-printf read 100 3 0 250
-fscanf read 111 5 0 154 251 137
-fscanf read 119 5 0 154 251 137
-fclose read 129 2 0 154
+fopen myocyte_write 38 8 26 114 245
+printf myocyte_write 40 3 0 246
+fprintf myocyte_write 52 5 0 26 247 0
+fprintf myocyte_write 54 4 0 26 245
+fprintf myocyte_write 61 5 0 26 247 0
+fprintf myocyte_write 63 4 0 26 245
+fclose myocyte_write 71 2 0 26
+fopen myocyte_read 98 8 154 238 245
+printf myocyte_read 100 3 0 250
+fscanf myocyte_read 111 5 0 154 251 137
+fscanf myocyte_read 119 5 0 154 251 137
+fclose myocyte_read 129 2 0 154

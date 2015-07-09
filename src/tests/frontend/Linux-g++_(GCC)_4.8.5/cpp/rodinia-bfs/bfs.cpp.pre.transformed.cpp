@@ -3986,8 +3986,6 @@ int count_iters;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 bool stop;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-int tid;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 int k;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 int *h_cost;
@@ -4010,7 +4008,7 @@ Node *h_graph_nodes;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 int source;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- register_stack_vars(15, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|tid|0", (int *)0x0, "i32", (void *)(&tid), (size_t)4, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|cost|0", (int *)0x0, "i32", (void *)(&cost), (size_t)4, 0, 0, 0, "BFSGraph|id|0", (int *)0x0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "BFSGraph|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|source|0", (int *)0x0, "i32", (void *)(&source), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
+ register_stack_vars(14, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|cost|0", (int *)0x0, "i32", (void *)(&cost), (size_t)4, 0, 0, 0, "BFSGraph|id|0", (int *)0x0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "BFSGraph|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|source|0", (int *)0x0, "i32", (void *)(&source), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(21): { goto call_lbl_21; } default: { chimes_error(); } } } ; ;
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
     char *input_f; ;
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
@@ -4134,7 +4132,7 @@ int source;
     k = (0) ;
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-      lbl_0: int i; register_stack_var("BFSGraph|i|3", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(21): { goto call_lbl_21; } default: { chimes_error(); } } } ;
+    int tid; int i; ;
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
   ;
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
@@ -4298,8 +4296,6 @@ int count_iters;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 bool stop;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-int tid;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 int k;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 int *h_cost;
@@ -4322,7 +4318,7 @@ Node *h_graph_nodes;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 int source;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- register_stack_vars(15, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|tid|0", (int *)0x0, "i32", (void *)(&tid), (size_t)4, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|cost|0", (int *)0x0, "i32", (void *)(&cost), (size_t)4, 0, 0, 0, "BFSGraph|id|0", (int *)0x0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "BFSGraph|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|source|0", (int *)0x0, "i32", (void *)(&source), (size_t)4, 0, 0, 0); ; ;
+ register_stack_vars(14, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|cost|0", (int *)0x0, "i32", (void *)(&cost), (size_t)4, 0, 0, 0, "BFSGraph|id|0", (int *)0x0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "BFSGraph|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|source|0", (int *)0x0, "i32", (void *)(&source), (size_t)4, 0, 0, 0); ; ;
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
     char *input_f; ;
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
@@ -4446,7 +4442,7 @@ int source;
     k = (0) ;
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-      lbl_0: int i; register_stack_var("BFSGraph|i|3", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ;
+    int tid; int i; ;
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
   ;
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
