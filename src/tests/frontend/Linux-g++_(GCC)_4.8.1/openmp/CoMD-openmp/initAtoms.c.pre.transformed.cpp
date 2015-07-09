@@ -43,10 +43,6 @@ static int ____must_checkpoint_createFccLattice_ix_0 = 2;
 static int ____must_checkpoint_createFccLattice_iy_0 = 2;
 static int ____must_checkpoint_createFccLattice_iz_0 = 2;
 static int ____must_checkpoint_createFccLattice_ib_0 = 2;
-static int ____must_checkpoint_createFccLattice_rx_0 = 2;
-static int ____must_checkpoint_createFccLattice_ry_0 = 2;
-static int ____must_checkpoint_createFccLattice_rz_0 = 2;
-static int ____must_checkpoint_createFccLattice_id_0 = 2;
 static int ____must_checkpoint_setVcm_s_0 = 2;
 static int ____must_checkpoint_setVcm_newVcm_0 = 2;
 static int ____must_checkpoint_setVcm_oldVcm_0 = 2;
@@ -58,16 +54,10 @@ static int ____must_checkpoint_setTemperature_temperature_0 = 2;
 static int ____must_checkpoint_setTemperature_iBox_0 = 2;
 static int ____must_checkpoint_setTemperature_iOff_0 = 2;
 static int ____must_checkpoint_setTemperature_ii_0 = 2;
-static int ____must_checkpoint_setTemperature_iType_0 = 2;
 static int ____must_checkpoint_setTemperature_mass_0 = 2;
 static int ____must_checkpoint_setTemperature_sigma_0 = 2;
 static int ____must_checkpoint_setTemperature_seed_0 = 2;
 static int ____must_checkpoint_setTemperature_vZero_0 = 2;
-static int ____must_checkpoint_setTemperature_temp_0 = 2;
-static int ____must_checkpoint_setTemperature_scaleFactor_0 = 2;
-static int ____must_checkpoint_setTemperature_iBox_1 = 2;
-static int ____must_checkpoint_setTemperature_iOff_1 = 2;
-static int ____must_checkpoint_setTemperature_ii_1 = 2;
 static int ____must_checkpoint_randomDisplacements_s_0 = 2;
 static int ____must_checkpoint_randomDisplacements_delta_0 = 2;
 static int ____must_checkpoint_randomDisplacements_iBox_0 = 2;
@@ -3879,15 +3869,7 @@ void createFccLattice_npm(int nx, int ny, int nz, real_t lat, SimFlat* s);static
 void createFccLattice_quick(int nx, int ny, int nz, real_t lat, SimFlat* s); void createFccLattice(int nx, int ny, int nz, real_t lat, SimFlat* s);
 void createFccLattice_resumable(int nx, int ny, int nz, real_t lat, SimFlat* s)
 # 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&createFccLattice), "createFccLattice", &____must_manage_createFccLattice, 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2774474540883984817UL), "createFccLattice|nx|0", &____must_checkpoint_createFccLattice_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", &____must_checkpoint_createFccLattice_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", &____must_checkpoint_createFccLattice_nz_0, "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", &____must_checkpoint_createFccLattice_lat_0, "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", &____must_checkpoint_createFccLattice_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int id;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-real_t rz;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-real_t ry;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-real_t rx;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-int ib;
+{const int ____chimes_did_disable2 = new_stack((void *)(&createFccLattice), "createFccLattice", &____must_manage_createFccLattice, 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2774474540883984817UL), "createFccLattice|nx|0", &____must_checkpoint_createFccLattice_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", &____must_checkpoint_createFccLattice_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", &____must_checkpoint_createFccLattice_nz_0, "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", &____must_checkpoint_createFccLattice_lat_0, "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", &____must_checkpoint_createFccLattice_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int ib;
 # 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int iz;
 # 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -3913,7 +3895,7 @@ const real_t *localMax;
 # 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 const real_t *localMin;
 # 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
- if (____must_checkpoint_createFccLattice_id_0 || ____must_checkpoint_createFccLattice_rz_0 || ____must_checkpoint_createFccLattice_ry_0 || ____must_checkpoint_createFccLattice_rx_0 || ____must_checkpoint_createFccLattice_ib_0 || ____must_checkpoint_createFccLattice_iz_0 || ____must_checkpoint_createFccLattice_iy_0 || ____must_checkpoint_createFccLattice_ix_0 || ____must_checkpoint_createFccLattice_pz_0 || ____must_checkpoint_createFccLattice_py_0 || ____must_checkpoint_createFccLattice_px_0 || ____must_checkpoint_createFccLattice_end_0 || ____must_checkpoint_createFccLattice_begin_0 || ____must_checkpoint_createFccLattice_basis_0 || ____must_checkpoint_createFccLattice_nb_0 || ____must_checkpoint_createFccLattice_localMax_0 || ____must_checkpoint_createFccLattice_localMin_0) { register_stack_vars(17, "createFccLattice|id|0", &____must_checkpoint_createFccLattice_id_0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "createFccLattice|rz|0", &____must_checkpoint_createFccLattice_rz_0, "double", (void *)(&rz), (size_t)8, 0, 0, 0, "createFccLattice|ry|0", &____must_checkpoint_createFccLattice_ry_0, "double", (void *)(&ry), (size_t)8, 0, 0, 0, "createFccLattice|rx|0", &____must_checkpoint_createFccLattice_rx_0, "double", (void *)(&rx), (size_t)8, 0, 0, 0, "createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0, "createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0, "createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0, "createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0, "createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0, "createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0, "createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_createFccLattice_ib_0 || ____must_checkpoint_createFccLattice_iz_0 || ____must_checkpoint_createFccLattice_iy_0 || ____must_checkpoint_createFccLattice_ix_0 || ____must_checkpoint_createFccLattice_pz_0 || ____must_checkpoint_createFccLattice_py_0 || ____must_checkpoint_createFccLattice_px_0 || ____must_checkpoint_createFccLattice_end_0 || ____must_checkpoint_createFccLattice_begin_0 || ____must_checkpoint_createFccLattice_basis_0 || ____must_checkpoint_createFccLattice_nb_0 || ____must_checkpoint_createFccLattice_localMax_0 || ____must_checkpoint_createFccLattice_localMin_0) { register_stack_vars(13, "createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0, "createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0, "createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0, "createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0, "createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0, "createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0, "createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
 # 80 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       localMin = (s->domain->localMin) ;
 # 81 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -3949,11 +3931,11 @@ const real_t *localMin;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             {
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-                  rx = ((ix + basis[ib][0]) * lat) ;
+                real_t rx; rx = ((ix + basis[ib][0]) * lat) ;
 # 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-                  ry = ((iy + basis[ib][1]) * lat) ;
+                real_t ry; ry = ((iy + basis[ib][1]) * lat) ;
 # 107 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-                  rz = ((iz + basis[ib][2]) * lat) ;
+                real_t rz; rz = ((iz + basis[ib][2]) * lat) ;
 # 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (rx < localMin[0] || rx >= localMax[0]) {continue; };
 # 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -3961,7 +3943,7 @@ const real_t *localMin;
 # 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (rz < localMin[2] || rz >= localMax[2]) {continue; };
 # 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-                  id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
+                int id; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
 # 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 call_lbl_3: ({ LinkCell * ____chimes_arg3; Atoms * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); ____chimes_arg4 = (s->atoms); } calling((void*)putAtomInBox, 3, ____alias_loc_id_2, 0UL, 10, (size_t)(2774474540883984819UL), (size_t)(2774474540883984819UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg3, ____chimes_arg4, id, 0, rx, ry, rz, px, py, pz); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4045,11 +4027,7 @@ void setTemperature_npm(SimFlat* s, real_t temperature);static double (*____chim
 void setTemperature_quick(SimFlat* s, real_t temperature); void setTemperature(SimFlat* s, real_t temperature);
 void setTemperature_resumable(SimFlat* s, real_t temperature)
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(2774474540883985498UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0) ; real_t scaleFactor;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-real_t temp;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-real_t vZero[3] = { 0., 0., 0. };
+{const int ____chimes_did_disable4 = new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(2774474540883985498UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0) ; real_t vZero[3] = { 0., 0., 0. };
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 uint64_t seed;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4057,28 +4035,26 @@ real_t sigma;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t mass;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-int iType;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
- if (____must_checkpoint_setTemperature_scaleFactor_0 || ____must_checkpoint_setTemperature_temp_0 || ____must_checkpoint_setTemperature_vZero_0 || ____must_checkpoint_setTemperature_seed_0 || ____must_checkpoint_setTemperature_sigma_0 || ____must_checkpoint_setTemperature_mass_0 || ____must_checkpoint_setTemperature_iType_0) { register_stack_vars(7, "setTemperature|scaleFactor|0", &____must_checkpoint_setTemperature_scaleFactor_0, "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0, "setTemperature|temp|0", &____must_checkpoint_setTemperature_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0, "setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0, "setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0, "setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0, "setTemperature|iType|0", &____must_checkpoint_setTemperature_iType_0, "i32", (void *)(&iType), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_setTemperature_vZero_0 || ____must_checkpoint_setTemperature_seed_0 || ____must_checkpoint_setTemperature_sigma_0 || ____must_checkpoint_setTemperature_mass_0) { register_stack_vars(4, "setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0, "setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0, "setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } ; ;
 # 162 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-{ call_lbl_12: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(12, &____chimes_region_id1, 4, &iType, &mass, &seed, &sigma); int ____chimes_first_iter1 = 1;
+{ call_lbl_12: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(12, &____chimes_region_id1, 3, &mass, &seed, &sigma); int ____chimes_first_iter1 = 1;
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-#pragma omp parallel for firstprivate(____chimes_first_iter1) firstprivate(iType) firstprivate(mass) firstprivate(sigma) firstprivate(seed)
+#pragma omp parallel for firstprivate(____chimes_first_iter1) firstprivate(mass) firstprivate(sigma) firstprivate(seed)
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 164 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 165 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 4, &iType, &mass, &seed, &sigma); ____chimes_first_iter1 = 0; } {
+   { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 3, &mass, &seed, &sigma); ____chimes_first_iter1 = 0; } {
 # 166 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 167 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
 # 168 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-            iType = (s->atoms->iSpecies[iOff]) ;
+          int iType; iType = (s->atoms->iSpecies[iOff]) ;
 # 169 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             mass = (s->species[iType].mass) ;
 # 170 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4106,14 +4082,14 @@ int iType;
 # 182 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_8: ({ calling((void*)kineticEnergy, 8, ____alias_loc_id_8, 0UL, 1, (size_t)(2774474540883985498UL)); (kineticEnergy)(s); }) ;
 # 183 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-      temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
+    real_t temp; temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
 # 184 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 185 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-      scaleFactor = (sqrt(temperature / temp)) ;
+    real_t scaleFactor; scaleFactor = (sqrt(temperature / temp)) ;
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-{ call_lbl_13: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(13, &____chimes_region_id2, 4, &iType, &mass, &seed, &sigma); int ____chimes_first_iter2 = 1;
+{ call_lbl_13: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(13, &____chimes_region_id2, 3, &mass, &seed, &sigma); int ____chimes_first_iter2 = 1;
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter2)
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4121,7 +4097,7 @@ int iType;
 # 187 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 188 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   { { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 4, &iType, &mass, &seed, &sigma); ____chimes_first_iter2 = 0; } {
+   { { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 3, &mass, &seed, &sigma); ____chimes_first_iter2 = 0; } {
 # 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4368,15 +4344,7 @@ void destroyAtoms(Atoms *atoms) { (____chimes_replaying ? destroyAtoms_resumable
 # 78 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void createFccLattice_quick(int nx, int ny, int nz, real_t lat, SimFlat* s)
 # 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&createFccLattice), "createFccLattice", &____must_manage_createFccLattice, 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2774474540883984817UL), "createFccLattice|nx|0", &____must_checkpoint_createFccLattice_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", &____must_checkpoint_createFccLattice_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", &____must_checkpoint_createFccLattice_nz_0, "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", &____must_checkpoint_createFccLattice_lat_0, "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", &____must_checkpoint_createFccLattice_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int id;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-real_t rz;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-real_t ry;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-real_t rx;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-int ib;
+{const int ____chimes_did_disable2 = new_stack((void *)(&createFccLattice), "createFccLattice", &____must_manage_createFccLattice, 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2774474540883984817UL), "createFccLattice|nx|0", &____must_checkpoint_createFccLattice_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", &____must_checkpoint_createFccLattice_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", &____must_checkpoint_createFccLattice_nz_0, "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", &____must_checkpoint_createFccLattice_lat_0, "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", &____must_checkpoint_createFccLattice_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int ib;
 # 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int iz;
 # 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4402,7 +4370,7 @@ const real_t *localMax;
 # 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 const real_t *localMin;
 # 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
- if (____must_checkpoint_createFccLattice_id_0 || ____must_checkpoint_createFccLattice_rz_0 || ____must_checkpoint_createFccLattice_ry_0 || ____must_checkpoint_createFccLattice_rx_0 || ____must_checkpoint_createFccLattice_ib_0 || ____must_checkpoint_createFccLattice_iz_0 || ____must_checkpoint_createFccLattice_iy_0 || ____must_checkpoint_createFccLattice_ix_0 || ____must_checkpoint_createFccLattice_pz_0 || ____must_checkpoint_createFccLattice_py_0 || ____must_checkpoint_createFccLattice_px_0 || ____must_checkpoint_createFccLattice_end_0 || ____must_checkpoint_createFccLattice_begin_0 || ____must_checkpoint_createFccLattice_basis_0 || ____must_checkpoint_createFccLattice_nb_0 || ____must_checkpoint_createFccLattice_localMax_0 || ____must_checkpoint_createFccLattice_localMin_0) { register_stack_vars(17, "createFccLattice|id|0", &____must_checkpoint_createFccLattice_id_0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "createFccLattice|rz|0", &____must_checkpoint_createFccLattice_rz_0, "double", (void *)(&rz), (size_t)8, 0, 0, 0, "createFccLattice|ry|0", &____must_checkpoint_createFccLattice_ry_0, "double", (void *)(&ry), (size_t)8, 0, 0, 0, "createFccLattice|rx|0", &____must_checkpoint_createFccLattice_rx_0, "double", (void *)(&rx), (size_t)8, 0, 0, 0, "createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0, "createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0, "createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0, "createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0, "createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0, "createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0, "createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); } ; ;
+ if (____must_checkpoint_createFccLattice_ib_0 || ____must_checkpoint_createFccLattice_iz_0 || ____must_checkpoint_createFccLattice_iy_0 || ____must_checkpoint_createFccLattice_ix_0 || ____must_checkpoint_createFccLattice_pz_0 || ____must_checkpoint_createFccLattice_py_0 || ____must_checkpoint_createFccLattice_px_0 || ____must_checkpoint_createFccLattice_end_0 || ____must_checkpoint_createFccLattice_begin_0 || ____must_checkpoint_createFccLattice_basis_0 || ____must_checkpoint_createFccLattice_nb_0 || ____must_checkpoint_createFccLattice_localMax_0 || ____must_checkpoint_createFccLattice_localMin_0) { register_stack_vars(13, "createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0, "createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0, "createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0, "createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0, "createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0, "createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0, "createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); } ; ;
 # 80 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       localMin = (s->domain->localMin) ;
 # 81 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4438,11 +4406,11 @@ const real_t *localMin;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             {
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-                  rx = ((ix + basis[ib][0]) * lat) ;
+                real_t rx; rx = ((ix + basis[ib][0]) * lat) ;
 # 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-                  ry = ((iy + basis[ib][1]) * lat) ;
+                real_t ry; ry = ((iy + basis[ib][1]) * lat) ;
 # 107 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-                  rz = ((iz + basis[ib][2]) * lat) ;
+                real_t rz; rz = ((iz + basis[ib][2]) * lat) ;
 # 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (rx < localMin[0] || rx >= localMax[0]) {continue; };
 # 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4450,7 +4418,7 @@ const real_t *localMin;
 # 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (rz < localMin[2] || rz >= localMax[2]) {continue; };
 # 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-                  id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
+                int id; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
 # 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 call_lbl_3: ({ calling((void*)putAtomInBox, 3, ____alias_loc_id_2, 0UL, 10, (size_t)(2774474540883984819UL), (size_t)(2774474540883984819UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4530,11 +4498,7 @@ void setVcm(SimFlat* s, real_t newVcm[3]) { (____chimes_replaying ? setVcm_resum
 # 160 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void setTemperature_quick(SimFlat* s, real_t temperature)
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(2774474540883985498UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0) ; real_t scaleFactor;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-real_t temp;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-real_t vZero[3] = { 0., 0., 0. };
+{const int ____chimes_did_disable4 = new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(2774474540883985498UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0) ; real_t vZero[3] = { 0., 0., 0. };
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 uint64_t seed;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4542,28 +4506,26 @@ real_t sigma;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t mass;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-int iType;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
- if (____must_checkpoint_setTemperature_scaleFactor_0 || ____must_checkpoint_setTemperature_temp_0 || ____must_checkpoint_setTemperature_vZero_0 || ____must_checkpoint_setTemperature_seed_0 || ____must_checkpoint_setTemperature_sigma_0 || ____must_checkpoint_setTemperature_mass_0 || ____must_checkpoint_setTemperature_iType_0) { register_stack_vars(7, "setTemperature|scaleFactor|0", &____must_checkpoint_setTemperature_scaleFactor_0, "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0, "setTemperature|temp|0", &____must_checkpoint_setTemperature_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0, "setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0, "setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0, "setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0, "setTemperature|iType|0", &____must_checkpoint_setTemperature_iType_0, "i32", (void *)(&iType), (size_t)4, 0, 0, 0); } ; ;
+ if (____must_checkpoint_setTemperature_vZero_0 || ____must_checkpoint_setTemperature_seed_0 || ____must_checkpoint_setTemperature_sigma_0 || ____must_checkpoint_setTemperature_mass_0) { register_stack_vars(4, "setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0, "setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0, "setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0); } ; ;
 # 162 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-{ call_lbl_12: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(12, &____chimes_region_id1, 4, &iType, &mass, &seed, &sigma); int ____chimes_first_iter1 = 1;
+{ call_lbl_12: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(12, &____chimes_region_id1, 3, &mass, &seed, &sigma); int ____chimes_first_iter1 = 1;
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-#pragma omp parallel for firstprivate(____chimes_first_iter1) firstprivate(iType) firstprivate(mass) firstprivate(sigma) firstprivate(seed)
+#pragma omp parallel for firstprivate(____chimes_first_iter1) firstprivate(mass) firstprivate(sigma) firstprivate(seed)
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 164 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 165 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 4, &iType, &mass, &seed, &sigma); ____chimes_first_iter1 = 0; } {
+   { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 3, &mass, &seed, &sigma); ____chimes_first_iter1 = 0; } {
 # 166 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 167 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
 # 168 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-            iType = (s->atoms->iSpecies[iOff]) ;
+          int iType; iType = (s->atoms->iSpecies[iOff]) ;
 # 169 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             mass = (s->species[iType].mass) ;
 # 170 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4591,14 +4553,14 @@ int iType;
 # 182 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_8: ({ calling((void*)kineticEnergy, 8, ____alias_loc_id_8, 0UL, 1, (size_t)(2774474540883985498UL)); (kineticEnergy)(s); }) ;
 # 183 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-      temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
+    real_t temp; temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
 # 184 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 185 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-      scaleFactor = (sqrt(temperature / temp)) ;
+    real_t scaleFactor; scaleFactor = (sqrt(temperature / temp)) ;
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-{ call_lbl_13: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(13, &____chimes_region_id2, 4, &iType, &mass, &seed, &sigma); int ____chimes_first_iter2 = 1;
+{ call_lbl_13: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(13, &____chimes_region_id2, 3, &mass, &seed, &sigma); int ____chimes_first_iter2 = 1;
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter2)
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4606,7 +4568,7 @@ int iType;
 # 187 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 188 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   { { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 4, &iType, &mass, &seed, &sigma); ____chimes_first_iter2 = 0; } {
+   { { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 3, &mass, &seed, &sigma); ____chimes_first_iter2 = 0; } {
 # 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -5160,7 +5122,7 @@ void computeVcm_npm(SimFlat* s, real_t vcm[3])
 
 
 static int module_init() {
-    init_module(2774474540883984311UL, 25, 8, 49, 24, 7, 10, 17, 0, 0, 8,
+    init_module(2774474540883984311UL, 25, 8, 39, 24, 7, 10, 17, 0, 0, 8,
                            &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "addIntParallel", (unsigned)1, (2774474540883984311UL + 508UL),
                            &____alias_loc_id_1, (unsigned)21, (unsigned)0, (unsigned)0, (2774474540883984311UL + 245UL), (2774474540883984311UL + 246UL), (2774474540883984311UL + 247UL), (2774474540883984311UL + 248UL), (2774474540883984311UL + 249UL), (2774474540883984311UL + 250UL), (2774474540883984311UL + 251UL), (2774474540883984311UL + 252UL), (2774474540883984311UL + 254UL), (2774474540883984311UL + 255UL), (2774474540883984311UL + 256UL), (2774474540883984311UL + 257UL), (2774474540883984311UL + 258UL), (2774474540883984311UL + 259UL), (2774474540883984311UL + 260UL), (2774474540883984311UL + 261UL), (2774474540883984311UL + 262UL), (2774474540883984311UL + 263UL), (2774474540883984311UL + 264UL), (2774474540883984311UL + 265UL), (2774474540883984311UL + 266UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (2774474540883984311UL + 267UL), "putAtomInBox", (unsigned)1, (2774474540883984311UL + 508UL),
@@ -5263,25 +5225,21 @@ static int module_init() {
                         "createFccLattice|nx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
                         "createFccLattice|ny|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
                         "createFccLattice|nz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|lat|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
+                        "createFccLattice|lat|0", 1, "putAtomInBox",
                         "createFccLattice|s|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|localMin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|localMax|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
+                        "createFccLattice|localMin|0", 1, "putAtomInBox",
+                        "createFccLattice|localMax|0", 1, "putAtomInBox",
                         "createFccLattice|nb|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
                         "createFccLattice|basis|0", 1, "createFccLattice",
-                        "createFccLattice|begin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|end|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|px|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|py|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|pz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|ix|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|iy|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|iz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|ib|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|rx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|ry|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|rz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|id|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
+                        "createFccLattice|begin|0", 1, "putAtomInBox",
+                        "createFccLattice|end|0", 1, "putAtomInBox",
+                        "createFccLattice|px|0", 1, "putAtomInBox",
+                        "createFccLattice|py|0", 1, "putAtomInBox",
+                        "createFccLattice|pz|0", 1, "putAtomInBox",
+                        "createFccLattice|ix|0", 1, "putAtomInBox",
+                        "createFccLattice|iy|0", 1, "putAtomInBox",
+                        "createFccLattice|iz|0", 1, "putAtomInBox",
+                        "createFccLattice|ib|0", 1, "putAtomInBox",
                         "setVcm|s|0", 1, "computeVcm",
                         "setVcm|newVcm|0", 1, "computeVcm",
                         "setVcm|oldVcm|0", 1, "setVcm",
@@ -5290,19 +5248,13 @@ static int module_init() {
                         "computeVcm|vcmSum|0", 1, "computeVcm",
                         "setTemperature|s|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
                         "setTemperature|temperature|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|iBox|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|iOff|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|ii|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|iType|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|mass|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|sigma|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
+                        "setTemperature|iBox|0", 2, "mkSeed", "gasdev",
+                        "setTemperature|iOff|0", 2, "mkSeed", "gasdev",
+                        "setTemperature|ii|0", 2, "mkSeed", "gasdev",
+                        "setTemperature|mass|0", 2, "mkSeed", "gasdev",
+                        "setTemperature|sigma|0", 2, "mkSeed", "gasdev",
                         "setTemperature|seed|0", 1, "setTemperature",
                         "setTemperature|vZero|0", 1, "setTemperature",
-                        "setTemperature|temp|0", 1, "kineticEnergy",
-                        "setTemperature|scaleFactor|0", 1, "kineticEnergy",
-                        "setTemperature|iBox|1", 1, "kineticEnergy",
-                        "setTemperature|iOff|1", 1, "kineticEnergy",
-                        "setTemperature|ii|1", 1, "kineticEnergy",
                         "randomDisplacements|s|0", 2, "mkSeed", "lcg61",
                         "randomDisplacements|delta|0", 2, "mkSeed", "lcg61",
                         "randomDisplacements|iBox|0", 2, "mkSeed", "lcg61",

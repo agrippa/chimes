@@ -68,11 +68,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 115 17
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 115 27 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 120 37  ({  calling((void*)getNumCUDADevices, 11, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 120 55 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 72 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 72 10 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 71 603  ; int c;
-# 71
- if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0);  }  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 71 603  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 7 6 len=9 save_text_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 8 328  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 26 6 len=9 init_data_resumable
@@ -90,8 +86,4 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 115 17
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 115 27 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 120 37  ({  calling((void*)getNumCUDADevices, 11, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 120 55 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 72 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 72 10 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 71 603  ; int c;
-# 71
- if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(11): { goto call_lbl_11; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp 71 603  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(11): { goto call_lbl_11; } default: { chimes_error(); } }  }  

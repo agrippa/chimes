@@ -18,7 +18,6 @@ static int ____chimes_does_checkpoint_parse_source_npm = 1;
 static int ____must_checkpoint_setup_config_conf_0 = 2;
 static int ____must_checkpoint_setup_config_argc_0 = 2;
 static int ____must_checkpoint_setup_config_argv_0 = 2;
-static int ____must_checkpoint_setup_config_c_0 = 2;
 
 static int ____must_manage_usage = 2;
 static int ____must_manage_setup_config = 2;
@@ -4231,11 +4230,9 @@ rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alia
 # 74 "/home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp"
 void setup_config_npm(config *conf, int argc, char **argv);static int (*____chimes_extern_func_getNumCUDADevices)(void) = getNumCUDADevices;static void (*____chimes_extern_func_parse_source)(char *, struct _source *) = parse_source;
 void setup_config_quick(config *conf, int argc, char **argv); void setup_config(config *conf, int argc, char **argv);
-void setup_config_resumable(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(16130283361139262395UL), (size_t)(0UL), (size_t)(16130283361139262397UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
-# 74 "/home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp"
- if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } ; ;
+void setup_config_resumable(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(16130283361139262395UL), (size_t)(0UL), (size_t)(16130283361139262397UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } ; ;
 # 75 "/home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp"
-     ;
+    int c; ;
 # 76 "/home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp"
     opterr = 0;
 # 77 "/home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp"
@@ -4474,11 +4471,9 @@ rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alia
 
 void default_config(config *conf) { (____chimes_replaying ? default_config_resumable(conf) : default_config_quick(conf)); }
 # 74 "/home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp"
-void setup_config_quick(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(16130283361139262395UL), (size_t)(0UL), (size_t)(16130283361139262397UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
-# 74 "/home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp"
- if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } ; ;
+void setup_config_quick(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(16130283361139262395UL), (size_t)(0UL), (size_t)(16130283361139262397UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; ; ;
 # 75 "/home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp"
-     ;
+    int c; ;
 # 76 "/home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp"
     opterr = 0;
 # 77 "/home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp"
@@ -4815,7 +4810,7 @@ void setup_config_npm(config *conf, int argc, char **argv) {
 
 
 static int module_init() {
-    init_module(16130283361139261957UL, 16, 5, 4, 6, 5, 2, 7, 2, 0, 4,
+    init_module(16130283361139261957UL, 16, 5, 3, 6, 5, 2, 7, 2, 0, 4,
                            &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (16130283361139261957UL + 438UL), "parse_source", (unsigned)2, (16130283361139261957UL + 332UL), (16130283361139261957UL + 368UL),
                            &____alias_loc_id_1, (unsigned)6, (unsigned)0, (unsigned)0, (16130283361139261957UL + 309UL), (16130283361139261957UL + 310UL), (16130283361139261957UL + 311UL), (16130283361139261957UL + 312UL), (16130283361139261957UL + 438UL), (16130283361139261957UL + 455UL),
                            &____alias_loc_id_2, (unsigned)12, (unsigned)0, (unsigned)0, (16130283361139261957UL + 1UL), (16130283361139261957UL + 2UL), (16130283361139261957UL + 3UL), (16130283361139261957UL + 4UL), (16130283361139261957UL + 5UL), (16130283361139261957UL + 6UL), (16130283361139261957UL + 7UL), (16130283361139261957UL + 8UL), (16130283361139261957UL + 9UL), (16130283361139261957UL + 10UL), (16130283361139261957UL + 11UL), (16130283361139261957UL + 30UL),
@@ -4862,9 +4857,8 @@ static int module_init() {
                              "default_config", "_Z14default_configP7_config", 0,
                              "save_layer_text", "_Z15save_layer_textPfiiiiiPKci", 0,
                         "setup_config|conf|0", 2, "parse_source", "getNumCUDADevices",
-                        "setup_config|argc|0", 2, "parse_source", "getNumCUDADevices",
-                        "setup_config|argv|0", 2, "parse_source", "getNumCUDADevices",
-                        "setup_config|c|0", 2, "parse_source", "getNumCUDADevices",
+                        "setup_config|argc|0", 1, "parse_source",
+                        "setup_config|argv|0", 1, "parse_source",
         "default_config", 0UL, (int)1, 16130283361139262395UL,
         "usage", 0UL, (int)1, 16130283361139262397UL);
     return 0;
