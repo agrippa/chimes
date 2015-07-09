@@ -526,23 +526,7 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPE
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 37 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 274 2 ({ calling_npm("addNoise", 0); addNoise_npm(I, &IszX, &IszY, &Nfr, seed); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 274 38 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 7 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 254 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 254 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 256 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 256 7 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 256 9 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 256 14 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 230 669  ; int y;
-# 230
-int x;
-# 230
-int *newMatrix;
-# 230
-int k;
-# 230
- register_stack_vars(4, "videoSequence|y|0", (int *)0x0, "i32", (void *)(&y), (size_t)4, 0, 0, 0, "videoSequence|x|0", (int *)0x0, "i32", (void *)(&x), (size_t)4, 0, 0, 0, "videoSequence|newMatrix|0", (int *)0x0, "i32*", (void *)(&newMatrix), (size_t)8, 1, 0, 0, "videoSequence|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0);  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 230 669  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 8 len=17 calcLikelihoodSum_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 278  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 298 5 len=9 findIndex_quick
@@ -638,18 +622,10 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPE
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 523 34 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 358 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 358 15 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 361 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 361 12 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 362 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 362 12 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 367 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 367 12 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 369 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 369 16 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 7 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 9 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 378 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 378 16 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 3 
@@ -672,127 +648,7 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPEN
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 399 11 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 7 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 10 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 12 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 20 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 410 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 410 24 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 19 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 420 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 420 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 441 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 441 29 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 442 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 442 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 449 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 449 25 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 450 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 450 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 456 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 456 22 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 457 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 457 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 462 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 462 23 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 463 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 463 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 472 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 472 23 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 473 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 473 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 36 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 95 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 126 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 184 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 199 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 489 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 489 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 35 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 491 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 491 13 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 496 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 496 20 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 497 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 497 35 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 8 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 10 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 15 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 509 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 509 22 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 35 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 19 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 35 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 356 799  ; float ____chimes_unroll_var_15;
-# 356
-long long reset;
-# 356
-float ____chimes_unroll_var_14;
-# 356
-long long xyj_time;
-# 356
-int i;
-# 356
-int j;
-# 356
-float ____chimes_unroll_var_13;
-# 356
-long long u_time;
-# 356
-double u1;
-# 356
-float ____chimes_unroll_var_12;
-# 356
-long long cum_sum;
-# 356
-double distance;
-# 356
-double ____chimes_unroll_var_11;
-# 356
-double ____chimes_unroll_var_10;
-# 356
-float ____chimes_unroll_var_9;
-# 356
-long long move_time;
-# 356
-float ____chimes_unroll_var_8;
-# 356
-long long normalize;
-# 356
-float ____chimes_unroll_var_7;
-# 356
-long long sum_time;
-# 356
-double sumWeights;
-# 356
-float ____chimes_unroll_var_6;
-# 356
-long long exponential;
-# 356
-float ____chimes_unroll_var_5;
-# 356
-long long likelihood_time;
-# 356
-float ____chimes_unroll_var_4;
-# 356
-long long error;
-# 356
-long long set_arrays;
-# 356
-int indY;
-# 356
-int indX;
-# 356
-int k;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 356 799  ; int k;
 # 356
 int *ind;
 # 356
@@ -814,21 +670,13 @@ double *weights;
 # 356
 double *objxy;
 # 356
-int y;
-# 356
-int x;
-# 356
 int countOnes;
 # 356
 int *disk;
 # 356
-double ye;
-# 356
-double xe;
-# 356
 int max_size;
 # 356
- register_stack_vars(48, "particleFilter|____chimes_unroll_var_15|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_15), (size_t)4, 0, 0, 0, "particleFilter|reset|0", (int *)0x0, "i64", (void *)(&reset), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_14|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_14), (size_t)4, 0, 0, 0, "particleFilter|xyj_time|0", (int *)0x0, "i64", (void *)(&xyj_time), (size_t)8, 0, 0, 0, "particleFilter|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "particleFilter|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "particleFilter|____chimes_unroll_var_13|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_13), (size_t)4, 0, 0, 0, "particleFilter|u_time|0", (int *)0x0, "i64", (void *)(&u_time), (size_t)8, 0, 0, 0, "particleFilter|u1|0", (int *)0x0, "double", (void *)(&u1), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_12|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_12), (size_t)4, 0, 0, 0, "particleFilter|cum_sum|0", (int *)0x0, "i64", (void *)(&cum_sum), (size_t)8, 0, 0, 0, "particleFilter|distance|0", (int *)0x0, "double", (void *)(&distance), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_11|0", (int *)0x0, "double", (void *)(&____chimes_unroll_var_11), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_10|0", (int *)0x0, "double", (void *)(&____chimes_unroll_var_10), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_9|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_9), (size_t)4, 0, 0, 0, "particleFilter|move_time|0", (int *)0x0, "i64", (void *)(&move_time), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_8|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_8), (size_t)4, 0, 0, 0, "particleFilter|normalize|0", (int *)0x0, "i64", (void *)(&normalize), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_7|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_7), (size_t)4, 0, 0, 0, "particleFilter|sum_time|0", (int *)0x0, "i64", (void *)(&sum_time), (size_t)8, 0, 0, 0, "particleFilter|sumWeights|0", (int *)0x0, "double", (void *)(&sumWeights), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_6|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_6), (size_t)4, 0, 0, 0, "particleFilter|exponential|0", (int *)0x0, "i64", (void *)(&exponential), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_5|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_5), (size_t)4, 0, 0, 0, "particleFilter|likelihood_time|0", (int *)0x0, "i64", (void *)(&likelihood_time), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_4|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_4), (size_t)4, 0, 0, 0, "particleFilter|error|0", (int *)0x0, "i64", (void *)(&error), (size_t)8, 0, 0, 0, "particleFilter|set_arrays|0", (int *)0x0, "i64", (void *)(&set_arrays), (size_t)8, 0, 0, 0, "particleFilter|indY|0", (int *)0x0, "i32", (void *)(&indY), (size_t)4, 0, 0, 0, "particleFilter|indX|0", (int *)0x0, "i32", (void *)(&indX), (size_t)4, 0, 0, 0, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|y|0", (int *)0x0, "i32", (void *)(&y), (size_t)4, 0, 0, 0, "particleFilter|x|0", (int *)0x0, "i32", (void *)(&x), (size_t)4, 0, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|ye|0", (int *)0x0, "double", (void *)(&ye), (size_t)8, 0, 0, 0, "particleFilter|xe|0", (int *)0x0, "double", (void *)(&xe), (size_t)8, 0, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0);  
+ register_stack_vars(14, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0);  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 538 5 len=4 main_quick
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 605 30 ({ calling_npm("get_time", 0); get_time_npm(); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 605 39 
@@ -862,11 +710,7 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPEN
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 605 18 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 608 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 608 29 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 614 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 614 34 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 538 169  ; float ____chimes_unroll_var_16;
-# 538
-long long endVideoSequence;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 538 169  ; long long endVideoSequence;
 # 538
 long long start;
 # 538
@@ -882,7 +726,7 @@ int IszY;
 # 538
 int IszX;
 # 538
- register_stack_vars(9, "main|____chimes_unroll_var_16|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_16), (size_t)4, 0, 0, 0, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0);  
+ register_stack_vars(8, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0);  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 34 11 len=8 get_time_resumable
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 35 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 35 20 
@@ -934,23 +778,7 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPE
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 37 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 274 2 ({ calling_npm("addNoise", 0); addNoise_npm(I, &IszX, &IszY, &Nfr, seed); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 274 38 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 7 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 254 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 254 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 256 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 256 7 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 256 9 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 256 14 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 230 669  ; int y;
-# 230
-int x;
-# 230
-int *newMatrix;
-# 230
-int k;
-# 230
- register_stack_vars(4, "videoSequence|y|0", (int *)0x0, "i32", (void *)(&y), (size_t)4, 0, 0, 0, "videoSequence|x|0", (int *)0x0, "i32", (void *)(&x), (size_t)4, 0, 0, 0, "videoSequence|newMatrix|0", (int *)0x0, "i32*", (void *)(&newMatrix), (size_t)8, 1, 0, 0, "videoSequence|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 230 669  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 8 len=17 calcLikelihoodSum_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 278  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 298 5 len=9 findIndex_resumable
@@ -1046,18 +874,10 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPE
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 523 34 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 358 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 358 15 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 361 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 361 12 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 362 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 362 12 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 367 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 367 12 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 369 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 369 16 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 7 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 9 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 378 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 378 16 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 3 
@@ -1080,127 +900,7 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPEN
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 399 11 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 7 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 10 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 12 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 20 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 410 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 410 24 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 19 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 420 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 420 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 441 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 441 29 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 442 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 442 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 449 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 449 25 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 450 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 450 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 456 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 456 22 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 457 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 457 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 462 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 462 23 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 463 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 463 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 472 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 472 23 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 473 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 473 34 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 36 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 95 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 126 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 184 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 476 199 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 489 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 489 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 35 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 491 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 491 13 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 496 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 496 20 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 497 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 497 35 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 8 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 10 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 15 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 509 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 509 22 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 35 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 19 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 35 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 356 799  ; float ____chimes_unroll_var_15;
-# 356
-long long reset;
-# 356
-float ____chimes_unroll_var_14;
-# 356
-long long xyj_time;
-# 356
-int i;
-# 356
-int j;
-# 356
-float ____chimes_unroll_var_13;
-# 356
-long long u_time;
-# 356
-double u1;
-# 356
-float ____chimes_unroll_var_12;
-# 356
-long long cum_sum;
-# 356
-double distance;
-# 356
-double ____chimes_unroll_var_11;
-# 356
-double ____chimes_unroll_var_10;
-# 356
-float ____chimes_unroll_var_9;
-# 356
-long long move_time;
-# 356
-float ____chimes_unroll_var_8;
-# 356
-long long normalize;
-# 356
-float ____chimes_unroll_var_7;
-# 356
-long long sum_time;
-# 356
-double sumWeights;
-# 356
-float ____chimes_unroll_var_6;
-# 356
-long long exponential;
-# 356
-float ____chimes_unroll_var_5;
-# 356
-long long likelihood_time;
-# 356
-float ____chimes_unroll_var_4;
-# 356
-long long error;
-# 356
-long long set_arrays;
-# 356
-int indY;
-# 356
-int indX;
-# 356
-int k;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 356 799  ; int k;
 # 356
 int *ind;
 # 356
@@ -1222,21 +922,13 @@ double *weights;
 # 356
 double *objxy;
 # 356
-int y;
-# 356
-int x;
-# 356
 int countOnes;
 # 356
 int *disk;
 # 356
-double ye;
-# 356
-double xe;
-# 356
 int max_size;
 # 356
- register_stack_vars(48, "particleFilter|____chimes_unroll_var_15|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_15), (size_t)4, 0, 0, 0, "particleFilter|reset|0", (int *)0x0, "i64", (void *)(&reset), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_14|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_14), (size_t)4, 0, 0, 0, "particleFilter|xyj_time|0", (int *)0x0, "i64", (void *)(&xyj_time), (size_t)8, 0, 0, 0, "particleFilter|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "particleFilter|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "particleFilter|____chimes_unroll_var_13|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_13), (size_t)4, 0, 0, 0, "particleFilter|u_time|0", (int *)0x0, "i64", (void *)(&u_time), (size_t)8, 0, 0, 0, "particleFilter|u1|0", (int *)0x0, "double", (void *)(&u1), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_12|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_12), (size_t)4, 0, 0, 0, "particleFilter|cum_sum|0", (int *)0x0, "i64", (void *)(&cum_sum), (size_t)8, 0, 0, 0, "particleFilter|distance|0", (int *)0x0, "double", (void *)(&distance), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_11|0", (int *)0x0, "double", (void *)(&____chimes_unroll_var_11), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_10|0", (int *)0x0, "double", (void *)(&____chimes_unroll_var_10), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_9|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_9), (size_t)4, 0, 0, 0, "particleFilter|move_time|0", (int *)0x0, "i64", (void *)(&move_time), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_8|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_8), (size_t)4, 0, 0, 0, "particleFilter|normalize|0", (int *)0x0, "i64", (void *)(&normalize), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_7|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_7), (size_t)4, 0, 0, 0, "particleFilter|sum_time|0", (int *)0x0, "i64", (void *)(&sum_time), (size_t)8, 0, 0, 0, "particleFilter|sumWeights|0", (int *)0x0, "double", (void *)(&sumWeights), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_6|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_6), (size_t)4, 0, 0, 0, "particleFilter|exponential|0", (int *)0x0, "i64", (void *)(&exponential), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_5|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_5), (size_t)4, 0, 0, 0, "particleFilter|likelihood_time|0", (int *)0x0, "i64", (void *)(&likelihood_time), (size_t)8, 0, 0, 0, "particleFilter|____chimes_unroll_var_4|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_4), (size_t)4, 0, 0, 0, "particleFilter|error|0", (int *)0x0, "i64", (void *)(&error), (size_t)8, 0, 0, 0, "particleFilter|set_arrays|0", (int *)0x0, "i64", (void *)(&set_arrays), (size_t)8, 0, 0, 0, "particleFilter|indY|0", (int *)0x0, "i32", (void *)(&indY), (size_t)4, 0, 0, 0, "particleFilter|indX|0", (int *)0x0, "i32", (void *)(&indX), (size_t)4, 0, 0, 0, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|y|0", (int *)0x0, "i32", (void *)(&y), (size_t)4, 0, 0, 0, "particleFilter|x|0", (int *)0x0, "i32", (void *)(&x), (size_t)4, 0, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|ye|0", (int *)0x0, "double", (void *)(&ye), (size_t)8, 0, 0, 0, "particleFilter|xe|0", (int *)0x0, "double", (void *)(&xe), (size_t)8, 0, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(35): { goto call_lbl_35; } default: { chimes_error(); } }  }  
+ register_stack_vars(14, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(35): { goto call_lbl_35; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 538 5 len=4 main_resumable
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 605 30 ({ calling_npm("get_time", 0); get_time_npm(); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 605 39 
@@ -1270,11 +962,7 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPEN
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 605 18 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 608 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 608 29 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 614 4 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 614 34 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 538 169  ; float ____chimes_unroll_var_16;
-# 538
-long long endVideoSequence;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 538 169  ; long long endVideoSequence;
 # 538
 long long start;
 # 538
@@ -1290,4 +978,4 @@ int IszY;
 # 538
 int IszX;
 # 538
- register_stack_vars(9, "main|____chimes_unroll_var_16|0", (int *)0x0, "float", (void *)(&____chimes_unroll_var_16), (size_t)4, 0, 0, 0, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(32): { goto call_lbl_32; } case(34): { goto call_lbl_34; } default: { chimes_error(); } }  }  
+ register_stack_vars(8, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(32): { goto call_lbl_32; } case(34): { goto call_lbl_34; } default: { chimes_error(); } }  }  

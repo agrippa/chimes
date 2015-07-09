@@ -2661,13 +2661,13 @@ extern int solver( float** y,
      float* params,
      int mode);
 
-extern void read( char* filename,
+extern void myocyte_read( char* filename,
      float* input,
      int data_rows,
      int data_cols,
      int major);
 
-extern void write( char* filename,
+extern void myocyte_write( char* filename,
      float* input,
      int data_rows,
      int data_cols,

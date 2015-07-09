@@ -429,117 +429,44 @@ RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 240 4
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 240 20 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 16 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 29 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 31 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 42 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 10 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 23 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 25 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 39 
 InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 242 7  lbl_0: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 242 15  if (____must_checkpoint_eamForce_iBox_0 != 0) { register_stack_var("eamForce|iBox|0", &____must_checkpoint_eamForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 242 15 
 InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 244 8  lbl_1: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 244 17  if (____must_checkpoint_eamForce_nIBox_0 != 0) { register_stack_var("eamForce|nIBox|0", &____must_checkpoint_eamForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 244 17 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 8  lbl_2: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 21  if (____must_checkpoint_eamForce_nNbrBoxes_0 != 0) { register_stack_var("eamForce|nNbrBoxes|0", &____must_checkpoint_eamForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 21 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 247 10  lbl_3: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 247 18  if (____must_checkpoint_eamForce_jTmp_0 != 0) { register_stack_var("eamForce|jTmp|0", &____must_checkpoint_eamForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 247 18 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 249 11  lbl_4: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 249 19  if (____must_checkpoint_eamForce_jBox_0 != 0) { register_stack_var("eamForce|jBox|0", &____must_checkpoint_eamForce_jBox_0, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 249 19 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 252 11  lbl_5: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 252 20  if (____must_checkpoint_eamForce_nJBox_0 != 0) { register_stack_var("eamForce|nJBox|0", &____must_checkpoint_eamForce_nJBox_0, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 252 20 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 13  lbl_6: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 21  if (____must_checkpoint_eamForce_iOff_0 != 0) { register_stack_var("eamForce|iOff|0", &____must_checkpoint_eamForce_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 21 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 24  lbl_7: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 30  if (____must_checkpoint_eamForce_ii_0 != 0) { register_stack_var("eamForce|ii|0", &____must_checkpoint_eamForce_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 30 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 16  lbl_8: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 24  if (____must_checkpoint_eamForce_jOff_0 != 0) { register_stack_var("eamForce|jOff|0", &____must_checkpoint_eamForce_jOff_0, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 24 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 27  lbl_9: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 33  if (____must_checkpoint_eamForce_ij_0 != 0) { register_stack_var("eamForce|ij|0", &____must_checkpoint_eamForce_ij_0, "i32", (void *)(&ij), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 33 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 261 17  lbl_10: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 261 26  if (____must_checkpoint_eamForce_r2_0 != 0) { register_stack_var("eamForce|r2|0", &____must_checkpoint_eamForce_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 261 26 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 16  lbl_11: 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 16  lbl_2: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 24  if (____must_checkpoint_eamForce_dr_0 != 0) { register_stack_var("eamForce|dr|0", &____must_checkpoint_eamForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 24 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 263 19  lbl_12: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 263 24  if (____must_checkpoint_eamForce_k_0 != 0) { register_stack_var("eamForce|k|0", &____must_checkpoint_eamForce_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 263 24 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 270 17  lbl_13: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 270 25  if (____must_checkpoint_eamForce_r_0 != 0) { register_stack_var("eamForce|r|0", &____must_checkpoint_eamForce_r_0, "double", (void *)(&r), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 270 25 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 44  lbl_14: 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 44  lbl_3: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 57  if (____must_checkpoint_eamForce_rhoTmp_0 != 0) { register_stack_var("eamForce|rhoTmp|0", &____must_checkpoint_eamForce_rhoTmp_0, "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 57 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 276 19  lbl_15: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 276 24  if (____must_checkpoint_eamForce_k_1 != 0) { register_stack_var("eamForce|k|1", &____must_checkpoint_eamForce_k_1, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 276 24 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 7  lbl_16: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 15  if (____must_checkpoint_eamForce_iBox_1 != 0) { register_stack_var("eamForce|iBox|1", &____must_checkpoint_eamForce_iBox_1, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 15 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 8  lbl_17: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 17  if (____must_checkpoint_eamForce_nIBox_1 != 0) { register_stack_var("eamForce|nIBox|1", &____must_checkpoint_eamForce_nIBox_1, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 17 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 10  lbl_18: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 18  if (____must_checkpoint_eamForce_iOff_2 != 0) { register_stack_var("eamForce|iOff|2", &____must_checkpoint_eamForce_iOff_2, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 18 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 21  lbl_19: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 27  if (____must_checkpoint_eamForce_ii_1 != 0) { register_stack_var("eamForce|ii|1", &____must_checkpoint_eamForce_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 27 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 7  lbl_20: 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 7  lbl_4: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  if (____must_checkpoint_eamForce_iBox_2 != 0) { register_stack_var("eamForce|iBox|2", &____must_checkpoint_eamForce_iBox_2, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 15 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 8  lbl_21: 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 8  lbl_5: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  if (____must_checkpoint_eamForce_nIBox_2 != 0) { register_stack_var("eamForce|nIBox|2", &____must_checkpoint_eamForce_nIBox_2, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 17 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 8  lbl_22: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 21  if (____must_checkpoint_eamForce_nNbrBoxes_1 != 0) { register_stack_var("eamForce|nNbrBoxes|1", &____must_checkpoint_eamForce_nNbrBoxes_1, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 21 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 10  lbl_23: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 18  if (____must_checkpoint_eamForce_jTmp_1 != 0) { register_stack_var("eamForce|jTmp|1", &____must_checkpoint_eamForce_jTmp_1, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 18 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 11  lbl_24: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 19  if (____must_checkpoint_eamForce_jBox_1 != 0) { register_stack_var("eamForce|jBox|1", &____must_checkpoint_eamForce_jBox_1, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 19 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 11  lbl_25: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 20  if (____must_checkpoint_eamForce_nJBox_1 != 0) { register_stack_var("eamForce|nJBox|1", &____must_checkpoint_eamForce_nJBox_1, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 20 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 13  lbl_26: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 21  if (____must_checkpoint_eamForce_iOff_3 != 0) { register_stack_var("eamForce|iOff|3", &____must_checkpoint_eamForce_iOff_3, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 21 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 24  lbl_27: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 30  if (____must_checkpoint_eamForce_ii_2 != 0) { register_stack_var("eamForce|ii|2", &____must_checkpoint_eamForce_ii_2, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 30 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 16  lbl_28: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 24  if (____must_checkpoint_eamForce_jOff_1 != 0) { register_stack_var("eamForce|jOff|1", &____must_checkpoint_eamForce_jOff_1, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 24 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 27  lbl_29: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 33  if (____must_checkpoint_eamForce_ij_1 != 0) { register_stack_var("eamForce|ij|1", &____must_checkpoint_eamForce_ij_1, "i32", (void *)(&ij), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 33 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 346 17  lbl_30: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 346 26  if (____must_checkpoint_eamForce_r2_1 != 0) { register_stack_var("eamForce|r2|1", &____must_checkpoint_eamForce_r2_1, "double", (void *)(&r2), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 346 26 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 16  lbl_31: 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 16  lbl_6: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 24  if (____must_checkpoint_eamForce_dr_1 != 0) { register_stack_var("eamForce|dr|1", &____must_checkpoint_eamForce_dr_1, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 24 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 348 19  lbl_32: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 348 24  if (____must_checkpoint_eamForce_k_2 != 0) { register_stack_var("eamForce|k|2", &____must_checkpoint_eamForce_k_2, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 348 24 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 17  lbl_33: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 25  if (____must_checkpoint_eamForce_r_1 != 0) { register_stack_var("eamForce|r|1", &____must_checkpoint_eamForce_r_1, "double", (void *)(&r), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 25 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 16  lbl_34: 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 16  lbl_7: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  if (____must_checkpoint_eamForce_rhoTmp_1 != 0) { register_stack_var("eamForce|rhoTmp|1", &____must_checkpoint_eamForce_rhoTmp_1, "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 29 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 19  lbl_35: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  if (____must_checkpoint_eamForce_k_3 != 0) { register_stack_var("eamForce|k|3", &____must_checkpoint_eamForce_k_3, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 215 253  ; real_t fEmbed;
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 31  lbl_8: 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 42  if (____must_checkpoint_eamForce_dRho_1 != 0) { register_stack_var("eamForce|dRho|1", &____must_checkpoint_eamForce_dRho_1, "double", (void *)(&dRho), (size_t)8, 0, 0, 0); } 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 42 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 215 253  ; real_t dfEmbed;
+# 215
+real_t fEmbed;
+# 215
+real_t dPhi;
 # 215
 real_t phiTmp;
 # 215
@@ -551,7 +478,7 @@ real_t rCut2;
 # 215
 EamPotential *pot;
 # 215
- if (____must_checkpoint_eamForce_fEmbed_0 || ____must_checkpoint_eamForce_phiTmp_0 || ____must_checkpoint_eamForce_nbrBoxes_0 || ____must_checkpoint_eamForce_etot_0 || ____must_checkpoint_eamForce_rCut2_0 || ____must_checkpoint_eamForce_pot_0) { register_stack_vars(6, "eamForce|fEmbed|0", &____must_checkpoint_eamForce_fEmbed_0, "double", (void *)(&fEmbed), (size_t)8, 0, 0, 0, "eamForce|phiTmp|0", &____must_checkpoint_eamForce_phiTmp_0, "double", (void *)(&phiTmp), (size_t)8, 0, 0, 0, "eamForce|nbrBoxes|0", &____must_checkpoint_eamForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "eamForce|etot|0", &____must_checkpoint_eamForce_etot_0, "double", (void *)(&etot), (size_t)8, 0, 0, 0, "eamForce|rCut2|0", &____must_checkpoint_eamForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "eamForce|pot|0", &____must_checkpoint_eamForce_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  
+ if (____must_checkpoint_eamForce_dfEmbed_0 || ____must_checkpoint_eamForce_fEmbed_0 || ____must_checkpoint_eamForce_dPhi_0 || ____must_checkpoint_eamForce_phiTmp_0 || ____must_checkpoint_eamForce_nbrBoxes_0 || ____must_checkpoint_eamForce_etot_0 || ____must_checkpoint_eamForce_rCut2_0 || ____must_checkpoint_eamForce_pot_0) { register_stack_vars(8, "eamForce|dfEmbed|0", &____must_checkpoint_eamForce_dfEmbed_0, "double", (void *)(&dfEmbed), (size_t)8, 0, 0, 0, "eamForce|fEmbed|0", &____must_checkpoint_eamForce_fEmbed_0, "double", (void *)(&fEmbed), (size_t)8, 0, 0, 0, "eamForce|dPhi|0", &____must_checkpoint_eamForce_dPhi_0, "double", (void *)(&dPhi), (size_t)8, 0, 0, 0, "eamForce|phiTmp|0", &____must_checkpoint_eamForce_phiTmp_0, "double", (void *)(&phiTmp), (size_t)8, 0, 0, 0, "eamForce|nbrBoxes|0", &____must_checkpoint_eamForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "eamForce|etot|0", &____must_checkpoint_eamForce_etot_0, "double", (void *)(&etot), (size_t)8, 0, 0, 0, "eamForce|rCut2|0", &____must_checkpoint_eamForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "eamForce|pot|0", &____must_checkpoint_eamForce_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 376 6 len=8 eamPrint_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 377 180  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 388 6 len=10 eamDestroy_quick
@@ -601,13 +528,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 17
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 64 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 15 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 572 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 572 19 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 358  ; int valuesSize;
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 358  ; buf_2_t buf;
 # 550
-buf_2_t buf;
-# 550
- if (____must_checkpoint_bcastInterpolationObject_valuesSize_0 || ____must_checkpoint_bcastInterpolationObject_buf_0) { register_stack_vars(2, "bcastInterpolationObject|valuesSize|0", &____must_checkpoint_bcastInterpolationObject_valuesSize_0, "i32", (void *)(&valuesSize), (size_t)4, 0, 0, 0, "bcastInterpolationObject|buf|0", &____must_checkpoint_bcastInterpolationObject_buf_0, "%struct._buf_2_t = type { i32, double, double }", (void *)(&buf), (size_t)24, 0, 1, 0);  }  
+ if (____must_checkpoint_bcastInterpolationObject_buf_0) { register_stack_vars(1, "bcastInterpolationObject|buf|0", &____must_checkpoint_bcastInterpolationObject_buf_0, "%struct._buf_2_t = type { i32, double, double }", (void *)(&buf), (size_t)24, 0, 1, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 635 6 len=12 eamReadSetfl_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 28 ({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadSetfl", tmp); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 60 
@@ -703,117 +626,44 @@ RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 240 4
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 240 20 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 16 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 29 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 31 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 42 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 10 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 23 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 25 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 39 
 InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 242 7  lbl_0: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 242 15  if (____must_checkpoint_eamForce_iBox_0 != 0) { register_stack_var("eamForce|iBox|0", &____must_checkpoint_eamForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 242 15  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 244 8  lbl_1: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 244 17  if (____must_checkpoint_eamForce_nIBox_0 != 0) { register_stack_var("eamForce|nIBox|0", &____must_checkpoint_eamForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 244 17  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 8  lbl_2: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 21  if (____must_checkpoint_eamForce_nNbrBoxes_0 != 0) { register_stack_var("eamForce|nNbrBoxes|0", &____must_checkpoint_eamForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 21  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 247 10  lbl_3: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 247 18  if (____must_checkpoint_eamForce_jTmp_0 != 0) { register_stack_var("eamForce|jTmp|0", &____must_checkpoint_eamForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 247 18  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 249 11  lbl_4: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 249 19  if (____must_checkpoint_eamForce_jBox_0 != 0) { register_stack_var("eamForce|jBox|0", &____must_checkpoint_eamForce_jBox_0, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 249 19  if (____chimes_replaying) { goto lbl_5; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 252 11  lbl_5: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 252 20  if (____must_checkpoint_eamForce_nJBox_0 != 0) { register_stack_var("eamForce|nJBox|0", &____must_checkpoint_eamForce_nJBox_0, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 252 20  if (____chimes_replaying) { goto lbl_6; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 13  lbl_6: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 21  if (____must_checkpoint_eamForce_iOff_0 != 0) { register_stack_var("eamForce|iOff|0", &____must_checkpoint_eamForce_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 21  if (____chimes_replaying) { goto lbl_7; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 24  lbl_7: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 30  if (____must_checkpoint_eamForce_ii_0 != 0) { register_stack_var("eamForce|ii|0", &____must_checkpoint_eamForce_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 30  if (____chimes_replaying) { goto lbl_8; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 16  lbl_8: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 24  if (____must_checkpoint_eamForce_jOff_0 != 0) { register_stack_var("eamForce|jOff|0", &____must_checkpoint_eamForce_jOff_0, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 24  if (____chimes_replaying) { goto lbl_9; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 27  lbl_9: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 33  if (____must_checkpoint_eamForce_ij_0 != 0) { register_stack_var("eamForce|ij|0", &____must_checkpoint_eamForce_ij_0, "i32", (void *)(&ij), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 33  if (____chimes_replaying) { goto lbl_10; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 261 17  lbl_10: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 261 26  if (____must_checkpoint_eamForce_r2_0 != 0) { register_stack_var("eamForce|r2|0", &____must_checkpoint_eamForce_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 261 26  if (____chimes_replaying) { goto lbl_11; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 16  lbl_11: 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 16  lbl_2: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 24  if (____must_checkpoint_eamForce_dr_0 != 0) { register_stack_var("eamForce|dr|0", &____must_checkpoint_eamForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 24  if (____chimes_replaying) { goto lbl_12; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 263 19  lbl_12: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 263 24  if (____must_checkpoint_eamForce_k_0 != 0) { register_stack_var("eamForce|k|0", &____must_checkpoint_eamForce_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 263 24  if (____chimes_replaying) { goto lbl_13; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 270 17  lbl_13: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 270 25  if (____must_checkpoint_eamForce_r_0 != 0) { register_stack_var("eamForce|r|0", &____must_checkpoint_eamForce_r_0, "double", (void *)(&r), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 270 25  if (____chimes_replaying) { goto lbl_14; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 44  lbl_14: 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 24  if (____chimes_replaying) { goto lbl_3; } 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 44  lbl_3: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 57  if (____must_checkpoint_eamForce_rhoTmp_0 != 0) { register_stack_var("eamForce|rhoTmp|0", &____must_checkpoint_eamForce_rhoTmp_0, "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 57  if (____chimes_replaying) { goto lbl_15; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 276 19  lbl_15: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 276 24  if (____must_checkpoint_eamForce_k_1 != 0) { register_stack_var("eamForce|k|1", &____must_checkpoint_eamForce_k_1, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 276 24  if (____chimes_replaying) { goto lbl_16; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 7  lbl_16: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 15  if (____must_checkpoint_eamForce_iBox_1 != 0) { register_stack_var("eamForce|iBox|1", &____must_checkpoint_eamForce_iBox_1, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 15  if (____chimes_replaying) { goto lbl_17; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 8  lbl_17: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 17  if (____must_checkpoint_eamForce_nIBox_1 != 0) { register_stack_var("eamForce|nIBox|1", &____must_checkpoint_eamForce_nIBox_1, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 17  if (____chimes_replaying) { goto lbl_18; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 10  lbl_18: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 18  if (____must_checkpoint_eamForce_iOff_2 != 0) { register_stack_var("eamForce|iOff|2", &____must_checkpoint_eamForce_iOff_2, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 18  if (____chimes_replaying) { goto lbl_19; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 21  lbl_19: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 27  if (____must_checkpoint_eamForce_ii_1 != 0) { register_stack_var("eamForce|ii|1", &____must_checkpoint_eamForce_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 27  if (____chimes_replaying) { goto lbl_20; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 7  lbl_20: 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 57  if (____chimes_replaying) { goto lbl_4; } 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 7  lbl_4: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  if (____must_checkpoint_eamForce_iBox_2 != 0) { register_stack_var("eamForce|iBox|2", &____must_checkpoint_eamForce_iBox_2, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  if (____chimes_replaying) { goto lbl_21; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 8  lbl_21: 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  if (____chimes_replaying) { goto lbl_5; } 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 8  lbl_5: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  if (____must_checkpoint_eamForce_nIBox_2 != 0) { register_stack_var("eamForce|nIBox|2", &____must_checkpoint_eamForce_nIBox_2, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  if (____chimes_replaying) { goto lbl_22; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 8  lbl_22: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 21  if (____must_checkpoint_eamForce_nNbrBoxes_1 != 0) { register_stack_var("eamForce|nNbrBoxes|1", &____must_checkpoint_eamForce_nNbrBoxes_1, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 21  if (____chimes_replaying) { goto lbl_23; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 10  lbl_23: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 18  if (____must_checkpoint_eamForce_jTmp_1 != 0) { register_stack_var("eamForce|jTmp|1", &____must_checkpoint_eamForce_jTmp_1, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 18  if (____chimes_replaying) { goto lbl_24; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 11  lbl_24: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 19  if (____must_checkpoint_eamForce_jBox_1 != 0) { register_stack_var("eamForce|jBox|1", &____must_checkpoint_eamForce_jBox_1, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 19  if (____chimes_replaying) { goto lbl_25; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 11  lbl_25: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 20  if (____must_checkpoint_eamForce_nJBox_1 != 0) { register_stack_var("eamForce|nJBox|1", &____must_checkpoint_eamForce_nJBox_1, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 20  if (____chimes_replaying) { goto lbl_26; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 13  lbl_26: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 21  if (____must_checkpoint_eamForce_iOff_3 != 0) { register_stack_var("eamForce|iOff|3", &____must_checkpoint_eamForce_iOff_3, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 21  if (____chimes_replaying) { goto lbl_27; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 24  lbl_27: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 30  if (____must_checkpoint_eamForce_ii_2 != 0) { register_stack_var("eamForce|ii|2", &____must_checkpoint_eamForce_ii_2, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 30  if (____chimes_replaying) { goto lbl_28; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 16  lbl_28: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 24  if (____must_checkpoint_eamForce_jOff_1 != 0) { register_stack_var("eamForce|jOff|1", &____must_checkpoint_eamForce_jOff_1, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 24  if (____chimes_replaying) { goto lbl_29; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 27  lbl_29: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 33  if (____must_checkpoint_eamForce_ij_1 != 0) { register_stack_var("eamForce|ij|1", &____must_checkpoint_eamForce_ij_1, "i32", (void *)(&ij), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 33  if (____chimes_replaying) { goto lbl_30; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 346 17  lbl_30: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 346 26  if (____must_checkpoint_eamForce_r2_1 != 0) { register_stack_var("eamForce|r2|1", &____must_checkpoint_eamForce_r2_1, "double", (void *)(&r2), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 346 26  if (____chimes_replaying) { goto lbl_31; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 16  lbl_31: 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  if (____chimes_replaying) { goto lbl_6; } 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 16  lbl_6: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 24  if (____must_checkpoint_eamForce_dr_1 != 0) { register_stack_var("eamForce|dr|1", &____must_checkpoint_eamForce_dr_1, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 24  if (____chimes_replaying) { goto lbl_32; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 348 19  lbl_32: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 348 24  if (____must_checkpoint_eamForce_k_2 != 0) { register_stack_var("eamForce|k|2", &____must_checkpoint_eamForce_k_2, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 348 24  if (____chimes_replaying) { goto lbl_33; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 17  lbl_33: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 25  if (____must_checkpoint_eamForce_r_1 != 0) { register_stack_var("eamForce|r|1", &____must_checkpoint_eamForce_r_1, "double", (void *)(&r), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 25  if (____chimes_replaying) { goto lbl_34; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 16  lbl_34: 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 24  if (____chimes_replaying) { goto lbl_7; } 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 16  lbl_7: 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  if (____must_checkpoint_eamForce_rhoTmp_1 != 0) { register_stack_var("eamForce|rhoTmp|1", &____must_checkpoint_eamForce_rhoTmp_1, "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  if (____chimes_replaying) { goto lbl_35; } 
-InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 19  lbl_35: 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  if (____must_checkpoint_eamForce_k_3 != 0) { register_stack_var("eamForce|k|3", &____must_checkpoint_eamForce_k_3, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 215 253  ; real_t fEmbed;
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  if (____chimes_replaying) { goto lbl_8; } 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 31  lbl_8: 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 42  if (____must_checkpoint_eamForce_dRho_1 != 0) { register_stack_var("eamForce|dRho|1", &____must_checkpoint_eamForce_dRho_1, "double", (void *)(&dRho), (size_t)8, 0, 0, 0); } 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 42  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 215 253  ; real_t dfEmbed;
+# 215
+real_t fEmbed;
+# 215
+real_t dPhi;
 # 215
 real_t phiTmp;
 # 215
@@ -825,7 +675,7 @@ real_t rCut2;
 # 215
 EamPotential *pot;
 # 215
- if (____must_checkpoint_eamForce_fEmbed_0 || ____must_checkpoint_eamForce_phiTmp_0 || ____must_checkpoint_eamForce_nbrBoxes_0 || ____must_checkpoint_eamForce_etot_0 || ____must_checkpoint_eamForce_rCut2_0 || ____must_checkpoint_eamForce_pot_0) { register_stack_vars(6, "eamForce|fEmbed|0", &____must_checkpoint_eamForce_fEmbed_0, "double", (void *)(&fEmbed), (size_t)8, 0, 0, 0, "eamForce|phiTmp|0", &____must_checkpoint_eamForce_phiTmp_0, "double", (void *)(&phiTmp), (size_t)8, 0, 0, 0, "eamForce|nbrBoxes|0", &____must_checkpoint_eamForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "eamForce|etot|0", &____must_checkpoint_eamForce_etot_0, "double", (void *)(&etot), (size_t)8, 0, 0, 0, "eamForce|rCut2|0", &____must_checkpoint_eamForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "eamForce|pot|0", &____must_checkpoint_eamForce_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) { goto lbl_0; }  
+ if (____must_checkpoint_eamForce_dfEmbed_0 || ____must_checkpoint_eamForce_fEmbed_0 || ____must_checkpoint_eamForce_dPhi_0 || ____must_checkpoint_eamForce_phiTmp_0 || ____must_checkpoint_eamForce_nbrBoxes_0 || ____must_checkpoint_eamForce_etot_0 || ____must_checkpoint_eamForce_rCut2_0 || ____must_checkpoint_eamForce_pot_0) { register_stack_vars(8, "eamForce|dfEmbed|0", &____must_checkpoint_eamForce_dfEmbed_0, "double", (void *)(&dfEmbed), (size_t)8, 0, 0, 0, "eamForce|fEmbed|0", &____must_checkpoint_eamForce_fEmbed_0, "double", (void *)(&fEmbed), (size_t)8, 0, 0, 0, "eamForce|dPhi|0", &____must_checkpoint_eamForce_dPhi_0, "double", (void *)(&dPhi), (size_t)8, 0, 0, 0, "eamForce|phiTmp|0", &____must_checkpoint_eamForce_phiTmp_0, "double", (void *)(&phiTmp), (size_t)8, 0, 0, 0, "eamForce|nbrBoxes|0", &____must_checkpoint_eamForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "eamForce|etot|0", &____must_checkpoint_eamForce_etot_0, "double", (void *)(&etot), (size_t)8, 0, 0, 0, "eamForce|rCut2|0", &____must_checkpoint_eamForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "eamForce|pot|0", &____must_checkpoint_eamForce_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) { goto lbl_0; }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 376 6 len=8 eamPrint_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 377 180  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 388 6 len=10 eamDestroy_resumable
@@ -875,13 +725,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 17
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 64 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 15 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 572 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 572 19 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 358  ; int valuesSize;
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 358  ; buf_2_t buf;
 # 550
-buf_2_t buf;
-# 550
- if (____must_checkpoint_bcastInterpolationObject_valuesSize_0 || ____must_checkpoint_bcastInterpolationObject_buf_0) { register_stack_vars(2, "bcastInterpolationObject|valuesSize|0", &____must_checkpoint_bcastInterpolationObject_valuesSize_0, "i32", (void *)(&valuesSize), (size_t)4, 0, 0, 0, "bcastInterpolationObject|buf|0", &____must_checkpoint_bcastInterpolationObject_buf_0, "%struct._buf_2_t = type { i32, double, double }", (void *)(&buf), (size_t)24, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(8): { goto call_lbl_8; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_bcastInterpolationObject_buf_0) { register_stack_vars(1, "bcastInterpolationObject|buf|0", &____must_checkpoint_bcastInterpolationObject_buf_0, "%struct._buf_2_t = type { i32, double, double }", (void *)(&buf), (size_t)24, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(8): { goto call_lbl_8; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 635 6 len=12 eamReadSetfl_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 28 ({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadSetfl", tmp); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 60 

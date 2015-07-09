@@ -184,8 +184,6 @@ RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 96 6
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 96 17 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 97 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 97 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 98 6 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 98 19 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 20 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 107 6 
@@ -200,25 +198,9 @@ RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 120 6
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 120 18 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 121 8 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 121 16 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 122 12 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 122 19 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 124 14 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 124 28 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 132 10 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 132 20 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 142 47 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 142 63 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 146 6 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 146 22 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 170  ; float point_rate;
-# 86
-double elapsed_s;
-# 86
-float *tmp;
-# 86
-int src_offset;
-# 86
-int src;
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 170  ; double elapsed_s;
 # 86
 int step;
 # 86
@@ -234,8 +216,6 @@ float *curr;
 # 86
 float *c_coeff;
 # 86
-size_t nbytes;
-# 86
 size_t dimz;
 # 86
 size_t dimy;
@@ -248,7 +228,7 @@ float dx;
 # 86
 config conf;
 # 86
- register_stack_vars(19, "main|point_rate|0", &____must_checkpoint_main_point_rate_0, "float", (void *)(&point_rate), (size_t)4, 0, 0, 0, "main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0, "main|tmp|0", (int *)0x0, "float*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|src_offset|0", (int *)0x0, "i32", (void *)(&src_offset), (size_t)4, 0, 0, 0, "main|src|0", (int *)0x0, "i32", (void *)(&src), (size_t)4, 0, 0, 0, "main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0, "main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0, "main|vsq|0", (int *)0x0, "float*", (void *)(&vsq), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "float*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "float*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|c_coeff|0", (int *)0x0, "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0, "main|nbytes|0", (int *)0x0, "i64", (void *)(&nbytes), (size_t)8, 0, 0, 0, "main|dimz|0", (int *)0x0, "i64", (void *)(&dimz), (size_t)8, 0, 0, 0, "main|dimy|0", (int *)0x0, "i64", (void *)(&dimy), (size_t)8, 0, 0, 0, "main|dimx|0", (int *)0x0, "i64", (void *)(&dimx), (size_t)8, 0, 0, 0, "main|dt|0", (int *)0x0, "float", (void *)(&dt), (size_t)4, 0, 0, 0, "main|dx|0", (int *)0x0, "float", (void *)(&dx), (size_t)4, 0, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs));  
+ register_stack_vars(14, "main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0, "main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0, "main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0, "main|vsq|0", (int *)0x0, "float*", (void *)(&vsq), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "float*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "float*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|c_coeff|0", (int *)0x0, "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0, "main|dimz|0", (int *)0x0, "i64", (void *)(&dimz), (size_t)8, 0, 0, 0, "main|dimy|0", (int *)0x0, "i64", (void *)(&dimy), (size_t)8, 0, 0, 0, "main|dimx|0", (int *)0x0, "i64", (void *)(&dimx), (size_t)8, 0, 0, 0, "main|dt|0", &____must_checkpoint_main_dt_0, "float", (void *)(&dt), (size_t)4, 0, 0, 0, "main|dx|0", &____must_checkpoint_main_dx_0, "float", (void *)(&dx), (size_t)4, 0, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs));  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 52 13 len=3 fwd_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 54 355  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 5 len=4 main_resumable
@@ -288,8 +268,6 @@ RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 96 6
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 96 17 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 97 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 97 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 98 6 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 98 19 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 20 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 107 6 
@@ -304,25 +282,9 @@ RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 120 6
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 120 18 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 121 8 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 121 16 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 122 12 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 122 19 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 124 14 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 124 28 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 132 10 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 132 20 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 142 47 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 142 63 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 146 6 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 146 22 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 170  ; float point_rate;
-# 86
-double elapsed_s;
-# 86
-float *tmp;
-# 86
-int src_offset;
-# 86
-int src;
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 170  ; double elapsed_s;
 # 86
 int step;
 # 86
@@ -338,8 +300,6 @@ float *curr;
 # 86
 float *c_coeff;
 # 86
-size_t nbytes;
-# 86
 size_t dimz;
 # 86
 size_t dimy;
@@ -352,4 +312,4 @@ float dx;
 # 86
 config conf;
 # 86
- register_stack_vars(19, "main|point_rate|0", &____must_checkpoint_main_point_rate_0, "float", (void *)(&point_rate), (size_t)4, 0, 0, 0, "main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0, "main|tmp|0", (int *)0x0, "float*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|src_offset|0", (int *)0x0, "i32", (void *)(&src_offset), (size_t)4, 0, 0, 0, "main|src|0", (int *)0x0, "i32", (void *)(&src), (size_t)4, 0, 0, 0, "main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0, "main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0, "main|vsq|0", (int *)0x0, "float*", (void *)(&vsq), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "float*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "float*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|c_coeff|0", (int *)0x0, "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0, "main|nbytes|0", (int *)0x0, "i64", (void *)(&nbytes), (size_t)8, 0, 0, 0, "main|dimz|0", (int *)0x0, "i64", (void *)(&dimz), (size_t)8, 0, 0, 0, "main|dimy|0", (int *)0x0, "i64", (void *)(&dimy), (size_t)8, 0, 0, 0, "main|dimx|0", (int *)0x0, "i64", (void *)(&dimx), (size_t)8, 0, 0, 0, "main|dt|0", (int *)0x0, "float", (void *)(&dt), (size_t)4, 0, 0, 0, "main|dx|0", (int *)0x0, "float", (void *)(&dx), (size_t)4, 0, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs));  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } default: { chimes_error(); } }  }  
+ register_stack_vars(14, "main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0, "main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0, "main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0, "main|vsq|0", (int *)0x0, "float*", (void *)(&vsq), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "float*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "float*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|c_coeff|0", (int *)0x0, "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0, "main|dimz|0", (int *)0x0, "i64", (void *)(&dimz), (size_t)8, 0, 0, 0, "main|dimy|0", (int *)0x0, "i64", (void *)(&dimy), (size_t)8, 0, 0, 0, "main|dimx|0", (int *)0x0, "i64", (void *)(&dimx), (size_t)8, 0, 0, 0, "main|dt|0", &____must_checkpoint_main_dt_0, "float", (void *)(&dt), (size_t)4, 0, 0, 0, "main|dx|0", &____must_checkpoint_main_dx_0, "float", (void *)(&dx), (size_t)4, 0, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs));  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } default: { chimes_error(); } }  }  

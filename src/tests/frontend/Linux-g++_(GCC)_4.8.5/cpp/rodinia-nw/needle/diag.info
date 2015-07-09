@@ -175,34 +175,23 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 19
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 31 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 33 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 44 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 46 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 53 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 55 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 64 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 5 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 24 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 26 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 46 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 48 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 63 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 189 5  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 189 10  register_stack_var("runTest|i|5", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 189 10 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 104 140  ; int *referrence;
 # 104
 int *output_itemsets;
 # 104
 int *input_itemsets;
 # 104
-int index;
-# 104
-int idx;
-# 104
 int penalty;
 # 104
 int max_cols;
 # 104
- register_stack_vars(7, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|index|0", (int *)0x0, "i32", (void *)(&index), (size_t)4, 0, 0, 0, "runTest|idx|0", (int *)0x0, "i32", (void *)(&idx), (size_t)4, 0, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0);  
+ register_stack_vars(5, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0);  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 15 8 len=7 seconds_resumable
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 16 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 16 23 
@@ -246,31 +235,20 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 19
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 31 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 33 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 44 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 46 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 53 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 55 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 105 64 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 5 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 24 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 26 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 46 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 48 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 106 63 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 189 5  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 189 10  register_stack_var("runTest|i|5", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 189 10  if (____chimes_replaying) {  switch(get_next_call()) { case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 104 140  ; int *referrence;
 # 104
 int *output_itemsets;
 # 104
 int *input_itemsets;
 # 104
-int index;
-# 104
-int idx;
-# 104
 int penalty;
 # 104
 int max_cols;
 # 104
- register_stack_vars(7, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|index|0", (int *)0x0, "i32", (void *)(&index), (size_t)4, 0, 0, 0, "runTest|idx|0", (int *)0x0, "i32", (void *)(&idx), (size_t)4, 0, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0);  if (____chimes_replaying) { goto lbl_0; }  
+ register_stack_vars(5, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } default: { chimes_error(); } }  }  

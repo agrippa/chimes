@@ -39,6 +39,7 @@ static std::string demangleABIName(std::string fname);
 namespace {
 
     enum CALLS_CHECKPOINT { DOES_NOT = 0, MAY = 1, DOES = 2 };
+    enum IS_CHECKPOINTED { YES = 0, NO = 1, MAYBE = 2};
 
     typedef struct _SimpleLoc {
         std::string *filename;
@@ -429,6 +430,13 @@ namespace {
         Hasher *calculate_hashes(Module &M);
         std::string traverseAllUses(const Value *user, int nesting);
         std::string findReachableUse(const User *user, const Value *parent, int nesting);
+
+        IS_CHECKPOINTED isCheckpointInLiveRange(BasicBlock *curr, bool currently_live,
+                std::set<StoreInst *> *stores, std::set<LoadInst *> *loads,
+                std::set<BasicBlock *> *visitedWhileLive,
+                std::set<BasicBlock *> *visitedWhileDead,
+                std::set<std::string> *may_cause_checkpoint, Module &M);
+
 
 #ifdef PROFILE
         // long propagateGroupsDownTime = 0;
@@ -2508,6 +2516,76 @@ bool Play::isPathFromCheckpointThroughLoad(BasicBlock *bb,
 }
 
 /*
+ * TODO change this return value to boolean? We kind of only care if it's YES or
+ * not-YES
+ */
+IS_CHECKPOINTED Play::isCheckpointInLiveRange(BasicBlock *curr, bool currently_live,
+        std::set<StoreInst *> *stores, std::set<LoadInst *> *loads,
+        std::set<BasicBlock *> *visitedWhileLive,
+        std::set<BasicBlock *> *visitedWhileDead,
+        std::set<std::string> *may_cause_checkpoint, Module &M) {
+
+    if (currently_live) {
+        if (visitedWhileLive->find(curr) != visitedWhileLive->end()) {
+            return MAYBE;
+        }
+        visitedWhileLive->insert(curr);
+    } else {
+        if (visitedWhileDead->find(curr) != visitedWhileDead->end()) {
+            return MAYBE;
+        }
+        visitedWhileDead->insert(curr);
+    }
+
+    for (BasicBlock::reverse_iterator i = curr->rbegin(), e = curr->rend(); i != e; i++) {
+        Instruction *insn = &*i;
+
+        if (StoreInst *store = dyn_cast<StoreInst>(insn)) {
+            if (stores->find(store) != stores->end()) {
+                currently_live = false;
+            }
+        } else if (LoadInst *load = dyn_cast<LoadInst>(insn)) {
+            if (loads->find(load) != loads->end()) {
+                currently_live = true;
+            }
+        } else if (CallInst *call = dyn_cast<CallInst>(insn)) {
+            if (currently_live) {
+                if (isCheckpoint(call->getCalledFunction())) {
+                    return YES;
+                } else {
+                    std::string checkpointable_call_name =
+                        isPossibleCheckpointCall(call, M);
+                    if (checkpointable_call_name.size() > 0) {
+                        may_cause_checkpoint->insert(checkpointable_call_name);
+                    }
+                }
+            }
+        }
+    }
+
+    set<BasicBlock *> unique_preds;
+    for (auto i = pred_begin(curr),
+            e = pred_end(curr); i != e; i++) {
+        BasicBlock *pred = *i;
+        unique_preds.insert(pred);
+    }
+    for (set<BasicBlock *>::iterator i = unique_preds.begin(),
+            e = unique_preds.end(); i != e; i++) {
+        BasicBlock *pred = *i;
+        IS_CHECKPOINTED parentResult = isCheckpointInLiveRange(pred,
+                currently_live, stores, loads, visitedWhileLive,
+                visitedWhileDead, may_cause_checkpoint, M);
+        if (parentResult == YES) return YES;
+    }
+
+    if (may_cause_checkpoint->size() == 0) {
+        return NO;
+    } else {
+        return MAYBE;
+    }
+}
+
+/*
  * Returns a mapping from stack allocations which must be checkpointed to the
  * function calls which cause them to be checkpointed. If the list of function
  * calls is empty for a stack allocation, it means we were unable to determine
@@ -2528,13 +2606,21 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
         }
     }
 
+    /*
+     * Find all loads and stores to each stack allocation. If for some reason we
+     * might not be able to resolve all loads and stores (e.g. the address of a
+     * stack variable is taken and stored in some other pointer-to-pointers)
+     * then we mark that stack variable as "unsolvable".
+     *
+     * AllocaVisitor is useful because it handles aliasing.
+     */
     AllocaVisitor visitor(initial);
     visitor.driver();
 
-    std::set<BasicBlock *> s_pre_visited;
-    std::set<BasicBlock *> s_post_visited;
-    std::set<BasicBlock *> l_pre_visited;
-    std::set<BasicBlock *> l_post_visited;
+    // std::set<BasicBlock *> s_pre_visited;
+    // std::set<BasicBlock *> s_post_visited;
+    // std::set<BasicBlock *> l_pre_visited;
+    // std::set<BasicBlock *> l_post_visited;
 
     /*
      * Construct a mapping from stack variable allocation to a list of function
@@ -2565,18 +2651,15 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
              * this variable.
              */
             std::set<std::string> just_parent;
-            // std::string *parent_display_name = getFunctionDisplayName(F, M);
-            // assert(parent_display_name);
-            // just_parent.insert(*parent_display_name);
             just_parent.insert(demangleABIName(F->getName().str()));
             result->insert(std::pair<AllocaInst *, std::set<std::string> >(curr,
                         just_parent));
         } else {
-            BasicBlock *entry = &F->getEntryBlock();
-            s_pre_visited.clear();
-            s_post_visited.clear();
-            l_pre_visited.clear();
-            l_post_visited.clear();
+            // BasicBlock *entry = &F->getEntryBlock();
+            // s_pre_visited.clear();
+            // s_post_visited.clear();
+            // l_pre_visited.clear();
+            // l_post_visited.clear();
 
             /*
              * The analysis below is a little coarse because it simply asks
@@ -2595,38 +2678,93 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
              * rather than just any functions following the store. Just removing
              * any functions after the last load would be an improvement. TODO.
              */
-            std::set<std::string> causesCheckpoint;
-            std::map<BasicBlock *, std::set<std::string> > *bb_to_checkpoints =
-                collectPossibleCheckpointsInBBs(F, M);
-            std::map<BasicBlock *, bool> *bb_to_loads = containsLoad(F, loads);
 
-            isPathFromFuncStartToCheckpointThroughStore(entry, stores, false,
-                    &s_pre_visited, &s_post_visited, &causesCheckpoint,
-                    bb_to_checkpoints, M);
-            bool through_store = (causesCheckpoint.size() > 0);
+            vector<BasicBlock *> terminators;
+            for (inst_iterator i = inst_begin(F), e = inst_end(F); i != e; i++) {
+                Instruction *curr = &*i;
+                if (ReturnInst *ret = dyn_cast<ReturnInst>(curr)) {
+                    BasicBlock *parent = ret->getParent();
+                    terminators.push_back(parent);
+                }
+            }
 
-            bool through_load = isPathFromCheckpointThroughLoad(entry, loads,
-                    false, &l_pre_visited, &l_post_visited, bb_to_loads, M);
-            bool should_checkpoint = (through_store && through_load);
-            if (should_checkpoint) {
-                if (causesCheckpoint.find("---") != causesCheckpoint.end()) {
-                    /*
-                     * If we are unable to fetch the function name/info for some
-                     * called function then use the same behavior as if it were
-                     * unsolvable: only checkpoint if the parent function may
-                     * cause a checkpoint.
-                     */
+            std::set<BasicBlock *> visitedWhileLive, visitedWhileDead;
+            std::set<std::string> may_cause_checkpoint;
+            IS_CHECKPOINTED need_to_checkpoint = MAYBE;
+            for (vector<BasicBlock *>::iterator i = terminators.begin(),
+                    e = terminators.end(); need_to_checkpoint != YES && i != e; i++) {
+                BasicBlock *curr = *i;
+                IS_CHECKPOINTED local_need_to_checkpoint = isCheckpointInLiveRange(
+                        curr, false, stores, loads, &visitedWhileLive,
+                        &visitedWhileDead, &may_cause_checkpoint, M);
+                switch (local_need_to_checkpoint) {
+                    case (YES):
+                        need_to_checkpoint = YES;
+                        break;
+                    case (NO):
+                    case (MAYBE):
+                        break;
+                }
+            }
+
+            if (need_to_checkpoint == YES) {
+            } else {
+                if (may_cause_checkpoint.size() == 0) {
+                    need_to_checkpoint = NO;
+                } else {
+                    need_to_checkpoint = MAYBE;
+                }
+            }
+
+            if (need_to_checkpoint == YES) {
+                std::set<std::string> just_checkpoint;
+                just_checkpoint.insert("checkpoint");
+                result->insert(std::pair<AllocaInst *, std::set<std::string> >(
+                            curr, just_checkpoint));
+            } else if (need_to_checkpoint == MAYBE) {
+                if (may_cause_checkpoint.find("---") != may_cause_checkpoint.end()) {
                     std::set<std::string> just_parent;
                     just_parent.insert(F->getName().str());
                     result->insert(std::pair<AllocaInst *, std::set<std::string> >(curr,
                                 just_parent));
                 } else {
                     result->insert(std::pair<AllocaInst *, std::set<std::string> >(
-                                curr, causesCheckpoint));
+                                curr, may_cause_checkpoint));
                 }
             }
 
-            delete bb_to_checkpoints;
+            // std::set<std::string> causesCheckpoint;
+            // std::map<BasicBlock *, std::set<std::string> > *bb_to_checkpoints =
+            //     collectPossibleCheckpointsInBBs(F, M);
+            // std::map<BasicBlock *, bool> *bb_to_loads = containsLoad(F, loads);
+
+            // isPathFromFuncStartToCheckpointThroughStore(entry, stores, false,
+            //         &s_pre_visited, &s_post_visited, &causesCheckpoint,
+            //         bb_to_checkpoints, M);
+            // bool through_store = (causesCheckpoint.size() > 0);
+
+            // bool through_load = isPathFromCheckpointThroughLoad(entry, loads,
+            //         false, &l_pre_visited, &l_post_visited, bb_to_loads, M);
+            // bool should_checkpoint = (through_store && through_load);
+            // if (should_checkpoint) {
+            //     if (causesCheckpoint.find("---") != causesCheckpoint.end()) {
+            //         /*
+            //          * If we are unable to fetch the function name/info for some
+            //          * called function then use the same behavior as if it were
+            //          * unsolvable: only checkpoint if the parent function may
+            //          * cause a checkpoint.
+            //          */
+            //         std::set<std::string> just_parent;
+            //         just_parent.insert(F->getName().str());
+            //         result->insert(std::pair<AllocaInst *, std::set<std::string> >(curr,
+            //                     just_parent));
+            //     } else {
+            //         result->insert(std::pair<AllocaInst *, std::set<std::string> >(
+            //                     curr, causesCheckpoint));
+            //     }
+            // }
+
+            // delete bb_to_checkpoints;
         }
     }
 
@@ -2634,8 +2772,8 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
 }
 
 /*
- * TODO I don't think this supports stack-allocated arrays yet. Related TODO in
- * libchimes.cpp
+ * Find stack allocations that need to be checkpointed and store some metadata
+ * about them.
  */
 void Play::findStackAllocations(Module &M, const char *output_file,
         const char *struct_info_filename) {
@@ -2840,16 +2978,12 @@ void Play::findStackAllocations(Module &M, const char *output_file,
     }
 
     /*
-     * Find which line in the original source to insert a stack variable
-     * registration. LLVM doesn't retain information on what line the actual
-     * declaration is on, so we just look for the earliest users in the CFG and
-     * mark those lines.
+     * Dump the information on each stack allocation to a file.
      */
     for (std::vector<StackAllocInfo *>::iterator alloc_iter =
             alloc_infos.begin(), alloc_end = alloc_infos.end();
             alloc_iter != alloc_end; alloc_iter++) {
         StackAllocInfo *info = *alloc_iter;
-        std::vector<Instruction *> users = info->users;
         std::vector<std::string> *field_names = info->struct_ptr_field_names;
 
         fprintf(fp, "%s %s \" %s \" %d %d %d",
@@ -3394,7 +3528,6 @@ bool Play::runOnModule(Module &M) {
      * add a callback that indicates we are removing a stack frame and any stack
      * variables belonging to it can be ignored now.
      */
-
     findStackAllocations(M, "stack.info", "struct.info");
 
     /*

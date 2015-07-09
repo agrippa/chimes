@@ -62,8 +62,6 @@ static int ____must_checkpoint_main_validate_0 = 2;
 static int ____must_checkpoint_main_nSteps_0 = 2;
 static int ____must_checkpoint_main_printRate_0 = 2;
 static int ____must_checkpoint_main_iStep_0 = 2;
-static int ____must_checkpoint_main_____chimes_unroll_var_0_0 = 2;
-static int ____must_checkpoint_main_____chimes_unroll_var_1_0 = 2;
 static int ____must_checkpoint_initSimulation_sim_0 = 2;
 static int ____must_checkpoint_initSimulation_latticeConstant_0 = 2;
 static int ____must_checkpoint_initSimulation_globalExtent_0 = 2;
@@ -73,8 +71,6 @@ static int ____must_checkpoint_printSimulationDataYaml_maxOcc_0 = 2;
 static int ____must_checkpoint_printSimulationDataYaml_perAtomSize_0 = 2;
 static int ____must_checkpoint_printSimulationDataYaml_totalMemLocal_0 = 2;
 static int ____must_checkpoint_printSimulationDataYaml_totalMemGlobal_0 = 2;
-static int ____must_checkpoint_printSimulationDataYaml_nLocalBoxes_0 = 2;
-static int ____must_checkpoint_printSimulationDataYaml_nTotalBoxes_0 = 2;
 static int ____must_checkpoint_printSimulationDataYaml_paddedMemLocal_0 = 2;
 static int ____must_checkpoint_printSimulationDataYaml_paddedMemTotal_0 = 2;
 static int ____must_checkpoint_initValidate_sim_0 = 2;
@@ -88,7 +84,6 @@ static int ____must_checkpoint_validateResult_val_0 = 2;
 static int ____must_checkpoint_validateResult_sim_0 = 2;
 static int ____must_checkpoint_destroySimulation_ps_0 = 2;
 static int ____must_checkpoint_destroySimulation_s_0 = 2;
-static int ____must_checkpoint_initPotential_pot_0 = 2;
 static int ____must_checkpoint_sanityChecks_cutoff_0 = 2;
 static int ____must_checkpoint_sanityChecks_latticeConst_0 = 2;
 static int ____must_checkpoint_sanityChecks_latticeType_0 = 2;
@@ -96,9 +91,6 @@ static int ____must_checkpoint_sanityChecks_failCode_0 = 2;
 static int ____must_checkpoint_sanityChecks_minx_0 = 2;
 static int ____must_checkpoint_sanityChecks_miny_0 = 2;
 static int ____must_checkpoint_sanityChecks_minz_0 = 2;
-static int ____must_checkpoint_sanityChecks_sizex_0 = 2;
-static int ____must_checkpoint_sanityChecks_sizey_0 = 2;
-static int ____must_checkpoint_sanityChecks_sizez_0 = 2;
 static int ____must_checkpoint_sanityChecks_checkCode_0 = 2;
 
 static int ____must_manage_validateResult = 2;
@@ -4658,11 +4650,7 @@ SimFlat* initSimulation_npm(Command cmd);void destroySimulation_npm(SimFlat** ps
 int main_quick(int argc, char** argv); int main(int argc, char** argv);SimFlat* initSimulation_quick(Command cmd); SimFlat* initSimulation(Command cmd);void destroySimulation_quick(SimFlat** ps); void destroySimulation(SimFlat** ps);void initSubsystems_quick(void); void initSubsystems(void);void finalizeSubsystems_quick(void); void finalizeSubsystems(void);Validate* initValidate_quick(SimFlat* sim); Validate* initValidate(SimFlat* sim);void validateResult_quick(const Validate* val, SimFlat* sim); void validateResult(const Validate* val, SimFlat* sim);void sumAtoms_quick(SimFlat* s); void sumAtoms(SimFlat* s);void printThings_quick(SimFlat* s, int iStep, double elapsedTime); void printThings(SimFlat* s, int iStep, double elapsedTime);void printSimulationDataYaml_quick(FILE* file, SimFlat* s); void printSimulationDataYaml(FILE* file, SimFlat* s);
 int main_resumable(int argc, char** argv)
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(9903828072463843389UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double ____chimes_unroll_var_1;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-double ____chimes_unroll_var_0;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-int iStep;
+{const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(9903828072463843389UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int iStep;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 int printRate;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -4674,7 +4662,7 @@ SimFlat *sim;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 Command cmd;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- if (____must_checkpoint_main_____chimes_unroll_var_1_0 || ____must_checkpoint_main_____chimes_unroll_var_0_0 || ____must_checkpoint_main_iStep_0 || ____must_checkpoint_main_printRate_0 || ____must_checkpoint_main_nSteps_0 || ____must_checkpoint_main_validate_0 || ____must_checkpoint_main_sim_0 || ____must_checkpoint_main_cmd_0) { register_stack_vars(8, "main|____chimes_unroll_var_1|0", &____must_checkpoint_main_____chimes_unroll_var_1_0, "double", (void *)(&____chimes_unroll_var_1), (size_t)8, 0, 0, 0, "main|____chimes_unroll_var_0|0", &____must_checkpoint_main_____chimes_unroll_var_0_0, "double", (void *)(&____chimes_unroll_var_0), (size_t)8, 0, 0, 0, "main|iStep|0", &____must_checkpoint_main_iStep_0, "i32", (void *)(&iStep), (size_t)4, 0, 0, 0, "main|printRate|0", &____must_checkpoint_main_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0, "main|nSteps|0", &____must_checkpoint_main_nSteps_0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "main|validate|0", &____must_checkpoint_main_validate_0, "%struct.ValidateSt*", (void *)(&validate), (size_t)8, 1, 0, 0, "main|sim|0", &____must_checkpoint_main_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0, "main|cmd|0", &____must_checkpoint_main_cmd_0, "%struct.CommandSt = type { [1024 x i8], [1024 x i8], [1024 x i8], i32, i32, i32, i32, i32, i32, i32, i32, i32, double, double, double, double }", (void *)(&cmd), (size_t)3144, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(36): { goto call_lbl_36; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_main_iStep_0 || ____must_checkpoint_main_printRate_0 || ____must_checkpoint_main_nSteps_0 || ____must_checkpoint_main_validate_0 || ____must_checkpoint_main_sim_0 || ____must_checkpoint_main_cmd_0) { register_stack_vars(6, "main|iStep|0", &____must_checkpoint_main_iStep_0, "i32", (void *)(&iStep), (size_t)4, 0, 0, 0, "main|printRate|0", &____must_checkpoint_main_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0, "main|nSteps|0", &____must_checkpoint_main_nSteps_0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "main|validate|0", &____must_checkpoint_main_validate_0, "%struct.ValidateSt*", (void *)(&validate), (size_t)8, 1, 0, 0, "main|sim|0", &____must_checkpoint_main_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0, "main|cmd|0", &____must_checkpoint_main_cmd_0, "%struct.CommandSt = type { [1024 x i8], [1024 x i8], [1024 x i8], i32, i32, i32, i32, i32, i32, i32, i32, i32, double, double, double, double }", (void *)(&cmd), (size_t)3144, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(36): { goto call_lbl_36; } default: { chimes_error(); } } } ; ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_1: (____chimes_does_checkpoint_initParallel_npm ? ( ({ calling((void*)initParallel, 1, ____alias_loc_id_15, 0UL, 2, (size_t)(9903828072463843259UL), (size_t)(9903828072463843260UL)); (initParallel)(&argc, &argv); }) ) : (({ calling_npm("initParallel", ____alias_loc_id_15); (*____chimes_extern_func_initParallel)(&argc, &argv); })));
@@ -4730,7 +4718,7 @@ Command cmd;
       do { call_lbl_18: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 18, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(commReduceTimer); }))); } while(0);
 # 119 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 120 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-           call_lbl_19: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_getElapsedTime_npm ? ( ({ calling((void*)getElapsedTime, 19, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))) ; call_lbl_20: (____chimes_does_checkpoint_printThings_npm ? ( ({ calling((void*)printThings, 20, ____alias_loc_id_8, 0UL, 3, (size_t)(9903828072463843324UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", ____alias_loc_id_8); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })));
+        double ____chimes_unroll_var_0; call_lbl_19: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_getElapsedTime_npm ? ( ({ calling((void*)getElapsedTime, 19, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))) ; call_lbl_20: (____chimes_does_checkpoint_printThings_npm ? ( ({ calling((void*)printThings, 20, ____alias_loc_id_8, 0UL, 3, (size_t)(9903828072463843324UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", ____alias_loc_id_8); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })));
 # 121 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 122 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       do { call_lbl_21: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 21, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(timestepTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(timestepTimer); }))); } while(0);
@@ -4749,7 +4737,7 @@ Command cmd;
 # 130 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_25: (____chimes_does_checkpoint_sumAtoms_npm ? ( ({ calling((void*)sumAtoms, 25, 0, 0UL, 1, (size_t)(9903828072463843324UL)); (sumAtoms)(sim); }) ) : (({ calling_npm("sumAtoms", 0); sumAtoms_npm(sim); })));
 # 131 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-        call_lbl_26: ____chimes_unroll_var_1 = ((____chimes_does_checkpoint_getElapsedTime_npm ? ( ({ calling((void*)getElapsedTime, 26, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))) ; call_lbl_27: (____chimes_does_checkpoint_printThings_npm ? ( ({ calling((void*)printThings, 27, ____alias_loc_id_2, 0UL, 3, (size_t)(9903828072463843324UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", ____alias_loc_id_2); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })));
+     double ____chimes_unroll_var_1; call_lbl_26: ____chimes_unroll_var_1 = ((____chimes_does_checkpoint_getElapsedTime_npm ? ( ({ calling((void*)getElapsedTime, 26, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))) ; call_lbl_27: (____chimes_does_checkpoint_printThings_npm ? ( ({ calling((void*)printThings, 27, ____alias_loc_id_2, 0UL, 3, (size_t)(9903828072463843324UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", ____alias_loc_id_2); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })));
 # 132 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_28: (____chimes_does_checkpoint_timestampBarrier_npm ? ( ({ calling((void*)timestampBarrier, 28, ____alias_loc_id_1, 0UL, 1, (size_t)(9903828072463844623UL)); (timestampBarrier)("Ending simulation\n"); }) ) : (({ calling_npm("timestampBarrier", ____alias_loc_id_1); (*____chimes_extern_func_timestampBarrier)("Ending simulation\n"); })));
 # 133 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -4952,11 +4940,9 @@ BasePotential* initPotential_resumable(
 # 257 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    int doeam, const char* potDir, const char* potName, const char* potType)
 # 258 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&initPotential), "initPotential", &____must_manage_initPotential, 4, 0, (size_t)(0UL), (size_t)(9903828072463844392UL), (size_t)(9903828072463844393UL), (size_t)(9903828072463844394UL)) ; BasePotential *pot;
-# 258 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- if (____must_checkpoint_initPotential_pot_0) { register_stack_vars(1, "initPotential|pot|0", &____must_checkpoint_initPotential_pot_0, "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable5 = new_stack((void *)(&initPotential), "initPotential", &____must_manage_initPotential, 4, 0, (size_t)(0UL), (size_t)(9903828072463844392UL), (size_t)(9903828072463844393UL), (size_t)(9903828072463844394UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 259 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      pot = (__null) ;
+    BasePotential *pot; pot = (__null) ;
 # 260 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 261 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    if (doeam) { call_lbl_1: pot = ({ calling((void*)initEamPot, 1, ____alias_loc_id_46, 9903828072463844387UL, 3, (size_t)(9903828072463844392UL), (size_t)(9903828072463844393UL), (size_t)(9903828072463844394UL)); (initEamPot)(potDir, potName, potType); }) ; } else { call_lbl_2: pot = ({ calling((void*)initLjPot, 2, ____alias_loc_id_45, 9903828072463844387UL, 0); (initLjPot)(); }) ; } ;
@@ -5171,10 +5157,6 @@ void printSimulationDataYaml_resumable(FILE* file, SimFlat* s)
 # 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 float paddedMemLocal;
 # 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-int nTotalBoxes;
-# 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-int nLocalBoxes;
-# 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 float totalMemGlobal;
 # 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 float totalMemLocal;
@@ -5183,7 +5165,7 @@ int perAtomSize;
 # 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 int maxOcc;
 # 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- if (____must_checkpoint_printSimulationDataYaml_paddedMemTotal_0 || ____must_checkpoint_printSimulationDataYaml_paddedMemLocal_0 || ____must_checkpoint_printSimulationDataYaml_nTotalBoxes_0 || ____must_checkpoint_printSimulationDataYaml_nLocalBoxes_0 || ____must_checkpoint_printSimulationDataYaml_totalMemGlobal_0 || ____must_checkpoint_printSimulationDataYaml_totalMemLocal_0 || ____must_checkpoint_printSimulationDataYaml_perAtomSize_0 || ____must_checkpoint_printSimulationDataYaml_maxOcc_0) { register_stack_vars(8, "printSimulationDataYaml|paddedMemTotal|0", &____must_checkpoint_printSimulationDataYaml_paddedMemTotal_0, "float", (void *)(&paddedMemTotal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|paddedMemLocal|0", &____must_checkpoint_printSimulationDataYaml_paddedMemLocal_0, "float", (void *)(&paddedMemLocal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|nTotalBoxes|0", &____must_checkpoint_printSimulationDataYaml_nTotalBoxes_0, "i32", (void *)(&nTotalBoxes), (size_t)4, 0, 0, 0, "printSimulationDataYaml|nLocalBoxes|0", &____must_checkpoint_printSimulationDataYaml_nLocalBoxes_0, "i32", (void *)(&nLocalBoxes), (size_t)4, 0, 0, 0, "printSimulationDataYaml|totalMemGlobal|0", &____must_checkpoint_printSimulationDataYaml_totalMemGlobal_0, "float", (void *)(&totalMemGlobal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|totalMemLocal|0", &____must_checkpoint_printSimulationDataYaml_totalMemLocal_0, "float", (void *)(&totalMemLocal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|perAtomSize|0", &____must_checkpoint_printSimulationDataYaml_perAtomSize_0, "i32", (void *)(&perAtomSize), (size_t)4, 0, 0, 0, "printSimulationDataYaml|maxOcc|0", &____must_checkpoint_printSimulationDataYaml_maxOcc_0, "i32", (void *)(&maxOcc), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(9): { goto call_lbl_9; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_printSimulationDataYaml_paddedMemTotal_0 || ____must_checkpoint_printSimulationDataYaml_paddedMemLocal_0 || ____must_checkpoint_printSimulationDataYaml_totalMemGlobal_0 || ____must_checkpoint_printSimulationDataYaml_totalMemLocal_0 || ____must_checkpoint_printSimulationDataYaml_perAtomSize_0 || ____must_checkpoint_printSimulationDataYaml_maxOcc_0) { register_stack_vars(6, "printSimulationDataYaml|paddedMemTotal|0", &____must_checkpoint_printSimulationDataYaml_paddedMemTotal_0, "float", (void *)(&paddedMemTotal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|paddedMemLocal|0", &____must_checkpoint_printSimulationDataYaml_paddedMemLocal_0, "float", (void *)(&paddedMemLocal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|totalMemGlobal|0", &____must_checkpoint_printSimulationDataYaml_totalMemGlobal_0, "float", (void *)(&totalMemGlobal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|totalMemLocal|0", &____must_checkpoint_printSimulationDataYaml_totalMemLocal_0, "float", (void *)(&totalMemLocal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|perAtomSize|0", &____must_checkpoint_printSimulationDataYaml_perAtomSize_0, "i32", (void *)(&perAtomSize), (size_t)4, 0, 0, 0, "printSimulationDataYaml|maxOcc|0", &____must_checkpoint_printSimulationDataYaml_maxOcc_0, "i32", (void *)(&maxOcc), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(9): { goto call_lbl_9; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ; ;
 # 380 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 381 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
        call_lbl_1: maxOcc = ((____chimes_does_checkpoint_maxOccupancy_npm ? ( ({ LinkCell * ____chimes_arg88; if (!____chimes_replaying) { ____chimes_arg88 = (s->boxes); } calling((void*)maxOccupancy, 1, ____alias_loc_id_32, 0UL, 1, (size_t)(9903828072463843622UL)); (maxOccupancy)(____chimes_arg88); }) ) : (({ calling_npm("maxOccupancy", ____alias_loc_id_32); (*____chimes_extern_func_maxOccupancy)(s->boxes); })))) ;
@@ -5254,9 +5236,9 @@ int maxOcc;
       totalMemGlobal = ((float)(perAtomSize * s->atoms->nGlobal) / 1024 / 1024) ;
 # 418 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 419 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      nLocalBoxes = (s->boxes->gridSize[0] * s->boxes->gridSize[1] * s->boxes->gridSize[2]) ;
+    int nLocalBoxes; nLocalBoxes = (s->boxes->gridSize[0] * s->boxes->gridSize[1] * s->boxes->gridSize[2]) ;
 # 420 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      nTotalBoxes = ((s->boxes->gridSize[0] + 2) * (s->boxes->gridSize[1] + 2) * (s->boxes->gridSize[2] + 2)) ;
+    int nTotalBoxes; nTotalBoxes = ((s->boxes->gridSize[0] + 2) * (s->boxes->gridSize[1] + 2) * (s->boxes->gridSize[2] + 2)) ;
 # 421 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       paddedMemLocal = ((float)nLocalBoxes * (perAtomSize * 64) / 1024 / 1024) ;
 # 422 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5287,12 +5269,6 @@ void sanityChecks_resumable(Command cmd, double cutoff, double latticeConst, cha
 # 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 {const int ____chimes_did_disable12 = new_stack((void *)(&sanityChecks), "sanityChecks", &____must_manage_sanityChecks, 4, 3, (size_t)(9903828072463844545UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9903828072463844548UL), "sanityChecks|cutoff|0", &____must_checkpoint_sanityChecks_cutoff_0, "double", (void *)(&cutoff), (size_t)8, 0, 0, 0, "sanityChecks|latticeConst|0", &____must_checkpoint_sanityChecks_latticeConst_0, "double", (void *)(&latticeConst), (size_t)8, 0, 0, 0, "sanityChecks|latticeType|0", &____must_checkpoint_sanityChecks_latticeType_0, "i8*", (void *)(&latticeType), (size_t)8, 1, 0, 0) ; int checkCode;
 # 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-double sizez;
-# 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-double sizey;
-# 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-double sizex;
-# 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 double minz;
 # 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 double miny;
@@ -5301,7 +5277,7 @@ double minx;
 # 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 int failCode;
 # 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- if (____must_checkpoint_sanityChecks_checkCode_0 || ____must_checkpoint_sanityChecks_sizez_0 || ____must_checkpoint_sanityChecks_sizey_0 || ____must_checkpoint_sanityChecks_sizex_0 || ____must_checkpoint_sanityChecks_minz_0 || ____must_checkpoint_sanityChecks_miny_0 || ____must_checkpoint_sanityChecks_minx_0 || ____must_checkpoint_sanityChecks_failCode_0) { register_stack_vars(8, "sanityChecks|checkCode|0", &____must_checkpoint_sanityChecks_checkCode_0, "i32", (void *)(&checkCode), (size_t)4, 0, 0, 0, "sanityChecks|sizez|0", &____must_checkpoint_sanityChecks_sizez_0, "double", (void *)(&sizez), (size_t)8, 0, 0, 0, "sanityChecks|sizey|0", &____must_checkpoint_sanityChecks_sizey_0, "double", (void *)(&sizey), (size_t)8, 0, 0, 0, "sanityChecks|sizex|0", &____must_checkpoint_sanityChecks_sizex_0, "double", (void *)(&sizex), (size_t)8, 0, 0, 0, "sanityChecks|minz|0", &____must_checkpoint_sanityChecks_minz_0, "double", (void *)(&minz), (size_t)8, 0, 0, 0, "sanityChecks|miny|0", &____must_checkpoint_sanityChecks_miny_0, "double", (void *)(&miny), (size_t)8, 0, 0, 0, "sanityChecks|minx|0", &____must_checkpoint_sanityChecks_minx_0, "double", (void *)(&minx), (size_t)8, 0, 0, 0, "sanityChecks|failCode|0", &____must_checkpoint_sanityChecks_failCode_0, "i32", (void *)(&failCode), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_sanityChecks_checkCode_0 || ____must_checkpoint_sanityChecks_minz_0 || ____must_checkpoint_sanityChecks_miny_0 || ____must_checkpoint_sanityChecks_minx_0 || ____must_checkpoint_sanityChecks_failCode_0) { register_stack_vars(5, "sanityChecks|checkCode|0", &____must_checkpoint_sanityChecks_checkCode_0, "i32", (void *)(&checkCode), (size_t)4, 0, 0, 0, "sanityChecks|minz|0", &____must_checkpoint_sanityChecks_minz_0, "double", (void *)(&minz), (size_t)8, 0, 0, 0, "sanityChecks|miny|0", &____must_checkpoint_sanityChecks_miny_0, "double", (void *)(&miny), (size_t)8, 0, 0, 0, "sanityChecks|minx|0", &____must_checkpoint_sanityChecks_minx_0, "double", (void *)(&minx), (size_t)8, 0, 0, 0, "sanityChecks|failCode|0", &____must_checkpoint_sanityChecks_failCode_0, "i32", (void *)(&failCode), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } ; ;
 # 437 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       failCode = (0) ;
 # 438 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5329,11 +5305,11 @@ int failCode;
 # 452 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       minz = (2 * cutoff * cmd.zproc) ;
 # 453 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      sizex = (cmd.nx * latticeConst) ;
+    double sizex; sizex = (cmd.nx * latticeConst) ;
 # 454 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      sizey = (cmd.ny * latticeConst) ;
+    double sizey; sizey = (cmd.ny * latticeConst) ;
 # 455 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      sizez = (cmd.nz * latticeConst) ;
+    double sizez; sizez = (cmd.nz * latticeConst) ;
 # 456 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 457 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    if ( sizex < minx || sizey < miny || sizez < minz)
@@ -5383,11 +5359,7 @@ rm_stack(false, 0UL, "sanityChecks", &____must_manage_sanityChecks, 0, ____chime
 # 85 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 int main_quick(int argc, char** argv)
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(9903828072463843389UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double ____chimes_unroll_var_1;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-double ____chimes_unroll_var_0;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-int iStep;
+{const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(9903828072463843389UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int iStep;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 int printRate;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5399,7 +5371,7 @@ SimFlat *sim;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 Command cmd;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- if (____must_checkpoint_main_____chimes_unroll_var_1_0 || ____must_checkpoint_main_____chimes_unroll_var_0_0 || ____must_checkpoint_main_iStep_0 || ____must_checkpoint_main_printRate_0 || ____must_checkpoint_main_nSteps_0 || ____must_checkpoint_main_validate_0 || ____must_checkpoint_main_sim_0 || ____must_checkpoint_main_cmd_0) { register_stack_vars(8, "main|____chimes_unroll_var_1|0", &____must_checkpoint_main_____chimes_unroll_var_1_0, "double", (void *)(&____chimes_unroll_var_1), (size_t)8, 0, 0, 0, "main|____chimes_unroll_var_0|0", &____must_checkpoint_main_____chimes_unroll_var_0_0, "double", (void *)(&____chimes_unroll_var_0), (size_t)8, 0, 0, 0, "main|iStep|0", &____must_checkpoint_main_iStep_0, "i32", (void *)(&iStep), (size_t)4, 0, 0, 0, "main|printRate|0", &____must_checkpoint_main_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0, "main|nSteps|0", &____must_checkpoint_main_nSteps_0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "main|validate|0", &____must_checkpoint_main_validate_0, "%struct.ValidateSt*", (void *)(&validate), (size_t)8, 1, 0, 0, "main|sim|0", &____must_checkpoint_main_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0, "main|cmd|0", &____must_checkpoint_main_cmd_0, "%struct.CommandSt = type { [1024 x i8], [1024 x i8], [1024 x i8], i32, i32, i32, i32, i32, i32, i32, i32, i32, double, double, double, double }", (void *)(&cmd), (size_t)3144, 0, 1, 0); } ; ;
+ if (____must_checkpoint_main_iStep_0 || ____must_checkpoint_main_printRate_0 || ____must_checkpoint_main_nSteps_0 || ____must_checkpoint_main_validate_0 || ____must_checkpoint_main_sim_0 || ____must_checkpoint_main_cmd_0) { register_stack_vars(6, "main|iStep|0", &____must_checkpoint_main_iStep_0, "i32", (void *)(&iStep), (size_t)4, 0, 0, 0, "main|printRate|0", &____must_checkpoint_main_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0, "main|nSteps|0", &____must_checkpoint_main_nSteps_0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "main|validate|0", &____must_checkpoint_main_validate_0, "%struct.ValidateSt*", (void *)(&validate), (size_t)8, 1, 0, 0, "main|sim|0", &____must_checkpoint_main_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0, "main|cmd|0", &____must_checkpoint_main_cmd_0, "%struct.CommandSt = type { [1024 x i8], [1024 x i8], [1024 x i8], i32, i32, i32, i32, i32, i32, i32, i32, i32, double, double, double, double }", (void *)(&cmd), (size_t)3144, 0, 1, 0); } ; ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_1: (____chimes_does_checkpoint_initParallel_npm ? ( ({ calling((void*)initParallel, 1, ____alias_loc_id_15, 0UL, 2, (size_t)(9903828072463843259UL), (size_t)(9903828072463843260UL)); (initParallel)(&argc, &argv); }) ) : (({ calling_npm("initParallel", ____alias_loc_id_15); (*____chimes_extern_func_initParallel)(&argc, &argv); })));
@@ -5455,7 +5427,7 @@ Command cmd;
       do { call_lbl_18: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 18, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(commReduceTimer); }))); } while(0);
 # 119 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 120 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-           call_lbl_19: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_getElapsedTime_npm ? ( ({ calling((void*)getElapsedTime, 19, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))) ; call_lbl_20: (____chimes_does_checkpoint_printThings_npm ? ( ({ calling((void*)printThings, 20, ____alias_loc_id_8, 0UL, 3, (size_t)(9903828072463843324UL), (size_t)(0UL), (size_t)(0UL)); printThings_quick(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", ____alias_loc_id_8); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })));
+        double ____chimes_unroll_var_0; call_lbl_19: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_getElapsedTime_npm ? ( ({ calling((void*)getElapsedTime, 19, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))) ; call_lbl_20: (____chimes_does_checkpoint_printThings_npm ? ( ({ calling((void*)printThings, 20, ____alias_loc_id_8, 0UL, 3, (size_t)(9903828072463843324UL), (size_t)(0UL), (size_t)(0UL)); printThings_quick(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", ____alias_loc_id_8); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })));
 # 121 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 122 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       do { call_lbl_21: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 21, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(timestepTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(timestepTimer); }))); } while(0);
@@ -5474,7 +5446,7 @@ Command cmd;
 # 130 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_25: (____chimes_does_checkpoint_sumAtoms_npm ? ( ({ calling((void*)sumAtoms, 25, 0, 0UL, 1, (size_t)(9903828072463843324UL)); sumAtoms_quick(sim); }) ) : (({ calling_npm("sumAtoms", 0); sumAtoms_npm(sim); })));
 # 131 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-        call_lbl_26: ____chimes_unroll_var_1 = ((____chimes_does_checkpoint_getElapsedTime_npm ? ( ({ calling((void*)getElapsedTime, 26, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))) ; call_lbl_27: (____chimes_does_checkpoint_printThings_npm ? ( ({ calling((void*)printThings, 27, ____alias_loc_id_2, 0UL, 3, (size_t)(9903828072463843324UL), (size_t)(0UL), (size_t)(0UL)); printThings_quick(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", ____alias_loc_id_2); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })));
+     double ____chimes_unroll_var_1; call_lbl_26: ____chimes_unroll_var_1 = ((____chimes_does_checkpoint_getElapsedTime_npm ? ( ({ calling((void*)getElapsedTime, 26, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))) ; call_lbl_27: (____chimes_does_checkpoint_printThings_npm ? ( ({ calling((void*)printThings, 27, ____alias_loc_id_2, 0UL, 3, (size_t)(9903828072463843324UL), (size_t)(0UL), (size_t)(0UL)); printThings_quick(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", ____alias_loc_id_2); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })));
 # 132 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_28: (____chimes_does_checkpoint_timestampBarrier_npm ? ( ({ calling((void*)timestampBarrier, 28, ____alias_loc_id_1, 0UL, 1, (size_t)(9903828072463844623UL)); (timestampBarrier)("Ending simulation\n"); }) ) : (({ calling_npm("timestampBarrier", ____alias_loc_id_1); (*____chimes_extern_func_timestampBarrier)("Ending simulation\n"); })));
 # 133 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5674,11 +5646,9 @@ BasePotential* initPotential_quick(
 # 257 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    int doeam, const char* potDir, const char* potName, const char* potType)
 # 258 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&initPotential), "initPotential", &____must_manage_initPotential, 4, 0, (size_t)(0UL), (size_t)(9903828072463844392UL), (size_t)(9903828072463844393UL), (size_t)(9903828072463844394UL)) ; BasePotential *pot;
-# 258 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- if (____must_checkpoint_initPotential_pot_0) { register_stack_vars(1, "initPotential|pot|0", &____must_checkpoint_initPotential_pot_0, "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); } ; ;
+{const int ____chimes_did_disable5 = new_stack((void *)(&initPotential), "initPotential", &____must_manage_initPotential, 4, 0, (size_t)(0UL), (size_t)(9903828072463844392UL), (size_t)(9903828072463844393UL), (size_t)(9903828072463844394UL)) ; ; ;
 # 259 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      pot = (__null) ;
+    BasePotential *pot; pot = (__null) ;
 # 260 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 261 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    if (doeam) { call_lbl_1: pot = ({ calling((void*)initEamPot, 1, ____alias_loc_id_46, 9903828072463844387UL, 3, (size_t)(9903828072463844392UL), (size_t)(9903828072463844393UL), (size_t)(9903828072463844394UL)); (initEamPot)(potDir, potName, potType); }) ; } else { call_lbl_2: pot = ({ calling((void*)initLjPot, 2, ____alias_loc_id_45, 9903828072463844387UL, 0); (initLjPot)(); }) ; } ;
@@ -5892,10 +5862,6 @@ void printSimulationDataYaml_quick(FILE* file, SimFlat* s)
 # 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 float paddedMemLocal;
 # 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-int nTotalBoxes;
-# 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-int nLocalBoxes;
-# 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 float totalMemGlobal;
 # 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 float totalMemLocal;
@@ -5904,7 +5870,7 @@ int perAtomSize;
 # 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 int maxOcc;
 # 379 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- if (____must_checkpoint_printSimulationDataYaml_paddedMemTotal_0 || ____must_checkpoint_printSimulationDataYaml_paddedMemLocal_0 || ____must_checkpoint_printSimulationDataYaml_nTotalBoxes_0 || ____must_checkpoint_printSimulationDataYaml_nLocalBoxes_0 || ____must_checkpoint_printSimulationDataYaml_totalMemGlobal_0 || ____must_checkpoint_printSimulationDataYaml_totalMemLocal_0 || ____must_checkpoint_printSimulationDataYaml_perAtomSize_0 || ____must_checkpoint_printSimulationDataYaml_maxOcc_0) { register_stack_vars(8, "printSimulationDataYaml|paddedMemTotal|0", &____must_checkpoint_printSimulationDataYaml_paddedMemTotal_0, "float", (void *)(&paddedMemTotal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|paddedMemLocal|0", &____must_checkpoint_printSimulationDataYaml_paddedMemLocal_0, "float", (void *)(&paddedMemLocal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|nTotalBoxes|0", &____must_checkpoint_printSimulationDataYaml_nTotalBoxes_0, "i32", (void *)(&nTotalBoxes), (size_t)4, 0, 0, 0, "printSimulationDataYaml|nLocalBoxes|0", &____must_checkpoint_printSimulationDataYaml_nLocalBoxes_0, "i32", (void *)(&nLocalBoxes), (size_t)4, 0, 0, 0, "printSimulationDataYaml|totalMemGlobal|0", &____must_checkpoint_printSimulationDataYaml_totalMemGlobal_0, "float", (void *)(&totalMemGlobal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|totalMemLocal|0", &____must_checkpoint_printSimulationDataYaml_totalMemLocal_0, "float", (void *)(&totalMemLocal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|perAtomSize|0", &____must_checkpoint_printSimulationDataYaml_perAtomSize_0, "i32", (void *)(&perAtomSize), (size_t)4, 0, 0, 0, "printSimulationDataYaml|maxOcc|0", &____must_checkpoint_printSimulationDataYaml_maxOcc_0, "i32", (void *)(&maxOcc), (size_t)4, 0, 0, 0); } ; ;
+ if (____must_checkpoint_printSimulationDataYaml_paddedMemTotal_0 || ____must_checkpoint_printSimulationDataYaml_paddedMemLocal_0 || ____must_checkpoint_printSimulationDataYaml_totalMemGlobal_0 || ____must_checkpoint_printSimulationDataYaml_totalMemLocal_0 || ____must_checkpoint_printSimulationDataYaml_perAtomSize_0 || ____must_checkpoint_printSimulationDataYaml_maxOcc_0) { register_stack_vars(6, "printSimulationDataYaml|paddedMemTotal|0", &____must_checkpoint_printSimulationDataYaml_paddedMemTotal_0, "float", (void *)(&paddedMemTotal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|paddedMemLocal|0", &____must_checkpoint_printSimulationDataYaml_paddedMemLocal_0, "float", (void *)(&paddedMemLocal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|totalMemGlobal|0", &____must_checkpoint_printSimulationDataYaml_totalMemGlobal_0, "float", (void *)(&totalMemGlobal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|totalMemLocal|0", &____must_checkpoint_printSimulationDataYaml_totalMemLocal_0, "float", (void *)(&totalMemLocal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|perAtomSize|0", &____must_checkpoint_printSimulationDataYaml_perAtomSize_0, "i32", (void *)(&perAtomSize), (size_t)4, 0, 0, 0, "printSimulationDataYaml|maxOcc|0", &____must_checkpoint_printSimulationDataYaml_maxOcc_0, "i32", (void *)(&maxOcc), (size_t)4, 0, 0, 0); } ; ;
 # 380 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 381 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
        call_lbl_1: maxOcc = ((____chimes_does_checkpoint_maxOccupancy_npm ? ( ({ calling((void*)maxOccupancy, 1, ____alias_loc_id_32, 0UL, 1, (size_t)(9903828072463843622UL)); (maxOccupancy)(s->boxes); }) ) : (({ calling_npm("maxOccupancy", ____alias_loc_id_32); (*____chimes_extern_func_maxOccupancy)(s->boxes); })))) ;
@@ -5975,9 +5941,9 @@ int maxOcc;
       totalMemGlobal = ((float)(perAtomSize * s->atoms->nGlobal) / 1024 / 1024) ;
 # 418 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 419 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      nLocalBoxes = (s->boxes->gridSize[0] * s->boxes->gridSize[1] * s->boxes->gridSize[2]) ;
+    int nLocalBoxes; nLocalBoxes = (s->boxes->gridSize[0] * s->boxes->gridSize[1] * s->boxes->gridSize[2]) ;
 # 420 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      nTotalBoxes = ((s->boxes->gridSize[0] + 2) * (s->boxes->gridSize[1] + 2) * (s->boxes->gridSize[2] + 2)) ;
+    int nTotalBoxes; nTotalBoxes = ((s->boxes->gridSize[0] + 2) * (s->boxes->gridSize[1] + 2) * (s->boxes->gridSize[2] + 2)) ;
 # 421 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       paddedMemLocal = ((float)nLocalBoxes * (perAtomSize * 64) / 1024 / 1024) ;
 # 422 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6007,12 +5973,6 @@ void sanityChecks_quick(Command cmd, double cutoff, double latticeConst, char la
 # 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 {const int ____chimes_did_disable12 = new_stack((void *)(&sanityChecks), "sanityChecks", &____must_manage_sanityChecks, 4, 3, (size_t)(9903828072463844545UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9903828072463844548UL), "sanityChecks|cutoff|0", &____must_checkpoint_sanityChecks_cutoff_0, "double", (void *)(&cutoff), (size_t)8, 0, 0, 0, "sanityChecks|latticeConst|0", &____must_checkpoint_sanityChecks_latticeConst_0, "double", (void *)(&latticeConst), (size_t)8, 0, 0, 0, "sanityChecks|latticeType|0", &____must_checkpoint_sanityChecks_latticeType_0, "i8*", (void *)(&latticeType), (size_t)8, 1, 0, 0) ; int checkCode;
 # 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-double sizez;
-# 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-double sizey;
-# 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-double sizex;
-# 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 double minz;
 # 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 double miny;
@@ -6021,7 +5981,7 @@ double minx;
 # 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 int failCode;
 # 436 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- if (____must_checkpoint_sanityChecks_checkCode_0 || ____must_checkpoint_sanityChecks_sizez_0 || ____must_checkpoint_sanityChecks_sizey_0 || ____must_checkpoint_sanityChecks_sizex_0 || ____must_checkpoint_sanityChecks_minz_0 || ____must_checkpoint_sanityChecks_miny_0 || ____must_checkpoint_sanityChecks_minx_0 || ____must_checkpoint_sanityChecks_failCode_0) { register_stack_vars(8, "sanityChecks|checkCode|0", &____must_checkpoint_sanityChecks_checkCode_0, "i32", (void *)(&checkCode), (size_t)4, 0, 0, 0, "sanityChecks|sizez|0", &____must_checkpoint_sanityChecks_sizez_0, "double", (void *)(&sizez), (size_t)8, 0, 0, 0, "sanityChecks|sizey|0", &____must_checkpoint_sanityChecks_sizey_0, "double", (void *)(&sizey), (size_t)8, 0, 0, 0, "sanityChecks|sizex|0", &____must_checkpoint_sanityChecks_sizex_0, "double", (void *)(&sizex), (size_t)8, 0, 0, 0, "sanityChecks|minz|0", &____must_checkpoint_sanityChecks_minz_0, "double", (void *)(&minz), (size_t)8, 0, 0, 0, "sanityChecks|miny|0", &____must_checkpoint_sanityChecks_miny_0, "double", (void *)(&miny), (size_t)8, 0, 0, 0, "sanityChecks|minx|0", &____must_checkpoint_sanityChecks_minx_0, "double", (void *)(&minx), (size_t)8, 0, 0, 0, "sanityChecks|failCode|0", &____must_checkpoint_sanityChecks_failCode_0, "i32", (void *)(&failCode), (size_t)4, 0, 0, 0); } ; ;
+ if (____must_checkpoint_sanityChecks_checkCode_0 || ____must_checkpoint_sanityChecks_minz_0 || ____must_checkpoint_sanityChecks_miny_0 || ____must_checkpoint_sanityChecks_minx_0 || ____must_checkpoint_sanityChecks_failCode_0) { register_stack_vars(5, "sanityChecks|checkCode|0", &____must_checkpoint_sanityChecks_checkCode_0, "i32", (void *)(&checkCode), (size_t)4, 0, 0, 0, "sanityChecks|minz|0", &____must_checkpoint_sanityChecks_minz_0, "double", (void *)(&minz), (size_t)8, 0, 0, 0, "sanityChecks|miny|0", &____must_checkpoint_sanityChecks_miny_0, "double", (void *)(&miny), (size_t)8, 0, 0, 0, "sanityChecks|minx|0", &____must_checkpoint_sanityChecks_minx_0, "double", (void *)(&minx), (size_t)8, 0, 0, 0, "sanityChecks|failCode|0", &____must_checkpoint_sanityChecks_failCode_0, "i32", (void *)(&failCode), (size_t)4, 0, 0, 0); } ; ;
 # 437 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       failCode = (0) ;
 # 438 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6049,11 +6009,11 @@ int failCode;
 # 452 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       minz = (2 * cutoff * cmd.zproc) ;
 # 453 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      sizex = (cmd.nx * latticeConst) ;
+    double sizex; sizex = (cmd.nx * latticeConst) ;
 # 454 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      sizey = (cmd.ny * latticeConst) ;
+    double sizey; sizey = (cmd.ny * latticeConst) ;
 # 455 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      sizez = (cmd.nz * latticeConst) ;
+    double sizez; sizez = (cmd.nz * latticeConst) ;
 # 456 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 457 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    if ( sizex < minx || sizey < miny || sizez < minz)
@@ -6533,7 +6493,7 @@ void sanityChecks_npm(Command cmd, double cutoff, double latticeConst, char latt
 
 
 static int module_init() {
-    init_module(9903828072463843257UL, 38, 13, 46, 60, 11, 34, 45, 1, 66, 12,
+    init_module(9903828072463843257UL, 38, 13, 38, 60, 11, 34, 45, 1, 66, 12,
                            &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "timestampBarrier", (unsigned)1, (9903828072463843257UL + 1367UL),
                            &____alias_loc_id_1, (unsigned)0, (unsigned)0, (unsigned)1, "timestampBarrier", (unsigned)1, (9903828072463843257UL + 1366UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (9903828072463843257UL + 12UL),
@@ -6748,31 +6708,27 @@ static int module_init() {
                              "printThings", "_ZL11printThingsP9SimFlatStid", 1, "printRank",
                              "destroySimulation", "_ZL17destroySimulationPP9SimFlatSt", 3, "destroyLinkCells", "destroyAtoms", "destroyHaloExchange",
                         "main|argc|0", 1, "main",
-                        "main|argv|0", 20, "yamlAppInfo", "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printSimulationDataYaml", "printPerformanceResults", "printCmdYaml", "parseCommandLine", "initValidate", "initSubsystems", "initSimulation", "initParallel", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel",
+                        "main|argv|0", 5, "yamlAppInfo", "timestampBarrier", "profileStart", "initSubsystems", "initParallel",
                         "main|cmd|0", 1, "main",
                         "main|sim|0", 1, "main",
-                        "main|validate|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel",
-                        "main|nSteps|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel",
-                        "main|printRate|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel",
-                        "main|iStep|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel",
-                        "main|____chimes_unroll_var_0|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel",
-                        "main|____chimes_unroll_var_1|0", 8, "validateResult", "timestampBarrier", "profileStop", "printThings", "printPerformanceResults", "finalizeSubsystems", "destroySimulation", "destroyParallel",
+                        "main|validate|0", 10, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "destroySimulation",
+                        "main|nSteps|0", 6, "timestep", "sumAtoms", "profileStop", "profileStart", "printThings", "getElapsedTime",
+                        "main|printRate|0", 6, "timestep", "sumAtoms", "profileStop", "profileStart", "printThings", "getElapsedTime",
+                        "main|iStep|0", 6, "timestep", "sumAtoms", "profileStop", "profileStart", "printThings", "getElapsedTime",
                         "initSimulation|sim|0", 14, "setTemperature", "sanityChecks", "redistributeAtoms", "randomDisplacements", "profileStop", "profileStart", "kineticEnergy", "initPotential", "initLinkCells", "initDecomposition", "initAtoms", "initAtomHaloExchange", "createFccLattice", "computeForce",
-                        "initSimulation|latticeConstant|0", 13, "setTemperature", "sanityChecks", "redistributeAtoms", "randomDisplacements", "profileStop", "profileStart", "kineticEnergy", "initLinkCells", "initDecomposition", "initAtoms", "initAtomHaloExchange", "createFccLattice", "computeForce",
+                        "initSimulation|latticeConstant|0", 4, "sanityChecks", "initLinkCells", "initDecomposition", "initAtoms",
                         "initSimulation|globalExtent|0", 1, "initSimulation",
                         "printSimulationDataYaml|file|0", 1, "_ZL23printSimulationDataYamlP8_IO_FILEP9SimFlatSt",
                         "printSimulationDataYaml|s|0", 1, "_ZL23printSimulationDataYamlP8_IO_FILEP9SimFlatSt",
-                        "printSimulationDataYaml|maxOcc|0", 1, "_ZL23printSimulationDataYamlP8_IO_FILEP9SimFlatSt",
+                        "printSimulationDataYaml|maxOcc|0", 2, "printSeparator", "printRank",
                         "printSimulationDataYaml|perAtomSize|0", 1, "printSeparator",
                         "printSimulationDataYaml|totalMemLocal|0", 1, "printSeparator",
                         "printSimulationDataYaml|totalMemGlobal|0", 1, "printSeparator",
-                        "printSimulationDataYaml|nLocalBoxes|0", 1, "printSeparator",
-                        "printSimulationDataYaml|nTotalBoxes|0", 1, "printSeparator",
                         "printSimulationDataYaml|paddedMemLocal|0", 1, "printSeparator",
                         "printSimulationDataYaml|paddedMemTotal|0", 1, "printSeparator",
-                        "initValidate|sim|0", 3, "sumAtoms", "printSeparator", "printRank",
+                        "initValidate|sim|0", 1, "sumAtoms",
                         "initValidate|val|0", 2, "printSeparator", "printRank",
-                        "sumAtoms|s|0", 3, "profileStop", "profileStart", "addIntParallel",
+                        "sumAtoms|s|0", 1, "profileStart",
                         "printThings|s|0", 1, "printRank",
                         "printThings|iStep|0", 1, "printRank",
                         "printThings|elapsedTime|0", 1, "printRank",
@@ -6781,17 +6737,13 @@ static int module_init() {
                         "validateResult|sim|0", 1, "printRank",
                         "destroySimulation|ps|0", 3, "destroyLinkCells", "destroyHaloExchange", "destroyAtoms",
                         "destroySimulation|s|0", 3, "destroyLinkCells", "destroyHaloExchange", "destroyAtoms",
-                        "initPotential|pot|0", 2, "initLjPot", "initEamPot",
-                        "sanityChecks|cutoff|0", 3, "printRank", "getNRanks", "bcastParallel",
-                        "sanityChecks|latticeConst|0", 3, "printRank", "getNRanks", "bcastParallel",
-                        "sanityChecks|latticeType|0", 3, "printRank", "getNRanks", "bcastParallel",
+                        "sanityChecks|cutoff|0", 2, "printRank", "getNRanks",
+                        "sanityChecks|latticeConst|0", 2, "printRank", "getNRanks",
+                        "sanityChecks|latticeType|0", 2, "printRank", "getNRanks",
                         "sanityChecks|failCode|0", 3, "printRank", "getNRanks", "bcastParallel",
-                        "sanityChecks|minx|0", 2, "printRank", "bcastParallel",
-                        "sanityChecks|miny|0", 2, "printRank", "bcastParallel",
-                        "sanityChecks|minz|0", 2, "printRank", "bcastParallel",
-                        "sanityChecks|sizex|0", 2, "printRank", "bcastParallel",
-                        "sanityChecks|sizey|0", 2, "printRank", "bcastParallel",
-                        "sanityChecks|sizez|0", 2, "printRank", "bcastParallel",
+                        "sanityChecks|minx|0", 1, "printRank",
+                        "sanityChecks|miny|0", 1, "printRank",
+                        "sanityChecks|minz|0", 1, "printRank",
                         "sanityChecks|checkCode|0", 1, "sanityChecks",
         "initSpecies", 9903828072463844664UL, (int)1, 9903828072463844664UL,
         "initParallel", 0UL, (int)2, 9903828072463843259UL, 9903828072463843260UL,

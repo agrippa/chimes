@@ -6,7 +6,7 @@ ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_co
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 121 6 len=21 bots_get_architecture_npm
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 122 6 len=21 bots_get_load_average_npm
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 124 6 len=18 bots_print_results_npm
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 36 1 const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 1, (size_t)(0UL), (size_t)(268134479069371226UL), "bots_error|error|0", &____must_checkpoint_bots_error_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 36 1 const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 0, (size_t)(0UL), (size_t)(268134479069371226UL)); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 58 1 rm_stack(false, 0UL, "bots_error", &____must_manage_bots_error, 0, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 62 1 const int ____chimes_did_disable1 = new_stack((void *)(&bots_warning), "bots_warning", &____must_manage_bots_warning, 2, 0, (size_t)(0UL), (size_t)(268134479069371259UL)); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 76 1 rm_stack(false, 0UL, "bots_warning", &____must_manage_bots_warning, ____alias_loc_id_0, ____chimes_did_disable1, false); 
@@ -24,8 +24,8 @@ InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/commo
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 122 60 rm_stack(false, 0UL, "bots_get_load_average", &____must_manage_bots_get_load_average, ____alias_loc_id_5, ____chimes_did_disable6, false); 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 125 1 const int ____chimes_did_disable7 = new_stack((void *)(&bots_print_results), "bots_print_results", &____must_manage_bots_print_results, 0, 0); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 351 1 rm_stack(false, 0UL, "bots_print_results", &____must_manage_bots_print_results, 0, ____chimes_did_disable7, false); 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 36 2 const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 1, (size_t)(0UL), (size_t)(268134479069371226UL), "bots_error|error|0", &____must_checkpoint_bots_error_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 36 274 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 36 2 const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 0, (size_t)(0UL), (size_t)(268134479069371226UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 36 166 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 62 2 const int ____chimes_did_disable1 = new_stack((void *)(&bots_warning), "bots_warning", &____must_manage_bots_warning, 2, 0, (size_t)(0UL), (size_t)(268134479069371259UL)); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 62 172 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 79 2 const int ____chimes_did_disable2 = new_stack((void *)(&bots_usecs), "bots_usecs", &____must_manage_bots_usecs, 0, 0); ;
@@ -95,7 +95,7 @@ InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_com
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 35 1 len=10 bots_error_quick
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 49 26  ({  calling((void*)bots_print_usage, 4, 0, 0UL, 0); (bots_print_usage)(); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 49 43 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 36 273  ; 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 36 165  ; 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 61 1 len=12 bots_warning_quick
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 62 171  ; 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 78 6 len=10 bots_usecs_quick
@@ -211,7 +211,7 @@ char str_name[128];
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 35 1 len=10 bots_error_resumable
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 49 26  ({  calling((void*)bots_print_usage, 4, 0, 0UL, 0); (bots_print_usage)(); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 49 43 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 36 273  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 36 165  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 61 1 len=12 bots_warning_resumable
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 62 171  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 78 6 len=10 bots_usecs_resumable

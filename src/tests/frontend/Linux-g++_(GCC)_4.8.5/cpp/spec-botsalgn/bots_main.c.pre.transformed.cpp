@@ -26,7 +26,6 @@ static int ____chimes_does_checkpoint_pairalign_init_npm = 1;
 static int ____must_checkpoint_bots_get_params_common_argc_0 = 2;
 static int ____must_checkpoint_bots_get_params_common_argv_0 = 2;
 static int ____must_checkpoint_main_bots_t_start_0 = 2;
-static int ____must_checkpoint_main_bots_t_end_0 = 2;
 
 static int ____must_manage_main = 2;
 static int ____must_manage_bots_get_params_common = 2;
@@ -4391,16 +4390,14 @@ int
 # 490 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 main_resumable(int argc, char* argv[])
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397277UL)) ; long bots_t_end;
+{const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397277UL)) ; long bots_t_start;
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-long bots_t_start;
-# 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
- if (____must_checkpoint_main_bots_t_end_0 || ____must_checkpoint_main_bots_t_start_0) { register_stack_vars(2, "main|bots_t_end|0", &____must_checkpoint_main_bots_t_end_0, "i64", (void *)(&bots_t_end), (size_t)8, 0, 0, 0, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_main_bots_t_start_0) { register_stack_vars(1, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } default: { chimes_error(); } } } ; ;
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 493 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
     ;
 # 494 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    ;
+   long bots_t_end; ;
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4764,16 +4761,14 @@ int
 # 490 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 main_quick(int argc, char* argv[])
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397277UL)) ; long bots_t_end;
+{const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397277UL)) ; long bots_t_start;
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-long bots_t_start;
-# 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
- if (____must_checkpoint_main_bots_t_end_0 || ____must_checkpoint_main_bots_t_start_0) { register_stack_vars(2, "main|bots_t_end|0", &____must_checkpoint_main_bots_t_end_0, "i64", (void *)(&bots_t_end), (size_t)8, 0, 0, 0, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0); } ; ;
+ if (____must_checkpoint_main_bots_t_start_0) { register_stack_vars(1, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0); } ; ;
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 493 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
     ;
 # 494 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    ;
+   long bots_t_end; ;
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -5130,7 +5125,7 @@ void bots_set_info_npm ()
 
 
 static int module_init() {
-    init_module(16260503078375396929UL, 5, 5, 4, 13, 4, 10, 14, 8, 14, 1,
+    init_module(16260503078375396929UL, 5, 5, 3, 13, 4, 10, 14, 8, 14, 1,
                            &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)1, (16260503078375396929UL + 52UL), (16260503078375396929UL + 53UL), (16260503078375396929UL + 357UL), "bots_get_date", (unsigned)1, (16260503078375396929UL + 357UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 261UL), (16260503078375396929UL + 262UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 351UL),
@@ -5185,8 +5180,7 @@ static int module_init() {
                              "bots_get_params", "_Z15bots_get_paramsiPPc", 1, "bots_get_params_common",
                         "bots_get_params_common|argc|0", 1, "bots_get_date",
                         "bots_get_params_common|argv|0", 1, "bots_get_date",
-                        "main|bots_t_start|0", 7, "bots_usecs", "bots_print_results", "align_verify", "align_seq", "align_init", "align_end", "align",
-                        "main|bots_t_end|0", 6, "bots_usecs", "bots_print_results", "align_verify", "align_init", "align_end", "align",
+                        "main|bots_t_start|0", 3, "bots_usecs", "align_seq", "align",
         "bots_print_usage", 0UL, (int)0,
         "bots_print_usage", 0UL, (int)0,
         "bots_print_usage", 0UL, (int)0,

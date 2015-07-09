@@ -18,7 +18,6 @@ static int ____chimes_does_checkpoint_bots_get_date_npm = 1;
 static int ____chimes_does_checkpoint_bots_error_npm = 1;
 static int ____chimes_does_checkpoint_bots_print_usage_npm = 1;
 
-static int ____must_checkpoint_bots_error_error_0 = 2;
 static int ____must_checkpoint_bots_usecs_t_0 = 2;
 static int ____must_checkpoint_bots_get_date_now_0 = 2;
 static int ____must_checkpoint_bots_print_results_str_name_0 = 2;
@@ -4846,7 +4845,7 @@ void
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_error_resumable(int error, char *message)
 # 36 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 1, (size_t)(0UL), (size_t)(268134479069371226UL), "bots_error|error|0", &____must_checkpoint_bots_error_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 0, (size_t)(0UL), (size_t)(268134479069371226UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 37 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (message == __null) {{
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
@@ -5438,7 +5437,7 @@ void
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_error_quick(int error, char *message)
 # 36 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 1, (size_t)(0UL), (size_t)(268134479069371226UL), "bots_error|error|0", &____must_checkpoint_bots_error_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0) ; ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 0, (size_t)(0UL), (size_t)(268134479069371226UL)) ; ; ;
 # 37 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (message == __null) {{
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
@@ -6561,7 +6560,7 @@ fprintf(stdout,
 
 
 static int module_init() {
-    init_module(268134479069371185UL, 6, 8, 24, 6, 8, 1, 9, 2, 0, 1,
+    init_module(268134479069371185UL, 6, 8, 23, 6, 8, 1, 9, 2, 0, 1,
                            &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (268134479069371185UL + 47UL), (268134479069371185UL + 48UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (268134479069371185UL + 75UL), (268134479069371185UL + 76UL),
                            &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (268134479069371185UL + 91UL), (268134479069371185UL + 92UL), (268134479069371185UL + 101UL),
@@ -6601,7 +6600,6 @@ static int module_init() {
                              "bots_print_results", "_Z18bots_print_resultsv", 3, "bots_get_architecture", "bots_get_load_average", "bots_error",
                              "bots_get_date", "_Z13bots_get_datePc", 0,
                              "bots_error", "_Z10bots_erroriPc", 1, "bots_print_usage",
-                        "bots_error|error|0", 1, "bots_print_usage",
                         "bots_usecs|t|0", 1, "bots_usecs",
                         "bots_get_date|now|0", 1, "bots_get_date",
                         "bots_print_results|str_name|0", 1, "bots_print_results",

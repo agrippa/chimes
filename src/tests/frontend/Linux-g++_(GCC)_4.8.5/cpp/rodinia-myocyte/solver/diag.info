@@ -85,16 +85,12 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 92 2
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 92 17 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 96 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 96 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 97 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 97 18 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 13 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 15 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 12 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 7 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 9 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 16 
@@ -103,15 +99,11 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 79 733  ;
 # 79
 int j;
 # 79
-int i;
-# 79
 float *yy;
 # 79
 float *scale;
 # 79
 float *err;
-# 79
-float scale_fina;
 # 79
 float scale_min;
 # 79
@@ -127,7 +119,7 @@ int error;
 # 79
 float err_exponent;
 # 79
- if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_i_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_scale_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_fina_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(14, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|i|0", &____must_checkpoint_solver_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "float*", (void *)(&yy), (size_t)8, 1, 0, 0, "solver|scale|0", &____must_checkpoint_solver_scale_0, "float*", (void *)(&scale), (size_t)8, 1, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "float*", (void *)(&err), (size_t)8, 1, 0, 0, "solver|scale_fina|0", &____must_checkpoint_solver_scale_fina_0, "float", (void *)(&scale_fina), (size_t)4, 0, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0);  }  
+ if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_scale_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(12, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "float*", (void *)(&yy), (size_t)8, 1, 0, 0, "solver|scale|0", &____must_checkpoint_solver_scale_0, "float*", (void *)(&scale), (size_t)8, 1, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "float*", (void *)(&err), (size_t)8, 1, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 75 5 len=6 solver_resumable
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 174 17  ({  float ____chimes_arg0;  float * ____chimes_arg2;  float * ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg0 = (x[k]); ____chimes_arg2 = (y[k - 1]); ____chimes_arg3 = (y[k]);  }  calling((void*)embedded_fehlberg_7_8, 6, ____alias_loc_id_0, 0UL, 7, (size_t)(0UL), (size_t)(0UL), (size_t)(6850351079512197292UL), (size_t)(6850351079512197292UL), (size_t)(6850351079512197190UL), (size_t)(6850351079512197573UL), (size_t)(0UL)); (embedded_fehlberg_7_8)(____chimes_arg0, h, ____chimes_arg2, ____chimes_arg3, err, params, mode); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 180 19 
@@ -145,16 +137,12 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 92 2
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 92 17 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 96 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 96 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 97 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 97 18 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 13 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 15 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 12 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 7 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 9 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 16 
@@ -163,15 +151,11 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 79 733  ;
 # 79
 int j;
 # 79
-int i;
-# 79
 float *yy;
 # 79
 float *scale;
 # 79
 float *err;
-# 79
-float scale_fina;
 # 79
 float scale_min;
 # 79
@@ -187,4 +171,4 @@ int error;
 # 79
 float err_exponent;
 # 79
- if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_i_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_scale_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_fina_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(14, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|i|0", &____must_checkpoint_solver_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "float*", (void *)(&yy), (size_t)8, 1, 0, 0, "solver|scale|0", &____must_checkpoint_solver_scale_0, "float*", (void *)(&scale), (size_t)8, 1, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "float*", (void *)(&err), (size_t)8, 1, 0, 0, "solver|scale_fina|0", &____must_checkpoint_solver_scale_fina_0, "float", (void *)(&scale_fina), (size_t)4, 0, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_scale_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(12, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "float*", (void *)(&yy), (size_t)8, 1, 0, 0, "solver|scale|0", &____must_checkpoint_solver_scale_0, "float*", (void *)(&scale), (size_t)8, 1, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "float*", (void *)(&err), (size_t)8, 1, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  

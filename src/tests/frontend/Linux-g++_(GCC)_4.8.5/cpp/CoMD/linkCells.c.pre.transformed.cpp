@@ -27,6 +27,7 @@ static int ____chimes_does_checkpoint_profileStop_npm = 1;
 static int ____must_checkpoint_getNeighborBoxes_ix_0 = 2;
 static int ____must_checkpoint_putAtomInBox_xyz_0 = 2;
 static int ____must_checkpoint_maxOccupancy_localMax_0 = 2;
+static int ____must_checkpoint_maxOccupancy_globalMax_0 = 2;
 
 static int ____must_manage_getNeighborBoxes = 2;
 static int ____must_manage_initLinkCells = 2;
@@ -4414,16 +4415,18 @@ int maxOccupancy_npm(LinkCell* boxes);static void (*____chimes_extern_func_maxIn
 int maxOccupancy_quick(LinkCell* boxes); int maxOccupancy(LinkCell* boxes);
 int maxOccupancy_resumable(LinkCell* boxes)
 # 298 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303549UL)) ; int localMax;
+{const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303549UL)) ; int globalMax;
 # 298 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- if (____must_checkpoint_maxOccupancy_localMax_0) { register_stack_vars(1, "maxOccupancy|localMax|0", &____must_checkpoint_maxOccupancy_localMax_0, "i32", (void *)(&localMax), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+int localMax;
+# 298 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
+ if (____must_checkpoint_maxOccupancy_globalMax_0 || ____must_checkpoint_maxOccupancy_localMax_0) { register_stack_vars(2, "maxOccupancy|globalMax|0", &____must_checkpoint_maxOccupancy_globalMax_0, "i32", (void *)(&globalMax), (size_t)4, 0, 0, 0, "maxOccupancy|localMax|0", &____must_checkpoint_maxOccupancy_localMax_0, "i32", (void *)(&localMax), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 299 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
       localMax = (0) ;
 # 300 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    { int ii; for ( ii = (0) ;ii<boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); } };
 # 302 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 303 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   int globalMax; ;
+    ;
 # 304 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 305 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
@@ -4947,16 +4950,18 @@ void updateLinkCells(LinkCell* boxes, Atoms* atoms) { (____chimes_replaying ? up
 # 297 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 int maxOccupancy_quick(LinkCell* boxes)
 # 298 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303549UL)) ; int localMax;
+{const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303549UL)) ; int globalMax;
 # 298 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- if (____must_checkpoint_maxOccupancy_localMax_0) { register_stack_vars(1, "maxOccupancy|localMax|0", &____must_checkpoint_maxOccupancy_localMax_0, "i32", (void *)(&localMax), (size_t)4, 0, 0, 0); } ; ;
+int localMax;
+# 298 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
+ if (____must_checkpoint_maxOccupancy_globalMax_0 || ____must_checkpoint_maxOccupancy_localMax_0) { register_stack_vars(2, "maxOccupancy|globalMax|0", &____must_checkpoint_maxOccupancy_globalMax_0, "i32", (void *)(&globalMax), (size_t)4, 0, 0, 0, "maxOccupancy|localMax|0", &____must_checkpoint_maxOccupancy_localMax_0, "i32", (void *)(&localMax), (size_t)4, 0, 0, 0); } ; ;
 # 299 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
       localMax = (0) ;
 # 300 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    { int ii; for ( ii = (0) ;ii<boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); } };
 # 302 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 303 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   int globalMax; ;
+    ;
 # 304 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 305 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
@@ -5695,7 +5700,7 @@ void getTuple_npm(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 
 
 static int module_init() {
-    init_module(13307200203520301951UL, 39, 12, 3, 14, 12, 3, 15, 9, 0, 4,
+    init_module(13307200203520301951UL, 39, 12, 4, 14, 12, 3, 15, 9, 0, 4,
                            &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "maxIntParallel", (unsigned)2, (13307200203520301951UL + 1567UL), (13307200203520301951UL + 1569UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1566UL), (13307200203520301951UL + 1567UL), (13307200203520301951UL + 1568UL),
                            &____alias_loc_id_2, (unsigned)8, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1UL), (13307200203520301951UL + 2UL), (13307200203520301951UL + 3UL), (13307200203520301951UL + 4UL), (13307200203520301951UL + 5UL), (13307200203520301951UL + 6UL), (13307200203520301951UL + 19UL), (13307200203520301951UL + 185UL),
@@ -5798,6 +5803,7 @@ static int module_init() {
                         "getNeighborBoxes|ix|0", 1, "getNeighborBoxes",
                         "putAtomInBox|xyz|0", 1, "putAtomInBox",
                         "maxOccupancy|localMax|0", 1, "maxOccupancy",
+                        "maxOccupancy|globalMax|0", 3, "profileStop", "profileStart", "maxIntParallel",
         "getTuple", 0UL, (int)5, 13307200203520302295UL, 0UL, 13307200203520302211UL, 13307200203520302212UL, 13307200203520302213UL,
         "getBoxFromTuple", 0UL, (int)4, 13307200203520302295UL, 0UL, 0UL, 0UL,
         "getBoxFromCoord", 0UL, (int)2, 13307200203520303004UL, 13307200203520302860UL,

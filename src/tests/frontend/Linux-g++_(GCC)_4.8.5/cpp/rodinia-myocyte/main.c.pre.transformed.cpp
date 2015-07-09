@@ -10,10 +10,16 @@ typedef long unsigned int size_t;
 # 1 "main.c.pre.transformed.cpp"
 static int ____chimes_does_checkpoint_seconds_npm = 1;
 static int ____chimes_does_checkpoint_get_time_npm = 1;
+static int ____chimes_does_checkpoint_getenv_npm = 1;
+static int ____chimes_does_checkpoint_myocyte_read_npm = 1;
 static int ____chimes_does_checkpoint_solver_npm = 1;
 
 static int ____must_checkpoint_seconds_tp_0 = 2;
+static int ____must_checkpoint_main_argc_0 = 2;
+static int ____must_checkpoint_main_argv_0 = 2;
 static int ____must_checkpoint_main_time4_0 = 2;
+static int ____must_checkpoint_main_y_path_0 = 2;
+static int ____must_checkpoint_main_params_path_0 = 2;
 
 static int ____must_manage_seconds = 2;
 
@@ -32,6 +38,7 @@ static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
 static unsigned ____alias_loc_id_13;
 static unsigned ____alias_loc_id_14;
+static unsigned ____alias_loc_id_15;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -2564,13 +2571,13 @@ extern int solver( float** y,
      float* params,
      int mode);
 
-extern void read( char* filename,
+extern void myocyte_read( char* filename,
      float* input,
      int data_rows,
      int data_cols,
      int major);
 
-extern void write( char* filename,
+extern void myocyte_write( char* filename,
      float* input,
      int data_rows,
      int data_cols,
@@ -2579,7 +2586,31 @@ extern void write( char* filename,
 
 extern long long get_time();
 # 2 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c" 2
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 1 "/usr/include/assert.h" 1 3 4
+# 66 "/usr/include/assert.h" 3 4
+extern "C" {
+
+
+extern void __assert_fail (__const char *__assertion, __const char *__file,
+      unsigned int __line, __const char *__function)
+     throw () __attribute__ ((__noreturn__));
+
+
+extern void __assert_perror_fail (int __errnum, __const char *__file,
+      unsigned int __line,
+      __const char *__function)
+     throw () __attribute__ ((__noreturn__));
+
+
+
+
+extern void __assert (const char *__assertion, const char *__file, int __line)
+     throw () __attribute__ ((__noreturn__));
+
+
+}
+# 3 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c" 2
+# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -3387,9 +3418,9 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c" 2
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c" 2
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
@@ -3866,7 +3897,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c" 2
+# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c" 2
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 27 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/time.h" 1 3 4
@@ -3972,9 +4003,9 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c" 2
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c" 2
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 85 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 
 # 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
 # 11 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
@@ -3983,65 +4014,61 @@ extern void checkpoint();
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c" 2
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 87 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c" 2
+# 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 double seconds_npm();
 double seconds_quick(); double seconds();
 double seconds_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; struct timeval tp;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i64 }", (void *)(&tp), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-      ;
+ if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i64 }", (void *)(&tp), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     struct timezone tzp; ;
+      ;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     int i; i = (gettimeofday(&tp, &tzp)) ;
+     struct timezone tzp; ;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_13, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+     int i; i = (gettimeofday(&tp, &tzp)) ;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_13, ____chimes_did_disable0, false); }
+     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_14, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_14, ____chimes_did_disable0, false); }
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-static long long (*____chimes_extern_func_get_time)(void) = get_time;static int (*____chimes_extern_func_solver)(float **, float *, int, float *, int) = solver;
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+static long long (*____chimes_extern_func_get_time)(void) = get_time;static char *(*____chimes_extern_func_getenv)(const char *) = getenv;static void (*____chimes_extern_func_myocyte_read)(char *, float *, int, int, int) = myocyte_read;static int (*____chimes_extern_func_solver)(float **, float *, int, float *, int) = solver;
 int main_quick(int argc, char *argv []); int main(int argc, char *argv []);
-int main_resumable(int argc, char *argv []){const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(3544992459305492265UL), "main|argc|0", (int *)0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-int threads;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+int main_resumable(int argc, char *argv []){const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(3544992459305492288UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; char params_path[1024];
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+char y_path[1024];
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+double start_time;
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 float **params;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 float **x;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 float ***y;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long xmax;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long workload;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 int mode;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-int j;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 int i;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-long long memory;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long long time4;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long long time3;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long long time2;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long long time1;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long long time0;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- register_stack_vars(16, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|threads|0", (int *)0x0, "i32", (void *)(&threads), (size_t)4, 0, 0, 0, "main|params|0", (int *)0x0, "float**", (void *)(&params), (size_t)8, 1, 0, 0, "main|x|0", (int *)0x0, "float**", (void *)(&x), (size_t)8, 1, 0, 0, "main|y|0", (int *)0x0, "float***", (void *)(&y), (size_t)8, 1, 0, 0, "main|xmax|0", (int *)0x0, "i64", (void *)(&xmax), (size_t)8, 0, 0, 0, "main|workload|0", (int *)0x0, "i64", (void *)(&workload), (size_t)8, 0, 0, 0, "main|mode|0", (int *)0x0, "i32", (void *)(&mode), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|memory|0", (int *)0x0, "i64", (void *)(&memory), (size_t)8, 0, 0, 0, "main|time4|0", &____must_checkpoint_main_time4_0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", (int *)0x0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", (int *)0x0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", (int *)0x0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", (int *)0x0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(16): { goto call_lbl_16; } case(26): { goto call_lbl_26; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(36): { goto call_lbl_36; } case(37): { goto call_lbl_37; } case(45): { goto call_lbl_45; } default: { chimes_error(); } } } ; ;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ register_stack_vars(15, "main|params_path|0", (int *)0x0, "[1024 x i8]", (void *)(params_path), (size_t)1024, 0, 0, 0, "main|y_path|0", (int *)0x0, "[1024 x i8]", (void *)(y_path), (size_t)1024, 0, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|params|0", (int *)0x0, "float**", (void *)(&params), (size_t)8, 1, 0, 0, "main|x|0", (int *)0x0, "float**", (void *)(&x), (size_t)8, 1, 0, 0, "main|y|0", (int *)0x0, "float***", (void *)(&y), (size_t)8, 1, 0, 0, "main|xmax|0", (int *)0x0, "i64", (void *)(&xmax), (size_t)8, 0, 0, 0, "main|workload|0", (int *)0x0, "i64", (void *)(&workload), (size_t)8, 0, 0, 0, "main|mode|0", (int *)0x0, "i32", (void *)(&mode), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|time4|0", &____must_checkpoint_main_time4_0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", (int *)0x0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", (int *)0x0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", (int *)0x0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", (int *)0x0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(16): { goto call_lbl_16; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(36): { goto call_lbl_36; } case(37): { goto call_lbl_37; } case(38): { goto call_lbl_38; } case(39): { goto call_lbl_39; } case(47): { goto call_lbl_47; } default: { chimes_error(); } } } ; ;
+# 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   ;
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
@@ -4051,435 +4078,430 @@ long long time0;
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   ;
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- long long time5; ;
+  ;
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ long long time5; ;
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   ;
+ long long memory; ;
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- int status; ;
+  int j; ;
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
+ int status; ;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  ;
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- long xmin; ;
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   ;
+# 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ long xmin; ;
 # 147 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- float h; ;
+  ;
 # 148 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- float tolerance; ;
+ float h; ;
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ float tolerance; ;
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   ;
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   ;
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  ;
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 162 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- if(argc!=5){
+# 163 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ int threads; ;
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  printf("ERROR: %d is the incorrect number of arguments, the number of arguments must be 4\n", argc-1);
+# 173 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ if(argc!=5){
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+  printf("ERROR: %d is the incorrect number of arguments, the number of arguments must be 4\n", argc-1);
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
+   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- else{
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ else{
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  xmax = atoi(argv[1]);
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  if(xmax<0){
+  xmax = atoi(argv[1]);
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   printf("ERROR: %d is the incorrect end of simulation interval, use numbers > 0\n", xmax);
+  if(xmax<0){
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
+   printf("ERROR: %d is the incorrect end of simulation interval, use numbers > 0\n", xmax);
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  }
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  workload = atoi(argv[2]);
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  if(workload<0){
+  workload = atoi(argv[2]);
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   printf("ERROR: %d is the incorrect number of instances of simulation, use numbers > 0\n", workload);
+  if(workload<0){
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
+   printf("ERROR: %d is the incorrect number of instances of simulation, use numbers > 0\n", workload);
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
 # 202 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  }
 # 203 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 204 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 205 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  mode = 0;
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  mode = atoi(argv[3]);
+  mode = 0;
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  if(mode != 0 && mode != 1){
+  mode = atoi(argv[3]);
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   printf("ERROR: %d is the incorrect mode, it should be omitted or equal to 0 or 1\n", mode);
+  if(mode != 0 && mode != 1){
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
+   printf("ERROR: %d is the incorrect mode, it should be omitted or equal to 0 or 1\n", mode);
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  }
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 215 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  threads = atoi(argv[4]);
 # 219 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  if(threads<0){
+  threads = atoi(argv[4]);
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   printf("ERROR: %d is the incorrect number of threads, use numbers > 0\n", threads);
+  if(threads<0){
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
+   printf("ERROR: %d is the incorrect number of threads, use numbers > 0\n", threads);
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+    int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  }
 # 224 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_16: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 16, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  call_lbl_16: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 16, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 232 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-       start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 236 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+       start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 237 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- memory = workload*(xmax+1)*91*4;
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- if(memory>1000000000){
+ memory = workload*(xmax+1)*91*4;
 # 243 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  printf("ERROR: trying to allocate more than 1.0GB of memory, decrease workload and span parameters or change memory parameter\n");
+ if(memory>1000000000){
 # 244 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
+  printf("ERROR: trying to allocate more than 1.0GB of memory, decrease workload and span parameters or change memory parameter\n");
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
+   int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 251 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- y = (float ***) malloc_wrapper(workload* sizeof(float **), 3544992459305491859UL, 1, 0);
 # 252 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for(i=0; i<workload; i++){
+ y = (float ***) malloc_wrapper(workload* sizeof(float **), 3544992459305491862UL, 1, 0);
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  y[i] = (float**)malloc_wrapper((1+xmax)*sizeof(float*), 3544992459305491855UL, 1, 0);
+ for(i=0; i<workload; i++){
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  for(j=0; j<(1+xmax); j++){
+  y[i] = (float**)malloc_wrapper((1+xmax)*sizeof(float*), 3544992459305491858UL, 1, 0);
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   y[i][j]= (float *) malloc_wrapper(91* sizeof(float), 3544992459305492082UL, 0, 0);
+  for(j=0; j<(1+xmax); j++){
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+   y[i][j]= (float *) malloc_wrapper(91* sizeof(float), 3544992459305492105UL, 0, 0);
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
+  }
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- x = (float **) malloc_wrapper(workload * sizeof(float *), 3544992459305492001UL, 1, 0);
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for (i= 0; i<workload; i++){
+ x = (float **) malloc_wrapper(workload * sizeof(float *), 3544992459305492024UL, 1, 0);
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  x[i]= (float *)malloc_wrapper((1+xmax) *sizeof(float), 3544992459305492003UL, 0, 0);
-# 262 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
-# 263 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- params = (float **) malloc_wrapper(workload * sizeof(float *), 3544992459305492008UL, 1, 0);
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  for (i= 0; i<workload; i++){
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  params[i]= (float *)malloc_wrapper(16 * sizeof(float), 3544992459305492010UL, 0, 0);
-# 267 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 262 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  x[i]= (float *)malloc_wrapper((1+xmax) *sizeof(float), 3544992459305492026UL, 0, 0);
+# 263 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
+# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 265 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ params = (float **) malloc_wrapper(workload * sizeof(float *), 3544992459305491996UL, 1, 0);
+# 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ for (i= 0; i<workload; i++){
+# 267 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  params[i]= (float *)malloc_wrapper(16 * sizeof(float), 3544992459305491998UL, 0, 0);
 # 268 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 269 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_26: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 26, ____alias_loc_id_7, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_7); (*____chimes_extern_func_get_time)(); })));
 # 270 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  call_lbl_26: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 26, ____alias_loc_id_13, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_13); (*____chimes_extern_func_get_time)(); })));
 # 271 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 275 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 276 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for(i=0; i<workload; i++){
+     char *RODINIA_HOME; call_lbl_27: RODINIA_HOME = ((____chimes_does_checkpoint_getenv_npm ? ( ({ calling((void*)getenv, 27, ____alias_loc_id_7, 3544992459305491960UL, 1, (size_t)(3544992459305492316UL)); (getenv)("RODINIA_HOME"); }) ) : (({ calling_npm("getenv", ____alias_loc_id_7); (*____chimes_extern_func_getenv)("RODINIA_HOME"); })))) ;
 # 277 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  alias_group_changed(____alias_loc_id_8); read( "../../data/myocyte/y.txt",
+    ((RODINIA_HOME) ? static_cast<void> (0) : __assert_fail ("RODINIA_HOME", "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c", 277, __PRETTY_FUNCTION__));
 # 278 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     y[i][0],
+     ;
 # 279 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     91,
+     ;
 # 280 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     1,
+    sprintf(y_path, "%s/data/myocyte/y.txt", RODINIA_HOME);
 # 281 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     0);
+    sprintf(params_path, "%s/data/myocyte/params.txt", RODINIA_HOME);
 # 282 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
 # 283 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 284 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  for(i=0; i<workload; i++){
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  alias_group_changed(____alias_loc_id_9); read( "../../data/myocyte/params.txt",
-# 287 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     params[i],
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     16,
-# 289 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     1,
+# 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+   call_lbl_31: (____chimes_does_checkpoint_myocyte_read_npm ? ( ({ float * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (y[i][0]); } calling((void*)myocyte_read, 31, ____alias_loc_id_8, 0UL, 5, (size_t)(3544992459305491713UL), (size_t)(3544992459305492105UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (myocyte_read)(y_path, ____chimes_arg2, 91, 1, 0); }) ) : (({ calling_npm("myocyte_read", ____alias_loc_id_8); (*____chimes_extern_func_myocyte_read)(y_path, y[i][0], 91, 1, 0); })));
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     0);
-# 291 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
+# 291 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_31: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 31, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
+ for(i=0; i<workload; i++){
 # 294 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 295 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 296 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 297 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 298 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+   call_lbl_32: (____chimes_does_checkpoint_myocyte_read_npm ? ( ({ float * ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = (params[i]); } calling((void*)myocyte_read, 32, ____alias_loc_id_9, 0UL, 5, (size_t)(3544992459305491714UL), (size_t)(3544992459305491998UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (myocyte_read)(params_path, ____chimes_arg7, 16, 1, 0); }) ) : (({ calling_npm("myocyte_read", ____alias_loc_id_9); (*____chimes_extern_func_myocyte_read)(params_path, params[i], 16, 1, 0); })));
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- if(mode == 0){
+ }
 # 300 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 301 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  for(i=0; i<workload; i++){
+  call_lbl_33: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 33, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
 # 302 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 303 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    call_lbl_32: status = (____chimes_does_checkpoint_solver_npm ? ( ({ float ** ____chimes_arg0; float * ____chimes_arg1; float * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg0 = (y[i]); ____chimes_arg1 = (x[i]); ____chimes_arg3 = (params[i]); } calling((void*)solver, 32, ____alias_loc_id_10, 0UL, 5, (size_t)(3544992459305491855UL), (size_t)(3544992459305492003UL), (size_t)(0UL), (size_t)(3544992459305492010UL), (size_t)(0UL)); (solver)(____chimes_arg0, ____chimes_arg1, xmax, ____chimes_arg3, mode); }) ) : (({ calling_npm("solver", ____alias_loc_id_10); (*____chimes_extern_func_solver)(y[i], x[i], xmax, params[i], mode); })));
+# 304 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 305 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 306 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 307 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ if(mode == 0){
 # 308 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 309 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  for(i=0; i<workload; i++){
 # 310 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 312 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 313 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-             call_lbl_33: checkpoint_transformed(33, ____alias_loc_id_5);
-# 314 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 315 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+    call_lbl_34: status = (____chimes_does_checkpoint_solver_npm ? ( ({ float ** ____chimes_arg11; float * ____chimes_arg12; float * ____chimes_arg14; if (!____chimes_replaying) { ____chimes_arg11 = (y[i]); ____chimes_arg12 = (x[i]); ____chimes_arg14 = (params[i]); } calling((void*)solver, 34, ____alias_loc_id_10, 0UL, 5, (size_t)(3544992459305491858UL), (size_t)(3544992459305492026UL), (size_t)(0UL), (size_t)(3544992459305491998UL), (size_t)(0UL)); (solver)(____chimes_arg11, ____chimes_arg12, xmax, ____chimes_arg14, mode); }) ) : (({ calling_npm("solver", ____alias_loc_id_10); (*____chimes_extern_func_solver)(y[i], x[i], xmax, params[i], mode); })));
 # 316 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 317 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
 # 318 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- else{
 # 319 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-        status = 0;
 # 320 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 321 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+             call_lbl_35: checkpoint_transformed(35, ____alias_loc_id_5);
 # 322 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-         call_lbl_34: checkpoint_transformed(34, ____alias_loc_id_11);
 # 323 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  }
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-#pragma omp parallel for private(i, status) shared(y, x, xmax, params, mode)
+ }
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  for(i=0; i<workload; i++){
+ else{
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+        status = 0;
 # 328 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    call_lbl_35: status = (____chimes_does_checkpoint_solver_npm ? ( ({ float ** ____chimes_arg5; float * ____chimes_arg6; float * ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg5 = (y[i]); ____chimes_arg6 = (x[i]); ____chimes_arg8 = (params[i]); } calling((void*)solver, 35, ____alias_loc_id_12, 0UL, 5, (size_t)(3544992459305491855UL), (size_t)(3544992459305492003UL), (size_t)(0UL), (size_t)(3544992459305492010UL), (size_t)(0UL)); (solver)(____chimes_arg5, ____chimes_arg6, xmax, ____chimes_arg8, mode); }) ) : (({ calling_npm("solver", ____alias_loc_id_12); (*____chimes_extern_func_solver)(y[i], x[i], xmax, params[i], mode); })));
+# 329 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 330 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+         call_lbl_36: checkpoint_transformed(36, ____alias_loc_id_11);
+# 331 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 332 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 333 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+#pragma omp parallel for private(i, status) shared(y, x, xmax, params, mode)
 # 334 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  for(i=0; i<workload; i++){
 # 335 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 336 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 337 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 338 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
-# 339 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+    call_lbl_37: status = (____chimes_does_checkpoint_solver_npm ? ( ({ float ** ____chimes_arg16; float * ____chimes_arg17; float * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg16 = (y[i]); ____chimes_arg17 = (x[i]); ____chimes_arg19 = (params[i]); } calling((void*)solver, 37, ____alias_loc_id_12, 0UL, 5, (size_t)(3544992459305491858UL), (size_t)(3544992459305492026UL), (size_t)(0UL), (size_t)(3544992459305491998UL), (size_t)(0UL)); (solver)(____chimes_arg16, ____chimes_arg17, xmax, ____chimes_arg19, mode); }) ) : (({ calling_npm("solver", ____alias_loc_id_12); (*____chimes_extern_func_solver)(y[i], x[i], xmax, params[i], mode); })));
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-         call_lbl_36: checkpoint_transformed(36, ____alias_loc_id_6);
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 344 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
-# 358 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 358 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_37: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 37, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 360 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 361 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 362 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 363 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 364 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 365 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for (i= 0; i< workload; i++){
-# 366 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  for (j= 0; j< (1+xmax); j++){
-# 367 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   free_wrapper(y[i][j], 3544992459305492082UL);
-# 368 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 345 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 346 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   }
-# 369 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  free_wrapper(y[i], 3544992459305491855UL);
-# 370 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 347 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 348 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 349 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+         call_lbl_38: checkpoint_transformed(38, ____alias_loc_id_6);
+# 350 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 351 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 352 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
+# 366 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 366 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  call_lbl_39: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 39, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));
+# 367 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 368 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 369 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 370 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- free_wrapper(y, 3544992459305491859UL);
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ for (i= 0; i< workload; i++){
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for (i= 0; i< workload; i++){
+  for (j= 0; j< (1+xmax); j++){
 # 375 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  free_wrapper(x[i], 3544992459305492003UL);
+   free_wrapper(y[i][j], 3544992459305492105UL);
 # 376 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
+  }
 # 377 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- free_wrapper(x, 3544992459305492001UL);
+  free_wrapper(y[i], 3544992459305491858UL);
 # 378 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 379 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 380 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for (i= 0; i< workload; i++){
-# 381 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  free_wrapper(params[i], 3544992459305492010UL);
-# 382 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
+# 379 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ free_wrapper(y, 3544992459305491862UL);
+# 380 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 381 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 382 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ for (i= 0; i< workload; i++){
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- free_wrapper(params, 3544992459305492008UL);
+  free_wrapper(x[i], 3544992459305492026UL);
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_45: time5= (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 45, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));
+ free_wrapper(x, 3544992459305492024UL);
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     double end_time; end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 388 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    printf("execution took %f s\n", end_time - start_time);
+ for (i= 0; i< workload; i++){
 # 389 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  free_wrapper(params[i], 3544992459305491998UL);
 # 390 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 391 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ free_wrapper(params, 3544992459305491996UL);
 # 392 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 393 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  call_lbl_47: time5= (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 47, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));
 # 394 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("Time spent in different stages of the application:\n");
 # 395 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s, %.12f % : SETUP VARIABLES, READ COMMAND LINE ARGUMENTS\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time5-time0) * 100);
+     double end_time; end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 396 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s, %.12f % : ALLOCATE MEMORY\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time5-time0) * 100);
+    printf("execution took %f s\n", end_time - start_time);
 # 397 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s, %.12f % : READ DATA FROM FILES\n", (float) (time3-time2) / 1000000, (float) (time3-time2) / (float) (time5-time0) * 100);
 # 398 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s, %.12f % : RUN COMPUTATION\n", (float) (time4-time3) / 1000000, (float) (time4-time3) / (float) (time5-time0) * 100);
 # 399 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s, %.12f % : FREE MEMORY\n", (float) (time5-time4) / 1000000, (float) (time5-time4) / (float) (time5-time0) * 100);
 # 400 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("Total time:\n");
 # 401 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s\n", (float) (time5-time0) / 1000000);
 # 402 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("Time spent in different stages of the application:\n");
 # 403 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("%.12f s, %.12f % : SETUP VARIABLES, READ COMMAND LINE ARGUMENTS\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time5-time0) * 100);
 # 404 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("%.12f s, %.12f % : ALLOCATE MEMORY\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time5-time0) * 100);
 # 405 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("%.12f s, %.12f % : READ DATA FROM FILES\n", (float) (time3-time2) / 1000000, (float) (time3-time2) / (float) (time5-time0) * 100);
 # 406 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
+ printf("%.12f s, %.12f % : RUN COMPUTATION\n", (float) (time4-time3) / 1000000, (float) (time4-time3) / (float) (time5-time0) * 100);
 # 407 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); }
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-double seconds_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; struct timeval tp;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i64 }", (void *)(&tp), (size_t)16, 0, 1, 0); } ; ;
+ printf("%.12f s, %.12f % : FREE MEMORY\n", (float) (time5-time4) / 1000000, (float) (time5-time4) / (float) (time5-time0) * 100);
+# 408 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("Total time:\n");
+# 409 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("%.12f s\n", (float) (time5-time0) / 1000000);
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 411 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 412 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 413 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 414 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+     int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
+# 415 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); }
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-      ;
+double seconds_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; struct timeval tp;
+# 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i64 }", (void *)(&tp), (size_t)16, 0, 1, 0); } ; ;
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     struct timezone tzp; ;
+      ;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     int i; i = (gettimeofday(&tp, &tzp)) ;
+     struct timezone tzp; ;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_13, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+     int i; i = (gettimeofday(&tp, &tzp)) ;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_13, ____chimes_did_disable0, false); }
+     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_14, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 110 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_14, ____chimes_did_disable0, false); }
 
 double seconds() { return (____chimes_replaying ? seconds_resumable() : seconds_quick()); }
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-int main_quick(int argc, char *argv []){const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(3544992459305492265UL), "main|argc|0", (int *)0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-int threads;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+int main_quick(int argc, char *argv []){const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(3544992459305492288UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; char params_path[1024];
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+char y_path[1024];
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+double start_time;
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 float **params;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 float **x;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 float ***y;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long xmax;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long workload;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 int mode;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-int j;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 int i;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-long long memory;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long long time4;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long long time3;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long long time2;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long long time1;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 long long time0;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- register_stack_vars(16, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|threads|0", (int *)0x0, "i32", (void *)(&threads), (size_t)4, 0, 0, 0, "main|params|0", (int *)0x0, "float**", (void *)(&params), (size_t)8, 1, 0, 0, "main|x|0", (int *)0x0, "float**", (void *)(&x), (size_t)8, 1, 0, 0, "main|y|0", (int *)0x0, "float***", (void *)(&y), (size_t)8, 1, 0, 0, "main|xmax|0", (int *)0x0, "i64", (void *)(&xmax), (size_t)8, 0, 0, 0, "main|workload|0", (int *)0x0, "i64", (void *)(&workload), (size_t)8, 0, 0, 0, "main|mode|0", (int *)0x0, "i32", (void *)(&mode), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|memory|0", (int *)0x0, "i64", (void *)(&memory), (size_t)8, 0, 0, 0, "main|time4|0", &____must_checkpoint_main_time4_0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", (int *)0x0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", (int *)0x0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", (int *)0x0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", (int *)0x0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); ; ;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ register_stack_vars(15, "main|params_path|0", (int *)0x0, "[1024 x i8]", (void *)(params_path), (size_t)1024, 0, 0, 0, "main|y_path|0", (int *)0x0, "[1024 x i8]", (void *)(y_path), (size_t)1024, 0, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|params|0", (int *)0x0, "float**", (void *)(&params), (size_t)8, 1, 0, 0, "main|x|0", (int *)0x0, "float**", (void *)(&x), (size_t)8, 1, 0, 0, "main|y|0", (int *)0x0, "float***", (void *)(&y), (size_t)8, 1, 0, 0, "main|xmax|0", (int *)0x0, "i64", (void *)(&xmax), (size_t)8, 0, 0, 0, "main|workload|0", (int *)0x0, "i64", (void *)(&workload), (size_t)8, 0, 0, 0, "main|mode|0", (int *)0x0, "i32", (void *)(&mode), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|time4|0", &____must_checkpoint_main_time4_0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", (int *)0x0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", (int *)0x0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", (int *)0x0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", (int *)0x0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); ; ;
+# 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   ;
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
@@ -4489,395 +4511,394 @@ long long time0;
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   ;
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- long long time5; ;
+  ;
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ long long time5; ;
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   ;
+ long long memory; ;
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- int status; ;
+  int j; ;
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
+ int status; ;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  ;
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- long xmin; ;
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   ;
+# 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ long xmin; ;
 # 147 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- float h; ;
+  ;
 # 148 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- float tolerance; ;
+ float h; ;
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ float tolerance; ;
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   ;
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   ;
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  ;
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 162 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ;
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- if(argc!=5){
+# 163 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ int threads; ;
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  printf("ERROR: %d is the incorrect number of arguments, the number of arguments must be 4\n", argc-1);
+# 173 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ if(argc!=5){
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+  printf("ERROR: %d is the incorrect number of arguments, the number of arguments must be 4\n", argc-1);
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
+   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- else{
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ else{
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  xmax = atoi(argv[1]);
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  if(xmax<0){
+  xmax = atoi(argv[1]);
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   printf("ERROR: %d is the incorrect end of simulation interval, use numbers > 0\n", xmax);
+  if(xmax<0){
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
+   printf("ERROR: %d is the incorrect end of simulation interval, use numbers > 0\n", xmax);
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  }
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  workload = atoi(argv[2]);
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  if(workload<0){
+  workload = atoi(argv[2]);
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   printf("ERROR: %d is the incorrect number of instances of simulation, use numbers > 0\n", workload);
+  if(workload<0){
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
+   printf("ERROR: %d is the incorrect number of instances of simulation, use numbers > 0\n", workload);
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
 # 202 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  }
 # 203 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 204 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 205 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  mode = 0;
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  mode = atoi(argv[3]);
+  mode = 0;
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  if(mode != 0 && mode != 1){
+  mode = atoi(argv[3]);
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   printf("ERROR: %d is the incorrect mode, it should be omitted or equal to 0 or 1\n", mode);
+  if(mode != 0 && mode != 1){
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
+   printf("ERROR: %d is the incorrect mode, it should be omitted or equal to 0 or 1\n", mode);
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  }
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 215 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  threads = atoi(argv[4]);
 # 219 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  if(threads<0){
+  threads = atoi(argv[4]);
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   printf("ERROR: %d is the incorrect number of threads, use numbers > 0\n", threads);
+  if(threads<0){
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
+   printf("ERROR: %d is the incorrect number of threads, use numbers > 0\n", threads);
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+    int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  }
 # 224 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_16: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 16, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  call_lbl_16: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 16, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 232 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-       start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 236 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+       start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 237 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- memory = workload*(xmax+1)*91*4;
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- if(memory>1000000000){
+ memory = workload*(xmax+1)*91*4;
 # 243 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  printf("ERROR: trying to allocate more than 1.0GB of memory, decrease workload and span parameters or change memory parameter\n");
+ if(memory>1000000000){
 # 244 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
+  printf("ERROR: trying to allocate more than 1.0GB of memory, decrease workload and span parameters or change memory parameter\n");
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
+   int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 251 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- y = (float ***) malloc_wrapper(workload* sizeof(float **), 3544992459305491859UL, 1, 0);
 # 252 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for(i=0; i<workload; i++){
+ y = (float ***) malloc_wrapper(workload* sizeof(float **), 3544992459305491862UL, 1, 0);
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  y[i] = (float**)malloc_wrapper((1+xmax)*sizeof(float*), 3544992459305491855UL, 1, 0);
+ for(i=0; i<workload; i++){
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  for(j=0; j<(1+xmax); j++){
+  y[i] = (float**)malloc_wrapper((1+xmax)*sizeof(float*), 3544992459305491858UL, 1, 0);
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   y[i][j]= (float *) malloc_wrapper(91* sizeof(float), 3544992459305492082UL, 0, 0);
+  for(j=0; j<(1+xmax); j++){
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+   y[i][j]= (float *) malloc_wrapper(91* sizeof(float), 3544992459305492105UL, 0, 0);
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
+  }
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- x = (float **) malloc_wrapper(workload * sizeof(float *), 3544992459305492001UL, 1, 0);
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for (i= 0; i<workload; i++){
+ x = (float **) malloc_wrapper(workload * sizeof(float *), 3544992459305492024UL, 1, 0);
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  x[i]= (float *)malloc_wrapper((1+xmax) *sizeof(float), 3544992459305492003UL, 0, 0);
-# 262 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
-# 263 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- params = (float **) malloc_wrapper(workload * sizeof(float *), 3544992459305492008UL, 1, 0);
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  for (i= 0; i<workload; i++){
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  params[i]= (float *)malloc_wrapper(16 * sizeof(float), 3544992459305492010UL, 0, 0);
-# 267 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 262 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  x[i]= (float *)malloc_wrapper((1+xmax) *sizeof(float), 3544992459305492026UL, 0, 0);
+# 263 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
+# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 265 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ params = (float **) malloc_wrapper(workload * sizeof(float *), 3544992459305491996UL, 1, 0);
+# 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ for (i= 0; i<workload; i++){
+# 267 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  params[i]= (float *)malloc_wrapper(16 * sizeof(float), 3544992459305491998UL, 0, 0);
 # 268 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 269 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_26: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 26, ____alias_loc_id_7, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_7); (*____chimes_extern_func_get_time)(); })));
 # 270 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  call_lbl_26: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 26, ____alias_loc_id_13, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_13); (*____chimes_extern_func_get_time)(); })));
 # 271 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 275 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 276 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for(i=0; i<workload; i++){
+     char *RODINIA_HOME; call_lbl_27: RODINIA_HOME = ((____chimes_does_checkpoint_getenv_npm ? ( ({ calling((void*)getenv, 27, ____alias_loc_id_7, 3544992459305491960UL, 1, (size_t)(3544992459305492316UL)); (getenv)("RODINIA_HOME"); }) ) : (({ calling_npm("getenv", ____alias_loc_id_7); (*____chimes_extern_func_getenv)("RODINIA_HOME"); })))) ;
 # 277 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  alias_group_changed(____alias_loc_id_8); read( "../../data/myocyte/y.txt",
+    ((RODINIA_HOME) ? static_cast<void> (0) : __assert_fail ("RODINIA_HOME", "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c", 277, __PRETTY_FUNCTION__));
 # 278 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     y[i][0],
+     ;
 # 279 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     91,
+     ;
 # 280 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     1,
+    sprintf(y_path, "%s/data/myocyte/y.txt", RODINIA_HOME);
 # 281 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     0);
+    sprintf(params_path, "%s/data/myocyte/params.txt", RODINIA_HOME);
 # 282 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
 # 283 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 284 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  for(i=0; i<workload; i++){
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  alias_group_changed(____alias_loc_id_9); read( "../../data/myocyte/params.txt",
-# 287 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     params[i],
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     16,
-# 289 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     1,
+# 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+   call_lbl_31: (____chimes_does_checkpoint_myocyte_read_npm ? ( ({ calling((void*)myocyte_read, 31, ____alias_loc_id_8, 0UL, 5, (size_t)(3544992459305491713UL), (size_t)(3544992459305492105UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (myocyte_read)(y_path, y[i][0], 91, 1, 0); }) ) : (({ calling_npm("myocyte_read", ____alias_loc_id_8); (*____chimes_extern_func_myocyte_read)(y_path, y[i][0], 91, 1, 0); })));
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     0);
-# 291 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
+# 291 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_31: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 31, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
+ for(i=0; i<workload; i++){
 # 294 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 295 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 296 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 297 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 298 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+   call_lbl_32: (____chimes_does_checkpoint_myocyte_read_npm ? ( ({ calling((void*)myocyte_read, 32, ____alias_loc_id_9, 0UL, 5, (size_t)(3544992459305491714UL), (size_t)(3544992459305491998UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (myocyte_read)(params_path, params[i], 16, 1, 0); }) ) : (({ calling_npm("myocyte_read", ____alias_loc_id_9); (*____chimes_extern_func_myocyte_read)(params_path, params[i], 16, 1, 0); })));
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- if(mode == 0){
+ }
 # 300 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 301 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  for(i=0; i<workload; i++){
+  call_lbl_33: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 33, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
 # 302 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 303 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    call_lbl_32: status = (____chimes_does_checkpoint_solver_npm ? ( ({ calling((void*)solver, 32, ____alias_loc_id_10, 0UL, 5, (size_t)(3544992459305491855UL), (size_t)(3544992459305492003UL), (size_t)(0UL), (size_t)(3544992459305492010UL), (size_t)(0UL)); (solver)(y[i], x[i], xmax, params[i], mode); }) ) : (({ calling_npm("solver", ____alias_loc_id_10); (*____chimes_extern_func_solver)(y[i], x[i], xmax, params[i], mode); })));
+# 304 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 305 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 306 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 307 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ if(mode == 0){
 # 308 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 309 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  for(i=0; i<workload; i++){
 # 310 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 312 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 313 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-             call_lbl_33: checkpoint_transformed(33, ____alias_loc_id_5);
-# 314 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 315 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
+    call_lbl_34: status = (____chimes_does_checkpoint_solver_npm ? ( ({ calling((void*)solver, 34, ____alias_loc_id_10, 0UL, 5, (size_t)(3544992459305491858UL), (size_t)(3544992459305492026UL), (size_t)(0UL), (size_t)(3544992459305491998UL), (size_t)(0UL)); (solver)(y[i], x[i], xmax, params[i], mode); }) ) : (({ calling_npm("solver", ____alias_loc_id_10); (*____chimes_extern_func_solver)(y[i], x[i], xmax, params[i], mode); })));
 # 316 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 317 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
 # 318 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- else{
 # 319 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-        status = 0;
 # 320 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 321 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+             call_lbl_35: checkpoint_transformed(35, ____alias_loc_id_5);
 # 322 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-         call_lbl_34: checkpoint_transformed(34, ____alias_loc_id_11);
 # 323 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  }
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-#pragma omp parallel for private(i, status) shared(y, x, xmax, params, mode)
+ }
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  for(i=0; i<workload; i++){
+ else{
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+        status = 0;
 # 328 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    call_lbl_35: status = (____chimes_does_checkpoint_solver_npm ? ( ({ calling((void*)solver, 35, ____alias_loc_id_12, 0UL, 5, (size_t)(3544992459305491855UL), (size_t)(3544992459305492003UL), (size_t)(0UL), (size_t)(3544992459305492010UL), (size_t)(0UL)); (solver)(y[i], x[i], xmax, params[i], mode); }) ) : (({ calling_npm("solver", ____alias_loc_id_12); (*____chimes_extern_func_solver)(y[i], x[i], xmax, params[i], mode); })));
+# 329 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 330 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+         call_lbl_36: checkpoint_transformed(36, ____alias_loc_id_11);
+# 331 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 332 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 333 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+#pragma omp parallel for private(i, status) shared(y, x, xmax, params, mode)
 # 334 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  for(i=0; i<workload; i++){
 # 335 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 336 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 337 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 338 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  }
-# 339 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+    call_lbl_37: status = (____chimes_does_checkpoint_solver_npm ? ( ({ calling((void*)solver, 37, ____alias_loc_id_12, 0UL, 5, (size_t)(3544992459305491858UL), (size_t)(3544992459305492026UL), (size_t)(0UL), (size_t)(3544992459305491998UL), (size_t)(0UL)); (solver)(y[i], x[i], xmax, params[i], mode); }) ) : (({ calling_npm("solver", ____alias_loc_id_12); (*____chimes_extern_func_solver)(y[i], x[i], xmax, params[i], mode); })));
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-         call_lbl_36: checkpoint_transformed(36, ____alias_loc_id_6);
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 344 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
-# 358 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 358 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_37: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 37, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 360 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 361 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 362 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 363 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 364 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 365 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for (i= 0; i< workload; i++){
-# 366 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  for (j= 0; j< (1+xmax); j++){
-# 367 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   free_wrapper(y[i][j], 3544992459305492082UL);
-# 368 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 345 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 346 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   }
-# 369 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  free_wrapper(y[i], 3544992459305491855UL);
-# 370 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 347 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 348 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 349 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+         call_lbl_38: checkpoint_transformed(38, ____alias_loc_id_6);
+# 350 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 351 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 352 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
+# 366 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 366 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  call_lbl_39: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 39, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));
+# 367 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 368 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 369 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 370 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- free_wrapper(y, 3544992459305491859UL);
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ for (i= 0; i< workload; i++){
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for (i= 0; i< workload; i++){
+  for (j= 0; j< (1+xmax); j++){
 # 375 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  free_wrapper(x[i], 3544992459305492003UL);
+   free_wrapper(y[i][j], 3544992459305492105UL);
 # 376 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- }
+  }
 # 377 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- free_wrapper(x, 3544992459305492001UL);
+  free_wrapper(y[i], 3544992459305491858UL);
 # 378 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 379 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-# 380 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- for (i= 0; i< workload; i++){
-# 381 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  free_wrapper(params[i], 3544992459305492010UL);
-# 382 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
+# 379 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ free_wrapper(y, 3544992459305491862UL);
+# 380 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 381 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 382 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ for (i= 0; i< workload; i++){
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- free_wrapper(params, 3544992459305492008UL);
+  free_wrapper(x[i], 3544992459305492026UL);
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  call_lbl_45: time5= (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 45, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));
+ free_wrapper(x, 3544992459305492024UL);
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     double end_time; end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 388 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    printf("execution took %f s\n", end_time - start_time);
+ for (i= 0; i< workload; i++){
 # 389 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  free_wrapper(params[i], 3544992459305491998UL);
 # 390 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ }
 # 391 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ free_wrapper(params, 3544992459305491996UL);
 # 392 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 393 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+  call_lbl_47: time5= (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 47, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));
 # 394 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("Time spent in different stages of the application:\n");
 # 395 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s, %.12f % : SETUP VARIABLES, READ COMMAND LINE ARGUMENTS\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time5-time0) * 100);
+     double end_time; end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 396 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s, %.12f % : ALLOCATE MEMORY\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time5-time0) * 100);
+    printf("execution took %f s\n", end_time - start_time);
 # 397 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s, %.12f % : READ DATA FROM FILES\n", (float) (time3-time2) / 1000000, (float) (time3-time2) / (float) (time5-time0) * 100);
 # 398 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s, %.12f % : RUN COMPUTATION\n", (float) (time4-time3) / 1000000, (float) (time4-time3) / (float) (time5-time0) * 100);
 # 399 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s, %.12f % : FREE MEMORY\n", (float) (time5-time4) / 1000000, (float) (time5-time4) / (float) (time5-time0) * 100);
 # 400 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("Total time:\n");
 # 401 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- printf("%.12f s\n", (float) (time5-time0) / 1000000);
 # 402 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("Time spent in different stages of the application:\n");
 # 403 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("%.12f s, %.12f % : SETUP VARIABLES, READ COMMAND LINE ARGUMENTS\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time5-time0) * 100);
 # 404 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("%.12f s, %.12f % : ALLOCATE MEMORY\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time5-time0) * 100);
 # 405 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("%.12f s, %.12f % : READ DATA FROM FILES\n", (float) (time3-time2) / 1000000, (float) (time3-time2) / (float) (time5-time0) * 100);
 # 406 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
+ printf("%.12f s, %.12f % : RUN COMPUTATION\n", (float) (time4-time3) / 1000000, (float) (time4-time3) / (float) (time5-time0) * 100);
 # 407 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_14, ____chimes_did_disable1, false); }
+ printf("%.12f s, %.12f % : FREE MEMORY\n", (float) (time5-time4) / 1000000, (float) (time5-time4) / (float) (time5-time0) * 100);
+# 408 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("Total time:\n");
+# 409 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+ printf("%.12f s\n", (float) (time5-time0) / 1000000);
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 411 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 412 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 413 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+# 414 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+     int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
+# 415 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_15, ____chimes_did_disable1, false); }
 
 int main(int argc, char *argv []) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-double seconds_npm() {
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    struct timeval tp;
+double seconds_npm() {
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    struct timezone tzp;
+    struct timeval tp;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    int i = gettimeofday(&tp, &tzp);
+    struct timezone tzp;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     double ____chimes_ret_var_0; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); return ____chimes_ret_var_0; ;
+    int i = gettimeofday(&tp, &tzp);
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
+     double ____chimes_ret_var_0; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); return ____chimes_ret_var_0; ;
+# 110 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 }
 
 
@@ -4885,51 +4906,64 @@ double seconds_npm() {
 
 
 static int module_init() {
-    init_module(3544992459305491656UL, 9, 2, 2, 15, 1, 2, 3, 2, 8, 2,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (3544992459305491656UL + 39UL), (3544992459305491656UL + 40UL), (3544992459305491656UL + 42UL), (3544992459305491656UL + 48UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (3544992459305491656UL + 26UL), (3544992459305491656UL + 27UL), (3544992459305491656UL + 28UL),
+    init_module(3544992459305491656UL, 10, 2, 6, 16, 1, 4, 5, 2, 11, 2,
+                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (3544992459305491656UL + 26UL), (3544992459305491656UL + 27UL), (3544992459305491656UL + 28UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (3544992459305491656UL + 39UL), (3544992459305491656UL + 40UL), (3544992459305491656UL + 48UL),
                            &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (3544992459305491656UL + 33UL), (3544992459305491656UL + 36UL), (3544992459305491656UL + 37UL),
                            &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (3544992459305491656UL + 32UL), (3544992459305491656UL + 36UL),
-                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (unsigned)0, (3544992459305491656UL + 31UL), (3544992459305491656UL + 36UL),
+                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (unsigned)0, (3544992459305491656UL + 36UL), (3544992459305491656UL + 56UL),
                            &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (3544992459305491656UL + 38UL),
                            &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)0, (3544992459305491656UL + 36UL), (3544992459305491656UL + 38UL),
-                           &____alias_loc_id_7, (unsigned)12, (unsigned)0, (unsigned)0, (3544992459305491656UL + 30UL), (3544992459305491656UL + 35UL), (3544992459305491656UL + 36UL), (3544992459305491656UL + 37UL), (3544992459305491656UL + 45UL), (3544992459305491656UL + 46UL), (3544992459305491656UL + 47UL), (3544992459305491656UL + 54UL), (3544992459305491656UL + 199UL), (3544992459305491656UL + 203UL), (3544992459305491656UL + 345UL), (3544992459305491656UL + 352UL),
-                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (unsigned)1, (3544992459305491656UL + 31UL), (3544992459305491656UL + 36UL), "read", (unsigned)2, (3544992459305491656UL + 426UL), (3544992459305491656UL + 630UL),
-                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)1, (3544992459305491656UL + 31UL), (3544992459305491656UL + 36UL), "read", (unsigned)2, (3544992459305491656UL + 354UL), (3544992459305491656UL + 631UL),
-                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)1, (3544992459305491656UL + 32UL), (3544992459305491656UL + 36UL), "solver", (unsigned)3, (3544992459305491656UL + 199UL), (3544992459305491656UL + 347UL), (3544992459305491656UL + 354UL),
+                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)1, (3544992459305491656UL + 31UL), "getenv", (unsigned)2, (3544992459305491656UL + 304UL), (3544992459305491656UL + 660UL),
+                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (unsigned)1, (3544992459305491656UL + 36UL), (3544992459305491656UL + 56UL), "myocyte_read", (unsigned)2, (3544992459305491656UL + 57UL), (3544992459305491656UL + 449UL),
+                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)1, (3544992459305491656UL + 36UL), (3544992459305491656UL + 56UL), "myocyte_read", (unsigned)2, (3544992459305491656UL + 58UL), (3544992459305491656UL + 342UL),
+                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)1, (3544992459305491656UL + 32UL), (3544992459305491656UL + 36UL), "solver", (unsigned)3, (3544992459305491656UL + 202UL), (3544992459305491656UL + 342UL), (3544992459305491656UL + 370UL),
                             &____alias_loc_id_11, (unsigned)2, (unsigned)0, (unsigned)0, (3544992459305491656UL + 32UL), (3544992459305491656UL + 38UL),
-                            &____alias_loc_id_12, (unsigned)2, (unsigned)0, (unsigned)1, (3544992459305491656UL + 36UL), (3544992459305491656UL + 38UL), "solver", (unsigned)3, (3544992459305491656UL + 199UL), (3544992459305491656UL + 347UL), (3544992459305491656UL + 354UL),
-                            &____alias_loc_id_13, (unsigned)3, (unsigned)0, (unsigned)0, (3544992459305491656UL + 1UL), (3544992459305491656UL + 3UL), (3544992459305491656UL + 4UL),
-                            &____alias_loc_id_14, (unsigned)18, (unsigned)0, (unsigned)0, (3544992459305491656UL + 26UL), (3544992459305491656UL + 29UL), (3544992459305491656UL + 30UL), (3544992459305491656UL + 34UL), (3544992459305491656UL + 35UL), (3544992459305491656UL + 39UL), (3544992459305491656UL + 40UL), (3544992459305491656UL + 42UL), (3544992459305491656UL + 48UL), (3544992459305491656UL + 49UL), (3544992459305491656UL + 50UL), (3544992459305491656UL + 51UL), (3544992459305491656UL + 52UL), (3544992459305491656UL + 53UL), (3544992459305491656UL + 54UL), (3544992459305491656UL + 55UL), (3544992459305491656UL + 56UL), (3544992459305491656UL + 57UL),
+                            &____alias_loc_id_12, (unsigned)2, (unsigned)0, (unsigned)1, (3544992459305491656UL + 36UL), (3544992459305491656UL + 38UL), "solver", (unsigned)3, (3544992459305491656UL + 202UL), (3544992459305491656UL + 342UL), (3544992459305491656UL + 370UL),
+                            &____alias_loc_id_13, (unsigned)12, (unsigned)0, (unsigned)0, (3544992459305491656UL + 30UL), (3544992459305491656UL + 35UL), (3544992459305491656UL + 36UL), (3544992459305491656UL + 37UL), (3544992459305491656UL + 45UL), (3544992459305491656UL + 46UL), (3544992459305491656UL + 47UL), (3544992459305491656UL + 54UL), (3544992459305491656UL + 202UL), (3544992459305491656UL + 206UL), (3544992459305491656UL + 340UL), (3544992459305491656UL + 368UL),
+                            &____alias_loc_id_14, (unsigned)3, (unsigned)0, (unsigned)0, (3544992459305491656UL + 1UL), (3544992459305491656UL + 3UL), (3544992459305491656UL + 4UL),
+                            &____alias_loc_id_15, (unsigned)18, (unsigned)0, (unsigned)0, (3544992459305491656UL + 26UL), (3544992459305491656UL + 29UL), (3544992459305491656UL + 30UL), (3544992459305491656UL + 34UL), (3544992459305491656UL + 35UL), (3544992459305491656UL + 39UL), (3544992459305491656UL + 40UL), (3544992459305491656UL + 42UL), (3544992459305491656UL + 48UL), (3544992459305491656UL + 49UL), (3544992459305491656UL + 50UL), (3544992459305491656UL + 51UL), (3544992459305491656UL + 52UL), (3544992459305491656UL + 53UL), (3544992459305491656UL + 54UL), (3544992459305491656UL + 55UL), (3544992459305491656UL + 59UL), (3544992459305491656UL + 60UL),
                             "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (3544992459305491656UL + 1UL), (3544992459305491656UL + 2UL), 0UL,
                                "get_time", (void **)&(____chimes_extern_func_get_time),
+                               "getenv", (void **)&(____chimes_extern_func_getenv),
+                               "myocyte_read", (void **)&(____chimes_extern_func_myocyte_read),
                                "solver", (void **)&(____chimes_extern_func_solver),
                            "seconds", &(____chimes_does_checkpoint_seconds_npm),
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
+                           "getenv", &(____chimes_does_checkpoint_getenv_npm),
+                           "myocyte_read", &(____chimes_does_checkpoint_myocyte_read_npm),
                            "solver", &(____chimes_does_checkpoint_solver_npm),
-                             (3544992459305491656UL + 203UL), (3544992459305491656UL + 199UL),
-                             (3544992459305491656UL + 199UL), (3544992459305491656UL + 426UL),
-                             (3544992459305491656UL + 46UL), (3544992459305491656UL + 345UL),
-                             (3544992459305491656UL + 47UL), (3544992459305491656UL + 352UL),
-                             (3544992459305491656UL + 609UL), (3544992459305491656UL + 98UL),
-                             (3544992459305491656UL + 45UL), (3544992459305491656UL + 203UL),
-                             (3544992459305491656UL + 28UL), (3544992459305491656UL + 609UL),
-                             (3544992459305491656UL + 345UL), (3544992459305491656UL + 347UL),
-                             (3544992459305491656UL + 352UL), (3544992459305491656UL + 354UL),
+                             (3544992459305491656UL + 632UL), (3544992459305491656UL + 101UL),
+                             (3544992459305491656UL + 202UL), (3544992459305491656UL + 449UL),
+                             (3544992459305491656UL + 206UL), (3544992459305491656UL + 202UL),
+                             (3544992459305491656UL + 46UL), (3544992459305491656UL + 368UL),
+                             (3544992459305491656UL + 47UL), (3544992459305491656UL + 340UL),
+                             (3544992459305491656UL + 45UL), (3544992459305491656UL + 206UL),
+                             (3544992459305491656UL + 28UL), (3544992459305491656UL + 632UL),
+                             (3544992459305491656UL + 340UL), (3544992459305491656UL + 342UL),
+                             (3544992459305491656UL + 368UL), (3544992459305491656UL + 370UL),
+                             (3544992459305491656UL + 56UL), (3544992459305491656UL + 304UL),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "timezone", 64UL, 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
                              "seconds", "_Z7secondsv", 0,
-                             "main", "main", 13, "get_time", "get_time", "seconds", "get_time", "get_time", "solver", "checkpoint", "checkpoint", "solver", "checkpoint", "get_time", "get_time", "seconds",
+                             "main", "main", 16, "get_time", "get_time", "seconds", "get_time", "getenv", "myocyte_read", "myocyte_read", "get_time", "solver", "checkpoint", "checkpoint", "solver", "checkpoint", "get_time", "get_time", "seconds",
                         "seconds|tp|0", 1, "seconds",
+                        "main|argc|0", 1, "get_time",
+                        "main|argv|0", 1, "get_time",
                         "main|time4|0", 1, "get_time",
+                        "main|y_path|0", 1, "main",
+                        "main|params_path|0", 1, "main",
         "seconds", 0UL, (int)0,
         "seconds", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
+        "getenv", 3544992459305491960UL, (int)1, 3544992459305492316UL,
+        "myocyte_read", 0UL, (int)5, 3544992459305491713UL, 3544992459305492105UL, 0UL, 0UL, 0UL,
+        "myocyte_read", 0UL, (int)5, 3544992459305491714UL, 3544992459305491998UL, 0UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
-        "solver", 0UL, (int)5, 3544992459305491855UL, 3544992459305492003UL, 0UL, 3544992459305492010UL, 0UL,
-        "solver", 0UL, (int)5, 3544992459305491855UL, 3544992459305492003UL, 0UL, 3544992459305492010UL, 0UL,
+        "solver", 0UL, (int)5, 3544992459305491858UL, 3544992459305492026UL, 0UL, 3544992459305491998UL, 0UL,
+        "solver", 0UL, (int)5, 3544992459305491858UL, 3544992459305492026UL, 0UL, 3544992459305491998UL, 0UL,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0);
     return 0;

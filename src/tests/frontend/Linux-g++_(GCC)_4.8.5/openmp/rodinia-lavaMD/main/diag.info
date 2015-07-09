@@ -44,7 +44,7 @@ InsertText /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 149 61 rm_stack(false,
 InsertText /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 155 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 161 59 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 371 59 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 64 1 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 2, (size_t)(0UL), (size_t)(1242561836700799382UL), "main|argc|0", (int *)0x0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0x0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 64 1 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 2, (size_t)(0UL), (size_t)(1242561836700799382UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 373 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 53 19 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 53 127 
@@ -56,8 +56,8 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 56 5  int i;  i 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 56 36 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 57 6 double ____chimes_ret_var_0; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 57 33 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 64 2 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(1242561836700799382UL), "main|argc|0", (int *)0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 64 281 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 64 2 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(1242561836700799382UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 64 325 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 71 2 long long time0; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 71 17 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 76 2 long long time1; ;
@@ -160,18 +160,6 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 322 36 ({ callin
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 322 44 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 346 24 (____chimes_does_checkpoint_get_time_npm ? ( ({  calling((void*)get_time, 50, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 346 33 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 7 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 9 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 14 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 16 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 23 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 28 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 30 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 35 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 37 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 42 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 88 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 88 18 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 89 3 
@@ -184,17 +172,9 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 92 2
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 92 16 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 93 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 93 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 94 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 94 8 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 199 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 199 23 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 322 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 322 21 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 64 274  ; double end_time;
-# 64
-double start_time;
-# 64
-int nh;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 64 322  ; double start_time;
 # 64
 FOUR_VECTOR *fv_cpu;
 # 64
@@ -208,19 +188,7 @@ dim_str dim_cpu;
 # 64
 par_str par_cpu;
 # 64
-int n;
-# 64
-int m;
-# 64
-int l;
-# 64
-int k;
-# 64
-int j;
-# 64
-int i;
-# 64
- register_stack_vars(15, "main|end_time|0", &____must_checkpoint_main_end_time_0, "double", (void *)(&end_time), (size_t)8, 0, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nh|0", (int *)0x0, "i32", (void *)(&nh), (size_t)4, 0, 0, 0, "main|fv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&fv_cpu), (size_t)8, 1, 0, 0, "main|qv_cpu|0", (int *)0x0, "double*", (void *)(&qv_cpu), (size_t)8, 1, 0, 0, "main|rv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&rv_cpu), (size_t)8, 1, 0, 0, "main|box_cpu|0", (int *)0x0, "%struct.box_str*", (void *)(&box_cpu), (size_t)8, 1, 0, 0, "main|dim_cpu|0", (int *)0x0, "%struct.dim_str = type { i32, i32, i32, i32, i64, i64, i64, i64, i64 }", (void *)(&dim_cpu), (size_t)56, 0, 1, 0, "main|par_cpu|0", (int *)0x0, "%struct.par_str = type { double }", (void *)(&par_cpu), (size_t)8, 0, 1, 0, "main|n|0", (int *)0x0, "i32", (void *)(&n), (size_t)4, 0, 0, 0, "main|m|0", (int *)0x0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "main|l|0", (int *)0x0, "i32", (void *)(&l), (size_t)4, 0, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  
+ register_stack_vars(7, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|fv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&fv_cpu), (size_t)8, 1, 0, 0, "main|qv_cpu|0", (int *)0x0, "double*", (void *)(&qv_cpu), (size_t)8, 1, 0, 0, "main|rv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&rv_cpu), (size_t)8, 1, 0, 0, "main|box_cpu|0", (int *)0x0, "%struct.box_str*", (void *)(&box_cpu), (size_t)8, 1, 0, 0, "main|dim_cpu|0", (int *)0x0, "%struct.dim_str = type { i32, i32, i32, i32, i64, i64, i64, i64, i64 }", (void *)(&dim_cpu), (size_t)56, 0, 1, 0, "main|par_cpu|0", (int *)0x0, "%struct.par_str = type { double }", (void *)(&par_cpu), (size_t)8, 0, 1, 0);  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 53 8 len=7 seconds_resumable
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 54 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 54 23 
@@ -258,18 +226,6 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 322 36 ({ callin
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 322 44 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 346 24 (____chimes_does_checkpoint_get_time_npm ? ( ({  calling((void*)get_time, 50, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 346 33 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 7 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 9 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 14 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 16 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 23 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 28 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 30 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 35 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 37 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 85 42 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 88 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 88 18 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 89 3 
@@ -282,17 +238,9 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 92 2
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 92 16 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 93 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 93 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 94 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 94 8 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 199 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 199 23 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 322 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 322 21 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 64 274  ; double end_time;
-# 64
-double start_time;
-# 64
-int nh;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 64 322  ; double start_time;
 # 64
 FOUR_VECTOR *fv_cpu;
 # 64
@@ -306,16 +254,4 @@ dim_str dim_cpu;
 # 64
 par_str par_cpu;
 # 64
-int n;
-# 64
-int m;
-# 64
-int l;
-# 64
-int k;
-# 64
-int j;
-# 64
-int i;
-# 64
- register_stack_vars(15, "main|end_time|0", &____must_checkpoint_main_end_time_0, "double", (void *)(&end_time), (size_t)8, 0, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nh|0", (int *)0x0, "i32", (void *)(&nh), (size_t)4, 0, 0, 0, "main|fv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&fv_cpu), (size_t)8, 1, 0, 0, "main|qv_cpu|0", (int *)0x0, "double*", (void *)(&qv_cpu), (size_t)8, 1, 0, 0, "main|rv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&rv_cpu), (size_t)8, 1, 0, 0, "main|box_cpu|0", (int *)0x0, "%struct.box_str*", (void *)(&box_cpu), (size_t)8, 1, 0, 0, "main|dim_cpu|0", (int *)0x0, "%struct.dim_str = type { i32, i32, i32, i32, i64, i64, i64, i64, i64 }", (void *)(&dim_cpu), (size_t)56, 0, 1, 0, "main|par_cpu|0", (int *)0x0, "%struct.par_str = type { double }", (void *)(&par_cpu), (size_t)8, 0, 1, 0, "main|n|0", (int *)0x0, "i32", (void *)(&n), (size_t)4, 0, 0, 0, "main|m|0", (int *)0x0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "main|l|0", (int *)0x0, "i32", (void *)(&l), (size_t)4, 0, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(15): { goto call_lbl_15; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(40): { goto call_lbl_40; } case(41): { goto call_lbl_41; } case(42): { goto call_lbl_42; } case(43): { goto call_lbl_43; } case(44): { goto call_lbl_44; } case(50): { goto call_lbl_50; } default: { chimes_error(); } }  }  
+ register_stack_vars(7, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|fv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&fv_cpu), (size_t)8, 1, 0, 0, "main|qv_cpu|0", (int *)0x0, "double*", (void *)(&qv_cpu), (size_t)8, 1, 0, 0, "main|rv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&rv_cpu), (size_t)8, 1, 0, 0, "main|box_cpu|0", (int *)0x0, "%struct.box_str*", (void *)(&box_cpu), (size_t)8, 1, 0, 0, "main|dim_cpu|0", (int *)0x0, "%struct.dim_str = type { i32, i32, i32, i32, i64, i64, i64, i64, i64 }", (void *)(&dim_cpu), (size_t)56, 0, 1, 0, "main|par_cpu|0", (int *)0x0, "%struct.par_str = type { double }", (void *)(&par_cpu), (size_t)8, 0, 1, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(15): { goto call_lbl_15; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(40): { goto call_lbl_40; } case(41): { goto call_lbl_41; } case(42): { goto call_lbl_42; } case(43): { goto call_lbl_43; } case(44): { goto call_lbl_44; } case(50): { goto call_lbl_50; } default: { chimes_error(); } }  }  

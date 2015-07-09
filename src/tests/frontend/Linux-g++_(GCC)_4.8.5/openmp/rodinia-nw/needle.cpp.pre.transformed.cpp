@@ -4093,17 +4093,13 @@ int *output_itemsets;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int *input_itemsets;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-int index;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-int idx;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int penalty;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int max_cols;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- register_stack_vars(8, "runTest|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|index|0", (int *)0x0, "i32", (void *)(&index), (size_t)4, 0, 0, 0, "runTest|idx|0", (int *)0x0, "i32", (void *)(&idx), (size_t)4, 0, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
+ register_stack_vars(6, "runTest|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(16): { goto call_lbl_16; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ; ;
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    int max_rows; ;
+    int max_rows; int idx; int index; ;
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
        ;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
@@ -4241,7 +4237,7 @@ int max_cols;
  printf("Processing bottom-right matrix\n");
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- { lbl_0: int i; register_stack_var("runTest|i|5", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(16): { goto call_lbl_16; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } for( i = (max_cols - 4) ; i >= 0 ; i--){
+ { int i; for( i = (max_cols - 4) ; i >= 0 ; i--){
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
     omp_set_num_threads(omp_num_threads);
@@ -4386,17 +4382,13 @@ int *output_itemsets;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int *input_itemsets;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-int index;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-int idx;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int penalty;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int max_cols;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- register_stack_vars(8, "runTest|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|index|0", (int *)0x0, "i32", (void *)(&index), (size_t)4, 0, 0, 0, "runTest|idx|0", (int *)0x0, "i32", (void *)(&idx), (size_t)4, 0, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0); ; ;
+ register_stack_vars(6, "runTest|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0); ; ;
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    int max_rows; ;
+    int max_rows; int idx; int index; ;
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
        ;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
@@ -4534,7 +4526,7 @@ int max_cols;
  printf("Processing bottom-right matrix\n");
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- { lbl_0: int i; register_stack_var("runTest|i|5", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); for( i = (max_cols - 4) ; i >= 0 ; i--){
+ { int i; for( i = (max_cols - 4) ; i >= 0 ; i--){
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
     omp_set_num_threads(omp_num_threads);

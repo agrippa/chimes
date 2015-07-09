@@ -7,7 +7,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_init|datum_delete|0 " void (i8*)* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_delete|l|0 " %struct.list_t* " 64 1 0 1 list_item_delete
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_delete|li|0 " %struct.list_item* " 64 1 0 1 list_item_delete
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_delete|del|0 " %struct.list_item* " 64 1 0 1 list_item_delete
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_delete|del|0 " %struct.list_item* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_item_delete|li|0 " %struct.list_item* " 64 1 0 1 _Z16list_item_deleteP9list_itemPFvPvE
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_item_delete|datum_delete|0 " void (i8*)* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_reset|l|0 " %struct.list_t* " 64 1 0 0
@@ -86,7 +86,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_visit_items|l|0 " %struct.list_t* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_visit_items|visitor|0 " void (i8*)* " 64 1 0 1 _Z16list_visit_itemsP6list_tPFvPvE
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_visit_items|li|0 " %struct.list_item* " 64 1 0 1 _Z16list_visit_itemsP6list_tPFvPvE
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_visit_items|____chimes_unroll_var_6|0 " i8* " 64 1 0 1 _Z16list_visit_itemsP6list_tPFvPvE
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_visit_items|____chimes_unroll_var_6|0 " i8* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_iterator_init|l|0 " %struct.list_t* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_iterator_init|li|0 " %struct.list_item** " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c list_iterator_delete|li|0 " %struct.list_item** " 64 1 0 0
@@ -320,76 +320,76 @@
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c destroy_tree_nodes|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c destroy_tree|root|0 " %struct.node* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c destroy_tree|____chimes_ret_var_57|0 " %struct.node* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|argc|0 " i32 " 32 0 0 1 checkpoint getchar isInteger kernel_cpu kernel_cpu_2 rewind scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|argv|0 " i8** " 64 1 0 1 checkpoint getchar isInteger kernel_cpu kernel_cpu_2 rewind scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|cur_arg|0 " i32 " 32 0 0 1 checkpoint getchar isInteger kernel_cpu kernel_cpu_2 rewind scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|cores_arg|0 " i32 " 32 0 0 1 checkpoint getchar isInteger kernel_cpu kernel_cpu_2 rewind scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|input_file|0 " i8* " 64 1 0 1 checkpoint getchar isInteger kernel_cpu kernel_cpu_2 rewind scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|command_file|0 " i8* " 64 1 0 1 checkpoint getchar isInteger kernel_cpu kernel_cpu_2 rewind scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|output|0 " i8* " 64 1 0 1 checkpoint getchar isInteger kernel_cpu kernel_cpu_2 rewind scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|pFile|0 " %struct._IO_FILE* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|argc|0 " i32 " 32 0 0 1 isInteger
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|argv|0 " i8** " 64 1 0 1 isInteger rewind
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|cur_arg|0 " i32 " 32 0 0 1 isInteger
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|cores_arg|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|input_file|0 " i8* " 64 1 0 1 isInteger rewind
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|command_file|0 " i8* " 64 1 0 1 isInteger
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|output|0 " i8* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|pFile|0 " %struct._IO_FILE* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_58|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_59|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_60|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_61|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|commandFile|0 " %struct._IO_FILE* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 rewind scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|lSize|0 " i64 " 64 0 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 rewind scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|commandBuffer|0 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|result|0 " i64 " 64 0 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|0 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|commandFile|0 " %struct._IO_FILE* " 64 1 0 1 rewind
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|lSize|0 " i64 " 64 0 0 1 rewind
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|commandBuffer|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|result|0 " i64 " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|0 " i8* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|sPointer|0 " i8* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|file_pointer|0 " %struct._IO_FILE* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|root|0 " %struct.node* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|r|0 " %struct.record* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|file_pointer|0 " %struct._IO_FILE* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|root|0 " %struct.node* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|r|0 " %struct.record* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|input|0 " i32 " 32 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|instruction|0 " i8 " 8 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_62|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|mem_used|0 " i64 " 64 0 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|rootLoc|0 " i64 " 64 0 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|commandPointer|0 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|start_time|0 " double " 64 0 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|mem_used|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|rootLoc|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|commandPointer|0 " i8* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|start_time|0 " double " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_63|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|count|0 " i32 " 32 0 0 1 main
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|records|0 " %struct.record* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|records|0 " %struct.record* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|records_elem|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|records_mem|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes|0 " %struct.knode* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes_elem|0 " i64 " 64 0 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes|0 " %struct.knode* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes_elem|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes_mem|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|currKnode|0 " i64* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|1 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|offset|0 " i64* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|2 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|keys|0 " i32* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|3 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|i|0 " i32 " 32 0 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|ans|0 " %struct.record* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|4 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|currKnode|0 " i64* " 64 1 0 1 kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|1 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|offset|0 " i64* " 64 1 0 1 kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|2 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|keys|0 " i32* " 64 1 0 1 kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|3 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|ans|0 " %struct.record* " 64 1 0 1 kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|4 " i8* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|start|0 " i32 " 32 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|end|0 " i32 " 32 0 0 1 main
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|ansList|0 " %struct.list_t* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_unroll_var_7|0 " i32 " 32 0 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|ansList|0 " %struct.list_t* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_unroll_var_7|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|count|1 " i32 " 32 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|rSize|0 " i32 " 32 0 0 1 main
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes|1 " %struct.knode* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes_elem|1 " i64 " 64 0 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes|1 " %struct.knode* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes_elem|1 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes_mem|1 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|currKnode|1 " i64* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|5 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|offset|1 " i64* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|6 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|lastKnode|0 " i64* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|7 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|offset_2|0 " i64* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|8 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|start|1 " i32* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|9 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|end|1 " i32* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|10 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|i|1 " i32 " 32 0 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|recstart|0 " i32* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|11 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|reclength|0 " i32* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|12 " i8* " 64 1 0 1 checkpoint getchar kernel_cpu kernel_cpu_2 scanf
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|currKnode|1 " i64* " 64 1 0 1 kernel_cpu_2
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|5 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|offset|1 " i64* " 64 1 0 1 kernel_cpu_2
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|6 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|lastKnode|0 " i64* " 64 1 0 1 kernel_cpu_2
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|7 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|offset_2|0 " i64* " 64 1 0 1 kernel_cpu_2
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|8 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|start|1 " i32* " 64 1 0 1 kernel_cpu_2
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|9 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|end|1 " i32* " 64 1 0 1 kernel_cpu_2
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|10 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|i|1 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|recstart|0 " i32* " 64 1 0 1 kernel_cpu_2
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|11 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|reclength|0 " i32* " 64 1 0 1 kernel_cpu_2
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|12 " i8* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|end_time|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_64|0 " i32 " 32 0 0 0

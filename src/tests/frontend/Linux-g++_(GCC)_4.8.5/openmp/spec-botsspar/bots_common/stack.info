@@ -1,4 +1,4 @@
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_error|error|0 " i32 " 32 0 0 1 bots_print_usage
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_error|error|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_error|message|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_warning|warning|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_warning|message|0 " i8* " 64 1 0 0

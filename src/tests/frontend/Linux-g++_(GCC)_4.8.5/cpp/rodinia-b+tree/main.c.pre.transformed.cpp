@@ -84,7 +84,6 @@ static int ____chimes_does_checkpoint_scanf_npm = 1;
 static int ____must_checkpoint_seconds_tp_0 = 2;
 static int ____must_checkpoint_list_delete_l_0 = 2;
 static int ____must_checkpoint_list_delete_li_0 = 2;
-static int ____must_checkpoint_list_delete_del_0 = 2;
 static int ____must_checkpoint_list_item_delete_li_0 = 2;
 static int ____must_checkpoint_list_insert_item_sorted_l_0 = 2;
 static int ____must_checkpoint_list_insert_item_sorted_i_0 = 2;
@@ -106,16 +105,34 @@ static int ____must_checkpoint_list_find_li_0 = 2;
 static int ____must_checkpoint_list_find_____chimes_unroll_var_5_0 = 2;
 static int ____must_checkpoint_list_visit_items_visitor_0 = 2;
 static int ____must_checkpoint_list_visit_items_li_0 = 2;
-static int ____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0 = 2;
 static int ____must_checkpoint_transform_to_cuda_one_0 = 2;
 static int ____must_checkpoint_transform_to_cuda_two_0 = 2;
+static int ____must_checkpoint_main_argc_0 = 2;
+static int ____must_checkpoint_main_argv_0 = 2;
+static int ____must_checkpoint_main_cur_arg_0 = 2;
+static int ____must_checkpoint_main_input_file_0 = 2;
+static int ____must_checkpoint_main_command_file_0 = 2;
+static int ____must_checkpoint_main_commandFile_0 = 2;
+static int ____must_checkpoint_main_lSize_0 = 2;
 static int ____must_checkpoint_main_input_0 = 2;
 static int ____must_checkpoint_main_instruction_0 = 2;
 static int ____must_checkpoint_main_count_0 = 2;
+static int ____must_checkpoint_main_currKnode_0 = 2;
+static int ____must_checkpoint_main_offset_0 = 2;
+static int ____must_checkpoint_main_keys_0 = 2;
+static int ____must_checkpoint_main_ans_0 = 2;
 static int ____must_checkpoint_main_start_0 = 2;
 static int ____must_checkpoint_main_end_0 = 2;
 static int ____must_checkpoint_main_count_1 = 2;
 static int ____must_checkpoint_main_rSize_0 = 2;
+static int ____must_checkpoint_main_currKnode_1 = 2;
+static int ____must_checkpoint_main_offset_1 = 2;
+static int ____must_checkpoint_main_lastKnode_0 = 2;
+static int ____must_checkpoint_main_offset_2_0 = 2;
+static int ____must_checkpoint_main_start_1 = 2;
+static int ____must_checkpoint_main_end_1 = 2;
+static int ____must_checkpoint_main_recstart_0 = 2;
+static int ____must_checkpoint_main_reclength_0 = 2;
 
 static int ____must_manage_insert_into_new_root = 2;
 static int ____must_manage_list_reverse_iterator_get_datum = 2;
@@ -4703,14 +4720,12 @@ void
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_delete_resumable(list_t *l)
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&list_delete), "list_delete", &____must_manage_list_delete, 1, 1, (size_t)(10498980943454487644UL), "list_delete|l|0", &____must_checkpoint_list_delete_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0) ; list_item_t *del;
+{const int ____chimes_did_disable2 = new_stack((void *)(&list_delete), "list_delete", &____must_manage_list_delete, 1, 1, (size_t)(10498980943454487644UL), "list_delete|l|0", &____must_checkpoint_list_delete_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0) ; list_item_t *li;
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-list_item_t *li;
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (____must_checkpoint_list_delete_del_0 || ____must_checkpoint_list_delete_li_0) { register_stack_vars(2, "list_delete|del|0", &____must_checkpoint_list_delete_del_0, "%struct.list_item*", (void *)(&del), (size_t)8, 1, 0, 0, "list_delete|li|0", &____must_checkpoint_list_delete_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_list_delete_li_0) { register_stack_vars(1, "list_delete|li|0", &____must_checkpoint_list_delete_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ;
+   list_item_t *del; ;
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   for (li = l->head; li;) {
@@ -5401,16 +5416,14 @@ list_visit_items_resumable( list_t *l,
 # 526 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void (*visitor)(void *v))
 # 527 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable26 = new_stack((void *)(&list_visit_items), "list_visit_items", (int *)0, 2, 1, (size_t)(10498980943454488847UL), (size_t)(10498980943454488848UL), "list_visit_items|visitor|0", &____must_checkpoint_list_visit_items_visitor_0, "void (i8*)*", (void *)(&visitor), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_6;
+{const int ____chimes_did_disable26 = new_stack((void *)(&list_visit_items), "list_visit_items", (int *)0, 2, 1, (size_t)(10498980943454488847UL), (size_t)(10498980943454488848UL), "list_visit_items|visitor|0", &____must_checkpoint_list_visit_items_visitor_0, "void (i8*)*", (void *)(&visitor), (size_t)8, 1, 0, 0) ; list_item_t *li;
 # 527 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-list_item_t *li;
-# 527 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0 || ____must_checkpoint_list_visit_items_li_0) { register_stack_vars(2, "list_visit_items|____chimes_unroll_var_6|0", &____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0, "i8*", (void *)(&____chimes_unroll_var_6), (size_t)8, 1, 0, 0, "list_visit_items|li|0", &____must_checkpoint_list_visit_items_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_list_visit_items_li_0) { register_stack_vars(1, "list_visit_items|li|0", &____must_checkpoint_list_visit_items_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 528 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    ;
 # 529 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 530 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  for (li = l->head; li; li = li->next) { ____chimes_unroll_var_6 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; call_lbl_1: ((void (*)(void *))(translate_fptr((void *)visitor, 1, 0, 0UL, 1, 10498980943454488835UL)))(____chimes_unroll_var_6); };
+  for (li = l->head; li; li = li->next) { void *____chimes_unroll_var_6; ____chimes_unroll_var_6 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; call_lbl_1: ((void (*)(void *))(translate_fptr((void *)visitor, 1, 0, 0UL, 1, 10498980943454488835UL)))(____chimes_unroll_var_6); };
 # 532 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_visit_items", (int *)0x0, ____alias_loc_id_51, ____chimes_did_disable26, false); }
 # 533 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7541,7 +7554,7 @@ main_resumable( int argc,
 # 1857 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   char** argv )
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable77 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(10498980943454494320UL), "main|argc|0", (int *)0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int *reclength;
+{const int ____chimes_did_disable77 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(10498980943454494320UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int *reclength;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 int *recstart;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7551,15 +7564,9 @@ long *lastKnode;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 int rSize;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-uint32_t ____chimes_unroll_var_7;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-list_t *ansList;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 record *ans;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 int *keys;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-record *records;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 double start_time;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7573,21 +7580,11 @@ char instruction;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 int input;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-record *r;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 node *root;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-FILE *file_pointer;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-size_t result;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-char *commandBuffer;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 long lSize;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 FILE *commandFile;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-FILE *pFile;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 char *output;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7599,7 +7596,7 @@ int cores_arg;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 int cur_arg;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- register_stack_vars(29, "main|reclength|0", (int *)0x0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0, "main|recstart|0", (int *)0x0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "main|offset_2|0", (int *)0x0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "main|lastKnode|0", (int *)0x0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "main|rSize|0", (int *)0x0, "i32", (void *)(&rSize), (size_t)4, 0, 0, 0, "main|____chimes_unroll_var_7|0", (int *)0x0, "i32", (void *)(&____chimes_unroll_var_7), (size_t)4, 0, 0, 0, "main|ansList|0", (int *)0x0, "%struct.list_t*", (void *)(&ansList), (size_t)8, 1, 0, 0, "main|ans|0", (int *)0x0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0, "main|keys|0", (int *)0x0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "main|records|0", (int *)0x0, "%struct.record*", (void *)(&records), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|commandPointer|0", (int *)0x0, "i8*", (void *)(&commandPointer), (size_t)8, 1, 0, 0, "main|rootLoc|0", (int *)0x0, "i64", (void *)(&rootLoc), (size_t)8, 0, 0, 0, "main|mem_used|0", (int *)0x0, "i64", (void *)(&mem_used), (size_t)8, 0, 0, 0, "main|instruction|0", (int *)0x0, "i8", (void *)(&instruction), (size_t)1, 0, 0, 0, "main|input|0", (int *)0x0, "i32", (void *)(&input), (size_t)4, 0, 0, 0, "main|r|0", (int *)0x0, "%struct.record*", (void *)(&r), (size_t)8, 1, 0, 0, "main|root|0", (int *)0x0, "%struct.node*", (void *)(&root), (size_t)8, 1, 0, 0, "main|file_pointer|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&file_pointer), (size_t)8, 1, 0, 0, "main|result|0", (int *)0x0, "i64", (void *)(&result), (size_t)8, 0, 0, 0, "main|commandBuffer|0", (int *)0x0, "i8*", (void *)(&commandBuffer), (size_t)8, 1, 0, 0, "main|lSize|0", (int *)0x0, "i64", (void *)(&lSize), (size_t)8, 0, 0, 0, "main|commandFile|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&commandFile), (size_t)8, 1, 0, 0, "main|pFile|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&pFile), (size_t)8, 1, 0, 0, "main|output|0", (int *)0x0, "i8*", (void *)(&output), (size_t)8, 1, 0, 0, "main|command_file|0", (int *)0x0, "i8*", (void *)(&command_file), (size_t)8, 1, 0, 0, "main|input_file|0", (int *)0x0, "i8*", (void *)(&input_file), (size_t)8, 1, 0, 0, "main|cores_arg|0", (int *)0x0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "main|cur_arg|0", (int *)0x0, "i32", (void *)(&cur_arg), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
+ register_stack_vars(21, "main|reclength|0", &____must_checkpoint_main_reclength_0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0, "main|recstart|0", &____must_checkpoint_main_recstart_0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "main|offset_2|0", &____must_checkpoint_main_offset_2_0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "main|lastKnode|0", &____must_checkpoint_main_lastKnode_0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "main|rSize|0", (int *)0x0, "i32", (void *)(&rSize), (size_t)4, 0, 0, 0, "main|ans|0", &____must_checkpoint_main_ans_0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0, "main|keys|0", &____must_checkpoint_main_keys_0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|commandPointer|0", (int *)0x0, "i8*", (void *)(&commandPointer), (size_t)8, 1, 0, 0, "main|rootLoc|0", (int *)0x0, "i64", (void *)(&rootLoc), (size_t)8, 0, 0, 0, "main|mem_used|0", (int *)0x0, "i64", (void *)(&mem_used), (size_t)8, 0, 0, 0, "main|instruction|0", (int *)0x0, "i8", (void *)(&instruction), (size_t)1, 0, 0, 0, "main|input|0", (int *)0x0, "i32", (void *)(&input), (size_t)4, 0, 0, 0, "main|root|0", (int *)0x0, "%struct.node*", (void *)(&root), (size_t)8, 1, 0, 0, "main|lSize|0", &____must_checkpoint_main_lSize_0, "i64", (void *)(&lSize), (size_t)8, 0, 0, 0, "main|commandFile|0", &____must_checkpoint_main_commandFile_0, "%struct._IO_FILE*", (void *)(&commandFile), (size_t)8, 1, 0, 0, "main|output|0", (int *)0x0, "i8*", (void *)(&output), (size_t)8, 1, 0, 0, "main|command_file|0", &____must_checkpoint_main_command_file_0, "i8*", (void *)(&command_file), (size_t)8, 1, 0, 0, "main|input_file|0", &____must_checkpoint_main_input_file_0, "i8*", (void *)(&input_file), (size_t)8, 1, 0, 0, "main|cores_arg|0", (int *)0x0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "main|cur_arg|0", &____must_checkpoint_main_cur_arg_0, "i32", (void *)(&cur_arg), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
 # 1859 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1860 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
@@ -7612,7 +7609,7 @@ int cur_arg;
 # 1864 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     output = ("output.txt") ;
 # 1865 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ;
+ FILE *pFile; ;
 # 1866 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1867 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1868 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7712,9 +7709,9 @@ int cur_arg;
 # 1926 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       ;
 # 1927 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      ;
+     char *commandBuffer; ;
 # 1928 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      ;
+     size_t result; ;
 # 1929 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1930 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      commandFile = fopen ( command_file, "rb" );
@@ -7731,7 +7728,7 @@ int cur_arg;
 # 1937 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1938 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1939 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     commandBuffer = (char*) ({ lbl_0: void *_tmp; register_stack_var("main|_tmp|0", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } ; if (!(_tmp = malloc_wrapper(sizeof(char)*(lSize + 1), 10498980943454493479UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1939); exit(-1); } _tmp; });
+     commandBuffer = (char*) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof(char)*(lSize + 1), 10498980943454493479UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1939); exit(-1); } _tmp; });
 # 1940 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      if (commandBuffer == __null) {fprintf (stderr, "Command Buffer memory error",stderr); exit (2);}
 # 1941 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7780,13 +7777,13 @@ int cur_arg;
 # 1970 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1971 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1972 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ;
+ FILE *file_pointer; ;
 # 1973 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
 # 1974 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  root = __null;
 # 1975 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ;
+ record *r; ;
 # 1976 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
 # 1977 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8050,7 +8047,7 @@ int cur_arg;
 # 2153 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2154 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2155 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_1: int count; register_stack_var("main|count|0", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
+     lbl_0: int count; register_stack_var("main|count|0", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 2156 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     sscanf(commandPointer, "%d", &count);
 # 2157 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8072,7 +8069,7 @@ int cur_arg;
 # 2166 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2167 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2168 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       records = ((record *)mem) ;
+     record *records; records = ((record *)mem) ;
 # 2169 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      long records_elem; records_elem = ((long)rootLoc / sizeof(record)) ;
 # 2170 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8081,27 +8078,27 @@ int cur_arg;
 # 2172 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2173 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2174 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_2: knode *knodes; register_stack_var("main|knodes|0", (int *)0x0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } knodes = ((knode *)((long)mem + (long)rootLoc)) ;
+     knode *knodes; knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2175 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_3: long knodes_elem; register_stack_var("main|knodes_elem|0", (int *)0x0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
+     long knodes_elem; knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
 # 2176 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
 # 2177 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2178 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2179 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2180 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_4: long *currKnode; register_stack_var("main|currKnode|0", (int *)0x0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
+     lbl_1: long *currKnode; if (____must_checkpoint_main_currKnode_0 != 0) { register_stack_var("main|currKnode|0", &____must_checkpoint_main_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_2; } ;
 # 2181 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ lbl_5: void *_tmp; register_stack_var("main|_tmp|1", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493787UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2181); exit(-1); } _tmp; });
+    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493787UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2181); exit(-1); } _tmp; });
 # 2182 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2183 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset(currKnode, 0, count*sizeof(long));
 # 2184 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2185 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2186 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_6: long *offset; register_stack_var("main|offset|0", (int *)0x0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } ;
+     lbl_2: long *offset; if (____must_checkpoint_main_offset_0 != 0) { register_stack_var("main|offset|0", &____must_checkpoint_main_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_3; } ;
 # 2187 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ lbl_7: void *_tmp; register_stack_var("main|_tmp|2", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_8; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493788UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2187); exit(-1); } _tmp; });
+    offset = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493788UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2187); exit(-1); } _tmp; });
 # 2188 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2189 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset(offset, 0, count*sizeof(long));
@@ -8110,10 +8107,10 @@ int cur_arg;
 # 2192 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2193 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    keys = (int *)({ lbl_8: void *_tmp; register_stack_var("main|_tmp|3", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_9; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493737UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2193); exit(-1); } _tmp; });
+    keys = (int *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493737UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2193); exit(-1); } _tmp; });
 # 2194 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2195 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_9: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } ;
+    int i; ;
 # 2196 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     for(i = 0; i < count; i++){
 # 2197 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8124,7 +8121,7 @@ int cur_arg;
 # 2200 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2201 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        ans = ((record *)({
-     lbl_10: void *_tmp; register_stack_var("main|_tmp|4", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_11; }
+    void *_tmp;
     if (!(_tmp = malloc_wrapper(sizeof(record) * count, 10498980943454493771UL, 0, 0))) {
         fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2201);
         exit(-1);
@@ -8195,7 +8192,7 @@ int cur_arg;
 # 2263 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    {
 # 2264 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_11: int start; register_stack_var("main|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } lbl_12: int end; register_stack_var("main|end|0", (int *)0x0, "i32", (void *)(&end), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } ;
+     lbl_3: int start; register_stack_var("main|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int end; register_stack_var("main|end|0", (int *)0x0, "i32", (void *)(&end), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
 # 2265 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      call_lbl_104: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 104, ____alias_loc_id_25, 0UL, 2, (size_t)(10498980943454494393UL), (size_t)(10498980943454493134UL)); (scanf)("%d", &start); }) ) : (({ calling_npm("scanf", ____alias_loc_id_25); (*____chimes_extern_func_scanf)("%d", &start); })));
 # 2266 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8213,11 +8210,11 @@ int cur_arg;
 # 2272 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     printf("For range %d to %d, ",start,end);
 # 2273 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
+    list_t *ansList; ;
 # 2274 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     ansList = ({ calling_npm("findRange", 0); findRange_npm(root, start, end); });
 # 2275 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
+      uint32_t ____chimes_unroll_var_7; ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
 # 2276 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2277 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     free_wrapper(ansList, 10498980943454493865UL);
@@ -8237,7 +8234,7 @@ int cur_arg;
 # 2287 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2288 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2289 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_13: int count; register_stack_var("main|count|1", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } ;
+     lbl_5: int count; register_stack_var("main|count|1", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } ;
 # 2290 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     sscanf(commandPointer, "%d", &count);
 # 2291 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8268,27 +8265,27 @@ int cur_arg;
 # 2305 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2306 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2307 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_14: knode *knodes; register_stack_var("main|knodes|1", (int *)0x0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_15; } knodes = ((knode *)((long)mem + (long)rootLoc)) ;
+     knode *knodes; knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2308 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_15: long knodes_elem; register_stack_var("main|knodes_elem|1", (int *)0x0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
+     long knodes_elem; knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
 # 2309 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
 # 2310 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2312 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2313 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_16: long *currKnode; register_stack_var("main|currKnode|1", (int *)0x0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_17; } ;
+     lbl_6: long *currKnode; if (____must_checkpoint_main_currKnode_1 != 0) { register_stack_var("main|currKnode|1", &____must_checkpoint_main_currKnode_1, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_7; } ;
 # 2314 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ lbl_17: void *_tmp; register_stack_var("main|_tmp|5", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_18; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494221UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2314); exit(-1); } _tmp; });
+    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494221UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2314); exit(-1); } _tmp; });
 # 2315 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2316 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (currKnode, 0, count*sizeof(long));
 # 2317 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2318 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2319 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_18: long *offset; register_stack_var("main|offset|1", (int *)0x0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_19; } ;
+     lbl_7: long *offset; if (____must_checkpoint_main_offset_1 != 0) { register_stack_var("main|offset|1", &____must_checkpoint_main_offset_1, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_8; } ;
 # 2320 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ lbl_19: void *_tmp; register_stack_var("main|_tmp|6", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_20; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494222UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2320); exit(-1); } _tmp; });
+    offset = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494222UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2320); exit(-1); } _tmp; });
 # 2321 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2322 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (offset, 0, count*sizeof(long));
@@ -8297,7 +8294,7 @@ int cur_arg;
 # 2325 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2326 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    lastKnode = (long *)({ lbl_20: void *_tmp; register_stack_var("main|_tmp|7", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_21; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494223UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2326); exit(-1); } _tmp; });
+    lastKnode = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494223UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2326); exit(-1); } _tmp; });
 # 2327 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2328 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (lastKnode, 0, count*sizeof(long));
@@ -8306,23 +8303,23 @@ int cur_arg;
 # 2331 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2332 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset_2 = (long *)({ lbl_21: void *_tmp; register_stack_var("main|_tmp|8", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_22; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494224UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2332); exit(-1); } _tmp; });
+    offset_2 = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494224UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2332); exit(-1); } _tmp; });
 # 2333 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2334 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (offset_2, 0, count*sizeof(long));
 # 2335 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2336 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2337 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_22: int *start; register_stack_var("main|start|1", (int *)0x0, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_23; } ;
+     lbl_8: int *start; if (____must_checkpoint_main_start_1 != 0) { register_stack_var("main|start|1", &____must_checkpoint_main_start_1, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_9; } ;
 # 2338 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    start = (int *)({ lbl_23: void *_tmp; register_stack_var("main|_tmp|9", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_24; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494099UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2338); exit(-1); } _tmp; });
+    start = (int *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494099UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2338); exit(-1); } _tmp; });
 # 2339 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_24: int *end; register_stack_var("main|end|1", (int *)0x0, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_25; } ;
+     lbl_9: int *end; if (____must_checkpoint_main_end_1 != 0) { register_stack_var("main|end|1", &____must_checkpoint_main_end_1, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(23): { goto call_lbl_23; } case(54): { goto call_lbl_54; } case(55): { goto call_lbl_55; } case(56): { goto call_lbl_56; } case(57): { goto call_lbl_57; } case(60): { goto call_lbl_60; } case(61): { goto call_lbl_61; } case(63): { goto call_lbl_63; } case(65): { goto call_lbl_65; } case(67): { goto call_lbl_67; } case(69): { goto call_lbl_69; } case(71): { goto call_lbl_71; } case(92): { goto call_lbl_92; } case(104): { goto call_lbl_104; } case(105): { goto call_lbl_105; } case(143): { goto call_lbl_143; } case(160): { goto call_lbl_160; } default: { chimes_error(); } } } ;
 # 2340 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    end = (int *)({ lbl_25: void *_tmp; register_stack_var("main|_tmp|10", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_26; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494111UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2340); exit(-1); } _tmp; });
+    end = (int *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494111UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2340); exit(-1); } _tmp; });
 # 2341 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2342 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_26: int i; register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_27; } ;
+    int i; ;
 # 2343 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     for(i = 0; i < count; i++){
 # 2344 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8344,11 +8341,11 @@ int cur_arg;
 # 2353 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2354 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    recstart = (int *)({ lbl_27: void *_tmp; register_stack_var("main|_tmp|11", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_28; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494202UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2354); exit(-1); } _tmp; });
+    recstart = (int *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494202UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2354); exit(-1); } _tmp; });
 # 2355 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2356 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    reclength = (int *)({ lbl_28: void *_tmp; register_stack_var("main|_tmp|12", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(23): { goto call_lbl_23; } case(54): { goto call_lbl_54; } case(55): { goto call_lbl_55; } case(56): { goto call_lbl_56; } case(57): { goto call_lbl_57; } case(60): { goto call_lbl_60; } case(61): { goto call_lbl_61; } case(63): { goto call_lbl_63; } case(65): { goto call_lbl_65; } case(67): { goto call_lbl_67; } case(69): { goto call_lbl_69; } case(71): { goto call_lbl_71; } case(92): { goto call_lbl_92; } case(104): { goto call_lbl_104; } case(105): { goto call_lbl_105; } case(143): { goto call_lbl_143; } case(160): { goto call_lbl_160; } default: { chimes_error(); } } } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494207UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2356); exit(-1); } _tmp; });
+    reclength = (int *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494207UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2356); exit(-1); } _tmp; });
 # 2357 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2358 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     for(i = 0; i < count; i++){
@@ -8513,14 +8510,12 @@ void
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_delete_quick(list_t *l)
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&list_delete), "list_delete", &____must_manage_list_delete, 1, 1, (size_t)(10498980943454487644UL), "list_delete|l|0", &____must_checkpoint_list_delete_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0) ; list_item_t *del;
+{const int ____chimes_did_disable2 = new_stack((void *)(&list_delete), "list_delete", &____must_manage_list_delete, 1, 1, (size_t)(10498980943454487644UL), "list_delete|l|0", &____must_checkpoint_list_delete_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0) ; list_item_t *li;
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-list_item_t *li;
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (____must_checkpoint_list_delete_del_0 || ____must_checkpoint_list_delete_li_0) { register_stack_vars(2, "list_delete|del|0", &____must_checkpoint_list_delete_del_0, "%struct.list_item*", (void *)(&del), (size_t)8, 1, 0, 0, "list_delete|li|0", &____must_checkpoint_list_delete_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } ; ;
+ if (____must_checkpoint_list_delete_li_0) { register_stack_vars(1, "list_delete|li|0", &____must_checkpoint_list_delete_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } ; ;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ;
+   list_item_t *del; ;
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   for (li = l->head; li;) {
@@ -9277,16 +9272,14 @@ list_visit_items_quick( list_t *l,
 # 526 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void (*visitor)(void *v))
 # 527 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable26 = new_stack((void *)(&list_visit_items), "list_visit_items", (int *)0, 2, 1, (size_t)(10498980943454488847UL), (size_t)(10498980943454488848UL), "list_visit_items|visitor|0", &____must_checkpoint_list_visit_items_visitor_0, "void (i8*)*", (void *)(&visitor), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_6;
+{const int ____chimes_did_disable26 = new_stack((void *)(&list_visit_items), "list_visit_items", (int *)0, 2, 1, (size_t)(10498980943454488847UL), (size_t)(10498980943454488848UL), "list_visit_items|visitor|0", &____must_checkpoint_list_visit_items_visitor_0, "void (i8*)*", (void *)(&visitor), (size_t)8, 1, 0, 0) ; list_item_t *li;
 # 527 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-list_item_t *li;
-# 527 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0 || ____must_checkpoint_list_visit_items_li_0) { register_stack_vars(2, "list_visit_items|____chimes_unroll_var_6|0", &____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0, "i8*", (void *)(&____chimes_unroll_var_6), (size_t)8, 1, 0, 0, "list_visit_items|li|0", &____must_checkpoint_list_visit_items_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } ; ;
+ if (____must_checkpoint_list_visit_items_li_0) { register_stack_vars(1, "list_visit_items|li|0", &____must_checkpoint_list_visit_items_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } ; ;
 # 528 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    ;
 # 529 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 530 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  for (li = l->head; li; li = li->next) { ____chimes_unroll_var_6 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; call_lbl_1: ((void (*)(void *))(translate_fptr((void *)visitor, 1, 0, 0UL, 1, 10498980943454488835UL)))(____chimes_unroll_var_6); };
+  for (li = l->head; li; li = li->next) { void *____chimes_unroll_var_6; ____chimes_unroll_var_6 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; call_lbl_1: ((void (*)(void *))(translate_fptr((void *)visitor, 1, 0, 0UL, 1, 10498980943454488835UL)))(____chimes_unroll_var_6); };
 # 532 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_visit_items", (int *)0x0, ____alias_loc_id_51, ____chimes_did_disable26, false); }
 
@@ -11521,7 +11514,7 @@ main_quick( int argc,
 # 1857 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   char** argv )
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable77 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(10498980943454494320UL), "main|argc|0", (int *)0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int *reclength;
+{const int ____chimes_did_disable77 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(10498980943454494320UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int *reclength;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 int *recstart;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11531,15 +11524,9 @@ long *lastKnode;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 int rSize;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-uint32_t ____chimes_unroll_var_7;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-list_t *ansList;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 record *ans;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 int *keys;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-record *records;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 double start_time;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11553,21 +11540,11 @@ char instruction;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 int input;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-record *r;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 node *root;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-FILE *file_pointer;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-size_t result;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-char *commandBuffer;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 long lSize;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 FILE *commandFile;
-# 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-FILE *pFile;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 char *output;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11579,7 +11556,7 @@ int cores_arg;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 int cur_arg;
 # 1858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- register_stack_vars(29, "main|reclength|0", (int *)0x0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0, "main|recstart|0", (int *)0x0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "main|offset_2|0", (int *)0x0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "main|lastKnode|0", (int *)0x0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "main|rSize|0", (int *)0x0, "i32", (void *)(&rSize), (size_t)4, 0, 0, 0, "main|____chimes_unroll_var_7|0", (int *)0x0, "i32", (void *)(&____chimes_unroll_var_7), (size_t)4, 0, 0, 0, "main|ansList|0", (int *)0x0, "%struct.list_t*", (void *)(&ansList), (size_t)8, 1, 0, 0, "main|ans|0", (int *)0x0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0, "main|keys|0", (int *)0x0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "main|records|0", (int *)0x0, "%struct.record*", (void *)(&records), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|commandPointer|0", (int *)0x0, "i8*", (void *)(&commandPointer), (size_t)8, 1, 0, 0, "main|rootLoc|0", (int *)0x0, "i64", (void *)(&rootLoc), (size_t)8, 0, 0, 0, "main|mem_used|0", (int *)0x0, "i64", (void *)(&mem_used), (size_t)8, 0, 0, 0, "main|instruction|0", (int *)0x0, "i8", (void *)(&instruction), (size_t)1, 0, 0, 0, "main|input|0", (int *)0x0, "i32", (void *)(&input), (size_t)4, 0, 0, 0, "main|r|0", (int *)0x0, "%struct.record*", (void *)(&r), (size_t)8, 1, 0, 0, "main|root|0", (int *)0x0, "%struct.node*", (void *)(&root), (size_t)8, 1, 0, 0, "main|file_pointer|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&file_pointer), (size_t)8, 1, 0, 0, "main|result|0", (int *)0x0, "i64", (void *)(&result), (size_t)8, 0, 0, 0, "main|commandBuffer|0", (int *)0x0, "i8*", (void *)(&commandBuffer), (size_t)8, 1, 0, 0, "main|lSize|0", (int *)0x0, "i64", (void *)(&lSize), (size_t)8, 0, 0, 0, "main|commandFile|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&commandFile), (size_t)8, 1, 0, 0, "main|pFile|0", (int *)0x0, "%struct._IO_FILE*", (void *)(&pFile), (size_t)8, 1, 0, 0, "main|output|0", (int *)0x0, "i8*", (void *)(&output), (size_t)8, 1, 0, 0, "main|command_file|0", (int *)0x0, "i8*", (void *)(&command_file), (size_t)8, 1, 0, 0, "main|input_file|0", (int *)0x0, "i8*", (void *)(&input_file), (size_t)8, 1, 0, 0, "main|cores_arg|0", (int *)0x0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "main|cur_arg|0", (int *)0x0, "i32", (void *)(&cur_arg), (size_t)4, 0, 0, 0); ; ;
+ register_stack_vars(21, "main|reclength|0", &____must_checkpoint_main_reclength_0, "i32*", (void *)(&reclength), (size_t)8, 1, 0, 0, "main|recstart|0", &____must_checkpoint_main_recstart_0, "i32*", (void *)(&recstart), (size_t)8, 1, 0, 0, "main|offset_2|0", &____must_checkpoint_main_offset_2_0, "i64*", (void *)(&offset_2), (size_t)8, 1, 0, 0, "main|lastKnode|0", &____must_checkpoint_main_lastKnode_0, "i64*", (void *)(&lastKnode), (size_t)8, 1, 0, 0, "main|rSize|0", (int *)0x0, "i32", (void *)(&rSize), (size_t)4, 0, 0, 0, "main|ans|0", &____must_checkpoint_main_ans_0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0, "main|keys|0", &____must_checkpoint_main_keys_0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|commandPointer|0", (int *)0x0, "i8*", (void *)(&commandPointer), (size_t)8, 1, 0, 0, "main|rootLoc|0", (int *)0x0, "i64", (void *)(&rootLoc), (size_t)8, 0, 0, 0, "main|mem_used|0", (int *)0x0, "i64", (void *)(&mem_used), (size_t)8, 0, 0, 0, "main|instruction|0", (int *)0x0, "i8", (void *)(&instruction), (size_t)1, 0, 0, 0, "main|input|0", (int *)0x0, "i32", (void *)(&input), (size_t)4, 0, 0, 0, "main|root|0", (int *)0x0, "%struct.node*", (void *)(&root), (size_t)8, 1, 0, 0, "main|lSize|0", &____must_checkpoint_main_lSize_0, "i64", (void *)(&lSize), (size_t)8, 0, 0, 0, "main|commandFile|0", &____must_checkpoint_main_commandFile_0, "%struct._IO_FILE*", (void *)(&commandFile), (size_t)8, 1, 0, 0, "main|output|0", (int *)0x0, "i8*", (void *)(&output), (size_t)8, 1, 0, 0, "main|command_file|0", &____must_checkpoint_main_command_file_0, "i8*", (void *)(&command_file), (size_t)8, 1, 0, 0, "main|input_file|0", &____must_checkpoint_main_input_file_0, "i8*", (void *)(&input_file), (size_t)8, 1, 0, 0, "main|cores_arg|0", (int *)0x0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "main|cur_arg|0", &____must_checkpoint_main_cur_arg_0, "i32", (void *)(&cur_arg), (size_t)4, 0, 0, 0); ; ;
 # 1859 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1860 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
@@ -11592,7 +11569,7 @@ int cur_arg;
 # 1864 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     output = ("output.txt") ;
 # 1865 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ;
+ FILE *pFile; ;
 # 1866 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1867 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1868 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11692,9 +11669,9 @@ int cur_arg;
 # 1926 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       ;
 # 1927 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      ;
+     char *commandBuffer; ;
 # 1928 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      ;
+     size_t result; ;
 # 1929 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1930 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      commandFile = fopen ( command_file, "rb" );
@@ -11711,7 +11688,7 @@ int cur_arg;
 # 1937 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1938 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1939 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     commandBuffer = (char*) ({ lbl_0: void *_tmp; register_stack_var("main|_tmp|0", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(sizeof(char)*(lSize + 1), 10498980943454493479UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1939); exit(-1); } _tmp; });
+     commandBuffer = (char*) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof(char)*(lSize + 1), 10498980943454493479UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1939); exit(-1); } _tmp; });
 # 1940 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      if (commandBuffer == __null) {fprintf (stderr, "Command Buffer memory error",stderr); exit (2);}
 # 1941 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11760,13 +11737,13 @@ int cur_arg;
 # 1970 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1971 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1972 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ;
+ FILE *file_pointer; ;
 # 1973 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
 # 1974 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  root = __null;
 # 1975 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ;
+ record *r; ;
 # 1976 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
 # 1977 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12030,7 +12007,7 @@ int cur_arg;
 # 2153 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2154 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2155 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_1: int count; register_stack_var("main|count|0", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); ;
+     lbl_0: int count; register_stack_var("main|count|0", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); ;
 # 2156 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     sscanf(commandPointer, "%d", &count);
 # 2157 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12052,7 +12029,7 @@ int cur_arg;
 # 2166 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2167 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2168 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       records = ((record *)mem) ;
+     record *records; records = ((record *)mem) ;
 # 2169 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      long records_elem; records_elem = ((long)rootLoc / sizeof(record)) ;
 # 2170 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12061,27 +12038,27 @@ int cur_arg;
 # 2172 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2173 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2174 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_2: knode *knodes; register_stack_var("main|knodes|0", (int *)0x0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); knodes = ((knode *)((long)mem + (long)rootLoc)) ;
+     knode *knodes; knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2175 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_3: long knodes_elem; register_stack_var("main|knodes_elem|0", (int *)0x0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
+     long knodes_elem; knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
 # 2176 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
 # 2177 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2178 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2179 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2180 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_4: long *currKnode; register_stack_var("main|currKnode|0", (int *)0x0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); ;
+     lbl_1: long *currKnode; if (____must_checkpoint_main_currKnode_0 != 0) { register_stack_var("main|currKnode|0", &____must_checkpoint_main_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } ;
 # 2181 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ lbl_5: void *_tmp; register_stack_var("main|_tmp|1", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493787UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2181); exit(-1); } _tmp; });
+    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493787UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2181); exit(-1); } _tmp; });
 # 2182 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2183 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset(currKnode, 0, count*sizeof(long));
 # 2184 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2185 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2186 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_6: long *offset; register_stack_var("main|offset|0", (int *)0x0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); ;
+     lbl_2: long *offset; if (____must_checkpoint_main_offset_0 != 0) { register_stack_var("main|offset|0", &____must_checkpoint_main_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } ;
 # 2187 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ lbl_7: void *_tmp; register_stack_var("main|_tmp|2", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493788UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2187); exit(-1); } _tmp; });
+    offset = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493788UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2187); exit(-1); } _tmp; });
 # 2188 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2189 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset(offset, 0, count*sizeof(long));
@@ -12090,10 +12067,10 @@ int cur_arg;
 # 2192 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2193 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    keys = (int *)({ lbl_8: void *_tmp; register_stack_var("main|_tmp|3", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493737UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2193); exit(-1); } _tmp; });
+    keys = (int *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493737UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2193); exit(-1); } _tmp; });
 # 2194 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2195 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_9: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ;
+    int i; ;
 # 2196 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     for(i = 0; i < count; i++){
 # 2197 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12104,7 +12081,7 @@ int cur_arg;
 # 2200 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2201 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        ans = ((record *)({
-     lbl_10: void *_tmp; register_stack_var("main|_tmp|4", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0);
+    void *_tmp;
     if (!(_tmp = malloc_wrapper(sizeof(record) * count, 10498980943454493771UL, 0, 0))) {
         fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2201);
         exit(-1);
@@ -12175,7 +12152,7 @@ int cur_arg;
 # 2263 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    {
 # 2264 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_11: int start; register_stack_var("main|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0); lbl_12: int end; register_stack_var("main|end|0", (int *)0x0, "i32", (void *)(&end), (size_t)4, 0, 0, 0); ;
+     lbl_3: int start; register_stack_var("main|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0); lbl_4: int end; register_stack_var("main|end|0", (int *)0x0, "i32", (void *)(&end), (size_t)4, 0, 0, 0); ;
 # 2265 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      call_lbl_104: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 104, ____alias_loc_id_25, 0UL, 2, (size_t)(10498980943454494393UL), (size_t)(10498980943454493134UL)); (scanf)("%d", &start); }) ) : (({ calling_npm("scanf", ____alias_loc_id_25); (*____chimes_extern_func_scanf)("%d", &start); })));
 # 2266 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12193,11 +12170,11 @@ int cur_arg;
 # 2272 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     printf("For range %d to %d, ",start,end);
 # 2273 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
+    list_t *ansList; ;
 # 2274 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     ansList = ({ calling_npm("findRange", 0); findRange_npm(root, start, end); });
 # 2275 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
+      uint32_t ____chimes_unroll_var_7; ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
 # 2276 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2277 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     free_wrapper(ansList, 10498980943454493865UL);
@@ -12217,7 +12194,7 @@ int cur_arg;
 # 2287 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2288 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2289 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_13: int count; register_stack_var("main|count|1", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); ;
+     lbl_5: int count; register_stack_var("main|count|1", (int *)0x0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); ;
 # 2290 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     sscanf(commandPointer, "%d", &count);
 # 2291 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12248,27 +12225,27 @@ int cur_arg;
 # 2305 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2306 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2307 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_14: knode *knodes; register_stack_var("main|knodes|1", (int *)0x0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); knodes = ((knode *)((long)mem + (long)rootLoc)) ;
+     knode *knodes; knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2308 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_15: long knodes_elem; register_stack_var("main|knodes_elem|1", (int *)0x0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
+     long knodes_elem; knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
 # 2309 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
 # 2310 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2312 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2313 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_16: long *currKnode; register_stack_var("main|currKnode|1", (int *)0x0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); ;
+     lbl_6: long *currKnode; if (____must_checkpoint_main_currKnode_1 != 0) { register_stack_var("main|currKnode|1", &____must_checkpoint_main_currKnode_1, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } ;
 # 2314 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ lbl_17: void *_tmp; register_stack_var("main|_tmp|5", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494221UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2314); exit(-1); } _tmp; });
+    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494221UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2314); exit(-1); } _tmp; });
 # 2315 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2316 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (currKnode, 0, count*sizeof(long));
 # 2317 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2318 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2319 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_18: long *offset; register_stack_var("main|offset|1", (int *)0x0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); ;
+     lbl_7: long *offset; if (____must_checkpoint_main_offset_1 != 0) { register_stack_var("main|offset|1", &____must_checkpoint_main_offset_1, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } ;
 # 2320 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ lbl_19: void *_tmp; register_stack_var("main|_tmp|6", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494222UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2320); exit(-1); } _tmp; });
+    offset = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494222UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2320); exit(-1); } _tmp; });
 # 2321 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2322 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (offset, 0, count*sizeof(long));
@@ -12277,7 +12254,7 @@ int cur_arg;
 # 2325 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2326 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    lastKnode = (long *)({ lbl_20: void *_tmp; register_stack_var("main|_tmp|7", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494223UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2326); exit(-1); } _tmp; });
+    lastKnode = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494223UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2326); exit(-1); } _tmp; });
 # 2327 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2328 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (lastKnode, 0, count*sizeof(long));
@@ -12286,23 +12263,23 @@ int cur_arg;
 # 2331 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2332 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset_2 = (long *)({ lbl_21: void *_tmp; register_stack_var("main|_tmp|8", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494224UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2332); exit(-1); } _tmp; });
+    offset_2 = (long *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494224UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2332); exit(-1); } _tmp; });
 # 2333 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2334 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (offset_2, 0, count*sizeof(long));
 # 2335 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2336 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2337 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_22: int *start; register_stack_var("main|start|1", (int *)0x0, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); ;
+     lbl_8: int *start; if (____must_checkpoint_main_start_1 != 0) { register_stack_var("main|start|1", &____must_checkpoint_main_start_1, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); } ;
 # 2338 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    start = (int *)({ lbl_23: void *_tmp; register_stack_var("main|_tmp|9", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494099UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2338); exit(-1); } _tmp; });
+    start = (int *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494099UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2338); exit(-1); } _tmp; });
 # 2339 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_24: int *end; register_stack_var("main|end|1", (int *)0x0, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); ;
+     lbl_9: int *end; if (____must_checkpoint_main_end_1 != 0) { register_stack_var("main|end|1", &____must_checkpoint_main_end_1, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); } ;
 # 2340 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    end = (int *)({ lbl_25: void *_tmp; register_stack_var("main|_tmp|10", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494111UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2340); exit(-1); } _tmp; });
+    end = (int *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494111UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2340); exit(-1); } _tmp; });
 # 2341 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2342 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_26: int i; register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ;
+    int i; ;
 # 2343 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     for(i = 0; i < count; i++){
 # 2344 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12324,11 +12301,11 @@ int cur_arg;
 # 2353 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2354 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    recstart = (int *)({ lbl_27: void *_tmp; register_stack_var("main|_tmp|11", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494202UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2354); exit(-1); } _tmp; });
+    recstart = (int *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494202UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2354); exit(-1); } _tmp; });
 # 2355 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2356 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    reclength = (int *)({ lbl_28: void *_tmp; register_stack_var("main|_tmp|12", (int *)0x0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494207UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2356); exit(-1); } _tmp; });
+    reclength = (int *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494207UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2356); exit(-1); } _tmp; });
 # 2357 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2358 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     for(i = 0; i < count; i++){
@@ -14758,7 +14735,7 @@ destroy_tree_npm(node* root)
 
 
 static int module_init() {
-    init_module(10498980943454487551UL, 400, 78, 35, 98, 66, 6, 72, 74, 17, 9,
+    init_module(10498980943454487551UL, 400, 78, 52, 98, 66, 6, 72, 74, 17, 9,
                            &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 56UL), (10498980943454487551UL + 57UL), (10498980943454487551UL + 58UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)2, (unsigned)0, (10498980943454487551UL + 94UL), (10498980943454487551UL + 95UL), (10498980943454487551UL + 94UL), (10498980943454487551UL + 95UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 115UL),
@@ -15491,7 +15468,6 @@ static int module_init() {
                         "seconds|tp|0", 1, "seconds",
                         "list_delete|l|0", 1, "list_item_delete",
                         "list_delete|li|0", 1, "list_item_delete",
-                        "list_delete|del|0", 1, "list_item_delete",
                         "list_item_delete|li|0", 1, "_Z16list_item_deleteP9list_itemPFvPvE",
                         "list_insert_item_sorted|l|0", 1, "_Z23list_insert_item_sortedP6list_tP9list_item",
                         "list_insert_item_sorted|i|0", 1, "_Z23list_insert_item_sortedP6list_tP9list_item",
@@ -15513,16 +15489,34 @@ static int module_init() {
                         "list_find|____chimes_unroll_var_5|0", 1, "_Z9list_findP6list_tPv",
                         "list_visit_items|visitor|0", 1, "_Z16list_visit_itemsP6list_tPFvPvE",
                         "list_visit_items|li|0", 1, "_Z16list_visit_itemsP6list_tPFvPvE",
-                        "list_visit_items|____chimes_unroll_var_6|0", 1, "_Z16list_visit_itemsP6list_tPFvPvE",
                         "transform_to_cuda|one|0", 1, "transform_to_cuda",
                         "transform_to_cuda|two|0", 1, "transform_to_cuda",
+                        "main|argc|0", 1, "isInteger",
+                        "main|argv|0", 2, "rewind", "isInteger",
+                        "main|cur_arg|0", 1, "isInteger",
+                        "main|input_file|0", 2, "rewind", "isInteger",
+                        "main|command_file|0", 1, "isInteger",
+                        "main|commandFile|0", 1, "rewind",
+                        "main|lSize|0", 1, "rewind",
                         "main|input|0", 1, "main",
                         "main|instruction|0", 1, "main",
                         "main|count|0", 1, "main",
+                        "main|currKnode|0", 1, "kernel_cpu",
+                        "main|offset|0", 1, "kernel_cpu",
+                        "main|keys|0", 1, "kernel_cpu",
+                        "main|ans|0", 1, "kernel_cpu",
                         "main|start|0", 1, "main",
                         "main|end|0", 1, "main",
                         "main|count|1", 1, "main",
                         "main|rSize|0", 1, "main",
+                        "main|currKnode|1", 1, "kernel_cpu_2",
+                        "main|offset|1", 1, "kernel_cpu_2",
+                        "main|lastKnode|0", 1, "kernel_cpu_2",
+                        "main|offset_2|0", 1, "kernel_cpu_2",
+                        "main|start|1", 1, "kernel_cpu_2",
+                        "main|end|1", 1, "kernel_cpu_2",
+                        "main|recstart|0", 1, "kernel_cpu_2",
+                        "main|reclength|0", 1, "kernel_cpu_2",
         "list_item_get_datum", 10498980943454487920UL, (int)1, 10498980943454488954UL,
         "list_item_get_datum", 10498980943454487920UL, (int)1, 10498980943454488954UL,
         "list_item_init", 0UL, (int)2, 10498980943454488954UL, 10498980943454488104UL,

@@ -163,7 +163,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ti
 # 126
 real_t eLocal[2];
 # 126
- if (____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(1, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0);  }  
+ if (____must_checkpoint_kineticEnergy_eSum_0 || ____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(2, "kineticEnergy|eSum|0", &____must_checkpoint_kineticEnergy_eSum_0, "[2 x double]", (void *)(eSum), (size_t)16, 0, 0, 0, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 168 6 len=17 redistributeAtoms_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 170 17  ({  calling((void*)updateLinkCells, 1, ____alias_loc_id_4, 0UL, 2, (size_t)(12369560726904678871UL), (size_t)(12369560726904678871UL)); (updateLinkCells)(sim->boxes, sim->atoms); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 170 55 
@@ -253,7 +253,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ti
 # 126
 real_t eLocal[2];
 # 126
- if (____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(1, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_kineticEnergy_eSum_0 || ____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(2, "kineticEnergy|eSum|0", &____must_checkpoint_kineticEnergy_eSum_0, "[2 x double]", (void *)(eSum), (size_t)16, 0, 0, 0, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 168 6 len=17 redistributeAtoms_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 170 17  ({  LinkCell * ____chimes_arg18;  Atoms * ____chimes_arg19;  if (!____chimes_replaying) { ____chimes_arg18 = (sim->boxes); ____chimes_arg19 = (sim->atoms);  }  calling((void*)updateLinkCells, 1, ____alias_loc_id_4, 0UL, 2, (size_t)(12369560726904678871UL), (size_t)(12369560726904678871UL)); (updateLinkCells)(____chimes_arg18, ____chimes_arg19); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 170 55 

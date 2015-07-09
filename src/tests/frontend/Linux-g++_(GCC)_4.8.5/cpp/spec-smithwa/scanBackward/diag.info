@@ -736,17 +736,27 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackwa
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1383 57 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1384 33 ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsJ[j]); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1384 57 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 8 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 56 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 65 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 98 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 112 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 3 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 12 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 14 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 23 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 25 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 34 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 36 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 45 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 825 4 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 825 13 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 794  ; BSTR_T *B;
+# 815
+int myCol;
+# 815
+int myRow;
+# 815
+int npCol;
 # 815
 int npRow;
 # 815
@@ -754,9 +764,7 @@ int matchLimit;
 # 815
 int bestR;
 # 815
-int i;
-# 815
- if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_bestR_0 || ____must_checkpoint_scanBackward_i_0) { register_stack_vars(5, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0, "scanBackward|i|0", &____must_checkpoint_scanBackward_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  }  
+ if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_myCol_0 || ____must_checkpoint_scanBackward_myRow_0 || ____must_checkpoint_scanBackward_npCol_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_bestR_0) { register_stack_vars(7, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|myCol|0", &____must_checkpoint_scanBackward_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "scanBackward|myRow|0", &____must_checkpoint_scanBackward_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "scanBackward|npCol|0", &____must_checkpoint_scanBackward_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 9 len=5 freeB_quick
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 162  ; 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 20 16 len=11 copyStringR_resumable
@@ -786,17 +794,27 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackwa
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1383 57 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1384 33 ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsJ[j]); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1384 57 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 8 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 56 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 65 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 98 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 112 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 3 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 12 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 14 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 23 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 25 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 34 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 36 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 45 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 825 4 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 825 13 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 794  ; BSTR_T *B;
+# 815
+int myCol;
+# 815
+int myRow;
+# 815
+int npCol;
 # 815
 int npRow;
 # 815
@@ -804,8 +822,6 @@ int matchLimit;
 # 815
 int bestR;
 # 815
-int i;
-# 815
- if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_bestR_0 || ____must_checkpoint_scanBackward_i_0) { register_stack_vars(5, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0, "scanBackward|i|0", &____must_checkpoint_scanBackward_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(28): { goto call_lbl_28; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_myCol_0 || ____must_checkpoint_scanBackward_myRow_0 || ____must_checkpoint_scanBackward_npCol_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_bestR_0) { register_stack_vars(7, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|myCol|0", &____must_checkpoint_scanBackward_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "scanBackward|myRow|0", &____must_checkpoint_scanBackward_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "scanBackward|npCol|0", &____must_checkpoint_scanBackward_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(28): { goto call_lbl_28; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 9 len=5 freeB_resumable
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 162  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

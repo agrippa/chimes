@@ -95,13 +95,9 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 110 3
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 110 12 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 13 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 112 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 112 12 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 18 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 106 816  ; char *image_buf;
-# 106
-int status;
 # 106
 int height;
 # 106
@@ -109,7 +105,7 @@ int width;
 # 106
 int dummy;
 # 106
- if (____must_checkpoint_get_frame_image_buf_0 || ____must_checkpoint_get_frame_status_0 || ____must_checkpoint_get_frame_height_0 || ____must_checkpoint_get_frame_width_0 || ____must_checkpoint_get_frame_dummy_0) { register_stack_vars(5, "get_frame|image_buf|0", &____must_checkpoint_get_frame_image_buf_0, "i8*", (void *)(&image_buf), (size_t)8, 1, 0, 0, "get_frame|status|0", &____must_checkpoint_get_frame_status_0, "i32", (void *)(&status), (size_t)4, 0, 0, 0, "get_frame|height|0", &____must_checkpoint_get_frame_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "get_frame|width|0", &____must_checkpoint_get_frame_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "get_frame|dummy|0", &____must_checkpoint_get_frame_dummy_0, "i32", (void *)(&dummy), (size_t)4, 0, 0, 0);  }  
+ if (____must_checkpoint_get_frame_image_buf_0 || ____must_checkpoint_get_frame_height_0 || ____must_checkpoint_get_frame_width_0 || ____must_checkpoint_get_frame_dummy_0) { register_stack_vars(4, "get_frame|image_buf|0", &____must_checkpoint_get_frame_image_buf_0, "i8*", (void *)(&image_buf), (size_t)8, 1, 0, 0, "get_frame|height|0", &____must_checkpoint_get_frame_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "get_frame|width|0", &____must_checkpoint_get_frame_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "get_frame|dummy|0", &____must_checkpoint_get_frame_dummy_0, "i32", (void *)(&dummy), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 16 8 len=15 chop_flip_image_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 21 265  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 102 8 len=9 get_frame_resumable
@@ -131,13 +127,9 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 110 3
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 110 12 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 13 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 112 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 112 12 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 18 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 106 816  ; char *image_buf;
-# 106
-int status;
 # 106
 int height;
 # 106
@@ -145,4 +137,4 @@ int width;
 # 106
 int dummy;
 # 106
- if (____must_checkpoint_get_frame_image_buf_0 || ____must_checkpoint_get_frame_status_0 || ____must_checkpoint_get_frame_height_0 || ____must_checkpoint_get_frame_width_0 || ____must_checkpoint_get_frame_dummy_0) { register_stack_vars(5, "get_frame|image_buf|0", &____must_checkpoint_get_frame_image_buf_0, "i8*", (void *)(&image_buf), (size_t)8, 1, 0, 0, "get_frame|status|0", &____must_checkpoint_get_frame_status_0, "i32", (void *)(&status), (size_t)4, 0, 0, 0, "get_frame|height|0", &____must_checkpoint_get_frame_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "get_frame|width|0", &____must_checkpoint_get_frame_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "get_frame|dummy|0", &____must_checkpoint_get_frame_dummy_0, "i32", (void *)(&dummy), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_get_frame_image_buf_0 || ____must_checkpoint_get_frame_height_0 || ____must_checkpoint_get_frame_width_0 || ____must_checkpoint_get_frame_dummy_0) { register_stack_vars(4, "get_frame|image_buf|0", &____must_checkpoint_get_frame_image_buf_0, "i8*", (void *)(&image_buf), (size_t)8, 1, 0, 0, "get_frame|height|0", &____must_checkpoint_get_frame_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "get_frame|width|0", &____must_checkpoint_get_frame_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "get_frame|dummy|0", &____must_checkpoint_get_frame_dummy_0, "i32", (void *)(&dummy), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  }  

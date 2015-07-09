@@ -170,17 +170,12 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 124 3
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 124 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 131 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 131 8 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 12 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 11 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 21 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 137 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 137 23 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 14  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 19  register_stack_var("BFSGraph|i|3", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 19 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 149 3  { 
 InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 162 3  } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 57 144  ; double start_time;
@@ -188,8 +183,6 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 57 144  ; doub
 int count_iters;
 # 57
 bool stop;
-# 57
-int tid;
 # 57
 int k;
 # 57
@@ -215,7 +208,7 @@ int source;
 # 57
 int num_omp_threads;
 # 57
- register_stack_vars(16, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|tid|0", (int *)0x0, "i32", (void *)(&tid), (size_t)4, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|cost|0", (int *)0x0, "i32", (void *)(&cost), (size_t)4, 0, 0, 0, "BFSGraph|id|0", (int *)0x0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "BFSGraph|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|source|0", (int *)0x0, "i32", (void *)(&source), (size_t)4, 0, 0, 0, "BFSGraph|num_omp_threads|0", (int *)0x0, "i32", (void *)(&num_omp_threads), (size_t)4, 0, 0, 0);  
+ register_stack_vars(15, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|cost|0", (int *)0x0, "i32", (void *)(&cost), (size_t)4, 0, 0, 0, "BFSGraph|id|0", (int *)0x0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "BFSGraph|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|source|0", (int *)0x0, "i32", (void *)(&source), (size_t)4, 0, 0, 0, "BFSGraph|num_omp_threads|0", (int *)0x0, "i32", (void *)(&num_omp_threads), (size_t)4, 0, 0, 0);  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 14 8 len=7 seconds_resumable
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 15 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 15 23 
@@ -261,17 +254,12 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 124 3
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 124 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 131 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 131 8 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 5 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 12 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 11 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 21 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 137 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 137 23 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 14  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 19  register_stack_var("BFSGraph|i|3", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 19  if (____chimes_replaying) {  switch(get_next_call()) { case(22): { goto call_lbl_22; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 149 3  { 
 InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 162 3  } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 57 144  ; double start_time;
@@ -279,8 +267,6 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 57 144  ; doub
 int count_iters;
 # 57
 bool stop;
-# 57
-int tid;
 # 57
 int k;
 # 57
@@ -306,4 +292,4 @@ int source;
 # 57
 int num_omp_threads;
 # 57
- register_stack_vars(16, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|tid|0", (int *)0x0, "i32", (void *)(&tid), (size_t)4, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|cost|0", (int *)0x0, "i32", (void *)(&cost), (size_t)4, 0, 0, 0, "BFSGraph|id|0", (int *)0x0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "BFSGraph|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|source|0", (int *)0x0, "i32", (void *)(&source), (size_t)4, 0, 0, 0, "BFSGraph|num_omp_threads|0", (int *)0x0, "i32", (void *)(&num_omp_threads), (size_t)4, 0, 0, 0);  if (____chimes_replaying) { goto lbl_0; }  
+ register_stack_vars(15, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|cost|0", (int *)0x0, "i32", (void *)(&cost), (size_t)4, 0, 0, 0, "BFSGraph|id|0", (int *)0x0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "BFSGraph|start|0", (int *)0x0, "i32", (void *)(&start), (size_t)4, 0, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|source|0", (int *)0x0, "i32", (void *)(&source), (size_t)4, 0, 0, 0, "BFSGraph|num_omp_threads|0", (int *)0x0, "i32", (void *)(&num_omp_threads), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(22): { goto call_lbl_22; } default: { chimes_error(); } }  }  

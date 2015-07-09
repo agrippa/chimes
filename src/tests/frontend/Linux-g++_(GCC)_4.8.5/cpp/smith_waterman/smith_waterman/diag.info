@@ -177,15 +177,7 @@ RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_wate
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 152 77 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 159 8 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 159 28 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 164 10 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 164 36 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 166 10 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 166 37 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 115 172  ; unsigned long long estimate;
-# 115
-unsigned long long elapsed;
-# 115
-unsigned long long c;
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 115 172  ; unsigned long long c;
 # 115
 struct timeval intermediate;
 # 115
@@ -207,7 +199,7 @@ unsigned long long n_char_in_file_1;
 # 115
 int *result_array[2];
 # 115
- register_stack_vars(13, "main|estimate|0", (int *)0x0, "i64", (void *)(&estimate), (size_t)8, 0, 0, 0, "main|elapsed|0", (int *)0x0, "i64", (void *)(&elapsed), (size_t)8, 0, 0, 0, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0);  
+ register_stack_vars(11, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0);  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 20 13 len=12 char_mapping_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 20 175  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 32 6 len=12 print_matrix_resumable
@@ -255,15 +247,7 @@ RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_wate
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 152 77 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 159 8 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 159 28 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 164 10 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 164 36 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 166 10 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 166 37 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 115 172  ; unsigned long long estimate;
-# 115
-unsigned long long elapsed;
-# 115
-unsigned long long c;
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 115 172  ; unsigned long long c;
 # 115
 struct timeval intermediate;
 # 115
@@ -285,4 +269,4 @@ unsigned long long n_char_in_file_1;
 # 115
 int *result_array[2];
 # 115
- register_stack_vars(13, "main|estimate|0", (int *)0x0, "i64", (void *)(&estimate), (size_t)8, 0, 0, 0, "main|elapsed|0", (int *)0x0, "i64", (void *)(&elapsed), (size_t)8, 0, 0, 0, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(19): { goto call_lbl_19; } default: { chimes_error(); } }  }  
+ register_stack_vars(11, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(19): { goto call_lbl_19; } default: { chimes_error(); } }  }  

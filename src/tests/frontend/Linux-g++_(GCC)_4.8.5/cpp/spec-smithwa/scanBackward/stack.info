@@ -6,7 +6,7 @@
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|maxReports|0 " i32 " 32 0 0 1 gridInfo
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|minSeparation|0 " i32 " 32 0 0 1 gridInfo
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|maxDoublings|0 " i32 " 32 0 0 1 gridInfo
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|i|0 " i32 " 32 0 0 1 gridInfo
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|m|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|n|0 " i32 " 32 0 0 0
@@ -25,9 +25,9 @@
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|threadNum|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|myTaskID|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|npRow|0 " i32 " 32 0 0 1 scanBackward
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|npCol|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|myRow|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|myCol|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|npCol|0 " i32 " 32 0 0 1 gridInfo
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|myRow|0 " i32 " 32 0 0 1 gridInfo
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|myCol|0 " i32 " 32 0 0 1 gridInfo
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|iBeg|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|jBeg|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|iFin|0 " i32 " 32 0 0 0

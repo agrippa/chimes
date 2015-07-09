@@ -4255,17 +4255,11 @@ rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, ____alias_
 void sparselu_par_call_quick(float **BENCH); void sparselu_par_call(float **BENCH);
 void sparselu_par_call_resumable(float **BENCH)
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(15559110349592349396UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0) ; float *block;
+{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(15559110349592349396UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0) ; int kk;
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-int kk;
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-int jj;
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-int ii;
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- register_stack_vars(4, "sparselu_par_call|block|0", (int *)0x0, "float*", (void *)(&block), (size_t)8, 1, 0, 0, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0, "sparselu_par_call|jj|0", (int *)0x0, "i32", (void *)(&jj), (size_t)4, 0, 0, 0, "sparselu_par_call|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(1, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 231 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      ;
+   int ii; int jj; ;
 # 232 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 233 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Computing SparseLU Factorization (%dx%d matrix with %dx%d blocks) " , bots_arg_size,bots_arg_size,bots_arg_size_1,bots_arg_size_1); } }
@@ -4286,13 +4280,13 @@ int ii;
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{ call_lbl_5: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, &____chimes_region_id0, 3, &block, &jj, &kk); int ____chimes_first_iter0 = 1;
+{ call_lbl_5: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, &____chimes_region_id0, 2, &jj, &kk); int ____chimes_first_iter0 = 1;
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(jj) firstprivate(____chimes_first_iter0)
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 244 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (jj=kk+1; jj<bots_arg_size; jj++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &block, &jj, &kk); ____chimes_first_iter0 = 0; } {
+      for (jj=kk+1; jj<bots_arg_size; jj++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 2, &jj, &kk); ____chimes_first_iter0 = 0; } {
 # 245 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (BENCH[kk*bots_arg_size+jj] != __null) {
 # 246 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4310,13 +4304,13 @@ int ii;
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{ call_lbl_6: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(6, &____chimes_region_id1, 3, &block, &ii, &kk); int ____chimes_first_iter1 = 1;
+{ call_lbl_6: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(6, &____chimes_region_id1, 2, &ii, &kk); int ____chimes_first_iter1 = 1;
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(ii) firstprivate(____chimes_first_iter1)
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 254 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (ii=kk+1; ii<bots_arg_size; ii++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 3, &block, &ii, &kk); ____chimes_first_iter1 = 0; } {
+      for (ii=kk+1; ii<bots_arg_size; ii++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &ii, &kk); ____chimes_first_iter1 = 0; } {
 # 255 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (BENCH[ii*bots_arg_size+kk] != __null) {
 # 256 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4336,19 +4330,19 @@ int ii;
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{ call_lbl_7: void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(7, &____chimes_region_id2, 1, &block);
+{ call_lbl_7: void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(7, &____chimes_region_id2, 0);
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel shared(BENCH)
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 266 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 1, &block); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
+      { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp for collapse(2) firstprivate(block)
+#pragma omp for collapse(2)
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 268 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4365,7 +4359,7 @@ bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
 # 274 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               if (BENCH[ii*bots_arg_size+jj]==__null) {
 # 275 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                     block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
+                                   float *block; block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
 # 276 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                   ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); });
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4847,17 +4841,11 @@ void sparselu_init (float ***pBENCH, char *pass) { (____chimes_replaying ? spars
 # 229 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_par_call_quick(float **BENCH)
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(15559110349592349396UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0) ; float *block;
+{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(15559110349592349396UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0) ; int kk;
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-int kk;
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-int jj;
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-int ii;
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- register_stack_vars(4, "sparselu_par_call|block|0", (int *)0x0, "float*", (void *)(&block), (size_t)8, 1, 0, 0, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0, "sparselu_par_call|jj|0", (int *)0x0, "i32", (void *)(&jj), (size_t)4, 0, 0, 0, "sparselu_par_call|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); ; ;
+ register_stack_vars(1, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0); ; ;
 # 231 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      ;
+   int ii; int jj; ;
 # 232 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 233 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Computing SparseLU Factorization (%dx%d matrix with %dx%d blocks) " , bots_arg_size,bots_arg_size,bots_arg_size_1,bots_arg_size_1); } }
@@ -4878,13 +4866,13 @@ int ii;
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{ call_lbl_5: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, &____chimes_region_id0, 3, &block, &jj, &kk); int ____chimes_first_iter0 = 1;
+{ call_lbl_5: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, &____chimes_region_id0, 2, &jj, &kk); int ____chimes_first_iter0 = 1;
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(jj) firstprivate(____chimes_first_iter0)
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 244 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (jj=kk+1; jj<bots_arg_size; jj++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &block, &jj, &kk); ____chimes_first_iter0 = 0; } {
+      for (jj=kk+1; jj<bots_arg_size; jj++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 2, &jj, &kk); ____chimes_first_iter0 = 0; } {
 # 245 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (BENCH[kk*bots_arg_size+jj] != __null) {
 # 246 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4902,13 +4890,13 @@ int ii;
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{ call_lbl_6: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(6, &____chimes_region_id1, 3, &block, &ii, &kk); int ____chimes_first_iter1 = 1;
+{ call_lbl_6: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(6, &____chimes_region_id1, 2, &ii, &kk); int ____chimes_first_iter1 = 1;
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(ii) firstprivate(____chimes_first_iter1)
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 254 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (ii=kk+1; ii<bots_arg_size; ii++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 3, &block, &ii, &kk); ____chimes_first_iter1 = 0; } {
+      for (ii=kk+1; ii<bots_arg_size; ii++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &ii, &kk); ____chimes_first_iter1 = 0; } {
 # 255 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (BENCH[ii*bots_arg_size+kk] != __null) {
 # 256 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4928,19 +4916,19 @@ int ii;
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{ call_lbl_7: void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(7, &____chimes_region_id2, 1, &block);
+{ call_lbl_7: void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(7, &____chimes_region_id2, 0);
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel shared(BENCH)
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 266 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 1, &block); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
+      { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp for collapse(2) firstprivate(block)
+#pragma omp for collapse(2)
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 268 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4957,7 +4945,7 @@ bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
 # 274 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               if (BENCH[ii*bots_arg_size+jj]==__null) {
 # 275 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                     block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
+                                   float *block; block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
 # 276 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                   ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); });
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"

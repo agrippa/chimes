@@ -166,14 +166,8 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 282 69 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 293 20 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 293 31 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 4 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 10 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 12 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 18 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 20 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 26 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 275 36 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 275 48 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 244 45  { 
 InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 251 7  } 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 254 45  { 
@@ -182,15 +176,9 @@ InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-t
 InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 288 11  } 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 266 7  { 
 InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 289 7  } 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 230 235  ; float *block;
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 230 235  ; int kk;
 # 230
-int kk;
-# 230
-int jj;
-# 230
-int ii;
-# 230
- register_stack_vars(4, "sparselu_par_call|block|0", (int *)0x0, "float*", (void *)(&block), (size_t)8, 1, 0, 0, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0, "sparselu_par_call|jj|0", (int *)0x0, "i32", (void *)(&jj), (size_t)4, 0, 0, 0, "sparselu_par_call|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0);  
+ register_stack_vars(1, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0);  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 303 6 len=17 sparselu_seq_call_quick
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 309 7 ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 309 37 
@@ -246,14 +234,8 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 282 69 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 293 20 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 293 31 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 4 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 10 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 12 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 18 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 20 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 26 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 275 36 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 275 48 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 244 45  { 
 InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 251 7  } 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 254 45  { 
@@ -262,15 +244,9 @@ InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-t
 InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 288 11  } 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 266 7  { 
 InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 289 7  } 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 230 235  ; float *block;
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 230 235  ; int kk;
 # 230
-int kk;
-# 230
-int jj;
-# 230
-int ii;
-# 230
- register_stack_vars(4, "sparselu_par_call|block|0", (int *)0x0, "float*", (void *)(&block), (size_t)8, 1, 0, 0, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0, "sparselu_par_call|jj|0", (int *)0x0, "i32", (void *)(&jj), (size_t)4, 0, 0, 0, "sparselu_par_call|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
+ register_stack_vars(1, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 303 6 len=17 sparselu_seq_call_resumable
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 309 7 ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 309 37 

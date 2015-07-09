@@ -19,10 +19,6 @@ static int ____chimes_does_checkpoint_getSeconds_npm = 1;
 
 static int ____must_checkpoint_pairwiseAlign_maxReports_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_minSeparation_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_i_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_j_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_k_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_r_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_sortReports_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_report_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_index_0 = 2;
@@ -31,7 +27,6 @@ static int ____must_checkpoint_pairwiseAlign_goodEndsI_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_goodEndsJ_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_gapFirst_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_gapExtend_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_worst_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_iBeg_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_iEnd_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_jBeg_0 = 2;
@@ -46,10 +41,6 @@ static int ____must_checkpoint_pairwiseAlign_goodScores_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_scores_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_V_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_F_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_G_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_Vp_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_E_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_W_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_llMinScore_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_A_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_beginTime_0 = 2;
@@ -3573,14 +3564,6 @@ ASTR_T *A;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 long long llMinScore;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-long long W;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-long long E;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-long long Vp;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-long long G;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 long long *F;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 long long *V;
@@ -3609,8 +3592,6 @@ int iEnd;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int iBeg;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int worst;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int gapExtend;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int gapFirst;
@@ -3627,20 +3608,12 @@ int report;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int sortReports;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int r;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int k;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int j;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int i;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_W_0 || ____must_checkpoint_pairwiseAlign_E_0 || ____must_checkpoint_pairwiseAlign_Vp_0 || ____must_checkpoint_pairwiseAlign_G_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myTaskID_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_worst_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0 || ____must_checkpoint_pairwiseAlign_r_0 || ____must_checkpoint_pairwiseAlign_k_0 || ____must_checkpoint_pairwiseAlign_j_0 || ____must_checkpoint_pairwiseAlign_i_0) { register_stack_vars(34, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|W|0", &____must_checkpoint_pairwiseAlign_W_0, "i64", (void *)(&W), (size_t)8, 0, 0, 0, "pairwiseAlign|E|0", &____must_checkpoint_pairwiseAlign_E_0, "i64", (void *)(&E), (size_t)8, 0, 0, 0, "pairwiseAlign|Vp|0", &____must_checkpoint_pairwiseAlign_Vp_0, "i64", (void *)(&Vp), (size_t)8, 0, 0, 0, "pairwiseAlign|G|0", &____must_checkpoint_pairwiseAlign_G_0, "i64", (void *)(&G), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myTaskID|0", &____must_checkpoint_pairwiseAlign_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|worst|0", &____must_checkpoint_pairwiseAlign_worst_0, "i32", (void *)(&worst), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0, "pairwiseAlign|r|0", &____must_checkpoint_pairwiseAlign_r_0, "i32", (void *)(&r), (size_t)4, 0, 0, 0, "pairwiseAlign|k|0", &____must_checkpoint_pairwiseAlign_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "pairwiseAlign|j|0", &____must_checkpoint_pairwiseAlign_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "pairwiseAlign|i|0", &____must_checkpoint_pairwiseAlign_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(52): { goto call_lbl_52; } case(54): { goto call_lbl_54; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myTaskID_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(25, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myTaskID|0", &____must_checkpoint_pairwiseAlign_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(52): { goto call_lbl_52; } case(54): { goto call_lbl_54; } default: { chimes_error(); } } } ; ;
 # 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      int n; int m; ;
+  int i; int j; int k; int r; int n; int m; ;
 # 281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-         ;
+        int worst; ;
 # 282 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        int myCol; int npRow; int npCol; ;
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3652,7 +3625,7 @@ int i;
 # 286 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     ;
 # 287 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-         ;
+    long long G; long long Vp; long long E; long long W; ;
 # 288 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      A = (__null) ;
 # 289 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4755,14 +4728,6 @@ ASTR_T *A;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 long long llMinScore;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-long long W;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-long long E;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-long long Vp;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-long long G;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 long long *F;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 long long *V;
@@ -4791,8 +4756,6 @@ int iEnd;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int iBeg;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int worst;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int gapExtend;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int gapFirst;
@@ -4809,20 +4772,12 @@ int report;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int sortReports;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int r;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int k;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int j;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int i;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_W_0 || ____must_checkpoint_pairwiseAlign_E_0 || ____must_checkpoint_pairwiseAlign_Vp_0 || ____must_checkpoint_pairwiseAlign_G_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myTaskID_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_worst_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0 || ____must_checkpoint_pairwiseAlign_r_0 || ____must_checkpoint_pairwiseAlign_k_0 || ____must_checkpoint_pairwiseAlign_j_0 || ____must_checkpoint_pairwiseAlign_i_0) { register_stack_vars(34, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|W|0", &____must_checkpoint_pairwiseAlign_W_0, "i64", (void *)(&W), (size_t)8, 0, 0, 0, "pairwiseAlign|E|0", &____must_checkpoint_pairwiseAlign_E_0, "i64", (void *)(&E), (size_t)8, 0, 0, 0, "pairwiseAlign|Vp|0", &____must_checkpoint_pairwiseAlign_Vp_0, "i64", (void *)(&Vp), (size_t)8, 0, 0, 0, "pairwiseAlign|G|0", &____must_checkpoint_pairwiseAlign_G_0, "i64", (void *)(&G), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myTaskID|0", &____must_checkpoint_pairwiseAlign_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|worst|0", &____must_checkpoint_pairwiseAlign_worst_0, "i32", (void *)(&worst), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0, "pairwiseAlign|r|0", &____must_checkpoint_pairwiseAlign_r_0, "i32", (void *)(&r), (size_t)4, 0, 0, 0, "pairwiseAlign|k|0", &____must_checkpoint_pairwiseAlign_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "pairwiseAlign|j|0", &____must_checkpoint_pairwiseAlign_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "pairwiseAlign|i|0", &____must_checkpoint_pairwiseAlign_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ; ;
+ if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myTaskID_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(25, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myTaskID|0", &____must_checkpoint_pairwiseAlign_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0); } ; ;
 # 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      int n; int m; ;
+  int i; int j; int k; int r; int n; int m; ;
 # 281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-         ;
+        int worst; ;
 # 282 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        int myCol; int npRow; int npCol; ;
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4834,7 +4789,7 @@ int i;
 # 286 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     ;
 # 287 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-         ;
+    long long G; long long Vp; long long E; long long W; ;
 # 288 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      A = (__null) ;
 # 289 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6847,7 +6802,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 
 
 static int module_init() {
-    init_module(7066887875038562491UL, 33, 7, 36, 9, 7, 1, 8, 7, 0, 3,
+    init_module(7066887875038562491UL, 33, 7, 27, 9, 7, 1, 8, 7, 0, 3,
                            &____alias_loc_id_0, (unsigned)18, (unsigned)0, (unsigned)0, (7066887875038562491UL + 416UL), (7066887875038562491UL + 417UL), (7066887875038562491UL + 418UL), (7066887875038562491UL + 419UL), (7066887875038562491UL + 423UL), (7066887875038562491UL + 430UL), (7066887875038562491UL + 450UL), (7066887875038562491UL + 451UL), (7066887875038562491UL + 452UL), (7066887875038562491UL + 453UL), (7066887875038562491UL + 454UL), (7066887875038562491UL + 456UL), (7066887875038562491UL + 1135UL), (7066887875038562491UL + 1138UL), (7066887875038562491UL + 1364UL), (7066887875038562491UL + 1410UL), (7066887875038562491UL + 1432UL), (7066887875038562491UL + 1528UL),
                            &____alias_loc_id_1, (unsigned)32, (unsigned)0, (unsigned)0, (7066887875038562491UL + 416UL), (7066887875038562491UL + 417UL), (7066887875038562491UL + 420UL), (7066887875038562491UL + 421UL), (7066887875038562491UL + 422UL), (7066887875038562491UL + 423UL), (7066887875038562491UL + 424UL), (7066887875038562491UL + 425UL), (7066887875038562491UL + 426UL), (7066887875038562491UL + 427UL), (7066887875038562491UL + 428UL), (7066887875038562491UL + 429UL), (7066887875038562491UL + 431UL), (7066887875038562491UL + 432UL), (7066887875038562491UL + 433UL), (7066887875038562491UL + 434UL), (7066887875038562491UL + 443UL), (7066887875038562491UL + 444UL), (7066887875038562491UL + 445UL), (7066887875038562491UL + 446UL), (7066887875038562491UL + 447UL), (7066887875038562491UL + 448UL), (7066887875038562491UL + 449UL), (7066887875038562491UL + 858UL), (7066887875038562491UL + 930UL), (7066887875038562491UL + 952UL), (7066887875038562491UL + 955UL), (7066887875038562491UL + 1135UL), (7066887875038562491UL + 1138UL), (7066887875038562491UL + 1364UL), (7066887875038562491UL + 1410UL), (7066887875038562491UL + 1432UL),
                            &____alias_loc_id_2, (unsigned)18, (unsigned)0, (unsigned)0, (7066887875038562491UL + 1UL), (7066887875038562491UL + 2UL), (7066887875038562491UL + 3UL), (7066887875038562491UL + 4UL), (7066887875038562491UL + 5UL), (7066887875038562491UL + 6UL), (7066887875038562491UL + 7UL), (7066887875038562491UL + 8UL), (7066887875038562491UL + 9UL), (7066887875038562491UL + 10UL), (7066887875038562491UL + 11UL), (7066887875038562491UL + 12UL), (7066887875038562491UL + 13UL), (7066887875038562491UL + 14UL), (7066887875038562491UL + 116UL), (7066887875038562491UL + 117UL), (7066887875038562491UL + 118UL), (7066887875038562491UL + 119UL),
@@ -6918,10 +6873,6 @@ static int module_init() {
                              "gridInfo", "_Z8gridInfoPiS_S_S_", 0,
                         "pairwiseAlign|maxReports|0", 1, "getSeconds",
                         "pairwiseAlign|minSeparation|0", 1, "getSeconds",
-                        "pairwiseAlign|i|0", 1, "getSeconds",
-                        "pairwiseAlign|j|0", 1, "getSeconds",
-                        "pairwiseAlign|k|0", 1, "getSeconds",
-                        "pairwiseAlign|r|0", 1, "getSeconds",
                         "pairwiseAlign|sortReports|0", 1, "getSeconds",
                         "pairwiseAlign|report|0", 1, "getSeconds",
                         "pairwiseAlign|index|0", 1, "getSeconds",
@@ -6930,7 +6881,6 @@ static int module_init() {
                         "pairwiseAlign|goodEndsJ|0", 1, "getSeconds",
                         "pairwiseAlign|gapFirst|0", 1, "getSeconds",
                         "pairwiseAlign|gapExtend|0", 1, "getSeconds",
-                        "pairwiseAlign|worst|0", 1, "getSeconds",
                         "pairwiseAlign|iBeg|0", 1, "getSeconds",
                         "pairwiseAlign|iEnd|0", 1, "getSeconds",
                         "pairwiseAlign|jBeg|0", 1, "getSeconds",
@@ -6945,10 +6895,6 @@ static int module_init() {
                         "pairwiseAlign|scores|0", 1, "getSeconds",
                         "pairwiseAlign|V|0", 1, "getSeconds",
                         "pairwiseAlign|F|0", 1, "getSeconds",
-                        "pairwiseAlign|G|0", 1, "getSeconds",
-                        "pairwiseAlign|Vp|0", 1, "getSeconds",
-                        "pairwiseAlign|E|0", 1, "getSeconds",
-                        "pairwiseAlign|W|0", 1, "getSeconds",
                         "pairwiseAlign|llMinScore|0", 1, "getSeconds",
                         "pairwiseAlign|A|0", 1, "getSeconds",
                         "pairwiseAlign|beginTime|0", 1, "getSeconds",

@@ -3965,15 +3965,7 @@ rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_1, __
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 int main_quick(int argc, char* argv[]); int main(int argc, char* argv[]);
-int main_resumable(int argc, char* argv[]) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9808122005516792338UL)) ; int max_idx;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-float max_dist;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-int window_end;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-int window_start;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-int w;
+int main_resumable(int argc, char* argv[]) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9808122005516792338UL)) ; int w;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 int nwindows;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -3997,22 +3989,16 @@ struct neighbor *neighbors;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 char dbname[64];
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-char *rec_iter;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 int k;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-int j;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-int i;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- register_stack_vars(20, "main|max_idx|0", (int *)0x0, "i32", (void *)(&max_idx), (size_t)4, 0, 0, 0, "main|max_dist|0", (int *)0x0, "float", (void *)(&max_dist), (size_t)4, 0, 0, 0, "main|window_end|0", (int *)0x0, "i32", (void *)(&window_end), (size_t)4, 0, 0, 0, "main|window_start|0", (int *)0x0, "i32", (void *)(&window_start), (size_t)4, 0, 0, 0, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", (int *)0x0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|rec_iter|0", (int *)0x0, "i8*", (void *)(&rec_iter), (size_t)8, 1, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(27): { goto call_lbl_27; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(13, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", (int *)0x0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(27): { goto call_lbl_27; } default: { chimes_error(); } } } ; ;
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  FILE *flist; FILE *fp; ;
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        int rec_count; int done; i = (0) ; j = (0) ; k = (0) ; rec_count = (0) ; done = (0) ;
+  int i; int j; int rec_count; int done; i = (0) ; j = (0) ; k = (0) ; rec_count = (0) ; done = (0) ;
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   ;
+ char *rec_iter; ;
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     neighbors = (__null) ;
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4123,9 +4109,9 @@ int i;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     { for ( w = (0) ; w < nwindows; w++) {
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-           window_start = (w * 1000) ;
+         int window_start; window_start = (w * 1000) ;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-           window_end = ((w + 1) * 1000) ;
+         int window_end; window_end = ((w + 1) * 1000) ;
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
         if (window_end > nrecords) {window_end = nrecords; };
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4160,9 +4146,9 @@ int i;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   for( i = window_start ; i < window_end ; i++ ) {
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-      max_dist = (-1) ;
+    float max_dist; max_dist = (-1) ;
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-      max_idx = (0) ;
+    int max_idx; max_idx = (0) ;
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
    for( j = 0 ; j < k ; j++ ) {
@@ -4232,15 +4218,7 @@ rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_1, __
 
 double seconds() { return (____chimes_replaying ? seconds_resumable() : seconds_quick()); }
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-int main_quick(int argc, char* argv[]) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9808122005516792338UL)) ; int max_idx;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-float max_dist;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-int window_end;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-int window_start;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-int w;
+int main_quick(int argc, char* argv[]) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9808122005516792338UL)) ; int w;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 int nwindows;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4264,22 +4242,16 @@ struct neighbor *neighbors;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 char dbname[64];
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-char *rec_iter;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 int k;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-int j;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-int i;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- register_stack_vars(20, "main|max_idx|0", (int *)0x0, "i32", (void *)(&max_idx), (size_t)4, 0, 0, 0, "main|max_dist|0", (int *)0x0, "float", (void *)(&max_dist), (size_t)4, 0, 0, 0, "main|window_end|0", (int *)0x0, "i32", (void *)(&window_end), (size_t)4, 0, 0, 0, "main|window_start|0", (int *)0x0, "i32", (void *)(&window_start), (size_t)4, 0, 0, 0, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", (int *)0x0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|rec_iter|0", (int *)0x0, "i8*", (void *)(&rec_iter), (size_t)8, 1, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ; ;
+ register_stack_vars(13, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", (int *)0x0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); ; ;
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  FILE *flist; FILE *fp; ;
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        int rec_count; int done; i = (0) ; j = (0) ; k = (0) ; rec_count = (0) ; done = (0) ;
+  int i; int j; int rec_count; int done; i = (0) ; j = (0) ; k = (0) ; rec_count = (0) ; done = (0) ;
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   ;
+ char *rec_iter; ;
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     neighbors = (__null) ;
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4390,9 +4362,9 @@ int i;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     { for ( w = (0) ; w < nwindows; w++) {
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-           window_start = (w * 1000) ;
+         int window_start; window_start = (w * 1000) ;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-           window_end = ((w + 1) * 1000) ;
+         int window_end; window_end = ((w + 1) * 1000) ;
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
         if (window_end > nrecords) {window_end = nrecords; };
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4427,9 +4399,9 @@ int i;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   for( i = window_start ; i < window_end ; i++ ) {
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-      max_dist = (-1) ;
+    float max_dist; max_dist = (-1) ;
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-      max_idx = (0) ;
+    int max_idx; max_idx = (0) ;
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
    for( j = 0 ; j < k ; j++ ) {

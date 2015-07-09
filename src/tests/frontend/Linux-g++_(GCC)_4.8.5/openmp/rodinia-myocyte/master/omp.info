@@ -1,1 +1,1 @@
-68 68 #pragma omp parallel private(th_id)
+68 68 #pragma omp parallel

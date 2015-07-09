@@ -29,18 +29,16 @@ static int ____must_checkpoint_mergeAlignment_tempSeqsI_0 = 2;
 static int ____must_checkpoint_mergeAlignment_tempSeqsJ_0 = 2;
 static int ____must_checkpoint_mergeAlignment_sequences_0 = 2;
 static int ____must_checkpoint_mergeAlignment_C_0 = 2;
-static int ____must_checkpoint_mergeAlignment_i_0 = 2;
-static int ____must_checkpoint_mergeAlignment_j_0 = 2;
 static int ____must_checkpoint_mergeAlignment_iter_0 = 2;
 static int ____must_checkpoint_mergeAlignment_mask_0 = 2;
 static int ____must_checkpoint_mergeAlignment_consumer_0 = 2;
 static int ____must_checkpoint_mergeAlignment_producer_0 = 2;
 static int ____must_checkpoint_mergeAlignment_totalReports_0 = 2;
-static int ____must_checkpoint_mergeAlignment_flag_0 = 2;
-static int ____must_checkpoint_mergeAlignment_length_0 = 2;
 static int ____must_checkpoint_mergeAlignment_index_0 = 2;
-static int ____must_checkpoint_mergeAlignment_indexB_0 = 2;
 static int ____must_checkpoint_mergeAlignment_myRow_0 = 2;
+static int ____must_checkpoint_mergeAlignment_myCol_0 = 2;
+static int ____must_checkpoint_mergeAlignment_npRow_0 = 2;
+static int ____must_checkpoint_mergeAlignment_npCol_0 = 2;
 static int ____must_checkpoint_mergeAlignment_beginTime_0 = 2;
 static int ____must_checkpoint_mergeAlignment_P_0 = 2;
 
@@ -2838,15 +2836,15 @@ CSTR_T *mergeAlignment_resumable(BSTR_T *B, int maxReports, int minSeparation) {
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 double beginTime;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+int npCol;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+int npRow;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+int myCol;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int myRow;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-int indexB;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *index;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-int length;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-int flag;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int totalReports;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -2857,10 +2855,6 @@ int consumer;
 int mask;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int iter;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-int j;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-int i;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *C;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -2886,7 +2880,7 @@ long long *scores;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 long long *tempScores;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- if (____must_checkpoint_mergeAlignment_P_0 || ____must_checkpoint_mergeAlignment_beginTime_0 || ____must_checkpoint_mergeAlignment_myRow_0 || ____must_checkpoint_mergeAlignment_indexB_0 || ____must_checkpoint_mergeAlignment_index_0 || ____must_checkpoint_mergeAlignment_length_0 || ____must_checkpoint_mergeAlignment_flag_0 || ____must_checkpoint_mergeAlignment_totalReports_0 || ____must_checkpoint_mergeAlignment_producer_0 || ____must_checkpoint_mergeAlignment_consumer_0 || ____must_checkpoint_mergeAlignment_mask_0 || ____must_checkpoint_mergeAlignment_iter_0 || ____must_checkpoint_mergeAlignment_j_0 || ____must_checkpoint_mergeAlignment_i_0 || ____must_checkpoint_mergeAlignment_C_0 || ____must_checkpoint_mergeAlignment_sequences_0 || ____must_checkpoint_mergeAlignment_tempSeqsJ_0 || ____must_checkpoint_mergeAlignment_tempSeqsI_0 || ____must_checkpoint_mergeAlignment_tempEndsJ_0 || ____must_checkpoint_mergeAlignment_tempEndsI_0 || ____must_checkpoint_mergeAlignment_tempStartsJ_0 || ____must_checkpoint_mergeAlignment_tempStartsI_0 || ____must_checkpoint_mergeAlignment_threadNum_0 || ____must_checkpoint_mergeAlignment_numReports_0 || ____must_checkpoint_mergeAlignment_scores_0 || ____must_checkpoint_mergeAlignment_tempScores_0) { register_stack_vars(26, "mergeAlignment|P|0", &____must_checkpoint_mergeAlignment_P_0, "%struct.bstr*", (void *)(&P), (size_t)8, 1, 0, 0, "mergeAlignment|beginTime|0", &____must_checkpoint_mergeAlignment_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "mergeAlignment|myRow|0", &____must_checkpoint_mergeAlignment_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "mergeAlignment|indexB|0", &____must_checkpoint_mergeAlignment_indexB_0, "i32", (void *)(&indexB), (size_t)4, 0, 0, 0, "mergeAlignment|index|0", &____must_checkpoint_mergeAlignment_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "mergeAlignment|length|0", &____must_checkpoint_mergeAlignment_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0, "mergeAlignment|flag|0", &____must_checkpoint_mergeAlignment_flag_0, "i32", (void *)(&flag), (size_t)4, 0, 0, 0, "mergeAlignment|totalReports|0", &____must_checkpoint_mergeAlignment_totalReports_0, "i32", (void *)(&totalReports), (size_t)4, 0, 0, 0, "mergeAlignment|producer|0", &____must_checkpoint_mergeAlignment_producer_0, "i32", (void *)(&producer), (size_t)4, 0, 0, 0, "mergeAlignment|consumer|0", &____must_checkpoint_mergeAlignment_consumer_0, "i32", (void *)(&consumer), (size_t)4, 0, 0, 0, "mergeAlignment|mask|0", &____must_checkpoint_mergeAlignment_mask_0, "i32", (void *)(&mask), (size_t)4, 0, 0, 0, "mergeAlignment|iter|0", &____must_checkpoint_mergeAlignment_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "mergeAlignment|j|0", &____must_checkpoint_mergeAlignment_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "mergeAlignment|i|0", &____must_checkpoint_mergeAlignment_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "mergeAlignment|C|0", &____must_checkpoint_mergeAlignment_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "mergeAlignment|sequences|0", &____must_checkpoint_mergeAlignment_sequences_0, "i8**", (void *)(&sequences), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsJ|0", &____must_checkpoint_mergeAlignment_tempSeqsJ_0, "i8**", (void *)(&tempSeqsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsI|0", &____must_checkpoint_mergeAlignment_tempSeqsI_0, "i8**", (void *)(&tempSeqsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsJ|0", &____must_checkpoint_mergeAlignment_tempEndsJ_0, "i32*", (void *)(&tempEndsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsI|0", &____must_checkpoint_mergeAlignment_tempEndsI_0, "i32*", (void *)(&tempEndsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsJ|0", &____must_checkpoint_mergeAlignment_tempStartsJ_0, "i32*", (void *)(&tempStartsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsI|0", &____must_checkpoint_mergeAlignment_tempStartsI_0, "i32*", (void *)(&tempStartsI), (size_t)8, 1, 0, 0, "mergeAlignment|threadNum|0", &____must_checkpoint_mergeAlignment_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "mergeAlignment|numReports|0", &____must_checkpoint_mergeAlignment_numReports_0, "i32", (void *)(&numReports), (size_t)4, 0, 0, 0, "mergeAlignment|scores|0", &____must_checkpoint_mergeAlignment_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "mergeAlignment|tempScores|0", &____must_checkpoint_mergeAlignment_tempScores_0, "i64*", (void *)(&tempScores), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(28): { goto call_lbl_28; } case(59): { goto call_lbl_59; } case(85): { goto call_lbl_85; } case(88): { goto call_lbl_88; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_mergeAlignment_P_0 || ____must_checkpoint_mergeAlignment_beginTime_0 || ____must_checkpoint_mergeAlignment_npCol_0 || ____must_checkpoint_mergeAlignment_npRow_0 || ____must_checkpoint_mergeAlignment_myCol_0 || ____must_checkpoint_mergeAlignment_myRow_0 || ____must_checkpoint_mergeAlignment_index_0 || ____must_checkpoint_mergeAlignment_totalReports_0 || ____must_checkpoint_mergeAlignment_producer_0 || ____must_checkpoint_mergeAlignment_consumer_0 || ____must_checkpoint_mergeAlignment_mask_0 || ____must_checkpoint_mergeAlignment_iter_0 || ____must_checkpoint_mergeAlignment_C_0 || ____must_checkpoint_mergeAlignment_sequences_0 || ____must_checkpoint_mergeAlignment_tempSeqsJ_0 || ____must_checkpoint_mergeAlignment_tempSeqsI_0 || ____must_checkpoint_mergeAlignment_tempEndsJ_0 || ____must_checkpoint_mergeAlignment_tempEndsI_0 || ____must_checkpoint_mergeAlignment_tempStartsJ_0 || ____must_checkpoint_mergeAlignment_tempStartsI_0 || ____must_checkpoint_mergeAlignment_threadNum_0 || ____must_checkpoint_mergeAlignment_numReports_0 || ____must_checkpoint_mergeAlignment_scores_0 || ____must_checkpoint_mergeAlignment_tempScores_0) { register_stack_vars(24, "mergeAlignment|P|0", &____must_checkpoint_mergeAlignment_P_0, "%struct.bstr*", (void *)(&P), (size_t)8, 1, 0, 0, "mergeAlignment|beginTime|0", &____must_checkpoint_mergeAlignment_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "mergeAlignment|npCol|0", &____must_checkpoint_mergeAlignment_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "mergeAlignment|npRow|0", &____must_checkpoint_mergeAlignment_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "mergeAlignment|myCol|0", &____must_checkpoint_mergeAlignment_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "mergeAlignment|myRow|0", &____must_checkpoint_mergeAlignment_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "mergeAlignment|index|0", &____must_checkpoint_mergeAlignment_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "mergeAlignment|totalReports|0", &____must_checkpoint_mergeAlignment_totalReports_0, "i32", (void *)(&totalReports), (size_t)4, 0, 0, 0, "mergeAlignment|producer|0", &____must_checkpoint_mergeAlignment_producer_0, "i32", (void *)(&producer), (size_t)4, 0, 0, 0, "mergeAlignment|consumer|0", &____must_checkpoint_mergeAlignment_consumer_0, "i32", (void *)(&consumer), (size_t)4, 0, 0, 0, "mergeAlignment|mask|0", &____must_checkpoint_mergeAlignment_mask_0, "i32", (void *)(&mask), (size_t)4, 0, 0, 0, "mergeAlignment|iter|0", &____must_checkpoint_mergeAlignment_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "mergeAlignment|C|0", &____must_checkpoint_mergeAlignment_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "mergeAlignment|sequences|0", &____must_checkpoint_mergeAlignment_sequences_0, "i8**", (void *)(&sequences), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsJ|0", &____must_checkpoint_mergeAlignment_tempSeqsJ_0, "i8**", (void *)(&tempSeqsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsI|0", &____must_checkpoint_mergeAlignment_tempSeqsI_0, "i8**", (void *)(&tempSeqsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsJ|0", &____must_checkpoint_mergeAlignment_tempEndsJ_0, "i32*", (void *)(&tempEndsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsI|0", &____must_checkpoint_mergeAlignment_tempEndsI_0, "i32*", (void *)(&tempEndsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsJ|0", &____must_checkpoint_mergeAlignment_tempStartsJ_0, "i32*", (void *)(&tempStartsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsI|0", &____must_checkpoint_mergeAlignment_tempStartsI_0, "i32*", (void *)(&tempStartsI), (size_t)8, 1, 0, 0, "mergeAlignment|threadNum|0", &____must_checkpoint_mergeAlignment_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "mergeAlignment|numReports|0", &____must_checkpoint_mergeAlignment_numReports_0, "i32", (void *)(&numReports), (size_t)4, 0, 0, 0, "mergeAlignment|scores|0", &____must_checkpoint_mergeAlignment_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "mergeAlignment|tempScores|0", &____must_checkpoint_mergeAlignment_tempScores_0, "i64*", (void *)(&tempScores), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(28): { goto call_lbl_28; } case(59): { goto call_lbl_59; } case(85): { goto call_lbl_85; } case(88): { goto call_lbl_88; } default: { chimes_error(); } } } ; ;
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = (__null) ;
@@ -2901,11 +2895,11 @@ long long *tempScores;
 # 58 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      C = (__null) ;
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-         ;
+  int i; int j; ;
 # 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    int count; ;
+  int flag; int length; int count; int indexB; ;
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   int myCol; int npRow; int npCol; ;
+      ;
 # 62 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    double endTime; ;
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4079,15 +4073,15 @@ CSTR_T *mergeAlignment_quick(BSTR_T *B, int maxReports, int minSeparation) {cons
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 double beginTime;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+int npCol;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+int npRow;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+int myCol;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int myRow;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-int indexB;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *index;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-int length;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-int flag;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int totalReports;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4098,10 +4092,6 @@ int consumer;
 int mask;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int iter;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-int j;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-int i;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *C;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4127,7 +4117,7 @@ long long *scores;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 long long *tempScores;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- if (____must_checkpoint_mergeAlignment_P_0 || ____must_checkpoint_mergeAlignment_beginTime_0 || ____must_checkpoint_mergeAlignment_myRow_0 || ____must_checkpoint_mergeAlignment_indexB_0 || ____must_checkpoint_mergeAlignment_index_0 || ____must_checkpoint_mergeAlignment_length_0 || ____must_checkpoint_mergeAlignment_flag_0 || ____must_checkpoint_mergeAlignment_totalReports_0 || ____must_checkpoint_mergeAlignment_producer_0 || ____must_checkpoint_mergeAlignment_consumer_0 || ____must_checkpoint_mergeAlignment_mask_0 || ____must_checkpoint_mergeAlignment_iter_0 || ____must_checkpoint_mergeAlignment_j_0 || ____must_checkpoint_mergeAlignment_i_0 || ____must_checkpoint_mergeAlignment_C_0 || ____must_checkpoint_mergeAlignment_sequences_0 || ____must_checkpoint_mergeAlignment_tempSeqsJ_0 || ____must_checkpoint_mergeAlignment_tempSeqsI_0 || ____must_checkpoint_mergeAlignment_tempEndsJ_0 || ____must_checkpoint_mergeAlignment_tempEndsI_0 || ____must_checkpoint_mergeAlignment_tempStartsJ_0 || ____must_checkpoint_mergeAlignment_tempStartsI_0 || ____must_checkpoint_mergeAlignment_threadNum_0 || ____must_checkpoint_mergeAlignment_numReports_0 || ____must_checkpoint_mergeAlignment_scores_0 || ____must_checkpoint_mergeAlignment_tempScores_0) { register_stack_vars(26, "mergeAlignment|P|0", &____must_checkpoint_mergeAlignment_P_0, "%struct.bstr*", (void *)(&P), (size_t)8, 1, 0, 0, "mergeAlignment|beginTime|0", &____must_checkpoint_mergeAlignment_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "mergeAlignment|myRow|0", &____must_checkpoint_mergeAlignment_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "mergeAlignment|indexB|0", &____must_checkpoint_mergeAlignment_indexB_0, "i32", (void *)(&indexB), (size_t)4, 0, 0, 0, "mergeAlignment|index|0", &____must_checkpoint_mergeAlignment_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "mergeAlignment|length|0", &____must_checkpoint_mergeAlignment_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0, "mergeAlignment|flag|0", &____must_checkpoint_mergeAlignment_flag_0, "i32", (void *)(&flag), (size_t)4, 0, 0, 0, "mergeAlignment|totalReports|0", &____must_checkpoint_mergeAlignment_totalReports_0, "i32", (void *)(&totalReports), (size_t)4, 0, 0, 0, "mergeAlignment|producer|0", &____must_checkpoint_mergeAlignment_producer_0, "i32", (void *)(&producer), (size_t)4, 0, 0, 0, "mergeAlignment|consumer|0", &____must_checkpoint_mergeAlignment_consumer_0, "i32", (void *)(&consumer), (size_t)4, 0, 0, 0, "mergeAlignment|mask|0", &____must_checkpoint_mergeAlignment_mask_0, "i32", (void *)(&mask), (size_t)4, 0, 0, 0, "mergeAlignment|iter|0", &____must_checkpoint_mergeAlignment_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "mergeAlignment|j|0", &____must_checkpoint_mergeAlignment_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "mergeAlignment|i|0", &____must_checkpoint_mergeAlignment_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "mergeAlignment|C|0", &____must_checkpoint_mergeAlignment_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "mergeAlignment|sequences|0", &____must_checkpoint_mergeAlignment_sequences_0, "i8**", (void *)(&sequences), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsJ|0", &____must_checkpoint_mergeAlignment_tempSeqsJ_0, "i8**", (void *)(&tempSeqsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsI|0", &____must_checkpoint_mergeAlignment_tempSeqsI_0, "i8**", (void *)(&tempSeqsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsJ|0", &____must_checkpoint_mergeAlignment_tempEndsJ_0, "i32*", (void *)(&tempEndsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsI|0", &____must_checkpoint_mergeAlignment_tempEndsI_0, "i32*", (void *)(&tempEndsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsJ|0", &____must_checkpoint_mergeAlignment_tempStartsJ_0, "i32*", (void *)(&tempStartsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsI|0", &____must_checkpoint_mergeAlignment_tempStartsI_0, "i32*", (void *)(&tempStartsI), (size_t)8, 1, 0, 0, "mergeAlignment|threadNum|0", &____must_checkpoint_mergeAlignment_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "mergeAlignment|numReports|0", &____must_checkpoint_mergeAlignment_numReports_0, "i32", (void *)(&numReports), (size_t)4, 0, 0, 0, "mergeAlignment|scores|0", &____must_checkpoint_mergeAlignment_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "mergeAlignment|tempScores|0", &____must_checkpoint_mergeAlignment_tempScores_0, "i64*", (void *)(&tempScores), (size_t)8, 1, 0, 0); } ; ;
+ if (____must_checkpoint_mergeAlignment_P_0 || ____must_checkpoint_mergeAlignment_beginTime_0 || ____must_checkpoint_mergeAlignment_npCol_0 || ____must_checkpoint_mergeAlignment_npRow_0 || ____must_checkpoint_mergeAlignment_myCol_0 || ____must_checkpoint_mergeAlignment_myRow_0 || ____must_checkpoint_mergeAlignment_index_0 || ____must_checkpoint_mergeAlignment_totalReports_0 || ____must_checkpoint_mergeAlignment_producer_0 || ____must_checkpoint_mergeAlignment_consumer_0 || ____must_checkpoint_mergeAlignment_mask_0 || ____must_checkpoint_mergeAlignment_iter_0 || ____must_checkpoint_mergeAlignment_C_0 || ____must_checkpoint_mergeAlignment_sequences_0 || ____must_checkpoint_mergeAlignment_tempSeqsJ_0 || ____must_checkpoint_mergeAlignment_tempSeqsI_0 || ____must_checkpoint_mergeAlignment_tempEndsJ_0 || ____must_checkpoint_mergeAlignment_tempEndsI_0 || ____must_checkpoint_mergeAlignment_tempStartsJ_0 || ____must_checkpoint_mergeAlignment_tempStartsI_0 || ____must_checkpoint_mergeAlignment_threadNum_0 || ____must_checkpoint_mergeAlignment_numReports_0 || ____must_checkpoint_mergeAlignment_scores_0 || ____must_checkpoint_mergeAlignment_tempScores_0) { register_stack_vars(24, "mergeAlignment|P|0", &____must_checkpoint_mergeAlignment_P_0, "%struct.bstr*", (void *)(&P), (size_t)8, 1, 0, 0, "mergeAlignment|beginTime|0", &____must_checkpoint_mergeAlignment_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "mergeAlignment|npCol|0", &____must_checkpoint_mergeAlignment_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "mergeAlignment|npRow|0", &____must_checkpoint_mergeAlignment_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "mergeAlignment|myCol|0", &____must_checkpoint_mergeAlignment_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "mergeAlignment|myRow|0", &____must_checkpoint_mergeAlignment_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "mergeAlignment|index|0", &____must_checkpoint_mergeAlignment_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "mergeAlignment|totalReports|0", &____must_checkpoint_mergeAlignment_totalReports_0, "i32", (void *)(&totalReports), (size_t)4, 0, 0, 0, "mergeAlignment|producer|0", &____must_checkpoint_mergeAlignment_producer_0, "i32", (void *)(&producer), (size_t)4, 0, 0, 0, "mergeAlignment|consumer|0", &____must_checkpoint_mergeAlignment_consumer_0, "i32", (void *)(&consumer), (size_t)4, 0, 0, 0, "mergeAlignment|mask|0", &____must_checkpoint_mergeAlignment_mask_0, "i32", (void *)(&mask), (size_t)4, 0, 0, 0, "mergeAlignment|iter|0", &____must_checkpoint_mergeAlignment_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "mergeAlignment|C|0", &____must_checkpoint_mergeAlignment_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "mergeAlignment|sequences|0", &____must_checkpoint_mergeAlignment_sequences_0, "i8**", (void *)(&sequences), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsJ|0", &____must_checkpoint_mergeAlignment_tempSeqsJ_0, "i8**", (void *)(&tempSeqsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsI|0", &____must_checkpoint_mergeAlignment_tempSeqsI_0, "i8**", (void *)(&tempSeqsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsJ|0", &____must_checkpoint_mergeAlignment_tempEndsJ_0, "i32*", (void *)(&tempEndsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsI|0", &____must_checkpoint_mergeAlignment_tempEndsI_0, "i32*", (void *)(&tempEndsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsJ|0", &____must_checkpoint_mergeAlignment_tempStartsJ_0, "i32*", (void *)(&tempStartsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsI|0", &____must_checkpoint_mergeAlignment_tempStartsI_0, "i32*", (void *)(&tempStartsI), (size_t)8, 1, 0, 0, "mergeAlignment|threadNum|0", &____must_checkpoint_mergeAlignment_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "mergeAlignment|numReports|0", &____must_checkpoint_mergeAlignment_numReports_0, "i32", (void *)(&numReports), (size_t)4, 0, 0, 0, "mergeAlignment|scores|0", &____must_checkpoint_mergeAlignment_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "mergeAlignment|tempScores|0", &____must_checkpoint_mergeAlignment_tempScores_0, "i64*", (void *)(&tempScores), (size_t)8, 1, 0, 0); } ; ;
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = (__null) ;
@@ -4142,11 +4132,11 @@ long long *tempScores;
 # 58 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      C = (__null) ;
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-         ;
+  int i; int j; ;
 # 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    int count; ;
+  int flag; int length; int count; int indexB; ;
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   int myCol; int npRow; int npCol; ;
+      ;
 # 62 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    double endTime; ;
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6504,7 +6494,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 
 
 static int module_init() {
-    init_module(10402924002521284791UL, 25, 2, 29, 6, 2, 3, 5, 0, 0, 2,
+    init_module(10402924002521284791UL, 25, 2, 27, 6, 2, 3, 5, 0, 0, 2,
                            &____alias_loc_id_0, (unsigned)14, (unsigned)0, (unsigned)0, (10402924002521284791UL + 6UL), (10402924002521284791UL + 20UL), (10402924002521284791UL + 22UL), (10402924002521284791UL + 23UL), (10402924002521284791UL + 24UL), (10402924002521284791UL + 25UL), (10402924002521284791UL + 28UL), (10402924002521284791UL + 31UL), (10402924002521284791UL + 36UL), (10402924002521284791UL + 1155UL), (10402924002521284791UL + 1185UL), (10402924002521284791UL + 1513UL), (10402924002521284791UL + 2307UL), (10402924002521284791UL + 2309UL),
                            &____alias_loc_id_1, (unsigned)14, (unsigned)0, (unsigned)0, (10402924002521284791UL + 4UL), (10402924002521284791UL + 5UL), (10402924002521284791UL + 8UL), (10402924002521284791UL + 11UL), (10402924002521284791UL + 12UL), (10402924002521284791UL + 13UL), (10402924002521284791UL + 14UL), (10402924002521284791UL + 15UL), (10402924002521284791UL + 16UL), (10402924002521284791UL + 17UL), (10402924002521284791UL + 20UL), (10402924002521284791UL + 30UL), (10402924002521284791UL + 1155UL), (10402924002521284791UL + 2307UL),
                            &____alias_loc_id_2, (unsigned)5, (unsigned)0, (unsigned)1, (10402924002521284791UL + 20UL), (10402924002521284791UL + 21UL), (10402924002521284791UL + 26UL), (10402924002521284791UL + 27UL), (10402924002521284791UL + 2307UL), "qSort_both", (unsigned)3, (10402924002521284791UL + 1176UL), (10402924002521284791UL + 1185UL), (10402924002521284791UL + 2307UL),
@@ -6550,33 +6540,31 @@ static int module_init() {
                      "cstr", 512UL, 8, "long long int*", (int)__builtin_offsetof (struct cstr, finalScores), "int", (int)__builtin_offsetof (struct cstr, numReports), "int*", (int)__builtin_offsetof (struct cstr, finalStartsI), "int*", (int)__builtin_offsetof (struct cstr, finalStartsJ), "int*", (int)__builtin_offsetof (struct cstr, finalEndsI), "int*", (int)__builtin_offsetof (struct cstr, finalEndsJ), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsI), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsJ),
                              "freeC", "_Z5freeCP4cstr", 0,
                              "mergeAlignment", "_Z14mergeAlignmentP4bstrii", 4, "gridInfo", "getSeconds", "qSort_both", "getSeconds",
-                        "mergeAlignment|B|0", 3, "qSort_both", "gridInfo", "getSeconds",
+                        "mergeAlignment|B|0", 2, "gridInfo", "getSeconds",
                         "mergeAlignment|maxReports|0", 3, "qSort_both", "gridInfo", "getSeconds",
                         "mergeAlignment|minSeparation|0", 3, "qSort_both", "gridInfo", "getSeconds",
-                        "mergeAlignment|tempScores|0", 3, "qSort_both", "gridInfo", "getSeconds",
-                        "mergeAlignment|scores|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|numReports|0", 2, "qSort_both", "getSeconds",
+                        "mergeAlignment|tempScores|0", 2, "qSort_both", "getSeconds",
+                        "mergeAlignment|scores|0", 3, "qSort_both", "gridInfo", "getSeconds",
+                        "mergeAlignment|numReports|0", 1, "getSeconds",
                         "mergeAlignment|threadNum|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|tempStartsI|0", 3, "qSort_both", "gridInfo", "getSeconds",
-                        "mergeAlignment|tempStartsJ|0", 3, "qSort_both", "gridInfo", "getSeconds",
-                        "mergeAlignment|tempEndsI|0", 3, "qSort_both", "gridInfo", "getSeconds",
-                        "mergeAlignment|tempEndsJ|0", 3, "qSort_both", "gridInfo", "getSeconds",
-                        "mergeAlignment|tempSeqsI|0", 3, "qSort_both", "gridInfo", "getSeconds",
-                        "mergeAlignment|tempSeqsJ|0", 3, "qSort_both", "gridInfo", "getSeconds",
-                        "mergeAlignment|sequences|0", 2, "qSort_both", "getSeconds",
+                        "mergeAlignment|tempStartsI|0", 2, "qSort_both", "getSeconds",
+                        "mergeAlignment|tempStartsJ|0", 2, "qSort_both", "getSeconds",
+                        "mergeAlignment|tempEndsI|0", 2, "qSort_both", "getSeconds",
+                        "mergeAlignment|tempEndsJ|0", 2, "qSort_both", "getSeconds",
+                        "mergeAlignment|tempSeqsI|0", 2, "qSort_both", "getSeconds",
+                        "mergeAlignment|tempSeqsJ|0", 2, "qSort_both", "getSeconds",
+                        "mergeAlignment|sequences|0", 3, "qSort_both", "gridInfo", "getSeconds",
                         "mergeAlignment|C|0", 3, "qSort_both", "gridInfo", "getSeconds",
-                        "mergeAlignment|i|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|j|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|iter|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|mask|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|consumer|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|producer|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|totalReports|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|flag|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|length|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|index|0", 2, "qSort_both", "getSeconds",
-                        "mergeAlignment|indexB|0", 2, "qSort_both", "getSeconds",
+                        "mergeAlignment|iter|0", 1, "qSort_both",
+                        "mergeAlignment|mask|0", 1, "qSort_both",
+                        "mergeAlignment|consumer|0", 1, "qSort_both",
+                        "mergeAlignment|producer|0", 1, "qSort_both",
+                        "mergeAlignment|totalReports|0", 1, "qSort_both",
+                        "mergeAlignment|index|0", 3, "qSort_both", "gridInfo", "getSeconds",
                         "mergeAlignment|myRow|0", 1, "mergeAlignment",
+                        "mergeAlignment|myCol|0", 3, "qSort_both", "gridInfo", "getSeconds",
+                        "mergeAlignment|npRow|0", 3, "qSort_both", "gridInfo", "getSeconds",
+                        "mergeAlignment|npCol|0", 3, "qSort_both", "gridInfo", "getSeconds",
                         "mergeAlignment|beginTime|0", 2, "qSort_both", "getSeconds",
                         "mergeAlignment|P|0", 3, "qSort_both", "gridInfo", "getSeconds");
     return 0;

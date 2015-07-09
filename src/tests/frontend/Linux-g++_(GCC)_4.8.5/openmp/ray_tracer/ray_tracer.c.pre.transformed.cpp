@@ -5485,51 +5485,13 @@ rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_lo
 # 208 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10958632321634172472UL)) ; double fact;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double cost;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double tauxlb;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-sphere *sphnb;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double tauxla;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double itz;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double ity;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double itx;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-rgb color;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double taux;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-sphere *sphn;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-sphere *spherehit;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-bool bShadow;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double mod_v;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double vz;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double vy;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double vx;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double y;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double x;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double f_max;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10958632321634172472UL)) ; double f_max;
 # 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 rgb *screen;
 # 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 config conf;
 # 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
- register_stack_vars(22, "main|fact|0", (int *)0x0, "double", (void *)(&fact), (size_t)8, 0, 0, 0, "main|cost|0", (int *)0x0, "double", (void *)(&cost), (size_t)8, 0, 0, 0, "main|tauxlb|0", (int *)0x0, "double", (void *)(&tauxlb), (size_t)8, 0, 0, 0, "main|sphnb|0", (int *)0x0, "%struct._sphere*", (void *)(&sphnb), (size_t)8, 1, 0, 0, "main|tauxla|0", (int *)0x0, "double", (void *)(&tauxla), (size_t)8, 0, 0, 0, "main|itz|0", (int *)0x0, "double", (void *)(&itz), (size_t)8, 0, 0, 0, "main|ity|0", (int *)0x0, "double", (void *)(&ity), (size_t)8, 0, 0, 0, "main|itx|0", (int *)0x0, "double", (void *)(&itx), (size_t)8, 0, 0, 0, "main|color|0", (int *)0x0, "%struct._rgb = type { double, double, double }", (void *)(&color), (size_t)24, 0, 1, 0, "main|taux|0", (int *)0x0, "double", (void *)(&taux), (size_t)8, 0, 0, 0, "main|sphn|0", (int *)0x0, "%struct._sphere*", (void *)(&sphn), (size_t)8, 1, 0, 0, "main|spherehit|0", (int *)0x0, "%struct._sphere*", (void *)(&spherehit), (size_t)8, 1, 0, 0, "main|bShadow|0", (int *)0x0, "i8", (void *)(&bShadow), (size_t)1, 0, 0, 0, "main|mod_v|0", (int *)0x0, "double", (void *)(&mod_v), (size_t)8, 0, 0, 0, "main|vz|0", (int *)0x0, "double", (void *)(&vz), (size_t)8, 0, 0, 0, "main|vy|0", (int *)0x0, "double", (void *)(&vy), (size_t)8, 0, 0, 0, "main|vx|0", (int *)0x0, "double", (void *)(&vx), (size_t)8, 0, 0, 0, "main|y|0", (int *)0x0, "double", (void *)(&y), (size_t)8, 0, 0, 0, "main|x|0", (int *)0x0, "double", (void *)(&x), (size_t)8, 0, 0, 0, "main|f_max|0", (int *)0x0, "double", (void *)(&f_max), (size_t)8, 0, 0, 0, "main|screen|0", (int *)0x0, "%struct._rgb*", (void *)(&screen), (size_t)8, 1, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 }", (void *)(&conf), (size_t)120, 0, 1, 1, (int)__builtin_offsetof(struct _config, spheres)); if (____chimes_replaying) { goto lbl_0; } ; ;
+ register_stack_vars(3, "main|f_max|0", (int *)0x0, "double", (void *)(&f_max), (size_t)8, 0, 0, 0, "main|screen|0", (int *)0x0, "%struct._rgb*", (void *)(&screen), (size_t)8, 1, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 }", (void *)(&conf), (size_t)120, 0, 1, 1, (int)__builtin_offsetof(struct _config, spheres)); if (____chimes_replaying) { goto lbl_0; } ; ;
 # 210 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
       ;
 # 211 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -5540,35 +5502,35 @@ config conf;
 # 214 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
        f_max = (200.) ;
 # 215 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-    { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( t = (0) ; t < conf.nt; t++) {
+    { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } for ( t = (0) ; t < conf.nt; t++) {
 # 216 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
+      int i; ;
 # 217 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-{ call_lbl_7: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(7, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
+{ call_lbl_7: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(7, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1;
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-#pragma omp parallel for firstprivate(____chimes_first_iter0) firstprivate(x) firstprivate(y) firstprivate(vx) firstprivate(vy) firstprivate(vz) firstprivate(mod_v) firstprivate(bShadow) firstprivate(spherehit) firstprivate(sphn) firstprivate(taux) firstprivate(color) firstprivate(itx) firstprivate(ity) firstprivate(itz) firstprivate(tauxla) firstprivate(sphnb) firstprivate(tauxlb) firstprivate(cost) firstprivate(fact)
+#pragma omp parallel for firstprivate(____chimes_first_iter0)
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 219 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-      for (i = 0; i < conf.nx * conf.ny; i++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; } {
+      for (i = 0; i < conf.nx * conf.ny; i++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; } {
 # 220 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           x = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
+         double x; x = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
 # 221 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           y = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })) ;
+         double y; y = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })) ;
 # 222 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
          double t; t = (1.0E+10) ;
 # 223 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           vx = (x - conf.px) ;
+         double vx; vx = (x - conf.px) ;
 # 224 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           vy = (y - conf.py) ;
+         double vy; vy = (y - conf.py) ;
 # 225 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           vz = (-conf.pz) ;
+         double vz; vz = (-conf.pz) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 227 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
+         double mod_v; mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
 # 228 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
         vx = vx / mod_v;
 # 229 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -5577,15 +5539,15 @@ config conf;
         vz = vz / mod_v;
 # 231 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 232 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           bShadow = (false) ;
+         bool bShadow; bShadow = (false) ;
 # 233 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           spherehit = (__null) ;
+         sphere *spherehit; spherehit = (__null) ;
 # 234 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
         { int k; for ( k = (0) ; k < conf.nspheres; k++) {
 # 235 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             sphn = (conf.spheres + k) ;
+           sphere *sphn; sphn = (conf.spheres + k) ;
 # 236 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
+           double taux; taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
 # 238 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           if (taux < 0) {continue; };
 # 239 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -5600,27 +5562,27 @@ config conf;
         } }
 # 244 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 245 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-          ; color.r = 0.03; color.g = 0.06; color.b = 0.03;
+         rgb color; ; color.r = 0.03; color.g = 0.06; color.b = 0.03;
 # 246 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
         if (spherehit != __null) {
 # 247 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             itx = (conf.px + t * vx) ;
+           double itx; itx = (conf.px + t * vx) ;
 # 248 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             ity = (conf.py + t * vy) ;
+           double ity; ity = (conf.py + t * vy) ;
 # 249 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             itz = (conf.pz + t * vz) ;
+           double itz; itz = (conf.pz + t * vz) ;
 # 250 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 251 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+           double tauxla; tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
 # 254 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 255 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           { int k; for ( k = (0) ; k < conf.nspheres; k++) {
 # 256 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-               sphnb = (conf.spheres + k) ;
+             sphere *sphnb; sphnb = (conf.spheres + k) ;
 # 257 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
             if (sphnb != spherehit) {
 # 258 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-                 tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+               double tauxlb; tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
 # 262 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
               if (tauxlb > 0 && tauxla < tauxlb) {
 # 263 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -5634,11 +5596,11 @@ config conf;
 # 267 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           } }
 # 268 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })) ;
+           double cost; cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })) ;
 # 271 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           if (cost < 0) {cost = 0; };
 # 272 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             fact = (1.) ;
+           double fact; fact = (1.) ;
 # 273 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           if (bShadow == true) {fact = 0.5; } else {fact = 1.0; } ;
 # 274 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -5660,7 +5622,7 @@ config conf;
        } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 283 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 284 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-      { lbl_2: int i; register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } for ( i = (0) ; i < conf.nspheres; i++) {
+      { int i; for ( i = (0) ; i < conf.nspheres; i++) {
 # 285 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
 # 286 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -6018,51 +5980,13 @@ rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_lo
 
 void parse_config(int argc, char **argv, config *conf) { (____chimes_replaying ? parse_config_resumable(argc, argv, conf) : parse_config_quick(argc, argv, conf)); }
 # 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10958632321634172472UL)) ; double fact;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double cost;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double tauxlb;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-sphere *sphnb;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double tauxla;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double itz;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double ity;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double itx;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-rgb color;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double taux;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-sphere *sphn;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-sphere *spherehit;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-bool bShadow;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double mod_v;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double vz;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double vy;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double vx;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double y;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double x;
-# 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-double f_max;
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10958632321634172472UL)) ; double f_max;
 # 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 rgb *screen;
 # 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 config conf;
 # 209 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
- register_stack_vars(22, "main|fact|0", (int *)0x0, "double", (void *)(&fact), (size_t)8, 0, 0, 0, "main|cost|0", (int *)0x0, "double", (void *)(&cost), (size_t)8, 0, 0, 0, "main|tauxlb|0", (int *)0x0, "double", (void *)(&tauxlb), (size_t)8, 0, 0, 0, "main|sphnb|0", (int *)0x0, "%struct._sphere*", (void *)(&sphnb), (size_t)8, 1, 0, 0, "main|tauxla|0", (int *)0x0, "double", (void *)(&tauxla), (size_t)8, 0, 0, 0, "main|itz|0", (int *)0x0, "double", (void *)(&itz), (size_t)8, 0, 0, 0, "main|ity|0", (int *)0x0, "double", (void *)(&ity), (size_t)8, 0, 0, 0, "main|itx|0", (int *)0x0, "double", (void *)(&itx), (size_t)8, 0, 0, 0, "main|color|0", (int *)0x0, "%struct._rgb = type { double, double, double }", (void *)(&color), (size_t)24, 0, 1, 0, "main|taux|0", (int *)0x0, "double", (void *)(&taux), (size_t)8, 0, 0, 0, "main|sphn|0", (int *)0x0, "%struct._sphere*", (void *)(&sphn), (size_t)8, 1, 0, 0, "main|spherehit|0", (int *)0x0, "%struct._sphere*", (void *)(&spherehit), (size_t)8, 1, 0, 0, "main|bShadow|0", (int *)0x0, "i8", (void *)(&bShadow), (size_t)1, 0, 0, 0, "main|mod_v|0", (int *)0x0, "double", (void *)(&mod_v), (size_t)8, 0, 0, 0, "main|vz|0", (int *)0x0, "double", (void *)(&vz), (size_t)8, 0, 0, 0, "main|vy|0", (int *)0x0, "double", (void *)(&vy), (size_t)8, 0, 0, 0, "main|vx|0", (int *)0x0, "double", (void *)(&vx), (size_t)8, 0, 0, 0, "main|y|0", (int *)0x0, "double", (void *)(&y), (size_t)8, 0, 0, 0, "main|x|0", (int *)0x0, "double", (void *)(&x), (size_t)8, 0, 0, 0, "main|f_max|0", (int *)0x0, "double", (void *)(&f_max), (size_t)8, 0, 0, 0, "main|screen|0", (int *)0x0, "%struct._rgb*", (void *)(&screen), (size_t)8, 1, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 }", (void *)(&conf), (size_t)120, 0, 1, 1, (int)__builtin_offsetof(struct _config, spheres)); ; ;
+ register_stack_vars(3, "main|f_max|0", (int *)0x0, "double", (void *)(&f_max), (size_t)8, 0, 0, 0, "main|screen|0", (int *)0x0, "%struct._rgb*", (void *)(&screen), (size_t)8, 1, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 }", (void *)(&conf), (size_t)120, 0, 1, 1, (int)__builtin_offsetof(struct _config, spheres)); ; ;
 # 210 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
       ;
 # 211 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -6075,33 +5999,33 @@ config conf;
 # 215 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
     { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); for ( t = (0) ; t < conf.nt; t++) {
 # 216 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ;
+      int i; ;
 # 217 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-{ call_lbl_7: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(7, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
+{ call_lbl_7: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(7, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1;
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-#pragma omp parallel for firstprivate(____chimes_first_iter0) firstprivate(x) firstprivate(y) firstprivate(vx) firstprivate(vy) firstprivate(vz) firstprivate(mod_v) firstprivate(bShadow) firstprivate(spherehit) firstprivate(sphn) firstprivate(taux) firstprivate(color) firstprivate(itx) firstprivate(ity) firstprivate(itz) firstprivate(tauxla) firstprivate(sphnb) firstprivate(tauxlb) firstprivate(cost) firstprivate(fact)
+#pragma omp parallel for firstprivate(____chimes_first_iter0)
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 219 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-      for (i = 0; i < conf.nx * conf.ny; i++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; } {
+      for (i = 0; i < conf.nx * conf.ny; i++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; } {
 # 220 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           x = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
+         double x; x = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
 # 221 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           y = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })) ;
+         double y; y = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })) ;
 # 222 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
          double t; t = (1.0E+10) ;
 # 223 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           vx = (x - conf.px) ;
+         double vx; vx = (x - conf.px) ;
 # 224 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           vy = (y - conf.py) ;
+         double vy; vy = (y - conf.py) ;
 # 225 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           vz = (-conf.pz) ;
+         double vz; vz = (-conf.pz) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 227 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
+         double mod_v; mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
 # 228 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
         vx = vx / mod_v;
 # 229 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -6110,15 +6034,15 @@ config conf;
         vz = vz / mod_v;
 # 231 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 232 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           bShadow = (false) ;
+         bool bShadow; bShadow = (false) ;
 # 233 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-           spherehit = (__null) ;
+         sphere *spherehit; spherehit = (__null) ;
 # 234 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
         { int k; for ( k = (0) ; k < conf.nspheres; k++) {
 # 235 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             sphn = (conf.spheres + k) ;
+           sphere *sphn; sphn = (conf.spheres + k) ;
 # 236 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
+           double taux; taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
 # 238 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           if (taux < 0) {continue; };
 # 239 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -6133,27 +6057,27 @@ config conf;
         } }
 # 244 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 245 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-          ; color.r = 0.03; color.g = 0.06; color.b = 0.03;
+         rgb color; ; color.r = 0.03; color.g = 0.06; color.b = 0.03;
 # 246 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
         if (spherehit != __null) {
 # 247 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             itx = (conf.px + t * vx) ;
+           double itx; itx = (conf.px + t * vx) ;
 # 248 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             ity = (conf.py + t * vy) ;
+           double ity; ity = (conf.py + t * vy) ;
 # 249 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             itz = (conf.pz + t * vz) ;
+           double itz; itz = (conf.pz + t * vz) ;
 # 250 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 251 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+           double tauxla; tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
 # 254 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 255 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           { int k; for ( k = (0) ; k < conf.nspheres; k++) {
 # 256 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-               sphnb = (conf.spheres + k) ;
+             sphere *sphnb; sphnb = (conf.spheres + k) ;
 # 257 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
             if (sphnb != spherehit) {
 # 258 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-                 tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+               double tauxlb; tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
 # 262 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
               if (tauxlb > 0 && tauxla < tauxlb) {
 # 263 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -6167,11 +6091,11 @@ config conf;
 # 267 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           } }
 # 268 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })) ;
+           double cost; cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })) ;
 # 271 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           if (cost < 0) {cost = 0; };
 # 272 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-             fact = (1.) ;
+           double fact; fact = (1.) ;
 # 273 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           if (bShadow == true) {fact = 0.5; } else {fact = 1.0; } ;
 # 274 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -6193,7 +6117,7 @@ config conf;
        } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 283 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 284 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-      { lbl_2: int i; register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); for ( i = (0) ; i < conf.nspheres; i++) {
+      { int i; for ( i = (0) ; i < conf.nspheres; i++) {
 # 285 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
           ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
 # 286 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"

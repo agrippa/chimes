@@ -1438,19 +1438,13 @@ extern void register_custom_init_handler(const char *obj_name,
 void lud_base_quick(float *a, int size); void lud_base(float *a, int size);
 void lud_base_resumable(float *a, int size)
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&lud_base), "lud_base", (int *)0, 2, 2, (size_t)(7743237120547627256UL), (size_t)(0UL), "lud_base|a|0", (int *)0, "float*", (void *)(&a), (size_t)8, 1, 0, 0, "lud_base|size|0", (int *)0, "i32", (void *)(&size), (size_t)4, 0, 0, 0) ; float sum;
+{const int ____chimes_did_disable0 = new_stack((void *)(&lud_base), "lud_base", (int *)0, 2, 2, (size_t)(7743237120547627256UL), (size_t)(0UL), "lud_base|a|0", (int *)0, "float*", (void *)(&a), (size_t)8, 1, 0, 0, "lud_base|size|0", (int *)0, "i32", (void *)(&size), (size_t)4, 0, 0, 0) ; int i;
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-int k;
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-int j;
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-int i;
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
- register_stack_vars(4, "lud_base|sum|0", (int *)0x0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "lud_base|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "lud_base|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "lud_base|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(1, "lud_base|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-        ;
+      int j; int k; ;
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-      ;
+     float sum; ;
 # 10 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
      for (i=0; i<size; i++){
@@ -1486,19 +1480,13 @@ rm_stack(false, 0UL, "lud_base", (int *)0x0, ____alias_loc_id_1, ____chimes_did_
 # 6 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
 void lud_base_quick(float *a, int size)
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&lud_base), "lud_base", (int *)0, 2, 2, (size_t)(7743237120547627256UL), (size_t)(0UL), "lud_base|a|0", (int *)0, "float*", (void *)(&a), (size_t)8, 1, 0, 0, "lud_base|size|0", (int *)0, "i32", (void *)(&size), (size_t)4, 0, 0, 0) ; float sum;
+{const int ____chimes_did_disable0 = new_stack((void *)(&lud_base), "lud_base", (int *)0, 2, 2, (size_t)(7743237120547627256UL), (size_t)(0UL), "lud_base|a|0", (int *)0, "float*", (void *)(&a), (size_t)8, 1, 0, 0, "lud_base|size|0", (int *)0, "i32", (void *)(&size), (size_t)4, 0, 0, 0) ; int i;
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-int k;
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-int j;
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-int i;
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
- register_stack_vars(4, "lud_base|sum|0", (int *)0x0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "lud_base|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "lud_base|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "lud_base|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ; ;
+ register_stack_vars(1, "lud_base|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ; ;
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-        ;
+      int j; int k; ;
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-      ;
+     float sum; ;
 # 10 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
      for (i=0; i<size; i++){

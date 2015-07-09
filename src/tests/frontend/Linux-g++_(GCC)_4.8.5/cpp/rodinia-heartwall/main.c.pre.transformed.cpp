@@ -20,8 +20,11 @@ static int ____chimes_does_checkpoint_get_frame_npm = 1;
 static int ____chimes_does_checkpoint_kernel_npm = 1;
 
 static int ____must_checkpoint_seconds_tp_0 = 2;
+static int ____must_checkpoint_main_argv_0 = 2;
+static int ____must_checkpoint_main_i_0 = 2;
 static int ____must_checkpoint_main_pub_0 = 2;
 static int ____must_checkpoint_main_priv_0 = 2;
+static int ____must_checkpoint_main_d_frames_0 = 2;
 
 static int ____must_manage_seconds = 2;
 static int ____must_manage_write_data = 2;
@@ -6865,9 +6868,7 @@ rm_stack(false, 0UL, "write_data", &____must_manage_write_data, ____alias_loc_id
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 static int (*____chimes_extern_func_AVI_close)(avi_t *) = AVI_close;static avi_t *(*____chimes_extern_func_AVI_open_input_file)(char *, int) = AVI_open_input_file;static void (*____chimes_extern_func_AVI_print_error)(char *) = AVI_print_error;static long (*____chimes_extern_func_AVI_video_frames)(avi_t *) = AVI_video_frames;static int (*____chimes_extern_func_AVI_video_height)(avi_t *) = AVI_video_height;static int (*____chimes_extern_func_AVI_video_width)(avi_t *) = AVI_video_width;static float *(*____chimes_extern_func_get_frame)(avi_t *, int, int, int, int) = get_frame;static void (*____chimes_extern_func_kernel)(struct _public_struct, struct _private_struct) = kernel;
 int main_quick(int argc, char *argv []); int main(int argc, char *argv []);
-int main_resumable(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(762051829673680241UL), "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-int omp_num_threads;
+int main_resumable(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(762051829673680241UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 avi_t *d_frames;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -6881,7 +6882,7 @@ int frames_processed;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 int i;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- register_stack_vars(8, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "main|d_frames|0", (int *)0x0, "%struct.avi_t*", (void *)(&d_frames), (size_t)8, 1, 0, 0, "main|video_file_name|0", (int *)0x0, "i8*", (void *)(&video_file_name), (size_t)8, 1, 0, 0, "main|priv|0", (int *)0x0, "[51 x %struct._private_struct]", (void *)(priv), (size_t)8160, 0, 0, 0, "main|pub|0", (int *)0x0, "%struct._public_struct = type { i32, i32, i32, float, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32, float*, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 }", (void *)(&pub), (size_t)384, 0, 1, 11, (int)__builtin_offsetof(struct _public_struct, d_endoRow), (int)__builtin_offsetof(struct _public_struct, d_endoCol), (int)__builtin_offsetof(struct _public_struct, d_tEndoRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEndoColLoc), (int)__builtin_offsetof(struct _public_struct, d_endoT), (int)__builtin_offsetof(struct _public_struct, d_epiRow), (int)__builtin_offsetof(struct _public_struct, d_epiCol), (int)__builtin_offsetof(struct _public_struct, d_tEpiRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEpiColLoc), (int)__builtin_offsetof(struct _public_struct, d_epiT), (int)__builtin_offsetof(struct _public_struct, d_frame), "main|frames_processed|0", (int *)0x0, "i32", (void *)(&frames_processed), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(44): { goto call_lbl_44; } case(46): { goto call_lbl_46; } case(47): { goto call_lbl_47; } case(48): { goto call_lbl_48; } case(54): { goto call_lbl_54; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(7, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|d_frames|0", &____must_checkpoint_main_d_frames_0, "%struct.avi_t*", (void *)(&d_frames), (size_t)8, 1, 0, 0, "main|video_file_name|0", (int *)0x0, "i8*", (void *)(&video_file_name), (size_t)8, 1, 0, 0, "main|priv|0", (int *)0x0, "[51 x %struct._private_struct]", (void *)(priv), (size_t)8160, 0, 0, 0, "main|pub|0", (int *)0x0, "%struct._public_struct = type { i32, i32, i32, float, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32, float*, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 }", (void *)(&pub), (size_t)384, 0, 1, 11, (int)__builtin_offsetof(struct _public_struct, d_endoRow), (int)__builtin_offsetof(struct _public_struct, d_endoCol), (int)__builtin_offsetof(struct _public_struct, d_tEndoRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEndoColLoc), (int)__builtin_offsetof(struct _public_struct, d_endoT), (int)__builtin_offsetof(struct _public_struct, d_epiRow), (int)__builtin_offsetof(struct _public_struct, d_epiCol), (int)__builtin_offsetof(struct _public_struct, d_tEpiRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEpiColLoc), (int)__builtin_offsetof(struct _public_struct, d_epiT), (int)__builtin_offsetof(struct _public_struct, d_frame), "main|frames_processed|0", (int *)0x0, "i32", (void *)(&frames_processed), (size_t)4, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(44): { goto call_lbl_44; } case(46): { goto call_lbl_46; } case(47): { goto call_lbl_47; } case(48): { goto call_lbl_48; } case(54): { goto call_lbl_54; } default: { chimes_error(); } } } ; ;
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -6962,7 +6963,7 @@ int i;
  }
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ;
+ int omp_num_threads; ;
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  omp_num_threads = atoi(argv[3]);
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7834,9 +7835,7 @@ void write_data( char* filename,
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    int* input_2b) { (____chimes_replaying ? write_data_resumable(filename, frameNo, frames_processed, endoPoints, input_a, input_b, epiPoints, input_2a, input_2b) : write_data_quick(filename, frameNo, frames_processed, endoPoints, input_a, input_b, epiPoints, input_2a, input_2b)); }
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-int main_quick(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(762051829673680241UL), "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-int omp_num_threads;
+int main_quick(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(762051829673680241UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 avi_t *d_frames;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7850,7 +7849,7 @@ int frames_processed;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 int i;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- register_stack_vars(8, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "main|d_frames|0", (int *)0x0, "%struct.avi_t*", (void *)(&d_frames), (size_t)8, 1, 0, 0, "main|video_file_name|0", (int *)0x0, "i8*", (void *)(&video_file_name), (size_t)8, 1, 0, 0, "main|priv|0", (int *)0x0, "[51 x %struct._private_struct]", (void *)(priv), (size_t)8160, 0, 0, 0, "main|pub|0", (int *)0x0, "%struct._public_struct = type { i32, i32, i32, float, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32, float*, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 }", (void *)(&pub), (size_t)384, 0, 1, 11, (int)__builtin_offsetof(struct _public_struct, d_endoRow), (int)__builtin_offsetof(struct _public_struct, d_endoCol), (int)__builtin_offsetof(struct _public_struct, d_tEndoRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEndoColLoc), (int)__builtin_offsetof(struct _public_struct, d_endoT), (int)__builtin_offsetof(struct _public_struct, d_epiRow), (int)__builtin_offsetof(struct _public_struct, d_epiCol), (int)__builtin_offsetof(struct _public_struct, d_tEpiRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEpiColLoc), (int)__builtin_offsetof(struct _public_struct, d_epiT), (int)__builtin_offsetof(struct _public_struct, d_frame), "main|frames_processed|0", (int *)0x0, "i32", (void *)(&frames_processed), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ; ;
+ register_stack_vars(7, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|d_frames|0", &____must_checkpoint_main_d_frames_0, "%struct.avi_t*", (void *)(&d_frames), (size_t)8, 1, 0, 0, "main|video_file_name|0", (int *)0x0, "i8*", (void *)(&video_file_name), (size_t)8, 1, 0, 0, "main|priv|0", (int *)0x0, "[51 x %struct._private_struct]", (void *)(priv), (size_t)8160, 0, 0, 0, "main|pub|0", (int *)0x0, "%struct._public_struct = type { i32, i32, i32, float, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32, float*, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 }", (void *)(&pub), (size_t)384, 0, 1, 11, (int)__builtin_offsetof(struct _public_struct, d_endoRow), (int)__builtin_offsetof(struct _public_struct, d_endoCol), (int)__builtin_offsetof(struct _public_struct, d_tEndoRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEndoColLoc), (int)__builtin_offsetof(struct _public_struct, d_endoT), (int)__builtin_offsetof(struct _public_struct, d_epiRow), (int)__builtin_offsetof(struct _public_struct, d_epiCol), (int)__builtin_offsetof(struct _public_struct, d_tEpiRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEpiColLoc), (int)__builtin_offsetof(struct _public_struct, d_epiT), (int)__builtin_offsetof(struct _public_struct, d_frame), "main|frames_processed|0", (int *)0x0, "i32", (void *)(&frames_processed), (size_t)4, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ; ;
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7931,7 +7930,7 @@ int i;
  }
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ;
+ int omp_num_threads; ;
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  omp_num_threads = atoi(argv[3]);
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8788,7 +8787,7 @@ void write_data_npm( char* filename,
 
 
 static int module_init() {
-    init_module(762051829673678370UL, 13, 3, 3, 14, 2, 8, 10, 2, 10, 10,
+    init_module(762051829673678370UL, 13, 3, 6, 14, 2, 8, 10, 2, 10, 10,
                            &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 220UL), "AVI_print_error", (unsigned)1, (762051829673678370UL + 1912UL),
                            &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_close", (unsigned)1, (762051829673678370UL + 1641UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (762051829673678370UL + 215UL),
@@ -8850,8 +8849,11 @@ static int module_init() {
                              "write_data", "_Z10write_dataPciiiPiS0_iS0_S0_", 0,
                              "main", "main", 13, "AVI_open_input_file", "AVI_print_error", "AVI_video_frames", "AVI_video_height", "AVI_video_width", "AVI_close", "seconds", "AVI_open_input_file", "get_frame", "AVI_close", "kernel", "checkpoint", "seconds",
                         "seconds|tp|0", 1, "seconds",
+                        "main|argv|0", 5, "AVI_video_width", "AVI_video_height", "AVI_video_frames", "AVI_open_input_file", "AVI_close",
+                        "main|i|0", 1, "kernel",
                         "main|pub|0", 1, "main",
                         "main|priv|0", 1, "main",
+                        "main|d_frames|0", 4, "get_frame", "AVI_video_width", "AVI_video_height", "AVI_video_frames",
         "seconds", 0UL, (int)0,
         "seconds", 0UL, (int)0,
         "AVI_open_input_file", 762051829673680011UL, (int)2, 762051829673680001UL, 0UL,

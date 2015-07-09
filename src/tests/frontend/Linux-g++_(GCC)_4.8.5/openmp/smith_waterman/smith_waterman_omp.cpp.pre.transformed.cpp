@@ -3197,13 +3197,7 @@ rm_stack(false, 0UL, "task_func", &____must_manage_task_func, ____alias_loc_id_1
 # 412 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 int main_quick ( int argc, char* argv[] ); int main ( int argc, char* argv[] );
-int main_resumable ( int argc, char* argv[] ) {const int ____chimes_did_disable18 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17943224531889796410UL)) ; tiles_to_run *tmp;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-bool done;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-tile *mine;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-tiles_to_run *next;
+int main_resumable ( int argc, char* argv[] ) {const int ____chimes_did_disable18 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17943224531889796410UL)) ; tiles_to_run *next;
 # 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 tiles_to_run *curr;
 # 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
@@ -3211,24 +3205,20 @@ int result_col;
 # 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 int result_row;
 # 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-int j;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-int i;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
- register_stack_vars(9, "main|tmp|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|done|0", (int *)0x0, "i8", (void *)(&done), (size_t)1, 0, 0, 0, "main|mine|0", (int *)0x0, "%struct._tile*", (void *)(&mine), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|result_col|0", (int *)0x0, "i32", (void *)(&result_col), (size_t)4, 0, 0, 0, "main|result_row|0", (int *)0x0, "i32", (void *)(&result_row), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(50): { goto call_lbl_50; } case(51): { goto call_lbl_51; } case(34): { goto call_lbl_34; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(4, "main|next|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|result_col|0", (int *)0x0, "i32", (void *)(&result_col), (size_t)4, 0, 0, 0, "main|result_row|0", (int *)0x0, "i32", (void *)(&result_row), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(50): { goto call_lbl_50; } case(51): { goto call_lbl_51; } case(34): { goto call_lbl_34; } default: { chimes_error(); } } } ; ;
 # 414 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-      int level; ;
+    int i; int j; int level; ;
 # 415 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-{ call_lbl_50: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(50, &____chimes_region_id0, 1, &done);
+{ call_lbl_50: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(50, &____chimes_region_id0, 0);
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 #pragma omp parallel
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 417 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
- { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &done); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
+ { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
 # 418 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
   nthreads = omp_get_num_threads();
 # 419 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
@@ -3436,19 +3426,19 @@ int i;
 # 569 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
     while (curr->length > 0) {
 # 570 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-           mine = (__null) ;
+         tile *mine; mine = (__null) ;
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-{ call_lbl_51: void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(51, &____chimes_region_id1, 2, &done, &mine);
+{ call_lbl_51: void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(51, &____chimes_region_id1, 1, &mine);
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-#pragma omp parallel firstprivate(mine) firstprivate(done)
+#pragma omp parallel firstprivate(mine)
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 572 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-        { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &done, &mine); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
+        { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &mine); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
 # 573 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-               done = (false) ;
+             bool done; done = (false) ;
 # 574 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 575 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
             while (!done) {
@@ -3481,7 +3471,7 @@ bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
          } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 0); }
 # 587 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 588 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-           tmp = (curr) ;
+         tiles_to_run *tmp; tmp = (curr) ;
 # 589 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
         curr = next;
 # 590 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
@@ -3900,13 +3890,7 @@ rm_stack(false, 0UL, "task_func", &____must_manage_task_func, ____alias_loc_id_1
 
 void task_func(int i, int j, tiles_to_run *next) { (____chimes_replaying ? task_func_resumable(i, j, next) : task_func_quick(i, j, next)); }
 # 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-int main_quick ( int argc, char* argv[] ) {const int ____chimes_did_disable18 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17943224531889796410UL)) ; tiles_to_run *tmp;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-bool done;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-tile *mine;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-tiles_to_run *next;
+int main_quick ( int argc, char* argv[] ) {const int ____chimes_did_disable18 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17943224531889796410UL)) ; tiles_to_run *next;
 # 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 tiles_to_run *curr;
 # 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
@@ -3914,24 +3898,20 @@ int result_col;
 # 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 int result_row;
 # 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-int j;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-int i;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
- register_stack_vars(9, "main|tmp|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|done|0", (int *)0x0, "i8", (void *)(&done), (size_t)1, 0, 0, 0, "main|mine|0", (int *)0x0, "%struct._tile*", (void *)(&mine), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|result_col|0", (int *)0x0, "i32", (void *)(&result_col), (size_t)4, 0, 0, 0, "main|result_row|0", (int *)0x0, "i32", (void *)(&result_row), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ; ;
+ register_stack_vars(4, "main|next|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|result_col|0", (int *)0x0, "i32", (void *)(&result_col), (size_t)4, 0, 0, 0, "main|result_row|0", (int *)0x0, "i32", (void *)(&result_row), (size_t)4, 0, 0, 0); ; ;
 # 414 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-      int level; ;
+    int i; int j; int level; ;
 # 415 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-{ call_lbl_50: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(50, &____chimes_region_id0, 1, &done);
+{ call_lbl_50: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(50, &____chimes_region_id0, 0);
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 #pragma omp parallel
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 416 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 417 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
- { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &done); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
+ { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
 # 418 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
   nthreads = omp_get_num_threads();
 # 419 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
@@ -4139,19 +4119,19 @@ int i;
 # 569 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
     while (curr->length > 0) {
 # 570 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-           mine = (__null) ;
+         tile *mine; mine = (__null) ;
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-{ call_lbl_51: void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(51, &____chimes_region_id1, 2, &done, &mine);
+{ call_lbl_51: void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(51, &____chimes_region_id1, 1, &mine);
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-#pragma omp parallel firstprivate(mine) firstprivate(done)
+#pragma omp parallel firstprivate(mine)
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 571 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 572 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-        { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &done, &mine); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
+        { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &mine); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
 # 573 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-               done = (false) ;
+             bool done; done = (false) ;
 # 574 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 575 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
             while (!done) {
@@ -4184,7 +4164,7 @@ bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
          } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 0); }
 # 587 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
 # 588 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-           tmp = (curr) ;
+         tiles_to_run *tmp; tmp = (curr) ;
 # 589 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
         curr = next;
 # 590 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"

@@ -7,22 +7,22 @@
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|argc|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|argv|0 " i8** " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|opt|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|nclusters|0 " i32 " 32 0 0 1 checkpoint cluster rewind strtok
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|nclusters|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|filename|0 " i8* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|buf|0 " float* " 64 1 0 1 checkpoint cluster rewind strtok
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|attributes|0 " float** " 64 1 0 1 checkpoint cluster rewind strtok
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|buf|0 " float* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|attributes|0 " float** " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|cluster_centres|0 " float** " 64 1 0 1 main
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|i|0 " i32 " 32 0 0 1 checkpoint cluster rewind strtok
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|j|0 " i32 " 32 0 0 1 checkpoint cluster strtok
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|i|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|j|0 " i32 " 32 0 0 1 strtok
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|numAttributes|0 " i32 " 32 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|numObjects|0 " i32 " 32 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|line|0 " [1024 x i8] " 8192 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|isBinaryFile|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|nloops|0 " i32 " 32 0 0 1 checkpoint cluster rewind strtok
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|threshold|0 " float " 32 0 0 1 checkpoint cluster rewind strtok
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|nloops|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|threshold|0 " float " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|infile|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|infile|1 " %struct._IO_FILE* " 64 1 0 1 checkpoint cluster rewind strtok
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|____chimes_unroll_var_0|0 " i8* " 64 1 0 1 checkpoint cluster strtok
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|start_time|0 " double " 64 0 0 1 checkpoint cluster
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|infile|1 " %struct._IO_FILE* " 64 1 0 1 rewind strtok
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|____chimes_unroll_var_0|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|start_time|0 " double " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|end_time|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|____chimes_ret_var_1|0 " i32 " 32 0 0 0
