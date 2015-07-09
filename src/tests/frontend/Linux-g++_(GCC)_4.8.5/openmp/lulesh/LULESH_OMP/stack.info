@@ -78,7 +78,7 @@
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|k|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|AbsDiff|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|RelDiff|0 " double " 64 0 0 0
-/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|____chimes_ret_var_7|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|____chimes_ret_var_8|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemVolume|x|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemVolume|y|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemVolume|z|0 " double* " 64 1 0 0
@@ -119,6 +119,8 @@
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|i|2 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|dthydro_per_thread|0 " [na x double] " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|hydro_elem_per_thread|0 " [na x i32] " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc get_num_threads|nthreads|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc get_num_threads|____chimes_ret_var_7|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc SQRT|arg|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc SQRT|____chimes_ret_var_0|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcLagrangeElements|deltatime|0 " double " 64 0 0 0
