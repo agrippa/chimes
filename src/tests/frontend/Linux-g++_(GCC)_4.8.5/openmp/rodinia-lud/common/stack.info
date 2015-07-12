@@ -11,7 +11,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c create_matrix_from_file|size_p|0 " i32* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c create_matrix_from_file|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c create_matrix_from_file|j|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c create_matrix_from_file|size|0 " i32 " 32 0 0 1 create_matrix_from_file
+/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c create_matrix_from_file|size|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c create_matrix_from_file|m|0 " float* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c create_matrix_from_file|fp|0 " %struct._IO_FILE* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c create_matrix_from_file|____chimes_ret_var_4|0 " i32 " 32 0 0 0

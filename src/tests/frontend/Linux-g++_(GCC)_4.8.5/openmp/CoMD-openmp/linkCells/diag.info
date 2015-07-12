@@ -1,17 +1,17 @@
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 83 11 len=13 initLinkCells_npm
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 30 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 52 , 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes)
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 105 23 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 105 56 , 15151216426301245439UL, 0, 0
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 112 26 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 112 60 , 15151216426301245439UL, 1, 0
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 115 34 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 115 54 , 15151216426301245485UL, 0, 0
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 30  ({ void *____chimes_tmp_ptr = malloc(sizeof(LinkCell)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes)); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 53 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 105 23  ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 15151216426301245439UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 105 57 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 112 26  ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int*), 15151216426301245439UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 112 61 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 115 34  ({ void *____chimes_tmp_ptr = malloc(27 * sizeof(int)); malloc_helper(____chimes_tmp_ptr, 27*sizeof(int), 15151216426301245485UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 115 55 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 126 6 len=16 destroyLinkCells_npm
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 131 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 131 19 , 15151216426301245612UL
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 132 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 132 10 , 15151216426301245605UL
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 131 4  ({ free((*boxes)->nAtoms); free_helper((*boxes)->nAtoms, 15151216426301245612UL); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 131 25 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 132 4  ({ free(*boxes); free_helper(*boxes, 15151216426301245605UL); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 132 15 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 144 5 len=16 getNeighborBoxes_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 172 6 len=12 putAtomInBox_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 206 5 len=15 getBoxFromTuple_npm
@@ -22,18 +22,18 @@ ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 350 5 len=15 getBoxFromCoord_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 386 6 len=14 emptyHaloCells_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 400 6 len=8 getTuple_npm
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 30 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 52 , 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes)
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 105 23 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 105 56 , 15151216426301245439UL, 0, 0
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 112 26 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 112 60 , 15151216426301245439UL, 1, 0
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 115 34 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 115 54 , 15151216426301245485UL, 0, 0
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 131 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 131 19 , 15151216426301245612UL
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 132 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 132 10 , 15151216426301245605UL
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 30  ({ void *____chimes_tmp_ptr = malloc(sizeof(LinkCell)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes)); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 53 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 105 23  ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 15151216426301245439UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 105 57 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 112 26  ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int*), 15151216426301245439UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 112 61 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 115 34  ({ void *____chimes_tmp_ptr = malloc(27 * sizeof(int)); malloc_helper(____chimes_tmp_ptr, 27*sizeof(int), 15151216426301245485UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 115 55 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 131 4  ({ free((*boxes)->nAtoms); free_helper((*boxes)->nAtoms, 15151216426301245612UL); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 131 25 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 132 4  ({ free(*boxes); free_helper(*boxes, 15151216426301245605UL); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 132 15 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 123 67 rm_stack(true, 15151216426301245238UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 84 1 const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(15151216426301245498UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 124 1 rm_stack(true, 15151216426301245238UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0, false); 
@@ -67,20 +67,26 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/li
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 472 1 rm_stack(false, 0UL, "getTuple", &____must_manage_getTuple, ____alias_loc_id_5, ____chimes_did_disable11, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 84 2 const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(15151216426301245498UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 84 177 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 4  LinkCell *ll;  ll = ((LinkCell *)malloc_wrapper(sizeof(LinkCell), 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes))) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 233 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 4  LinkCell *ll;  ll = ((LinkCell*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LinkCell)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes)); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 86 334 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 88 4 {  int i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 95 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 88 9  i = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 88 18 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 105 27 void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 105 91 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 106 4 {  int iBox; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 106 74  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 106 9  iBox = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 106 19 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 112 30 void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 112 96 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 113 4 {  int iBox; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 116 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 113 9  iBox = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 113 19 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 115 38 void *____chimes_tmp_ptr = malloc(27 * sizeof(int)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 115 89 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 118 4 {  int iBox; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 121 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 118 9  iBox = (0) ;
@@ -99,15 +105,15 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCe
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 149 17 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 150 4 {  int i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 156 4  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 150 9  i = (ix - 1) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 150 9  i = (ix-1) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 150 19 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 151 7 {  int j; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 155 7  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 151 12  j = (iy - 1) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 151 12  j = (iy-1) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 151 22 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 152 10 {  int k; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 154 10  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 152 15  k = (iz - 1) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 152 15  k = (iz-1) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 152 25 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 158 5 int ____chimes_ret_var_1; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 158 29 
@@ -117,7 +123,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCe
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 177 17 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 180 4  int iBox;  iBox = (getBoxFromCoord(boxes, xyz)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 180 42 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 181 4  int iOff;  iOff = (iBox * 64) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 181 4  int iOff;  iOff = (iBox*64) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 181 22 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 207 2 const int ____chimes_did_disable4 = new_stack((void *)(&getBoxFromTuple), "getBoxFromTuple", &____must_manage_getBoxFromTuple, 4, 0, (size_t)(15151216426301246159UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 207 213 
@@ -139,11 +145,11 @@ InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 306 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 294 9  iBox = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 294 19 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 296 7  int iOff;  iOff = (iBox * 64) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 296 7  int iOff;  iOff = (iBox*64) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 296 25 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 297 7  int ii;  ii = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 297 15 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 10  int jBox;  jBox = (getBoxFromCoord(boxes, atoms->r[iOff + ii])) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 10  int jBox;  jBox = (getBoxFromCoord(boxes, atoms->r[iOff+ii])) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 62 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 311 2 const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(15151216426301246876UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 311 159 
@@ -159,9 +165,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCe
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 322 29 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 329 2 const int ____chimes_did_disable8 = new_stack((void *)(&copyAtom), "copyAtom", &____must_manage_copyAtom, 6, 0, (size_t)(15151216426301246733UL), (size_t)(15151216426301246734UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 329 241 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 330 4  int iOff;  iOff = (64 * iBox + iAtom) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 330 4  int iOff;  iOff = (64*iBox+iAtom) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 330 28 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 331 4  int jOff;  jOff = (64 * jBox + jAtom) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 331 4  int jOff;  jOff = (64*jBox+jAtom) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 331 28 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 351 2 const int ____chimes_did_disable9 = new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(15151216426301246508UL), (size_t)(15151216426301246509UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 351 202 
@@ -171,11 +177,11 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCe
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 353 44 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 354 4  const int *gridSize;  gridSize = (boxes->gridSize) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 354 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 355 4  int ix;  ix = ((int)(floor((rr[0] - localMin[0]) * boxes->invBoxSize[0]))) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 355 4  int ix;  ix = ((int)(floor((rr[0] - localMin[0])*boxes->invBoxSize[0]))) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 355 69 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 356 4  int iy;  iy = ((int)(floor((rr[1] - localMin[1]) * boxes->invBoxSize[1]))) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 356 4  int iy;  iy = ((int)(floor((rr[1] - localMin[1])*boxes->invBoxSize[1]))) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 356 69 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 357 4  int iz;  iz = ((int)(floor((rr[2] - localMin[2]) * boxes->invBoxSize[2]))) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 357 4  int iz;  iz = ((int)(floor((rr[2] - localMin[2])*boxes->invBoxSize[2]))) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 357 69 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 381 4  int result;  result = (getBoxFromTuple(boxes, ix, iy, iz)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 381 51 
@@ -195,28 +201,38 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCe
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 403 41 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 416 7 int ink; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 416 14 
-InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 318 9  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 319 4  call_lbl_2: 
-InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 320 9  call_lbl_3: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 120 24  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 147 4  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 153 13  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 180 16  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 262 4  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 269 13  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 292 4  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 22  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 301 29  call_lbl_2: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 318 9  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 319 4  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 320 9  call_lbl_2: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 381 18  call_lbl_0: 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 83 11 len=13 initLinkCells_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 120 37 ({ calling_npm("getNeighborBoxes", 0); getNeighborBoxes_npm(ll, iBox, ll->nbrBoxes[iBox]); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 120 82 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 120 50 ({ calling_npm("getNeighborBoxes", 0); getNeighborBoxes_npm(ll, iBox, ll->nbrBoxes[iBox]); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 120 95 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 84 176  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 126 6 len=16 destroyLinkCells_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 127 170  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 144 5 len=16 getNeighborBoxes_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 147 4 ({ calling_npm("getTuple", 0); getTuple_npm(boxes, iBox, &ix, &iy, &iz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 147 39 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 153 33 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, i, j, k); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 153 60 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 147 17 ({ calling_npm("getTuple", 0); getTuple_npm(boxes, iBox, &ix, &iy, &iz); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 147 52 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 153 46 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, i, j, k); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 153 73 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 146 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 146 10 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 145 219  ; int ix;
 # 145
  if (____must_checkpoint_getNeighborBoxes_ix_0) { register_stack_vars(1, "getNeighborBoxes|ix|0", &____must_checkpoint_getNeighborBoxes_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 172 6 len=12 putAtomInBox_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 180 24 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, xyz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 180 50 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 180 37 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, xyz); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 180 63 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 177 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 177 17 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 176 313  ; real_t xyz[3];
@@ -225,25 +241,25 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/li
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 206 5 len=15 getBoxFromTuple_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 207 212  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 259 6 len=8 moveAtom_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 262 4 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 262 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 269 13 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 269 55 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 262 17 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 262 59 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 269 26 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 269 68 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 260 225  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 290 6 len=15 updateLinkCells_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 292 4 ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 292 24 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 30 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, atoms->r[iOff + ii]); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 72 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 301 29 ({ calling_npm("moveAtom", 0); moveAtom_npm(boxes, atoms, ii, iBox, jBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 301 66 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 292 17 ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 292 37 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 43 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, atoms->r[iOff+ii]); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 83 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 301 42 ({ calling_npm("moveAtom", 0); moveAtom_npm(boxes, atoms, ii, iBox, jBox); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 301 79 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 291 201  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 310 5 len=12 maxOccupancy_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 318 22  ({  calling((void*)profileStart, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 318 22  ({  calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 318 50 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 319 17  ({  calling((void*)maxIntParallel, 2, ____alias_loc_id_0, 0UL, 3, (size_t)(15151216426301246845UL), (size_t)(15151216426301246847UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 319 17  ({  calling((void*)maxIntParallel, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15151216426301246845UL), (size_t)(15151216426301246847UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 319 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 320 22  ({  calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 320 22  ({  calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 320 49 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 312 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 312 17 
@@ -257,32 +273,32 @@ int localMax;
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 328 6 len=8 copyAtom_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 329 240  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 350 5 len=15 getBoxFromCoord_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 381 28 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 381 61 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 381 41 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 381 74 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 351 201  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 386 6 len=14 emptyHaloCells_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 387 165  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 400 6 len=8 getTuple_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 401 264  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 83 11 len=13 initLinkCells_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 120 37 ({ calling_npm("getNeighborBoxes", 0); getNeighborBoxes_npm(ll, iBox, ll->nbrBoxes[iBox]); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 120 82 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 120 50 ({ calling_npm("getNeighborBoxes", 0); getNeighborBoxes_npm(ll, iBox, ll->nbrBoxes[iBox]); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 120 95 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 84 176  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 126 6 len=16 destroyLinkCells_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 127 170  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 144 5 len=16 getNeighborBoxes_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 147 4 ({ calling_npm("getTuple", 0); getTuple_npm(boxes, iBox, &ix, &iy, &iz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 147 39 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 153 33 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, i, j, k); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 153 60 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 147 17 ({ calling_npm("getTuple", 0); getTuple_npm(boxes, iBox, &ix, &iy, &iz); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 147 52 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 153 46 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, i, j, k); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 153 73 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 146 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 146 10 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 145 219  ; int ix;
 # 145
  if (____must_checkpoint_getNeighborBoxes_ix_0) { register_stack_vars(1, "getNeighborBoxes|ix|0", &____must_checkpoint_getNeighborBoxes_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 172 6 len=12 putAtomInBox_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 180 24 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, xyz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 180 50 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 180 37 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, xyz); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 180 63 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 177 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 177 17 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 176 313  ; real_t xyz[3];
@@ -291,25 +307,25 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/li
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 206 5 len=15 getBoxFromTuple_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 207 212  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 259 6 len=8 moveAtom_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 262 4 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 262 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 269 13 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 269 55 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 262 17 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 262 59 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 269 26 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 269 68 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 260 225  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 290 6 len=15 updateLinkCells_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 292 4 ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 292 24 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 30 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, atoms->r[iOff + ii]); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 72 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 301 29 ({ calling_npm("moveAtom", 0); moveAtom_npm(boxes, atoms, ii, iBox, jBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 301 66 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 292 17 ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 292 37 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 43 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, atoms->r[iOff+ii]); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 300 83 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 301 42 ({ calling_npm("moveAtom", 0); moveAtom_npm(boxes, atoms, ii, iBox, jBox); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 301 79 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 291 201  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 310 5 len=12 maxOccupancy_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 318 22  ({  calling((void*)profileStart, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 318 22  ({  calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 318 50 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 319 17  ({  calling((void*)maxIntParallel, 2, ____alias_loc_id_0, 0UL, 3, (size_t)(15151216426301246845UL), (size_t)(15151216426301246847UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 319 17  ({  calling((void*)maxIntParallel, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15151216426301246845UL), (size_t)(15151216426301246847UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 319 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 320 22  ({  calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 320 22  ({  calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 320 49 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 312 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 312 17 
@@ -319,12 +335,12 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/li
 # 311
 int localMax;
 # 311
- if (____must_checkpoint_maxOccupancy_globalMax_0 || ____must_checkpoint_maxOccupancy_localMax_0) { register_stack_vars(2, "maxOccupancy|globalMax|0", &____must_checkpoint_maxOccupancy_globalMax_0, "i32", (void *)(&globalMax), (size_t)4, 0, 0, 0, "maxOccupancy|localMax|0", &____must_checkpoint_maxOccupancy_localMax_0, "i32", (void *)(&localMax), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_maxOccupancy_globalMax_0 || ____must_checkpoint_maxOccupancy_localMax_0) { register_stack_vars(2, "maxOccupancy|globalMax|0", &____must_checkpoint_maxOccupancy_globalMax_0, "i32", (void *)(&globalMax), (size_t)4, 0, 0, 0, "maxOccupancy|localMax|0", &____must_checkpoint_maxOccupancy_localMax_0, "i32", (void *)(&localMax), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 328 6 len=8 copyAtom_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 329 240  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 350 5 len=15 getBoxFromCoord_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 381 28 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 381 61 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 381 41 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 381 74 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 351 201  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 386 6 len=14 emptyHaloCells_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c 387 165  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

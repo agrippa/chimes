@@ -11,7 +11,6 @@ typedef long unsigned int size_t;
 static int ____chimes_does_checkpoint_myocyte_write_npm = 1;
 static int ____chimes_does_checkpoint_myocyte_read_npm = 1;
 
-static int ____must_checkpoint_myocyte_read_temp_0 = 2;
 
 static int ____must_manage_myocyte_write = 2;
 static int ____must_manage_myocyte_read = 2;
@@ -62,13 +61,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -3485,9 +3484,7 @@ void myocyte_read_resumable( char* filename,
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      int data_cols,
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int major){const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(3544992386570270689UL), (size_t)(3544992386570270690UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; float temp;
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
- if (____must_checkpoint_myocyte_read_temp_0) { register_stack_vars(1, "myocyte_read|temp|0", &____must_checkpoint_myocyte_read_temp_0, "float", (void *)(&temp), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+     int major){const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(3544992386570270689UL), (size_t)(3544992386570270690UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3500,7 +3497,7 @@ void myocyte_read_resumable( char* filename,
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
  char c; ;
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-  ;
+ float temp; ;
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3669,9 +3666,7 @@ void myocyte_read_quick( char* filename,
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
      int data_cols,
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int major){const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(3544992386570270689UL), (size_t)(3544992386570270690UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; float temp;
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
- if (____must_checkpoint_myocyte_read_temp_0) { register_stack_vars(1, "myocyte_read|temp|0", &____must_checkpoint_myocyte_read_temp_0, "float", (void *)(&temp), (size_t)4, 0, 0, 0); } ; ;
+     int major){const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(3544992386570270689UL), (size_t)(3544992386570270690UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3684,7 +3679,7 @@ void myocyte_read_quick( char* filename,
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
  char c; ;
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-  ;
+ float temp; ;
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
@@ -3933,7 +3928,7 @@ void myocyte_read_npm( char* filename,
 
 
 static int module_init() {
-    init_module(3544992386570270451UL, 6, 2, 1, 2, 2, 0, 2, 0, 0, 2,
+    init_module(3544992386570270451UL, 6, 2, 0, 2, 2, 0, 2, 0, 0, 2,
                            &____alias_loc_id_0, (unsigned)10, (unsigned)0, (unsigned)0, (3544992386570270451UL + 1UL), (3544992386570270451UL + 2UL), (3544992386570270451UL + 3UL), (3544992386570270451UL + 4UL), (3544992386570270451UL + 5UL), (3544992386570270451UL + 6UL), (3544992386570270451UL + 7UL), (3544992386570270451UL + 8UL), (3544992386570270451UL + 9UL), (3544992386570270451UL + 26UL),
                            &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (3544992386570270451UL + 128UL), (3544992386570270451UL + 129UL), (3544992386570270451UL + 130UL), (3544992386570270451UL + 131UL), (3544992386570270451UL + 132UL), (3544992386570270451UL + 133UL), (3544992386570270451UL + 134UL), (3544992386570270451UL + 135UL), (3544992386570270451UL + 154UL), (3544992386570270451UL + 239UL),
                             "myocyte_write", 0, "_Z13myocyte_writePcPfiiii", "_Z17myocyte_write_npmPcPfiiii", 0, 6, (3544992386570270451UL + 114UL), (3544992386570270451UL + 115UL), 0UL, 0UL, 0UL, 0UL, 0UL, 7, "fopen", 2, (3544992386570270451UL + 114UL), (3544992386570270451UL + 245UL), (3544992386570270451UL + 26UL), "printf", 1, (3544992386570270451UL + 246UL), 0UL, "fprintf", 3, (3544992386570270451UL + 26UL), (3544992386570270451UL + 247UL), 0UL, 0UL, "fprintf", 2, (3544992386570270451UL + 26UL), (3544992386570270451UL + 245UL), 0UL, "fprintf", 3, (3544992386570270451UL + 26UL), (3544992386570270451UL + 247UL), 0UL, 0UL, "fprintf", 2, (3544992386570270451UL + 26UL), (3544992386570270451UL + 245UL), 0UL, "fclose", 1, (3544992386570270451UL + 26UL), 0UL,
@@ -3949,8 +3944,7 @@ static int module_init() {
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
                              "myocyte_write", "_Z13myocyte_writePcPfiiii", 0,
-                             "myocyte_read", "_Z12myocyte_readPcPfiii", 0,
-                        "myocyte_read|temp|0", 1, "myocyte_read");
+                             "myocyte_read", "_Z12myocyte_readPcPfiii", 0);
     return 0;
 }
 

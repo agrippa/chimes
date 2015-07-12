@@ -2,7 +2,7 @@ import os
 import sys
 
 from common import PerfTest, RuntimeTest, parse_argv, CHIMES_HOME, \
-         run_runtime_test, cleanup_runtime_files, run_perf_test, \
+         run_runtime_test, run_perf_test, \
          is_rodinia_supported, is_spec_supported, get_machine_name
 from shared_tests import MISC_OMP_RUNTIME_TESTS, PERF_CLI_ARGS
 from exec_time_parsers import EXEC_TIME_PARSERS
@@ -34,7 +34,6 @@ if is_spec_supported():
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
     CONFIG.add_custom_compiler_flag('-fopenmp')
-    cleanup_runtime_files()
 
     for t in TESTS:
         run_perf_test(t, COMPILE_SCRIPT, NORMAL_COMPILE_SCRIPT, OMP_INPUTS_DIR,

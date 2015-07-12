@@ -18,29 +18,8 @@ static int ____chimes_does_checkpoint_bots_get_date_npm = 1;
 static int ____chimes_does_checkpoint_bots_error_npm = 1;
 static int ____chimes_does_checkpoint_bots_print_usage_npm = 1;
 
-static int ____must_checkpoint_bots_usecs_t_0 = 2;
-static int ____must_checkpoint_bots_get_date_now_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_name_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_parameters_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_model_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_resources_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_result_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_time_program_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_time_sequential_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_speed_up_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_number_of_tasks_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_number_of_tasks_per_second_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_exec_date_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_exec_message_0 = 2;
 static int ____must_checkpoint_bots_print_results_str_architecture_0 = 2;
 static int ____must_checkpoint_bots_print_results_str_load_avg_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_comp_date_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_comp_message_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_cc_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_cflags_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_ld_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_ldflags_0 = 2;
-static int ____must_checkpoint_bots_print_results_str_cutoff_0 = 2;
 
 static int ____must_manage_bots_get_load_average = 2;
 static int ____must_manage_bots_usecs = 2;
@@ -101,13 +80,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -4845,7 +4824,7 @@ void
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
 bots_error_resumable(int error, char *message)
 # 36 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 0, (size_t)(0UL), (size_t)(375384663979096343UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 0, (size_t)(0UL), (size_t)(375384663979096343UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 37 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
    if (message == __null) {{
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -4869,7 +4848,7 @@ bots_error_resumable(int error, char *message)
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Unrecognized parameter.");
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-             call_lbl_4: ({ calling((void*)bots_print_usage, 4, 0, 0UL, 0); (bots_print_usage)(); }) ;
+             call_lbl_0: ({ calling((void*)bots_print_usage, 0, 0, 0UL, 0); (bots_print_usage)(); }) ;
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
             break;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -4925,11 +4904,9 @@ long bots_usecs_npm (void);
 long bots_usecs_quick (void); long bots_usecs (void);
 long bots_usecs_resumable (void)
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&bots_usecs), "bots_usecs", &____must_manage_bots_usecs, 0, 0) ; struct timeval t;
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
- if (____must_checkpoint_bots_usecs_t_0) { register_stack_vars(1, "bots_usecs|t|0", &____must_checkpoint_bots_usecs_t_0, "%struct.timeval = type { i64, i64 }", (void *)(&t), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&bots_usecs), "bots_usecs", &____must_manage_bots_usecs, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-     ;
+    struct timeval t; ;
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
    gettimeofday(&t,__null);
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -4944,11 +4921,9 @@ void
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
 bots_get_date_resumable(char *str)
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 0, (size_t)(375384663979096403UL)) ; time_t now;
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
- if (____must_checkpoint_bots_get_date_now_0) { register_stack_vars(1, "bots_get_date|now|0", &____must_checkpoint_bots_get_date_now_0, "i64", (void *)(&now), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 0, (size_t)(375384663979096403UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-    ;
+   time_t now; ;
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
    time(&now);
 # 90 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -5016,7 +4991,7 @@ char str_parameters[128];
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
 char str_name[128];
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
- if (____must_checkpoint_bots_print_results_str_cutoff_0 || ____must_checkpoint_bots_print_results_str_ldflags_0 || ____must_checkpoint_bots_print_results_str_ld_0 || ____must_checkpoint_bots_print_results_str_cflags_0 || ____must_checkpoint_bots_print_results_str_cc_0 || ____must_checkpoint_bots_print_results_str_comp_message_0 || ____must_checkpoint_bots_print_results_str_comp_date_0 || ____must_checkpoint_bots_print_results_str_load_avg_0 || ____must_checkpoint_bots_print_results_str_architecture_0 || ____must_checkpoint_bots_print_results_str_exec_message_0 || ____must_checkpoint_bots_print_results_str_exec_date_0 || ____must_checkpoint_bots_print_results_str_number_of_tasks_per_second_0 || ____must_checkpoint_bots_print_results_str_number_of_tasks_0 || ____must_checkpoint_bots_print_results_str_speed_up_0 || ____must_checkpoint_bots_print_results_str_time_sequential_0 || ____must_checkpoint_bots_print_results_str_time_program_0 || ____must_checkpoint_bots_print_results_str_result_0 || ____must_checkpoint_bots_print_results_str_resources_0 || ____must_checkpoint_bots_print_results_str_model_0 || ____must_checkpoint_bots_print_results_str_parameters_0 || ____must_checkpoint_bots_print_results_str_name_0) { register_stack_vars(21, "bots_print_results|str_cutoff|0", &____must_checkpoint_bots_print_results_str_cutoff_0, "[128 x i8]", (void *)(str_cutoff), (size_t)128, 0, 0, 0, "bots_print_results|str_ldflags|0", &____must_checkpoint_bots_print_results_str_ldflags_0, "[128 x i8]", (void *)(str_ldflags), (size_t)128, 0, 0, 0, "bots_print_results|str_ld|0", &____must_checkpoint_bots_print_results_str_ld_0, "[128 x i8]", (void *)(str_ld), (size_t)128, 0, 0, 0, "bots_print_results|str_cflags|0", &____must_checkpoint_bots_print_results_str_cflags_0, "[128 x i8]", (void *)(str_cflags), (size_t)128, 0, 0, 0, "bots_print_results|str_cc|0", &____must_checkpoint_bots_print_results_str_cc_0, "[128 x i8]", (void *)(str_cc), (size_t)128, 0, 0, 0, "bots_print_results|str_comp_message|0", &____must_checkpoint_bots_print_results_str_comp_message_0, "[128 x i8]", (void *)(str_comp_message), (size_t)128, 0, 0, 0, "bots_print_results|str_comp_date|0", &____must_checkpoint_bots_print_results_str_comp_date_0, "[128 x i8]", (void *)(str_comp_date), (size_t)128, 0, 0, 0, "bots_print_results|str_load_avg|0", &____must_checkpoint_bots_print_results_str_load_avg_0, "[128 x i8]", (void *)(str_load_avg), (size_t)128, 0, 0, 0, "bots_print_results|str_architecture|0", &____must_checkpoint_bots_print_results_str_architecture_0, "[128 x i8]", (void *)(str_architecture), (size_t)128, 0, 0, 0, "bots_print_results|str_exec_message|0", &____must_checkpoint_bots_print_results_str_exec_message_0, "[128 x i8]", (void *)(str_exec_message), (size_t)128, 0, 0, 0, "bots_print_results|str_exec_date|0", &____must_checkpoint_bots_print_results_str_exec_date_0, "[128 x i8]", (void *)(str_exec_date), (size_t)128, 0, 0, 0, "bots_print_results|str_number_of_tasks_per_second|0", &____must_checkpoint_bots_print_results_str_number_of_tasks_per_second_0, "[15 x i8]", (void *)(str_number_of_tasks_per_second), (size_t)15, 0, 0, 0, "bots_print_results|str_number_of_tasks|0", &____must_checkpoint_bots_print_results_str_number_of_tasks_0, "[15 x i8]", (void *)(str_number_of_tasks), (size_t)15, 0, 0, 0, "bots_print_results|str_speed_up|0", &____must_checkpoint_bots_print_results_str_speed_up_0, "[15 x i8]", (void *)(str_speed_up), (size_t)15, 0, 0, 0, "bots_print_results|str_time_sequential|0", &____must_checkpoint_bots_print_results_str_time_sequential_0, "[15 x i8]", (void *)(str_time_sequential), (size_t)15, 0, 0, 0, "bots_print_results|str_time_program|0", &____must_checkpoint_bots_print_results_str_time_program_0, "[15 x i8]", (void *)(str_time_program), (size_t)15, 0, 0, 0, "bots_print_results|str_result|0", &____must_checkpoint_bots_print_results_str_result_0, "[15 x i8]", (void *)(str_result), (size_t)15, 0, 0, 0, "bots_print_results|str_resources|0", &____must_checkpoint_bots_print_results_str_resources_0, "[128 x i8]", (void *)(str_resources), (size_t)128, 0, 0, 0, "bots_print_results|str_model|0", &____must_checkpoint_bots_print_results_str_model_0, "[128 x i8]", (void *)(str_model), (size_t)128, 0, 0, 0, "bots_print_results|str_parameters|0", &____must_checkpoint_bots_print_results_str_parameters_0, "[128 x i8]", (void *)(str_parameters), (size_t)128, 0, 0, 0, "bots_print_results|str_name|0", &____must_checkpoint_bots_print_results_str_name_0, "[128 x i8]", (void *)(str_name), (size_t)128, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(72): { goto call_lbl_72; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_bots_print_results_str_load_avg_0 || ____must_checkpoint_bots_print_results_str_architecture_0) { register_stack_vars(2, "bots_print_results|str_load_avg|0", &____must_checkpoint_bots_print_results_str_load_avg_0, "[128 x i8]", (void *)(str_load_avg), (size_t)128, 0, 0, 0, "bots_print_results|str_architecture|0", &____must_checkpoint_bots_print_results_str_architecture_0, "[128 x i8]", (void *)(str_architecture), (size_t)128, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
     ;
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -5124,9 +5099,9 @@ char str_name[128];
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
    sprintf(str_exec_message, "%s", bots_exec_message);
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-   ({ calling_npm("bots_get_architecture", 0); bots_get_architecture_npm(str_architecture); });
+    call_lbl_0: ({ calling_npm("bots_get_architecture", 0); bots_get_architecture_npm(str_architecture); });
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-   ({ calling_npm("bots_get_load_average", 0); bots_get_load_average_npm(str_load_avg); });
+    call_lbl_1: ({ calling_npm("bots_get_load_average", 0); bots_get_load_average_npm(str_load_avg); });
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
    sprintf(str_comp_date, "%s", bots_comp_date);
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -5423,9 +5398,9 @@ fprintf(stdout,
 # 346 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
          break;
 # 347 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-       call_lbl_72: default:
+       call_lbl_2: default:
 # 348 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-          ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("No valid output format\n"); } calling((void*)bots_error, 72, 0, 0UL, 2, (size_t)(0UL), (size_t)(375384663979096753UL)); (bots_error)(0, ____chimes_arg1); }) ;
+          ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("No valid output format\n"); } calling((void*)bots_error, 2, 0, 0UL, 2, (size_t)(0UL), (size_t)(375384663979096753UL)); (bots_error)(0, ____chimes_arg1); }) ;
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
          break;
 # 350 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -5461,7 +5436,7 @@ bots_error_quick(int error, char *message)
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Unrecognized parameter.");
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-             call_lbl_4: ({ calling((void*)bots_print_usage, 4, 0, 0UL, 0); (bots_print_usage)(); }) ;
+             call_lbl_0: ({ calling((void*)bots_print_usage, 0, 0, 0UL, 0); (bots_print_usage)(); }) ;
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
             break;
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -5519,11 +5494,9 @@ bots_warning(int warning, char *message) { (____chimes_replaying ? bots_warning_
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
 long bots_usecs_quick (void)
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&bots_usecs), "bots_usecs", &____must_manage_bots_usecs, 0, 0) ; struct timeval t;
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
- if (____must_checkpoint_bots_usecs_t_0) { register_stack_vars(1, "bots_usecs|t|0", &____must_checkpoint_bots_usecs_t_0, "%struct.timeval = type { i64, i64 }", (void *)(&t), (size_t)16, 0, 1, 0); } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&bots_usecs), "bots_usecs", &____must_manage_bots_usecs, 0, 0) ; ; ;
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-     ;
+    struct timeval t; ;
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
    gettimeofday(&t,__null);
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -5537,11 +5510,9 @@ void
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
 bots_get_date_quick(char *str)
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 0, (size_t)(375384663979096403UL)) ; time_t now;
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
- if (____must_checkpoint_bots_get_date_now_0) { register_stack_vars(1, "bots_get_date|now|0", &____must_checkpoint_bots_get_date_now_0, "i64", (void *)(&now), (size_t)8, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 0, (size_t)(375384663979096403UL)) ; ; ;
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-    ;
+   time_t now; ;
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
    time(&now);
 # 90 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -5609,7 +5580,7 @@ char str_parameters[128];
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
 char str_name[128];
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
- if (____must_checkpoint_bots_print_results_str_cutoff_0 || ____must_checkpoint_bots_print_results_str_ldflags_0 || ____must_checkpoint_bots_print_results_str_ld_0 || ____must_checkpoint_bots_print_results_str_cflags_0 || ____must_checkpoint_bots_print_results_str_cc_0 || ____must_checkpoint_bots_print_results_str_comp_message_0 || ____must_checkpoint_bots_print_results_str_comp_date_0 || ____must_checkpoint_bots_print_results_str_load_avg_0 || ____must_checkpoint_bots_print_results_str_architecture_0 || ____must_checkpoint_bots_print_results_str_exec_message_0 || ____must_checkpoint_bots_print_results_str_exec_date_0 || ____must_checkpoint_bots_print_results_str_number_of_tasks_per_second_0 || ____must_checkpoint_bots_print_results_str_number_of_tasks_0 || ____must_checkpoint_bots_print_results_str_speed_up_0 || ____must_checkpoint_bots_print_results_str_time_sequential_0 || ____must_checkpoint_bots_print_results_str_time_program_0 || ____must_checkpoint_bots_print_results_str_result_0 || ____must_checkpoint_bots_print_results_str_resources_0 || ____must_checkpoint_bots_print_results_str_model_0 || ____must_checkpoint_bots_print_results_str_parameters_0 || ____must_checkpoint_bots_print_results_str_name_0) { register_stack_vars(21, "bots_print_results|str_cutoff|0", &____must_checkpoint_bots_print_results_str_cutoff_0, "[128 x i8]", (void *)(str_cutoff), (size_t)128, 0, 0, 0, "bots_print_results|str_ldflags|0", &____must_checkpoint_bots_print_results_str_ldflags_0, "[128 x i8]", (void *)(str_ldflags), (size_t)128, 0, 0, 0, "bots_print_results|str_ld|0", &____must_checkpoint_bots_print_results_str_ld_0, "[128 x i8]", (void *)(str_ld), (size_t)128, 0, 0, 0, "bots_print_results|str_cflags|0", &____must_checkpoint_bots_print_results_str_cflags_0, "[128 x i8]", (void *)(str_cflags), (size_t)128, 0, 0, 0, "bots_print_results|str_cc|0", &____must_checkpoint_bots_print_results_str_cc_0, "[128 x i8]", (void *)(str_cc), (size_t)128, 0, 0, 0, "bots_print_results|str_comp_message|0", &____must_checkpoint_bots_print_results_str_comp_message_0, "[128 x i8]", (void *)(str_comp_message), (size_t)128, 0, 0, 0, "bots_print_results|str_comp_date|0", &____must_checkpoint_bots_print_results_str_comp_date_0, "[128 x i8]", (void *)(str_comp_date), (size_t)128, 0, 0, 0, "bots_print_results|str_load_avg|0", &____must_checkpoint_bots_print_results_str_load_avg_0, "[128 x i8]", (void *)(str_load_avg), (size_t)128, 0, 0, 0, "bots_print_results|str_architecture|0", &____must_checkpoint_bots_print_results_str_architecture_0, "[128 x i8]", (void *)(str_architecture), (size_t)128, 0, 0, 0, "bots_print_results|str_exec_message|0", &____must_checkpoint_bots_print_results_str_exec_message_0, "[128 x i8]", (void *)(str_exec_message), (size_t)128, 0, 0, 0, "bots_print_results|str_exec_date|0", &____must_checkpoint_bots_print_results_str_exec_date_0, "[128 x i8]", (void *)(str_exec_date), (size_t)128, 0, 0, 0, "bots_print_results|str_number_of_tasks_per_second|0", &____must_checkpoint_bots_print_results_str_number_of_tasks_per_second_0, "[15 x i8]", (void *)(str_number_of_tasks_per_second), (size_t)15, 0, 0, 0, "bots_print_results|str_number_of_tasks|0", &____must_checkpoint_bots_print_results_str_number_of_tasks_0, "[15 x i8]", (void *)(str_number_of_tasks), (size_t)15, 0, 0, 0, "bots_print_results|str_speed_up|0", &____must_checkpoint_bots_print_results_str_speed_up_0, "[15 x i8]", (void *)(str_speed_up), (size_t)15, 0, 0, 0, "bots_print_results|str_time_sequential|0", &____must_checkpoint_bots_print_results_str_time_sequential_0, "[15 x i8]", (void *)(str_time_sequential), (size_t)15, 0, 0, 0, "bots_print_results|str_time_program|0", &____must_checkpoint_bots_print_results_str_time_program_0, "[15 x i8]", (void *)(str_time_program), (size_t)15, 0, 0, 0, "bots_print_results|str_result|0", &____must_checkpoint_bots_print_results_str_result_0, "[15 x i8]", (void *)(str_result), (size_t)15, 0, 0, 0, "bots_print_results|str_resources|0", &____must_checkpoint_bots_print_results_str_resources_0, "[128 x i8]", (void *)(str_resources), (size_t)128, 0, 0, 0, "bots_print_results|str_model|0", &____must_checkpoint_bots_print_results_str_model_0, "[128 x i8]", (void *)(str_model), (size_t)128, 0, 0, 0, "bots_print_results|str_parameters|0", &____must_checkpoint_bots_print_results_str_parameters_0, "[128 x i8]", (void *)(str_parameters), (size_t)128, 0, 0, 0, "bots_print_results|str_name|0", &____must_checkpoint_bots_print_results_str_name_0, "[128 x i8]", (void *)(str_name), (size_t)128, 0, 0, 0); } ; ;
+ if (____must_checkpoint_bots_print_results_str_load_avg_0 || ____must_checkpoint_bots_print_results_str_architecture_0) { register_stack_vars(2, "bots_print_results|str_load_avg|0", &____must_checkpoint_bots_print_results_str_load_avg_0, "[128 x i8]", (void *)(str_load_avg), (size_t)128, 0, 0, 0, "bots_print_results|str_architecture|0", &____must_checkpoint_bots_print_results_str_architecture_0, "[128 x i8]", (void *)(str_architecture), (size_t)128, 0, 0, 0); } ; ;
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
     ;
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -5717,9 +5688,9 @@ char str_name[128];
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
    sprintf(str_exec_message, "%s", bots_exec_message);
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-   ({ calling_npm("bots_get_architecture", 0); bots_get_architecture_npm(str_architecture); });
+    call_lbl_0: ({ calling_npm("bots_get_architecture", 0); bots_get_architecture_npm(str_architecture); });
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-   ({ calling_npm("bots_get_load_average", 0); bots_get_load_average_npm(str_load_avg); });
+    call_lbl_1: ({ calling_npm("bots_get_load_average", 0); bots_get_load_average_npm(str_load_avg); });
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
    sprintf(str_comp_date, "%s", bots_comp_date);
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -6016,9 +5987,9 @@ fprintf(stdout,
 # 346 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
          break;
 # 347 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-       call_lbl_72: default:
+       call_lbl_2: default:
 # 348 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
-          ({ calling((void*)bots_error, 72, 0, 0UL, 2, (size_t)(0UL), (size_t)(375384663979096753UL)); bots_error_quick(0, "No valid output format\n"); }) ;
+          ({ calling((void*)bots_error, 2, 0, 0UL, 2, (size_t)(0UL), (size_t)(375384663979096753UL)); bots_error_quick(0, "No valid output format\n"); }) ;
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
          break;
 # 350 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c"
@@ -6560,7 +6531,7 @@ fprintf(stdout,
 
 
 static int module_init() {
-    init_module(375384663979096302UL, 6, 8, 23, 6, 8, 1, 9, 2, 0, 1,
+    init_module(375384663979096302UL, 6, 8, 2, 6, 8, 1, 9, 2, 0, 1,
                            &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (375384663979096302UL + 47UL), (375384663979096302UL + 48UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (375384663979096302UL + 75UL), (375384663979096302UL + 76UL),
                            &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (375384663979096302UL + 91UL), (375384663979096302UL + 92UL), (375384663979096302UL + 101UL),
@@ -6600,29 +6571,8 @@ static int module_init() {
                              "bots_print_results", "_Z18bots_print_resultsv", 3, "bots_get_architecture", "bots_get_load_average", "bots_error",
                              "bots_get_date", "_Z13bots_get_datePc", 0,
                              "bots_error", "_Z10bots_erroriPc", 1, "bots_print_usage",
-                        "bots_usecs|t|0", 1, "bots_usecs",
-                        "bots_get_date|now|0", 1, "bots_get_date",
-                        "bots_print_results|str_name|0", 1, "bots_print_results",
-                        "bots_print_results|str_parameters|0", 1, "bots_print_results",
-                        "bots_print_results|str_model|0", 1, "bots_print_results",
-                        "bots_print_results|str_resources|0", 1, "bots_print_results",
-                        "bots_print_results|str_result|0", 1, "bots_print_results",
-                        "bots_print_results|str_time_program|0", 1, "bots_print_results",
-                        "bots_print_results|str_time_sequential|0", 1, "bots_print_results",
-                        "bots_print_results|str_speed_up|0", 1, "bots_print_results",
-                        "bots_print_results|str_number_of_tasks|0", 1, "bots_print_results",
-                        "bots_print_results|str_number_of_tasks_per_second|0", 1, "bots_print_results",
-                        "bots_print_results|str_exec_date|0", 1, "bots_print_results",
-                        "bots_print_results|str_exec_message|0", 1, "bots_print_results",
                         "bots_print_results|str_architecture|0", 1, "bots_print_results",
                         "bots_print_results|str_load_avg|0", 1, "bots_print_results",
-                        "bots_print_results|str_comp_date|0", 1, "bots_print_results",
-                        "bots_print_results|str_comp_message|0", 1, "bots_print_results",
-                        "bots_print_results|str_cc|0", 1, "bots_print_results",
-                        "bots_print_results|str_cflags|0", 1, "bots_print_results",
-                        "bots_print_results|str_ld|0", 1, "bots_print_results",
-                        "bots_print_results|str_ldflags|0", 1, "bots_print_results",
-                        "bots_print_results|str_cutoff|0", 1, "bots_print_results",
         "bots_get_architecture", 0UL, (int)1, 375384663979096443UL,
         "bots_get_load_average", 0UL, (int)1, 375384663979096444UL);
     return 0;

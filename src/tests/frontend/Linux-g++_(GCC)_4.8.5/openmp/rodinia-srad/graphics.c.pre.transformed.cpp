@@ -70,13 +70,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -1210,7 +1210,7 @@ int i;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 FILE *fid;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
- if (____must_checkpoint_read_graphics_temp_0 || ____must_checkpoint_read_graphics_i_0 || ____must_checkpoint_read_graphics_fid_0) { register_stack_vars(3, "read_graphics|temp|0", &____must_checkpoint_read_graphics_temp_0, "i32", (void *)(&temp), (size_t)4, 0, 0, 0, "read_graphics|i|0", &____must_checkpoint_read_graphics_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "read_graphics|fid|0", &____must_checkpoint_read_graphics_fid_0, "%struct._IO_FILE*", (void *)(&fid), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_read_graphics_temp_0 || ____must_checkpoint_read_graphics_i_0 || ____must_checkpoint_read_graphics_fid_0) { register_stack_vars(3, "read_graphics|temp|0", &____must_checkpoint_read_graphics_temp_0, "i32", (void *)(&temp), (size_t)4, 0, 0, 0, "read_graphics|i|0", &____must_checkpoint_read_graphics_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "read_graphics|fid|0", &____must_checkpoint_read_graphics_fid_0, "%struct._IO_FILE*", (void *)(&fid), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1249,7 +1249,7 @@ FILE *fid;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
  while(i<3){
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-  alias_group_changed(____alias_loc_id_0); call_lbl_5: c = ({ calling((void*)fgetc, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) ;
+  alias_group_changed(____alias_loc_id_0); call_lbl_0: c = ({ calling((void*)fgetc, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) ;
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
   if(c == '\n'){
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1467,7 +1467,7 @@ FILE *fid;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
  while(i<3){
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-  alias_group_changed(____alias_loc_id_0); call_lbl_5: c = ({ calling((void*)fgetc, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) ;
+  alias_group_changed(____alias_loc_id_0); call_lbl_0: c = ({ calling((void*)fgetc, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) ;
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
   if(c == '\n'){
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1765,7 +1765,7 @@ static int module_init() {
                         "read_graphics|major|0", 1, "fgetc",
                         "read_graphics|fid|0", 1, "fgetc",
                         "read_graphics|i|0", 1, "fgetc",
-                        "read_graphics|temp|0", 1, "read_graphics");
+                        "read_graphics|temp|0", 1, "fgetc");
     return 0;
 }
 

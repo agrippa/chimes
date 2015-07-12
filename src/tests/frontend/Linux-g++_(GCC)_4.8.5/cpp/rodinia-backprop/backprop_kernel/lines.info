@@ -1,7 +1,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 42 53 : { 21, 22, 23 } {  } call:setup { setup { 38 } }
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 86 3 : {  } {  } call:bpnn_adjust_weights { bpnn_adjust_weights { 75 } }
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 80 3 : {  } {  } call:bpnn_adjust_weights { bpnn_adjust_weights { 75 } }
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 74 3 : {  } {  } call:bpnn_hidden_error { bpnn_hidden_error { 48, 75 } }
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 68 3 : {  } {  } call:bpnn_output_error { bpnn_output_error { 47, 75 } }
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 62 3 : {  } {  } call:bpnn_layerforward { bpnn_layerforward { 75 } }
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 91 3 : {  } {  } call:bpnn_adjust_weights { bpnn_adjust_weights { 75 } }
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 84 3 : {  } {  } call:bpnn_adjust_weights { bpnn_adjust_weights { 75 } }
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 77 3 : {  } {  } call:bpnn_hidden_error { bpnn_hidden_error { 48, 75 } }
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 70 3 : {  } {  } call:bpnn_output_error { bpnn_output_error { 47, 75 } }
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 63 3 : {  } {  } call:bpnn_layerforward { bpnn_layerforward { 75 } }
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 56 3 : { 41, 42, 43, 44, 45, 46 } {  } call:bpnn_layerforward { bpnn_layerforward { 75 } }

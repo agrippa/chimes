@@ -1,4 +1,4 @@
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 seconds
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c seconds|tzp|0 " %struct.timezone = type { i32, i32 } " 64 0 1 timezone 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c seconds|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c seconds|____chimes_ret_var_0|0 " double " 64 0 0 0
@@ -110,8 +110,8 @@
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c kmalloc|____chimes_ret_var_15|0 " i8* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c transform_to_cuda|root|0 " %struct.node* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c transform_to_cuda|verbose|0 " i8 " 8 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c transform_to_cuda|one|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 transform_to_cuda
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c transform_to_cuda|two|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 transform_to_cuda
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c transform_to_cuda|one|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c transform_to_cuda|two|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c transform_to_cuda|time|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c transform_to_cuda|max_nodes|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c transform_to_cuda|_tmp|0 " i8* " 64 1 0 0
@@ -342,14 +342,14 @@
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|root|0 " %struct.node* " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|r|0 " %struct.record* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|input|0 " i32 " 32 0 0 1 main
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|instruction|0 " i8 " 8 0 0 1 main
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|instruction|0 " i8 " 8 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_62|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|mem_used|0 " i64 " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|rootLoc|0 " i64 " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|commandPointer|0 " i8* " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|start_time|0 " double " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_63|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|count|0 " i32 " 32 0 0 1 main
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|count|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|records|0 " %struct.record* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|records_elem|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|records_mem|0 " i64 " 64 0 0 0
@@ -369,8 +369,8 @@
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|end|0 " i32 " 32 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|ansList|0 " %struct.list_t* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_unroll_var_7|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|count|1 " i32 " 32 0 0 1 main
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|rSize|0 " i32 " 32 0 0 1 main
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|count|1 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|rSize|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes|1 " %struct.knode* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes_elem|1 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|knodes_mem|1 " i64 " 64 0 0 0

@@ -129,6 +129,10 @@ void init_chimes(int argc, char **argv) {
 }
 
 void calling_npm(const char *name, unsigned loc_id) {
+#ifdef VERBOSE
+    fprintf(stderr, "calling_npm: %s\n", name);
+#endif
+
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling_npm, 1);
 #endif
@@ -136,6 +140,10 @@ void calling_npm(const char *name, unsigned loc_id) {
 
 void calling(void *func_ptr, int lbl, unsigned loc_id, size_t set_return_alias,
         unsigned naliases, ...) {
+#ifdef VERBOSE
+    fprintf(stderr, "calling: %u\n", loc_id);
+#endif
+
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling, 1);
 
@@ -155,6 +163,9 @@ void calling(void *func_ptr, int lbl, unsigned loc_id, size_t set_return_alias,
 int get_next_call() { return (0); }
 int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...) {
+#ifdef VERBOSE
+    fprintf(stderr, "new_stack: %s\n", funcname);
+#endif
     if (conditional) { *conditional = 0; }
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_new_stack, 1);
@@ -164,6 +175,9 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
 
 void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
         int n_params, ...) {
+#ifdef VERBOSE
+    fprintf(stderr, "translate_fptr: %u\n", loc_id);
+#endif
     map<void *, void *>::iterator exists = original_function_to_npm.find(fptr);
     if (exists != original_function_to_npm.end()) {
         return exists->second;
@@ -214,6 +228,10 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
         void *fptr, *original_fptr;
         if (is_static) {
+#ifdef VERBOSE
+            fprintf(stderr, "WARNING: Had to take function addresses for "
+                    "function %s\n", fname.c_str());
+#endif
             fptr = va_arg(vl, void *);
             original_fptr = va_arg(vl, void *);
         } else {
@@ -316,6 +334,9 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled,
         bool is_allocator) {
+#ifdef VERBOSE
+    fprintf(stderr, "rm_stack: %s\n", funcname);
+#endif
     if (conditional) { *conditional = 0; }
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_rm_stack, 1);
@@ -372,35 +393,34 @@ int alias_group_changed(unsigned loc_id) {
     return 0;
 }
 
-void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...) {
+void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_malloc_wrapper, 1);
 #endif
-    return malloc(nbytes);
 }
 
-void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calloc_wrapper, 1);
 #endif
-    return calloc(num, size);
+    // return calloc(num, size);
 }
 
-void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_realloc_wrapper, 1);
 #endif
-    return realloc(ptr, nbytes);
+    // return realloc(ptr, nbytes);
 }
 
-void free_wrapper(void *ptr, size_t group) {
+void free_helper(const void *ptr, size_t group) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_free_wrapper, 1);
 #endif
-    free(ptr);
+    // free(ptr);
 }
 
 bool disable_current_thread() {

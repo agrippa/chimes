@@ -8,21 +8,21 @@
 
 using namespace std;
 
-extern void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
+extern void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
         int is_cuda_alloc, int is_ptr, int is_struct, int elem_size,
         int *ptr_field_offsets, int n_ptr_field_offsets);
-extern void free_helper(void *ptr);
+extern void free_impl(const void *ptr);
 extern map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
 
 __global__ void translate_pointers_kernel(void *arr, int nelems, int elem_size,
         int *ptr_offsets, int n_ptr_offsets, void **old_ptrs, void **new_ptrs,
         size_t *ptr_size, int n_translations);
 
-cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, size_t group,
+void cudaMalloc_helper(cudaError_t err, void **ptr, size_t size, size_t group,
         int is_ptr, int is_struct, ...) {
-    cudaError_t err = cudaMalloc(ptr, size);
+    // cudaError_t err = cudaMalloc(ptr, size);
     if (err != cudaSuccess) {
-        return err;
+        return;
     }
 
     chimes_type_info info; memset(&info, 0x00, sizeof(info));
@@ -33,20 +33,22 @@ cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, size_t group,
         va_end(vl);
     }
 
-    malloc_helper(*ptr, size, group, 1, is_ptr, is_struct, info.elem_size,
+    malloc_impl(*ptr, size, group, 1, is_ptr, is_struct, info.elem_size,
             info.ptr_field_offsets, info.n_ptr_fields);
 
-    return cudaSuccess;
+    // return cudaSuccess;
 }
 
-cudaError_t cudaFree_wrapper(void *ptr, size_t group) {
-    free_helper(ptr);
-    cudaError_t err = cudaFree(ptr);
-    if (err != cudaSuccess) {
-        return err;
+void cudaFree_helper(cudaError_t err, void *ptr, size_t group) {
+    if (err == cudaSuccess) {
+        free_impl(ptr);
     }
+    // cudaError_t err = cudaFree(ptr);
+    // if (err != cudaSuccess) {
+    //     return err;
+    // }
 
-    return cudaSuccess;
+    // return cudaSuccess;
 }
 
 void translate_cuda_pointers(void *d_arr, int nelems, int elem_size,

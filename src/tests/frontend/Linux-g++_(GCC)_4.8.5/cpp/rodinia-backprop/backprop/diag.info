@@ -2,49 +2,49 @@ ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 32 7 len=4 drnd
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 38 7 len=4 dpn1_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 45 7 len=6 squash_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 57 8 len=12 alloc_1d_dbl_npm
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 23 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 61 , 12828305900417644654UL, 0, 0
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 23  ({ void *____chimes_tmp_ptr = malloc((unsigned int)(n * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) (n * sizeof (float)), 12828305900417644654UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 62 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 72 9 len=12 alloc_2d_dbl_npm
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 24 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 64 , 12828305900417644695UL, 1, 0
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 24  ({ void *____chimes_tmp_ptr = malloc((unsigned int)(m * sizeof(float *))); malloc_helper(____chimes_tmp_ptr, (unsigned) (m * sizeof (float *)), 12828305900417644695UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 65 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 91 6 len=22 bpnn_randomize_weights_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 103 6 len=18 bpnn_randomize_row_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 113 6 len=17 bpnn_zero_weights_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 125 6 len=15 bpnn_initialize_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 132 7 len=20 bpnn_internal_create_npm
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 21 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 41 , 12828305900417646130UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(BPNN)); malloc_helper(____chimes_tmp_ptr, sizeof (BPNN), 12828305900417646130UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 42 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 163 6 len=9 bpnn_free_npm
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 170 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 170 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 171 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 171 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 175 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 175 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 179 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 179 39 , 12828305900417645047UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 44 , 12828305900417645047UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 182 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 182 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 183 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 183 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 40 , 12828305900417645047UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 45 , 12828305900417645047UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 192 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 192 17 , 12828305900417645117UL
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 170 3  ({ free((char *)net->input_units); free_helper((char *) net->input_units, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 170 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 171 3  ({ free((char *)net->hidden_units); free_helper((char *) net->hidden_units, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 171 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 3  ({ free((char *)net->output_units); free_helper((char *) net->output_units, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 3  ({ free((char *)net->hidden_delta); free_helper((char *) net->hidden_delta, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 175 3  ({ free((char *)net->output_delta); free_helper((char *) net->output_delta, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 175 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 3  ({ free((char *)net->target); free_helper((char *) net->target, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 28 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 179 5  ({ free((char *)net->input_weights[i]); free_helper((char *) net->input_weights[i], 12828305900417645047UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 179 40 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 5  ({ free((char *)net->input_prev_weights[i]); free_helper((char *) net->input_prev_weights[i], 12828305900417645047UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 182 3  ({ free((char *)net->input_weights); free_helper((char *) net->input_weights, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 182 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 183 3  ({ free((char *)net->input_prev_weights); free_helper((char *) net->input_prev_weights, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 183 40 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 5  ({ free((char *)net->hidden_weights[i]); free_helper((char *) net->hidden_weights[i], 12828305900417645047UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 41 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 5  ({ free((char *)net->hidden_prev_weights[i]); free_helper((char *) net->hidden_prev_weights[i], 12828305900417645047UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 46 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 3  ({ free((char *)net->hidden_weights); free_helper((char *) net->hidden_weights, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 3  ({ free((char *)net->hidden_prev_weights); free_helper((char *) net->hidden_prev_weights, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 41 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 192 3  ({ free((char *)net); free_helper((char *) net, 12828305900417645117UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 192 20 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 205 7 len=11 bpnn_create_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 225 6 len=17 bpnn_layerforward_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 249 6 len=17 bpnn_output_error_npm
@@ -53,75 +53,75 @@ ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 289 6 len=19 bp
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 314 6 len=16 bpnn_feedforward_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 331 6 len=10 bpnn_train_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 365 6 len=9 bpnn_save_npm
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 397 18 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 397 69 , 12828305900417645830UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 8 , 12828305900417645830UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 411 18 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 411 69 , 12828305900417645830UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 8 , 12828305900417645830UL
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 397 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417645830UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 397 70 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 3  ({ free(mem); free_helper(mem, 12828305900417645830UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 411 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417645830UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 411 70 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 3  ({ free(mem); free_helper(mem, 12828305900417645830UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 11 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 428 7 len=9 bpnn_read_npm
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 18 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 69 , 12828305900417646140UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 457 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 457 8 , 12828305900417646140UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 462 18 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 462 69 , 12828305900417646140UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 470 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 470 8 , 12828305900417646140UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 23 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 61 , 12828305900417644654UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 24 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 64 , 12828305900417644695UL, 1, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 21 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 41 , 12828305900417646130UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 170 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 170 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 171 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 171 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 175 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 175 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 179 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 179 39 , 12828305900417645047UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 44 , 12828305900417645047UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 182 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 182 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 183 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 183 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 40 , 12828305900417645047UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 45 , 12828305900417645047UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 22 , 12828305900417645007UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 192 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 192 17 , 12828305900417645117UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 397 18 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 397 69 , 12828305900417645830UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 8 , 12828305900417645830UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 411 18 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 411 69 , 12828305900417645830UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 8 , 12828305900417645830UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 18 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 69 , 12828305900417646140UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 457 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 457 8 , 12828305900417646140UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 462 18 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 462 69 , 12828305900417646140UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 470 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 470 8 , 12828305900417646140UL
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417646140UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 70 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 457 3  ({ free(mem); free_helper(mem, 12828305900417646140UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 457 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 462 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417646140UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 462 70 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 470 3  ({ free(mem); free_helper(mem, 12828305900417646140UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 470 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 23  ({ void *____chimes_tmp_ptr = malloc((unsigned int)(n * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) (n * sizeof (float)), 12828305900417644654UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 62 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 24  ({ void *____chimes_tmp_ptr = malloc((unsigned int)(m * sizeof(float *))); malloc_helper(____chimes_tmp_ptr, (unsigned) (m * sizeof (float *)), 12828305900417644695UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 65 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(BPNN)); malloc_helper(____chimes_tmp_ptr, sizeof (BPNN), 12828305900417646130UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 170 3  ({ free((char *)net->input_units); free_helper((char *) net->input_units, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 170 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 171 3  ({ free((char *)net->hidden_units); free_helper((char *) net->hidden_units, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 171 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 3  ({ free((char *)net->output_units); free_helper((char *) net->output_units, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 3  ({ free((char *)net->hidden_delta); free_helper((char *) net->hidden_delta, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 175 3  ({ free((char *)net->output_delta); free_helper((char *) net->output_delta, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 175 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 3  ({ free((char *)net->target); free_helper((char *) net->target, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 28 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 179 5  ({ free((char *)net->input_weights[i]); free_helper((char *) net->input_weights[i], 12828305900417645047UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 179 40 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 5  ({ free((char *)net->input_prev_weights[i]); free_helper((char *) net->input_prev_weights[i], 12828305900417645047UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 182 3  ({ free((char *)net->input_weights); free_helper((char *) net->input_weights, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 182 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 183 3  ({ free((char *)net->input_prev_weights); free_helper((char *) net->input_prev_weights, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 183 40 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 5  ({ free((char *)net->hidden_weights[i]); free_helper((char *) net->hidden_weights[i], 12828305900417645047UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 41 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 5  ({ free((char *)net->hidden_prev_weights[i]); free_helper((char *) net->hidden_prev_weights[i], 12828305900417645047UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 46 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 3  ({ free((char *)net->hidden_weights); free_helper((char *) net->hidden_weights, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 3  ({ free((char *)net->hidden_prev_weights); free_helper((char *) net->hidden_prev_weights, 12828305900417645007UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 41 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 192 3  ({ free((char *)net); free_helper((char *) net, 12828305900417645117UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 192 20 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 397 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417645830UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 397 70 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 3  ({ free(mem); free_helper(mem, 12828305900417645830UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 411 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417645830UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 411 70 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 3  ({ free(mem); free_helper(mem, 12828305900417645830UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417646140UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 70 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 457 3  ({ free(mem); free_helper(mem, 12828305900417646140UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 457 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 462 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417646140UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 462 70 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 470 3  ({ free(mem); free_helper(mem, 12828305900417646140UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 470 11 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 34 96 rm_stack(false, 0UL, "drnd", &____must_manage_drnd, ____alias_loc_id_0, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 33 1 const int ____chimes_did_disable0 = new_stack((void *)(&drnd), "drnd", &____must_manage_drnd, 0, 0); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 35 1 rm_stack(false, 0UL, "drnd", &____must_manage_drnd, ____alias_loc_id_0, ____chimes_did_disable0, false); 
@@ -192,6 +192,8 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 58 2 const
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 58 140 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 59 3 float *new_mem; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 59 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 27 void *____chimes_tmp_ptr = malloc((unsigned int)(n * sizeof(float))); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 95 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 64 6 float *____chimes_ret_var_3; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 64 34 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 66 4 float *____chimes_ret_var_4; ;
@@ -202,6 +204,8 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 74 3 int i
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 74 8 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 75 3 float **new_mem; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 75 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 28 void *____chimes_tmp_ptr = malloc((unsigned int)(m * sizeof(float *))); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 98 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 80 6 float **____chimes_ret_var_5; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 80 35 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 87 4 float **____chimes_ret_var_6; ;
@@ -224,6 +228,8 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 133 2 cons
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 133 194 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 134 3 BPNN *newnet; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 134 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 25 void *____chimes_tmp_ptr = malloc(sizeof(BPNN)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 72 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 139 6 BPNN *____chimes_ret_var_7; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 139 33 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 159 4 BPNN *____chimes_ret_var_8; ;
@@ -282,10 +288,14 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 369 3 char
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 369 12 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 371 3 FILE *pFile; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 371 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 397 22 void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 397 108 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 401 9 register char *_to; register char *_from; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 401 34 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 401 36 register int _i; register int _l; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 401 54 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 411 22 void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 411 108 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 415 9 register char *_to; register char *_from; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 415 34 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 415 36 register int _i; register int _l; ;
@@ -300,29 +310,63 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 3 int 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 35 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 435 6 BPNN *____chimes_ret_var_10; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 435 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 22 void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 108 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 453 9 register char *_to; register char *_from; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 453 34 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 453 36 register int _i; register int _l; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 453 54 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 462 22 void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 462 108 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 466 9 register char *_to; register char *_from; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 466 34 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 466 36 register int _i; register int _l; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 466 54 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 478 4 BPNN *____chimes_ret_var_11; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 478 32 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 34  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 84 5  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 145 3  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 146 3  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 3  call_lbl_2: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 3  call_lbl_3: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 150 3  call_lbl_4: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 3  call_lbl_5: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 3  call_lbl_6: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 154 3  call_lbl_7: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 3  call_lbl_8: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 157 3  call_lbl_9: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 210 3  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 215 3  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 217 3  call_lbl_2: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 218 3  call_lbl_3: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 219 3  call_lbl_4: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 220 3  call_lbl_5: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 244 5  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 323 3  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 325 3  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 341 3  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 343 3  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 347 3  call_lbl_2: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 349 3  call_lbl_3: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 355 3  call_lbl_4: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 357 3  call_lbl_5: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 443 3  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 475 3  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 3  call_lbl_2: 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 32 7 len=4 drnd_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 33 100  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 38 7 len=4 dpn1_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 60 ({ calling_npm("drnd", 0); drnd_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 65 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 73 ({ calling_npm("drnd", 0); drnd_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 78 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 39 100  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 45 7 len=6 squash_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 46 121  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 57 8 len=12 alloc_1d_dbl_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 58 139  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 72 9 len=12 alloc_2d_dbl_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 84 18 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 84 32 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 84 31 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 84 45 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 73 154  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 91 6 len=22 bpnn_randomize_weights_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 92 218  ; 
@@ -333,46 +377,46 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 114 20
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 125 6 len=15 bpnn_initialize_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 126 148  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 132 7 len=20 bpnn_internal_create_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 145 25 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_in + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 145 46 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 146 26 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 146 51 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 26 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 48 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 26 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 51 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 150 26 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 150 48 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 20 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 42 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 27 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 62 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 154 28 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 154 64 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 32 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 67 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 157 33 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 157 69 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 145 38 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_in + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 145 59 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 146 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 146 64 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 64 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 150 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 150 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 33 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 55 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 40 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 75 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 154 41 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 154 77 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 45 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 80 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 157 46 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 157 82 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 133 193  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 163 6 len=9 bpnn_free_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 164 150  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 205 7 len=11 bpnn_create_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 210 12 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n_in, n_hidden, n_out); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 210 54 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 215 3 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->input_weights, n_in, n_hidden); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 215 63 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 217 3 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->hidden_weights, n_hidden, n_out); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 217 65 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 218 3 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->input_prev_weights, n_in, n_hidden); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 218 63 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 219 3 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->hidden_prev_weights, n_hidden, n_out); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 219 65 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 220 3 ({ calling_npm("bpnn_randomize_row", 0); bpnn_randomize_row_npm(newnet->target, n_out); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 220 43 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 210 25 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n_in, n_hidden, n_out); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 210 67 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 215 16 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->input_weights, n_in, n_hidden); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 215 76 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 217 16 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->hidden_weights, n_hidden, n_out); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 217 78 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 218 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->input_prev_weights, n_in, n_hidden); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 218 76 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 219 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->hidden_prev_weights, n_hidden, n_out); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 219 78 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 220 16 ({ calling_npm("bpnn_randomize_row", 0); bpnn_randomize_row_npm(newnet->target, n_out); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 220 56 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 206 167  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 225 6 len=17 bpnn_layerforward_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 244 13 ({ calling_npm("squash", 0); squash_npm(sum); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 244 23 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 244 26 ({ calling_npm("squash", 0); squash_npm(sum); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 244 36 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 226 272  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 249 6 len=17 bpnn_output_error_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 250 291  ; 
@@ -381,23 +425,23 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 271 34
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 289 6 len=19 bpnn_adjust_weights_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 290 312  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 314 6 len=16 bpnn_feedforward_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 323 3 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 323 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 324 34 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 325 3 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 325 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 326 36 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 315 171  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 331 6 len=10 bpnn_train_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 341 3 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 341 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 342 34 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 343 3 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 343 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 344 36 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 347 3 ({ calling_npm("bpnn_output_error", 0); bpnn_output_error_npm(net->output_delta, net->target, net->output_units, out, &out_err); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 347 16 ({ calling_npm("bpnn_output_error", 0); bpnn_output_error_npm(net->output_delta, net->target, net->output_units, out, &out_err); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 348 20 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 349 3 ({ calling_npm("bpnn_hidden_error", 0); bpnn_hidden_error_npm(net->hidden_delta, hid, net->output_delta, out, net->hidden_weights, net->hidden_units, &hid_err); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 349 16 ({ calling_npm("bpnn_hidden_error", 0); bpnn_hidden_error_npm(net->hidden_delta, hid, net->output_delta, out, net->hidden_weights, net->hidden_units, &hid_err); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 350 55 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 355 3 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->output_delta, out, net->hidden_units, hid, net->hidden_weights, net->hidden_prev_weights); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 355 16 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->output_delta, out, net->hidden_units, hid, net->hidden_weights, net->hidden_prev_weights); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 356 52 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 357 3 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->hidden_delta, hid, net->input_units, in, net->input_weights, net->input_prev_weights); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 357 16 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->hidden_delta, hid, net->input_units, in, net->input_weights, net->input_prev_weights); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 358 50 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 334 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 334 16 
@@ -409,56 +453,32 @@ float out_err;
 # 332
  if (____must_checkpoint_bpnn_train_hid_err_0 || ____must_checkpoint_bpnn_train_out_err_0) { register_stack_vars(2, "bpnn_train|hid_err|0", &____must_checkpoint_bpnn_train_hid_err_0, "float", (void *)(&hid_err), (size_t)4, 0, 0, 0, "bpnn_train|out_err|0", &____must_checkpoint_bpnn_train_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 365 6 len=9 bpnn_save_quick
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 9 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 11 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 19 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 25 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 368 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 368 15 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 366 184  ; float dvalue;
 # 366
-int n3;
-# 366
-int n2;
-# 366
-int n1;
-# 366
- if (____must_checkpoint_bpnn_save_dvalue_0 || ____must_checkpoint_bpnn_save_n3_0 || ____must_checkpoint_bpnn_save_n2_0 || ____must_checkpoint_bpnn_save_n1_0) { register_stack_vars(4, "bpnn_save|dvalue|0", &____must_checkpoint_bpnn_save_dvalue_0, "float", (void *)(&dvalue), (size_t)4, 0, 0, 0, "bpnn_save|n3|0", &____must_checkpoint_bpnn_save_n3_0, "i32", (void *)(&n3), (size_t)4, 0, 0, 0, "bpnn_save|n2|0", &____must_checkpoint_bpnn_save_n2_0, "i32", (void *)(&n2), (size_t)4, 0, 0, 0, "bpnn_save|n1|0", &____must_checkpoint_bpnn_save_n1_0, "i32", (void *)(&n1), (size_t)4, 0, 0, 0);  }  
+ if (____must_checkpoint_bpnn_save_dvalue_0) { register_stack_vars(1, "bpnn_save|dvalue|0", &____must_checkpoint_bpnn_save_dvalue_0, "float", (void *)(&dvalue), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 428 7 len=9 bpnn_read_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 443 13 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n1, n2, n3); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 443 44 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 475 3 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->input_prev_weights, n1, n2); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 475 56 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 3 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->hidden_prev_weights, n2, n3); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 57 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 11 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 19 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 25 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 27 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 33 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 429 150  ; int n3;
-# 429
-int n2;
-# 429
-int n1;
-# 429
- if (____must_checkpoint_bpnn_read_n3_0 || ____must_checkpoint_bpnn_read_n2_0 || ____must_checkpoint_bpnn_read_n1_0) { register_stack_vars(3, "bpnn_read|n3|0", &____must_checkpoint_bpnn_read_n3_0, "i32", (void *)(&n3), (size_t)4, 0, 0, 0, "bpnn_read|n2|0", &____must_checkpoint_bpnn_read_n2_0, "i32", (void *)(&n2), (size_t)4, 0, 0, 0, "bpnn_read|n1|0", &____must_checkpoint_bpnn_read_n1_0, "i32", (void *)(&n1), (size_t)4, 0, 0, 0);  }  
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 443 26 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n1, n2, n3); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 443 57 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 475 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->input_prev_weights, n1, n2); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 475 69 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->hidden_prev_weights, n2, n3); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 70 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 429 150  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 32 7 len=4 drnd_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 33 100  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 38 7 len=4 dpn1_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 60 ({ calling_npm("drnd", 0); drnd_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 65 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 73 ({ calling_npm("drnd", 0); drnd_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 78 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 39 100  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 45 7 len=6 squash_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 46 121  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 57 8 len=12 alloc_1d_dbl_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 58 139  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 72 9 len=12 alloc_2d_dbl_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 84 18 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 84 32 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 84 31 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 84 45 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 73 154  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 91 6 len=22 bpnn_randomize_weights_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 92 218  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
@@ -469,46 +489,46 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 114 20
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 125 6 len=15 bpnn_initialize_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 126 148  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 132 7 len=20 bpnn_internal_create_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 145 25 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_in + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 145 46 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 146 26 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 146 51 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 26 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 48 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 26 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 51 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 150 26 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 150 48 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 20 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 42 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 27 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 62 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 154 28 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 154 64 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 32 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 67 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 157 33 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 157 69 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 145 38 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_in + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 145 59 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 146 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 146 64 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 64 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 150 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 150 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 33 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 55 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 40 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 75 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 154 41 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 154 77 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 45 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 80 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 157 46 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 157 82 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 133 193  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 163 6 len=9 bpnn_free_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 164 150  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 205 7 len=11 bpnn_create_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 210 12 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n_in, n_hidden, n_out); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 210 54 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 215 3 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->input_weights, n_in, n_hidden); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 215 63 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 217 3 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->hidden_weights, n_hidden, n_out); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 217 65 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 218 3 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->input_prev_weights, n_in, n_hidden); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 218 63 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 219 3 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->hidden_prev_weights, n_hidden, n_out); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 219 65 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 220 3 ({ calling_npm("bpnn_randomize_row", 0); bpnn_randomize_row_npm(newnet->target, n_out); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 220 43 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 210 25 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n_in, n_hidden, n_out); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 210 67 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 215 16 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->input_weights, n_in, n_hidden); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 215 76 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 217 16 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->hidden_weights, n_hidden, n_out); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 217 78 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 218 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->input_prev_weights, n_in, n_hidden); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 218 76 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 219 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->hidden_prev_weights, n_hidden, n_out); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 219 78 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 220 16 ({ calling_npm("bpnn_randomize_row", 0); bpnn_randomize_row_npm(newnet->target, n_out); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 220 56 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 206 167  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 225 6 len=17 bpnn_layerforward_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 244 13 ({ calling_npm("squash", 0); squash_npm(sum); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 244 23 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 244 26 ({ calling_npm("squash", 0); squash_npm(sum); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 244 36 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 226 272  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 249 6 len=17 bpnn_output_error_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 250 291  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
@@ -517,23 +537,23 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 271 34
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 289 6 len=19 bpnn_adjust_weights_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 290 312  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 314 6 len=16 bpnn_feedforward_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 323 3 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 323 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 324 34 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 325 3 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 325 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 326 36 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 315 171  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 331 6 len=10 bpnn_train_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 341 3 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 341 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 342 34 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 343 3 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 343 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 344 36 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 347 3 ({ calling_npm("bpnn_output_error", 0); bpnn_output_error_npm(net->output_delta, net->target, net->output_units, out, &out_err); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 347 16 ({ calling_npm("bpnn_output_error", 0); bpnn_output_error_npm(net->output_delta, net->target, net->output_units, out, &out_err); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 348 20 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 349 3 ({ calling_npm("bpnn_hidden_error", 0); bpnn_hidden_error_npm(net->hidden_delta, hid, net->output_delta, out, net->hidden_weights, net->hidden_units, &hid_err); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 349 16 ({ calling_npm("bpnn_hidden_error", 0); bpnn_hidden_error_npm(net->hidden_delta, hid, net->output_delta, out, net->hidden_weights, net->hidden_units, &hid_err); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 350 55 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 355 3 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->output_delta, out, net->hidden_units, hid, net->hidden_weights, net->hidden_prev_weights); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 355 16 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->output_delta, out, net->hidden_units, hid, net->hidden_weights, net->hidden_prev_weights); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 356 52 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 357 3 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->hidden_delta, hid, net->input_units, in, net->input_weights, net->input_prev_weights); })
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 357 16 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->hidden_delta, hid, net->input_units, in, net->input_weights, net->input_prev_weights); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 358 50 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 334 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 334 16 
@@ -545,40 +565,16 @@ float out_err;
 # 332
  if (____must_checkpoint_bpnn_train_hid_err_0 || ____must_checkpoint_bpnn_train_out_err_0) { register_stack_vars(2, "bpnn_train|hid_err|0", &____must_checkpoint_bpnn_train_hid_err_0, "float", (void *)(&hid_err), (size_t)4, 0, 0, 0, "bpnn_train|out_err|0", &____must_checkpoint_bpnn_train_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 365 6 len=9 bpnn_save_resumable
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 9 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 11 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 19 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 367 25 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 368 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 368 15 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 366 184  ; float dvalue;
 # 366
-int n3;
-# 366
-int n2;
-# 366
-int n1;
-# 366
- if (____must_checkpoint_bpnn_save_dvalue_0 || ____must_checkpoint_bpnn_save_n3_0 || ____must_checkpoint_bpnn_save_n2_0 || ____must_checkpoint_bpnn_save_n1_0) { register_stack_vars(4, "bpnn_save|dvalue|0", &____must_checkpoint_bpnn_save_dvalue_0, "float", (void *)(&dvalue), (size_t)4, 0, 0, 0, "bpnn_save|n3|0", &____must_checkpoint_bpnn_save_n3_0, "i32", (void *)(&n3), (size_t)4, 0, 0, 0, "bpnn_save|n2|0", &____must_checkpoint_bpnn_save_n2_0, "i32", (void *)(&n2), (size_t)4, 0, 0, 0, "bpnn_save|n1|0", &____must_checkpoint_bpnn_save_n1_0, "i32", (void *)(&n1), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ if (____must_checkpoint_bpnn_save_dvalue_0) { register_stack_vars(1, "bpnn_save|dvalue|0", &____must_checkpoint_bpnn_save_dvalue_0, "float", (void *)(&dvalue), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 428 7 len=9 bpnn_read_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 443 13 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n1, n2, n3); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 443 44 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 475 3 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->input_prev_weights, n1, n2); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 475 56 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 3 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->hidden_prev_weights, n2, n3); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 57 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 11 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 19 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 25 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 27 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 432 33 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 429 150  ; int n3;
-# 429
-int n2;
-# 429
-int n1;
-# 429
- if (____must_checkpoint_bpnn_read_n3_0 || ____must_checkpoint_bpnn_read_n2_0 || ____must_checkpoint_bpnn_read_n1_0) { register_stack_vars(3, "bpnn_read|n3|0", &____must_checkpoint_bpnn_read_n3_0, "i32", (void *)(&n3), (size_t)4, 0, 0, 0, "bpnn_read|n2|0", &____must_checkpoint_bpnn_read_n2_0, "i32", (void *)(&n2), (size_t)4, 0, 0, 0, "bpnn_read|n1|0", &____must_checkpoint_bpnn_read_n1_0, "i32", (void *)(&n1), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 443 26 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n1, n2, n3); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 443 57 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 475 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->input_prev_weights, n1, n2); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 475 69 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->hidden_prev_weights, n2, n3); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 70 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c 429 150  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

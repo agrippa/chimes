@@ -70,13 +70,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -1585,12 +1585,12 @@ Domain* initDecomposition_resumable(int xproc, int yproc, int zproc, real3 globa
 # 19 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&initDecomposition), "initDecomposition", &____must_manage_initDecomposition, 4, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9341214929697525590UL), "initDecomposition|xproc|0", &____must_checkpoint_initDecomposition_xproc_0, "i32", (void *)(&xproc), (size_t)4, 0, 0, 0, "initDecomposition|yproc|0", &____must_checkpoint_initDecomposition_yproc_0, "i32", (void *)(&yproc), (size_t)4, 0, 0, 0, "initDecomposition|zproc|0", &____must_checkpoint_initDecomposition_zproc_0, "i32", (void *)(&zproc), (size_t)4, 0, 0, 0, "initDecomposition|globalExtent|0", &____must_checkpoint_initDecomposition_globalExtent_0, "double*", (void *)(&globalExtent), (size_t)8, 1, 0, 0) ; Domain *dd;
 # 19 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
- if (____must_checkpoint_initDecomposition_dd_0) { register_stack_vars(1, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_initDecomposition_dd_0) { register_stack_vars(1, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 20 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-    call_lbl_1: ((xproc * yproc * zproc == ({ calling((void*)getNRanks, 1, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) ) ? static_cast<void> (0) : __assert_fail ("xproc * yproc * zproc == getNRanks()", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c", 20, __PRETTY_FUNCTION__));
+    call_lbl_0: ((xproc * yproc * zproc == ({ calling((void*)getNRanks, 0, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) ) ? static_cast<void> (0) : __assert_fail ("xproc * yproc * zproc == getNRanks()", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c", 20, __PRETTY_FUNCTION__));
 # 21 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 22 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-      dd = ((Domain *)malloc_wrapper(sizeof(Domain), 9341214929697525391UL, 0, 1, (int)sizeof(struct DomainSt), 0)) ;
+      dd = ((Domain*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Domain)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 9341214929697525391UL, 0, 1, (int)sizeof(struct DomainSt), 0); ____chimes_tmp_ptr; })) ;
 # 23 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
    dd->procGrid[0] = xproc;
 # 24 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
@@ -1599,7 +1599,7 @@ Domain* initDecomposition_resumable(int xproc, int yproc, int zproc, real3 globa
    dd->procGrid[2] = zproc;
 # 26 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 27 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-    int myRank; call_lbl_4: myRank = ( ({ calling((void*)getMyRank, 4, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) ) ;
+    int myRank; call_lbl_1: myRank = ( ({ calling((void*)getMyRank, 1, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) ) ;
 # 28 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
    dd->procCoord[0] = myRank % dd->procGrid[0];
 # 29 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
@@ -1675,10 +1675,10 @@ Domain* initDecomposition_quick(int xproc, int yproc, int zproc, real3 globalExt
 # 19 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
  if (____must_checkpoint_initDecomposition_dd_0) { register_stack_vars(1, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); } ; ;
 # 20 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-    call_lbl_1: ((xproc * yproc * zproc == ({ calling((void*)getNRanks, 1, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) ) ? static_cast<void> (0) : __assert_fail ("xproc * yproc * zproc == getNRanks()", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c", 20, __PRETTY_FUNCTION__));
+    call_lbl_0: ((xproc * yproc * zproc == ({ calling((void*)getNRanks, 0, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) ) ? static_cast<void> (0) : __assert_fail ("xproc * yproc * zproc == getNRanks()", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c", 20, __PRETTY_FUNCTION__));
 # 21 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 22 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-      dd = ((Domain *)malloc_wrapper(sizeof(Domain), 9341214929697525391UL, 0, 1, (int)sizeof(struct DomainSt), 0)) ;
+      dd = ((Domain*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Domain)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 9341214929697525391UL, 0, 1, (int)sizeof(struct DomainSt), 0); ____chimes_tmp_ptr; })) ;
 # 23 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
    dd->procGrid[0] = xproc;
 # 24 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
@@ -1687,7 +1687,7 @@ Domain* initDecomposition_quick(int xproc, int yproc, int zproc, real3 globalExt
    dd->procGrid[2] = zproc;
 # 26 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 27 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-    int myRank; call_lbl_4: myRank = ( ({ calling((void*)getMyRank, 4, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) ) ;
+    int myRank; call_lbl_1: myRank = ( ({ calling((void*)getMyRank, 1, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) ) ;
 # 28 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
    dd->procCoord[0] = myRank % dd->procGrid[0];
 # 29 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
@@ -1760,7 +1760,7 @@ Domain* initDecomposition_npm(int xproc, int yproc, int zproc, real3 globalExten
    ((xproc * yproc * zproc == (*____chimes_extern_func_getNRanks)()) ? static_cast<void> (0) : __assert_fail ("xproc * yproc * zproc == getNRanks()", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c", 20, __PRETTY_FUNCTION__));
 # 21 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 22 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-   Domain* dd = (Domain*)malloc_wrapper(sizeof(Domain), 9341214929697525391UL, 0, 1, (int)sizeof(struct DomainSt), 0);
+   Domain* dd = (Domain*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Domain)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 9341214929697525391UL, 0, 1, (int)sizeof(struct DomainSt), 0); ____chimes_tmp_ptr; }) ;
 # 23 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
    dd->procGrid[0] = xproc;
 # 24 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"

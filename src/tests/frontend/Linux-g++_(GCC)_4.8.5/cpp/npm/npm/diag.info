@@ -25,16 +25,18 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 5  int d;  d
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 19 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 16 6 int ____chimes_ret_var_2; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 16 30 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 8 34  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 14  call_lbl_0: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 14 5  call_lbl_1: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 3 5 len=3 bar_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 3 127  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 7 5 len=3 foo_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 8 58 ({ calling_npm("bar", 0); bar_npm(a); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 8 63 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 8 71 ({ calling_npm("bar", 0); bar_npm(a); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 8 76 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 7 127  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 11 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 19 ({ calling_npm("foo", 0); foo_npm(a); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 24 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 32 ({ calling_npm("foo", 0); foo_npm(a); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 37 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 14 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 14 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 6 
@@ -45,12 +47,12 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 11 167  ; i
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 3 5 len=3 bar_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 3 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 7 5 len=3 foo_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 8 58 ({ calling_npm("bar", 0); bar_npm(a); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 8 63 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 8 71 ({ calling_npm("bar", 0); bar_npm(a); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 8 76 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 7 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 11 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 19 ({ calling_npm("foo", 0); foo_npm(a); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 24 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 32 ({ calling_npm("foo", 0); foo_npm(a); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 37 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 14 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 14 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./npm.cpp 13 6 

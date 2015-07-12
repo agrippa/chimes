@@ -5,7 +5,7 @@ functionality of the chimes runtime.
 import os
 import sys
 from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
-         cleanup_runtime_files, find_file, is_rodinia_supported, is_spec_supported
+         find_file, is_rodinia_supported, is_spec_supported
 from shared_tests import MISC_OMP_RUNTIME_TESTS
 
 OMP_H = find_file('omp.h', '/usr/')
@@ -49,7 +49,6 @@ OMP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/openmp'
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
     CONFIG.add_custom_compiler_flag('-fopenmp')
-    cleanup_runtime_files()
 
     for t in TESTS:
         run_runtime_test(t, COMPILE_SCRIPT, OMP_INPUTS_DIR, CONFIG)

@@ -20,7 +20,6 @@ static int ____chimes_does_checkpoint_get_interval_by_sec_npm = 1;
 static int ____chimes_does_checkpoint_lud_verify_npm = 1;
 static int ____chimes_does_checkpoint_create_matrix_from_file_npm = 1;
 
-static int ____must_checkpoint_create_matrix_from_file_size_0 = 2;
 
 static int ____must_manage_create_matrix = 2;
 static int ____must_manage_matrix_multiply = 2;
@@ -89,13 +88,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -4189,11 +4188,9 @@ func_ret_t create_matrix_from_file_npm(float **mp, const char* filename, int *si
 func_ret_t create_matrix_from_file_quick(float **mp, const char* filename, int *size_p); func_ret_t create_matrix_from_file(float **mp, const char* filename, int *size_p);
 func_ret_t
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-create_matrix_from_file_resumable(float **mp, const char* filename, int *size_p){const int ____chimes_did_disable4 = new_stack((void *)(&create_matrix_from_file), "create_matrix_from_file", &____must_manage_create_matrix_from_file, 3, 0, (size_t)(8120987097540548914UL), (size_t)(8120987097540548915UL), (size_t)(8120987097540548916UL)) ; int size;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
- if (____must_checkpoint_create_matrix_from_file_size_0) { register_stack_vars(1, "create_matrix_from_file|size|0", &____must_checkpoint_create_matrix_from_file_size_0, "i32", (void *)(&size), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+create_matrix_from_file_resumable(float **mp, const char* filename, int *size_p){const int ____chimes_did_disable4 = new_stack((void *)(&create_matrix_from_file), "create_matrix_from_file", &____must_manage_create_matrix_from_file, 3, 0, (size_t)(8120987097540548914UL), (size_t)(8120987097540548915UL), (size_t)(8120987097540548916UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  int i; int j; ;
+  int i; int j; int size; ;
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   float *m; ;
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4212,7 +4209,7 @@ create_matrix_from_file_resumable(float **mp, const char* filename, int *size_p)
   fscanf(fp, "%d\n", &size);
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) malloc_wrapper(sizeof(float)*size*size, 8120987097540548879UL, 0, 0);
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 8120987097540548879UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4262,16 +4259,16 @@ create_matrix_from_random_resumable(float **mp, int size){const int ____chimes_d
   srand(time(__null));
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  l = (float*)malloc_wrapper(size*size*sizeof(float), 8120987097540548953UL, 0, 0);
+  l = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 8120987097540548953UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if (l == __null) { enum _FUNC_RETURN_CODE ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (RET_FAILURE); rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_7; ; };
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  u = (float*)malloc_wrapper(size*size*sizeof(float), 8120987097540549137UL, 0, 0);
+  u = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 8120987097540549137UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( u == __null) {
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-      free_wrapper(l, 8120987097540548953UL);
+       ({ free(l); free_helper(l, 8120987097540548953UL); }) ;
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
        enum _FUNC_RETURN_CODE ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (RET_FAILURE); rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_8; ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4331,9 +4328,9 @@ create_matrix_from_random_resumable(float **mp, int size){const int ____chimes_d
   }
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  free_wrapper(l, 8120987097540548953UL);
+   ({ free(l); free_helper(l, 8120987097540548953UL); }) ;
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  free_wrapper(u, 8120987097540549137UL);
+   ({ free(u); free_helper(u, 8120987097540549137UL); }) ;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   *mp = m;
@@ -4367,7 +4364,7 @@ lud_verify_resumable(float *m, float *lu, int matrix_dim){const int ____chimes_d
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   int i; int j; int k; ;
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   float *tmp; tmp = ((float *)malloc_wrapper(matrix_dim * matrix_dim * sizeof(float), 8120987097540549295UL, 0, 0)) ;
+   float *tmp; tmp = ((float*) ({ void *____chimes_tmp_ptr = malloc(matrix_dim * matrix_dim * sizeof(float)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 8120987097540549295UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   for (i=0; i < matrix_dim; i ++) { for (j=0; j< matrix_dim; j++) {
@@ -4401,7 +4398,7 @@ lud_verify_resumable(float *m, float *lu, int matrix_dim){const int ____chimes_d
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   }
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  free_wrapper(tmp, 8120987097540549295UL);
+   ({ free(tmp); free_helper(tmp, 8120987097540549295UL); }) ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 rm_stack(false, 0UL, "lud_verify", &____must_manage_lud_verify, ____alias_loc_id_7, ____chimes_did_disable7, false); }
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4412,9 +4409,9 @@ void
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 matrix_duplicate_resumable(float *src, float **dst, int matrix_dim) {const int ____chimes_did_disable8 = new_stack((void *)(&matrix_duplicate), "matrix_duplicate", &____must_manage_matrix_duplicate, 3, 0, (size_t)(8120987097540549500UL), (size_t)(8120987097540549501UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-     int s; s = (matrix_dim * matrix_dim * sizeof(float)) ;
+     int s; s = (matrix_dim*matrix_dim*sizeof(float)) ;
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-    float *p; p = ((float *)malloc_wrapper(s, 8120987097540549486UL, 0, 0)) ;
+    float *p; p = ((float *) ({ void *____chimes_tmp_ptr = malloc(s); malloc_helper(____chimes_tmp_ptr, s, 8120987097540549486UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
    memcpy(p, src, s);
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4459,7 +4456,7 @@ create_matrix_resumable(float **mp, int size){const int ____chimes_did_disable10
 # 215 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
    lbl_0: float coe[2 * size - 1]; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   float coe_i; coe_i = (0.) ;
+   float coe_i; coe_i = (0.0) ;
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   for (i=0; i < size; i++)
@@ -4479,7 +4476,7 @@ create_matrix_resumable(float **mp, int size){const int ____chimes_did_disable10
     }
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) malloc_wrapper(sizeof(float)*size*size, 8120987097540549671UL, 0, 0);
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 8120987097540549671UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4563,11 +4560,9 @@ get_interval_by_usec(stopwatch *sw) { return (____chimes_replaying ? get_interva
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 func_ret_t
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-create_matrix_from_file_quick(float **mp, const char* filename, int *size_p){const int ____chimes_did_disable4 = new_stack((void *)(&create_matrix_from_file), "create_matrix_from_file", &____must_manage_create_matrix_from_file, 3, 0, (size_t)(8120987097540548914UL), (size_t)(8120987097540548915UL), (size_t)(8120987097540548916UL)) ; int size;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
- if (____must_checkpoint_create_matrix_from_file_size_0) { register_stack_vars(1, "create_matrix_from_file|size|0", &____must_checkpoint_create_matrix_from_file_size_0, "i32", (void *)(&size), (size_t)4, 0, 0, 0); } ; ;
+create_matrix_from_file_quick(float **mp, const char* filename, int *size_p){const int ____chimes_did_disable4 = new_stack((void *)(&create_matrix_from_file), "create_matrix_from_file", &____must_manage_create_matrix_from_file, 3, 0, (size_t)(8120987097540548914UL), (size_t)(8120987097540548915UL), (size_t)(8120987097540548916UL)) ; ; ;
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  int i; int j; ;
+  int i; int j; int size; ;
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   float *m; ;
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4586,7 +4581,7 @@ create_matrix_from_file_quick(float **mp, const char* filename, int *size_p){con
   fscanf(fp, "%d\n", &size);
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) malloc_wrapper(sizeof(float)*size*size, 8120987097540548879UL, 0, 0);
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 8120987097540548879UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4636,16 +4631,16 @@ create_matrix_from_random_quick(float **mp, int size){const int ____chimes_did_d
   srand(time(__null));
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  l = (float*)malloc_wrapper(size*size*sizeof(float), 8120987097540548953UL, 0, 0);
+  l = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 8120987097540548953UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if (l == __null) { enum _FUNC_RETURN_CODE ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (RET_FAILURE); rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_7; ; };
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  u = (float*)malloc_wrapper(size*size*sizeof(float), 8120987097540549137UL, 0, 0);
+  u = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 8120987097540549137UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( u == __null) {
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-      free_wrapper(l, 8120987097540548953UL);
+       ({ free(l); free_helper(l, 8120987097540548953UL); }) ;
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
        enum _FUNC_RETURN_CODE ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (RET_FAILURE); rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_8; ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4705,9 +4700,9 @@ create_matrix_from_random_quick(float **mp, int size){const int ____chimes_did_d
   }
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  free_wrapper(l, 8120987097540548953UL);
+   ({ free(l); free_helper(l, 8120987097540548953UL); }) ;
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  free_wrapper(u, 8120987097540549137UL);
+   ({ free(u); free_helper(u, 8120987097540549137UL); }) ;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   *mp = m;
@@ -4743,7 +4738,7 @@ lud_verify_quick(float *m, float *lu, int matrix_dim){const int ____chimes_did_d
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   int i; int j; int k; ;
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   float *tmp; tmp = ((float *)malloc_wrapper(matrix_dim * matrix_dim * sizeof(float), 8120987097540549295UL, 0, 0)) ;
+   float *tmp; tmp = ((float*) ({ void *____chimes_tmp_ptr = malloc(matrix_dim * matrix_dim * sizeof(float)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 8120987097540549295UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   for (i=0; i < matrix_dim; i ++) { for (j=0; j< matrix_dim; j++) {
@@ -4777,7 +4772,7 @@ lud_verify_quick(float *m, float *lu, int matrix_dim){const int ____chimes_did_d
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   }
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  free_wrapper(tmp, 8120987097540549295UL);
+   ({ free(tmp); free_helper(tmp, 8120987097540549295UL); }) ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 rm_stack(false, 0UL, "lud_verify", &____must_manage_lud_verify, ____alias_loc_id_7, ____chimes_did_disable7, false); }
 
@@ -4789,9 +4784,9 @@ void
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 matrix_duplicate_quick(float *src, float **dst, int matrix_dim) {const int ____chimes_did_disable8 = new_stack((void *)(&matrix_duplicate), "matrix_duplicate", &____must_manage_matrix_duplicate, 3, 0, (size_t)(8120987097540549500UL), (size_t)(8120987097540549501UL), (size_t)(0UL)) ; ; ;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-     int s; s = (matrix_dim * matrix_dim * sizeof(float)) ;
+     int s; s = (matrix_dim*matrix_dim*sizeof(float)) ;
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-    float *p; p = ((float *)malloc_wrapper(s, 8120987097540549486UL, 0, 0)) ;
+    float *p; p = ((float *) ({ void *____chimes_tmp_ptr = malloc(s); malloc_helper(____chimes_tmp_ptr, s, 8120987097540549486UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
    memcpy(p, src, s);
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4835,7 +4830,7 @@ create_matrix_quick(float **mp, int size){const int ____chimes_did_disable10 = n
 # 215 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
    lbl_0: float coe[2 * size - 1]; ;
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   float coe_i; coe_i = (0.) ;
+   float coe_i; coe_i = (0.0) ;
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   for (i=0; i < size; i++)
@@ -4855,7 +4850,7 @@ create_matrix_quick(float **mp, int size){const int ____chimes_did_disable10 = n
     }
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) malloc_wrapper(sizeof(float)*size*size, 8120987097540549671UL, 0, 0);
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 8120987097540549671UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4952,7 +4947,7 @@ create_matrix_from_file_npm(float **mp, const char* filename, int *size_p){
   fscanf(fp, "%d\n", &size);
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) malloc_wrapper(sizeof(float)*size*size, 8120987097540548879UL, 0, 0);
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 8120987097540548879UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4998,16 +4993,16 @@ create_matrix_from_random_npm(float **mp, int size){
   srand(time(__null));
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  l = (float*)malloc_wrapper(size*size*sizeof(float), 8120987097540548953UL, 0, 0);
+  l = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 8120987097540548953UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if (l == __null) { enum _FUNC_RETURN_CODE ____chimes_ret_var_7; ____chimes_ret_var_7 = (RET_FAILURE); return ____chimes_ret_var_7; ; };
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  u = (float*)malloc_wrapper(size*size*sizeof(float), 8120987097540549137UL, 0, 0);
+  u = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 8120987097540549137UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( u == __null) {
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-      free_wrapper(l, 8120987097540548953UL);
+       ({ free(l); free_helper(l, 8120987097540548953UL); }) ;
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
        enum _FUNC_RETURN_CODE ____chimes_ret_var_8; ____chimes_ret_var_8 = (RET_FAILURE); return ____chimes_ret_var_8; ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -5067,9 +5062,9 @@ create_matrix_from_random_npm(float **mp, int size){
   }
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  free_wrapper(l, 8120987097540548953UL);
+   ({ free(l); free_helper(l, 8120987097540548953UL); }) ;
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  free_wrapper(u, 8120987097540549137UL);
+   ({ free(u); free_helper(u, 8120987097540549137UL); }) ;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   *mp = m;
@@ -5097,7 +5092,7 @@ lud_verify_npm(float *m, float *lu, int matrix_dim){
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   int i,j,k;
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  float *tmp = (float*)malloc_wrapper(matrix_dim*matrix_dim*sizeof(float), 8120987097540549295UL, 0, 0);
+  float *tmp = (float*) ({ void *____chimes_tmp_ptr = malloc(matrix_dim * matrix_dim * sizeof(float)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 8120987097540549295UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   for (i=0; i < matrix_dim; i ++) { for (j=0; j< matrix_dim; j++) {
@@ -5131,7 +5126,7 @@ lud_verify_npm(float *m, float *lu, int matrix_dim){
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   }
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  free_wrapper(tmp, 8120987097540549295UL);
+   ({ free(tmp); free_helper(tmp, 8120987097540549295UL); }) ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 }
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -5141,7 +5136,7 @@ matrix_duplicate_npm(float *src, float **dst, int matrix_dim) {
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
     int s = matrix_dim*matrix_dim*sizeof(float);
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   float *p = (float *) malloc_wrapper (s, 8120987097540549486UL, 0, 0);
+   float *p = (float *) ({ void *____chimes_tmp_ptr = malloc(s); malloc_helper(____chimes_tmp_ptr, s, 8120987097540549486UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
    memcpy(p, src, s);
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -5197,7 +5192,7 @@ create_matrix_npm(float **mp, int size){
     }
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) malloc_wrapper(sizeof(float)*size*size, 8120987097540549671UL, 0, 0);
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 8120987097540549671UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -5229,7 +5224,7 @@ create_matrix_npm(float **mp, int size){
 
 
 static int module_init() {
-    init_module(8120987097540548679UL, 30, 11, 1, 11, 11, 0, 11, 0, 0, 5,
+    init_module(8120987097540548679UL, 30, 11, 0, 11, 11, 0, 11, 0, 0, 5,
                            &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (8120987097540548679UL + 1UL), (8120987097540548679UL + 21UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (8120987097540548679UL + 31UL), (8120987097540548679UL + 43UL),
                            &____alias_loc_id_2, (unsigned)4, (unsigned)0, (unsigned)0, (8120987097540548679UL + 44UL), (8120987097540548679UL + 45UL), (8120987097540548679UL + 46UL), (8120987097540548679UL + 47UL),
@@ -5308,8 +5303,7 @@ static int module_init() {
                              "get_interval_by_usec", "get_interval_by_usec", 0,
                              "get_interval_by_sec", "get_interval_by_sec", 0,
                              "lud_verify", "lud_verify", 0,
-                             "create_matrix_from_file", "create_matrix_from_file", 0,
-                        "create_matrix_from_file|size|0", 1, "create_matrix_from_file");
+                             "create_matrix_from_file", "create_matrix_from_file", 0);
     return 0;
 }
 

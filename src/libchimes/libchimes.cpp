@@ -47,7 +47,6 @@
 #include "already_updated_ptrs.h"
 #include "chimes_stack.h"
 #include "heap_allocation.h"
-#include "checkpointable_heap_allocation.h"
 #include "type_info.h"
 #include "thread_ctx.h"
 #include "heap_tree.h"
@@ -133,10 +132,8 @@ typedef struct _checkpoint_thread_ctx {
 
     std::vector<std::pair<unsigned, clock_t> > *checkpoint_entry_times;
 
-    void *heap_to_checkpoint;
+    heap_serialization_wrapper *heap_to_checkpoint;
     size_t n_heap_to_checkpoint;
-    size_t heap_to_checkpoint_len;
-    // vector<checkpointable_heap_allocation> *heap_to_checkpoint;
 
     void *contains_serialized;
     size_t contains_serialized_len;
@@ -217,13 +214,13 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_ptr, int is_struct, int n_ptr_fields, ...);
 void register_stack_vars(int nvars, ...);
 int alias_group_changed(unsigned loc_id);
-void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
-        ...);
-void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-void free_wrapper(void *ptr, size_t group);
+// void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
+//         ...);
+// void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+//         int is_struct, ...);
+// void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+//         int is_struct, ...);
+// void free_wrapper(void *ptr, size_t group);
 
 void onexit();
 
@@ -240,7 +237,7 @@ static void *translate_old_ptr(void *ptr,
         void *container);
 static void fix_stack_or_global_pointer(void *container, string type, int nesting);
 map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
-void free_helper(void *ptr);
+void free_impl(const void *ptr);
 static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         va_list *vl);
@@ -285,7 +282,6 @@ pthread_key_t tid_key;
  * Globally shared heap representation used by all threads.
  */
 static map<void *, heap_allocation *> heap;
-static map<size_t, vector<heap_allocation *> *> alias_to_heap;
 static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
@@ -736,11 +732,6 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
 
             assert(heap.find(alloc->get_address()) == heap.end());
             heap[alloc->get_address()] = alloc;
-
-            if (alias_to_heap.find(group) == alias_to_heap.end()) {
-                alias_to_heap[group] = new vector<heap_allocation *>();
-            }
-            alias_to_heap[group]->push_back(alloc);
 
             old_to_new->insert(old_address, new_address, size);
             filled->insert(pair<void *, memory_filled *>(old_address,
@@ -2225,7 +2216,7 @@ enum DISABLED_THREAD { DISABLED, NOT_DISABLED, ALREADY_DISABLED };
 
 int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
-#ifdef TRACE
+#ifdef VERBOSE
     fprintf(stderr, "new_stack: %s\n", funcname);
 #endif
 
@@ -2447,7 +2438,7 @@ static void calling_npm_helper(const char *name, unsigned loc_id,
 }
 
 void calling_npm(const char *name, unsigned loc_id) {
-#if defined(VERBOSE) || defined(TRACE)
+#ifdef VERBOSE
     fprintf(stderr, "calling_npm: %s\n", name);
 #endif
 
@@ -2582,7 +2573,7 @@ static inline void alias_group_changed_helper(unsigned loc_id,
 void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id,
         int did_disable, bool is_allocator) {
-#if defined(VERBOSE) || defined(TRACE)
+#ifdef VERBOSE
     fprintf(stderr, "rm_stack: funcname=%s\n", funcname);
 #endif
 
@@ -2956,12 +2947,12 @@ int alias_group_changed(unsigned loc_id) {
     return 0;
 }
 
-void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
+void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
         int is_cuda_alloc, int is_ptr, int is_struct, int elem_size,
         int *ptr_field_offsets, int n_ptr_field_offsets) {
     assert(valid_group(group) || is_cuda_alloc);
 
-    heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
+    heap_allocation *alloc = new heap_allocation((void *)new_ptr, nbytes, group,
             is_cuda_alloc, is_ptr, is_struct, *hash_chunker);
 
     get_my_context()->add_changed_alias(group);
@@ -2975,12 +2966,8 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
     }
 
     VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
-    assert(heap.find(new_ptr) == heap.end());
-    heap.insert(pair<void *, heap_allocation *>(new_ptr, alloc));
-    if (alias_to_heap.find(group) == alias_to_heap.end()) {
-        alias_to_heap[group] = new vector<heap_allocation *>();
-    }
-    alias_to_heap.at(group)->push_back(alloc);
+    assert(heap.find((void *)new_ptr) == heap.end());
+    heap.insert(pair<void *, heap_allocation *>((void *)new_ptr, alloc));
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 }
 
@@ -2997,7 +2984,7 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
  * followed by n_ptr_fields int arguments, each of which is an offset in the
  * struct at which a pointer can be found.
  */
-void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
+void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr, int is_struct,
         ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
@@ -3006,7 +2993,7 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         perf_profile::current_time_ns();
     assert(valid_group(group));
 
-    void *ptr = malloc(nbytes);
+    // void *ptr = malloc(nbytes);
 
 #ifdef VERBOSE
     fprintf(stderr, "malloc_wrapper: nbytes=%lu group=%lu ptr=%p is_ptr=%d "
@@ -3024,7 +3011,7 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
             parse_type_info(vl, &info);
             va_end(vl);
         }
-        malloc_helper(ptr, nbytes, group, 0, is_ptr, is_struct, info.elem_size,
+        malloc_impl(ptr, nbytes, group, 0, is_ptr, is_struct, info.elem_size,
                 info.ptr_field_offsets, info.n_ptr_fields);
     }
 
@@ -3033,10 +3020,10 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
     pp.add_time(MALLOC_WRAPPER, __start_time);
 #endif
 
-    return ptr;
+    // return ptr;
 }
 
-void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
@@ -3045,7 +3032,7 @@ void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
         perf_profile::current_time_ns();
     assert(valid_group(group));
 
-    void *ptr = calloc(num, size);
+    // void *ptr = calloc(num, size);
 
     if (ptr != NULL) {
         chimes_type_info info; memset(&info, 0x00, sizeof(info));
@@ -3058,7 +3045,7 @@ void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
             parse_type_info(vl, &info);
             va_end(vl);
         }
-        malloc_helper(ptr, num * size, group, 0, is_ptr, is_struct,
+        malloc_impl(ptr, num * size, group, 0, is_ptr, is_struct,
                 info.elem_size, info.ptr_field_offsets, info.n_ptr_fields);
     }
 
@@ -3067,12 +3054,11 @@ void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
     pp.add_time(CALLOC_WRAPPER, __start_time);
 #endif
 
-    return ptr;
-
+    // return ptr;
 }
 
-void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...) {
+void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t group,
+        int is_ptr, int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -3080,7 +3066,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         perf_profile::current_time_ns();
     assert(valid_group(group));
 
-    void *new_ptr = realloc(ptr, nbytes);
+    // void *new_ptr = realloc(ptr, nbytes);
     unsigned long long old_size = 0;
 
     if (ptr != NULL && new_ptr == ptr) {
@@ -3088,7 +3074,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
          * The location in memory of a previous allocation did not change, only
          * the size was extended.
          */
-        map<void *, heap_allocation *>::iterator alloc_ptr = find_in_heap(ptr);
+        map<void *, heap_allocation *>::iterator alloc_ptr = find_in_heap((void *)ptr);
 
         heap_allocation *alloc = alloc_ptr->second;
         old_size = alloc->get_size();
@@ -3113,7 +3099,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
              * in it to avoid the overhead of re-parsing the allocation type.
              */
             map<void *, heap_allocation *>::iterator alloc_ptr =
-                find_in_heap(ptr);
+                find_in_heap((void *)ptr);
             heap_allocation *alloc = alloc_ptr->second;
             assert(alloc->get_alias_group() == group);
             old_size = alloc->get_size();
@@ -3127,7 +3113,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
                     ptr_field_offsets[i] = (*alloc->get_ptr_field_offsets())[i];
                 }
             }
-            free_helper(ptr);
+            free_impl(ptr);
         } else {
             /*
              * A realloc of a NULL pointer, equivalent to a fresh malloc.
@@ -3145,7 +3131,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
             n_struct_ptr_fields = info.n_ptr_fields;
         }
 
-        malloc_helper(new_ptr, nbytes, group, 0, is_ptr, is_struct,
+        malloc_impl(new_ptr, nbytes, group, 0, is_ptr, is_struct,
                 elem_size, ptr_field_offsets, n_struct_ptr_fields);
     }
 
@@ -3160,25 +3146,18 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
     pp.add_time(REALLOC_WRAPPER, __start_time);
 #endif
 
-    return new_ptr;
+    // return new_ptr;
 }
 
-void free_helper(void *ptr) {
+void free_impl(const void *ptr) {
 #ifdef VERBOSE
-    fprintf(stderr, "free_helper: ptr=%p\n", ptr);
+    fprintf(stderr, "free_impl: ptr=%p\n", ptr);
 #endif
     map<void *, heap_allocation *>::iterator in_heap =
-        find_in_heap(ptr);
-    size_t group = in_heap->second->get_alias_group();
+        find_in_heap((void *)ptr);
 
     // Update heap metadata
     VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
-    vector<heap_allocation *>::iterator in_alias_to_heap =
-        std::find(alias_to_heap.at(group)->begin(), alias_to_heap.at(group)->end(),
-                in_heap->second);
-    assert(in_alias_to_heap != alias_to_heap.at(group)->end());
-    alias_to_heap.at(group)->erase(in_alias_to_heap);
-
     heap.erase(in_heap);
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 }
@@ -3195,7 +3174,7 @@ map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
     return in_heap;
 }
 
-void free_wrapper(void *ptr, size_t group) {
+void free_helper(const void *ptr, size_t group) {
 #ifdef VERBOSE
     fprintf(stderr, "free_wrapper: ptr=%p group=%lu\n", ptr, group);
 #endif
@@ -3212,7 +3191,7 @@ void free_wrapper(void *ptr, size_t group) {
          * applications, for example when the host application does a 0-byte
          * allocation and then frees it.
          */
-        map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
+        map<void *, heap_allocation *>::iterator in_heap = find_in_heap((void *)ptr);
         size_t original_group = in_heap->second->get_alias_group();
 
 #ifdef VERBOSE
@@ -3223,8 +3202,8 @@ void free_wrapper(void *ptr, size_t group) {
 
         __sync_fetch_and_sub(&total_allocations, in_heap->second->get_size());
 
-        free_helper(ptr);
-        free(ptr);
+        free_impl(ptr);
+        // free(ptr);
     }
 
     ADD_TO_OVERHEAD
@@ -3824,9 +3803,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                             (double)total_allocations);
                 size_t copied_so_far = 0;
 
-                void *buffer = NULL;
-                size_t buffer_len = 0;
-                size_t buffer_capacity = 0;
+                heap_serialization_wrapper *buffer = new heap_serialization_wrapper();
 #ifdef HASHING_DIAGNOSTICS
                 fprintf(stderr, "Hashing diagnostics for checkpoint:\n");
 #endif
@@ -3842,8 +3819,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                                 curr->get_size(), curr->hashes_invalid(),
                                 copied_so_far, desired_checkpoint_size);
 #endif
-                        buffer = serialize_heap_allocation(curr, buffer,
-                                &buffer_len, &buffer_capacity);
+                        serialize_heap_allocation(curr, buffer);
                         curr->invalidate_hashes();
                         copied_so_far += curr->get_size();
                     } else {
@@ -3855,8 +3831,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 #endif
 
                             curr->update_hashes();
-                            buffer = serialize_heap_allocation(curr, buffer,
-                                    &buffer_len, &buffer_capacity);
+                            serialize_heap_allocation(curr, buffer);
                             curr->mark_hashes_valid();
                             copied_so_far += curr->get_size();
                         } else {
@@ -3897,8 +3872,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 #endif
 
 
-                            buffer = serialize_heap_allocation(curr, &ranges, buffer,
-                                    &buffer_len, &buffer_capacity);
+                            serialize_heap_allocation(curr, &ranges, buffer);
 
                             curr->mark_hashes_valid();
                             copied_so_far += n_bytes_changed;
@@ -3906,7 +3880,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                     }
                 }
 
-                buffer = realloc(buffer, buffer_len);
+                buffer->resize_to_used();
 #ifdef HASHING_DIAGNOSTICS
                 fprintf(stderr, "    Hashed checkpoint size = %lu\n", copied_so_far);
 #endif
@@ -3932,7 +3906,6 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                         &running_checkpoint_ctx.thread_hierarchy_serialized_len);
                 running_checkpoint_ctx.heap_to_checkpoint = buffer;
                 running_checkpoint_ctx.n_heap_to_checkpoint = heap_to_checkpoint_sorted.size();
-                running_checkpoint_ctx.heap_to_checkpoint_len = buffer_len;
 
                 running_checkpoint_ctx.checkpoint_entry_times =
                     new std::vector<std::pair<unsigned, clock_t> >(
@@ -3966,12 +3939,19 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                 VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
                 VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 
-                if (disable_throttling) {
+                if (buffer->is_out_of_memory() || disable_throttling) {
                     /*
-                     * If we're running in a test that has decided to disable
-                     * throttling to ensure that useful checkpoints get created that
-                     * we can test, block on checkpoint creation.
+                     * If we're:
+                     *   1. running in a test that has decided to disable
+                     *      throttling to ensure that useful checkpoints get
+                     *      created that we can test, or
+                     *   2. weren't able to create separate copies of all heap
+                     *      allocations.
+                     * then we block on checkpoint creation.
                      */
+                    if (buffer->is_out_of_memory()) {
+                        assert(buffer->has_no_copy_buffers());
+                    }
                     VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
                     while (checkpoint_thread_running == 1) {
                         VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
@@ -4394,9 +4374,8 @@ void *checkpoint_func(void *data) {
             ctx->thread_hierarchy_serialized;
         uint64_t thread_hierarchy_serialized_len =
             ctx->thread_hierarchy_serialized_len;
-        void *to_checkpoint = ctx->heap_to_checkpoint;
+        heap_serialization_wrapper *to_checkpoint = ctx->heap_to_checkpoint;
         size_t n_to_checkpoint = ctx->n_heap_to_checkpoint;
-        size_t to_checkpoint_len = ctx->heap_to_checkpoint_len;
         void *contains_serialized = ctx->contains_serialized;
         size_t contains_serialized_len = ctx->contains_serialized_len;
         void *serialized_alias_groups = ctx->serialized_alias_groups;
@@ -4543,8 +4522,86 @@ void *checkpoint_func(void *data) {
         uint64_t n_heap_allocs = n_to_checkpoint;
         prep_async_safe_write(fd, &n_heap_allocs, sizeof(n_heap_allocs),
                 count_bytes, &count_bytes, "n_heap_allocs", &async_tokens);
-        prep_async_safe_write(fd, to_checkpoint, to_checkpoint_len, count_bytes,
-                &count_bytes, "heap_checkpoint", &async_tokens);
+        if (!to_checkpoint->is_buffer_empty()) {
+            prep_async_safe_write(fd, to_checkpoint->get_buffer(),
+                    to_checkpoint->get_used(), count_bytes, &count_bytes,
+                    "heap_checkpoint", &async_tokens);
+        }
+
+        size_t *ranges = NULL;
+
+        if (to_checkpoint->has_no_copy_buffers()) {
+            unsigned n_ranges = 0;
+            for (vector<partial_heap_serialization>::iterator i =
+                    to_checkpoint->no_copy_begin(), e =
+                    to_checkpoint->no_copy_end(); i != e; i++) {
+                for (vector<pair<size_t, size_t> >::iterator ii =
+                        i->ranges_begin(), ee = i->ranges_end(); ii != ee;
+                        ii++) {
+                    n_ranges++;
+                }
+            }
+
+            ranges = (size_t *)malloc(n_ranges * 2 * sizeof(size_t));
+
+            n_ranges = 0;
+            for (vector<partial_heap_serialization>::iterator i =
+                    to_checkpoint->no_copy_begin(), e =
+                    to_checkpoint->no_copy_end(); i != e; i++) {
+
+                unsigned base_range = n_ranges;
+                unsigned my_n_ranges = 0;
+                for (vector<pair<size_t, size_t> >::iterator ii =
+                        i->ranges_begin(), ee = i->ranges_end(); ii != ee;
+                        ii++) {
+                    size_t start = ii->first;
+                    size_t end = ii->second;
+
+                    ranges[2 * n_ranges] = start;
+                    ranges[2 * n_ranges + 1] = end;
+                    my_n_ranges++;
+                    n_ranges++;
+                }
+
+                prep_async_safe_write(fd, ranges + (2 * base_range),
+                        my_n_ranges * 2 * sizeof(int), count_bytes,
+                        &count_bytes, "no_copy_buffer_range", &async_tokens);
+            }
+
+            for (vector<partial_heap_serialization>::iterator i =
+                    to_checkpoint->no_copy_begin(), e =
+                    to_checkpoint->no_copy_end(); i != e; i++) {
+                heap_allocation *alloc = i->get_alloc();
+                unsigned char *address = (unsigned char *)alloc->get_address();
+
+                for (vector<pair<size_t, size_t> >::iterator ii =
+                        i->ranges_begin(), ee = i->ranges_end(); ii != ee;
+                        ii++) {
+                    size_t start = ii->first;
+                    size_t end = ii->second;
+
+                    if (alloc->get_is_cuda_alloc()) {
+                        /*
+                         * Don't support blocking writes of CUDA allocations
+                         * yet... The problem here is that we got to this point
+                         * because we couldn't get enough extra memory to
+                         * serialize heap allocations into to allow for an
+                         * asynchronous checkpoint. But to transfer back a CUDA
+                         * allocation, we need to allocate some host memory. So
+                         * we need to try and figure out somewhere else we can
+                         * get that memory, or risk having to abort. The
+                         * simplest solution is just to not create a checkpoint
+                         * if this happens.
+                         */
+                        assert(false);
+                    } else {
+                        prep_async_safe_write(fd, address + start, end - start,
+                                count_bytes, &count_bytes, "no_copy_buffer",
+                                &async_tokens);
+                    }
+                }
+            }
+        }
 
         prep_async_safe_write(fd, &contains_serialized_len,
                 sizeof(contains_serialized_len), count_bytes, &count_bytes,
@@ -4635,7 +4692,8 @@ void *checkpoint_func(void *data) {
         free(serialized_traces);
         free(contains_serialized);
         free(serialized_alias_groups);
-        free(to_checkpoint);
+        if (ranges) free(ranges);
+        delete to_checkpoint;
         delete ctx->stack_trackers;
         delete ctx->checkpoint_entry_times;
 

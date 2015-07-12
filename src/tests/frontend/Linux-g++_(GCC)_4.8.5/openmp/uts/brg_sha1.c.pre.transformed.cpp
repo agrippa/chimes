@@ -92,13 +92,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2890,11 +2890,11 @@ void rng_init_resumable(RNG_state *newstate, int seed)
   gen.state[19] = 0xFF & (seed >> 0);
 # 61 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 62 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+   call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 63 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
+   call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
 # 64 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
+   call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 65 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 # 66 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -2923,13 +2923,13 @@ struct sha1_ctx_s ctx;
  bytes[3] = 0xFF & spawnnumber;
 # 76 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 77 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+  call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 78 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
+  call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
 # 79 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
+  call_lbl_2: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
 # 80 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
+  call_lbl_3: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 81 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1, false); }
 # 82 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -2940,7 +2940,9 @@ int rng_rand_resumable(RNG_state *mystate){const int ____chimes_did_disable2 = n
 # 84 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
         int r; ;
 # 85 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-  uint32 b; b = ((mystate[16] << 24) | (mystate[17] << 16) | (mystate[18] << 8) | (mystate[19] << 0)) ;
+  uint32 b; b = ((mystate[16] << 24) | (mystate[17] << 16)
+# 86 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+  | (mystate[18] << 8) | (mystate[19] << 0)) ;
 # 87 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
 # 88 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -2966,11 +2968,11 @@ int rng_nextrand_resumable(RNG_state *mystate){const int ____chimes_did_disable3
  uint32 b; ;
 # 98 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 99 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+  call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 100 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
+  call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
 # 101 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
+  call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
 # 102 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
  b = (mystate[16] << 24) | (mystate[17] << 16)
 # 103 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -3144,7 +3146,7 @@ void sha1_hash_resumable(const unsigned char data[], unsigned long len, sha1_ctx
 # 276 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
         { int _i; _i = ((64 >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
 # 277 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-        ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
+         call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
 # 278 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
     }
 # 279 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -3185,7 +3187,7 @@ void sha1_end_resumable(unsigned char hval[], sha1_ctx ctx[1])
 # 305 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
         if(i < 60) ctx->wbuf[15] = 0;
 # 306 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-        ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
+         call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
 # 307 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
         i = 0;
 # 308 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -3209,7 +3211,7 @@ void sha1_end_resumable(unsigned char hval[], sha1_ctx ctx[1])
 # 320 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[15] = ctx->count[0] << 3;
 # 321 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-    ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
+     call_lbl_1: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
 # 322 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 323 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 324 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -3230,7 +3232,7 @@ void sha1_resumable(unsigned char hval[], const unsigned char data[], unsigned l
  if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; ;
 # 331 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 332 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-    ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
+     call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
 # 333 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 # 334 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -3264,11 +3266,11 @@ void rng_init_quick(RNG_state *newstate, int seed)
   gen.state[19] = 0xFF & (seed >> 0);
 # 61 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 62 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+   call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 63 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
+   call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
 # 64 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
+   call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 65 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
@@ -3296,13 +3298,13 @@ struct sha1_ctx_s ctx;
  bytes[3] = 0xFF & spawnnumber;
 # 76 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 77 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+  call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 78 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
+  call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
 # 79 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
+  call_lbl_2: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
 # 80 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
+  call_lbl_3: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 81 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1, false); }
 
@@ -3312,7 +3314,9 @@ int rng_rand_quick(RNG_state *mystate){const int ____chimes_did_disable2 = new_s
 # 84 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
         int r; ;
 # 85 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-  uint32 b; b = ((mystate[16] << 24) | (mystate[17] << 16) | (mystate[18] << 8) | (mystate[19] << 0)) ;
+  uint32 b; b = ((mystate[16] << 24) | (mystate[17] << 16)
+# 86 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+  | (mystate[18] << 8) | (mystate[19] << 0)) ;
 # 87 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
 # 88 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -3337,11 +3341,11 @@ int rng_nextrand_quick(RNG_state *mystate){const int ____chimes_did_disable3 = n
  uint32 b; ;
 # 98 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 99 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+  call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 100 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
+  call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
 # 101 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
+  call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
 # 102 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
  b = (mystate[16] << 24) | (mystate[17] << 16)
 # 103 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -3509,7 +3513,7 @@ void sha1_hash_quick(const unsigned char data[], unsigned long len, sha1_ctx ctx
 # 276 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
         { int _i; _i = ((64 >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
 # 277 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-        ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
+         call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
 # 278 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
     }
 # 279 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -3549,7 +3553,7 @@ void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1])
 # 305 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
         if(i < 60) ctx->wbuf[15] = 0;
 # 306 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-        ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
+         call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
 # 307 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
         i = 0;
 # 308 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -3573,7 +3577,7 @@ void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1])
 # 320 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[15] = ctx->count[0] << 3;
 # 321 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-    ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
+     call_lbl_1: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
 # 322 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 323 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 324 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
@@ -3593,7 +3597,7 @@ void sha1_quick(unsigned char hval[], const unsigned char data[], unsigned long 
  if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } ; ; ;
 # 331 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 332 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-    ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
+     call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
 # 333 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 

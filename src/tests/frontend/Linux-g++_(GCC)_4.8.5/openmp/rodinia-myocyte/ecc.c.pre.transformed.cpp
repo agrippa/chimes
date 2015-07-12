@@ -71,13 +71,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2618,7 +2618,7 @@ int offset_41;
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 int offset_39;
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
- if (____must_checkpoint_ecc_I_Ca_tot_sl_0 || ____must_checkpoint_ecc_I_Ca_tot_junc_0 || ____must_checkpoint_ecc_I_K_tot_0 || ____must_checkpoint_ecc_I_Na_tot_sl_0 || ____must_checkpoint_ecc_I_Na_tot_junc_0 || ____must_checkpoint_ecc_I_Clbk_0 || ____must_checkpoint_ecc_I_ClCa_0 || ____must_checkpoint_ecc_offset_42_0 || ____must_checkpoint_ecc_offset_41_0 || ____must_checkpoint_ecc_offset_39_0) { register_stack_vars(10, "ecc|I_Ca_tot_sl|0", &____must_checkpoint_ecc_I_Ca_tot_sl_0, "float", (void *)(&I_Ca_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Ca_tot_junc|0", &____must_checkpoint_ecc_I_Ca_tot_junc_0, "float", (void *)(&I_Ca_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_K_tot|0", &____must_checkpoint_ecc_I_K_tot_0, "float", (void *)(&I_K_tot), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_sl|0", &____must_checkpoint_ecc_I_Na_tot_sl_0, "float", (void *)(&I_Na_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_junc|0", &____must_checkpoint_ecc_I_Na_tot_junc_0, "float", (void *)(&I_Na_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_Clbk|0", &____must_checkpoint_ecc_I_Clbk_0, "float", (void *)(&I_Clbk), (size_t)4, 0, 0, 0, "ecc|I_ClCa|0", &____must_checkpoint_ecc_I_ClCa_0, "float", (void *)(&I_ClCa), (size_t)4, 0, 0, 0, "ecc|offset_42|0", &____must_checkpoint_ecc_offset_42_0, "i32", (void *)(&offset_42), (size_t)4, 0, 0, 0, "ecc|offset_41|0", &____must_checkpoint_ecc_offset_41_0, "i32", (void *)(&offset_41), (size_t)4, 0, 0, 0, "ecc|offset_39|0", &____must_checkpoint_ecc_offset_39_0, "i32", (void *)(&offset_39), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(124): { goto call_lbl_124; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_ecc_I_Ca_tot_sl_0 || ____must_checkpoint_ecc_I_Ca_tot_junc_0 || ____must_checkpoint_ecc_I_K_tot_0 || ____must_checkpoint_ecc_I_Na_tot_sl_0 || ____must_checkpoint_ecc_I_Na_tot_junc_0 || ____must_checkpoint_ecc_I_Clbk_0 || ____must_checkpoint_ecc_I_ClCa_0 || ____must_checkpoint_ecc_offset_42_0 || ____must_checkpoint_ecc_offset_41_0 || ____must_checkpoint_ecc_offset_39_0) { register_stack_vars(10, "ecc|I_Ca_tot_sl|0", &____must_checkpoint_ecc_I_Ca_tot_sl_0, "float", (void *)(&I_Ca_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Ca_tot_junc|0", &____must_checkpoint_ecc_I_Ca_tot_junc_0, "float", (void *)(&I_Ca_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_K_tot|0", &____must_checkpoint_ecc_I_K_tot_0, "float", (void *)(&I_K_tot), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_sl|0", &____must_checkpoint_ecc_I_Na_tot_sl_0, "float", (void *)(&I_Na_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_junc|0", &____must_checkpoint_ecc_I_Na_tot_junc_0, "float", (void *)(&I_Na_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_Clbk|0", &____must_checkpoint_ecc_I_Clbk_0, "float", (void *)(&I_Clbk), (size_t)4, 0, 0, 0, "ecc|I_ClCa|0", &____must_checkpoint_ecc_I_ClCa_0, "float", (void *)(&I_ClCa), (size_t)4, 0, 0, 0, "ecc|offset_42|0", &____must_checkpoint_ecc_offset_42_0, "i32", (void *)(&offset_42), (size_t)4, 0, 0, 0, "ecc|offset_41|0", &____must_checkpoint_ecc_offset_41_0, "i32", (void *)(&offset_41), (size_t)4, 0, 0, 0, "ecc|offset_39|0", &____must_checkpoint_ecc_offset_39_0, "i32", (void *)(&offset_39), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 # 13 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 # 14 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
@@ -4254,7 +4254,7 @@ int offset_39;
 # 914 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
   case 1:
 # 915 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
-    call_lbl_124: if(alias_group_changed(____alias_loc_id_0) || ({ calling((void*)fmod, 124, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) <= 5){
+    call_lbl_0: if(alias_group_changed(____alias_loc_id_0) || ({ calling((void*)fmod, 0, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) <= 5){
 # 916 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
     I_app = 9.5;
 # 917 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
@@ -5981,7 +5981,7 @@ int offset_39;
 # 914 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
   case 1:
 # 915 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
-    call_lbl_124: if(alias_group_changed(____alias_loc_id_0) || ({ calling((void*)fmod, 124, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) <= 5){
+    call_lbl_0: if(alias_group_changed(____alias_loc_id_0) || ({ calling((void*)fmod, 0, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) <= 5){
 # 916 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
     I_app = 9.5;
 # 917 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"

@@ -69,13 +69,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2344,7 +2344,7 @@ int matchLimit;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int myTaskID;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
- if (____must_checkpoint_verifyData_npCol_0 || ____must_checkpoint_verifyData_npRow_0 || ____must_checkpoint_verifyData_myCol_0 || ____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(6, "verifyData|npCol|0", &____must_checkpoint_verifyData_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "verifyData|npRow|0", &____must_checkpoint_verifyData_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "verifyData|myCol|0", &____must_checkpoint_verifyData_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_verifyData_npCol_0 || ____must_checkpoint_verifyData_npRow_0 || ____must_checkpoint_verifyData_myCol_0 || ____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(6, "verifyData|npCol|0", &____must_checkpoint_verifyData_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "verifyData|npRow|0", &____must_checkpoint_verifyData_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "verifyData|myCol|0", &____must_checkpoint_verifyData_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 36 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 37 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     int globalNpRow; int globalNpCol; ;
@@ -2374,7 +2374,7 @@ int myTaskID;
 # 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-     call_lbl_1: ({ calling((void*)gridInfo, 1, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
+     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     if (myTaskID == 0) {
@@ -2510,7 +2510,7 @@ int myTaskID;
 # 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-     call_lbl_1: ({ calling((void*)gridInfo, 1, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
+     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     if (myTaskID == 0) {

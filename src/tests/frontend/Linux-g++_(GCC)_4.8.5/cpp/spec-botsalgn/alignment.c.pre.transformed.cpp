@@ -112,13 +112,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -4079,7 +4079,7 @@ int get_matrix_resumable(int *matptr, int *xref, int scale)
 # 106 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(2235191825397910045UL), (size_t)(2235191825397910046UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   matrix = (int *)malloc_wrapper(32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0);
+   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc(32 * 32 * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int gg_score; gg_score = (0) ;
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4394,13 +4394,13 @@ int HH[5000];
     ;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 279 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   if (N <= 0) {if (M > 0) {({ calling_npm("del", 0); del_npm(M, print_ptr, last_print, displ); }); }; int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (( - (int) ((M) <= 0 ? 0 : tb + gh * (M)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_2; ; }
+   if (N <= 0) {if (M > 0) { call_lbl_0: ({ calling_npm("del", 0); del_npm(M, print_ptr, last_print, displ); }); }; int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (( - (int) ((M) <= 0 ? 0 : tb + gh * (M)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_2; ; }
 # 280 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 281 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (M <= 1) {
 # 282 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      if (M <= 0) {({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); }); int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (( - (int)((N) <= 0 ? 0 : tb + gh * (N)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;}
+      if (M <= 0) { call_lbl_1: ({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); }); int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (( - (int)((N) <= 0 ? 0 : tb + gh * (N)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;}
 # 284 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 285 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       midh = -(tb+gh) - ((N) <= 0 ? 0 : te + gh * (N));
@@ -4415,7 +4415,7 @@ int HH[5000];
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 1; j <= N; j++) {
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         hh = ({ calling_npm("calc_score", 0); calc_score_npm(1, j, A, B, seq1, seq2); }) - ((N-j) <= 0 ? 0 : te + gh * (N-j)) - ((j-1) <= 0 ? 0 : tb + gh * (j-1));
+          call_lbl_2: hh = ({ calling_npm("calc_score", 0); calc_score_npm(1, j, A, B, seq1, seq2); }) - ((N-j) <= 0 ? 0 : te + gh * (N-j)) - ((j-1) <= 0 ? 0 : tb + gh * (j-1));
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh > midh) {midh = hh; midj = j;}
 # 294 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4424,17 +4424,17 @@ int HH[5000];
 # 296 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (midj == 0) {
 # 297 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         ({ calling_npm("del", 0); del_npm(1, print_ptr, last_print, displ); });
+          call_lbl_3: ({ calling_npm("del", 0); del_npm(1, print_ptr, last_print, displ); });
 # 298 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         ({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); });
+          call_lbl_4: ({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); });
 # 299 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       } else {
 # 300 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         if (midj > 1) {({ calling_npm("add", 0); add_npm(midj-1, print_ptr, last_print, displ); }); };
+         if (midj > 1) { call_lbl_5: ({ calling_npm("add", 0); add_npm(midj-1, print_ptr, last_print, displ); }); };
 # 301 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          displ[(*print_ptr)++] = *last_print = 0;
 # 302 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         if (midj < N) {({ calling_npm("add", 0); add_npm(N-midj, print_ptr, last_print, displ); }); };
+         if (midj < N) { call_lbl_6: ({ calling_npm("add", 0); add_npm(N-midj, print_ptr, last_print, displ); }); };
 # 303 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
 # 304 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4477,7 +4477,7 @@ int HH[5000];
 # 325 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = HH[j] - g - gh) > (e = DD[j]- gh)) {e = hh; };
 # 326 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i, j, A, B, seq1, seq2); });
+          call_lbl_7: hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i, j, A, B, seq1, seq2); });
 # 327 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f > hh) {hh = f; };
 # 328 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4522,7 +4522,7 @@ int HH[5000];
 # 350 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = RR[j] - g - gh) > (e = SS[j] - gh)) {e = hh; };
 # 351 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i+1, j+1, A, B, seq1, seq2); });
+          call_lbl_8: hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i+1, j+1, A, B, seq1, seq2); });
 # 352 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f > hh) {hh = f; };
 # 353 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4573,17 +4573,17 @@ int HH[5000];
 # 380 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (type == 1) {
 # 381 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      ({ calling_npm("diff", 0); diff_npm(A, B, midi, midj, tb, g, print_ptr, last_print, displ, seq1, seq2, g, gh); });
+       call_lbl_9: ({ calling_npm("diff", 0); diff_npm(A, B, midi, midj, tb, g, print_ptr, last_print, displ, seq1, seq2, g, gh); });
 # 382 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      ({ calling_npm("diff", 0); diff_npm(A+midi, B+midj, M-midi, N-midj, g, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
+       call_lbl_10: ({ calling_npm("diff", 0); diff_npm(A+midi, B+midj, M-midi, N-midj, g, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
 # 383 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    } else {
 # 384 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      ({ calling_npm("diff", 0); diff_npm(A, B, midi-1, midj, tb, 0.0, print_ptr, last_print, displ, seq1, seq2, g, gh); });
+       call_lbl_11: ({ calling_npm("diff", 0); diff_npm(A, B, midi-1, midj, tb, 0.0, print_ptr, last_print, displ, seq1, seq2, g, gh); });
 # 385 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      ({ calling_npm("del", 0); del_npm(2, print_ptr, last_print, displ); });
+       call_lbl_12: ({ calling_npm("del", 0); del_npm(2, print_ptr, last_print, displ); });
 # 386 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      ({ calling_npm("diff", 0); diff_npm(A+midi+1, B+midj, M-midi-1, N-midj, 0.0, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
+       call_lbl_13: ({ calling_npm("diff", 0); diff_npm(A+midi+1, B+midj, M-midi-1, N-midj, 0.0, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
 # 387 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 388 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4660,7 +4660,7 @@ int sb1;
 # 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int se1;
 # 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
- register_stack_vars(3, "pairalign|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(3, "pairalign|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 427 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int n; int m; int si; int sj; ;
 # 428 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4675,7 +4675,7 @@ int se1;
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    mat_xref = def_aa_xref;
 # 434 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
+    call_lbl_0: maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
 # 435 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (maxres == 0) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((-1)); rm_stack(false, 0UL, "pairalign", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable8, false); return ____chimes_ret_var_7; ; };
 # 436 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4694,7 +4694,7 @@ int se1;
 # 443 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             for (i = 1, len1 = 0; i <= n; i++) {
 # 444 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                char c; c = (seq_array[si + 1][i]) ;
+                char c; c = (seq_array[si+1][i]) ;
 # 445 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                if ((c != gap_pos1) && (c != gap_pos2)) {len1++; };
 # 446 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4724,7 +4724,7 @@ int se1;
 # 460 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   for (i = 1, len2 = 0; i <= m; i++) {
 # 461 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                      char c; c = (seq_array[sj + 1][i]) ;
+                      char c; c = (seq_array[sj+1][i]) ;
 # 462 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                      if ((c != gap_pos1) && (c != gap_pos2)) {len2++; };
 # 463 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4743,9 +4743,9 @@ int se1;
                   seq2 = sj + 1;
 # 471 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 472 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                  ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
+                   call_lbl_1: ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
 # 473 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                  ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
+                   call_lbl_2: ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
 # 474 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 475 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   print_ptr = 1;
@@ -4753,9 +4753,9 @@ int se1;
                   last_print = 0;
 # 477 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 478 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                  ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
+                   call_lbl_3: ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
 # 479 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                  mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
+                   call_lbl_4: mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
 # 480 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 481 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   if (len1 == 0 || len2 == 0) {mm_score = 0.0; } else {mm_score /= (double) ((len1)<(len2)?(len1):(len2)); } ;
@@ -4781,7 +4781,7 @@ int se1;
 # 494 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " calling checkpoint "); } };
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-    call_lbl_6: checkpoint_transformed(6, ____alias_loc_id_0);
+    call_lbl_5: checkpoint_transformed(5, ____alias_loc_id_0);
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
@@ -4808,7 +4808,7 @@ int se1;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int si;
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
- register_stack_vars(7, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|maxscore|0", (int *)0x0, "i32", (void *)(&maxscore), (size_t)4, 0, 0, 0, "pairalign_seq|sb2|0", (int *)0x0, "i32", (void *)(&sb2), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se2|0", (int *)0x0, "i32", (void *)(&se2), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(7, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|maxscore|0", (int *)0x0, "i32", (void *)(&maxscore), (size_t)4, 0, 0, 0, "pairalign_seq|sb2|0", (int *)0x0, "i32", (void *)(&sb2), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se2|0", (int *)0x0, "i32", (void *)(&se2), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 503 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int n; int m; int sj; ;
 # 504 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4823,7 +4823,7 @@ int si;
 # 509 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    mat_xref = def_aa_xref;
 # 510 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
+    call_lbl_0: maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
 # 511 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (maxres == 0) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = ((-1)); rm_stack(false, 0UL, "pairalign_seq", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable9, false); return ____chimes_ret_var_9; ; };
 # 512 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4834,7 +4834,7 @@ int si;
 # 515 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          for (i = 1, len1 = 0; i <= n; i++) {
 # 516 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-             char c; c = (seq_array[si + 1][i]) ;
+             char c; c = (seq_array[si+1][i]) ;
 # 517 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if ((c != gap_pos1) && (c != gap_pos2)) {len1++; };
 # 518 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4854,7 +4854,7 @@ int si;
 # 526 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                for (i = 1, len2 = 0; i <= m; i++) {
 # 527 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                   char c; c = (seq_array[sj + 1][i]) ;
+                   char c; c = (seq_array[sj+1][i]) ;
 # 528 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   if ((c != gap_pos1) && (c != gap_pos2)) {len2++; };
 # 529 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4873,9 +4873,9 @@ int si;
                seq2 = sj + 1;
 # 537 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 538 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-               ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
+                call_lbl_1: ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
 # 539 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-               ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
+                call_lbl_2: ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 541 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                print_ptr = 1;
@@ -4883,9 +4883,9 @@ int si;
                last_print = 0;
 # 543 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 544 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-               ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
+                call_lbl_3: ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
 # 545 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-               mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
+                call_lbl_4: mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
 # 546 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 547 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                if (len1 == 0 || len2 == 0) {mm_score = 0.0; } else {mm_score /= (double) ((len1)<(len2)?(len1):(len2)); } ;
@@ -4900,7 +4900,7 @@ int si;
       }
 # 554 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 555 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-       call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_1);
+       call_lbl_5: checkpoint_transformed(5, ____alias_loc_id_1);
 # 556 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 557 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
@@ -4944,19 +4944,19 @@ void pairalign_init_npm (char *filename);static void (*____chimes_extern_func_bo
 void pairalign_init_quick (char *filename); void pairalign_init (char *filename);
 void pairalign_init_resumable (char *filename)
 # 582 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&pairalign_init), "pairalign_init", &____must_manage_pairalign_init, 1, 1, (size_t)(2235191825397912300UL), "pairalign_init|filename|0", &____must_checkpoint_pairalign_init_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&pairalign_init), "pairalign_init", &____must_manage_pairalign_init, 1, 1, (size_t)(2235191825397912300UL), "pairalign_init|filename|0", &____must_checkpoint_pairalign_init_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 583 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; ;
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (!filename || !filename[0]) {
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-       call_lbl_1: ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("Please specify an input file with the -f option\n"); } calling((void*)bots_error, 1, ____alias_loc_id_3, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912543UL)); (bots_error)(0, ____chimes_arg1); }) ;
+       call_lbl_0: ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("Please specify an input file with the -f option\n"); } calling((void*)bots_error, 0, ____alias_loc_id_3, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912543UL)); (bots_error)(0, ____chimes_arg1); }) ;
 # 587 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 588 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 589 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   ({ calling_npm("init_matrix", 0); init_matrix_npm(); });
+    call_lbl_1: ({ calling_npm("init_matrix", 0); init_matrix_npm(); });
 # 590 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 591 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 592 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4994,7 +4994,7 @@ void align_init_resumable ()
 # 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0);
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
@@ -5005,9 +5005,9 @@ rm_stack(false, 0UL, "align_init", &____must_manage_align_init, ____alias_loc_id
 void align_quick(); void align();
 void align_resumable()
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&align), "align", (int *)0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable13 = new_stack((void *)(&align), "align", (int *)0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-    call_lbl_1: ({ calling((void*)pairalign, 1, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairalign)(0, nseqs, 0, nseqs); }) ;
+    call_lbl_0: ({ calling((void*)pairalign, 0, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairalign)(0, nseqs, 0, nseqs); }) ;
 # 621 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align", (int *)0x0, 0, ____chimes_did_disable13, false); }
 # 622 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5020,9 +5020,9 @@ void align_seq_init_resumable ()
 # 625 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 626 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0);
+   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 627 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0);
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 628 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 629 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };
@@ -5033,9 +5033,9 @@ rm_stack(false, 0UL, "align_seq_init", &____must_manage_align_seq_init, ____alia
 void align_seq_quick(); void align_seq();
 void align_seq_resumable()
 # 635 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable15 = new_stack((void *)(&align_seq), "align_seq", (int *)0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable15 = new_stack((void *)(&align_seq), "align_seq", (int *)0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 636 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-    call_lbl_1: ({ calling((void*)pairalign_seq, 1, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairalign_seq)(0, nseqs, 0, nseqs); }) ;
+    call_lbl_0: ({ calling((void*)pairalign_seq, 0, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairalign_seq)(0, nseqs, 0, nseqs); }) ;
 # 637 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_seq", (int *)0x0, 0, ____chimes_did_disable15, false); }
 # 638 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5134,7 +5134,7 @@ int get_matrix_quick(int *matptr, int *xref, int scale)
 # 106 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(2235191825397910045UL), (size_t)(2235191825397910046UL), (size_t)(0UL)) ; ; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   matrix = (int *)malloc_wrapper(32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0);
+   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc(32 * 32 * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int gg_score; gg_score = (0) ;
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5437,13 +5437,13 @@ int HH[5000];
     ;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 279 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   if (N <= 0) {if (M > 0) {({ calling_npm("del", 0); del_npm(M, print_ptr, last_print, displ); }); }; int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (( - (int) ((M) <= 0 ? 0 : tb + gh * (M)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_2; ; }
+   if (N <= 0) {if (M > 0) { call_lbl_0: ({ calling_npm("del", 0); del_npm(M, print_ptr, last_print, displ); }); }; int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (( - (int) ((M) <= 0 ? 0 : tb + gh * (M)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_2; ; }
 # 280 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 281 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (M <= 1) {
 # 282 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      if (M <= 0) {({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); }); int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (( - (int)((N) <= 0 ? 0 : tb + gh * (N)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;}
+      if (M <= 0) { call_lbl_1: ({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); }); int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (( - (int)((N) <= 0 ? 0 : tb + gh * (N)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;}
 # 284 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 285 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       midh = -(tb+gh) - ((N) <= 0 ? 0 : te + gh * (N));
@@ -5458,7 +5458,7 @@ int HH[5000];
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 1; j <= N; j++) {
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         hh = ({ calling_npm("calc_score", 0); calc_score_npm(1, j, A, B, seq1, seq2); }) - ((N-j) <= 0 ? 0 : te + gh * (N-j)) - ((j-1) <= 0 ? 0 : tb + gh * (j-1));
+          call_lbl_2: hh = ({ calling_npm("calc_score", 0); calc_score_npm(1, j, A, B, seq1, seq2); }) - ((N-j) <= 0 ? 0 : te + gh * (N-j)) - ((j-1) <= 0 ? 0 : tb + gh * (j-1));
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh > midh) {midh = hh; midj = j;}
 # 294 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5467,17 +5467,17 @@ int HH[5000];
 # 296 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (midj == 0) {
 # 297 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         ({ calling_npm("del", 0); del_npm(1, print_ptr, last_print, displ); });
+          call_lbl_3: ({ calling_npm("del", 0); del_npm(1, print_ptr, last_print, displ); });
 # 298 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         ({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); });
+          call_lbl_4: ({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); });
 # 299 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       } else {
 # 300 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         if (midj > 1) {({ calling_npm("add", 0); add_npm(midj-1, print_ptr, last_print, displ); }); };
+         if (midj > 1) { call_lbl_5: ({ calling_npm("add", 0); add_npm(midj-1, print_ptr, last_print, displ); }); };
 # 301 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          displ[(*print_ptr)++] = *last_print = 0;
 # 302 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         if (midj < N) {({ calling_npm("add", 0); add_npm(N-midj, print_ptr, last_print, displ); }); };
+         if (midj < N) { call_lbl_6: ({ calling_npm("add", 0); add_npm(N-midj, print_ptr, last_print, displ); }); };
 # 303 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
 # 304 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5520,7 +5520,7 @@ int HH[5000];
 # 325 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = HH[j] - g - gh) > (e = DD[j]- gh)) {e = hh; };
 # 326 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i, j, A, B, seq1, seq2); });
+          call_lbl_7: hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i, j, A, B, seq1, seq2); });
 # 327 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f > hh) {hh = f; };
 # 328 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5565,7 +5565,7 @@ int HH[5000];
 # 350 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = RR[j] - g - gh) > (e = SS[j] - gh)) {e = hh; };
 # 351 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-         hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i+1, j+1, A, B, seq1, seq2); });
+          call_lbl_8: hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i+1, j+1, A, B, seq1, seq2); });
 # 352 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f > hh) {hh = f; };
 # 353 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5616,17 +5616,17 @@ int HH[5000];
 # 380 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (type == 1) {
 # 381 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      ({ calling_npm("diff", 0); diff_npm(A, B, midi, midj, tb, g, print_ptr, last_print, displ, seq1, seq2, g, gh); });
+       call_lbl_9: ({ calling_npm("diff", 0); diff_npm(A, B, midi, midj, tb, g, print_ptr, last_print, displ, seq1, seq2, g, gh); });
 # 382 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      ({ calling_npm("diff", 0); diff_npm(A+midi, B+midj, M-midi, N-midj, g, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
+       call_lbl_10: ({ calling_npm("diff", 0); diff_npm(A+midi, B+midj, M-midi, N-midj, g, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
 # 383 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    } else {
 # 384 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      ({ calling_npm("diff", 0); diff_npm(A, B, midi-1, midj, tb, 0.0, print_ptr, last_print, displ, seq1, seq2, g, gh); });
+       call_lbl_11: ({ calling_npm("diff", 0); diff_npm(A, B, midi-1, midj, tb, 0.0, print_ptr, last_print, displ, seq1, seq2, g, gh); });
 # 385 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      ({ calling_npm("del", 0); del_npm(2, print_ptr, last_print, displ); });
+       call_lbl_12: ({ calling_npm("del", 0); del_npm(2, print_ptr, last_print, displ); });
 # 386 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      ({ calling_npm("diff", 0); diff_npm(A+midi+1, B+midj, M-midi-1, N-midj, 0.0, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
+       call_lbl_13: ({ calling_npm("diff", 0); diff_npm(A+midi+1, B+midj, M-midi-1, N-midj, 0.0, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
 # 387 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 388 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5713,7 +5713,7 @@ int se1;
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    mat_xref = def_aa_xref;
 # 434 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
+    call_lbl_0: maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
 # 435 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (maxres == 0) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((-1)); rm_stack(false, 0UL, "pairalign", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable8, false); return ____chimes_ret_var_7; ; };
 # 436 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5732,7 +5732,7 @@ int se1;
 # 443 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             for (i = 1, len1 = 0; i <= n; i++) {
 # 444 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                char c; c = (seq_array[si + 1][i]) ;
+                char c; c = (seq_array[si+1][i]) ;
 # 445 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                if ((c != gap_pos1) && (c != gap_pos2)) {len1++; };
 # 446 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5762,7 +5762,7 @@ int se1;
 # 460 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   for (i = 1, len2 = 0; i <= m; i++) {
 # 461 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                      char c; c = (seq_array[sj + 1][i]) ;
+                      char c; c = (seq_array[sj+1][i]) ;
 # 462 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                      if ((c != gap_pos1) && (c != gap_pos2)) {len2++; };
 # 463 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5781,9 +5781,9 @@ int se1;
                   seq2 = sj + 1;
 # 471 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 472 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                  ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
+                   call_lbl_1: ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
 # 473 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                  ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
+                   call_lbl_2: ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
 # 474 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 475 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   print_ptr = 1;
@@ -5791,9 +5791,9 @@ int se1;
                   last_print = 0;
 # 477 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 478 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                  ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
+                   call_lbl_3: ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
 # 479 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                  mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
+                   call_lbl_4: mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
 # 480 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 481 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   if (len1 == 0 || len2 == 0) {mm_score = 0.0; } else {mm_score /= (double) ((len1)<(len2)?(len1):(len2)); } ;
@@ -5819,7 +5819,7 @@ int se1;
 # 494 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " calling checkpoint "); } };
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-    call_lbl_6: checkpoint_transformed(6, ____alias_loc_id_0);
+    call_lbl_5: checkpoint_transformed(5, ____alias_loc_id_0);
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
@@ -5861,7 +5861,7 @@ int si;
 # 509 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    mat_xref = def_aa_xref;
 # 510 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
+    call_lbl_0: maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
 # 511 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (maxres == 0) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = ((-1)); rm_stack(false, 0UL, "pairalign_seq", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable9, false); return ____chimes_ret_var_9; ; };
 # 512 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5872,7 +5872,7 @@ int si;
 # 515 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          for (i = 1, len1 = 0; i <= n; i++) {
 # 516 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-             char c; c = (seq_array[si + 1][i]) ;
+             char c; c = (seq_array[si+1][i]) ;
 # 517 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if ((c != gap_pos1) && (c != gap_pos2)) {len1++; };
 # 518 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5892,7 +5892,7 @@ int si;
 # 526 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                for (i = 1, len2 = 0; i <= m; i++) {
 # 527 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-                   char c; c = (seq_array[sj + 1][i]) ;
+                   char c; c = (seq_array[sj+1][i]) ;
 # 528 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   if ((c != gap_pos1) && (c != gap_pos2)) {len2++; };
 # 529 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5911,9 +5911,9 @@ int si;
                seq2 = sj + 1;
 # 537 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 538 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-               ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
+                call_lbl_1: ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
 # 539 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-               ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
+                call_lbl_2: ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 541 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                print_ptr = 1;
@@ -5921,9 +5921,9 @@ int si;
                last_print = 0;
 # 543 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 544 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-               ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
+                call_lbl_3: ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
 # 545 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-               mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
+                call_lbl_4: mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
 # 546 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 547 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                if (len1 == 0 || len2 == 0) {mm_score = 0.0; } else {mm_score /= (double) ((len1)<(len2)?(len1):(len2)); } ;
@@ -5938,7 +5938,7 @@ int si;
       }
 # 554 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 555 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-       call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_1);
+       call_lbl_5: checkpoint_transformed(5, ____alias_loc_id_1);
 # 556 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 557 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
@@ -5983,12 +5983,12 @@ void pairalign_init_quick (char *filename)
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (!filename || !filename[0]) {
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-       call_lbl_1: ({ calling((void*)bots_error, 1, ____alias_loc_id_3, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912543UL)); (bots_error)(0, "Please specify an input file with the -f option\n"); }) ;
+       call_lbl_0: ({ calling((void*)bots_error, 0, ____alias_loc_id_3, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912543UL)); (bots_error)(0, "Please specify an input file with the -f option\n"); }) ;
 # 587 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 588 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 589 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   ({ calling_npm("init_matrix", 0); init_matrix_npm(); });
+    call_lbl_1: ({ calling_npm("init_matrix", 0); init_matrix_npm(); });
 # 590 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 591 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 592 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -6025,7 +6025,7 @@ void align_init_quick ()
 # 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0);
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
@@ -6038,7 +6038,7 @@ void align_quick()
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable13 = new_stack((void *)(&align), "align", (int *)0, 0, 0) ; ; ;
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-    call_lbl_1: ({ calling((void*)pairalign, 1, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); pairalign_quick(0, nseqs, 0, nseqs); }) ;
+    call_lbl_0: ({ calling((void*)pairalign, 0, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); pairalign_quick(0, nseqs, 0, nseqs); }) ;
 # 621 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align", (int *)0x0, 0, ____chimes_did_disable13, false); }
 
@@ -6050,9 +6050,9 @@ void align_seq_init_quick ()
 # 625 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 626 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0);
+   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 627 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0);
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 628 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 629 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };
@@ -6065,7 +6065,7 @@ void align_seq_quick()
 # 635 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable15 = new_stack((void *)(&align_seq), "align_seq", (int *)0, 0, 0) ; ; ;
 # 636 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-    call_lbl_1: ({ calling((void*)pairalign_seq, 1, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); pairalign_seq_quick(0, nseqs, 0, nseqs); }) ;
+    call_lbl_0: ({ calling((void*)pairalign_seq, 0, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); pairalign_seq_quick(0, nseqs, 0, nseqs); }) ;
 # 637 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_seq", (int *)0x0, 0, ____chimes_did_disable15, false); }
 
@@ -6157,7 +6157,7 @@ int get_matrix_npm(int *matptr, int *xref, int scale)
 # 106 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   matrix = (int *)malloc_wrapper(32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0);
+   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc(32 * 32 * sizeof(int)); malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int gg_score = 0;
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -6759,7 +6759,7 @@ void align_init_npm ()
 # 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i,j;
 # 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0);
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
@@ -6772,9 +6772,9 @@ void align_seq_init_npm ()
 # 625 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i,j;
 # 626 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0);
+   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 627 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0);
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 628 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 629 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };

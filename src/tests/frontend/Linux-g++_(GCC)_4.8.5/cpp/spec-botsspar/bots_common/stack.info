@@ -2,31 +2,31 @@
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_error|message|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_warning|warning|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_warning|message|0 " i8* " 64 1 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_usecs|t|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 bots_usecs
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_usecs|t|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_usecs|____chimes_ret_var_0|0 " i64 " 64 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_get_date|str|0 " i8* " 64 1 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_get_date|now|0 " i64 " 64 0 0 1 bots_get_date
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_get_date|now|0 " i64 " 64 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_get_max_cpus|____chimes_ret_var_1|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_get_architecture|str|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_get_load_average|str|0 " i8* " 64 1 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_name|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_parameters|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_model|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_resources|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_result|0 " [15 x i8] " 120 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_time_program|0 " [15 x i8] " 120 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_time_sequential|0 " [15 x i8] " 120 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_speed_up|0 " [15 x i8] " 120 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_number_of_tasks|0 " [15 x i8] " 120 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_number_of_tasks_per_second|0 " [15 x i8] " 120 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_exec_date|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_exec_message|0 " [128 x i8] " 1024 0 0 1 bots_print_results
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_name|0 " [128 x i8] " 1024 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_parameters|0 " [128 x i8] " 1024 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_model|0 " [128 x i8] " 1024 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_resources|0 " [128 x i8] " 1024 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_result|0 " [15 x i8] " 120 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_time_program|0 " [15 x i8] " 120 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_time_sequential|0 " [15 x i8] " 120 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_speed_up|0 " [15 x i8] " 120 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_number_of_tasks|0 " [15 x i8] " 120 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_number_of_tasks_per_second|0 " [15 x i8] " 120 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_exec_date|0 " [128 x i8] " 1024 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_exec_message|0 " [128 x i8] " 1024 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_architecture|0 " [128 x i8] " 1024 0 0 1 bots_print_results
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_load_avg|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_comp_date|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_comp_message|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_cc|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_cflags|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_ld|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_ldflags|0 " [128 x i8] " 1024 0 0 1 bots_print_results
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_cutoff|0 " [128 x i8] " 1024 0 0 1 bots_print_results
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_comp_date|0 " [128 x i8] " 1024 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_comp_message|0 " [128 x i8] " 1024 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_cc|0 " [128 x i8] " 1024 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_cflags|0 " [128 x i8] " 1024 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_ld|0 " [128 x i8] " 1024 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_ldflags|0 " [128 x i8] " 1024 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_common.c bots_print_results|str_cutoff|0 " [128 x i8] " 1024 0 0 0

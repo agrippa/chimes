@@ -68,13 +68,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2423,7 +2423,7 @@ int myRow;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int matchLimit;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
- if (____must_checkpoint_verifyData_npCol_0 || ____must_checkpoint_verifyData_npRow_0 || ____must_checkpoint_verifyData_myCol_0 || ____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0) { register_stack_vars(5, "verifyData|npCol|0", &____must_checkpoint_verifyData_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "verifyData|npRow|0", &____must_checkpoint_verifyData_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "verifyData|myCol|0", &____must_checkpoint_verifyData_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(14): { goto call_lbl_14; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_verifyData_npCol_0 || ____must_checkpoint_verifyData_npRow_0 || ____must_checkpoint_verifyData_myCol_0 || ____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0) { register_stack_vars(5, "verifyData|npCol|0", &____must_checkpoint_verifyData_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "verifyData|npRow|0", &____must_checkpoint_verifyData_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "verifyData|myCol|0", &____must_checkpoint_verifyData_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 36 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 37 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int myTaskID; int globalNpRow; int globalNpCol; ;
@@ -2443,14 +2443,14 @@ int matchLimit;
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-{ call_lbl_14: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(14, &____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow);
+{ call_lbl_1: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(1, &____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow);
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 #pragma omp parallel reduction(+:comparisons) private(iBeg, iEnd, jBeg, jEnd, myRow, myCol, npRow, npCol, n, m, myTaskID)
 # 47 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } {
+  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } {
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
@@ -2458,7 +2458,7 @@ int matchLimit;
 # 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-     call_lbl_1: ({ calling((void*)gridInfo, 1, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
+     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     myTaskID = omp_get_thread_num();
@@ -2586,14 +2586,14 @@ int matchLimit;
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-{ call_lbl_14: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(14, &____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow);
+{ call_lbl_1: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(1, &____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow);
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 #pragma omp parallel reduction(+:comparisons) private(iBeg, iEnd, jBeg, jEnd, myRow, myCol, npRow, npCol, n, m, myTaskID)
 # 47 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } {
+  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } {
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
@@ -2601,7 +2601,7 @@ int matchLimit;
 # 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-     call_lbl_1: ({ calling((void*)gridInfo, 1, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
+     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     myTaskID = omp_get_thread_num();

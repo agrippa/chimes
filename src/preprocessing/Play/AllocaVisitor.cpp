@@ -171,10 +171,12 @@ bool AllocaVisitor::visitCall(CallInst *call, Value *prev) {
      * have no way to figure out if it is loaded, stored, etc so we deem it
      * unsolvable.
      */
-    for (unsigned i = 0; i < call->getNumArgOperands(); i++) {
-        Value *arg = call->getArgOperand(i);
-        if (arg == prev) {
-            unsolvable[curr] = true;
+    if (!mainPlugin->isKnownFunction(call->getCalledFunction())) {
+        for (unsigned i = 0; i < call->getNumArgOperands(); i++) {
+            Value *arg = call->getArgOperand(i);
+            if (arg == prev) {
+                unsolvable[curr] = true;
+            }
         }
     }
     return (false);

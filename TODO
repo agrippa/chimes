@@ -47,3 +47,9 @@
        the end of these regions, and the fact that they all share the same
        ending location. This could probably be fixed with brace insertions
        during that pass.
+11. One issue I've run into is that to checkpoint the state of a variable on the
+    stack, we need to take its address. However, compilers may often optimize
+    out local variables so that they are entirely in registers and never on the
+    stack. Taking the address of something forces the compiler to place it on
+    the stack and to keep that stack value updated, which can have significant
+    performance implications for some apps (and none for others).

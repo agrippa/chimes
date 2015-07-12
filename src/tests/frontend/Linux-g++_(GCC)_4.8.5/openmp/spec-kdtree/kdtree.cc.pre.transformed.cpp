@@ -101,13 +101,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -4137,7 +4137,7 @@ kdnode *empty_kdnode_npm();
 kdnode *empty_kdnode_quick(); kdnode *empty_kdnode();
 kdnode *empty_kdnode_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&empty_kdnode), "empty_kdnode", &____must_manage_empty_kdnode, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 66 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4154,7 +4154,7 @@ kdnode *init_kdnode_npm(long long nn);
 kdnode *init_kdnode_quick(long long nn); kdnode *init_kdnode(long long nn);
 kdnode *init_kdnode_resumable(long long nn) {const int ____chimes_did_disable1 = new_stack((void *)(&init_kdnode), "init_kdnode", &____must_manage_init_kdnode, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4210,7 +4210,7 @@ void heapsort_resumable(long long *a, long long n, int **x, int p)
    long long k; long long v; ;
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   for (k = n / 2; k >= 1; k--) { ({ calling_npm("downheap", 0); downheap_npm(a, n, k, x, p); }); };
+   for (k = n / 2; k >= 1; k--) { call_lbl_0: ({ calling_npm("downheap", 0); downheap_npm(a, n, k, x, p); }); };
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    while (n > 1) {
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4220,7 +4220,7 @@ void heapsort_resumable(long long *a, long long n, int **x, int p)
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       a[n - 1] = v;
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      ({ calling_npm("downheap", 0); downheap_npm(a, --n, 1, x, p); });
+       call_lbl_1: ({ calling_npm("downheap", 0); downheap_npm(a, --n, 1, x, p); });
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4262,13 +4262,13 @@ void buildkdtree_resumable(kdnode *curr, long long *xn, long long *yn,
 # 232 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       curr->n = xn[end];
 # 233 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[start]); });
+       call_lbl_0: curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[start]); });
 # 234 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }; } else if (x[xn[start]][p] > x[xn[end]][p]) {
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       curr->n = xn[start];
 # 240 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
+       call_lbl_1: curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
 # 241 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 242 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4279,7 +4279,7 @@ void buildkdtree_resumable(kdnode *curr, long long *xn, long long *yn,
 # 246 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       curr->n = xn[start];
 # 247 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->hi = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
+       call_lbl_2: curr->hi = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
 # 248 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 249 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4393,11 +4393,11 @@ void buildkdtree_resumable(kdnode *curr, long long *xn, long long *yn,
 # 398 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (lower >= start) {
 # 399 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
+       call_lbl_3: curr->lo = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
 # 400 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       if ((3) == 4) {
 # 401 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   buildkdtree(curr->lo, tn, yn, zn, xn, wn,
+    call_lbl_4: buildkdtree(curr->lo, tn, yn, zn, xn, wn,
 # 402 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    start, lower, x, p+1);
 # 403 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4412,7 +4412,7 @@ void buildkdtree_resumable(kdnode *curr, long long *xn, long long *yn,
 # 411 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        {
 # 412 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->lo, tn, yn, xn, wn, zn, start, lower, x, p+1); });
+  call_lbl_5: ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->lo, tn, yn, xn, wn, zn, start, lower, x, p+1); });
 # 414 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        }
 # 415 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4423,11 +4423,11 @@ void buildkdtree_resumable(kdnode *curr, long long *xn, long long *yn,
 # 428 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (upper > middle) {
 # 429 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->hi = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
+       call_lbl_6: curr->hi = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
 # 430 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       if ((3) == 4) {
 # 431 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- buildkdtree(curr->hi, tn, yn, zn, xn, wn,
+  call_lbl_7: buildkdtree(curr->hi, tn, yn, zn, xn, wn,
 # 432 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       middle + 1, end, x, p+1);
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4442,7 +4442,7 @@ void buildkdtree_resumable(kdnode *curr, long long *xn, long long *yn,
 # 441 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        {
 # 442 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->hi, tn, yn, xn, wn, zn, middle + 1, end, x, p+1); });
+  call_lbl_8: ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->hi, tn, yn, xn, wn, zn, middle + 1, end, x, p+1); });
 # 444 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        }
 # 445 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4477,14 +4477,14 @@ void coordkdtree_resumable(kdnode *curr, int **x)
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   if (curr->hi != __null) {
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->hi, x); });
+     call_lbl_0: ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->hi, x); });
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
 # 487 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 488 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   if (curr->lo != __null) {
 # 489 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->lo, x); });
+     call_lbl_1: ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->lo, x); });
 # 490 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4523,7 +4523,7 @@ long long searchkdtree_resumable(kdnode *curr, kdnode *q, int p,
 # 537 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      { bool ____chimes_disable0; ____chimes_disable0 = disable_current_thread(); {
 # 538 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       countH = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->hi, q, p+1, cut, cut2, depth+1, depthmax); });
+        call_lbl_0: countH = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->hi, q, p+1, cut, cut2, depth+1, depthmax); });
 # 539 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       } reenable_current_thread(____chimes_disable0); }
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4544,7 +4544,7 @@ long long searchkdtree_resumable(kdnode *curr, kdnode *q, int p,
 # 559 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      { bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread(); {
 # 560 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       countL = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->lo, q, p+1, cut, cut2, depth+1, depthmax); });
+        call_lbl_1: countL = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->lo, q, p+1, cut, cut2, depth+1, depthmax); });
 # 561 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       } reenable_current_thread(____chimes_disable1); }
 # 562 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4615,7 +4615,7 @@ long long sweepkdtree_resumable(kdnode *curr, kdnode *r, long long cut, long lon
 # 616 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 617 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 618 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  count = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(r, curr, 0, cut, cut2, depth, depthmax); });
+   call_lbl_0: count = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(r, curr, 0, cut, cut2, depth, depthmax); });
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 621 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4630,7 +4630,7 @@ long long sweepkdtree_resumable(kdnode *curr, kdnode *r, long long cut, long lon
 # 628 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     {
 # 629 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      countH = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->hi, r, cut, cut2, depth, depthmax); });
+       call_lbl_1: countH = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->hi, r, cut, cut2, depth, depthmax); });
 # 630 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 631 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4649,7 +4649,7 @@ long long sweepkdtree_resumable(kdnode *curr, kdnode *r, long long cut, long lon
 # 641 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     {
 # 642 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      countL = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->lo, r, cut, cut2, depth, depthmax); });
+       call_lbl_2: countL = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->lo, r, cut, cut2, depth, depthmax); });
 # 643 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 644 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4744,7 +4744,7 @@ int **xyzw;
 # 691 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }; } else if (argc == 2) {{
 # 692 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_7); call_lbl_4: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (argv[1]); } calling((void*)atol, 4, ____alias_loc_id_7, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg0); }) ) : (({ calling_npm("atol", ____alias_loc_id_7); (*____chimes_extern_func_atol)(argv[1]); })));
+    alias_group_changed(____alias_loc_id_7); call_lbl_0: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (argv[1]); } calling((void*)atol, 0, ____alias_loc_id_7, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg0); }) ) : (({ calling_npm("atol", ____alias_loc_id_7); (*____chimes_extern_func_atol)(argv[1]); })));
 # 693 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (n < 0) {
 # 694 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4760,7 +4760,7 @@ int **xyzw;
 # 699 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }; } else if (argc == 3){
 # 700 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_10); call_lbl_8: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (argv[1]); } calling((void*)atol, 8, ____alias_loc_id_10, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg1); }) ) : (({ calling_npm("atol", ____alias_loc_id_10); (*____chimes_extern_func_atol)(argv[1]); })));
+    alias_group_changed(____alias_loc_id_10); call_lbl_1: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (argv[1]); } calling((void*)atol, 1, ____alias_loc_id_10, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg1); }) ) : (({ calling_npm("atol", ____alias_loc_id_10); (*____chimes_extern_func_atol)(argv[1]); })));
 # 701 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (n < 0) {
 # 702 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4770,7 +4770,7 @@ int **xyzw;
 # 704 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 705 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_8); call_lbl_12: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (argv[2]); } calling((void*)atol, 12, ____alias_loc_id_8, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg2); }) ) : (({ calling_npm("atol", ____alias_loc_id_8); (*____chimes_extern_func_atol)(argv[2]); })));
+    alias_group_changed(____alias_loc_id_8); call_lbl_2: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (argv[2]); } calling((void*)atol, 2, ____alias_loc_id_8, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg2); }) ) : (({ calling_npm("atol", ____alias_loc_id_8); (*____chimes_extern_func_atol)(argv[2]); })));
 # 706 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (cutoff <= 0) {
 # 707 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4786,7 +4786,7 @@ int **xyzw;
 # 712 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   } else {
 # 713 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_11); call_lbl_16: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (argv[1]); } calling((void*)atol, 16, ____alias_loc_id_11, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg3); }) ) : (({ calling_npm("atol", ____alias_loc_id_11); (*____chimes_extern_func_atol)(argv[1]); })));
+    alias_group_changed(____alias_loc_id_11); call_lbl_3: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (argv[1]); } calling((void*)atol, 3, ____alias_loc_id_11, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg3); }) ) : (({ calling_npm("atol", ____alias_loc_id_11); (*____chimes_extern_func_atol)(argv[1]); })));
 # 714 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (n < 0) {
 # 715 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4796,7 +4796,7 @@ int **xyzw;
 # 717 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 718 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_9); call_lbl_20: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (argv[2]); } calling((void*)atol, 20, ____alias_loc_id_9, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg4); }) ) : (({ calling_npm("atol", ____alias_loc_id_9); (*____chimes_extern_func_atol)(argv[2]); })));
+    alias_group_changed(____alias_loc_id_9); call_lbl_4: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (argv[2]); } calling((void*)atol, 4, ____alias_loc_id_9, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg4); }) ) : (({ calling_npm("atol", ____alias_loc_id_9); (*____chimes_extern_func_atol)(argv[2]); })));
 # 719 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (cutoff <= 0) {
 # 720 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4826,7 +4826,7 @@ int **xyzw;
    cutoff2 = cutoff * cutoff;
 # 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630307UL, 0, 0);
+   xi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630307UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 749 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xi == __null) {
 # 750 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4837,7 +4837,7 @@ int **xyzw;
    }
 # 753 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 754 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630303UL, 0, 0);
+   yi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630303UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 755 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (yi == __null) {
 # 756 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4848,7 +4848,7 @@ int **xyzw;
    }
 # 759 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 760 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   zi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630299UL, 0, 0);
+   zi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630299UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 761 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (zi == __null) {
 # 762 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4859,7 +4859,7 @@ int **xyzw;
    }
 # 765 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 766 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ti = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630428UL, 0, 0);
+   ti = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630428UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 767 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (ti == __null) {
 # 768 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4870,7 +4870,7 @@ int **xyzw;
    }
 # 771 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 772 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   wi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630427UL, 0, 0);
+   wi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630427UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 773 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (wi == __null) {
 # 774 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4884,7 +4884,7 @@ int **xyzw;
 # 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{ call_lbl_58: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(58, &____chimes_region_id0, 1, &i); int ____chimes_first_iter0 = 1;
+{ call_lbl_20: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(20, &____chimes_region_id0, 1, &i); int ____chimes_first_iter0 = 1;
 # 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 #pragma omp parallel for shared(xi,yi,zi,wi) private(i) firstprivate(____chimes_first_iter0)
 # 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4910,7 +4910,7 @@ int **xyzw;
 # 792 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 793 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 794 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xyzw = (int **) malloc_wrapper(n * sizeof(int *), 339782406926630360UL, 1, 0);
+   xyzw = (int **) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(int *), 339782406926630360UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 795 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xyzw == __null) {
 # 796 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4922,14 +4922,14 @@ int **xyzw;
 # 799 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 800 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 801 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_44: (____chimes_does_checkpoint_spec_init_genrand_npm ? ( ({ unsigned long ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = ((unsigned long)1830129); } calling((void*)spec_init_genrand, 44, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (spec_init_genrand)(____chimes_arg5); }) ) : (({ calling_npm("spec_init_genrand", ____alias_loc_id_5); (*____chimes_extern_func_spec_init_genrand)((unsigned long) 1830129); })));
+    call_lbl_5: (____chimes_does_checkpoint_spec_init_genrand_npm ? ( ({ unsigned long ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = ((unsigned long)1830129); } calling((void*)spec_init_genrand, 5, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (spec_init_genrand)(____chimes_arg5); }) ) : (({ calling_npm("spec_init_genrand", ____alias_loc_id_5); (*____chimes_extern_func_spec_init_genrand)((unsigned long) 1830129); })));
 # 802 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 803 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 804 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{ call_lbl_59: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(59, &____chimes_region_id1, 1, &i); int ____chimes_first_iter1 = 1;
+{ call_lbl_21: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(21, &____chimes_region_id1, 1, &i); int ____chimes_first_iter1 = 1;
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 #pragma omp parallel for shared(xyzw) private (i) firstprivate(____chimes_first_iter1)
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4939,7 +4939,7 @@ int **xyzw;
    for (i=0L; i<n; i++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &i); ____chimes_first_iter1 = 0; } {
 # 808 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 809 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     xyzw[i] = (int *) malloc_wrapper((3)*sizeof(int), 339782406926630362UL, 0, 0);
+     xyzw[i] = (int *) ({ void *____chimes_tmp_ptr = malloc((3) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (3)*sizeof(int), 339782406926630362UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 810 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      if (xyzw[i] == __null) {
 # 811 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4964,10 +4964,10 @@ int **xyzw;
 # 823 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    for (i=0L; i<n; i++) {
 # 824 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     { lbl_0: int j; if (____must_checkpoint_main_j_1 != 0) { register_stack_var("main|j|1", &____must_checkpoint_main_j_1, "i32", (void *)(&j), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(60): { goto call_lbl_60; } case(4): { goto call_lbl_4; } case(8): { goto call_lbl_8; } case(12): { goto call_lbl_12; } case(16): { goto call_lbl_16; } case(20): { goto call_lbl_20; } case(44): { goto call_lbl_44; } case(49): { goto call_lbl_49; } case(50): { goto call_lbl_50; } case(51): { goto call_lbl_51; } case(52): { goto call_lbl_52; } case(53): { goto call_lbl_53; } case(54): { goto call_lbl_54; } default: { chimes_error(); } } } for ( j = (0) ; j<(3); j++) {
+     { lbl_0: int j; if (____must_checkpoint_main_j_1 != 0) { register_stack_var("main|j|1", &____must_checkpoint_main_j_1, "i32", (void *)(&j), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(22): { goto call_lbl_22; } case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(11): { goto call_lbl_11; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } for ( j = (0) ; j<(3); j++) {
 # 825 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 826 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       alias_group_changed(____alias_loc_id_6); call_lbl_49: xyzw[i][j] = (int) ((____chimes_does_checkpoint_spec_genrand_int32_npm ? ( ({ calling((void*)spec_genrand_int32, 49, ____alias_loc_id_6, 0UL, 0); (spec_genrand_int32)(); }) ) : (({ calling_npm("spec_genrand_int32", ____alias_loc_id_6); (*____chimes_extern_func_spec_genrand_int32)(); }))) >> 17);
+       alias_group_changed(____alias_loc_id_6); call_lbl_6: xyzw[i][j] = (int) ((____chimes_does_checkpoint_spec_genrand_int32_npm ? ( ({ calling((void*)spec_genrand_int32, 6, ____alias_loc_id_6, 0UL, 0); (spec_genrand_int32)(); }) ) : (({ calling_npm("spec_genrand_int32", ____alias_loc_id_6); (*____chimes_extern_func_spec_genrand_int32)(); }))) >> 17);
 # 827 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 828 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 829 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4980,28 +4980,28 @@ int **xyzw;
 # 834 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 835 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 836 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(xi, n, xyzw, 0); });
+    call_lbl_7: ({ calling_npm("heapsort", 0); heapsort_npm(xi, n, xyzw, 0); });
 # 837 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(yi, n, xyzw, 1); });
+    call_lbl_8: ({ calling_npm("heapsort", 0); heapsort_npm(yi, n, xyzw, 1); });
 # 838 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(zi, n, xyzw, 2); });
+    call_lbl_9: ({ calling_npm("heapsort", 0); heapsort_npm(zi, n, xyzw, 2); });
 # 839 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 840 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if ((3) == 4) {
 # 841 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     heapsort(wi, n, xyzw, 3);
+      call_lbl_10: heapsort(wi, n, xyzw, 3);
 # 842 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
 # 843 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 844 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 845 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_50: checkpoint_transformed(50, ____alias_loc_id_4);
+    call_lbl_11: checkpoint_transformed(11, ____alias_loc_id_4);
 # 846 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 847 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 848 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 849 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 850 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   root = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
+    call_lbl_12: root = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
 # 864 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 864 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   {
@@ -5013,7 +5013,7 @@ int **xyzw;
 # 870 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    {
 # 871 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("buildkdtree", 0); buildkdtree_npm(root, xi, yi, zi, wi, ti, 0L, n-1, xyzw, 0); });
+    call_lbl_13: ({ calling_npm("buildkdtree", 0); buildkdtree_npm(root, xi, yi, zi, wi, ti, 0L, n-1, xyzw, 0); });
 # 872 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
 # 873 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5021,10 +5021,10 @@ int **xyzw;
 # 874 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 875 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 876 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_51: checkpoint_transformed(51, ____alias_loc_id_3);
+    call_lbl_14: checkpoint_transformed(14, ____alias_loc_id_3);
 # 886 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 886 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("coordkdtree", 0); coordkdtree_npm(root, xyzw); });
+    call_lbl_15: ({ calling_npm("coordkdtree", 0); coordkdtree_npm(root, xyzw); });
 # 887 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 888 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 889 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5033,7 +5033,7 @@ int **xyzw;
 # 892 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 893 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 894 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   call_lbl_52: (____chimes_does_checkpoint_clock_gettime_npm ? ( ({ calling((void*)clock_gettime, 52, ____alias_loc_id_2, 0UL, 2, (size_t)(0UL), (size_t)(339782406926630089UL)); (clock_gettime)(0, &startTime); }) ) : (({ calling_npm("clock_gettime", ____alias_loc_id_2); (*____chimes_extern_func_clock_gettime)(0, &startTime); })));
+   call_lbl_16: (____chimes_does_checkpoint_clock_gettime_npm ? ( ({ calling((void*)clock_gettime, 16, ____alias_loc_id_2, 0UL, 2, (size_t)(0UL), (size_t)(339782406926630089UL)); (clock_gettime)(0, &startTime); }) ) : (({ calling_npm("clock_gettime", ____alias_loc_id_2); (*____chimes_extern_func_clock_gettime)(0, &startTime); })));
 # 903 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 903 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   count = 0L;
@@ -5041,7 +5041,7 @@ int **xyzw;
 # 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{ call_lbl_60: void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(60, &____chimes_region_id2, 4, &cutoff, &cutoff2, &maxdepth, &root);
+{ call_lbl_22: void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(22, &____chimes_region_id2, 4, &cutoff, &cutoff2, &maxdepth, &root);
 # 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 #pragma omp parallel shared(count) firstprivate(root, cutoff, cutoff2, maxdepth)
 # 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5059,7 +5059,7 @@ int **xyzw;
 # 909 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     { bool ____chimes_disable5; ____chimes_disable5 = disable_current_thread(); {
 # 910 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      count += ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(root, root, cutoff, cutoff2, 0, maxdepth); });
+       call_lbl_17: count += ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(root, root, cutoff, cutoff2, 0, maxdepth); });
 # 911 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      } reenable_current_thread(____chimes_disable5); }
 # 912 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5067,13 +5067,13 @@ int **xyzw;
 # 913 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 914 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 915 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_53: checkpoint_transformed(53, ____alias_loc_id_1);
+    call_lbl_18: checkpoint_transformed(18, ____alias_loc_id_1);
 # 916 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 917 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 918 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 919 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 920 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_54: (____chimes_does_checkpoint_clock_gettime_npm ? ( ({ calling((void*)clock_gettime, 54, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(339782406926630090UL)); (clock_gettime)(0, &endTime); }) ) : (({ calling_npm("clock_gettime", ____alias_loc_id_0); (*____chimes_extern_func_clock_gettime)(0, &endTime); })));
+    call_lbl_19: (____chimes_does_checkpoint_clock_gettime_npm ? ( ({ calling((void*)clock_gettime, 19, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(339782406926630090UL)); (clock_gettime)(0, &endTime); }) ) : (({ calling_npm("clock_gettime", ____alias_loc_id_0); (*____chimes_extern_func_clock_gettime)(0, &endTime); })));
 # 921 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    elapsedTime = (double)(endTime.tv_sec - startTime.tv_sec) +
 # 922 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5097,7 +5097,7 @@ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_dis
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *empty_kdnode_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&empty_kdnode), "empty_kdnode", &____must_manage_empty_kdnode, 0, 0) ; ; ;
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 66 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5113,7 +5113,7 @@ kdnode *empty_kdnode() { return (____chimes_replaying ? empty_kdnode_resumable()
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *init_kdnode_quick(long long nn) {const int ____chimes_did_disable1 = new_stack((void *)(&init_kdnode), "init_kdnode", &____must_manage_init_kdnode, 1, 0, (size_t)(0UL)) ; ; ;
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5167,7 +5167,7 @@ void heapsort_quick(long long *a, long long n, int **x, int p)
    long long k; long long v; ;
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   for (k = n / 2; k >= 1; k--) { ({ calling_npm("downheap", 0); downheap_npm(a, n, k, x, p); }); };
+   for (k = n / 2; k >= 1; k--) { call_lbl_0: ({ calling_npm("downheap", 0); downheap_npm(a, n, k, x, p); }); };
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    while (n > 1) {
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5177,7 +5177,7 @@ void heapsort_quick(long long *a, long long n, int **x, int p)
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       a[n - 1] = v;
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      ({ calling_npm("downheap", 0); downheap_npm(a, --n, 1, x, p); });
+       call_lbl_1: ({ calling_npm("downheap", 0); downheap_npm(a, --n, 1, x, p); });
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5218,13 +5218,13 @@ void buildkdtree_quick(kdnode *curr, long long *xn, long long *yn,
 # 232 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       curr->n = xn[end];
 # 233 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[start]); });
+       call_lbl_0: curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[start]); });
 # 234 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }; } else if (x[xn[start]][p] > x[xn[end]][p]) {
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       curr->n = xn[start];
 # 240 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
+       call_lbl_1: curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
 # 241 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 242 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5235,7 +5235,7 @@ void buildkdtree_quick(kdnode *curr, long long *xn, long long *yn,
 # 246 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       curr->n = xn[start];
 # 247 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->hi = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
+       call_lbl_2: curr->hi = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
 # 248 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 249 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5349,11 +5349,11 @@ void buildkdtree_quick(kdnode *curr, long long *xn, long long *yn,
 # 398 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (lower >= start) {
 # 399 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
+       call_lbl_3: curr->lo = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
 # 400 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       if ((3) == 4) {
 # 401 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   buildkdtree_quick(curr->lo, tn, yn, zn, xn, wn, start, lower, x, p+1);
+    call_lbl_4: buildkdtree_quick(curr->lo, tn, yn, zn, xn, wn, start, lower, x, p+1);
 # 403 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       } else {
 # 404 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5366,7 +5366,7 @@ void buildkdtree_quick(kdnode *curr, long long *xn, long long *yn,
 # 411 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        {
 # 412 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->lo, tn, yn, xn, wn, zn, start, lower, x, p+1); });
+  call_lbl_5: ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->lo, tn, yn, xn, wn, zn, start, lower, x, p+1); });
 # 414 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        }
 # 415 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5377,11 +5377,11 @@ void buildkdtree_quick(kdnode *curr, long long *xn, long long *yn,
 # 428 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (upper > middle) {
 # 429 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->hi = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
+       call_lbl_6: curr->hi = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
 # 430 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       if ((3) == 4) {
 # 431 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- buildkdtree_quick(curr->hi, tn, yn, zn, xn, wn, middle + 1, end, x, p+1);
+  call_lbl_7: buildkdtree_quick(curr->hi, tn, yn, zn, xn, wn, middle + 1, end, x, p+1);
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       } else {
 # 434 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5394,7 +5394,7 @@ void buildkdtree_quick(kdnode *curr, long long *xn, long long *yn,
 # 441 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        {
 # 442 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->hi, tn, yn, xn, wn, zn, middle + 1, end, x, p+1); });
+  call_lbl_8: ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->hi, tn, yn, xn, wn, zn, middle + 1, end, x, p+1); });
 # 444 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
        }
 # 445 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5434,14 +5434,14 @@ void coordkdtree_quick(kdnode *curr, int **x)
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   if (curr->hi != __null) {
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->hi, x); });
+     call_lbl_0: ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->hi, x); });
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
 # 487 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 488 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   if (curr->lo != __null) {
 # 489 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->lo, x); });
+     call_lbl_1: ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->lo, x); });
 # 490 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5479,7 +5479,7 @@ long long searchkdtree_quick(kdnode *curr, kdnode *q, int p,
 # 537 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      { bool ____chimes_disable0; ____chimes_disable0 = disable_current_thread(); {
 # 538 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       countH = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->hi, q, p+1, cut, cut2, depth+1, depthmax); });
+        call_lbl_0: countH = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->hi, q, p+1, cut, cut2, depth+1, depthmax); });
 # 539 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       } reenable_current_thread(____chimes_disable0); }
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5500,7 +5500,7 @@ long long searchkdtree_quick(kdnode *curr, kdnode *q, int p,
 # 559 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      { bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread(); {
 # 560 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       countL = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->lo, q, p+1, cut, cut2, depth+1, depthmax); });
+        call_lbl_1: countL = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->lo, q, p+1, cut, cut2, depth+1, depthmax); });
 # 561 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       } reenable_current_thread(____chimes_disable1); }
 # 562 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5574,7 +5574,7 @@ long long sweepkdtree_quick(kdnode *curr, kdnode *r, long long cut, long long cu
 # 616 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 617 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 618 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  count = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(r, curr, 0, cut, cut2, depth, depthmax); });
+   call_lbl_0: count = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(r, curr, 0, cut, cut2, depth, depthmax); });
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 621 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5589,7 +5589,7 @@ long long sweepkdtree_quick(kdnode *curr, kdnode *r, long long cut, long long cu
 # 628 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     {
 # 629 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      countH = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->hi, r, cut, cut2, depth, depthmax); });
+       call_lbl_1: countH = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->hi, r, cut, cut2, depth, depthmax); });
 # 630 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 631 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5608,7 +5608,7 @@ long long sweepkdtree_quick(kdnode *curr, kdnode *r, long long cut, long long cu
 # 641 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     {
 # 642 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      countL = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->lo, r, cut, cut2, depth, depthmax); });
+       call_lbl_2: countL = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->lo, r, cut, cut2, depth, depthmax); });
 # 643 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 644 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5704,7 +5704,7 @@ int **xyzw;
 # 691 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }; } else if (argc == 2) {{
 # 692 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_7); call_lbl_4: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 4, ____alias_loc_id_7, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_7); (*____chimes_extern_func_atol)(argv[1]); })));
+    alias_group_changed(____alias_loc_id_7); call_lbl_0: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 0, ____alias_loc_id_7, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_7); (*____chimes_extern_func_atol)(argv[1]); })));
 # 693 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (n < 0) {
 # 694 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5720,7 +5720,7 @@ int **xyzw;
 # 699 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }; } else if (argc == 3){
 # 700 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_10); call_lbl_8: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 8, ____alias_loc_id_10, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_10); (*____chimes_extern_func_atol)(argv[1]); })));
+    alias_group_changed(____alias_loc_id_10); call_lbl_1: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 1, ____alias_loc_id_10, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_10); (*____chimes_extern_func_atol)(argv[1]); })));
 # 701 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (n < 0) {
 # 702 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5730,7 +5730,7 @@ int **xyzw;
 # 704 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 705 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_8); call_lbl_12: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 12, ____alias_loc_id_8, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[2]); }) ) : (({ calling_npm("atol", ____alias_loc_id_8); (*____chimes_extern_func_atol)(argv[2]); })));
+    alias_group_changed(____alias_loc_id_8); call_lbl_2: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 2, ____alias_loc_id_8, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[2]); }) ) : (({ calling_npm("atol", ____alias_loc_id_8); (*____chimes_extern_func_atol)(argv[2]); })));
 # 706 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (cutoff <= 0) {
 # 707 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5746,7 +5746,7 @@ int **xyzw;
 # 712 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   } else {
 # 713 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_11); call_lbl_16: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 16, ____alias_loc_id_11, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_11); (*____chimes_extern_func_atol)(argv[1]); })));
+    alias_group_changed(____alias_loc_id_11); call_lbl_3: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 3, ____alias_loc_id_11, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_11); (*____chimes_extern_func_atol)(argv[1]); })));
 # 714 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (n < 0) {
 # 715 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5756,7 +5756,7 @@ int **xyzw;
 # 717 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
 # 718 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_9); call_lbl_20: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 20, ____alias_loc_id_9, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[2]); }) ) : (({ calling_npm("atol", ____alias_loc_id_9); (*____chimes_extern_func_atol)(argv[2]); })));
+    alias_group_changed(____alias_loc_id_9); call_lbl_4: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 4, ____alias_loc_id_9, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[2]); }) ) : (({ calling_npm("atol", ____alias_loc_id_9); (*____chimes_extern_func_atol)(argv[2]); })));
 # 719 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (cutoff <= 0) {
 # 720 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5786,7 +5786,7 @@ int **xyzw;
    cutoff2 = cutoff * cutoff;
 # 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630307UL, 0, 0);
+   xi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630307UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 749 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xi == __null) {
 # 750 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5797,7 +5797,7 @@ int **xyzw;
    }
 # 753 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 754 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630303UL, 0, 0);
+   yi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630303UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 755 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (yi == __null) {
 # 756 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5808,7 +5808,7 @@ int **xyzw;
    }
 # 759 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 760 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   zi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630299UL, 0, 0);
+   zi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630299UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 761 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (zi == __null) {
 # 762 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5819,7 +5819,7 @@ int **xyzw;
    }
 # 765 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 766 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ti = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630428UL, 0, 0);
+   ti = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630428UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 767 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (ti == __null) {
 # 768 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5830,7 +5830,7 @@ int **xyzw;
    }
 # 771 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 772 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   wi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630427UL, 0, 0);
+   wi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630427UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 773 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (wi == __null) {
 # 774 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5844,7 +5844,7 @@ int **xyzw;
 # 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{ call_lbl_58: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(58, &____chimes_region_id0, 1, &i); int ____chimes_first_iter0 = 1;
+{ call_lbl_20: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(20, &____chimes_region_id0, 1, &i); int ____chimes_first_iter0 = 1;
 # 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 #pragma omp parallel for shared(xi,yi,zi,wi) private(i) firstprivate(____chimes_first_iter0)
 # 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5870,7 +5870,7 @@ int **xyzw;
 # 792 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 793 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 794 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xyzw = (int **) malloc_wrapper(n * sizeof(int *), 339782406926630360UL, 1, 0);
+   xyzw = (int **) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(int *), 339782406926630360UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 795 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xyzw == __null) {
 # 796 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5882,14 +5882,14 @@ int **xyzw;
 # 799 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 800 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 801 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_44: (____chimes_does_checkpoint_spec_init_genrand_npm ? ( ({ calling((void*)spec_init_genrand, 44, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (spec_init_genrand)((unsigned long)1830129); }) ) : (({ calling_npm("spec_init_genrand", ____alias_loc_id_5); (*____chimes_extern_func_spec_init_genrand)((unsigned long) 1830129); })));
+    call_lbl_5: (____chimes_does_checkpoint_spec_init_genrand_npm ? ( ({ calling((void*)spec_init_genrand, 5, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (spec_init_genrand)((unsigned long)1830129); }) ) : (({ calling_npm("spec_init_genrand", ____alias_loc_id_5); (*____chimes_extern_func_spec_init_genrand)((unsigned long) 1830129); })));
 # 802 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 803 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 804 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{ call_lbl_59: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(59, &____chimes_region_id1, 1, &i); int ____chimes_first_iter1 = 1;
+{ call_lbl_21: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(21, &____chimes_region_id1, 1, &i); int ____chimes_first_iter1 = 1;
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 #pragma omp parallel for shared(xyzw) private (i) firstprivate(____chimes_first_iter1)
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5899,7 +5899,7 @@ int **xyzw;
    for (i=0L; i<n; i++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &i); ____chimes_first_iter1 = 0; } {
 # 808 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 809 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     xyzw[i] = (int *) malloc_wrapper((3)*sizeof(int), 339782406926630362UL, 0, 0);
+     xyzw[i] = (int *) ({ void *____chimes_tmp_ptr = malloc((3) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (3)*sizeof(int), 339782406926630362UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 810 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      if (xyzw[i] == __null) {
 # 811 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5927,7 +5927,7 @@ int **xyzw;
      { lbl_0: int j; if (____must_checkpoint_main_j_1 != 0) { register_stack_var("main|j|1", &____must_checkpoint_main_j_1, "i32", (void *)(&j), (size_t)4, 0, 0, 0); } for ( j = (0) ; j<(3); j++) {
 # 825 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 826 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       alias_group_changed(____alias_loc_id_6); call_lbl_49: xyzw[i][j] = (int) ((____chimes_does_checkpoint_spec_genrand_int32_npm ? ( ({ calling((void*)spec_genrand_int32, 49, ____alias_loc_id_6, 0UL, 0); (spec_genrand_int32)(); }) ) : (({ calling_npm("spec_genrand_int32", ____alias_loc_id_6); (*____chimes_extern_func_spec_genrand_int32)(); }))) >> 17);
+       alias_group_changed(____alias_loc_id_6); call_lbl_6: xyzw[i][j] = (int) ((____chimes_does_checkpoint_spec_genrand_int32_npm ? ( ({ calling((void*)spec_genrand_int32, 6, ____alias_loc_id_6, 0UL, 0); (spec_genrand_int32)(); }) ) : (({ calling_npm("spec_genrand_int32", ____alias_loc_id_6); (*____chimes_extern_func_spec_genrand_int32)(); }))) >> 17);
 # 827 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 828 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 829 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5940,28 +5940,28 @@ int **xyzw;
 # 834 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 835 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 836 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(xi, n, xyzw, 0); });
+    call_lbl_7: ({ calling_npm("heapsort", 0); heapsort_npm(xi, n, xyzw, 0); });
 # 837 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(yi, n, xyzw, 1); });
+    call_lbl_8: ({ calling_npm("heapsort", 0); heapsort_npm(yi, n, xyzw, 1); });
 # 838 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(zi, n, xyzw, 2); });
+    call_lbl_9: ({ calling_npm("heapsort", 0); heapsort_npm(zi, n, xyzw, 2); });
 # 839 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 840 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if ((3) == 4) {
 # 841 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     heapsort_quick(wi, n, xyzw, 3);
+      call_lbl_10: heapsort_quick(wi, n, xyzw, 3);
 # 842 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
 # 843 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 844 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 845 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_50: checkpoint_transformed(50, ____alias_loc_id_4);
+    call_lbl_11: checkpoint_transformed(11, ____alias_loc_id_4);
 # 846 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 847 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 848 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 849 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 850 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   root = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
+    call_lbl_12: root = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
 # 864 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 864 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   {
@@ -5973,7 +5973,7 @@ int **xyzw;
 # 870 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    {
 # 871 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("buildkdtree", 0); buildkdtree_npm(root, xi, yi, zi, wi, ti, 0L, n-1, xyzw, 0); });
+    call_lbl_13: ({ calling_npm("buildkdtree", 0); buildkdtree_npm(root, xi, yi, zi, wi, ti, 0L, n-1, xyzw, 0); });
 # 872 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
 # 873 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5981,10 +5981,10 @@ int **xyzw;
 # 874 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 875 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 876 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_51: checkpoint_transformed(51, ____alias_loc_id_3);
+    call_lbl_14: checkpoint_transformed(14, ____alias_loc_id_3);
 # 886 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 886 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("coordkdtree", 0); coordkdtree_npm(root, xyzw); });
+    call_lbl_15: ({ calling_npm("coordkdtree", 0); coordkdtree_npm(root, xyzw); });
 # 887 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 888 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 889 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5993,7 +5993,7 @@ int **xyzw;
 # 892 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 893 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 894 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   call_lbl_52: (____chimes_does_checkpoint_clock_gettime_npm ? ( ({ calling((void*)clock_gettime, 52, ____alias_loc_id_2, 0UL, 2, (size_t)(0UL), (size_t)(339782406926630089UL)); (clock_gettime)(0, &startTime); }) ) : (({ calling_npm("clock_gettime", ____alias_loc_id_2); (*____chimes_extern_func_clock_gettime)(0, &startTime); })));
+   call_lbl_16: (____chimes_does_checkpoint_clock_gettime_npm ? ( ({ calling((void*)clock_gettime, 16, ____alias_loc_id_2, 0UL, 2, (size_t)(0UL), (size_t)(339782406926630089UL)); (clock_gettime)(0, &startTime); }) ) : (({ calling_npm("clock_gettime", ____alias_loc_id_2); (*____chimes_extern_func_clock_gettime)(0, &startTime); })));
 # 903 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 903 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   count = 0L;
@@ -6001,7 +6001,7 @@ int **xyzw;
 # 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{ call_lbl_60: void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(60, &____chimes_region_id2, 4, &cutoff, &cutoff2, &maxdepth, &root);
+{ call_lbl_22: void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(22, &____chimes_region_id2, 4, &cutoff, &cutoff2, &maxdepth, &root);
 # 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 #pragma omp parallel shared(count) firstprivate(root, cutoff, cutoff2, maxdepth)
 # 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -6019,7 +6019,7 @@ int **xyzw;
 # 909 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     { bool ____chimes_disable5; ____chimes_disable5 = disable_current_thread(); {
 # 910 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      count += ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(root, root, cutoff, cutoff2, 0, maxdepth); });
+       call_lbl_17: count += ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(root, root, cutoff, cutoff2, 0, maxdepth); });
 # 911 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      } reenable_current_thread(____chimes_disable5); }
 # 912 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -6027,13 +6027,13 @@ int **xyzw;
 # 913 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 914 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 915 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_53: checkpoint_transformed(53, ____alias_loc_id_1);
+    call_lbl_18: checkpoint_transformed(18, ____alias_loc_id_1);
 # 916 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 917 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 918 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 919 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 920 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_54: (____chimes_does_checkpoint_clock_gettime_npm ? ( ({ calling((void*)clock_gettime, 54, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(339782406926630090UL)); (clock_gettime)(0, &endTime); }) ) : (({ calling_npm("clock_gettime", ____alias_loc_id_0); (*____chimes_extern_func_clock_gettime)(0, &endTime); })));
+    call_lbl_19: (____chimes_does_checkpoint_clock_gettime_npm ? ( ({ calling((void*)clock_gettime, 19, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(339782406926630090UL)); (clock_gettime)(0, &endTime); }) ) : (({ calling_npm("clock_gettime", ____alias_loc_id_0); (*____chimes_extern_func_clock_gettime)(0, &endTime); })));
 # 921 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    elapsedTime = (double)(endTime.tv_sec - startTime.tv_sec) +
 # 922 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -6059,7 +6059,7 @@ int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_re
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *empty_kdnode_npm() {
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    kdnode *empty = (kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi));
+    kdnode *empty = (kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; }) ;
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 66 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -6073,7 +6073,7 @@ kdnode *empty_kdnode_npm() {
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *init_kdnode_npm(long long nn) {
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    kdnode *empty = (kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi));
+    kdnode *empty = (kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; }) ;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"

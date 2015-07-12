@@ -5,7 +5,7 @@ functionality of the chimes runtime.
 import os
 import sys
 from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
-         cleanup_runtime_files, is_rodinia_supported, is_spec_supported
+         is_rodinia_supported, is_spec_supported
 from shared_tests import MISC_CPP_RUNTIME_TESTS
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
@@ -82,7 +82,6 @@ CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
     CONFIG.set_force_sequential()
-    cleanup_runtime_files()
 
     for t in TESTS:
         run_runtime_test(t, COMPILE_SCRIPT, CPP_INPUTS_DIR, CONFIG)

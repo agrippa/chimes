@@ -57,13 +57,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -1433,7 +1433,7 @@ void lud_base_resumable(float *a, int size)
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&lud_base), "lud_base", (int *)0, 2, 2, (size_t)(7743237120547627256UL), (size_t)(0UL), "lud_base|a|0", (int *)0, "float*", (void *)(&a), (size_t)8, 1, 0, 0, "lud_base|size|0", (int *)0, "i32", (void *)(&size), (size_t)4, 0, 0, 0) ; int i;
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
- register_stack_vars(1, "lud_base|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(1, "lud_base|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
       int j; int k; ;
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
@@ -1464,7 +1464,7 @@ void lud_base_resumable(float *a, int size)
          }
 # 23 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-          call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
+          call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
 # 25 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
      }
@@ -1506,7 +1506,7 @@ void lud_base_quick(float *a, int size)
          }
 # 23 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
-          call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
+          call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
 # 25 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c"
      }

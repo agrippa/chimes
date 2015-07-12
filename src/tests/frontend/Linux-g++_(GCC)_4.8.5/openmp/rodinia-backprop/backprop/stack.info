@@ -93,9 +93,9 @@
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_train|hid_err|0 " float " 32 0 0 1 bpnn_train
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|net|0 " %struct.BPNN* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|filename|0 " i8* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|n1|0 " i32 " 32 0 0 1 bpnn_save
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|n2|0 " i32 " 32 0 0 1 bpnn_save
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|n3|0 " i32 " 32 0 0 1 bpnn_save
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|n1|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|n2|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|n3|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|memcnt|0 " i32 " 32 0 0 0
@@ -115,9 +115,9 @@
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|mem|0 " i8* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|new_mem|0 " %struct.BPNN* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|fd|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|n1|0 " i32 " 32 0 0 1 bpnn_read
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|n2|0 " i32 " 32 0 0 1 bpnn_read
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|n3|0 " i32 " 32 0 0 1 bpnn_read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|n1|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|n2|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|n3|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|memcnt|0 " i32 " 32 0 0 0

@@ -7,6 +7,14 @@ from shared_tests import PERF_CLI_ARGS
 
 # SPEC tests
 SPEC_HOME = os.environ['SPEC_HOME']
+if not os.path.isdir(SPEC_HOME):
+    print('SPEC_HOME does not seem to be a directory (' + SPEC_HOME + ')')
+    print('If you are a Habanero member and need to restore the SPEC ' +
+          'benchmarks, you can copy them from the ZIP under:')
+    print('  https://svn.rice.edu/r/parsoft/projects/' +
+          'Max-Grossman-Masters-Thesis/Benchmarks/')
+    sys.exit(1)
+
 ALL_SPEC_FRONTEND_TESTS = []
 ALL_SPEC_RUNTIME_TESTS = []
 
@@ -96,7 +104,7 @@ SPEC_PERF_CLI_ARGS = \
                                                     'run', 'run_base_test_davinci.0000',
                                                     'botsalgn'),
          'SPECBotsSpar':          '-n 50 -m 25',
-         'SPECSmithwa':           '30',
+         'SPECSmithwa':           '32',
          'SPECKDTree':            '100000 10 2'
         }
 PERF_CLI_ARGS.update(SPEC_PERF_CLI_ARGS)

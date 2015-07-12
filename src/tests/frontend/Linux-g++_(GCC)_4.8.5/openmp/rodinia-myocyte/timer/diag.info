@@ -9,14 +9,6 @@ ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 8 19
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 10 3 long long ____chimes_ret_var_0; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 10 33 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 11 len=8 get_time_quick
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 8 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 8 20 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 133  ; struct timeval tv;
-# 7
- if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 133  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 11 len=8 get_time_resumable
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 8 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 8 20 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 133  ; struct timeval tv;
-# 7
- if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 133  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

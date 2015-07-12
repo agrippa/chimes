@@ -76,13 +76,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -4245,14 +4245,14 @@ rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alia
 # 74 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void setup_config_npm(config *conf, int argc, char **argv);static int (*____chimes_extern_func_getNumCUDADevices)(void) = getNumCUDADevices;static void (*____chimes_extern_func_parse_source)(char *, struct _source *) = parse_source;
 void setup_config_quick(config *conf, int argc, char **argv); void setup_config(config *conf, int argc, char **argv);
-void setup_config_resumable(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(75241783173009775UL), (size_t)(0UL), (size_t)(75241783173009777UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } ; ;
+void setup_config_resumable(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(75241783173009775UL), (size_t)(0UL), (size_t)(75241783173009777UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 75 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     int c; ;
 # 76 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     opterr = 0;
 # 77 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 # 78 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-    ({ calling_npm("default_config", 0); default_config_npm(conf); });
+     call_lbl_0: ({ calling_npm("default_config", 0); default_config_npm(conf); });
 # 79 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 # 80 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
@@ -4297,11 +4297,11 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 100 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
             case 'p':
 # 101 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
+                conf->srcs = (source *) ({ void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); ; realloc_helper(____chimes_tmp_ptr, conf->srcs, sizeof(source) *
 # 102 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0);
+                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) ;
 # 103 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                 call_lbl_8: ({ source * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 8, ____alias_loc_id_0, 0UL, 2, (size_t)(75241783173009669UL), (size_t)(75241783173009705UL)); (parse_source)(optarg, ____chimes_arg1); }) ;
+                 call_lbl_1: ({ source * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(75241783173009669UL), (size_t)(75241783173009705UL)); (parse_source)(optarg, ____chimes_arg1); }) ;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                 conf->nsrcs++;
 # 105 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
@@ -4335,7 +4335,7 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 119 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                 fprintf(stderr, "Missing argument to option %c\n", optopt);
 # 120 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-            default:
+             call_lbl_2: default:
 # 121 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                 ({ calling_npm("usage", 0); usage_npm(argv); });
 # 122 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
@@ -4346,7 +4346,7 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 125 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     if (conf->ngpus == -1) {
 # 126 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-         call_lbl_13: conf->ngpus = ({ calling((void*)getNumCUDADevices, 13, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
+         call_lbl_3: conf->ngpus = ({ calling((void*)getNumCUDADevices, 3, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
 # 127 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     }
 # 128 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
@@ -4493,7 +4493,7 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
     opterr = 0;
 # 77 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 # 78 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-    ({ calling_npm("default_config", 0); default_config_npm(conf); });
+     call_lbl_0: ({ calling_npm("default_config", 0); default_config_npm(conf); });
 # 79 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 # 80 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
@@ -4538,11 +4538,11 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 100 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
             case 'p':
 # 101 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
+                conf->srcs = (source *) ({ void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); ; realloc_helper(____chimes_tmp_ptr, conf->srcs, sizeof(source) *
 # 102 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0);
+                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) ;
 # 103 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                 call_lbl_8: ({ calling((void*)parse_source, 8, ____alias_loc_id_0, 0UL, 2, (size_t)(75241783173009669UL), (size_t)(75241783173009705UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) ;
+                 call_lbl_1: ({ calling((void*)parse_source, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(75241783173009669UL), (size_t)(75241783173009705UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) ;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                 conf->nsrcs++;
 # 105 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
@@ -4576,7 +4576,7 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 119 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                 fprintf(stderr, "Missing argument to option %c\n", optopt);
 # 120 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-            default:
+             call_lbl_2: default:
 # 121 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                 ({ calling_npm("usage", 0); usage_npm(argv); });
 # 122 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
@@ -4587,7 +4587,7 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 125 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     if (conf->ngpus == -1) {
 # 126 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-         call_lbl_13: conf->ngpus = ({ calling((void*)getNumCUDADevices, 13, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
+         call_lbl_3: conf->ngpus = ({ calling((void*)getNumCUDADevices, 3, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
 # 127 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     }
 # 128 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
@@ -4765,9 +4765,9 @@ void setup_config_npm(config *conf, int argc, char **argv) {
 # 100 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
             case 'p':
 # 101 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
+                conf->srcs = (source *) ({ void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); realloc_helper(____chimes_tmp_ptr, conf->srcs, sizeof(source) *
 # 102 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0);
+                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) ;
 # 103 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                 (*____chimes_extern_func_parse_source)(optarg, conf->srcs + conf->nsrcs);
 # 104 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"

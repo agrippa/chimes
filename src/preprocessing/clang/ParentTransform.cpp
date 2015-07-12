@@ -3,6 +3,7 @@
 #include <sstream>
 
 extern DesiredInsertions *insertions;
+extern std::set<std::string> *ignorable;
 
 std::string ParentTransform::get_cond_registration_varname(
         std::string mangled_varname) {
@@ -338,4 +339,27 @@ std::string ParentTransform::get_callee_name(const CallExpr *call) {
     } else {
         return (call->getDirectCallee()->getNameAsString());
     }
+}
+
+bool ParentTransform::should_be_labelled(const CallExpr *call) {
+    std::string callee_name = get_callee_name(call);
+
+    if (callee_name == "register_custom_init_handler") {
+        return false;
+    }
+    if (clang::isa<const clang::CXXConstructExpr>(call)) {
+        return false;
+    }
+    if (ignorable->find(callee_name) != ignorable->end()) {
+        return false;
+    }
+
+    return true;
+    // return (callee_name == "anon" || insertions->may_cause_checkpoint(callee_name));
+}
+
+std::string ParentTransform::getArgString(const clang::CallExpr *call, int arg) {
+    assert(arg < call->getNumArgs());
+    return getRewrittenText(clang::SourceRange(call->getArg(arg)->getLocStart(),
+                call->getArg(arg)->getLocEnd()));
 }

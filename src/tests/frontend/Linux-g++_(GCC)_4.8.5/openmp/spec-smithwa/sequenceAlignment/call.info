@@ -39,12 +39,12 @@ printf main 236 5 0 300
 dispElapsedTime main 239 3 0 0
 checkpoint main 242 3 0
 verifyMergeAlignment main 248 3 0 127 200 0
-freeA main 255 7 161 161
-freeB main 256 7 179 179
-freeC main 257 7 200 200
-freeSimMatrix main 258 3 223 127
-freeSeqData main 259 3 225 139
-seconds main 265 21 0
+seconds main 254 21 0
+freeA main 256 7 161 161
+freeB main 257 7 179 179
+freeC main 258 7 200 200
+freeSimMatrix main 259 3 226 127
+freeSeqData main 260 3 228 139
 printf main 266 3 0 301 0
 printf main 269 5 0 290
 printf main 270 5 0 296
