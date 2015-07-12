@@ -22,6 +22,7 @@ static int ____must_checkpoint_redistributeAtoms_sim_0 = 2;
 static int ____must_checkpoint_redistributeAtoms_ii_0 = 2;
 static int ____must_checkpoint_kineticEnergy_s_0 = 2;
 static int ____must_checkpoint_kineticEnergy_eLocal_0 = 2;
+static int ____must_checkpoint_kineticEnergy_eSum_0 = 2;
 
 static int ____must_manage_advancePosition = 2;
 static int ____must_manage_kineticEnergy = 2;
@@ -2839,7 +2840,7 @@ void kineticEnergy_resumable(SimFlat* s)
 # 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 real_t eLocal[2];
 # 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
- if (____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(1, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_kineticEnergy_eSum_0 || ____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(2, "kineticEnergy|eSum|0", &____must_checkpoint_kineticEnergy_eSum_0, "[2 x double]", (void *)(eSum), (size_t)16, 0, 0, 0, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
     ;
 # 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -3095,7 +3096,7 @@ void kineticEnergy_quick(SimFlat* s)
 # 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 real_t eLocal[2];
 # 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
- if (____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(1, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); } ; ;
+ if (____must_checkpoint_kineticEnergy_eSum_0 || ____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(2, "kineticEnergy|eSum|0", &____must_checkpoint_kineticEnergy_eSum_0, "[2 x double]", (void *)(eSum), (size_t)16, 0, 0, 0, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); } ; ;
 # 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
     ;
 # 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -3336,7 +3337,7 @@ void redistributeAtoms_npm(SimFlat* sim)
 
 
 static int module_init() {
-    init_module(12369560726904678466UL, 16, 6, 4, 13, 4, 6, 10, 3, 0, 10,
+    init_module(12369560726904678466UL, 16, 6, 5, 13, 4, 6, 10, 3, 0, 10,
                            &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (12369560726904678466UL + 1UL), (12369560726904678466UL + 2UL), (12369560726904678466UL + 3UL), (12369560726904678466UL + 4UL),
                            &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)0, (12369560726904678466UL + 1UL), (12369560726904678466UL + 2UL), (12369560726904678466UL + 3UL), (12369560726904678466UL + 4UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (12369560726904678466UL + 390UL), "sortAtomsInCell", (unsigned)1, (12369560726904678466UL + 405UL),
@@ -3406,6 +3407,7 @@ static int module_init() {
                         "redistributeAtoms|ii|0", 1, "sortAtomsInCell",
                         "kineticEnergy|s|0", 3, "profileStop", "profileStart", "addRealParallel",
                         "kineticEnergy|eLocal|0", 1, "kineticEnergy",
+                        "kineticEnergy|eSum|0", 3, "profileStop", "profileStart", "addRealParallel",
         "advanceVelocity", 0UL, (int)3, 12369560726904678488UL, 0UL, 0UL,
         "advancePosition", 0UL, (int)3, 12369560726904678488UL, 0UL, 0UL,
         "advanceVelocity", 0UL, (int)3, 12369560726904678488UL, 0UL, 0UL);

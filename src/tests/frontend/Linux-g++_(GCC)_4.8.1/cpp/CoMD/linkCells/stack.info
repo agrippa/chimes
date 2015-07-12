@@ -82,5 +82,5 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c maxOccupancy|boxes|0 " %struct.LinkCellSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c maxOccupancy|localMax|0 " i32 " 32 0 0 1 maxOccupancy
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c maxOccupancy|ii|0 " i32 " 32 0 0 0
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c maxOccupancy|globalMax|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c maxOccupancy|globalMax|0 " i32 " 32 0 0 1 maxIntParallel profileStart profileStop
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c maxOccupancy|____chimes_ret_var_3|0 " i32 " 32 0 0 0
