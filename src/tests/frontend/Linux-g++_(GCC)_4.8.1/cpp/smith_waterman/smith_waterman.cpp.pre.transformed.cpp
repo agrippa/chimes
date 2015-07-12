@@ -2802,11 +2802,7 @@ rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_5, ____
 # 114 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 int main_quick ( int argc, char* argv[] ); int main ( int argc, char* argv[] );
-int main_resumable ( int argc, char* argv[] ) {const int ____chimes_did_disable6 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17130708580749872867UL)) ; unsigned long long estimate;
-# 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-unsigned long long elapsed;
-# 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-unsigned long long c;
+int main_resumable ( int argc, char* argv[] ) {const int ____chimes_did_disable6 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17130708580749872867UL)) ; unsigned long long c;
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 struct timeval intermediate;
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
@@ -2828,7 +2824,7 @@ unsigned long long n_char_in_file_1;
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 int *result_array[2];
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
- register_stack_vars(13, "main|estimate|0", (int *)0x0, "i64", (void *)(&estimate), (size_t)8, 0, 0, 0, "main|elapsed|0", (int *)0x0, "i64", (void *)(&elapsed), (size_t)8, 0, 0, 0, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(11, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ; ;
 # 116 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     int i; int j; ;
 # 117 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
@@ -2913,9 +2909,9 @@ int *result_array[2];
 # 163 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         gettimeofday(&intermediate, 0);
 # 164 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-           elapsed = (((intermediate.tv_sec - begin.tv_sec) * 1000) + ((intermediate.tv_usec - begin.tv_usec) / 1000)) ;
+         unsigned long long elapsed; elapsed = (((intermediate.tv_sec - begin.tv_sec) * 1000) + ((intermediate.tv_usec - begin.tv_usec) / 1000)) ;
 # 166 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-           estimate = (elapsed / (c + 1)) ;
+         unsigned long long estimate; estimate = (elapsed / (c + 1)) ;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         fprintf(stderr, "%llu / %llu: %llu ms elapsed, %llu estimated total\n",
 # 168 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
@@ -3108,11 +3104,7 @@ void kernel(const unsigned long long c, const unsigned long long chunking, int *
 # 93 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         unsigned long long n_char_in_file_2) { (____chimes_replaying ? kernel_resumable(c, chunking, current, prev, n_char_in_file_1, n_char_in_file_2) : kernel_quick(c, chunking, current, prev, n_char_in_file_1, n_char_in_file_2)); }
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-int main_quick ( int argc, char* argv[] ) {const int ____chimes_did_disable6 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17130708580749872867UL)) ; unsigned long long estimate;
-# 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-unsigned long long elapsed;
-# 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-unsigned long long c;
+int main_quick ( int argc, char* argv[] ) {const int ____chimes_did_disable6 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17130708580749872867UL)) ; unsigned long long c;
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 struct timeval intermediate;
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
@@ -3134,7 +3126,7 @@ unsigned long long n_char_in_file_1;
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 int *result_array[2];
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
- register_stack_vars(13, "main|estimate|0", (int *)0x0, "i64", (void *)(&estimate), (size_t)8, 0, 0, 0, "main|elapsed|0", (int *)0x0, "i64", (void *)(&elapsed), (size_t)8, 0, 0, 0, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0); ; ;
+ register_stack_vars(11, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0); ; ;
 # 116 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     int i; int j; ;
 # 117 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
@@ -3219,9 +3211,9 @@ int *result_array[2];
 # 163 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         gettimeofday(&intermediate, 0);
 # 164 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-           elapsed = (((intermediate.tv_sec - begin.tv_sec) * 1000) + ((intermediate.tv_usec - begin.tv_usec) / 1000)) ;
+         unsigned long long elapsed; elapsed = (((intermediate.tv_sec - begin.tv_sec) * 1000) + ((intermediate.tv_usec - begin.tv_usec) / 1000)) ;
 # 166 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-           estimate = (elapsed / (c + 1)) ;
+         unsigned long long estimate; estimate = (elapsed / (c + 1)) ;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         fprintf(stderr, "%llu / %llu: %llu ms elapsed, %llu estimated total\n",
 # 168 "/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"

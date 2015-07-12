@@ -1850,9 +1850,9 @@ static int module_init() {
                      "DomainSt", 1344UL, 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent),
                              "processorNum", "_Z12processorNumP8DomainStiii", 0,
                              "initDecomposition", "_Z17initDecompositioniiiPd", 2, "getNRanks", "getMyRank",
-                        "initDecomposition|xproc|0", 2, "getNRanks", "getMyRank",
-                        "initDecomposition|yproc|0", 2, "getNRanks", "getMyRank",
-                        "initDecomposition|zproc|0", 2, "getNRanks", "getMyRank",
+                        "initDecomposition|xproc|0", 1, "getNRanks",
+                        "initDecomposition|yproc|0", 1, "getNRanks",
+                        "initDecomposition|zproc|0", 1, "getNRanks",
                         "initDecomposition|globalExtent|0", 2, "getNRanks", "getMyRank",
                         "initDecomposition|dd|0", 1, "getMyRank");
     return 0;

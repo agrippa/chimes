@@ -43,10 +43,6 @@ static int ____must_checkpoint_createFccLattice_ix_0 = 2;
 static int ____must_checkpoint_createFccLattice_iy_0 = 2;
 static int ____must_checkpoint_createFccLattice_iz_0 = 2;
 static int ____must_checkpoint_createFccLattice_ib_0 = 2;
-static int ____must_checkpoint_createFccLattice_rx_0 = 2;
-static int ____must_checkpoint_createFccLattice_ry_0 = 2;
-static int ____must_checkpoint_createFccLattice_rz_0 = 2;
-static int ____must_checkpoint_createFccLattice_id_0 = 2;
 static int ____must_checkpoint_setVcm_s_0 = 2;
 static int ____must_checkpoint_setVcm_newVcm_0 = 2;
 static int ____must_checkpoint_setVcm_oldVcm_0 = 2;
@@ -58,16 +54,10 @@ static int ____must_checkpoint_setTemperature_temperature_0 = 2;
 static int ____must_checkpoint_setTemperature_iBox_0 = 2;
 static int ____must_checkpoint_setTemperature_iOff_0 = 2;
 static int ____must_checkpoint_setTemperature_ii_0 = 2;
-static int ____must_checkpoint_setTemperature_iType_0 = 2;
 static int ____must_checkpoint_setTemperature_mass_0 = 2;
 static int ____must_checkpoint_setTemperature_sigma_0 = 2;
 static int ____must_checkpoint_setTemperature_seed_0 = 2;
 static int ____must_checkpoint_setTemperature_vZero_0 = 2;
-static int ____must_checkpoint_setTemperature_temp_0 = 2;
-static int ____must_checkpoint_setTemperature_scaleFactor_0 = 2;
-static int ____must_checkpoint_setTemperature_iBox_1 = 2;
-static int ____must_checkpoint_setTemperature_iOff_1 = 2;
-static int ____must_checkpoint_setTemperature_ii_1 = 2;
 static int ____must_checkpoint_randomDisplacements_s_0 = 2;
 static int ____must_checkpoint_randomDisplacements_delta_0 = 2;
 static int ____must_checkpoint_randomDisplacements_iBox_0 = 2;
@@ -3871,15 +3861,7 @@ void createFccLattice_npm(int nx, int ny, int nz, real_t lat, SimFlat* s);static
 void createFccLattice_quick(int nx, int ny, int nz, real_t lat, SimFlat* s); void createFccLattice(int nx, int ny, int nz, real_t lat, SimFlat* s);
 void createFccLattice_resumable(int nx, int ny, int nz, real_t lat, SimFlat* s)
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&createFccLattice), "createFccLattice", &____must_manage_createFccLattice, 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(930458318103041552UL), "createFccLattice|nx|0", &____must_checkpoint_createFccLattice_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", &____must_checkpoint_createFccLattice_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", &____must_checkpoint_createFccLattice_nz_0, "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", &____must_checkpoint_createFccLattice_lat_0, "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", &____must_checkpoint_createFccLattice_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int id;
-# 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-real_t rz;
-# 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-real_t ry;
-# 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-real_t rx;
-# 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-int ib;
+{const int ____chimes_did_disable2 = new_stack((void *)(&createFccLattice), "createFccLattice", &____must_manage_createFccLattice, 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(930458318103041552UL), "createFccLattice|nx|0", &____must_checkpoint_createFccLattice_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", &____must_checkpoint_createFccLattice_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", &____must_checkpoint_createFccLattice_nz_0, "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", &____must_checkpoint_createFccLattice_lat_0, "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", &____must_checkpoint_createFccLattice_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int ib;
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 int iz;
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -3905,7 +3887,7 @@ const real_t *localMax;
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 const real_t *localMin;
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- if (____must_checkpoint_createFccLattice_id_0 || ____must_checkpoint_createFccLattice_rz_0 || ____must_checkpoint_createFccLattice_ry_0 || ____must_checkpoint_createFccLattice_rx_0 || ____must_checkpoint_createFccLattice_ib_0 || ____must_checkpoint_createFccLattice_iz_0 || ____must_checkpoint_createFccLattice_iy_0 || ____must_checkpoint_createFccLattice_ix_0 || ____must_checkpoint_createFccLattice_pz_0 || ____must_checkpoint_createFccLattice_py_0 || ____must_checkpoint_createFccLattice_px_0 || ____must_checkpoint_createFccLattice_end_0 || ____must_checkpoint_createFccLattice_begin_0 || ____must_checkpoint_createFccLattice_basis_0 || ____must_checkpoint_createFccLattice_nb_0 || ____must_checkpoint_createFccLattice_localMax_0 || ____must_checkpoint_createFccLattice_localMin_0) { register_stack_vars(17, "createFccLattice|id|0", &____must_checkpoint_createFccLattice_id_0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "createFccLattice|rz|0", &____must_checkpoint_createFccLattice_rz_0, "double", (void *)(&rz), (size_t)8, 0, 0, 0, "createFccLattice|ry|0", &____must_checkpoint_createFccLattice_ry_0, "double", (void *)(&ry), (size_t)8, 0, 0, 0, "createFccLattice|rx|0", &____must_checkpoint_createFccLattice_rx_0, "double", (void *)(&rx), (size_t)8, 0, 0, 0, "createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0, "createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0, "createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0, "createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0, "createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0, "createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0, "createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_createFccLattice_ib_0 || ____must_checkpoint_createFccLattice_iz_0 || ____must_checkpoint_createFccLattice_iy_0 || ____must_checkpoint_createFccLattice_ix_0 || ____must_checkpoint_createFccLattice_pz_0 || ____must_checkpoint_createFccLattice_py_0 || ____must_checkpoint_createFccLattice_px_0 || ____must_checkpoint_createFccLattice_end_0 || ____must_checkpoint_createFccLattice_begin_0 || ____must_checkpoint_createFccLattice_basis_0 || ____must_checkpoint_createFccLattice_nb_0 || ____must_checkpoint_createFccLattice_localMax_0 || ____must_checkpoint_createFccLattice_localMin_0) { register_stack_vars(13, "createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0, "createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0, "createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0, "createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0, "createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0, "createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0, "createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
 # 80 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
       localMin = (s->domain->localMin) ;
 # 81 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -3941,11 +3923,11 @@ const real_t *localMin;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
             {
 # 105 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-                  rx = ((ix + basis[ib][0]) * lat) ;
+                real_t rx; rx = ((ix + basis[ib][0]) * lat) ;
 # 106 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-                  ry = ((iy + basis[ib][1]) * lat) ;
+                real_t ry; ry = ((iy + basis[ib][1]) * lat) ;
 # 107 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-                  rz = ((iz + basis[ib][2]) * lat) ;
+                real_t rz; rz = ((iz + basis[ib][2]) * lat) ;
 # 108 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
                if (rx < localMin[0] || rx >= localMax[0]) {continue; };
 # 109 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -3953,7 +3935,7 @@ const real_t *localMin;
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
                if (rz < localMin[2] || rz >= localMax[2]) {continue; };
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-                  id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
+                int id; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
                 call_lbl_3: ({ LinkCell * ____chimes_arg3; Atoms * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); ____chimes_arg4 = (s->atoms); } calling((void*)putAtomInBox, 3, ____alias_loc_id_2, 0UL, 10, (size_t)(930458318103041554UL), (size_t)(930458318103041554UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg3, ____chimes_arg4, id, 0, rx, ry, rz, px, py, pz); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4029,11 +4011,7 @@ void setTemperature_npm(SimFlat* s, real_t temperature);static double (*____chim
 void setTemperature_quick(SimFlat* s, real_t temperature); void setTemperature(SimFlat* s, real_t temperature);
 void setTemperature_resumable(SimFlat* s, real_t temperature)
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(930458318103042213UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0) ; real_t scaleFactor;
-# 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-real_t temp;
-# 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-real_t vZero[3] = { 0., 0., 0. };
+{const int ____chimes_did_disable4 = new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(930458318103042213UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0) ; real_t vZero[3] = { 0., 0., 0. };
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 uint64_t seed;
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4041,20 +4019,18 @@ real_t sigma;
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 real_t mass;
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-int iType;
-# 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- if (____must_checkpoint_setTemperature_scaleFactor_0 || ____must_checkpoint_setTemperature_temp_0 || ____must_checkpoint_setTemperature_vZero_0 || ____must_checkpoint_setTemperature_seed_0 || ____must_checkpoint_setTemperature_sigma_0 || ____must_checkpoint_setTemperature_mass_0 || ____must_checkpoint_setTemperature_iType_0) { register_stack_vars(7, "setTemperature|scaleFactor|0", &____must_checkpoint_setTemperature_scaleFactor_0, "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0, "setTemperature|temp|0", &____must_checkpoint_setTemperature_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0, "setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0, "setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0, "setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0, "setTemperature|iType|0", &____must_checkpoint_setTemperature_iType_0, "i32", (void *)(&iType), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_0; } ; ;
+ if (____must_checkpoint_setTemperature_vZero_0 || ____must_checkpoint_setTemperature_seed_0 || ____must_checkpoint_setTemperature_sigma_0 || ____must_checkpoint_setTemperature_mass_0) { register_stack_vars(4, "setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0, "setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0, "setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_0; } ; ;
 # 161 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 162 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    { lbl_0: int iBox; if (____must_checkpoint_setTemperature_iBox_0 != 0) { register_stack_var("setTemperature|iBox|0", &____must_checkpoint_setTemperature_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 163 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    {
 # 164 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-      { lbl_1: int iOff; if (____must_checkpoint_setTemperature_iOff_0 != 0) { register_stack_var("setTemperature|iOff|0", &____must_checkpoint_setTemperature_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_2; } lbl_2: int ii; if (____must_checkpoint_setTemperature_ii_0 != 0) { register_stack_var("setTemperature|ii|0", &____must_checkpoint_setTemperature_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_3; } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+      { lbl_1: int iOff; if (____must_checkpoint_setTemperature_iOff_0 != 0) { register_stack_var("setTemperature|iOff|0", &____must_checkpoint_setTemperature_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_2; } lbl_2: int ii; if (____must_checkpoint_setTemperature_ii_0 != 0) { register_stack_var("setTemperature|ii|0", &____must_checkpoint_setTemperature_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
       {
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-            iType = (s->atoms->iSpecies[iOff]) ;
+          int iType; iType = (s->atoms->iSpecies[iOff]) ;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
             mass = (s->species[iType].mass) ;
 # 168 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4082,16 +4058,16 @@ int iType;
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
     call_lbl_8: ({ calling((void*)kineticEnergy, 8, ____alias_loc_id_8, 0UL, 1, (size_t)(930458318103042213UL)); (kineticEnergy)(s); }) ;
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-      temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
+    real_t temp; temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
 # 182 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-      scaleFactor = (sqrt(temperature / temp)) ;
+    real_t scaleFactor; scaleFactor = (sqrt(temperature / temp)) ;
 # 184 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   { lbl_3: int iBox; if (____must_checkpoint_setTemperature_iBox_1 != 0) { register_stack_var("setTemperature|iBox|1", &____must_checkpoint_setTemperature_iBox_1, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_4; } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
+   { int iBox; for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 185 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    {
 # 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-      { lbl_4: int iOff; if (____must_checkpoint_setTemperature_iOff_1 != 0) { register_stack_var("setTemperature|iOff|1", &____must_checkpoint_setTemperature_iOff_1, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_5; } lbl_5: int ii; if (____must_checkpoint_setTemperature_ii_1 != 0) { register_stack_var("setTemperature|ii|1", &____must_checkpoint_setTemperature_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
       {
 # 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4305,15 +4281,7 @@ void destroyAtoms(Atoms *atoms) { (____chimes_replaying ? destroyAtoms_resumable
 # 78 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 void createFccLattice_quick(int nx, int ny, int nz, real_t lat, SimFlat* s)
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&createFccLattice), "createFccLattice", &____must_manage_createFccLattice, 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(930458318103041552UL), "createFccLattice|nx|0", &____must_checkpoint_createFccLattice_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", &____must_checkpoint_createFccLattice_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", &____must_checkpoint_createFccLattice_nz_0, "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", &____must_checkpoint_createFccLattice_lat_0, "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", &____must_checkpoint_createFccLattice_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int id;
-# 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-real_t rz;
-# 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-real_t ry;
-# 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-real_t rx;
-# 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-int ib;
+{const int ____chimes_did_disable2 = new_stack((void *)(&createFccLattice), "createFccLattice", &____must_manage_createFccLattice, 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(930458318103041552UL), "createFccLattice|nx|0", &____must_checkpoint_createFccLattice_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", &____must_checkpoint_createFccLattice_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", &____must_checkpoint_createFccLattice_nz_0, "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", &____must_checkpoint_createFccLattice_lat_0, "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", &____must_checkpoint_createFccLattice_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int ib;
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 int iz;
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4339,7 +4307,7 @@ const real_t *localMax;
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 const real_t *localMin;
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- if (____must_checkpoint_createFccLattice_id_0 || ____must_checkpoint_createFccLattice_rz_0 || ____must_checkpoint_createFccLattice_ry_0 || ____must_checkpoint_createFccLattice_rx_0 || ____must_checkpoint_createFccLattice_ib_0 || ____must_checkpoint_createFccLattice_iz_0 || ____must_checkpoint_createFccLattice_iy_0 || ____must_checkpoint_createFccLattice_ix_0 || ____must_checkpoint_createFccLattice_pz_0 || ____must_checkpoint_createFccLattice_py_0 || ____must_checkpoint_createFccLattice_px_0 || ____must_checkpoint_createFccLattice_end_0 || ____must_checkpoint_createFccLattice_begin_0 || ____must_checkpoint_createFccLattice_basis_0 || ____must_checkpoint_createFccLattice_nb_0 || ____must_checkpoint_createFccLattice_localMax_0 || ____must_checkpoint_createFccLattice_localMin_0) { register_stack_vars(17, "createFccLattice|id|0", &____must_checkpoint_createFccLattice_id_0, "i32", (void *)(&id), (size_t)4, 0, 0, 0, "createFccLattice|rz|0", &____must_checkpoint_createFccLattice_rz_0, "double", (void *)(&rz), (size_t)8, 0, 0, 0, "createFccLattice|ry|0", &____must_checkpoint_createFccLattice_ry_0, "double", (void *)(&ry), (size_t)8, 0, 0, 0, "createFccLattice|rx|0", &____must_checkpoint_createFccLattice_rx_0, "double", (void *)(&rx), (size_t)8, 0, 0, 0, "createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0, "createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0, "createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0, "createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0, "createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0, "createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0, "createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); } ; ;
+ if (____must_checkpoint_createFccLattice_ib_0 || ____must_checkpoint_createFccLattice_iz_0 || ____must_checkpoint_createFccLattice_iy_0 || ____must_checkpoint_createFccLattice_ix_0 || ____must_checkpoint_createFccLattice_pz_0 || ____must_checkpoint_createFccLattice_py_0 || ____must_checkpoint_createFccLattice_px_0 || ____must_checkpoint_createFccLattice_end_0 || ____must_checkpoint_createFccLattice_begin_0 || ____must_checkpoint_createFccLattice_basis_0 || ____must_checkpoint_createFccLattice_nb_0 || ____must_checkpoint_createFccLattice_localMax_0 || ____must_checkpoint_createFccLattice_localMin_0) { register_stack_vars(13, "createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0, "createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0, "createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0, "createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0, "createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0, "createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0, "createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); } ; ;
 # 80 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
       localMin = (s->domain->localMin) ;
 # 81 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4375,11 +4343,11 @@ const real_t *localMin;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
             {
 # 105 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-                  rx = ((ix + basis[ib][0]) * lat) ;
+                real_t rx; rx = ((ix + basis[ib][0]) * lat) ;
 # 106 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-                  ry = ((iy + basis[ib][1]) * lat) ;
+                real_t ry; ry = ((iy + basis[ib][1]) * lat) ;
 # 107 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-                  rz = ((iz + basis[ib][2]) * lat) ;
+                real_t rz; rz = ((iz + basis[ib][2]) * lat) ;
 # 108 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
                if (rx < localMin[0] || rx >= localMax[0]) {continue; };
 # 109 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4387,7 +4355,7 @@ const real_t *localMin;
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
                if (rz < localMin[2] || rz >= localMax[2]) {continue; };
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-                  id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
+                int id; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
                 call_lbl_3: ({ calling((void*)putAtomInBox, 3, ____alias_loc_id_2, 0UL, 10, (size_t)(930458318103041554UL), (size_t)(930458318103041554UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4459,11 +4427,7 @@ void setVcm(SimFlat* s, real_t newVcm[3]) { (____chimes_replaying ? setVcm_resum
 # 159 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 void setTemperature_quick(SimFlat* s, real_t temperature)
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(930458318103042213UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0) ; real_t scaleFactor;
-# 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-real_t temp;
-# 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-real_t vZero[3] = { 0., 0., 0. };
+{const int ____chimes_did_disable4 = new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(930458318103042213UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0) ; real_t vZero[3] = { 0., 0., 0. };
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 uint64_t seed;
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4471,9 +4435,7 @@ real_t sigma;
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 real_t mass;
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-int iType;
-# 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- if (____must_checkpoint_setTemperature_scaleFactor_0 || ____must_checkpoint_setTemperature_temp_0 || ____must_checkpoint_setTemperature_vZero_0 || ____must_checkpoint_setTemperature_seed_0 || ____must_checkpoint_setTemperature_sigma_0 || ____must_checkpoint_setTemperature_mass_0 || ____must_checkpoint_setTemperature_iType_0) { register_stack_vars(7, "setTemperature|scaleFactor|0", &____must_checkpoint_setTemperature_scaleFactor_0, "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0, "setTemperature|temp|0", &____must_checkpoint_setTemperature_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0, "setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0, "setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0, "setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0, "setTemperature|iType|0", &____must_checkpoint_setTemperature_iType_0, "i32", (void *)(&iType), (size_t)4, 0, 0, 0); } ; ;
+ if (____must_checkpoint_setTemperature_vZero_0 || ____must_checkpoint_setTemperature_seed_0 || ____must_checkpoint_setTemperature_sigma_0 || ____must_checkpoint_setTemperature_mass_0) { register_stack_vars(4, "setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0, "setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0, "setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0); } ; ;
 # 161 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 162 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    { lbl_0: int iBox; if (____must_checkpoint_setTemperature_iBox_0 != 0) { register_stack_var("setTemperature|iBox|0", &____must_checkpoint_setTemperature_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
@@ -4484,7 +4446,7 @@ int iType;
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
       {
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-            iType = (s->atoms->iSpecies[iOff]) ;
+          int iType; iType = (s->atoms->iSpecies[iOff]) ;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
             mass = (s->species[iType].mass) ;
 # 168 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4512,16 +4474,16 @@ int iType;
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
     call_lbl_8: ({ calling((void*)kineticEnergy, 8, ____alias_loc_id_8, 0UL, 1, (size_t)(930458318103042213UL)); (kineticEnergy)(s); }) ;
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-      temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
+    real_t temp; temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
 # 182 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-      scaleFactor = (sqrt(temperature / temp)) ;
+    real_t scaleFactor; scaleFactor = (sqrt(temperature / temp)) ;
 # 184 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   { lbl_3: int iBox; if (____must_checkpoint_setTemperature_iBox_1 != 0) { register_stack_var("setTemperature|iBox|1", &____must_checkpoint_setTemperature_iBox_1, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
+   { int iBox; for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 185 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    {
 # 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-      { lbl_4: int iOff; if (____must_checkpoint_setTemperature_iOff_1 != 0) { register_stack_var("setTemperature|iOff|1", &____must_checkpoint_setTemperature_iOff_1, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } lbl_5: int ii; if (____must_checkpoint_setTemperature_ii_1 != 0) { register_stack_var("setTemperature|ii|1", &____must_checkpoint_setTemperature_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
       {
 # 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4995,7 +4957,7 @@ void computeVcm_npm(SimFlat* s, real_t vcm[3])
 
 
 static int module_init() {
-    init_module(930458318103041046UL, 25, 8, 49, 24, 7, 10, 17, 0, 0, 8,
+    init_module(930458318103041046UL, 25, 8, 39, 24, 7, 10, 17, 0, 0, 8,
                            &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "addIntParallel", (unsigned)1, (930458318103041046UL + 508UL),
                            &____alias_loc_id_1, (unsigned)21, (unsigned)0, (unsigned)0, (930458318103041046UL + 245UL), (930458318103041046UL + 246UL), (930458318103041046UL + 247UL), (930458318103041046UL + 248UL), (930458318103041046UL + 249UL), (930458318103041046UL + 250UL), (930458318103041046UL + 251UL), (930458318103041046UL + 252UL), (930458318103041046UL + 254UL), (930458318103041046UL + 255UL), (930458318103041046UL + 256UL), (930458318103041046UL + 257UL), (930458318103041046UL + 258UL), (930458318103041046UL + 259UL), (930458318103041046UL + 260UL), (930458318103041046UL + 261UL), (930458318103041046UL + 262UL), (930458318103041046UL + 263UL), (930458318103041046UL + 264UL), (930458318103041046UL + 265UL), (930458318103041046UL + 266UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (930458318103041046UL + 267UL), "putAtomInBox", (unsigned)1, (930458318103041046UL + 508UL),
@@ -5098,25 +5060,21 @@ static int module_init() {
                         "createFccLattice|nx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
                         "createFccLattice|ny|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
                         "createFccLattice|nz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|lat|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
+                        "createFccLattice|lat|0", 1, "putAtomInBox",
                         "createFccLattice|s|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|localMin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|localMax|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
+                        "createFccLattice|localMin|0", 1, "putAtomInBox",
+                        "createFccLattice|localMax|0", 1, "putAtomInBox",
                         "createFccLattice|nb|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
                         "createFccLattice|basis|0", 1, "createFccLattice",
-                        "createFccLattice|begin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|end|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|px|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|py|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|pz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|ix|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|iy|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|iz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|ib|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|rx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|ry|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|rz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
-                        "createFccLattice|id|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
+                        "createFccLattice|begin|0", 1, "putAtomInBox",
+                        "createFccLattice|end|0", 1, "putAtomInBox",
+                        "createFccLattice|px|0", 1, "putAtomInBox",
+                        "createFccLattice|py|0", 1, "putAtomInBox",
+                        "createFccLattice|pz|0", 1, "putAtomInBox",
+                        "createFccLattice|ix|0", 1, "putAtomInBox",
+                        "createFccLattice|iy|0", 1, "putAtomInBox",
+                        "createFccLattice|iz|0", 1, "putAtomInBox",
+                        "createFccLattice|ib|0", 1, "putAtomInBox",
                         "setVcm|s|0", 1, "computeVcm",
                         "setVcm|newVcm|0", 1, "computeVcm",
                         "setVcm|oldVcm|0", 1, "setVcm",
@@ -5125,19 +5083,13 @@ static int module_init() {
                         "computeVcm|vcmSum|0", 1, "computeVcm",
                         "setTemperature|s|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
                         "setTemperature|temperature|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|iBox|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|iOff|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|ii|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|iType|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|mass|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
-                        "setTemperature|sigma|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev",
+                        "setTemperature|iBox|0", 2, "mkSeed", "gasdev",
+                        "setTemperature|iOff|0", 2, "mkSeed", "gasdev",
+                        "setTemperature|ii|0", 2, "mkSeed", "gasdev",
+                        "setTemperature|mass|0", 2, "mkSeed", "gasdev",
+                        "setTemperature|sigma|0", 2, "mkSeed", "gasdev",
                         "setTemperature|seed|0", 1, "setTemperature",
                         "setTemperature|vZero|0", 1, "setTemperature",
-                        "setTemperature|temp|0", 1, "kineticEnergy",
-                        "setTemperature|scaleFactor|0", 1, "kineticEnergy",
-                        "setTemperature|iBox|1", 1, "kineticEnergy",
-                        "setTemperature|iOff|1", 1, "kineticEnergy",
-                        "setTemperature|ii|1", 1, "kineticEnergy",
                         "randomDisplacements|s|0", 2, "mkSeed", "lcg61",
                         "randomDisplacements|delta|0", 2, "mkSeed", "lcg61",
                         "randomDisplacements|iBox|0", 2, "mkSeed", "lcg61",

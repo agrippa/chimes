@@ -510,14 +510,6 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloEx
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 123 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 153 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 153 21 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 155 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 155 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 156 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 156 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 157 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 157 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 158 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 158 16 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 166 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 166 29 
 InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 7  lbl_0: 
@@ -525,17 +517,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ha
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 13 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 152 505  ; AtomExchangeParms *parms;
 # 152
-int maxSize;
-# 152
-int size2;
-# 152
-int size1;
-# 152
-int size0;
-# 152
 HaloExchange *hh;
 # 152
- if (____must_checkpoint_initAtomHaloExchange_parms_0 || ____must_checkpoint_initAtomHaloExchange_maxSize_0 || ____must_checkpoint_initAtomHaloExchange_size2_0 || ____must_checkpoint_initAtomHaloExchange_size1_0 || ____must_checkpoint_initAtomHaloExchange_size0_0 || ____must_checkpoint_initAtomHaloExchange_hh_0) { register_stack_vars(6, "initAtomHaloExchange|parms|0", &____must_checkpoint_initAtomHaloExchange_parms_0, "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0, "initAtomHaloExchange|maxSize|0", &____must_checkpoint_initAtomHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size2|0", &____must_checkpoint_initAtomHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size1|0", &____must_checkpoint_initAtomHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size0|0", &____must_checkpoint_initAtomHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0, "initAtomHaloExchange|hh|0", &____must_checkpoint_initAtomHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0);  }  
+ if (____must_checkpoint_initAtomHaloExchange_parms_0 || ____must_checkpoint_initAtomHaloExchange_hh_0) { register_stack_vars(2, "initAtomHaloExchange|parms|0", &____must_checkpoint_initAtomHaloExchange_parms_0, "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0, "initAtomHaloExchange|hh|0", &____must_checkpoint_initAtomHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 212 15 len=21 initForceHaloExchange_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 43  ({  calling((void*)initHaloExchange, 1, ____alias_loc_id_10, 12143118692030656493UL, 1, (size_t)(12143118692030656617UL)); (initHaloExchange)(domain); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 66 
@@ -545,14 +529,6 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloEx
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 239 91 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 21 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 220 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 220 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 221 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 221 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 222 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 222 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 223 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 223 16 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 227 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 227 30 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 236 7 
@@ -561,17 +537,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ha
 # 213
 ForceExchangeParms *parms;
 # 213
-int maxSize;
-# 213
-int size2;
-# 213
-int size1;
-# 213
-int size0;
-# 213
 HaloExchange *hh;
 # 213
- if (____must_checkpoint_initForceHaloExchange_ii_0 || ____must_checkpoint_initForceHaloExchange_parms_0 || ____must_checkpoint_initForceHaloExchange_maxSize_0 || ____must_checkpoint_initForceHaloExchange_size2_0 || ____must_checkpoint_initForceHaloExchange_size1_0 || ____must_checkpoint_initForceHaloExchange_size0_0 || ____must_checkpoint_initForceHaloExchange_hh_0) { register_stack_vars(7, "initForceHaloExchange|ii|0", &____must_checkpoint_initForceHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "initForceHaloExchange|parms|0", &____must_checkpoint_initForceHaloExchange_parms_0, "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0, "initForceHaloExchange|maxSize|0", &____must_checkpoint_initForceHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0, "initForceHaloExchange|size2|0", &____must_checkpoint_initForceHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0, "initForceHaloExchange|size1|0", &____must_checkpoint_initForceHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0, "initForceHaloExchange|size0|0", &____must_checkpoint_initForceHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0, "initForceHaloExchange|hh|0", &____must_checkpoint_initForceHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0);  }  
+ if (____must_checkpoint_initForceHaloExchange_ii_0 || ____must_checkpoint_initForceHaloExchange_parms_0 || ____must_checkpoint_initForceHaloExchange_hh_0) { register_stack_vars(3, "initForceHaloExchange|ii|0", &____must_checkpoint_initForceHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "initForceHaloExchange|parms|0", &____must_checkpoint_initForceHaloExchange_parms_0, "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0, "initForceHaloExchange|hh|0", &____must_checkpoint_initForceHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 246 6 len=19 destroyHaloExchange_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 247 179  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 253 6 len=12 haloExchange_quick
@@ -727,39 +695,7 @@ RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExc
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 420 13 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 423 7 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 423 13 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 425 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 425 15 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 426 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 426 16 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 427 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 427 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 428 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 428 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 429 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 429 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 430 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 430 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 431 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 431 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 432 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 432 17 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 416 271  ; real_t pz;
-# 416
-real_t py;
-# 416
-real_t px;
-# 416
-real_t rz;
-# 416
-real_t ry;
-# 416
-real_t rx;
-# 416
-int type;
-# 416
-int gid;
-# 416
-int ii;
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 416 271  ; int ii;
 # 416
 int nBuf;
 # 416
@@ -767,7 +703,7 @@ AtomMsg *buf;
 # 416
 SimFlat *s;
 # 416
- if (____must_checkpoint_unloadAtomsBuffer_pz_0 || ____must_checkpoint_unloadAtomsBuffer_py_0 || ____must_checkpoint_unloadAtomsBuffer_px_0 || ____must_checkpoint_unloadAtomsBuffer_rz_0 || ____must_checkpoint_unloadAtomsBuffer_ry_0 || ____must_checkpoint_unloadAtomsBuffer_rx_0 || ____must_checkpoint_unloadAtomsBuffer_type_0 || ____must_checkpoint_unloadAtomsBuffer_gid_0 || ____must_checkpoint_unloadAtomsBuffer_ii_0 || ____must_checkpoint_unloadAtomsBuffer_nBuf_0 || ____must_checkpoint_unloadAtomsBuffer_buf_0 || ____must_checkpoint_unloadAtomsBuffer_s_0) { register_stack_vars(12, "unloadAtomsBuffer|pz|0", &____must_checkpoint_unloadAtomsBuffer_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|py|0", &____must_checkpoint_unloadAtomsBuffer_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|px|0", &____must_checkpoint_unloadAtomsBuffer_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|rz|0", &____must_checkpoint_unloadAtomsBuffer_rz_0, "double", (void *)(&rz), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|ry|0", &____must_checkpoint_unloadAtomsBuffer_ry_0, "double", (void *)(&ry), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|rx|0", &____must_checkpoint_unloadAtomsBuffer_rx_0, "double", (void *)(&rx), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|type|0", &____must_checkpoint_unloadAtomsBuffer_type_0, "i32", (void *)(&type), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|gid|0", &____must_checkpoint_unloadAtomsBuffer_gid_0, "i32", (void *)(&gid), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|ii|0", &____must_checkpoint_unloadAtomsBuffer_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|nBuf|0", &____must_checkpoint_unloadAtomsBuffer_nBuf_0, "i32", (void *)(&nBuf), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|buf|0", &____must_checkpoint_unloadAtomsBuffer_buf_0, "%struct.AtomMsgSt*", (void *)(&buf), (size_t)8, 1, 0, 0, "unloadAtomsBuffer|s|0", &____must_checkpoint_unloadAtomsBuffer_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0);  }  
+ if (____must_checkpoint_unloadAtomsBuffer_ii_0 || ____must_checkpoint_unloadAtomsBuffer_nBuf_0 || ____must_checkpoint_unloadAtomsBuffer_buf_0 || ____must_checkpoint_unloadAtomsBuffer_s_0) { register_stack_vars(4, "unloadAtomsBuffer|ii|0", &____must_checkpoint_unloadAtomsBuffer_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|nBuf|0", &____must_checkpoint_unloadAtomsBuffer_nBuf_0, "i32", (void *)(&nBuf), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|buf|0", &____must_checkpoint_unloadAtomsBuffer_buf_0, "%struct.AtomMsgSt*", (void *)(&buf), (size_t)8, 1, 0, 0, "unloadAtomsBuffer|s|0", &____must_checkpoint_unloadAtomsBuffer_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 437 6 len=20 destroyAtomsExchange_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 438 182  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 455 6 len=19 mkForceSendCellList_quick
@@ -878,14 +814,6 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloEx
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 123 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 153 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 153 21 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 155 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 155 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 156 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 156 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 157 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 157 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 158 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 158 16 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 166 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 166 29 
 InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 7  lbl_0: 
@@ -893,17 +821,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ha
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 13  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 152 505  ; AtomExchangeParms *parms;
 # 152
-int maxSize;
-# 152
-int size2;
-# 152
-int size1;
-# 152
-int size0;
-# 152
 HaloExchange *hh;
 # 152
- if (____must_checkpoint_initAtomHaloExchange_parms_0 || ____must_checkpoint_initAtomHaloExchange_maxSize_0 || ____must_checkpoint_initAtomHaloExchange_size2_0 || ____must_checkpoint_initAtomHaloExchange_size1_0 || ____must_checkpoint_initAtomHaloExchange_size0_0 || ____must_checkpoint_initAtomHaloExchange_hh_0) { register_stack_vars(6, "initAtomHaloExchange|parms|0", &____must_checkpoint_initAtomHaloExchange_parms_0, "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0, "initAtomHaloExchange|maxSize|0", &____must_checkpoint_initAtomHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size2|0", &____must_checkpoint_initAtomHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size1|0", &____must_checkpoint_initAtomHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size0|0", &____must_checkpoint_initAtomHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0, "initAtomHaloExchange|hh|0", &____must_checkpoint_initAtomHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) { goto lbl_0; }  
+ if (____must_checkpoint_initAtomHaloExchange_parms_0 || ____must_checkpoint_initAtomHaloExchange_hh_0) { register_stack_vars(2, "initAtomHaloExchange|parms|0", &____must_checkpoint_initAtomHaloExchange_parms_0, "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0, "initAtomHaloExchange|hh|0", &____must_checkpoint_initAtomHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) { goto lbl_0; }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 212 15 len=21 initForceHaloExchange_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 43  ({  calling((void*)initHaloExchange, 1, ____alias_loc_id_10, 12143118692030656493UL, 1, (size_t)(12143118692030656617UL)); (initHaloExchange)(domain); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 66 
@@ -913,14 +833,6 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloEx
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 239 91 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 21 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 220 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 220 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 221 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 221 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 222 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 222 14 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 223 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 223 16 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 227 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 227 30 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 236 7 
@@ -929,17 +841,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ha
 # 213
 ForceExchangeParms *parms;
 # 213
-int maxSize;
-# 213
-int size2;
-# 213
-int size1;
-# 213
-int size0;
-# 213
 HaloExchange *hh;
 # 213
- if (____must_checkpoint_initForceHaloExchange_ii_0 || ____must_checkpoint_initForceHaloExchange_parms_0 || ____must_checkpoint_initForceHaloExchange_maxSize_0 || ____must_checkpoint_initForceHaloExchange_size2_0 || ____must_checkpoint_initForceHaloExchange_size1_0 || ____must_checkpoint_initForceHaloExchange_size0_0 || ____must_checkpoint_initForceHaloExchange_hh_0) { register_stack_vars(7, "initForceHaloExchange|ii|0", &____must_checkpoint_initForceHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "initForceHaloExchange|parms|0", &____must_checkpoint_initForceHaloExchange_parms_0, "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0, "initForceHaloExchange|maxSize|0", &____must_checkpoint_initForceHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0, "initForceHaloExchange|size2|0", &____must_checkpoint_initForceHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0, "initForceHaloExchange|size1|0", &____must_checkpoint_initForceHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0, "initForceHaloExchange|size0|0", &____must_checkpoint_initForceHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0, "initForceHaloExchange|hh|0", &____must_checkpoint_initForceHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_initForceHaloExchange_ii_0 || ____must_checkpoint_initForceHaloExchange_parms_0 || ____must_checkpoint_initForceHaloExchange_hh_0) { register_stack_vars(3, "initForceHaloExchange|ii|0", &____must_checkpoint_initForceHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "initForceHaloExchange|parms|0", &____must_checkpoint_initForceHaloExchange_parms_0, "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0, "initForceHaloExchange|hh|0", &____must_checkpoint_initForceHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 246 6 len=19 destroyHaloExchange_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 247 179  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 253 6 len=12 haloExchange_resumable
@@ -1095,39 +999,7 @@ RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExc
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 420 13 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 423 7 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 423 13 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 425 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 425 15 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 426 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 426 16 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 427 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 427 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 428 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 428 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 429 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 429 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 430 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 430 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 431 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 431 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 432 8 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 432 17 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 416 271  ; real_t pz;
-# 416
-real_t py;
-# 416
-real_t px;
-# 416
-real_t rz;
-# 416
-real_t ry;
-# 416
-real_t rx;
-# 416
-int type;
-# 416
-int gid;
-# 416
-int ii;
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 416 271  ; int ii;
 # 416
 int nBuf;
 # 416
@@ -1135,7 +1007,7 @@ AtomMsg *buf;
 # 416
 SimFlat *s;
 # 416
- if (____must_checkpoint_unloadAtomsBuffer_pz_0 || ____must_checkpoint_unloadAtomsBuffer_py_0 || ____must_checkpoint_unloadAtomsBuffer_px_0 || ____must_checkpoint_unloadAtomsBuffer_rz_0 || ____must_checkpoint_unloadAtomsBuffer_ry_0 || ____must_checkpoint_unloadAtomsBuffer_rx_0 || ____must_checkpoint_unloadAtomsBuffer_type_0 || ____must_checkpoint_unloadAtomsBuffer_gid_0 || ____must_checkpoint_unloadAtomsBuffer_ii_0 || ____must_checkpoint_unloadAtomsBuffer_nBuf_0 || ____must_checkpoint_unloadAtomsBuffer_buf_0 || ____must_checkpoint_unloadAtomsBuffer_s_0) { register_stack_vars(12, "unloadAtomsBuffer|pz|0", &____must_checkpoint_unloadAtomsBuffer_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|py|0", &____must_checkpoint_unloadAtomsBuffer_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|px|0", &____must_checkpoint_unloadAtomsBuffer_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|rz|0", &____must_checkpoint_unloadAtomsBuffer_rz_0, "double", (void *)(&rz), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|ry|0", &____must_checkpoint_unloadAtomsBuffer_ry_0, "double", (void *)(&ry), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|rx|0", &____must_checkpoint_unloadAtomsBuffer_rx_0, "double", (void *)(&rx), (size_t)8, 0, 0, 0, "unloadAtomsBuffer|type|0", &____must_checkpoint_unloadAtomsBuffer_type_0, "i32", (void *)(&type), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|gid|0", &____must_checkpoint_unloadAtomsBuffer_gid_0, "i32", (void *)(&gid), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|ii|0", &____must_checkpoint_unloadAtomsBuffer_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|nBuf|0", &____must_checkpoint_unloadAtomsBuffer_nBuf_0, "i32", (void *)(&nBuf), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|buf|0", &____must_checkpoint_unloadAtomsBuffer_buf_0, "%struct.AtomMsgSt*", (void *)(&buf), (size_t)8, 1, 0, 0, "unloadAtomsBuffer|s|0", &____must_checkpoint_unloadAtomsBuffer_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_unloadAtomsBuffer_ii_0 || ____must_checkpoint_unloadAtomsBuffer_nBuf_0 || ____must_checkpoint_unloadAtomsBuffer_buf_0 || ____must_checkpoint_unloadAtomsBuffer_s_0) { register_stack_vars(4, "unloadAtomsBuffer|ii|0", &____must_checkpoint_unloadAtomsBuffer_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|nBuf|0", &____must_checkpoint_unloadAtomsBuffer_nBuf_0, "i32", (void *)(&nBuf), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|buf|0", &____must_checkpoint_unloadAtomsBuffer_buf_0, "%struct.AtomMsgSt*", (void *)(&buf), (size_t)8, 1, 0, 0, "unloadAtomsBuffer|s|0", &____must_checkpoint_unloadAtomsBuffer_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 437 6 len=20 destroyAtomsExchange_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 438 182  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 455 6 len=19 mkForceSendCellList_resumable

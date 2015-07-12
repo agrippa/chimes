@@ -37,17 +37,11 @@ static int ____must_checkpoint_uts_numChildren_parent_0 = 2;
 static int ____must_checkpoint_uts_numChildren_numChildren_0 = 2;
 static int ____must_checkpoint_uts_paramsToStr_strBuf_0 = 2;
 static int ____must_checkpoint_uts_paramsToStr_ind_0 = 2;
-static int ____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0 = 2;
-static int ____must_checkpoint_uts_paramsToStr_q_0 = 2;
-static int ____must_checkpoint_uts_paramsToStr_m_0 = 2;
-static int ____must_checkpoint_uts_paramsToStr_es_0 = 2;
 static int ____must_checkpoint_uts_printParams_strBuf_0 = 2;
-static int ____must_checkpoint_uts_printParams_ind_0 = 2;
 static int ____must_checkpoint_uts_parseParams_argc_0 = 2;
 static int ____must_checkpoint_uts_parseParams_argv_0 = 2;
 static int ____must_checkpoint_uts_parseParams_i_0 = 2;
 static int ____must_checkpoint_uts_parseParams_err_0 = 2;
-static int ____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0 = 2;
 
 static int ____must_manage_uts_numChildren_bin = 2;
 static int ____must_manage_uts_childType = 2;
@@ -4388,18 +4382,10 @@ rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_
 # 291 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 int uts_paramsToStr_npm(char *strBuf, int ind);static char *(*____chimes_extern_func_impl_getName)(void) = impl_getName;static int (*____chimes_extern_func_rng_showtype)(char *, int) = rng_showtype;
 int uts_paramsToStr_quick(char *strBuf, int ind); int uts_paramsToStr(char *strBuf, int ind);
-int uts_paramsToStr_resumable(char *strBuf, int ind) {const int ____chimes_did_disable8 = new_stack((void *)(&uts_paramsToStr), "uts_paramsToStr", &____must_manage_uts_paramsToStr, 2, 2, (size_t)(15584602656006456505UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0) ; double es;
-# 291 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-int m;
-# 291 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-double q;
-# 291 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-char *____chimes_unroll_var_0;
-# 291 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
- if (____must_checkpoint_uts_paramsToStr_es_0 || ____must_checkpoint_uts_paramsToStr_m_0 || ____must_checkpoint_uts_paramsToStr_q_0 || ____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0) { register_stack_vars(4, "uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0, "uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0, "uts_paramsToStr|____chimes_unroll_var_0|0", &____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } ; ;
+int uts_paramsToStr_resumable(char *strBuf, int ind) {const int ____chimes_did_disable8 = new_stack((void *)(&uts_paramsToStr), "uts_paramsToStr", &____must_manage_uts_paramsToStr, 2, 2, (size_t)(15584602656006456505UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } ; ;
 # 292 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 293 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_11, 15584602656006456362UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
+    char *____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_11, 15584602656006456362UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
 # 294 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 295 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 296 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4423,11 +4409,11 @@ char *____chimes_unroll_var_0;
 # 307 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (type == BIN || type == HYBRID) {
 # 308 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       q = (nonLeafProb) ;
+     double q; q = (nonLeafProb) ;
 # 309 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       m = (nonLeafBF) ;
+     int m; m = (nonLeafBF) ;
 # 310 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       es = ((1. / (1. - q * m))) ;
+     double es; es = ((1. / (1. - q * m))) ;
 # 311 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  BIN parameters:  q = %f, m = %d, E(n) = %f, E(s) = %.2f\n",
 # 312 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4461,17 +4447,15 @@ rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____al
 # 329 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 void uts_printParams_npm();static int (*____chimes_extern_func_impl_paramsToStr)(char *, int) = impl_paramsToStr;
 void uts_printParams_quick(); void uts_printParams();
-void uts_printParams_resumable() {const int ____chimes_did_disable9 = new_stack((void *)(&uts_printParams), "uts_printParams", &____must_manage_uts_printParams, 0, 0) ; int ind;
+void uts_printParams_resumable() {const int ____chimes_did_disable9 = new_stack((void *)(&uts_printParams), "uts_printParams", &____must_manage_uts_printParams, 0, 0) ; char strBuf[5000];
 # 329 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-char strBuf[5000];
-# 329 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
- if (____must_checkpoint_uts_printParams_ind_0 || ____must_checkpoint_uts_printParams_strBuf_0) { register_stack_vars(2, "uts_printParams|ind|0", &____must_checkpoint_uts_printParams_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0, "uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_uts_printParams_strBuf_0) { register_stack_vars(1, "uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 330 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
    ;
 # 331 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   strBuf[0] = '\0';
 # 332 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-     ind = (0) ;
+   int ind; ind = (0) ;
 # 333 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 334 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (verbose > 0) {
@@ -4609,11 +4593,9 @@ rm_stack(false, 0UL, "uts_parseParams", &____must_manage_uts_parseParams, ____al
 # 403 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 404 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 static void (*____chimes_extern_func_impl_helpMessage)(void) = impl_helpMessage;
-void uts_helpMessage_resumable() {const int ____chimes_did_disable11 = new_stack((void *)(&uts_helpMessage), "uts_helpMessage", &____must_manage_uts_helpMessage, 0, 0) ; char *____chimes_unroll_var_1;
-# 404 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
- if (____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0) { register_stack_vars(1, "uts_helpMessage|____chimes_unroll_var_1|0", &____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0, "i8*", (void *)(&____chimes_unroll_var_1), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ; ;
+void uts_helpMessage_resumable() {const int ____chimes_did_disable11 = new_stack((void *)(&uts_helpMessage), "uts_helpMessage", &____must_manage_uts_helpMessage, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ; ;
 # 405 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_17, 15584602656006456805UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
+    char *____chimes_unroll_var_1; call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_17, 15584602656006456805UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
 # 406 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   printf("    usage:  uts-bin [parameter value] ...\n\n");
 # 407 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4948,18 +4930,10 @@ rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_
 
 int uts_childType(Node *parent) { return (____chimes_replaying ? uts_childType_resumable(parent) : uts_childType_quick(parent)); }
 # 291 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-int uts_paramsToStr_quick(char *strBuf, int ind) {const int ____chimes_did_disable8 = new_stack((void *)(&uts_paramsToStr), "uts_paramsToStr", &____must_manage_uts_paramsToStr, 2, 2, (size_t)(15584602656006456505UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0) ; double es;
-# 291 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-int m;
-# 291 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-double q;
-# 291 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-char *____chimes_unroll_var_0;
-# 291 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
- if (____must_checkpoint_uts_paramsToStr_es_0 || ____must_checkpoint_uts_paramsToStr_m_0 || ____must_checkpoint_uts_paramsToStr_q_0 || ____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0) { register_stack_vars(4, "uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0, "uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0, "uts_paramsToStr|____chimes_unroll_var_0|0", &____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0); } ; ;
+int uts_paramsToStr_quick(char *strBuf, int ind) {const int ____chimes_did_disable8 = new_stack((void *)(&uts_paramsToStr), "uts_paramsToStr", &____must_manage_uts_paramsToStr, 2, 2, (size_t)(15584602656006456505UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0) ; ; ;
 # 292 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 293 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_11, 15584602656006456362UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
+    char *____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_11, 15584602656006456362UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
 # 294 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 295 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 296 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4983,11 +4957,11 @@ char *____chimes_unroll_var_0;
 # 307 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (type == BIN || type == HYBRID) {
 # 308 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       q = (nonLeafProb) ;
+     double q; q = (nonLeafProb) ;
 # 309 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       m = (nonLeafBF) ;
+     int m; m = (nonLeafBF) ;
 # 310 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       es = ((1. / (1. - q * m))) ;
+     double es; es = ((1. / (1. - q * m))) ;
 # 311 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  BIN parameters:  q = %f, m = %d, E(n) = %f, E(s) = %.2f\n",
 # 312 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -5019,17 +4993,15 @@ rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____al
 
 int uts_paramsToStr(char *strBuf, int ind) { return (____chimes_replaying ? uts_paramsToStr_resumable(strBuf, ind) : uts_paramsToStr_quick(strBuf, ind)); }
 # 329 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-void uts_printParams_quick() {const int ____chimes_did_disable9 = new_stack((void *)(&uts_printParams), "uts_printParams", &____must_manage_uts_printParams, 0, 0) ; int ind;
+void uts_printParams_quick() {const int ____chimes_did_disable9 = new_stack((void *)(&uts_printParams), "uts_printParams", &____must_manage_uts_printParams, 0, 0) ; char strBuf[5000];
 # 329 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-char strBuf[5000];
-# 329 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
- if (____must_checkpoint_uts_printParams_ind_0 || ____must_checkpoint_uts_printParams_strBuf_0) { register_stack_vars(2, "uts_printParams|ind|0", &____must_checkpoint_uts_printParams_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0, "uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); } ; ;
+ if (____must_checkpoint_uts_printParams_strBuf_0) { register_stack_vars(1, "uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); } ; ;
 # 330 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
    ;
 # 331 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   strBuf[0] = '\0';
 # 332 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-     ind = (0) ;
+   int ind; ind = (0) ;
 # 333 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 334 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (verbose > 0) {
@@ -5166,11 +5138,9 @@ rm_stack(false, 0UL, "uts_parseParams", &____must_manage_uts_parseParams, ____al
 
 void uts_parseParams(int argc, char *argv[]) { (____chimes_replaying ? uts_parseParams_resumable(argc, argv) : uts_parseParams_quick(argc, argv)); }
 # 404 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-void uts_helpMessage_quick() {const int ____chimes_did_disable11 = new_stack((void *)(&uts_helpMessage), "uts_helpMessage", &____must_manage_uts_helpMessage, 0, 0) ; char *____chimes_unroll_var_1;
-# 404 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
- if (____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0) { register_stack_vars(1, "uts_helpMessage|____chimes_unroll_var_1|0", &____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0, "i8*", (void *)(&____chimes_unroll_var_1), (size_t)8, 1, 0, 0); } ; ;
+void uts_helpMessage_quick() {const int ____chimes_did_disable11 = new_stack((void *)(&uts_helpMessage), "uts_helpMessage", &____must_manage_uts_helpMessage, 0, 0) ; ; ;
 # 405 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_17, 15584602656006456805UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
+    char *____chimes_unroll_var_1; call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_17, 15584602656006456805UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
 # 406 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   printf("    usage:  uts-bin [parameter value] ...\n\n");
 # 407 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -5755,7 +5725,7 @@ void uts_showStats_npm(int nPes, int chunkSize, double walltime, int nNodes, int
 
 
 static int module_init() {
-    init_module(15584602656006455973UL, 13, 13, 19, 28, 13, 8, 21, 2, 0, 5,
+    init_module(15584602656006455973UL, 13, 13, 13, 28, 13, 8, 21, 2, 0, 5,
                            &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (15584602656006455973UL + 1UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)1, (15584602656006455973UL + 55UL), (15584602656006455973UL + 56UL), (15584602656006455973UL + 86UL), "rng_init", (unsigned)1, (15584602656006455973UL + 86UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (15584602656006455973UL + 90UL), "rng_rand", (unsigned)1, (15584602656006455973UL + 119UL),
@@ -5862,20 +5832,14 @@ static int module_init() {
                         "uts_initRoot|type|0", 1, "rng_init",
                         "uts_numChildren_geo|p|0", 1, "rng_rand",
                         "uts_numChildren|parent|0", 3, "uts_numChildren_geo", "uts_numChildren_bin", "uts_error",
-                        "uts_numChildren|numChildren|0", 3, "uts_numChildren_geo", "uts_numChildren_bin", "uts_error",
+                        "uts_numChildren|numChildren|0", 1, "uts_error",
                         "uts_paramsToStr|strBuf|0", 2, "rng_showtype", "impl_getName",
-                        "uts_paramsToStr|ind|0", 2, "rng_showtype", "impl_getName",
-                        "uts_paramsToStr|____chimes_unroll_var_0|0", 1, "rng_showtype",
-                        "uts_paramsToStr|q|0", 1, "rng_showtype",
-                        "uts_paramsToStr|m|0", 1, "rng_showtype",
-                        "uts_paramsToStr|es|0", 1, "rng_showtype",
+                        "uts_paramsToStr|ind|0", 1, "impl_getName",
                         "uts_printParams|strBuf|0", 1, "uts_printParams",
-                        "uts_printParams|ind|0", 2, "uts_paramsToStr", "impl_paramsToStr",
                         "uts_parseParams|argc|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort",
                         "uts_parseParams|argv|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort",
                         "uts_parseParams|i|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort",
                         "uts_parseParams|err|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort",
-                        "uts_helpMessage|____chimes_unroll_var_1|0", 1, "impl_helpMessage",
         "rng_toProb", 0UL, (int)1, 0UL,
         "rng_toProb", 0UL, (int)1, 0UL);
     register_global_var("global|uts_trees_str", "[3 x i8*]", (void *)(&uts_trees_str), 24, 0, 0, 0UL, 0);
