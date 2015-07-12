@@ -1,4 +1,4 @@
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 seconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c seconds|tzp|0 " %struct.timezone = type { i32, i32 } " 64 0 1 timezone 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c seconds|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c seconds|____chimes_ret_var_0|0 " double " 64 0 0 0
@@ -16,5 +16,5 @@
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c main|B|0 " %struct.bstr* " 64 1 0 1 checkpoint
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c main|C|0 " %struct.cstr* " 64 1 0 1 checkpoint
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c main|start_time|0 " double " 64 0 0 1 checkpoint
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c main|end_time|0 " double " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c main|end_time|0 " double " 64 0 0 1 freeA freeB freeC freeSeqData freeSimMatrix
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c main|____chimes_ret_var_1|0 " i32 " 32 0 0 0

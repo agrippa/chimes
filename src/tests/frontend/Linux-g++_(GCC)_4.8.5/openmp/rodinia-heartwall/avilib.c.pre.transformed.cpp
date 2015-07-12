@@ -233,13 +233,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -5278,7 +5278,7 @@ static int avi_add_chunk_resumable(avi_t *AVI, unsigned char *tag, unsigned char
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    memcpy(c,tag,4);
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(c+4, length); });
+    call_lbl_0: ({ calling_npm("long2str", 0); long2str_npm(c+4, length); });
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5287,7 +5287,7 @@ static int avi_add_chunk_resumable(avi_t *AVI, unsigned char *tag, unsigned char
    length = ( ((length)+1) & ~1 );
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if( ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)c, 8); }) != 8 ||
+    call_lbl_1: call_lbl_2: if( ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)c, 8); }) != 8 ||
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)data, length); }) != length )
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5325,7 +5325,7 @@ static int avi_add_index_entry_resumable(avi_t *AVI, unsigned char *tag, long fl
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-     ptr = realloc_wrapper((void *)AVI->idx,(AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0);
+     ptr = ({ void *____chimes_tmp_ptr = realloc((void *)AVI->idx, (AVI->max_idx + 4096) * 16); ; realloc_helper(____chimes_tmp_ptr, (void *)AVI->idx, (AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      if(ptr == 0) {
@@ -5349,11 +5349,11 @@ static int avi_add_index_entry_resumable(avi_t *AVI, unsigned char *tag, long fl
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    memcpy(AVI->idx[AVI->n_idx],tag,4);
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+ 4, flags); });
+    call_lbl_0: ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+ 4, flags); });
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+ 8, pos); });
+    call_lbl_1: ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+ 8, pos); });
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+12, len); });
+    call_lbl_2: ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+12, len); });
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5390,7 +5390,7 @@ avi_t* AVI_open_output_file_resumable(char * filename)
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI==0)
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5413,7 +5413,7 @@ avi_t* AVI_open_output_file_resumable(char * filename)
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      free_wrapper(AVI, 17693923975991247325UL);
+       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5425,7 +5425,7 @@ avi_t* AVI_open_output_file_resumable(char * filename)
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    for (i=0;i<2048;i++) AVI_header[i] = 0;
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   i = ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); });
+    call_lbl_0: i = ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); });
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if (i != 2048)
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5435,7 +5435,7 @@ avi_t* AVI_open_output_file_resumable(char * filename)
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 4;
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      free_wrapper(AVI, 17693923975991247325UL);
+       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5490,7 +5490,7 @@ void AVI_set_video_resumable(avi_t *AVI, int width, int height, double fps, char
    AVI->compressor[4] = 0;
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 291 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
+    call_lbl_0: ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 rm_stack(false, 0UL, "AVI_set_video", &____must_manage_AVI_set_video, ____alias_loc_id_2, ____chimes_did_disable9, false); }
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5532,7 +5532,7 @@ void AVI_set_audio_resumable(avi_t *AVI, int channels, long rate, int bits, int 
    AVI->track[AVI->aptr].mp3rate = mp3rate;
 # 314 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 315 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
+    call_lbl_0: ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
 # 316 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 rm_stack(false, 0UL, "AVI_set_audio", &____must_manage_AVI_set_audio, ____alias_loc_id_4, ____chimes_did_disable10, false); }
 # 333 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5584,7 +5584,7 @@ int avi_update_header_resumable(avi_t *AVI)
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"RIFF",4); nhb += 4;
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
+    call_lbl_0: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"AVI ",4); nhb += 4;
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5593,7 +5593,7 @@ int avi_update_header_resumable(avi_t *AVI)
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 367 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_1: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    hdrl_start = nhb;
 # 369 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5602,15 +5602,15 @@ int avi_update_header_resumable(avi_t *AVI)
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"avih",4); nhb += 4;
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+    call_lbl_2: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, ms_per_frame); }); nhb += 4;
+    call_lbl_3: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, ms_per_frame); }); nhb += 4;
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_4: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 388 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_5: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 389 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 390 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    flag = 0x00000100;
@@ -5619,30 +5619,30 @@ int avi_update_header_resumable(avi_t *AVI)
 # 392 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(hasIndex && AVI->must_use_index) flag |= 0x00000020;
 # 393 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, flag); }); nhb += 4;
+    call_lbl_6: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, flag); }); nhb += 4;
 # 394 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_7: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 395 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_8: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 396 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 397 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->anum+1); }); nhb += 4;
+    call_lbl_9: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->anum+1); }); nhb += 4;
 # 398 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 399 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_10: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 400 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
+    call_lbl_11: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
 # 401 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
+    call_lbl_12: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
 # 402 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 403 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_13: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 404 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_14: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 405 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_15: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 406 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_16: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 407 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 408 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 409 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5650,7 +5650,7 @@ int avi_update_header_resumable(avi_t *AVI)
 # 411 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 412 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_17: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 413 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    strl_start = nhb;
 # 414 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5661,35 +5661,35 @@ int avi_update_header_resumable(avi_t *AVI)
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strh",4); nhb += 4;
 # 419 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+    call_lbl_18: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 420 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"vids",4); nhb += 4;
 # 421 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,AVI->compressor,4); nhb += 4;
 # 422 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_19: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 423 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_20: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 424 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_21: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000000); }); nhb += 4;
+    call_lbl_22: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000000); }); nhb += 4;
 # 426 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, frate); }); nhb += 4;
+    call_lbl_23: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, frate); }); nhb += 4;
 # 427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_24: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 428 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_25: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 429 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_26: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 430 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
+    call_lbl_27: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
 # 431 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_28: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 432 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_29: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 433 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_30: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 434 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 435 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 436 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5698,33 +5698,33 @@ int avi_update_header_resumable(avi_t *AVI)
 # 439 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strf",4); nhb += 4;
 # 440 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
+    call_lbl_31: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
 # 441 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
+    call_lbl_32: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
 # 442 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
+    call_lbl_33: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
 # 443 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
+    call_lbl_34: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
 # 444 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -2) { AVI_header[nhb ] = (1 )&0xff; AVI_header[nhb+1] = (1>>8)&0xff; } nhb += 2; if(nhb<=2048 -2) { AVI_header[nhb ] = (24 )&0xff; AVI_header[nhb+1] = (24>>8)&0xff; } nhb += 2;
 # 445 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,AVI->compressor,4); nhb += 4;
 # 446 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 447 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width*AVI->height*3); }); nhb += 4;
+    call_lbl_35: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width*AVI->height*3); }); nhb += 4;
 # 448 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_36: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 449 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_37: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 450 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_38: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 451 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_39: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 452 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 453 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 454 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 455 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
+    call_lbl_40: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
 # 456 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 457 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 458 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5733,12 +5733,12 @@ int avi_update_header_resumable(avi_t *AVI)
    for(j=0; j<AVI->anum; ++j) {
 # 461 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       sampsize = ({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, j); });
+        call_lbl_41: sampsize = ({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, j); });
 # 463 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 464 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 465 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_42: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 466 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        strl_start = nhb;
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5749,45 +5749,45 @@ int avi_update_header_resumable(avi_t *AVI)
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strh",4); nhb += 4;
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+        call_lbl_43: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -4) memcpy(AVI_header+nhb,"auds",4); nhb += 4;
 # 474 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 475 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 476 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 477 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_44: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 478 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 479 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 480 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_45: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 481 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_46: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 482 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_47: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 483 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 484 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 485 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
+        call_lbl_48: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
 # 486 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
+        call_lbl_49: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
 # 487 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_50: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 488 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 4*AVI->track[j].audio_bytes/sampsize); }); nhb += 4;
+        call_lbl_51: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 4*AVI->track[j].audio_bytes/sampsize); }); nhb += 4;
 # 489 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_52: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 490 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
+        call_lbl_53: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
 # 491 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 492 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 493 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
+        call_lbl_54: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
 # 494 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 495 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_55: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 496 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_56: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 497 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 498 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 499 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5796,16 +5796,16 @@ int avi_update_header_resumable(avi_t *AVI)
 # 502 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strf",4); nhb += 4;
 # 503 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 16); }); nhb += 4;
+        call_lbl_57: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 16); }); nhb += 4;
 # 504 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -2) { AVI_header[nhb ] = (AVI->track[j].a_fmt )&0xff; AVI_header[nhb+1] = (AVI->track[j].a_fmt>>8)&0xff; } nhb += 2;
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -2) { AVI_header[nhb ] = (AVI->track[j].a_chans )&0xff; AVI_header[nhb+1] = (AVI->track[j].a_chans>>8)&0xff; } nhb += 2;
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->track[j].a_rate); }); nhb += 4;
+        call_lbl_58: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->track[j].a_rate); }); nhb += 4;
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 508 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
+        call_lbl_59: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
 # 509 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 511 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5818,14 +5818,14 @@ int avi_update_header_resumable(avi_t *AVI)
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
+        call_lbl_60: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    }
 # 520 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 522 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 523 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI_header+hdrl_start-4, nhb-hdrl_start); });
+    call_lbl_61: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+hdrl_start-4, nhb-hdrl_start); });
 # 524 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 525 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 526 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5851,7 +5851,7 @@ int avi_update_header_resumable(avi_t *AVI)
 # 540 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"JUNK",4); nhb += 4;
 # 541 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, njunk); }); nhb += 4;
+    call_lbl_62: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, njunk); }); nhb += 4;
 # 542 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    memset(AVI_header+nhb,0,njunk);
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5874,7 +5874,7 @@ int avi_update_header_resumable(avi_t *AVI)
 # 555 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
+    call_lbl_63: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"movi",4); nhb += 4;
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5882,7 +5882,7 @@ int avi_update_header_resumable(avi_t *AVI)
 # 560 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 561 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 562 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if ( lseek(AVI->fdes,0,0)<0 ||
+    call_lbl_64: if ( lseek(AVI->fdes,0,0)<0 ||
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
         ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); })!=2048 ||
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5946,7 +5946,7 @@ static int avi_close_output_file_resumable(avi_t *AVI)
    idxerror = 0;
 # 602 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 603 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ret = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *)"idx1", (unsigned char *)((void*)AVI->idx), AVI->n_idx*16); });
+    call_lbl_0: ret = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *)"idx1", (unsigned char *)((void*)AVI->idx), AVI->n_idx*16); });
 # 604 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    hasIndex = (ret==0);
 # 605 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5987,7 +5987,7 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 628 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"RIFF",4); nhb += 4;
 # 629 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->pos - 8); }); nhb += 4;
+    call_lbl_1: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->pos - 8); }); nhb += 4;
 # 630 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"AVI ",4); nhb += 4;
 # 631 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5996,7 +5996,7 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 634 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 635 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_2: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 636 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    hdrl_start = nhb;
 # 637 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6005,15 +6005,15 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 650 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"avih",4); nhb += 4;
 # 651 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+    call_lbl_3: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 652 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, ms_per_frame); }); nhb += 4;
+    call_lbl_4: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, ms_per_frame); }); nhb += 4;
 # 653 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 654 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 655 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_5: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 656 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_6: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 657 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 658 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    flag = 0x00000100;
@@ -6022,34 +6022,34 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 660 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(hasIndex && AVI->must_use_index) flag |= 0x00000020;
 # 661 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, flag); }); nhb += 4;
+    call_lbl_7: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, flag); }); nhb += 4;
 # 662 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->video_frames); }); nhb += 4;
+    call_lbl_8: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->video_frames); }); nhb += 4;
 # 663 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_9: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 664 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 665 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->anum+1); }); nhb += 4;
+    call_lbl_10: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->anum+1); }); nhb += 4;
 # 666 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 667 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 668 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 669 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 670 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 671 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_11: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 672 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
+    call_lbl_12: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
 # 673 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
+    call_lbl_13: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
 # 674 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 675 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_14: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 676 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_15: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 677 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_16: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 678 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_17: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 679 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 680 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 681 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6057,7 +6057,7 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 683 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 684 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_18: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 685 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    strl_start = nhb;
 # 686 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6068,35 +6068,35 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 690 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strh",4); nhb += 4;
 # 691 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+    call_lbl_19: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 692 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"vids",4); nhb += 4;
 # 693 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,AVI->compressor,4); nhb += 4;
 # 694 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_20: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 695 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_21: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 696 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_22: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 697 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000000); }); nhb += 4;
+    call_lbl_23: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000000); }); nhb += 4;
 # 698 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, frate); }); nhb += 4;
+    call_lbl_24: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, frate); }); nhb += 4;
 # 699 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_25: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 700 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->video_frames); }); nhb += 4;
+    call_lbl_26: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->video_frames); }); nhb += 4;
 # 701 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_27: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 702 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
+    call_lbl_28: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
 # 703 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_29: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 704 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_30: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 705 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_31: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 706 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 707 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 708 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6105,33 +6105,33 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 711 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strf",4); nhb += 4;
 # 712 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
+    call_lbl_32: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
 # 713 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
+    call_lbl_33: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
 # 714 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
+    call_lbl_34: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
 # 715 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
+    call_lbl_35: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
 # 716 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -2) { AVI_header[nhb ] = (1 )&0xff; AVI_header[nhb+1] = (1>>8)&0xff; } nhb += 2; if(nhb<=2048 -2) { AVI_header[nhb ] = (24 )&0xff; AVI_header[nhb+1] = (24>>8)&0xff; } nhb += 2;
 # 717 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,AVI->compressor,4); nhb += 4;
 # 718 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 719 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width*AVI->height*3); }); nhb += 4;
+    call_lbl_36: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width*AVI->height*3); }); nhb += 4;
 # 720 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_37: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 721 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_38: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 722 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_39: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 723 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_40: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 724 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 725 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 726 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 727 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
+    call_lbl_41: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
 # 728 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 729 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 730 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6143,12 +6143,12 @@ static int avi_close_output_file_resumable(avi_t *AVI)
        {
 # 735 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 736 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  sampsize = ({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, j); });
+   call_lbl_42: sampsize = ({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, j); });
 # 737 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 738 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 739 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_43: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 740 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   strl_start = nhb;
 # 741 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6159,45 +6159,45 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 745 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strh",4); nhb += 4;
 # 746 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+   call_lbl_44: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 747 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -4) memcpy(AVI_header+nhb,"auds",4); nhb += 4;
 # 748 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 749 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 750 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 751 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_45: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 752 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 753 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 754 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_46: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 755 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_47: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 756 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_48: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 757 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 758 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 759 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
+   call_lbl_49: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
 # 760 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
+   call_lbl_50: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
 # 761 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_51: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 762 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 4*AVI->track[j].audio_bytes/sampsize); }); nhb += 4;
+   call_lbl_52: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 4*AVI->track[j].audio_bytes/sampsize); }); nhb += 4;
 # 763 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_53: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 764 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
+   call_lbl_54: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
 # 765 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 766 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 767 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
+   call_lbl_55: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
 # 768 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 769 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_56: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 770 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_57: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 771 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 772 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 773 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6206,16 +6206,16 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 776 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strf",4); nhb += 4;
 # 777 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 16); }); nhb += 4;
+   call_lbl_58: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 16); }); nhb += 4;
 # 778 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -2) { AVI_header[nhb ] = (AVI->track[j].a_fmt )&0xff; AVI_header[nhb+1] = (AVI->track[j].a_fmt>>8)&0xff; } nhb += 2;
 # 779 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -2) { AVI_header[nhb ] = (AVI->track[j].a_chans )&0xff; AVI_header[nhb+1] = (AVI->track[j].a_chans>>8)&0xff; } nhb += 2;
 # 780 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->track[j].a_rate); }); nhb += 4;
+   call_lbl_59: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->track[j].a_rate); }); nhb += 4;
 # 781 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 782 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
+   call_lbl_60: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
 # 783 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 784 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 785 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6229,14 +6229,14 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 791 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        }
 # 792 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
+        call_lbl_61: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
 # 793 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    }
 # 794 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 795 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 796 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 797 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI_header+hdrl_start-4, nhb-hdrl_start); });
+    call_lbl_62: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+hdrl_start-4, nhb-hdrl_start); });
 # 798 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 799 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 800 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6249,14 +6249,14 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 806 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    info_len = 64 + 12;
 # 807 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, info_len); }); nhb += 4;
+    call_lbl_63: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, info_len); }); nhb += 4;
 # 808 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"INFO",4); nhb += 4;
 # 818 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 818 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"ISFT",4); nhb += 4;
 # 819 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 64); }); nhb += 4;
+    call_lbl_64: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 64); }); nhb += 4;
 # 820 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 821 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    sprintf(id_str, "%s-%s", "my", "0.00");
@@ -6288,7 +6288,7 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 852 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"JUNK",4); nhb += 4;
 # 853 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, njunk); }); nhb += 4;
+    call_lbl_65: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, njunk); }); nhb += 4;
 # 854 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    memset(AVI_header+nhb,0,njunk);
 # 855 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6300,7 +6300,7 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 860 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 861 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
+    call_lbl_66: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
 # 862 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"movi",4); nhb += 4;
 # 863 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6308,7 +6308,7 @@ static int avi_close_output_file_resumable(avi_t *AVI)
 # 865 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 866 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 867 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if ( lseek(AVI->fdes,0,0)<0 ||
+    call_lbl_67: if ( lseek(AVI->fdes,0,0)<0 ||
 # 868 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
         ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); })!=2048
 # 869 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6363,7 +6363,7 @@ static int avi_write_data_resumable(avi_t *AVI, char *data, unsigned long length
    sprintf((char *)astr, "0%1dwb", AVI->aptr+1);
 # 908 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 909 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(audio)
+    call_lbl_0: call_lbl_1: if(audio)
 # 910 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      n = ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, astr, 0x00, AVI->pos, length); });
 # 911 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6377,7 +6377,7 @@ static int avi_write_data_resumable(avi_t *AVI, char *data, unsigned long length
 # 916 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 917 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 918 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(audio)
+    call_lbl_2: call_lbl_3: if(audio)
 # 919 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      n = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *) astr, (unsigned char *)data, length); });
 # 920 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6409,7 +6409,7 @@ int AVI_write_frame_resumable(avi_t *AVI, char *data, long bytes, int keyframe)
   pos = AVI->pos;
 # 935 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 936 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 0, keyframe); })) rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14, false); return -1;
+   call_lbl_0: if(({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 0, keyframe); })) rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14, false); return -1;
 # 937 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 938 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   AVI->last_pos = pos;
@@ -6434,7 +6434,7 @@ int AVI_dup_frame_resumable(avi_t *AVI)
 # 948 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->last_pos==0) rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15, false); return 0;
 # 949 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *)"00db", 0x10, AVI->last_pos, AVI->last_len); })) rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15, false); return -1;
+    call_lbl_0: if(({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *)"00db", 0x10, AVI->last_pos, AVI->last_len); })) rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15, false); return -1;
 # 950 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    AVI->video_frames++;
 # 951 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6454,7 +6454,7 @@ int AVI_write_audio_resumable(avi_t *AVI, char *data, long bytes)
    if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16, false); return -1; }
 # 958 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 959 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if( ({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 1, 0); }) ) rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16, false); return -1;
+    call_lbl_0: if( ({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 1, 0); }) ) rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16, false); return -1;
 # 960 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    AVI->track[AVI->aptr].audio_bytes += bytes;
 # 961 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6485,13 +6485,13 @@ int AVI_append_audio_resumable(avi_t *AVI, char *data, long bytes)
 # 975 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   --AVI->n_idx;
 # 976 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  length = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[AVI->n_idx]+12); });
+   call_lbl_0: length = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[AVI->n_idx]+12); });
 # 977 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[AVI->n_idx]+8); });
+   call_lbl_1: pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[AVI->n_idx]+8); });
 # 978 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 979 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 980 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+12, length+bytes); });
+   call_lbl_2: ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+12, length+bytes); });
 # 981 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 982 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   ++AVI->n_idx;
@@ -6503,9 +6503,9 @@ int AVI_append_audio_resumable(avi_t *AVI, char *data, long bytes)
 # 987 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   lseek(AVI->fdes, pos+4, 0);
 # 988 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("long2str", 0); long2str_npm(c, length+bytes); });
+   call_lbl_3: ({ calling_npm("long2str", 0); long2str_npm(c, length+bytes); });
 # 989 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *) c, 4); });
+   call_lbl_4: ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *) c, 4); });
 # 990 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 991 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   lseek(AVI->fdes, pos+8+length, 0);
@@ -6516,7 +6516,7 @@ int AVI_append_audio_resumable(avi_t *AVI, char *data, long bytes)
 # 995 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   bytes = i - length;
 # 996 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, data, bytes); });
+   call_lbl_5: ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, data, bytes); });
 # 997 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   AVI->pos = pos + 8 + i;
 # 998 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6596,7 +6596,7 @@ int AVI_close_resumable(avi_t *AVI)
 # 1044 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1045 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1046 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->mode == 0)
+    call_lbl_0: if(AVI->mode == 0)
 # 1047 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       ret = ({ calling_npm("avi_close_output_file", 0); avi_close_output_file_npm(AVI); });
 # 1048 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6609,13 +6609,13 @@ int AVI_close_resumable(avi_t *AVI)
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    close(AVI->fdes);
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->idx) free_wrapper(AVI->idx, 17693923975991249707UL);
+   if(AVI->idx) ({ free(AVI->idx); free_helper(AVI->idx, 17693923975991249707UL); }) ;
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_index) free_wrapper(AVI->video_index, 17693923975991249707UL);
+   if(AVI->video_index) ({ free(AVI->video_index); free_helper(AVI->video_index, 17693923975991249707UL); }) ;
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1057 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1058 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   free_wrapper(AVI, 17693923975991249732UL);
+    ({ free(AVI); free_helper(AVI, 17693923975991249732UL); }) ;
 # 1059 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1060 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, ____alias_loc_id_18, ____chimes_did_disable22, false); return ret;
@@ -6634,7 +6634,7 @@ avi_t *AVI_open_input_file_resumable(char *filename, int getIndex)
 # 1075 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1076 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
 # 1078 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1079 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6662,14 +6662,14 @@ avi_t *AVI_open_input_file_resumable(char *filename, int getIndex)
 # 1092 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 1093 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      free_wrapper(AVI, 17693923975991247325UL);
+       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
 # 1094 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23, false); return 0;
 # 1095 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     }
 # 1096 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1097 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
+   call_lbl_0: ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
 # 1098 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1099 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   AVI->aptr=0;
@@ -6691,7 +6691,7 @@ avi_t *AVI_open_fd_resumable(int fd, int getIndex)
 # 1108 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
 # 1111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6713,7 +6713,7 @@ avi_t *AVI_open_fd_resumable(int fd, int getIndex)
   AVI->fdes = fd;
 # 1122 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1123 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
+   call_lbl_0: ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
 # 1124 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1125 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   AVI->aptr=0;
@@ -6762,12 +6762,12 @@ long nai[8];
 # 1146 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1147 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1148 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 12); }) != 12 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+    call_lbl_0: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 12); }) != 12 ) { call_lbl_1: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1149 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1150 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if( strncasecmp(data ,"RIFF",4) !=0 ||
 # 1151 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       strncasecmp(data+8,"AVI ",4) !=0 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 9; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+       strncasecmp(data+8,"AVI ",4) !=0 ) { call_lbl_2: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 9; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1152 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1153 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1154 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6781,10 +6781,10 @@ long nai[8];
 # 1160 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    {
 # 1161 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) break;
+       call_lbl_3: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) break;
 # 1162 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1163 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *) data+4); });
+       call_lbl_4: n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *) data+4); });
 # 1164 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       n = ( ((n)+1) & ~1 );
 # 1165 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6793,7 +6793,7 @@ long nai[8];
 # 1167 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       {
 # 1168 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 4); }) != 4 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+          call_lbl_5: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 4); }) != 4 ) { call_lbl_6: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1169 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          n -= 4;
 # 1170 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6803,9 +6803,9 @@ long nai[8];
 # 1172 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             hdrl_len = n;
 # 1173 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            hdrl_data = (unsigned char *) malloc_wrapper(n, 17693923975991251472UL, 0, 0);
+            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251472UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 1174 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            if(hdrl_data==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
+            if(hdrl_data==0) { call_lbl_7: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1175 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1176 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1177 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6813,7 +6813,7 @@ long nai[8];
      header_offset = lseek(AVI->fdes,0,1);
 # 1179 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1180 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *)hdrl_data, n); }) != n ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+             call_lbl_8: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *)hdrl_data, n); }) != n ) { call_lbl_9: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1181 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          }
 # 1182 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6842,11 +6842,11 @@ long nai[8];
 # 1195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1196 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) malloc_wrapper(n, 17693923975991251942UL, 0, 0);
+         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251942UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 1197 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if(AVI->idx==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+         if(AVI->idx==0) { call_lbl_10: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *) AVI->idx, n); }) != n ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+          call_lbl_11: if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *) AVI->idx, n); }) != n ) { call_lbl_12: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1199 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       }
 # 1200 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6857,9 +6857,9 @@ long nai[8];
    }
 # 1203 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1204 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(!hdrl_data ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 10; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+   if(!hdrl_data ) { call_lbl_13: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 10; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1205 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(!AVI->movi_start) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 11; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+   if(!AVI->movi_start) { call_lbl_14: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 11; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1206 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1207 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1208 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6873,7 +6873,7 @@ long nai[8];
       if(strncasecmp((char *) hdrl_data+i, "LIST",4)==0) { i+= 12; continue; }
 # 1214 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1215 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      n = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
+       call_lbl_15: n = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
 # 1216 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       n = ( ((n)+1) & ~1 );
 # 1217 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6899,13 +6899,13 @@ long nai[8];
      AVI->v_codech_off = header_offset + i+4;
 # 1230 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1231 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            scale = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)hdrl_data+i+20); });
+             call_lbl_16: scale = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)hdrl_data+i+20); });
 # 1232 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            rate = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+24); });
+             call_lbl_17: rate = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+24); });
 # 1233 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             if(scale!=0) AVI->fps = (double)rate/(double)scale;
 # 1234 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->video_frames = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+32); });
+             call_lbl_18: AVI->video_frames = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+32); });
 # 1235 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             AVI->video_strn = num_stream;
 # 1236 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6937,7 +6937,7 @@ long nai[8];
     }
 # 1251 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1252 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    AVI->track[AVI->aptr].audio_bytes = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+32); })*({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, 0); });
+     call_lbl_19: call_lbl_20: AVI->track[AVI->aptr].audio_bytes = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+32); })*({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, 0); });
 # 1253 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     AVI->track[AVI->aptr].audio_strn = num_stream;
 # 1254 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6969,9 +6969,9 @@ long nai[8];
 # 1269 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          {
 # 1270 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->width = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
+             call_lbl_21: AVI->width = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
 # 1271 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->height = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+8); });
+             call_lbl_22: AVI->height = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+8); });
 # 1272 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             vids_strf_seen = 1;
 # 1273 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6990,22 +6990,22 @@ long nai[8];
 # 1281 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          {
 # 1282 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->track[AVI->aptr].a_fmt = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i); });
+             call_lbl_23: AVI->track[AVI->aptr].a_fmt = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i); });
 # 1283 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1284 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1285 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      AVI->track[AVI->aptr].a_codecf_off = header_offset + i;
 # 1286 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1287 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->track[AVI->aptr].a_chans = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i+2); });
+             call_lbl_24: AVI->track[AVI->aptr].a_chans = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i+2); });
 # 1288 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->track[AVI->aptr].a_rate = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
+             call_lbl_25: AVI->track[AVI->aptr].a_rate = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
 # 1289 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1290 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-     AVI->track[AVI->aptr].mp3rate = 8*({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+8); })/1000;
+      call_lbl_26: AVI->track[AVI->aptr].mp3rate = 8*({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+8); })/1000;
 # 1291 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1292 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->track[AVI->aptr].a_bits = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i+14); });
+             call_lbl_27: AVI->track[AVI->aptr].a_bits = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i+14); });
 # 1293 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1294 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          }
@@ -7030,10 +7030,10 @@ long nai[8];
    }
 # 1305 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1306 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   free_wrapper(hdrl_data, 17693923975991251472UL);
+    ({ free(hdrl_data); free_helper(hdrl_data, 17693923975991251472UL); }) ;
 # 1307 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1308 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(!vids_strh_seen || !vids_strf_seen) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+   if(!vids_strh_seen || !vids_strf_seen) { call_lbl_28: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1309 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1310 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    AVI->video_tag[0] = AVI->video_strn/10 + '0';
@@ -7090,19 +7090,19 @@ long nai[8];
 # 1344 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          if( strncasecmp((char *) AVI->idx[i],(char *) AVI->video_tag,3)==0 ) break;
 # 1345 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if(i>=AVI->n_idx) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+      if(i>=AVI->n_idx) { call_lbl_29: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1346 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1347 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); });
+       call_lbl_30: pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); });
 # 1348 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
+       call_lbl_31: len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
 # 1349 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1350 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       lseek(AVI->fdes,pos,0);
 # 1351 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+       call_lbl_32: if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { call_lbl_33: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1352 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 &&
+       call_lbl_34: if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 &&
 # 1353 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
 # 1354 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7118,9 +7118,9 @@ long nai[8];
 # 1359 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          lseek(AVI->fdes,pos+AVI->movi_start-4,0);
 # 1360 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+          call_lbl_35: if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { call_lbl_36: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1361 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 && ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
+          call_lbl_37: if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 && ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
 # 1362 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          {
 # 1363 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7150,9 +7150,9 @@ long nai[8];
 # 1378 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       {
 # 1379 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) break;
+          call_lbl_38: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) break;
 # 1380 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); });
+          call_lbl_39: n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); });
 # 1381 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1382 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1383 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7180,7 +7180,7 @@ long nai[8];
 # 1396 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     {
 # 1397 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *) data, 0, lseek(AVI->fdes,0,1)-8, n); });
+     call_lbl_40: ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *) data, 0, lseek(AVI->fdes,0,1)-8, n); });
 # 1398 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          }
 # 1399 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7219,20 +7219,20 @@ long nai[8];
 # 1420 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1421 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1422 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_frames==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
+   if(AVI->video_frames==0) { call_lbl_41: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1423 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI->video_index = (video_index_entry *) malloc_wrapper(nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0);
+   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nvi * sizeof(video_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0); ____chimes_tmp_ptr; }) ;
 # 1424 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_index==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
+   if(AVI->video_index==0) { call_lbl_42: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1426 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    for(j=0; j<AVI->anum; ++j) {
 # 1427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1428 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) malloc_wrapper(nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0);
+    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nai[j] * sizeof(audio_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0); ____chimes_tmp_ptr; }) ;
 # 1429 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    if(AVI->track[j].audio_index==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
+    if(AVI->track[j].audio_index==0) { call_lbl_43: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1430 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        }
 # 1431 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7253,11 +7253,11 @@ long nai[8];
 # 1441 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      if(strncasecmp((char *)AVI->idx[i],(char *)AVI->video_tag,3) == 0) {
 # 1442 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       AVI->video_index[nvi].key = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 4); });
+        call_lbl_44: AVI->video_index[nvi].key = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 4); });
 # 1443 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       AVI->video_index[nvi].pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); })+ioff;
+        call_lbl_45: AVI->video_index[nvi].pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); })+ioff;
 # 1444 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       AVI->video_index[nvi].len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
+        call_lbl_46: AVI->video_index[nvi].len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
 # 1445 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        nvi++;
 # 1446 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7270,9 +7270,9 @@ long nai[8];
 # 1451 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(strncasecmp((char *)AVI->idx[i],AVI->track[j].audio_tag,4) == 0) {
 # 1452 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI->track[j].audio_index[nai[j]].pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); })+ioff;
+   call_lbl_47: AVI->track[j].audio_index[nai[j]].pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); })+ioff;
 # 1453 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI->track[j].audio_index[nai[j]].len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
+   call_lbl_48: AVI->track[j].audio_index[nai[j]].len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
 # 1454 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   AVI->track[j].audio_index[nai[j]].tot = tot[j];
 # 1455 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7627,7 +7627,7 @@ long AVI_read_frame_resumable(avi_t *AVI, char *vidbuf, int *keyframe)
 # 1622 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    lseek(AVI->fdes, AVI->video_index[AVI->video_pos].pos, 0);
 # 1623 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n)
+    call_lbl_0: if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n)
 # 1624 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    {
 # 1625 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7744,7 +7744,7 @@ long AVI_read_audio_resumable(avi_t *AVI, char *audbuf, long bytes)
 # 1685 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       lseek(AVI->fdes, pos, 0);
 # 1686 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf+nr, todo); }) != todo)
+       call_lbl_0: if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf+nr, todo); }) != todo)
 # 1687 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       {
 # 1688 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7798,7 +7798,7 @@ int AVI_read_data_resumable(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1724 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1725 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1726 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
+       call_lbl_0: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
 # 1727 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1728 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1729 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7814,7 +7814,7 @@ int AVI_read_data_resumable(avi_t *AVI, char *vidbuf, long max_vidbuf,
       }
 # 1735 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1736 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      n = ( ((({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); }))+1) & ~1 );
+       call_lbl_1: n = ( ((({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); }))+1) & ~1 );
 # 1737 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1738 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       if(strncasecmp(data,AVI->video_tag,3) == 0)
@@ -7835,7 +7835,7 @@ int AVI_read_data_resumable(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1746 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          }
 # 1747 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
+          call_lbl_2: if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
 # 1748 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 1;
 # 1749 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7857,7 +7857,7 @@ int AVI_read_data_resumable(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1757 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          }
 # 1758 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf, n); }) != n ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
+          call_lbl_3: if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf, n); }) != n ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
 # 1759 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 2;
 # 1760 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8133,7 +8133,7 @@ static int avi_add_chunk_quick(avi_t *AVI, unsigned char *tag, unsigned char *da
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    memcpy(c,tag,4);
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(c+4, length); });
+    call_lbl_0: ({ calling_npm("long2str", 0); long2str_npm(c+4, length); });
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8142,7 +8142,7 @@ static int avi_add_chunk_quick(avi_t *AVI, unsigned char *tag, unsigned char *da
    length = ( ((length)+1) & ~1 );
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if( ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)c, 8); }) != 8 ||
+    call_lbl_1: call_lbl_2: if( ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)c, 8); }) != 8 ||
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)data, length); }) != length )
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8179,7 +8179,7 @@ static int avi_add_index_entry_quick(avi_t *AVI, unsigned char *tag, long flags,
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-     ptr = realloc_wrapper((void *)AVI->idx,(AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0);
+     ptr = ({ void *____chimes_tmp_ptr = realloc((void *)AVI->idx, (AVI->max_idx + 4096) * 16); ; realloc_helper(____chimes_tmp_ptr, (void *)AVI->idx, (AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      if(ptr == 0) {
@@ -8203,11 +8203,11 @@ static int avi_add_index_entry_quick(avi_t *AVI, unsigned char *tag, long flags,
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    memcpy(AVI->idx[AVI->n_idx],tag,4);
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+ 4, flags); });
+    call_lbl_0: ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+ 4, flags); });
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+ 8, pos); });
+    call_lbl_1: ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+ 8, pos); });
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+12, len); });
+    call_lbl_2: ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+12, len); });
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8243,7 +8243,7 @@ avi_t* AVI_open_output_file_quick(char * filename)
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI==0)
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8266,7 +8266,7 @@ avi_t* AVI_open_output_file_quick(char * filename)
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      free_wrapper(AVI, 17693923975991247325UL);
+       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8278,7 +8278,7 @@ avi_t* AVI_open_output_file_quick(char * filename)
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    for (i=0;i<2048;i++) AVI_header[i] = 0;
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   i = ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); });
+    call_lbl_0: i = ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); });
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if (i != 2048)
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8288,7 +8288,7 @@ avi_t* AVI_open_output_file_quick(char * filename)
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 4;
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      free_wrapper(AVI, 17693923975991247325UL);
+       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8342,7 +8342,7 @@ void AVI_set_video_quick(avi_t *AVI, int width, int height, double fps, char *co
    AVI->compressor[4] = 0;
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 291 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
+    call_lbl_0: ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 rm_stack(false, 0UL, "AVI_set_video", &____must_manage_AVI_set_video, ____alias_loc_id_2, ____chimes_did_disable9, false); }
 
@@ -8383,7 +8383,7 @@ void AVI_set_audio_quick(avi_t *AVI, int channels, long rate, int bits, int form
    AVI->track[AVI->aptr].mp3rate = mp3rate;
 # 314 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 315 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
+    call_lbl_0: ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
 # 316 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 rm_stack(false, 0UL, "AVI_set_audio", &____must_manage_AVI_set_audio, ____alias_loc_id_4, ____chimes_did_disable10, false); }
 
@@ -8436,7 +8436,7 @@ int avi_update_header_quick(avi_t *AVI)
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"RIFF",4); nhb += 4;
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
+    call_lbl_0: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"AVI ",4); nhb += 4;
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8445,7 +8445,7 @@ int avi_update_header_quick(avi_t *AVI)
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 367 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_1: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    hdrl_start = nhb;
 # 369 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8454,15 +8454,15 @@ int avi_update_header_quick(avi_t *AVI)
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"avih",4); nhb += 4;
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+    call_lbl_2: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, ms_per_frame); }); nhb += 4;
+    call_lbl_3: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, ms_per_frame); }); nhb += 4;
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_4: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 388 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_5: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 389 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 390 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    flag = 0x00000100;
@@ -8471,30 +8471,30 @@ int avi_update_header_quick(avi_t *AVI)
 # 392 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(hasIndex && AVI->must_use_index) flag |= 0x00000020;
 # 393 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, flag); }); nhb += 4;
+    call_lbl_6: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, flag); }); nhb += 4;
 # 394 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_7: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 395 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_8: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 396 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 397 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->anum+1); }); nhb += 4;
+    call_lbl_9: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->anum+1); }); nhb += 4;
 # 398 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 399 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_10: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 400 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
+    call_lbl_11: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
 # 401 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
+    call_lbl_12: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
 # 402 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 403 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_13: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 404 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_14: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 405 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_15: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 406 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_16: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 407 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 408 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 409 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8502,7 +8502,7 @@ int avi_update_header_quick(avi_t *AVI)
 # 411 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 412 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_17: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 413 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    strl_start = nhb;
 # 414 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8513,35 +8513,35 @@ int avi_update_header_quick(avi_t *AVI)
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strh",4); nhb += 4;
 # 419 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+    call_lbl_18: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 420 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"vids",4); nhb += 4;
 # 421 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,AVI->compressor,4); nhb += 4;
 # 422 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_19: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 423 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_20: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 424 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_21: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000000); }); nhb += 4;
+    call_lbl_22: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000000); }); nhb += 4;
 # 426 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, frate); }); nhb += 4;
+    call_lbl_23: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, frate); }); nhb += 4;
 # 427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_24: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 428 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_25: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 429 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_26: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 430 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
+    call_lbl_27: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
 # 431 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_28: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 432 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_29: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 433 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_30: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 434 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 435 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 436 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8550,33 +8550,33 @@ int avi_update_header_quick(avi_t *AVI)
 # 439 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strf",4); nhb += 4;
 # 440 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
+    call_lbl_31: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
 # 441 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
+    call_lbl_32: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
 # 442 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
+    call_lbl_33: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
 # 443 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
+    call_lbl_34: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
 # 444 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -2) { AVI_header[nhb ] = (1 )&0xff; AVI_header[nhb+1] = (1>>8)&0xff; } nhb += 2; if(nhb<=2048 -2) { AVI_header[nhb ] = (24 )&0xff; AVI_header[nhb+1] = (24>>8)&0xff; } nhb += 2;
 # 445 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,AVI->compressor,4); nhb += 4;
 # 446 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 447 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width*AVI->height*3); }); nhb += 4;
+    call_lbl_35: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width*AVI->height*3); }); nhb += 4;
 # 448 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_36: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 449 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_37: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 450 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_38: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 451 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_39: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 452 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 453 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 454 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 455 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
+    call_lbl_40: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
 # 456 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 457 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 458 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8585,12 +8585,12 @@ int avi_update_header_quick(avi_t *AVI)
    for(j=0; j<AVI->anum; ++j) {
 # 461 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       sampsize = ({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, j); });
+        call_lbl_41: sampsize = ({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, j); });
 # 463 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 464 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 465 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_42: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 466 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        strl_start = nhb;
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8601,45 +8601,45 @@ int avi_update_header_quick(avi_t *AVI)
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strh",4); nhb += 4;
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+        call_lbl_43: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -4) memcpy(AVI_header+nhb,"auds",4); nhb += 4;
 # 474 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 475 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 476 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 477 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_44: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 478 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 479 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 480 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_45: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 481 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_46: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 482 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_47: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 483 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 484 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 485 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
+        call_lbl_48: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
 # 486 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
+        call_lbl_49: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
 # 487 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_50: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 488 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 4*AVI->track[j].audio_bytes/sampsize); }); nhb += 4;
+        call_lbl_51: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 4*AVI->track[j].audio_bytes/sampsize); }); nhb += 4;
 # 489 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_52: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 490 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
+        call_lbl_53: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
 # 491 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 492 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 493 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
+        call_lbl_54: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
 # 494 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 495 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_55: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 496 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+        call_lbl_56: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 497 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 498 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 499 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8648,16 +8648,16 @@ int avi_update_header_quick(avi_t *AVI)
 # 502 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strf",4); nhb += 4;
 # 503 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 16); }); nhb += 4;
+        call_lbl_57: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 16); }); nhb += 4;
 # 504 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -2) { AVI_header[nhb ] = (AVI->track[j].a_fmt )&0xff; AVI_header[nhb+1] = (AVI->track[j].a_fmt>>8)&0xff; } nhb += 2;
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(nhb<=2048 -2) { AVI_header[nhb ] = (AVI->track[j].a_chans )&0xff; AVI_header[nhb+1] = (AVI->track[j].a_chans>>8)&0xff; } nhb += 2;
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->track[j].a_rate); }); nhb += 4;
+        call_lbl_58: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->track[j].a_rate); }); nhb += 4;
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 508 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
+        call_lbl_59: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
 # 509 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 511 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8670,14 +8670,14 @@ int avi_update_header_quick(avi_t *AVI)
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
+        call_lbl_60: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    }
 # 520 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 522 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 523 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI_header+hdrl_start-4, nhb-hdrl_start); });
+    call_lbl_61: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+hdrl_start-4, nhb-hdrl_start); });
 # 524 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 525 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 526 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8703,7 +8703,7 @@ int avi_update_header_quick(avi_t *AVI)
 # 540 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"JUNK",4); nhb += 4;
 # 541 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, njunk); }); nhb += 4;
+    call_lbl_62: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, njunk); }); nhb += 4;
 # 542 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    memset(AVI_header+nhb,0,njunk);
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8726,7 +8726,7 @@ int avi_update_header_quick(avi_t *AVI)
 # 555 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
+    call_lbl_63: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"movi",4); nhb += 4;
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8734,7 +8734,7 @@ int avi_update_header_quick(avi_t *AVI)
 # 560 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 561 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 562 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if ( lseek(AVI->fdes,0,0)<0 ||
+    call_lbl_64: if ( lseek(AVI->fdes,0,0)<0 ||
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
         ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); })!=2048 ||
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8792,7 +8792,7 @@ static int avi_close_output_file_quick(avi_t *AVI)
    idxerror = 0;
 # 602 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 603 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ret = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *)"idx1", (unsigned char *)((void*)AVI->idx), AVI->n_idx*16); });
+    call_lbl_0: ret = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *)"idx1", (unsigned char *)((void*)AVI->idx), AVI->n_idx*16); });
 # 604 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    hasIndex = (ret==0);
 # 605 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8833,7 +8833,7 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 628 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"RIFF",4); nhb += 4;
 # 629 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->pos - 8); }); nhb += 4;
+    call_lbl_1: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->pos - 8); }); nhb += 4;
 # 630 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"AVI ",4); nhb += 4;
 # 631 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8842,7 +8842,7 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 634 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 635 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_2: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 636 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    hdrl_start = nhb;
 # 637 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8851,15 +8851,15 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 650 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"avih",4); nhb += 4;
 # 651 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+    call_lbl_3: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 652 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, ms_per_frame); }); nhb += 4;
+    call_lbl_4: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, ms_per_frame); }); nhb += 4;
 # 653 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 654 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 655 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_5: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 656 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_6: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 657 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 658 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    flag = 0x00000100;
@@ -8868,34 +8868,34 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 660 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(hasIndex && AVI->must_use_index) flag |= 0x00000020;
 # 661 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, flag); }); nhb += 4;
+    call_lbl_7: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, flag); }); nhb += 4;
 # 662 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->video_frames); }); nhb += 4;
+    call_lbl_8: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->video_frames); }); nhb += 4;
 # 663 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_9: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 664 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 665 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->anum+1); }); nhb += 4;
+    call_lbl_10: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->anum+1); }); nhb += 4;
 # 666 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 667 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 668 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 669 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 670 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 671 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_11: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 672 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
+    call_lbl_12: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
 # 673 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
+    call_lbl_13: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
 # 674 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 675 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_14: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 676 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_15: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 677 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_16: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 678 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_17: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 679 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 680 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 681 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8903,7 +8903,7 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 683 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 684 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_18: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 685 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    strl_start = nhb;
 # 686 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8914,35 +8914,35 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 690 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strh",4); nhb += 4;
 # 691 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+    call_lbl_19: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 692 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"vids",4); nhb += 4;
 # 693 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,AVI->compressor,4); nhb += 4;
 # 694 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_20: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 695 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_21: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 696 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_22: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 697 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000000); }); nhb += 4;
+    call_lbl_23: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000000); }); nhb += 4;
 # 698 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, frate); }); nhb += 4;
+    call_lbl_24: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, frate); }); nhb += 4;
 # 699 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_25: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 700 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->video_frames); }); nhb += 4;
+    call_lbl_26: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->video_frames); }); nhb += 4;
 # 701 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_27: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 702 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
+    call_lbl_28: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
 # 703 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_29: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 704 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_30: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 705 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_31: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 706 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 707 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 708 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8951,33 +8951,33 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 711 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strf",4); nhb += 4;
 # 712 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
+    call_lbl_32: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
 # 713 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
+    call_lbl_33: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 40); }); nhb += 4;
 # 714 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
+    call_lbl_34: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width); }); nhb += 4;
 # 715 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
+    call_lbl_35: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->height); }); nhb += 4;
 # 716 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -2) { AVI_header[nhb ] = (1 )&0xff; AVI_header[nhb+1] = (1>>8)&0xff; } nhb += 2; if(nhb<=2048 -2) { AVI_header[nhb ] = (24 )&0xff; AVI_header[nhb+1] = (24>>8)&0xff; } nhb += 2;
 # 717 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,AVI->compressor,4); nhb += 4;
 # 718 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 719 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width*AVI->height*3); }); nhb += 4;
+    call_lbl_36: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->width*AVI->height*3); }); nhb += 4;
 # 720 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_37: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 721 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_38: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 722 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_39: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 723 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+    call_lbl_40: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 724 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 725 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 726 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 727 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
+    call_lbl_41: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
 # 728 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 729 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 730 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8989,12 +8989,12 @@ static int avi_close_output_file_quick(avi_t *AVI)
        {
 # 735 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 736 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  sampsize = ({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, j); });
+   call_lbl_42: sampsize = ({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, j); });
 # 737 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 738 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 739 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_43: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 740 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   strl_start = nhb;
 # 741 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9005,45 +9005,45 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 745 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strh",4); nhb += 4;
 # 746 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
+   call_lbl_44: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 56); }); nhb += 4;
 # 747 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -4) memcpy(AVI_header+nhb,"auds",4); nhb += 4;
 # 748 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 749 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 750 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 751 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_45: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 752 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 753 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 754 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_46: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 755 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_47: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 756 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_48: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 757 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 758 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 759 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
+   call_lbl_49: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
 # 760 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
+   call_lbl_50: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
 # 761 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_51: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 762 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 4*AVI->track[j].audio_bytes/sampsize); }); nhb += 4;
+   call_lbl_52: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 4*AVI->track[j].audio_bytes/sampsize); }); nhb += 4;
 # 763 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_53: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 764 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
+   call_lbl_54: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, -1); }); nhb += 4;
 # 765 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 766 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 767 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
+   call_lbl_55: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, sampsize/4); }); nhb += 4;
 # 768 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 769 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_56: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 770 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
+   call_lbl_57: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 0); }); nhb += 4;
 # 771 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 772 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 773 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9052,16 +9052,16 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 776 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -4) memcpy(AVI_header+nhb,"strf",4); nhb += 4;
 # 777 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 16); }); nhb += 4;
+   call_lbl_58: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 16); }); nhb += 4;
 # 778 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -2) { AVI_header[nhb ] = (AVI->track[j].a_fmt )&0xff; AVI_header[nhb+1] = (AVI->track[j].a_fmt>>8)&0xff; } nhb += 2;
 # 779 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(nhb<=2048 -2) { AVI_header[nhb ] = (AVI->track[j].a_chans )&0xff; AVI_header[nhb+1] = (AVI->track[j].a_chans>>8)&0xff; } nhb += 2;
 # 780 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->track[j].a_rate); }); nhb += 4;
+   call_lbl_59: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, AVI->track[j].a_rate); }); nhb += 4;
 # 781 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 782 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
+   call_lbl_60: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 1000*AVI->track[j].mp3rate/8); }); nhb += 4;
 # 783 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 784 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 785 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9075,14 +9075,14 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 791 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        }
 # 792 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
+        call_lbl_61: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+strl_start-4, nhb-strl_start); });
 # 793 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    }
 # 794 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 795 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 796 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 797 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   ({ calling_npm("long2str", 0); long2str_npm(AVI_header+hdrl_start-4, nhb-hdrl_start); });
+    call_lbl_62: ({ calling_npm("long2str", 0); long2str_npm(AVI_header+hdrl_start-4, nhb-hdrl_start); });
 # 798 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 799 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 800 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9095,14 +9095,14 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 806 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    info_len = 64 + 12;
 # 807 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, info_len); }); nhb += 4;
+    call_lbl_63: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, info_len); }); nhb += 4;
 # 808 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"INFO",4); nhb += 4;
 # 818 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 818 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"ISFT",4); nhb += 4;
 # 819 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 64); }); nhb += 4;
+    call_lbl_64: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, 64); }); nhb += 4;
 # 820 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 821 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    sprintf(id_str, "%s-%s", "my", "0.00");
@@ -9134,7 +9134,7 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 852 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"JUNK",4); nhb += 4;
 # 853 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, njunk); }); nhb += 4;
+    call_lbl_65: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, njunk); }); nhb += 4;
 # 854 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    memset(AVI_header+nhb,0,njunk);
 # 855 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9146,7 +9146,7 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 860 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"LIST",4); nhb += 4;
 # 861 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
+    call_lbl_66: if(nhb<=2048 -4) ({ calling_npm("long2str", 0); long2str_npm(AVI_header+nhb, movi_len); }); nhb += 4;
 # 862 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(nhb<=2048 -4) memcpy(AVI_header+nhb,"movi",4); nhb += 4;
 # 863 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9154,7 +9154,7 @@ static int avi_close_output_file_quick(avi_t *AVI)
 # 865 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 866 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 867 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if ( lseek(AVI->fdes,0,0)<0 ||
+    call_lbl_67: if ( lseek(AVI->fdes,0,0)<0 ||
 # 868 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
         ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); })!=2048
 # 869 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9208,7 +9208,7 @@ static int avi_write_data_quick(avi_t *AVI, char *data, unsigned long length, in
    sprintf((char *)astr, "0%1dwb", AVI->aptr+1);
 # 908 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 909 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(audio)
+    call_lbl_0: call_lbl_1: if(audio)
 # 910 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      n = ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, astr, 0x00, AVI->pos, length); });
 # 911 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9222,7 +9222,7 @@ static int avi_write_data_quick(avi_t *AVI, char *data, unsigned long length, in
 # 916 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 917 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 918 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(audio)
+    call_lbl_2: call_lbl_3: if(audio)
 # 919 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      n = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *) astr, (unsigned char *)data, length); });
 # 920 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9253,7 +9253,7 @@ int AVI_write_frame_quick(avi_t *AVI, char *data, long bytes, int keyframe)
   pos = AVI->pos;
 # 935 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 936 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  if(({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 0, keyframe); })) rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14, false); return -1;
+   call_lbl_0: if(({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 0, keyframe); })) rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14, false); return -1;
 # 937 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 938 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   AVI->last_pos = pos;
@@ -9277,7 +9277,7 @@ int AVI_dup_frame_quick(avi_t *AVI)
 # 948 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->last_pos==0) rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15, false); return 0;
 # 949 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *)"00db", 0x10, AVI->last_pos, AVI->last_len); })) rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15, false); return -1;
+    call_lbl_0: if(({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *)"00db", 0x10, AVI->last_pos, AVI->last_len); })) rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15, false); return -1;
 # 950 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    AVI->video_frames++;
 # 951 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9296,7 +9296,7 @@ int AVI_write_audio_quick(avi_t *AVI, char *data, long bytes)
    if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16, false); return -1; }
 # 958 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 959 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if( ({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 1, 0); }) ) rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16, false); return -1;
+    call_lbl_0: if( ({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 1, 0); }) ) rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16, false); return -1;
 # 960 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    AVI->track[AVI->aptr].audio_bytes += bytes;
 # 961 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9325,13 +9325,13 @@ int AVI_append_audio_quick(avi_t *AVI, char *data, long bytes)
 # 975 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   --AVI->n_idx;
 # 976 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  length = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[AVI->n_idx]+12); });
+   call_lbl_0: length = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[AVI->n_idx]+12); });
 # 977 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[AVI->n_idx]+8); });
+   call_lbl_1: pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[AVI->n_idx]+8); });
 # 978 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 979 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 980 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+12, length+bytes); });
+   call_lbl_2: ({ calling_npm("long2str", 0); long2str_npm(AVI->idx[AVI->n_idx]+12, length+bytes); });
 # 981 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 982 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   ++AVI->n_idx;
@@ -9343,9 +9343,9 @@ int AVI_append_audio_quick(avi_t *AVI, char *data, long bytes)
 # 987 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   lseek(AVI->fdes, pos+4, 0);
 # 988 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("long2str", 0); long2str_npm(c, length+bytes); });
+   call_lbl_3: ({ calling_npm("long2str", 0); long2str_npm(c, length+bytes); });
 # 989 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *) c, 4); });
+   call_lbl_4: ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *) c, 4); });
 # 990 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 991 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   lseek(AVI->fdes, pos+8+length, 0);
@@ -9356,7 +9356,7 @@ int AVI_append_audio_quick(avi_t *AVI, char *data, long bytes)
 # 995 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   bytes = i - length;
 # 996 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, data, bytes); });
+   call_lbl_5: ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, data, bytes); });
 # 997 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   AVI->pos = pos + 8 + i;
 # 998 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9430,7 +9430,7 @@ int AVI_close_quick(avi_t *AVI)
 # 1044 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1045 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1046 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->mode == 0)
+    call_lbl_0: if(AVI->mode == 0)
 # 1047 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       ret = ({ calling_npm("avi_close_output_file", 0); avi_close_output_file_npm(AVI); });
 # 1048 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9443,13 +9443,13 @@ int AVI_close_quick(avi_t *AVI)
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    close(AVI->fdes);
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->idx) free_wrapper(AVI->idx, 17693923975991249707UL);
+   if(AVI->idx) ({ free(AVI->idx); free_helper(AVI->idx, 17693923975991249707UL); }) ;
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_index) free_wrapper(AVI->video_index, 17693923975991249707UL);
+   if(AVI->video_index) ({ free(AVI->video_index); free_helper(AVI->video_index, 17693923975991249707UL); }) ;
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1057 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1058 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   free_wrapper(AVI, 17693923975991249732UL);
+    ({ free(AVI); free_helper(AVI, 17693923975991249732UL); }) ;
 # 1059 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1060 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, ____alias_loc_id_18, ____chimes_did_disable22, false); return ret;
@@ -9467,7 +9467,7 @@ avi_t *AVI_open_input_file_quick(char *filename, int getIndex)
 # 1075 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1076 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
 # 1078 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1079 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9495,14 +9495,14 @@ avi_t *AVI_open_input_file_quick(char *filename, int getIndex)
 # 1092 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 1093 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      free_wrapper(AVI, 17693923975991247325UL);
+       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
 # 1094 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23, false); return 0;
 # 1095 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     }
 # 1096 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1097 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
+   call_lbl_0: ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
 # 1098 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1099 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   AVI->aptr=0;
@@ -9523,7 +9523,7 @@ avi_t *AVI_open_fd_quick(int fd, int getIndex)
 # 1108 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
 # 1111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9545,7 +9545,7 @@ avi_t *AVI_open_fd_quick(int fd, int getIndex)
   AVI->fdes = fd;
 # 1122 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1123 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
+   call_lbl_0: ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
 # 1124 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1125 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   AVI->aptr=0;
@@ -9595,12 +9595,12 @@ long nai[8];
 # 1146 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1147 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1148 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 12); }) != 12 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+    call_lbl_0: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 12); }) != 12 ) { call_lbl_1: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1149 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1150 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if( strncasecmp(data ,"RIFF",4) !=0 ||
 # 1151 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       strncasecmp(data+8,"AVI ",4) !=0 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 9; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+       strncasecmp(data+8,"AVI ",4) !=0 ) { call_lbl_2: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 9; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1152 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1153 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1154 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9614,10 +9614,10 @@ long nai[8];
 # 1160 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    {
 # 1161 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) break;
+       call_lbl_3: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) break;
 # 1162 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1163 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *) data+4); });
+       call_lbl_4: n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *) data+4); });
 # 1164 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       n = ( ((n)+1) & ~1 );
 # 1165 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9626,7 +9626,7 @@ long nai[8];
 # 1167 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       {
 # 1168 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 4); }) != 4 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+          call_lbl_5: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 4); }) != 4 ) { call_lbl_6: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1169 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          n -= 4;
 # 1170 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9636,9 +9636,9 @@ long nai[8];
 # 1172 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             hdrl_len = n;
 # 1173 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            hdrl_data = (unsigned char *) malloc_wrapper(n, 17693923975991251472UL, 0, 0);
+            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251472UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 1174 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            if(hdrl_data==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
+            if(hdrl_data==0) { call_lbl_7: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1175 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1176 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1177 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9646,7 +9646,7 @@ long nai[8];
      header_offset = lseek(AVI->fdes,0,1);
 # 1179 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1180 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *)hdrl_data, n); }) != n ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+             call_lbl_8: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *)hdrl_data, n); }) != n ) { call_lbl_9: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1181 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          }
 # 1182 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9675,11 +9675,11 @@ long nai[8];
 # 1195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1196 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) malloc_wrapper(n, 17693923975991251942UL, 0, 0);
+         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251942UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 1197 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if(AVI->idx==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+         if(AVI->idx==0) { call_lbl_10: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *) AVI->idx, n); }) != n ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+          call_lbl_11: if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *) AVI->idx, n); }) != n ) { call_lbl_12: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1199 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       }
 # 1200 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9690,9 +9690,9 @@ long nai[8];
    }
 # 1203 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1204 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(!hdrl_data ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 10; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+   if(!hdrl_data ) { call_lbl_13: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 10; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1205 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(!AVI->movi_start) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 11; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+   if(!AVI->movi_start) { call_lbl_14: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 11; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1206 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1207 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1208 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9706,7 +9706,7 @@ long nai[8];
       if(strncasecmp((char *) hdrl_data+i, "LIST",4)==0) { i+= 12; continue; }
 # 1214 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1215 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      n = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
+       call_lbl_15: n = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
 # 1216 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       n = ( ((n)+1) & ~1 );
 # 1217 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9732,13 +9732,13 @@ long nai[8];
      AVI->v_codech_off = header_offset + i+4;
 # 1230 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1231 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            scale = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)hdrl_data+i+20); });
+             call_lbl_16: scale = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)hdrl_data+i+20); });
 # 1232 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            rate = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+24); });
+             call_lbl_17: rate = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+24); });
 # 1233 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             if(scale!=0) AVI->fps = (double)rate/(double)scale;
 # 1234 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->video_frames = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+32); });
+             call_lbl_18: AVI->video_frames = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+32); });
 # 1235 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             AVI->video_strn = num_stream;
 # 1236 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9770,7 +9770,7 @@ long nai[8];
     }
 # 1251 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1252 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    AVI->track[AVI->aptr].audio_bytes = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+32); })*({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, 0); });
+     call_lbl_19: call_lbl_20: AVI->track[AVI->aptr].audio_bytes = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+32); })*({ calling_npm("avi_sampsize", 0); avi_sampsize_npm(AVI, 0); });
 # 1253 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     AVI->track[AVI->aptr].audio_strn = num_stream;
 # 1254 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9802,9 +9802,9 @@ long nai[8];
 # 1269 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          {
 # 1270 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->width = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
+             call_lbl_21: AVI->width = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
 # 1271 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->height = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+8); });
+             call_lbl_22: AVI->height = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+8); });
 # 1272 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             vids_strf_seen = 1;
 # 1273 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9823,22 +9823,22 @@ long nai[8];
 # 1281 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          {
 # 1282 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->track[AVI->aptr].a_fmt = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i); });
+             call_lbl_23: AVI->track[AVI->aptr].a_fmt = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i); });
 # 1283 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1284 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1285 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      AVI->track[AVI->aptr].a_codecf_off = header_offset + i;
 # 1286 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1287 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->track[AVI->aptr].a_chans = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i+2); });
+             call_lbl_24: AVI->track[AVI->aptr].a_chans = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i+2); });
 # 1288 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->track[AVI->aptr].a_rate = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
+             call_lbl_25: AVI->track[AVI->aptr].a_rate = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
 # 1289 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1290 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-     AVI->track[AVI->aptr].mp3rate = 8*({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+8); })/1000;
+      call_lbl_26: AVI->track[AVI->aptr].mp3rate = 8*({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+8); })/1000;
 # 1291 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1292 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            AVI->track[AVI->aptr].a_bits = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i+14); });
+             call_lbl_27: AVI->track[AVI->aptr].a_bits = ({ calling_npm("str2ushort", 0); str2ushort_npm(hdrl_data+i+14); });
 # 1293 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1294 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          }
@@ -9863,10 +9863,10 @@ long nai[8];
    }
 # 1305 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1306 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   free_wrapper(hdrl_data, 17693923975991251472UL);
+    ({ free(hdrl_data); free_helper(hdrl_data, 17693923975991251472UL); }) ;
 # 1307 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1308 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(!vids_strh_seen || !vids_strf_seen) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+   if(!vids_strh_seen || !vids_strf_seen) { call_lbl_28: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1309 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1310 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    AVI->video_tag[0] = AVI->video_strn/10 + '0';
@@ -9923,19 +9923,19 @@ long nai[8];
 # 1344 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          if( strncasecmp((char *) AVI->idx[i],(char *) AVI->video_tag,3)==0 ) break;
 # 1345 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if(i>=AVI->n_idx) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+      if(i>=AVI->n_idx) { call_lbl_29: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1346 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1347 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); });
+       call_lbl_30: pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); });
 # 1348 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
+       call_lbl_31: len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
 # 1349 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1350 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       lseek(AVI->fdes,pos,0);
 # 1351 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+       call_lbl_32: if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { call_lbl_33: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1352 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 &&
+       call_lbl_34: if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 &&
 # 1353 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
 # 1354 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9951,9 +9951,9 @@ long nai[8];
 # 1359 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          lseek(AVI->fdes,pos+AVI->movi_start-4,0);
 # 1360 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
+          call_lbl_35: if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { call_lbl_36: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1361 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 && ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
+          call_lbl_37: if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 && ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
 # 1362 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          {
 # 1363 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9983,9 +9983,9 @@ long nai[8];
 # 1378 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       {
 # 1379 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) break;
+          call_lbl_38: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) break;
 # 1380 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); });
+          call_lbl_39: n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); });
 # 1381 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1382 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1383 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10013,7 +10013,7 @@ long nai[8];
 # 1396 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     {
 # 1397 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *) data, 0, lseek(AVI->fdes,0,1)-8, n); });
+     call_lbl_40: ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *) data, 0, lseek(AVI->fdes,0,1)-8, n); });
 # 1398 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          }
 # 1399 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10052,20 +10052,20 @@ long nai[8];
 # 1420 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1421 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1422 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_frames==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
+   if(AVI->video_frames==0) { call_lbl_41: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1423 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI->video_index = (video_index_entry *) malloc_wrapper(nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0);
+   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nvi * sizeof(video_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0); ____chimes_tmp_ptr; }) ;
 # 1424 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_index==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
+   if(AVI->video_index==0) { call_lbl_42: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1426 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    for(j=0; j<AVI->anum; ++j) {
 # 1427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1428 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) malloc_wrapper(nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0);
+    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nai[j] * sizeof(audio_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0); ____chimes_tmp_ptr; }) ;
 # 1429 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    if(AVI->track[j].audio_index==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
+    if(AVI->track[j].audio_index==0) { call_lbl_43: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1430 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        }
 # 1431 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10086,11 +10086,11 @@ long nai[8];
 # 1441 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      if(strncasecmp((char *)AVI->idx[i],(char *)AVI->video_tag,3) == 0) {
 # 1442 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       AVI->video_index[nvi].key = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 4); });
+        call_lbl_44: AVI->video_index[nvi].key = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 4); });
 # 1443 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       AVI->video_index[nvi].pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); })+ioff;
+        call_lbl_45: AVI->video_index[nvi].pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); })+ioff;
 # 1444 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       AVI->video_index[nvi].len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
+        call_lbl_46: AVI->video_index[nvi].len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
 # 1445 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        nvi++;
 # 1446 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10103,9 +10103,9 @@ long nai[8];
 # 1451 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(strncasecmp((char *)AVI->idx[i],AVI->track[j].audio_tag,4) == 0) {
 # 1452 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI->track[j].audio_index[nai[j]].pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); })+ioff;
+   call_lbl_47: AVI->track[j].audio_index[nai[j]].pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); })+ioff;
 # 1453 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI->track[j].audio_index[nai[j]].len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
+   call_lbl_48: AVI->track[j].audio_index[nai[j]].len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
 # 1454 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   AVI->track[j].audio_index[nai[j]].tot = tot[j];
 # 1455 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10437,7 +10437,7 @@ long AVI_read_frame_quick(avi_t *AVI, char *vidbuf, int *keyframe)
 # 1622 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    lseek(AVI->fdes, AVI->video_index[AVI->video_pos].pos, 0);
 # 1623 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n)
+    call_lbl_0: if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n)
 # 1624 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    {
 # 1625 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10552,7 +10552,7 @@ long AVI_read_audio_quick(avi_t *AVI, char *audbuf, long bytes)
 # 1685 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       lseek(AVI->fdes, pos, 0);
 # 1686 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf+nr, todo); }) != todo)
+       call_lbl_0: if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf+nr, todo); }) != todo)
 # 1687 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       {
 # 1688 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10602,7 +10602,7 @@ int AVI_read_data_quick(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1724 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1725 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1726 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
+       call_lbl_0: if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8 ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
 # 1727 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1728 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1729 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10618,7 +10618,7 @@ int AVI_read_data_quick(avi_t *AVI, char *vidbuf, long max_vidbuf,
       }
 # 1735 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1736 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      n = ( ((({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); }))+1) & ~1 );
+       call_lbl_1: n = ( ((({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); }))+1) & ~1 );
 # 1737 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1738 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       if(strncasecmp(data,AVI->video_tag,3) == 0)
@@ -10639,7 +10639,7 @@ int AVI_read_data_quick(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1746 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          }
 # 1747 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
+          call_lbl_2: if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
 # 1748 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 1;
 # 1749 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10661,7 +10661,7 @@ int AVI_read_data_quick(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1757 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          }
 # 1758 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf, n); }) != n ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
+          call_lbl_3: if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf, n); }) != n ) rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 0;
 # 1759 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53, false); return 2;
 # 1760 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10922,7 +10922,7 @@ static int avi_add_index_entry_npm(avi_t *AVI, unsigned char *tag, long flags, u
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-     ptr = realloc_wrapper((void *)AVI->idx,(AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0);
+     ptr = ({ void *____chimes_tmp_ptr = realloc((void *)AVI->idx, (AVI->max_idx + 4096) * 16); realloc_helper(____chimes_tmp_ptr, (void *)AVI->idx, (AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      if(ptr == 0) {
@@ -10982,7 +10982,7 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI==0)
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -11005,7 +11005,7 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      free_wrapper(AVI, 17693923975991247325UL);
+       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       return 0;
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -11027,7 +11027,7 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 4;
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      free_wrapper(AVI, 17693923975991247325UL);
+       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       return 0;
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12146,13 +12146,13 @@ int AVI_close_npm(avi_t *AVI)
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    close(AVI->fdes);
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->idx) free_wrapper(AVI->idx, 17693923975991249707UL);
+   if(AVI->idx) ({ free(AVI->idx); free_helper(AVI->idx, 17693923975991249707UL); }) ;
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_index) free_wrapper(AVI->video_index, 17693923975991249707UL);
+   if(AVI->video_index) ({ free(AVI->video_index); free_helper(AVI->video_index, 17693923975991249707UL); }) ;
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1057 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1058 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   free_wrapper(AVI, 17693923975991249732UL);
+    ({ free(AVI); free_helper(AVI, 17693923975991249732UL); }) ;
 # 1059 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1060 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    return ret;
@@ -12168,7 +12168,7 @@ avi_t *AVI_open_input_file_npm(char *filename, int getIndex)
 # 1075 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1076 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
 # 1078 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1079 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12196,7 +12196,7 @@ avi_t *AVI_open_input_file_npm(char *filename, int getIndex)
 # 1092 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 1093 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-      free_wrapper(AVI, 17693923975991247325UL);
+       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
 # 1094 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       return 0;
 # 1095 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12222,7 +12222,7 @@ avi_t *AVI_open_fd_npm(int fd, int getIndex)
 # 1108 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
 # 1111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12327,7 +12327,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1172 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             hdrl_len = n;
 # 1173 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            hdrl_data = (unsigned char *) malloc_wrapper(n, 17693923975991251472UL, 0, 0);
+            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc(n); malloc_helper(____chimes_tmp_ptr, n, 17693923975991251472UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 1174 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             if(hdrl_data==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
 # 1175 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12366,7 +12366,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1196 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) malloc_wrapper(n, 17693923975991251942UL, 0, 0);
+         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc(n); malloc_helper(____chimes_tmp_ptr, n, 17693923975991251942UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 1197 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          if(AVI->idx==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; }
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12554,7 +12554,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
    }
 # 1305 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1306 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   free_wrapper(hdrl_data, 17693923975991251472UL);
+    ({ free(hdrl_data); free_helper(hdrl_data, 17693923975991251472UL); }) ;
 # 1307 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1308 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(!vids_strh_seen || !vids_strf_seen) { AVI_close_npm(AVI); AVI_errno = 12; return 0; }
@@ -12745,7 +12745,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1422 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_frames==0) { AVI_close_npm(AVI); AVI_errno = 12; return 0; };
 # 1423 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI->video_index = (video_index_entry *) malloc_wrapper(nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0);
+   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nvi * sizeof(video_index_entry)); malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0); ____chimes_tmp_ptr; }) ;
 # 1424 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_index==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
 # 1425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12754,7 +12754,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1428 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) malloc_wrapper(nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0);
+    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nai[j] * sizeof(audio_index_entry)); malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0); ____chimes_tmp_ptr; }) ;
 # 1429 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     if(AVI->track[j].audio_index==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
 # 1430 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"

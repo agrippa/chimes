@@ -40,42 +40,26 @@ void CallLabelInsertPass::VisitStmt(const clang::Stmt *s) {
         if (const clang::CallExpr *call =
                 clang::dyn_cast<const clang::CallExpr>(s)) {
 
-            std::string callee_name = get_callee_name(call);
+            clang::PresumedLoc presumed = SM->getPresumedLoc(start);
+            int line_no = presumed.getLine();
 
-            if (callee_name != "register_custom_init_handler" &&
-                    !clang::isa<const clang::CXXConstructExpr>(call)) {
-                /*
-                 * This means we can't support checkpoints from inside
-                 * constructors.
-                 */
-                clang::PresumedLoc presumed = SM->getPresumedLoc(start);
-                int line_no = presumed.getLine();
-
-                int lbl;
-                if (callee_name == "anon" ||
-                        insertions->may_cause_checkpoint(callee_name)) {
-                    lbl = getNextFunctionLabel();
-                } else {
-                    lbl = -1;
-                }
+            if (should_be_labelled(call)) {
+                int lbl = getNextFunctionLabel();
 
                 if (call_lbls.find(line_no) == call_lbls.end()) {
-                    call_lbls[line_no] =
-                        std::vector<CallLabel>();
+                    call_lbls.insert(pair<int, std::vector<CallLabel> >(
+                                    line_no, std::vector<CallLabel>()));
                 }
                 call_lbls.at(line_no).push_back(CallLabel(presumed.getColumn(),
                             lbl));
 
-                if (lbl >= 0 && ignorable->find(callee_name) == ignorable->end()) {
-                    std::stringstream lbl_ss;
-                    lbl_ss << " call_lbl_" << lbl << ": ";
-                    InsertAtFront(call, lbl_ss.str());
-                    insertions->update_alias_change_locations(
-                            presumed.getLine(), presumed.getColumn(),
-                            presumed.getFilename(), lbl_ss.str().size());
-                }
+                std::stringstream lbl_ss;
+                lbl_ss << " call_lbl_" << lbl << ": ";
+                InsertAtFront(call, lbl_ss.str());
+                insertions->update_alias_change_locations(
+                        presumed.getLine(), presumed.getColumn(),
+                        presumed.getFilename(), lbl_ss.str().size());
             }
-
         }
     }
 

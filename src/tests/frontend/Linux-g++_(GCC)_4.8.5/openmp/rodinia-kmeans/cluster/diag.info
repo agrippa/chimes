@@ -1,20 +1,20 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 78 5 len=7 cluster_npm
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 90 25 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 90 55 , 433509646541986825UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 102 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 102 28 , 433509646541986844UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 103 9 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 103 15 , 433509646541986838UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 108 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 108 7 , 433509646541986825UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 90 25 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 90 55 , 433509646541986825UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 102 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 102 28 , 433509646541986844UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 103 9 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 103 15 , 433509646541986838UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 108 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 108 7 , 433509646541986825UL
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 90 25  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(int)); malloc_helper(____chimes_tmp_ptr, numObjects * sizeof(int), 433509646541986825UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 90 56 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 102 3  ({ free((*cluster_centres)[0]); free_helper((*cluster_centres)[0], 433509646541986844UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 102 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 103 9  ({ free(*cluster_centres); free_helper(*cluster_centres, 433509646541986838UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 103 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 108 2  ({ free(membership); free_helper(membership, 433509646541986825UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 108 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 90 25  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(int)); malloc_helper(____chimes_tmp_ptr, numObjects * sizeof(int), 433509646541986825UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 90 56 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 102 3  ({ free((*cluster_centres)[0]); free_helper((*cluster_centres)[0], 433509646541986844UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 102 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 103 9  ({ free(*cluster_centres); free_helper(*cluster_centres, 433509646541986838UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 103 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 108 2  ({ free(membership); free_helper(membership, 433509646541986825UL); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 108 17 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 110 60 rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 86 1 const int ____chimes_did_disable0 = new_stack((void *)(&cluster), "cluster", &____must_manage_cluster, 6, 1, (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986864UL), (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986867UL), "cluster|cluster_centres|0", &____must_checkpoint_cluster_cluster_centres_0, "float***", (void *)(&cluster_centres), (size_t)8, 1, 0, 0); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 111 1 rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0, false); 
@@ -24,11 +24,13 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 87 20 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 88 5 float **tmp_cluster_centres; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 88 32 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 90 29 void *____chimes_tmp_ptr = malloc(numObjects * sizeof(int)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 90 88 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 110 6 int ____chimes_ret_var_0; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 110 30 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 94 5  call_lbl_3: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 94 5  call_lbl_0: 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 78 5 len=7 cluster_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 94 40  ({  calling((void*)kmeans_clustering, 3, ____alias_loc_id_0, 433509646541986838UL, 6, (size_t)(433509646541986864UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986825UL)); (kmeans_clustering)(attributes, numAttributes, numObjects, nclusters, threshold, membership); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 94 40  ({  calling((void*)kmeans_clustering, 0, ____alias_loc_id_0, 433509646541986838UL, 6, (size_t)(433509646541986864UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986825UL)); (kmeans_clustering)(attributes, numAttributes, numObjects, nclusters, threshold, membership); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 99 55 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 87 5 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 87 20 
@@ -36,10 +38,10 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/clust
 # 86
  if (____must_checkpoint_cluster_membership_0) { register_stack_vars(1, "cluster|membership|0", &____must_checkpoint_cluster_membership_0, "i32*", (void *)(&membership), (size_t)8, 1, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 78 5 len=7 cluster_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 94 40  ({  calling((void*)kmeans_clustering, 3, ____alias_loc_id_0, 433509646541986838UL, 6, (size_t)(433509646541986864UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986825UL)); (kmeans_clustering)(attributes, numAttributes, numObjects, nclusters, threshold, membership); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 94 40  ({  calling((void*)kmeans_clustering, 0, ____alias_loc_id_0, 433509646541986838UL, 6, (size_t)(433509646541986864UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986825UL)); (kmeans_clustering)(attributes, numAttributes, numObjects, nclusters, threshold, membership); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 99 55 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 87 5 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 87 20 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c 86 370  ; int *membership;
 # 86
- if (____must_checkpoint_cluster_membership_0) { register_stack_vars(1, "cluster|membership|0", &____must_checkpoint_cluster_membership_0, "i32*", (void *)(&membership), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_cluster_membership_0) { register_stack_vars(1, "cluster|membership|0", &____must_checkpoint_cluster_membership_0, "i32*", (void *)(&membership), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  

@@ -1,6 +1,6 @@
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c usage|argv0|0 " i8* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c usage|help|0 " i8* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 seconds
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c seconds|tzp|0 " %struct.timezone = type { i32, i32 } " 64 0 1 timezone 0 0
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c seconds|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c seconds|____chimes_ret_var_0|0 " double " 64 0 0 0
@@ -14,8 +14,8 @@
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|cluster_centres|0 " float** " 64 1 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|i|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|j|0 " i32 " 32 0 0 1 strtok
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|numAttributes|0 " i32 " 32 0 0 1 main
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|numObjects|0 " i32 " 32 0 0 1 main
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|numAttributes|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|numObjects|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|line|0 " [1024 x i8] " 8192 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|isBinaryFile|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c main|nloops|0 " i32 " 32 0 0 1 checkpoint

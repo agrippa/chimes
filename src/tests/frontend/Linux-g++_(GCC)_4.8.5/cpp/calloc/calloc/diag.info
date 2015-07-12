@@ -1,19 +1,19 @@
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 25 len=6 calloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 46 , 14294407443907813601UL, 0, 0
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 25 len=6 calloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 46 , 14294407443907813601UL, 0, 0
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 25  ({ void *____chimes_tmp_ptr = calloc(10, sizeof(int)); calloc_helper(____chimes_tmp_ptr, 10, sizeof(int), 14294407443907813601UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 47 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 25  ({ void *____chimes_tmp_ptr = calloc(10, sizeof(int)); calloc_helper(____chimes_tmp_ptr, 10, sizeof(int), 14294407443907813601UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 47 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 11 67 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 3 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(14294407443907813619UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 12 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 3 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(14294407443907813619UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 3 171 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 5  int *alloc;  alloc = ((int *)calloc_wrapper(10, sizeof(int), 14294407443907813601UL, 0, 0)) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 86 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 5  int *alloc;  alloc = ((int *) ({ void *____chimes_tmp_ptr = calloc(10, sizeof(int)); calloc_helper(____chimes_tmp_ptr, 10, sizeof(int), 14294407443907813601UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 186 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 11 6 int ____chimes_ret_var_0; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 11 30 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 6 5  call_lbl_2: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 6 5  call_lbl_0: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 3 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 6 18 checkpoint_transformed(2, ____alias_loc_id_0)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 6 18 checkpoint_transformed(0, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 6 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 16 
@@ -21,10 +21,10 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 3 168  ;
 # 3
  register_stack_vars(1, "main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0);  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 3 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 6 18 checkpoint_transformed(2, ____alias_loc_id_0)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 6 18 checkpoint_transformed(0, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 6 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 4 16 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./calloc.cpp 3 168  ; int *alloc;
 # 3
- register_stack_vars(1, "main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
+ register_stack_vars(1, "main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  

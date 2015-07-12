@@ -15,6 +15,7 @@
 #include "llvm/IR/Operator.h"
 
 #include "Hasher.h"
+#include "Play.h"
 
 #include <stdio.h>
 #include <set>
@@ -26,8 +27,9 @@ using namespace llvm;
 
 class AllocaVisitor {
     public:
-        AllocaVisitor(std::vector<AllocaInst *> *initial_insns) {
+        AllocaVisitor(std::vector<AllocaInst *> *initial_insns, struct Play *set_mainPlugin) {
             toprocess = initial_insns;
+            mainPlugin = set_mainPlugin;
 
             for (std::vector<AllocaInst *>::iterator i = toprocess->begin(),
                     e = toprocess->end(); i != e; i++) {
@@ -85,6 +87,7 @@ class AllocaVisitor {
         std::set<Value *> visited;
 
         AllocaInst *curr;
+        struct Play *mainPlugin;
 };
 
 #endif

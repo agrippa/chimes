@@ -1,4 +1,4 @@
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 seconds
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c seconds|tzp|0 " %struct.timezone = type { i32, i32 } " 64 0 1 timezone 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c seconds|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c seconds|____chimes_ret_var_0|0 " double " 64 0 0 0
@@ -26,8 +26,8 @@
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_3|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_4|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_5|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|start_time|0 " double " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_6|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|start_time|0 " double " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|RODINIA_HOME|0 " i8* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|y_path|0 " [1024 x i8] " 8192 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|params_path|0 " [1024 x i8] " 8192 0 0 1 main

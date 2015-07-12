@@ -7,10 +7,18 @@ from shared_tests import PERF_CLI_ARGS
 
 # Rodinia benchmarks
 RODINIA_HOME = os.environ['RODINIA_HOME']
+if not os.path.isdir(RODINIA_HOME):
+    print('RODINIA_HOME does not seem to be a directory (' + RODINIA_HOME + ')')
+    print('If you are a Habanero member and need to restore the Rodinia ' +
+          'benchmarks, you can copy them from the ZIP under:')
+    print('  https://svn.rice.edu/r/parsoft/projects/' +
+          'Max-Grossman-Masters-Thesis/Benchmarks/')
+    sys.exit(1)
+
 RODINIA_DATA = path.join(RODINIA_HOME, 'data')
 RODINIA_TESTS = ['backprop', 'bfs', 'b+tree', 'heartwall', 'hotspot',
                  'kmeans', 'lavaMD', 'lud', 'myocyte',
-                 'nn', 'nw', 'particlefilter', 'srad']
+                 'nn', 'nw', 'nw_refactored', 'particlefilter', 'srad']
 RODINIA_CLI_ARGS = {'backprop': '65536',
                     'bfs': '4 ' + path.join(RODINIA_DATA, 'bfs/graph1MW_6.txt'),
                     'b+tree': 'core 2 file ' + path.join(RODINIA_DATA,
@@ -34,6 +42,7 @@ RODINIA_CLI_ARGS = {'backprop': '65536',
                     'nn': path.join(RODINIA_HOME, 'openmp', 'nn',
                                     'filelist_4') + ' 5 30 90',
                     'nw': '2048 10 2',
+                    'nw_refactored': '2048 10 2',
                     'particlefilter': '-x 128 -y 128 -z 10 -np 100',
                     'srad': '100 0.5 502 458 4'}
 EXCLUDED_FILES={'lud': ['omp/lud.c', 'omp/lud_omp.c', 'gen_input.c'],
@@ -114,7 +123,8 @@ RODINIA_PERF_CLI_ARGS = \
          'RodiniaMyocyte':        '100 1 0 4',
          'RodiniaNn':             path.join(RODINIA_HOME, 'openmp', 'nn',
                                             'filelist_4') + ' 5 30 90',
-         'RodiniaNw':             '2048 10 2',
+         'RodiniaNw':             '32768 10 12',
+         'RodiniaNw_refactored':  '32768 10 12',
          'RodiniaParticlefilter': '-x 128 -y 128 -z 10 -np 100',
          'RodiniaSrad':           '100 0.5 502 458 4',
         }

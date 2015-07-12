@@ -76,6 +76,7 @@ protected:
     std::string getRewrittenText(clang::SourceRange range);
 
     std::string stmtToString(const clang::Stmt* s);
+    std::string getArgString(const clang::CallExpr *call, int arg);
 
     bool is_omp_for_iter_declaration(const Stmt *s);
 
@@ -94,6 +95,7 @@ protected:
     int endingLine(const clang::Stmt *stmt);
 
     std::string get_callee_name(const CallExpr *call);
+    bool should_be_labelled(const CallExpr *call);
 
 private:
     clang::Rewriter *rewriter;

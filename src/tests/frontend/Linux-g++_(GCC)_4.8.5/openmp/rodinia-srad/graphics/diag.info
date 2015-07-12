@@ -23,11 +23,11 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 104 2 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 104 8 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 105 2 int temp; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 105 10 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 44  call_lbl_5: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 44  call_lbl_0: 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 23 6 len=14 write_graphics_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 28 280  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 92 6 len=13 read_graphics_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 61  ({  calling((void*)fgetc, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 61  ({  calling((void*)fgetc, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 70 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 102 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 102 11 
@@ -45,7 +45,7 @@ FILE *fid;
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 23 6 len=14 write_graphics_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 28 280  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 92 6 len=13 read_graphics_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 61  ({  calling((void*)fgetc, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 61  ({  calling((void*)fgetc, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 70 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 102 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 102 11 
@@ -59,4 +59,4 @@ int i;
 # 96
 FILE *fid;
 # 96
- if (____must_checkpoint_read_graphics_temp_0 || ____must_checkpoint_read_graphics_i_0 || ____must_checkpoint_read_graphics_fid_0) { register_stack_vars(3, "read_graphics|temp|0", &____must_checkpoint_read_graphics_temp_0, "i32", (void *)(&temp), (size_t)4, 0, 0, 0, "read_graphics|i|0", &____must_checkpoint_read_graphics_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "read_graphics|fid|0", &____must_checkpoint_read_graphics_fid_0, "%struct._IO_FILE*", (void *)(&fid), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_read_graphics_temp_0 || ____must_checkpoint_read_graphics_i_0 || ____must_checkpoint_read_graphics_fid_0) { register_stack_vars(3, "read_graphics|temp|0", &____must_checkpoint_read_graphics_temp_0, "i32", (void *)(&temp), (size_t)4, 0, 0, 0, "read_graphics|i|0", &____must_checkpoint_read_graphics_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "read_graphics|fid|0", &____must_checkpoint_read_graphics_fid_0, "%struct._IO_FILE*", (void *)(&fid), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  

@@ -1,3 +1,3 @@
 seconds _Z7secondsv 0 DOES_NOT
-backprop_face _Z13backprop_facev 0 MAY seconds 30 18 bpnn_create 32 9 load 34 3 bpnn_train_kernel 37 3 bpnn_free 38 3 seconds 40 16
+backprop_face _Z13backprop_facev 0 MAY seconds 30 18 bpnn_create 32 9 load 34 3 bpnn_train_kernel 37 3 seconds 38 16 bpnn_free 39 3
 setup _Z5setupiPPc 0 MAY bpnn_initialize 56 3 backprop_face 57 3

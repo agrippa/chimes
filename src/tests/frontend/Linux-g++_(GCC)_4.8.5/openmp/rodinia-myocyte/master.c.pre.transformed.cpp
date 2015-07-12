@@ -86,13 +86,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2630,7 +2630,7 @@ float JCaSL;
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float JCaDyad;
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
- if (____must_checkpoint_master_th_id_0 || ____must_checkpoint_master_th_count_0 || ____must_checkpoint_master_initvalu_offset_Cyt_0 || ____must_checkpoint_master_initvalu_offset_SL_0 || ____must_checkpoint_master_initvalu_offset_Dyad_0 || ____must_checkpoint_master_initvalu_offset_ecc_0 || ____must_checkpoint_master_JCaCyt_0 || ____must_checkpoint_master_JCaSL_0 || ____must_checkpoint_master_JCaDyad_0) { register_stack_vars(9, "master|th_id|0", &____must_checkpoint_master_th_id_0, "i32", (void *)(&th_id), (size_t)4, 0, 0, 0, "master|th_count|0", &____must_checkpoint_master_th_count_0, "[4 x i32]", (void *)(th_count), (size_t)16, 0, 0, 0, "master|initvalu_offset_Cyt|0", &____must_checkpoint_master_initvalu_offset_Cyt_0, "i32", (void *)(&initvalu_offset_Cyt), (size_t)4, 0, 0, 0, "master|initvalu_offset_SL|0", &____must_checkpoint_master_initvalu_offset_SL_0, "i32", (void *)(&initvalu_offset_SL), (size_t)4, 0, 0, 0, "master|initvalu_offset_Dyad|0", &____must_checkpoint_master_initvalu_offset_Dyad_0, "i32", (void *)(&initvalu_offset_Dyad), (size_t)4, 0, 0, 0, "master|initvalu_offset_ecc|0", &____must_checkpoint_master_initvalu_offset_ecc_0, "i32", (void *)(&initvalu_offset_ecc), (size_t)4, 0, 0, 0, "master|JCaCyt|0", &____must_checkpoint_master_JCaCyt_0, "float", (void *)(&JCaCyt), (size_t)4, 0, 0, 0, "master|JCaSL|0", &____must_checkpoint_master_JCaSL_0, "float", (void *)(&JCaSL), (size_t)4, 0, 0, 0, "master|JCaDyad|0", &____must_checkpoint_master_JCaDyad_0, "float", (void *)(&JCaDyad), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(19): { goto call_lbl_19; } case(1): { goto call_lbl_1; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_master_th_id_0 || ____must_checkpoint_master_th_count_0 || ____must_checkpoint_master_initvalu_offset_Cyt_0 || ____must_checkpoint_master_initvalu_offset_SL_0 || ____must_checkpoint_master_initvalu_offset_Dyad_0 || ____must_checkpoint_master_initvalu_offset_ecc_0 || ____must_checkpoint_master_JCaCyt_0 || ____must_checkpoint_master_JCaSL_0 || ____must_checkpoint_master_JCaDyad_0) { register_stack_vars(9, "master|th_id|0", &____must_checkpoint_master_th_id_0, "i32", (void *)(&th_id), (size_t)4, 0, 0, 0, "master|th_count|0", &____must_checkpoint_master_th_count_0, "[4 x i32]", (void *)(th_count), (size_t)16, 0, 0, 0, "master|initvalu_offset_Cyt|0", &____must_checkpoint_master_initvalu_offset_Cyt_0, "i32", (void *)(&initvalu_offset_Cyt), (size_t)4, 0, 0, 0, "master|initvalu_offset_SL|0", &____must_checkpoint_master_initvalu_offset_SL_0, "i32", (void *)(&initvalu_offset_SL), (size_t)4, 0, 0, 0, "master|initvalu_offset_Dyad|0", &____must_checkpoint_master_initvalu_offset_Dyad_0, "i32", (void *)(&initvalu_offset_Dyad), (size_t)4, 0, 0, 0, "master|initvalu_offset_ecc|0", &____must_checkpoint_master_initvalu_offset_ecc_0, "i32", (void *)(&initvalu_offset_ecc), (size_t)4, 0, 0, 0, "master|JCaCyt|0", &____must_checkpoint_master_JCaCyt_0, "float", (void *)(&JCaCyt), (size_t)4, 0, 0, 0, "master|JCaSL|0", &____must_checkpoint_master_JCaSL_0, "float", (void *)(&JCaSL), (size_t)4, 0, 0, 0, "master|JCaDyad|0", &____must_checkpoint_master_JCaDyad_0, "float", (void *)(&JCaDyad), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } case(0): { goto call_lbl_0; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } } } ; ;
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 13 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 14 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2689,7 +2689,7 @@ float JCaDyad;
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-  call_lbl_1: nthreads = ({ calling((void*)omp_get_max_threads, 1, ____alias_loc_id_4, 0UL, 0); (omp_get_max_threads)(); }) ;
+  call_lbl_0: nthreads = ({ calling((void*)omp_get_max_threads, 0, ____alias_loc_id_4, 0UL, 0); (omp_get_max_threads)(); }) ;
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2719,13 +2719,13 @@ float JCaDyad;
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-{ call_lbl_19: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(19, &____chimes_region_id0, 1, &th_id);
+{ call_lbl_10: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(10, &____chimes_region_id0, 1, &th_id);
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 #pragma omp parallel firstprivate(th_id)
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &th_id); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } {
+  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &th_id); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } {
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
                th_id = (omp_get_thread_num()) ;
@@ -2742,7 +2742,7 @@ float JCaDyad;
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     parameter_offset_ecc = 0;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_3: ({ calling((void*)ecc, 3, ____alias_loc_id_3, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
+     call_lbl_1: ({ calling((void*)ecc, 1, ____alias_loc_id_3, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -2758,7 +2758,7 @@ float JCaDyad;
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     CaDyad = initvalu[35]*1e3;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_4: JCaDyad = ({ calling((void*)cam, 4, ____alias_loc_id_5, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
+     call_lbl_2: JCaDyad = ({ calling((void*)cam, 2, ____alias_loc_id_5, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -2774,7 +2774,7 @@ float JCaDyad;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     CaSL = initvalu[36]*1e3;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_5: JCaSL = ({ calling((void*)cam, 5, ____alias_loc_id_2, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
+     call_lbl_3: JCaSL = ({ calling((void*)cam, 3, ____alias_loc_id_2, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -2790,7 +2790,7 @@ float JCaDyad;
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     CaCyt = initvalu[37]*1e3;
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_6: JCaCyt = ({ calling((void*)cam, 6, ____alias_loc_id_6, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
+     call_lbl_4: JCaCyt = ({ calling((void*)cam, 4, ____alias_loc_id_6, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -2814,7 +2814,7 @@ float JCaDyad;
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   parameter_offset_ecc = 0;
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_7: ({ calling((void*)ecc, 7, ____alias_loc_id_9, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
+   call_lbl_5: ({ calling((void*)ecc, 5, ____alias_loc_id_9, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2824,7 +2824,7 @@ float JCaDyad;
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaDyad = initvalu[35]*1e3;
 # 162 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_8: JCaDyad = ({ calling((void*)cam, 8, ____alias_loc_id_8, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
+   call_lbl_6: JCaDyad = ({ calling((void*)cam, 6, ____alias_loc_id_8, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2834,7 +2834,7 @@ float JCaDyad;
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaSL = initvalu[36]*1e3;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_9: JCaSL = ({ calling((void*)cam, 9, ____alias_loc_id_7, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
+   call_lbl_7: JCaSL = ({ calling((void*)cam, 7, ____alias_loc_id_7, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2844,7 +2844,7 @@ float JCaDyad;
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaCyt = initvalu[37]*1e3;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_10: JCaCyt = ({ calling((void*)cam, 10, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
+   call_lbl_8: JCaCyt = ({ calling((void*)cam, 8, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
  }
@@ -2855,7 +2855,7 @@ float JCaDyad;
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-  call_lbl_11: ({ calling((void*)fin, 11, ____alias_loc_id_0, 0UL, 10, (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(6849693010381407521UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
+  call_lbl_9: ({ calling((void*)fin, 9, ____alias_loc_id_0, 0UL, 10, (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(6849693010381407521UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2965,7 +2965,7 @@ float JCaDyad;
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-  call_lbl_1: nthreads = ({ calling((void*)omp_get_max_threads, 1, ____alias_loc_id_4, 0UL, 0); (omp_get_max_threads)(); }) ;
+  call_lbl_0: nthreads = ({ calling((void*)omp_get_max_threads, 0, ____alias_loc_id_4, 0UL, 0); (omp_get_max_threads)(); }) ;
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2995,13 +2995,13 @@ float JCaDyad;
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-{ call_lbl_19: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(19, &____chimes_region_id0, 1, &th_id);
+{ call_lbl_10: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(10, &____chimes_region_id0, 1, &th_id);
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 #pragma omp parallel firstprivate(th_id)
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &th_id); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } {
+  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &th_id); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } {
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
                th_id = (omp_get_thread_num()) ;
@@ -3018,7 +3018,7 @@ float JCaDyad;
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     parameter_offset_ecc = 0;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_3: ({ calling((void*)ecc, 3, ____alias_loc_id_3, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
+     call_lbl_1: ({ calling((void*)ecc, 1, ____alias_loc_id_3, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -3034,7 +3034,7 @@ float JCaDyad;
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     CaDyad = initvalu[35]*1e3;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_4: JCaDyad = ({ calling((void*)cam, 4, ____alias_loc_id_5, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
+     call_lbl_2: JCaDyad = ({ calling((void*)cam, 2, ____alias_loc_id_5, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -3050,7 +3050,7 @@ float JCaDyad;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     CaSL = initvalu[36]*1e3;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_5: JCaSL = ({ calling((void*)cam, 5, ____alias_loc_id_2, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
+     call_lbl_3: JCaSL = ({ calling((void*)cam, 3, ____alias_loc_id_2, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -3066,7 +3066,7 @@ float JCaDyad;
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     CaCyt = initvalu[37]*1e3;
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_6: JCaCyt = ({ calling((void*)cam, 6, ____alias_loc_id_6, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
+     call_lbl_4: JCaCyt = ({ calling((void*)cam, 4, ____alias_loc_id_6, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -3090,7 +3090,7 @@ float JCaDyad;
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   parameter_offset_ecc = 0;
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_7: ({ calling((void*)ecc, 7, ____alias_loc_id_9, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
+   call_lbl_5: ({ calling((void*)ecc, 5, ____alias_loc_id_9, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -3100,7 +3100,7 @@ float JCaDyad;
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaDyad = initvalu[35]*1e3;
 # 162 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_8: JCaDyad = ({ calling((void*)cam, 8, ____alias_loc_id_8, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
+   call_lbl_6: JCaDyad = ({ calling((void*)cam, 6, ____alias_loc_id_8, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -3110,7 +3110,7 @@ float JCaDyad;
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaSL = initvalu[36]*1e3;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_9: JCaSL = ({ calling((void*)cam, 9, ____alias_loc_id_7, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
+   call_lbl_7: JCaSL = ({ calling((void*)cam, 7, ____alias_loc_id_7, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -3120,7 +3120,7 @@ float JCaDyad;
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaCyt = initvalu[37]*1e3;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_10: JCaCyt = ({ calling((void*)cam, 10, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
+   call_lbl_8: JCaCyt = ({ calling((void*)cam, 8, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(0UL), (size_t)(6849693010381407521UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
  }
@@ -3131,7 +3131,7 @@ float JCaDyad;
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-  call_lbl_11: ({ calling((void*)fin, 11, ____alias_loc_id_0, 0UL, 10, (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(6849693010381407521UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
+  call_lbl_9: ({ calling((void*)fin, 9, ____alias_loc_id_0, 0UL, 10, (size_t)(6849693010381407519UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6849693010381407520UL), (size_t)(6849693010381407521UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"

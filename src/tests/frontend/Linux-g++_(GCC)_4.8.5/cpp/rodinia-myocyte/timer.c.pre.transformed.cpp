@@ -10,7 +10,6 @@ typedef long unsigned int size_t;
 # 1 "timer.c.pre.transformed.cpp"
 static int ____chimes_does_checkpoint_get_time_npm = 1;
 
-static int ____must_checkpoint_get_time_tv_0 = 2;
 
 static int ____must_manage_get_time = 2;
 
@@ -59,13 +58,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2675,11 +2674,9 @@ extern long long get_time();
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c"
 long long get_time_npm();
 long long get_time_quick(); long long get_time();
-long long get_time_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; struct timeval tv;
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c"
- if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+long long get_time_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c"
-   ;
+  struct timeval tv; ;
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c"
  gettimeofday(&tv, __null);
 # 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c"
@@ -2687,11 +2684,9 @@ long long get_time_resumable() {const int ____chimes_did_disable0 = new_stack((v
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c"
 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c"
-long long get_time_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; struct timeval tv;
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c"
- if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0); } ; ;
+long long get_time_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; ; ;
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c"
-   ;
+  struct timeval tv; ;
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c"
  gettimeofday(&tv, __null);
 # 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/timer.c"
@@ -2716,13 +2711,12 @@ long long get_time_npm() {
 
 
 static int module_init() {
-    init_module(7556108504502692076UL, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1,
+    init_module(7556108504502692076UL, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1,
                            &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (7556108504502692076UL + 1UL), (7556108504502692076UL + 2UL),
                             "get_time", 0, "_Z8get_timev", "_Z12get_time_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (7556108504502692076UL + 1UL), (7556108504502692076UL + 19UL), 0UL,
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                             "get_time", "_Z8get_timev", 0,
-                        "get_time|tv|0", 1, "get_time");
+                             "get_time", "_Z8get_timev", 0);
     return 0;
 }
 

@@ -106,13 +106,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -3484,7 +3484,7 @@ void qSort_resumable(int *b, const int *a, const int left, const int right) {con
 # 157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  ({ calling_npm("bubbleSort", 0); bubbleSort_npm(b, left, right); });
+   call_lbl_0: ({ calling_npm("bubbleSort", 0); bubbleSort_npm(b, left, right); });
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 rm_stack(false, 0UL, "qSort", &____must_manage_qSort, ____alias_loc_id_3, ____chimes_did_disable2, false); }
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3549,7 +3549,7 @@ void qSort_both_resumable(long long *y, int *a, const long long *x, const int n)
 # 217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  ({ calling_npm("bubbleSort_both", 0); bubbleSort_both_npm(y, a, 1, n); });
+   call_lbl_0: ({ calling_npm("bubbleSort_both", 0); bubbleSort_both_npm(y, a, 1, n); });
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 rm_stack(false, 0UL, "qSort_both", &____must_manage_qSort_both, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 # 277 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3608,7 +3608,7 @@ int report;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int sortReports;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myTaskID_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(25, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myTaskID|0", &____must_checkpoint_pairwiseAlign_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(52): { goto call_lbl_52; } case(54): { goto call_lbl_54; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myTaskID_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(25, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myTaskID|0", &____must_checkpoint_pairwiseAlign_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   int i; int j; int k; int r; int n; int m; ;
@@ -3644,7 +3644,7 @@ int sortReports;
 # 299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 301 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A = (ASTR_T*)malloc_wrapper( sizeof(ASTR_T), 7066887875038564454UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ) ) ) == __null ) {
+  if ( (A = (ASTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ASTR_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7066887875038564454UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
 # 302 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A\n");
 # 303 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3683,7 +3683,7 @@ int sortReports;
   A->numThreads = maxThreads;
 # 338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 339 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->numReports = (int*)malloc_wrapper(maxThreads * sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  if ( (A->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->numReports\n");
 # 341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3695,7 +3695,7 @@ int sortReports;
   }
 # 346 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 347 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodScores = (long long**)malloc_wrapper(maxThreads * sizeof(long long*), 7066887875038564699UL, 1, 0))
+  if ( (A->goodScores = (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7066887875038564699UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 348 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        == __null ) {
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3709,7 +3709,7 @@ int sortReports;
   }
 # 355 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 356 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsI = (int**)malloc_wrapper(maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0)) == __null ) {
+  if ( (A->goodEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 357 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsI\n");
 # 358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3721,7 +3721,7 @@ int sortReports;
   }
 # 363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsJ = (int**)malloc_wrapper(maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0)) == __null ) {
+  if ( (A->goodEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsJ\n");
 # 366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3749,7 +3749,7 @@ int sortReports;
 # 403 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 404 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    ({ calling_npm("gridInfo", 0); gridInfo_npm(&npRow, &npCol, &myRow, &myCol); });
+     call_lbl_0: ({ calling_npm("gridInfo", 0); gridInfo_npm(&npRow, &npCol, &myRow, &myCol); });
 # 417 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 417 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     threadNum = 0;
@@ -3780,7 +3780,7 @@ int sortReports;
 # 445 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (goodScores =
 # 446 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (long long*)malloc_wrapper((sortReports+1)*sizeof(long long), 7066887875038563901UL, 0, 0)) == __null ) {
+     (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7066887875038563901UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 447 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodScores for thread %d\n",
 # 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3794,7 +3794,7 @@ int sortReports;
       }
 # 454 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 455 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsI = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038563855UL, 0, 0)) == __null ) {
+      if ( (goodEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038563855UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 456 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsI for thread %d\n",
 # 457 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3808,7 +3808,7 @@ int sortReports;
       }
 # 463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsJ = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038563923UL, 0, 0)) == __null ) {
+      if ( (goodEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038563923UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsJ for thread %d\n",
 # 466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3836,7 +3836,7 @@ int sortReports;
 # 481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 482 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (scores = (long long*)malloc_wrapper((sortReports+1)*sizeof(long long), 7066887875038564019UL, 0, 0))
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7066887875038564019UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  == __null ) {
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3852,7 +3852,7 @@ int sortReports;
       }
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 493 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (index = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038564357UL, 0, 0)) == __null ) {
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038564357UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 494 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate index for thread %d\n",
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3866,7 +3866,7 @@ int sortReports;
       }
 # 501 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if( (best = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038564007UL, 0, 0)) == __null ) {
+      if( (best = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038564007UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 503 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate best for thread %d\n",
 # 504 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3901,7 +3901,7 @@ int sortReports;
 # 547 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (mainSeq =
 # 548 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*)malloc_wrapper((iEnd - iBeg + 2) * sizeof(unsigned char), 7066887875038563349UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7066887875038563349UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 549 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 550 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3926,7 +3926,7 @@ int sortReports;
 # 562 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (matchSeq =
 # 563 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*)malloc_wrapper((jEnd - jBeg + 2) * sizeof(unsigned char), 7066887875038563421UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7066887875038563421UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 564 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
          == __null ) {
 # 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3949,7 +3949,7 @@ int sortReports;
       }
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (weights = (char**)malloc_wrapper( ((64) + 1)*sizeof(char*), 7066887875038563446UL, 1, 0)) == __null ) {
+      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7066887875038563446UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights for thread %d\n",
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3965,7 +3965,7 @@ int sortReports;
 # 593 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 594 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if ( (weights[i] = (char*)malloc_wrapper( ((64) + 1)*sizeof(char), 7066887875038563443UL, 0, 0)) == __null ) {
+ if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7066887875038563443UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 595 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights[%d] for thread %d\n",
 # 596 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3988,7 +3988,7 @@ int sortReports;
       }
 # 641 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 641 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (V = (long long*)malloc_wrapper( (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563626UL, 0, 0))
+      if ( (V = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563626UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 642 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 643 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4011,7 +4011,7 @@ int sortReports;
       }
 # 654 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 655 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (F = (long long*)malloc_wrapper( (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563629UL, 0, 0))
+      if ( (F = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563629UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 656 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 657 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4037,7 +4037,7 @@ int sortReports;
 # 670 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 671 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 672 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       call_lbl_52: beginTime = ({ calling((void*)getSeconds, 52, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) ;
+       call_lbl_1: beginTime = ({ calling((void*)getSeconds, 1, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) ;
 # 681 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 681 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = iBeg; i <= iEnd; i++) {
@@ -4146,13 +4146,13 @@ int sortReports;
 # 911 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      if (report == sortReports) {
 # 912 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); });
+        call_lbl_2: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); });
 # 913 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        worst = sortReports - maxReports + 1;
 # 914 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        llMinScore = scores[worst] + 1L;
 # 915 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); });
+        call_lbl_3: ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); });
 # 916 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 917 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        for (k = worst; k <= sortReports; k++) {
@@ -4213,7 +4213,7 @@ int sortReports;
 # 956 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 958 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       call_lbl_54: endTime = ({ calling((void*)getSeconds, 54, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) ;
+       call_lbl_4: endTime = ({ calling((void*)getSeconds, 4, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) ;
 # 959 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 960 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 961 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4250,7 +4250,7 @@ int sortReports;
 # 984 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 985 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*)malloc_wrapper((report+1)*sizeof(long long), 7066887875038564699UL, 0, 0)) == __null ) {
+  (long long*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 986 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: can't allocate A->goodScores for thread %d\n",
 # 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4266,7 +4266,7 @@ int sortReports;
 # 994 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 995 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((report+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 997 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4282,7 +4282,7 @@ int sortReports;
 # 1004 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1005 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((report+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1006 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1007 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4296,7 +4296,7 @@ int sortReports;
    }
 # 1024 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1024 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
+    call_lbl_5: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
 # 1025 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    j = 1;
 # 1026 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4333,7 +4333,7 @@ int sortReports;
 # 1048 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 1049 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*)malloc_wrapper((maxReports+1)*sizeof(long long), 7066887875038564699UL, 0, 0)) ==
+  (long long*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) ==
 # 1050 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
         __null ) {
 # 1051 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4351,7 +4351,7 @@ int sortReports;
 # 1059 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 1060 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1061 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 1062 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4367,7 +4367,7 @@ int sortReports;
 # 1069 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1070 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1071 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1072 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4381,7 +4381,7 @@ int sortReports;
    }
 # 1089 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1089 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
+    call_lbl_6: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
 # 1090 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    j = 1;
 # 1091 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4411,32 +4411,32 @@ int sortReports;
 # 1106 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- free_wrapper(weights[i], 7066887875038563443UL);
+  ({ free(weights[i]); free_helper(weights[i], 7066887875038563443UL); }) ;
 # 1108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(weights, 7066887875038563446UL);
+       ({ free(weights); free_helper(weights, 7066887875038563446UL); }) ;
 # 1110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(goodScores, 7066887875038563901UL);
+       ({ free(goodScores); free_helper(goodScores, 7066887875038563901UL); }) ;
 # 1111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(goodEndsI, 7066887875038563855UL);
+       ({ free(goodEndsI); free_helper(goodEndsI, 7066887875038563855UL); }) ;
 # 1112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(goodEndsJ, 7066887875038563923UL);
+       ({ free(goodEndsJ); free_helper(goodEndsJ, 7066887875038563923UL); }) ;
 # 1113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(F, 7066887875038563629UL);
+       ({ free(F); free_helper(F, 7066887875038563629UL); }) ;
 # 1114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(V, 7066887875038563626UL);
+       ({ free(V); free_helper(V, 7066887875038563626UL); }) ;
 # 1115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(scores, 7066887875038564019UL);
+       ({ free(scores); free_helper(scores, 7066887875038564019UL); }) ;
 # 1116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(index, 7066887875038564357UL);
+       ({ free(index); free_helper(index, 7066887875038564357UL); }) ;
 # 1117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(best, 7066887875038564007UL);
+       ({ free(best); free_helper(best, 7066887875038564007UL); }) ;
 # 1118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(mainSeq, 7066887875038563349UL);
+       ({ free(mainSeq); free_helper(mainSeq, 7066887875038563349UL); }) ;
 # 1120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(matchSeq, 7066887875038563421UL);
+       ({ free(matchSeq); free_helper(matchSeq, 7066887875038563421UL); }) ;
 # 1121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
@@ -4463,7 +4463,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     if (A->numReports) {
 # 1136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->numReports, 7066887875038564699UL);
+       ({ free(A->numReports); free_helper(A->numReports, 7066887875038564699UL); }) ;
 # 1137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->numReports = __null;
 # 1138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4475,7 +4475,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1141 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodScores[i]) {
 # 1142 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   free_wrapper(A->goodScores[i], 7066887875038564699UL);
+    ({ free(A->goodScores[i]); free_helper(A->goodScores[i], 7066887875038564699UL); }) ;
 # 1143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodScores[i] = __null;
 # 1144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4483,7 +4483,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->goodScores, 7066887875038564699UL);
+       ({ free(A->goodScores); free_helper(A->goodScores, 7066887875038564699UL); }) ;
 # 1147 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodScores = __null;
 # 1148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4495,7 +4495,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1151 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsI[i]) {
 # 1152 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   free_wrapper(A->goodEndsI[i], 7066887875038564699UL);
+    ({ free(A->goodEndsI[i]); free_helper(A->goodEndsI[i], 7066887875038564699UL); }) ;
 # 1153 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsI[i] = __null;
 # 1154 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4503,7 +4503,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->goodEndsI, 7066887875038564699UL);
+       ({ free(A->goodEndsI); free_helper(A->goodEndsI, 7066887875038564699UL); }) ;
 # 1157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsI = __null;
 # 1158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4515,7 +4515,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsJ[i]) {
 # 1162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   free_wrapper(A->goodEndsJ[i], 7066887875038564699UL);
+    ({ free(A->goodEndsJ[i]); free_helper(A->goodEndsJ[i], 7066887875038564699UL); }) ;
 # 1163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsJ[i] = __null;
 # 1164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4523,13 +4523,13 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->goodEndsJ, 7066887875038564699UL);
+       ({ free(A->goodEndsJ); free_helper(A->goodEndsJ, 7066887875038564699UL); }) ;
 # 1167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsJ = __null;
 # 1168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
 # 1169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    free_wrapper(A, 7066887875038564847UL);
+     ({ free(A); free_helper(A, 7066887875038564847UL); }) ;
 # 1170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 1171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4649,7 +4649,7 @@ void qSort_quick(int *b, const int *a, const int left, const int right) {const i
 # 157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  ({ calling_npm("bubbleSort", 0); bubbleSort_npm(b, left, right); });
+   call_lbl_0: ({ calling_npm("bubbleSort", 0); bubbleSort_npm(b, left, right); });
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 rm_stack(false, 0UL, "qSort", &____must_manage_qSort, ____alias_loc_id_3, ____chimes_did_disable2, false); }
 
@@ -4714,7 +4714,7 @@ void qSort_both_quick(long long *y, int *a, const long long *x, const int n) {co
 # 217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  ({ calling_npm("bubbleSort_both", 0); bubbleSort_both_npm(y, a, 1, n); });
+   call_lbl_0: ({ calling_npm("bubbleSort_both", 0); bubbleSort_both_npm(y, a, 1, n); });
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 rm_stack(false, 0UL, "qSort_both", &____must_manage_qSort_both, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 
@@ -4808,7 +4808,7 @@ int sortReports;
 # 299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 301 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A = (ASTR_T*)malloc_wrapper( sizeof(ASTR_T), 7066887875038564454UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ) ) ) == __null ) {
+  if ( (A = (ASTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ASTR_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7066887875038564454UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
 # 302 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A\n");
 # 303 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4847,7 +4847,7 @@ int sortReports;
   A->numThreads = maxThreads;
 # 338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 339 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->numReports = (int*)malloc_wrapper(maxThreads * sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  if ( (A->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->numReports\n");
 # 341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4859,7 +4859,7 @@ int sortReports;
   }
 # 346 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 347 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodScores = (long long**)malloc_wrapper(maxThreads * sizeof(long long*), 7066887875038564699UL, 1, 0))
+  if ( (A->goodScores = (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7066887875038564699UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 348 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        == __null ) {
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4873,7 +4873,7 @@ int sortReports;
   }
 # 355 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 356 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsI = (int**)malloc_wrapper(maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0)) == __null ) {
+  if ( (A->goodEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 357 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsI\n");
 # 358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4885,7 +4885,7 @@ int sortReports;
   }
 # 363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsJ = (int**)malloc_wrapper(maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0)) == __null ) {
+  if ( (A->goodEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsJ\n");
 # 366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4913,7 +4913,7 @@ int sortReports;
 # 403 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 404 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    ({ calling_npm("gridInfo", 0); gridInfo_npm(&npRow, &npCol, &myRow, &myCol); });
+     call_lbl_0: ({ calling_npm("gridInfo", 0); gridInfo_npm(&npRow, &npCol, &myRow, &myCol); });
 # 417 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 417 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     threadNum = 0;
@@ -4944,7 +4944,7 @@ int sortReports;
 # 445 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (goodScores =
 # 446 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (long long*)malloc_wrapper((sortReports+1)*sizeof(long long), 7066887875038563901UL, 0, 0)) == __null ) {
+     (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7066887875038563901UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 447 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodScores for thread %d\n",
 # 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4958,7 +4958,7 @@ int sortReports;
       }
 # 454 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 455 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsI = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038563855UL, 0, 0)) == __null ) {
+      if ( (goodEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038563855UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 456 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsI for thread %d\n",
 # 457 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4972,7 +4972,7 @@ int sortReports;
       }
 # 463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsJ = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038563923UL, 0, 0)) == __null ) {
+      if ( (goodEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038563923UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsJ for thread %d\n",
 # 466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5000,7 +5000,7 @@ int sortReports;
 # 481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 482 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (scores = (long long*)malloc_wrapper((sortReports+1)*sizeof(long long), 7066887875038564019UL, 0, 0))
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7066887875038564019UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  == __null ) {
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5016,7 +5016,7 @@ int sortReports;
       }
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 493 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (index = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038564357UL, 0, 0)) == __null ) {
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038564357UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 494 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate index for thread %d\n",
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5030,7 +5030,7 @@ int sortReports;
       }
 # 501 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if( (best = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038564007UL, 0, 0)) == __null ) {
+      if( (best = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038564007UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 503 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate best for thread %d\n",
 # 504 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5065,7 +5065,7 @@ int sortReports;
 # 547 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (mainSeq =
 # 548 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*)malloc_wrapper((iEnd - iBeg + 2) * sizeof(unsigned char), 7066887875038563349UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7066887875038563349UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 549 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 550 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5090,7 +5090,7 @@ int sortReports;
 # 562 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (matchSeq =
 # 563 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*)malloc_wrapper((jEnd - jBeg + 2) * sizeof(unsigned char), 7066887875038563421UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7066887875038563421UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 564 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
          == __null ) {
 # 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5113,7 +5113,7 @@ int sortReports;
       }
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (weights = (char**)malloc_wrapper( ((64) + 1)*sizeof(char*), 7066887875038563446UL, 1, 0)) == __null ) {
+      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7066887875038563446UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights for thread %d\n",
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5129,7 +5129,7 @@ int sortReports;
 # 593 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 594 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if ( (weights[i] = (char*)malloc_wrapper( ((64) + 1)*sizeof(char), 7066887875038563443UL, 0, 0)) == __null ) {
+ if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7066887875038563443UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 595 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights[%d] for thread %d\n",
 # 596 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5152,7 +5152,7 @@ int sortReports;
       }
 # 641 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 641 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (V = (long long*)malloc_wrapper( (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563626UL, 0, 0))
+      if ( (V = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563626UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 642 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 643 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5175,7 +5175,7 @@ int sortReports;
       }
 # 654 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 655 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (F = (long long*)malloc_wrapper( (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563629UL, 0, 0))
+      if ( (F = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563629UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 656 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 657 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5201,7 +5201,7 @@ int sortReports;
 # 670 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 671 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 672 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       call_lbl_52: beginTime = ({ calling((void*)getSeconds, 52, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) ;
+       call_lbl_1: beginTime = ({ calling((void*)getSeconds, 1, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) ;
 # 681 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 681 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = iBeg; i <= iEnd; i++) {
@@ -5310,13 +5310,13 @@ int sortReports;
 # 911 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      if (report == sortReports) {
 # 912 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); });
+        call_lbl_2: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); });
 # 913 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        worst = sortReports - maxReports + 1;
 # 914 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        llMinScore = scores[worst] + 1L;
 # 915 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); });
+        call_lbl_3: ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); });
 # 916 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 917 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        for (k = worst; k <= sortReports; k++) {
@@ -5377,7 +5377,7 @@ int sortReports;
 # 956 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 958 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       call_lbl_54: endTime = ({ calling((void*)getSeconds, 54, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) ;
+       call_lbl_4: endTime = ({ calling((void*)getSeconds, 4, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) ;
 # 959 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 960 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 961 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5414,7 +5414,7 @@ int sortReports;
 # 984 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 985 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*)malloc_wrapper((report+1)*sizeof(long long), 7066887875038564699UL, 0, 0)) == __null ) {
+  (long long*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 986 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: can't allocate A->goodScores for thread %d\n",
 # 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5430,7 +5430,7 @@ int sortReports;
 # 994 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 995 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((report+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 997 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5446,7 +5446,7 @@ int sortReports;
 # 1004 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1005 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((report+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1006 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1007 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5460,7 +5460,7 @@ int sortReports;
    }
 # 1024 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1024 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
+    call_lbl_5: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
 # 1025 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    j = 1;
 # 1026 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5497,7 +5497,7 @@ int sortReports;
 # 1048 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 1049 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*)malloc_wrapper((maxReports+1)*sizeof(long long), 7066887875038564699UL, 0, 0)) ==
+  (long long*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) ==
 # 1050 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
         __null ) {
 # 1051 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5515,7 +5515,7 @@ int sortReports;
 # 1059 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 1060 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1061 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 1062 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5531,7 +5531,7 @@ int sortReports;
 # 1069 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1070 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1071 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1072 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5545,7 +5545,7 @@ int sortReports;
    }
 # 1089 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1089 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
+    call_lbl_6: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
 # 1090 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    j = 1;
 # 1091 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5575,32 +5575,32 @@ int sortReports;
 # 1106 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- free_wrapper(weights[i], 7066887875038563443UL);
+  ({ free(weights[i]); free_helper(weights[i], 7066887875038563443UL); }) ;
 # 1108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(weights, 7066887875038563446UL);
+       ({ free(weights); free_helper(weights, 7066887875038563446UL); }) ;
 # 1110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(goodScores, 7066887875038563901UL);
+       ({ free(goodScores); free_helper(goodScores, 7066887875038563901UL); }) ;
 # 1111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(goodEndsI, 7066887875038563855UL);
+       ({ free(goodEndsI); free_helper(goodEndsI, 7066887875038563855UL); }) ;
 # 1112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(goodEndsJ, 7066887875038563923UL);
+       ({ free(goodEndsJ); free_helper(goodEndsJ, 7066887875038563923UL); }) ;
 # 1113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(F, 7066887875038563629UL);
+       ({ free(F); free_helper(F, 7066887875038563629UL); }) ;
 # 1114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(V, 7066887875038563626UL);
+       ({ free(V); free_helper(V, 7066887875038563626UL); }) ;
 # 1115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(scores, 7066887875038564019UL);
+       ({ free(scores); free_helper(scores, 7066887875038564019UL); }) ;
 # 1116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(index, 7066887875038564357UL);
+       ({ free(index); free_helper(index, 7066887875038564357UL); }) ;
 # 1117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(best, 7066887875038564007UL);
+       ({ free(best); free_helper(best, 7066887875038564007UL); }) ;
 # 1118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(mainSeq, 7066887875038563349UL);
+       ({ free(mainSeq); free_helper(mainSeq, 7066887875038563349UL); }) ;
 # 1120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(matchSeq, 7066887875038563421UL);
+       ({ free(matchSeq); free_helper(matchSeq, 7066887875038563421UL); }) ;
 # 1121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
@@ -5626,7 +5626,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     if (A->numReports) {
 # 1136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->numReports, 7066887875038564699UL);
+       ({ free(A->numReports); free_helper(A->numReports, 7066887875038564699UL); }) ;
 # 1137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->numReports = __null;
 # 1138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5638,7 +5638,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1141 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodScores[i]) {
 # 1142 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   free_wrapper(A->goodScores[i], 7066887875038564699UL);
+    ({ free(A->goodScores[i]); free_helper(A->goodScores[i], 7066887875038564699UL); }) ;
 # 1143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodScores[i] = __null;
 # 1144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5646,7 +5646,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->goodScores, 7066887875038564699UL);
+       ({ free(A->goodScores); free_helper(A->goodScores, 7066887875038564699UL); }) ;
 # 1147 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodScores = __null;
 # 1148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5658,7 +5658,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1151 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsI[i]) {
 # 1152 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   free_wrapper(A->goodEndsI[i], 7066887875038564699UL);
+    ({ free(A->goodEndsI[i]); free_helper(A->goodEndsI[i], 7066887875038564699UL); }) ;
 # 1153 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsI[i] = __null;
 # 1154 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5666,7 +5666,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->goodEndsI, 7066887875038564699UL);
+       ({ free(A->goodEndsI); free_helper(A->goodEndsI, 7066887875038564699UL); }) ;
 # 1157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsI = __null;
 # 1158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5678,7 +5678,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsJ[i]) {
 # 1162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   free_wrapper(A->goodEndsJ[i], 7066887875038564699UL);
+    ({ free(A->goodEndsJ[i]); free_helper(A->goodEndsJ[i], 7066887875038564699UL); }) ;
 # 1163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsJ[i] = __null;
 # 1164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5686,13 +5686,13 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->goodEndsJ, 7066887875038564699UL);
+       ({ free(A->goodEndsJ); free_helper(A->goodEndsJ, 7066887875038564699UL); }) ;
 # 1167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsJ = __null;
 # 1168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
 # 1169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    free_wrapper(A, 7066887875038564847UL);
+     ({ free(A); free_helper(A, 7066887875038564847UL); }) ;
 # 1170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 1171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5909,7 +5909,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 301 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A = (ASTR_T*)malloc_wrapper( sizeof(ASTR_T), 7066887875038564454UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ) ) ) == __null ) {
+  if ( (A = (ASTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ASTR_T)); malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7066887875038564454UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
 # 302 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A\n");
 # 303 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5948,7 +5948,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
   A->numThreads = maxThreads;
 # 338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 339 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->numReports = (int*)malloc_wrapper(maxThreads * sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  if ( (A->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->numReports\n");
 # 341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5960,7 +5960,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
   }
 # 346 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 347 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodScores = (long long**)malloc_wrapper(maxThreads * sizeof(long long*), 7066887875038564699UL, 1, 0))
+  if ( (A->goodScores = (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7066887875038564699UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 348 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        == __null ) {
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5974,7 +5974,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
   }
 # 355 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 356 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsI = (int**)malloc_wrapper(maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0)) == __null ) {
+  if ( (A->goodEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 357 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsI\n");
 # 358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5986,7 +5986,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
   }
 # 363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsJ = (int**)malloc_wrapper(maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0)) == __null ) {
+  if ( (A->goodEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7066887875038564699UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsJ\n");
 # 366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6045,7 +6045,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 445 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (goodScores =
 # 446 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (long long*)malloc_wrapper((sortReports+1)*sizeof(long long), 7066887875038563901UL, 0, 0)) == __null ) {
+     (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7066887875038563901UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 447 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodScores for thread %d\n",
 # 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6059,7 +6059,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 454 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 455 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsI = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038563855UL, 0, 0)) == __null ) {
+      if ( (goodEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038563855UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 456 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsI for thread %d\n",
 # 457 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6073,7 +6073,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsJ = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038563923UL, 0, 0)) == __null ) {
+      if ( (goodEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038563923UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsJ for thread %d\n",
 # 466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6101,7 +6101,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 482 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (scores = (long long*)malloc_wrapper((sortReports+1)*sizeof(long long), 7066887875038564019UL, 0, 0))
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7066887875038564019UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  == __null ) {
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6117,7 +6117,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 493 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (index = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038564357UL, 0, 0)) == __null ) {
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038564357UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 494 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate index for thread %d\n",
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6131,7 +6131,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 501 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if( (best = (int*)malloc_wrapper((sortReports+1)*sizeof(int), 7066887875038564007UL, 0, 0)) == __null ) {
+      if( (best = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7066887875038564007UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 503 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate best for thread %d\n",
 # 504 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6166,7 +6166,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 547 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (mainSeq =
 # 548 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*)malloc_wrapper((iEnd - iBeg + 2) * sizeof(unsigned char), 7066887875038563349UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7066887875038563349UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 549 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 550 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6191,7 +6191,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 562 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (matchSeq =
 # 563 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*)malloc_wrapper((jEnd - jBeg + 2) * sizeof(unsigned char), 7066887875038563421UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7066887875038563421UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 564 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
          == __null ) {
 # 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6214,7 +6214,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (weights = (char**)malloc_wrapper( ((64) + 1)*sizeof(char*), 7066887875038563446UL, 1, 0)) == __null ) {
+      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7066887875038563446UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights for thread %d\n",
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6230,7 +6230,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 593 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 594 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if ( (weights[i] = (char*)malloc_wrapper( ((64) + 1)*sizeof(char), 7066887875038563443UL, 0, 0)) == __null ) {
+ if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7066887875038563443UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 595 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights[%d] for thread %d\n",
 # 596 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6253,7 +6253,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 641 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 641 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (V = (long long*)malloc_wrapper( (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563626UL, 0, 0))
+      if ( (V = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563626UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 642 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 643 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6276,7 +6276,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 654 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 655 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (F = (long long*)malloc_wrapper( (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563629UL, 0, 0))
+      if ( (F = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7066887875038563629UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 656 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 657 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6515,7 +6515,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 984 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 985 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*)malloc_wrapper((report+1)*sizeof(long long), 7066887875038564699UL, 0, 0)) == __null ) {
+  (long long*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 986 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: can't allocate A->goodScores for thread %d\n",
 # 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6531,7 +6531,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 994 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 995 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((report+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 997 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6547,7 +6547,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 1004 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1005 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((report+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1006 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1007 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6598,7 +6598,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 1048 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 1049 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*)malloc_wrapper((maxReports+1)*sizeof(long long), 7066887875038564699UL, 0, 0)) ==
+  (long long*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) ==
 # 1050 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
         __null ) {
 # 1051 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6616,7 +6616,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 1059 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 1060 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1061 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 1062 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6632,7 +6632,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 1069 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1070 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*)malloc_wrapper((maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0)) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7066887875038564699UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1071 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1072 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6676,32 +6676,32 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 1106 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- free_wrapper(weights[i], 7066887875038563443UL);
+  ({ free(weights[i]); free_helper(weights[i], 7066887875038563443UL); }) ;
 # 1108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(weights, 7066887875038563446UL);
+       ({ free(weights); free_helper(weights, 7066887875038563446UL); }) ;
 # 1110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(goodScores, 7066887875038563901UL);
+       ({ free(goodScores); free_helper(goodScores, 7066887875038563901UL); }) ;
 # 1111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(goodEndsI, 7066887875038563855UL);
+       ({ free(goodEndsI); free_helper(goodEndsI, 7066887875038563855UL); }) ;
 # 1112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(goodEndsJ, 7066887875038563923UL);
+       ({ free(goodEndsJ); free_helper(goodEndsJ, 7066887875038563923UL); }) ;
 # 1113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(F, 7066887875038563629UL);
+       ({ free(F); free_helper(F, 7066887875038563629UL); }) ;
 # 1114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(V, 7066887875038563626UL);
+       ({ free(V); free_helper(V, 7066887875038563626UL); }) ;
 # 1115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(scores, 7066887875038564019UL);
+       ({ free(scores); free_helper(scores, 7066887875038564019UL); }) ;
 # 1116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(index, 7066887875038564357UL);
+       ({ free(index); free_helper(index, 7066887875038564357UL); }) ;
 # 1117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(best, 7066887875038564007UL);
+       ({ free(best); free_helper(best, 7066887875038564007UL); }) ;
 # 1118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(mainSeq, 7066887875038563349UL);
+       ({ free(mainSeq); free_helper(mainSeq, 7066887875038563349UL); }) ;
 # 1120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(matchSeq, 7066887875038563421UL);
+       ({ free(matchSeq); free_helper(matchSeq, 7066887875038563421UL); }) ;
 # 1121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
@@ -6723,7 +6723,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     if (A->numReports) {
 # 1136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->numReports, 7066887875038564699UL);
+       ({ free(A->numReports); free_helper(A->numReports, 7066887875038564699UL); }) ;
 # 1137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->numReports = __null;
 # 1138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6735,7 +6735,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1141 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodScores[i]) {
 # 1142 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   free_wrapper(A->goodScores[i], 7066887875038564699UL);
+    ({ free(A->goodScores[i]); free_helper(A->goodScores[i], 7066887875038564699UL); }) ;
 # 1143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodScores[i] = __null;
 # 1144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6743,7 +6743,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->goodScores, 7066887875038564699UL);
+       ({ free(A->goodScores); free_helper(A->goodScores, 7066887875038564699UL); }) ;
 # 1147 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodScores = __null;
 # 1148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6755,7 +6755,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1151 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsI[i]) {
 # 1152 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   free_wrapper(A->goodEndsI[i], 7066887875038564699UL);
+    ({ free(A->goodEndsI[i]); free_helper(A->goodEndsI[i], 7066887875038564699UL); }) ;
 # 1153 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsI[i] = __null;
 # 1154 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6763,7 +6763,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->goodEndsI, 7066887875038564699UL);
+       ({ free(A->goodEndsI); free_helper(A->goodEndsI, 7066887875038564699UL); }) ;
 # 1157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsI = __null;
 # 1158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6775,7 +6775,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsJ[i]) {
 # 1162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   free_wrapper(A->goodEndsJ[i], 7066887875038564699UL);
+    ({ free(A->goodEndsJ[i]); free_helper(A->goodEndsJ[i], 7066887875038564699UL); }) ;
 # 1163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsJ[i] = __null;
 # 1164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6783,13 +6783,13 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      free_wrapper(A->goodEndsJ, 7066887875038564699UL);
+       ({ free(A->goodEndsJ); free_helper(A->goodEndsJ, 7066887875038564699UL); }) ;
 # 1167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsJ = __null;
 # 1168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
 # 1169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    free_wrapper(A, 7066887875038564847UL);
+     ({ free(A); free_helper(A, 7066887875038564847UL); }) ;
 # 1170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 1171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"

@@ -25,16 +25,8 @@ ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 12
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 20 6 len=13 myocyte_write_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 273  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 79 6 len=12 myocyte_read_quick
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 12 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 250  ; float temp;
-# 83
- if (____must_checkpoint_myocyte_read_temp_0) { register_stack_vars(1, "myocyte_read|temp|0", &____must_checkpoint_myocyte_read_temp_0, "float", (void *)(&temp), (size_t)4, 0, 0, 0);  }  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 250  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 20 6 len=13 myocyte_write_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 273  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 79 6 len=12 myocyte_read_resumable
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 12 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 250  ; float temp;
-# 83
- if (____must_checkpoint_myocyte_read_temp_0) { register_stack_vars(1, "myocyte_read|temp|0", &____must_checkpoint_myocyte_read_temp_0, "float", (void *)(&temp), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 250  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

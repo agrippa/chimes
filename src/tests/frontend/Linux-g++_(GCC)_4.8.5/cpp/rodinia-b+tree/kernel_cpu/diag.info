@@ -19,15 +19,15 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 88 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 88 9 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 89 2 int i; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 89 7 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 2  call_lbl_1: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 2  call_lbl_2: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 2  call_lbl_3: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 2  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 2  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 2  call_lbl_2: 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 34 1 len=10 kernel_cpu_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 23  ({  calling((void*)get_time, 1, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 23  ({  calling((void*)get_time, 0, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 32 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 23  ({  calling((void*)get_time, 2, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 23  ({  calling((void*)get_time, 1, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 32 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 23  ({  calling((void*)get_time, 3, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 23  ({  calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 32 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 55 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 55 17 
@@ -43,11 +43,11 @@ long long time0;
 # 48
  if (____must_checkpoint_kernel_cpu_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_time1_0 || ____must_checkpoint_kernel_cpu_time0_0) { register_stack_vars(3, "kernel_cpu|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu|time1|0", &____must_checkpoint_kernel_cpu_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu|time0|0", &____must_checkpoint_kernel_cpu_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 34 1 len=10 kernel_cpu_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 23  ({  calling((void*)get_time, 1, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 23  ({  calling((void*)get_time, 0, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 32 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 23  ({  calling((void*)get_time, 2, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 23  ({  calling((void*)get_time, 1, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 32 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 23  ({  calling((void*)get_time, 3, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 23  ({  calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 32 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 55 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 55 17 
@@ -61,4 +61,4 @@ long long time1;
 # 48
 long long time0;
 # 48
- if (____must_checkpoint_kernel_cpu_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_time1_0 || ____must_checkpoint_kernel_cpu_time0_0) { register_stack_vars(3, "kernel_cpu|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu|time1|0", &____must_checkpoint_kernel_cpu_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu|time0|0", &____must_checkpoint_kernel_cpu_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_kernel_cpu_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_time1_0 || ____must_checkpoint_kernel_cpu_time0_0) { register_stack_vars(3, "kernel_cpu|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu|time1|0", &____must_checkpoint_kernel_cpu_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu|time0|0", &____must_checkpoint_kernel_cpu_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  

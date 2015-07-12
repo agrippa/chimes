@@ -84,13 +84,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -3930,7 +3930,7 @@ unsigned char *copyStringR_resumable(const unsigned char *inpString) {const int 
   }
 # 32 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 33 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( ( outString = (unsigned char*)malloc_wrapper( (c+1)*sizeof(unsigned char), 12370633197367790811UL, 0, 0 ) )
+  if ( ( outString = (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((c + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (c+1)*sizeof(unsigned char), 12370633197367790811UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        == __null ) {
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4054,7 +4054,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (dir & 4) != 0) {
 # 194 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i-1, j-1, 0, threadNum, rsi, rsj, ++ri, ++rj); });
+     call_lbl_0: ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i-1, j-1, 0, threadNum, rsi, rsj, ++ri, ++rj); });
 # 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if ( (*rsi > 0) || (*rsj > 0) ) {
@@ -4072,7 +4072,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (dir & 2) != 0) {
 # 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i-1, j, 2, threadNum, rsi, rsj, ++ri, ++rj); });
+     call_lbl_1: ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i-1, j, 2, threadNum, rsi, rsj, ++ri, ++rj); });
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if ( (*rsi > 0) || (*rsj > 0) ) {
@@ -4090,7 +4090,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (dir & 1) != 0) {
 # 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i, j-1, 1, threadNum, rsi, rsj, ++ri, ++rj); });
+     call_lbl_2: ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i, j-1, 1, threadNum, rsi, rsj, ++ri, ++rj); });
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if ( (*rsi > 0) || (*rsj > 0) ) {
@@ -4217,7 +4217,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 377 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 378 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 379 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (V = (long long**)malloc_wrapper( 3 * sizeof(long long*), 12370633197367792534UL, 1, 0 ) ) == __null ) {
+  if ( (V = (long long**) ({ void *____chimes_tmp_ptr = malloc(3 * sizeof(long long *)); ; malloc_helper(____chimes_tmp_ptr, 3 * sizeof(long long*), 12370633197367792534UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 380 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("doScan: cannot allocate V for thread %d\n", threadNum);
 # 381 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4230,7 +4230,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 386 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   for (i = 1; i <= 2; i++) {
 # 387 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    V[i] = (long long *)malloc_wrapper( (m+2) * sizeof(long long), 12370633197367792863UL, 0, 0 );
+    V[i] = (long long *) ({ void *____chimes_tmp_ptr = malloc((m + 2) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (m+2) * sizeof(long long), 12370633197367792863UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 388 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     for (j = 1; j <= m+1; j++) {
 # 389 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4246,7 +4246,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 396 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 397 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 398 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (E = (long long*)malloc_wrapper( (m+1) * sizeof(long long), 12370633197367793346UL, 0, 0 ) ) == __null ) {
+  if ( (E = (long long*) ({ void *____chimes_tmp_ptr = malloc((m + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (m+1) * sizeof(long long), 12370633197367793346UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 399 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("doScan: cannot allocate E for thread %d\n", threadNum);
 # 400 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4258,7 +4258,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
   }
 # 405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 406 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (F = (long long *)malloc_wrapper( (m+1) * sizeof(long long), 12370633197367793351UL, 0, 0 ) ) == __null ) {
+  if ( (F = (long long *) ({ void *____chimes_tmp_ptr = malloc((m + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (m+1) * sizeof(long long), 12370633197367793351UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 407 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("doScan: cannot allocate F for thread %d\n", threadNum);
 # 408 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4288,15 +4288,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 426 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 427 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(V[1], 12370633197367792863UL);
+     ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 428 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(V[2], 12370633197367792863UL);
+     ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 429 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(V, 12370633197367792534UL);
+     ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 430 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(E, 12370633197367793346UL);
+     ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 431 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(F, 12370633197367793351UL);
+     ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 432 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = ((-2)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_15; ;
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4370,15 +4370,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 478 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 479 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 480 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 482 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_16; ;
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4391,15 +4391,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 493 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 494 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_17; ;
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4418,15 +4418,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 524 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 525 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 526 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 527 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 528 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 529 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 530 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 531 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_18; ;
 # 532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4439,15 +4439,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 537 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 538 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 539 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 541 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 542 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 543 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 544 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_19; ;
 # 545 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4471,15 +4471,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 564 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 566 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(V[1], 12370633197367792863UL);
+      ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 567 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(V[2], 12370633197367792863UL);
+      ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 568 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(V, 12370633197367792534UL);
+      ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 569 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(E, 12370633197367793346UL);
+      ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 570 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(F, 12370633197367793351UL);
+      ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 571 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = ((-10)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_20; ;
 # 572 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4494,15 +4494,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 578 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 579 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 580 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 581 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 582 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 583 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = ((-11)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_21; ;
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4515,15 +4515,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 599 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 600 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 601 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 602 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 603 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 604 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 605 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 606 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_22; ;
 # 607 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4536,21 +4536,21 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 614 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 615 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 616 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 617 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 618 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_23; ;
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 621 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, e, f, 0, threadNum, &rsi, &rsj, bestSeqsI[*bestR+1], bestSeqsJ[*bestR+1]); });
+  call_lbl_0: ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, e, f, 0, threadNum, &rsi, &rsj, bestSeqsI[*bestR+1], bestSeqsJ[*bestR+1]); });
 # 625 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (rsi <= 0) && (rsj <= 0) ) {
 # 626 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4561,15 +4561,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 631 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 632 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 633 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 634 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 635 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 636 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 637 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 638 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = ((-14)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_24; ;
 # 639 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4589,15 +4589,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
  bestScores[*bestR] = goal;
 # 667 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 667 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(V[1], 12370633197367792863UL);
+  ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 668 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(V[2], 12370633197367792863UL);
+  ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 669 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(V, 12370633197367792534UL);
+  ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 670 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(E, 12370633197367793346UL);
+  ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 671 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(F, 12370633197367793351UL);
+  ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 672 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = ((0)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_25; ;
 # 673 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4627,15 +4627,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 692 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 693 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 694 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 695 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 696 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 697 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 698 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 699 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_26; ;
 # 700 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4648,15 +4648,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 705 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 706 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 707 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 708 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 709 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 710 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 711 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 712 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_27; ;
 # 713 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4701,15 +4701,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 738 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 739 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 740 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(V[1], 12370633197367792863UL);
+   ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 741 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(V[2], 12370633197367792863UL);
+   ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 742 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(V, 12370633197367792534UL);
+   ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 743 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(E, 12370633197367793346UL);
+   ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 744 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(F, 12370633197367793351UL);
+   ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 745 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    int ____chimes_ret_var_28; ; ____chimes_ret_var_28 = ((-15)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_28; ;
 # 746 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4732,7 +4732,7 @@ int matchLimit;
 # 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int bestR;
 # 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_myCol_0 || ____must_checkpoint_scanBackward_myRow_0 || ____must_checkpoint_scanBackward_npCol_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_bestR_0) { register_stack_vars(7, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|myCol|0", &____must_checkpoint_scanBackward_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "scanBackward|myRow|0", &____must_checkpoint_scanBackward_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "scanBackward|npCol|0", &____must_checkpoint_scanBackward_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(127): { goto call_lbl_127; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_myCol_0 || ____must_checkpoint_scanBackward_myRow_0 || ____must_checkpoint_scanBackward_npCol_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_bestR_0) { register_stack_vars(7, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|myCol|0", &____must_checkpoint_scanBackward_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "scanBackward|myRow|0", &____must_checkpoint_scanBackward_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "scanBackward|npCol|0", &____must_checkpoint_scanBackward_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 816 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 817 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   int i; int j; int m; int n; int r; int c; int sizeT; int ei; int ej; int doublings; ;
@@ -4767,7 +4767,7 @@ int bestR;
 # 843 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 844 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 845 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B = (BSTR_T*)malloc_wrapper( sizeof(BSTR_T), 12370633197367794539UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ) ) ) == __null ) {
+  if ( (B = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(BSTR_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 12370633197367794539UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
 # 846 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B\n");
 # 847 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4793,7 +4793,7 @@ int bestR;
 # 866 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   B->numThreads = A->numThreads;
 # 867 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->numReports = (int*)malloc_wrapper(maxThreads * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+  if ( (B->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 868 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->numReports\n");
 # 869 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4807,7 +4807,7 @@ int bestR;
 # 875 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (B->bestScores =
 # 876 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- (long long**)malloc_wrapper(maxThreads * sizeof(long long*), 12370633197367793869UL, 1, 0)) == __null ) {
+ (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 877 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestScores\n");
 # 878 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4819,7 +4819,7 @@ int bestR;
   }
 # 883 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 884 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestStartsI = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 885 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestStartsI\n");
 # 886 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4831,7 +4831,7 @@ int bestR;
   }
 # 891 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 892 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestStartsJ = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 893 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestStartsJ\n");
 # 894 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4843,7 +4843,7 @@ int bestR;
   }
 # 899 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 900 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestEndsI = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 901 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestEndsI\n");
 # 902 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4855,7 +4855,7 @@ int bestR;
   }
 # 907 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 908 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestEndsJ = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 909 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestEndsJ\n");
 # 910 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4869,7 +4869,7 @@ int bestR;
 # 916 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (B->bestSeqsI =
 # 917 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- (unsigned char***)malloc_wrapper(maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0))
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 918 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        == __null ) {
 # 919 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4885,7 +4885,7 @@ int bestR;
 # 926 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (B->bestSeqsJ =
 # 927 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- (unsigned char***)malloc_wrapper(maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0))
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 928 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        == __null ) {
 # 929 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4916,7 +4916,7 @@ int bestR;
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-{ call_lbl_127: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(127, &____chimes_region_id0, 42, &T, &bestEndsI, &bestEndsJ, &bestR, &bestScores, &bestSeqsI, &bestSeqsJ, &bestStartsI, &bestStartsJ, &c, &doublings, &ei, &ej, &gapExtend, &gapFirst, &gapStart, &goal, &hyphen, &i, &iBeg, &iEnd, &iFin, &j, &jBeg, &jEnd, &jFin, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &sizeT, &threadNum, &weights);
+{ call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 42, &T, &bestEndsI, &bestEndsJ, &bestR, &bestScores, &bestSeqsI, &bestSeqsJ, &bestStartsI, &bestStartsJ, &c, &doublings, &ei, &ej, &gapExtend, &gapFirst, &gapStart, &goal, &hyphen, &i, &iBeg, &iEnd, &iFin, &j, &jBeg, &jEnd, &jFin, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &sizeT, &threadNum, &weights);
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 #pragma omp parallel firstprivate(maxReports, matchLimit, minSeparation) private (i, j, m, n, r, c, npRow, npCol, myRow, myCol, weights, iBeg, jBeg, iFin, jFin, iEnd, jEnd, doublings, hyphen, gapStart, gapExtend, gapFirst, sizeT, bestR, goal, ei, ej, T, bestScores, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, mainSeq, matchSeq, threadNum, myTaskID)
 # 958 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4926,12 +4926,12 @@ int bestR;
 # 962 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 963 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 964 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 42, &T, &bestEndsI, &bestEndsJ, &bestR, &bestScores, &bestSeqsI, &bestSeqsJ, &bestStartsI, &bestStartsJ, &c, &doublings, &ei, &ej, &gapExtend, &gapFirst, &gapStart, &goal, &hyphen, &i, &iBeg, &iEnd, &iFin, &j, &jBeg, &jEnd, &jFin, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &sizeT, &threadNum, &weights); if (____chimes_replaying) { switch(get_next_call()) { case(28): { goto call_lbl_28; } default: { chimes_error(); } } } {
+  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 42, &T, &bestEndsI, &bestEndsJ, &bestR, &bestScores, &bestSeqsI, &bestSeqsJ, &bestStartsI, &bestStartsJ, &c, &doublings, &ei, &ej, &gapExtend, &gapFirst, &gapStart, &goal, &hyphen, &i, &iBeg, &iEnd, &iFin, &j, &jBeg, &jEnd, &jFin, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &sizeT, &threadNum, &weights); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } {
 # 965 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 966 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 967 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 968 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     call_lbl_28: ({ calling((void*)gridInfo, 28, ____alias_loc_id_0, 0UL, 4, (size_t)(12370633197367790860UL), (size_t)(12370633197367790861UL), (size_t)(12370633197367790862UL), (size_t)(12370633197367790863UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
+     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_0, 0UL, 4, (size_t)(12370633197367790860UL), (size_t)(12370633197367790861UL), (size_t)(12370633197367790862UL), (size_t)(12370633197367790863UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
 # 978 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 978 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     threadNum = omp_get_thread_num();
@@ -4957,7 +4957,7 @@ int bestR;
       gapFirst = gapStart + gapExtend;
 # 1014 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1014 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestScores = (long long*)malloc_wrapper((maxReports+1)*sizeof(long long), 12370633197367791290UL, 0, 0))
+      if ( (bestScores = (long long*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 12370633197367791290UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1015 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1016 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4973,7 +4973,7 @@ int bestR;
       }
 # 1023 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1024 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestStartsI = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791310UL, 0, 0)) == __null ) {
+      if ( (bestStartsI = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791310UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1025 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestStartsI for thread %d\n",
 # 1026 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4987,7 +4987,7 @@ int bestR;
       }
 # 1032 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1033 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestStartsJ = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791305UL, 0, 0)) == __null ) {
+      if ( (bestStartsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791305UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1034 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestStartsJ for thread %d\n",
 # 1035 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5001,7 +5001,7 @@ int bestR;
       }
 # 1041 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1042 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestEndsI = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791300UL, 0, 0)) == __null ) {
+      if ( (bestEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791300UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1043 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestEndsI for thread %d\n",
 # 1044 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5015,7 +5015,7 @@ int bestR;
       }
 # 1050 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1051 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestEndsJ = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791295UL, 0, 0)) == __null ) {
+      if ( (bestEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791295UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1052 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestEndsJ for thread %d\n",
 # 1053 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5031,7 +5031,7 @@ int bestR;
 # 1060 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       if ( (bestSeqsI =
 # 1061 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char**)malloc_wrapper((maxReports+1)*sizeof(unsigned char*), 12370633197367791320UL, 1, 0))
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(unsigned char*), 12370633197367791320UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1062 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1063 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5049,7 +5049,7 @@ int bestR;
 # 1071 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        if ( (bestSeqsJ =
 # 1072 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char**)malloc_wrapper((maxReports+1)*sizeof(unsigned char*), 12370633197367792065UL, 1, 0))
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(unsigned char*), 12370633197367792065UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1073 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1074 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5074,7 +5074,7 @@ int bestR;
 # 1086 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (bestSeqsI[i] =
 # 1087 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char*)malloc_wrapper((matchLimit+1)*sizeof(unsigned char), 12370633197367791317UL, 0, 0))
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((matchLimit + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (matchLimit+1)*sizeof(unsigned char), 12370633197367791317UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1088 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1089 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5092,7 +5092,7 @@ int bestR;
 # 1097 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (bestSeqsJ[i] =
 # 1098 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char*)malloc_wrapper((matchLimit+1)*sizeof(unsigned char), 12370633197367792067UL, 0, 0))
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((matchLimit + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (matchLimit+1)*sizeof(unsigned char), 12370633197367792067UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1099 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5137,7 +5137,7 @@ int bestR;
 # 1143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       if ( (mainSeq =
 # 1144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char*)malloc_wrapper((iEnd - iBeg + 2) * sizeof(unsigned char), 12370633197367791430UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 12370633197367791430UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  == __null ) {
 # 1146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5159,7 +5159,7 @@ int bestR;
 # 1155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       if ( (matchSeq =
 # 1156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char*)malloc_wrapper((jEnd - jBeg + 2) * sizeof(unsigned char), 12370633197367791502UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 12370633197367791502UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null) {
 # 1158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5185,7 +5185,7 @@ int bestR;
 # 1171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (weights = (char**)malloc_wrapper( ((64) + 1) * sizeof(char*), 12370633197367791527UL, 1, 0 ) ) == __null ) {
+      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1) * sizeof(char*), 12370633197367791527UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate weights for thread %d\n",
 # 1175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5201,7 +5201,7 @@ int bestR;
 # 1182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- if ( (weights[i] = (char*)malloc_wrapper( ((64) + 1) * sizeof(char), 12370633197367791524UL, 0, 0 ) )
+ if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1) * sizeof(char), 12370633197367791524UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5227,7 +5227,7 @@ int bestR;
 # 1208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     retry:
 # 1209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (T = (unsigned char**)malloc_wrapper((sizeT+1) * sizeof(unsigned char*), 12370633197367791625UL, 1, 0))
+      if ( (T = (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((sizeT + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (sizeT+1) * sizeof(unsigned char*), 12370633197367791625UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5243,7 +5243,7 @@ int bestR;
 # 1218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= sizeT; i++) {
 # 1219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- if ( (T[i] = (unsigned char*)malloc_wrapper((sizeT+1)*sizeof(unsigned char), 12370633197367791622UL, 0, 0))
+ if ( (T[i] = (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((sizeT + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (sizeT+1)*sizeof(unsigned char), 12370633197367791622UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5293,7 +5293,7 @@ int bestR;
 # 1247 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1248 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1249 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- if ( ({ calling_npm("doScan", 0); doScan_npm(A, T, sizeT, ei, ej, mainSeq, matchSeq, weights, gapFirst, gapExtend, minSeparation, r, goal, iBeg, jBeg, iFin, jFin, iEnd, jEnd, myTaskID, &bestR, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, bestScores); }) == -1 ) {
+  call_lbl_1: if ( ({ calling_npm("doScan", 0); doScan_npm(A, T, sizeT, ei, ej, mainSeq, matchSeq, weights, gapFirst, gapExtend, minSeparation, r, goal, iBeg, jBeg, iFin, jFin, iEnd, jEnd, myTaskID, &bestR, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, bestScores); }) == -1 ) {
 # 1254 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1255 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1256 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5311,11 +5311,11 @@ int bestR;
 # 1264 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      for (i = 1; i <= sizeT; i++) {
 # 1265 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       free_wrapper(T[i], 12370633197367791622UL);
+        ({ free(T[i]); free_helper(T[i], 12370633197367791622UL); }) ;
 # 1266 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      }
 # 1267 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(T, 12370633197367791625UL);
+      ({ free(T); free_helper(T, 12370633197367791625UL); }) ;
 # 1268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      sizeT *= 2;
 # 1269 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5352,7 +5352,7 @@ int bestR;
 # 1297 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestScores[threadNum] =
 # 1298 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (long long*)malloc_wrapper((bestR +1) * sizeof(long long), 12370633197367793869UL, 0, 0)) == __null ) {
+       (long long*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (bestR +1) * sizeof(long long), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestScores for thread %d\n",
 # 1300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5368,7 +5368,7 @@ int bestR;
 # 1307 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestStartsI[threadNum] =
 # 1308 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1309 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestStartsI for thread %d\n",
 # 1310 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5385,7 +5385,7 @@ int bestR;
 # 1318 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestStartsJ[threadNum] =
 # 1319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestStartsJ for thread %d\n",
 # 1321 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5402,7 +5402,7 @@ int bestR;
 # 1329 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestEndsI[threadNum] =
 # 1330 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1331 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestEndsI for thread %d\n",
 # 1332 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5419,7 +5419,7 @@ int bestR;
 # 1340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestEndsJ[threadNum] =
 # 1341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1342 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestEndsJ for thread %d\n",
 # 1343 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5436,7 +5436,7 @@ int bestR;
 # 1351 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestSeqsI[threadNum] =
 # 1352 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char**)malloc_wrapper((bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0))
+       (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1353 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1354 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5455,7 +5455,7 @@ int bestR;
 # 1363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestSeqsJ[threadNum] =
 # 1364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char**)malloc_wrapper((bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0))
+       (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5486,9 +5486,9 @@ int bestR;
 # 1382 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsJ[threadNum][j] = bestEndsJ[j];
 # 1383 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   B->bestSeqsI[threadNum][j] = ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsI[j]); });
+    call_lbl_2: B->bestSeqsI[threadNum][j] = ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsI[j]); });
 # 1384 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   B->bestSeqsJ[threadNum][j] = ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsJ[j]); });
+    call_lbl_3: B->bestSeqsJ[threadNum][j] = ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsJ[j]); });
 # 1385 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 1386 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5598,52 +5598,52 @@ int bestR;
 # 1449 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1450 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1451 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestScores, 12370633197367791290UL);
+       ({ free(bestScores); free_helper(bestScores, 12370633197367791290UL); }) ;
 # 1452 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestStartsI, 12370633197367791310UL);
+       ({ free(bestStartsI); free_helper(bestStartsI, 12370633197367791310UL); }) ;
 # 1453 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestStartsJ, 12370633197367791305UL);
+       ({ free(bestStartsJ); free_helper(bestStartsJ, 12370633197367791305UL); }) ;
 # 1454 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestEndsI, 12370633197367791300UL);
+       ({ free(bestEndsI); free_helper(bestEndsI, 12370633197367791300UL); }) ;
 # 1455 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestEndsJ, 12370633197367791295UL);
+       ({ free(bestEndsJ); free_helper(bestEndsJ, 12370633197367791295UL); }) ;
 # 1456 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1457 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= maxReports; i++) {
 # 1458 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(bestSeqsI[i], 12370633197367791317UL);
+  ({ free(bestSeqsI[i]); free_helper(bestSeqsI[i], 12370633197367791317UL); }) ;
 # 1459 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(bestSeqsJ[i], 12370633197367792067UL);
+  ({ free(bestSeqsJ[i]); free_helper(bestSeqsJ[i], 12370633197367792067UL); }) ;
 # 1460 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1461 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestSeqsI, 12370633197367791320UL);
+       ({ free(bestSeqsI); free_helper(bestSeqsI, 12370633197367791320UL); }) ;
 # 1463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestSeqsJ, 12370633197367792065UL);
+       ({ free(bestSeqsJ); free_helper(bestSeqsJ, 12370633197367792065UL); }) ;
 # 1464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(weights[i], 12370633197367791524UL);
+  ({ free(weights[i]); free_helper(weights[i], 12370633197367791524UL); }) ;
 # 1467 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1468 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(weights, 12370633197367791527UL);
+       ({ free(weights); free_helper(weights, 12370633197367791527UL); }) ;
 # 1469 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1470 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= sizeT; i++) {
 # 1471 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(T[i], 12370633197367791622UL);
+  ({ free(T[i]); free_helper(T[i], 12370633197367791622UL); }) ;
 # 1472 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1473 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(T, 12370633197367791625UL);
+       ({ free(T); free_helper(T, 12370633197367791625UL); }) ;
 # 1474 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1475 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(mainSeq, 12370633197367791430UL);
+       ({ free(mainSeq); free_helper(mainSeq, 12370633197367791430UL); }) ;
 # 1476 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(matchSeq, 12370633197367791502UL);
+       ({ free(matchSeq); free_helper(matchSeq, 12370633197367791502UL); }) ;
 # 1477 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1478 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5673,7 +5673,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1492 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestScores[i]) {
 # 1493 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestScores[i], 12370633197367793869UL);
+    ({ free(B->bestScores[i]); free_helper(B->bestScores[i], 12370633197367793869UL); }) ;
 # 1494 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestScores[i] = __null;
 # 1495 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5681,7 +5681,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1496 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1497 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestScores, 12370633197367793869UL);
+       ({ free(B->bestScores); free_helper(B->bestScores, 12370633197367793869UL); }) ;
 # 1498 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestScores = __null;
 # 1499 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5693,7 +5693,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1502 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsI[i]) {
 # 1503 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestStartsI[i], 12370633197367793869UL);
+    ({ free(B->bestStartsI[i]); free_helper(B->bestStartsI[i], 12370633197367793869UL); }) ;
 # 1504 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsI[i] = __null;
 # 1505 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5701,7 +5701,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1506 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1507 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestStartsI, 12370633197367793869UL);
+       ({ free(B->bestStartsI); free_helper(B->bestStartsI, 12370633197367793869UL); }) ;
 # 1508 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsI = __null;
 # 1509 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5713,7 +5713,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1512 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsJ[i]) {
 # 1513 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestStartsJ[i], 12370633197367793869UL);
+    ({ free(B->bestStartsJ[i]); free_helper(B->bestStartsJ[i], 12370633197367793869UL); }) ;
 # 1514 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsJ[i] = __null;
 # 1515 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5721,7 +5721,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1516 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1517 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestStartsJ, 12370633197367793869UL);
+       ({ free(B->bestStartsJ); free_helper(B->bestStartsJ, 12370633197367793869UL); }) ;
 # 1518 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsJ = __null;
 # 1519 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5733,7 +5733,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1522 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsI[i]) {
 # 1523 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestEndsI[i], 12370633197367793869UL);
+    ({ free(B->bestEndsI[i]); free_helper(B->bestEndsI[i], 12370633197367793869UL); }) ;
 # 1524 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsI[i] = __null;
 # 1525 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5741,7 +5741,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1526 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1527 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestEndsI, 12370633197367793869UL);
+       ({ free(B->bestEndsI); free_helper(B->bestEndsI, 12370633197367793869UL); }) ;
 # 1528 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsI = __null;
 # 1529 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5753,7 +5753,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsJ[i]) {
 # 1533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestEndsJ[i], 12370633197367793869UL);
+    ({ free(B->bestEndsJ[i]); free_helper(B->bestEndsJ[i], 12370633197367793869UL); }) ;
 # 1534 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsJ[i] = __null;
 # 1535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5761,7 +5761,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1536 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1537 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestEndsJ, 12370633197367793869UL);
+       ({ free(B->bestEndsJ); free_helper(B->bestEndsJ, 12370633197367793869UL); }) ;
 # 1538 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsJ = __null;
 # 1539 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5777,7 +5777,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1544 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsI[i][j]) {
 # 1545 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       free_wrapper(B->bestSeqsI[i][j], 12370633197367793869UL);
+        ({ free(B->bestSeqsI[i][j]); free_helper(B->bestSeqsI[i][j], 12370633197367793869UL); }) ;
 # 1546 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsI[i][j] = __null;
 # 1547 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5785,7 +5785,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1548 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1549 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestSeqsI[i], 12370633197367793869UL);
+    ({ free(B->bestSeqsI[i]); free_helper(B->bestSeqsI[i], 12370633197367793869UL); }) ;
 # 1550 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsI[i] = __null;
 # 1551 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5793,7 +5793,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1552 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1553 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestSeqsI, 12370633197367793869UL);
+       ({ free(B->bestSeqsI); free_helper(B->bestSeqsI, 12370633197367793869UL); }) ;
 # 1554 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsI = __null;
 # 1555 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5809,7 +5809,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1560 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsJ[i][j]) {
 # 1561 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       free_wrapper(B->bestSeqsJ[i][j], 12370633197367793869UL);
+        ({ free(B->bestSeqsJ[i][j]); free_helper(B->bestSeqsJ[i][j], 12370633197367793869UL); }) ;
 # 1562 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsJ[i][j] = __null;
 # 1563 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5817,7 +5817,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1564 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestSeqsJ[i], 12370633197367793869UL);
+    ({ free(B->bestSeqsJ[i]); free_helper(B->bestSeqsJ[i], 12370633197367793869UL); }) ;
 # 1566 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsJ[i] = __null;
 # 1567 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5825,7 +5825,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1568 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1569 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestSeqsJ, 12370633197367793869UL);
+       ({ free(B->bestSeqsJ); free_helper(B->bestSeqsJ, 12370633197367793869UL); }) ;
 # 1570 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsJ = __null;
 # 1571 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5833,13 +5833,13 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1572 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if (B->numReports) {
 # 1573 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->numReports, 12370633197367793869UL);
+       ({ free(B->numReports); free_helper(B->numReports, 12370633197367793869UL); }) ;
 # 1574 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->numReports = __null;
 # 1575 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1576 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(B, 12370633197367794061UL);
+     ({ free(B); free_helper(B, 12370633197367794061UL); }) ;
 # 1577 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 1578 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5867,7 +5867,7 @@ unsigned char *copyStringR_quick(const unsigned char *inpString) {const int ____
   }
 # 32 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 33 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( ( outString = (unsigned char*)malloc_wrapper( (c+1)*sizeof(unsigned char), 12370633197367790811UL, 0, 0 ) )
+  if ( ( outString = (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((c + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (c+1)*sizeof(unsigned char), 12370633197367790811UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        == __null ) {
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5990,7 +5990,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (dir & 4) != 0) {
 # 194 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i-1, j-1, 0, threadNum, rsi, rsj, ++ri, ++rj); });
+     call_lbl_0: ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i-1, j-1, 0, threadNum, rsi, rsj, ++ri, ++rj); });
 # 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if ( (*rsi > 0) || (*rsj > 0) ) {
@@ -6008,7 +6008,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (dir & 2) != 0) {
 # 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i-1, j, 2, threadNum, rsi, rsj, ++ri, ++rj); });
+     call_lbl_1: ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i-1, j, 2, threadNum, rsi, rsj, ++ri, ++rj); });
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if ( (*rsi > 0) || (*rsj > 0) ) {
@@ -6026,7 +6026,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (dir & 1) != 0) {
 # 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i, j-1, 1, threadNum, rsi, rsj, ++ri, ++rj); });
+     call_lbl_2: ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i, j-1, 1, threadNum, rsi, rsj, ++ri, ++rj); });
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if ( (*rsi > 0) || (*rsj > 0) ) {
@@ -6168,7 +6168,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 377 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 378 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 379 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (V = (long long**)malloc_wrapper( 3 * sizeof(long long*), 12370633197367792534UL, 1, 0 ) ) == __null ) {
+  if ( (V = (long long**) ({ void *____chimes_tmp_ptr = malloc(3 * sizeof(long long *)); ; malloc_helper(____chimes_tmp_ptr, 3 * sizeof(long long*), 12370633197367792534UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 380 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("doScan: cannot allocate V for thread %d\n", threadNum);
 # 381 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6181,7 +6181,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 386 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   for (i = 1; i <= 2; i++) {
 # 387 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    V[i] = (long long *)malloc_wrapper( (m+2) * sizeof(long long), 12370633197367792863UL, 0, 0 );
+    V[i] = (long long *) ({ void *____chimes_tmp_ptr = malloc((m + 2) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (m+2) * sizeof(long long), 12370633197367792863UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 388 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     for (j = 1; j <= m+1; j++) {
 # 389 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6197,7 +6197,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 396 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 397 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 398 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (E = (long long*)malloc_wrapper( (m+1) * sizeof(long long), 12370633197367793346UL, 0, 0 ) ) == __null ) {
+  if ( (E = (long long*) ({ void *____chimes_tmp_ptr = malloc((m + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (m+1) * sizeof(long long), 12370633197367793346UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 399 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("doScan: cannot allocate E for thread %d\n", threadNum);
 # 400 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6209,7 +6209,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
   }
 # 405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 406 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (F = (long long *)malloc_wrapper( (m+1) * sizeof(long long), 12370633197367793351UL, 0, 0 ) ) == __null ) {
+  if ( (F = (long long *) ({ void *____chimes_tmp_ptr = malloc((m + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (m+1) * sizeof(long long), 12370633197367793351UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 407 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("doScan: cannot allocate F for thread %d\n", threadNum);
 # 408 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6239,15 +6239,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 426 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 427 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(V[1], 12370633197367792863UL);
+     ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 428 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(V[2], 12370633197367792863UL);
+     ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 429 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(V, 12370633197367792534UL);
+     ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 430 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(E, 12370633197367793346UL);
+     ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 431 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(F, 12370633197367793351UL);
+     ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 432 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = ((-2)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_15; ;
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6321,15 +6321,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 478 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 479 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 480 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 482 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_16; ;
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6342,15 +6342,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 493 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 494 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_17; ;
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6369,15 +6369,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 524 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 525 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 526 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 527 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 528 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 529 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 530 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 531 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_18; ;
 # 532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6390,15 +6390,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 537 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 538 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 539 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 541 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 542 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 543 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 544 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_19; ;
 # 545 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6422,15 +6422,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 564 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 566 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(V[1], 12370633197367792863UL);
+      ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 567 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(V[2], 12370633197367792863UL);
+      ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 568 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(V, 12370633197367792534UL);
+      ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 569 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(E, 12370633197367793346UL);
+      ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 570 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(F, 12370633197367793351UL);
+      ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 571 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = ((-10)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_20; ;
 # 572 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6445,15 +6445,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 578 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 579 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 580 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 581 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 582 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 583 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = ((-11)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_21; ;
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6466,15 +6466,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 599 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 600 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 601 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 602 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 603 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 604 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 605 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 606 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_22; ;
 # 607 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6487,21 +6487,21 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 614 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 615 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 616 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 617 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 618 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_23; ;
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 621 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, e, f, 0, threadNum, &rsi, &rsj, bestSeqsI[*bestR+1], bestSeqsJ[*bestR+1]); });
+  call_lbl_0: ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, e, f, 0, threadNum, &rsi, &rsj, bestSeqsI[*bestR+1], bestSeqsJ[*bestR+1]); });
 # 625 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (rsi <= 0) && (rsj <= 0) ) {
 # 626 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6512,15 +6512,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 631 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 632 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 633 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 634 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 635 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 636 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 637 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 638 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = ((-14)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_24; ;
 # 639 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6540,15 +6540,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
  bestScores[*bestR] = goal;
 # 667 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 667 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(V[1], 12370633197367792863UL);
+  ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 668 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(V[2], 12370633197367792863UL);
+  ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 669 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(V, 12370633197367792534UL);
+  ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 670 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(E, 12370633197367793346UL);
+  ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 671 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(F, 12370633197367793351UL);
+  ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 672 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = ((0)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_25; ;
 # 673 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6578,15 +6578,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 692 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 693 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 694 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 695 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 696 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 697 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 698 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 699 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_26; ;
 # 700 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6599,15 +6599,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 705 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 706 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 707 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 708 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 709 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 710 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 711 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 712 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_27; ;
 # 713 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6652,15 +6652,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 738 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 739 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 740 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(V[1], 12370633197367792863UL);
+   ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 741 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(V[2], 12370633197367792863UL);
+   ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 742 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(V, 12370633197367792534UL);
+   ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 743 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(E, 12370633197367793346UL);
+   ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 744 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(F, 12370633197367793351UL);
+   ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 745 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    int ____chimes_ret_var_28; ; ____chimes_ret_var_28 = ((-15)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_28; ;
 # 746 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6741,7 +6741,7 @@ int bestR;
 # 843 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 844 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 845 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B = (BSTR_T*)malloc_wrapper( sizeof(BSTR_T), 12370633197367794539UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ) ) ) == __null ) {
+  if ( (B = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(BSTR_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 12370633197367794539UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
 # 846 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B\n");
 # 847 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6767,7 +6767,7 @@ int bestR;
 # 866 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   B->numThreads = A->numThreads;
 # 867 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->numReports = (int*)malloc_wrapper(maxThreads * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+  if ( (B->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 868 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->numReports\n");
 # 869 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6781,7 +6781,7 @@ int bestR;
 # 875 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (B->bestScores =
 # 876 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- (long long**)malloc_wrapper(maxThreads * sizeof(long long*), 12370633197367793869UL, 1, 0)) == __null ) {
+ (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 877 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestScores\n");
 # 878 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6793,7 +6793,7 @@ int bestR;
   }
 # 883 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 884 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestStartsI = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 885 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestStartsI\n");
 # 886 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6805,7 +6805,7 @@ int bestR;
   }
 # 891 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 892 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestStartsJ = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 893 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestStartsJ\n");
 # 894 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6817,7 +6817,7 @@ int bestR;
   }
 # 899 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 900 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestEndsI = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 901 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestEndsI\n");
 # 902 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6829,7 +6829,7 @@ int bestR;
   }
 # 907 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 908 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestEndsJ = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 909 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestEndsJ\n");
 # 910 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6843,7 +6843,7 @@ int bestR;
 # 916 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (B->bestSeqsI =
 # 917 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- (unsigned char***)malloc_wrapper(maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0))
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 918 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        == __null ) {
 # 919 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6859,7 +6859,7 @@ int bestR;
 # 926 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (B->bestSeqsJ =
 # 927 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- (unsigned char***)malloc_wrapper(maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0))
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 928 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        == __null ) {
 # 929 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6890,7 +6890,7 @@ int bestR;
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-{ call_lbl_127: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(127, &____chimes_region_id0, 42, &T, &bestEndsI, &bestEndsJ, &bestR, &bestScores, &bestSeqsI, &bestSeqsJ, &bestStartsI, &bestStartsJ, &c, &doublings, &ei, &ej, &gapExtend, &gapFirst, &gapStart, &goal, &hyphen, &i, &iBeg, &iEnd, &iFin, &j, &jBeg, &jEnd, &jFin, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &sizeT, &threadNum, &weights);
+{ call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 42, &T, &bestEndsI, &bestEndsJ, &bestR, &bestScores, &bestSeqsI, &bestSeqsJ, &bestStartsI, &bestStartsJ, &c, &doublings, &ei, &ej, &gapExtend, &gapFirst, &gapStart, &goal, &hyphen, &i, &iBeg, &iEnd, &iFin, &j, &jBeg, &jEnd, &jFin, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &sizeT, &threadNum, &weights);
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 #pragma omp parallel firstprivate(maxReports, matchLimit, minSeparation) private (i, j, m, n, r, c, npRow, npCol, myRow, myCol, weights, iBeg, jBeg, iFin, jFin, iEnd, jEnd, doublings, hyphen, gapStart, gapExtend, gapFirst, sizeT, bestR, goal, ei, ej, T, bestScores, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, mainSeq, matchSeq, threadNum, myTaskID)
 # 958 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6900,12 +6900,12 @@ int bestR;
 # 962 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 963 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 964 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 42, &T, &bestEndsI, &bestEndsJ, &bestR, &bestScores, &bestSeqsI, &bestSeqsJ, &bestStartsI, &bestStartsJ, &c, &doublings, &ei, &ej, &gapExtend, &gapFirst, &gapStart, &goal, &hyphen, &i, &iBeg, &iEnd, &iFin, &j, &jBeg, &jEnd, &jFin, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &sizeT, &threadNum, &weights); if (____chimes_replaying) { switch(get_next_call()) { case(28): { goto call_lbl_28; } default: { chimes_error(); } } } {
+  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 42, &T, &bestEndsI, &bestEndsJ, &bestR, &bestScores, &bestSeqsI, &bestSeqsJ, &bestStartsI, &bestStartsJ, &c, &doublings, &ei, &ej, &gapExtend, &gapFirst, &gapStart, &goal, &hyphen, &i, &iBeg, &iEnd, &iFin, &j, &jBeg, &jEnd, &jFin, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &sizeT, &threadNum, &weights); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } {
 # 965 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 966 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 967 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 968 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     call_lbl_28: ({ calling((void*)gridInfo, 28, ____alias_loc_id_0, 0UL, 4, (size_t)(12370633197367790860UL), (size_t)(12370633197367790861UL), (size_t)(12370633197367790862UL), (size_t)(12370633197367790863UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
+     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_0, 0UL, 4, (size_t)(12370633197367790860UL), (size_t)(12370633197367790861UL), (size_t)(12370633197367790862UL), (size_t)(12370633197367790863UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
 # 978 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 978 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     threadNum = omp_get_thread_num();
@@ -6931,7 +6931,7 @@ int bestR;
       gapFirst = gapStart + gapExtend;
 # 1014 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1014 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestScores = (long long*)malloc_wrapper((maxReports+1)*sizeof(long long), 12370633197367791290UL, 0, 0))
+      if ( (bestScores = (long long*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 12370633197367791290UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1015 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1016 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6947,7 +6947,7 @@ int bestR;
       }
 # 1023 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1024 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestStartsI = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791310UL, 0, 0)) == __null ) {
+      if ( (bestStartsI = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791310UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1025 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestStartsI for thread %d\n",
 # 1026 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6961,7 +6961,7 @@ int bestR;
       }
 # 1032 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1033 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestStartsJ = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791305UL, 0, 0)) == __null ) {
+      if ( (bestStartsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791305UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1034 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestStartsJ for thread %d\n",
 # 1035 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6975,7 +6975,7 @@ int bestR;
       }
 # 1041 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1042 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestEndsI = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791300UL, 0, 0)) == __null ) {
+      if ( (bestEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791300UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1043 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestEndsI for thread %d\n",
 # 1044 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6989,7 +6989,7 @@ int bestR;
       }
 # 1050 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1051 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestEndsJ = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791295UL, 0, 0)) == __null ) {
+      if ( (bestEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791295UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1052 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestEndsJ for thread %d\n",
 # 1053 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7005,7 +7005,7 @@ int bestR;
 # 1060 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       if ( (bestSeqsI =
 # 1061 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char**)malloc_wrapper((maxReports+1)*sizeof(unsigned char*), 12370633197367791320UL, 1, 0))
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(unsigned char*), 12370633197367791320UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1062 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1063 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7023,7 +7023,7 @@ int bestR;
 # 1071 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        if ( (bestSeqsJ =
 # 1072 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char**)malloc_wrapper((maxReports+1)*sizeof(unsigned char*), 12370633197367792065UL, 1, 0))
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(unsigned char*), 12370633197367792065UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1073 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1074 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7048,7 +7048,7 @@ int bestR;
 # 1086 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (bestSeqsI[i] =
 # 1087 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char*)malloc_wrapper((matchLimit+1)*sizeof(unsigned char), 12370633197367791317UL, 0, 0))
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((matchLimit + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (matchLimit+1)*sizeof(unsigned char), 12370633197367791317UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1088 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1089 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7066,7 +7066,7 @@ int bestR;
 # 1097 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (bestSeqsJ[i] =
 # 1098 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char*)malloc_wrapper((matchLimit+1)*sizeof(unsigned char), 12370633197367792067UL, 0, 0))
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((matchLimit + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (matchLimit+1)*sizeof(unsigned char), 12370633197367792067UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1099 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7111,7 +7111,7 @@ int bestR;
 # 1143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       if ( (mainSeq =
 # 1144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char*)malloc_wrapper((iEnd - iBeg + 2) * sizeof(unsigned char), 12370633197367791430UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 12370633197367791430UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  == __null ) {
 # 1146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7133,7 +7133,7 @@ int bestR;
 # 1155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       if ( (matchSeq =
 # 1156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char*)malloc_wrapper((jEnd - jBeg + 2) * sizeof(unsigned char), 12370633197367791502UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 12370633197367791502UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null) {
 # 1158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7159,7 +7159,7 @@ int bestR;
 # 1171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (weights = (char**)malloc_wrapper( ((64) + 1) * sizeof(char*), 12370633197367791527UL, 1, 0 ) ) == __null ) {
+      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1) * sizeof(char*), 12370633197367791527UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate weights for thread %d\n",
 # 1175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7175,7 +7175,7 @@ int bestR;
 # 1182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- if ( (weights[i] = (char*)malloc_wrapper( ((64) + 1) * sizeof(char), 12370633197367791524UL, 0, 0 ) )
+ if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1) * sizeof(char), 12370633197367791524UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7201,7 +7201,7 @@ int bestR;
 # 1208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     retry:
 # 1209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (T = (unsigned char**)malloc_wrapper((sizeT+1) * sizeof(unsigned char*), 12370633197367791625UL, 1, 0))
+      if ( (T = (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((sizeT + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (sizeT+1) * sizeof(unsigned char*), 12370633197367791625UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7217,7 +7217,7 @@ int bestR;
 # 1218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= sizeT; i++) {
 # 1219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- if ( (T[i] = (unsigned char*)malloc_wrapper((sizeT+1)*sizeof(unsigned char), 12370633197367791622UL, 0, 0))
+ if ( (T[i] = (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((sizeT + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (sizeT+1)*sizeof(unsigned char), 12370633197367791622UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7267,7 +7267,7 @@ int bestR;
 # 1247 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1248 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1249 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- if ( ({ calling_npm("doScan", 0); doScan_npm(A, T, sizeT, ei, ej, mainSeq, matchSeq, weights, gapFirst, gapExtend, minSeparation, r, goal, iBeg, jBeg, iFin, jFin, iEnd, jEnd, myTaskID, &bestR, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, bestScores); }) == -1 ) {
+  call_lbl_1: if ( ({ calling_npm("doScan", 0); doScan_npm(A, T, sizeT, ei, ej, mainSeq, matchSeq, weights, gapFirst, gapExtend, minSeparation, r, goal, iBeg, jBeg, iFin, jFin, iEnd, jEnd, myTaskID, &bestR, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, bestScores); }) == -1 ) {
 # 1254 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1255 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1256 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7285,11 +7285,11 @@ int bestR;
 # 1264 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      for (i = 1; i <= sizeT; i++) {
 # 1265 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       free_wrapper(T[i], 12370633197367791622UL);
+        ({ free(T[i]); free_helper(T[i], 12370633197367791622UL); }) ;
 # 1266 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      }
 # 1267 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(T, 12370633197367791625UL);
+      ({ free(T); free_helper(T, 12370633197367791625UL); }) ;
 # 1268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      sizeT *= 2;
 # 1269 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7326,7 +7326,7 @@ int bestR;
 # 1297 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestScores[threadNum] =
 # 1298 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (long long*)malloc_wrapper((bestR +1) * sizeof(long long), 12370633197367793869UL, 0, 0)) == __null ) {
+       (long long*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (bestR +1) * sizeof(long long), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestScores for thread %d\n",
 # 1300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7342,7 +7342,7 @@ int bestR;
 # 1307 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestStartsI[threadNum] =
 # 1308 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1309 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestStartsI for thread %d\n",
 # 1310 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7359,7 +7359,7 @@ int bestR;
 # 1318 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestStartsJ[threadNum] =
 # 1319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestStartsJ for thread %d\n",
 # 1321 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7376,7 +7376,7 @@ int bestR;
 # 1329 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestEndsI[threadNum] =
 # 1330 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1331 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestEndsI for thread %d\n",
 # 1332 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7393,7 +7393,7 @@ int bestR;
 # 1340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestEndsJ[threadNum] =
 # 1341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1342 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestEndsJ for thread %d\n",
 # 1343 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7410,7 +7410,7 @@ int bestR;
 # 1351 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestSeqsI[threadNum] =
 # 1352 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char**)malloc_wrapper((bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0))
+       (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1353 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1354 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7429,7 +7429,7 @@ int bestR;
 # 1363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestSeqsJ[threadNum] =
 # 1364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char**)malloc_wrapper((bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0))
+       (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7460,9 +7460,9 @@ int bestR;
 # 1382 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsJ[threadNum][j] = bestEndsJ[j];
 # 1383 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   B->bestSeqsI[threadNum][j] = ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsI[j]); });
+    call_lbl_2: B->bestSeqsI[threadNum][j] = ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsI[j]); });
 # 1384 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   B->bestSeqsJ[threadNum][j] = ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsJ[j]); });
+    call_lbl_3: B->bestSeqsJ[threadNum][j] = ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsJ[j]); });
 # 1385 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 1386 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7572,52 +7572,52 @@ int bestR;
 # 1449 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1450 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1451 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestScores, 12370633197367791290UL);
+       ({ free(bestScores); free_helper(bestScores, 12370633197367791290UL); }) ;
 # 1452 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestStartsI, 12370633197367791310UL);
+       ({ free(bestStartsI); free_helper(bestStartsI, 12370633197367791310UL); }) ;
 # 1453 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestStartsJ, 12370633197367791305UL);
+       ({ free(bestStartsJ); free_helper(bestStartsJ, 12370633197367791305UL); }) ;
 # 1454 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestEndsI, 12370633197367791300UL);
+       ({ free(bestEndsI); free_helper(bestEndsI, 12370633197367791300UL); }) ;
 # 1455 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestEndsJ, 12370633197367791295UL);
+       ({ free(bestEndsJ); free_helper(bestEndsJ, 12370633197367791295UL); }) ;
 # 1456 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1457 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= maxReports; i++) {
 # 1458 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(bestSeqsI[i], 12370633197367791317UL);
+  ({ free(bestSeqsI[i]); free_helper(bestSeqsI[i], 12370633197367791317UL); }) ;
 # 1459 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(bestSeqsJ[i], 12370633197367792067UL);
+  ({ free(bestSeqsJ[i]); free_helper(bestSeqsJ[i], 12370633197367792067UL); }) ;
 # 1460 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1461 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestSeqsI, 12370633197367791320UL);
+       ({ free(bestSeqsI); free_helper(bestSeqsI, 12370633197367791320UL); }) ;
 # 1463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestSeqsJ, 12370633197367792065UL);
+       ({ free(bestSeqsJ); free_helper(bestSeqsJ, 12370633197367792065UL); }) ;
 # 1464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(weights[i], 12370633197367791524UL);
+  ({ free(weights[i]); free_helper(weights[i], 12370633197367791524UL); }) ;
 # 1467 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1468 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(weights, 12370633197367791527UL);
+       ({ free(weights); free_helper(weights, 12370633197367791527UL); }) ;
 # 1469 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1470 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= sizeT; i++) {
 # 1471 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(T[i], 12370633197367791622UL);
+  ({ free(T[i]); free_helper(T[i], 12370633197367791622UL); }) ;
 # 1472 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1473 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(T, 12370633197367791625UL);
+       ({ free(T); free_helper(T, 12370633197367791625UL); }) ;
 # 1474 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1475 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(mainSeq, 12370633197367791430UL);
+       ({ free(mainSeq); free_helper(mainSeq, 12370633197367791430UL); }) ;
 # 1476 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(matchSeq, 12370633197367791502UL);
+       ({ free(matchSeq); free_helper(matchSeq, 12370633197367791502UL); }) ;
 # 1477 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1478 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7644,7 +7644,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1492 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestScores[i]) {
 # 1493 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestScores[i], 12370633197367793869UL);
+    ({ free(B->bestScores[i]); free_helper(B->bestScores[i], 12370633197367793869UL); }) ;
 # 1494 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestScores[i] = __null;
 # 1495 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7652,7 +7652,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1496 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1497 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestScores, 12370633197367793869UL);
+       ({ free(B->bestScores); free_helper(B->bestScores, 12370633197367793869UL); }) ;
 # 1498 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestScores = __null;
 # 1499 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7664,7 +7664,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1502 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsI[i]) {
 # 1503 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestStartsI[i], 12370633197367793869UL);
+    ({ free(B->bestStartsI[i]); free_helper(B->bestStartsI[i], 12370633197367793869UL); }) ;
 # 1504 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsI[i] = __null;
 # 1505 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7672,7 +7672,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1506 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1507 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestStartsI, 12370633197367793869UL);
+       ({ free(B->bestStartsI); free_helper(B->bestStartsI, 12370633197367793869UL); }) ;
 # 1508 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsI = __null;
 # 1509 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7684,7 +7684,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1512 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsJ[i]) {
 # 1513 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestStartsJ[i], 12370633197367793869UL);
+    ({ free(B->bestStartsJ[i]); free_helper(B->bestStartsJ[i], 12370633197367793869UL); }) ;
 # 1514 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsJ[i] = __null;
 # 1515 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7692,7 +7692,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1516 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1517 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestStartsJ, 12370633197367793869UL);
+       ({ free(B->bestStartsJ); free_helper(B->bestStartsJ, 12370633197367793869UL); }) ;
 # 1518 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsJ = __null;
 # 1519 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7704,7 +7704,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1522 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsI[i]) {
 # 1523 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestEndsI[i], 12370633197367793869UL);
+    ({ free(B->bestEndsI[i]); free_helper(B->bestEndsI[i], 12370633197367793869UL); }) ;
 # 1524 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsI[i] = __null;
 # 1525 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7712,7 +7712,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1526 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1527 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestEndsI, 12370633197367793869UL);
+       ({ free(B->bestEndsI); free_helper(B->bestEndsI, 12370633197367793869UL); }) ;
 # 1528 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsI = __null;
 # 1529 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7724,7 +7724,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsJ[i]) {
 # 1533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestEndsJ[i], 12370633197367793869UL);
+    ({ free(B->bestEndsJ[i]); free_helper(B->bestEndsJ[i], 12370633197367793869UL); }) ;
 # 1534 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsJ[i] = __null;
 # 1535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7732,7 +7732,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1536 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1537 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestEndsJ, 12370633197367793869UL);
+       ({ free(B->bestEndsJ); free_helper(B->bestEndsJ, 12370633197367793869UL); }) ;
 # 1538 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsJ = __null;
 # 1539 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7748,7 +7748,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1544 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsI[i][j]) {
 # 1545 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       free_wrapper(B->bestSeqsI[i][j], 12370633197367793869UL);
+        ({ free(B->bestSeqsI[i][j]); free_helper(B->bestSeqsI[i][j], 12370633197367793869UL); }) ;
 # 1546 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsI[i][j] = __null;
 # 1547 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7756,7 +7756,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1548 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1549 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestSeqsI[i], 12370633197367793869UL);
+    ({ free(B->bestSeqsI[i]); free_helper(B->bestSeqsI[i], 12370633197367793869UL); }) ;
 # 1550 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsI[i] = __null;
 # 1551 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7764,7 +7764,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1552 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1553 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestSeqsI, 12370633197367793869UL);
+       ({ free(B->bestSeqsI); free_helper(B->bestSeqsI, 12370633197367793869UL); }) ;
 # 1554 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsI = __null;
 # 1555 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7780,7 +7780,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1560 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsJ[i][j]) {
 # 1561 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       free_wrapper(B->bestSeqsJ[i][j], 12370633197367793869UL);
+        ({ free(B->bestSeqsJ[i][j]); free_helper(B->bestSeqsJ[i][j], 12370633197367793869UL); }) ;
 # 1562 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsJ[i][j] = __null;
 # 1563 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7788,7 +7788,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1564 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestSeqsJ[i], 12370633197367793869UL);
+    ({ free(B->bestSeqsJ[i]); free_helper(B->bestSeqsJ[i], 12370633197367793869UL); }) ;
 # 1566 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsJ[i] = __null;
 # 1567 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7796,7 +7796,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1568 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1569 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestSeqsJ, 12370633197367793869UL);
+       ({ free(B->bestSeqsJ); free_helper(B->bestSeqsJ, 12370633197367793869UL); }) ;
 # 1570 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsJ = __null;
 # 1571 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7804,13 +7804,13 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1572 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if (B->numReports) {
 # 1573 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->numReports, 12370633197367793869UL);
+       ({ free(B->numReports); free_helper(B->numReports, 12370633197367793869UL); }) ;
 # 1574 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->numReports = __null;
 # 1575 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1576 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(B, 12370633197367794061UL);
+     ({ free(B); free_helper(B, 12370633197367794061UL); }) ;
 # 1577 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 1578 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7840,7 +7840,7 @@ unsigned char *copyStringR_npm(const unsigned char *inpString) {
   }
 # 32 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 33 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( ( outString = (unsigned char*)malloc_wrapper( (c+1)*sizeof(unsigned char), 12370633197367790811UL, 0, 0 ) )
+  if ( ( outString = (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((c + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (c+1)*sizeof(unsigned char), 12370633197367790811UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        == __null ) {
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8119,7 +8119,7 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 377 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 378 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 379 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (V = (long long**)malloc_wrapper( 3 * sizeof(long long*), 12370633197367792534UL, 1, 0 ) ) == __null ) {
+  if ( (V = (long long**) ({ void *____chimes_tmp_ptr = malloc(3 * sizeof(long long *)); malloc_helper(____chimes_tmp_ptr, 3 * sizeof(long long*), 12370633197367792534UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 380 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("doScan: cannot allocate V for thread %d\n", threadNum);
 # 381 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8132,7 +8132,7 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 386 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   for (i = 1; i <= 2; i++) {
 # 387 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    V[i] = (long long *)malloc_wrapper( (m+2) * sizeof(long long), 12370633197367792863UL, 0, 0 );
+    V[i] = (long long *) ({ void *____chimes_tmp_ptr = malloc((m + 2) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (m+2) * sizeof(long long), 12370633197367792863UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 388 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     for (j = 1; j <= m+1; j++) {
 # 389 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8148,7 +8148,7 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 396 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 397 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 398 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (E = (long long*)malloc_wrapper( (m+1) * sizeof(long long), 12370633197367793346UL, 0, 0 ) ) == __null ) {
+  if ( (E = (long long*) ({ void *____chimes_tmp_ptr = malloc((m + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (m+1) * sizeof(long long), 12370633197367793346UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 399 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("doScan: cannot allocate E for thread %d\n", threadNum);
 # 400 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8160,7 +8160,7 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
   }
 # 405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 406 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (F = (long long *)malloc_wrapper( (m+1) * sizeof(long long), 12370633197367793351UL, 0, 0 ) ) == __null ) {
+  if ( (F = (long long *) ({ void *____chimes_tmp_ptr = malloc((m + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (m+1) * sizeof(long long), 12370633197367793351UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 407 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("doScan: cannot allocate F for thread %d\n", threadNum);
 # 408 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8190,15 +8190,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 426 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 427 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(V[1], 12370633197367792863UL);
+     ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 428 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(V[2], 12370633197367792863UL);
+     ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 429 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(V, 12370633197367792534UL);
+     ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 430 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(E, 12370633197367793346UL);
+     ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 431 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(F, 12370633197367793351UL);
+     ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 432 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      int ____chimes_ret_var_15; ____chimes_ret_var_15 = ((-2)); return ____chimes_ret_var_15; ;
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8272,15 +8272,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 478 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 479 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 480 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 482 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_16; ____chimes_ret_var_16 = ((-1)); return ____chimes_ret_var_16; ;
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8293,15 +8293,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 493 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 494 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_17; ____chimes_ret_var_17 = ((-1)); return ____chimes_ret_var_17; ;
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8320,15 +8320,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 524 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 525 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 526 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 527 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 528 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 529 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 530 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 531 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_18; ____chimes_ret_var_18 = ((-1)); return ____chimes_ret_var_18; ;
 # 532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8341,15 +8341,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 537 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 538 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 539 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 541 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 542 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 543 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 544 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_19; ____chimes_ret_var_19 = ((-1)); return ____chimes_ret_var_19; ;
 # 545 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8373,15 +8373,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 564 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 566 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(V[1], 12370633197367792863UL);
+      ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 567 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(V[2], 12370633197367792863UL);
+      ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 568 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(V, 12370633197367792534UL);
+      ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 569 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(E, 12370633197367793346UL);
+      ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 570 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(F, 12370633197367793351UL);
+      ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 571 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       int ____chimes_ret_var_20; ____chimes_ret_var_20 = ((-10)); return ____chimes_ret_var_20; ;
 # 572 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8396,15 +8396,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 578 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 579 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 580 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 581 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 582 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 583 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_21; ____chimes_ret_var_21 = ((-11)); return ____chimes_ret_var_21; ;
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8417,15 +8417,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 599 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 600 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 601 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 602 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 603 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 604 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 605 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 606 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_22; ____chimes_ret_var_22 = ((-1)); return ____chimes_ret_var_22; ;
 # 607 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8438,15 +8438,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 614 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 615 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 616 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 617 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 618 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_23; ____chimes_ret_var_23 = ((-1)); return ____chimes_ret_var_23; ;
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8463,15 +8463,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 631 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 632 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 633 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 634 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 635 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 636 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 637 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 638 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_24; ____chimes_ret_var_24 = ((-14)); return ____chimes_ret_var_24; ;
 # 639 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8491,15 +8491,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
  bestScores[*bestR] = goal;
 # 667 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 667 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(V[1], 12370633197367792863UL);
+  ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 668 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(V[2], 12370633197367792863UL);
+  ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 669 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(V, 12370633197367792534UL);
+  ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 670 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(E, 12370633197367793346UL);
+  ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 671 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(F, 12370633197367793351UL);
+  ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 672 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   int ____chimes_ret_var_25; ____chimes_ret_var_25 = ((0)); return ____chimes_ret_var_25; ;
 # 673 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8529,15 +8529,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 692 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 693 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 694 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 695 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 696 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 697 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 698 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 699 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_26; ____chimes_ret_var_26 = ((-1)); return ____chimes_ret_var_26; ;
 # 700 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8550,15 +8550,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 705 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 706 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 707 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[1], 12370633197367792863UL);
+    ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 708 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V[2], 12370633197367792863UL);
+    ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 709 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(V, 12370633197367792534UL);
+    ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 710 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(E, 12370633197367793346UL);
+    ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 711 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(F, 12370633197367793351UL);
+    ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 712 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_27; ____chimes_ret_var_27 = ((-1)); return ____chimes_ret_var_27; ;
 # 713 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8603,15 +8603,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 738 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 739 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 740 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(V[1], 12370633197367792863UL);
+   ({ free(V[1]); free_helper(V[1], 12370633197367792863UL); }) ;
 # 741 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(V[2], 12370633197367792863UL);
+   ({ free(V[2]); free_helper(V[2], 12370633197367792863UL); }) ;
 # 742 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(V, 12370633197367792534UL);
+   ({ free(V); free_helper(V, 12370633197367792534UL); }) ;
 # 743 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(E, 12370633197367793346UL);
+   ({ free(E); free_helper(E, 12370633197367793346UL); }) ;
 # 744 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  free_wrapper(F, 12370633197367793351UL);
+   ({ free(F); free_helper(F, 12370633197367793351UL); }) ;
 # 745 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    int ____chimes_ret_var_28; ____chimes_ret_var_28 = ((-15)); return ____chimes_ret_var_28; ;
 # 746 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8652,7 +8652,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 843 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 844 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 845 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B = (BSTR_T*)malloc_wrapper( sizeof(BSTR_T), 12370633197367794539UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ) ) ) == __null ) {
+  if ( (B = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(BSTR_T)); malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 12370633197367794539UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
 # 846 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B\n");
 # 847 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8678,7 +8678,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 866 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   B->numThreads = A->numThreads;
 # 867 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->numReports = (int*)malloc_wrapper(maxThreads * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+  if ( (B->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 868 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->numReports\n");
 # 869 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8692,7 +8692,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 875 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (B->bestScores =
 # 876 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- (long long**)malloc_wrapper(maxThreads * sizeof(long long*), 12370633197367793869UL, 1, 0)) == __null ) {
+ (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 877 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestScores\n");
 # 878 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8704,7 +8704,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
   }
 # 883 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 884 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestStartsI = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 885 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestStartsI\n");
 # 886 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8716,7 +8716,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
   }
 # 891 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 892 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestStartsJ = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 893 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestStartsJ\n");
 # 894 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8728,7 +8728,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
   }
 # 899 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 900 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestEndsI = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 901 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestEndsI\n");
 # 902 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8740,7 +8740,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
   }
 # 907 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 908 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  if ( (B->bestEndsJ = (int**)malloc_wrapper(maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0)) == __null ) {
+  if ( (B->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 909 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("scanBackward: cannot allocate B->bestEndsJ\n");
 # 910 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8754,7 +8754,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 916 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (B->bestSeqsI =
 # 917 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- (unsigned char***)malloc_wrapper(maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0))
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 918 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        == __null ) {
 # 919 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8770,7 +8770,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 926 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   if ( (B->bestSeqsJ =
 # 927 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- (unsigned char***)malloc_wrapper(maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0))
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(unsigned char**), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 928 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        == __null ) {
 # 929 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8840,7 +8840,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
       gapFirst = gapStart + gapExtend;
 # 1014 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1014 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestScores = (long long*)malloc_wrapper((maxReports+1)*sizeof(long long), 12370633197367791290UL, 0, 0))
+      if ( (bestScores = (long long*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 12370633197367791290UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1015 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1016 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8856,7 +8856,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
       }
 # 1023 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1024 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestStartsI = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791310UL, 0, 0)) == __null ) {
+      if ( (bestStartsI = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791310UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1025 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestStartsI for thread %d\n",
 # 1026 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8870,7 +8870,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
       }
 # 1032 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1033 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestStartsJ = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791305UL, 0, 0)) == __null ) {
+      if ( (bestStartsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791305UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1034 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestStartsJ for thread %d\n",
 # 1035 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8884,7 +8884,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
       }
 # 1041 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1042 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestEndsI = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791300UL, 0, 0)) == __null ) {
+      if ( (bestEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791300UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1043 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestEndsI for thread %d\n",
 # 1044 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8898,7 +8898,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
       }
 # 1050 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1051 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (bestEndsJ = (int*)malloc_wrapper((maxReports+1)*sizeof(int), 12370633197367791295UL, 0, 0)) == __null ) {
+      if ( (bestEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 12370633197367791295UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1052 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate bestEndsJ for thread %d\n",
 # 1053 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8914,7 +8914,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1060 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       if ( (bestSeqsI =
 # 1061 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char**)malloc_wrapper((maxReports+1)*sizeof(unsigned char*), 12370633197367791320UL, 1, 0))
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(unsigned char*), 12370633197367791320UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1062 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1063 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8932,7 +8932,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1071 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        if ( (bestSeqsJ =
 # 1072 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char**)malloc_wrapper((maxReports+1)*sizeof(unsigned char*), 12370633197367792065UL, 1, 0))
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(unsigned char*), 12370633197367792065UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1073 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1074 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8957,7 +8957,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1086 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (bestSeqsI[i] =
 # 1087 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char*)malloc_wrapper((matchLimit+1)*sizeof(unsigned char), 12370633197367791317UL, 0, 0))
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((matchLimit + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (matchLimit+1)*sizeof(unsigned char), 12370633197367791317UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1088 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1089 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8975,7 +8975,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1097 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (bestSeqsJ[i] =
 # 1098 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char*)malloc_wrapper((matchLimit+1)*sizeof(unsigned char), 12370633197367792067UL, 0, 0))
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((matchLimit + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (matchLimit+1)*sizeof(unsigned char), 12370633197367792067UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1099 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9020,7 +9020,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       if ( (mainSeq =
 # 1144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char*)malloc_wrapper((iEnd - iBeg + 2) * sizeof(unsigned char), 12370633197367791430UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 12370633197367791430UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  == __null ) {
 # 1146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9042,7 +9042,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       if ( (matchSeq =
 # 1156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     (unsigned char*)malloc_wrapper((jEnd - jBeg + 2) * sizeof(unsigned char), 12370633197367791502UL, 0, 0))
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 12370633197367791502UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null) {
 # 1158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9068,7 +9068,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (weights = (char**)malloc_wrapper( ((64) + 1) * sizeof(char*), 12370633197367791527UL, 1, 0 ) ) == __null ) {
+      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); malloc_helper(____chimes_tmp_ptr, ((64) + 1) * sizeof(char*), 12370633197367791527UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  printf("scanBackward: cannot allocate weights for thread %d\n",
 # 1175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9084,7 +9084,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- if ( (weights[i] = (char*)malloc_wrapper( ((64) + 1) * sizeof(char), 12370633197367791524UL, 0, 0 ) )
+ if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); malloc_helper(____chimes_tmp_ptr, ((64) + 1) * sizeof(char), 12370633197367791524UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9110,7 +9110,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     retry:
 # 1209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      if ( (T = (unsigned char**)malloc_wrapper((sizeT+1) * sizeof(unsigned char*), 12370633197367791625UL, 1, 0))
+      if ( (T = (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((sizeT + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (sizeT+1) * sizeof(unsigned char*), 12370633197367791625UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     == __null ) {
 # 1211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9126,7 +9126,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= sizeT; i++) {
 # 1219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- if ( (T[i] = (unsigned char*)malloc_wrapper((sizeT+1)*sizeof(unsigned char), 12370633197367791622UL, 0, 0))
+ if ( (T[i] = (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((sizeT + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (sizeT+1)*sizeof(unsigned char), 12370633197367791622UL, 0, 0); ____chimes_tmp_ptr; }) )
 # 1220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9194,11 +9194,11 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1264 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      for (i = 1; i <= sizeT; i++) {
 # 1265 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       free_wrapper(T[i], 12370633197367791622UL);
+        ({ free(T[i]); free_helper(T[i], 12370633197367791622UL); }) ;
 # 1266 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      }
 # 1267 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     free_wrapper(T, 12370633197367791625UL);
+      ({ free(T); free_helper(T, 12370633197367791625UL); }) ;
 # 1268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      sizeT *= 2;
 # 1269 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9235,7 +9235,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1297 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestScores[threadNum] =
 # 1298 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (long long*)malloc_wrapper((bestR +1) * sizeof(long long), 12370633197367793869UL, 0, 0)) == __null ) {
+       (long long*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (bestR +1) * sizeof(long long), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestScores for thread %d\n",
 # 1300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9251,7 +9251,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1307 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestStartsI[threadNum] =
 # 1308 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1309 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestStartsI for thread %d\n",
 # 1310 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9268,7 +9268,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1318 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestStartsJ[threadNum] =
 # 1319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestStartsJ for thread %d\n",
 # 1321 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9285,7 +9285,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1329 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestEndsI[threadNum] =
 # 1330 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1331 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestEndsI for thread %d\n",
 # 1332 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9302,7 +9302,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestEndsJ[threadNum] =
 # 1341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (int*)malloc_wrapper((bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0)) == __null ) {
+       (int*) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (bestR+1) * sizeof(int), 12370633197367793869UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
 # 1342 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    printf("scanBackward: cannot allocate B->bestEndsJ for thread %d\n",
 # 1343 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9319,7 +9319,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1351 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestSeqsI[threadNum] =
 # 1352 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char**)malloc_wrapper((bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0))
+       (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1353 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1354 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9338,7 +9338,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if ( (B->bestSeqsJ[threadNum] =
 # 1364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       (unsigned char**)malloc_wrapper((bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0))
+       (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (bestR + 1) * sizeof(unsigned char*), 12370633197367793869UL, 1, 0); ____chimes_tmp_ptr; }) )
 # 1365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       == __null ) {
 # 1366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9481,52 +9481,52 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1449 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1450 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1451 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestScores, 12370633197367791290UL);
+       ({ free(bestScores); free_helper(bestScores, 12370633197367791290UL); }) ;
 # 1452 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestStartsI, 12370633197367791310UL);
+       ({ free(bestStartsI); free_helper(bestStartsI, 12370633197367791310UL); }) ;
 # 1453 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestStartsJ, 12370633197367791305UL);
+       ({ free(bestStartsJ); free_helper(bestStartsJ, 12370633197367791305UL); }) ;
 # 1454 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestEndsI, 12370633197367791300UL);
+       ({ free(bestEndsI); free_helper(bestEndsI, 12370633197367791300UL); }) ;
 # 1455 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestEndsJ, 12370633197367791295UL);
+       ({ free(bestEndsJ); free_helper(bestEndsJ, 12370633197367791295UL); }) ;
 # 1456 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1457 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= maxReports; i++) {
 # 1458 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(bestSeqsI[i], 12370633197367791317UL);
+  ({ free(bestSeqsI[i]); free_helper(bestSeqsI[i], 12370633197367791317UL); }) ;
 # 1459 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(bestSeqsJ[i], 12370633197367792067UL);
+  ({ free(bestSeqsJ[i]); free_helper(bestSeqsJ[i], 12370633197367792067UL); }) ;
 # 1460 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1461 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestSeqsI, 12370633197367791320UL);
+       ({ free(bestSeqsI); free_helper(bestSeqsI, 12370633197367791320UL); }) ;
 # 1463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(bestSeqsJ, 12370633197367792065UL);
+       ({ free(bestSeqsJ); free_helper(bestSeqsJ, 12370633197367792065UL); }) ;
 # 1464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(weights[i], 12370633197367791524UL);
+  ({ free(weights[i]); free_helper(weights[i], 12370633197367791524UL); }) ;
 # 1467 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1468 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(weights, 12370633197367791527UL);
+       ({ free(weights); free_helper(weights, 12370633197367791527UL); }) ;
 # 1469 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1470 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= sizeT; i++) {
 # 1471 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
- free_wrapper(T[i], 12370633197367791622UL);
+  ({ free(T[i]); free_helper(T[i], 12370633197367791622UL); }) ;
 # 1472 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1473 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(T, 12370633197367791625UL);
+       ({ free(T); free_helper(T, 12370633197367791625UL); }) ;
 # 1474 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1475 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(mainSeq, 12370633197367791430UL);
+       ({ free(mainSeq); free_helper(mainSeq, 12370633197367791430UL); }) ;
 # 1476 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(matchSeq, 12370633197367791502UL);
+       ({ free(matchSeq); free_helper(matchSeq, 12370633197367791502UL); }) ;
 # 1477 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1478 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9551,7 +9551,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1492 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestScores[i]) {
 # 1493 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestScores[i], 12370633197367793869UL);
+    ({ free(B->bestScores[i]); free_helper(B->bestScores[i], 12370633197367793869UL); }) ;
 # 1494 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestScores[i] = __null;
 # 1495 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9559,7 +9559,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1496 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1497 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestScores, 12370633197367793869UL);
+       ({ free(B->bestScores); free_helper(B->bestScores, 12370633197367793869UL); }) ;
 # 1498 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestScores = __null;
 # 1499 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9571,7 +9571,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1502 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsI[i]) {
 # 1503 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestStartsI[i], 12370633197367793869UL);
+    ({ free(B->bestStartsI[i]); free_helper(B->bestStartsI[i], 12370633197367793869UL); }) ;
 # 1504 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsI[i] = __null;
 # 1505 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9579,7 +9579,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1506 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1507 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestStartsI, 12370633197367793869UL);
+       ({ free(B->bestStartsI); free_helper(B->bestStartsI, 12370633197367793869UL); }) ;
 # 1508 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsI = __null;
 # 1509 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9591,7 +9591,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1512 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsJ[i]) {
 # 1513 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestStartsJ[i], 12370633197367793869UL);
+    ({ free(B->bestStartsJ[i]); free_helper(B->bestStartsJ[i], 12370633197367793869UL); }) ;
 # 1514 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsJ[i] = __null;
 # 1515 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9599,7 +9599,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1516 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1517 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestStartsJ, 12370633197367793869UL);
+       ({ free(B->bestStartsJ); free_helper(B->bestStartsJ, 12370633197367793869UL); }) ;
 # 1518 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsJ = __null;
 # 1519 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9611,7 +9611,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1522 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsI[i]) {
 # 1523 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestEndsI[i], 12370633197367793869UL);
+    ({ free(B->bestEndsI[i]); free_helper(B->bestEndsI[i], 12370633197367793869UL); }) ;
 # 1524 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsI[i] = __null;
 # 1525 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9619,7 +9619,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1526 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1527 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestEndsI, 12370633197367793869UL);
+       ({ free(B->bestEndsI); free_helper(B->bestEndsI, 12370633197367793869UL); }) ;
 # 1528 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsI = __null;
 # 1529 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9631,7 +9631,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsJ[i]) {
 # 1533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestEndsJ[i], 12370633197367793869UL);
+    ({ free(B->bestEndsJ[i]); free_helper(B->bestEndsJ[i], 12370633197367793869UL); }) ;
 # 1534 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsJ[i] = __null;
 # 1535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9639,7 +9639,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1536 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1537 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestEndsJ, 12370633197367793869UL);
+       ({ free(B->bestEndsJ); free_helper(B->bestEndsJ, 12370633197367793869UL); }) ;
 # 1538 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsJ = __null;
 # 1539 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9655,7 +9655,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1544 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsI[i][j]) {
 # 1545 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       free_wrapper(B->bestSeqsI[i][j], 12370633197367793869UL);
+        ({ free(B->bestSeqsI[i][j]); free_helper(B->bestSeqsI[i][j], 12370633197367793869UL); }) ;
 # 1546 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsI[i][j] = __null;
 # 1547 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9663,7 +9663,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1548 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1549 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestSeqsI[i], 12370633197367793869UL);
+    ({ free(B->bestSeqsI[i]); free_helper(B->bestSeqsI[i], 12370633197367793869UL); }) ;
 # 1550 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsI[i] = __null;
 # 1551 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9671,7 +9671,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1552 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1553 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestSeqsI, 12370633197367793869UL);
+       ({ free(B->bestSeqsI); free_helper(B->bestSeqsI, 12370633197367793869UL); }) ;
 # 1554 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsI = __null;
 # 1555 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9687,7 +9687,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1560 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsJ[i][j]) {
 # 1561 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       free_wrapper(B->bestSeqsJ[i][j], 12370633197367793869UL);
+        ({ free(B->bestSeqsJ[i][j]); free_helper(B->bestSeqsJ[i][j], 12370633197367793869UL); }) ;
 # 1562 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsJ[i][j] = __null;
 # 1563 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9695,7 +9695,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1564 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   free_wrapper(B->bestSeqsJ[i], 12370633197367793869UL);
+    ({ free(B->bestSeqsJ[i]); free_helper(B->bestSeqsJ[i], 12370633197367793869UL); }) ;
 # 1566 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsJ[i] = __null;
 # 1567 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9703,7 +9703,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1568 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1569 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->bestSeqsJ, 12370633197367793869UL);
+       ({ free(B->bestSeqsJ); free_helper(B->bestSeqsJ, 12370633197367793869UL); }) ;
 # 1570 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsJ = __null;
 # 1571 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9711,13 +9711,13 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1572 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if (B->numReports) {
 # 1573 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      free_wrapper(B->numReports, 12370633197367793869UL);
+       ({ free(B->numReports); free_helper(B->numReports, 12370633197367793869UL); }) ;
 # 1574 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->numReports = __null;
 # 1575 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1576 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    free_wrapper(B, 12370633197367794061UL);
+     ({ free(B); free_helper(B, 12370633197367794061UL); }) ;
 # 1577 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 1578 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"

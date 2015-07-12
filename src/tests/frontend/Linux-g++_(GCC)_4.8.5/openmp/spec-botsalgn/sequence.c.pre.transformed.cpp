@@ -83,13 +83,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2956,7 +2956,7 @@ void fill_chartab_resumable(char *chartab)
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int i;
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
- if (____must_checkpoint_fill_chartab_c_0 || ____must_checkpoint_fill_chartab_i_0) { register_stack_vars(2, "fill_chartab|c|0", &____must_checkpoint_fill_chartab_c_0, "i8", (void *)(&c), (size_t)1, 0, 0, 0, "fill_chartab|i|0", &____must_checkpoint_fill_chartab_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_fill_chartab_c_0 || ____must_checkpoint_fill_chartab_i_0) { register_stack_vars(2, "fill_chartab|c|0", &____must_checkpoint_fill_chartab_c_0, "i8", (void *)(&c), (size_t)1, 0, 0, 0, "fill_chartab|i|0", &____must_checkpoint_fill_chartab_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
     ;
 # 69 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -2968,7 +2968,7 @@ int i;
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
          c = (amino_acid_codes[i]) ;
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-       call_lbl_1: chartab[(int)c] = chartab[ ({ calling((void*)tolower, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (tolower)(c); }) ] = c;
+       call_lbl_0: chartab[(int)c] = chartab[ ({ calling((void*)tolower, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (tolower)(c); }) ] = c;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3026,16 +3026,16 @@ void alloc_aln_resumable(int nseqs)
    int i; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   names = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
+   names = (char **) ({ void *____chimes_tmp_ptr = malloc((nseqs + 1) * sizeof(char *)); ; malloc_helper(____chimes_tmp_ptr, (nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seq_array = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
+   seq_array = (char **) ({ void *____chimes_tmp_ptr = malloc((nseqs + 1) * sizeof(char *)); ; malloc_helper(____chimes_tmp_ptr, (nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seqlen_array = (int *) malloc_wrapper((nseqs + 1) * sizeof(int), 13606384021850635571UL, 0, 0);
+   seqlen_array = (int *) ({ void *____chimes_tmp_ptr = malloc((nseqs + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (nseqs + 1) * sizeof(int), 13606384021850635571UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    for (i = 0; i < nseqs + 1; i++) {
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      names[i] = (char * ) malloc_wrapper((30 + 1) * sizeof(char), 13606384021850635563UL, 0, 0);
+      names[i] = (char * ) ({ void *____chimes_tmp_ptr = malloc((30 + 1) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, (30 + 1) * sizeof(char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seq_array[i] = __null;
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3072,14 +3072,14 @@ char * get_seq_resumable(char *sname, int *len, char *chartab, FILE *fin)
    for (j = i; j <= strlen(line); j++) { if (line[j] == ' ') {break; }; };
 # 133 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 134 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   ({ calling_npm("strlcpy", 0); strlcpy_npm(sname, line + i, j - i + 1); });;
+    call_lbl_0: ({ calling_npm("strlcpy", 0); strlcpy_npm(sname, line + i, j - i + 1); });;
 # 135 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    sname[j - i] = '\0';
 # 136 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    while (fgets(line, 512 +1, fin) != __null) {
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      if (seq == __null) {seq = (char *) malloc_wrapper((512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } else {seq = (char *) realloc_wrapper(seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } ;
+      if (seq == __null) {seq = (char *) ({ void *____chimes_tmp_ptr = malloc((512 + 2) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, (512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ; } else {seq = (char *) ({ void *____chimes_tmp_ptr = realloc(seq, ((*len) + 512 + 2) * sizeof(char)); ; realloc_helper(____chimes_tmp_ptr, seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ; } ;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       for (i = 0; i <= 512; i++) {
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3115,7 +3115,7 @@ int no_seqs;
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int l1;
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
- if (____must_checkpoint_readseqs_chartab_0 || ____must_checkpoint_readseqs_fin_0 || ____must_checkpoint_readseqs_no_seqs_0 || ____must_checkpoint_readseqs_l1_0) { register_stack_vars(4, "readseqs|chartab|0", &____must_checkpoint_readseqs_chartab_0, "[128 x i8]", (void *)(chartab), (size_t)128, 0, 0, 0, "readseqs|fin|0", &____must_checkpoint_readseqs_fin_0, "%struct._IO_FILE*", (void *)(&fin), (size_t)8, 1, 0, 0, "readseqs|no_seqs|0", &____must_checkpoint_readseqs_no_seqs_0, "i32", (void *)(&no_seqs), (size_t)4, 0, 0, 0, "readseqs|l1|0", &____must_checkpoint_readseqs_l1_0, "i32", (void *)(&l1), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_readseqs_chartab_0 || ____must_checkpoint_readseqs_fin_0 || ____must_checkpoint_readseqs_no_seqs_0 || ____must_checkpoint_readseqs_l1_0) { register_stack_vars(4, "readseqs|chartab|0", &____must_checkpoint_readseqs_chartab_0, "[128 x i8]", (void *)(chartab), (size_t)128, 0, 0, 0, "readseqs|fin|0", &____must_checkpoint_readseqs_fin_0, "%struct._IO_FILE*", (void *)(&fin), (size_t)8, 1, 0, 0, "readseqs|no_seqs|0", &____must_checkpoint_readseqs_no_seqs_0, "i32", (void *)(&no_seqs), (size_t)4, 0, 0, 0, "readseqs|l1|0", &____must_checkpoint_readseqs_l1_0, "i32", (void *)(&l1), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    int i; ;
 # 157 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3142,28 +3142,28 @@ int l1;
    };
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-    call_lbl_7: ({ calling((void*)fill_chartab, 7, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635504UL)); (fill_chartab)(chartab); }) ;
+    call_lbl_0: ({ calling((void*)fill_chartab, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635504UL)); (fill_chartab)(chartab); }) ;
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Sequence format is Pearson\n"); } };
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   ({ calling_npm("alloc_aln", 0); alloc_aln_npm(no_seqs); });
+    call_lbl_1: ({ calling_npm("alloc_aln", 0); alloc_aln_npm(no_seqs); });
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 175 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    for (i = 1; i <= no_seqs; i++) {
 # 176 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      seq1 = ({ calling_npm("get_seq", 0); get_seq_npm(names[i], &l1, chartab, fin); });
+       call_lbl_2: seq1 = ({ calling_npm("get_seq", 0); get_seq_npm(names[i], &l1, chartab, fin); });
 # 177 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 178 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seqlen_array[i] = l1;
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      seq_array[i] = (char *) malloc_wrapper((l1 + 2) * sizeof (char), 13606384021850635563UL, 0, 0);
+      seq_array[i] = (char *) ({ void *____chimes_tmp_ptr = malloc((l1 + 2) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, (l1 + 2) * sizeof (char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      ({ calling_npm("encode", 0); encode_npm(seq1, seq_array[i], l1); });
+       call_lbl_3: ({ calling_npm("encode", 0); encode_npm(seq1, seq_array[i], l1); });
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      free_wrapper(seq1, 13606384021850635566UL);
+       ({ free(seq1); free_helper(seq1, 13606384021850635566UL); }) ;
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3231,7 +3231,7 @@ int i;
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
          c = (amino_acid_codes[i]) ;
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-       call_lbl_1: chartab[(int)c] = chartab[ ({ calling((void*)tolower, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (tolower)(c); }) ] = c;
+       call_lbl_0: chartab[(int)c] = chartab[ ({ calling((void*)tolower, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (tolower)(c); }) ] = c;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3280,16 +3280,16 @@ void alloc_aln_quick(int nseqs)
    int i; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   names = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
+   names = (char **) ({ void *____chimes_tmp_ptr = malloc((nseqs + 1) * sizeof(char *)); ; malloc_helper(____chimes_tmp_ptr, (nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seq_array = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
+   seq_array = (char **) ({ void *____chimes_tmp_ptr = malloc((nseqs + 1) * sizeof(char *)); ; malloc_helper(____chimes_tmp_ptr, (nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seqlen_array = (int *) malloc_wrapper((nseqs + 1) * sizeof(int), 13606384021850635571UL, 0, 0);
+   seqlen_array = (int *) ({ void *____chimes_tmp_ptr = malloc((nseqs + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (nseqs + 1) * sizeof(int), 13606384021850635571UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    for (i = 0; i < nseqs + 1; i++) {
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      names[i] = (char * ) malloc_wrapper((30 + 1) * sizeof(char), 13606384021850635563UL, 0, 0);
+      names[i] = (char * ) ({ void *____chimes_tmp_ptr = malloc((30 + 1) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, (30 + 1) * sizeof(char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seq_array[i] = __null;
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3322,14 +3322,14 @@ char * get_seq_quick(char *sname, int *len, char *chartab, FILE *fin)
    for (j = i; j <= strlen(line); j++) { if (line[j] == ' ') {break; }; };
 # 133 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 134 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   ({ calling_npm("strlcpy", 0); strlcpy_npm(sname, line + i, j - i + 1); });;
+    call_lbl_0: ({ calling_npm("strlcpy", 0); strlcpy_npm(sname, line + i, j - i + 1); });;
 # 135 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    sname[j - i] = '\0';
 # 136 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    while (fgets(line, 512 +1, fin) != __null) {
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      if (seq == __null) {seq = (char *) malloc_wrapper((512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } else {seq = (char *) realloc_wrapper(seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } ;
+      if (seq == __null) {seq = (char *) ({ void *____chimes_tmp_ptr = malloc((512 + 2) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, (512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ; } else {seq = (char *) ({ void *____chimes_tmp_ptr = realloc(seq, ((*len) + 512 + 2) * sizeof(char)); ; realloc_helper(____chimes_tmp_ptr, seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ; } ;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       for (i = 0; i <= 512; i++) {
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3391,28 +3391,28 @@ int l1;
    };
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-    call_lbl_7: ({ calling((void*)fill_chartab, 7, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635504UL)); fill_chartab_quick(chartab); }) ;
+    call_lbl_0: ({ calling((void*)fill_chartab, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635504UL)); fill_chartab_quick(chartab); }) ;
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Sequence format is Pearson\n"); } };
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   ({ calling_npm("alloc_aln", 0); alloc_aln_npm(no_seqs); });
+    call_lbl_1: ({ calling_npm("alloc_aln", 0); alloc_aln_npm(no_seqs); });
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 175 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    for (i = 1; i <= no_seqs; i++) {
 # 176 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      seq1 = ({ calling_npm("get_seq", 0); get_seq_npm(names[i], &l1, chartab, fin); });
+       call_lbl_2: seq1 = ({ calling_npm("get_seq", 0); get_seq_npm(names[i], &l1, chartab, fin); });
 # 177 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 178 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seqlen_array[i] = l1;
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      seq_array[i] = (char *) malloc_wrapper((l1 + 2) * sizeof (char), 13606384021850635563UL, 0, 0);
+      seq_array[i] = (char *) ({ void *____chimes_tmp_ptr = malloc((l1 + 2) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, (l1 + 2) * sizeof (char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      ({ calling_npm("encode", 0); encode_npm(seq1, seq_array[i], l1); });
+       call_lbl_3: ({ calling_npm("encode", 0); encode_npm(seq1, seq_array[i], l1); });
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      free_wrapper(seq1, 13606384021850635566UL);
+       ({ free(seq1); free_helper(seq1, 13606384021850635566UL); }) ;
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3521,16 +3521,16 @@ void alloc_aln_npm(int nseqs)
    int i;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   names = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
+   names = (char **) ({ void *____chimes_tmp_ptr = malloc((nseqs + 1) * sizeof(char *)); malloc_helper(____chimes_tmp_ptr, (nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seq_array = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
+   seq_array = (char **) ({ void *____chimes_tmp_ptr = malloc((nseqs + 1) * sizeof(char *)); malloc_helper(____chimes_tmp_ptr, (nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seqlen_array = (int *) malloc_wrapper((nseqs + 1) * sizeof(int), 13606384021850635571UL, 0, 0);
+   seqlen_array = (int *) ({ void *____chimes_tmp_ptr = malloc((nseqs + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (nseqs + 1) * sizeof(int), 13606384021850635571UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    for (i = 0; i < nseqs + 1; i++) {
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      names[i] = (char * ) malloc_wrapper((30 + 1) * sizeof(char), 13606384021850635563UL, 0, 0);
+      names[i] = (char * ) ({ void *____chimes_tmp_ptr = malloc((30 + 1) * sizeof(char)); malloc_helper(____chimes_tmp_ptr, (30 + 1) * sizeof(char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seq_array[i] = __null;
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3568,7 +3568,7 @@ char * get_seq_npm(char *sname, int *len, char *chartab, FILE *fin)
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    while (fgets(line, 512 +1, fin) != __null) {
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      if (seq == __null) {seq = (char *) malloc_wrapper((512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } else {seq = (char *) realloc_wrapper(seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } ;
+      if (seq == __null) {seq = (char *) ({ void *____chimes_tmp_ptr = malloc((512 + 2) * sizeof(char)); malloc_helper(____chimes_tmp_ptr, (512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ; } else {seq = (char *) ({ void *____chimes_tmp_ptr = realloc(seq, ((*len) + 512 + 2) * sizeof(char)); realloc_helper(____chimes_tmp_ptr, seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ; } ;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       for (i = 0; i <= 512; i++) {
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3635,13 +3635,13 @@ int readseqs_npm(int first_seq, char *filename)
 # 178 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seqlen_array[i] = l1;
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      seq_array[i] = (char *) malloc_wrapper((l1 + 2) * sizeof (char), 13606384021850635563UL, 0, 0);
+      seq_array[i] = (char *) ({ void *____chimes_tmp_ptr = malloc((l1 + 2) * sizeof(char)); malloc_helper(____chimes_tmp_ptr, (l1 + 2) * sizeof (char), 13606384021850635563UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       encode_npm(seq1, seq_array[i], l1);
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      free_wrapper(seq1, 13606384021850635566UL);
+       ({ free(seq1); free_helper(seq1, 13606384021850635566UL); }) ;
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3713,7 +3713,7 @@ static int module_init() {
                         "fill_chartab|i|0", 1, "tolower",
                         "fill_chartab|c|0", 1, "tolower",
                         "readseqs|l1|0", 1, "readseqs",
-                        "readseqs|no_seqs|0", 1, "readseqs",
+                        "readseqs|no_seqs|0", 1, "fill_chartab",
                         "readseqs|fin|0", 1, "fill_chartab",
                         "readseqs|chartab|0", 1, "readseqs",
         "strlcpy", 0UL, (int)3, 13606384021850635487UL, 13606384021850635619UL, 0UL,

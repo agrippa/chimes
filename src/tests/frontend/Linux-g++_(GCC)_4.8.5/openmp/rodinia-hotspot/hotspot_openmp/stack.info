@@ -1,4 +1,4 @@
-/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 seconds
+/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
 /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp seconds|tzp|0 " %struct.timezone = type { i32, i32 } " 64 0 1 timezone 0 0
 /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp seconds|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp seconds|____chimes_ret_var_0|0 " double " 64 0 0 0
@@ -37,7 +37,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp read_input|file|0 " i8* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp read_input|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp read_input|fp|0 " %struct._IO_FILE* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp read_input|str|0 " [256 x i8] " 2048 0 0 1 read_input
+/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp read_input|str|0 " [256 x i8] " 2048 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp read_input|val|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp usage|argc|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp usage|argv|0 " i8** " 64 1 0 0

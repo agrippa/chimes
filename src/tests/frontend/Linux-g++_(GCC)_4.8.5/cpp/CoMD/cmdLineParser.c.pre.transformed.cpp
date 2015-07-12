@@ -18,8 +18,6 @@ static int ____chimes_does_checkpoint_processArgs_npm = 1;
 static int ____chimes_does_checkpoint_findOption_npm = 1;
 static int ____chimes_does_checkpoint_printArgs_npm = 1;
 
-static int ____must_checkpoint_printArgs_s_0 = 2;
-static int ____must_checkpoint_processArgs_option_index_0 = 2;
 
 static int ____must_manage_myOptionAlloc = 2;
 static int ____must_manage_myOptionFree = 2;
@@ -84,13 +82,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2845,7 +2843,7 @@ static char* dupString_resumable(const char* s)
 # 39 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    if (! s) {s = ""; };
 # 40 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   d = (char*)calloc_wrapper((strlen(s)+1),sizeof(char), 808920877031013652UL, 0, 0);
+   d = (char*) ({ void *____chimes_tmp_ptr = calloc((strlen(s) + 1), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 808920877031013652UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 41 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    strcpy(d, s);
 # 42 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -2866,11 +2864,11 @@ static MyOption* myOptionAlloc_resumable(
 # 49 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
     static int iBase; iBase = (129) ;
 # 50 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-    MyOption *o; o = ((MyOption *)calloc_wrapper(1, sizeof(MyOption), 808920877031013112UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next))) ;
+    MyOption *o; o = ((MyOption*) ({ void *____chimes_tmp_ptr = calloc(1, sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 808920877031013112UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); ____chimes_tmp_ptr; })) ;
 # 51 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   o->help = ({ calling_npm("dupString", 0); dupString_npm(help); });
+    call_lbl_0: o->help = ({ calling_npm("dupString", 0); dupString_npm(help); });
 # 52 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   o->longArg = ({ calling_npm("dupString", 0); dupString_npm(longOption); });
+    call_lbl_1: o->longArg = ({ calling_npm("dupString", 0); dupString_npm(longOption); });
 # 53 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    if (shortOption) {o->shortArg[0] = (unsigned char)shortOption; } else {{
 # 56 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -2907,11 +2905,11 @@ static MyOption* myOptionFree_resumable(MyOption* o)
 # 71 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    r = ((MyOption*) o->next);
 # 72 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   if (o->longArg) {free_wrapper(o->longArg, 808920877031013255UL); };
+   if (o->longArg) { ({ free(o->longArg); free_helper(o->longArg, 808920877031013255UL); }) ; };
 # 73 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   if (o->help) {free_wrapper(o->help, 808920877031013255UL); };
+   if (o->help) { ({ free(o->help); free_helper(o->help, 808920877031013255UL); }) ; };
 # 74 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   free_wrapper(o, 808920877031013289UL);
+    ({ free(o); free_helper(o, 808920877031013289UL); }) ;
 # 75 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
     MyOption *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (r); rm_stack(true, 808920877031013255UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
 # 76 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -2969,13 +2967,13 @@ int addArg_resumable(const char* longOption, const char shortOption,
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    MyOption *p; ;
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   o = ({ calling_npm("myOptionAlloc", 0); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); });
+    call_lbl_0: o = ({ calling_npm("myOptionAlloc", 0); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); });
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    if (! o) { int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (1); rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5, false); return ____chimes_ret_var_8; ; };
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    if (! myargs) {myargs = o; } else {{
 # 107 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-      p = ({ calling_npm("lastOption", 0); lastOption_npm(myargs); });
+       call_lbl_1: p = ({ calling_npm("lastOption", 0); lastOption_npm(myargs); });
 # 108 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
       p->next = (void *)o;
 # 109 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -2997,7 +2995,7 @@ void freeArgs_resumable()
 # 117 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    {
 # 118 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-      myargs = ({ calling_npm("myOptionFree", 0); myOptionFree_npm(myargs); });
+       call_lbl_0: myargs = ({ calling_npm("myOptionFree", 0); myOptionFree_npm(myargs); });
 # 119 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    }
 # 120 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3012,7 +3010,7 @@ void printArgs_resumable()
 # 124 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&printArgs), "printArgs", &____must_manage_printArgs, 0, 0) ; char s[4096];
 # 124 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
- if (____must_checkpoint_printArgs_s_0) { register_stack_vars(1, "printArgs|s|0", &____must_checkpoint_printArgs_s_0, "[4096 x i8]", (void *)(s), (size_t)4096, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+ if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 125 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
     MyOption *o; o = (myargs) ;
 # 126 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3052,9 +3050,7 @@ void processArgs_npm(int argc, char** argv);
 void processArgs_quick(int argc, char** argv); void processArgs(int argc, char** argv);
 void processArgs_resumable(int argc, char** argv)
 # 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(808920877031013578UL)) ; int option_index;
-# 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
- if (____must_checkpoint_processArgs_option_index_0) { register_stack_vars(1, "processArgs|option_index|0", &____must_checkpoint_processArgs_option_index_0, "i32", (void *)(&option_index), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(808920877031013578UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 146 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    MyOption *o; ;
 # 147 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3080,9 +3076,9 @@ void processArgs_resumable(int argc, char** argv)
 # 158 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    o = myargs;
 # 159 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   sArgs= (char*)calloc_wrapper(2*(n+2),sizeof(char), 808920877031013450UL, 0, 0);
+   sArgs= (char*) ({ void *____chimes_tmp_ptr = calloc(2 * (n + 2), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 808920877031013450UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   opts = (struct option*)calloc_wrapper(n,sizeof(struct option), 808920877031013420UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag));
+   opts = (struct option*) ({ void *____chimes_tmp_ptr = calloc(n, sizeof(struct option)); ; calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 808920877031013420UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); ____chimes_tmp_ptr; }) ;
 # 161 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    for (i=0; i<n; i++)
 # 162 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3111,14 +3107,14 @@ void processArgs_resumable(int argc, char** argv)
    {
 # 175 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 # 176 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-         option_index = (0) ;
+       int option_index; option_index = (0) ;
 # 177 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 # 178 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
       c = getopt_long (argc, argv, sArgs, opts, &option_index);
 # 179 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
       if (c == -1) {break; };
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-      o = ({ calling_npm("findOption", 0); findOption_npm(myargs, c); });
+       call_lbl_0: o = ({ calling_npm("findOption", 0); findOption_npm(myargs, c); });
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
       if ( ! o )
 # 182 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3140,7 +3136,7 @@ void processArgs_resumable(int argc, char** argv)
 # 190 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
       {
 # 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-          int *i; i = ((int *)o->ptr) ;
+          int *i; i = ((int*)o->ptr) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
          *i = 1;
 # 193 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3205,9 +3201,9 @@ void processArgs_resumable(int argc, char** argv)
    }
 # 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 # 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   free_wrapper(opts, 808920877031013420UL);
+    ({ free(opts); free_helper(opts, 808920877031013420UL); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   free_wrapper(sArgs, 808920877031013450UL);
+    ({ free(sArgs); free_helper(sArgs, 808920877031013450UL); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8, false); return;
@@ -3222,7 +3218,7 @@ static char* dupString_quick(const char* s)
 # 39 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    if (! s) {s = ""; };
 # 40 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   d = (char*)calloc_wrapper((strlen(s)+1),sizeof(char), 808920877031013652UL, 0, 0);
+   d = (char*) ({ void *____chimes_tmp_ptr = calloc((strlen(s) + 1), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 808920877031013652UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 41 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    strcpy(d, s);
 # 42 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3242,11 +3238,11 @@ static MyOption* myOptionAlloc_quick(
 # 49 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
     static int iBase; iBase = (129) ;
 # 50 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-    MyOption *o; o = ((MyOption *)calloc_wrapper(1, sizeof(MyOption), 808920877031013112UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next))) ;
+    MyOption *o; o = ((MyOption*) ({ void *____chimes_tmp_ptr = calloc(1, sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 808920877031013112UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); ____chimes_tmp_ptr; })) ;
 # 51 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   o->help = ({ calling_npm("dupString", 0); dupString_npm(help); });
+    call_lbl_0: o->help = ({ calling_npm("dupString", 0); dupString_npm(help); });
 # 52 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   o->longArg = ({ calling_npm("dupString", 0); dupString_npm(longOption); });
+    call_lbl_1: o->longArg = ({ calling_npm("dupString", 0); dupString_npm(longOption); });
 # 53 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    if (shortOption) {o->shortArg[0] = (unsigned char)shortOption; } else {{
 # 56 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3286,11 +3282,11 @@ static MyOption* myOptionFree_quick(MyOption* o)
 # 71 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    r = ((MyOption*) o->next);
 # 72 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   if (o->longArg) {free_wrapper(o->longArg, 808920877031013255UL); };
+   if (o->longArg) { ({ free(o->longArg); free_helper(o->longArg, 808920877031013255UL); }) ; };
 # 73 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   if (o->help) {free_wrapper(o->help, 808920877031013255UL); };
+   if (o->help) { ({ free(o->help); free_helper(o->help, 808920877031013255UL); }) ; };
 # 74 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   free_wrapper(o, 808920877031013289UL);
+    ({ free(o); free_helper(o, 808920877031013289UL); }) ;
 # 75 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
     MyOption *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (r); rm_stack(true, 808920877031013255UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
 # 76 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3344,13 +3340,13 @@ int addArg_quick(const char* longOption, const char shortOption,
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    MyOption *p; ;
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   o = ({ calling_npm("myOptionAlloc", 0); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); });
+    call_lbl_0: o = ({ calling_npm("myOptionAlloc", 0); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); });
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    if (! o) { int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (1); rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5, false); return ____chimes_ret_var_8; ; };
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    if (! myargs) {myargs = o; } else {{
 # 107 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-      p = ({ calling_npm("lastOption", 0); lastOption_npm(myargs); });
+       call_lbl_1: p = ({ calling_npm("lastOption", 0); lastOption_npm(myargs); });
 # 108 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
       p->next = (void *)o;
 # 109 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3374,7 +3370,7 @@ void freeArgs_quick()
 # 117 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    {
 # 118 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-      myargs = ({ calling_npm("myOptionFree", 0); myOptionFree_npm(myargs); });
+       call_lbl_0: myargs = ({ calling_npm("myOptionFree", 0); myOptionFree_npm(myargs); });
 # 119 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    }
 # 120 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3388,7 +3384,7 @@ void printArgs_quick()
 # 124 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&printArgs), "printArgs", &____must_manage_printArgs, 0, 0) ; char s[4096];
 # 124 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
- if (____must_checkpoint_printArgs_s_0) { register_stack_vars(1, "printArgs|s|0", &____must_checkpoint_printArgs_s_0, "[4096 x i8]", (void *)(s), (size_t)4096, 0, 0, 0); } ; ;
+ ; ;
 # 125 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
     MyOption *o; o = (myargs) ;
 # 126 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3427,9 +3423,7 @@ void printArgs() { (____chimes_replaying ? printArgs_resumable() : printArgs_qui
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 void processArgs_quick(int argc, char** argv)
 # 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(808920877031013578UL)) ; int option_index;
-# 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
- if (____must_checkpoint_processArgs_option_index_0) { register_stack_vars(1, "processArgs|option_index|0", &____must_checkpoint_processArgs_option_index_0, "i32", (void *)(&option_index), (size_t)4, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(808920877031013578UL)) ; ; ;
 # 146 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    MyOption *o; ;
 # 147 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3455,9 +3449,9 @@ void processArgs_quick(int argc, char** argv)
 # 158 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    o = myargs;
 # 159 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   sArgs= (char*)calloc_wrapper(2*(n+2),sizeof(char), 808920877031013450UL, 0, 0);
+   sArgs= (char*) ({ void *____chimes_tmp_ptr = calloc(2 * (n + 2), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 808920877031013450UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   opts = (struct option*)calloc_wrapper(n,sizeof(struct option), 808920877031013420UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag));
+   opts = (struct option*) ({ void *____chimes_tmp_ptr = calloc(n, sizeof(struct option)); ; calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 808920877031013420UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); ____chimes_tmp_ptr; }) ;
 # 161 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    for (i=0; i<n; i++)
 # 162 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3486,14 +3480,14 @@ void processArgs_quick(int argc, char** argv)
    {
 # 175 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 # 176 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-         option_index = (0) ;
+       int option_index; option_index = (0) ;
 # 177 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 # 178 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
       c = getopt_long (argc, argv, sArgs, opts, &option_index);
 # 179 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
       if (c == -1) {break; };
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-      o = ({ calling_npm("findOption", 0); findOption_npm(myargs, c); });
+       call_lbl_0: o = ({ calling_npm("findOption", 0); findOption_npm(myargs, c); });
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
       if ( ! o )
 # 182 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3515,7 +3509,7 @@ void processArgs_quick(int argc, char** argv)
 # 190 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
       {
 # 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-          int *i; i = ((int *)o->ptr) ;
+          int *i; i = ((int*)o->ptr) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
          *i = 1;
 # 193 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3580,9 +3574,9 @@ void processArgs_quick(int argc, char** argv)
    }
 # 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 # 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   free_wrapper(opts, 808920877031013420UL);
+    ({ free(opts); free_helper(opts, 808920877031013420UL); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   free_wrapper(sArgs, 808920877031013450UL);
+    ({ free(sArgs); free_helper(sArgs, 808920877031013450UL); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8, false); return;
@@ -3599,7 +3593,7 @@ static char* dupString_npm(const char* s)
 # 39 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    if (! s) {s = ""; };
 # 40 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   d = (char*)calloc_wrapper((strlen(s)+1),sizeof(char), 808920877031013652UL, 0, 0);
+   d = (char*) ({ void *____chimes_tmp_ptr = calloc((strlen(s) + 1), sizeof(char)); calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 808920877031013652UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 41 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    strcpy(d, s);
 # 42 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3617,7 +3611,7 @@ static MyOption* myOptionAlloc_npm(
 # 49 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    static int iBase=129;
 # 50 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   MyOption* o = (MyOption*)calloc_wrapper(1, sizeof(MyOption), 808920877031013112UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next));
+   MyOption* o = (MyOption*) ({ void *____chimes_tmp_ptr = calloc(1, sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 808920877031013112UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); ____chimes_tmp_ptr; }) ;
 # 51 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    o->help = dupString_npm(help);
 # 52 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3655,11 +3649,11 @@ static MyOption* myOptionFree_npm(MyOption* o)
 # 71 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    r = ((MyOption*) o->next);
 # 72 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   if (o->longArg) {free_wrapper(o->longArg, 808920877031013255UL); };
+   if (o->longArg) { ({ free(o->longArg); free_helper(o->longArg, 808920877031013255UL); }) ; };
 # 73 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   if (o->help) {free_wrapper(o->help, 808920877031013255UL); };
+   if (o->help) { ({ free(o->help); free_helper(o->help, 808920877031013255UL); }) ; };
 # 74 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   free_wrapper(o, 808920877031013289UL);
+    ({ free(o); free_helper(o, 808920877031013289UL); }) ;
 # 75 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
     MyOption * ____chimes_ret_var_3; ____chimes_ret_var_3 = (r); return ____chimes_ret_var_3; ;
 # 76 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3804,9 +3798,9 @@ void processArgs_npm(int argc, char** argv)
 # 158 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    o = myargs;
 # 159 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   sArgs= (char*)calloc_wrapper(2*(n+2),sizeof(char), 808920877031013450UL, 0, 0);
+   sArgs= (char*) ({ void *____chimes_tmp_ptr = calloc(2 * (n + 2), sizeof(char)); calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 808920877031013450UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   opts = (struct option*)calloc_wrapper(n,sizeof(struct option), 808920877031013420UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag));
+   opts = (struct option*) ({ void *____chimes_tmp_ptr = calloc(n, sizeof(struct option)); calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 808920877031013420UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); ____chimes_tmp_ptr; }) ;
 # 161 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    for (i=0; i<n; i++)
 # 162 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
@@ -3929,9 +3923,9 @@ void processArgs_npm(int argc, char** argv)
    }
 # 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 # 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   free_wrapper(opts, 808920877031013420UL);
+    ({ free(opts); free_helper(opts, 808920877031013420UL); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
-   free_wrapper(sArgs, 808920877031013450UL);
+    ({ free(sArgs); free_helper(sArgs, 808920877031013450UL); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
    return;
@@ -3943,7 +3937,7 @@ void processArgs_npm(int argc, char** argv)
 
 
 static int module_init() {
-    init_module(808920877031013011UL, 43, 9, 2, 9, 9, 0, 9, 6, 0, 2,
+    init_module(808920877031013011UL, 43, 9, 0, 9, 9, 0, 9, 6, 0, 2,
                            &____alias_loc_id_0, (unsigned)14, (unsigned)0, (unsigned)0, (808920877031013011UL + 1UL), (808920877031013011UL + 2UL), (808920877031013011UL + 3UL), (808920877031013011UL + 4UL), (808920877031013011UL + 5UL), (808920877031013011UL + 6UL), (808920877031013011UL + 7UL), (808920877031013011UL + 8UL), (808920877031013011UL + 9UL), (808920877031013011UL + 10UL), (808920877031013011UL + 11UL), (808920877031013011UL + 12UL), (808920877031013011UL + 53UL), (808920877031013011UL + 655UL),
                            &____alias_loc_id_1, (unsigned)11, (unsigned)0, (unsigned)0, (808920877031013011UL + 77UL), (808920877031013011UL + 78UL), (808920877031013011UL + 79UL), (808920877031013011UL + 80UL), (808920877031013011UL + 81UL), (808920877031013011UL + 82UL), (808920877031013011UL + 83UL), (808920877031013011UL + 84UL), (808920877031013011UL + 85UL), (808920877031013011UL + 101UL), (808920877031013011UL + 659UL),
                            &____alias_loc_id_2, (unsigned)4, (unsigned)0, (unsigned)0, (808920877031013011UL + 180UL), (808920877031013011UL + 181UL), (808920877031013011UL + 182UL), (808920877031013011UL + 183UL),
@@ -4025,8 +4019,6 @@ static int module_init() {
                              "processArgs", "_Z11processArgsiPPc", 1, "findOption",
                              "findOption", "_ZL10findOptionP10MyOptionSth", 0,
                              "printArgs", "_Z9printArgsv", 0,
-                        "printArgs|s|0", 1, "printArgs",
-                        "processArgs|option_index|0", 1, "processArgs",
         "dupString", 808920877031013116UL, (int)1, 808920877031013190UL,
         "dupString", 808920877031013116UL, (int)1, 808920877031013172UL,
         "myOptionAlloc", 808920877031013671UL, (int)7, 808920877031013079UL, 0UL, 0UL, 0UL, 808920877031013083UL, 0UL, 808920877031013085UL,

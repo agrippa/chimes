@@ -96,13 +96,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -3993,7 +3993,7 @@ void genmat_resumable (float *M[])
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0);
+            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4098,7 +4098,7 @@ float * allocate_clean_block_resumable()
   float *p; float *q; ;
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0);
+  p = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4237,9 +4237,9 @@ void sparselu_init_resumable (float ***pBENCH, char *pass)
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349133UL), (size_t)(15559110349592349134UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0);
+   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size * bots_arg_size * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
+    call_lbl_0: ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 227 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, ____alias_loc_id_9, ____chimes_did_disable8, false); }
@@ -4250,7 +4250,7 @@ void sparselu_par_call_resumable(float **BENCH)
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(15559110349592349396UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0) ; int kk;
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- register_stack_vars(1, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(1, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
 # 231 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; ;
 # 232 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4268,7 +4268,7 @@ void sparselu_par_call_resumable(float **BENCH)
 # 240 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
 # 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
+       call_lbl_0: ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
 # 242 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(jj)
@@ -4280,7 +4280,7 @@ void sparselu_par_call_resumable(float **BENCH)
 # 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            {
 # 248 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-              ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
+               call_lbl_1: ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
 # 249 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            }
 # 250 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4298,7 +4298,7 @@ void sparselu_par_call_resumable(float **BENCH)
 # 257 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            {
 # 258 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-              ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
+               call_lbl_2: ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
 # 259 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            }
 # 260 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4328,15 +4328,15 @@ void sparselu_par_call_resumable(float **BENCH)
 # 274 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               if (BENCH[ii*bots_arg_size+jj]==__null) {
 # 275 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                   float *block; block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
+                                   float *block; call_lbl_3: block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
 # 276 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                  ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); });
+                                   call_lbl_4: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); });
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                   BENCH[ii*bots_arg_size+jj] = block;
 # 279 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               } else {
 # 280 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                  ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
+                                   call_lbl_5: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               }
 # 284 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4355,7 +4355,7 @@ void sparselu_par_call_resumable(float **BENCH)
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-       call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
+       call_lbl_6: checkpoint_transformed(6, ____alias_loc_id_0);
 # 294 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 295 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
@@ -4383,13 +4383,13 @@ void sparselu_seq_call_resumable(float **BENCH)
 # 308 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
 # 309 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
+       call_lbl_0: ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
 # 310 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
 # 312 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
 # 313 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
+             call_lbl_1: ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
 # 314 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
 # 315 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4397,7 +4397,7 @@ void sparselu_seq_call_resumable(float **BENCH)
 # 317 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
 # 318 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
+             call_lbl_2: ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
 # 319 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
 # 320 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4405,9 +4405,9 @@ void sparselu_seq_call_resumable(float **BENCH)
 # 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                {
 # 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     if (BENCH[ii*bots_arg_size+jj]==__null) {BENCH[ii*bots_arg_size+jj] = ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); }); };
+                     if (BENCH[ii*bots_arg_size+jj]==__null) { call_lbl_3: BENCH[ii*bots_arg_size+jj] = ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); }); };
 # 326 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
+                      call_lbl_4: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
 # 327 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }; }; }; }
 # 328 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4450,7 +4450,7 @@ int sparselu_check_resumable(float **SEQ, float **BENCH)
 # 373 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
 # 374 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ok = ({ calling_npm("checkmat1", 0); checkmat1_npm(BENCH[i*bots_arg_size+j]); });
+             call_lbl_0: ok = ({ calling_npm("checkmat1", 0); checkmat1_npm(BENCH[i*bots_arg_size+j]); });
 # 375 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
 # 376 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4577,7 +4577,7 @@ void genmat_quick (float *M[])
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0);
+            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4676,7 +4676,7 @@ float * allocate_clean_block_quick()
   float *p; float *q; ;
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0);
+  p = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4799,9 +4799,9 @@ void sparselu_init_quick (float ***pBENCH, char *pass)
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349133UL), (size_t)(15559110349592349134UL)) ; ; ;
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0);
+   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size * bots_arg_size * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
+    call_lbl_0: ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 227 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, ____alias_loc_id_9, ____chimes_did_disable8, false); }
@@ -4830,7 +4830,7 @@ void sparselu_par_call_quick(float **BENCH)
 # 240 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
 # 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
+       call_lbl_0: ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
 # 242 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(jj)
@@ -4842,7 +4842,7 @@ void sparselu_par_call_quick(float **BENCH)
 # 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            {
 # 248 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-              ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
+               call_lbl_1: ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
 # 249 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            }
 # 250 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4860,7 +4860,7 @@ void sparselu_par_call_quick(float **BENCH)
 # 257 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            {
 # 258 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-              ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
+               call_lbl_2: ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
 # 259 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            }
 # 260 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4890,15 +4890,15 @@ void sparselu_par_call_quick(float **BENCH)
 # 274 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               if (BENCH[ii*bots_arg_size+jj]==__null) {
 # 275 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                   float *block; block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
+                                   float *block; call_lbl_3: block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
 # 276 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                  ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); });
+                                   call_lbl_4: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); });
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                   BENCH[ii*bots_arg_size+jj] = block;
 # 279 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               } else {
 # 280 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                  ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
+                                   call_lbl_5: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               }
 # 284 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4917,7 +4917,7 @@ void sparselu_par_call_quick(float **BENCH)
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-       call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
+       call_lbl_6: checkpoint_transformed(6, ____alias_loc_id_0);
 # 294 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 295 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
@@ -4943,13 +4943,13 @@ void sparselu_seq_call_quick(float **BENCH)
 # 308 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
 # 309 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
+       call_lbl_0: ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
 # 310 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
 # 312 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
 # 313 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
+             call_lbl_1: ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
 # 314 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
 # 315 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4957,7 +4957,7 @@ void sparselu_seq_call_quick(float **BENCH)
 # 317 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
 # 318 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
+             call_lbl_2: ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
 # 319 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
 # 320 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4965,9 +4965,9 @@ void sparselu_seq_call_quick(float **BENCH)
 # 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                {
 # 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     if (BENCH[ii*bots_arg_size+jj]==__null) {BENCH[ii*bots_arg_size+jj] = ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); }); };
+                     if (BENCH[ii*bots_arg_size+jj]==__null) { call_lbl_3: BENCH[ii*bots_arg_size+jj] = ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); }); };
 # 326 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
+                      call_lbl_4: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
 # 327 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }; }; }; }
 # 328 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5006,7 +5006,7 @@ int sparselu_check_quick(float **SEQ, float **BENCH)
 # 373 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
 # 374 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ok = ({ calling_npm("checkmat1", 0); checkmat1_npm(BENCH[i*bots_arg_size+j]); });
+             call_lbl_0: ok = ({ calling_npm("checkmat1", 0); checkmat1_npm(BENCH[i*bots_arg_size+j]); });
 # 375 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
 # 376 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5135,7 +5135,7 @@ void genmat_npm (float *M[])
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0);
+            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5230,7 +5230,7 @@ float * allocate_clean_block_npm()
   float *p, *q;
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0);
+  p = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5343,7 +5343,7 @@ void sparselu_init_npm (float ***pBENCH, char *pass)
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0);
+   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size * bots_arg_size * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    genmat_npm(*pBENCH);
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"

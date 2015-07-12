@@ -6,14 +6,6 @@ ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 134
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 26 2  struct timeval tv; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 26 19 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 11 len=8 get_time_quick
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 26 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 26 20 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 133  ; struct timeval tv;
-# 25
- if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 133  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 11 len=8 get_time_resumable
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 26 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 26 20 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 133  ; struct timeval tv;
-# 25
- if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 133  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

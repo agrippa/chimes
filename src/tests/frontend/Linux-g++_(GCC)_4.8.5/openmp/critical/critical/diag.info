@@ -19,14 +19,14 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 16 9  i
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 16 23 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 27 6 int ____chimes_ret_var_0; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 27 30 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 6 5  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 9  call_lbl_3: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 6 5  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 9  call_lbl_0: 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 5 6 len=3 foo_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 6 18 checkpoint_transformed(1, 0)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 6 18 checkpoint_transformed(0, 0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 6 29 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 5 96  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 9 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 22  ({  calling((void*)foo, 3, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 22  ({  calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 26 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 19 9  { 
 InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 21 9  } 
@@ -34,14 +34,14 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 15 
 InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 25 5  } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 9 167  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 5 6 len=3 foo_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 6 18 checkpoint_transformed(1, 0)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 6 18 checkpoint_transformed(0, 0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 6 29 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 5 96  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 5 96  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 9 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 22  ({  calling((void*)foo, 3, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 22  ({  calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 26 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 19 9  { 
 InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 21 9  } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 15 5  { 
 InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 25 5  } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 9 167  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 9 167  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

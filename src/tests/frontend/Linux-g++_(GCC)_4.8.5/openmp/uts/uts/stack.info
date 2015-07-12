@@ -1,5 +1,5 @@
 /home/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_error|str|0 " i8* " 64 1 0 0
-/home/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_wctime|tv|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 uts_wctime
+/home/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_wctime|tv|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
 /home/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_wctime|____chimes_ret_var_0|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/uts/uts.c rng_toProb|n|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/uts/uts.c rng_toProb|____chimes_ret_var_1|0 " double " 64 0 0 0

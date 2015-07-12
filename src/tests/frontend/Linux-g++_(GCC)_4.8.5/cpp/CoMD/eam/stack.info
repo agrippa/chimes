@@ -71,7 +71,7 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadSetfl|nAtomic|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadSetfl|mass|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadSetfl|lat|0 " double " 64 0 0 0
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadSetfl|latticeType|0 " [8 x i8] " 64 0 0 1 eamReadSetfl
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadSetfl|latticeType|0 " [8 x i8] " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadSetfl|bufSize|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadSetfl|buf|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadSetfl|x0|0 " double " 64 0 0 0
@@ -85,11 +85,11 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|potName|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|tmp|0 " [4096 x i8] " 32768 0 0 1 eamReadFuncfl
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|potFile|0 " %struct._IO_FILE* " 64 1 0 0
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|name|0 " [3 x i8] " 24 0 0 1 eamReadFuncfl
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|name|0 " [3 x i8] " 24 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|nAtomic|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|mass|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|lat|0 " double " 64 0 0 0
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|latticeType|0 " [8 x i8] " 64 0 0 1 eamReadFuncfl
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|latticeType|0 " [8 x i8] " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|nRho|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|nR|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamReadFuncfl|dRho|0 " double " 64 0 0 0

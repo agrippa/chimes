@@ -1,4 +1,4 @@
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c gettime|t|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 gettime
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c gettime|t|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c gettime|____chimes_ret_var_0|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c main|argc|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c main|argv|0 " i8** " 64 1 0 0

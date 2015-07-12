@@ -1,4 +1,4 @@
-/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 seconds
+/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp seconds|tzp|0 " %struct.timezone = type { i32, i32 } " 64 0 1 timezone 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp seconds|i|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp seconds|____chimes_ret_var_0|0 " double " 64 0 0 0

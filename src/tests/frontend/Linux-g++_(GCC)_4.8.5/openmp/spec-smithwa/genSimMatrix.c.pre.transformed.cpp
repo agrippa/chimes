@@ -61,13 +61,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2947,7 +2947,7 @@ SIMMATRIX_T *genSimMatrix_resumable(int exact, int similar, int dissimilar,
   int i; int j; int k; int ccode; int ccode2; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *)malloc_wrapper( sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases) ) ) == __null ) {
+  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SIMMATRIX_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); ____chimes_tmp_ptr; }) ) == __null ) {
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     printf("genSimMatrix: cannot allocate simMatrix\n");
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3136,7 +3136,7 @@ SIMMATRIX_T *freeSimMatrix_resumable(SIMMATRIX_T *M) {const int ____chimes_did_d
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    free_wrapper(M, 17725255480324453911UL);
+     ({ free(M); free_helper(M, 17725255480324453911UL); }) ;
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3158,7 +3158,7 @@ SIMMATRIX_T *genSimMatrix_quick(int exact, int similar, int dissimilar,
   int i; int j; int k; int ccode; int ccode2; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *)malloc_wrapper( sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases) ) ) == __null ) {
+  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SIMMATRIX_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); ____chimes_tmp_ptr; }) ) == __null ) {
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     printf("genSimMatrix: cannot allocate simMatrix\n");
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3348,7 +3348,7 @@ SIMMATRIX_T *freeSimMatrix_quick(SIMMATRIX_T *M) {const int ____chimes_did_disab
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    free_wrapper(M, 17725255480324453911UL);
+     ({ free(M); free_helper(M, 17725255480324453911UL); }) ;
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3372,7 +3372,7 @@ SIMMATRIX_T *genSimMatrix_npm(int exact, int similar, int dissimilar,
   int i, j, k, ccode, ccode2;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *)malloc_wrapper( sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases) ) ) == __null ) {
+  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SIMMATRIX_T)); malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); ____chimes_tmp_ptr; }) ) == __null ) {
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     printf("genSimMatrix: cannot allocate simMatrix\n");
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3556,7 +3556,7 @@ SIMMATRIX_T *freeSimMatrix_npm(SIMMATRIX_T *M) {
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    free_wrapper(M, 17725255480324453911UL);
+     ({ free(M); free_helper(M, 17725255480324453911UL); }) ;
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"

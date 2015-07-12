@@ -14,6 +14,58 @@ extern std::map<std::string, int> function_starting_lines;
 extern std::map<std::string, int> earliest_call_line;
 extern std::set<std::string> npm_functions;
 
+std::string MallocPass::getMetadataArgs(HeapAlloc *alloc) {
+    std::stringstream ss;
+    ss << ", " << alloc->get_group() << "UL";
+
+    /*
+     * This is already asserted while generating heap.info from
+     * LLVM, but assert here to improve readability and protect
+     * against parsing errors.
+     */
+    assert(!(alloc->get_is_elem_ptr() &&
+                alloc->get_is_elem_struct()));
+    if (alloc->get_is_elem_ptr()) {
+        // elements in allocation are pointers, not structs
+        ss << ", 1, 0";
+    } else if (alloc->get_is_elem_struct()) {
+        // elements in allocation are structs, not pointers
+        ss << ", 0, 1";
+        StructFields *struct_info =
+            insertions->get_struct_fields_for(
+                    alloc->get_struct_type_name());
+        assert(struct_info);
+
+        std::string full_type_name;
+        if (struct_info->get_is_unnamed()) {
+            full_type_name = alloc->get_struct_type_name();
+        } else {
+            full_type_name = "struct " + alloc->get_struct_type_name();
+        }
+
+        // Element size for each struct
+        ss << ", (int)sizeof(" << full_type_name << "), ";
+
+        // Number of pointer-typed fields
+        ss << alloc->get_num_field_ptrs();
+
+        // Offests in struct of all pointer fields
+        std::vector<std::string> *struct_field_ptrs =
+            alloc->get_struct_field_ptrs();
+        for (std::vector<std::string>::iterator p_i =
+                struct_field_ptrs->begin(), p_e =
+                struct_field_ptrs->end(); p_i != p_e; p_i++) {
+            std::string fieldname = *p_i;
+            ss << ", (int)__builtin_offsetof(" <<
+                full_type_name << ", " << fieldname << ")";
+        }
+    } else {
+        ss << ", 0, 0";
+    }
+
+    return ss.str();
+}
+
 void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
 #ifdef VERBOSE
@@ -60,7 +112,6 @@ void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                 FoundAlloc found = *iii;
                 const clang::CallExpr *call = found.get_call();
                 const clang::FunctionDecl *callee = call->getDirectCallee();
-                clang::SourceLocation start = call->getLocStart();
 
                 HeapAlloc alloc;
                 bool found_info = insertions->findNextMatchingMemoryAllocation(
@@ -74,66 +125,54 @@ void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
                 assert(callee->getNameAsString() == alloc.get_fname());
 
-                std::stringstream ss;
-                ss << alloc.get_fname() << "_wrapper";
-                ReplaceText(start, alloc.get_fname().size(), ss.str());
+                std::string call_str = stmtToString(call);
 
-                std::stringstream ss2;
-                ss2 << ", " << alloc.get_group() << "UL";
+                std::stringstream helper_ss;
 
-                if (alloc.get_fname() == "malloc" ||
-                        alloc.get_fname() == "calloc" ||
-                        alloc.get_fname() == "realloc" ||
-                        alloc.get_fname() == "cudaMalloc") {
-                    /*
-                     * This is already asserted while generating heap.info from
-                     * LLVM, but assert here to improve readability and protect
-                     * against parsing errors.
-                     */
-                    assert(!(alloc.get_is_elem_ptr() &&
-                            alloc.get_is_elem_struct()));
-                    if (alloc.get_is_elem_ptr()) {
-                        // elements in allocation are pointers, not structs
-                        ss2 << ", 1, 0";
-                    } else if (alloc.get_is_elem_struct()) {
-                        // elements in allocation are structs, not pointers
-                        ss2 << ", 0, 1";
-                        StructFields *struct_info =
-                            insertions->get_struct_fields_for(
-                                    alloc.get_struct_type_name());
-                        assert(struct_info);
-
-                        std::string full_type_name;
-                        if (struct_info->get_is_unnamed()) {
-                            full_type_name = alloc.get_struct_type_name();
-                        } else {
-                            full_type_name = "struct " + alloc.get_struct_type_name();
-                        }
-
-                        // Element size for each struct
-                        ss2 << ", (int)sizeof(" << full_type_name << "), ";
-
-                        // Number of pointer-typed fields
-                        ss2 << alloc.get_num_field_ptrs();
-
-                        // Offests in struct of all pointer fields
-                        std::vector<std::string> *struct_field_ptrs =
-                            alloc.get_struct_field_ptrs();
-                        for (std::vector<std::string>::iterator p_i =
-                                struct_field_ptrs->begin(), p_e =
-                                struct_field_ptrs->end(); p_i != p_e; p_i++) {
-                            std::string fieldname = *p_i;
-                            ss2 << ", (int)__builtin_offsetof(" <<
-                                full_type_name << ", " << fieldname << ")";
-                        }
-                    } else {
-                        ss2 << ", 0, 0";
-                    }
+                if (alloc.get_fname() == "malloc") {
+                    helper_ss << " ({ void *____chimes_tmp_ptr = " << call_str <<
+                        "; ";
+                    helper_ss << "malloc_helper(____chimes_tmp_ptr, " <<
+                        getArgString(call, 0);
+                    helper_ss << getMetadataArgs(&alloc);
+                    helper_ss << "); ____chimes_tmp_ptr; }) ";
+                } else if (alloc.get_fname() == "calloc") {
+                    helper_ss << " ({ void *____chimes_tmp_ptr = " << call_str <<
+                        "; ";
+                    helper_ss << "calloc_helper(____chimes_tmp_ptr, " <<
+                        getArgString(call, 0) << ", " << getArgString(call, 1);
+                    helper_ss << getMetadataArgs(&alloc);
+                    helper_ss << "); ____chimes_tmp_ptr; }) ";
+                } else if (alloc.get_fname() == "realloc") {
+                    helper_ss << " ({ void *____chimes_tmp_ptr = " << call_str <<
+                        "; ";
+                    helper_ss << "realloc_helper(____chimes_tmp_ptr, " <<
+                        getArgString(call, 0) << ", " << getArgString(call, 1);
+                    helper_ss << getMetadataArgs(&alloc);
+                    helper_ss << "); ____chimes_tmp_ptr; }) ";
+                } else if (alloc.get_fname() == "free") {
+                    helper_ss << " ({ " << call_str << "; free_helper(" <<
+                        getArgString(call, 0) << ", " << alloc.get_group() <<
+                        "UL); }) ";
+                } else if (alloc.get_fname() == "cudaMalloc") {
+                    helper_ss << " ({ cudaError_t ____chimes_err = " <<
+                        call_str << "; cudaMalloc_helper(____chimes_err, " <<
+                        getArgString(call, 0) << ", " <<
+                        getArgString(call, 1) << getMetadataArgs(&alloc) <<
+                        "); ____chimes_err; }) ";
+                } else if (alloc.get_fname() == "cudaFree") {
+                    helper_ss << " ({ cudaError_t ____chimes_err = " <<
+                        call_str << "; cudaFree_helper(____chimes_err, " <<
+                        getArgString(call, 0) << "); ____chimes_err; }) ";
+                } else {
+                    fprintf(stderr, "Unsupported allocation function \"%s\"\n",
+                            alloc.get_fname().c_str());
+                    assert(false);
                 }
 
-                const clang::Expr *arg = call->getArg(call->getNumArgs() - 1);
-                clang::SourceLocation end_arg = arg->getLocEnd();
-                InsertTextAfterToken(end_arg, ss2.str());
+                clang::SourceLocation start = call->getLocStart();
+                clang::SourceLocation end = call->getLocEnd();
+                ReplaceText(clang::SourceRange(start, end), helper_ss.str());
             }
         }
     }

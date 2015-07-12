@@ -116,7 +116,11 @@ echo ${ABS_INPUTS[@]}
 
 LAST_FILES=()
 OBJ_FILES=()
-OUTPUT=$(pwd)/${OUTPUT_FILE}
+if [[ $OUTPUT_FILE = /* ]]; then
+    OUTPUT=$OUTPUT_FILE
+else
+    OUTPUT=$(pwd)/${OUTPUT_FILE}
+fi
 
 if [[ -z ${WORK_DIR} ]]; then
     WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)

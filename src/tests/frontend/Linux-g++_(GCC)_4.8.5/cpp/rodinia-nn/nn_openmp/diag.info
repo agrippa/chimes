@@ -1,16 +1,16 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 23 8 len=7 seconds_npm
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 64 33 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 64 64 , 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 86 31 len=7 realloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 86 65 , 9808122005516792060UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 104 16 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 104 42 , 9808122005516792176UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 64 33 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 64 64 , 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 86 31 len=7 realloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 86 65 , 9808122005516792060UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 104 16 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 104 42 , 9808122005516792176UL, 0, 0
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 64 33  ({ void *____chimes_tmp_ptr = malloc(k * sizeof(struct neighbor)); malloc_helper(____chimes_tmp_ptr, k*sizeof(struct neighbor), 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 64 65 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 86 31  ({ void *____chimes_tmp_ptr = realloc(sandbox, (nrecords + 1) * 49); realloc_helper(____chimes_tmp_ptr, sandbox, (nrecords + 1) * 49, 9808122005516792060UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 86 67 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 104 16  ({ void *____chimes_tmp_ptr = malloc(1000 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, 1000 * sizeof(float), 9808122005516792176UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 104 43 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 64 33  ({ void *____chimes_tmp_ptr = malloc(k * sizeof(struct neighbor)); malloc_helper(____chimes_tmp_ptr, k*sizeof(struct neighbor), 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 64 65 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 86 31  ({ void *____chimes_tmp_ptr = realloc(sandbox, (nrecords + 1) * 49); realloc_helper(____chimes_tmp_ptr, sandbox, (nrecords + 1) * 49, 9808122005516792060UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 86 67 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 104 16  ({ void *____chimes_tmp_ptr = malloc(1000 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, 1000 * sizeof(float), 9808122005516792176UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 104 43 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 27 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 23 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 28 1 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_1, ____chimes_did_disable0, false); 
@@ -39,16 +39,22 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 46 2  struct ne
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 46 37 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 47 2 float target_lat; float target_long;  float tmp_lat;  float tmp_long;  tmp_lat = (0)  ; tmp_long = (0) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 47 54 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 64 37 void *____chimes_tmp_ptr = malloc(k * sizeof(struct neighbor)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 64 99 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 75 5  char *sandbox;  sandbox = (__null) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 75 27 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 76 5  size_t nrecords;  nrecords = (0) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 76 24 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 84 9 size_t nread; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 84 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 86 35 void *____chimes_tmp_ptr = realloc(sandbox, (nrecords + 1) * 49); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 86 99 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 101 5  double start_time;  start_time = (seconds()) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 101 34 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 103 2 float *z; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 103 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 104 20 void *____chimes_tmp_ptr = malloc(1000 * sizeof(float)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 104 75 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 106 5  int nwindows;  nwindows = ((nrecords + 1000 - 1) / 1000) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 106 48 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 107 5 {  int w; 
@@ -67,20 +73,18 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 144 5  double e
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 144 32 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 154 3 int ____chimes_ret_var_1; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 154 27 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 140 9  call_lbl_27: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 101 26  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 140 9  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 144 24  call_lbl_2: 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 23 8 len=7 seconds_quick
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 24 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 24 23 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 23 126  ; struct timeval tp;
-# 23
- if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i64 }", (void *)(&tp), (size_t)16, 0, 1, 0);  }  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 23 126  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 41 5 len=4 main_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 101 40 ({ calling_npm("seconds", 0); seconds_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 101 48 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 140 23 checkpoint_transformed(27, ____alias_loc_id_0)
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 140 34 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 144 36 ({ calling_npm("seconds", 0); seconds_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 144 44 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 101 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 101 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 140 22 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 140 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 144 49 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 144 57 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 43 19 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 43 24 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 45 18 
@@ -133,20 +137,16 @@ char dbname[64];
 # 41
 int k;
 # 41
- register_stack_vars(13, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", (int *)0x0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0);  
+ register_stack_vars(12, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0);  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 23 8 len=7 seconds_resumable
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 24 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 24 23 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 23 126  ; struct timeval tp;
-# 23
- if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i64 }", (void *)(&tp), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 23 126  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 41 5 len=4 main_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 101 40 ({ calling_npm("seconds", 0); seconds_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 101 48 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 140 23 checkpoint_transformed(27, ____alias_loc_id_0)
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 140 34 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 144 36 ({ calling_npm("seconds", 0); seconds_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 144 44 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 101 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 101 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 140 22 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 140 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 144 49 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 144 57 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 43 19 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 43 24 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 45 18 
@@ -199,4 +199,4 @@ char dbname[64];
 # 41
 int k;
 # 41
- register_stack_vars(13, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", (int *)0x0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(27): { goto call_lbl_27; } default: { chimes_error(); } }  }  
+ register_stack_vars(12, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

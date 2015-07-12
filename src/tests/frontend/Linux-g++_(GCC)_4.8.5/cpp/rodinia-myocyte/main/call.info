@@ -10,39 +10,39 @@ printf main 211 4 0 657 0
 atoi main 219 13 0 101
 printf main 221 4 0 658 0
 get_time main 230 10 0
-seconds main 236 25 0
-printf main 244 3 0 659
-malloc main 252 18 206 0
-malloc main 254 19 202 0
-malloc main 256 23 449 0
-malloc main 260 17 368 0
-malloc main 262 18 370 0
-malloc main 265 22 340 0
-malloc main 267 23 342 0
+printf main 242 3 0 659
+malloc main 250 18 203 0
+malloc main 252 19 199 0
+malloc main 254 23 456 0
+malloc main 258 17 368 0
+malloc main 260 18 370 0
+malloc main 263 22 340 0
+malloc main 265 23 342 0
+seconds main 268 25 0
 get_time main 270 10 0
 getenv main 276 26 304 660
 __assert_fail main 277 47 0 660 661 0 662
 sprintf main 280 5 0 57 663 304
 sprintf main 281 5 0 58 664 304
-myocyte_read main 285 3 0 57 449 0 0 0
+myocyte_read main 285 3 0 57 456 0 0 0
 myocyte_read main 294 3 0 58 342 0 0 0
 get_time main 301 10 0
-solver main 311 13 0 202 370 0 342 0
+solver main 311 13 0 199 370 0 342 0
 checkpoint main 321 13 0
 checkpoint main 330 9 0
-solver main 336 13 0 202 370 0 342 0
+solver main 336 13 0 199 370 0 342 0
 checkpoint main 349 9 0
 get_time main 366 10 0
-free main 375 4 0 449
-free main 377 3 0 202
-free main 379 2 0 206
-free main 383 3 0 370
-free main 385 2 0 368
-free main 389 3 0 342
-free main 391 2 0 340
-get_time main 393 9 0
-seconds main 395 23 0
-printf main 396 5 0 665 0
+seconds main 368 23 0
+printf main 369 5 0 665 0
+free main 378 4 0 456
+free main 380 3 0 199
+free main 382 2 0 203
+free main 386 3 0 370
+free main 388 2 0 368
+free main 392 3 0 342
+free main 394 2 0 340
+get_time main 396 9 0
 printf main 402 2 0 666
 printf main 403 2 0 667 0 0
 printf main 404 2 0 668 0 0
