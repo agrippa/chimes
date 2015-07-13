@@ -11,6 +11,7 @@ ENABLE_OMP=1
 KEEP=0
 PROFILE=0
 DUMMY=0
+BLOCK_CHECKPOINTS="false"
 COMPILE=0
 INPUTS=()
 INCLUDES=
@@ -24,10 +25,13 @@ GXX_FLAGS="-O3"
 DEFINES=
 ADDED_INCLUDES=
 
-while getopts ":kci:I:L:l:o:w:vpx:y:sD:dnf:" opt; do
+while getopts ":kci:I:L:l:o:w:vpx:y:sD:dnf:b" opt; do
     case $opt in 
         d)
             DUMMY=1
+            ;;
+        b)
+            BLOCK_CHECKPOINTS="true"
             ;;
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -285,7 +289,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -r ${INFO_FILE_PREFIX}.reachable.info \
             -o ${INFO_FILE_PREFIX}.module.info \
             -w ${WORK_DIR} \
-            -c true \
+            -c ${BLOCK_CHECKPOINTS} \
             -t ${INFO_FILE_PREFIX}.omp.info \
             -v ${INFO_FILE_PREFIX}.firstprivate.info \
             -b ${INFO_FILE_PREFIX}.tree.info \

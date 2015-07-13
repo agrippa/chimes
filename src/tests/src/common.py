@@ -53,7 +53,7 @@ class TestConfig(object):
     Encapsulates configuration that can be changed at the command line
     """
     def __init__(self, keep, verbose, targets, update_tests, just_compile,
-                 force_update, dummy, quiet, repeats):
+                 force_update, dummy, quiet, repeats, block_checkpoints):
         assert repeats >= 1, str(repeats)
 
         self.keep = keep
@@ -68,6 +68,7 @@ class TestConfig(object):
         self.dummy = dummy
         self.quiet = quiet
         self.repeats = repeats
+        self.block_checkpoints = block_checkpoints
 
     def set_force_sequential(self):
         self.force_sequential = True
@@ -80,16 +81,6 @@ class TestConfig(object):
         :type flag: `str`
         """
         self.custom_compiler_flags.append(flag)
-
-    # def set_custom_compiler(self, compiler):
-    #     """
-    #     Set base compiler to use for compilation (set using the GXX env
-    #     variable).
-
-    #     :param compiler: Compiler to force.
-    #     :type compiler: `str`
-    #     """
-    #     self.custom_compiler = compiler
 
     def __str__(self):
         return 'keep=' + str(self.keep) + ', verbose=' + str(self.verbose)
@@ -357,6 +348,7 @@ def parse_argv(argv):
     just_compile = False
     force_update = False
     dummy = False
+    block_checkpoints = False
     quiet = False
     repeats = 1
 
@@ -370,6 +362,8 @@ def parse_argv(argv):
             update_tests = True
         elif argv[i] == '-d':
             dummy = True
+        elif argv[i] == '-b':
+            block_checkpoints = True
         elif argv[i] == '-f':
             force_update = True
         elif argv[i] == '-q':
@@ -392,7 +386,7 @@ def parse_argv(argv):
         i += 1
 
     return TestConfig(keep, verbose, targets, update_tests, just_compile,
-                      force_update, dummy, quiet, repeats)
+                      force_update, dummy, quiet, repeats, block_checkpoints)
 
 
 def print_and_abort(stdout, stderr, abort=True):
@@ -664,7 +658,7 @@ def check_warnings(testname, stderr, input_dir, output_dir, warnings_filename,
 
 
 def build_compile_cmd(compile_script_path, test, output_file, inputs_dir,
-                      config, dummy, env):
+                      config, dummy, block_checkpoints, env):
     compile_cmd = compile_script_path + ' ' + test.extra_compile_args
 
     if config.force_sequential:
@@ -672,6 +666,9 @@ def build_compile_cmd(compile_script_path, test, output_file, inputs_dir,
 
     if dummy:
         compile_cmd += ' -d'
+
+    if block_checkpoints:
+        compile_cmd += ' -b'
 
     for flag in config.custom_compiler_flags:
         compile_cmd += ' -y ' + flag
@@ -896,7 +893,8 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     #     env['GXX'] = config.custom_compiler
 
     compile_cmd = build_compile_cmd(compile_script_path, test, RUNTIME_BIN,
-                                    inputs_dir, config, config.dummy, env)
+                                    inputs_dir, config, config.dummy,
+                                    config.block_checkpoints, env)
 
     if config.verbose:
         print(compile_cmd)
@@ -1022,10 +1020,11 @@ def run_perf_test(test, compile_script_path, normal_compile_script_path,
 
     chimes_compile_cmd = build_compile_cmd(compile_script_path, test,
                                            CHIMES_PERF_BIN, inputs_dir, config,
-                                           config.dummy, env)
+                                           config.dummy,
+                                           config.block_checkpoints, env)
     normal_compile_cmd = build_compile_cmd(normal_compile_script_path, test,
                                            NORMAL_PERF_BIN, inputs_dir, config,
-                                           False, env)
+                                           False, False, env)
     if config.verbose:
         print(chimes_compile_cmd)
         print(normal_compile_cmd)

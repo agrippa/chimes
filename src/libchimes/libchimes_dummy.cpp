@@ -141,7 +141,7 @@ void calling_npm(const char *name, unsigned loc_id) {
 void calling(void *func_ptr, int lbl, unsigned loc_id, size_t set_return_alias,
         unsigned naliases, ...) {
 #ifdef VERBOSE
-    fprintf(stderr, "calling: %u\n", loc_id);
+    fprintf(stderr, "calling: %u\n", lbl);
 #endif
 
 #ifdef __CHIMES_PROFILE

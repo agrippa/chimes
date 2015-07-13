@@ -16,11 +16,12 @@ if not os.path.isdir(RODINIA_HOME):
     sys.exit(1)
 
 RODINIA_DATA = path.join(RODINIA_HOME, 'data')
-RODINIA_TESTS = ['backprop', 'bfs', 'b+tree', 'heartwall', 'hotspot',
+RODINIA_TESTS = ['backprop', 'bfs', 'bfs_refactored', 'b+tree', 'heartwall', 'hotspot',
                  'kmeans', 'lavaMD', 'lud', 'myocyte',
                  'nn', 'nw', 'nw_refactored', 'particlefilter', 'srad']
 RODINIA_CLI_ARGS = {'backprop': '65536',
                     'bfs': '4 ' + path.join(RODINIA_DATA, 'bfs/graph1MW_6.txt'),
+                    'bfs_refactored': '4 ' + path.join(RODINIA_DATA, 'bfs/graph1MW_6.txt'),
                     'b+tree': 'core 2 file ' + path.join(RODINIA_DATA,
                                                          'b+tree/mil.txt') + \
                               ' command ' + path.join(RODINIA_DATA,
@@ -104,23 +105,24 @@ for rtest in RODINIA_TESTS:
 
 
 RODINIA_PERF_CLI_ARGS = \
-        {'RodiniaBackprop':       '65536',
-         'RodiniaBfs':            '12 ' + path.join(RODINIA_DATA, 'bfs/inputGen/graph16M.txt'),
-         'RodiniaB+tree':         'core 2 file ' + path.join(RODINIA_DATA,
+        {'RodiniaBackprop':       '268435456',
+         'RodiniaBfs':            '12 ' + path.join(RODINIA_DATA, 'bfs/inputGen/graph64M.txt'),
+         'RodiniaBfs_refactored': '12 ' + path.join(RODINIA_DATA, 'bfs/inputGen/graph64M.txt'),
+         'RodiniaB+tree':         'cores 12 file ' + path.join(RODINIA_DATA,
                                                              'b+tree/mil.txt') + \
                                   ' command ' + path.join(RODINIA_DATA,
                                                           'b+tree/command.txt'),
          'RodiniaHeartwall':      path.join(RODINIA_DATA,
-                                        'heartwall/test.avi') + ' 20 4',
-         'RodiniaHotspot':        '512 512 2 4 ' + path.join(RODINIA_DATA,
-                                                             'hotspot/temp_512') + \
+                                        'heartwall/test.avi') + ' 80 12',
+         'RodiniaHotspot':        '4096 4096 20 12 ' + path.join(RODINIA_DATA,
+                                                             'hotspot/temp_4096') + \
                                   ' ' + path.join(RODINIA_DATA,
-                                                  'hotspot/power_512'),
-         'RodiniaKmeans':         '-n 4 -i ' + path.join(RODINIA_DATA,
+                                                  'hotspot/power_4096'),
+         'RodiniaKmeans':         '-n 12 -i ' + path.join(RODINIA_DATA,
                                                          'kmeans/kdd_cup'),
-         'RodiniaLavamd':         '-cores 4 -boxes1d 10',
+         'RodiniaLavamd':         '-cores 12 -boxes1d 10',
          'RodiniaLud':            '-i ' + path.join(RODINIA_DATA, 'lud/512.dat'),
-         'RodiniaMyocyte':        '100 1 0 4',
+         'RodiniaMyocyte':        '2000 200 12',
          'RodiniaNn':             path.join(RODINIA_HOME, 'openmp', 'nn',
                                             'filelist_4') + ' 5 30 90',
          'RodiniaNw':             '32768 10 12',

@@ -1132,7 +1132,7 @@ void parTreeSearch(StealStack *ss) {
 
   /* tree search */
   while (done == 0) {
-   
+  
     int localDepth = ss_localDepth(ss);
     /* local work */
     while (localDepth > 0) {
@@ -1159,20 +1159,7 @@ void parTreeSearch(StealStack *ss) {
       // and wake up quiescent threads
       releaseNodes(ss);
       localDepth = ss_localDepth(ss);
-
-#ifdef __CHIMES_SUPPORT
-      // disable conditional checkpoints on test runs
-#ifndef __CHIMES_TESTING
-      if (localDepth > 120) {
-#endif
-          checkpoint();
-#ifndef __CHIMES_TESTING
-      }
-#endif
-
-#endif
     }
-
 		
     /* local work exhausted on this stack - resume tree search if able
      * to re-acquire work from shared portion of this thread's stack
@@ -1430,6 +1417,10 @@ int main(int argc, char *argv[]) {
     // line up for the start
 #pragma omp barrier    
     BARRIER
+
+#ifdef __CHIMES_SUPPORT
+    checkpoint();
+#endif
     
     /* time parallel search */
     ss_initState(ss);
@@ -1445,6 +1436,10 @@ int main(int argc, char *argv[]) {
 
 #pragma omp barrier
     BARRIER
+
+#ifdef __CHIMES_SUPPORT
+    checkpoint();
+#endif
 
     /* display results */
     if (GET_THREAD_NUM == 0) {

@@ -1,3 +1,5 @@
+import sys
+
 def get_first_line_containing(s, find, append=0):
     lines = s.split('\n')
     line_index = 0
@@ -61,6 +63,7 @@ EXEC_TIME_PARSERS = {'Iso3D': iso3d_parser,
                      'UTS': uts_parser,
                      'RodiniaBackprop': rodinia_parser,
                      'RodiniaBfs': rodinia_parser,
+                     'RodiniaBfs_refactored': rodinia_parser,
                      'RodiniaB+tree': rodinia_parser,
                      'RodiniaHeartwall': rodinia_parser,
                      'RodiniaHotspot': rodinia_parser,
