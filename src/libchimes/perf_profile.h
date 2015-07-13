@@ -14,7 +14,7 @@ class perf_profile {
         std::string tostr();
 
         void add_time(int label_id, unsigned long long start_time);
-        static unsigned long long current_time_ns();
+        static unsigned long long current_time_us();
 
     private:
         unsigned long long *elapsed;

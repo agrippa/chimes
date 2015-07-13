@@ -47,9 +47,9 @@ static llvm::cl::opt<std::string> diag_file("d",
 static llvm::cl::opt<std::string> working_directory("w",
         llvm::cl::desc("Working directory"),
         llvm::cl::value_desc("work_dir"));
-static llvm::cl::opt<std::string> contains_line_markings("c",
-        llvm::cl::desc("Input file contains line markings?"),
-        llvm::cl::value_desc("line_markings"));
+static llvm::cl::opt<std::string> no_checkpoint("c",
+        llvm::cl::desc("No checkpoint"),
+        llvm::cl::value_desc("no_checkpoint"));
 static llvm::cl::opt<std::string> func_file("f",
         llvm::cl::desc("Function info file"),
         llvm::cl::value_desc("func_info"));
@@ -113,6 +113,7 @@ std::set<std::string> function_pointers_loaded;
 std::string merge_filename;
 std::vector<Merge> static_merges;
 std::vector<Merge> dynamic_merges;
+bool blockCheckpoints = false;
 
 static void writeMerges(std::vector<Merge> *l, std::string suffix) {
     std::ofstream out(merge_filename + suffix);
@@ -525,7 +526,7 @@ int main(int argc, const char **argv) {
   check_opt(original_file, "Original file");
   check_opt(diag_file, "Diagnostics file");
   check_opt(working_directory, "Working directory");
-  check_opt(contains_line_markings, "Line markings flag");
+  check_opt(no_checkpoint, "No checkpoint");
   check_opt(func_file, "Function file");
   check_opt(call_file, "Callsite file");
   check_opt(exit_file, "Exit file");
@@ -565,9 +566,10 @@ int main(int argc, const char **argv) {
   }
   infile.close();
 
-  bool updateFile = true;
-  if (contains_line_markings.compare("true") == 0) {
-      updateFile = false;
+  assert(no_checkpoint.compare("true") == 0 ||
+          no_checkpoint.compare("false") == 0);
+  if (no_checkpoint.compare("true") == 0) {
+      blockCheckpoints = true;
   }
 
   assert(op.getSourcePathList().size() == 1);
@@ -640,9 +642,6 @@ int main(int argc, const char **argv) {
       } else {
           std::vector<std::string> inputs; inputs.push_back(current_output_file);
           Tool = new ClangTool(op.getCompilations(), inputs);
-          if (updateFile) {
-              insertions->updateMainFile(current_output_file);
-          }
           input_file = current_output_file;
       }
 

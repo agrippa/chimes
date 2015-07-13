@@ -250,7 +250,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -r ${INFO_FILE_PREFIX}.reachable.info \
             -o ${INFO_FILE_PREFIX}.module.info \
             -w ${NVCC_WORK_DIR} \
-            -c true \
+            -c false \
             -t ${INFO_FILE_PREFIX}.omp.info \
             -v ${INFO_FILE_PREFIX}.firstprivate.info \
             -b ${INFO_FILE_PREFIX}.tree.info \

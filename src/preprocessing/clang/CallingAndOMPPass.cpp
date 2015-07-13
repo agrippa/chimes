@@ -33,6 +33,7 @@ extern std::set<string> definitions_in_main_file;
 extern std::string merge_filename;
 extern std::vector<Merge> static_merges;
 extern std::vector<Merge> dynamic_merges;
+extern bool blockCheckpoints;
 
 extern std::string constructMangledName(std::string varname);
 
@@ -1436,8 +1437,14 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                 std::string new_call;
                 if (loc.get_funcname() == "checkpoint") {
                     std::stringstream ss;
+                    if (blockCheckpoints) {
+                        ss << "if (0) { ";
+                    }
                     ss << "checkpoint_transformed(" << lbl.get_lbl() <<
                         ", " << get_loc_arg(call, loc.get_funcname()) << ")";
+                    if (blockCheckpoints) {
+                        ss << "; } ";
+                    }
                     new_call = ss.str();
                 } else {
                     new_call = generateNormalCall(call, loc, lbl, callsite);
