@@ -1,16 +1,16 @@
-fopen write_graphics 41 8 26 123 275
-printf write_graphics 43 3 0 276
-fprintf write_graphics 51 2 0 26 277
-fprintf write_graphics 52 2 0 26 278 0 0
-fprintf write_graphics 53 2 0 26 277 0
-fprintf write_graphics 63 5 0 26 277 0
-fprintf write_graphics 65 4 0 26 275
-fprintf write_graphics 72 5 0 26 277 0
-fprintf write_graphics 74 4 0 26 275
+fopen write_graphics 41 8 26 123 276
+printf write_graphics 43 3 0 277
+fprintf write_graphics 51 2 0 26 278
+fprintf write_graphics 52 2 0 26 279 0 0
+fprintf write_graphics 53 2 0 26 278 0
+fprintf write_graphics 63 5 0 26 278 0
+fprintf write_graphics 65 4 0 26 276
+fprintf write_graphics 72 5 0 26 278 0
+fprintf write_graphics 74 4 0 26 276
 fclose write_graphics 82 2 0 26
-fopen read_graphics 111 8 163 267 275
-printf read_graphics 113 3 0 283
+fopen read_graphics 111 8 163 268 276
+printf read_graphics 113 3 0 284 268
 fgetc read_graphics 123 7 0 163
-fscanf read_graphics 136 5 0 163 284 146
-fscanf read_graphics 144 5 0 163 284 146
+fscanf read_graphics 136 5 0 163 285 146
+fscanf read_graphics 144 5 0 163 285 146
 fclose read_graphics 154 2 0 163

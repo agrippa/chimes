@@ -1,8 +1,9 @@
-/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 144 5 : { 22 } {  } call:finish_progress {  }
-/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 151 9 : { 23 } {  } call:save_layer_text { save_layer_text { 249, 761 } }
-/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 88 5 : { 1, 2, 3 } {  } call:setup_config { setup_config { 4, 380 } }
-/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 142 24 : { 17, 18 } {  } call:seconds {  }
-/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 118 5 : { 16 } {  } call:init_data { init_data { 249, 251, 252 } }
-/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 137 9 : { 12, 13, 17, 18, 19, 20, 21, 249 } {  } call:checkpoint {  }
-/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 116 20 : {  } {  } call:sample_sources { sample_sources { 185, 359 } }
-/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 115 5 : {  } {  } call:config_sources { config_sources { 4 } }
+/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 146 5 : { 22 } {  } call:finish_progress {  }
+/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 153 9 : { 23 } {  } call:save_layer_text { save_layer_text { 249, 761 } }
+/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 91 5 : { 5 } {  } call:setup_config { setup_config { 4, 380 } }
+/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 144 24 : { 18 } {  } call:seconds {  }
+/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 89 20 : { 1, 2, 3 } {  } call:seconds {  }
+/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 121 5 : { 17 } {  } call:init_data { init_data { 249, 251, 252 } }
+/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 119 20 : {  } {  } call:sample_sources { sample_sources { 185, 359 } }
+/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 139 9 : { 13, 14, 18, 19, 20, 21, 249 } {  } call:checkpoint {  }
+/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 118 5 : {  } {  } call:config_sources { config_sources { 4 } }

@@ -67,7 +67,7 @@ MISC_OMP_RUNTIME_TESTS.append(LULESH_OMP)
 MISC_OMP_RUNTIME_TESTS.append(COMD_OMP)
 MISC_OMP_RUNTIME_TESTS.append(UTS_OMP)
 
-PERF_CLI_ARGS = {'Iso3D': '-x 1024 -y 1024 -z 256 -i 20',
+PERF_CLI_ARGS = {'Iso3D': '-x 1024 -y 1024 -z 256 -i 30',
                  'SmithWaterman': '1204000 7000 700',
                  'SmithWaterman-OMP': '1204000 7000 12040 700',
                  'Lulesh': '20',

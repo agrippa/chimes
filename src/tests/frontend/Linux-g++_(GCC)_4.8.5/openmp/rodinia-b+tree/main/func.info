@@ -42,7 +42,7 @@ list_reverse_iterator_get_datum 1460
 list_reverse_iterator_is_valid 1483
 kmalloc 0
 transform_to_cuda 1959 0
-enqueue 5913
+enqueue 5911
 dequeue
 findRange 2141 0 0
 find_leaf 2303 0 0
@@ -59,20 +59,20 @@ make_node
 make_leaf
 get_left_index 2952 2953
 insert_into_leaf 3063 0 3023
-insert_into_leaf_after_splitting 3421 3422 0 5913
+insert_into_leaf_after_splitting 3421 3422 0 5911
 insert_into_parent 3496 3497 0 3499
 insert_into_node 3590 3591 0 0 3533
 insert_into_node_after_splitting 3945 3946 0 0 3924
-insert_into_new_root 5913 0 5913
-start_new_tree 0 5913
+insert_into_new_root 5911 0 5911
+start_new_tree 0 5911
 insert 4125 0 0
 get_neighbor_index 4178
 remove_entry_from_node 4248 0 4363
-adjust_root 5913
+adjust_root 5911
 coalesce_nodes 4827 4800 4800 0 0
 delete_entry 4991 4893 0 5001
-redistribute_nodes 5401 5913 5403 0 0 0
+redistribute_nodes 5401 5911 5403 0 0 0
 deleteVal 5448 0
 destroy_tree_nodes 5520
 destroy_tree 5531
-main 0 6769
+main 0 6767

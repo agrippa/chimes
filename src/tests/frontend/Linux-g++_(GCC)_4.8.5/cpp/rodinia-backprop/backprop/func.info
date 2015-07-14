@@ -3,18 +3,18 @@ dpn1
 squash 0
 alloc_1d_dbl 0
 alloc_2d_dbl 0 0
-bpnn_randomize_weights 182 0 0
-bpnn_randomize_row 210 0
-bpnn_zero_weights 257 0 0
+bpnn_randomize_weights 185 0 0
+bpnn_randomize_row 213 0
+bpnn_zero_weights 260 0 0
 bpnn_initialize 0
 bpnn_internal_create 0 0 0
-bpnn_free 516
+bpnn_free 503
 bpnn_create 0 0 0
-bpnn_layerforward 645 646 647 0 0
-bpnn_output_error 725 744 745 0 747
-bpnn_hidden_error 853 0 873 0 875 876 877
-bpnn_adjust_weights 978 0 980 0 982 983
-bpnn_feedforward 1030
-bpnn_train 1149 1150 1151
-bpnn_save 1414 1415
-bpnn_read 1695
+bpnn_layerforward 632 633 634 0 0
+bpnn_output_error 712 731 732 0 734
+bpnn_hidden_error 840 0 860 0 862 863 864
+bpnn_adjust_weights 965 0 967 0 969 970
+bpnn_feedforward 1017
+bpnn_train 1136 1137 1138
+bpnn_save 1401 1402
+bpnn_read 1682

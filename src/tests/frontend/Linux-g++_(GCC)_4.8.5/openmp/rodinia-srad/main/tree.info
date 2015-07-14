@@ -1,1 +1,2 @@
-main main 0 DOES get_time 64 10 get_time 113 10 get_time 137 10 read_graphics 150 2 get_time 156 10 resize 166 2 get_time 174 10 get_time 220 10 get_time 231 10 checkpoint 328 9 get_time 334 10 get_time 345 10 write_graphics 351 2 get_time 358 10 get_time 371 11
+kernel _Z6kernelPfflPiS0_S0_S0_S_S_S_S_ffffffS_filiii 0 DOES_NOT
+main main 0 DOES get_time 154 10 get_time 203 10 get_time 227 10 read_graphics 243 2 get_time 249 10 resize 259 2 get_time 267 10 get_time 313 10 get_time 324 10 kernel 334 9 checkpoint 338 9 get_time 344 10 get_time 355 10 write_graphics 361 2 get_time 368 10 get_time 381 11

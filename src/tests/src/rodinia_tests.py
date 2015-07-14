@@ -39,7 +39,7 @@ RODINIA_CLI_ARGS = {'backprop': '65536',
                                         path.join(RODINIA_DATA,
                                                   'leukocyte/testfile.avi'),
                     'lud': '-i ' + path.join(RODINIA_DATA, 'lud/512.dat'),
-                    'myocyte': '100 1 0 4',
+                    'myocyte': '100 1 4',
                     'nn': path.join(RODINIA_HOME, 'openmp', 'nn',
                                     'filelist_4') + ' 5 30 90',
                     'nw': '2048 10 2',
@@ -105,7 +105,7 @@ for rtest in RODINIA_TESTS:
 
 
 RODINIA_PERF_CLI_ARGS = \
-        {'RodiniaBackprop':       '268435456',
+        {'RodiniaBackprop':       '134217728',
          'RodiniaBfs':            '12 ' + path.join(RODINIA_DATA, 'bfs/inputGen/graph64M.txt'),
          'RodiniaBfs_refactored': '12 ' + path.join(RODINIA_DATA, 'bfs/inputGen/graph64M.txt'),
          'RodiniaB+tree':         'cores 12 file ' + path.join(RODINIA_DATA,
@@ -121,13 +121,13 @@ RODINIA_PERF_CLI_ARGS = \
          'RodiniaKmeans':         '-n 12 -i ' + path.join(RODINIA_DATA,
                                                          'kmeans/kdd_cup'),
          'RodiniaLavamd':         '-cores 12 -boxes1d 10',
-         'RodiniaLud':            '-i ' + path.join(RODINIA_DATA, 'lud/512.dat'),
+         'RodiniaLud':            '-i ' + path.join(RODINIA_DATA, 'lud/2048.dat'),
          'RodiniaMyocyte':        '2000 200 12',
          'RodiniaNn':             path.join(RODINIA_HOME, 'openmp', 'nn',
                                             'filelist_4') + ' 5 30 90',
          'RodiniaNw':             '32768 10 12',
-         'RodiniaNw_refactored':  '32768 10 12',
-         'RodiniaParticlefilter': '-x 128 -y 128 -z 10 -np 100',
+         'RodiniaNw_refactored':  '40960 10 12',
+         'RodiniaParticlefilter': '-x 512 -y 512 -z 60 -np 1000',
          'RodiniaSrad':           '100 0.5 502 458 4',
         }
 

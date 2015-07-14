@@ -1,51 +1,51 @@
-fprintf usage 101 5 0 7 461 14
+fprintf usage 101 5 0 7 457 14
 exit usage 102 5 0 0
 gettimeofday seconds 108 13 0 20 21
-getopt main 133 15 0 0 425 463
-atof main 139 33 0 474
-atoi main 141 35 0 474
-atoi main 143 32 0 474
-usage main 145 23 0 134
-usage main 147 22 0 134
-usage main 153 25 0 134
-open main 161 23 0 474 0 465
-fprintf main 162 13 0 7 466 474
+getopt main 133 15 0 0 421 459
+atof main 139 33 0 470
+atoi main 141 35 0 470
+atoi main 143 32 0 470
+usage main 145 23 0 133
+usage main 147 22 0 133
+usage main 153 25 0 133
+open main 161 23 0 470 0 461
+fprintf main 162 13 0 7 462 470
 exit main 163 13 0 0
 read main 165 9 0 0 55 0
 read main 166 9 0 0 54 0
-malloc main 170 24 345 0
-malloc main 171 31 192 0
-malloc main 172 34 194 0
-read main 176 9 0 0 345 0
+malloc main 170 24 341 0
+malloc main 171 31 191 0
+malloc main 172 34 193 0
+read main 176 9 0 0 341 0
 close main 178 9 0 0
-fopen main 182 23 317 474 467
-fprintf main 183 13 0 7 466 474
+fopen main 182 23 316 470 463
+fprintf main 183 13 0 7 462 470
 exit main 184 13 0 0
-fgets main 186 16 234 56 0 317
-strtok main 187 17 238 56 468
-rewind main 189 9 0 317
-fgets main 190 16 251 56 0 317
-strtok main 191 17 255 56 468
-strtok main 193 24 259 474 465
-malloc main 200 24 345 0
-malloc main 201 31 192 0
-malloc main 202 34 194 0
-rewind main 205 9 0 317
-fgets main 207 16 323 56 0 317
-strtok main 208 17 327 56 468
-strtok main 210 51 338 474 465
-atof main 210 86 0 338
-fclose main 214 9 0 317
-printf main 216 2 0 470
-memcpy main 218 2 0 194 345 0
+fgets main 186 16 233 56 0 316
+strtok main 187 17 237 56 464
+rewind main 189 9 0 316
+fgets main 190 16 250 56 0 316
+strtok main 191 17 254 56 464
+strtok main 193 24 258 470 461
+malloc main 200 24 341 0
+malloc main 201 31 191 0
+malloc main 202 34 193 0
+rewind main 205 9 0 316
+fgets main 207 16 322 56 0 316
+strtok main 208 17 326 56 464
+strtok main 210 31 336 470 461
+atof main 210 26 0 336
+fclose main 214 9 0 316
+printf main 216 2 0 466
+memcpy main 218 2 0 193 341 0
 seconds main 220 25 0
-cluster main 224 9 0 0 0 192 0 0 51
+cluster main 224 9 0 0 0 191 0 0 51
 checkpoint main 232 9 0
 seconds main 236 23 0
-printf main 239 2 0 471 0
-printf main 240 2 0 466 0
-printf main 252 5 0 473 0
-free main 254 5 0 192
-free main 255 5 0 411
-free main 256 5 0 475
-free main 257 5 0 345
+printf main 239 2 0 467 0
+printf main 240 2 0 462 0
+printf main 252 5 0 469 0
+free main 254 5 0 191
+free main 255 5 0 407
+free main 256 5 0 471
+free main 257 5 0 341

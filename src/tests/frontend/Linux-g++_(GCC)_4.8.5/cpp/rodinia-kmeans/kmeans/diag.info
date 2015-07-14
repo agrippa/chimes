@@ -1,57 +1,53 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 6 len=5 usage_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 8 len=7 seconds_npm
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403272UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403268UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 69 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 10963612600445403119UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 10963612600445403118UL, 1, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 64 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403121UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403120UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 79 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403272UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403268UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 69 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 10963612600445403119UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 10963612600445403118UL, 1, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 64 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403121UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403120UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 79 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 254 5  ({ free(attributes); free_helper(attributes, 10963612600445403119UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 254 5  ({ free(attributes); free_helper(attributes, 10963612600445403118UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 254 20 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 5  ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 10963612600445403338UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 5  ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 10963612600445403334UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 28 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 5  ({ free(cluster_centres); free_helper(cluster_centres, 10963612600445403402UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 5  ({ free(cluster_centres); free_helper(cluster_centres, 10963612600445403398UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 25 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 5  ({ free(buf); free_helper(buf, 10963612600445403272UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 5  ({ free(buf); free_helper(buf, 10963612600445403268UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 13 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 187 17 alias_group_changed(____alias_loc_id_7) || 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 191 17 alias_group_changed(____alias_loc_id_4) || 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 193 17 alias_group_changed(____alias_loc_id_5); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 208 17 alias_group_changed(____alias_loc_id_1) || 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403272UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403268UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 69 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 10963612600445403119UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 10963612600445403118UL, 1, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 64 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403121UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403120UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 79 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403272UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403268UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 69 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 10963612600445403119UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 10963612600445403118UL, 1, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 64 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403121UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 10963612600445403120UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 79 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 254 5  ({ free(attributes); free_helper(attributes, 10963612600445403119UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 254 5  ({ free(attributes); free_helper(attributes, 10963612600445403118UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 254 20 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 5  ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 10963612600445403338UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 5  ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 10963612600445403334UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 28 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 5  ({ free(cluster_centres); free_helper(cluster_centres, 10963612600445403402UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 5  ({ free(cluster_centres); free_helper(cluster_centres, 10963612600445403398UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 25 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 5  ({ free(buf); free_helper(buf, 10963612600445403272UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 5  ({ free(buf); free_helper(buf, 10963612600445403268UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 13 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 25 const int ____chimes_did_disable0 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(10963612600445402941UL)); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 103 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable0, false); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 109 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_8, ____chimes_did_disable1, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 109 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_1, ____chimes_did_disable1, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 18 const int ____chimes_did_disable1 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 110 1 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_8, ____chimes_did_disable1, false); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 62 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_9, ____chimes_did_disable2, false); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 33 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(10963612600445403352UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 259 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_9, ____chimes_did_disable2, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 110 1 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 62 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 33 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(10963612600445403348UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 259 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 26 const int ____chimes_did_disable0 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(10963612600445402941UL)); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 162 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 94 5  char *help;  help = ("Usage: %s [switches] -i filename\n"
@@ -76,7 +72,7 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 108 36 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 109 6 double ____chimes_ret_var_0; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 109 33 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 34 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10963612600445403352UL)); ;
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 34 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10963612600445403348UL)); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 171 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 115 12 int opt; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 115 19 
@@ -124,8 +120,6 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 98 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 38 void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 115 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 18  char *____chimes_unroll_var_0;  ____chimes_unroll_var_0 = (strtok(__null, " ,\t\n")) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 75 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 5  double start_time;  start_time = (seconds()) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 34 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 5  double end_time;  end_time = (seconds()) ;
@@ -135,17 +129,10 @@ ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 25
 InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 145 23  call_lbl_0: 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 147 13  call_lbl_1: 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 153 25  call_lbl_2: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 186 9  call_lbl_3: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 189 9  call_lbl_4: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 191 13  call_lbl_5: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 193 58  call_lbl_6: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 205 9  call_lbl_7: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 208 13  call_lbl_8: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 51  call_lbl_9: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 26  call_lbl_10: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 224 9  call_lbl_11: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 9  call_lbl_12: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 24  call_lbl_13: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 26  call_lbl_3: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 224 9  call_lbl_4: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 9  call_lbl_5: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 24  call_lbl_6: 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 6 len=5 usage_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 161  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 8 len=7 seconds_quick
@@ -157,28 +144,14 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 147 48 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 153 38 ({ calling_npm("usage", 0); usage_npm(argv[0]); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 153 51 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 187 60 (____chimes_does_checkpoint_strtok_npm ? ( ({  calling((void*)strtok, 3, ____alias_loc_id_7, 10963612600445403165UL, 2, (size_t)(10963612600445402983UL), (size_t)(10963612600445403395UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_7); (*____chimes_extern_func_strtok)(line, " \t\n"); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 187 80 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 189 22 (____chimes_does_checkpoint_rewind_npm ? ( ({  calling((void*)rewind, 4, ____alias_loc_id_3, 0UL, 1, (size_t)(10963612600445403244UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_3); (*____chimes_extern_func_rewind)(infile); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 189 35 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 191 73 (____chimes_does_checkpoint_strtok_npm ? ( ({  calling((void*)strtok, 5, ____alias_loc_id_4, 10963612600445403182UL, 2, (size_t)(10963612600445402983UL), (size_t)(10963612600445403395UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_4); (*____chimes_extern_func_strtok)(line, " \t\n"); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 191 93 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 193 78 (____chimes_does_checkpoint_strtok_npm ? ( ({  calling((void*)strtok, 6, ____alias_loc_id_5, 10963612600445403186UL, 2, (size_t)(10963612600445403401UL), (size_t)(10963612600445403392UL)); (strtok)(__null, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_5); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 193 101 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 205 22 (____chimes_does_checkpoint_rewind_npm ? ( ({  calling((void*)rewind, 7, ____alias_loc_id_0, 0UL, 1, (size_t)(10963612600445403244UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_0); (*____chimes_extern_func_rewind)(infile); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 205 35 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 208 73 (____chimes_does_checkpoint_strtok_npm ? ( ({  calling((void*)strtok, 8, ____alias_loc_id_1, 10963612600445403254UL, 2, (size_t)(10963612600445402983UL), (size_t)(10963612600445403395UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_1); (*____chimes_extern_func_strtok)(line, " \t\n"); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 208 93 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 91 (____chimes_does_checkpoint_strtok_npm ? ( ({  calling((void*)strtok, 9, ____alias_loc_id_2, 10963612600445403265UL, 2, (size_t)(10963612600445403401UL), (size_t)(10963612600445403392UL)); (strtok)(__null, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_2); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 114 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 54 ({ calling_npm("seconds", 0); seconds_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 62 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 224 23 (____chimes_does_checkpoint_cluster_npm ? ( ({  calling((void*)cluster, 11, ____alias_loc_id_6, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445403119UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445402978UL)); (cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); }) ) : (({ calling_npm("cluster", ____alias_loc_id_6); (*____chimes_extern_func_cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 224 22 (____chimes_does_checkpoint_cluster_npm ? ( ({  calling((void*)cluster, 4, ____alias_loc_id_0, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445403118UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445402978UL)); (cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); }) ) : (({ calling_npm("cluster", ____alias_loc_id_0); (*____chimes_extern_func_cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 230 16 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 23 checkpoint_transformed(12, 0)
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 34 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 50 ({ calling_npm("seconds", 0); seconds_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 58 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 22 checkpoint_transformed(5, 0)
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 49 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 57 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 118 13 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 118 26 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 120 12 
@@ -189,8 +162,6 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 1
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 122 36 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 12 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 19 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 24 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 125 12 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 125 29 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 126 12 
@@ -203,9 +174,6 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 1
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 28 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 23 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 9  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21  if (____must_checkpoint_main_infile_1 != 0) { register_stack_var("main|infile|1", &____must_checkpoint_main_infile_1, "%struct._IO_FILE*", (void *)(&infile), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 168  ; double start_time;
 # 114
 float threshold;
@@ -218,8 +186,6 @@ int numObjects;
 # 114
 int numAttributes;
 # 114
-int j;
-# 114
 int i;
 # 114
 float **cluster_centres;
@@ -230,7 +196,7 @@ float *buf;
 # 114
 int nclusters;
 # 114
- register_stack_vars(12, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|threshold|0", (int *)0x0, "float", (void *)(&threshold), (size_t)4, 0, 0, 0, "main|nloops|0", (int *)0x0, "i32", (void *)(&nloops), (size_t)4, 0, 0, 0, "main|line|0", (int *)0x0, "[1024 x i8]", (void *)(line), (size_t)1024, 0, 0, 0, "main|numObjects|0", (int *)0x0, "i32", (void *)(&numObjects), (size_t)4, 0, 0, 0, "main|numAttributes|0", (int *)0x0, "i32", (void *)(&numAttributes), (size_t)4, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|cluster_centres|0", (int *)0x0, "float**", (void *)(&cluster_centres), (size_t)8, 1, 0, 0, "main|attributes|0", (int *)0x0, "float**", (void *)(&attributes), (size_t)8, 1, 0, 0, "main|buf|0", (int *)0x0, "float*", (void *)(&buf), (size_t)8, 1, 0, 0, "main|nclusters|0", (int *)0x0, "i32", (void *)(&nclusters), (size_t)4, 0, 0, 0);  
+ register_stack_vars(10, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|threshold|0", (int *)0x0, "float", (void *)(&threshold), (size_t)4, 0, 0, 0, "main|nloops|0", (int *)0x0, "i32", (void *)(&nloops), (size_t)4, 0, 0, 0, "main|numObjects|0", (int *)0x0, "i32", (void *)(&numObjects), (size_t)4, 0, 0, 0, "main|numAttributes|0", (int *)0x0, "i32", (void *)(&numAttributes), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|cluster_centres|0", (int *)0x0, "float**", (void *)(&cluster_centres), (size_t)8, 1, 0, 0, "main|attributes|0", (int *)0x0, "float**", (void *)(&attributes), (size_t)8, 1, 0, 0, "main|buf|0", (int *)0x0, "float*", (void *)(&buf), (size_t)8, 1, 0, 0, "main|nclusters|0", (int *)0x0, "i32", (void *)(&nclusters), (size_t)4, 0, 0, 0);  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 6 len=5 usage_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 161  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 8 len=7 seconds_resumable
@@ -242,28 +208,14 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 147 48 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 153 38 ({ calling_npm("usage", 0); usage_npm(argv[0]); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 153 51 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 187 60 (____chimes_does_checkpoint_strtok_npm ? ( ({  calling((void*)strtok, 3, ____alias_loc_id_7, 10963612600445403165UL, 2, (size_t)(10963612600445402983UL), (size_t)(10963612600445403395UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_7); (*____chimes_extern_func_strtok)(line, " \t\n"); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 187 80 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 189 22 (____chimes_does_checkpoint_rewind_npm ? ( ({  calling((void*)rewind, 4, ____alias_loc_id_3, 0UL, 1, (size_t)(10963612600445403244UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_3); (*____chimes_extern_func_rewind)(infile); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 189 35 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 191 73 (____chimes_does_checkpoint_strtok_npm ? ( ({  calling((void*)strtok, 5, ____alias_loc_id_4, 10963612600445403182UL, 2, (size_t)(10963612600445402983UL), (size_t)(10963612600445403395UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_4); (*____chimes_extern_func_strtok)(line, " \t\n"); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 191 93 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 193 78 (____chimes_does_checkpoint_strtok_npm ? ( ({  char * ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg5 = (__null);  }  calling((void*)strtok, 6, ____alias_loc_id_5, 10963612600445403186UL, 2, (size_t)(10963612600445403401UL), (size_t)(10963612600445403392UL)); (strtok)(____chimes_arg5, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_5); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 193 101 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 205 22 (____chimes_does_checkpoint_rewind_npm ? ( ({  calling((void*)rewind, 7, ____alias_loc_id_0, 0UL, 1, (size_t)(10963612600445403244UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_0); (*____chimes_extern_func_rewind)(infile); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 205 35 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 208 73 (____chimes_does_checkpoint_strtok_npm ? ( ({  calling((void*)strtok, 8, ____alias_loc_id_1, 10963612600445403254UL, 2, (size_t)(10963612600445402983UL), (size_t)(10963612600445403395UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_1); (*____chimes_extern_func_strtok)(line, " \t\n"); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 208 93 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 91 (____chimes_does_checkpoint_strtok_npm ? ( ({  char * ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg10 = (__null);  }  calling((void*)strtok, 9, ____alias_loc_id_2, 10963612600445403265UL, 2, (size_t)(10963612600445403401UL), (size_t)(10963612600445403392UL)); (strtok)(____chimes_arg10, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_2); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 114 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 54 ({ calling_npm("seconds", 0); seconds_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 62 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 224 23 (____chimes_does_checkpoint_cluster_npm ? ( ({  calling((void*)cluster, 11, ____alias_loc_id_6, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445403119UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445402978UL)); (cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); }) ) : (({ calling_npm("cluster", ____alias_loc_id_6); (*____chimes_extern_func_cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 224 22 (____chimes_does_checkpoint_cluster_npm ? ( ({  calling((void*)cluster, 4, ____alias_loc_id_0, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445403118UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445402978UL)); (cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); }) ) : (({ calling_npm("cluster", ____alias_loc_id_0); (*____chimes_extern_func_cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 230 16 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 23 checkpoint_transformed(12, 0)
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 34 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 50 ({ calling_npm("seconds", 0); seconds_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 58 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 22 checkpoint_transformed(5, 0)
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 49 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 57 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 118 13 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 118 26 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 120 12 
@@ -274,8 +226,6 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 1
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 122 36 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 12 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 17 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 19 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 24 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 125 12 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 125 29 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 126 12 
@@ -288,9 +238,6 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 1
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 28 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 6 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 23 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 9  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21  if (____must_checkpoint_main_infile_1 != 0) { register_stack_var("main|infile|1", &____must_checkpoint_main_infile_1, "%struct._IO_FILE*", (void *)(&infile), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 168  ; double start_time;
 # 114
 float threshold;
@@ -303,8 +250,6 @@ int numObjects;
 # 114
 int numAttributes;
 # 114
-int j;
-# 114
 int i;
 # 114
 float **cluster_centres;
@@ -315,4 +260,4 @@ float *buf;
 # 114
 int nclusters;
 # 114
- register_stack_vars(12, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|threshold|0", (int *)0x0, "float", (void *)(&threshold), (size_t)4, 0, 0, 0, "main|nloops|0", (int *)0x0, "i32", (void *)(&nloops), (size_t)4, 0, 0, 0, "main|line|0", (int *)0x0, "[1024 x i8]", (void *)(line), (size_t)1024, 0, 0, 0, "main|numObjects|0", (int *)0x0, "i32", (void *)(&numObjects), (size_t)4, 0, 0, 0, "main|numAttributes|0", (int *)0x0, "i32", (void *)(&numAttributes), (size_t)4, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|cluster_centres|0", (int *)0x0, "float**", (void *)(&cluster_centres), (size_t)8, 1, 0, 0, "main|attributes|0", (int *)0x0, "float**", (void *)(&attributes), (size_t)8, 1, 0, 0, "main|buf|0", (int *)0x0, "float*", (void *)(&buf), (size_t)8, 1, 0, 0, "main|nclusters|0", (int *)0x0, "i32", (void *)(&nclusters), (size_t)4, 0, 0, 0);  if (____chimes_replaying) { goto lbl_0; }  
+ register_stack_vars(10, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|threshold|0", (int *)0x0, "float", (void *)(&threshold), (size_t)4, 0, 0, 0, "main|nloops|0", (int *)0x0, "i32", (void *)(&nloops), (size_t)4, 0, 0, 0, "main|numObjects|0", (int *)0x0, "i32", (void *)(&numObjects), (size_t)4, 0, 0, 0, "main|numAttributes|0", (int *)0x0, "i32", (void *)(&numAttributes), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|cluster_centres|0", (int *)0x0, "float**", (void *)(&cluster_centres), (size_t)8, 1, 0, 0, "main|attributes|0", (int *)0x0, "float**", (void *)(&attributes), (size_t)8, 1, 0, 0, "main|buf|0", (int *)0x0, "float*", (void *)(&buf), (size_t)8, 1, 0, 0, "main|nclusters|0", (int *)0x0, "i32", (void *)(&nclusters), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  }  

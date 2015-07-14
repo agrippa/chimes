@@ -1,9 +1,9 @@
 64 31 4 malloc 0 1 kdnode lo hi
 74 31 29 malloc 0 1 kdnode lo hi
-748 23 1207 malloc
-754 23 1203 malloc
-760 23 1199 malloc
-766 23 1328 malloc
-772 23 1327 malloc
-794 20 1260 malloc 1 0
-809 24 1262 malloc
+748 23 1208 malloc
+754 23 1204 malloc
+760 23 1200 malloc
+766 23 1336 malloc
+772 23 1335 malloc
+794 20 1270 malloc 1 0
+804 22 1272 malloc

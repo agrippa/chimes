@@ -1197,7 +1197,7 @@ void read_graphics_resumable( char* filename,
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
          int data_cols,
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-         int major){const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(9161344876833313006UL), (size_t)(9161344876833313007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0) ; int temp;
+         int major){const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(9161344876833313007UL), (size_t)(9161344876833313008UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0) ; int temp;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 int i;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1227,7 +1227,7 @@ FILE *fid;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
  if( fid == __null ){
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-  printf( "The file was not opened for reading\n" );
+  printf( "The file %s was not opened for reading\n", filename);
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
   rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1, false); return;
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1415,7 +1415,7 @@ void read_graphics_quick( char* filename,
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
          int data_cols,
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-         int major){const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(9161344876833313006UL), (size_t)(9161344876833313007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0) ; int temp;
+         int major){const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(9161344876833313007UL), (size_t)(9161344876833313008UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0) ; int temp;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 int i;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1445,7 +1445,7 @@ FILE *fid;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
  if( fid == __null ){
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-  printf( "The file was not opened for reading\n" );
+  printf( "The file %s was not opened for reading\n", filename);
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
   rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1, false); return;
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1655,7 +1655,7 @@ void read_graphics_npm( char* filename,
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
  if( fid == __null ){
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-  printf( "The file was not opened for reading\n" );
+  printf( "The file %s was not opened for reading\n", filename);
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
   return;
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1735,9 +1735,9 @@ static int module_init() {
     init_module(9161344876833312739UL, 6, 2, 7, 3, 2, 1, 3, 0, 0, 2,
                            &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)1, (9161344876833312739UL + 143UL), (9161344876833312739UL + 145UL), "fgetc", (unsigned)1, (9161344876833312739UL + 163UL),
                            &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (9161344876833312739UL + 1UL), (9161344876833312739UL + 2UL), (9161344876833312739UL + 3UL), (9161344876833312739UL + 4UL), (9161344876833312739UL + 5UL), (9161344876833312739UL + 6UL), (9161344876833312739UL + 7UL), (9161344876833312739UL + 8UL), (9161344876833312739UL + 9UL), (9161344876833312739UL + 26UL),
-                           &____alias_loc_id_2, (unsigned)11, (unsigned)0, (unsigned)0, (9161344876833312739UL + 137UL), (9161344876833312739UL + 138UL), (9161344876833312739UL + 139UL), (9161344876833312739UL + 140UL), (9161344876833312739UL + 141UL), (9161344876833312739UL + 142UL), (9161344876833312739UL + 143UL), (9161344876833312739UL + 144UL), (9161344876833312739UL + 145UL), (9161344876833312739UL + 163UL), (9161344876833312739UL + 268UL),
-                            "write_graphics", 0, "_Z14write_graphicsPcPfiiii", "_Z18write_graphics_npmPcPfiiii", 0, 6, (9161344876833312739UL + 123UL), (9161344876833312739UL + 124UL), 0UL, 0UL, 0UL, 0UL, 0UL, 10, "fopen", 2, (9161344876833312739UL + 123UL), (9161344876833312739UL + 275UL), (9161344876833312739UL + 26UL), "printf", 1, (9161344876833312739UL + 276UL), 0UL, "fprintf", 2, (9161344876833312739UL + 26UL), (9161344876833312739UL + 277UL), 0UL, "fprintf", 4, (9161344876833312739UL + 26UL), (9161344876833312739UL + 278UL), 0UL, 0UL, 0UL, "fprintf", 3, (9161344876833312739UL + 26UL), (9161344876833312739UL + 277UL), 0UL, 0UL, "fprintf", 3, (9161344876833312739UL + 26UL), (9161344876833312739UL + 277UL), 0UL, 0UL, "fprintf", 2, (9161344876833312739UL + 26UL), (9161344876833312739UL + 275UL), 0UL, "fprintf", 3, (9161344876833312739UL + 26UL), (9161344876833312739UL + 277UL), 0UL, 0UL, "fprintf", 2, (9161344876833312739UL + 26UL), (9161344876833312739UL + 275UL), 0UL, "fclose", 1, (9161344876833312739UL + 26UL), 0UL,
-                            "read_graphics", 0, "_Z13read_graphicsPcPfiii", "_Z17read_graphics_npmPcPfiii", 1, &____alias_loc_id_0, 5, (9161344876833312739UL + 267UL), (9161344876833312739UL + 268UL), 0UL, 0UL, 0UL, 0UL, 6, "fopen", 2, (9161344876833312739UL + 267UL), (9161344876833312739UL + 275UL), (9161344876833312739UL + 163UL), "printf", 1, (9161344876833312739UL + 283UL), 0UL, "fgetc", 1, (9161344876833312739UL + 163UL), 0UL, "fscanf", 3, (9161344876833312739UL + 163UL), (9161344876833312739UL + 284UL), (9161344876833312739UL + 146UL), 0UL, "fscanf", 3, (9161344876833312739UL + 163UL), (9161344876833312739UL + 284UL), (9161344876833312739UL + 146UL), 0UL, "fclose", 1, (9161344876833312739UL + 163UL), 0UL,
+                           &____alias_loc_id_2, (unsigned)11, (unsigned)0, (unsigned)0, (9161344876833312739UL + 137UL), (9161344876833312739UL + 138UL), (9161344876833312739UL + 139UL), (9161344876833312739UL + 140UL), (9161344876833312739UL + 141UL), (9161344876833312739UL + 142UL), (9161344876833312739UL + 143UL), (9161344876833312739UL + 144UL), (9161344876833312739UL + 145UL), (9161344876833312739UL + 163UL), (9161344876833312739UL + 269UL),
+                            "write_graphics", 0, "_Z14write_graphicsPcPfiiii", "_Z18write_graphics_npmPcPfiiii", 0, 6, (9161344876833312739UL + 123UL), (9161344876833312739UL + 124UL), 0UL, 0UL, 0UL, 0UL, 0UL, 10, "fopen", 2, (9161344876833312739UL + 123UL), (9161344876833312739UL + 276UL), (9161344876833312739UL + 26UL), "printf", 1, (9161344876833312739UL + 277UL), 0UL, "fprintf", 2, (9161344876833312739UL + 26UL), (9161344876833312739UL + 278UL), 0UL, "fprintf", 4, (9161344876833312739UL + 26UL), (9161344876833312739UL + 279UL), 0UL, 0UL, 0UL, "fprintf", 3, (9161344876833312739UL + 26UL), (9161344876833312739UL + 278UL), 0UL, 0UL, "fprintf", 3, (9161344876833312739UL + 26UL), (9161344876833312739UL + 278UL), 0UL, 0UL, "fprintf", 2, (9161344876833312739UL + 26UL), (9161344876833312739UL + 276UL), 0UL, "fprintf", 3, (9161344876833312739UL + 26UL), (9161344876833312739UL + 278UL), 0UL, 0UL, "fprintf", 2, (9161344876833312739UL + 26UL), (9161344876833312739UL + 276UL), 0UL, "fclose", 1, (9161344876833312739UL + 26UL), 0UL,
+                            "read_graphics", 0, "_Z13read_graphicsPcPfiii", "_Z17read_graphics_npmPcPfiii", 1, &____alias_loc_id_0, 5, (9161344876833312739UL + 268UL), (9161344876833312739UL + 269UL), 0UL, 0UL, 0UL, 0UL, 6, "fopen", 2, (9161344876833312739UL + 268UL), (9161344876833312739UL + 276UL), (9161344876833312739UL + 163UL), "printf", 2, (9161344876833312739UL + 284UL), (9161344876833312739UL + 268UL), 0UL, "fgetc", 1, (9161344876833312739UL + 163UL), 0UL, "fscanf", 3, (9161344876833312739UL + 163UL), (9161344876833312739UL + 285UL), (9161344876833312739UL + 146UL), 0UL, "fscanf", 3, (9161344876833312739UL + 163UL), (9161344876833312739UL + 285UL), (9161344876833312739UL + 146UL), 0UL, "fclose", 1, (9161344876833312739UL + 163UL), 0UL,
                                "fgetc", (void **)&(____chimes_extern_func_fgetc),
                            "write_graphics", &(____chimes_does_checkpoint_write_graphics_npm),
                            "read_graphics", &(____chimes_does_checkpoint_read_graphics_npm),
@@ -1745,9 +1745,9 @@ static int module_init() {
                              (9161344876833312739UL + 142UL), (9161344876833312739UL + 163UL),
                              (9161344876833312739UL + 1UL), (9161344876833312739UL + 123UL),
                              (9161344876833312739UL + 2UL), (9161344876833312739UL + 124UL),
-                             (9161344876833312739UL + 137UL), (9161344876833312739UL + 267UL),
+                             (9161344876833312739UL + 137UL), (9161344876833312739UL + 268UL),
                              (9161344876833312739UL + 7UL), (9161344876833312739UL + 26UL),
-                             (9161344876833312739UL + 138UL), (9161344876833312739UL + 268UL),
+                             (9161344876833312739UL + 138UL), (9161344876833312739UL + 269UL),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
                              "write_graphics", "_Z14write_graphicsPcPfiiii", 0,

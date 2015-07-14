@@ -11,6 +11,7 @@ typedef long unsigned int size_t;
 static int ____chimes_does_checkpoint_embedded_fehlberg_7_8_npm = 1;
 static int ____chimes_does_checkpoint_master_npm = 1;
 
+static int ____must_checkpoint_embedded_fehlberg_7_8_initvalu_temp_0 = 2;
 
 static int ____must_manage_embedded_fehlberg_7_8 = 2;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
@@ -2583,7 +2584,11 @@ float embedded_fehlberg_7_8_resumable( float timeinst,
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
                float* parameter,
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-               int mode) {const int ____chimes_did_disable0 = new_stack((void *)(&embedded_fehlberg_7_8), "embedded_fehlberg_7_8", &____must_manage_embedded_fehlberg_7_8, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(16264326111341338151UL), (size_t)(16264326111341338152UL), (size_t)(16264326111341338153UL), (size_t)(16264326111341338154UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } ; ;
+               int mode) {const int ____chimes_did_disable0 = new_stack((void *)(&embedded_fehlberg_7_8), "embedded_fehlberg_7_8", &____must_manage_embedded_fehlberg_7_8, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(16264326111341337964UL), (size_t)(16264326111341337965UL), (size_t)(16264326111341337966UL), (size_t)(16264326111341337967UL), (size_t)(0UL)) ; float finavalu_temp[13][91];
+# 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+float initvalu_temp[91];
+# 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ if (____must_checkpoint_embedded_fehlberg_7_8_initvalu_temp_0) { register_stack_vars(1, "embedded_fehlberg_7_8|initvalu_temp|0", &____must_checkpoint_embedded_fehlberg_7_8_initvalu_temp_0, "[91 x float]", (void *)(initvalu_temp), (size_t)364, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } ; ;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
   static float c_1_11; c_1_11 = (41.0 / 840.0) ;
@@ -2729,9 +2734,7 @@ float embedded_fehlberg_7_8_resumable( float timeinst,
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  float timeinst_temp; ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- float *initvalu_temp; ;
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- float **finavalu_temp; ;
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  int i; ;
@@ -2741,204 +2744,190 @@ float embedded_fehlberg_7_8_resumable( float timeinst,
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- initvalu_temp= (float *) ({ void *____chimes_tmp_ptr = malloc(91 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, 91* sizeof(float), 16264326111341336981UL, 0, 0); ____chimes_tmp_ptr; }) ;
+     ;
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- finavalu_temp= (float **) ({ void *____chimes_tmp_ptr = malloc(13 * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, 13* sizeof(float *), 16264326111341336984UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for (i= 0; i<13; i++){
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  finavalu_temp[i]= (float *) ({ void *____chimes_tmp_ptr = malloc(91 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, 91* sizeof(float), 16264326111341336992UL, 0, 0); ____chimes_tmp_ptr; }) ;
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+     ;
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] ;
+# 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst;
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+  initvalu_temp[i] = initvalu[i] ;
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_0: ({ float * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (finavalu_temp[0]); } calling((void*)master, 0, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg3, mode); }) ;
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+h2_7;
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 214 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_0: ({ float * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (finavalu_temp[0]); } calling((void*)master, 0, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg3, mode); }) ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h2_7 * (finavalu_temp[0][i]);
+# 228 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+h2_7;
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h2_7 * (finavalu_temp[0][i]);
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_1: ({ float * ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg8 = (finavalu_temp[1]); } calling((void*)master, 1, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg8, mode); }) ;
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a3*h;
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 232 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 233 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_1: ({ float * ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg8 = (finavalu_temp[1]); } calling((void*)master, 1, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg8, mode); }) ;
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b31*finavalu_temp[0][i] + b32*finavalu_temp[1][i]);
+# 247 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a3*h;
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b31*finavalu_temp[0][i] + b32*finavalu_temp[1][i]);
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_2: ({ float * ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg13 = (finavalu_temp[2]); } calling((void*)master, 2, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg13, mode); }) ;
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a4*h;
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 251 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 252 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_2: ({ float * ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg13 = (finavalu_temp[2]); } calling((void*)master, 2, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg13, mode); }) ;
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b41*finavalu_temp[0][i] + b43*finavalu_temp[2][i]) ;
+# 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a4*h;
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 268 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b41*finavalu_temp[0][i] + b43*finavalu_temp[2][i]) ;
 # 269 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_3: ({ float * ____chimes_arg18; if (!____chimes_replaying) { ____chimes_arg18 = (finavalu_temp[3]); } calling((void*)master, 3, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg18, mode); }) ;
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a5*h;
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 270 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 271 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_3: ({ float * ____chimes_arg18; if (!____chimes_replaying) { ____chimes_arg18 = (finavalu_temp[3]); } calling((void*)master, 3, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg18, mode); }) ;
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b51*finavalu_temp[0][i] + b53*finavalu_temp[2][i] + b54*finavalu_temp[3][i]) ;
+# 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a5*h;
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b51*finavalu_temp[0][i] + b53*finavalu_temp[2][i] + b54*finavalu_temp[3][i]) ;
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_4: ({ float * ____chimes_arg23; if (!____chimes_replaying) { ____chimes_arg23 = (finavalu_temp[4]); } calling((void*)master, 4, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg23, mode); }) ;
-# 302 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 302 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a6*h;
-# 303 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 289 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 290 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_4: ({ float * ____chimes_arg23; if (!____chimes_replaying) { ____chimes_arg23 = (finavalu_temp[4]); } calling((void*)master, 4, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg23, mode); }) ;
 # 304 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b61*finavalu_temp[0][i] + b64*finavalu_temp[3][i] + b65*finavalu_temp[4][i]) ;
+# 304 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a6*h;
 # 305 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 306 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b61*finavalu_temp[0][i] + b64*finavalu_temp[3][i] + b65*finavalu_temp[4][i]) ;
 # 307 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_5: ({ float * ____chimes_arg28; if (!____chimes_replaying) { ____chimes_arg28 = (finavalu_temp[5]); } calling((void*)master, 5, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg28, mode); }) ;
-# 321 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 321 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a7*h;
-# 322 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 308 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 309 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_5: ({ float * ____chimes_arg28; if (!____chimes_replaying) { ____chimes_arg28 = (finavalu_temp[5]); } calling((void*)master, 5, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg28, mode); }) ;
 # 323 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b71*finavalu_temp[0][i] + b74*finavalu_temp[3][i] + b75*finavalu_temp[4][i] + b76*finavalu_temp[5][i]);
+# 323 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a7*h;
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b71*finavalu_temp[0][i] + b74*finavalu_temp[3][i] + b75*finavalu_temp[4][i] + b76*finavalu_temp[5][i]);
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_6: ({ float * ____chimes_arg33; if (!____chimes_replaying) { ____chimes_arg33 = (finavalu_temp[6]); } calling((void*)master, 6, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg33, mode); }) ;
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a8*h;
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 327 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 328 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_6: ({ float * ____chimes_arg33; if (!____chimes_replaying) { ____chimes_arg33 = (finavalu_temp[6]); } calling((void*)master, 6, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg33, mode); }) ;
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b81*finavalu_temp[0][i] + b85*finavalu_temp[4][i] + b86*finavalu_temp[5][i] + b87*finavalu_temp[6][i]);
+# 342 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a8*h;
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 344 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b81*finavalu_temp[0][i] + b85*finavalu_temp[4][i] + b86*finavalu_temp[5][i] + b87*finavalu_temp[6][i]);
 # 345 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_7: ({ float * ____chimes_arg38; if (!____chimes_replaying) { ____chimes_arg38 = (finavalu_temp[7]); } calling((void*)master, 7, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg38, mode); }) ;
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a9*h;
-# 360 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 346 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 347 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_7: ({ float * ____chimes_arg38; if (!____chimes_replaying) { ____chimes_arg38 = (finavalu_temp[7]); } calling((void*)master, 7, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg38, mode); }) ;
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b91*finavalu_temp[0][i] + b94*finavalu_temp[3][i] + b95*finavalu_temp[4][i] + b96*finavalu_temp[5][i] + b97*finavalu_temp[6][i]+ b98*finavalu_temp[7][i]) ;
+# 361 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a9*h;
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b91*finavalu_temp[0][i] + b94*finavalu_temp[3][i] + b95*finavalu_temp[4][i] + b96*finavalu_temp[5][i] + b97*finavalu_temp[6][i]+ b98*finavalu_temp[7][i]) ;
 # 364 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_8: ({ float * ____chimes_arg43; if (!____chimes_replaying) { ____chimes_arg43 = (finavalu_temp[8]); } calling((void*)master, 8, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg43, mode); }) ;
-# 378 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 378 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a10*h;
-# 379 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 366 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_8: ({ float * ____chimes_arg43; if (!____chimes_replaying) { ____chimes_arg43 = (finavalu_temp[8]); } calling((void*)master, 8, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg43, mode); }) ;
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b10_1*finavalu_temp[0][i] + b10_4*finavalu_temp[3][i] + b10_5*finavalu_temp[4][i] + b10_6*finavalu_temp[5][i] + b10_7*finavalu_temp[6][i] + b10_8*finavalu_temp[7][i] + b10_9*finavalu_temp[8] [i]) ;
+# 380 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a10*h;
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b10_1*finavalu_temp[0][i] + b10_4*finavalu_temp[3][i] + b10_5*finavalu_temp[4][i] + b10_6*finavalu_temp[5][i] + b10_7*finavalu_temp[6][i] + b10_8*finavalu_temp[7][i] + b10_9*finavalu_temp[8] [i]) ;
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_9: ({ float * ____chimes_arg48; if (!____chimes_replaying) { ____chimes_arg48 = (finavalu_temp[9]); } calling((void*)master, 9, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg48, mode); }) ;
-# 397 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 397 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+h;
-# 398 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 384 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 385 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_9: ({ float * ____chimes_arg48; if (!____chimes_replaying) { ____chimes_arg48 = (finavalu_temp[9]); } calling((void*)master, 9, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg48, mode); }) ;
 # 399 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b11_1*finavalu_temp[0][i] + b11_4*finavalu_temp[3][i] + b11_5*finavalu_temp[4][i] + b11_6*finavalu_temp[5][i] + b11_7*finavalu_temp[6][i] + b11_8*finavalu_temp[7][i] + b11_9*finavalu_temp[8][i]+ b11_10 * finavalu_temp[9][i]);
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 401 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 402 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_10: ({ float * ____chimes_arg53; if (!____chimes_replaying) { ____chimes_arg53 = (finavalu_temp[10]); } calling((void*)master, 10, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg53, mode); }) ;
-# 416 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 416 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst;
-# 417 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
-# 418 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b12_1*finavalu_temp[0][i] + b12_6*finavalu_temp[5][i] + b12_7*finavalu_temp[6][i] + b12_8*finavalu_temp[7][i] + b12_9*finavalu_temp[8][i] + b12_10 * finavalu_temp[9][i]) ;
-# 419 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 420 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 421 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_11: ({ float * ____chimes_arg58; if (!____chimes_replaying) { ____chimes_arg58 = (finavalu_temp[11]); } calling((void*)master, 11, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg58, mode); }) ;
-# 435 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 435 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 399 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  timeinst_temp = timeinst+h;
-# 436 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 400 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  for(i=0; i<91; i++){
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b11_1*finavalu_temp[0][i] + b11_4*finavalu_temp[3][i] + b11_5*finavalu_temp[4][i] + b11_6*finavalu_temp[5][i] + b11_7*finavalu_temp[6][i] + b11_8*finavalu_temp[7][i] + b11_9*finavalu_temp[8][i]+ b11_10 * finavalu_temp[9][i]);
+# 402 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 403 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 404 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_10: ({ float * ____chimes_arg53; if (!____chimes_replaying) { ____chimes_arg53 = (finavalu_temp[10]); } calling((void*)master, 10, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg53, mode); }) ;
+# 418 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 418 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst;
+# 419 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
+# 420 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b12_1*finavalu_temp[0][i] + b12_6*finavalu_temp[5][i] + b12_7*finavalu_temp[6][i] + b12_8*finavalu_temp[7][i] + b12_9*finavalu_temp[8][i] + b12_10 * finavalu_temp[9][i]) ;
+# 421 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 422 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 423 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_11: ({ float * ____chimes_arg58; if (!____chimes_replaying) { ____chimes_arg58 = (finavalu_temp[11]); } calling((void*)master, 11, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg58, mode); }) ;
 # 437 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b13_1*finavalu_temp[0][i] + b13_4*finavalu_temp[3][i] + b13_5*finavalu_temp[4][i] + b13_6*finavalu_temp[5][i] + b13_7*finavalu_temp[6][i] + b13_8*finavalu_temp[7][i] + b13_9*finavalu_temp[8][i] + b13_10*finavalu_temp[9][i] + finavalu_temp[11][i]) ;
+# 437 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+h;
 # 438 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 439 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 440 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_12: ({ float * ____chimes_arg63; if (!____chimes_replaying) { ____chimes_arg63 = (finavalu_temp[12]); } calling((void*)master, 12, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg63, mode); }) ;
-# 454 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 454 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  for(i=0; i<91; i++){
-# 455 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  finavalu[i]= initvalu[i] + h * (c_1_11 * (finavalu_temp[0][i] + finavalu_temp[10][i]) + c6 * finavalu_temp[5][i] + c_7_8 * (finavalu_temp[6][i] + finavalu_temp[7][i]) + c_9_10 * (finavalu_temp[8][i] + finavalu_temp[9][i]) );
-# 464 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 464 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 439 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b13_1*finavalu_temp[0][i] + b13_4*finavalu_temp[3][i] + b13_5*finavalu_temp[4][i] + b13_6*finavalu_temp[5][i] + b13_7*finavalu_temp[6][i] + b13_8*finavalu_temp[7][i] + b13_9*finavalu_temp[8][i] + b13_10*finavalu_temp[9][i] + finavalu_temp[11][i]) ;
+# 440 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  }
-# 465 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 441 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 442 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_12: ({ float * ____chimes_arg63; if (!____chimes_replaying) { ____chimes_arg63 = (finavalu_temp[12]); } calling((void*)master, 12, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, ____chimes_arg63, mode); }) ;
+# 456 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 456 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
+# 457 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  finavalu[i]= initvalu[i] + h * (c_1_11 * (finavalu_temp[0][i] + finavalu_temp[10][i]) + c6 * finavalu_temp[5][i] + c_7_8 * (finavalu_temp[6][i] + finavalu_temp[7][i]) + c_9_10 * (finavalu_temp[8][i] + finavalu_temp[9][i]) );
 # 466 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 466 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 469 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  error[i] = fabs(err_factor * (finavalu_temp[0][i] + finavalu_temp[10][i] - finavalu_temp[11][i] - finavalu_temp[12][i]));
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+  error[i] = fabs(err_factor * (finavalu_temp[0][i] + finavalu_temp[10][i] - finavalu_temp[11][i] - finavalu_temp[12][i]));
 # 474 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 475 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 476 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 478 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 479 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  ({ free(initvalu_temp); free_helper(initvalu_temp, 16264326111341336981UL); }) ;
-# 480 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  ({ free(finavalu_temp); free_helper(finavalu_temp, 16264326111341336984UL); }) ;
-# 481 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 482 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 484 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 484 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 rm_stack(false, 0UL, "embedded_fehlberg_7_8", &____must_manage_embedded_fehlberg_7_8, 0, ____chimes_did_disable0, false); }
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 float embedded_fehlberg_7_8_quick( float timeinst,
@@ -2953,7 +2942,11 @@ float embedded_fehlberg_7_8_quick( float timeinst,
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
                float* parameter,
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-               int mode) {const int ____chimes_did_disable0 = new_stack((void *)(&embedded_fehlberg_7_8), "embedded_fehlberg_7_8", &____must_manage_embedded_fehlberg_7_8, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(16264326111341338151UL), (size_t)(16264326111341338152UL), (size_t)(16264326111341338153UL), (size_t)(16264326111341338154UL), (size_t)(0UL)) ; ; ;
+               int mode) {const int ____chimes_did_disable0 = new_stack((void *)(&embedded_fehlberg_7_8), "embedded_fehlberg_7_8", &____must_manage_embedded_fehlberg_7_8, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(16264326111341337964UL), (size_t)(16264326111341337965UL), (size_t)(16264326111341337966UL), (size_t)(16264326111341337967UL), (size_t)(0UL)) ; float finavalu_temp[13][91];
+# 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+float initvalu_temp[91];
+# 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ if (____must_checkpoint_embedded_fehlberg_7_8_initvalu_temp_0) { register_stack_vars(1, "embedded_fehlberg_7_8|initvalu_temp|0", &____must_checkpoint_embedded_fehlberg_7_8_initvalu_temp_0, "[91 x float]", (void *)(initvalu_temp), (size_t)364, 0, 0, 0); } ; ;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
   static float c_1_11; c_1_11 = (41.0 / 840.0) ;
@@ -3099,9 +3092,7 @@ float embedded_fehlberg_7_8_quick( float timeinst,
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  float timeinst_temp; ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- float *initvalu_temp; ;
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- float **finavalu_temp; ;
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  int i; ;
@@ -3111,204 +3102,190 @@ float embedded_fehlberg_7_8_quick( float timeinst,
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- initvalu_temp= (float *) ({ void *____chimes_tmp_ptr = malloc(91 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, 91* sizeof(float), 16264326111341336981UL, 0, 0); ____chimes_tmp_ptr; }) ;
+     ;
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- finavalu_temp= (float **) ({ void *____chimes_tmp_ptr = malloc(13 * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, 13* sizeof(float *), 16264326111341336984UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for (i= 0; i<13; i++){
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  finavalu_temp[i]= (float *) ({ void *____chimes_tmp_ptr = malloc(91 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, 91* sizeof(float), 16264326111341336992UL, 0, 0); ____chimes_tmp_ptr; }) ;
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+     ;
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] ;
+# 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst;
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+  initvalu_temp[i] = initvalu[i] ;
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_0: ({ calling((void*)master, 0, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[0], mode); }) ;
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+h2_7;
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 214 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_0: ({ calling((void*)master, 0, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[0], mode); }) ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h2_7 * (finavalu_temp[0][i]);
+# 228 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+h2_7;
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h2_7 * (finavalu_temp[0][i]);
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_1: ({ calling((void*)master, 1, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[1], mode); }) ;
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a3*h;
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 232 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 233 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_1: ({ calling((void*)master, 1, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[1], mode); }) ;
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b31*finavalu_temp[0][i] + b32*finavalu_temp[1][i]);
+# 247 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a3*h;
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b31*finavalu_temp[0][i] + b32*finavalu_temp[1][i]);
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_2: ({ calling((void*)master, 2, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[2], mode); }) ;
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a4*h;
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 251 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 252 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_2: ({ calling((void*)master, 2, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[2], mode); }) ;
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b41*finavalu_temp[0][i] + b43*finavalu_temp[2][i]) ;
+# 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a4*h;
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 268 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b41*finavalu_temp[0][i] + b43*finavalu_temp[2][i]) ;
 # 269 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_3: ({ calling((void*)master, 3, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[3], mode); }) ;
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a5*h;
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 270 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 271 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_3: ({ calling((void*)master, 3, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[3], mode); }) ;
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b51*finavalu_temp[0][i] + b53*finavalu_temp[2][i] + b54*finavalu_temp[3][i]) ;
+# 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a5*h;
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b51*finavalu_temp[0][i] + b53*finavalu_temp[2][i] + b54*finavalu_temp[3][i]) ;
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_4: ({ calling((void*)master, 4, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[4], mode); }) ;
-# 302 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 302 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a6*h;
-# 303 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 289 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 290 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_4: ({ calling((void*)master, 4, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[4], mode); }) ;
 # 304 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b61*finavalu_temp[0][i] + b64*finavalu_temp[3][i] + b65*finavalu_temp[4][i]) ;
+# 304 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a6*h;
 # 305 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 306 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b61*finavalu_temp[0][i] + b64*finavalu_temp[3][i] + b65*finavalu_temp[4][i]) ;
 # 307 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_5: ({ calling((void*)master, 5, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[5], mode); }) ;
-# 321 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 321 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a7*h;
-# 322 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 308 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 309 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_5: ({ calling((void*)master, 5, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[5], mode); }) ;
 # 323 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b71*finavalu_temp[0][i] + b74*finavalu_temp[3][i] + b75*finavalu_temp[4][i] + b76*finavalu_temp[5][i]);
+# 323 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a7*h;
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b71*finavalu_temp[0][i] + b74*finavalu_temp[3][i] + b75*finavalu_temp[4][i] + b76*finavalu_temp[5][i]);
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_6: ({ calling((void*)master, 6, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[6], mode); }) ;
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a8*h;
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 327 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 328 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_6: ({ calling((void*)master, 6, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[6], mode); }) ;
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b81*finavalu_temp[0][i] + b85*finavalu_temp[4][i] + b86*finavalu_temp[5][i] + b87*finavalu_temp[6][i]);
+# 342 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a8*h;
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 344 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b81*finavalu_temp[0][i] + b85*finavalu_temp[4][i] + b86*finavalu_temp[5][i] + b87*finavalu_temp[6][i]);
 # 345 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_7: ({ calling((void*)master, 7, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[7], mode); }) ;
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a9*h;
-# 360 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 346 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 347 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_7: ({ calling((void*)master, 7, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[7], mode); }) ;
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b91*finavalu_temp[0][i] + b94*finavalu_temp[3][i] + b95*finavalu_temp[4][i] + b96*finavalu_temp[5][i] + b97*finavalu_temp[6][i]+ b98*finavalu_temp[7][i]) ;
+# 361 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a9*h;
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b91*finavalu_temp[0][i] + b94*finavalu_temp[3][i] + b95*finavalu_temp[4][i] + b96*finavalu_temp[5][i] + b97*finavalu_temp[6][i]+ b98*finavalu_temp[7][i]) ;
 # 364 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_8: ({ calling((void*)master, 8, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[8], mode); }) ;
-# 378 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 378 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a10*h;
-# 379 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 366 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_8: ({ calling((void*)master, 8, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[8], mode); }) ;
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b10_1*finavalu_temp[0][i] + b10_4*finavalu_temp[3][i] + b10_5*finavalu_temp[4][i] + b10_6*finavalu_temp[5][i] + b10_7*finavalu_temp[6][i] + b10_8*finavalu_temp[7][i] + b10_9*finavalu_temp[8] [i]) ;
+# 380 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a10*h;
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b10_1*finavalu_temp[0][i] + b10_4*finavalu_temp[3][i] + b10_5*finavalu_temp[4][i] + b10_6*finavalu_temp[5][i] + b10_7*finavalu_temp[6][i] + b10_8*finavalu_temp[7][i] + b10_9*finavalu_temp[8] [i]) ;
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_9: ({ calling((void*)master, 9, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[9], mode); }) ;
-# 397 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 397 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+h;
-# 398 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+ }
+# 384 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 385 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_9: ({ calling((void*)master, 9, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[9], mode); }) ;
 # 399 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b11_1*finavalu_temp[0][i] + b11_4*finavalu_temp[3][i] + b11_5*finavalu_temp[4][i] + b11_6*finavalu_temp[5][i] + b11_7*finavalu_temp[6][i] + b11_8*finavalu_temp[7][i] + b11_9*finavalu_temp[8][i]+ b11_10 * finavalu_temp[9][i]);
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 401 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 402 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_10: ({ calling((void*)master, 10, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[10], mode); }) ;
-# 416 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 416 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst;
-# 417 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
-# 418 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b12_1*finavalu_temp[0][i] + b12_6*finavalu_temp[5][i] + b12_7*finavalu_temp[6][i] + b12_8*finavalu_temp[7][i] + b12_9*finavalu_temp[8][i] + b12_10 * finavalu_temp[9][i]) ;
-# 419 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 420 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 421 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_11: ({ calling((void*)master, 11, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[11], mode); }) ;
-# 435 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 435 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 399 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  timeinst_temp = timeinst+h;
-# 436 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 400 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  for(i=0; i<91; i++){
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b11_1*finavalu_temp[0][i] + b11_4*finavalu_temp[3][i] + b11_5*finavalu_temp[4][i] + b11_6*finavalu_temp[5][i] + b11_7*finavalu_temp[6][i] + b11_8*finavalu_temp[7][i] + b11_9*finavalu_temp[8][i]+ b11_10 * finavalu_temp[9][i]);
+# 402 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 403 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 404 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_10: ({ calling((void*)master, 10, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[10], mode); }) ;
+# 418 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 418 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst;
+# 419 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
+# 420 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b12_1*finavalu_temp[0][i] + b12_6*finavalu_temp[5][i] + b12_7*finavalu_temp[6][i] + b12_8*finavalu_temp[7][i] + b12_9*finavalu_temp[8][i] + b12_10 * finavalu_temp[9][i]) ;
+# 421 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 422 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 423 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_11: ({ calling((void*)master, 11, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[11], mode); }) ;
 # 437 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b13_1*finavalu_temp[0][i] + b13_4*finavalu_temp[3][i] + b13_5*finavalu_temp[4][i] + b13_6*finavalu_temp[5][i] + b13_7*finavalu_temp[6][i] + b13_8*finavalu_temp[7][i] + b13_9*finavalu_temp[8][i] + b13_10*finavalu_temp[9][i] + finavalu_temp[11][i]) ;
+# 437 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+h;
 # 438 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 439 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 440 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  call_lbl_12: ({ calling((void*)master, 12, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336981UL), (size_t)(16264326111341338154UL), (size_t)(16264326111341336992UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[12], mode); }) ;
-# 454 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 454 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  for(i=0; i<91; i++){
-# 455 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  finavalu[i]= initvalu[i] + h * (c_1_11 * (finavalu_temp[0][i] + finavalu_temp[10][i]) + c6 * finavalu_temp[5][i] + c_7_8 * (finavalu_temp[6][i] + finavalu_temp[7][i]) + c_9_10 * (finavalu_temp[8][i] + finavalu_temp[9][i]) );
-# 464 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 464 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 439 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b13_1*finavalu_temp[0][i] + b13_4*finavalu_temp[3][i] + b13_5*finavalu_temp[4][i] + b13_6*finavalu_temp[5][i] + b13_7*finavalu_temp[6][i] + b13_8*finavalu_temp[7][i] + b13_9*finavalu_temp[8][i] + b13_10*finavalu_temp[9][i] + finavalu_temp[11][i]) ;
+# 440 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  }
-# 465 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 441 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 442 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  call_lbl_12: ({ calling((void*)master, 12, 0, 0UL, 5, (size_t)(0UL), (size_t)(16264326111341336956UL), (size_t)(16264326111341337967UL), (size_t)(16264326111341336957UL), (size_t)(0UL)); (master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[12], mode); }) ;
+# 456 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 456 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
+# 457 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  finavalu[i]= initvalu[i] + h * (c_1_11 * (finavalu_temp[0][i] + finavalu_temp[10][i]) + c6 * finavalu_temp[5][i] + c_7_8 * (finavalu_temp[6][i] + finavalu_temp[7][i]) + c_9_10 * (finavalu_temp[8][i] + finavalu_temp[9][i]) );
 # 466 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 466 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 469 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  error[i] = fabs(err_factor * (finavalu_temp[0][i] + finavalu_temp[10][i] - finavalu_temp[11][i] - finavalu_temp[12][i]));
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+  error[i] = fabs(err_factor * (finavalu_temp[0][i] + finavalu_temp[10][i] - finavalu_temp[11][i] - finavalu_temp[12][i]));
 # 474 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 475 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 476 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 478 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 479 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  ({ free(initvalu_temp); free_helper(initvalu_temp, 16264326111341336981UL); }) ;
-# 480 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  ({ free(finavalu_temp); free_helper(finavalu_temp, 16264326111341336984UL); }) ;
-# 481 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 482 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 484 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 484 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 rm_stack(false, 0UL, "embedded_fehlberg_7_8", &____must_manage_embedded_fehlberg_7_8, 0, ____chimes_did_disable0, false); }
 
 float embedded_fehlberg_7_8( float timeinst,
@@ -3483,9 +3460,7 @@ float embedded_fehlberg_7_8_npm( float timeinst,
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  float timeinst_temp;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- float* initvalu_temp;
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- float** finavalu_temp;
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  int i;
@@ -3495,204 +3470,190 @@ float embedded_fehlberg_7_8_npm( float timeinst,
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- initvalu_temp= (float *) ({ void *____chimes_tmp_ptr = malloc(91 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, 91* sizeof(float), 16264326111341336981UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    float initvalu_temp[91];
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- finavalu_temp= (float **) ({ void *____chimes_tmp_ptr = malloc(13 * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, 13* sizeof(float *), 16264326111341336984UL, 1, 0); ____chimes_tmp_ptr; }) ;
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for (i= 0; i<13; i++){
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  finavalu_temp[i]= (float *) ({ void *____chimes_tmp_ptr = malloc(91 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, 91* sizeof(float), 16264326111341336992UL, 0, 0); ____chimes_tmp_ptr; }) ;
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
+    float finavalu_temp[13][91];
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] ;
+# 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst;
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+  initvalu_temp[i] = initvalu[i] ;
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 214 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[0], mode);
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+h2_7;
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h2_7 * (finavalu_temp[0][i]);
+# 228 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+h2_7;
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h2_7 * (finavalu_temp[0][i]);
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 232 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 233 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[1], mode);
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a3*h;
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b31*finavalu_temp[0][i] + b32*finavalu_temp[1][i]);
+# 247 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a3*h;
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b31*finavalu_temp[0][i] + b32*finavalu_temp[1][i]);
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 251 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 252 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[2], mode);
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a4*h;
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b41*finavalu_temp[0][i] + b43*finavalu_temp[2][i]) ;
+# 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a4*h;
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 268 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b41*finavalu_temp[0][i] + b43*finavalu_temp[2][i]) ;
 # 269 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 270 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 271 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[3], mode);
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a5*h;
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b51*finavalu_temp[0][i] + b53*finavalu_temp[2][i] + b54*finavalu_temp[3][i]) ;
+# 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a5*h;
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b51*finavalu_temp[0][i] + b53*finavalu_temp[2][i] + b54*finavalu_temp[3][i]) ;
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 289 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 290 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[4], mode);
-# 302 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 302 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a6*h;
-# 303 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 304 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b61*finavalu_temp[0][i] + b64*finavalu_temp[3][i] + b65*finavalu_temp[4][i]) ;
+# 304 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a6*h;
 # 305 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 306 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b61*finavalu_temp[0][i] + b64*finavalu_temp[3][i] + b65*finavalu_temp[4][i]) ;
 # 307 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 308 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 309 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[5], mode);
-# 321 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 321 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a7*h;
-# 322 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 323 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b71*finavalu_temp[0][i] + b74*finavalu_temp[3][i] + b75*finavalu_temp[4][i] + b76*finavalu_temp[5][i]);
+# 323 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a7*h;
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b71*finavalu_temp[0][i] + b74*finavalu_temp[3][i] + b75*finavalu_temp[4][i] + b76*finavalu_temp[5][i]);
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 327 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 328 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[6], mode);
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a8*h;
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b81*finavalu_temp[0][i] + b85*finavalu_temp[4][i] + b86*finavalu_temp[5][i] + b87*finavalu_temp[6][i]);
+# 342 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a8*h;
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 344 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b81*finavalu_temp[0][i] + b85*finavalu_temp[4][i] + b86*finavalu_temp[5][i] + b87*finavalu_temp[6][i]);
 # 345 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 346 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 347 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[7], mode);
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a9*h;
-# 360 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b91*finavalu_temp[0][i] + b94*finavalu_temp[3][i] + b95*finavalu_temp[4][i] + b96*finavalu_temp[5][i] + b97*finavalu_temp[6][i]+ b98*finavalu_temp[7][i]) ;
+# 361 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a9*h;
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b91*finavalu_temp[0][i] + b94*finavalu_temp[3][i] + b95*finavalu_temp[4][i] + b96*finavalu_temp[5][i] + b97*finavalu_temp[6][i]+ b98*finavalu_temp[7][i]) ;
 # 364 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 366 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[8], mode);
-# 378 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 378 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+a10*h;
-# 379 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b10_1*finavalu_temp[0][i] + b10_4*finavalu_temp[3][i] + b10_5*finavalu_temp[4][i] + b10_6*finavalu_temp[5][i] + b10_7*finavalu_temp[6][i] + b10_8*finavalu_temp[7][i] + b10_9*finavalu_temp[8] [i]) ;
+# 380 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+a10*h;
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+ for(i=0; i<91; i++){
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b10_1*finavalu_temp[0][i] + b10_4*finavalu_temp[3][i] + b10_5*finavalu_temp[4][i] + b10_6*finavalu_temp[5][i] + b10_7*finavalu_temp[6][i] + b10_8*finavalu_temp[7][i] + b10_9*finavalu_temp[8] [i]) ;
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 384 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 385 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[9], mode);
-# 397 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 397 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst+h;
-# 398 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 399 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b11_1*finavalu_temp[0][i] + b11_4*finavalu_temp[3][i] + b11_5*finavalu_temp[4][i] + b11_6*finavalu_temp[5][i] + b11_7*finavalu_temp[6][i] + b11_8*finavalu_temp[7][i] + b11_9*finavalu_temp[8][i]+ b11_10 * finavalu_temp[9][i]);
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 401 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 402 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[10], mode);
-# 416 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 416 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- timeinst_temp = timeinst;
-# 417 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
-# 418 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b12_1*finavalu_temp[0][i] + b12_6*finavalu_temp[5][i] + b12_7*finavalu_temp[6][i] + b12_8*finavalu_temp[7][i] + b12_9*finavalu_temp[8][i] + b12_10 * finavalu_temp[9][i]) ;
-# 419 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 420 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 421 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[11], mode);
-# 435 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 435 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 399 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  timeinst_temp = timeinst+h;
-# 436 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 400 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  for(i=0; i<91; i++){
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b11_1*finavalu_temp[0][i] + b11_4*finavalu_temp[3][i] + b11_5*finavalu_temp[4][i] + b11_6*finavalu_temp[5][i] + b11_7*finavalu_temp[6][i] + b11_8*finavalu_temp[7][i] + b11_9*finavalu_temp[8][i]+ b11_10 * finavalu_temp[9][i]);
+# 402 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 403 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 404 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[10], mode);
+# 418 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 418 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst;
+# 419 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
+# 420 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b12_1*finavalu_temp[0][i] + b12_6*finavalu_temp[5][i] + b12_7*finavalu_temp[6][i] + b12_8*finavalu_temp[7][i] + b12_9*finavalu_temp[8][i] + b12_10 * finavalu_temp[9][i]) ;
+# 421 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 422 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 423 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[11], mode);
 # 437 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  initvalu_temp[i] = initvalu[i] + h * ( b13_1*finavalu_temp[0][i] + b13_4*finavalu_temp[3][i] + b13_5*finavalu_temp[4][i] + b13_6*finavalu_temp[5][i] + b13_7*finavalu_temp[6][i] + b13_8*finavalu_temp[7][i] + b13_9*finavalu_temp[8][i] + b13_10*finavalu_temp[9][i] + finavalu_temp[11][i]) ;
+# 437 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ timeinst_temp = timeinst+h;
 # 438 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
-# 439 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 440 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[12], mode);
-# 454 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 454 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  for(i=0; i<91; i++){
-# 455 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  finavalu[i]= initvalu[i] + h * (c_1_11 * (finavalu_temp[0][i] + finavalu_temp[10][i]) + c6 * finavalu_temp[5][i] + c_7_8 * (finavalu_temp[6][i] + finavalu_temp[7][i]) + c_9_10 * (finavalu_temp[8][i] + finavalu_temp[9][i]) );
-# 464 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 464 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 439 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  initvalu_temp[i] = initvalu[i] + h * ( b13_1*finavalu_temp[0][i] + b13_4*finavalu_temp[3][i] + b13_5*finavalu_temp[4][i] + b13_6*finavalu_temp[5][i] + b13_7*finavalu_temp[6][i] + b13_8*finavalu_temp[7][i] + b13_9*finavalu_temp[8][i] + b13_10*finavalu_temp[9][i] + finavalu_temp[11][i]) ;
+# 440 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
  }
-# 465 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 441 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 442 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ (*____chimes_extern_func_master)(timeinst_temp, initvalu_temp, parameter, finavalu_temp[12], mode);
+# 456 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 456 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
+# 457 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+  finavalu[i]= initvalu[i] + h * (c_1_11 * (finavalu_temp[0][i] + finavalu_temp[10][i]) + c6 * finavalu_temp[5][i] + c_7_8 * (finavalu_temp[6][i] + finavalu_temp[7][i]) + c_9_10 * (finavalu_temp[8][i] + finavalu_temp[9][i]) );
 # 466 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 466 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 469 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- for(i=0; i<91; i++){
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  error[i] = fabs(err_factor * (finavalu_temp[0][i] + finavalu_temp[10][i] - finavalu_temp[11][i] - finavalu_temp[12][i]));
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ for(i=0; i<91; i++){
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
- }
+  error[i] = fabs(err_factor * (finavalu_temp[0][i] + finavalu_temp[10][i] - finavalu_temp[11][i] - finavalu_temp[12][i]));
 # 474 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 # 475 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 476 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 478 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 479 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  ({ free(initvalu_temp); free_helper(initvalu_temp, 16264326111341336981UL); }) ;
-# 480 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-  ({ free(finavalu_temp); free_helper(finavalu_temp, 16264326111341336984UL); }) ;
-# 481 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
-# 482 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+ }
+# 484 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
+# 484 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c"
 }
 
 
@@ -3700,19 +3661,17 @@ float embedded_fehlberg_7_8_npm( float timeinst,
 
 
 static int module_init() {
-    init_module(16264326111341336944UL, 7, 1, 0, 0, 1, 1, 2, 0, 0, 0,
-                            "embedded_fehlberg_7_8", 0, "_Z21embedded_fehlberg_7_8ffPfS_S_S_i", "_Z25embedded_fehlberg_7_8_npmffPfS_S_S_i", 0, 7, 0UL, 0UL, (16264326111341336944UL + 1207UL), (16264326111341336944UL + 1208UL), (16264326111341336944UL + 1209UL), (16264326111341336944UL + 1210UL), 0UL, 0UL, 19, "malloc", 1, 0UL, (16264326111341336944UL + 37UL), "malloc", 1, 0UL, (16264326111341336944UL + 40UL), "malloc", 1, 0UL, (16264326111341336944UL + 48UL), "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 37UL), (16264326111341336944UL + 1210UL), (16264326111341336944UL + 48UL), 0UL, 0UL, "fabs", 1, 0UL, 0UL, "free", 1, (16264326111341336944UL + 37UL), 0UL, "free", 1, (16264326111341336944UL + 40UL), 0UL,
+    init_module(16264326111341336944UL, 4, 1, 1, 0, 1, 1, 2, 0, 0, 0,
+                            "embedded_fehlberg_7_8", 0, "_Z21embedded_fehlberg_7_8ffPfS_S_S_i", "_Z25embedded_fehlberg_7_8_npmffPfS_S_S_i", 0, 7, 0UL, 0UL, (16264326111341336944UL + 1020UL), (16264326111341336944UL + 1021UL), (16264326111341336944UL + 1022UL), (16264326111341336944UL + 1023UL), 0UL, 0UL, 14, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "master", 5, 0UL, (16264326111341336944UL + 12UL), (16264326111341336944UL + 1023UL), (16264326111341336944UL + 13UL), 0UL, 0UL, "fabs", 1, 0UL, 0UL,
                                "master", (void **)&(____chimes_extern_func_master),
                            "embedded_fehlberg_7_8", &(____chimes_does_checkpoint_embedded_fehlberg_7_8_npm),
                            "master", &(____chimes_does_checkpoint_master_npm),
-                             (16264326111341336944UL + 11UL), (16264326111341336944UL + 37UL),
-                             (16264326111341336944UL + 12UL), (16264326111341336944UL + 40UL),
-                             (16264326111341336944UL + 40UL), (16264326111341336944UL + 48UL),
-                             (16264326111341336944UL + 5UL), (16264326111341336944UL + 1208UL),
-                             (16264326111341336944UL + 4UL), (16264326111341336944UL + 1207UL),
-                             (16264326111341336944UL + 7UL), (16264326111341336944UL + 1210UL),
-                             (16264326111341336944UL + 6UL), (16264326111341336944UL + 1209UL),
-                             "embedded_fehlberg_7_8", "_Z21embedded_fehlberg_7_8ffPfS_S_S_i", 13, "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master");
+                             (16264326111341336944UL + 5UL), (16264326111341336944UL + 1021UL),
+                             (16264326111341336944UL + 4UL), (16264326111341336944UL + 1020UL),
+                             (16264326111341336944UL + 7UL), (16264326111341336944UL + 1023UL),
+                             (16264326111341336944UL + 6UL), (16264326111341336944UL + 1022UL),
+                             "embedded_fehlberg_7_8", "_Z21embedded_fehlberg_7_8ffPfS_S_S_i", 13, "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master",
+                        "embedded_fehlberg_7_8|initvalu_temp|0", 1, "embedded_fehlberg_7_8");
     return 0;
 }
 

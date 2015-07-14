@@ -11,7 +11,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time4|0 " i64 " 64 0 0 1 get_time
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time5|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|memory|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|i|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|i|0 " i32 " 32 0 0 1 myocyte_read solver
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|status|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|mode|0 " i32 " 32 0 0 1 checkpoint
@@ -20,16 +20,17 @@
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|y|0 " float*** " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|x|0 " float** " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|params|0 " float** " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|start_time|0 " double " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|threads|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_1|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_2|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_3|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_4|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_5|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_6|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|start_time|0 " double " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|tmp|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|tmp|1 " float* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|RODINIA_HOME|0 " i8* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|y_path|0 " [1024 x i8] " 8192 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|params_path|0 " [1024 x i8] " 8192 0 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|end_time|0 " double " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_7|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_6|0 " i32 " 32 0 0 0

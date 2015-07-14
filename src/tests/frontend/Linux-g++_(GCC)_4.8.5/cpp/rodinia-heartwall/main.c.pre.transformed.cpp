@@ -6865,7 +6865,7 @@ rm_stack(false, 0UL, "write_data", &____must_manage_write_data, ____alias_loc_id
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 static int (*____chimes_extern_func_AVI_close)(avi_t *) = AVI_close;static avi_t *(*____chimes_extern_func_AVI_open_input_file)(char *, int) = AVI_open_input_file;static void (*____chimes_extern_func_AVI_print_error)(char *) = AVI_print_error;static long (*____chimes_extern_func_AVI_video_frames)(avi_t *) = AVI_video_frames;static int (*____chimes_extern_func_AVI_video_height)(avi_t *) = AVI_video_height;static int (*____chimes_extern_func_AVI_video_width)(avi_t *) = AVI_video_width;static float *(*____chimes_extern_func_get_frame)(avi_t *, int, int, int, int) = get_frame;static void (*____chimes_extern_func_kernel)(struct _public_struct, struct _private_struct) = kernel;
 int main_quick(int argc, char *argv []); int main(int argc, char *argv []);
-int main_resumable(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(762051829673680241UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
+int main_resumable(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(762051829673680223UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 avi_t *d_frames;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -6918,11 +6918,11 @@ int i;
  video_file_name = argv[1];
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-     call_lbl_0: d_frames = ((avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 0, ____alias_loc_id_3, 762051829673680011UL, 2, (size_t)(762051829673680001UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_3); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))) ;
+     call_lbl_0: d_frames = ((avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 0, ____alias_loc_id_6, 762051829673680011UL, 2, (size_t)(762051829673680001UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_6); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))) ;
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  if (d_frames == __null) {
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-      call_lbl_1: (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({ char * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = ((char *)"Error with AVI_open_input_file"); } calling((void*)AVI_print_error, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(762051829673680282UL)); (AVI_print_error)(____chimes_arg2); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_0); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })));
+      call_lbl_1: (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({ char * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = ((char *)"Error with AVI_open_input_file"); } calling((void*)AVI_print_error, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(762051829673680264UL)); (AVI_print_error)(____chimes_arg2); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_2); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })));
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
       int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (-1); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
 # 146 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -6934,14 +6934,14 @@ int i;
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   call_lbl_3: pub.frame_rows = (____chimes_does_checkpoint_AVI_video_height_npm ? ( ({ calling((void*)AVI_video_height, 3, ____alias_loc_id_7, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_height)(d_frames); }) ) : (({ calling_npm("AVI_video_height", ____alias_loc_id_7); (*____chimes_extern_func_AVI_video_height)(d_frames); })));
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  call_lbl_4: pub.frame_cols = (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({ calling((void*)AVI_video_width, 4, ____alias_loc_id_4, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_4); (*____chimes_extern_func_AVI_video_width)(d_frames); })));
+  call_lbl_4: pub.frame_cols = (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({ calling((void*)AVI_video_width, 4, ____alias_loc_id_3, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_3); (*____chimes_extern_func_AVI_video_width)(d_frames); })));
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.frame_elem = pub.frame_rows * pub.frame_cols;
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.frame_mem = sizeof(float) * pub.frame_elem;
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-     call_lbl_5: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 5, ____alias_loc_id_1, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_1); (*____chimes_extern_func_AVI_close)(d_frames); })));
+     call_lbl_5: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_0); (*____chimes_extern_func_AVI_close)(d_frames); })));
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7557,14 +7557,14 @@ int i;
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    call_lbl_8: pub.d_frame = (____chimes_does_checkpoint_get_frame_npm ? ( ({ int ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = (pub.frame_no); } calling((void*)get_frame, 8, ____alias_loc_id_8, 762051829673679220UL, 5, (size_t)(762051829673680011UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_frame)(d_frames, ____chimes_arg10, 0, 0, 1); }) ) : (({ calling_npm("get_frame", ____alias_loc_id_8); (*____chimes_extern_func_get_frame)(d_frames, pub.frame_no, 0, 0, 1); })));
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-         call_lbl_9: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 9, ____alias_loc_id_5, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_5); (*____chimes_extern_func_AVI_close)(d_frames); })));
+         call_lbl_9: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 9, ____alias_loc_id_4, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_4); (*____chimes_extern_func_AVI_close)(d_frames); })));
 # 575 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 575 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 #pragma omp parallel for
 # 576 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   for(i=0; i<pub.allPoints; i++){
 # 577 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-    call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ public_struct ____chimes_arg15; private_struct ____chimes_arg16; if (!____chimes_replaying) { ____chimes_arg15 = (pub); ____chimes_arg16 = (priv[i]); } calling((void*)kernel, 10, ____alias_loc_id_6, 0UL, 2, (size_t)(762051829673678596UL), (size_t)(762051829673678597UL)); (kernel)(____chimes_arg15, ____chimes_arg16); }) ) : (({ calling_npm("kernel", ____alias_loc_id_6); (*____chimes_extern_func_kernel)(pub, priv[i]); })));
+    call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ public_struct ____chimes_arg15; private_struct ____chimes_arg16; if (!____chimes_replaying) { ____chimes_arg15 = (pub); ____chimes_arg16 = (priv[i]); } calling((void*)kernel, 10, ____alias_loc_id_5, 0UL, 2, (size_t)(762051829673678596UL), (size_t)(762051829673678597UL)); (kernel)(____chimes_arg15, ____chimes_arg16); }) ) : (({ calling_npm("kernel", ____alias_loc_id_5); (*____chimes_extern_func_kernel)(pub, priv[i]); })));
 # 579 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   }
 # 580 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7574,119 +7574,107 @@ int i;
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 586 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-        fprintf(stderr, "Freeing d_frame\n");
-# 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(pub.d_frame); free_helper(pub.d_frame, 762051829673679220UL); }) ;
+# 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 588 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-        fprintf(stderr, "Done\n");
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 590 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 591 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 592 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 593 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 594 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   printf("%d ", pub.frame_no);
-# 595 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 593 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   fflush(__null);
+# 594 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 595 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 596 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+     call_lbl_11: checkpoint_transformed(11, ____alias_loc_id_1);
 # 597 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 598 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-     call_lbl_11: checkpoint_transformed(11, ____alias_loc_id_2);
 # 599 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+ }
 # 600 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 601 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- }
 # 602 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 603 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 604 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 605 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 606 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 607 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  printf("\n");
-# 608 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 606 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  fflush(__null);
-# 609 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 610 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 607 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 608 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
      double end_time; call_lbl_12: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 611 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 609 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
     printf("execution took %f s\n", end_time - start_time);
-# 639 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 639 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-    fprintf(stderr, "Freeing d_endoRow\n");
-# 640 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 637 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 637 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_endoRow); free_helper(pub.d_endoRow, 762051829673679220UL); }) ;
-# 641 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-    fprintf(stderr, "Freeing d_endoCol\n");
-# 642 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 638 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_endoCol); free_helper(pub.d_endoCol, 762051829673679220UL); }) ;
-# 643 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 639 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_tEndoRowLoc); free_helper(pub.d_tEndoRowLoc, 762051829673679220UL); }) ;
-# 644 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 640 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_tEndoColLoc); free_helper(pub.d_tEndoColLoc, 762051829673679220UL); }) ;
-# 645 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 641 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_endoT); free_helper(pub.d_endoT, 762051829673679220UL); }) ;
-# 646 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 647 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 642 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 643 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_epiRow); free_helper(pub.d_epiRow, 762051829673679220UL); }) ;
-# 648 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 644 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_epiCol); free_helper(pub.d_epiCol, 762051829673679220UL); }) ;
-# 649 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 645 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_tEpiRowLoc); free_helper(pub.d_tEpiRowLoc, 762051829673679220UL); }) ;
-# 650 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 646 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_tEpiColLoc); free_helper(pub.d_tEpiColLoc, 762051829673679220UL); }) ;
-# 651 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 647 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_epiT); free_helper(pub.d_epiT, 762051829673679220UL); }) ;
+# 648 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 649 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 650 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 651 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 652 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 653 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 654 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 655 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 656 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 657 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 658 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-        fprintf(stderr, "Freeing for point %d\n", i);
-# 659 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 654 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].in_partial_sum); free_helper(priv[i].in_partial_sum, 762051829673679220UL); }) ;
-# 660 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-        fprintf(stderr, "%p\n", priv[i].in_partial_sum);
-# 661 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 655 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].in_sqr_partial_sum); free_helper(priv[i].in_sqr_partial_sum, 762051829673679220UL); }) ;
-# 662 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 656 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].par_max_val); free_helper(priv[i].par_max_val, 762051829673679220UL); }) ;
-# 663 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 657 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].par_max_coo); free_helper(priv[i].par_max_coo, 762051829673679220UL); }) ;
+# 658 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 659 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+   ({ free(priv[i].d_in2); free_helper(priv[i].d_in2, 762051829673679220UL); }) ;
+# 660 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+   ({ free(priv[i].d_in2_sqr); free_helper(priv[i].d_in2_sqr, 762051829673679220UL); }) ;
+# 661 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 662 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+   ({ free(priv[i].d_in_mod); free_helper(priv[i].d_in_mod, 762051829673679220UL); }) ;
+# 663 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+   ({ free(priv[i].d_in_sqr); free_helper(priv[i].d_in_sqr, 762051829673679220UL); }) ;
 # 664 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 665 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2); free_helper(priv[i].d_in2, 762051829673679220UL); }) ;
+   ({ free(priv[i].d_conv); free_helper(priv[i].d_conv, 762051829673679220UL); }) ;
 # 666 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sqr); free_helper(priv[i].d_in2_sqr, 762051829673679220UL); }) ;
 # 667 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+   ({ free(priv[i].d_in2_pad); free_helper(priv[i].d_in2_pad, 762051829673679220UL); }) ;
 # 668 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_mod); free_helper(priv[i].d_in_mod, 762051829673679220UL); }) ;
 # 669 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_sqr); free_helper(priv[i].d_in_sqr, 762051829673679220UL); }) ;
+   ({ free(priv[i].d_in2_sub); free_helper(priv[i].d_in2_sub, 762051829673679220UL); }) ;
 # 670 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 671 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_conv); free_helper(priv[i].d_conv, 762051829673679220UL); }) ;
+   ({ free(priv[i].d_in2_sub2_sqr); free_helper(priv[i].d_in2_sub2_sqr, 762051829673679220UL); }) ;
 # 672 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 673 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_pad); free_helper(priv[i].d_in2_pad, 762051829673679220UL); }) ;
-# 674 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 675 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub); free_helper(priv[i].d_in2_sub, 762051829673679220UL); }) ;
-# 676 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 677 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub2_sqr); free_helper(priv[i].d_in2_sub2_sqr, 762051829673679220UL); }) ;
-# 678 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 679 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].d_tMask); free_helper(priv[i].d_tMask, 762051829673679220UL); }) ;
-# 680 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 674 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].d_mask_conv); free_helper(priv[i].d_mask_conv, 762051829673679220UL); }) ;
-# 681 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 675 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
-# 682 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 676 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable2, false); return ____chimes_ret_var_4; ;
-# 683 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 677 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable2, false); }
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 double seconds_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; ; ;
@@ -7830,7 +7818,7 @@ void write_data( char* filename,
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    int* input_2b) { (____chimes_replaying ? write_data_resumable(filename, frameNo, frames_processed, endoPoints, input_a, input_b, epiPoints, input_2a, input_2b) : write_data_quick(filename, frameNo, frames_processed, endoPoints, input_a, input_b, epiPoints, input_2a, input_2b)); }
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-int main_quick(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(762051829673680241UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
+int main_quick(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(762051829673680223UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 avi_t *d_frames;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7883,11 +7871,11 @@ int i;
  video_file_name = argv[1];
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-     call_lbl_0: d_frames = ((avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 0, ____alias_loc_id_3, 762051829673680011UL, 2, (size_t)(762051829673680001UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_3); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))) ;
+     call_lbl_0: d_frames = ((avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 0, ____alias_loc_id_6, 762051829673680011UL, 2, (size_t)(762051829673680001UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_6); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))) ;
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  if (d_frames == __null) {
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-      call_lbl_1: (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({ calling((void*)AVI_print_error, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(762051829673680282UL)); (AVI_print_error)((char *)"Error with AVI_open_input_file"); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_0); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })));
+      call_lbl_1: (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({ calling((void*)AVI_print_error, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(762051829673680264UL)); (AVI_print_error)((char *)"Error with AVI_open_input_file"); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_2); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })));
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
       int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (-1); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
 # 146 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7899,14 +7887,14 @@ int i;
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   call_lbl_3: pub.frame_rows = (____chimes_does_checkpoint_AVI_video_height_npm ? ( ({ calling((void*)AVI_video_height, 3, ____alias_loc_id_7, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_height)(d_frames); }) ) : (({ calling_npm("AVI_video_height", ____alias_loc_id_7); (*____chimes_extern_func_AVI_video_height)(d_frames); })));
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  call_lbl_4: pub.frame_cols = (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({ calling((void*)AVI_video_width, 4, ____alias_loc_id_4, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_4); (*____chimes_extern_func_AVI_video_width)(d_frames); })));
+  call_lbl_4: pub.frame_cols = (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({ calling((void*)AVI_video_width, 4, ____alias_loc_id_3, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_3); (*____chimes_extern_func_AVI_video_width)(d_frames); })));
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.frame_elem = pub.frame_rows * pub.frame_cols;
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.frame_mem = sizeof(float) * pub.frame_elem;
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-     call_lbl_5: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 5, ____alias_loc_id_1, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_1); (*____chimes_extern_func_AVI_close)(d_frames); })));
+     call_lbl_5: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_0); (*____chimes_extern_func_AVI_close)(d_frames); })));
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8522,14 +8510,14 @@ int i;
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    call_lbl_8: pub.d_frame = (____chimes_does_checkpoint_get_frame_npm ? ( ({ calling((void*)get_frame, 8, ____alias_loc_id_8, 762051829673679220UL, 5, (size_t)(762051829673680011UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_frame)(d_frames, pub.frame_no, 0, 0, 1); }) ) : (({ calling_npm("get_frame", ____alias_loc_id_8); (*____chimes_extern_func_get_frame)(d_frames, pub.frame_no, 0, 0, 1); })));
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-         call_lbl_9: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 9, ____alias_loc_id_5, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_5); (*____chimes_extern_func_AVI_close)(d_frames); })));
+         call_lbl_9: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 9, ____alias_loc_id_4, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_4); (*____chimes_extern_func_AVI_close)(d_frames); })));
 # 575 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 575 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 #pragma omp parallel for
 # 576 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   for(i=0; i<pub.allPoints; i++){
 # 577 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-    call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ calling((void*)kernel, 10, ____alias_loc_id_6, 0UL, 2, (size_t)(762051829673678596UL), (size_t)(762051829673678597UL)); (kernel)(pub, priv[i]); }) ) : (({ calling_npm("kernel", ____alias_loc_id_6); (*____chimes_extern_func_kernel)(pub, priv[i]); })));
+    call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ calling((void*)kernel, 10, ____alias_loc_id_5, 0UL, 2, (size_t)(762051829673678596UL), (size_t)(762051829673678597UL)); (kernel)(pub, priv[i]); }) ) : (({ calling_npm("kernel", ____alias_loc_id_5); (*____chimes_extern_func_kernel)(pub, priv[i]); })));
 # 579 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   }
 # 580 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8539,119 +8527,107 @@ int i;
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 586 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-        fprintf(stderr, "Freeing d_frame\n");
-# 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(pub.d_frame); free_helper(pub.d_frame, 762051829673679220UL); }) ;
+# 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 588 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-        fprintf(stderr, "Done\n");
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 590 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 591 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 592 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 593 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 594 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   printf("%d ", pub.frame_no);
-# 595 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 593 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   fflush(__null);
+# 594 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 595 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 596 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+     call_lbl_11: checkpoint_transformed(11, ____alias_loc_id_1);
 # 597 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 598 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-     call_lbl_11: checkpoint_transformed(11, ____alias_loc_id_2);
 # 599 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+ }
 # 600 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 601 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- }
 # 602 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 603 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 604 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 605 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 606 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 607 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  printf("\n");
-# 608 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 606 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  fflush(__null);
-# 609 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 610 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 607 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 608 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
      double end_time; call_lbl_12: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 611 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 609 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
     printf("execution took %f s\n", end_time - start_time);
-# 639 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 639 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-    fprintf(stderr, "Freeing d_endoRow\n");
-# 640 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 637 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 637 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_endoRow); free_helper(pub.d_endoRow, 762051829673679220UL); }) ;
-# 641 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-    fprintf(stderr, "Freeing d_endoCol\n");
-# 642 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 638 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_endoCol); free_helper(pub.d_endoCol, 762051829673679220UL); }) ;
-# 643 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 639 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_tEndoRowLoc); free_helper(pub.d_tEndoRowLoc, 762051829673679220UL); }) ;
-# 644 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 640 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_tEndoColLoc); free_helper(pub.d_tEndoColLoc, 762051829673679220UL); }) ;
-# 645 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 641 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_endoT); free_helper(pub.d_endoT, 762051829673679220UL); }) ;
-# 646 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 647 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 642 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 643 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_epiRow); free_helper(pub.d_epiRow, 762051829673679220UL); }) ;
-# 648 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 644 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_epiCol); free_helper(pub.d_epiCol, 762051829673679220UL); }) ;
-# 649 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 645 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_tEpiRowLoc); free_helper(pub.d_tEpiRowLoc, 762051829673679220UL); }) ;
-# 650 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 646 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_tEpiColLoc); free_helper(pub.d_tEpiColLoc, 762051829673679220UL); }) ;
-# 651 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 647 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
   ({ free(pub.d_epiT); free_helper(pub.d_epiT, 762051829673679220UL); }) ;
+# 648 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 649 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 650 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 651 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 652 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 653 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 654 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 655 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 656 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 657 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 658 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-        fprintf(stderr, "Freeing for point %d\n", i);
-# 659 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 654 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].in_partial_sum); free_helper(priv[i].in_partial_sum, 762051829673679220UL); }) ;
-# 660 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-        fprintf(stderr, "%p\n", priv[i].in_partial_sum);
-# 661 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 655 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].in_sqr_partial_sum); free_helper(priv[i].in_sqr_partial_sum, 762051829673679220UL); }) ;
-# 662 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 656 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].par_max_val); free_helper(priv[i].par_max_val, 762051829673679220UL); }) ;
-# 663 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 657 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].par_max_coo); free_helper(priv[i].par_max_coo, 762051829673679220UL); }) ;
+# 658 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 659 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+   ({ free(priv[i].d_in2); free_helper(priv[i].d_in2, 762051829673679220UL); }) ;
+# 660 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+   ({ free(priv[i].d_in2_sqr); free_helper(priv[i].d_in2_sqr, 762051829673679220UL); }) ;
+# 661 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 662 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+   ({ free(priv[i].d_in_mod); free_helper(priv[i].d_in_mod, 762051829673679220UL); }) ;
+# 663 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+   ({ free(priv[i].d_in_sqr); free_helper(priv[i].d_in_sqr, 762051829673679220UL); }) ;
 # 664 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 665 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2); free_helper(priv[i].d_in2, 762051829673679220UL); }) ;
+   ({ free(priv[i].d_conv); free_helper(priv[i].d_conv, 762051829673679220UL); }) ;
 # 666 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sqr); free_helper(priv[i].d_in2_sqr, 762051829673679220UL); }) ;
 # 667 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+   ({ free(priv[i].d_in2_pad); free_helper(priv[i].d_in2_pad, 762051829673679220UL); }) ;
 # 668 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_mod); free_helper(priv[i].d_in_mod, 762051829673679220UL); }) ;
 # 669 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_sqr); free_helper(priv[i].d_in_sqr, 762051829673679220UL); }) ;
+   ({ free(priv[i].d_in2_sub); free_helper(priv[i].d_in2_sub, 762051829673679220UL); }) ;
 # 670 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 671 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_conv); free_helper(priv[i].d_conv, 762051829673679220UL); }) ;
+   ({ free(priv[i].d_in2_sub2_sqr); free_helper(priv[i].d_in2_sub2_sqr, 762051829673679220UL); }) ;
 # 672 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 673 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_pad); free_helper(priv[i].d_in2_pad, 762051829673679220UL); }) ;
-# 674 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 675 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub); free_helper(priv[i].d_in2_sub, 762051829673679220UL); }) ;
-# 676 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 677 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub2_sqr); free_helper(priv[i].d_in2_sub2_sqr, 762051829673679220UL); }) ;
-# 678 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 679 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].d_tMask); free_helper(priv[i].d_tMask, 762051829673679220UL); }) ;
-# 680 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 674 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
    ({ free(priv[i].d_mask_conv); free_helper(priv[i].d_mask_conv, 762051829673679220UL); }) ;
-# 681 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 675 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
-# 682 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 676 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable2, false); return ____chimes_ret_var_4; ;
-# 683 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 677 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable2, false); }
 
 int main(int argc, char *argv []) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -8782,23 +8758,23 @@ void write_data_npm( char* filename,
 
 
 static int module_init() {
-    init_module(762051829673678370UL, 13, 3, 5, 14, 2, 8, 10, 2, 10, 10,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 220UL), "AVI_print_error", (unsigned)1, (762051829673678370UL + 1912UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_close", (unsigned)1, (762051829673678370UL + 1641UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (762051829673678370UL + 215UL),
-                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)1, (762051829673678370UL + 212UL), (762051829673678370UL + 213UL), (762051829673678370UL + 214UL), (762051829673678370UL + 219UL), "AVI_open_input_file", (unsigned)2, (762051829673678370UL + 1631UL), (762051829673678370UL + 1641UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_video_width", (unsigned)1, (762051829673678370UL + 1641UL),
-                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_close", (unsigned)1, (762051829673678370UL + 1641UL),
-                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 215UL), "kernel", (unsigned)2, (762051829673678370UL + 226UL), (762051829673678370UL + 227UL),
+    init_module(762051829673678370UL, 12, 3, 5, 14, 2, 8, 10, 2, 10, 10,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_close", (unsigned)1, (762051829673678370UL + 1641UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (762051829673678370UL + 215UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 220UL), "AVI_print_error", (unsigned)1, (762051829673678370UL + 1894UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_video_width", (unsigned)1, (762051829673678370UL + 1641UL),
+                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_close", (unsigned)1, (762051829673678370UL + 1641UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 215UL), "kernel", (unsigned)2, (762051829673678370UL + 226UL), (762051829673678370UL + 227UL),
+                           &____alias_loc_id_6, (unsigned)4, (unsigned)0, (unsigned)1, (762051829673678370UL + 212UL), (762051829673678370UL + 213UL), (762051829673678370UL + 214UL), (762051829673678370UL + 219UL), "AVI_open_input_file", (unsigned)2, (762051829673678370UL + 1631UL), (762051829673678370UL + 1641UL),
                            &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_video_height", (unsigned)1, (762051829673678370UL + 1641UL),
                            &____alias_loc_id_8, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 220UL), "get_frame", (unsigned)2, (762051829673678370UL + 850UL), (762051829673678370UL + 1641UL),
                            &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 220UL), "AVI_video_frames", (unsigned)1, (762051829673678370UL + 1641UL),
-                            &____alias_loc_id_10, (unsigned)5, (unsigned)0, (unsigned)1, (762051829673678370UL + 215UL), (762051829673678370UL + 217UL), (762051829673678370UL + 218UL), (762051829673678370UL + 225UL), (762051829673678370UL + 850UL), "AVI_open_input_file", (unsigned)2, (762051829673678370UL + 1631UL), (762051829673678370UL + 1641UL),
+                            &____alias_loc_id_10, (unsigned)7, (unsigned)0, (unsigned)1, (762051829673678370UL + 215UL), (762051829673678370UL + 216UL), (762051829673678370UL + 217UL), (762051829673678370UL + 218UL), (762051829673678370UL + 223UL), (762051829673678370UL + 225UL), (762051829673678370UL + 850UL), "AVI_open_input_file", (unsigned)2, (762051829673678370UL + 1631UL), (762051829673678370UL + 1641UL),
                             &____alias_loc_id_11, (unsigned)3, (unsigned)0, (unsigned)0, (762051829673678370UL + 1UL), (762051829673678370UL + 3UL), (762051829673678370UL + 4UL),
                             &____alias_loc_id_12, (unsigned)13, (unsigned)0, (unsigned)0, (762051829673678370UL + 26UL), (762051829673678370UL + 27UL), (762051829673678370UL + 28UL), (762051829673678370UL + 29UL), (762051829673678370UL + 30UL), (762051829673678370UL + 31UL), (762051829673678370UL + 32UL), (762051829673678370UL + 33UL), (762051829673678370UL + 34UL), (762051829673678370UL + 35UL), (762051829673678370UL + 36UL), (762051829673678370UL + 37UL), (762051829673678370UL + 62UL),
                             &____alias_loc_id_13, (unsigned)13, (unsigned)0, (unsigned)0, (762051829673678370UL + 212UL), (762051829673678370UL + 215UL), (762051829673678370UL + 216UL), (762051829673678370UL + 217UL), (762051829673678370UL + 218UL), (762051829673678370UL + 221UL), (762051829673678370UL + 222UL), (762051829673678370UL + 223UL), (762051829673678370UL + 224UL), (762051829673678370UL + 225UL), (762051829673678370UL + 228UL), (762051829673678370UL + 229UL), (762051829673678370UL + 850UL),
                             "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (762051829673678370UL + 1UL), (762051829673678370UL + 2UL), 0UL,
-                            "write_data", 0, "_Z10write_dataPciiiPiS0_iS0_S0_", "_Z14write_data_npmPciiiPiS0_iS0_S0_", 0, 9, (762051829673678370UL + 197UL), 0UL, 0UL, 0UL, (762051829673678370UL + 201UL), (762051829673678370UL + 202UL), 0UL, (762051829673678370UL + 204UL), (762051829673678370UL + 205UL), 0UL, 16, "fopen", 2, (762051829673678370UL + 197UL), (762051829673678370UL + 1900UL), (762051829673678370UL + 62UL), "printf", 1, (762051829673678370UL + 1901UL), 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1902UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1902UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1904UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1905UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1904UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1907UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1908UL), 0UL, 0UL, "fprintf", 2, (762051829673678370UL + 62UL), (762051829673678370UL + 1909UL), 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1908UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1910UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1908UL), 0UL, 0UL, "fprintf", 2, (762051829673678370UL + 62UL), (762051829673678370UL + 1909UL), 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1908UL), 0UL, 0UL, "fclose", 1, (762051829673678370UL + 62UL), 0UL,
+                            "write_data", 0, "_Z10write_dataPciiiPiS0_iS0_S0_", "_Z14write_data_npmPciiiPiS0_iS0_S0_", 0, 9, (762051829673678370UL + 197UL), 0UL, 0UL, 0UL, (762051829673678370UL + 201UL), (762051829673678370UL + 202UL), 0UL, (762051829673678370UL + 204UL), (762051829673678370UL + 205UL), 0UL, 16, "fopen", 2, (762051829673678370UL + 197UL), (762051829673678370UL + 1882UL), (762051829673678370UL + 62UL), "printf", 1, (762051829673678370UL + 1883UL), 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1884UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1884UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1886UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1887UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1886UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1889UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1890UL), 0UL, 0UL, "fprintf", 2, (762051829673678370UL + 62UL), (762051829673678370UL + 1891UL), 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1890UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1892UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1890UL), 0UL, 0UL, "fprintf", 2, (762051829673678370UL + 62UL), (762051829673678370UL + 1891UL), 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1890UL), 0UL, 0UL, "fclose", 1, (762051829673678370UL + 62UL), 0UL,
                                "AVI_close", (void **)&(____chimes_extern_func_AVI_close),
                                "AVI_open_input_file", (void **)&(____chimes_extern_func_AVI_open_input_file),
                                "AVI_print_error", (void **)&(____chimes_extern_func_AVI_print_error),
@@ -8819,15 +8795,14 @@ static int module_init() {
                            "kernel", &(____chimes_does_checkpoint_kernel_npm),
                              (762051829673678370UL + 217UL), (762051829673678370UL + 850UL),
                              (762051829673678370UL + 26UL), (762051829673678370UL + 197UL),
+                             (762051829673678370UL + 1853UL), (762051829673678370UL + 1631UL),
                              (762051829673678370UL + 33UL), (762051829673678370UL + 204UL),
                              (762051829673678370UL + 31UL), (762051829673678370UL + 202UL),
                              (762051829673678370UL + 30UL), (762051829673678370UL + 201UL),
-                             (762051829673678370UL + 214UL), (762051829673678370UL + 1871UL),
+                             (762051829673678370UL + 214UL), (762051829673678370UL + 1853UL),
                              (762051829673678370UL + 35UL), (762051829673678370UL + 62UL),
                              (762051829673678370UL + 34UL), (762051829673678370UL + 205UL),
-                             (762051829673678370UL + 1920UL), (762051829673678370UL + 1750UL),
                              (762051829673678370UL + 218UL), (762051829673678370UL + 850UL),
-                             (762051829673678370UL + 1871UL), (762051829673678370UL + 1631UL),
                              (762051829673678370UL + 219UL), (762051829673678370UL + 1631UL),
                              (762051829673678370UL + 220UL), (762051829673678370UL + 1641UL),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
@@ -8851,7 +8826,7 @@ static int module_init() {
         "seconds", 0UL, (int)0,
         "seconds", 0UL, (int)0,
         "AVI_open_input_file", 762051829673680011UL, (int)2, 762051829673680001UL, 0UL,
-        "AVI_print_error", 0UL, (int)1, 762051829673680282UL,
+        "AVI_print_error", 0UL, (int)1, 762051829673680264UL,
         "AVI_video_frames", 0UL, (int)1, 762051829673680011UL,
         "AVI_video_height", 0UL, (int)1, 762051829673680011UL,
         "AVI_video_width", 0UL, (int)1, 762051829673680011UL,

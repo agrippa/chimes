@@ -1,0 +1,43 @@
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp seconds|tzp|0 " %struct.timezone = type { i32, i32 } " 64 0 1 timezone 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp seconds|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp seconds|____chimes_ret_var_0|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp Usage|argc|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp Usage|argv|0 " i8** " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp main|argc|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp main|argv|0 " i8** " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp main|____chimes_ret_var_1|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|argc|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|argv|0 " i8** " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|input_f|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|num_omp_threads|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|start_time|0 " double " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|h_graph_nodes|0 " %struct.Node* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|h_graph_mask|0 " i8* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|h_updating_graph_mask|0 " i8* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|h_graph_visited|0 " i8* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|h_graph_edges|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|h_cost|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|source|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|start|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|edgeno|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|id|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|cost|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|i|1 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|i|2 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|stop|0 " i8 " 8 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp BFSGraph|end_time|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|num_omp_threads|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|h_graph_mask|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|h_graph_nodes|0 " %struct.Node* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|h_graph_edges|0 " i32* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|h_graph_visited|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|h_cost|0 " i32* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|h_updating_graph_mask|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|stop|0 " i8 " 8 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|tid|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|id|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|tid|1 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp kernel|____chimes_ret_var_2|0 " i8 " 8 0 0 0

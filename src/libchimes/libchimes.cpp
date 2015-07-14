@@ -214,13 +214,6 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_ptr, int is_struct, int n_ptr_fields, ...);
 void register_stack_vars(int nvars, ...);
 int alias_group_changed(unsigned loc_id);
-// void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
-//         ...);
-// void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-//         int is_struct, ...);
-// void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-//         int is_struct, ...);
-// void free_wrapper(void *ptr, size_t group);
 
 void onexit();
 
@@ -512,8 +505,6 @@ static map<string, vector<merge_info> > npm_callee_to_static_merge_info;
  * in-memory.
  */
 static unsigned long long total_allocations = 0;
-static hash_chunker *hash_chunker = new fixed_chunk_size_chunker(
-        16 * 1024UL * 1024UL);
 // Just dump things smaller than this, don't waste time hashing.
 static const size_t DONT_HASH_SIZE = 1024UL * 1024UL;
 // static const size_t DONT_HASH_SIZE = 16 * 1024UL * 1024UL;
@@ -523,7 +514,7 @@ static double target_checkpoint_size_perc = 0.2;
 // The target amount of overhead to add to the host program.
 static bool disable_throttling = false;
 static double target_time_overhead = 0.05;
-static unsigned long long max_checkpoint_latency_ns = 60000000ULL;
+static unsigned long long max_checkpoint_latency_ns = 60000000000ULL;
 static unsigned long long last_checkpoint = 0;
 static unsigned long long chimes_overhead = 0;
 static unsigned long long dead_thread_time = 0;
@@ -719,8 +710,7 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
 #endif
 
             alloc = new heap_allocation(new_address, size,
-                    group, is_cuda_alloc, elem_is_ptr, elem_is_struct,
-                    *hash_chunker);
+                    group, is_cuda_alloc, elem_is_ptr, elem_is_struct);
             if (elem_is_struct) {
                 alloc->add_struct_elem_size(elem_size);
                 alloc->set_pointer_offsets(&elem_ptr_offsets);
@@ -959,12 +949,6 @@ void init_chimes(int argc, char **argv) {
     char *chimes_disable_throttling = getenv("CHIMES_DISABLE_THROTTLING");
     if (chimes_disable_throttling && strlen(chimes_disable_throttling) > 0) {
         disable_throttling = true;
-    }
-
-    char *chunk_size = getenv("CHIMES_CHUNK_SIZE_MB");
-    if (chunk_size != NULL) {
-        hash_chunker = new fixed_chunk_size_chunker(
-                atoi(chunk_size) * 1024UL * 1024UL);
     }
 
     char *checkpoint_dir = getenv("CHIMES_CHECKPOINT_DIR");
@@ -1509,9 +1493,9 @@ void init_chimes(int argc, char **argv) {
                 int nelems = alloc->get_size() / sizeof(void *);
                 if (alloc->get_is_cuda_alloc()) {
 #ifdef CUDA_SUPPORT
-                    vector<int> ptr_offsets; ptr_offsets.push_back(0);
+                    int ptr_offsets[1] = { 0 };
                     translate_cuda_pointers(alloc->get_address(), nelems,
-                            sizeof(void *), ptr_offsets, old_to_new);
+                            sizeof(void *), ptr_offsets, 1, old_to_new);
 #else
                     VERIFY(false);
 #endif
@@ -1534,16 +1518,17 @@ void init_chimes(int argc, char **argv) {
 
             } else if (alloc->check_elem_is_struct()) {
                 int elem_size = alloc->get_elem_size();
-                std::vector<int> *ptr_field_offsets = alloc->get_ptr_field_offsets();
-                if (ptr_field_offsets->size() > 0) {
+                int *ptr_field_offsets = alloc->get_ptr_field_offsets();
+                unsigned n_ptr_fields = alloc->get_n_ptr_fields();
+                if (n_ptr_fields > 0) {
                     assert(alloc->get_size() % elem_size == 0);
 
                     int nelems = alloc->get_size() / elem_size;
                     if (alloc->get_is_cuda_alloc()) {
 #ifdef CUDA_SUPPORT
                         translate_cuda_pointers(alloc->get_address(),
-                                nelems, elem_size, *ptr_field_offsets,
-                                old_to_new);
+                                nelems, elem_size, ptr_field_offsets,
+                                n_ptr_fields, old_to_new);
 #else
                         VERIFY(false);
 #endif
@@ -1559,22 +1544,17 @@ void init_chimes(int argc, char **argv) {
                         unsigned char *raw_arr = (unsigned char *)(alloc->get_address());
                         for (int i = 0; i < nelems; i++) {
                             unsigned char *this_struct = raw_arr + (elem_size * i);
-                            for (std::vector<int>::iterator f_iter =
-                                    ptr_field_offsets->begin(), f_end =
-                                    ptr_field_offsets->end(); f_iter != f_end;
-                                    f_iter++) {
-                                unsigned char *field_address = this_struct + *f_iter;
+                            for (unsigned f_iter = 0; f_iter < n_ptr_fields; f_iter++) {
+                                unsigned char *field_address = this_struct +
+                                    ptr_field_offsets[f_iter];
                                 void **ptr_address = (void **)field_address;
                                 void *new_address = translate_old_ptr(*ptr_address, old_to_new, ptr_address);
                                 if (new_address != NULL) *ptr_address = new_address;
                             }
                         }
 
-                        for (std::vector<int>::iterator f_iter =
-                                ptr_field_offsets->begin(), f_end =
-                                ptr_field_offsets->end(); f_iter != f_end;
-                                f_iter++) {
-                            int field_offset = *f_iter;
+                        for (unsigned f_iter = 0; f_iter < n_ptr_fields; f_iter++) {
+                            int field_offset = ptr_field_offsets[f_iter];
                             unsigned char *base = raw_arr + field_offset;
 
                             already_updated_ptrs *updated =
@@ -2952,8 +2932,12 @@ void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
         int *ptr_field_offsets, int n_ptr_field_offsets) {
     assert(valid_group(group) || is_cuda_alloc);
 
+#ifdef VERBOSE
+            fprintf(stderr, "creating new heap allocation address=%p size=%lu "
+                    "group=%lu\n", new_ptr, nbytes, group);
+#endif
     heap_allocation *alloc = new heap_allocation((void *)new_ptr, nbytes, group,
-            is_cuda_alloc, is_ptr, is_struct, *hash_chunker);
+            is_cuda_alloc, is_ptr, is_struct);
 
     get_my_context()->add_changed_alias(group);
 
@@ -2966,8 +2950,7 @@ void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
     }
 
     VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
-    assert(heap.find((void *)new_ptr) == heap.end());
-    heap.insert(pair<void *, heap_allocation *>((void *)new_ptr, alloc));
+    VERIFY(heap.insert(pair<void *, heap_allocation *>((void *)new_ptr, alloc)).second);
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 }
 
@@ -2993,8 +2976,6 @@ void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr, int
         perf_profile::current_time_ns();
     assert(valid_group(group));
 
-    // void *ptr = malloc(nbytes);
-
 #ifdef VERBOSE
     fprintf(stderr, "malloc_wrapper: nbytes=%lu group=%lu ptr=%p is_ptr=%d "
             "is_struct=%d\n", nbytes, group, ptr, is_ptr, is_struct);
@@ -3008,7 +2989,7 @@ void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr, int
         if (is_struct) {
             va_list vl;
             va_start(vl, is_struct);
-            parse_type_info(vl, &info);
+            parse_type_info(&vl, &info);
             va_end(vl);
         }
         malloc_impl(ptr, nbytes, group, 0, is_ptr, is_struct, info.elem_size,
@@ -3019,8 +3000,6 @@ void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr, int
 #ifdef __CHIMES_PROFILE
     pp.add_time(MALLOC_WRAPPER, __start_time);
 #endif
-
-    // return ptr;
 }
 
 void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
@@ -3032,8 +3011,6 @@ void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int i
         perf_profile::current_time_ns();
     assert(valid_group(group));
 
-    // void *ptr = calloc(num, size);
-
     if (ptr != NULL) {
         chimes_type_info info; memset(&info, 0x00, sizeof(info));
 
@@ -3042,7 +3019,7 @@ void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int i
         if (is_struct) {
             va_list vl;
             va_start(vl, is_struct);
-            parse_type_info(vl, &info);
+            parse_type_info(&vl, &info);
             va_end(vl);
         }
         malloc_impl(ptr, num * size, group, 0, is_ptr, is_struct,
@@ -3053,8 +3030,6 @@ void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int i
 #ifdef __CHIMES_PROFILE
     pp.add_time(CALLOC_WRAPPER, __start_time);
 #endif
-
-    // return ptr;
 }
 
 void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t group,
@@ -3106,11 +3081,11 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
 
             if (alloc->check_elem_is_struct()) {
                 elem_size = alloc->get_elem_size();
-                n_struct_ptr_fields = alloc->get_ptr_field_offsets()->size();
+                n_struct_ptr_fields = alloc->get_n_ptr_fields();
                 ptr_field_offsets = (int *)malloc(sizeof(int) *
                         n_struct_ptr_fields);
                 for (int i = 0; i < n_struct_ptr_fields; i++) {
-                    ptr_field_offsets[i] = (*alloc->get_ptr_field_offsets())[i];
+                    ptr_field_offsets[i] = (alloc->get_ptr_field_offsets())[i];
                 }
             }
             free_impl(ptr);
@@ -3123,7 +3098,7 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
             if (is_struct) {
                 va_list vl;
                 va_start(vl, is_struct);
-                parse_type_info(vl, &info);
+                parse_type_info(&vl, &info);
                 va_end(vl);
             }
             elem_size = info.elem_size;
@@ -3456,6 +3431,13 @@ bool within_overhead_bounds() {
     bool should_checkpoint = (curr_percent_overhead < target_time_overhead ||
             perf_profile::current_time_ns() - last_checkpoint >
                 max_checkpoint_latency_ns);
+#ifdef VERBOSE
+    fprintf(stderr, "should_checkpoint=%d curr_percent_overhead=%f "
+            "target_time_overhead=%f since last=%llu max latency=%llu\n",
+            should_checkpoint, curr_percent_overhead, target_time_overhead,
+            perf_profile::current_time_ns() - last_checkpoint,
+            max_checkpoint_latency_ns);
+#endif
     return should_checkpoint;
 }
 
@@ -5154,6 +5136,11 @@ void onexit() {
 #ifdef VERBOSE
     fprintf(stderr, "Locking...\n");
 #endif
+
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
+
     VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
     while (checkpoint_thread_running == 1) {
         VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
@@ -5172,10 +5159,6 @@ void onexit() {
     VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 #ifdef VERBOSE
     fprintf(stderr, "Joining\n");
-#endif
-
-#ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     pthread_join(checkpoint_thread, NULL);
 #ifdef __CHIMES_PROFILE

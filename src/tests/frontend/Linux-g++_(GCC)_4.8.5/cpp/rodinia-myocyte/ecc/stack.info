@@ -3,7 +3,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|initvalu_offset|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|parameter|0 " float* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|parameter_offset|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|finavalu|0 " float* " 64 1 0 1 fmod
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|finavalu|0 " float* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_1|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_2|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_3|0 " i32 " 32 0 0 0
@@ -42,10 +42,10 @@
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_36|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_37|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_38|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_39|0 " i32 " 32 0 0 1 fmod
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_39|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_40|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_41|0 " i32 " 32 0 0 1 fmod
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_42|0 " i32 " 32 0 0 1 fmod
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_41|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_42|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_43|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_44|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|offset_45|0 " i32 " 32 0 0 0
@@ -272,8 +272,8 @@
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_ki|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_ClCa_junc|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_ClCa_sl|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_ClCa|0 " float " 32 0 0 1 fmod
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_Clbk|0 " float " 32 0 0 1 fmod
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_ClCa|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_Clbk|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|dss|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|taud|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|fss|0 " float " 32 0 0 0
@@ -321,12 +321,12 @@
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|J_CaB_junction|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|J_CaB_sl|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|oneovervsr|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_Na_tot_junc|0 " float " 32 0 0 1 fmod
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_Na_tot_sl|0 " float " 32 0 0 1 fmod
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_Na_tot_junc|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_Na_tot_sl|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|oneovervsl|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_K_tot|0 " float " 32 0 0 1 fmod
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_Ca_tot_junc|0 " float " 32 0 0 1 fmod
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_Ca_tot_sl|0 " float " 32 0 0 1 fmod
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_K_tot|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_Ca_tot_junc|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|I_Ca_tot_sl|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|junc_sl|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|sl_junc|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c ecc|sl_myo|0 " float " 32 0 0 0
