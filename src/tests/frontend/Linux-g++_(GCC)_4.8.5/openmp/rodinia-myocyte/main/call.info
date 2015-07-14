@@ -1,54 +1,50 @@
 gettimeofday seconds 108 13 0 1 2
 get_time main 130 10 0
-printf main 174 3 0 657 0
-atoi main 188 10 0 101
-printf main 190 4 0 658 0
-atoi main 198 14 0 101
-printf main 200 4 0 659 0
-atoi main 209 10 0 101
-printf main 211 4 0 660 0
-atoi main 219 13 0 101
-printf main 221 4 0 661 0
-omp_set_num_threads main 225 3 0 0
-get_time main 230 10 0
-printf main 242 3 0 662
-malloc main 250 18 205 0
-malloc main 252 19 201 0
-malloc main 254 23 458 0
-malloc main 258 17 370 0
-malloc main 260 18 372 0
-malloc main 263 22 342 0
-malloc main 265 23 344 0
-seconds main 268 25 0
-get_time main 270 10 0
-getenv main 276 26 306 663
-__assert_fail main 277 47 0 663 664 0 665
-sprintf main 280 5 0 57 666 306
-sprintf main 281 5 0 58 667 306
-myocyte_read main 285 3 0 57 458 0 0 0
-myocyte_read main 294 3 0 58 344 0 0 0
-get_time main 301 10 0
-solver main 311 13 0 201 372 0 344 0
-checkpoint main 321 13 0
-checkpoint main 330 9 0
-solver main 336 13 0 201 372 0 344 0
-checkpoint main 349 9 0
-get_time main 366 10 0
-seconds main 368 23 0
-printf main 369 5 0 668 0
-free main 378 4 0 458
-free main 380 3 0 201
-free main 382 2 0 205
-free main 386 3 0 372
-free main 388 2 0 370
-free main 392 3 0 344
-free main 394 2 0 342
-get_time main 396 9 0
-printf main 402 2 0 669
-printf main 403 2 0 670 0 0
-printf main 404 2 0 671 0 0
-printf main 405 2 0 672 0 0
-printf main 406 2 0 671 0 0
-printf main 407 2 0 674 0 0
-printf main 408 2 0 663
-printf main 409 2 0 676 0
+seconds main 163 25 0
+printf main 176 3 0 588 0
+atoi main 190 10 0 105
+printf main 192 4 0 589 0
+atoi main 200 14 0 105
+printf main 202 4 0 590 0
+atoi main 210 13 0 105
+printf main 212 4 0 591 0
+omp_set_num_threads main 216 3 0 0
+get_time main 221 10 0
+printf main 233 3 0 592
+malloc main 241 18 190 0
+malloc main 243 19 186 0
+malloc main 244 31 338 0
+malloc main 252 17 381 0
+malloc main 253 27 357 0
+malloc main 259 22 355 0
+malloc main 260 20 357 0
+get_time main 266 10 0
+getenv main 272 26 319 593
+__assert_fail main 273 47 0 593 594 0 595
+sprintf main 276 5 0 58 596 319
+sprintf main 277 5 0 59 597 319
+myocyte_read main 281 3 0 58 338 0 0 0
+myocyte_read main 290 3 0 59 357 0 0 0
+get_time main 297 10 0
+checkpoint main 320 9 0
+solver main 326 13 0 186 357 0 357 0
+checkpoint main 334 9 0
+get_time main 351 10 0
+free main 359 9 0 338
+free main 363 3 0 186
+free main 365 2 0 190
+free main 368 5 0 357
+free main 372 2 0 381
+free main 375 5 0 357
+free main 379 2 0 355
+get_time main 381 9 0
+seconds main 387 23 0
+printf main 388 5 0 598 0
+printf main 390 2 0 599
+printf main 391 2 0 600 0 0
+printf main 392 2 0 601 0 0
+printf main 393 2 0 602 0 0
+printf main 394 2 0 601 0 0
+printf main 395 2 0 604 0 0
+printf main 396 2 0 593
+printf main 397 2 0 606 0

@@ -2,15 +2,15 @@ gettimeofday seconds 20 13 0 1 2
 seconds backprop_face 30 18 0
 bpnn_create backprop_face 32 9 40 0 0 0
 printf backprop_face 33 3 0 105 0
-load backprop_face 34 3 0 40
-printf backprop_face 36 3 0 106
-bpnn_train_kernel backprop_face 37 3 0 40 28 29
-seconds backprop_face 38 16 0
-bpnn_free backprop_face 39 3 0 40
-printf backprop_face 41 3 0 107 0
-fprintf setup 47 3 0 79 109
-exit setup 48 3 0 0
-atoi setup 51 16 0 85
-bpnn_initialize setup 56 3 0 0
-backprop_face setup 57 3 0
-exit setup 59 3 0 0
+load backprop_face 35 3 0 40
+printf backprop_face 37 3 0 106
+bpnn_train_kernel backprop_face 38 3 0 40 28 29
+seconds backprop_face 39 16 0
+bpnn_free backprop_face 40 3 0 40
+printf backprop_face 42 3 0 107 0
+fprintf setup 48 3 0 79 109
+exit setup 49 3 0 0
+atoi setup 52 16 0 85
+bpnn_initialize setup 57 3 0 0
+backprop_face setup 58 3 0
+exit setup 60 3 0 0

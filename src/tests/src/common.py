@@ -997,8 +997,8 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
         completed_checkpoints += 1
 
-    cleanup_files() # delete binary and checkpoint files
     if not config.keep:
+        cleanup_files() # delete binary and checkpoint files
         run_cmd('rm -rf ' + root_folder, False)
 
     if completed_checkpoints == total_checkpoints:

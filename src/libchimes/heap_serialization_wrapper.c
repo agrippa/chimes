@@ -45,8 +45,7 @@ void heap_serialization_wrapper::append_all_to_buffer(heap_allocation *alloc, si
 
     if (elem_is_struct) {
         elem_size = alloc->get_elem_size();
-        elem_ptr_offsets_len =
-            alloc->get_ptr_field_offsets()->size();
+        elem_ptr_offsets_len = alloc->get_n_ptr_fields();
     }
     unsigned char *iter = (unsigned char *)buffer + used;
 
@@ -76,7 +75,7 @@ void heap_serialization_wrapper::append_all_to_buffer(heap_allocation *alloc, si
         iter += sizeof(elem_ptr_offsets_len);
 
         for (int i = 0; i < elem_ptr_offsets_len; i++) {
-            int offset = (*alloc->get_ptr_field_offsets())[i];
+            int offset = (alloc->get_ptr_field_offsets())[i];
             memcpy(iter, &offset, sizeof(offset));
             iter += sizeof(offset);
         }
@@ -121,8 +120,7 @@ void heap_serialization_wrapper::append_some_to_buffer(heap_allocation *alloc,
 
     if (elem_is_struct) {
         elem_size = alloc->get_elem_size();
-        elem_ptr_offsets_len =
-            alloc->get_ptr_field_offsets()->size();
+        elem_ptr_offsets_len = alloc->get_n_ptr_fields();
     }
 
     const int n_ranges = ranges->size();
@@ -155,7 +153,7 @@ void heap_serialization_wrapper::append_some_to_buffer(heap_allocation *alloc,
         iter += sizeof(elem_ptr_offsets_len);
 
         for (int i = 0; i < elem_ptr_offsets_len; i++) {
-            int offset = (*alloc->get_ptr_field_offsets())[i];
+            int offset = (alloc->get_ptr_field_offsets())[i];
             memcpy(iter, &offset, sizeof(offset));
             iter += sizeof(offset);
         }

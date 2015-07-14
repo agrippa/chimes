@@ -1,10 +1,10 @@
-170 24 345 malloc
-171 31 192 malloc 1 0
-172 34 194 malloc
-200 24 345 malloc
-201 31 192 malloc 1 0
-202 34 194 malloc
-254 5 192 free
-255 5 411 free
-256 5 475 free
-257 5 345 free
+170 24 341 malloc
+171 31 191 malloc 1 0
+172 34 193 malloc
+200 24 341 malloc
+201 31 191 malloc 1 0
+202 34 193 malloc
+254 5 191 free
+255 5 407 free
+256 5 471 free
+257 5 341 free

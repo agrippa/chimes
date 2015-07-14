@@ -1,16 +1,16 @@
 euclid_dist_2 find_nearest_point 89 16 0 57 34 0
-malloc kmeans_clustering 139 26 717 0
-malloc kmeans_clustering 140 28 186 0
-calloc kmeans_clustering 156 30 713 0 0
-malloc kmeans_clustering 158 29 705 0
-calloc kmeans_clustering 159 31 707 0 0
-malloc kmeans_clustering 164 39 545 0
-calloc kmeans_clustering 165 41 547 0 0
-malloc kmeans_clustering 169 33 421 0
-malloc kmeans_clustering 170 39 423 0
-calloc kmeans_clustering 176 75 415 0 0
-printf kmeans_clustering 179 2 0 733 0
-find_nearest_point kmeans_clustering 200 18 0 452 0 717 0
-free kmeans_clustering 243 5 0 707
-free kmeans_clustering 244 5 0 705
-free kmeans_clustering 245 5 0 713
+malloc kmeans_clustering 138 26 717 0
+malloc kmeans_clustering 139 28 186 0
+calloc kmeans_clustering 155 30 713 0 0
+malloc kmeans_clustering 157 29 705 0
+calloc kmeans_clustering 158 31 707 0 0
+malloc kmeans_clustering 163 39 545 0
+calloc kmeans_clustering 164 41 547 0 0
+malloc kmeans_clustering 168 33 421 0
+malloc kmeans_clustering 169 39 423 0
+calloc kmeans_clustering 175 75 415 0 0
+printf kmeans_clustering 178 2 0 733 0
+find_nearest_point kmeans_clustering 199 18 0 452 0 717 0
+free kmeans_clustering 242 5 0 707
+free kmeans_clustering 243 5 0 705
+free kmeans_clustering 244 5 0 713

@@ -3973,9 +3973,7 @@ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_4, ____chimes_did_disa
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 void BFSGraph_resumable( int argc, char** argv)
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-{const int ____chimes_did_disable3 = new_stack((void *)(&BFSGraph), "BFSGraph", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17351084539009084692UL)) ; double start_time;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-int count_iters;
+{const int ____chimes_did_disable3 = new_stack((void *)(&BFSGraph), "BFSGraph", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17351084539009084692UL)) ; int count_iters;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 bool stop;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
@@ -3993,138 +3991,140 @@ bool *h_graph_mask;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 Node *h_graph_nodes;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- register_stack_vars(10, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+double start_time;
+# 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ register_stack_vars(10, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
     char *input_f; ;
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
  int num_omp_threads; ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- if(argc!=3){
+        call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  call_lbl_0: ({ calling_npm("Usage", 0); Usage_npm(argc, argv); });
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- exit(0);
+ if(argc!=3){
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- }
+  call_lbl_1: ({ calling_npm("Usage", 0); Usage_npm(argc, argv); });
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ exit(0);
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- num_omp_threads = atoi(argv[1]);
+ }
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- input_f = argv[2];
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ num_omp_threads = atoi(argv[1]);
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- printf("Reading File\n");
+ input_f = argv[2];
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- fp = fopen(input_f,"r");
+ printf("Reading File\n");
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- if(!fp)
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- {
+ fp = fopen(input_f,"r");
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  printf("Error Reading graph file\n");
+ if(!fp)
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  rm_stack(false, 0UL, "BFSGraph", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable3, false); return;
+ {
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- }
+  printf("Error Reading graph file\n");
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+  rm_stack(false, 0UL, "BFSGraph", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable3, false); return;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  int source; source = (0) ;
+ }
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- fscanf(fp,"%d",&no_of_nodes);
+  int source; source = (0) ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ fscanf(fp,"%d",&no_of_nodes);
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_graph_nodes = ((Node*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Node) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(Node)*no_of_nodes, 17351084539009084674UL, 0, 1, (int)sizeof(struct Node), 0); ____chimes_tmp_ptr; })) ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_graph_mask = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084680UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_updating_graph_mask = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084682UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    h_graph_nodes = ((Node*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Node) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(Node)*no_of_nodes, 17351084539009084674UL, 0, 1, (int)sizeof(struct Node), 0); ____chimes_tmp_ptr; })) ;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_graph_visited = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084684UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    h_graph_mask = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084680UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+    h_updating_graph_mask = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084682UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- int start; int edgeno; ;
+    h_graph_visited = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084684UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- { unsigned int i; for( i = (0) ; i < no_of_nodes; i++)
+ int start; int edgeno; ;
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- {
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  fscanf(fp,"%d %d",&start,&edgeno);
+ { unsigned int i; for( i = (0) ; i < no_of_nodes; i++)
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_graph_nodes[i].starting = start;
+ {
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_graph_nodes[i].no_of_edges = edgeno;
+  fscanf(fp,"%d %d",&start,&edgeno);
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_graph_mask[i]=false;
+  h_graph_nodes[i].starting = start;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_updating_graph_mask[i]=false;
+  h_graph_nodes[i].no_of_edges = edgeno;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_graph_visited[i]=false;
+  h_graph_mask[i]=false;
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- } }
+  h_updating_graph_mask[i]=false;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+  h_graph_visited[i]=false;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ } }
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- fscanf(fp,"%d",&source);
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ fscanf(fp,"%d",&source);
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- h_graph_mask[source]=true;
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- h_graph_visited[source]=true;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ h_graph_mask[source]=true;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- fscanf(fp,"%d",&edge_list_size);
+ h_graph_visited[source]=true;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- int id; int cost; ;
+ fscanf(fp,"%d",&edge_list_size);
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_graph_edges = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * edge_list_size); malloc_helper(____chimes_tmp_ptr, sizeof(int)*edge_list_size, 17351084539009084677UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- { int i; for( i = (0) ; i < edge_list_size ; i++)
+ int id; int cost; ;
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- {
+    h_graph_edges = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * edge_list_size); malloc_helper(____chimes_tmp_ptr, sizeof(int)*edge_list_size, 17351084539009084677UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  fscanf(fp,"%d",&id);
+ { int i; for( i = (0) ; i < edge_list_size ; i++)
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  fscanf(fp,"%d",&cost);
+ {
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_graph_edges[i] = id;
+  fscanf(fp,"%d",&id);
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- } }
+  fscanf(fp,"%d",&cost);
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+  h_graph_edges[i] = id;
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- if (fp) {fclose(fp); };
+ } }
+# 120 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ if (fp) {fclose(fp); };
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_cost = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 17351084539009084686UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- { int i; for ( i = (0) ;i<no_of_nodes; i++) { h_cost[i]=-1; } };
+# 126 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+    h_cost = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 17351084539009084686UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- h_cost[source]=0;
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ { int i; for ( i = (0) ;i<no_of_nodes; i++) { h_cost[i]=-1; } };
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- printf("Start traversing the tree\n");
+ h_cost[source]=0;
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    k = (0) ;
+ printf("Start traversing the tree\n");
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    int tid; int i; ;
+    k = (0) ;
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  ;
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-       count_iters = (0) ;
+    int tid; int i; ;
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+  ;
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-        call_lbl_1: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
+       count_iters = (0) ;
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
  do
@@ -4273,9 +4273,7 @@ int main( int argc, char** argv) { init_chimes(argc, argv); return (____chimes_r
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 void BFSGraph_quick( int argc, char** argv)
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-{const int ____chimes_did_disable3 = new_stack((void *)(&BFSGraph), "BFSGraph", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17351084539009084692UL)) ; double start_time;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-int count_iters;
+{const int ____chimes_did_disable3 = new_stack((void *)(&BFSGraph), "BFSGraph", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17351084539009084692UL)) ; int count_iters;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 bool stop;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
@@ -4293,138 +4291,140 @@ bool *h_graph_mask;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 Node *h_graph_nodes;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- register_stack_vars(10, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0); ; ;
+double start_time;
+# 57 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ register_stack_vars(10, "BFSGraph|count_iters|0", (int *)0x0, "i32", (void *)(&count_iters), (size_t)4, 0, 0, 0, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0); ; ;
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
     char *input_f; ;
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
  int num_omp_threads; ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- if(argc!=3){
+        call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  call_lbl_0: ({ calling_npm("Usage", 0); Usage_npm(argc, argv); });
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- exit(0);
+ if(argc!=3){
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- }
+  call_lbl_1: ({ calling_npm("Usage", 0); Usage_npm(argc, argv); });
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ exit(0);
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- num_omp_threads = atoi(argv[1]);
+ }
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- input_f = argv[2];
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ num_omp_threads = atoi(argv[1]);
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- printf("Reading File\n");
+ input_f = argv[2];
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- fp = fopen(input_f,"r");
+ printf("Reading File\n");
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- if(!fp)
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- {
+ fp = fopen(input_f,"r");
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  printf("Error Reading graph file\n");
+ if(!fp)
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  rm_stack(false, 0UL, "BFSGraph", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable3, false); return;
+ {
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- }
+  printf("Error Reading graph file\n");
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+  rm_stack(false, 0UL, "BFSGraph", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable3, false); return;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  int source; source = (0) ;
+ }
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- fscanf(fp,"%d",&no_of_nodes);
+  int source; source = (0) ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ fscanf(fp,"%d",&no_of_nodes);
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_graph_nodes = ((Node*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Node) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(Node)*no_of_nodes, 17351084539009084674UL, 0, 1, (int)sizeof(struct Node), 0); ____chimes_tmp_ptr; })) ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_graph_mask = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084680UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_updating_graph_mask = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084682UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    h_graph_nodes = ((Node*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Node) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(Node)*no_of_nodes, 17351084539009084674UL, 0, 1, (int)sizeof(struct Node), 0); ____chimes_tmp_ptr; })) ;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_graph_visited = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084684UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    h_graph_mask = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084680UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+    h_updating_graph_mask = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084682UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- int start; int edgeno; ;
+    h_graph_visited = ((bool*) ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17351084539009084684UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- { unsigned int i; for( i = (0) ; i < no_of_nodes; i++)
+ int start; int edgeno; ;
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- {
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  fscanf(fp,"%d %d",&start,&edgeno);
+ { unsigned int i; for( i = (0) ; i < no_of_nodes; i++)
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_graph_nodes[i].starting = start;
+ {
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_graph_nodes[i].no_of_edges = edgeno;
+  fscanf(fp,"%d %d",&start,&edgeno);
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_graph_mask[i]=false;
+  h_graph_nodes[i].starting = start;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_updating_graph_mask[i]=false;
+  h_graph_nodes[i].no_of_edges = edgeno;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_graph_visited[i]=false;
+  h_graph_mask[i]=false;
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- } }
+  h_updating_graph_mask[i]=false;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+  h_graph_visited[i]=false;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ } }
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- fscanf(fp,"%d",&source);
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ fscanf(fp,"%d",&source);
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- h_graph_mask[source]=true;
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- h_graph_visited[source]=true;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ h_graph_mask[source]=true;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- fscanf(fp,"%d",&edge_list_size);
+ h_graph_visited[source]=true;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- int id; int cost; ;
+ fscanf(fp,"%d",&edge_list_size);
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_graph_edges = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * edge_list_size); malloc_helper(____chimes_tmp_ptr, sizeof(int)*edge_list_size, 17351084539009084677UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- { int i; for( i = (0) ; i < edge_list_size ; i++)
+ int id; int cost; ;
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- {
+    h_graph_edges = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * edge_list_size); malloc_helper(____chimes_tmp_ptr, sizeof(int)*edge_list_size, 17351084539009084677UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  fscanf(fp,"%d",&id);
+ { int i; for( i = (0) ; i < edge_list_size ; i++)
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  fscanf(fp,"%d",&cost);
+ {
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  h_graph_edges[i] = id;
+  fscanf(fp,"%d",&id);
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- } }
+  fscanf(fp,"%d",&cost);
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+  h_graph_edges[i] = id;
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- if (fp) {fclose(fp); };
+ } }
+# 120 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ if (fp) {fclose(fp); };
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    h_cost = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 17351084539009084686UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- { int i; for ( i = (0) ;i<no_of_nodes; i++) { h_cost[i]=-1; } };
+# 126 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+    h_cost = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 17351084539009084686UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- h_cost[source]=0;
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+ { int i; for ( i = (0) ;i<no_of_nodes; i++) { h_cost[i]=-1; } };
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
- printf("Start traversing the tree\n");
+ h_cost[source]=0;
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    k = (0) ;
+ printf("Start traversing the tree\n");
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-    int tid; int i; ;
+    k = (0) ;
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-  ;
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-       count_iters = (0) ;
+    int tid; int i; ;
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
+  ;
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
-        call_lbl_1: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
+       count_iters = (0) ;
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp"
  do
@@ -4560,11 +4560,11 @@ fprintf(stderr,"Usage: %s <num_threads> <input_file>\n", argv[0]);
 static int module_init() {
     init_module(17351084539009084247UL, 13, 4, 0, 6, 2, 0, 2, 3, 0, 5,
                            &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (17351084539009084247UL + 42UL), (17351084539009084247UL + 43UL), (17351084539009084247UL + 44UL), (17351084539009084247UL + 456UL),
-                           &____alias_loc_id_1, (unsigned)29, (unsigned)0, (unsigned)0, (17351084539009084247UL + 32UL), (17351084539009084247UL + 62UL), (17351084539009084247UL + 63UL), (17351084539009084247UL + 64UL), (17351084539009084247UL + 65UL), (17351084539009084247UL + 66UL), (17351084539009084247UL + 67UL), (17351084539009084247UL + 68UL), (17351084539009084247UL + 69UL), (17351084539009084247UL + 70UL), (17351084539009084247UL + 73UL), (17351084539009084247UL + 74UL), (17351084539009084247UL + 76UL), (17351084539009084247UL + 77UL), (17351084539009084247UL + 78UL), (17351084539009084247UL + 79UL), (17351084539009084247UL + 80UL), (17351084539009084247UL + 81UL), (17351084539009084247UL + 82UL), (17351084539009084247UL + 83UL), (17351084539009084247UL + 84UL), (17351084539009084247UL + 85UL), (17351084539009084247UL + 427UL), (17351084539009084247UL + 430UL), (17351084539009084247UL + 433UL), (17351084539009084247UL + 435UL), (17351084539009084247UL + 437UL), (17351084539009084247UL + 439UL), (17351084539009084247UL + 458UL),
+                           &____alias_loc_id_1, (unsigned)29, (unsigned)0, (unsigned)0, (17351084539009084247UL + 32UL), (17351084539009084247UL + 62UL), (17351084539009084247UL + 63UL), (17351084539009084247UL + 64UL), (17351084539009084247UL + 65UL), (17351084539009084247UL + 66UL), (17351084539009084247UL + 67UL), (17351084539009084247UL + 68UL), (17351084539009084247UL + 69UL), (17351084539009084247UL + 70UL), (17351084539009084247UL + 71UL), (17351084539009084247UL + 74UL), (17351084539009084247UL + 75UL), (17351084539009084247UL + 77UL), (17351084539009084247UL + 78UL), (17351084539009084247UL + 79UL), (17351084539009084247UL + 80UL), (17351084539009084247UL + 81UL), (17351084539009084247UL + 82UL), (17351084539009084247UL + 83UL), (17351084539009084247UL + 84UL), (17351084539009084247UL + 85UL), (17351084539009084247UL + 427UL), (17351084539009084247UL + 430UL), (17351084539009084247UL + 433UL), (17351084539009084247UL + 435UL), (17351084539009084247UL + 437UL), (17351084539009084247UL + 439UL), (17351084539009084247UL + 458UL),
                            &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (17351084539009084247UL + 1UL), (17351084539009084247UL + 3UL), (17351084539009084247UL + 4UL),
                            &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (17351084539009084247UL + 26UL), (17351084539009084247UL + 27UL),
                            &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (17351084539009084247UL + 45UL),
-                           &____alias_loc_id_5, (unsigned)8, (unsigned)0, (unsigned)0, (17351084539009084247UL + 32UL), (17351084539009084247UL + 62UL), (17351084539009084247UL + 63UL), (17351084539009084247UL + 64UL), (17351084539009084247UL + 65UL), (17351084539009084247UL + 84UL), (17351084539009084247UL + 86UL), (17351084539009084247UL + 458UL),
+                           &____alias_loc_id_5, (unsigned)9, (unsigned)0, (unsigned)0, (17351084539009084247UL + 32UL), (17351084539009084247UL + 62UL), (17351084539009084247UL + 63UL), (17351084539009084247UL + 64UL), (17351084539009084247UL + 65UL), (17351084539009084247UL + 66UL), (17351084539009084247UL + 85UL), (17351084539009084247UL + 86UL), (17351084539009084247UL + 458UL),
                             "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (17351084539009084247UL + 1UL), (17351084539009084247UL + 2UL), 0UL,
                             "Usage", 0, "_Z5UsageiPPc", "_Z9Usage_npmiPPc", 0, 2, 0UL, (17351084539009084247UL + 39UL), 0UL, 1, "fprintf", 3, (17351084539009084247UL + 32UL), (17351084539009084247UL + 460UL), (17351084539009084247UL + 35UL), 0UL,
                            "seconds", &(____chimes_does_checkpoint_seconds_npm),
@@ -4573,15 +4573,15 @@ static int module_init() {
                              (17351084539009084247UL + 39UL), (17351084539009084247UL + 35UL),
                              (17351084539009084247UL + 27UL), (17351084539009084247UL + 39UL),
                              (17351084539009084247UL + 44UL), (17351084539009084247UL + 61UL),
-                             (17351084539009084247UL + 70UL), (17351084539009084247UL + 437UL),
-                             (17351084539009084247UL + 445UL), (17351084539009084247UL + 103UL),
-                             (17351084539009084247UL + 76UL), (17351084539009084247UL + 430UL),
+                             (17351084539009084247UL + 445UL), (17351084539009084247UL + 106UL),
+                             (17351084539009084247UL + 77UL), (17351084539009084247UL + 430UL),
                              (17351084539009084247UL + 63UL), (17351084539009084247UL + 445UL),
-                             (17351084539009084247UL + 64UL), (17351084539009084247UL + 103UL),
-                             (17351084539009084247UL + 67UL), (17351084539009084247UL + 427UL),
-                             (17351084539009084247UL + 68UL), (17351084539009084247UL + 433UL),
-                             (17351084539009084247UL + 69UL), (17351084539009084247UL + 435UL),
-                             (17351084539009084247UL + 78UL), (17351084539009084247UL + 439UL),
+                             (17351084539009084247UL + 64UL), (17351084539009084247UL + 106UL),
+                             (17351084539009084247UL + 71UL), (17351084539009084247UL + 437UL),
+                             (17351084539009084247UL + 70UL), (17351084539009084247UL + 435UL),
+                             (17351084539009084247UL + 68UL), (17351084539009084247UL + 427UL),
+                             (17351084539009084247UL + 69UL), (17351084539009084247UL + 433UL),
+                             (17351084539009084247UL + 79UL), (17351084539009084247UL + 439UL),
                      "Node", 64UL, 2, "int", (int)__builtin_offsetof (struct Node, starting), "int", (int)__builtin_offsetof (struct Node, no_of_edges),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
@@ -4590,9 +4590,9 @@ static int module_init() {
                              "seconds", "_Z7secondsv", 0,
                              "Usage", "_Z5UsageiPPc", 0,
                              "main", "main", 1, "BFSGraph",
-                             "BFSGraph", "_Z8BFSGraphiPPc", 4, "Usage", "seconds", "checkpoint", "seconds",
-        "Usage", 0UL, (int)2, 0UL, 17351084539009084692UL,
+                             "BFSGraph", "_Z8BFSGraphiPPc", 4, "seconds", "Usage", "checkpoint", "seconds",
         "seconds", 0UL, (int)0,
+        "Usage", 0UL, (int)2, 0UL, 17351084539009084692UL,
         "seconds", 0UL, (int)0);
     register_global_var("global|no_of_nodes", "i32", (void *)(&no_of_nodes), 4, 0, 0, 0UL, 0);
     register_global_var("global|edge_list_size", "i32", (void *)(&edge_list_size), 4, 0, 0, 0UL, 0);

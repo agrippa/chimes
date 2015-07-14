@@ -10,6 +10,7 @@ typedef long unsigned int size_t;
 # 1 "ex_particle_OPENMP_seq.c.pre.transformed.cpp"
 static int ____chimes_does_checkpoint_findIndex_npm = 1;
 static int ____chimes_does_checkpoint_randn_npm = 1;
+static int ____chimes_does_checkpoint_particleFilter_kernel_npm = 1;
 static int ____chimes_does_checkpoint_calcLikelihoodSum_npm = 1;
 static int ____chimes_does_checkpoint_roundDouble_npm = 1;
 static int ____chimes_does_checkpoint_findIndexBin_npm = 1;
@@ -36,6 +37,7 @@ static int ____must_checkpoint_main_endVideoSequence_0 = 2;
 static int ____must_manage_findIndex = 2;
 static int ____must_manage_calcLikelihoodSum = 2;
 static int ____must_manage_randn = 2;
+static int ____must_manage_particleFilter_kernel = 2;
 static int ____must_manage_roundDouble = 2;
 static int ____must_manage_findIndexBin = 2;
 static int ____must_manage_elapsed_time = 2;
@@ -69,6 +71,7 @@ static unsigned ____alias_loc_id_17;
 static unsigned ____alias_loc_id_18;
 static unsigned ____alias_loc_id_19;
 static unsigned ____alias_loc_id_20;
+static unsigned ____alias_loc_id_21;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -4679,582 +4682,607 @@ int findIndexBin_resumable(double * CDF, int beginIndex, int endIndex, double va
   int ____chimes_ret_var_14; ; call_lbl_1: ____chimes_ret_var_14 = (({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, middleIndex-1, endIndex, value); })); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_14; ;
 # 344 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); }
+# 345 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 346 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void particleFilter_kernel_npm(int *I, int IszX, int IszY, int Nfr, int * seed, int Nparticles, double *likelihood, double *arrayX, double *arrayY, double *xj, double *yj, double *CDF, double *u, double *objxy, int countOnes, int *ind, int k, int max_size, double *weights, double xe, double ye);
+void particleFilter_kernel_quick(int *I, int IszX, int IszY, int Nfr, int * seed, int Nparticles, double *likelihood, double *arrayX, double *arrayY, double *xj, double *yj, double *CDF, double *u, double *objxy, int countOnes, int *ind, int k, int max_size, double *weights, double xe, double ye); void particleFilter_kernel(int *I, int IszX, int IszY, int Nfr, int * seed, int Nparticles, double *likelihood, double *arrayX, double *arrayY, double *xj, double *yj, double *CDF, double *u, double *objxy, int countOnes, int *ind, int k, int max_size, double *weights, double xe, double ye);
+void particleFilter_kernel_resumable(int *I, int IszX, int IszY, int Nfr, int * seed,
+# 347 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        int Nparticles, double *likelihood, double *arrayX, double *arrayY,
+# 348 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        double *xj, double *yj, double *CDF, double *u, double *objxy,
+# 349 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        int countOnes, int *ind, int k, int max_size, double *weights,
+# 350 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        double xe, double ye) {const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter_kernel), "particleFilter_kernel", &____must_manage_particleFilter_kernel, 21, 0, (size_t)(7756533236910311467UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311471UL), (size_t)(0UL), (size_t)(7756533236910311473UL), (size_t)(7756533236910311474UL), (size_t)(7756533236910311475UL), (size_t)(7756533236910311476UL), (size_t)(7756533236910311477UL), (size_t)(7756533236910311478UL), (size_t)(7756533236910311479UL), (size_t)(7756533236910311480UL), (size_t)(0UL), (size_t)(7756533236910311482UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311485UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 351 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    int x; int y; ;
+# 352 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    int indX; int indY; ;
+# 353 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     long long set_arrays; call_lbl_0: set_arrays = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+# 354 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 355 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles); void particleFilter(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles);
-void particleFilter_resumable(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter), "particleFilter", (int *)0, 6, 6, (size_t)(7756533236910311726UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311730UL), (size_t)(0UL), "particleFilter|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "particleFilter|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "particleFilter|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "particleFilter|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "particleFilter|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "particleFilter|Nparticles|0", (int *)0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0) ; int k;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int *ind;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *u;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *CDF;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *yj;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *xj;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *arrayY;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *arrayX;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *likelihood;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *weights;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *objxy;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int countOnes;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int *disk;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int max_size;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- register_stack_vars(14, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(40): { goto call_lbl_40; } default: { chimes_error(); } } } ; ;
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_29: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(29, &____chimes_region_id0, 1, &x); int ____chimes_first_iter0 = 1;
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(arrayX, arrayY, Nparticles, seed) private(x) firstprivate(____chimes_first_iter0)
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    max_size = (IszX*IszY*Nfr) ;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &x); ____chimes_first_iter0 = 0; } {
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  long long start; call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+         call_lbl_1: arrayX[x] += 1 + 5*({ calling_npm("randn", 0); randn_npm(seed, x); });
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+         call_lbl_2: arrayY[x] += -2 + 2*({ calling_npm("randn", 0); randn_npm(seed, x); });
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double xe; call_lbl_1: xe = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ;
+     } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double ye; call_lbl_2: ye = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ;
+     long long error; call_lbl_3: error = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+      float ____chimes_unroll_var_0; call_lbl_4: ____chimes_unroll_var_0 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(set_arrays, error); })) ; printf("TIME TO SET ERROR TOOK: %f\n", ____chimes_unroll_var_0);
 # 364 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int radius; radius = (5) ;
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_30: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(30, &____chimes_region_id1, 4, &indX, &indY, &x, &y); int ____chimes_first_iter1 = 1;
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(likelihood, I, arrayX, arrayY, objxy, ind) private(x, y, indX, indY) firstprivate(____chimes_first_iter1)
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int diameter; diameter = (radius*2 - 1) ;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 4, &indX, &indY, &x, &y); ____chimes_first_iter1 = 0; } {
 # 367 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc(diameter * diameter * sizeof(int)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 7756533236910310861UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_3: ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); });
 # 369 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    countOnes = (0) ;
 # 370 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- int x; int y; ;
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- for(x = 0; x < diameter; x++){
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(y = 0; y < diameter; y++){
+        for(y = 0; y < countOnes; y++){
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   if(disk[x*diameter + y]) {
+             call_lbl_5: indX = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayX[x]); }) + objxy[y*2 + 1];
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    countOnes++;
+             call_lbl_6: indY = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayY[x]); }) + objxy[y*2];
 # 375 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-            }
+            ind[x*countOnes + y] = fabs(indX*IszY*Nfr + indY*Nfr + k);
 # 376 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  }
-# 377 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+            if (ind[x*countOnes + y] >= max_size) {ind[x*countOnes + y] = 0; };
 # 378 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc(countOnes * 2 * sizeof(double)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 7756533236910311141UL, 0, 0); ____chimes_tmp_ptr; })) ;
+        }
 # 379 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_4: ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, objxy, radius); });
+        likelihood[x] = 0;
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 381 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  long long get_neighbors; call_lbl_5: get_neighbors = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+        for (y = 0; y < countOnes; y++) { likelihood[x] += (pow((I[ind[x*countOnes + y]] - 100),2) - pow((I[ind[x*countOnes + y]]-228),2))/50.0; };
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   float ____chimes_unroll_var_0; call_lbl_6: ____chimes_unroll_var_0 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })) ; printf("TIME TO GET NEIGHBORS TOOK: %f\n", ____chimes_unroll_var_0);
+        likelihood[x] = likelihood[x]/((double) countOnes);
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311306UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     long long likelihood_time; call_lbl_7: likelihood_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_41: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(41, &____chimes_region_id0, 1, &x); int ____chimes_first_iter0 = 1;
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(weights, Nparticles) private(x) firstprivate(____chimes_first_iter0)
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+      float ____chimes_unroll_var_1; call_lbl_8: ____chimes_unroll_var_1 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(error, likelihood_time); })) ; printf("TIME TO GET LIKELIHOODS TOOK: %f\n", ____chimes_unroll_var_1);
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &x); ____chimes_first_iter0 = 0; } {
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  weights[x] = 1/((double)(Nparticles));
 # 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_31: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(31, &____chimes_region_id2, 1, &x); int ____chimes_first_iter2 = 1;
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(Nparticles, weights, likelihood) private(x) firstprivate(____chimes_first_iter2)
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 389 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  long long get_weights; call_lbl_7: get_weights = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 1, &x); ____chimes_first_iter2 = 0; } {
 # 390 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   float ____chimes_unroll_var_1; call_lbl_8: ____chimes_unroll_var_1 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })) ; printf("TIME TO GET WEIGHTSTOOK: %f\n", ____chimes_unroll_var_1);
+        weights[x] = weights[x] * exp(likelihood[x]);
 # 391 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     } } } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
 # 392 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311259UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     long long exponential; call_lbl_9: exponential = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 393 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311133UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      float ____chimes_unroll_var_2; call_lbl_10: ____chimes_unroll_var_2 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(likelihood_time, exponential); })) ; printf("TIME TO GET EXP TOOK: %f\n", ____chimes_unroll_var_2);
 # 394 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311149UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     double sumWeights; sumWeights = (0) ;
 # 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311644UL, 0, 0); ____chimes_tmp_ptr; })) ;
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_32: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(32, &____chimes_region_id3, 1, &x); int ____chimes_first_iter3 = 1;
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for private(x) reduction(+:sumWeights) firstprivate(____chimes_first_iter3)
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 396 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311654UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 1, &x); ____chimes_first_iter3 = 0; } {
 # 397 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311509UL, 0, 0); ____chimes_tmp_ptr; })) ;
+        sumWeights += weights[x];
 # 398 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    u = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311557UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     } } } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); }
 # 399 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * countOnes * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 7756533236910311182UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     long long sum_time; call_lbl_11: sum_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_42: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(42, &____chimes_region_id1, 1, &x); int ____chimes_first_iter1 = 1;
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(arrayX, arrayY, xe, ye) private(x) firstprivate(____chimes_first_iter1)
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+      float ____chimes_unroll_var_3; call_lbl_12: ____chimes_unroll_var_3 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(exponential, sum_time); })) ; printf("TIME TO SUM WEIGHTS TOOK: %f\n", ____chimes_unroll_var_3);
 # 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &x); ____chimes_first_iter1 = 0; } {
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_33: bool ____chimes_disable4 = disable_current_thread(); void *____chimes_parent_ctx5 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth4 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth4 = get_thread_stack_depth(); size_t ____chimes_region_id4; unsigned ____chimes_parent_thread4 = entering_omp_parallel(33, &____chimes_region_id4, 1, &x); int ____chimes_first_iter4 = 1;
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(sumWeights, weights) private(x) firstprivate(____chimes_first_iter4)
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 402 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  arrayX[x] = xe;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter4) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread4, ____chimes_parent_ctx5, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth4, ____chimes_region_id4, 1, &x); ____chimes_first_iter4 = 0; } {
 # 403 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  arrayY[x] = ye;
+        weights[x] = weights[x]/sumWeights;
 # 404 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
+     } } } leaving_omp_parallel(____chimes_call_stack_depth4, ____chimes_region_id4, 1); reenable_current_thread(____chimes_disable4); }
 # 405 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ;
+     long long normalize; call_lbl_13: normalize = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 406 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+      float ____chimes_unroll_var_4; call_lbl_14: ____chimes_unroll_var_4 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(sum_time, normalize); })) ; printf("TIME TO NORMALIZE WEIGHTS TOOK: %f\n", ____chimes_unroll_var_4);
 # 407 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long ____chimes_unroll_var_2; call_lbl_9: ____chimes_unroll_var_2 = (({ calling_npm("get_time", 0); get_time_npm(); })) ; float ____chimes_unroll_var_3; call_lbl_10: ____chimes_unroll_var_3 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_weights, ____chimes_unroll_var_2); })) ; printf("TIME TO SET ARRAYS TOOK: %f\n", ____chimes_unroll_var_3);
+    xe = 0;
 # 408 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- int indX; int indY; ;
+    ye = 0;
 # 409 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- for(k = 1; k < Nfr; k++){
 # 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long set_arrays; call_lbl_11: set_arrays = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_34: bool ____chimes_disable5 = disable_current_thread(); void *____chimes_parent_ctx6 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth5 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth5 = get_thread_stack_depth(); size_t ____chimes_region_id5; unsigned ____chimes_parent_thread5 = entering_omp_parallel(34, &____chimes_region_id5, 1, &x); int ____chimes_first_iter5 = 1;
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for private(x) reduction(+:xe, ye) firstprivate(____chimes_first_iter5)
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 411 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter5) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread5, ____chimes_parent_ctx6, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth5, ____chimes_region_id5, 1, &x); ____chimes_first_iter5 = 0; } {
 # 412 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        xe += arrayX[x] * weights[x];
 # 413 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        ye += arrayY[x] * weights[x];
 # 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_43: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(43, &____chimes_region_id2, 1, &x); int ____chimes_first_iter2 = 1;
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(arrayX, arrayY, Nparticles, seed) private(x) firstprivate(____chimes_first_iter2)
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     } } } leaving_omp_parallel(____chimes_call_stack_depth5, ____chimes_region_id5, 1); reenable_current_thread(____chimes_disable5); }
 # 415 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 1, &x); ____chimes_first_iter2 = 0; } {
+     long long move_time; call_lbl_15: move_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 416 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    call_lbl_12: arrayX[x] += 1 + 5*({ calling_npm("randn", 0); randn_npm(seed, x); });
+      float ____chimes_unroll_var_5; call_lbl_16: ____chimes_unroll_var_5 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(normalize, move_time); })) ; printf("TIME TO MOVE OBJECT TOOK: %f\n", ____chimes_unroll_var_5);
 # 417 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    call_lbl_13: arrayY[x] += -2 + 2*({ calling_npm("randn", 0); randn_npm(seed, x); });
+    printf("XE: %lf\n", xe);
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
+    printf("YE: %lf\n", ye);
 # 419 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long error; call_lbl_14: error = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+      double ____chimes_unroll_var_6; call_lbl_17: ____chimes_unroll_var_6 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ; double ____chimes_unroll_var_7; call_lbl_18: ____chimes_unroll_var_7 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ; double distance; distance = (sqrt( pow((double)(xe-(int)____chimes_unroll_var_6),2) + pow((double)(ye-(int)____chimes_unroll_var_7),2) )) ;
 # 420 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_4; call_lbl_15: ____chimes_unroll_var_4 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(set_arrays, error); })) ; printf("TIME TO SET ERROR TOOK: %f\n", ____chimes_unroll_var_4);
+    printf("%lf\n", distance);
 # 421 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_44: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(44, &____chimes_region_id3, 4, &indX, &indY, &x, &y); int ____chimes_first_iter3 = 1;
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(likelihood, I, arrayX, arrayY, objxy, ind) private(x, y, indX, indY) firstprivate(____chimes_first_iter3)
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 423 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 4, &indX, &indY, &x, &y); ____chimes_first_iter3 = 0; } {
 # 424 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 425 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 426 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 427 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 428 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    CDF[0] = weights[0];
 # 429 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   for(y = 0; y < countOnes; y++){
+    for(x = 1; x < Nparticles; x++){
 # 430 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     call_lbl_16: indX = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayX[x]); }) + objxy[y*2 + 1];
+        CDF[x] = weights[x] + CDF[x-1];
 # 431 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     call_lbl_17: indY = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayY[x]); }) + objxy[y*2];
+    }
 # 432 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    ind[x*countOnes + y] = fabs(indX*IszY*Nfr + indY*Nfr + k);
+     long long cum_sum; call_lbl_19: cum_sum = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 433 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    if (ind[x*countOnes + y] >= max_size) {ind[x*countOnes + y] = 0; };
+      float ____chimes_unroll_var_8; call_lbl_20: ____chimes_unroll_var_8 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(move_time, cum_sum); })) ; printf("TIME TO CALC CUM SUM TOOK: %f\n", ____chimes_unroll_var_8);
+# 434 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     double u1; call_lbl_21: u1 = ((1/((double)(Nparticles)))*({ calling_npm("randu", 0); randu_npm(seed, 0); })) ;
 # 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   }
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_35: bool ____chimes_disable6 = disable_current_thread(); void *____chimes_parent_ctx7 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth6 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth6 = get_thread_stack_depth(); size_t ____chimes_region_id6; unsigned ____chimes_parent_thread6 = entering_omp_parallel(35, &____chimes_region_id6, 1, &x); int ____chimes_first_iter6 = 1;
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(u, u1, Nparticles) private(x) firstprivate(____chimes_first_iter6)
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 436 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   likelihood[x] = 0;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter6) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread6, ____chimes_parent_ctx7, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth6, ____chimes_region_id6, 1, &x); ____chimes_first_iter6 = 0; } {
 # 437 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   for (y = 0; y < countOnes; y++) { likelihood[x] += (pow((I[ind[x*countOnes + y]] - 100),2) - pow((I[ind[x*countOnes + y]]-228),2))/50.0; };
+        u[x] = u1 + x/((double)(Nparticles));
+# 438 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     } } } leaving_omp_parallel(____chimes_call_stack_depth6, ____chimes_region_id6, 1); reenable_current_thread(____chimes_disable6); }
 # 439 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   likelihood[x] = likelihood[x]/((double) countOnes);
+     long long u_time; call_lbl_22: u_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 440 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); }
+      float ____chimes_unroll_var_9; call_lbl_23: ____chimes_unroll_var_9 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(cum_sum, u_time); })) ; printf("TIME TO CALC U TOOK: %f\n", ____chimes_unroll_var_9);
 # 441 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long likelihood_time; call_lbl_18: likelihood_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+    int j; int i; ;
 # 442 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_5; call_lbl_19: ____chimes_unroll_var_5 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(error, likelihood_time); })) ; printf("TIME TO GET LIKELIHOODS TOOK: %f\n", ____chimes_unroll_var_5);
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_36: bool ____chimes_disable7 = disable_current_thread(); void *____chimes_parent_ctx8 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth7 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth7 = get_thread_stack_depth(); size_t ____chimes_region_id7; unsigned ____chimes_parent_thread7 = entering_omp_parallel(36, &____chimes_region_id7, 2, &i, &j); int ____chimes_first_iter7 = 1;
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(CDF, Nparticles, xj, yj, u, arrayX, arrayY) private(i, j) firstprivate(____chimes_first_iter7)
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 444 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(j = 0; j < Nparticles; j++){ { if (____chimes_first_iter7) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread7, ____chimes_parent_ctx8, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth7, ____chimes_region_id7, 2, &i, &j); ____chimes_first_iter7 = 0; } {
 # 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_45: bool ____chimes_disable4 = disable_current_thread(); void *____chimes_parent_ctx5 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth4 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth4 = get_thread_stack_depth(); size_t ____chimes_region_id4; unsigned ____chimes_parent_thread4 = entering_omp_parallel(45, &____chimes_region_id4, 1, &x); int ____chimes_first_iter4 = 1;
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(Nparticles, weights, likelihood) private(x) firstprivate(____chimes_first_iter4)
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+         call_lbl_24: i = ({ calling_npm("findIndex", 0); findIndex_npm(CDF, Nparticles, u[j]); });
 # 446 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter4) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread4, ____chimes_parent_ctx5, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth4, ____chimes_region_id4, 1, &x); ____chimes_first_iter4 = 0; } {
-# 447 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   weights[x] = weights[x] * exp(likelihood[x]);
+        if (i == -1) {i = Nparticles-1; };
 # 448 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth4, ____chimes_region_id4, 1); reenable_current_thread(____chimes_disable4); }
+        xj[j] = arrayX[i];
 # 449 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long exponential; call_lbl_20: exponential = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+        yj[j] = arrayY[i];
 # 450 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_6; call_lbl_21: ____chimes_unroll_var_6 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(likelihood_time, exponential); })) ; printf("TIME TO GET EXP TOOK: %f\n", ____chimes_unroll_var_6);
 # 451 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   double sumWeights; sumWeights = (0) ;
+     } } } leaving_omp_parallel(____chimes_call_stack_depth7, ____chimes_region_id7, 1); reenable_current_thread(____chimes_disable7); }
 # 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_46: bool ____chimes_disable5 = disable_current_thread(); void *____chimes_parent_ctx6 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth5 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth5 = get_thread_stack_depth(); size_t ____chimes_region_id5; unsigned ____chimes_parent_thread5 = entering_omp_parallel(46, &____chimes_region_id5, 1, &x); int ____chimes_first_iter5 = 1;
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for private(x) reduction(+:sumWeights) firstprivate(____chimes_first_iter5)
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     long long xyj_time; call_lbl_25: xyj_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 453 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter5) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread5, ____chimes_parent_ctx6, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth5, ____chimes_region_id5, 1, &x); ____chimes_first_iter5 = 0; } {
+      float ____chimes_unroll_var_10; call_lbl_26: ____chimes_unroll_var_10 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(u_time, xyj_time); })) ; printf("TIME TO CALC NEW ARRAY X AND Y TOOK: %f\n", ____chimes_unroll_var_10);
 # 454 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   sumWeights += weights[x];
 # 455 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth5, ____chimes_region_id5, 1); reenable_current_thread(____chimes_disable5); }
 # 456 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long sum_time; call_lbl_22: sum_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+    for(x = 0; x < Nparticles; x++){
 # 457 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_7; call_lbl_23: ____chimes_unroll_var_7 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(exponential, sum_time); })) ; printf("TIME TO SUM WEIGHTS TOOK: %f\n", ____chimes_unroll_var_7);
 # 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_47: bool ____chimes_disable6 = disable_current_thread(); void *____chimes_parent_ctx7 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth6 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth6 = get_thread_stack_depth(); size_t ____chimes_region_id6; unsigned ____chimes_parent_thread6 = entering_omp_parallel(47, &____chimes_region_id6, 1, &x); int ____chimes_first_iter6 = 1;
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(sumWeights, weights) private(x) firstprivate(____chimes_first_iter6)
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        arrayX[x] = xj[x];
 # 459 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter6) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread6, ____chimes_parent_ctx7, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth6, ____chimes_region_id6, 1, &x); ____chimes_first_iter6 = 0; } {
+        arrayY[x] = yj[x];
 # 460 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   weights[x] = weights[x]/sumWeights;
+        weights[x] = 1/((double)(Nparticles));
 # 461 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth6, ____chimes_region_id6, 1); reenable_current_thread(____chimes_disable6); }
+    }
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long normalize; call_lbl_24: normalize = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+     long long reset; call_lbl_27: reset = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 463 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_8; call_lbl_25: ____chimes_unroll_var_8 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(sum_time, normalize); })) ; printf("TIME TO NORMALIZE WEIGHTS TOOK: %f\n", ____chimes_unroll_var_8);
+      float ____chimes_unroll_var_11; call_lbl_28: ____chimes_unroll_var_11 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(xyj_time, reset); })) ; printf("TIME TO RESET WEIGHTS TOOK: %f\n", ____chimes_unroll_var_11);
 # 464 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  xe = 0;
-# 465 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ye = 0;
-# 466 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_48: bool ____chimes_disable7 = disable_current_thread(); void *____chimes_parent_ctx8 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth7 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth7 = get_thread_stack_depth(); size_t ____chimes_region_id7; unsigned ____chimes_parent_thread7 = entering_omp_parallel(48, &____chimes_region_id7, 1, &x); int ____chimes_first_iter7 = 1;
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for private(x) reduction(+:xe, ye) firstprivate(____chimes_first_iter7)
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 468 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter7) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread7, ____chimes_parent_ctx8, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth7, ____chimes_region_id7, 1, &x); ____chimes_first_iter7 = 0; } {
-# 469 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   xe += arrayX[x] * weights[x];
-# 470 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   ye += arrayY[x] * weights[x];
-# 471 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth7, ____chimes_region_id7, 1); reenable_current_thread(____chimes_disable7); }
-# 472 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long move_time; call_lbl_26: move_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 473 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_9; call_lbl_27: ____chimes_unroll_var_9 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(normalize, move_time); })) ; printf("TIME TO MOVE OBJECT TOOK: %f\n", ____chimes_unroll_var_9);
-# 474 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("XE: %lf\n", xe);
-# 475 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("YE: %lf\n", ye);
-# 476 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    double ____chimes_unroll_var_10; call_lbl_28: ____chimes_unroll_var_10 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ; double ____chimes_unroll_var_11; call_lbl_29: ____chimes_unroll_var_11 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ; double distance; distance = (sqrt( pow((double)(xe-(int)____chimes_unroll_var_10),2) + pow((double)(ye-(int)____chimes_unroll_var_11),2) )) ;
+rm_stack(false, 0UL, "particleFilter_kernel", &____must_manage_particleFilter_kernel, ____alias_loc_id_19, ____chimes_did_disable15, false); }
 # 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("%lf\n", distance);
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles); void particleFilter(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles);
+void particleFilter_resumable(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable16 = new_stack((void *)(&particleFilter), "particleFilter", (int *)0, 6, 6, (size_t)(7756533236910311839UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311843UL), (size_t)(0UL), "particleFilter|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "particleFilter|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "particleFilter|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "particleFilter|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "particleFilter|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "particleFilter|Nparticles|0", (int *)0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0) ; int k;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int *ind;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *u;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *CDF;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *yj;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *xj;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *arrayY;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *arrayX;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *likelihood;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *weights;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *objxy;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int countOnes;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int *disk;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double ye;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double xe;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int max_size;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ register_stack_vars(16, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|ye|0", (int *)0x0, "double", (void *)(&ye), (size_t)8, 0, 0, 0, "particleFilter|xe|0", (int *)0x0, "double", (void *)(&xe), (size_t)8, 0, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(12): { goto call_lbl_12; } default: { chimes_error(); } } } ; ;
 # 478 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 479 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    max_size = (IszX*IszY*Nfr) ;
 # 480 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  long long start; call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 481 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 482 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     call_lbl_1: xe = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ;
 # 483 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     call_lbl_2: ye = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ;
 # 484 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 485 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  CDF[0] = weights[0];
 # 486 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 1; x < Nparticles; x++){
+  int radius; radius = (5) ;
 # 487 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   CDF[x] = weights[x] + CDF[x-1];
+  int diameter; diameter = (radius*2 - 1) ;
 # 488 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  }
+    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc(diameter * diameter * sizeof(int)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 7756533236910311570UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 489 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long cum_sum; call_lbl_30: cum_sum = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+  call_lbl_3: ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); });
 # 490 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_12; call_lbl_31: ____chimes_unroll_var_12 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(move_time, cum_sum); })) ; printf("TIME TO CALC CUM SUM TOOK: %f\n", ____chimes_unroll_var_12);
+    countOnes = (0) ;
 # 491 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   double u1; call_lbl_32: u1 = ((1/((double)(Nparticles)))*({ calling_npm("randu", 0); randu_npm(seed, 0); })) ;
+ int x; int y; ;
 # 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_49: bool ____chimes_disable8 = disable_current_thread(); void *____chimes_parent_ctx9 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth8 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth8 = get_thread_stack_depth(); size_t ____chimes_region_id8; unsigned ____chimes_parent_thread8 = entering_omp_parallel(49, &____chimes_region_id8, 1, &x); int ____chimes_first_iter8 = 1;
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(u, u1, Nparticles) private(x) firstprivate(____chimes_first_iter8)
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ for(x = 0; x < diameter; x++){
 # 493 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter8) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread8, ____chimes_parent_ctx9, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth8, ____chimes_region_id8, 1, &x); ____chimes_first_iter8 = 0; } {
+  for(y = 0; y < diameter; y++){
 # 494 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   u[x] = u1 + x/((double)(Nparticles));
+   if(disk[x*diameter + y]) {
 # 495 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth8, ____chimes_region_id8, 1); reenable_current_thread(____chimes_disable8); }
+    countOnes++;
 # 496 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long u_time; call_lbl_33: u_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+            }
 # 497 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_13; call_lbl_34: ____chimes_unroll_var_13 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(cum_sum, u_time); })) ; printf("TIME TO CALC U TOOK: %f\n", ____chimes_unroll_var_13);
+  }
 # 498 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int j; int i; ;
+ }
 # 499 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc(countOnes * 2 * sizeof(double)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 7756533236910311790UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_50: bool ____chimes_disable9 = disable_current_thread(); void *____chimes_parent_ctx10 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth9 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth9 = get_thread_stack_depth(); size_t ____chimes_region_id9; unsigned ____chimes_parent_thread9 = entering_omp_parallel(50, &____chimes_region_id9, 2, &i, &j); int ____chimes_first_iter9 = 1;
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(CDF, Nparticles, xj, yj, u, arrayX, arrayY) private(i, j) firstprivate(____chimes_first_iter9)
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  call_lbl_4: ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, objxy, radius); });
 # 501 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(j = 0; j < Nparticles; j++){ { if (____chimes_first_iter9) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread9, ____chimes_parent_ctx10, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth9, ____chimes_region_id9, 2, &i, &j); ____chimes_first_iter9 = 0; } {
 # 502 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    call_lbl_35: i = ({ calling_npm("findIndex", 0); findIndex_npm(CDF, Nparticles, u[j]); });
+  long long get_neighbors; call_lbl_5: get_neighbors = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 503 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   if (i == -1) {i = Nparticles-1; };
+   float ____chimes_unroll_var_12; call_lbl_6: ____chimes_unroll_var_12 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })) ; printf("TIME TO GET NEIGHBORS TOOK: %f\n", ____chimes_unroll_var_12);
+# 504 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   xj[j] = arrayX[i];
+    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311658UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   yj[j] = arrayY[i];
+# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_13: bool ____chimes_disable8 = disable_current_thread(); void *____chimes_parent_ctx9 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth8 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth8 = get_thread_stack_depth(); size_t ____chimes_region_id8; unsigned ____chimes_parent_thread8 = entering_omp_parallel(13, &____chimes_region_id8, 1, &x); int ____chimes_first_iter8 = 1;
+# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(weights, Nparticles) private(x) firstprivate(____chimes_first_iter8)
+# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter8) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread8, ____chimes_parent_ctx9, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth8, ____chimes_region_id8, 1, &x); ____chimes_first_iter8 = 0; } {
 # 508 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth9, ____chimes_region_id9, 1); reenable_current_thread(____chimes_disable9); }
+  weights[x] = 1/((double)(Nparticles));
 # 509 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long xyj_time; call_lbl_36: xyj_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+  } } } leaving_omp_parallel(____chimes_call_stack_depth8, ____chimes_region_id8, 1); reenable_current_thread(____chimes_disable8); }
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_14; call_lbl_37: ____chimes_unroll_var_14 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(u_time, xyj_time); })) ; printf("TIME TO CALC NEW ARRAY X AND Y TOOK: %f\n", ____chimes_unroll_var_14);
+  long long get_weights; call_lbl_7: get_weights = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 511 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   float ____chimes_unroll_var_13; call_lbl_8: ____chimes_unroll_var_13 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })) ; printf("TIME TO GET WEIGHTSTOOK: %f\n", ____chimes_unroll_var_13);
 # 512 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 513 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){
+    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311783UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 514 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311745UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 515 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   arrayX[x] = xj[x];
+    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311751UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   arrayY[x] = yj[x];
+    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311786UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   weights[x] = 1/((double)(Nparticles));
+    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311787UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  }
+    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311788UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long reset; call_lbl_38: reset = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+    u = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311789UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 520 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_15; call_lbl_39: ____chimes_unroll_var_15 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(xyj_time, reset); })) ; printf("TIME TO RESET WEIGHTS TOOK: %f\n", ____chimes_unroll_var_15);
+    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * countOnes * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 7756533236910311792UL, 0, 0); ____chimes_tmp_ptr; })) ;
+# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_14: bool ____chimes_disable9 = disable_current_thread(); void *____chimes_parent_ctx10 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth9 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth9 = get_thread_stack_depth(); size_t ____chimes_region_id9; unsigned ____chimes_parent_thread9 = entering_omp_parallel(14, &____chimes_region_id9, 1, &x); int ____chimes_first_iter9 = 1;
+# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(arrayX, arrayY, xe, ye) private(x) firstprivate(____chimes_first_iter9)
+# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 522 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter9) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread9, ____chimes_parent_ctx10, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth9, ____chimes_region_id9, 1, &x); ____chimes_first_iter9 = 0; } {
 # 523 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-         call_lbl_40: checkpoint_transformed(40, ____alias_loc_id_2);
+  arrayX[x] = xe;
 # 524 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  arrayY[x] = ye;
 # 525 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+  } } } leaving_omp_parallel(____chimes_call_stack_depth9, ____chimes_region_id9, 1); reenable_current_thread(____chimes_disable9); }
 # 526 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(disk); free_helper(disk, 7756533236910310861UL); }) ;
+  ;
 # 527 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(objxy); free_helper(objxy, 7756533236910311141UL); }) ;
 # 528 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(weights); free_helper(weights, 7756533236910311306UL); }) ;
+   long long ____chimes_unroll_var_14; call_lbl_9: ____chimes_unroll_var_14 = (({ calling_npm("get_time", 0); get_time_npm(); })) ; float ____chimes_unroll_var_15; call_lbl_10: ____chimes_unroll_var_15 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_weights, ____chimes_unroll_var_14); })) ; printf("TIME TO SET ARRAYS TOOK: %f\n", ____chimes_unroll_var_15);
 # 529 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(likelihood); free_helper(likelihood, 7756533236910311259UL); }) ;
 # 530 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(xj); free_helper(xj, 7756533236910311644UL); }) ;
+ for(k = 1; k < Nfr; k++){
 # 531 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(yj); free_helper(yj, 7756533236910311654UL); }) ;
 # 532 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayX); free_helper(arrayX, 7756533236910311133UL); }) ;
-# 533 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayY); free_helper(arrayY, 7756533236910311149UL); }) ;
-# 534 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(CDF); free_helper(CDF, 7756533236910311509UL); }) ;
+         call_lbl_11: ({ calling_npm("particleFilter_kernel", 0); particleFilter_kernel_npm(I, IszX, IszY, Nfr, seed, Nparticles, likelihood, arrayX, arrayY, xj, yj, CDF, u, objxy, countOnes, ind, k, max_size, weights, xe, ye); });
 # 535 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(u); free_helper(u, 7756533236910311557UL); }) ;
 # 536 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(ind); free_helper(ind, 7756533236910311182UL); }) ;
 # 537 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "particleFilter", (int *)0x0, ____alias_loc_id_19, ____chimes_did_disable15, false); }
+         call_lbl_12: checkpoint_transformed(12, ____alias_loc_id_2);
 # 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int main_quick(int argc, char * argv[]); int main(int argc, char * argv[]);
-int main_resumable(int argc, char * argv[]){const int ____chimes_did_disable16 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7756533236910312000UL)) ; long long endVideoSequence;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-long long start;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int *I;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int *seed;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int Nparticles;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int Nfr;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int IszY;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int IszX;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- register_stack_vars(8, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 539 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ }
 # 540 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  char *usage; usage = ("openmp.out -x <dimX> -y <dimY> -z <Nfr> -np <Nparticles>") ;
+  ({ free(disk); free_helper(disk, 7756533236910311570UL); }) ;
 # 541 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(objxy); free_helper(objxy, 7756533236910311790UL); }) ;
 # 542 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if(argc != 9)
+  ({ free(weights); free_helper(weights, 7756533236910311658UL); }) ;
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- {
+  ({ free(likelihood); free_helper(likelihood, 7756533236910311783UL); }) ;
 # 544 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("%s\n", usage);
+  ({ free(xj); free_helper(xj, 7756533236910311786UL); }) ;
 # 545 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_15; ;
+  ({ free(yj); free_helper(yj, 7756533236910311787UL); }) ;
 # 546 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+  ({ free(arrayX); free_helper(arrayX, 7756533236910311745UL); }) ;
 # 547 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(arrayY); free_helper(arrayY, 7756533236910311751UL); }) ;
 # 548 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( strcmp( argv[1], "-x" ) || strcmp( argv[3], "-y" ) || strcmp( argv[5], "-z" ) || strcmp( argv[7], "-np" ) ) {
+  ({ free(CDF); free_helper(CDF, 7756533236910311788UL); }) ;
 # 549 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf( "%s\n",usage );
+  ({ free(u); free_helper(u, 7756533236910311789UL); }) ;
 # 550 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_16; ;
+  ({ free(ind); free_helper(ind, 7756533236910311792UL); }) ;
 # 551 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+rm_stack(false, 0UL, "particleFilter", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); }
 # 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int main_quick(int argc, char * argv[]); int main(int argc, char * argv[]);
+int main_resumable(int argc, char * argv[]){const int ____chimes_did_disable17 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7756533236910312111UL)) ; long long endVideoSequence;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+long long start;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int *I;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int *seed;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int Nparticles;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int Nfr;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int IszY;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int IszX;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ register_stack_vars(8, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 553 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     ;
 # 554 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  char *usage; usage = ("openmp.out -x <dimX> -y <dimY> -z <Nfr> -np <Nparticles>") ;
 # 555 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( sscanf( argv[2], "%d", &IszX ) == (-1) ) {
+ if(argc != 9)
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    printf("ERROR: dimX input is incorrect");
+ {
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_17; ;
+  printf("%s\n", usage);
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+   int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_15; ;
 # 560 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 561 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( IszX <= 0 ) {
-# 562 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("dimX must be > 0\n");
-# 563 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_18; ;
-# 564 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
+# 561 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 562 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ if( strcmp( argv[1], "-x" ) || strcmp( argv[3], "-y" ) || strcmp( argv[5], "-z" ) || strcmp( argv[7], "-np" ) ) {
+# 563 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  printf( "%s\n",usage );
+# 564 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_16; ;
 # 565 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ }
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 567 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( sscanf( argv[4], "%d", &IszY ) == (-1) ) {
+     ;
 # 568 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    printf("ERROR: dimY input is incorrect");
 # 569 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_19; ;
 # 570 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+ if( sscanf( argv[2], "%d", &IszX ) == (-1) ) {
 # 571 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    printf("ERROR: dimX input is incorrect");
 # 572 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( IszY <= 0 ) {
+     int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_17; ;
 # 573 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("dimY must be > 0\n");
+ }
 # 574 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_20; ;
 # 575 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+ if( IszX <= 0 ) {
 # 576 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  printf("dimX must be > 0\n");
 # 577 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_18; ;
 # 578 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( sscanf( argv[6], "%d", &Nfr ) == (-1) ) {
+ }
 # 579 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    printf("ERROR: Number of frames input is incorrect");
 # 580 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_21; ;
 # 581 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+ if( sscanf( argv[4], "%d", &IszY ) == (-1) ) {
 # 582 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    printf("ERROR: dimY input is incorrect");
 # 583 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( Nfr <= 0 ) {
+     int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_19; ;
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("number of frames must be > 0\n");
+ }
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_22; ;
 # 586 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+ if( IszY <= 0 ) {
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  printf("dimY must be > 0\n");
 # 588 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_20; ;
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( sscanf( argv[8], "%d", &Nparticles ) == (-1) ) {
+ }
 # 590 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    printf("ERROR: Number of particles input is incorrect");
 # 591 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_23; ;
 # 592 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+ if( sscanf( argv[6], "%d", &Nfr ) == (-1) ) {
 # 593 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    printf("ERROR: Number of frames input is incorrect");
 # 594 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( Nparticles <= 0 ) {
+     int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_21; ;
 # 595 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("Number of particles must be > 0\n");
-# 596 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_24; ;
-# 597 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
+# 596 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 597 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ if( Nfr <= 0 ) {
 # 598 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  printf("number of frames must be > 0\n");
 # 599 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 7756533236910311919UL, 0, 0); ____chimes_tmp_ptr; })) ;
+   int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_22; ;
 # 600 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- int i; ;
+ }
 # 601 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- for (i = 0; i < Nparticles; i++) { seed[i] = time(0)*i; };
+# 602 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 603 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ if( sscanf( argv[8], "%d", &Nparticles ) == (-1) ) {
 # 604 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    I = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910311937UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    printf("ERROR: Number of particles input is incorrect");
 # 605 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+     int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_23; ;
 # 606 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ }
 # 607 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_1: ({ calling((void*)videoSequence, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(7756533236910311937UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311919UL)); (videoSequence)(I, IszX, IszY, Nfr, seed); }) ;
 # 608 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     call_lbl_2: endVideoSequence = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+ if( Nparticles <= 0 ) {
 # 609 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  printf("Number of particles must be > 0\n");
 # 610 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_24; ;
 # 611 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ }
 # 612 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 613 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 7756533236910312030UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 614 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   float ____chimes_unroll_var_16; call_lbl_3: ____chimes_unroll_var_16 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endVideoSequence); })) ; printf("VIDEO SEQUENCE TOOK %f\n", ____chimes_unroll_var_16);
+ int i; ;
 # 615 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 616 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_4: ({ calling((void*)particleFilter, 4, ____alias_loc_id_3, 0UL, 6, (size_t)(7756533236910311937UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311919UL), (size_t)(0UL)); (particleFilter)(I, IszX, IszY, Nfr, seed, Nparticles); }) ;
+ for (i = 0; i < Nparticles; i++) { seed[i] = time(0)*i; };
 # 617 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  long long endParticleFilter; call_lbl_5: endParticleFilter = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 618 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   float ____chimes_unroll_var_17; call_lbl_6: ____chimes_unroll_var_17 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(endVideoSequence, endParticleFilter); })) ; printf("PARTICLE FILTER TOOK %f\n", ____chimes_unroll_var_17);
+    I = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910312048UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 619 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   float ____chimes_unroll_var_18; call_lbl_7: ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
+     call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 620 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 621 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(seed); free_helper(seed, 7756533236910311919UL); }) ;
+  call_lbl_1: ({ calling((void*)videoSequence, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(7756533236910312048UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910312030UL)); (videoSequence)(I, IszX, IszY, Nfr, seed); }) ;
 # 622 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(I); free_helper(I, 7756533236910311937UL); }) ;
+     call_lbl_2: endVideoSequence = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 623 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_25; ;
 # 624 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); }
+# 625 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 626 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 627 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 628 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   float ____chimes_unroll_var_16; call_lbl_3: ____chimes_unroll_var_16 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endVideoSequence); })) ; printf("VIDEO SEQUENCE TOOK %f\n", ____chimes_unroll_var_16);
+# 629 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 630 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  call_lbl_4: ({ calling((void*)particleFilter, 4, ____alias_loc_id_3, 0UL, 6, (size_t)(7756533236910312048UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910312030UL), (size_t)(0UL)); (particleFilter)(I, IszX, IszY, Nfr, seed, Nparticles); }) ;
+# 631 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  long long endParticleFilter; call_lbl_5: endParticleFilter = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+# 632 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   float ____chimes_unroll_var_17; call_lbl_6: ____chimes_unroll_var_17 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(endVideoSequence, endParticleFilter); })) ; printf("PARTICLE FILTER TOOK %f\n", ____chimes_unroll_var_17);
+# 633 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   float ____chimes_unroll_var_18; call_lbl_7: ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
+# 634 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 635 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(seed); free_helper(seed, 7756533236910312030UL); }) ;
+# 636 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(I); free_helper(I, 7756533236910312048UL); }) ;
+# 637 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_25; ;
+# 638 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); }
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 long long get_time_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; ; ;
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5646,581 +5674,613 @@ int findIndexBin_quick(double * CDF, int beginIndex, int endIndex, double value)
 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); }
 
 int findIndexBin(double * CDF, int beginIndex, int endIndex, double value) { return (____chimes_replaying ? findIndexBin_resumable(CDF, beginIndex, endIndex, value) : findIndexBin_quick(CDF, beginIndex, endIndex, value)); }
+# 346 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void particleFilter_kernel_quick(int *I, int IszX, int IszY, int Nfr, int * seed,
+# 347 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        int Nparticles, double *likelihood, double *arrayX, double *arrayY,
+# 348 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        double *xj, double *yj, double *CDF, double *u, double *objxy,
+# 349 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        int countOnes, int *ind, int k, int max_size, double *weights,
+# 350 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        double xe, double ye) {const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter_kernel), "particleFilter_kernel", &____must_manage_particleFilter_kernel, 21, 0, (size_t)(7756533236910311467UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311471UL), (size_t)(0UL), (size_t)(7756533236910311473UL), (size_t)(7756533236910311474UL), (size_t)(7756533236910311475UL), (size_t)(7756533236910311476UL), (size_t)(7756533236910311477UL), (size_t)(7756533236910311478UL), (size_t)(7756533236910311479UL), (size_t)(7756533236910311480UL), (size_t)(0UL), (size_t)(7756533236910311482UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311485UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 351 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    int x; int y; ;
+# 352 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    int indX; int indY; ;
+# 353 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     long long set_arrays; call_lbl_0: set_arrays = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+# 354 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 355 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter), "particleFilter", (int *)0, 6, 6, (size_t)(7756533236910311726UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311730UL), (size_t)(0UL), "particleFilter|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "particleFilter|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "particleFilter|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "particleFilter|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "particleFilter|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "particleFilter|Nparticles|0", (int *)0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0) ; int k;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int *ind;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *u;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *CDF;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *yj;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *xj;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *arrayY;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *arrayX;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *likelihood;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *weights;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double *objxy;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int countOnes;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int *disk;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int max_size;
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- register_stack_vars(14, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0); ; ;
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_29: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(29, &____chimes_region_id0, 1, &x); int ____chimes_first_iter0 = 1;
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(arrayX, arrayY, Nparticles, seed) private(x) firstprivate(____chimes_first_iter0)
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    max_size = (IszX*IszY*Nfr) ;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &x); ____chimes_first_iter0 = 0; } {
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  long long start; call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+         call_lbl_1: arrayX[x] += 1 + 5*({ calling_npm("randn", 0); randn_npm(seed, x); });
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+         call_lbl_2: arrayY[x] += -2 + 2*({ calling_npm("randn", 0); randn_npm(seed, x); });
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double xe; call_lbl_1: xe = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ;
+     } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double ye; call_lbl_2: ye = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ;
+     long long error; call_lbl_3: error = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+      float ____chimes_unroll_var_0; call_lbl_4: ____chimes_unroll_var_0 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(set_arrays, error); })) ; printf("TIME TO SET ERROR TOOK: %f\n", ____chimes_unroll_var_0);
 # 364 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int radius; radius = (5) ;
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_30: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(30, &____chimes_region_id1, 4, &indX, &indY, &x, &y); int ____chimes_first_iter1 = 1;
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(likelihood, I, arrayX, arrayY, objxy, ind) private(x, y, indX, indY) firstprivate(____chimes_first_iter1)
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int diameter; diameter = (radius*2 - 1) ;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 4, &indX, &indY, &x, &y); ____chimes_first_iter1 = 0; } {
 # 367 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc(diameter * diameter * sizeof(int)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 7756533236910310861UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_3: ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); });
 # 369 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    countOnes = (0) ;
 # 370 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- int x; int y; ;
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- for(x = 0; x < diameter; x++){
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(y = 0; y < diameter; y++){
+        for(y = 0; y < countOnes; y++){
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   if(disk[x*diameter + y]) {
+             call_lbl_5: indX = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayX[x]); }) + objxy[y*2 + 1];
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    countOnes++;
+             call_lbl_6: indY = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayY[x]); }) + objxy[y*2];
 # 375 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-            }
+            ind[x*countOnes + y] = fabs(indX*IszY*Nfr + indY*Nfr + k);
 # 376 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  }
-# 377 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+            if (ind[x*countOnes + y] >= max_size) {ind[x*countOnes + y] = 0; };
 # 378 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc(countOnes * 2 * sizeof(double)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 7756533236910311141UL, 0, 0); ____chimes_tmp_ptr; })) ;
+        }
 # 379 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_4: ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, objxy, radius); });
+        likelihood[x] = 0;
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 381 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  long long get_neighbors; call_lbl_5: get_neighbors = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+        for (y = 0; y < countOnes; y++) { likelihood[x] += (pow((I[ind[x*countOnes + y]] - 100),2) - pow((I[ind[x*countOnes + y]]-228),2))/50.0; };
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   float ____chimes_unroll_var_0; call_lbl_6: ____chimes_unroll_var_0 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })) ; printf("TIME TO GET NEIGHBORS TOOK: %f\n", ____chimes_unroll_var_0);
+        likelihood[x] = likelihood[x]/((double) countOnes);
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311306UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     long long likelihood_time; call_lbl_7: likelihood_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_41: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(41, &____chimes_region_id0, 1, &x); int ____chimes_first_iter0 = 1;
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(weights, Nparticles) private(x) firstprivate(____chimes_first_iter0)
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+      float ____chimes_unroll_var_1; call_lbl_8: ____chimes_unroll_var_1 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(error, likelihood_time); })) ; printf("TIME TO GET LIKELIHOODS TOOK: %f\n", ____chimes_unroll_var_1);
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &x); ____chimes_first_iter0 = 0; } {
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  weights[x] = 1/((double)(Nparticles));
 # 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_31: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(31, &____chimes_region_id2, 1, &x); int ____chimes_first_iter2 = 1;
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(Nparticles, weights, likelihood) private(x) firstprivate(____chimes_first_iter2)
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 389 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  long long get_weights; call_lbl_7: get_weights = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 1, &x); ____chimes_first_iter2 = 0; } {
 # 390 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   float ____chimes_unroll_var_1; call_lbl_8: ____chimes_unroll_var_1 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })) ; printf("TIME TO GET WEIGHTSTOOK: %f\n", ____chimes_unroll_var_1);
+        weights[x] = weights[x] * exp(likelihood[x]);
 # 391 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     } } } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
 # 392 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311259UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     long long exponential; call_lbl_9: exponential = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 393 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311133UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      float ____chimes_unroll_var_2; call_lbl_10: ____chimes_unroll_var_2 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(likelihood_time, exponential); })) ; printf("TIME TO GET EXP TOOK: %f\n", ____chimes_unroll_var_2);
 # 394 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311149UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     double sumWeights; sumWeights = (0) ;
 # 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311644UL, 0, 0); ____chimes_tmp_ptr; })) ;
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_32: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(32, &____chimes_region_id3, 1, &x); int ____chimes_first_iter3 = 1;
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for private(x) reduction(+:sumWeights) firstprivate(____chimes_first_iter3)
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 396 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311654UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 1, &x); ____chimes_first_iter3 = 0; } {
 # 397 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311509UL, 0, 0); ____chimes_tmp_ptr; })) ;
+        sumWeights += weights[x];
 # 398 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    u = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311557UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     } } } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); }
 # 399 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * countOnes * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 7756533236910311182UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     long long sum_time; call_lbl_11: sum_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_42: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(42, &____chimes_region_id1, 1, &x); int ____chimes_first_iter1 = 1;
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(arrayX, arrayY, xe, ye) private(x) firstprivate(____chimes_first_iter1)
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+      float ____chimes_unroll_var_3; call_lbl_12: ____chimes_unroll_var_3 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(exponential, sum_time); })) ; printf("TIME TO SUM WEIGHTS TOOK: %f\n", ____chimes_unroll_var_3);
 # 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &x); ____chimes_first_iter1 = 0; } {
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_33: bool ____chimes_disable4 = disable_current_thread(); void *____chimes_parent_ctx5 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth4 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth4 = get_thread_stack_depth(); size_t ____chimes_region_id4; unsigned ____chimes_parent_thread4 = entering_omp_parallel(33, &____chimes_region_id4, 1, &x); int ____chimes_first_iter4 = 1;
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(sumWeights, weights) private(x) firstprivate(____chimes_first_iter4)
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 402 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  arrayX[x] = xe;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter4) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread4, ____chimes_parent_ctx5, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth4, ____chimes_region_id4, 1, &x); ____chimes_first_iter4 = 0; } {
 # 403 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  arrayY[x] = ye;
+        weights[x] = weights[x]/sumWeights;
 # 404 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
+     } } } leaving_omp_parallel(____chimes_call_stack_depth4, ____chimes_region_id4, 1); reenable_current_thread(____chimes_disable4); }
 # 405 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ;
+     long long normalize; call_lbl_13: normalize = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 406 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+      float ____chimes_unroll_var_4; call_lbl_14: ____chimes_unroll_var_4 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(sum_time, normalize); })) ; printf("TIME TO NORMALIZE WEIGHTS TOOK: %f\n", ____chimes_unroll_var_4);
 # 407 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long ____chimes_unroll_var_2; call_lbl_9: ____chimes_unroll_var_2 = (({ calling_npm("get_time", 0); get_time_npm(); })) ; float ____chimes_unroll_var_3; call_lbl_10: ____chimes_unroll_var_3 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_weights, ____chimes_unroll_var_2); })) ; printf("TIME TO SET ARRAYS TOOK: %f\n", ____chimes_unroll_var_3);
+    xe = 0;
 # 408 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- int indX; int indY; ;
+    ye = 0;
 # 409 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- for(k = 1; k < Nfr; k++){
 # 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long set_arrays; call_lbl_11: set_arrays = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_34: bool ____chimes_disable5 = disable_current_thread(); void *____chimes_parent_ctx6 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth5 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth5 = get_thread_stack_depth(); size_t ____chimes_region_id5; unsigned ____chimes_parent_thread5 = entering_omp_parallel(34, &____chimes_region_id5, 1, &x); int ____chimes_first_iter5 = 1;
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for private(x) reduction(+:xe, ye) firstprivate(____chimes_first_iter5)
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 411 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter5) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread5, ____chimes_parent_ctx6, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth5, ____chimes_region_id5, 1, &x); ____chimes_first_iter5 = 0; } {
 # 412 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        xe += arrayX[x] * weights[x];
 # 413 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        ye += arrayY[x] * weights[x];
 # 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_43: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(43, &____chimes_region_id2, 1, &x); int ____chimes_first_iter2 = 1;
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(arrayX, arrayY, Nparticles, seed) private(x) firstprivate(____chimes_first_iter2)
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     } } } leaving_omp_parallel(____chimes_call_stack_depth5, ____chimes_region_id5, 1); reenable_current_thread(____chimes_disable5); }
 # 415 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 1, &x); ____chimes_first_iter2 = 0; } {
+     long long move_time; call_lbl_15: move_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 416 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    call_lbl_12: arrayX[x] += 1 + 5*({ calling_npm("randn", 0); randn_npm(seed, x); });
+      float ____chimes_unroll_var_5; call_lbl_16: ____chimes_unroll_var_5 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(normalize, move_time); })) ; printf("TIME TO MOVE OBJECT TOOK: %f\n", ____chimes_unroll_var_5);
 # 417 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    call_lbl_13: arrayY[x] += -2 + 2*({ calling_npm("randn", 0); randn_npm(seed, x); });
+    printf("XE: %lf\n", xe);
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
+    printf("YE: %lf\n", ye);
 # 419 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long error; call_lbl_14: error = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+      double ____chimes_unroll_var_6; call_lbl_17: ____chimes_unroll_var_6 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ; double ____chimes_unroll_var_7; call_lbl_18: ____chimes_unroll_var_7 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ; double distance; distance = (sqrt( pow((double)(xe-(int)____chimes_unroll_var_6),2) + pow((double)(ye-(int)____chimes_unroll_var_7),2) )) ;
 # 420 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_4; call_lbl_15: ____chimes_unroll_var_4 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(set_arrays, error); })) ; printf("TIME TO SET ERROR TOOK: %f\n", ____chimes_unroll_var_4);
+    printf("%lf\n", distance);
 # 421 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_44: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(44, &____chimes_region_id3, 4, &indX, &indY, &x, &y); int ____chimes_first_iter3 = 1;
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(likelihood, I, arrayX, arrayY, objxy, ind) private(x, y, indX, indY) firstprivate(____chimes_first_iter3)
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 423 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 4, &indX, &indY, &x, &y); ____chimes_first_iter3 = 0; } {
 # 424 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 425 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 426 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 427 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 428 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    CDF[0] = weights[0];
 # 429 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   for(y = 0; y < countOnes; y++){
+    for(x = 1; x < Nparticles; x++){
 # 430 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     call_lbl_16: indX = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayX[x]); }) + objxy[y*2 + 1];
+        CDF[x] = weights[x] + CDF[x-1];
 # 431 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     call_lbl_17: indY = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayY[x]); }) + objxy[y*2];
+    }
 # 432 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    ind[x*countOnes + y] = fabs(indX*IszY*Nfr + indY*Nfr + k);
+     long long cum_sum; call_lbl_19: cum_sum = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 433 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    if (ind[x*countOnes + y] >= max_size) {ind[x*countOnes + y] = 0; };
+      float ____chimes_unroll_var_8; call_lbl_20: ____chimes_unroll_var_8 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(move_time, cum_sum); })) ; printf("TIME TO CALC CUM SUM TOOK: %f\n", ____chimes_unroll_var_8);
+# 434 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     double u1; call_lbl_21: u1 = ((1/((double)(Nparticles)))*({ calling_npm("randu", 0); randu_npm(seed, 0); })) ;
 # 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   }
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_35: bool ____chimes_disable6 = disable_current_thread(); void *____chimes_parent_ctx7 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth6 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth6 = get_thread_stack_depth(); size_t ____chimes_region_id6; unsigned ____chimes_parent_thread6 = entering_omp_parallel(35, &____chimes_region_id6, 1, &x); int ____chimes_first_iter6 = 1;
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(u, u1, Nparticles) private(x) firstprivate(____chimes_first_iter6)
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 436 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   likelihood[x] = 0;
+    for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter6) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread6, ____chimes_parent_ctx7, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth6, ____chimes_region_id6, 1, &x); ____chimes_first_iter6 = 0; } {
 # 437 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   for (y = 0; y < countOnes; y++) { likelihood[x] += (pow((I[ind[x*countOnes + y]] - 100),2) - pow((I[ind[x*countOnes + y]]-228),2))/50.0; };
+        u[x] = u1 + x/((double)(Nparticles));
+# 438 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     } } } leaving_omp_parallel(____chimes_call_stack_depth6, ____chimes_region_id6, 1); reenable_current_thread(____chimes_disable6); }
 # 439 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   likelihood[x] = likelihood[x]/((double) countOnes);
+     long long u_time; call_lbl_22: u_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 440 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); }
+      float ____chimes_unroll_var_9; call_lbl_23: ____chimes_unroll_var_9 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(cum_sum, u_time); })) ; printf("TIME TO CALC U TOOK: %f\n", ____chimes_unroll_var_9);
 # 441 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long likelihood_time; call_lbl_18: likelihood_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+    int j; int i; ;
 # 442 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_5; call_lbl_19: ____chimes_unroll_var_5 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(error, likelihood_time); })) ; printf("TIME TO GET LIKELIHOODS TOOK: %f\n", ____chimes_unroll_var_5);
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_36: bool ____chimes_disable7 = disable_current_thread(); void *____chimes_parent_ctx8 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth7 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth7 = get_thread_stack_depth(); size_t ____chimes_region_id7; unsigned ____chimes_parent_thread7 = entering_omp_parallel(36, &____chimes_region_id7, 2, &i, &j); int ____chimes_first_iter7 = 1;
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(CDF, Nparticles, xj, yj, u, arrayX, arrayY) private(i, j) firstprivate(____chimes_first_iter7)
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 444 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(j = 0; j < Nparticles; j++){ { if (____chimes_first_iter7) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread7, ____chimes_parent_ctx8, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth7, ____chimes_region_id7, 2, &i, &j); ____chimes_first_iter7 = 0; } {
 # 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_45: bool ____chimes_disable4 = disable_current_thread(); void *____chimes_parent_ctx5 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth4 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth4 = get_thread_stack_depth(); size_t ____chimes_region_id4; unsigned ____chimes_parent_thread4 = entering_omp_parallel(45, &____chimes_region_id4, 1, &x); int ____chimes_first_iter4 = 1;
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(Nparticles, weights, likelihood) private(x) firstprivate(____chimes_first_iter4)
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+         call_lbl_24: i = ({ calling_npm("findIndex", 0); findIndex_npm(CDF, Nparticles, u[j]); });
 # 446 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter4) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread4, ____chimes_parent_ctx5, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth4, ____chimes_region_id4, 1, &x); ____chimes_first_iter4 = 0; } {
-# 447 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   weights[x] = weights[x] * exp(likelihood[x]);
+        if (i == -1) {i = Nparticles-1; };
 # 448 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth4, ____chimes_region_id4, 1); reenable_current_thread(____chimes_disable4); }
+        xj[j] = arrayX[i];
 # 449 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long exponential; call_lbl_20: exponential = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+        yj[j] = arrayY[i];
 # 450 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_6; call_lbl_21: ____chimes_unroll_var_6 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(likelihood_time, exponential); })) ; printf("TIME TO GET EXP TOOK: %f\n", ____chimes_unroll_var_6);
 # 451 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   double sumWeights; sumWeights = (0) ;
+     } } } leaving_omp_parallel(____chimes_call_stack_depth7, ____chimes_region_id7, 1); reenable_current_thread(____chimes_disable7); }
 # 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_46: bool ____chimes_disable5 = disable_current_thread(); void *____chimes_parent_ctx6 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth5 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth5 = get_thread_stack_depth(); size_t ____chimes_region_id5; unsigned ____chimes_parent_thread5 = entering_omp_parallel(46, &____chimes_region_id5, 1, &x); int ____chimes_first_iter5 = 1;
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for private(x) reduction(+:sumWeights) firstprivate(____chimes_first_iter5)
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     long long xyj_time; call_lbl_25: xyj_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 453 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter5) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread5, ____chimes_parent_ctx6, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth5, ____chimes_region_id5, 1, &x); ____chimes_first_iter5 = 0; } {
+      float ____chimes_unroll_var_10; call_lbl_26: ____chimes_unroll_var_10 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(u_time, xyj_time); })) ; printf("TIME TO CALC NEW ARRAY X AND Y TOOK: %f\n", ____chimes_unroll_var_10);
 # 454 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   sumWeights += weights[x];
 # 455 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth5, ____chimes_region_id5, 1); reenable_current_thread(____chimes_disable5); }
 # 456 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long sum_time; call_lbl_22: sum_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+    for(x = 0; x < Nparticles; x++){
 # 457 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_7; call_lbl_23: ____chimes_unroll_var_7 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(exponential, sum_time); })) ; printf("TIME TO SUM WEIGHTS TOOK: %f\n", ____chimes_unroll_var_7);
 # 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_47: bool ____chimes_disable6 = disable_current_thread(); void *____chimes_parent_ctx7 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth6 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth6 = get_thread_stack_depth(); size_t ____chimes_region_id6; unsigned ____chimes_parent_thread6 = entering_omp_parallel(47, &____chimes_region_id6, 1, &x); int ____chimes_first_iter6 = 1;
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(sumWeights, weights) private(x) firstprivate(____chimes_first_iter6)
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        arrayX[x] = xj[x];
 # 459 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter6) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread6, ____chimes_parent_ctx7, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth6, ____chimes_region_id6, 1, &x); ____chimes_first_iter6 = 0; } {
+        arrayY[x] = yj[x];
 # 460 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   weights[x] = weights[x]/sumWeights;
+        weights[x] = 1/((double)(Nparticles));
 # 461 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth6, ____chimes_region_id6, 1); reenable_current_thread(____chimes_disable6); }
+    }
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long normalize; call_lbl_24: normalize = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+     long long reset; call_lbl_27: reset = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 463 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_8; call_lbl_25: ____chimes_unroll_var_8 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(sum_time, normalize); })) ; printf("TIME TO NORMALIZE WEIGHTS TOOK: %f\n", ____chimes_unroll_var_8);
+      float ____chimes_unroll_var_11; call_lbl_28: ____chimes_unroll_var_11 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(xyj_time, reset); })) ; printf("TIME TO RESET WEIGHTS TOOK: %f\n", ____chimes_unroll_var_11);
 # 464 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  xe = 0;
-# 465 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ye = 0;
-# 466 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_48: bool ____chimes_disable7 = disable_current_thread(); void *____chimes_parent_ctx8 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth7 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth7 = get_thread_stack_depth(); size_t ____chimes_region_id7; unsigned ____chimes_parent_thread7 = entering_omp_parallel(48, &____chimes_region_id7, 1, &x); int ____chimes_first_iter7 = 1;
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for private(x) reduction(+:xe, ye) firstprivate(____chimes_first_iter7)
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 468 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter7) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread7, ____chimes_parent_ctx8, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth7, ____chimes_region_id7, 1, &x); ____chimes_first_iter7 = 0; } {
-# 469 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   xe += arrayX[x] * weights[x];
-# 470 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   ye += arrayY[x] * weights[x];
-# 471 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth7, ____chimes_region_id7, 1); reenable_current_thread(____chimes_disable7); }
-# 472 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long move_time; call_lbl_26: move_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 473 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_9; call_lbl_27: ____chimes_unroll_var_9 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(normalize, move_time); })) ; printf("TIME TO MOVE OBJECT TOOK: %f\n", ____chimes_unroll_var_9);
-# 474 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("XE: %lf\n", xe);
-# 475 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("YE: %lf\n", ye);
-# 476 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    double ____chimes_unroll_var_10; call_lbl_28: ____chimes_unroll_var_10 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ; double ____chimes_unroll_var_11; call_lbl_29: ____chimes_unroll_var_11 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ; double distance; distance = (sqrt( pow((double)(xe-(int)____chimes_unroll_var_10),2) + pow((double)(ye-(int)____chimes_unroll_var_11),2) )) ;
+rm_stack(false, 0UL, "particleFilter_kernel", &____must_manage_particleFilter_kernel, ____alias_loc_id_19, ____chimes_did_disable15, false); }
+
+void particleFilter_kernel(int *I, int IszX, int IszY, int Nfr, int * seed,
+# 347 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        int Nparticles, double *likelihood, double *arrayX, double *arrayY,
+# 348 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        double *xj, double *yj, double *CDF, double *u, double *objxy,
+# 349 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        int countOnes, int *ind, int k, int max_size, double *weights,
+# 350 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        double xe, double ye) { (____chimes_replaying ? particleFilter_kernel_resumable(I, IszX, IszY, Nfr, seed, Nparticles, likelihood, arrayX, arrayY, xj, yj, CDF, u, objxy, countOnes, ind, k, max_size, weights, xe, ye) : particleFilter_kernel_quick(I, IszX, IszY, Nfr, seed, Nparticles, likelihood, arrayX, arrayY, xj, yj, CDF, u, objxy, countOnes, ind, k, max_size, weights, xe, ye)); }
 # 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("%lf\n", distance);
+void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable16 = new_stack((void *)(&particleFilter), "particleFilter", (int *)0, 6, 6, (size_t)(7756533236910311839UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311843UL), (size_t)(0UL), "particleFilter|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "particleFilter|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "particleFilter|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "particleFilter|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "particleFilter|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "particleFilter|Nparticles|0", (int *)0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0) ; int k;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int *ind;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *u;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *CDF;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *yj;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *xj;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *arrayY;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *arrayX;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *likelihood;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *weights;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double *objxy;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int countOnes;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int *disk;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double ye;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double xe;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int max_size;
+# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ register_stack_vars(16, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|ye|0", (int *)0x0, "double", (void *)(&ye), (size_t)8, 0, 0, 0, "particleFilter|xe|0", (int *)0x0, "double", (void *)(&xe), (size_t)8, 0, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0); ; ;
 # 478 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 479 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    max_size = (IszX*IszY*Nfr) ;
 # 480 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  long long start; call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 481 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 482 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     call_lbl_1: xe = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ;
 # 483 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     call_lbl_2: ye = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ;
 # 484 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 485 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  CDF[0] = weights[0];
 # 486 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 1; x < Nparticles; x++){
+  int radius; radius = (5) ;
 # 487 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   CDF[x] = weights[x] + CDF[x-1];
+  int diameter; diameter = (radius*2 - 1) ;
 # 488 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  }
+    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc(diameter * diameter * sizeof(int)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 7756533236910311570UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 489 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long cum_sum; call_lbl_30: cum_sum = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+  call_lbl_3: ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); });
 # 490 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_12; call_lbl_31: ____chimes_unroll_var_12 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(move_time, cum_sum); })) ; printf("TIME TO CALC CUM SUM TOOK: %f\n", ____chimes_unroll_var_12);
+    countOnes = (0) ;
 # 491 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   double u1; call_lbl_32: u1 = ((1/((double)(Nparticles)))*({ calling_npm("randu", 0); randu_npm(seed, 0); })) ;
+ int x; int y; ;
 # 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_49: bool ____chimes_disable8 = disable_current_thread(); void *____chimes_parent_ctx9 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth8 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth8 = get_thread_stack_depth(); size_t ____chimes_region_id8; unsigned ____chimes_parent_thread8 = entering_omp_parallel(49, &____chimes_region_id8, 1, &x); int ____chimes_first_iter8 = 1;
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(u, u1, Nparticles) private(x) firstprivate(____chimes_first_iter8)
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ for(x = 0; x < diameter; x++){
 # 493 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter8) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread8, ____chimes_parent_ctx9, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth8, ____chimes_region_id8, 1, &x); ____chimes_first_iter8 = 0; } {
+  for(y = 0; y < diameter; y++){
 # 494 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   u[x] = u1 + x/((double)(Nparticles));
+   if(disk[x*diameter + y]) {
 # 495 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth8, ____chimes_region_id8, 1); reenable_current_thread(____chimes_disable8); }
+    countOnes++;
 # 496 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long u_time; call_lbl_33: u_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+            }
 # 497 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_13; call_lbl_34: ____chimes_unroll_var_13 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(cum_sum, u_time); })) ; printf("TIME TO CALC U TOOK: %f\n", ____chimes_unroll_var_13);
+  }
 # 498 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int j; int i; ;
+ }
 # 499 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc(countOnes * 2 * sizeof(double)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 7756533236910311790UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{ call_lbl_50: bool ____chimes_disable9 = disable_current_thread(); void *____chimes_parent_ctx10 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth9 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth9 = get_thread_stack_depth(); size_t ____chimes_region_id9; unsigned ____chimes_parent_thread9 = entering_omp_parallel(50, &____chimes_region_id9, 2, &i, &j); int ____chimes_first_iter9 = 1;
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-#pragma omp parallel for shared(CDF, Nparticles, xj, yj, u, arrayX, arrayY) private(i, j) firstprivate(____chimes_first_iter9)
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  call_lbl_4: ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, objxy, radius); });
 # 501 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(j = 0; j < Nparticles; j++){ { if (____chimes_first_iter9) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread9, ____chimes_parent_ctx10, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth9, ____chimes_region_id9, 2, &i, &j); ____chimes_first_iter9 = 0; } {
 # 502 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    call_lbl_35: i = ({ calling_npm("findIndex", 0); findIndex_npm(CDF, Nparticles, u[j]); });
+  long long get_neighbors; call_lbl_5: get_neighbors = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 503 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   if (i == -1) {i = Nparticles-1; };
+   float ____chimes_unroll_var_12; call_lbl_6: ____chimes_unroll_var_12 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })) ; printf("TIME TO GET NEIGHBORS TOOK: %f\n", ____chimes_unroll_var_12);
+# 504 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   xj[j] = arrayX[i];
+    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311658UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   yj[j] = arrayY[i];
+# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_13: bool ____chimes_disable8 = disable_current_thread(); void *____chimes_parent_ctx9 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth8 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth8 = get_thread_stack_depth(); size_t ____chimes_region_id8; unsigned ____chimes_parent_thread8 = entering_omp_parallel(13, &____chimes_region_id8, 1, &x); int ____chimes_first_iter8 = 1;
+# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(weights, Nparticles) private(x) firstprivate(____chimes_first_iter8)
+# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter8) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread8, ____chimes_parent_ctx9, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth8, ____chimes_region_id8, 1, &x); ____chimes_first_iter8 = 0; } {
 # 508 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   } } } leaving_omp_parallel(____chimes_call_stack_depth9, ____chimes_region_id9, 1); reenable_current_thread(____chimes_disable9); }
+  weights[x] = 1/((double)(Nparticles));
 # 509 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long xyj_time; call_lbl_36: xyj_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+  } } } leaving_omp_parallel(____chimes_call_stack_depth8, ____chimes_region_id8, 1); reenable_current_thread(____chimes_disable8); }
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_14; call_lbl_37: ____chimes_unroll_var_14 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(u_time, xyj_time); })) ; printf("TIME TO CALC NEW ARRAY X AND Y TOOK: %f\n", ____chimes_unroll_var_14);
+  long long get_weights; call_lbl_7: get_weights = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 511 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   float ____chimes_unroll_var_13; call_lbl_8: ____chimes_unroll_var_13 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })) ; printf("TIME TO GET WEIGHTSTOOK: %f\n", ____chimes_unroll_var_13);
 # 512 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 513 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  for(x = 0; x < Nparticles; x++){
+    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311783UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 514 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311745UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 515 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   arrayX[x] = xj[x];
+    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311751UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   arrayY[x] = yj[x];
+    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311786UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   weights[x] = 1/((double)(Nparticles));
+    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311787UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  }
+    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311788UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   long long reset; call_lbl_38: reset = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+    u = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311789UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 520 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    float ____chimes_unroll_var_15; call_lbl_39: ____chimes_unroll_var_15 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(xyj_time, reset); })) ; printf("TIME TO RESET WEIGHTS TOOK: %f\n", ____chimes_unroll_var_15);
+    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * countOnes * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 7756533236910311792UL, 0, 0); ____chimes_tmp_ptr; })) ;
+# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{ call_lbl_14: bool ____chimes_disable9 = disable_current_thread(); void *____chimes_parent_ctx10 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth9 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth9 = get_thread_stack_depth(); size_t ____chimes_region_id9; unsigned ____chimes_parent_thread9 = entering_omp_parallel(14, &____chimes_region_id9, 1, &x); int ____chimes_first_iter9 = 1;
+# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(arrayX, arrayY, xe, ye) private(x) firstprivate(____chimes_first_iter9)
+# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 522 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ for(x = 0; x < Nparticles; x++){ { if (____chimes_first_iter9) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread9, ____chimes_parent_ctx10, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth9, ____chimes_region_id9, 1, &x); ____chimes_first_iter9 = 0; } {
 # 523 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-         call_lbl_40: checkpoint_transformed(40, ____alias_loc_id_2);
+  arrayX[x] = xe;
 # 524 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  arrayY[x] = ye;
 # 525 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+  } } } leaving_omp_parallel(____chimes_call_stack_depth9, ____chimes_region_id9, 1); reenable_current_thread(____chimes_disable9); }
 # 526 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(disk); free_helper(disk, 7756533236910310861UL); }) ;
+  ;
 # 527 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(objxy); free_helper(objxy, 7756533236910311141UL); }) ;
 # 528 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(weights); free_helper(weights, 7756533236910311306UL); }) ;
+   long long ____chimes_unroll_var_14; call_lbl_9: ____chimes_unroll_var_14 = (({ calling_npm("get_time", 0); get_time_npm(); })) ; float ____chimes_unroll_var_15; call_lbl_10: ____chimes_unroll_var_15 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_weights, ____chimes_unroll_var_14); })) ; printf("TIME TO SET ARRAYS TOOK: %f\n", ____chimes_unroll_var_15);
 # 529 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(likelihood); free_helper(likelihood, 7756533236910311259UL); }) ;
 # 530 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(xj); free_helper(xj, 7756533236910311644UL); }) ;
+ for(k = 1; k < Nfr; k++){
 # 531 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(yj); free_helper(yj, 7756533236910311654UL); }) ;
 # 532 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayX); free_helper(arrayX, 7756533236910311133UL); }) ;
-# 533 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayY); free_helper(arrayY, 7756533236910311149UL); }) ;
-# 534 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(CDF); free_helper(CDF, 7756533236910311509UL); }) ;
+         call_lbl_11: ({ calling_npm("particleFilter_kernel", 0); particleFilter_kernel_npm(I, IszX, IszY, Nfr, seed, Nparticles, likelihood, arrayX, arrayY, xj, yj, CDF, u, objxy, countOnes, ind, k, max_size, weights, xe, ye); });
 # 535 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(u); free_helper(u, 7756533236910311557UL); }) ;
 # 536 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(ind); free_helper(ind, 7756533236910311182UL); }) ;
 # 537 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "particleFilter", (int *)0x0, ____alias_loc_id_19, ____chimes_did_disable15, false); }
+         call_lbl_12: checkpoint_transformed(12, ____alias_loc_id_2);
+# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 539 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ }
+# 540 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(disk); free_helper(disk, 7756533236910311570UL); }) ;
+# 541 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(objxy); free_helper(objxy, 7756533236910311790UL); }) ;
+# 542 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(weights); free_helper(weights, 7756533236910311658UL); }) ;
+# 543 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(likelihood); free_helper(likelihood, 7756533236910311783UL); }) ;
+# 544 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(xj); free_helper(xj, 7756533236910311786UL); }) ;
+# 545 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(yj); free_helper(yj, 7756533236910311787UL); }) ;
+# 546 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(arrayX); free_helper(arrayX, 7756533236910311745UL); }) ;
+# 547 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(arrayY); free_helper(arrayY, 7756533236910311751UL); }) ;
+# 548 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(CDF); free_helper(CDF, 7756533236910311788UL); }) ;
+# 549 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(u); free_helper(u, 7756533236910311789UL); }) ;
+# 550 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(ind); free_helper(ind, 7756533236910311792UL); }) ;
+# 551 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+rm_stack(false, 0UL, "particleFilter", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); }
 
 void particleFilter(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles) { (____chimes_replaying ? particleFilter_resumable(I, IszX, IszY, Nfr, seed, Nparticles) : particleFilter_quick(I, IszX, IszY, Nfr, seed, Nparticles)); }
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int main_quick(int argc, char * argv[]){const int ____chimes_did_disable16 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7756533236910312000UL)) ; long long endVideoSequence;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-long long start;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int *I;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int *seed;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int Nparticles;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int Nfr;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int IszY;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int IszX;
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- register_stack_vars(8, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0); ; ;
-# 539 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 540 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  char *usage; usage = ("openmp.out -x <dimX> -y <dimY> -z <Nfr> -np <Nparticles>") ;
-# 541 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 542 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if(argc != 9)
-# 543 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- {
-# 544 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("%s\n", usage);
-# 545 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_15; ;
-# 546 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
-# 547 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 548 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( strcmp( argv[1], "-x" ) || strcmp( argv[3], "-y" ) || strcmp( argv[5], "-z" ) || strcmp( argv[7], "-np" ) ) {
-# 549 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf( "%s\n",usage );
-# 550 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_16; ;
-# 551 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
 # 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int main_quick(int argc, char * argv[]){const int ____chimes_did_disable17 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7756533236910312111UL)) ; long long endVideoSequence;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+long long start;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int *I;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int *seed;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int Nparticles;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int Nfr;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int IszY;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int IszX;
+# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ register_stack_vars(8, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0); ; ;
 # 553 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     ;
 # 554 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  char *usage; usage = ("openmp.out -x <dimX> -y <dimY> -z <Nfr> -np <Nparticles>") ;
 # 555 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( sscanf( argv[2], "%d", &IszX ) == (-1) ) {
+ if(argc != 9)
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    printf("ERROR: dimX input is incorrect");
+ {
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_17; ;
+  printf("%s\n", usage);
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+   int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_15; ;
 # 560 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 561 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( IszX <= 0 ) {
-# 562 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("dimX must be > 0\n");
-# 563 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_18; ;
-# 564 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
+# 561 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 562 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ if( strcmp( argv[1], "-x" ) || strcmp( argv[3], "-y" ) || strcmp( argv[5], "-z" ) || strcmp( argv[7], "-np" ) ) {
+# 563 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  printf( "%s\n",usage );
+# 564 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_16; ;
 # 565 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ }
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 567 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( sscanf( argv[4], "%d", &IszY ) == (-1) ) {
+     ;
 # 568 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    printf("ERROR: dimY input is incorrect");
 # 569 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_19; ;
 # 570 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+ if( sscanf( argv[2], "%d", &IszX ) == (-1) ) {
 # 571 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    printf("ERROR: dimX input is incorrect");
 # 572 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( IszY <= 0 ) {
+     int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_17; ;
 # 573 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("dimY must be > 0\n");
+ }
 # 574 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_20; ;
 # 575 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+ if( IszX <= 0 ) {
 # 576 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  printf("dimX must be > 0\n");
 # 577 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_18; ;
 # 578 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( sscanf( argv[6], "%d", &Nfr ) == (-1) ) {
+ }
 # 579 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    printf("ERROR: Number of frames input is incorrect");
 # 580 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_21; ;
 # 581 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+ if( sscanf( argv[4], "%d", &IszY ) == (-1) ) {
 # 582 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    printf("ERROR: dimY input is incorrect");
 # 583 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( Nfr <= 0 ) {
+     int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_19; ;
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("number of frames must be > 0\n");
+ }
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_22; ;
 # 586 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+ if( IszY <= 0 ) {
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  printf("dimY must be > 0\n");
 # 588 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_20; ;
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( sscanf( argv[8], "%d", &Nparticles ) == (-1) ) {
+ }
 # 590 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    printf("ERROR: Number of particles input is incorrect");
 # 591 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_23; ;
 # 592 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- }
+ if( sscanf( argv[6], "%d", &Nfr ) == (-1) ) {
 # 593 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    printf("ERROR: Number of frames input is incorrect");
 # 594 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if( Nparticles <= 0 ) {
+     int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_21; ;
 # 595 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  printf("Number of particles must be > 0\n");
-# 596 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_24; ;
-# 597 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
+# 596 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 597 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ if( Nfr <= 0 ) {
 # 598 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  printf("number of frames must be > 0\n");
 # 599 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 7756533236910311919UL, 0, 0); ____chimes_tmp_ptr; })) ;
+   int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_22; ;
 # 600 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- int i; ;
+ }
 # 601 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- for (i = 0; i < Nparticles; i++) { seed[i] = time(0)*i; };
+# 602 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 603 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ if( sscanf( argv[8], "%d", &Nparticles ) == (-1) ) {
 # 604 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    I = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910311937UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    printf("ERROR: Number of particles input is incorrect");
 # 605 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+     int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_23; ;
 # 606 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ }
 # 607 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_1: ({ calling((void*)videoSequence, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(7756533236910311937UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311919UL)); videoSequence_quick(I, IszX, IszY, Nfr, seed); }) ;
 # 608 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-     call_lbl_2: endVideoSequence = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+ if( Nparticles <= 0 ) {
 # 609 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  printf("Number of particles must be > 0\n");
 # 610 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_24; ;
 # 611 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+ }
 # 612 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 613 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 7756533236910312030UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 614 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   float ____chimes_unroll_var_16; call_lbl_3: ____chimes_unroll_var_16 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endVideoSequence); })) ; printf("VIDEO SEQUENCE TOOK %f\n", ____chimes_unroll_var_16);
+ int i; ;
 # 615 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 616 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_4: ({ calling((void*)particleFilter, 4, ____alias_loc_id_3, 0UL, 6, (size_t)(7756533236910311937UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311919UL), (size_t)(0UL)); particleFilter_quick(I, IszX, IszY, Nfr, seed, Nparticles); }) ;
+ for (i = 0; i < Nparticles; i++) { seed[i] = time(0)*i; };
 # 617 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  long long endParticleFilter; call_lbl_5: endParticleFilter = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 618 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   float ____chimes_unroll_var_17; call_lbl_6: ____chimes_unroll_var_17 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(endVideoSequence, endParticleFilter); })) ; printf("PARTICLE FILTER TOOK %f\n", ____chimes_unroll_var_17);
+    I = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910312048UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 619 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   float ____chimes_unroll_var_18; call_lbl_7: ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
+     call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 620 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 621 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(seed); free_helper(seed, 7756533236910311919UL); }) ;
+  call_lbl_1: ({ calling((void*)videoSequence, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(7756533236910312048UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910312030UL)); videoSequence_quick(I, IszX, IszY, Nfr, seed); }) ;
 # 622 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(I); free_helper(I, 7756533236910311937UL); }) ;
+     call_lbl_2: endVideoSequence = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 623 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); return ____chimes_ret_var_25; ;
 # 624 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); }
+# 625 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 626 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 627 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 628 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   float ____chimes_unroll_var_16; call_lbl_3: ____chimes_unroll_var_16 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endVideoSequence); })) ; printf("VIDEO SEQUENCE TOOK %f\n", ____chimes_unroll_var_16);
+# 629 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 630 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  call_lbl_4: ({ calling((void*)particleFilter, 4, ____alias_loc_id_3, 0UL, 6, (size_t)(7756533236910312048UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910312030UL), (size_t)(0UL)); particleFilter_quick(I, IszX, IszY, Nfr, seed, Nparticles); }) ;
+# 631 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  long long endParticleFilter; call_lbl_5: endParticleFilter = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+# 632 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   float ____chimes_unroll_var_17; call_lbl_6: ____chimes_unroll_var_17 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(endVideoSequence, endParticleFilter); })) ; printf("PARTICLE FILTER TOOK %f\n", ____chimes_unroll_var_17);
+# 633 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+   float ____chimes_unroll_var_18; call_lbl_7: ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
+# 634 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 635 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(seed); free_helper(seed, 7756533236910312030UL); }) ;
+# 636 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free(I); free_helper(I, 7756533236910312048UL); }) ;
+# 637 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_25; ;
+# 638 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); }
 
 int main(int argc, char * argv[]) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6508,18 +6568,258 @@ int findIndexBin_npm(double * CDF, int beginIndex, int endIndex, double value){
   int ____chimes_ret_var_14; ____chimes_ret_var_14 = (findIndexBin_npm(CDF, middleIndex-1, endIndex, value)); return ____chimes_ret_var_14; ;
 # 344 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
+# 346 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void particleFilter_kernel_npm(int *I, int IszX, int IszY, int Nfr, int * seed,
+# 347 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        int Nparticles, double *likelihood, double *arrayX, double *arrayY,
+# 348 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        double *xj, double *yj, double *CDF, double *u, double *objxy,
+# 349 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        int countOnes, int *ind, int k, int max_size, double *weights,
+# 350 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        double xe, double ye) {
+# 351 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    int x, y;
+# 352 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    int indX, indY;
+# 353 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    long long set_arrays = get_time_npm();
+# 354 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 355 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(arrayX, arrayY, Nparticles, seed) private(x)
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 358 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(x = 0; x < Nparticles; x++){
+# 359 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        arrayX[x] += 1 + 5*randn_npm(seed, x);
+# 360 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        arrayY[x] += -2 + 2*randn_npm(seed, x);
+# 361 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    }
+# 362 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    long long error = get_time_npm();
+# 363 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     float ____chimes_unroll_var_0 = elapsed_time_npm(set_arrays, error); printf("TIME TO SET ERROR TOOK: %f\n", ____chimes_unroll_var_0);
+# 364 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(likelihood, I, arrayX, arrayY, objxy, ind) private(x, y, indX, indY)
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 366 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(x = 0; x < Nparticles; x++){
+# 367 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 368 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 369 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 370 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 371 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 372 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        for(y = 0; y < countOnes; y++){
+# 373 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+            indX = roundDouble_npm(arrayX[x]) + objxy[y*2 + 1];
+# 374 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+            indY = roundDouble_npm(arrayY[x]) + objxy[y*2];
+# 375 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+            ind[x*countOnes + y] = fabs(indX*IszY*Nfr + indY*Nfr + k);
+# 376 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+            if (ind[x*countOnes + y] >= max_size) {ind[x*countOnes + y] = 0; };
+# 378 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        }
+# 379 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        likelihood[x] = 0;
+# 380 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        for (y = 0; y < countOnes; y++) { likelihood[x] += (pow((I[ind[x*countOnes + y]] - 100),2) - pow((I[ind[x*countOnes + y]]-228),2))/50.0; };
+# 382 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        likelihood[x] = likelihood[x]/((double) countOnes);
+# 383 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    }
+# 384 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    long long likelihood_time = get_time_npm();
+# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     float ____chimes_unroll_var_1 = elapsed_time_npm(error, likelihood_time); printf("TIME TO GET LIKELIHOODS TOOK: %f\n", ____chimes_unroll_var_1);
+# 386 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 387 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(Nparticles, weights, likelihood) private(x)
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 389 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(x = 0; x < Nparticles; x++){
+# 390 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        weights[x] = weights[x] * exp(likelihood[x]);
+# 391 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    }
+# 392 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    long long exponential = get_time_npm();
+# 393 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     float ____chimes_unroll_var_2 = elapsed_time_npm(likelihood_time, exponential); printf("TIME TO GET EXP TOOK: %f\n", ____chimes_unroll_var_2);
+# 394 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    double sumWeights = 0;
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for private(x) reduction(+:sumWeights)
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 396 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(x = 0; x < Nparticles; x++){
+# 397 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        sumWeights += weights[x];
+# 398 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    }
+# 399 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    long long sum_time = get_time_npm();
+# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     float ____chimes_unroll_var_3 = elapsed_time_npm(exponential, sum_time); printf("TIME TO SUM WEIGHTS TOOK: %f\n", ____chimes_unroll_var_3);
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(sumWeights, weights) private(x)
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 402 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(x = 0; x < Nparticles; x++){
+# 403 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        weights[x] = weights[x]/sumWeights;
+# 404 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    }
+# 405 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    long long normalize = get_time_npm();
+# 406 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     float ____chimes_unroll_var_4 = elapsed_time_npm(sum_time, normalize); printf("TIME TO NORMALIZE WEIGHTS TOOK: %f\n", ____chimes_unroll_var_4);
+# 407 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    xe = 0;
+# 408 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    ye = 0;
+# 409 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for private(x) reduction(+:xe, ye)
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 411 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(x = 0; x < Nparticles; x++){
+# 412 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        xe += arrayX[x] * weights[x];
+# 413 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        ye += arrayY[x] * weights[x];
+# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    }
+# 415 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    long long move_time = get_time_npm();
+# 416 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     float ____chimes_unroll_var_5 = elapsed_time_npm(normalize, move_time); printf("TIME TO MOVE OBJECT TOOK: %f\n", ____chimes_unroll_var_5);
+# 417 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    printf("XE: %lf\n", xe);
+# 418 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    printf("YE: %lf\n", ye);
+# 419 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     double ____chimes_unroll_var_6 = roundDouble_npm(IszY/2.0); double ____chimes_unroll_var_7 = roundDouble_npm(IszX/2.0); double distance = sqrt( pow((double)(xe-(int)____chimes_unroll_var_6),2) + pow((double)(ye-(int)____chimes_unroll_var_7),2) );
+# 420 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    printf("%lf\n", distance);
+# 421 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 423 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 424 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 425 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 426 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 427 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 428 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    CDF[0] = weights[0];
+# 429 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(x = 1; x < Nparticles; x++){
+# 430 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        CDF[x] = weights[x] + CDF[x-1];
+# 431 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    }
+# 432 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    long long cum_sum = get_time_npm();
+# 433 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     float ____chimes_unroll_var_8 = elapsed_time_npm(move_time, cum_sum); printf("TIME TO CALC CUM SUM TOOK: %f\n", ____chimes_unroll_var_8);
+# 434 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    double u1 = (1/((double)(Nparticles)))*randu_npm(seed, 0);
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(u, u1, Nparticles) private(x)
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 436 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(x = 0; x < Nparticles; x++){
+# 437 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        u[x] = u1 + x/((double)(Nparticles));
+# 438 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    }
+# 439 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    long long u_time = get_time_npm();
+# 440 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     float ____chimes_unroll_var_9 = elapsed_time_npm(cum_sum, u_time); printf("TIME TO CALC U TOOK: %f\n", ____chimes_unroll_var_9);
+# 441 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    int j, i;
+# 442 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+#pragma omp parallel for shared(CDF, Nparticles, xj, yj, u, arrayX, arrayY) private(i, j)
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 444 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(j = 0; j < Nparticles; j++){
+# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        i = findIndex_npm(CDF, Nparticles, u[j]);
+# 446 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        if (i == -1) {i = Nparticles-1; };
+# 448 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        xj[j] = arrayX[i];
+# 449 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        yj[j] = arrayY[i];
+# 450 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 451 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    }
+# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    long long xyj_time = get_time_npm();
+# 453 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     float ____chimes_unroll_var_10 = elapsed_time_npm(u_time, xyj_time); printf("TIME TO CALC NEW ARRAY X AND Y TOOK: %f\n", ____chimes_unroll_var_10);
+# 454 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 455 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 456 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    for(x = 0; x < Nparticles; x++){
+# 457 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        arrayX[x] = xj[x];
+# 459 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        arrayY[x] = yj[x];
+# 460 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        weights[x] = 1/((double)(Nparticles));
+# 461 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    }
+# 462 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    long long reset = get_time_npm();
+# 463 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+     float ____chimes_unroll_var_11 = elapsed_time_npm(xyj_time, reset); printf("TIME TO RESET WEIGHTS TOOK: %f\n", ____chimes_unroll_var_11);
+# 464 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+}
 
 
 
 
 
 static int module_init() {
-    init_module(7756533236910309485UL, 42, 17, 9, 21, 14, 0, 14, 58, 0, 1,
+    init_module(7756533236910309485UL, 54, 18, 9, 22, 15, 0, 15, 59, 0, 1,
                            &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (7756533236910309485UL + 790UL), (7756533236910309485UL + 797UL), (7756533236910309485UL + 798UL), (7756533236910309485UL + 799UL), (7756533236910309485UL + 993UL),
                            &____alias_loc_id_1, (unsigned)13, (unsigned)0, (unsigned)0, (7756533236910309485UL + 785UL), (7756533236910309485UL + 786UL), (7756533236910309485UL + 787UL), (7756533236910309485UL + 788UL), (7756533236910309485UL + 789UL), (7756533236910309485UL + 790UL), (7756533236910309485UL + 791UL), (7756533236910309485UL + 792UL), (7756533236910309485UL + 793UL), (7756533236910309485UL + 794UL), (7756533236910309485UL + 795UL), (7756533236910309485UL + 796UL), (7756533236910309485UL + 993UL),
-                           &____alias_loc_id_2, (unsigned)72, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1266UL), (7756533236910309485UL + 1267UL), (7756533236910309485UL + 1268UL), (7756533236910309485UL + 1269UL), (7756533236910309485UL + 1270UL), (7756533236910309485UL + 1271UL), (7756533236910309485UL + 1272UL), (7756533236910309485UL + 1273UL), (7756533236910309485UL + 1274UL), (7756533236910309485UL + 1275UL), (7756533236910309485UL + 1276UL), (7756533236910309485UL + 1277UL), (7756533236910309485UL + 1278UL), (7756533236910309485UL + 1279UL), (7756533236910309485UL + 1280UL), (7756533236910309485UL + 1281UL), (7756533236910309485UL + 1282UL), (7756533236910309485UL + 1283UL), (7756533236910309485UL + 1284UL), (7756533236910309485UL + 1285UL), (7756533236910309485UL + 1286UL), (7756533236910309485UL + 1287UL), (7756533236910309485UL + 1288UL), (7756533236910309485UL + 1289UL), (7756533236910309485UL + 1290UL), (7756533236910309485UL + 1291UL), (7756533236910309485UL + 1292UL), (7756533236910309485UL + 1293UL), (7756533236910309485UL + 1294UL), (7756533236910309485UL + 1295UL), (7756533236910309485UL + 1296UL), (7756533236910309485UL + 1297UL), (7756533236910309485UL + 1298UL), (7756533236910309485UL + 1299UL), (7756533236910309485UL + 1300UL), (7756533236910309485UL + 1301UL), (7756533236910309485UL + 1302UL), (7756533236910309485UL + 1303UL), (7756533236910309485UL + 1304UL), (7756533236910309485UL + 1305UL), (7756533236910309485UL + 1306UL), (7756533236910309485UL + 1307UL), (7756533236910309485UL + 1308UL), (7756533236910309485UL + 1309UL), (7756533236910309485UL + 1310UL), (7756533236910309485UL + 1311UL), (7756533236910309485UL + 1312UL), (7756533236910309485UL + 1313UL), (7756533236910309485UL + 1314UL), (7756533236910309485UL + 1315UL), (7756533236910309485UL + 1316UL), (7756533236910309485UL + 1317UL), (7756533236910309485UL + 1318UL), (7756533236910309485UL + 1319UL), (7756533236910309485UL + 1320UL), (7756533236910309485UL + 1321UL), (7756533236910309485UL + 1322UL), (7756533236910309485UL + 1323UL), (7756533236910309485UL + 1324UL), (7756533236910309485UL + 1325UL), (7756533236910309485UL + 1326UL), (7756533236910309485UL + 1327UL), (7756533236910309485UL + 1328UL), (7756533236910309485UL + 1648UL), (7756533236910309485UL + 1664UL), (7756533236910309485UL + 1697UL), (7756533236910309485UL + 1774UL), (7756533236910309485UL + 1821UL), (7756533236910309485UL + 2024UL), (7756533236910309485UL + 2072UL), (7756533236910309485UL + 2159UL), (7756533236910309485UL + 2169UL),
-                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2271UL), (7756533236910309485UL + 2272UL),
-                           &____alias_loc_id_4, (unsigned)6, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2267UL), (7756533236910309485UL + 2268UL), (7756533236910309485UL + 2269UL), (7756533236910309485UL + 2270UL), (7756533236910309485UL + 2434UL), (7756533236910309485UL + 2559UL),
+                           &____alias_loc_id_2, (unsigned)36, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2005UL), (7756533236910309485UL + 2006UL), (7756533236910309485UL + 2007UL), (7756533236910309485UL + 2008UL), (7756533236910309485UL + 2009UL), (7756533236910309485UL + 2010UL), (7756533236910309485UL + 2011UL), (7756533236910309485UL + 2012UL), (7756533236910309485UL + 2013UL), (7756533236910309485UL + 2014UL), (7756533236910309485UL + 2015UL), (7756533236910309485UL + 2016UL), (7756533236910309485UL + 2017UL), (7756533236910309485UL + 2018UL), (7756533236910309485UL + 2019UL), (7756533236910309485UL + 2020UL), (7756533236910309485UL + 2021UL), (7756533236910309485UL + 2022UL), (7756533236910309485UL + 2023UL), (7756533236910309485UL + 2024UL), (7756533236910309485UL + 2025UL), (7756533236910309485UL + 2026UL), (7756533236910309485UL + 2027UL), (7756533236910309485UL + 2028UL), (7756533236910309485UL + 2029UL), (7756533236910309485UL + 2030UL), (7756533236910309485UL + 2031UL), (7756533236910309485UL + 2032UL), (7756533236910309485UL + 2033UL), (7756533236910309485UL + 2034UL), (7756533236910309485UL + 2035UL), (7756533236910309485UL + 2036UL), (7756533236910309485UL + 2037UL), (7756533236910309485UL + 2173UL), (7756533236910309485UL + 2260UL), (7756533236910309485UL + 2266UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2382UL), (7756533236910309485UL + 2383UL),
+                           &____alias_loc_id_4, (unsigned)6, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2378UL), (7756533236910309485UL + 2379UL), (7756533236910309485UL + 2380UL), (7756533236910309485UL + 2381UL), (7756533236910309485UL + 2545UL), (7756533236910309485UL + 2670UL),
                            &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1UL), (7756533236910309485UL + 2UL),
                            &____alias_loc_id_6, (unsigned)3, (unsigned)0, (unsigned)0, (7756533236910309485UL + 19UL), (7756533236910309485UL + 20UL), (7756533236910309485UL + 21UL),
                            &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (7756533236910309485UL + 37UL), (7756533236910309485UL + 38UL), (7756533236910309485UL + 39UL), (7756533236910309485UL + 40UL), (7756533236910309485UL + 41UL),
@@ -6534,10 +6834,12 @@ static int module_init() {
                             &____alias_loc_id_16, (unsigned)6, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1001UL), (7756533236910309485UL + 1002UL), (7756533236910309485UL + 1003UL), (7756533236910309485UL + 1004UL), (7756533236910309485UL + 1005UL), (7756533236910309485UL + 1006UL),
                             &____alias_loc_id_17, (unsigned)8, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1064UL), (7756533236910309485UL + 1065UL), (7756533236910309485UL + 1066UL), (7756533236910309485UL + 1067UL), (7756533236910309485UL + 1068UL), (7756533236910309485UL + 1069UL), (7756533236910309485UL + 1070UL), (7756533236910309485UL + 1071UL),
                             &____alias_loc_id_18, (unsigned)12, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1124UL), (7756533236910309485UL + 1125UL), (7756533236910309485UL + 1126UL), (7756533236910309485UL + 1127UL), (7756533236910309485UL + 1128UL), (7756533236910309485UL + 1129UL), (7756533236910309485UL + 1130UL), (7756533236910309485UL + 1131UL), (7756533236910309485UL + 1132UL), (7756533236910309485UL + 1133UL), (7756533236910309485UL + 1134UL), (7756533236910309485UL + 1135UL),
-                            &____alias_loc_id_19, (unsigned)36, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1266UL), (7756533236910309485UL + 1267UL), (7756533236910309485UL + 1268UL), (7756533236910309485UL + 1269UL), (7756533236910309485UL + 1270UL), (7756533236910309485UL + 1271UL), (7756533236910309485UL + 1272UL), (7756533236910309485UL + 1273UL), (7756533236910309485UL + 1274UL), (7756533236910309485UL + 1275UL), (7756533236910309485UL + 1276UL), (7756533236910309485UL + 1277UL), (7756533236910309485UL + 1278UL), (7756533236910309485UL + 1279UL), (7756533236910309485UL + 1280UL), (7756533236910309485UL + 1281UL), (7756533236910309485UL + 1282UL), (7756533236910309485UL + 1283UL), (7756533236910309485UL + 1284UL), (7756533236910309485UL + 1285UL), (7756533236910309485UL + 1286UL), (7756533236910309485UL + 1287UL), (7756533236910309485UL + 1288UL), (7756533236910309485UL + 1289UL), (7756533236910309485UL + 1290UL), (7756533236910309485UL + 1291UL), (7756533236910309485UL + 1292UL), (7756533236910309485UL + 1293UL), (7756533236910309485UL + 1294UL), (7756533236910309485UL + 1295UL), (7756533236910309485UL + 1296UL), (7756533236910309485UL + 1297UL), (7756533236910309485UL + 1298UL), (7756533236910309485UL + 1648UL), (7756533236910309485UL + 1664UL), (7756533236910309485UL + 1821UL),
-                            &____alias_loc_id_20, (unsigned)18, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2249UL), (7756533236910309485UL + 2250UL), (7756533236910309485UL + 2251UL), (7756533236910309485UL + 2252UL), (7756533236910309485UL + 2253UL), (7756533236910309485UL + 2254UL), (7756533236910309485UL + 2259UL), (7756533236910309485UL + 2260UL), (7756533236910309485UL + 2261UL), (7756533236910309485UL + 2262UL), (7756533236910309485UL + 2263UL), (7756533236910309485UL + 2264UL), (7756533236910309485UL + 2265UL), (7756533236910309485UL + 2266UL), (7756533236910309485UL + 2273UL), (7756533236910309485UL + 2274UL), (7756533236910309485UL + 2275UL), (7756533236910309485UL + 2276UL),
+                            &____alias_loc_id_19, (unsigned)62, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1266UL), (7756533236910309485UL + 1267UL), (7756533236910309485UL + 1268UL), (7756533236910309485UL + 1269UL), (7756533236910309485UL + 1270UL), (7756533236910309485UL + 1271UL), (7756533236910309485UL + 1272UL), (7756533236910309485UL + 1273UL), (7756533236910309485UL + 1274UL), (7756533236910309485UL + 1275UL), (7756533236910309485UL + 1276UL), (7756533236910309485UL + 1277UL), (7756533236910309485UL + 1278UL), (7756533236910309485UL + 1279UL), (7756533236910309485UL + 1280UL), (7756533236910309485UL + 1281UL), (7756533236910309485UL + 1282UL), (7756533236910309485UL + 1283UL), (7756533236910309485UL + 1284UL), (7756533236910309485UL + 1285UL), (7756533236910309485UL + 1286UL), (7756533236910309485UL + 1287UL), (7756533236910309485UL + 1288UL), (7756533236910309485UL + 1289UL), (7756533236910309485UL + 1290UL), (7756533236910309485UL + 1291UL), (7756533236910309485UL + 1292UL), (7756533236910309485UL + 1293UL), (7756533236910309485UL + 1294UL), (7756533236910309485UL + 1295UL), (7756533236910309485UL + 1296UL), (7756533236910309485UL + 1297UL), (7756533236910309485UL + 1298UL), (7756533236910309485UL + 1299UL), (7756533236910309485UL + 1300UL), (7756533236910309485UL + 1301UL), (7756533236910309485UL + 1302UL), (7756533236910309485UL + 1303UL), (7756533236910309485UL + 1304UL), (7756533236910309485UL + 1305UL), (7756533236910309485UL + 1306UL), (7756533236910309485UL + 1307UL), (7756533236910309485UL + 1308UL), (7756533236910309485UL + 1309UL), (7756533236910309485UL + 1310UL), (7756533236910309485UL + 1311UL), (7756533236910309485UL + 1312UL), (7756533236910309485UL + 1313UL), (7756533236910309485UL + 1314UL), (7756533236910309485UL + 1315UL), (7756533236910309485UL + 1316UL), (7756533236910309485UL + 1317UL), (7756533236910309485UL + 1318UL), (7756533236910309485UL + 1988UL), (7756533236910309485UL + 1989UL), (7756533236910309485UL + 1990UL), (7756533236910309485UL + 1991UL), (7756533236910309485UL + 1992UL), (7756533236910309485UL + 1993UL), (7756533236910309485UL + 1994UL), (7756533236910309485UL + 1997UL), (7756533236910309485UL + 2000UL),
+                            &____alias_loc_id_20, (unsigned)36, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2005UL), (7756533236910309485UL + 2006UL), (7756533236910309485UL + 2007UL), (7756533236910309485UL + 2008UL), (7756533236910309485UL + 2009UL), (7756533236910309485UL + 2010UL), (7756533236910309485UL + 2011UL), (7756533236910309485UL + 2012UL), (7756533236910309485UL + 2013UL), (7756533236910309485UL + 2014UL), (7756533236910309485UL + 2015UL), (7756533236910309485UL + 2016UL), (7756533236910309485UL + 2017UL), (7756533236910309485UL + 2018UL), (7756533236910309485UL + 2019UL), (7756533236910309485UL + 2020UL), (7756533236910309485UL + 2021UL), (7756533236910309485UL + 2022UL), (7756533236910309485UL + 2023UL), (7756533236910309485UL + 2024UL), (7756533236910309485UL + 2025UL), (7756533236910309485UL + 2026UL), (7756533236910309485UL + 2027UL), (7756533236910309485UL + 2028UL), (7756533236910309485UL + 2029UL), (7756533236910309485UL + 2030UL), (7756533236910309485UL + 2031UL), (7756533236910309485UL + 2032UL), (7756533236910309485UL + 2033UL), (7756533236910309485UL + 2034UL), (7756533236910309485UL + 2035UL), (7756533236910309485UL + 2036UL), (7756533236910309485UL + 2037UL), (7756533236910309485UL + 2173UL), (7756533236910309485UL + 2260UL), (7756533236910309485UL + 2266UL),
+                            &____alias_loc_id_21, (unsigned)18, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2360UL), (7756533236910309485UL + 2361UL), (7756533236910309485UL + 2362UL), (7756533236910309485UL + 2363UL), (7756533236910309485UL + 2364UL), (7756533236910309485UL + 2365UL), (7756533236910309485UL + 2370UL), (7756533236910309485UL + 2371UL), (7756533236910309485UL + 2372UL), (7756533236910309485UL + 2373UL), (7756533236910309485UL + 2374UL), (7756533236910309485UL + 2375UL), (7756533236910309485UL + 2376UL), (7756533236910309485UL + 2377UL), (7756533236910309485UL + 2384UL), (7756533236910309485UL + 2385UL), (7756533236910309485UL + 2386UL), (7756533236910309485UL + 2387UL),
                             "findIndex", 0, "_Z9findIndexPdid", "_Z13findIndex_npmPdid", 0, 3, (7756533236910309485UL + 1121UL), 0UL, 0UL, 0UL, 0,
                             "randn", 0, "_Z5randnPii", "_Z9randn_npmPii", 0, 2, (7756533236910309485UL + 266UL), 0UL, 0UL, 5, "randu", 2, (7756533236910309485UL + 266UL), 0UL, 0UL, "randu", 2, (7756533236910309485UL + 266UL), 0UL, 0UL, "cos", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
+                            "particleFilter_kernel", 0, "_Z21particleFilter_kernelPiiiiS_iPdS0_S0_S0_S0_S0_S0_S0_iS_iiS0_dd", "_Z25particleFilter_kernel_npmPiiiiS_iPdS0_S0_S0_S0_S0_S0_S0_iS_iiS0_dd", 0, 21, (7756533236910309485UL + 1982UL), 0UL, 0UL, 0UL, (7756533236910309485UL + 1986UL), 0UL, (7756533236910309485UL + 1988UL), (7756533236910309485UL + 1989UL), (7756533236910309485UL + 1990UL), (7756533236910309485UL + 1991UL), (7756533236910309485UL + 1992UL), (7756533236910309485UL + 1993UL), (7756533236910309485UL + 1994UL), (7756533236910309485UL + 1995UL), 0UL, (7756533236910309485UL + 1997UL), 0UL, 0UL, (7756533236910309485UL + 2000UL), 0UL, 0UL, 0UL, 49, "get_time", 0, 0UL, "randn", 2, (7756533236910309485UL + 1986UL), 0UL, 0UL, "randn", 2, (7756533236910309485UL + 1986UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2635UL), 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "fabs", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2636UL), 0UL, 0UL, "exp", 1, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2637UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2638UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2639UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2638UL), 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2641UL), 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2641UL), 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2643UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2644UL), 0UL, 0UL, "randu", 2, (7756533236910309485UL + 1986UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2645UL), 0UL, 0UL, "findIndex", 3, (7756533236910309485UL + 1993UL), 0UL, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2646UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2647UL), 0UL, 0UL,
                             "calcLikelihoodSum", 0, "_Z17calcLikelihoodSumPiS_i", "_Z21calcLikelihoodSum_npmPiS_i", 0, 3, (7756533236910309485UL + 1061UL), (7756533236910309485UL + 1062UL), 0UL, 0UL, 2, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL,
                             "roundDouble", 0, "_Z11roundDoubled", "_Z15roundDouble_npmd", 0, 1, 0UL, 0UL, 0,
                             "findIndexBin", 0, "_Z12findIndexBinPdiid", "_Z16findIndexBin_npmPdiid", 0, 4, (7756533236910309485UL + 1262UL), 0UL, 0UL, 0UL, 0UL, 2, "findIndexBin", 4, (7756533236910309485UL + 1262UL), 0UL, 0UL, 0UL, 0UL, "findIndexBin", 4, (7756533236910309485UL + 1262UL), 0UL, 0UL, 0UL, 0UL,
@@ -6545,13 +6847,14 @@ static int module_init() {
                             "setIf", 0, "_Z5setIfiiPiS_S_S_", "_Z9setIf_npmiiPiS_S_S_", 0, 6, 0UL, 0UL, (7756533236910309485UL + 177UL), (7756533236910309485UL + 178UL), (7756533236910309485UL + 179UL), (7756533236910309485UL + 180UL), 0UL, 0,
                             "dilate_matrix", 0, "_Z13dilate_matrixPiiiiiiii", "_Z17dilate_matrix_npmPiiiiiiii", 0, 8, (7756533236910309485UL + 597UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 3, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
                             "imdilate_disk", 0, "_Z13imdilate_diskPiiiiiS_", "_Z17imdilate_disk_npmPiiiiiS_", 0, 6, (7756533236910309485UL + 690UL), 0UL, 0UL, 0UL, 0UL, (7756533236910309485UL + 695UL), 0UL, 1, "dilate_matrix", 8, (7756533236910309485UL + 695UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "get_time", 0, "_Z8get_timev", "_Z12get_time_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (7756533236910309485UL + 1UL), (7756533236910309485UL + 2558UL), 0UL,
+                            "get_time", 0, "_Z8get_timev", "_Z12get_time_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (7756533236910309485UL + 1UL), (7756533236910309485UL + 2669UL), 0UL,
                             "getneighbors", 0, "_Z12getneighborsPiPdi", "_Z16getneighbors_npmPiPdi", 0, 3, (7756533236910309485UL + 782UL), (7756533236910309485UL + 783UL), 0UL, 0UL, 0,
                             "strelDisk", 0, "_Z9strelDiskPii", "_Z13strelDisk_npmPii", 0, 2, (7756533236910309485UL + 446UL), 0UL, 0UL, 3, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
                             "addNoise", 0, "_Z8addNoisePiS_S_S_S_", "_Z12addNoise_npmPiS_S_S_S_", 0, 5, (7756533236910309485UL + 370UL), (7756533236910309485UL + 371UL), (7756533236910309485UL + 372UL), (7756533236910309485UL + 373UL), (7756533236910309485UL + 374UL), 0UL, 1, "randn", 2, (7756533236910309485UL + 374UL), 0UL, 0UL,
                             "randu", 0, "_Z5randuPii", "_Z9randu_npmPii", 0, 2, (7756533236910309485UL + 224UL), 0UL, 0UL, 1, "fabs", 1, 0UL, 0UL,
                            "findIndex", &(____chimes_does_checkpoint_findIndex_npm),
                            "randn", &(____chimes_does_checkpoint_randn_npm),
+                           "particleFilter_kernel", &(____chimes_does_checkpoint_particleFilter_kernel_npm),
                            "calcLikelihoodSum", &(____chimes_does_checkpoint_calcLikelihoodSum_npm),
                            "roundDouble", &(____chimes_does_checkpoint_roundDouble_npm),
                            "findIndexBin", &(____chimes_does_checkpoint_findIndexBin_npm),
@@ -6565,11 +6868,8 @@ static int module_init() {
                            "addNoise", &(____chimes_does_checkpoint_addNoise_npm),
                            "randu", &(____chimes_does_checkpoint_randu_npm),
                              (7756533236910309485UL + 605UL), (7756533236910309485UL + 690UL),
-                             (7756533236910309485UL + 2269UL), (7756533236910309485UL + 2452UL),
                              (7756533236910309485UL + 450UL), (7756533236910309485UL + 597UL),
-                             (7756533236910309485UL + 1289UL), (7756533236910309485UL + 1648UL),
                              (7756533236910309485UL + 1125UL), (7756533236910309485UL + 1262UL),
-                             (7756533236910309485UL + 1288UL), (7756533236910309485UL + 1774UL),
                              (7756533236910309485UL + 271UL), (7756533236910309485UL + 370UL),
                              (7756533236910309485UL + 272UL), (7756533236910309485UL + 371UL),
                              (7756533236910309485UL + 273UL), (7756533236910309485UL + 372UL),
@@ -6578,31 +6878,46 @@ static int module_init() {
                              (7756533236910309485UL + 797UL), (7756533236910309485UL + 948UL),
                              (7756533236910309485UL + 696UL), (7756533236910309485UL + 782UL),
                              (7756533236910309485UL + 697UL), (7756533236910309485UL + 783UL),
+                             (7756533236910309485UL + 2034UL), (7756533236910309485UL + 2307UL),
+                             (7756533236910309485UL + 2380UL), (7756533236910309485UL + 2563UL),
                              (7756533236910309485UL + 181UL), (7756533236910309485UL + 224UL),
-                             (7756533236910309485UL + 1292UL), (7756533236910309485UL + 2169UL),
-                             (7756533236910309485UL + 1293UL), (7756533236910309485UL + 2024UL),
-                             (7756533236910309485UL + 1290UL), (7756533236910309485UL + 1664UL),
-                             (7756533236910309485UL + 1291UL), (7756533236910309485UL + 2159UL),
-                             (7756533236910309485UL + 2267UL), (7756533236910309485UL + 2434UL),
-                             (7756533236910309485UL + 1294UL), (7756533236910309485UL + 2072UL),
-                             (7756533236910309485UL + 1295UL), (7756533236910309485UL + 1697UL),
-                             (7756533236910309485UL + 1278UL), (7756533236910309485UL + 1376UL),
-                             (7756533236910309485UL + 1270UL), (7756533236910309485UL + 2245UL),
+                             (7756533236910309485UL + 2033UL), (7756533236910309485UL + 2304UL),
+                             (7756533236910309485UL + 2032UL), (7756533236910309485UL + 2303UL),
+                             (7756533236910309485UL + 2031UL), (7756533236910309485UL + 2302UL),
+                             (7756533236910309485UL + 2030UL), (7756533236910309485UL + 2301UL),
+                             (7756533236910309485UL + 2017UL), (7756533236910309485UL + 2085UL),
+                             (7756533236910309485UL + 2363UL), (7756533236910309485UL + 2651UL),
+                             (7756533236910309485UL + 1272UL), (7756533236910309485UL + 1988UL),
+                             (7756533236910309485UL + 1278UL), (7756533236910309485UL + 1994UL),
+                             (7756533236910309485UL + 1279UL), (7756533236910309485UL + 1995UL),
+                             (7756533236910309485UL + 2626UL), (7756533236910309485UL + 2407UL),
+                             (7756533236910309485UL + 1284UL), (7756533236910309485UL + 2000UL),
+                             (7756533236910309485UL + 1270UL), (7756533236910309485UL + 1986UL),
                              (7756533236910309485UL + 610UL), (7756533236910309485UL + 695UL),
-                             (7756533236910309485UL + 1266UL), (7756533236910309485UL + 2241UL),
+                             (7756533236910309485UL + 1273UL), (7756533236910309485UL + 1989UL),
+                             (7756533236910309485UL + 1274UL), (7756533236910309485UL + 1990UL),
+                             (7756533236910309485UL + 1275UL), (7756533236910309485UL + 1991UL),
+                             (7756533236910309485UL + 1276UL), (7756533236910309485UL + 1992UL),
+                             (7756533236910309485UL + 1266UL), (7756533236910309485UL + 1982UL),
                              (7756533236910309485UL + 77UL), (7756533236910309485UL + 179UL),
                              (7756533236910309485UL + 76UL), (7756533236910309485UL + 178UL),
                              (7756533236910309485UL + 75UL), (7756533236910309485UL + 177UL),
+                             (7756533236910309485UL + 2362UL), (7756533236910309485UL + 2626UL),
                              (7756533236910309485UL + 227UL), (7756533236910309485UL + 266UL),
+                             (7756533236910309485UL + 1277UL), (7756533236910309485UL + 1993UL),
                              (7756533236910309485UL + 78UL), (7756533236910309485UL + 180UL),
-                             (7756533236910309485UL + 1285UL), (7756533236910309485UL + 1821UL),
                              (7756533236910309485UL + 785UL), (7756533236910309485UL + 993UL),
-                             (7756533236910309485UL + 1282UL), (7756533236910309485UL + 1656UL),
+                             (7756533236910309485UL + 1281UL), (7756533236910309485UL + 1997UL),
+                             (7756533236910309485UL + 2028UL), (7756533236910309485UL + 2260UL),
                              (7756533236910309485UL + 1065UL), (7756533236910309485UL + 1121UL),
                              (7756533236910309485UL + 789UL), (7756533236910309485UL + 997UL),
-                             (7756533236910309485UL + 2252UL), (7756533236910309485UL + 2540UL),
-                             (7756533236910309485UL + 2251UL), (7756533236910309485UL + 2515UL),
-                             (7756533236910309485UL + 2515UL), (7756533236910309485UL + 2296UL),
+                             (7756533236910309485UL + 2029UL), (7756533236910309485UL + 2266UL),
+                             (7756533236910309485UL + 2024UL), (7756533236910309485UL + 2173UL),
+                             (7756533236910309485UL + 2027UL), (7756533236910309485UL + 2298UL),
+                             (7756533236910309485UL + 2378UL), (7756533236910309485UL + 2545UL),
+                             (7756533236910309485UL + 2021UL), (7756533236910309485UL + 2305UL),
+                             (7756533236910309485UL + 2005UL), (7756533236910309485UL + 2354UL),
+                             (7756533236910309485UL + 2009UL), (7756533236910309485UL + 2358UL),
                              (7756533236910309485UL + 375UL), (7756533236910309485UL + 446UL),
                              (7756533236910309485UL + 1002UL), (7756533236910309485UL + 1062UL),
                              (7756533236910309485UL + 1001UL), (7756533236910309485UL + 1061UL),
@@ -6610,7 +6925,8 @@ static int module_init() {
                              "findIndex", "_Z9findIndexPdid", 0,
                              "calcLikelihoodSum", "_Z17calcLikelihoodSumPiS_i", 0,
                              "randn", "_Z5randnPii", 2, "randu", "randu",
-                             "particleFilter", "_Z14particleFilterPiiiiS_i", 41, "get_time", "roundDouble", "roundDouble", "strelDisk", "getneighbors", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "randn", "randn", "get_time", "elapsed_time", "roundDouble", "roundDouble", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "roundDouble", "roundDouble", "get_time", "elapsed_time", "randu", "get_time", "elapsed_time", "findIndex", "get_time", "elapsed_time", "get_time", "elapsed_time", "checkpoint",
+                             "particleFilter", "_Z14particleFilterPiiiiS_i", 13, "get_time", "roundDouble", "roundDouble", "strelDisk", "getneighbors", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "particleFilter_kernel", "checkpoint",
+                             "particleFilter_kernel", "_Z21particleFilter_kernelPiiiiS_iPdS0_S0_S0_S0_S0_S0_S0_iS_iiS0_dd", 29, "get_time", "randn", "randn", "get_time", "elapsed_time", "roundDouble", "roundDouble", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "roundDouble", "roundDouble", "get_time", "elapsed_time", "randu", "get_time", "elapsed_time", "findIndex", "get_time", "elapsed_time", "get_time", "elapsed_time",
                              "videoSequence", "_Z13videoSequencePiiiiS_", 8, "roundDouble", "roundDouble", "checkpoint", "imdilate_disk", "checkpoint", "setIf", "setIf", "addNoise",
                              "roundDouble", "_Z11roundDoubled", 0,
                              "findIndexBin", "_Z12findIndexBinPdiid", 2, "findIndexBin", "findIndexBin",
@@ -6646,19 +6962,8 @@ static int module_init() {
         "findIndexBin", 0UL, (int)4, 7756533236910310747UL, 0UL, 0UL, 0UL,
         "findIndexBin", 0UL, (int)4, 7756533236910310747UL, 0UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
-        "roundDouble", 0UL, (int)1, 0UL,
-        "roundDouble", 0UL, (int)1, 0UL,
-        "strelDisk", 0UL, (int)2, 7756533236910310861UL, 0UL,
-        "getneighbors", 0UL, (int)3, 7756533236910310861UL, 7756533236910311141UL, 0UL,
-        "get_time", 0UL, (int)0,
-        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "get_time", 0UL, (int)0,
-        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "get_time", 0UL, (int)0,
-        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "get_time", 0UL, (int)0,
-        "randn", 0UL, (int)2, 7756533236910311730UL, 0UL,
-        "randn", 0UL, (int)2, 7756533236910311730UL, 0UL,
+        "randn", 0UL, (int)2, 7756533236910311471UL, 0UL,
+        "randn", 0UL, (int)2, 7756533236910311471UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
         "roundDouble", 0UL, (int)1, 0UL,
@@ -6677,14 +6982,26 @@ static int module_init() {
         "roundDouble", 0UL, (int)1, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "randu", 0UL, (int)2, 7756533236910311730UL, 0UL,
+        "randu", 0UL, (int)2, 7756533236910311471UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "findIndex", 0UL, (int)3, 7756533236910311509UL, 0UL, 0UL,
+        "findIndex", 0UL, (int)3, 7756533236910311478UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
+        "get_time", 0UL, (int)0,
+        "roundDouble", 0UL, (int)1, 0UL,
+        "roundDouble", 0UL, (int)1, 0UL,
+        "strelDisk", 0UL, (int)2, 7756533236910311570UL, 0UL,
+        "getneighbors", 0UL, (int)3, 7756533236910311570UL, 7756533236910311790UL, 0UL,
+        "get_time", 0UL, (int)0,
+        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
+        "get_time", 0UL, (int)0,
+        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
+        "get_time", 0UL, (int)0,
+        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
+        "particleFilter_kernel", 0UL, (int)21, 7756533236910311839UL, 0UL, 0UL, 0UL, 7756533236910311843UL, 0UL, 7756533236910311783UL, 7756533236910311745UL, 7756533236910311751UL, 7756533236910311786UL, 7756533236910311787UL, 7756533236910311788UL, 7756533236910311789UL, 7756533236910311790UL, 0UL, 7756533236910311792UL, 0UL, 0UL, 7756533236910311658UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,

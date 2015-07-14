@@ -1,9 +1,3 @@
-malloc solver 98 24 48 0
-malloc solver 99 26 52 0
-malloc solver 100 23 56 0
-embedded_fehlberg_7_8 solver 174 4 0 0 0 150 150 48 431 0
-fabs solver 205 14 0 0
-pow solver 207 22 0 0 0
-free solver 271 2 0 48
-free solver 272 2 0 52
-free solver 273 2 0 56
+embedded_fehlberg_7_8 solver 177 4 0 0 0 141 141 17 403 0
+fabs solver 208 14 0 0
+pow solver 210 22 0 0 0

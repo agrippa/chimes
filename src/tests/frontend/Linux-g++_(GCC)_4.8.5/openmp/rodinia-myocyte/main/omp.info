@@ -1,1 +1,1 @@
-333 333 #pragma omp parallel for private(i, status) shared(y, x, xmax, params, mode)
+323 323 #pragma omp parallel for private(i, status) shared(y, x, xmax, params, mode)

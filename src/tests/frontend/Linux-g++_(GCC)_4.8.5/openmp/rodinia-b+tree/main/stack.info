@@ -321,10 +321,10 @@
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c destroy_tree|root|0 " %struct.node* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c destroy_tree|____chimes_ret_var_57|0 " %struct.node* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|argc|0 " i32 " 32 0 0 1 isInteger
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|argv|0 " i8** " 64 1 0 1 isInteger rewind
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|argv|0 " i8** " 64 1 0 1 isInteger
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|cur_arg|0 " i32 " 32 0 0 1 isInteger
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|cores_arg|0 " i32 " 32 0 0 1 checkpoint
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|input_file|0 " i8* " 64 1 0 1 isInteger rewind
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|input_file|0 " i8* " 64 1 0 1 isInteger
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|command_file|0 " i8* " 64 1 0 1 isInteger
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|output|0 " i8* " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|pFile|0 " %struct._IO_FILE* " 64 1 0 0
@@ -332,8 +332,8 @@
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_59|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_60|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|____chimes_ret_var_61|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|commandFile|0 " %struct._IO_FILE* " 64 1 0 1 rewind
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|lSize|0 " i64 " 64 0 0 1 rewind
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|commandFile|0 " %struct._IO_FILE* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|lSize|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|commandBuffer|0 " i8* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|result|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c main|_tmp|0 " i8* " 64 1 0 0

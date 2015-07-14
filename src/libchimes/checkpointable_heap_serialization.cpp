@@ -22,8 +22,7 @@ void serialize_heap_allocation(heap_allocation *alloc,
 
     if (elem_is_struct) {
         elem_size = alloc->get_elem_size();
-        elem_ptr_offsets_len =
-            alloc->get_ptr_field_offsets()->size();
+        elem_ptr_offsets_len = alloc->get_n_ptr_fields();
 
         len += (sizeof(elem_size) + sizeof(elem_ptr_offsets_len));
         len += (elem_ptr_offsets_len * sizeof(int)); // offsets
@@ -60,8 +59,7 @@ void serialize_heap_allocation(heap_allocation *alloc,
 
     if (elem_is_struct) {
         elem_size = alloc->get_elem_size();
-        elem_ptr_offsets_len =
-            alloc->get_ptr_field_offsets()->size();
+        elem_ptr_offsets_len = alloc->get_n_ptr_fields();
 
         len += (sizeof(elem_size) + sizeof(elem_ptr_offsets_len));
         len += (elem_ptr_offsets_len * sizeof(int)); // offsets

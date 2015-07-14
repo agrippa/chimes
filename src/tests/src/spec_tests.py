@@ -105,6 +105,6 @@ SPEC_PERF_CLI_ARGS = \
                                                     'botsalgn'),
          'SPECBotsSpar':          '-n 50 -m 25',
          'SPECSmithwa':           '32',
-         'SPECKDTree':            '100000 10 2'
+         'SPECKDTree':            '3000000 10 2'
         }
 PERF_CLI_ARGS.update(SPEC_PERF_CLI_ARGS)
