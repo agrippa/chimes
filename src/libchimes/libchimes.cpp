@@ -56,6 +56,7 @@
 using namespace std;
 
 // #define HASHING_DIAGNOSTICS
+// #define OVERHEAD_DIAGNOSTICS
 
 /*
  * A note on OMP nested parallelism and how that maps to pthreads.
@@ -275,6 +276,7 @@ pthread_key_t tid_key;
  * Globally shared heap representation used by all threads.
  */
 static map<void *, heap_allocation *> heap;
+static set<size_t> allocated_aliases;
 static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
@@ -334,6 +336,7 @@ static pthread_rwlock_t thread_ctxs_lock = PTHREAD_RWLOCK_INITIALIZER;
  */
 static std::map<pthread_t, unsigned> pthread_to_id;
 static pthread_rwlock_t pthread_to_id_lock = PTHREAD_RWLOCK_INITIALIZER;
+static unsigned long long program_start_time = 0;
 
 /*
  * count_threads is used to assign every pthread created a unique ID that we use
@@ -618,7 +621,6 @@ static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
 
 static void read_heap_from_file(int fd, char *checkpoint_file,
         heap_tree *old_to_new,
-        // std::map<void *, ptr_and_size *> *old_to_new,
         std::vector<heap_allocation *> *new_heap,
         std::map<void *, memory_filled *> *filled,
         std::map<void *, heap_allocation *> *old_to_alloc) {
@@ -945,6 +947,7 @@ void init_chimes(int argc, char **argv) {
     pthread_to_id[self] = 0; set_my_tid(0);
     thread_ctx *ctx = new thread_ctx(self, count_change_locations);
     thread_ctxs[0] = ctx; set_my_thread_ctx(ctx);
+    program_start_time = perf_profile::current_time_ns();
 
     char *chimes_disable_throttling = getenv("CHIMES_DISABLE_THROTTLING");
     if (chimes_disable_throttling && strlen(chimes_disable_throttling) > 0) {
@@ -1393,7 +1396,6 @@ void init_chimes(int argc, char **argv) {
 
         // read in heap serialization
         old_to_new = new heap_tree();
-        // old_to_new = new std::map<void *, ptr_and_size *>();
         std::vector<heap_allocation *> *new_heap =
             new std::vector<heap_allocation *>();
         std::map<void *, memory_filled *> *filled = new std::map<void *,
@@ -2929,7 +2931,7 @@ int alias_group_changed(unsigned loc_id) {
 
 void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
         int is_cuda_alloc, int is_ptr, int is_struct, int elem_size,
-        int *ptr_field_offsets, int n_ptr_field_offsets) {
+        int *ptr_field_offsets, int n_ptr_field_offsets, bool filled) {
     assert(valid_group(group) || is_cuda_alloc);
 
 #ifdef VERBOSE
@@ -2939,8 +2941,6 @@ void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
     heap_allocation *alloc = new heap_allocation((void *)new_ptr, nbytes, group,
             is_cuda_alloc, is_ptr, is_struct);
 
-    get_my_context()->add_changed_alias(group);
-
     if (is_struct) {
         alloc->add_struct_elem_size(elem_size);
         for (int i = 0; i < n_ptr_field_offsets; i++) {
@@ -2949,7 +2949,15 @@ void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
         if (n_ptr_field_offsets > 0) free(ptr_field_offsets);
     }
 
+    thread_ctx *ctx = get_my_context_may_fail();
+    if (ctx) {
+        ctx->add_changed_alias(group);
+    }
+
     VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
+    if (!ctx) {
+        allocated_aliases.insert(group);
+    }
     VERIFY(heap.insert(pair<void *, heap_allocation *>((void *)new_ptr, alloc)).second);
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 }
@@ -2993,7 +3001,7 @@ void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr, int
             va_end(vl);
         }
         malloc_impl(ptr, nbytes, group, 0, is_ptr, is_struct, info.elem_size,
-                info.ptr_field_offsets, info.n_ptr_fields);
+                info.ptr_field_offsets, info.n_ptr_fields, false);
     }
 
     ADD_TO_OVERHEAD
@@ -3023,7 +3031,7 @@ void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int i
             va_end(vl);
         }
         malloc_impl(ptr, num * size, group, 0, is_ptr, is_struct,
-                info.elem_size, info.ptr_field_offsets, info.n_ptr_fields);
+                info.elem_size, info.ptr_field_offsets, info.n_ptr_fields, true);
     }
 
     ADD_TO_OVERHEAD
@@ -3107,7 +3115,7 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
         }
 
         malloc_impl(new_ptr, nbytes, group, 0, is_ptr, is_struct,
-                elem_size, ptr_field_offsets, n_struct_ptr_fields);
+                elem_size, ptr_field_offsets, n_struct_ptr_fields, false);
     }
 
     if (old_size < nbytes) {
@@ -3418,21 +3426,42 @@ bool within_overhead_bounds() {
         return true;
     }
 
-    unsigned long long running_time = dead_thread_time;
+    // unsigned long long running_time = dead_thread_time;
+    unsigned long long running_time = perf_profile::current_time_ns() -
+        program_start_time;
+
+#if defined(VERBOSE) || defined(OVERHEAD_DIAGNOSTICS)
+    fprintf(stderr, "Calculating CHIMES overhead:\n");
+    fprintf(stderr, "  running_time = %llu\n", running_time);
+#endif
+/*
     VERIFY(pthread_rwlock_rdlock(&thread_ctxs_lock) == 0);
     for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
             e = thread_ctxs.end(); i != e; i++) {
-        running_time += i->second->elapsed_time();
+        unsigned long long thread_elapsed_time = i->second->elapsed_time();
+// #ifdef VERBOSE
+        fprintf(stderr, "  thread %u, elapsed time = %llu\n", i->first,
+                thread_elapsed_time);
+// #endif
+        running_time += (thread_elapsed_time / thread_ctxs.size());
     }
     VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+// #ifdef VERBOSE
+    fprintf(stderr, "  running_time = %llu\n", running_time);
+// #endif
+    */
 
-    double curr_percent_overhead = (double)chimes_overhead /
+    unsigned long long curr_chimes_overhead = __sync_fetch_and_add(&chimes_overhead, 0);
+#if defined(VERBOSE) || defined(OVERHEAD_DIAGNOSTICS)
+    fprintf(stderr, "  curr_chimes_overhead = %llu\n", curr_chimes_overhead);
+#endif
+    double curr_percent_overhead = (double)curr_chimes_overhead /
         (double)running_time;
     bool should_checkpoint = (curr_percent_overhead < target_time_overhead ||
             perf_profile::current_time_ns() - last_checkpoint >
                 max_checkpoint_latency_ns);
-#ifdef VERBOSE
-    fprintf(stderr, "should_checkpoint=%d curr_percent_overhead=%f "
+#if defined(VERBOSE) || defined(OVERHEAD_DIAGNOSTICS)
+    fprintf(stderr, "  should_checkpoint=%d curr_percent_overhead=%f "
             "target_time_overhead=%f since last=%llu max latency=%llu\n",
             should_checkpoint, curr_percent_overhead, target_time_overhead,
             perf_profile::current_time_ns() - last_checkpoint,
@@ -3672,6 +3701,12 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                  */
 
                 set<size_t> *all_changed = new set<size_t>();
+
+                for (set<size_t>::iterator i = allocated_aliases.begin(),
+                        e = allocated_aliases.end(); i != e; i++) {
+                    all_changed->insert(*i);
+                }
+
                 bool any_unknown_func_calls = false;
                 for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
                         e = thread_ctxs.end(); i != e; i++) {
@@ -4985,6 +5020,10 @@ static void destroy_thread_ctx(void *thread_ctx_ptr) {
     pthread_to_id.erase(found);
     VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
 
+#ifdef VERBOSE
+    fprintf(stderr, "adding dead thread time elapsed_time=%llu\n",
+            ctx->elapsed_time());
+#endif
     __sync_fetch_and_add(&dead_thread_time, ctx->elapsed_time());
 
     VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);

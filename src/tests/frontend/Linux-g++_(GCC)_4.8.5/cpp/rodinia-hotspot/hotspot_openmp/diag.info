@@ -3,25 +3,25 @@ ReplaceText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 43 6 len
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 175 6 len=5 fatal_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 181 6 len=10 read_input_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 204 6 len=5 usage_npm
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 233 20  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767237UL, 0, 0); ____chimes_tmp_ptr; }) 
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 233 65 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 234 21  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767244UL, 0, 0); ____chimes_tmp_ptr; }) 
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 234 66 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 22  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767251UL, 0, 0); ____chimes_tmp_ptr; }) 
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 67 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 2  ({ free(temp); free_helper(temp, 10021604361511767237UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 20  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767240UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 65 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 21  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767247UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 66 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 22  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767254UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 67 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 2  ({ free(temp); free_helper(temp, 10021604361511767240UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 11 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 2  ({ free(power); free_helper(power, 10021604361511767244UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 2  ({ free(power); free_helper(power, 10021604361511767247UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 12 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 233 20  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767237UL, 0, 0); ____chimes_tmp_ptr; }) 
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 233 65 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 234 21  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767244UL, 0, 0); ____chimes_tmp_ptr; }) 
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 234 66 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 22  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767251UL, 0, 0); ____chimes_tmp_ptr; }) 
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 67 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 2  ({ free(temp); free_helper(temp, 10021604361511767237UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 20  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767240UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 65 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 21  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767247UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 66 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 22  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767254UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 67 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 2  ({ free(temp); free_helper(temp, 10021604361511767240UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 11 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 2  ({ free(power); free_helper(power, 10021604361511767244UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 2  ({ free(power); free_helper(power, 10021604361511767247UL); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 12 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 26 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 22 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
@@ -101,14 +101,14 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 219
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 219 31 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 220 2 char *tfile; char *pfile; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 220 21 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 233 24 void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 233 96 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 234 25 void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 234 97 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 26 void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 98 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 5  double start_time;  start_time = (seconds()) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 5  double start_time;  start_time = (seconds()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 24 void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 96 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 25 void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 97 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 26 void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 98 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 251 5  double end_time;  end_time = (seconds()) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 251 32 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 267 3 int ____chimes_ret_var_1; ;
@@ -118,12 +118,12 @@ InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 166 9  ca
 InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 189 12  call_lbl_0: 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 194 18  call_lbl_1: 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 196 41  call_lbl_2: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 223 18  call_lbl_0: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 228 44  call_lbl_1: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 24  call_lbl_2: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 242 2  call_lbl_3: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 243 2  call_lbl_4: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 26  call_lbl_5: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 26  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 225 18  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 230 44  call_lbl_2: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 238 24  call_lbl_3: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 244 2  call_lbl_4: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 2  call_lbl_5: 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 248 2  call_lbl_6: 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 251 24  call_lbl_7: 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 22 8 len=7 seconds_quick
@@ -177,19 +177,19 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 204 6 len=5 usage_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 205 152  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 216 5 len=4 main_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 223 31 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 223 47 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 228 57 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 228 73 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 37 ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 70 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 242 15 ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 242 59 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 243 15 ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 243 60 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 53 ({ calling_npm("seconds", 0); seconds_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 61 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 248 15  ({  calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767251UL), (size_t)(0UL), (size_t)(10021604361511767237UL), (size_t)(10021604361511767244UL), (size_t)(0UL), (size_t)(0UL)); (compute_tran_temp)(result, sim_time, temp, power, grid_rows, grid_cols); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 225 31 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 225 47 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 230 57 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 230 73 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 238 37 ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 238 70 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 244 15 ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 244 59 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 15 ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 60 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 248 15  ({  calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767254UL), (size_t)(0UL), (size_t)(10021604361511767240UL), (size_t)(10021604361511767247UL), (size_t)(0UL), (size_t)(0UL)); (compute_tran_temp)(result, sim_time, temp, power, grid_rows, grid_cols); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 248 83 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 251 49 ({ calling_npm("seconds", 0); seconds_npm(); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 251 57 
@@ -197,8 +197,8 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 219 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 219 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 219 16 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 219 29 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 23 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 6 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 23 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 217 136  ; double start_time;
 # 217
 double *power;
@@ -257,19 +257,19 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 204 6 len=5 usage_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 205 152  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 216 5 len=4 main_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 223 31 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 223 47 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 228 57 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 228 73 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 37 ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 70 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 242 15 ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 242 59 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 243 15 ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 243 60 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 53 ({ calling_npm("seconds", 0); seconds_npm(); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 61 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 248 15  ({  calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767251UL), (size_t)(0UL), (size_t)(10021604361511767237UL), (size_t)(10021604361511767244UL), (size_t)(0UL), (size_t)(0UL)); (compute_tran_temp)(result, sim_time, temp, power, grid_rows, grid_cols); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 225 31 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 225 47 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 230 57 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 230 73 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 238 37 ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 238 70 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 244 15 ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 244 59 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 15 ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 60 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 248 15  ({  calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767254UL), (size_t)(0UL), (size_t)(10021604361511767240UL), (size_t)(10021604361511767247UL), (size_t)(0UL), (size_t)(0UL)); (compute_tran_temp)(result, sim_time, temp, power, grid_rows, grid_cols); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 248 83 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 251 49 ({ calling_npm("seconds", 0); seconds_npm(); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 251 57 
@@ -277,8 +277,8 @@ RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 219 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 219 14 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 219 16 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 219 29 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 6 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 245 23 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 6 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 23 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 217 136  ; double start_time;
 # 217
 double *power;

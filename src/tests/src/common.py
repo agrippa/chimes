@@ -26,6 +26,8 @@ CHIMES_REPLAY_EXIT_CODE = 55
 MAX_TEST_TIME = 60
 
 SCRATCH_DIR=os.path.join(os.environ['SHARED_SCRATCH'], 'jmg3')
+assert os.path.isdir(SCRATCH_DIR), SCRATCH_DIR
+# SCRATCH_DIR='/tmp'
 EXEC_DIR = tempfile.mkdtemp(prefix='chimes.exec.', dir=SCRATCH_DIR)
 
 # Use a special executable name for runtime tests so that you can run a runtime

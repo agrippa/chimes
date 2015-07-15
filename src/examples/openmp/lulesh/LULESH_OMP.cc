@@ -3009,6 +3009,9 @@ void LagrangeLeapFrog()
 
 int main(int argc, char *argv[])
 {
+	timeval start, end;
+	gettimeofday(&start, NULL);
+
  	Index_t edgeElems = atoi(argv[1]);
 	Index_t edgeNodes = edgeElems+1 ;
 	// Real_t ds = Real_t(1.125)/Real_t(edgeElems) ; /* may accumulate roundoff */
@@ -3221,9 +3224,6 @@ int main(int argc, char *argv[])
 	}
 	
 	/* timestep to solution */
-
-	timeval start, end;
-	gettimeofday(&start, NULL);
 
 	
 	while(domain.time < domain.stoptime ) {

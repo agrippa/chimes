@@ -177,26 +177,26 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAl
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 24 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 5  ({ free(A); free_helper(A, 7066887875038564851UL); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 11 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 100 82 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_5, ____chimes_did_disable0, false); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 104 63 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_5, ____chimes_did_disable0, false); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 1 const int ____chimes_did_disable0 = new_stack((void *)(&gridInfo), "gridInfo", &____must_manage_gridInfo, 4, 4, (size_t)(7066887875038562609UL), (size_t)(7066887875038562610UL), (size_t)(7066887875038562611UL), (size_t)(7066887875038562612UL), "gridInfo|npRow|0", &____must_checkpoint_gridInfo_npRow_0, "i32*", (void *)(&npRow), (size_t)8, 1, 0, 0, "gridInfo|npCol|0", &____must_checkpoint_gridInfo_npCol_0, "i32*", (void *)(&npCol), (size_t)8, 1, 0, 0, "gridInfo|myRow|0", &____must_checkpoint_gridInfo_myRow_0, "i32*", (void *)(&myRow), (size_t)8, 1, 0, 0, "gridInfo|myCol|0", &____must_checkpoint_gridInfo_myCol_0, "i32*", (void *)(&myCol), (size_t)8, 1, 0, 0); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 106 1 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_5, ____chimes_did_disable0, false); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 100 82 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 104 63 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 1 const int ____chimes_did_disable0 = new_stack((void *)(&gridInfo), "gridInfo", &____must_manage_gridInfo, 4, 0, (size_t)(7066887875038562609UL), (size_t)(7066887875038562610UL), (size_t)(7066887875038562611UL), (size_t)(7066887875038562612UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 106 1 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 46 const int ____chimes_did_disable1 = new_stack((void *)(&bubbleSort), "bubbleSort", &____must_manage_bubbleSort, 3, 0, (size_t)(7066887875038562739UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 132 1 rm_stack(false, 0UL, "bubbleSort", &____must_manage_bubbleSort, ____alias_loc_id_7, ____chimes_did_disable1, false); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 132 1 rm_stack(false, 0UL, "bubbleSort", &____must_manage_bubbleSort, ____alias_loc_id_4, ____chimes_did_disable1, false); 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 145 67 const int ____chimes_did_disable2 = new_stack((void *)(&qSort), "qSort", &____must_manage_qSort, 4, 0, (size_t)(7066887875038562656UL), (size_t)(7066887875038562657UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 159 1 rm_stack(false, 0UL, "qSort", &____must_manage_qSort, ____alias_loc_id_6, ____chimes_did_disable2, false); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 159 1 rm_stack(false, 0UL, "qSort", &____must_manage_qSort, ____alias_loc_id_3, ____chimes_did_disable2, false); 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 175 65 const int ____chimes_did_disable3 = new_stack((void *)(&bubbleSort_both), "bubbleSort_both", &____must_manage_bubbleSort_both, 4, 0, (size_t)(7066887875038562900UL), (size_t)(7066887875038562901UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 192 1 rm_stack(false, 0UL, "bubbleSort_both", &____must_manage_bubbleSort_both, ____alias_loc_id_9, ____chimes_did_disable3, false); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 192 1 rm_stack(false, 0UL, "bubbleSort_both", &____must_manage_bubbleSort_both, ____alias_loc_id_6, ____chimes_did_disable3, false); 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 72 const int ____chimes_did_disable4 = new_stack((void *)(&qSort_both), "qSort_both", &____must_manage_qSort_both, 4, 0, (size_t)(7066887875038562788UL), (size_t)(7066887875038562789UL), (size_t)(7066887875038562790UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 219 1 rm_stack(false, 0UL, "qSort_both", &____must_manage_qSort_both, ____alias_loc_id_8, ____chimes_did_disable4, false); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1125 65 rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_10, ____chimes_did_disable5, false); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 58 const int ____chimes_did_disable5 = new_stack((void *)(&pairwiseAlign), "pairwiseAlign", &____must_manage_pairwiseAlign, 5, 3, (size_t)(7066887875038564703UL), (size_t)(7066887875038564703UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "pairwiseAlign|simMatrix|0", &____must_checkpoint_pairwiseAlign_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "pairwiseAlign|maxReports|0", &____must_checkpoint_pairwiseAlign_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "pairwiseAlign|minSeparation|0", &____must_checkpoint_pairwiseAlign_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1126 1 rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_10, ____chimes_did_disable5, false); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1171 70 rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_11, ____chimes_did_disable6, false); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 219 1 rm_stack(false, 0UL, "qSort_both", &____must_manage_qSort_both, ____alias_loc_id_5, ____chimes_did_disable4, false); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1125 65 rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_7, ____chimes_did_disable5, false); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 58 const int ____chimes_did_disable5 = new_stack((void *)(&pairwiseAlign), "pairwiseAlign", &____must_manage_pairwiseAlign, 5, 2, (size_t)(7066887875038564703UL), (size_t)(7066887875038564703UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "pairwiseAlign|maxReports|0", &____must_checkpoint_pairwiseAlign_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "pairwiseAlign|minSeparation|0", &____must_checkpoint_pairwiseAlign_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1126 1 rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_7, ____chimes_did_disable5, false); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1171 70 rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_8, ____chimes_did_disable6, false); 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 26 const int ____chimes_did_disable6 = new_stack((void *)(&freeA), "freeA", &____must_manage_freeA, 1, 0, (size_t)(7066887875038564851UL)); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1172 1 rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_11, ____chimes_did_disable6, false); 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 2 const int ____chimes_did_disable0 = new_stack((void *)(&gridInfo), "gridInfo", &____must_manage_gridInfo, 4, 4, (size_t)(7066887875038562609UL), (size_t)(7066887875038562610UL), (size_t)(7066887875038562611UL), (size_t)(7066887875038562612UL), "gridInfo|npRow|0", &____must_checkpoint_gridInfo_npRow_0, "i32*", (void *)(&npRow), (size_t)8, 1, 0, 0, "gridInfo|npCol|0", &____must_checkpoint_gridInfo_npCol_0, "i32*", (void *)(&npCol), (size_t)8, 1, 0, 0, "gridInfo|myRow|0", &____must_checkpoint_gridInfo_myRow_0, "i32*", (void *)(&myRow), (size_t)8, 1, 0, 0, "gridInfo|myCol|0", &____must_checkpoint_gridInfo_myCol_0, "i32*", (void *)(&myCol), (size_t)8, 1, 0, 0); ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 665 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1172 1 rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_8, ____chimes_did_disable6, false); 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 2 const int ____chimes_did_disable0 = new_stack((void *)(&gridInfo), "gridInfo", &____must_manage_gridInfo, 4, 0, (size_t)(7066887875038562609UL), (size_t)(7066887875038562610UL), (size_t)(7066887875038562611UL), (size_t)(7066887875038562612UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 245 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 29 3 int i; int threadNum; int numThreads; int minPer; int per; int row; int col; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 29 54 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 100 6 int ____chimes_ret_var_0; ;
@@ -221,8 +221,8 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAl
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 304 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 207 3 int i; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 207 8 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 59 const int ____chimes_did_disable5 = new_stack((void *)(&pairwiseAlign), "pairwiseAlign", &____must_manage_pairwiseAlign, 5, 3, (size_t)(7066887875038564703UL), (size_t)(7066887875038564703UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "pairwiseAlign|simMatrix|0", &____must_checkpoint_pairwiseAlign_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "pairwiseAlign|maxReports|0", &____must_checkpoint_pairwiseAlign_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "pairwiseAlign|minSeparation|0", &____must_checkpoint_pairwiseAlign_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0); ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 701 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 59 const int ____chimes_did_disable5 = new_stack((void *)(&pairwiseAlign), "pairwiseAlign", &____must_manage_pairwiseAlign, 5, 2, (size_t)(7066887875038564703UL), (size_t)(7066887875038564703UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "pairwiseAlign|maxReports|0", &____must_checkpoint_pairwiseAlign_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "pairwiseAlign|minSeparation|0", &____must_checkpoint_pairwiseAlign_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 563 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 3 int i; int j; int k; int r; int n; int m; int sortReports; int report; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 44 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 3 int *index; int *best; int *goodEndsI; int *goodEndsJ; int gapFirst; int gapExtend; int worst; ;
@@ -297,25 +297,17 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAl
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1132 8 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1171 4 ASTR_T *____chimes_ret_var_3; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1171 33 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 39 3  call_lbl_0: 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 158 3  call_lbl_0: 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 218 3  call_lbl_0: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 327 3  call_lbl_0: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 5  call_lbl_1: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 7  call_lbl_2: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 912 8  call_lbl_3: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 915 8  call_lbl_4: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 7  call_lbl_5: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1024 4  call_lbl_6: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1089 4  call_lbl_7: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 5  call_lbl_0: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 7  call_lbl_1: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 912 8  call_lbl_2: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 915 8  call_lbl_3: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 7  call_lbl_4: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1024 4  call_lbl_5: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1089 4  call_lbl_6: 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 26 5 len=8 gridInfo_quick
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 39 29  ({  calling((void*)omp_get_max_threads, 0, ____alias_loc_id_0, 0UL, 0); (omp_get_max_threads)(); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 39 49 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 29 10 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 29 23 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 664  ; int threadNum;
-# 27
- if (____must_checkpoint_gridInfo_threadNum_0) { register_stack_vars(1, "gridInfo|threadNum|0", &____must_checkpoint_gridInfo_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0);  }  
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 244  ; 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 6 len=10 bubbleSort_quick
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 226  ; 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 145 6 len=5 qSort_quick
@@ -329,17 +321,15 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAl
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 218 42 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 303  ; 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 277 9 len=13 pairwiseAlign_quick
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 327 29  ({  calling((void*)omp_get_max_threads, 0, ____alias_loc_id_3, 0UL, 0); (omp_get_max_threads)(); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 327 49 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 18  ({  calling((void*)gridInfo, 1, ____alias_loc_id_1, 0UL, 4, (size_t)(7066887875038562930UL), (size_t)(7066887875038562931UL), (size_t)(7066887875038562928UL), (size_t)(7066887875038562929UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 18 ({ calling_npm("gridInfo", 0); gridInfo_npm(&npRow, &npCol, &myRow, &myCol); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 57 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 32  ({  calling((void*)getSeconds, 2, ____alias_loc_id_4, 0UL, 0); (getSeconds)(); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 32  ({  calling((void*)getSeconds, 1, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 43 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 912 21 ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 912 70 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 915 21 ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 915 58 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 30  ({  calling((void*)getSeconds, 5, ____alias_loc_id_2, 0UL, 0); (getSeconds)(); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 30  ({  calling((void*)getSeconds, 4, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 41 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1024 17 ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1024 61 
@@ -371,16 +361,8 @@ RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAli
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 41 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 43 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 52 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 54 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 63 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 65 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 74 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 76 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 85 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 17 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 30 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 48 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 62 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 3 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 25 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 27 
@@ -403,7 +385,7 @@ RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAli
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 289 19 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 401 3  { 
 InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1123 3  } 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 700  ; double beginTime;
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 562  ; double beginTime;
 # 278
 ASTR_T *A;
 # 278
@@ -423,15 +405,7 @@ unsigned char *matchSeq;
 # 278
 unsigned char *mainSeq;
 # 278
-int matchLimit;
-# 278
 int threadNum;
-# 278
-int npCol;
-# 278
-int npRow;
-# 278
-int myCol;
 # 278
 int myRow;
 # 278
@@ -459,17 +433,11 @@ int report;
 # 278
 int sortReports;
 # 278
- if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_matchLimit_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_npCol_0 || ____must_checkpoint_pairwiseAlign_npRow_0 || ____must_checkpoint_pairwiseAlign_myCol_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(28, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|matchLimit|0", &____must_checkpoint_pairwiseAlign_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|npCol|0", &____must_checkpoint_pairwiseAlign_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "pairwiseAlign|npRow|0", &____must_checkpoint_pairwiseAlign_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "pairwiseAlign|myCol|0", &____must_checkpoint_pairwiseAlign_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0);  }  
+ if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(24, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 9 len=5 freeA_quick
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 161  ; 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 26 5 len=8 gridInfo_resumable
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 39 29  ({  calling((void*)omp_get_max_threads, 0, ____alias_loc_id_0, 0UL, 0); (omp_get_max_threads)(); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 39 49 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 29 10 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 29 23 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 664  ; int threadNum;
-# 27
- if (____must_checkpoint_gridInfo_threadNum_0) { register_stack_vars(1, "gridInfo|threadNum|0", &____must_checkpoint_gridInfo_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 244  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 6 len=10 bubbleSort_resumable
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 226  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 145 6 len=5 qSort_resumable
@@ -483,17 +451,15 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAl
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 218 42 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 303  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 277 9 len=13 pairwiseAlign_resumable
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 327 29  ({  calling((void*)omp_get_max_threads, 0, ____alias_loc_id_3, 0UL, 0); (omp_get_max_threads)(); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 327 49 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 18  ({  calling((void*)gridInfo, 1, ____alias_loc_id_1, 0UL, 4, (size_t)(7066887875038562930UL), (size_t)(7066887875038562931UL), (size_t)(7066887875038562928UL), (size_t)(7066887875038562929UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 18 ({ calling_npm("gridInfo", 0); gridInfo_npm(&npRow, &npCol, &myRow, &myCol); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 57 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 32  ({  calling((void*)getSeconds, 2, ____alias_loc_id_4, 0UL, 0); (getSeconds)(); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 32  ({  calling((void*)getSeconds, 1, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 43 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 912 21 ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 912 70 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 915 21 ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 915 58 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 30  ({  calling((void*)getSeconds, 5, ____alias_loc_id_2, 0UL, 0); (getSeconds)(); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 30  ({  calling((void*)getSeconds, 4, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 41 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1024 17 ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1024 61 
@@ -525,16 +491,8 @@ RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAli
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 41 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 43 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 52 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 54 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 63 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 65 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 74 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 76 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 85 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 17 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 30 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 48 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 62 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 3 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 25 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 27 
@@ -557,7 +515,7 @@ RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAli
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 289 19 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 401 3  { 
 InsertTextBefore /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1123 3  } 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 700  ; double beginTime;
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 562  ; double beginTime;
 # 278
 ASTR_T *A;
 # 278
@@ -577,15 +535,7 @@ unsigned char *matchSeq;
 # 278
 unsigned char *mainSeq;
 # 278
-int matchLimit;
-# 278
 int threadNum;
-# 278
-int npCol;
-# 278
-int npRow;
-# 278
-int myCol;
 # 278
 int myRow;
 # 278
@@ -613,6 +563,6 @@ int report;
 # 278
 int sortReports;
 # 278
- if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_matchLimit_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_npCol_0 || ____must_checkpoint_pairwiseAlign_npRow_0 || ____must_checkpoint_pairwiseAlign_myCol_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(28, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|matchLimit|0", &____must_checkpoint_pairwiseAlign_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|npCol|0", &____must_checkpoint_pairwiseAlign_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "pairwiseAlign|npRow|0", &____must_checkpoint_pairwiseAlign_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "pairwiseAlign|myCol|0", &____must_checkpoint_pairwiseAlign_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(8): { goto call_lbl_8; } case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(24, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 9 len=5 freeA_resumable
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 161  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

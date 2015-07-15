@@ -27,6 +27,8 @@
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc AllocateNodeElemIndexes|clv|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|argc|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|argv|0 " i8** " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|start|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|end|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|edgeElems|0 " i32 " 32 0 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|edgeNodes|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|tx|0 " double " 64 0 0 0
@@ -67,8 +69,6 @@
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|planeInc|1 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|rowInc|1 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|j|2 " i32 " 32 0 0 0
-/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|start|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|end|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|elapsed_time|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|ElemId|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|MaxAbsDiff|0 " double " 64 0 0 0

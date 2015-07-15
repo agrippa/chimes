@@ -18,10 +18,10 @@
 /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|target_long|0 " float " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|tmp_lat|0 " float " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|tmp_long|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|start_time|0 " double " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|sandbox|0 " i8* " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|nrecords|0 " i64 " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|nread|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|start_time|0 " double " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|z|0 " float* " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|nwindows|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|w|0 " i32 " 32 0 0 1 checkpoint

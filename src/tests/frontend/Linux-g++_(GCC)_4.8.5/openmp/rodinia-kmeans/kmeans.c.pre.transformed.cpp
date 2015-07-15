@@ -5596,7 +5596,7 @@ rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_1, __
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 static int (*____chimes_extern_func_cluster)(int, int, float **, int, float, float ***) = cluster;
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10963612600445403348UL)) ; double start_time;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10963612600445403387UL)) ; double start_time;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 float threshold;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5647,7 +5647,7 @@ int nclusters;
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
             int isBinaryFile; isBinaryFile = (0) ;
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-              nloops = (1) ;
+              nloops = (20) ;
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
               threshold = (0.001) ;
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5827,21 +5827,39 @@ int nclusters;
  printf("number of Clusters %d\n",nclusters);
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
  printf("number of Attributes %d\n\n",numAttributes);
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+# 241 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+# 242 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
     printf("execution took %f s\n", end_time - start_time);
+# 243 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+   printf("Cluster Centers Output\n");
+# 244 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+ printf("The first number is cluster number and the following data is arribute value\n");
+# 245 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+ printf("=============================================================================\n\n");
+# 246 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+# 247 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+    for (i=0; i< nclusters; i++) {
+# 248 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+  printf("%d: ", i);
+# 249 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+        for (j=0; j<numAttributes; j++) { printf("%.2f ", cluster_centres[i][j]); };
+# 251 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+        printf("\n\n");
+# 252 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+    }
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(attributes); free_helper(attributes, 10963612600445403118UL); }) ;
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 10963612600445403334UL); }) ;
+     ({ free(attributes); free_helper(attributes, 10963612600445403118UL); }) ;
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(cluster_centres); free_helper(cluster_centres, 10963612600445403398UL); }) ;
+     ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 10963612600445403352UL); }) ;
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(buf); free_helper(buf, 10963612600445403268UL); }) ;
+     ({ free(cluster_centres); free_helper(cluster_centres, 10963612600445403443UL); }) ;
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
+     ({ free(buf); free_helper(buf, 10963612600445403268UL); }) ;
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
+# 260 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); }
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 void usage_quick(char *argv0) {const int ____chimes_did_disable0 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(10963612600445402941UL)) ; ; ;
@@ -5880,7 +5898,7 @@ rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_1, __
 
 double seconds() { return (____chimes_replaying ? seconds_resumable() : seconds_quick()); }
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10963612600445403348UL)) ; double start_time;
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10963612600445403387UL)) ; double start_time;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 float threshold;
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5931,7 +5949,7 @@ int nclusters;
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
             int isBinaryFile; isBinaryFile = (0) ;
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-              nloops = (1) ;
+              nloops = (20) ;
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
               threshold = (0.001) ;
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -6111,21 +6129,39 @@ int nclusters;
  printf("number of Clusters %d\n",nclusters);
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
  printf("number of Attributes %d\n\n",numAttributes);
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+# 241 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+# 242 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
     printf("execution took %f s\n", end_time - start_time);
+# 243 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+   printf("Cluster Centers Output\n");
+# 244 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+ printf("The first number is cluster number and the following data is arribute value\n");
+# 245 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+ printf("=============================================================================\n\n");
+# 246 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+# 247 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+    for (i=0; i< nclusters; i++) {
+# 248 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+  printf("%d: ", i);
+# 249 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+        for (j=0; j<numAttributes; j++) { printf("%.2f ", cluster_centres[i][j]); };
+# 251 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+        printf("\n\n");
+# 252 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+    }
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(attributes); free_helper(attributes, 10963612600445403118UL); }) ;
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 10963612600445403334UL); }) ;
+     ({ free(attributes); free_helper(attributes, 10963612600445403118UL); }) ;
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(cluster_centres); free_helper(cluster_centres, 10963612600445403398UL); }) ;
+     ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 10963612600445403352UL); }) ;
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(buf); free_helper(buf, 10963612600445403268UL); }) ;
+     ({ free(cluster_centres); free_helper(cluster_centres, 10963612600445403443UL); }) ;
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
+     ({ free(buf); free_helper(buf, 10963612600445403268UL); }) ;
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
+# 260 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); }
 
 int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -6170,28 +6206,28 @@ double seconds_npm() {
 
 static int module_init() {
     init_module(10963612600445402927UL, 13, 3, 1, 3, 2, 1, 3, 5, 1, 4,
-                           &____alias_loc_id_0, (unsigned)24, (unsigned)0, (unsigned)1, (10963612600445402927UL + 43UL), (10963612600445402927UL + 44UL), (10963612600445402927UL + 45UL), (10963612600445402927UL + 46UL), (10963612600445402927UL + 47UL), (10963612600445402927UL + 48UL), (10963612600445402927UL + 49UL), (10963612600445402927UL + 50UL), (10963612600445402927UL + 51UL), (10963612600445402927UL + 52UL), (10963612600445402927UL + 53UL), (10963612600445402927UL + 54UL), (10963612600445402927UL + 55UL), (10963612600445402927UL + 56UL), (10963612600445402927UL + 57UL), (10963612600445402927UL + 58UL), (10963612600445402927UL + 59UL), (10963612600445402927UL + 60UL), (10963612600445402927UL + 61UL), (10963612600445402927UL + 62UL), (10963612600445402927UL + 191UL), (10963612600445402927UL + 316UL), (10963612600445402927UL + 341UL), (10963612600445402927UL + 456UL), "cluster", (unsigned)2, (10963612600445402927UL + 51UL), (10963612600445402927UL + 191UL),
+                           &____alias_loc_id_0, (unsigned)24, (unsigned)0, (unsigned)1, (10963612600445402927UL + 43UL), (10963612600445402927UL + 44UL), (10963612600445402927UL + 45UL), (10963612600445402927UL + 46UL), (10963612600445402927UL + 47UL), (10963612600445402927UL + 48UL), (10963612600445402927UL + 49UL), (10963612600445402927UL + 50UL), (10963612600445402927UL + 51UL), (10963612600445402927UL + 52UL), (10963612600445402927UL + 53UL), (10963612600445402927UL + 54UL), (10963612600445402927UL + 55UL), (10963612600445402927UL + 56UL), (10963612600445402927UL + 57UL), (10963612600445402927UL + 58UL), (10963612600445402927UL + 59UL), (10963612600445402927UL + 60UL), (10963612600445402927UL + 61UL), (10963612600445402927UL + 62UL), (10963612600445402927UL + 191UL), (10963612600445402927UL + 316UL), (10963612600445402927UL + 341UL), (10963612600445402927UL + 495UL), "cluster", (unsigned)2, (10963612600445402927UL + 51UL), (10963612600445402927UL + 191UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (10963612600445402927UL + 20UL), (10963612600445402927UL + 22UL), (10963612600445402927UL + 23UL),
-                           &____alias_loc_id_2, (unsigned)26, (unsigned)0, (unsigned)0, (10963612600445402927UL + 43UL), (10963612600445402927UL + 44UL), (10963612600445402927UL + 45UL), (10963612600445402927UL + 46UL), (10963612600445402927UL + 47UL), (10963612600445402927UL + 48UL), (10963612600445402927UL + 49UL), (10963612600445402927UL + 50UL), (10963612600445402927UL + 51UL), (10963612600445402927UL + 52UL), (10963612600445402927UL + 53UL), (10963612600445402927UL + 54UL), (10963612600445402927UL + 55UL), (10963612600445402927UL + 56UL), (10963612600445402927UL + 57UL), (10963612600445402927UL + 58UL), (10963612600445402927UL + 59UL), (10963612600445402927UL + 60UL), (10963612600445402927UL + 61UL), (10963612600445402927UL + 62UL), (10963612600445402927UL + 63UL), (10963612600445402927UL + 64UL), (10963612600445402927UL + 191UL), (10963612600445402927UL + 316UL), (10963612600445402927UL + 341UL), (10963612600445402927UL + 456UL),
-                            "usage", 0, "_Z5usagePc", "_Z9usage_npmPc", 0, 1, (10963612600445402927UL + 14UL), 0UL, 2, "fprintf", 3, (10963612600445402927UL + 7UL), (10963612600445402927UL + 457UL), (10963612600445402927UL + 14UL), 0UL, "exit", 1, 0UL, 0UL,
+                           &____alias_loc_id_2, (unsigned)26, (unsigned)0, (unsigned)0, (10963612600445402927UL + 43UL), (10963612600445402927UL + 44UL), (10963612600445402927UL + 45UL), (10963612600445402927UL + 46UL), (10963612600445402927UL + 47UL), (10963612600445402927UL + 48UL), (10963612600445402927UL + 49UL), (10963612600445402927UL + 50UL), (10963612600445402927UL + 51UL), (10963612600445402927UL + 52UL), (10963612600445402927UL + 53UL), (10963612600445402927UL + 54UL), (10963612600445402927UL + 55UL), (10963612600445402927UL + 56UL), (10963612600445402927UL + 57UL), (10963612600445402927UL + 58UL), (10963612600445402927UL + 59UL), (10963612600445402927UL + 60UL), (10963612600445402927UL + 61UL), (10963612600445402927UL + 62UL), (10963612600445402927UL + 63UL), (10963612600445402927UL + 64UL), (10963612600445402927UL + 191UL), (10963612600445402927UL + 316UL), (10963612600445402927UL + 341UL), (10963612600445402927UL + 495UL),
+                            "usage", 0, "_Z5usagePc", "_Z9usage_npmPc", 0, 1, (10963612600445402927UL + 14UL), 0UL, 2, "fprintf", 3, (10963612600445402927UL + 7UL), (10963612600445402927UL + 496UL), (10963612600445402927UL + 14UL), 0UL, "exit", 1, 0UL, 0UL,
                             "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (10963612600445402927UL + 20UL), (10963612600445402927UL + 21UL), 0UL,
                                "cluster", (void **)&(____chimes_extern_func_cluster),
                            "usage", &(____chimes_does_checkpoint_usage_npm),
                            "seconds", &(____chimes_does_checkpoint_seconds_npm),
                            "cluster", &(____chimes_does_checkpoint_cluster_npm),
-                             (10963612600445402927UL + 458UL), (10963612600445402927UL + 7UL),
-                             (10963612600445402927UL + 48UL), (10963612600445402927UL + 470UL),
+                             (10963612600445402927UL + 48UL), (10963612600445402927UL + 515UL),
                              (10963612600445402927UL + 49UL), (10963612600445402927UL + 341UL),
                              (10963612600445402927UL + 191UL), (10963612600445402927UL + 193UL),
-                             (10963612600445402927UL + 45UL), (10963612600445402927UL + 421UL),
-                             (10963612600445402927UL + 51UL), (10963612600445402927UL + 471UL),
+                             (10963612600445402927UL + 45UL), (10963612600445402927UL + 460UL),
+                             (10963612600445402927UL + 51UL), (10963612600445402927UL + 516UL),
                              (10963612600445402927UL + 50UL), (10963612600445402927UL + 191UL),
-                             (10963612600445402927UL + 460UL), (10963612600445402927UL + 470UL),
+                             (10963612600445402927UL + 460UL), (10963612600445402927UL + 133UL),
                              (10963612600445402927UL + 1UL), (10963612600445402927UL + 14UL),
                              (10963612600445402927UL + 61UL), (10963612600445402927UL + 316UL),
-                             (10963612600445402927UL + 2UL), (10963612600445402927UL + 457UL),
-                             (10963612600445402927UL + 421UL), (10963612600445402927UL + 133UL),
-                             (10963612600445402927UL + 471UL), (10963612600445402927UL + 407UL),
+                             (10963612600445402927UL + 2UL), (10963612600445402927UL + 496UL),
+                             (10963612600445402927UL + 499UL), (10963612600445402927UL + 515UL),
+                             (10963612600445402927UL + 497UL), (10963612600445402927UL + 7UL),
+                             (10963612600445402927UL + 516UL), (10963612600445402927UL + 425UL),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),

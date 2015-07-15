@@ -16,14 +16,7 @@ static int ____chimes_does_checkpoint_qSort_both_npm = 1;
 static int ____chimes_does_checkpoint_freeA_npm = 1;
 static int ____chimes_does_checkpoint_gridInfo_npm = 1;
 static int ____chimes_does_checkpoint_getSeconds_npm = 1;
-static int ____chimes_does_checkpoint_omp_get_max_threads_npm = 1;
 
-static int ____must_checkpoint_gridInfo_npRow_0 = 2;
-static int ____must_checkpoint_gridInfo_npCol_0 = 2;
-static int ____must_checkpoint_gridInfo_myRow_0 = 2;
-static int ____must_checkpoint_gridInfo_myCol_0 = 2;
-static int ____must_checkpoint_gridInfo_threadNum_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_simMatrix_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_maxReports_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_minSeparation_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_sortReports_0 = 2;
@@ -39,11 +32,7 @@ static int ____must_checkpoint_pairwiseAlign_iEnd_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_jBeg_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_jEnd_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_myRow_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_myCol_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_npRow_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_npCol_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_threadNum_0 = 2;
-static int ____must_checkpoint_pairwiseAlign_matchLimit_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_mainSeq_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_matchSeq_0 = 2;
 static int ____must_checkpoint_pairwiseAlign_weights_0 = 2;
@@ -72,9 +61,6 @@ static unsigned ____alias_loc_id_5;
 static unsigned ____alias_loc_id_6;
 static unsigned ____alias_loc_id_7;
 static unsigned ____alias_loc_id_8;
-static unsigned ____alias_loc_id_9;
-static unsigned ____alias_loc_id_10;
-static unsigned ____alias_loc_id_11;
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -3465,21 +3451,19 @@ void dispElapsedTime(double);
 # 16 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c" 2
 # 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int gridInfo_npm(int *npRow, int *npCol, int *myRow, int *myCol);static int (*____chimes_extern_func_omp_get_max_threads)(void) = omp_get_max_threads;
+int gridInfo_npm(int *npRow, int *npCol, int *myRow, int *myCol);
 int gridInfo_quick(int *npRow, int *npCol, int *myRow, int *myCol); int gridInfo(int *npRow, int *npCol, int *myRow, int *myCol);
 int gridInfo_resumable(int *npRow, int *npCol, int *myRow, int *myCol)
 # 27 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&gridInfo), "gridInfo", &____must_manage_gridInfo, 4, 4, (size_t)(7066887875038562609UL), (size_t)(7066887875038562610UL), (size_t)(7066887875038562611UL), (size_t)(7066887875038562612UL), "gridInfo|npRow|0", &____must_checkpoint_gridInfo_npRow_0, "i32*", (void *)(&npRow), (size_t)8, 1, 0, 0, "gridInfo|npCol|0", &____must_checkpoint_gridInfo_npCol_0, "i32*", (void *)(&npCol), (size_t)8, 1, 0, 0, "gridInfo|myRow|0", &____must_checkpoint_gridInfo_myRow_0, "i32*", (void *)(&myRow), (size_t)8, 1, 0, 0, "gridInfo|myCol|0", &____must_checkpoint_gridInfo_myCol_0, "i32*", (void *)(&myCol), (size_t)8, 1, 0, 0) ; int threadNum;
-# 27 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if (____must_checkpoint_gridInfo_threadNum_0) { register_stack_vars(1, "gridInfo|threadNum|0", &____must_checkpoint_gridInfo_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&gridInfo), "gridInfo", &____must_manage_gridInfo, 4, 0, (size_t)(7066887875038562609UL), (size_t)(7066887875038562610UL), (size_t)(7066887875038562611UL), (size_t)(7066887875038562612UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 28 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 29 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  int i; int numThreads; int minPer; int per; int row; int col; ;
+  int i; int threadNum; int numThreads; int minPer; int per; int row; int col; ;
 # 38 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 38 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   threadNum = omp_get_thread_num();
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   call_lbl_0: numThreads = ({ calling((void*)omp_get_max_threads, 0, ____alias_loc_id_0, 0UL, 0); (omp_get_max_threads)(); }) ;
+  numThreads = omp_get_max_threads();
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   minPer = numThreads + 2;
@@ -3515,7 +3499,7 @@ int gridInfo_resumable(int *npRow, int *npCol, int *myRow, int *myCol)
 # 99 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     *myCol = threadNum % (*npCol);
 # 100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (( (*npRow) * (*npCol) )); rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_5, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (( (*npRow) * (*npCol) )); rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   } else {
 # 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3523,11 +3507,11 @@ int gridInfo_resumable(int *npRow, int *npCol, int *myRow, int *myCol)
 # 103 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     *myCol = -1;
 # 104 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((-1)); rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_5, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((-1)); rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
 # 105 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 106 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_5, ____chimes_did_disable0, false); }
+rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 static void bubbleSort_npm(int *b, int left, int right);
@@ -3558,7 +3542,7 @@ void bubbleSort_resumable(int *b, int left, int right) {const int ____chimes_did
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(false, 0UL, "bubbleSort", &____must_manage_bubbleSort, ____alias_loc_id_7, ____chimes_did_disable1, false); }
+rm_stack(false, 0UL, "bubbleSort", &____must_manage_bubbleSort, ____alias_loc_id_4, ____chimes_did_disable1, false); }
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 void qSort_npm(int *b, const int *a, const int left, const int right);
@@ -3583,7 +3567,7 @@ void qSort_resumable(int *b, const int *a, const int left, const int right) {con
 # 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    call_lbl_0: ({ calling_npm("bubbleSort", 0); bubbleSort_npm(b, left, right); });
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(false, 0UL, "qSort", &____must_manage_qSort, ____alias_loc_id_6, ____chimes_did_disable2, false); }
+rm_stack(false, 0UL, "qSort", &____must_manage_qSort, ____alias_loc_id_3, ____chimes_did_disable2, false); }
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 static void bubbleSort_both_npm(long long *y, int *a, int left, int right);
@@ -3622,7 +3606,7 @@ void bubbleSort_both_resumable(long long *y, int *a, int left, int right) {const
 # 191 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 192 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(false, 0UL, "bubbleSort_both", &____must_manage_bubbleSort_both, ____alias_loc_id_9, ____chimes_did_disable3, false); }
+rm_stack(false, 0UL, "bubbleSort_both", &____must_manage_bubbleSort_both, ____alias_loc_id_6, ____chimes_did_disable3, false); }
 # 205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 void qSort_both_npm(long long *y, int *a, const long long *x, const int n);
@@ -3648,14 +3632,14 @@ void qSort_both_resumable(long long *y, int *a, const long long *x, const int n)
 # 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    call_lbl_0: ({ calling_npm("bubbleSort_both", 0); bubbleSort_both_npm(y, a, 1, n); });
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(false, 0UL, "qSort_both", &____must_manage_qSort_both, ____alias_loc_id_8, ____chimes_did_disable4, false); }
+rm_stack(false, 0UL, "qSort_both", &____must_manage_qSort_both, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 # 277 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 277 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix, int minScore, int maxReports, int minSeparation);static double (*____chimes_extern_func_getSeconds)(void) = getSeconds;
 ASTR_T *pairwiseAlign_quick(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix, int minScore, int maxReports, int minSeparation); ASTR_T *pairwiseAlign(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix, int minScore, int maxReports, int minSeparation);
 ASTR_T *pairwiseAlign_resumable(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-        int minScore, int maxReports, int minSeparation) {const int ____chimes_did_disable5 = new_stack((void *)(&pairwiseAlign), "pairwiseAlign", &____must_manage_pairwiseAlign, 5, 3, (size_t)(7066887875038564703UL), (size_t)(7066887875038564703UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "pairwiseAlign|simMatrix|0", &____must_checkpoint_pairwiseAlign_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "pairwiseAlign|maxReports|0", &____must_checkpoint_pairwiseAlign_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "pairwiseAlign|minSeparation|0", &____must_checkpoint_pairwiseAlign_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0) ; double beginTime;
+        int minScore, int maxReports, int minSeparation) {const int ____chimes_did_disable5 = new_stack((void *)(&pairwiseAlign), "pairwiseAlign", &____must_manage_pairwiseAlign, 5, 2, (size_t)(7066887875038564703UL), (size_t)(7066887875038564703UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "pairwiseAlign|maxReports|0", &____must_checkpoint_pairwiseAlign_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "pairwiseAlign|minSeparation|0", &____must_checkpoint_pairwiseAlign_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0) ; double beginTime;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 ASTR_T *A;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3675,15 +3659,7 @@ unsigned char *matchSeq;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 unsigned char *mainSeq;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int matchLimit;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int threadNum;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int npCol;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int npRow;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int myCol;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int myRow;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3711,16 +3687,16 @@ int report;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int sortReports;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_matchLimit_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_npCol_0 || ____must_checkpoint_pairwiseAlign_npRow_0 || ____must_checkpoint_pairwiseAlign_myCol_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(28, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|matchLimit|0", &____must_checkpoint_pairwiseAlign_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|npCol|0", &____must_checkpoint_pairwiseAlign_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "pairwiseAlign|npRow|0", &____must_checkpoint_pairwiseAlign_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "pairwiseAlign|myCol|0", &____must_checkpoint_pairwiseAlign_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(24, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } } ; ;
 # 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   int i; int j; int k; int r; int n; int m; ;
 # 281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
         int worst; ;
 # 282 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-          ;
+       int myCol; int npRow; int npCol; ;
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  int myTaskID; int maxThreads; ;
+  int myTaskID; int maxThreads; int matchLimit; ;
 # 284 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     ;
 # 285 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3774,7 +3750,7 @@ int sortReports;
   A->simMatrix = simMatrix;
 # 327 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 327 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   call_lbl_0: maxThreads = ({ calling((void*)omp_get_max_threads, 0, ____alias_loc_id_3, 0UL, 0); (omp_get_max_threads)(); }) ;
+  maxThreads = omp_get_max_threads();
 # 337 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 337 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   A->numThreads = maxThreads;
@@ -3843,7 +3819,7 @@ int sortReports;
 # 394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-{ call_lbl_8: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(8, &____chimes_region_id0, 42, &E, &F, &G, &V, &Vp, &W, &beginTime, &best, &endTime, &gapExtend, &gapFirst, &goodEndsI, &goodEndsJ, &goodScores, &i, &iBeg, &iEnd, &index, &j, &jBeg, &jEnd, &k, &llMinScore, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &report, &scores, &sortReports, &threadNum, &weights, &worst);
+{ call_lbl_7: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(7, &____chimes_region_id0, 42, &E, &F, &G, &V, &Vp, &W, &beginTime, &best, &endTime, &gapExtend, &gapFirst, &goodEndsI, &goodEndsJ, &goodScores, &i, &iBeg, &iEnd, &index, &j, &jBeg, &jEnd, &k, &llMinScore, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &report, &scores, &sortReports, &threadNum, &weights, &worst);
 # 394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 #pragma omp parallel firstprivate(llMinScore, maxReports, matchLimit, minSeparation) private (i, j, k, r, m, n, sortReports, report, worst, index, best, goodEndsI, goodEndsJ, gapFirst, gapExtend, iBeg, iEnd, jBeg, jEnd, myRow, myCol, npRow, npCol, mainSeq, matchSeq, weights, goodScores, scores, V, F, G, Vp, E, W, threadNum, myTaskID, beginTime, endTime)
 # 395 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3853,12 +3829,12 @@ int sortReports;
 # 399 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 400 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 401 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 42, &E, &F, &G, &V, &Vp, &W, &beginTime, &best, &endTime, &gapExtend, &gapFirst, &goodEndsI, &goodEndsJ, &goodScores, &i, &iBeg, &iEnd, &index, &j, &jBeg, &jEnd, &k, &llMinScore, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &report, &scores, &sortReports, &threadNum, &weights, &worst); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } {
+  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 42, &E, &F, &G, &V, &Vp, &W, &beginTime, &best, &endTime, &gapExtend, &gapFirst, &goodEndsI, &goodEndsJ, &goodScores, &i, &iBeg, &iEnd, &index, &j, &jBeg, &jEnd, &k, &llMinScore, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &report, &scores, &sortReports, &threadNum, &weights, &worst); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } {
 # 402 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 403 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 404 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     call_lbl_1: ({ calling((void*)gridInfo, 1, ____alias_loc_id_1, 0UL, 4, (size_t)(7066887875038562930UL), (size_t)(7066887875038562931UL), (size_t)(7066887875038562928UL), (size_t)(7066887875038562929UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
+     call_lbl_0: ({ calling_npm("gridInfo", 0); gridInfo_npm(&npRow, &npCol, &myRow, &myCol); });
 # 415 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 415 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     threadNum = omp_get_thread_num();
@@ -4146,7 +4122,7 @@ int sortReports;
 # 670 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 671 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 672 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       call_lbl_2: beginTime = ({ calling((void*)getSeconds, 2, ____alias_loc_id_4, 0UL, 0); (getSeconds)(); }) ;
+       call_lbl_1: beginTime = ({ calling((void*)getSeconds, 1, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) ;
 # 681 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 681 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = iBeg; i <= iEnd; i++) {
@@ -4255,13 +4231,13 @@ int sortReports;
 # 911 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      if (report == sortReports) {
 # 912 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-        call_lbl_3: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); });
+        call_lbl_2: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); });
 # 913 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        worst = sortReports - maxReports + 1;
 # 914 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        llMinScore = scores[worst] + 1L;
 # 915 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-        call_lbl_4: ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); });
+        call_lbl_3: ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); });
 # 916 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 917 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        for (k = worst; k <= sortReports; k++) {
@@ -4322,7 +4298,7 @@ int sortReports;
 # 956 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 958 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       call_lbl_5: endTime = ({ calling((void*)getSeconds, 5, ____alias_loc_id_2, 0UL, 0); (getSeconds)(); }) ;
+       call_lbl_4: endTime = ({ calling((void*)getSeconds, 4, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) ;
 # 959 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 960 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if (threadNum == 0) {
@@ -4396,7 +4372,7 @@ int sortReports;
    }
 # 1024 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1024 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    call_lbl_6: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
+    call_lbl_5: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
 # 1025 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    j = 1;
 # 1026 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4481,7 +4457,7 @@ int sortReports;
    }
 # 1089 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1089 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    call_lbl_7: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
+    call_lbl_6: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
 # 1090 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    j = 1;
 # 1091 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4544,9 +4520,9 @@ int sortReports;
    } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
 # 1124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   ASTR_T *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((A)); rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_10, ____chimes_did_disable5, false); return ____chimes_ret_var_2; ;
+   ASTR_T *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((A)); rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_7, ____chimes_did_disable5, false); return ____chimes_ret_var_2; ;
 # 1126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_10, ____chimes_did_disable5, false); }
+rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_7, ____chimes_did_disable5, false); }
 # 1127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4633,23 +4609,21 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 1171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   ASTR_T *____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((__null)); rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_11, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;
+   ASTR_T *____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((__null)); rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_8, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;
 # 1172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_11, ____chimes_did_disable6, false); }
+rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_8, ____chimes_did_disable6, false); }
 # 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int gridInfo_quick(int *npRow, int *npCol, int *myRow, int *myCol)
 # 27 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&gridInfo), "gridInfo", &____must_manage_gridInfo, 4, 4, (size_t)(7066887875038562609UL), (size_t)(7066887875038562610UL), (size_t)(7066887875038562611UL), (size_t)(7066887875038562612UL), "gridInfo|npRow|0", &____must_checkpoint_gridInfo_npRow_0, "i32*", (void *)(&npRow), (size_t)8, 1, 0, 0, "gridInfo|npCol|0", &____must_checkpoint_gridInfo_npCol_0, "i32*", (void *)(&npCol), (size_t)8, 1, 0, 0, "gridInfo|myRow|0", &____must_checkpoint_gridInfo_myRow_0, "i32*", (void *)(&myRow), (size_t)8, 1, 0, 0, "gridInfo|myCol|0", &____must_checkpoint_gridInfo_myCol_0, "i32*", (void *)(&myCol), (size_t)8, 1, 0, 0) ; int threadNum;
-# 27 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if (____must_checkpoint_gridInfo_threadNum_0) { register_stack_vars(1, "gridInfo|threadNum|0", &____must_checkpoint_gridInfo_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&gridInfo), "gridInfo", &____must_manage_gridInfo, 4, 0, (size_t)(7066887875038562609UL), (size_t)(7066887875038562610UL), (size_t)(7066887875038562611UL), (size_t)(7066887875038562612UL)) ; ; ;
 # 28 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 29 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  int i; int numThreads; int minPer; int per; int row; int col; ;
+  int i; int threadNum; int numThreads; int minPer; int per; int row; int col; ;
 # 38 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 38 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   threadNum = omp_get_thread_num();
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   call_lbl_0: numThreads = ({ calling((void*)omp_get_max_threads, 0, ____alias_loc_id_0, 0UL, 0); (omp_get_max_threads)(); }) ;
+  numThreads = omp_get_max_threads();
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   minPer = numThreads + 2;
@@ -4685,7 +4659,7 @@ int gridInfo_quick(int *npRow, int *npCol, int *myRow, int *myCol)
 # 99 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     *myCol = threadNum % (*npCol);
 # 100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (( (*npRow) * (*npCol) )); rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_5, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (( (*npRow) * (*npCol) )); rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   } else {
 # 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4693,11 +4667,11 @@ int gridInfo_quick(int *npRow, int *npCol, int *myRow, int *myCol)
 # 103 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     *myCol = -1;
 # 104 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((-1)); rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_5, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((-1)); rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
 # 105 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 106 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_5, ____chimes_did_disable0, false); }
+rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 
 int gridInfo(int *npRow, int *npCol, int *myRow, int *myCol) { return (____chimes_replaying ? gridInfo_resumable(npRow, npCol, myRow, myCol) : gridInfo_quick(npRow, npCol, myRow, myCol)); }
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4727,7 +4701,7 @@ void bubbleSort_quick(int *b, int left, int right) {const int ____chimes_did_dis
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(false, 0UL, "bubbleSort", &____must_manage_bubbleSort, ____alias_loc_id_7, ____chimes_did_disable1, false); }
+rm_stack(false, 0UL, "bubbleSort", &____must_manage_bubbleSort, ____alias_loc_id_4, ____chimes_did_disable1, false); }
 
 static
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4753,7 +4727,7 @@ void qSort_quick(int *b, const int *a, const int left, const int right) {const i
 # 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    call_lbl_0: ({ calling_npm("bubbleSort", 0); bubbleSort_npm(b, left, right); });
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(false, 0UL, "qSort", &____must_manage_qSort, ____alias_loc_id_6, ____chimes_did_disable2, false); }
+rm_stack(false, 0UL, "qSort", &____must_manage_qSort, ____alias_loc_id_3, ____chimes_did_disable2, false); }
 
 void qSort(int *b, const int *a, const int left, const int right) { (____chimes_replaying ? qSort_resumable(b, a, left, right) : qSort_quick(b, a, left, right)); }
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4791,7 +4765,7 @@ void bubbleSort_both_quick(long long *y, int *a, int left, int right) {const int
 # 191 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 192 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(false, 0UL, "bubbleSort_both", &____must_manage_bubbleSort_both, ____alias_loc_id_9, ____chimes_did_disable3, false); }
+rm_stack(false, 0UL, "bubbleSort_both", &____must_manage_bubbleSort_both, ____alias_loc_id_6, ____chimes_did_disable3, false); }
 
 static
 # 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4818,13 +4792,13 @@ void qSort_both_quick(long long *y, int *a, const long long *x, const int n) {co
 # 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    call_lbl_0: ({ calling_npm("bubbleSort_both", 0); bubbleSort_both_npm(y, a, 1, n); });
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(false, 0UL, "qSort_both", &____must_manage_qSort_both, ____alias_loc_id_8, ____chimes_did_disable4, false); }
+rm_stack(false, 0UL, "qSort_both", &____must_manage_qSort_both, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 
 void qSort_both(long long *y, int *a, const long long *x, const int n) { (____chimes_replaying ? qSort_both_resumable(y, a, x, n) : qSort_both_quick(y, a, x, n)); }
 # 277 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 ASTR_T *pairwiseAlign_quick(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-        int minScore, int maxReports, int minSeparation) {const int ____chimes_did_disable5 = new_stack((void *)(&pairwiseAlign), "pairwiseAlign", &____must_manage_pairwiseAlign, 5, 3, (size_t)(7066887875038564703UL), (size_t)(7066887875038564703UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "pairwiseAlign|simMatrix|0", &____must_checkpoint_pairwiseAlign_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "pairwiseAlign|maxReports|0", &____must_checkpoint_pairwiseAlign_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "pairwiseAlign|minSeparation|0", &____must_checkpoint_pairwiseAlign_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0) ; double beginTime;
+        int minScore, int maxReports, int minSeparation) {const int ____chimes_did_disable5 = new_stack((void *)(&pairwiseAlign), "pairwiseAlign", &____must_manage_pairwiseAlign, 5, 2, (size_t)(7066887875038564703UL), (size_t)(7066887875038564703UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "pairwiseAlign|maxReports|0", &____must_checkpoint_pairwiseAlign_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "pairwiseAlign|minSeparation|0", &____must_checkpoint_pairwiseAlign_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0) ; double beginTime;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 ASTR_T *A;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4844,15 +4818,7 @@ unsigned char *matchSeq;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 unsigned char *mainSeq;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int matchLimit;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int threadNum;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int npCol;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int npRow;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-int myCol;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int myRow;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4880,16 +4846,16 @@ int report;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 int sortReports;
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_matchLimit_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_npCol_0 || ____must_checkpoint_pairwiseAlign_npRow_0 || ____must_checkpoint_pairwiseAlign_myCol_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(28, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|matchLimit|0", &____must_checkpoint_pairwiseAlign_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|npCol|0", &____must_checkpoint_pairwiseAlign_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "pairwiseAlign|npRow|0", &____must_checkpoint_pairwiseAlign_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "pairwiseAlign|myCol|0", &____must_checkpoint_pairwiseAlign_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0); } ; ;
+ if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0) { register_stack_vars(24, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0); } ; ;
 # 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   int i; int j; int k; int r; int n; int m; ;
 # 281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
         int worst; ;
 # 282 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-          ;
+       int myCol; int npRow; int npCol; ;
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  int myTaskID; int maxThreads; ;
+  int myTaskID; int maxThreads; int matchLimit; ;
 # 284 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     ;
 # 285 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4943,7 +4909,7 @@ int sortReports;
   A->simMatrix = simMatrix;
 # 327 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 327 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   call_lbl_0: maxThreads = ({ calling((void*)omp_get_max_threads, 0, ____alias_loc_id_3, 0UL, 0); (omp_get_max_threads)(); }) ;
+  maxThreads = omp_get_max_threads();
 # 337 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 337 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   A->numThreads = maxThreads;
@@ -5012,7 +4978,7 @@ int sortReports;
 # 394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-{ call_lbl_8: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(8, &____chimes_region_id0, 42, &E, &F, &G, &V, &Vp, &W, &beginTime, &best, &endTime, &gapExtend, &gapFirst, &goodEndsI, &goodEndsJ, &goodScores, &i, &iBeg, &iEnd, &index, &j, &jBeg, &jEnd, &k, &llMinScore, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &report, &scores, &sortReports, &threadNum, &weights, &worst);
+{ call_lbl_7: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(7, &____chimes_region_id0, 42, &E, &F, &G, &V, &Vp, &W, &beginTime, &best, &endTime, &gapExtend, &gapFirst, &goodEndsI, &goodEndsJ, &goodScores, &i, &iBeg, &iEnd, &index, &j, &jBeg, &jEnd, &k, &llMinScore, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &report, &scores, &sortReports, &threadNum, &weights, &worst);
 # 394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 #pragma omp parallel firstprivate(llMinScore, maxReports, matchLimit, minSeparation) private (i, j, k, r, m, n, sortReports, report, worst, index, best, goodEndsI, goodEndsJ, gapFirst, gapExtend, iBeg, iEnd, jBeg, jEnd, myRow, myCol, npRow, npCol, mainSeq, matchSeq, weights, goodScores, scores, V, F, G, Vp, E, W, threadNum, myTaskID, beginTime, endTime)
 # 395 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5022,12 +4988,12 @@ int sortReports;
 # 399 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 400 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 401 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 42, &E, &F, &G, &V, &Vp, &W, &beginTime, &best, &endTime, &gapExtend, &gapFirst, &goodEndsI, &goodEndsJ, &goodScores, &i, &iBeg, &iEnd, &index, &j, &jBeg, &jEnd, &k, &llMinScore, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &report, &scores, &sortReports, &threadNum, &weights, &worst); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } {
+  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 42, &E, &F, &G, &V, &Vp, &W, &beginTime, &best, &endTime, &gapExtend, &gapFirst, &goodEndsI, &goodEndsJ, &goodScores, &i, &iBeg, &iEnd, &index, &j, &jBeg, &jEnd, &k, &llMinScore, &m, &mainSeq, &matchLimit, &matchSeq, &maxReports, &minSeparation, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow, &r, &report, &scores, &sortReports, &threadNum, &weights, &worst); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } {
 # 402 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 403 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 404 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     call_lbl_1: ({ calling((void*)gridInfo, 1, ____alias_loc_id_1, 0UL, 4, (size_t)(7066887875038562930UL), (size_t)(7066887875038562931UL), (size_t)(7066887875038562928UL), (size_t)(7066887875038562929UL)); gridInfo_quick(&npRow, &npCol, &myRow, &myCol); }) ;
+     call_lbl_0: ({ calling_npm("gridInfo", 0); gridInfo_npm(&npRow, &npCol, &myRow, &myCol); });
 # 415 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 415 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     threadNum = omp_get_thread_num();
@@ -5315,7 +5281,7 @@ int sortReports;
 # 670 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 671 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 672 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       call_lbl_2: beginTime = ({ calling((void*)getSeconds, 2, ____alias_loc_id_4, 0UL, 0); (getSeconds)(); }) ;
+       call_lbl_1: beginTime = ({ calling((void*)getSeconds, 1, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) ;
 # 681 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 681 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = iBeg; i <= iEnd; i++) {
@@ -5424,13 +5390,13 @@ int sortReports;
 # 911 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      if (report == sortReports) {
 # 912 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-        call_lbl_3: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); });
+        call_lbl_2: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); });
 # 913 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        worst = sortReports - maxReports + 1;
 # 914 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        llMinScore = scores[worst] + 1L;
 # 915 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-        call_lbl_4: ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); });
+        call_lbl_3: ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); });
 # 916 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 917 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        for (k = worst; k <= sortReports; k++) {
@@ -5491,7 +5457,7 @@ int sortReports;
 # 956 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 957 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 958 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       call_lbl_5: endTime = ({ calling((void*)getSeconds, 5, ____alias_loc_id_2, 0UL, 0); (getSeconds)(); }) ;
+       call_lbl_4: endTime = ({ calling((void*)getSeconds, 4, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) ;
 # 959 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 960 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if (threadNum == 0) {
@@ -5565,7 +5531,7 @@ int sortReports;
    }
 # 1024 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1024 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    call_lbl_6: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
+    call_lbl_5: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
 # 1025 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    j = 1;
 # 1026 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5650,7 +5616,7 @@ int sortReports;
    }
 # 1089 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1089 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    call_lbl_7: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
+    call_lbl_6: ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); });
 # 1090 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    j = 1;
 # 1091 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5713,9 +5679,9 @@ int sortReports;
    } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
 # 1124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   ASTR_T *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((A)); rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_10, ____chimes_did_disable5, false); return ____chimes_ret_var_2; ;
+   ASTR_T *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((A)); rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_7, ____chimes_did_disable5, false); return ____chimes_ret_var_2; ;
 # 1126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_10, ____chimes_did_disable5, false); }
+rm_stack(true, 7066887875038564458UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_7, ____chimes_did_disable5, false); }
 
 ASTR_T *pairwiseAlign(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5801,9 +5767,9 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 1171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-   ASTR_T *____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((__null)); rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_11, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;
+   ASTR_T *____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((__null)); rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_8, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;
 # 1172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_11, ____chimes_did_disable6, false); }
+rm_stack(true, 7066887875038564458UL, "freeA", &____must_manage_freeA, ____alias_loc_id_8, ____chimes_did_disable6, false); }
 
 ASTR_T *freeA(ASTR_T *A) { return (____chimes_replaying ? freeA_resumable(A) : freeA_quick(A)); }
 # 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5817,7 +5783,7 @@ int gridInfo_npm(int *npRow, int *npCol, int *myRow, int *myCol)
 # 38 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   threadNum = omp_get_thread_num();
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  numThreads = (*____chimes_extern_func_omp_get_max_threads)();
+  numThreads = omp_get_max_threads();
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   minPer = numThreads + 2;
@@ -6041,7 +6007,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
   A->simMatrix = simMatrix;
 # 327 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 327 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  maxThreads = (*____chimes_extern_func_omp_get_max_threads)();
+  maxThreads = omp_get_max_threads();
 # 337 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 337 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   A->numThreads = maxThreads;
@@ -6902,28 +6868,24 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 
 
 static int module_init() {
-    init_module(7066887875038562491UL, 33, 7, 36, 12, 7, 2, 9, 6, 0, 3,
-                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (7066887875038562491UL + 2UL), (7066887875038562491UL + 3UL), (7066887875038562491UL + 4UL), (7066887875038562491UL + 5UL), (7066887875038562491UL + 7UL),
-                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)0, (7066887875038562491UL + 418UL), (7066887875038562491UL + 443UL), (7066887875038562491UL + 1967UL), (7066887875038562491UL + 2212UL),
-                           &____alias_loc_id_2, (unsigned)18, (unsigned)0, (unsigned)0, (7066887875038562491UL + 418UL), (7066887875038562491UL + 419UL), (7066887875038562491UL + 420UL), (7066887875038562491UL + 421UL), (7066887875038562491UL + 425UL), (7066887875038562491UL + 432UL), (7066887875038562491UL + 452UL), (7066887875038562491UL + 453UL), (7066887875038562491UL + 454UL), (7066887875038562491UL + 455UL), (7066887875038562491UL + 456UL), (7066887875038562491UL + 458UL), (7066887875038562491UL + 1139UL), (7066887875038562491UL + 1142UL), (7066887875038562491UL + 1368UL), (7066887875038562491UL + 1414UL), (7066887875038562491UL + 1436UL), (7066887875038562491UL + 1532UL),
-                           &____alias_loc_id_3, (unsigned)9, (unsigned)0, (unsigned)0, (7066887875038562491UL + 413UL), (7066887875038562491UL + 414UL), (7066887875038562491UL + 415UL), (7066887875038562491UL + 416UL), (7066887875038562491UL + 417UL), (7066887875038562491UL + 444UL), (7066887875038562491UL + 456UL), (7066887875038562491UL + 457UL), (7066887875038562491UL + 1967UL),
-                           &____alias_loc_id_4, (unsigned)32, (unsigned)0, (unsigned)0, (7066887875038562491UL + 418UL), (7066887875038562491UL + 419UL), (7066887875038562491UL + 422UL), (7066887875038562491UL + 423UL), (7066887875038562491UL + 424UL), (7066887875038562491UL + 425UL), (7066887875038562491UL + 426UL), (7066887875038562491UL + 427UL), (7066887875038562491UL + 428UL), (7066887875038562491UL + 429UL), (7066887875038562491UL + 430UL), (7066887875038562491UL + 431UL), (7066887875038562491UL + 433UL), (7066887875038562491UL + 434UL), (7066887875038562491UL + 435UL), (7066887875038562491UL + 436UL), (7066887875038562491UL + 445UL), (7066887875038562491UL + 446UL), (7066887875038562491UL + 447UL), (7066887875038562491UL + 448UL), (7066887875038562491UL + 449UL), (7066887875038562491UL + 450UL), (7066887875038562491UL + 451UL), (7066887875038562491UL + 862UL), (7066887875038562491UL + 934UL), (7066887875038562491UL + 956UL), (7066887875038562491UL + 959UL), (7066887875038562491UL + 1139UL), (7066887875038562491UL + 1142UL), (7066887875038562491UL + 1368UL), (7066887875038562491UL + 1414UL), (7066887875038562491UL + 1436UL),
-                           &____alias_loc_id_5, (unsigned)13, (unsigned)0, (unsigned)0, (7066887875038562491UL + 1UL), (7066887875038562491UL + 6UL), (7066887875038562491UL + 8UL), (7066887875038562491UL + 9UL), (7066887875038562491UL + 10UL), (7066887875038562491UL + 11UL), (7066887875038562491UL + 12UL), (7066887875038562491UL + 13UL), (7066887875038562491UL + 14UL), (7066887875038562491UL + 118UL), (7066887875038562491UL + 119UL), (7066887875038562491UL + 120UL), (7066887875038562491UL + 121UL),
-                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (unsigned)0, (7066887875038562491UL + 124UL), (7066887875038562491UL + 125UL), (7066887875038562491UL + 126UL), (7066887875038562491UL + 127UL), (7066887875038562491UL + 128UL), (7066887875038562491UL + 165UL),
-                           &____alias_loc_id_7, (unsigned)7, (unsigned)0, (unsigned)0, (7066887875038562491UL + 169UL), (7066887875038562491UL + 170UL), (7066887875038562491UL + 171UL), (7066887875038562491UL + 172UL), (7066887875038562491UL + 173UL), (7066887875038562491UL + 174UL), (7066887875038562491UL + 248UL),
-                           &____alias_loc_id_8, (unsigned)7, (unsigned)0, (unsigned)0, (7066887875038562491UL + 251UL), (7066887875038562491UL + 252UL), (7066887875038562491UL + 253UL), (7066887875038562491UL + 254UL), (7066887875038562491UL + 255UL), (7066887875038562491UL + 297UL), (7066887875038562491UL + 298UL),
-                           &____alias_loc_id_9, (unsigned)10, (unsigned)0, (unsigned)0, (7066887875038562491UL + 301UL), (7066887875038562491UL + 302UL), (7066887875038562491UL + 303UL), (7066887875038562491UL + 304UL), (7066887875038562491UL + 305UL), (7066887875038562491UL + 306UL), (7066887875038562491UL + 307UL), (7066887875038562491UL + 308UL), (7066887875038562491UL + 409UL), (7066887875038562491UL + 410UL),
-                            &____alias_loc_id_10, (unsigned)8, (unsigned)0, (unsigned)0, (7066887875038562491UL + 418UL), (7066887875038562491UL + 419UL), (7066887875038562491UL + 432UL), (7066887875038562491UL + 441UL), (7066887875038562491UL + 442UL), (7066887875038562491UL + 459UL), (7066887875038562491UL + 460UL), (7066887875038562491UL + 2212UL),
-                            &____alias_loc_id_11, (unsigned)5, (unsigned)0, (unsigned)0, (7066887875038562491UL + 2170UL), (7066887875038562491UL + 2171UL), (7066887875038562491UL + 2172UL), (7066887875038562491UL + 2212UL), (7066887875038562491UL + 2360UL),
-                            "pairwiseAlign", 0, "_Z13pairwiseAlignP6seqdatP6simmatiii", "_Z17pairwiseAlign_npmP6seqdatP6simmatiii", 4, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, &____alias_loc_id_4, 5, (7066887875038562491UL + 2212UL), (7066887875038562491UL + 2212UL), 0UL, 0UL, 0UL, (7066887875038562491UL + 1967UL), 92, "malloc", 1, 0UL, (7066887875038562491UL + 1967UL), "printf", 1, (7066887875038562491UL + 2361UL), 0UL, "exit", 1, 0UL, 0UL, "omp_get_max_threads", 0, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 1, (7066887875038562491UL + 2362UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 1, (7066887875038562491UL + 2362UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 1, (7066887875038562491UL + 2364UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 1, (7066887875038562491UL + 2364UL), 0UL, "exit", 1, 0UL, 0UL, "gridInfo", 4, (7066887875038562491UL + 439UL), (7066887875038562491UL + 440UL), (7066887875038562491UL + 437UL), (7066887875038562491UL + 438UL), 0UL, "omp_get_thread_num", 0, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1414UL), "printf", 2, (7066887875038562491UL + 2366UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1368UL), "printf", 2, (7066887875038562491UL + 2367UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1436UL), "printf", 2, (7066887875038562491UL + 2367UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1532UL), "printf", 2, (7066887875038562491UL + 2369UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1870UL), "printf", 2, (7066887875038562491UL + 2370UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1520UL), "printf", 2, (7066887875038562491UL + 2371UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 862UL), "printf", 2, (7066887875038562491UL + 2372UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 934UL), "printf", 2, (7066887875038562491UL + 2373UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 959UL), "printf", 2, (7066887875038562491UL + 2372UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 956UL), "printf", 3, (7066887875038562491UL + 2375UL), 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1139UL), "printf", 2, (7066887875038562491UL + 2376UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1142UL), "printf", 2, (7066887875038562491UL + 2376UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "getSeconds", 0, 0UL, "abs", 1, 0UL, 0UL, "qSort_both", 4, (7066887875038562491UL + 1532UL), (7066887875038562491UL + 1870UL), (7066887875038562491UL + 1414UL), 0UL, 0UL, "qSort", 4, (7066887875038562491UL + 1520UL), (7066887875038562491UL + 1870UL), 0UL, 0UL, 0UL, "getSeconds", 0, 0UL, "printf", 2, (7066887875038562491UL + 2378UL), 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2379UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2379UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2379UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "qSort_both", 4, (7066887875038562491UL + 1532UL), (7066887875038562491UL + 1870UL), (7066887875038562491UL + 1414UL), 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2382UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2379UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2379UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "qSort_both", 4, (7066887875038562491UL + 1532UL), (7066887875038562491UL + 1870UL), (7066887875038562491UL + 1414UL), 0UL, 0UL, "free", 1, (7066887875038562491UL + 956UL), 0UL, "free", 1, (7066887875038562491UL + 959UL), 0UL, "free", 1, (7066887875038562491UL + 1414UL), 0UL, "free", 1, (7066887875038562491UL + 1368UL), 0UL, "free", 1, (7066887875038562491UL + 1436UL), 0UL, "free", 1, (7066887875038562491UL + 1142UL), 0UL, "free", 1, (7066887875038562491UL + 1139UL), 0UL, "free", 1, (7066887875038562491UL + 1532UL), 0UL, "free", 1, (7066887875038562491UL + 1870UL), 0UL, "free", 1, (7066887875038562491UL + 1520UL), 0UL, "free", 1, (7066887875038562491UL + 862UL), 0UL, "free", 1, (7066887875038562491UL + 934UL), 0UL,
+    init_module(7066887875038562491UL, 33, 7, 26, 9, 7, 1, 8, 7, 0, 3,
+                           &____alias_loc_id_0, (unsigned)18, (unsigned)0, (unsigned)0, (7066887875038562491UL + 418UL), (7066887875038562491UL + 419UL), (7066887875038562491UL + 420UL), (7066887875038562491UL + 421UL), (7066887875038562491UL + 425UL), (7066887875038562491UL + 432UL), (7066887875038562491UL + 452UL), (7066887875038562491UL + 453UL), (7066887875038562491UL + 454UL), (7066887875038562491UL + 455UL), (7066887875038562491UL + 456UL), (7066887875038562491UL + 458UL), (7066887875038562491UL + 1139UL), (7066887875038562491UL + 1142UL), (7066887875038562491UL + 1368UL), (7066887875038562491UL + 1414UL), (7066887875038562491UL + 1436UL), (7066887875038562491UL + 1532UL),
+                           &____alias_loc_id_1, (unsigned)32, (unsigned)0, (unsigned)0, (7066887875038562491UL + 418UL), (7066887875038562491UL + 419UL), (7066887875038562491UL + 422UL), (7066887875038562491UL + 423UL), (7066887875038562491UL + 424UL), (7066887875038562491UL + 425UL), (7066887875038562491UL + 426UL), (7066887875038562491UL + 427UL), (7066887875038562491UL + 428UL), (7066887875038562491UL + 429UL), (7066887875038562491UL + 430UL), (7066887875038562491UL + 431UL), (7066887875038562491UL + 433UL), (7066887875038562491UL + 434UL), (7066887875038562491UL + 435UL), (7066887875038562491UL + 436UL), (7066887875038562491UL + 445UL), (7066887875038562491UL + 446UL), (7066887875038562491UL + 447UL), (7066887875038562491UL + 448UL), (7066887875038562491UL + 449UL), (7066887875038562491UL + 450UL), (7066887875038562491UL + 451UL), (7066887875038562491UL + 862UL), (7066887875038562491UL + 934UL), (7066887875038562491UL + 956UL), (7066887875038562491UL + 959UL), (7066887875038562491UL + 1139UL), (7066887875038562491UL + 1142UL), (7066887875038562491UL + 1368UL), (7066887875038562491UL + 1414UL), (7066887875038562491UL + 1436UL),
+                           &____alias_loc_id_2, (unsigned)18, (unsigned)0, (unsigned)0, (7066887875038562491UL + 1UL), (7066887875038562491UL + 2UL), (7066887875038562491UL + 3UL), (7066887875038562491UL + 4UL), (7066887875038562491UL + 5UL), (7066887875038562491UL + 6UL), (7066887875038562491UL + 7UL), (7066887875038562491UL + 8UL), (7066887875038562491UL + 9UL), (7066887875038562491UL + 10UL), (7066887875038562491UL + 11UL), (7066887875038562491UL + 12UL), (7066887875038562491UL + 13UL), (7066887875038562491UL + 14UL), (7066887875038562491UL + 118UL), (7066887875038562491UL + 119UL), (7066887875038562491UL + 120UL), (7066887875038562491UL + 121UL),
+                           &____alias_loc_id_3, (unsigned)6, (unsigned)0, (unsigned)0, (7066887875038562491UL + 124UL), (7066887875038562491UL + 125UL), (7066887875038562491UL + 126UL), (7066887875038562491UL + 127UL), (7066887875038562491UL + 128UL), (7066887875038562491UL + 165UL),
+                           &____alias_loc_id_4, (unsigned)7, (unsigned)0, (unsigned)0, (7066887875038562491UL + 169UL), (7066887875038562491UL + 170UL), (7066887875038562491UL + 171UL), (7066887875038562491UL + 172UL), (7066887875038562491UL + 173UL), (7066887875038562491UL + 174UL), (7066887875038562491UL + 248UL),
+                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (unsigned)0, (7066887875038562491UL + 251UL), (7066887875038562491UL + 252UL), (7066887875038562491UL + 253UL), (7066887875038562491UL + 254UL), (7066887875038562491UL + 255UL), (7066887875038562491UL + 297UL), (7066887875038562491UL + 298UL),
+                           &____alias_loc_id_6, (unsigned)10, (unsigned)0, (unsigned)0, (7066887875038562491UL + 301UL), (7066887875038562491UL + 302UL), (7066887875038562491UL + 303UL), (7066887875038562491UL + 304UL), (7066887875038562491UL + 305UL), (7066887875038562491UL + 306UL), (7066887875038562491UL + 307UL), (7066887875038562491UL + 308UL), (7066887875038562491UL + 409UL), (7066887875038562491UL + 410UL),
+                           &____alias_loc_id_7, (unsigned)18, (unsigned)0, (unsigned)0, (7066887875038562491UL + 413UL), (7066887875038562491UL + 414UL), (7066887875038562491UL + 415UL), (7066887875038562491UL + 416UL), (7066887875038562491UL + 417UL), (7066887875038562491UL + 418UL), (7066887875038562491UL + 419UL), (7066887875038562491UL + 432UL), (7066887875038562491UL + 441UL), (7066887875038562491UL + 442UL), (7066887875038562491UL + 443UL), (7066887875038562491UL + 444UL), (7066887875038562491UL + 456UL), (7066887875038562491UL + 457UL), (7066887875038562491UL + 459UL), (7066887875038562491UL + 460UL), (7066887875038562491UL + 1967UL), (7066887875038562491UL + 2212UL),
+                           &____alias_loc_id_8, (unsigned)5, (unsigned)0, (unsigned)0, (7066887875038562491UL + 2170UL), (7066887875038562491UL + 2171UL), (7066887875038562491UL + 2172UL), (7066887875038562491UL + 2212UL), (7066887875038562491UL + 2360UL),
+                            "pairwiseAlign", 0, "_Z13pairwiseAlignP6seqdatP6simmatiii", "_Z17pairwiseAlign_npmP6seqdatP6simmatiii", 2, &____alias_loc_id_0, &____alias_loc_id_1, 5, (7066887875038562491UL + 2212UL), (7066887875038562491UL + 2212UL), 0UL, 0UL, 0UL, (7066887875038562491UL + 1967UL), 92, "malloc", 1, 0UL, (7066887875038562491UL + 1967UL), "printf", 1, (7066887875038562491UL + 2361UL), 0UL, "exit", 1, 0UL, 0UL, "omp_get_max_threads", 0, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 1, (7066887875038562491UL + 2362UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 1, (7066887875038562491UL + 2362UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 1, (7066887875038562491UL + 2364UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 1, (7066887875038562491UL + 2364UL), 0UL, "exit", 1, 0UL, 0UL, "gridInfo", 4, (7066887875038562491UL + 439UL), (7066887875038562491UL + 440UL), (7066887875038562491UL + 437UL), (7066887875038562491UL + 438UL), 0UL, "omp_get_thread_num", 0, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1414UL), "printf", 2, (7066887875038562491UL + 2366UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1368UL), "printf", 2, (7066887875038562491UL + 2367UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1436UL), "printf", 2, (7066887875038562491UL + 2367UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1532UL), "printf", 2, (7066887875038562491UL + 2369UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1870UL), "printf", 2, (7066887875038562491UL + 2370UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1520UL), "printf", 2, (7066887875038562491UL + 2371UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 862UL), "printf", 2, (7066887875038562491UL + 2372UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 934UL), "printf", 2, (7066887875038562491UL + 2373UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 959UL), "printf", 2, (7066887875038562491UL + 2372UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 956UL), "printf", 3, (7066887875038562491UL + 2375UL), 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1139UL), "printf", 2, (7066887875038562491UL + 2376UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 1142UL), "printf", 2, (7066887875038562491UL + 2376UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "getSeconds", 0, 0UL, "abs", 1, 0UL, 0UL, "qSort_both", 4, (7066887875038562491UL + 1532UL), (7066887875038562491UL + 1870UL), (7066887875038562491UL + 1414UL), 0UL, 0UL, "qSort", 4, (7066887875038562491UL + 1520UL), (7066887875038562491UL + 1870UL), 0UL, 0UL, 0UL, "getSeconds", 0, 0UL, "printf", 2, (7066887875038562491UL + 2378UL), 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2379UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2379UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2379UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "qSort_both", 4, (7066887875038562491UL + 1532UL), (7066887875038562491UL + 1870UL), (7066887875038562491UL + 1414UL), 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2382UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2379UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7066887875038562491UL + 2212UL), "printf", 2, (7066887875038562491UL + 2379UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "qSort_both", 4, (7066887875038562491UL + 1532UL), (7066887875038562491UL + 1870UL), (7066887875038562491UL + 1414UL), 0UL, 0UL, "free", 1, (7066887875038562491UL + 956UL), 0UL, "free", 1, (7066887875038562491UL + 959UL), 0UL, "free", 1, (7066887875038562491UL + 1414UL), 0UL, "free", 1, (7066887875038562491UL + 1368UL), 0UL, "free", 1, (7066887875038562491UL + 1436UL), 0UL, "free", 1, (7066887875038562491UL + 1142UL), 0UL, "free", 1, (7066887875038562491UL + 1139UL), 0UL, "free", 1, (7066887875038562491UL + 1532UL), 0UL, "free", 1, (7066887875038562491UL + 1870UL), 0UL, "free", 1, (7066887875038562491UL + 1520UL), 0UL, "free", 1, (7066887875038562491UL + 862UL), 0UL, "free", 1, (7066887875038562491UL + 934UL), 0UL,
                             "bubbleSort_both", 1, (void *)(&bubbleSort_both_npm), (void *)__null, 0, 4, (7066887875038562491UL + 409UL), (7066887875038562491UL + 410UL), 0UL, 0UL, 0UL, 0,
                             "qSort", 0, "_Z5qSortPiPKiii", "_Z9qSort_npmPiPKiii", 0, 4, (7066887875038562491UL + 165UL), (7066887875038562491UL + 166UL), 0UL, 0UL, 0UL, 1, "bubbleSort", 3, (7066887875038562491UL + 165UL), 0UL, 0UL, 0UL,
                             "bubbleSort", 1, (void *)(&bubbleSort_npm), (void *)__null, 0, 3, (7066887875038562491UL + 248UL), 0UL, 0UL, 0UL, 0,
                             "qSort_both", 0, "_Z10qSort_bothPxPiPKxi", "_Z14qSort_both_npmPxPiPKxi", 0, 4, (7066887875038562491UL + 297UL), (7066887875038562491UL + 298UL), (7066887875038562491UL + 299UL), 0UL, 0UL, 1, "bubbleSort_both", 4, (7066887875038562491UL + 297UL), (7066887875038562491UL + 298UL), 0UL, 0UL, 0UL,
                             "freeA", 0, "_Z5freeAP4astr", "_Z9freeA_npmP4astr", 0, 1, (7066887875038562491UL + 2360UL), (7066887875038562491UL + 1967UL), 8, "free", 1, (7066887875038562491UL + 2212UL), 0UL, "free", 1, (7066887875038562491UL + 2212UL), 0UL, "free", 1, (7066887875038562491UL + 2212UL), 0UL, "free", 1, (7066887875038562491UL + 2212UL), 0UL, "free", 1, (7066887875038562491UL + 2212UL), 0UL, "free", 1, (7066887875038562491UL + 2212UL), 0UL, "free", 1, (7066887875038562491UL + 2212UL), 0UL, "free", 1, (7066887875038562491UL + 2360UL), 0UL,
-                            "gridInfo", 0, "_Z8gridInfoPiS_S_S_", "_Z12gridInfo_npmPiS_S_S_", 1, &____alias_loc_id_0, 4, (7066887875038562491UL + 118UL), (7066887875038562491UL + 119UL), (7066887875038562491UL + 120UL), (7066887875038562491UL + 121UL), 0UL, 2, "omp_get_thread_num", 0, 0UL, "omp_get_max_threads", 0, 0UL,
+                            "gridInfo", 0, "_Z8gridInfoPiS_S_S_", "_Z12gridInfo_npmPiS_S_S_", 0, 4, (7066887875038562491UL + 118UL), (7066887875038562491UL + 119UL), (7066887875038562491UL + 120UL), (7066887875038562491UL + 121UL), 0UL, 2, "omp_get_thread_num", 0, 0UL, "omp_get_max_threads", 0, 0UL,
                                "getSeconds", (void **)&(____chimes_extern_func_getSeconds),
-                               "omp_get_max_threads", (void **)&(____chimes_extern_func_omp_get_max_threads),
                            "pairwiseAlign", &(____chimes_does_checkpoint_pairwiseAlign_npm),
                            "bubbleSort_both", &(____chimes_does_checkpoint_bubbleSort_both_npm),
                            "qSort", &(____chimes_does_checkpoint_qSort_npm),
@@ -6932,7 +6894,6 @@ static int module_init() {
                            "freeA", &(____chimes_does_checkpoint_freeA_npm),
                            "gridInfo", &(____chimes_does_checkpoint_gridInfo_npm),
                            "getSeconds", &(____chimes_does_checkpoint_getSeconds_npm),
-                           "omp_get_max_threads", &(____chimes_does_checkpoint_omp_get_max_threads_npm),
                              (7066887875038562491UL + 450UL), (7066887875038562491UL + 1139UL),
                              (7066887875038562491UL + 451UL), (7066887875038562491UL + 1142UL),
                              (7066887875038562491UL + 457UL), (7066887875038562491UL + 1967UL),
@@ -6969,21 +6930,15 @@ static int module_init() {
                      "astr", 448UL, 7, "%struct.seqdat*", (int)__builtin_offsetof (struct astr, seqData), "%struct.simmat*", (int)__builtin_offsetof (struct astr, simMatrix), "long long int**", (int)__builtin_offsetof (struct astr, goodScores), "int", (int)__builtin_offsetof (struct astr, numThreads), "int*", (int)__builtin_offsetof (struct astr, numReports), "int**", (int)__builtin_offsetof (struct astr, goodEndsI), "int**", (int)__builtin_offsetof (struct astr, goodEndsJ),
                      "seqdat", 256UL, 5, "unsigned char*", (int)__builtin_offsetof (struct seqdat, main), "unsigned char*", (int)__builtin_offsetof (struct seqdat, match), "int", (int)__builtin_offsetof (struct seqdat, mainLen), "int", (int)__builtin_offsetof (struct seqdat, matchLen), "int", (int)__builtin_offsetof (struct seqdat, maxValidation),
                      "simmat", 40960UL, 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
-                             "pairwiseAlign", "_Z13pairwiseAlignP6seqdatP6simmatiii", 8, "omp_get_max_threads", "gridInfo", "getSeconds", "qSort_both", "qSort", "getSeconds", "qSort_both", "qSort_both",
+                             "pairwiseAlign", "_Z13pairwiseAlignP6seqdatP6simmatiii", 7, "gridInfo", "getSeconds", "qSort_both", "qSort", "getSeconds", "qSort_both", "qSort_both",
                              "bubbleSort_both", "_ZL15bubbleSort_bothPxPiii", 0,
                              "qSort", "_Z5qSortPiPKiii", 1, "bubbleSort",
                              "bubbleSort", "_ZL10bubbleSortPiii", 0,
                              "qSort_both", "_Z10qSort_bothPxPiPKxi", 1, "bubbleSort_both",
                              "freeA", "_Z5freeAP4astr", 0,
-                             "gridInfo", "_Z8gridInfoPiS_S_S_", 1, "omp_get_max_threads",
-                        "gridInfo|npRow|0", 1, "omp_get_max_threads",
-                        "gridInfo|npCol|0", 1, "omp_get_max_threads",
-                        "gridInfo|myRow|0", 1, "omp_get_max_threads",
-                        "gridInfo|myCol|0", 1, "omp_get_max_threads",
-                        "gridInfo|threadNum|0", 1, "omp_get_max_threads",
-                        "pairwiseAlign|simMatrix|0", 2, "omp_get_max_threads", "gridInfo",
-                        "pairwiseAlign|maxReports|0", 3, "omp_get_max_threads", "gridInfo", "getSeconds",
-                        "pairwiseAlign|minSeparation|0", 3, "omp_get_max_threads", "gridInfo", "getSeconds",
+                             "gridInfo", "_Z8gridInfoPiS_S_S_", 0,
+                        "pairwiseAlign|maxReports|0", 1, "getSeconds",
+                        "pairwiseAlign|minSeparation|0", 1, "getSeconds",
                         "pairwiseAlign|sortReports|0", 1, "getSeconds",
                         "pairwiseAlign|report|0", 1, "getSeconds",
                         "pairwiseAlign|index|0", 1, "getSeconds",
@@ -6997,11 +6952,7 @@ static int module_init() {
                         "pairwiseAlign|jBeg|0", 1, "getSeconds",
                         "pairwiseAlign|jEnd|0", 1, "getSeconds",
                         "pairwiseAlign|myRow|0", 1, "pairwiseAlign",
-                        "pairwiseAlign|myCol|0", 2, "omp_get_max_threads", "gridInfo",
-                        "pairwiseAlign|npRow|0", 2, "omp_get_max_threads", "gridInfo",
-                        "pairwiseAlign|npCol|0", 2, "omp_get_max_threads", "gridInfo",
                         "pairwiseAlign|threadNum|0", 1, "getSeconds",
-                        "pairwiseAlign|matchLimit|0", 2, "omp_get_max_threads", "gridInfo",
                         "pairwiseAlign|mainSeq|0", 1, "getSeconds",
                         "pairwiseAlign|matchSeq|0", 1, "getSeconds",
                         "pairwiseAlign|weights|0", 1, "getSeconds",
@@ -7009,11 +6960,12 @@ static int module_init() {
                         "pairwiseAlign|scores|0", 1, "getSeconds",
                         "pairwiseAlign|V|0", 1, "getSeconds",
                         "pairwiseAlign|F|0", 1, "getSeconds",
-                        "pairwiseAlign|llMinScore|0", 3, "omp_get_max_threads", "gridInfo", "getSeconds",
-                        "pairwiseAlign|A|0", 3, "omp_get_max_threads", "gridInfo", "getSeconds",
+                        "pairwiseAlign|llMinScore|0", 1, "getSeconds",
+                        "pairwiseAlign|A|0", 1, "getSeconds",
                         "pairwiseAlign|beginTime|0", 1, "getSeconds",
         "bubbleSort", 0UL, (int)3, 7066887875038562656UL, 0UL, 0UL,
         "bubbleSort_both", 0UL, (int)4, 7066887875038562788UL, 7066887875038562789UL, 0UL, 0UL,
+        "gridInfo", 0UL, (int)4, 7066887875038562930UL, 7066887875038562931UL, 7066887875038562928UL, 7066887875038562929UL,
         "qSort_both", 0UL, (int)4, 7066887875038564023UL, 7066887875038564361UL, 7066887875038563905UL, 0UL,
         "qSort", 0UL, (int)4, 7066887875038564011UL, 7066887875038564361UL, 0UL, 0UL,
         "qSort_both", 0UL, (int)4, 7066887875038564023UL, 7066887875038564361UL, 7066887875038563905UL, 0UL,

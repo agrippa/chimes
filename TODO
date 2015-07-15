@@ -53,3 +53,24 @@
     stack. Taking the address of something forces the compiler to place it on
     the stack and to keep that stack value updated, which can have significant
     performance implications for some apps (and none for others).
+12. As it stands today, the overhead tracking system relies on two inputs: the
+    total wall clock time since the start of the program, and the sum of all
+    time spent in high-overhead libchimes functions (which includes most of
+    them). This system's main fault is that in multi-threaded programs with
+    libchimes calls from multiple threads, we may over-estimate the overhead of
+    the program. One way to resolve this is to do a better job of distinguishing
+    libchimes calls that operate in multi-threaded context and those that
+    operate primarily in single-threaded context, and divide the overhead of
+    commonly-multithreaded calls by the number of active threads. However, in
+    practice this may not make a difference as many of these API calls grab
+    locks leading to a serialization of overheads so that the sum of all
+    libchimes function time approximates wallclock time instead of CPU time.
+13. I believe there is a race between free_helper removing a heap allocation
+    from the heap and malloc_helper inserting a new one. If a free releases some
+    memory that a malloc in another thread immediately allocates, it is possibly
+    for malloc_helper to grab the lock on the heap before the free can remove
+    that entry (causing a VERIFY that the void* allocated is not already in the
+    heap to fail). We can fix this by removing the VERIFY in the malloc_helper
+    and just setting the value for any existing mapping, and only removing the
+    mapping in free_helper if some unique ID remains the same (maybe mark
+    heap_allocations with the allocating thread?).

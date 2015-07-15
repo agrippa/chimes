@@ -568,7 +568,7 @@ InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1791 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1722 1 const int ____chimes_did_disable28 = new_stack((void *)(&CalcElemVolumeScalar), "CalcElemVolumeScalar", &____must_manage_CalcElemVolumeScalar, 24, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1792 1 rm_stack(false, 0UL, "CalcElemVolumeScalar", &____must_manage_CalcElemVolumeScalar, ____alias_loc_id_50, ____chimes_did_disable28, false); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1799 59 rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_7, ____chimes_did_disable29, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1796 1 const int ____chimes_did_disable29 = new_stack((void *)(&CalcElemVolume), "CalcElemVolume", &____must_manage_CalcElemVolume, 3, 0, (size_t)(5910949521486994509UL), (size_t)(5910949521486994510UL), (size_t)(5910949521486994511UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1796 1 const int ____chimes_did_disable29 = new_stack((void *)(&CalcElemVolume), "CalcElemVolume", &____must_manage_CalcElemVolume, 3, 0, (size_t)(5910949521486994511UL), (size_t)(5910949521486994512UL), (size_t)(5910949521486994513UL)); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1800 1 rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_7, ____chimes_did_disable29, false); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1821 63 rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_31, ____chimes_did_disable30, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1809 1 const int ____chimes_did_disable30 = new_stack((void *)(&AreaFace), "AreaFace", &____must_manage_AreaFace, 12, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
@@ -1322,7 +1322,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1785 32 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1791 3 Real_t ____chimes_ret_var_3; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1791 30 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1796 2 const int ____chimes_did_disable29 = new_stack((void *)(&CalcElemVolume), "CalcElemVolume", &____must_manage_CalcElemVolume, 3, 0, (size_t)(5910949521486994509UL), (size_t)(5910949521486994510UL), (size_t)(5910949521486994511UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1796 2 const int ____chimes_did_disable29 = new_stack((void *)(&CalcElemVolume), "CalcElemVolume", &____must_manage_CalcElemVolume, 3, 0, (size_t)(5910949521486994511UL), (size_t)(5910949521486994512UL), (size_t)(5910949521486994513UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1796 231 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1797 3 Real_t ____chimes_ret_var_4; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1797 30 
@@ -1850,118 +1850,118 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2996 138 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3011 2 const int ____chimes_did_disable51 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(5910949521486994420UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3011 139 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 3  Index_t edgeElems;  edgeElems = (atoi(argv[1])) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 36 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3013 2  Index_t edgeNodes;  edgeNodes = (edgeElems+1) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3013 34 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3015 2 Real_t tx; Real_t ty; Real_t tz; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3015 20 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3016 2 Index_t nidx; Index_t zidx; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3016 21 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3017 2 Index_t domElems; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3017 19 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3050 2 {  Index_t plane; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3067 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3050 7  plane = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3050 22 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3052 3 {  Index_t row; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3064 3  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3052 8  row = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3052 21 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3054 4 {  Index_t col; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3061 4  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3054 9  col = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3054 22 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3074 2 {  Index_t plane; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3092 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3074 7  plane = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3074 22 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3075 3 {  Index_t row; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3090 3  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3075 8  row = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3075 21 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3076 4 {  Index_t col; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3088 4  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3076 9  col = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3076 22 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3077 5  Index_t *localNode;  localNode = (domain.nodelist + (8 * zidx)) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3077 54 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3097 2 {  Index_t i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3099 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3097 7  i = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3097 18 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3140 2 {  Index_t i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3159 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3140 7  i = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3140 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 3 Real_t x_local[8]; Real_t y_local[8]; Real_t z_local[8]; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 45 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3142 3  Index_t *elemToNode;  elemToNode = (domain.nodelist + (8 * i)) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3142 51 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3143 3 {  Index_t lnode; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3149 3  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3143 8  lnode = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3143 24 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3145 4  Index_t gnode;  gnode = (elemToNode[lnode]) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3145 37 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3152 3  Real_t volume;  volume = (CalcElemVolume(x_local, y_local, z_local )) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3152 61 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3155 3 {  Index_t j; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3158 3  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3155 8  j = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3155 19 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3156 4  Index_t idx;  idx = (elemToNode[j]) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3156 32 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3166 2 {  Index_t i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3175 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3166 7  i = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3166 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3167 3  Index_t planeInc;  planeInc = (i*edgeNodes*edgeNodes) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3167 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3168 3  Index_t rowInc;  rowInc = (i*edgeNodes) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3168 32 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3169 3 {  Index_t j; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3174 3  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3169 8  j = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3169 19 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3179 2 {  Index_t i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3182 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3179 7  i = (1) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3179 18 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3185 2 {  Index_t i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3188 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3185 7  i = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3185 18 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3189 2 {  Index_t i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3192 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3189 7  i = (edgeElems) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3189 26 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3194 2 {  Index_t i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3197 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3194 7  i = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3194 18 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3198 2 {  Index_t i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3201 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3198 7  i = (edgeElems*edgeElems) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3198 36 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3204 2 {  Index_t i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3206 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3204 7  i = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3204 18 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3210 2 {  Index_t i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3221 2  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3210 7  i = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3210 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3211 3  Index_t planeInc;  planeInc = (i*edgeElems*edgeElems) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3211 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3212 3  Index_t rowInc;  rowInc = (i*edgeElems) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3212 32 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3213 3 {  Index_t j; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3220 3  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3213 8  j = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3213 19 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3225 2  timeval start;  timeval end; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3225 20 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 2  timeval start;  timeval end; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 20 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3015 3  Index_t edgeElems;  edgeElems = (atoi(argv[1])) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3015 36 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3016 2  Index_t edgeNodes;  edgeNodes = (edgeElems+1) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3016 34 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3018 2 Real_t tx; Real_t ty; Real_t tz; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3018 20 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3019 2 Index_t nidx; Index_t zidx; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3019 21 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3020 2 Index_t domElems; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3020 19 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3053 2 {  Index_t plane; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3070 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3053 7  plane = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3053 22 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3055 3 {  Index_t row; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3067 3  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3055 8  row = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3055 21 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3057 4 {  Index_t col; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3064 4  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3057 9  col = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3057 22 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3077 2 {  Index_t plane; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3095 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3077 7  plane = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3077 22 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3078 3 {  Index_t row; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3093 3  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3078 8  row = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3078 21 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3079 4 {  Index_t col; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3091 4  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3079 9  col = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3079 22 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3080 5  Index_t *localNode;  localNode = (domain.nodelist + (8 * zidx)) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3080 54 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3100 2 {  Index_t i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3102 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3100 7  i = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3100 18 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3143 2 {  Index_t i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3162 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3143 7  i = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3143 18 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 3 Real_t x_local[8]; Real_t y_local[8]; Real_t z_local[8]; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 45 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3145 3  Index_t *elemToNode;  elemToNode = (domain.nodelist + (8 * i)) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3145 51 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3146 3 {  Index_t lnode; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3152 3  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3146 8  lnode = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3146 24 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3148 4  Index_t gnode;  gnode = (elemToNode[lnode]) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3148 37 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3155 3  Real_t volume;  volume = (CalcElemVolume(x_local, y_local, z_local )) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3155 61 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3158 3 {  Index_t j; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3161 3  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3158 8  j = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3158 19 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3159 4  Index_t idx;  idx = (elemToNode[j]) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3159 32 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3169 2 {  Index_t i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3178 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3169 7  i = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3169 18 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3170 3  Index_t planeInc;  planeInc = (i*edgeNodes*edgeNodes) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3170 44 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3171 3  Index_t rowInc;  rowInc = (i*edgeNodes) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3171 32 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3172 3 {  Index_t j; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3177 3  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3172 8  j = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3172 19 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3182 2 {  Index_t i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3185 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3182 7  i = (1) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3182 18 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3188 2 {  Index_t i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3191 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3188 7  i = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3188 18 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3192 2 {  Index_t i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3195 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3192 7  i = (edgeElems) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3192 26 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3197 2 {  Index_t i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3200 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3197 7  i = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3197 18 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3201 2 {  Index_t i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3204 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3201 7  i = (edgeElems*edgeElems) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3201 36 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3207 2 {  Index_t i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3209 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3207 7  i = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3207 18 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3213 2 {  Index_t i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3224 2  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3213 7  i = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3213 18 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3214 3  Index_t planeInc;  planeInc = (i*edgeElems*edgeElems) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3214 44 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3215 3  Index_t rowInc;  rowInc = (i*edgeElems) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3215 32 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3216 3 {  Index_t j; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3223 3  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3216 8  j = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3216 19 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3247 2  double elapsed_time;  elapsed_time = (double(end.tv_sec - start.tv_sec) + double(end.tv_usec - start.tv_usec) *1e-6) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3247 101 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3252 2  Index_t ElemId;  ElemId = (0) ;
@@ -2067,12 +2067,12 @@ InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2991 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2999 2  call_lbl_0: 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3003 2  call_lbl_1: 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3005 2  call_lbl_2: 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3040 2  call_lbl_0: 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3041 2  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3043 2  call_lbl_2: 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3044 2  call_lbl_3: 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3094 2  call_lbl_4: 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3152 20  call_lbl_5: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3043 2  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3044 2  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3046 2  call_lbl_2: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3047 2  call_lbl_3: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3097 2  call_lbl_4: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3155 20  call_lbl_5: 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3231 3  call_lbl_6: 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3232 3  call_lbl_7: 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3241 9  call_lbl_8: 
@@ -2584,18 +2584,18 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3005 43 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2996 137  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3010 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3040 15 ({ calling_npm("AllocateElemPersistent", 0); AllocateElemPersistent_npm(&domain, domain.numElem); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3040 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3041 15 ({ calling_npm("AllocateElemTemporary", 0); AllocateElemTemporary_npm(&domain, domain.numElem); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3041 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3043 15 ({ calling_npm("AllocateNodalPersistent", 0); AllocateNodalPersistent_npm(&domain, domain.numNode); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3043 62 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3044 15 ({ calling_npm("AllocateNodesets", 0); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3044 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3094 15 ({ calling_npm("AllocateNodeElemIndexes", 0); AllocateNodeElemIndexes_npm(&domain); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3094 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3152 43 ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x_local, y_local, z_local); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3152 84 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3043 15 ({ calling_npm("AllocateElemPersistent", 0); AllocateElemPersistent_npm(&domain, domain.numElem); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3043 61 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3044 15 ({ calling_npm("AllocateElemTemporary", 0); AllocateElemTemporary_npm(&domain, domain.numElem); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3044 61 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3046 15 ({ calling_npm("AllocateNodalPersistent", 0); AllocateNodalPersistent_npm(&domain, domain.numNode); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3046 62 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3047 15 ({ calling_npm("AllocateNodesets", 0); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3047 60 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3097 15 ({ calling_npm("AllocateNodeElemIndexes", 0); AllocateNodeElemIndexes_npm(&domain); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3097 46 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3155 43 ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x_local, y_local, z_local); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3155 84 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3231 16 ({ calling_npm("TimeIncrement", 0); TimeIncrement_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3231 30 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3232 16 ({ calling_npm("LagrangeLeapFrog", 0); LagrangeLeapFrog_npm(); })
@@ -2604,23 +2604,19 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3241 33 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3264 46 ({ calling_npm("FABS", 0); FABS_npm(domain.e[j*edgeElems+k] - domain.e[k*edgeElems+j]); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3264 100 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 4 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 21 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 3 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 20 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 22 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 39 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 41 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 58 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3225 3 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3225 16 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3225 19 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3225 30 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3011 136  ; timeval end;
-# 3011
-timeval start;
-# 3011
-Real_t z_local[8];
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 3 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 16 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 19 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 30 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3015 4 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3015 21 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 3 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 20 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 22 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 39 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 41 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 58 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3011 136  ; Real_t z_local[8];
 # 3011
 Real_t y_local[8];
 # 3011
@@ -2628,7 +2624,11 @@ Real_t x_local[8];
 # 3011
 Index_t edgeElems;
 # 3011
- register_stack_vars(4, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|start|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&start), (size_t)16, 0, 1, 0, "main|x_local|0", (int *)0x0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "main|edgeElems|0", (int *)0x0, "i32", (void *)(&edgeElems), (size_t)4, 0, 0, 0);  
+timeval end;
+# 3011
+timeval start;
+# 3011
+ register_stack_vars(4, "main|x_local|0", (int *)0x0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "main|edgeElems|0", (int *)0x0, "i32", (void *)(&edgeElems), (size_t)4, 0, 0, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|start|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&start), (size_t)16, 0, 1, 0);  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 103 14 len=4 SQRT_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 103 144  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 105 14 len=4 CBRT_resumable
@@ -3136,18 +3136,18 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3005 43 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2996 137  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3010 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3040 15 ({ calling_npm("AllocateElemPersistent", 0); AllocateElemPersistent_npm(&domain, domain.numElem); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3040 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3041 15 ({ calling_npm("AllocateElemTemporary", 0); AllocateElemTemporary_npm(&domain, domain.numElem); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3041 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3043 15 ({ calling_npm("AllocateNodalPersistent", 0); AllocateNodalPersistent_npm(&domain, domain.numNode); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3043 62 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3044 15 ({ calling_npm("AllocateNodesets", 0); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3044 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3094 15 ({ calling_npm("AllocateNodeElemIndexes", 0); AllocateNodeElemIndexes_npm(&domain); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3094 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3152 43 ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x_local, y_local, z_local); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3152 84 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3043 15 ({ calling_npm("AllocateElemPersistent", 0); AllocateElemPersistent_npm(&domain, domain.numElem); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3043 61 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3044 15 ({ calling_npm("AllocateElemTemporary", 0); AllocateElemTemporary_npm(&domain, domain.numElem); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3044 61 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3046 15 ({ calling_npm("AllocateNodalPersistent", 0); AllocateNodalPersistent_npm(&domain, domain.numNode); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3046 62 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3047 15 ({ calling_npm("AllocateNodesets", 0); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3047 60 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3097 15 ({ calling_npm("AllocateNodeElemIndexes", 0); AllocateNodeElemIndexes_npm(&domain); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3097 46 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3155 43 ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x_local, y_local, z_local); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3155 84 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3231 16 ({ calling_npm("TimeIncrement", 0); TimeIncrement_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3231 30 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3232 16 ({ calling_npm("LagrangeLeapFrog", 0); LagrangeLeapFrog_npm(); })
@@ -3156,23 +3156,19 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3241 33 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3264 46 ({ calling_npm("FABS", 0); FABS_npm(domain.e[j*edgeElems+k] - domain.e[k*edgeElems+j]); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3264 100 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 4 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 21 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 3 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 20 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 22 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 39 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 41 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3141 58 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3225 3 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3225 16 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3225 19 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3225 30 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3011 136  ; timeval end;
-# 3011
-timeval start;
-# 3011
-Real_t z_local[8];
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 3 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 16 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 19 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3012 30 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3015 4 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3015 21 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 3 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 20 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 22 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 39 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 41 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3144 58 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 3011 136  ; Real_t z_local[8];
 # 3011
 Real_t y_local[8];
 # 3011
@@ -3180,4 +3176,8 @@ Real_t x_local[8];
 # 3011
 Index_t edgeElems;
 # 3011
- register_stack_vars(4, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|start|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&start), (size_t)16, 0, 1, 0, "main|x_local|0", (int *)0x0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "main|edgeElems|0", (int *)0x0, "i32", (void *)(&edgeElems), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(8): { goto call_lbl_8; } default: { chimes_error(); } }  }  
+timeval end;
+# 3011
+timeval start;
+# 3011
+ register_stack_vars(4, "main|x_local|0", (int *)0x0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "main|edgeElems|0", (int *)0x0, "i32", (void *)(&edgeElems), (size_t)4, 0, 0, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|start|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&start), (size_t)16, 0, 1, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(8): { goto call_lbl_8; } default: { chimes_error(); } }  }  
