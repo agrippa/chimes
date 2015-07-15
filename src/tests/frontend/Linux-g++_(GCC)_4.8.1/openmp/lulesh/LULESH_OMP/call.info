@@ -59,18 +59,18 @@ malloc AllocateNodeElemIndexes 484 37 541 0
 malloc AllocateNodeElemIndexes 494 42 541 0
 fprintf AllocateNodeElemIndexes 516 13 0 768 14914
 exit AllocateNodeElemIndexes 518 13 0 0
-atoi main 3012 23 0 845
-AllocateElemPersistent main 3040 2 0 14912 0
-AllocateElemTemporary main 3041 2 0 14912 0
-AllocateNodalPersistent main 3043 2 0 14912 0
-AllocateNodesets main 3044 2 0 14912 0
-AllocateNodeElemIndexes main 3094 2 0 14912
-CalcElemVolume main 3152 19 0 802 803 804
-gettimeofday main 3226 2 0 825 14961
+gettimeofday main 3013 2 0 785 14961
+atoi main 3015 23 0 848
+AllocateElemPersistent main 3043 2 0 14912 0
+AllocateElemTemporary main 3044 2 0 14912 0
+AllocateNodalPersistent main 3046 2 0 14912 0
+AllocateNodesets main 3047 2 0 14912 0
+AllocateNodeElemIndexes main 3097 2 0 14912
+CalcElemVolume main 3155 19 0 804 805 806
 TimeIncrement main 3231 3 0
 LagrangeLeapFrog main 3232 3 0
 checkpoint main 3241 9 0
-gettimeofday main 3246 2 0 826 14961
+gettimeofday main 3246 2 0 786 14961
 printf main 3250 2 0 14915 0
 printf main 3253 2 0 14916
 printf main 3254 2 0 14917 0

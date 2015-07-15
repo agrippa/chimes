@@ -7,12 +7,12 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 9 5 int
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 9 10 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 12 6 int ____chimes_ret_var_0; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 12 30 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 10 5  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 11 5  call_lbl_2: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 10 5  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 11 5  call_lbl_1: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 8 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 10 18 (____chimes_does_checkpoint_foo_npm ? ( ({  calling((void*)foo, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(11918420205256332552UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 10 18 (____chimes_does_checkpoint_foo_npm ? ( ({  calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(11918420205256332552UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 10 24 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 11 18 checkpoint_transformed(2, 0)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 11 18 checkpoint_transformed(1, 0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 11 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 9 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 9 10 
@@ -20,12 +20,12 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 8 1
 # 8
  register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0);  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 8 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 10 18 (____chimes_does_checkpoint_foo_npm ? ( ({  calling((void*)foo, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(11918420205256332552UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 10 18 (____chimes_does_checkpoint_foo_npm ? ( ({  calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(11918420205256332552UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 10 24 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 11 18 checkpoint_transformed(2, 0)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 11 18 checkpoint_transformed(1, 0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 11 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 9 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 9 10 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 8 168  ; int b;
 # 8
- register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
+ register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

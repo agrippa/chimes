@@ -61,13 +61,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -1435,7 +1435,7 @@ int foo_npm(int a);
 int foo_quick(int a); int foo(int a);
 int foo_resumable(int a) {const int ____chimes_did_disable1 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (({ calling_npm("bar", 0); bar_npm(a); }) + 5); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; call_lbl_0: ____chimes_ret_var_1 = (({ calling_npm("bar", 0); bar_npm(a); }) + 5); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
@@ -1447,7 +1447,7 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = n
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
      int a; a = (5) ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
-       d = (({ calling_npm("foo", 0); foo_npm(a); })) ;
+        call_lbl_0: d = (({ calling_npm("foo", 0); foo_npm(a); })) ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
@@ -1467,7 +1467,7 @@ int bar(int c) { return (____chimes_replaying ? bar_resumable(c) : bar_quick(c))
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
 int foo_quick(int a) {const int ____chimes_did_disable1 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)) ; ; ;
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (({ calling_npm("bar", 0); bar_npm(a); }) + 5); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; call_lbl_0: ____chimes_ret_var_1 = (({ calling_npm("bar", 0); bar_npm(a); }) + 5); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
@@ -1479,7 +1479,7 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_s
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
      int a; a = (5) ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
-       d = (({ calling_npm("foo", 0); foo_npm(a); })) ;
+        call_lbl_0: d = (({ calling_npm("foo", 0); foo_npm(a); })) ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./npm.cpp"

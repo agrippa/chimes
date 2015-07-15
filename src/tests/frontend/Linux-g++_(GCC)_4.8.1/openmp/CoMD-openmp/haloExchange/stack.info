@@ -176,7 +176,7 @@
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsInCell|iTmp|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsInCell|ii|1 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsInCell|iTmp|1 " i32 " 32 0 0 0
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsInCell|tmp|0 " [na x %struct.AtomMsgSt = type { i32, i32, double, double, double, double, double, double }] " 448 0 1 AtomMsgSt 0 1 sortAtomsInCell
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsInCell|tmp|0 " [na x %struct.AtomMsgSt = type { i32, i32, double, double, double, double, double, double }] " 448 0 1 AtomMsgSt 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsById|a|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsById|b|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsById|aId|0 " i32 " 32 0 0 0

@@ -58,13 +58,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -1433,19 +1433,23 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = n
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 int a;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
- register_stack_vars(2, "main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(2, "main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-       a = (3 + 4 + 5 + 6) ;
+       a = (3 +
+# 9 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+        4 + 5 +
+# 10 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+        6) ;
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-       ptr = ((int *)malloc_wrapper(100, 12560481006554535957UL, 0, 0)) ;
+       ptr = ((int *) ({ void *____chimes_tmp_ptr = malloc(100); malloc_helper(____chimes_tmp_ptr, 100, 12560481006554535957UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
     ptr[0] = 42;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-     call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
+     call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (({ calling_npm("foo", 0); foo_npm(ptr[0], a); })); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; call_lbl_1: ____chimes_ret_var_1 = (({ calling_npm("foo", 0); foo_npm(ptr[0], a); })); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 # 3 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
@@ -1463,17 +1467,21 @@ int a;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
  register_stack_vars(2, "main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); ; ;
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-       a = (3 + 4 + 5 + 6) ;
+       a = (3 +
+# 9 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+        4 + 5 +
+# 10 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+        6) ;
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-       ptr = ((int *)malloc_wrapper(100, 12560481006554535957UL, 0, 0)) ;
+       ptr = ((int *) ({ void *____chimes_tmp_ptr = malloc(100); malloc_helper(____chimes_tmp_ptr, 100, 12560481006554535957UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
     ptr[0] = 42;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-     call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
+     call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (({ calling_npm("foo", 0); foo_npm(ptr[0], a); })); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; call_lbl_1: ____chimes_ret_var_1 = (({ calling_npm("foo", 0); foo_npm(ptr[0], a); })); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 

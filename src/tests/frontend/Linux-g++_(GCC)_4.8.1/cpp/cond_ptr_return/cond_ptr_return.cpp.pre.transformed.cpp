@@ -58,13 +58,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -1422,7 +1422,7 @@ void *foo_npm();
 void *foo_quick(); void *foo();
 void *foo_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-     int *A; A = ((int *)malloc_wrapper(sizeof(int) * 10, 1528448604885477001UL, 0, 0)) ;
+     int *A; A = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1528448604885477001UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
     A[0] = 1;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
@@ -1442,7 +1442,7 @@ rm_stack(true, 1528448604885477001UL, "foo", &____must_manage_foo, ____alias_loc
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1528448604885477000UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-     void *tmp; tmp = (({ calling_npm("foo", 0); foo_npm(); })) ;
+     void *tmp; call_lbl_0: tmp = (({ calling_npm("foo", 0); foo_npm(); })) ;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
@@ -1452,7 +1452,7 @@ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disa
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
 void *foo_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 0, 0) ; ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-     int *A; A = ((int *)malloc_wrapper(sizeof(int) * 10, 1528448604885477001UL, 0, 0)) ;
+     int *A; A = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1528448604885477001UL, 0, 0); ____chimes_tmp_ptr; })) ;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
     A[0] = 1;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
@@ -1472,7 +1472,7 @@ void *foo() { return (____chimes_replaying ? foo_resumable() : foo_quick()); }
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1528448604885477000UL)) ; ; ;
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-     void *tmp; tmp = (({ calling_npm("foo", 0); foo_npm(); })) ;
+     void *tmp; call_lbl_0: tmp = (({ calling_npm("foo", 0); foo_npm(); })) ;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
@@ -1484,7 +1484,7 @@ int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_re
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
 void *foo_npm() {
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-    int *A = (int *)malloc_wrapper(sizeof(int) * 10, 1528448604885477001UL, 0, 0);
+    int *A = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1528448604885477001UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
     A[0] = 1;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"

@@ -49,8 +49,8 @@
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|planeInc|1 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|rowInc|1 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|j|2 " i32 " 32 0 0 0
-/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|start|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 main
-/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|end|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 main
+/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|start|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|end|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|elapsed_time|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|ElemId|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|MaxAbsDiff|0 " double " 64 0 0 0

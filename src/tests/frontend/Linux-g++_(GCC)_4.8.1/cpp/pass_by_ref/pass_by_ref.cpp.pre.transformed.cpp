@@ -57,13 +57,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2223,13 +2223,13 @@ static void (*____chimes_extern_func_foo)(int *) = foo;
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11918420205256332568UL)) ; int b;
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
- register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
      ;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
-     call_lbl_1: (____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(11918420205256332552UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })));
+     call_lbl_0: (____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(11918420205256332552UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })));
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
-     call_lbl_2: checkpoint_transformed(2, 0);
+     call_lbl_1: checkpoint_transformed(1, 0);
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (b); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
@@ -2241,9 +2241,9 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
      ;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
-     call_lbl_1: (____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(11918420205256332552UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })));
+     call_lbl_0: (____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(11918420205256332552UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })));
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
-     call_lbl_2: checkpoint_transformed(2, 0);
+     call_lbl_1: checkpoint_transformed(1, 0);
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (b); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"

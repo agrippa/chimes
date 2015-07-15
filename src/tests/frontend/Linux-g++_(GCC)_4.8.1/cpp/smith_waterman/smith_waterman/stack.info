@@ -44,9 +44,9 @@
 /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|nchunks|0 " i64 " 64 0 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|prev|0 " i32 " 32 0 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|current|0 " i32 " 32 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|begin|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 main
-/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|end|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 main
-/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|intermediate|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 main
+/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|begin|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|end|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|intermediate|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|c|0 " i64 " 64 0 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|elapsed|0 " i64 " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp main|estimate|0 " i64 " 64 0 0 0

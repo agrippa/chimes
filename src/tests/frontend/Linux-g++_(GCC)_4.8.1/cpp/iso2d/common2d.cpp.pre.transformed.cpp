@@ -74,13 +74,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -4223,14 +4223,14 @@ rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alia
 # 71 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
 void setup_config_npm(config *conf, int argc, char **argv);static int (*____chimes_extern_func_getNumCUDADevices)(void) = getNumCUDADevices;static void (*____chimes_extern_func_parse_source)(char *, struct _source *) = parse_source;
 void setup_config_quick(config *conf, int argc, char **argv); void setup_config(config *conf, int argc, char **argv);
-void setup_config_resumable(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(16130283350629161862UL), (size_t)(0UL), (size_t)(16130283350629161864UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } ; ;
+void setup_config_resumable(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(16130283350629161862UL), (size_t)(0UL), (size_t)(16130283350629161864UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 72 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     int c; ;
 # 73 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     opterr = 0;
 # 74 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
 # 75 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-    ({ calling_npm("default_config", 0); default_config_npm(conf); });
+     call_lbl_0: ({ calling_npm("default_config", 0); default_config_npm(conf); });
 # 76 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
 # 77 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     while ((c = getopt(argc, argv, "x:y:z:i:svr:tp:g:w:d")) != -1) {
@@ -4269,11 +4269,11 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 94 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
             case 'p':
 # 95 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-                conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
+                conf->srcs = (source *) ({ void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); ; realloc_helper(____chimes_tmp_ptr, conf->srcs, sizeof(source) *
 # 96 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-                        (conf->nsrcs + 1), 16130283350629161792UL, 0, 1, (int)sizeof(struct _source), 0);
+                        (conf->nsrcs + 1), 16130283350629161792UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) ;
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-                 call_lbl_6: ({ source * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 6, ____alias_loc_id_0, 0UL, 2, (size_t)(16130283350629161764UL), (size_t)(16130283350629161792UL)); (parse_source)(optarg, ____chimes_arg1); }) ;
+                 call_lbl_1: ({ source * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(16130283350629161764UL), (size_t)(16130283350629161792UL)); (parse_source)(optarg, ____chimes_arg1); }) ;
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
                 conf->nsrcs++;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
@@ -4307,7 +4307,7 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 113 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
                 fprintf(stderr, "Missing argument to option %c\n", optopt);
 # 114 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-            default:
+             call_lbl_2: default:
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
                 ({ calling_npm("usage", 0); usage_npm(argv); });
 # 116 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
@@ -4318,7 +4318,7 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 119 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     if (conf->ngpus == -1) {
 # 120 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-         call_lbl_11: conf->ngpus = ({ calling((void*)getNumCUDADevices, 11, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
+         call_lbl_3: conf->ngpus = ({ calling((void*)getNumCUDADevices, 3, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     }
 # 122 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
@@ -4457,7 +4457,7 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
     opterr = 0;
 # 74 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
 # 75 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-    ({ calling_npm("default_config", 0); default_config_npm(conf); });
+     call_lbl_0: ({ calling_npm("default_config", 0); default_config_npm(conf); });
 # 76 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
 # 77 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     while ((c = getopt(argc, argv, "x:y:z:i:svr:tp:g:w:d")) != -1) {
@@ -4496,11 +4496,11 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 94 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
             case 'p':
 # 95 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-                conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
+                conf->srcs = (source *) ({ void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); ; realloc_helper(____chimes_tmp_ptr, conf->srcs, sizeof(source) *
 # 96 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-                        (conf->nsrcs + 1), 16130283350629161792UL, 0, 1, (int)sizeof(struct _source), 0);
+                        (conf->nsrcs + 1), 16130283350629161792UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) ;
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-                 call_lbl_6: ({ calling((void*)parse_source, 6, ____alias_loc_id_0, 0UL, 2, (size_t)(16130283350629161764UL), (size_t)(16130283350629161792UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) ;
+                 call_lbl_1: ({ calling((void*)parse_source, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(16130283350629161764UL), (size_t)(16130283350629161792UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) ;
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
                 conf->nsrcs++;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
@@ -4534,7 +4534,7 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 113 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
                 fprintf(stderr, "Missing argument to option %c\n", optopt);
 # 114 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-            default:
+             call_lbl_2: default:
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
                 ({ calling_npm("usage", 0); usage_npm(argv); });
 # 116 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
@@ -4545,7 +4545,7 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 119 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     if (conf->ngpus == -1) {
 # 120 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-         call_lbl_11: conf->ngpus = ({ calling((void*)getNumCUDADevices, 11, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
+         call_lbl_3: conf->ngpus = ({ calling((void*)getNumCUDADevices, 3, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     }
 # 122 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
@@ -4711,9 +4711,9 @@ void setup_config_npm(config *conf, int argc, char **argv) {
 # 94 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
             case 'p':
 # 95 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-                conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
+                conf->srcs = (source *) ({ void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); realloc_helper(____chimes_tmp_ptr, conf->srcs, sizeof(source) *
 # 96 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-                        (conf->nsrcs + 1), 16130283350629161792UL, 0, 1, (int)sizeof(struct _source), 0);
+                        (conf->nsrcs + 1), 16130283350629161792UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) ;
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
                 (*____chimes_extern_func_parse_source)(optarg, conf->srcs + conf->nsrcs);
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"

@@ -91,13 +91,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -5233,21 +5233,27 @@ double get_sphere_intersec_resumable(double cx, double cy, double cz, double rad
 # 84 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      double A; A = ((vx * vx + vy * vy + vz * vz)) ;
 # 85 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     double B; B = (2. * (px * vx + py * vy + pz * vz - vx * cx - vy * cy - vz * cz)) ;
+     double B; B = (2.0 * (px * vx + py * vy + pz * vz - vx * cx - vy *
+# 86 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+        cy - vz * cz)) ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     double C; C = (px * px - 2 * px * cx + cx * cx + py * py - 2 * py * cy + cy * cy + pz * pz - 2 * pz * cz + cz * cz - radius * radius) ;
+     double C; C = (px * px - 2 * px * cx + cx * cx + py * py - 2 * py *
+# 88 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+      cy + cy * cy + pz * pz - 2 * pz * cz + cz * cz -
+# 89 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+      radius * radius) ;
 # 90 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      double D; D = (B * B - 4 * A * C) ;
 # 91 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     double t; t = (-1.) ;
+     double t; t = (-1.0) ;
 # 92 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     if (D >= 0)
 # 93 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     {
 # 94 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       double t1; t1 = ((-B - sqrt(D)) / (2. * A)) ;
+       double t1; t1 = ((-B - sqrt(D)) / (2.0 * A)) ;
 # 95 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       double t2; t2 = ((-B + sqrt(D)) / (2. * A)) ;
+       double t2; t2 = ((-B + sqrt(D)) / (2.0 * A)) ;
 # 96 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
       if (t1 > t2) {t = t1; } else {t = t2; } ;
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5264,9 +5270,9 @@ double get_cos_angle_v1v2_resumable(double v1x, double v1y, double v1z, double v
 # 102 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
         double v2y, double v2z) {const int ____chimes_did_disable8 = new_stack((void *)(&get_cos_angle_v1v2), "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 103 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     double a; a = (({ calling_npm("modv", 0); modv_npm(v1x, v1y, v1z); })) ;
+     double a; call_lbl_0: a = (({ calling_npm("modv", 0); modv_npm(v1x, v1y, v1z); })) ;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     double b; b = (({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })) ;
+     double b; call_lbl_1: b = (({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })) ;
 # 105 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((v1x * v2x + v1y * v2y + v1z * v2z) / (a * b)); rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8, false); return ____chimes_ret_var_3; ;
 # 106 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5369,25 +5375,25 @@ void parse_config_resumable(int argc, char **argv, config *conf) {const int ____
 # 155 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             case 'v':
 # 156 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); });
+                 call_lbl_0: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); });
 # 157 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 break;
 # 158 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             case 'p':
 # 159 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); });
+                 call_lbl_1: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); });
 # 160 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 break;
 # 161 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             case 'l':
 # 162 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); });
+                 call_lbl_2: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); });
 # 163 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 break;
 # 164 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             case 'd':
 # 165 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); });
+                 call_lbl_3: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); });
 # 166 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 break;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5434,11 +5440,9 @@ void parse_config_resumable(int argc, char **argv, config *conf) {const int ____
                 *sixth_comma = '\0';
 # 189 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 190 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                conf->spheres = (sphere *)realloc_wrapper(conf->spheres,
-# 191 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                    (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0);
+                conf->spheres = (sphere *) ({ void *____chimes_tmp_ptr = realloc(conf->spheres, (conf->nspheres + 1) * sizeof(sphere)); ; realloc_helper(____chimes_tmp_ptr, conf->spheres, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); ____chimes_tmp_ptr; }) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
+                 call_lbl_4: ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
 # 196 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 conf->nspheres += 1;
 # 197 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5453,7 +5457,7 @@ void parse_config_resumable(int argc, char **argv, config *conf) {const int ____
 # 202 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
         case 'h':
 # 203 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-        default:
+         call_lbl_5: default:
 # 204 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             ({ calling_npm("usage", 0); usage_npm(argv); });
 # 205 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5475,14 +5479,14 @@ config conf;
 # 210 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
       ;
 # 211 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
+     call_lbl_0: ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
 # 212 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
+       screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc(sizeof(rgb) * conf.nx * conf.ny); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); ____chimes_tmp_ptr; })) ;
 # 213 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 214 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       f_max = (200.) ;
+       f_max = (200.0) ;
 # 215 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } for ( t = (0) ; t < conf.nt; t++) {
+    { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(9): { goto call_lbl_9; } default: { chimes_error(); } } } for ( t = (0) ; t < conf.nt; t++) {
 # 216 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
       int i; ;
 # 217 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5491,11 +5495,11 @@ config conf;
 # 219 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
       for (i = 0; i < conf.nx * conf.ny; i++) {
 # 220 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-         double x; x = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
+         double x; call_lbl_1: x = (({ calling_npm("get_coord", 0); get_coord_npm(0.0, conf.nx, -f_max, f_max, i / conf.ny); })) ;
 # 221 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-         double y; y = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })) ;
+         double y; call_lbl_2: y = (({ calling_npm("get_coord", 0); get_coord_npm(0.0, conf.ny, -f_max, f_max, i % conf.ny); })) ;
 # 222 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-         double t; t = (1.0E+10) ;
+         double t; t = (1.0E10) ;
 # 223 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
          double vx; vx = (x - conf.px) ;
 # 224 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5504,7 +5508,7 @@ config conf;
          double vz; vz = (-conf.pz) ;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 227 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-         double mod_v; mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
+         double mod_v; call_lbl_3: mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
 # 228 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
         vx = vx / mod_v;
 # 229 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5521,7 +5525,7 @@ config conf;
 # 235 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
            sphere *sphn; sphn = (conf.spheres + k) ;
 # 236 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-           double taux; taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
+           double taux; call_lbl_4: taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
 # 238 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
           if (taux < 0) {continue; };
 # 239 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5547,7 +5551,7 @@ config conf;
            double itz; itz = (conf.pz + t * vz) ;
 # 250 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 251 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-           double tauxla; tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+           double tauxla; call_lbl_5: tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
 # 254 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 255 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
           { int k; for ( k = (0) ; k < conf.nspheres; k++) {
@@ -5556,7 +5560,9 @@ config conf;
 # 257 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             if (sphnb != spherehit) {
 # 258 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-               double tauxlb; tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+               double tauxlb; call_lbl_6: tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz -
+# 261 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+                  conf.lz); })) ;
 # 262 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
               if (tauxlb > 0 && tauxla < tauxlb) {
 # 263 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5570,11 +5576,15 @@ config conf;
 # 267 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
           } }
 # 268 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-           double cost; cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })) ;
+           double cost; call_lbl_7: cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx -
+# 269 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+              spherehit->cx, ity - spherehit->cy, itz -
+# 270 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+              spherehit->cz); })) ;
 # 271 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
           if (cost < 0) {cost = 0; };
 # 272 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-           double fact; fact = (1.) ;
+           double fact; fact = (1.0) ;
 # 273 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
           if (bShadow == true) {fact = 0.5; } else {fact = 1.0; } ;
 # 274 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5598,13 +5608,13 @@ config conf;
 # 284 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
       { int i; for ( i = (0) ; i < conf.nspheres; i++) {
 # 285 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-          ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
+           call_lbl_8: ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
 # 286 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
       } }
 # 287 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 288 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 289 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-         call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
+         call_lbl_9: checkpoint_transformed(9, ____alias_loc_id_0);
 # 290 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 291 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 292 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5613,7 +5623,7 @@ config conf;
     } }
 # 294 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 295 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    free_wrapper(screen, 11205885433679075224UL);
+     ({ free(screen); free_helper(screen, 11205885433679075224UL); }) ;
 # 296 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12, false); return ____chimes_ret_var_4; ;
 # 297 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5722,21 +5732,27 @@ double get_sphere_intersec_quick(double cx, double cy, double cz, double radius,
 # 84 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      double A; A = ((vx * vx + vy * vy + vz * vz)) ;
 # 85 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     double B; B = (2. * (px * vx + py * vy + pz * vz - vx * cx - vy * cy - vz * cz)) ;
+     double B; B = (2.0 * (px * vx + py * vy + pz * vz - vx * cx - vy *
+# 86 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+        cy - vz * cz)) ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     double C; C = (px * px - 2 * px * cx + cx * cx + py * py - 2 * py * cy + cy * cy + pz * pz - 2 * pz * cz + cz * cz - radius * radius) ;
+     double C; C = (px * px - 2 * px * cx + cx * cx + py * py - 2 * py *
+# 88 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+      cy + cy * cy + pz * pz - 2 * pz * cz + cz * cz -
+# 89 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+      radius * radius) ;
 # 90 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      double D; D = (B * B - 4 * A * C) ;
 # 91 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     double t; t = (-1.) ;
+     double t; t = (-1.0) ;
 # 92 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     if (D >= 0)
 # 93 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     {
 # 94 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       double t1; t1 = ((-B - sqrt(D)) / (2. * A)) ;
+       double t1; t1 = ((-B - sqrt(D)) / (2.0 * A)) ;
 # 95 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       double t2; t2 = ((-B + sqrt(D)) / (2. * A)) ;
+       double t2; t2 = ((-B + sqrt(D)) / (2.0 * A)) ;
 # 96 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
       if (t1 > t2) {t = t1; } else {t = t2; } ;
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5754,9 +5770,9 @@ double get_cos_angle_v1v2_quick(double v1x, double v1y, double v1z, double v2x,
 # 102 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
         double v2y, double v2z) {const int ____chimes_did_disable8 = new_stack((void *)(&get_cos_angle_v1v2), "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 103 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     double a; a = (({ calling_npm("modv", 0); modv_npm(v1x, v1y, v1z); })) ;
+     double a; call_lbl_0: a = (({ calling_npm("modv", 0); modv_npm(v1x, v1y, v1z); })) ;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     double b; b = (({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })) ;
+     double b; call_lbl_1: b = (({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })) ;
 # 105 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((v1x * v2x + v1y * v2y + v1z * v2z) / (a * b)); rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8, false); return ____chimes_ret_var_3; ;
 # 106 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5858,25 +5874,25 @@ void parse_config_quick(int argc, char **argv, config *conf) {const int ____chim
 # 155 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             case 'v':
 # 156 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); });
+                 call_lbl_0: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); });
 # 157 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 break;
 # 158 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             case 'p':
 # 159 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); });
+                 call_lbl_1: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); });
 # 160 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 break;
 # 161 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             case 'l':
 # 162 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); });
+                 call_lbl_2: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); });
 # 163 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 break;
 # 164 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             case 'd':
 # 165 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); });
+                 call_lbl_3: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); });
 # 166 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 break;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5923,11 +5939,9 @@ void parse_config_quick(int argc, char **argv, config *conf) {const int ____chim
                 *sixth_comma = '\0';
 # 189 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 190 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                conf->spheres = (sphere *)realloc_wrapper(conf->spheres,
-# 191 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                    (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0);
+                conf->spheres = (sphere *) ({ void *____chimes_tmp_ptr = realloc(conf->spheres, (conf->nspheres + 1) * sizeof(sphere)); ; realloc_helper(____chimes_tmp_ptr, conf->spheres, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); ____chimes_tmp_ptr; }) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
+                 call_lbl_4: ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
 # 196 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 conf->nspheres += 1;
 # 197 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5942,7 +5956,7 @@ void parse_config_quick(int argc, char **argv, config *conf) {const int ____chim
 # 202 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
         case 'h':
 # 203 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-        default:
+         call_lbl_5: default:
 # 204 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             ({ calling_npm("usage", 0); usage_npm(argv); });
 # 205 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5964,12 +5978,12 @@ config conf;
 # 210 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
       ;
 # 211 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
+     call_lbl_0: ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
 # 212 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
+       screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc(sizeof(rgb) * conf.nx * conf.ny); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); ____chimes_tmp_ptr; })) ;
 # 213 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 214 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       f_max = (200.) ;
+       f_max = (200.0) ;
 # 215 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); for ( t = (0) ; t < conf.nt; t++) {
 # 216 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5980,11 +5994,11 @@ config conf;
 # 219 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
       for (i = 0; i < conf.nx * conf.ny; i++) {
 # 220 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-         double x; x = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
+         double x; call_lbl_1: x = (({ calling_npm("get_coord", 0); get_coord_npm(0.0, conf.nx, -f_max, f_max, i / conf.ny); })) ;
 # 221 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-         double y; y = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })) ;
+         double y; call_lbl_2: y = (({ calling_npm("get_coord", 0); get_coord_npm(0.0, conf.ny, -f_max, f_max, i % conf.ny); })) ;
 # 222 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-         double t; t = (1.0E+10) ;
+         double t; t = (1.0E10) ;
 # 223 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
          double vx; vx = (x - conf.px) ;
 # 224 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5993,7 +6007,7 @@ config conf;
          double vz; vz = (-conf.pz) ;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 227 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-         double mod_v; mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
+         double mod_v; call_lbl_3: mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
 # 228 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
         vx = vx / mod_v;
 # 229 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -6010,7 +6024,7 @@ config conf;
 # 235 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
            sphere *sphn; sphn = (conf.spheres + k) ;
 # 236 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-           double taux; taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
+           double taux; call_lbl_4: taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
 # 238 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
           if (taux < 0) {continue; };
 # 239 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -6036,7 +6050,7 @@ config conf;
            double itz; itz = (conf.pz + t * vz) ;
 # 250 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 251 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-           double tauxla; tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+           double tauxla; call_lbl_5: tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
 # 254 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 255 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
           { int k; for ( k = (0) ; k < conf.nspheres; k++) {
@@ -6045,7 +6059,9 @@ config conf;
 # 257 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
             if (sphnb != spherehit) {
 # 258 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-               double tauxlb; tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+               double tauxlb; call_lbl_6: tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz -
+# 261 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+                  conf.lz); })) ;
 # 262 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
               if (tauxlb > 0 && tauxla < tauxlb) {
 # 263 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -6059,11 +6075,15 @@ config conf;
 # 267 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
           } }
 # 268 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-           double cost; cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })) ;
+           double cost; call_lbl_7: cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx -
+# 269 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+              spherehit->cx, ity - spherehit->cy, itz -
+# 270 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
+              spherehit->cz); })) ;
 # 271 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
           if (cost < 0) {cost = 0; };
 # 272 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-           double fact; fact = (1.) ;
+           double fact; fact = (1.0) ;
 # 273 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
           if (bShadow == true) {fact = 0.5; } else {fact = 1.0; } ;
 # 274 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -6087,13 +6107,13 @@ config conf;
 # 284 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
       { int i; for ( i = (0) ; i < conf.nspheres; i++) {
 # 285 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-          ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
+           call_lbl_8: ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
 # 286 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
       } }
 # 287 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 288 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 289 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-         call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
+         call_lbl_9: checkpoint_transformed(9, ____alias_loc_id_0);
 # 290 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 291 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 292 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -6102,7 +6122,7 @@ config conf;
     } }
 # 294 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 295 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    free_wrapper(screen, 11205885433679075224UL);
+     ({ free(screen); free_helper(screen, 11205885433679075224UL); }) ;
 # 296 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12, false); return ____chimes_ret_var_4; ;
 # 297 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -6392,9 +6412,7 @@ void parse_config_npm(int argc, char **argv, config *conf) {
                 *sixth_comma = '\0';
 # 189 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 190 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                conf->spheres = (sphere *)realloc_wrapper(conf->spheres,
-# 191 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                    (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0);
+                conf->spheres = (sphere *) ({ void *____chimes_tmp_ptr = realloc(conf->spheres, (conf->nspheres + 1) * sizeof(sphere)); realloc_helper(____chimes_tmp_ptr, conf->spheres, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); ____chimes_tmp_ptr; }) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1));
 # 196 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"

@@ -80,13 +80,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -3103,11 +3103,11 @@ void ljDestroy_resumable(BasePotential** inppot)
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
 # 100 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
+    LjPotential *pot; pot = ((LjPotential*)(*inppot)) ;
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   free_wrapper(pot, 15692222973149250874UL);
+    ({ free(pot); free_helper(pot, 15692222973149250874UL); }) ;
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    *inppot = __null;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3124,7 +3124,7 @@ BasePotential* initLjPot_resumable(void)
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential *)malloc_wrapper(sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy))) ;
+    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LjPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); ____chimes_tmp_ptr; })) ;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->force = ljForce;
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3162,7 +3162,7 @@ void ljPrint_resumable(FILE* file, BasePotential* pot)
 # 130 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(15692222973149251488UL), (size_t)(15692222973149251489UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 131 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *ljPot; ljPot = ((LjPotential *)pot) ;
+    LjPotential *ljPot; ljPot = ((LjPotential*) pot) ;
 # 132 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Potential type   : Lennard-Jones\n");
 # 133 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3207,9 +3207,9 @@ real_t rCut2;
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t epsilon;
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- if (____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(9, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(9, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential *)s->pot) ;
+    LjPotential *pot; pot = ((LjPotential *) s->pot) ;
 # 146 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     real_t sigma; sigma = (pot->sigma) ;
 # 147 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3217,33 +3217,33 @@ real_t epsilon;
 # 148 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     real_t rCut; rCut = (pot->cutoff) ;
 # 149 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      rCut2 = (rCut * rCut) ;
+      rCut2 = (rCut*rCut) ;
 # 150 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 151 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 152 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      ePot = (0.) ;
+      ePot = (0.0) ;
 # 153 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    s->ePotential = 0.0;
 # 154 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    int fSize; fSize = (s->boxes->nTotalBoxes * 64) ;
+    int fSize; fSize = (s->boxes->nTotalBoxes*64) ;
 # 155 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    { int iii; for ( iii = (0) ; iii<fSize; ++iii)
 # 156 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    {
 # 157 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-       ({ calling((void*)zeroReal3, -1, 0, 0UL, 1, (size_t)(15692222973149251140UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
+       call_lbl_0: ({ calling((void*)zeroReal3, 0, 0, 0UL, 1, (size_t)(15692222973149251140UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
 # 158 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       s->atoms->U[iii] = 0.;
 # 159 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    } }
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 161 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      s6 = (sigma * sigma * sigma * sigma * sigma * sigma) ;
+      s6 = (sigma*sigma*sigma*sigma*sigma*sigma) ;
 # 162 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 163 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    real_t rCut6; rCut6 = (s6 / (rCut2 * rCut2 * rCut2)) ;
+    real_t rCut6; rCut6 = (s6 / (rCut2*rCut2*rCut2)) ;
 # 164 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      eShift = (1. * rCut6 * (rCut6 - 1.)) ;
+      eShift = (1.0 * rCut6 * (rCut6 - 1.0)) ;
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     ;
@@ -3276,14 +3276,14 @@ real_t epsilon;
 # 182 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 184 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-         { int iOff; int ii; for ( iOff = (iBox * 64) , ii = (0) ; ii<nIBox; ii++,iOff++)
+         { int iOff; int ii; for ( iOff = (iBox*64) , ii = (0) ; ii<nIBox; ii++,iOff++)
 # 185 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          {
 # 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
              int iId; iId = (s->atoms->gid[iOff]) ;
 # 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-            { int jOff; int ij; for ( jOff = (64 * jBox) , ij = (0) ; ij<nJBox; ij++,jOff++)
+            { int jOff; int ij; for ( jOff = (64*jBox) , ij = (0) ; ij<nJBox; ij++,jOff++)
 # 189 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             {
 # 190 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3293,7 +3293,7 @@ real_t epsilon;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue; };
 # 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                real_t r2; r2 = (0.) ;
+                real_t r2; r2 = (0.0) ;
 # 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                { int m1; for ( m1 = (0) ; m1<3; m1++)
 # 196 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3313,9 +3313,9 @@ real_t epsilon;
 # 205 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                r2 = 1.0/r2;
 # 206 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                real_t r6; r6 = (s6 * (r2 * r2 * r2)) ;
+                real_t r6; r6 = (s6 * (r2*r2*r2)) ;
 # 207 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                real_t eLocal; eLocal = (r6 * (r6 - 1.) - eShift) ;
+                real_t eLocal; eLocal = (r6 * (r6 - 1.0) - eShift) ;
 # 208 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                s->atoms->U[iOff] += 0.5*eLocal;
 # 209 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3328,7 +3328,7 @@ real_t epsilon;
 # 217 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 218 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 219 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                real_t fr; fr = (-4. * epsilon * r6 * r2 * (12. * r6 - 6.)) ;
+                real_t fr; fr = (- 4.0*epsilon*r6*r2*(12.0*r6 - 6.0)) ;
 # 220 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                { int m2; for ( m2 = (0) ; m2<3; m2++)
 # 221 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3364,11 +3364,11 @@ void ljDestroy_quick(BasePotential** inppot)
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
 # 100 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
+    LjPotential *pot; pot = ((LjPotential*)(*inppot)) ;
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   free_wrapper(pot, 15692222973149250874UL);
+    ({ free(pot); free_helper(pot, 15692222973149250874UL); }) ;
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    *inppot = __null;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3383,7 +3383,7 @@ BasePotential* initLjPot_quick(void)
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; ; ;
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential *)malloc_wrapper(sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy))) ;
+    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LjPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); ____chimes_tmp_ptr; })) ;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->force = ljForce;
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3420,7 +3420,7 @@ void ljPrint_quick(FILE* file, BasePotential* pot)
 # 130 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(15692222973149251488UL), (size_t)(15692222973149251489UL)) ; ; ;
 # 131 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *ljPot; ljPot = ((LjPotential *)pot) ;
+    LjPotential *ljPot; ljPot = ((LjPotential*) pot) ;
 # 132 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Potential type   : Lennard-Jones\n");
 # 133 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3466,7 +3466,7 @@ real_t epsilon;
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  if (____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(9, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } ; ;
 # 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential *)s->pot) ;
+    LjPotential *pot; pot = ((LjPotential *) s->pot) ;
 # 146 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     real_t sigma; sigma = (pot->sigma) ;
 # 147 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3474,33 +3474,33 @@ real_t epsilon;
 # 148 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     real_t rCut; rCut = (pot->cutoff) ;
 # 149 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      rCut2 = (rCut * rCut) ;
+      rCut2 = (rCut*rCut) ;
 # 150 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 151 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 152 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      ePot = (0.) ;
+      ePot = (0.0) ;
 # 153 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    s->ePotential = 0.0;
 # 154 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    int fSize; fSize = (s->boxes->nTotalBoxes * 64) ;
+    int fSize; fSize = (s->boxes->nTotalBoxes*64) ;
 # 155 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    { int iii; for ( iii = (0) ; iii<fSize; ++iii)
 # 156 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    {
 # 157 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-       ({ calling((void*)zeroReal3, -1, 0, 0UL, 1, (size_t)(15692222973149251140UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
+       call_lbl_0: ({ calling((void*)zeroReal3, 0, 0, 0UL, 1, (size_t)(15692222973149251140UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
 # 158 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       s->atoms->U[iii] = 0.;
 # 159 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    } }
 # 160 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 161 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      s6 = (sigma * sigma * sigma * sigma * sigma * sigma) ;
+      s6 = (sigma*sigma*sigma*sigma*sigma*sigma) ;
 # 162 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 163 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    real_t rCut6; rCut6 = (s6 / (rCut2 * rCut2 * rCut2)) ;
+    real_t rCut6; rCut6 = (s6 / (rCut2*rCut2*rCut2)) ;
 # 164 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      eShift = (1. * rCut6 * (rCut6 - 1.)) ;
+      eShift = (1.0 * rCut6 * (rCut6 - 1.0)) ;
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     ;
@@ -3533,14 +3533,14 @@ real_t epsilon;
 # 182 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 184 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-         { int iOff; int ii; for ( iOff = (iBox * 64) , ii = (0) ; ii<nIBox; ii++,iOff++)
+         { int iOff; int ii; for ( iOff = (iBox*64) , ii = (0) ; ii<nIBox; ii++,iOff++)
 # 185 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          {
 # 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
              int iId; iId = (s->atoms->gid[iOff]) ;
 # 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-            { int jOff; int ij; for ( jOff = (64 * jBox) , ij = (0) ; ij<nJBox; ij++,jOff++)
+            { int jOff; int ij; for ( jOff = (64*jBox) , ij = (0) ; ij<nJBox; ij++,jOff++)
 # 189 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             {
 # 190 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3550,7 +3550,7 @@ real_t epsilon;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue; };
 # 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                real_t r2; r2 = (0.) ;
+                real_t r2; r2 = (0.0) ;
 # 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                { int m1; for ( m1 = (0) ; m1<3; m1++)
 # 196 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3570,9 +3570,9 @@ real_t epsilon;
 # 205 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                r2 = 1.0/r2;
 # 206 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                real_t r6; r6 = (s6 * (r2 * r2 * r2)) ;
+                real_t r6; r6 = (s6 * (r2*r2*r2)) ;
 # 207 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                real_t eLocal; eLocal = (r6 * (r6 - 1.) - eShift) ;
+                real_t eLocal; eLocal = (r6 * (r6 - 1.0) - eShift) ;
 # 208 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                s->atoms->U[iOff] += 0.5*eLocal;
 # 209 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3585,7 +3585,7 @@ real_t epsilon;
 # 217 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 218 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 219 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-                real_t fr; fr = (-4. * epsilon * r6 * r2 * (12. * r6 - 6.)) ;
+                real_t fr; fr = (- 4.0*epsilon*r6*r2*(12.0*r6 - 6.0)) ;
 # 220 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                { int m2; for ( m2 = (0) ; m2<3; m2++)
 # 221 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3627,7 +3627,7 @@ void ljDestroy_npm(BasePotential** inppot)
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! pot) {return; };
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   free_wrapper(pot, 15692222973149250874UL);
+    ({ free(pot); free_helper(pot, 15692222973149250874UL); }) ;
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    *inppot = __null;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3640,7 +3640,7 @@ BasePotential* initLjPot_npm(void)
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   LjPotential *pot = (LjPotential*)malloc_wrapper(sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy));
+   LjPotential *pot = (LjPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LjPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); ____chimes_tmp_ptr; }) ;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->force = ljForce;
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"

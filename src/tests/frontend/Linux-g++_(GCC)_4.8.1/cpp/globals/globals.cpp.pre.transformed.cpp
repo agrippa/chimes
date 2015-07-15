@@ -55,13 +55,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2221,7 +2221,7 @@ const char *hello_world = "hello world";
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16078043286575642298UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16078043286575642298UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
     a = 4;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
@@ -2229,7 +2229,7 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
     printf("auto global\n");
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
-     call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
+     call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (b + a); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
@@ -2243,7 +2243,7 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
     printf("auto global\n");
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
-     call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
+     call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (b + a); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
