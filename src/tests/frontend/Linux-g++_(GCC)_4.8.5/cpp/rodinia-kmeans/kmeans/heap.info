@@ -4,7 +4,7 @@
 200 24 341 malloc
 201 31 191 malloc 1 0
 202 34 193 malloc
-254 5 191 free
-255 5 407 free
-256 5 471 free
-257 5 341 free
+255 5 191 free
+256 5 425 free
+257 5 516 free
+258 5 341 free

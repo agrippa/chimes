@@ -3966,11 +3966,11 @@ int nwindows;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 float *z;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-double start_time;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 size_t nrecords;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 char *sandbox;
+# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+double start_time;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 float tmp_long;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -3986,7 +3986,7 @@ char dbname[64];
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 int k;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- register_stack_vars(12, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(12, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  FILE *flist; FILE *fp; ;
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4000,99 +4000,99 @@ int k;
         tmp_lat = (0) ; tmp_long = (0) ;
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(argc < 5) {
+        call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  fprintf(stderr, "Invalid set of arguments\n");
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(-1);
+ if(argc < 5) {
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+  fprintf(stderr, "Invalid set of arguments\n");
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(-1);
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- flist = fopen(argv[1], "r");
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(!flist) {
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  printf("error opening flist\n");
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(1);
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  }
+# 55 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 56 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ flist = fopen(argv[1], "r");
+# 57 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ if(!flist) {
+# 58 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  printf("error opening flist\n");
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(1);
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- k = atoi(argv[2]);
+ }
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- target_lat = atof(argv[3]);
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- target_long = atof(argv[4]);
+ k = atoi(argv[2]);
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ target_lat = atof(argv[3]);
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- neighbors = (struct neighbor *) ({ void *____chimes_tmp_ptr = malloc(k * sizeof(struct neighbor)); ; malloc_helper(____chimes_tmp_ptr, k*sizeof(struct neighbor), 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0); ____chimes_tmp_ptr; }) ;
+ target_long = atof(argv[4]);
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(neighbors == __null) {
+ neighbors = (struct neighbor *) ({ void *____chimes_tmp_ptr = malloc(k * sizeof(struct neighbor)); ; malloc_helper(____chimes_tmp_ptr, k*sizeof(struct neighbor), 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0); ____chimes_tmp_ptr; }) ;
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  fprintf(stderr, "no room for neighbors\n");
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(0);
+ if(neighbors == __null) {
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+  fprintf(stderr, "no room for neighbors\n");
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(0);
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- for( j = 0 ; j < k ; j++ ) {
+ }
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  neighbors[j].dist = 10000;
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+ for( j = 0 ; j < k ; j++ ) {
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  neighbors[j].dist = 10000;
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-       sandbox = (__null) ;
+ }
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-       nrecords = (0) ;
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+       sandbox = (__null) ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    while (!feof(flist)) {
+       nrecords = (0) ;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        fscanf(flist, "%s\n", dbname);
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+    while (!feof(flist)) {
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        fp = fopen(dbname, "r");
+        fscanf(flist, "%s\n", dbname);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        ((fp) ? static_cast<void> (0) : __assert_fail ("fp", "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c", 82, __PRETTY_FUNCTION__));
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+        fp = fopen(dbname, "r");
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        size_t nread; ;
+        ((fp) ? static_cast<void> (0) : __assert_fail ("fp", "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c", 84, __PRETTY_FUNCTION__));
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        do {
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-            sandbox = (char *) ({ void *____chimes_tmp_ptr = realloc(sandbox, (nrecords + 1) * 49); ; realloc_helper(____chimes_tmp_ptr, sandbox, (nrecords + 1) * 49, 9808122005516792060UL, 0, 0); ____chimes_tmp_ptr; }) ;
+        size_t nread; ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-            nread = fread(sandbox + (nrecords * 49), 49, 1, fp);
+        do {
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-            if (nread == 1) {nrecords++; };
+            sandbox = (char *) ({ void *____chimes_tmp_ptr = realloc(sandbox, (nrecords + 1) * 49); ; realloc_helper(____chimes_tmp_ptr, sandbox, (nrecords + 1) * 49, 9808122005516792063UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        } while (nread == 1);
+            nread = fread(sandbox + (nrecords * 49), 49, 1, fp);
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+            if (nread == 1) {nrecords++; };
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        fclose(fp);
+        } while (nread == 1);
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    fclose(flist);
+        fclose(fp);
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- fp = fopen(dbname, "r");
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(!fp) {
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  printf("error opening flist\n");
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(1);
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  }
+# 95 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+    fclose(flist);
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 97 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ fp = fopen(dbname, "r");
+# 98 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ if(!fp) {
+# 99 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  printf("error opening flist\n");
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(1);
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
+ }
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   ;
@@ -4217,11 +4217,11 @@ int nwindows;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 float *z;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-double start_time;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 size_t nrecords;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 char *sandbox;
+# 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+double start_time;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 float tmp_long;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4237,7 +4237,7 @@ char dbname[64];
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 int k;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- register_stack_vars(12, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); ; ;
+ register_stack_vars(12, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); ; ;
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  FILE *flist; FILE *fp; ;
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4251,99 +4251,99 @@ int k;
         tmp_lat = (0) ; tmp_long = (0) ;
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(argc < 5) {
+        call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  fprintf(stderr, "Invalid set of arguments\n");
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(-1);
+ if(argc < 5) {
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+  fprintf(stderr, "Invalid set of arguments\n");
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(-1);
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- flist = fopen(argv[1], "r");
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(!flist) {
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  printf("error opening flist\n");
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(1);
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  }
+# 55 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 56 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ flist = fopen(argv[1], "r");
+# 57 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ if(!flist) {
+# 58 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  printf("error opening flist\n");
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(1);
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- k = atoi(argv[2]);
+ }
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- target_lat = atof(argv[3]);
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- target_long = atof(argv[4]);
+ k = atoi(argv[2]);
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ target_lat = atof(argv[3]);
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- neighbors = (struct neighbor *) ({ void *____chimes_tmp_ptr = malloc(k * sizeof(struct neighbor)); ; malloc_helper(____chimes_tmp_ptr, k*sizeof(struct neighbor), 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0); ____chimes_tmp_ptr; }) ;
+ target_long = atof(argv[4]);
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(neighbors == __null) {
+ neighbors = (struct neighbor *) ({ void *____chimes_tmp_ptr = malloc(k * sizeof(struct neighbor)); ; malloc_helper(____chimes_tmp_ptr, k*sizeof(struct neighbor), 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0); ____chimes_tmp_ptr; }) ;
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  fprintf(stderr, "no room for neighbors\n");
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(0);
+ if(neighbors == __null) {
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+  fprintf(stderr, "no room for neighbors\n");
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(0);
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- for( j = 0 ; j < k ; j++ ) {
+ }
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  neighbors[j].dist = 10000;
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+ for( j = 0 ; j < k ; j++ ) {
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  neighbors[j].dist = 10000;
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-       sandbox = (__null) ;
+ }
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-       nrecords = (0) ;
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+       sandbox = (__null) ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    while (!feof(flist)) {
+       nrecords = (0) ;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        fscanf(flist, "%s\n", dbname);
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+    while (!feof(flist)) {
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        fp = fopen(dbname, "r");
+        fscanf(flist, "%s\n", dbname);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        ((fp) ? static_cast<void> (0) : __assert_fail ("fp", "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c", 82, __PRETTY_FUNCTION__));
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+        fp = fopen(dbname, "r");
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        size_t nread; ;
+        ((fp) ? static_cast<void> (0) : __assert_fail ("fp", "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c", 84, __PRETTY_FUNCTION__));
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        do {
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-            sandbox = (char *) ({ void *____chimes_tmp_ptr = realloc(sandbox, (nrecords + 1) * 49); ; realloc_helper(____chimes_tmp_ptr, sandbox, (nrecords + 1) * 49, 9808122005516792060UL, 0, 0); ____chimes_tmp_ptr; }) ;
+        size_t nread; ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-            nread = fread(sandbox + (nrecords * 49), 49, 1, fp);
+        do {
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-            if (nread == 1) {nrecords++; };
+            sandbox = (char *) ({ void *____chimes_tmp_ptr = realloc(sandbox, (nrecords + 1) * 49); ; realloc_helper(____chimes_tmp_ptr, sandbox, (nrecords + 1) * 49, 9808122005516792063UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        } while (nread == 1);
+            nread = fread(sandbox + (nrecords * 49), 49, 1, fp);
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+            if (nread == 1) {nrecords++; };
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        fclose(fp);
+        } while (nread == 1);
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    fclose(flist);
+        fclose(fp);
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- fp = fopen(dbname, "r");
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(!fp) {
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  printf("error opening flist\n");
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(1);
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  }
+# 95 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+    fclose(flist);
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 97 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ fp = fopen(dbname, "r");
+# 98 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ if(!fp) {
+# 99 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  printf("error opening flist\n");
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(1);
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
+ }
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   ;
@@ -4468,19 +4468,19 @@ double seconds_npm() {
 
 static int module_init() {
     init_module(9808122005516791887UL, 9, 2, 0, 3, 1, 0, 1, 2, 0, 5,
-                           &____alias_loc_id_0, (unsigned)32, (unsigned)0, (unsigned)0, (9808122005516791887UL + 26UL), (9808122005516791887UL + 27UL), (9808122005516791887UL + 28UL), (9808122005516791887UL + 29UL), (9808122005516791887UL + 30UL), (9808122005516791887UL + 31UL), (9808122005516791887UL + 32UL), (9808122005516791887UL + 33UL), (9808122005516791887UL + 34UL), (9808122005516791887UL + 35UL), (9808122005516791887UL + 36UL), (9808122005516791887UL + 38UL), (9808122005516791887UL + 39UL), (9808122005516791887UL + 40UL), (9808122005516791887UL + 41UL), (9808122005516791887UL + 42UL), (9808122005516791887UL + 43UL), (9808122005516791887UL + 44UL), (9808122005516791887UL + 45UL), (9808122005516791887UL + 46UL), (9808122005516791887UL + 47UL), (9808122005516791887UL + 48UL), (9808122005516791887UL + 49UL), (9808122005516791887UL + 50UL), (9808122005516791887UL + 51UL), (9808122005516791887UL + 52UL), (9808122005516791887UL + 53UL), (9808122005516791887UL + 93UL), (9808122005516791887UL + 173UL), (9808122005516791887UL + 183UL), (9808122005516791887UL + 289UL), (9808122005516791887UL + 493UL),
+                           &____alias_loc_id_0, (unsigned)32, (unsigned)0, (unsigned)0, (9808122005516791887UL + 26UL), (9808122005516791887UL + 27UL), (9808122005516791887UL + 28UL), (9808122005516791887UL + 29UL), (9808122005516791887UL + 30UL), (9808122005516791887UL + 31UL), (9808122005516791887UL + 32UL), (9808122005516791887UL + 33UL), (9808122005516791887UL + 34UL), (9808122005516791887UL + 35UL), (9808122005516791887UL + 36UL), (9808122005516791887UL + 38UL), (9808122005516791887UL + 39UL), (9808122005516791887UL + 40UL), (9808122005516791887UL + 41UL), (9808122005516791887UL + 42UL), (9808122005516791887UL + 43UL), (9808122005516791887UL + 44UL), (9808122005516791887UL + 45UL), (9808122005516791887UL + 46UL), (9808122005516791887UL + 47UL), (9808122005516791887UL + 48UL), (9808122005516791887UL + 49UL), (9808122005516791887UL + 50UL), (9808122005516791887UL + 51UL), (9808122005516791887UL + 52UL), (9808122005516791887UL + 53UL), (9808122005516791887UL + 96UL), (9808122005516791887UL + 176UL), (9808122005516791887UL + 186UL), (9808122005516791887UL + 289UL), (9808122005516791887UL + 493UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (9808122005516791887UL + 1UL), (9808122005516791887UL + 3UL), (9808122005516791887UL + 4UL),
-                           &____alias_loc_id_2, (unsigned)27, (unsigned)0, (unsigned)0, (9808122005516791887UL + 26UL), (9808122005516791887UL + 27UL), (9808122005516791887UL + 28UL), (9808122005516791887UL + 29UL), (9808122005516791887UL + 30UL), (9808122005516791887UL + 31UL), (9808122005516791887UL + 32UL), (9808122005516791887UL + 33UL), (9808122005516791887UL + 34UL), (9808122005516791887UL + 35UL), (9808122005516791887UL + 38UL), (9808122005516791887UL + 39UL), (9808122005516791887UL + 40UL), (9808122005516791887UL + 41UL), (9808122005516791887UL + 42UL), (9808122005516791887UL + 43UL), (9808122005516791887UL + 44UL), (9808122005516791887UL + 45UL), (9808122005516791887UL + 46UL), (9808122005516791887UL + 47UL), (9808122005516791887UL + 48UL), (9808122005516791887UL + 49UL), (9808122005516791887UL + 54UL), (9808122005516791887UL + 55UL), (9808122005516791887UL + 93UL), (9808122005516791887UL + 183UL), (9808122005516791887UL + 493UL),
+                           &____alias_loc_id_2, (unsigned)27, (unsigned)0, (unsigned)0, (9808122005516791887UL + 26UL), (9808122005516791887UL + 27UL), (9808122005516791887UL + 28UL), (9808122005516791887UL + 29UL), (9808122005516791887UL + 30UL), (9808122005516791887UL + 31UL), (9808122005516791887UL + 32UL), (9808122005516791887UL + 33UL), (9808122005516791887UL + 34UL), (9808122005516791887UL + 35UL), (9808122005516791887UL + 38UL), (9808122005516791887UL + 39UL), (9808122005516791887UL + 40UL), (9808122005516791887UL + 41UL), (9808122005516791887UL + 42UL), (9808122005516791887UL + 43UL), (9808122005516791887UL + 44UL), (9808122005516791887UL + 45UL), (9808122005516791887UL + 46UL), (9808122005516791887UL + 47UL), (9808122005516791887UL + 48UL), (9808122005516791887UL + 49UL), (9808122005516791887UL + 54UL), (9808122005516791887UL + 55UL), (9808122005516791887UL + 96UL), (9808122005516791887UL + 186UL), (9808122005516791887UL + 493UL),
                             "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (9808122005516791887UL + 1UL), (9808122005516791887UL + 2UL), 0UL,
                            "seconds", &(____chimes_does_checkpoint_seconds_npm),
                              (9808122005516791887UL + 38UL), (9808122005516791887UL + 493UL),
                              (9808122005516791887UL + 47UL), (9808122005516791887UL + 289UL),
-                             (9808122005516791887UL + 30UL), (9808122005516791887UL + 183UL),
+                             (9808122005516791887UL + 44UL), (9808122005516791887UL + 176UL),
+                             (9808122005516791887UL + 30UL), (9808122005516791887UL + 186UL),
                              (9808122005516791887UL + 28UL), (9808122005516791887UL + 451UL),
-                             (9808122005516791887UL + 43UL), (9808122005516791887UL + 173UL),
-                             (9808122005516791887UL + 29UL), (9808122005516791887UL + 93UL),
-                             (9808122005516791887UL + 36UL), (9808122005516791887UL + 173UL),
-                             (9808122005516791887UL + 451UL), (9808122005516791887UL + 92UL),
+                             (9808122005516791887UL + 29UL), (9808122005516791887UL + 96UL),
+                             (9808122005516791887UL + 36UL), (9808122005516791887UL + 176UL),
+                             (9808122005516791887UL + 451UL), (9808122005516791887UL + 95UL),
                              (9808122005516791887UL + 480UL), (9808122005516791887UL + 409UL),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,

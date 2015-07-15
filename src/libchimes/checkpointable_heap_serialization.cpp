@@ -1,3 +1,5 @@
+#include <string.h>
+
 #include "checkpointable_heap_serialization.h"
 #include "heap_serialization_wrapper.h"
 

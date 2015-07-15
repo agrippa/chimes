@@ -1,1 +1,1 @@
-323 323 #pragma omp parallel for private(i, status) shared(y, x, xmax, params, mode)
+114 114 #pragma omp parallel for schedule(static) shared(y, x, xmax, params)

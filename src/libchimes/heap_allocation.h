@@ -196,6 +196,11 @@ class heap_allocation {
             return elem_ptr_offsets;
         }
         void *get_tmp_buffer() { return tmp_buffer; }
+        void set_tmp_buffer(void *s) {
+            assert(tmp_buffer == NULL);
+            assert(s);
+            tmp_buffer = s;
+        }
         int get_is_cuda_alloc() { return is_cuda_alloc; }
 
         // Size can be updated on a realloc

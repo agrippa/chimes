@@ -1,11 +1,11 @@
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 96 10 : { 29 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 113 8 : {  } {  } call:isInteger { isInteger { 109 } }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 138 8 : { 30, 44 } {  } call:isInteger { isInteger { 109 } }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 115 8 : {  } {  } call:isInteger { isInteger { 112 } }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 98 10 : { 29 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 140 8 : { 31, 45 } {  } call:isInteger { isInteger { 112 } }
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 346 10 : { 60 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 73 10 : { 26, 27, 28 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 319 5 : { 35 } {  } call:checkpoint {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 309 2 : { 34 } {  } call:kernel_cpu { kernel_cpu { 59, 324, 663, 725, 748 } }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 296 5 : { 33, 37, 38, 39, 40, 41, 42, 45, 46, 47, 48, 49, 57, 324, 663, 725, 748, 855 } {  } call:checkpoint {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 193 10 : { 32, 44 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 176 10 : { 31, 43 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 168 10 : { 30, 44 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 75 10 : { 26, 27, 28, 30 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 319 5 : { 36 } {  } call:checkpoint {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 309 2 : { 35 } {  } call:kernel_cpu { kernel_cpu { 59, 324, 663, 725, 748 } }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 296 5 : { 34, 38, 39, 40, 41, 42, 43, 46, 47, 48, 49, 50, 324, 663, 725, 748, 855 } {  } call:checkpoint {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 195 10 : { 33, 45 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 178 10 : { 32, 44 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 170 10 : { 31, 45 } {  } call:get_time {  }

@@ -2774,44 +2774,44 @@ double *temp;
  char *tfile; char *pfile; ;
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+        call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if (argc != 7) { call_lbl_0: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
+# 224 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if ((grid_rows = atoi(argv[1])) <= 0 ||
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (grid_cols = atoi(argv[2])) <= 0 ||
+ if (argc != 7) { call_lbl_1: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (sim_time = atoi(argv[3])) <= 0 ||
+ if ((grid_rows = atoi(argv[1])) <= 0 ||
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (num_omp_threads = atoi(argv[4])) <= 0) { call_lbl_1: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 232 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  (grid_cols = atoi(argv[2])) <= 0 ||
+# 229 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  (sim_time = atoi(argv[3])) <= 0 ||
+# 230 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  (num_omp_threads = atoi(argv[4])) <= 0) { call_lbl_2: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- temp = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767237UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- power = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767244UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- result = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767251UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ temp = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767240UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 236 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if (!temp || !power) { call_lbl_2: ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
+ power = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767247UL, 0, 0); ____chimes_tmp_ptr; }) ;
+# 237 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ result = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767254UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ if (!temp || !power) { call_lbl_3: ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- tfile = argv[5];
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- pfile = argv[6];
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_3: ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); });
+ tfile = argv[5];
 # 243 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_4: ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); });
+ pfile = argv[6];
 # 244 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  call_lbl_4: ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); });
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-        call_lbl_5: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
+  call_lbl_5: ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); });
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  printf("Start computing the transient temperature\n");
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_6: ({ calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767251UL), (size_t)(0UL), (size_t)(10021604361511767237UL), (size_t)(10021604361511767244UL), (size_t)(0UL), (size_t)(0UL)); (compute_tran_temp)(result, sim_time, temp, power, grid_rows, grid_cols); }) ;
+  call_lbl_6: ({ calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767254UL), (size_t)(0UL), (size_t)(10021604361511767240UL), (size_t)(10021604361511767247UL), (size_t)(0UL), (size_t)(0UL)); (compute_tran_temp)(result, sim_time, temp, power, grid_rows, grid_cols); }) ;
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  printf("Ending simulation\n");
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
@@ -2821,9 +2821,9 @@ double *temp;
     printf("execution took %f s\n", end_time - start_time);
 # 264 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 264 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free(temp); free_helper(temp, 10021604361511767237UL); }) ;
+  ({ free(temp); free_helper(temp, 10021604361511767240UL); }) ;
 # 265 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free(power); free_helper(power, 10021604361511767244UL); }) ;
+  ({ free(power); free_helper(power, 10021604361511767247UL); }) ;
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6, false); return ____chimes_ret_var_1; ;
@@ -3156,44 +3156,44 @@ double *temp;
  char *tfile; char *pfile; ;
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+        call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if (argc != 7) { call_lbl_0: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
+# 224 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if ((grid_rows = atoi(argv[1])) <= 0 ||
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (grid_cols = atoi(argv[2])) <= 0 ||
+ if (argc != 7) { call_lbl_1: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (sim_time = atoi(argv[3])) <= 0 ||
+ if ((grid_rows = atoi(argv[1])) <= 0 ||
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (num_omp_threads = atoi(argv[4])) <= 0) { call_lbl_1: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 232 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  (grid_cols = atoi(argv[2])) <= 0 ||
+# 229 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  (sim_time = atoi(argv[3])) <= 0 ||
+# 230 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  (num_omp_threads = atoi(argv[4])) <= 0) { call_lbl_2: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- temp = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767237UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- power = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767244UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- result = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767251UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ temp = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767240UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 236 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if (!temp || !power) { call_lbl_2: ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
+ power = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767247UL, 0, 0); ____chimes_tmp_ptr; }) ;
+# 237 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ result = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767254UL, 0, 0); ____chimes_tmp_ptr; }) ;
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ if (!temp || !power) { call_lbl_3: ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- tfile = argv[5];
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- pfile = argv[6];
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_3: ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); });
+ tfile = argv[5];
 # 243 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_4: ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); });
+ pfile = argv[6];
 # 244 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  call_lbl_4: ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); });
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-        call_lbl_5: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
+  call_lbl_5: ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); });
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  printf("Start computing the transient temperature\n");
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_6: ({ calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767251UL), (size_t)(0UL), (size_t)(10021604361511767237UL), (size_t)(10021604361511767244UL), (size_t)(0UL), (size_t)(0UL)); compute_tran_temp_quick(result, sim_time, temp, power, grid_rows, grid_cols); }) ;
+  call_lbl_6: ({ calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767254UL), (size_t)(0UL), (size_t)(10021604361511767240UL), (size_t)(10021604361511767247UL), (size_t)(0UL), (size_t)(0UL)); compute_tran_temp_quick(result, sim_time, temp, power, grid_rows, grid_cols); }) ;
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  printf("Ending simulation\n");
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
@@ -3203,9 +3203,9 @@ double *temp;
     printf("execution took %f s\n", end_time - start_time);
 # 264 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 264 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free(temp); free_helper(temp, 10021604361511767237UL); }) ;
+  ({ free(temp); free_helper(temp, 10021604361511767240UL); }) ;
 # 265 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free(power); free_helper(power, 10021604361511767244UL); }) ;
+  ({ free(power); free_helper(power, 10021604361511767247UL); }) ;
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6, false); return ____chimes_ret_var_1; ;
@@ -3444,7 +3444,7 @@ void usage_npm(int argc, char **argv)
 static int module_init() {
     init_module(10021604361511766085UL, 20, 7, 3, 7, 5, 0, 5, 11, 0, 4,
                            &____alias_loc_id_0, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 845UL), (10021604361511766085UL + 846UL), (10021604361511766085UL + 847UL), (10021604361511766085UL + 848UL), (10021604361511766085UL + 849UL), (10021604361511766085UL + 850UL), (10021604361511766085UL + 851UL), (10021604361511766085UL + 852UL), (10021604361511766085UL + 853UL), (10021604361511766085UL + 854UL), (10021604361511766085UL + 855UL), (10021604361511766085UL + 856UL), (10021604361511766085UL + 857UL), (10021604361511766085UL + 858UL), (10021604361511766085UL + 860UL),
-                           &____alias_loc_id_1, (unsigned)16, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1080UL), (10021604361511766085UL + 1081UL), (10021604361511766085UL + 1082UL), (10021604361511766085UL + 1083UL), (10021604361511766085UL + 1084UL), (10021604361511766085UL + 1085UL), (10021604361511766085UL + 1087UL), (10021604361511766085UL + 1088UL), (10021604361511766085UL + 1089UL), (10021604361511766085UL + 1090UL), (10021604361511766085UL + 1091UL), (10021604361511766085UL + 1092UL), (10021604361511766085UL + 1152UL), (10021604361511766085UL + 1159UL), (10021604361511766085UL + 1166UL), (10021604361511766085UL + 1235UL),
+                           &____alias_loc_id_1, (unsigned)16, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1080UL), (10021604361511766085UL + 1081UL), (10021604361511766085UL + 1082UL), (10021604361511766085UL + 1083UL), (10021604361511766085UL + 1084UL), (10021604361511766085UL + 1085UL), (10021604361511766085UL + 1087UL), (10021604361511766085UL + 1088UL), (10021604361511766085UL + 1089UL), (10021604361511766085UL + 1090UL), (10021604361511766085UL + 1091UL), (10021604361511766085UL + 1092UL), (10021604361511766085UL + 1155UL), (10021604361511766085UL + 1162UL), (10021604361511766085UL + 1169UL), (10021604361511766085UL + 1235UL),
                            &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1UL), (10021604361511766085UL + 3UL), (10021604361511766085UL + 4UL),
                            &____alias_loc_id_3, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 26UL), (10021604361511766085UL + 27UL), (10021604361511766085UL + 28UL), (10021604361511766085UL + 29UL), (10021604361511766085UL + 30UL), (10021604361511766085UL + 31UL), (10021604361511766085UL + 32UL), (10021604361511766085UL + 33UL), (10021604361511766085UL + 34UL), (10021604361511766085UL + 35UL), (10021604361511766085UL + 36UL), (10021604361511766085UL + 37UL), (10021604361511766085UL + 38UL), (10021604361511766085UL + 835UL), (10021604361511766085UL + 836UL),
                            &____alias_loc_id_4, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 845UL), (10021604361511766085UL + 846UL), (10021604361511766085UL + 847UL), (10021604361511766085UL + 848UL), (10021604361511766085UL + 849UL), (10021604361511766085UL + 850UL), (10021604361511766085UL + 851UL), (10021604361511766085UL + 852UL), (10021604361511766085UL + 853UL), (10021604361511766085UL + 854UL), (10021604361511766085UL + 855UL), (10021604361511766085UL + 856UL), (10021604361511766085UL + 857UL), (10021604361511766085UL + 858UL), (10021604361511766085UL + 860UL),
@@ -3464,20 +3464,20 @@ static int module_init() {
                              (10021604361511766085UL + 959UL), (10021604361511766085UL + 968UL),
                              (10021604361511766085UL + 26UL), (10021604361511766085UL + 835UL),
                              (10021604361511766085UL + 27UL), (10021604361511766085UL + 836UL),
-                             (10021604361511766085UL + 1090UL), (10021604361511766085UL + 1118UL),
+                             (10021604361511766085UL + 1090UL), (10021604361511766085UL + 1121UL),
                              (10021604361511766085UL + 972UL), (10021604361511766085UL + 1039UL),
                              (10021604361511766085UL + 1079UL), (10021604361511766085UL + 1061UL),
                              (10021604361511766085UL + 1236UL), (10021604361511766085UL + 962UL),
-                             (10021604361511766085UL + 1087UL), (10021604361511766085UL + 1152UL),
+                             (10021604361511766085UL + 1087UL), (10021604361511766085UL + 1155UL),
                              (10021604361511766085UL + 978UL), (10021604361511766085UL + 995UL),
                              (10021604361511766085UL + 28UL), (10021604361511766085UL + 837UL),
                              (10021604361511766085UL + 845UL), (10021604361511766085UL + 953UL),
-                             (10021604361511766085UL + 1089UL), (10021604361511766085UL + 1166UL),
+                             (10021604361511766085UL + 1089UL), (10021604361511766085UL + 1169UL),
                              (10021604361511766085UL + 848UL), (10021604361511766085UL + 956UL),
                              (10021604361511766085UL + 1053UL), (10021604361511766085UL + 1079UL),
-                             (10021604361511766085UL + 1091UL), (10021604361511766085UL + 1118UL),
-                             (10021604361511766085UL + 1088UL), (10021604361511766085UL + 1159UL),
-                             (10021604361511766085UL + 1225UL), (10021604361511766085UL + 1118UL),
+                             (10021604361511766085UL + 1091UL), (10021604361511766085UL + 1121UL),
+                             (10021604361511766085UL + 1088UL), (10021604361511766085UL + 1162UL),
+                             (10021604361511766085UL + 1225UL), (10021604361511766085UL + 1121UL),
                              (10021604361511766085UL + 975UL), (10021604361511766085UL + 1042UL),
                              (10021604361511766085UL + 1082UL), (10021604361511766085UL + 1225UL),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
@@ -3485,7 +3485,7 @@ static int module_init() {
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "timezone", 64UL, 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
                              "single_iteration", "_Z16single_iterationPdS_S_iiddddd", 0,
-                             "main", "main", 8, "usage", "usage", "fatal", "read_input", "read_input", "seconds", "compute_tran_temp", "seconds",
+                             "main", "main", 8, "seconds", "usage", "usage", "fatal", "read_input", "read_input", "compute_tran_temp", "seconds",
                              "read_input", "_Z10read_inputPdiiPc", 3, "fatal", "fatal", "fatal",
                              "seconds", "_Z7secondsv", 0,
                              "compute_tran_temp", "_Z17compute_tran_tempPdiS_S_ii", 2, "single_iteration", "checkpoint",
@@ -3498,12 +3498,12 @@ static int module_init() {
         "fatal", 0UL, (int)1, 10021604361511767324UL,
         "fatal", 0UL, (int)1, 10021604361511767325UL,
         "fatal", 0UL, (int)1, 10021604361511767327UL,
+        "seconds", 0UL, (int)0,
         "usage", 0UL, (int)2, 0UL, 10021604361511767310UL,
         "usage", 0UL, (int)2, 0UL, 10021604361511767310UL,
         "fatal", 0UL, (int)1, 10021604361511767335UL,
-        "read_input", 0UL, (int)4, 10021604361511767237UL, 0UL, 0UL, 10021604361511767203UL,
-        "read_input", 0UL, (int)4, 10021604361511767244UL, 0UL, 0UL, 10021604361511767203UL,
-        "seconds", 0UL, (int)0,
+        "read_input", 0UL, (int)4, 10021604361511767240UL, 0UL, 0UL, 10021604361511767206UL,
+        "read_input", 0UL, (int)4, 10021604361511767247UL, 0UL, 0UL, 10021604361511767206UL,
         "seconds", 0UL, (int)0);
     register_global_var("global|t_chip", "double", (void *)(&t_chip), 8, 0, 0, 0UL, 0);
     register_global_var("global|chip_height", "double", (void *)(&chip_height), 8, 0, 0, 0UL, 0);

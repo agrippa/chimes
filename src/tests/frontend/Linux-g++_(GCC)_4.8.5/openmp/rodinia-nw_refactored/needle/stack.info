@@ -43,6 +43,6 @@
 /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|penalty|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|input_itemsets|0 " i32* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|referrence|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|index|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|idx|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|index|0 " i64 " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|idx|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|i|0 " i32 " 32 0 0 0

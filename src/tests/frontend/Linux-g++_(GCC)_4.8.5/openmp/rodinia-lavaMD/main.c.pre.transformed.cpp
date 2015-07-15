@@ -3230,9 +3230,7 @@ main_resumable( int argc,
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   char *argv [])
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(1242561836700799382UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-FOUR_VECTOR *fv_cpu;
+{const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(1242561836700799382UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; FOUR_VECTOR *fv_cpu;
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 double *qv_cpu;
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3244,7 +3242,9 @@ dim_str dim_cpu;
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 par_str par_cpu;
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- register_stack_vars(7, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|fv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&fv_cpu), (size_t)8, 1, 0, 0, "main|qv_cpu|0", (int *)0x0, "double*", (void *)(&qv_cpu), (size_t)8, 1, 0, 0, "main|rv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&rv_cpu), (size_t)8, 1, 0, 0, "main|box_cpu|0", (int *)0x0, "%struct.box_str*", (void *)(&box_cpu), (size_t)8, 1, 0, 0, "main|dim_cpu|0", (int *)0x0, "%struct.dim_str = type { i32, i32, i32, i32, i64, i64, i64, i64, i64 }", (void *)(&dim_cpu), (size_t)56, 0, 1, 0, "main|par_cpu|0", (int *)0x0, "%struct.par_str = type { double }", (void *)(&par_cpu), (size_t)8, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } default: { chimes_error(); } } } ; ;
+double start_time;
+# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ register_stack_vars(7, "main|fv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&fv_cpu), (size_t)8, 1, 0, 0, "main|qv_cpu|0", (int *)0x0, "double*", (void *)(&qv_cpu), (size_t)8, 1, 0, 0, "main|rv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&rv_cpu), (size_t)8, 1, 0, 0, "main|box_cpu|0", (int *)0x0, "%struct.box_str*", (void *)(&box_cpu), (size_t)8, 1, 0, 0, "main|dim_cpu|0", (int *)0x0, "%struct.dim_str = type { i32, i32, i32, i32, i64, i64, i64, i64, i64 }", (void *)(&dim_cpu), (size_t)56, 0, 1, 0, "main|par_cpu|0", (int *)0x0, "%struct.par_str = type { double }", (void *)(&par_cpu), (size_t)8, 0, 1, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } default: { chimes_error(); } } } ; ;
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3255,211 +3255,202 @@ par_str par_cpu;
  long long time0; ;
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_0: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 0, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
+        call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time1; ;
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time2; ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time3; ;
+ long long time1; ;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time4; ;
+ long long time2; ;
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time5; ;
+ long long time3; ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time6; ;
+ long long time4; ;
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time7; ;
+ long long time5; ;
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ long long time6; ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ long long time7; ;
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- int i; int j; int k; int l; int m; int n; ;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ int i; int j; int k; int l; int m; int n; ;
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   ;
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ;
+   ;
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ;
+   ;
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   ;
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   ;
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- int nh; ;
+  ;
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  ;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_1: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
+ int nh; ;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.cores_arg = 1;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.boxes1d_arg = 1;
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ dim_cpu.cores_arg = 1;
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ dim_cpu.boxes1d_arg = 1;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- for(dim_cpu.cur_arg=1; dim_cpu.cur_arg<argc; dim_cpu.cur_arg++){
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  if (strcmp(argv[dim_cpu.cur_arg], "-cores")==0) {{
+ for(dim_cpu.cur_arg=1; dim_cpu.cur_arg<argc; dim_cpu.cur_arg++){
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   if(argc>=dim_cpu.cur_arg+1){
+  if (strcmp(argv[dim_cpu.cur_arg], "-cores")==0) {{
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     call_lbl_2: if(alias_group_changed(____alias_loc_id_1) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (argv[dim_cpu.cur_arg + 1]); } calling((void*)isInteger, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(1242561836700798668UL)); (isInteger)(____chimes_arg0); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_1); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     dim_cpu.cores_arg = atoi(argv[dim_cpu.cur_arg+1]);
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     if(dim_cpu.cores_arg<0){
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-      printf("ERROR: Wrong value to -cores parameter, cannot be <=0\n");
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-       int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     }
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     dim_cpu.cur_arg = dim_cpu.cur_arg+1;
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    }
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    else{
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     printf("ERROR: Value to -cores parameter in not a number\n");
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-      int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    }
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   }
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   else{
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    printf("ERROR: Missing value to -cores parameter\n");
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   }
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  }; } else if(strcmp(argv[dim_cpu.cur_arg], "-boxes1d")==0){
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
    if(argc>=dim_cpu.cur_arg+1){
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 115 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     call_lbl_3: if(alias_group_changed(____alias_loc_id_0) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (argv[dim_cpu.cur_arg + 1]); } calling((void*)isInteger, 3, ____alias_loc_id_0, 0UL, 1, (size_t)(1242561836700798671UL)); (isInteger)(____chimes_arg0); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_0); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
+# 116 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     dim_cpu.cores_arg = atoi(argv[dim_cpu.cur_arg+1]);
+# 117 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     if(dim_cpu.cores_arg<0){
+# 118 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+      printf("ERROR: Wrong value to -cores parameter, cannot be <=0\n");
+# 119 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+       int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 120 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     }
+# 121 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     dim_cpu.cur_arg = dim_cpu.cur_arg+1;
+# 122 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    }
+# 123 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 124 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    else{
+# 125 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     printf("ERROR: Value to -cores parameter in not a number\n");
+# 126 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+      int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
+# 127 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    }
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   }
+# 129 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 130 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   else{
+# 131 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    printf("ERROR: Missing value to -cores parameter\n");
+# 132 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
+# 133 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   }
+# 134 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  }; } else if(strcmp(argv[dim_cpu.cur_arg], "-boxes1d")==0){
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     call_lbl_3: if(alias_group_changed(____alias_loc_id_2) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (argv[dim_cpu.cur_arg + 1]); } calling((void*)isInteger, 3, ____alias_loc_id_2, 0UL, 1, (size_t)(1242561836700798668UL)); (isInteger)(____chimes_arg1); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_2); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
+   if(argc>=dim_cpu.cur_arg+1){
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     dim_cpu.boxes1d_arg = atoi(argv[dim_cpu.cur_arg+1]);
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     if(dim_cpu.boxes1d_arg<0){
+     call_lbl_4: if(alias_group_changed(____alias_loc_id_2) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (argv[dim_cpu.cur_arg + 1]); } calling((void*)isInteger, 4, ____alias_loc_id_2, 0UL, 1, (size_t)(1242561836700798671UL)); (isInteger)(____chimes_arg1); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_2); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-      printf("ERROR: Wrong value to -boxes1d parameter, cannot be <=0\n");
+     dim_cpu.boxes1d_arg = atoi(argv[dim_cpu.cur_arg+1]);
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-       int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
+     if(dim_cpu.boxes1d_arg<0){
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     }
+      printf("ERROR: Wrong value to -boxes1d parameter, cannot be <=0\n");
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     dim_cpu.cur_arg = dim_cpu.cur_arg+1;
+       int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    }
+     }
 # 146 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     dim_cpu.cur_arg = dim_cpu.cur_arg+1;
 # 147 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    else{
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     printf("ERROR: Value to -boxes1d parameter in not a number\n");
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-      int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
     }
+# 148 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 149 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    else{
+# 150 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     printf("ERROR: Value to -boxes1d parameter in not a number\n");
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   }
+      int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    }
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   else{
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    printf("ERROR: Missing value to -boxes1d parameter\n");
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
    }
+# 154 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 155 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   else{
+# 156 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    printf("ERROR: Missing value to -boxes1d parameter\n");
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  }
+     int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   }
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  else{
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   printf("ERROR: Unknown parameter\n");
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   }
+# 160 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 161 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  else{
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   printf("ERROR: Unknown parameter\n");
 # 163 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- }
+    int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
 # 164 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  }
 # 165 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ }
 # 166 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- printf("Configuration used: cores = %d, boxes1d = %d\n", dim_cpu.cores_arg, dim_cpu.boxes1d_arg);
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_4: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 4, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
+ printf("Configuration used: cores = %d, boxes1d = %d\n", dim_cpu.cores_arg, dim_cpu.boxes1d_arg);
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  call_lbl_5: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 5, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- par_cpu.alpha = 0.5;
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_5: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 5, ____alias_loc_id_9, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_9); (*____chimes_extern_func_get_time)(); })));
+ par_cpu.alpha = 0.5;
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  call_lbl_6: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 6, ____alias_loc_id_9, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_9); (*____chimes_extern_func_get_time)(); })));
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.number_boxes = dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg;
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ dim_cpu.number_boxes = dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.space_elem = dim_cpu.number_boxes * 100;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.space_mem = dim_cpu.space_elem * sizeof(FOUR_VECTOR);
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.space_mem2 = dim_cpu.space_elem * sizeof(double);
+ dim_cpu.space_elem = dim_cpu.number_boxes * 100;
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ dim_cpu.space_mem = dim_cpu.space_elem * sizeof(FOUR_VECTOR);
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ dim_cpu.space_mem2 = dim_cpu.space_elem * sizeof(double);
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.box_mem = dim_cpu.number_boxes * sizeof(box_str);
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_6: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 6, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
+ dim_cpu.box_mem = dim_cpu.number_boxes * sizeof(box_str);
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 199 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-        call_lbl_7: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 200 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 201 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  call_lbl_7: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 7, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
+# 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.box_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 1242561836700798883UL, 0, 1, (int)sizeof(struct box_str), 0); ____chimes_tmp_ptr; }) ;
 # 207 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3662,9 +3653,7 @@ main_quick( int argc,
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   char *argv [])
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(1242561836700799382UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; double start_time;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-FOUR_VECTOR *fv_cpu;
+{const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(1242561836700799382UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; FOUR_VECTOR *fv_cpu;
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 double *qv_cpu;
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3676,7 +3665,9 @@ dim_str dim_cpu;
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 par_str par_cpu;
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- register_stack_vars(7, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|fv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&fv_cpu), (size_t)8, 1, 0, 0, "main|qv_cpu|0", (int *)0x0, "double*", (void *)(&qv_cpu), (size_t)8, 1, 0, 0, "main|rv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&rv_cpu), (size_t)8, 1, 0, 0, "main|box_cpu|0", (int *)0x0, "%struct.box_str*", (void *)(&box_cpu), (size_t)8, 1, 0, 0, "main|dim_cpu|0", (int *)0x0, "%struct.dim_str = type { i32, i32, i32, i32, i64, i64, i64, i64, i64 }", (void *)(&dim_cpu), (size_t)56, 0, 1, 0, "main|par_cpu|0", (int *)0x0, "%struct.par_str = type { double }", (void *)(&par_cpu), (size_t)8, 0, 1, 0); ; ;
+double start_time;
+# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ register_stack_vars(7, "main|fv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&fv_cpu), (size_t)8, 1, 0, 0, "main|qv_cpu|0", (int *)0x0, "double*", (void *)(&qv_cpu), (size_t)8, 1, 0, 0, "main|rv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&rv_cpu), (size_t)8, 1, 0, 0, "main|box_cpu|0", (int *)0x0, "%struct.box_str*", (void *)(&box_cpu), (size_t)8, 1, 0, 0, "main|dim_cpu|0", (int *)0x0, "%struct.dim_str = type { i32, i32, i32, i32, i64, i64, i64, i64, i64 }", (void *)(&dim_cpu), (size_t)56, 0, 1, 0, "main|par_cpu|0", (int *)0x0, "%struct.par_str = type { double }", (void *)(&par_cpu), (size_t)8, 0, 1, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0); ; ;
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3687,211 +3678,202 @@ par_str par_cpu;
  long long time0; ;
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_0: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 0, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
+        call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time1; ;
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time2; ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time3; ;
+ long long time1; ;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time4; ;
+ long long time2; ;
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time5; ;
+ long long time3; ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time6; ;
+ long long time4; ;
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- long long time7; ;
+ long long time5; ;
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ long long time6; ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ long long time7; ;
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- int i; int j; int k; int l; int m; int n; ;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ int i; int j; int k; int l; int m; int n; ;
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   ;
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ;
+   ;
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ;
+   ;
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   ;
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   ;
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- int nh; ;
+  ;
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  ;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_1: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
+ int nh; ;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.cores_arg = 1;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.boxes1d_arg = 1;
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ dim_cpu.cores_arg = 1;
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ dim_cpu.boxes1d_arg = 1;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- for(dim_cpu.cur_arg=1; dim_cpu.cur_arg<argc; dim_cpu.cur_arg++){
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  if (strcmp(argv[dim_cpu.cur_arg], "-cores")==0) {{
+ for(dim_cpu.cur_arg=1; dim_cpu.cur_arg<argc; dim_cpu.cur_arg++){
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   if(argc>=dim_cpu.cur_arg+1){
+  if (strcmp(argv[dim_cpu.cur_arg], "-cores")==0) {{
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     call_lbl_2: if(alias_group_changed(____alias_loc_id_1) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ calling((void*)isInteger, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(1242561836700798668UL)); (isInteger)(argv[dim_cpu.cur_arg + 1]); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_1); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     dim_cpu.cores_arg = atoi(argv[dim_cpu.cur_arg+1]);
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     if(dim_cpu.cores_arg<0){
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-      printf("ERROR: Wrong value to -cores parameter, cannot be <=0\n");
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-       int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     }
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     dim_cpu.cur_arg = dim_cpu.cur_arg+1;
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    }
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    else{
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     printf("ERROR: Value to -cores parameter in not a number\n");
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-      int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    }
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   }
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   else{
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    printf("ERROR: Missing value to -cores parameter\n");
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   }
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  }; } else if(strcmp(argv[dim_cpu.cur_arg], "-boxes1d")==0){
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
    if(argc>=dim_cpu.cur_arg+1){
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 115 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     call_lbl_3: if(alias_group_changed(____alias_loc_id_0) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ calling((void*)isInteger, 3, ____alias_loc_id_0, 0UL, 1, (size_t)(1242561836700798671UL)); (isInteger)(argv[dim_cpu.cur_arg + 1]); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_0); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
+# 116 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     dim_cpu.cores_arg = atoi(argv[dim_cpu.cur_arg+1]);
+# 117 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     if(dim_cpu.cores_arg<0){
+# 118 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+      printf("ERROR: Wrong value to -cores parameter, cannot be <=0\n");
+# 119 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+       int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 120 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     }
+# 121 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     dim_cpu.cur_arg = dim_cpu.cur_arg+1;
+# 122 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    }
+# 123 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 124 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    else{
+# 125 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     printf("ERROR: Value to -cores parameter in not a number\n");
+# 126 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+      int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
+# 127 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    }
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   }
+# 129 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 130 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   else{
+# 131 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    printf("ERROR: Missing value to -cores parameter\n");
+# 132 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
+# 133 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   }
+# 134 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  }; } else if(strcmp(argv[dim_cpu.cur_arg], "-boxes1d")==0){
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     call_lbl_3: if(alias_group_changed(____alias_loc_id_2) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ calling((void*)isInteger, 3, ____alias_loc_id_2, 0UL, 1, (size_t)(1242561836700798668UL)); (isInteger)(argv[dim_cpu.cur_arg + 1]); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_2); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
+   if(argc>=dim_cpu.cur_arg+1){
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     dim_cpu.boxes1d_arg = atoi(argv[dim_cpu.cur_arg+1]);
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     if(dim_cpu.boxes1d_arg<0){
+     call_lbl_4: if(alias_group_changed(____alias_loc_id_2) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ calling((void*)isInteger, 4, ____alias_loc_id_2, 0UL, 1, (size_t)(1242561836700798671UL)); (isInteger)(argv[dim_cpu.cur_arg + 1]); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_2); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-      printf("ERROR: Wrong value to -boxes1d parameter, cannot be <=0\n");
+     dim_cpu.boxes1d_arg = atoi(argv[dim_cpu.cur_arg+1]);
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-       int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
+     if(dim_cpu.boxes1d_arg<0){
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     }
+      printf("ERROR: Wrong value to -boxes1d parameter, cannot be <=0\n");
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     dim_cpu.cur_arg = dim_cpu.cur_arg+1;
+       int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    }
+     }
 # 146 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     dim_cpu.cur_arg = dim_cpu.cur_arg+1;
 # 147 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    else{
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     printf("ERROR: Value to -boxes1d parameter in not a number\n");
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-      int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
     }
+# 148 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 149 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    else{
+# 150 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+     printf("ERROR: Value to -boxes1d parameter in not a number\n");
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   }
+      int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    }
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   else{
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    printf("ERROR: Missing value to -boxes1d parameter\n");
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
    }
+# 154 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 155 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   else{
+# 156 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+    printf("ERROR: Missing value to -boxes1d parameter\n");
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  }
+     int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   }
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  else{
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-   printf("ERROR: Unknown parameter\n");
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-    int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   }
+# 160 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 161 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  else{
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+   printf("ERROR: Unknown parameter\n");
 # 163 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- }
+    int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
 # 164 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  }
 # 165 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ }
 # 166 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- printf("Configuration used: cores = %d, boxes1d = %d\n", dim_cpu.cores_arg, dim_cpu.boxes1d_arg);
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_4: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 4, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
+ printf("Configuration used: cores = %d, boxes1d = %d\n", dim_cpu.cores_arg, dim_cpu.boxes1d_arg);
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  call_lbl_5: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 5, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- par_cpu.alpha = 0.5;
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_5: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 5, ____alias_loc_id_9, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_9); (*____chimes_extern_func_get_time)(); })));
+ par_cpu.alpha = 0.5;
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  call_lbl_6: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 6, ____alias_loc_id_9, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_9); (*____chimes_extern_func_get_time)(); })));
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.number_boxes = dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg;
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ dim_cpu.number_boxes = dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.space_elem = dim_cpu.number_boxes * 100;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.space_mem = dim_cpu.space_elem * sizeof(FOUR_VECTOR);
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.space_mem2 = dim_cpu.space_elem * sizeof(double);
+ dim_cpu.space_elem = dim_cpu.number_boxes * 100;
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ dim_cpu.space_mem = dim_cpu.space_elem * sizeof(FOUR_VECTOR);
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+ dim_cpu.space_mem2 = dim_cpu.space_elem * sizeof(double);
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- dim_cpu.box_mem = dim_cpu.number_boxes * sizeof(box_str);
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_6: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 6, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
+ dim_cpu.box_mem = dim_cpu.number_boxes * sizeof(box_str);
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 199 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-        call_lbl_7: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 200 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 201 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+  call_lbl_7: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 7, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
+# 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.box_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 1242561836700798883UL, 0, 1, (int)sizeof(struct box_str), 0); ____chimes_tmp_ptr; }) ;
 # 207 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -4098,19 +4080,19 @@ double seconds_npm() {
 
 static int module_init() {
     init_module(1242561836700798559UL, 6, 2, 4, 13, 1, 3, 4, 2, 11, 7,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (1242561836700798559UL + 29UL),
-                           &____alias_loc_id_1, (unsigned)0, (unsigned)0, (unsigned)1, "isInteger", (unsigned)1, (1242561836700798559UL + 109UL),
-                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (unsigned)1, (1242561836700798559UL + 30UL), (1242561836700798559UL + 44UL), "isInteger", (unsigned)1, (1242561836700798559UL + 109UL),
+                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "isInteger", (unsigned)1, (1242561836700798559UL + 112UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (1242561836700798559UL + 29UL),
+                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (unsigned)1, (1242561836700798559UL + 31UL), (1242561836700798559UL + 45UL), "isInteger", (unsigned)1, (1242561836700798559UL + 112UL),
                            &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (1242561836700798559UL + 60UL),
-                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (1242561836700798559UL + 26UL), (1242561836700798559UL + 27UL), (1242561836700798559UL + 28UL),
-                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (1242561836700798559UL + 35UL),
-                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)1, (1242561836700798559UL + 34UL), "kernel_cpu", (unsigned)5, (1242561836700798559UL + 59UL), (1242561836700798559UL + 324UL), (1242561836700798559UL + 663UL), (1242561836700798559UL + 725UL), (1242561836700798559UL + 748UL),
-                           &____alias_loc_id_7, (unsigned)18, (unsigned)0, (unsigned)0, (1242561836700798559UL + 33UL), (1242561836700798559UL + 37UL), (1242561836700798559UL + 38UL), (1242561836700798559UL + 39UL), (1242561836700798559UL + 40UL), (1242561836700798559UL + 41UL), (1242561836700798559UL + 42UL), (1242561836700798559UL + 45UL), (1242561836700798559UL + 46UL), (1242561836700798559UL + 47UL), (1242561836700798559UL + 48UL), (1242561836700798559UL + 49UL), (1242561836700798559UL + 57UL), (1242561836700798559UL + 324UL), (1242561836700798559UL + 663UL), (1242561836700798559UL + 725UL), (1242561836700798559UL + 748UL), (1242561836700798559UL + 855UL),
-                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (unsigned)0, (1242561836700798559UL + 32UL), (1242561836700798559UL + 44UL),
-                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)0, (1242561836700798559UL + 31UL), (1242561836700798559UL + 43UL),
-                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (1242561836700798559UL + 30UL), (1242561836700798559UL + 44UL),
+                           &____alias_loc_id_4, (unsigned)4, (unsigned)0, (unsigned)0, (1242561836700798559UL + 26UL), (1242561836700798559UL + 27UL), (1242561836700798559UL + 28UL), (1242561836700798559UL + 30UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (1242561836700798559UL + 36UL),
+                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)1, (1242561836700798559UL + 35UL), "kernel_cpu", (unsigned)5, (1242561836700798559UL + 59UL), (1242561836700798559UL + 324UL), (1242561836700798559UL + 663UL), (1242561836700798559UL + 725UL), (1242561836700798559UL + 748UL),
+                           &____alias_loc_id_7, (unsigned)17, (unsigned)0, (unsigned)0, (1242561836700798559UL + 34UL), (1242561836700798559UL + 38UL), (1242561836700798559UL + 39UL), (1242561836700798559UL + 40UL), (1242561836700798559UL + 41UL), (1242561836700798559UL + 42UL), (1242561836700798559UL + 43UL), (1242561836700798559UL + 46UL), (1242561836700798559UL + 47UL), (1242561836700798559UL + 48UL), (1242561836700798559UL + 49UL), (1242561836700798559UL + 50UL), (1242561836700798559UL + 324UL), (1242561836700798559UL + 663UL), (1242561836700798559UL + 725UL), (1242561836700798559UL + 748UL), (1242561836700798559UL + 855UL),
+                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (unsigned)0, (1242561836700798559UL + 33UL), (1242561836700798559UL + 45UL),
+                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)0, (1242561836700798559UL + 32UL), (1242561836700798559UL + 44UL),
+                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (1242561836700798559UL + 31UL), (1242561836700798559UL + 45UL),
                             &____alias_loc_id_11, (unsigned)3, (unsigned)0, (unsigned)0, (1242561836700798559UL + 1UL), (1242561836700798559UL + 3UL), (1242561836700798559UL + 4UL),
-                            &____alias_loc_id_12, (unsigned)12, (unsigned)0, (unsigned)0, (1242561836700798559UL + 26UL), (1242561836700798559UL + 30UL), (1242561836700798559UL + 36UL), (1242561836700798559UL + 44UL), (1242561836700798559UL + 50UL), (1242561836700798559UL + 51UL), (1242561836700798559UL + 52UL), (1242561836700798559UL + 53UL), (1242561836700798559UL + 54UL), (1242561836700798559UL + 55UL), (1242561836700798559UL + 56UL), (1242561836700798559UL + 61UL),
+                            &____alias_loc_id_12, (unsigned)12, (unsigned)0, (unsigned)0, (1242561836700798559UL + 26UL), (1242561836700798559UL + 31UL), (1242561836700798559UL + 37UL), (1242561836700798559UL + 45UL), (1242561836700798559UL + 51UL), (1242561836700798559UL + 52UL), (1242561836700798559UL + 53UL), (1242561836700798559UL + 54UL), (1242561836700798559UL + 55UL), (1242561836700798559UL + 56UL), (1242561836700798559UL + 57UL), (1242561836700798559UL + 61UL),
                             "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (1242561836700798559UL + 1UL), (1242561836700798559UL + 2UL), 0UL,
                                "get_time", (void **)&(____chimes_extern_func_get_time),
                                "isInteger", (void **)&(____chimes_extern_func_isInteger),
@@ -4119,12 +4101,12 @@ static int module_init() {
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
                            "isInteger", &(____chimes_does_checkpoint_isInteger_npm),
                            "kernel_cpu", &(____chimes_does_checkpoint_kernel_cpu_npm),
-                             (1242561836700798559UL + 48UL), (1242561836700798559UL + 748UL),
-                             (1242561836700798559UL + 46UL), (1242561836700798559UL + 663UL),
-                             (1242561836700798559UL + 47UL), (1242561836700798559UL + 725UL),
-                             (1242561836700798559UL + 45UL), (1242561836700798559UL + 324UL),
+                             (1242561836700798559UL + 48UL), (1242561836700798559UL + 725UL),
+                             (1242561836700798559UL + 49UL), (1242561836700798559UL + 748UL),
+                             (1242561836700798559UL + 46UL), (1242561836700798559UL + 324UL),
+                             (1242561836700798559UL + 47UL), (1242561836700798559UL + 663UL),
                              (1242561836700798559UL + 28UL), (1242561836700798559UL + 823UL),
-                             (1242561836700798559UL + 823UL), (1242561836700798559UL + 109UL),
+                             (1242561836700798559UL + 823UL), (1242561836700798559UL + 112UL),
                      "FOUR_VECTOR", 256UL, 4, "double", (int)__builtin_offsetof (FOUR_VECTOR, v), "double", (int)__builtin_offsetof (FOUR_VECTOR, x), "double", (int)__builtin_offsetof (FOUR_VECTOR, y), "double", (int)__builtin_offsetof (FOUR_VECTOR, z),
                      "box_str", 5248UL, 7, "int", (int)__builtin_offsetof (struct box_str, x), "int", (int)__builtin_offsetof (struct box_str, y), "int", (int)__builtin_offsetof (struct box_str, z), "int", (int)__builtin_offsetof (struct box_str, number), "long int", (int)__builtin_offsetof (struct box_str, offset), "int", (int)__builtin_offsetof (struct box_str, nn), "[ 26 x %struct.nei_str ]", (int)__builtin_offsetof (struct box_str, nei),
                      "dim_str", 448UL, 9, "int", (int)__builtin_offsetof (struct dim_str, cur_arg), "int", (int)__builtin_offsetof (struct dim_str, arch_arg), "int", (int)__builtin_offsetof (struct dim_str, cores_arg), "int", (int)__builtin_offsetof (struct dim_str, boxes1d_arg), "long int", (int)__builtin_offsetof (struct dim_str, number_boxes), "long int", (int)__builtin_offsetof (struct dim_str, box_mem), "long int", (int)__builtin_offsetof (struct dim_str, space_elem), "long int", (int)__builtin_offsetof (struct dim_str, space_mem), "long int", (int)__builtin_offsetof (struct dim_str, space_mem2),
@@ -4133,7 +4115,7 @@ static int module_init() {
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "timezone", 64UL, 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
                              "seconds", "_Z7secondsv", 0,
-                             "main", "main", 15, "get_time", "get_time", "isInteger", "isInteger", "get_time", "get_time", "get_time", "seconds", "checkpoint", "get_time", "kernel_cpu", "get_time", "checkpoint", "seconds", "get_time",
+                             "main", "main", 15, "seconds", "get_time", "get_time", "isInteger", "isInteger", "get_time", "get_time", "get_time", "checkpoint", "get_time", "kernel_cpu", "get_time", "checkpoint", "seconds", "get_time",
                         "main|argc|0", 2, "isInteger", "get_time",
                         "main|argv|0", 2, "isInteger", "get_time",
                         "main|par_cpu|0", 1, "main",
@@ -4142,8 +4124,8 @@ static int module_init() {
         "seconds", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
-        "isInteger", 0UL, (int)1, 1242561836700798668UL,
-        "isInteger", 0UL, (int)1, 1242561836700798668UL,
+        "isInteger", 0UL, (int)1, 1242561836700798671UL,
+        "isInteger", 0UL, (int)1, 1242561836700798671UL,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,

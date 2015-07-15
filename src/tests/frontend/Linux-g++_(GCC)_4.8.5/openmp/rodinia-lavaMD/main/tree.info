@@ -1,2 +1,2 @@
 seconds _Z7secondsv 0 DOES_NOT
-main main 0 DOES get_time 73 10 get_time 96 10 isInteger 113 8 isInteger 138 8 get_time 168 10 get_time 176 10 get_time 193 10 seconds 199 25 checkpoint 296 5 get_time 299 10 kernel_cpu 309 2 get_time 316 10 checkpoint 319 5 seconds 322 23 get_time 346 10
+main main 0 DOES seconds 73 25 get_time 75 10 get_time 98 10 isInteger 115 8 isInteger 140 8 get_time 170 10 get_time 178 10 get_time 195 10 checkpoint 296 5 get_time 299 10 kernel_cpu 309 2 get_time 316 10 checkpoint 319 5 seconds 322 23 get_time 346 10

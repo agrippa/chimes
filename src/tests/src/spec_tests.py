@@ -103,7 +103,7 @@ SPEC_PERF_CLI_ARGS = \
          'SPECBotsAlgn':          '-f ' + path.join(SPEC_BOTSALGN_ROOT, '..',
                                                     'run', 'run_base_test_davinci.0000',
                                                     'botsalgn'),
-         'SPECBotsSpar':          '-n 50 -m 25',
+         'SPECBotsSpar':          '-n 200 -m 100',
          'SPECSmithwa':           '32',
          'SPECKDTree':            '3000000 10 2'
         }

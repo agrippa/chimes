@@ -1,7 +1,7 @@
 seconds
 gettime
 main 0 59
-runTest 0 185
-usage 0 207
-runTest_helper1 568 0 0 523 0 0
-runTest_helper2 0 0 0 756 711
+runTest 0 188
+usage 0 210
+runTest_helper1 365 0 0 397 0 0
+runTest_helper2 0 0 0 791 748

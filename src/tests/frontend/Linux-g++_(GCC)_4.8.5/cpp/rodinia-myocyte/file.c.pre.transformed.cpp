@@ -2508,8 +2508,7 @@ extern float embedded_fehlberg_7_8( float timeinst,
                float* initvalu,
                float* finavalu,
                float* error,
-               float* parameter,
-               int mode);
+               float* parameter);
 extern void ecc( float timeinst,
     float *initvalu,
     int initvalu_offset,
@@ -2539,15 +2538,13 @@ extern void fin( float *initvalu,
 extern void master(float timeinst,
      float* initvalu,
      float* parameter,
-     float* finavalu,
-     int mode);
+     float* finavalu);
 
 
 extern int solver( float** y,
      float* x,
      int xmax,
-     float* params,
-     int mode);
+     float* params);
 
 extern void myocyte_read( char* filename,
      float* input,

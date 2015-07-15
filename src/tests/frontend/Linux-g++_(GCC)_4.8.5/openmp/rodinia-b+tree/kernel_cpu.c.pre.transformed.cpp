@@ -10,7 +10,6 @@ typedef long unsigned int size_t;
 # 1 "kernel_cpu.c.pre.transformed.cpp"
 static int ____chimes_does_checkpoint_kernel_cpu_npm = 1;
 static int ____chimes_does_checkpoint_get_time_npm = 1;
-static int ____chimes_does_checkpoint_omp_get_max_threads_npm = 1;
 
 static int ____must_checkpoint_kernel_cpu_cores_arg_0 = 2;
 static int ____must_checkpoint_kernel_cpu_records_0 = 2;
@@ -33,7 +32,6 @@ static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
-static unsigned ____alias_loc_id_4;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -2752,7 +2750,7 @@ get_time();
 # 31 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 32 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 33 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-void kernel_cpu_npm( int cores_arg, record *records, knode *knodes, long knodes_elem, int order, long maxheight, int count, long *currKnode, long *offset, int *keys, record *ans);static long long (*____chimes_extern_func_get_time)(void) = get_time;static int (*____chimes_extern_func_omp_get_max_threads)(void) = omp_get_max_threads;
+void kernel_cpu_npm( int cores_arg, record *records, knode *knodes, long knodes_elem, int order, long maxheight, int count, long *currKnode, long *offset, int *keys, record *ans);static long long (*____chimes_extern_func_get_time)(void) = get_time;
 void kernel_cpu_quick( int cores_arg, record *records, knode *knodes, long knodes_elem, int order, long maxheight, int count, long *currKnode, long *offset, int *keys, record *ans); void kernel_cpu( int cores_arg, record *records, knode *knodes, long knodes_elem, int order, long maxheight, int count, long *currKnode, long *offset, int *keys, record *ans);
 void
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -2787,7 +2785,7 @@ long long time1;
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 long long time0;
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
- if (____must_checkpoint_kernel_cpu_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_time1_0 || ____must_checkpoint_kernel_cpu_time0_0) { register_stack_vars(3, "kernel_cpu|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu|time1|0", &____must_checkpoint_kernel_cpu_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu|time0|0", &____must_checkpoint_kernel_cpu_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_kernel_cpu_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_time1_0 || ____must_checkpoint_kernel_cpu_time0_0) { register_stack_vars(3, "kernel_cpu|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu|time1|0", &____must_checkpoint_kernel_cpu_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu|time0|0", &____must_checkpoint_kernel_cpu_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -2802,7 +2800,7 @@ long long time0;
  long long time2; ;
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-  call_lbl_0: time0 = ({ calling((void*)get_time, 0, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ;
+  call_lbl_0: time0 = ({ calling((void*)get_time, 0, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -2812,7 +2810,7 @@ long long time0;
  int max_nthreads; ;
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-  call_lbl_1: max_nthreads = ({ calling((void*)omp_get_max_threads, 1, ____alias_loc_id_2, 0UL, 0); (omp_get_max_threads)(); }) ;
+ max_nthreads = omp_get_max_threads();
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -2829,7 +2827,7 @@ long long time0;
  threadsPerBlock = order < 1024 ? order : 1024;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-  call_lbl_2: time1 = ({ calling((void*)get_time, 2, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ;
+  call_lbl_1: time1 = ({ calling((void*)get_time, 1, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -2847,7 +2845,7 @@ long long time0;
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-{ call_lbl_4: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 2, &i, &thid); int ____chimes_first_iter0 = 1;
+{ call_lbl_3: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(3, &____chimes_region_id0, 2, &i, &thid); int ____chimes_first_iter0 = 1;
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 #pragma omp parallel for private (i, thid) firstprivate(____chimes_first_iter0)
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -2908,7 +2906,7 @@ long long time0;
   } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-  call_lbl_3: time2 = ({ calling((void*)get_time, 3, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ;
+  call_lbl_2: time2 = ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ;
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -2928,7 +2926,7 @@ long long time0;
  printf("%.12f s\n", (float) (time2-time0) / 1000000);
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-rm_stack(false, 0UL, "kernel_cpu", &____must_manage_kernel_cpu, ____alias_loc_id_4, ____chimes_did_disable0, false); }
+rm_stack(false, 0UL, "kernel_cpu", &____must_manage_kernel_cpu, ____alias_loc_id_3, ____chimes_did_disable0, false); }
 # 33 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 void
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -2978,7 +2976,7 @@ long long time0;
  long long time2; ;
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-  call_lbl_0: time0 = ({ calling((void*)get_time, 0, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ;
+  call_lbl_0: time0 = ({ calling((void*)get_time, 0, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -2988,7 +2986,7 @@ long long time0;
  int max_nthreads; ;
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-  call_lbl_1: max_nthreads = ({ calling((void*)omp_get_max_threads, 1, ____alias_loc_id_2, 0UL, 0); (omp_get_max_threads)(); }) ;
+ max_nthreads = omp_get_max_threads();
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -3005,7 +3003,7 @@ long long time0;
  threadsPerBlock = order < 1024 ? order : 1024;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-  call_lbl_2: time1 = ({ calling((void*)get_time, 2, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ;
+  call_lbl_1: time1 = ({ calling((void*)get_time, 1, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -3023,7 +3021,7 @@ long long time0;
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-{ call_lbl_4: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 2, &i, &thid); int ____chimes_first_iter0 = 1;
+{ call_lbl_3: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(3, &____chimes_region_id0, 2, &i, &thid); int ____chimes_first_iter0 = 1;
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 #pragma omp parallel for private (i, thid) firstprivate(____chimes_first_iter0)
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -3084,7 +3082,7 @@ long long time0;
   } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-  call_lbl_3: time2 = ({ calling((void*)get_time, 3, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ;
+  call_lbl_2: time2 = ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ;
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -3104,7 +3102,7 @@ long long time0;
  printf("%.12f s\n", (float) (time2-time0) / 1000000);
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-rm_stack(false, 0UL, "kernel_cpu", &____must_manage_kernel_cpu, ____alias_loc_id_4, ____chimes_did_disable0, false); }
+rm_stack(false, 0UL, "kernel_cpu", &____must_manage_kernel_cpu, ____alias_loc_id_3, ____chimes_did_disable0, false); }
 
 void
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -3185,7 +3183,7 @@ kernel_cpu_npm( int cores_arg,
  int max_nthreads;
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
- max_nthreads = (*____chimes_extern_func_omp_get_max_threads)();
+ max_nthreads = omp_get_max_threads();
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
@@ -3306,18 +3304,15 @@ kernel_cpu_npm( int cores_arg,
 
 
 static int module_init() {
-    init_module(7567338248737025078UL, 6, 1, 14, 5, 1, 2, 3, 0, 0, 2,
+    init_module(7567338248737025078UL, 6, 1, 14, 4, 1, 1, 2, 0, 0, 2,
                            &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)0, (7567338248737025078UL + 13UL), (7567338248737025078UL + 17UL), (7567338248737025078UL + 18UL), (7567338248737025078UL + 19UL), (7567338248737025078UL + 294UL), (7567338248737025078UL + 295UL), (7567338248737025078UL + 297UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (7567338248737025078UL + 15UL), (7567338248737025078UL + 16UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (7567338248737025078UL + 12UL),
-                           &____alias_loc_id_3, (unsigned)11, (unsigned)0, (unsigned)0, (7567338248737025078UL + 1UL), (7567338248737025078UL + 2UL), (7567338248737025078UL + 3UL), (7567338248737025078UL + 4UL), (7567338248737025078UL + 5UL), (7567338248737025078UL + 6UL), (7567338248737025078UL + 7UL), (7567338248737025078UL + 8UL), (7567338248737025078UL + 9UL), (7567338248737025078UL + 10UL), (7567338248737025078UL + 11UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (7567338248737025078UL + 14UL),
-                            "kernel_cpu", 0, "_Z10kernel_cpuiP6recordP5knodeliliPlS3_PiS0_", "_Z14kernel_cpu_npmiP6recordP5knodeliliPlS3_PiS0_", 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 11, 0UL, (7567338248737025078UL + 288UL), (7567338248737025078UL + 289UL), 0UL, 0UL, 0UL, 0UL, (7567338248737025078UL + 294UL), (7567338248737025078UL + 295UL), (7567338248737025078UL + 296UL), (7567338248737025078UL + 297UL), 0UL, 10, "get_time", 0, 0UL, "omp_get_max_threads", 0, 0UL, "omp_set_num_threads", 1, 0UL, 0UL, "get_time", 0, 0UL, "get_time", 0, 0UL, "printf", 1, (7567338248737025078UL + 302UL), 0UL, "printf", 3, (7567338248737025078UL + 303UL), 0UL, 0UL, 0UL, "printf", 3, (7567338248737025078UL + 303UL), 0UL, 0UL, 0UL, "printf", 1, (7567338248737025078UL + 305UL), 0UL, "printf", 2, (7567338248737025078UL + 306UL), 0UL, 0UL,
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (7567338248737025078UL + 12UL), (7567338248737025078UL + 15UL), (7567338248737025078UL + 16UL),
+                           &____alias_loc_id_2, (unsigned)11, (unsigned)0, (unsigned)0, (7567338248737025078UL + 1UL), (7567338248737025078UL + 2UL), (7567338248737025078UL + 3UL), (7567338248737025078UL + 4UL), (7567338248737025078UL + 5UL), (7567338248737025078UL + 6UL), (7567338248737025078UL + 7UL), (7567338248737025078UL + 8UL), (7567338248737025078UL + 9UL), (7567338248737025078UL + 10UL), (7567338248737025078UL + 11UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (7567338248737025078UL + 14UL),
+                            "kernel_cpu", 0, "_Z10kernel_cpuiP6recordP5knodeliliPlS3_PiS0_", "_Z14kernel_cpu_npmiP6recordP5knodeliliPlS3_PiS0_", 3, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, 11, 0UL, (7567338248737025078UL + 288UL), (7567338248737025078UL + 289UL), 0UL, 0UL, 0UL, 0UL, (7567338248737025078UL + 294UL), (7567338248737025078UL + 295UL), (7567338248737025078UL + 296UL), (7567338248737025078UL + 297UL), 0UL, 10, "get_time", 0, 0UL, "omp_get_max_threads", 0, 0UL, "omp_set_num_threads", 1, 0UL, 0UL, "get_time", 0, 0UL, "get_time", 0, 0UL, "printf", 1, (7567338248737025078UL + 302UL), 0UL, "printf", 3, (7567338248737025078UL + 303UL), 0UL, 0UL, 0UL, "printf", 3, (7567338248737025078UL + 303UL), 0UL, 0UL, 0UL, "printf", 1, (7567338248737025078UL + 305UL), 0UL, "printf", 2, (7567338248737025078UL + 306UL), 0UL, 0UL,
                                "get_time", (void **)&(____chimes_extern_func_get_time),
-                               "omp_get_max_threads", (void **)&(____chimes_extern_func_omp_get_max_threads),
                            "kernel_cpu", &(____chimes_does_checkpoint_kernel_cpu_npm),
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
-                           "omp_get_max_threads", &(____chimes_does_checkpoint_omp_get_max_threads_npm),
                              (7567338248737025078UL + 11UL), (7567338248737025078UL + 297UL),
                              (7567338248737025078UL + 10UL), (7567338248737025078UL + 296UL),
                              (7567338248737025078UL + 3UL), (7567338248737025078UL + 289UL),
@@ -3326,19 +3321,19 @@ static int module_init() {
                              (7567338248737025078UL + 8UL), (7567338248737025078UL + 294UL),
                      "knode", 32672UL, 5, "int", (int)__builtin_offsetof (struct knode, location), "[ 509 x int ]", (int)__builtin_offsetof (struct knode, indices), "[ 509 x int ]", (int)__builtin_offsetof (struct knode, keys), "bool", (int)__builtin_offsetof (struct knode, is_leaf), "int", (int)__builtin_offsetof (struct knode, num_keys),
                      "record", 32UL, 1, "int", (int)__builtin_offsetof (struct record, value),
-                             "kernel_cpu", "_Z10kernel_cpuiP6recordP5knodeliliPlS3_PiS0_", 4, "get_time", "omp_get_max_threads", "get_time", "get_time",
-                        "kernel_cpu|cores_arg|0", 2, "omp_get_max_threads", "get_time",
-                        "kernel_cpu|records|0", 2, "omp_get_max_threads", "get_time",
-                        "kernel_cpu|knodes|0", 2, "omp_get_max_threads", "get_time",
-                        "kernel_cpu|knodes_elem|0", 2, "omp_get_max_threads", "get_time",
-                        "kernel_cpu|order|0", 2, "omp_get_max_threads", "get_time",
-                        "kernel_cpu|maxheight|0", 2, "omp_get_max_threads", "get_time",
-                        "kernel_cpu|count|0", 2, "omp_get_max_threads", "get_time",
-                        "kernel_cpu|currKnode|0", 2, "omp_get_max_threads", "get_time",
-                        "kernel_cpu|offset|0", 2, "omp_get_max_threads", "get_time",
-                        "kernel_cpu|keys|0", 2, "omp_get_max_threads", "get_time",
-                        "kernel_cpu|ans|0", 2, "omp_get_max_threads", "get_time",
-                        "kernel_cpu|time0|0", 2, "omp_get_max_threads", "get_time",
+                             "kernel_cpu", "_Z10kernel_cpuiP6recordP5knodeliliPlS3_PiS0_", 3, "get_time", "get_time", "get_time",
+                        "kernel_cpu|cores_arg|0", 1, "get_time",
+                        "kernel_cpu|records|0", 1, "get_time",
+                        "kernel_cpu|knodes|0", 1, "get_time",
+                        "kernel_cpu|knodes_elem|0", 1, "get_time",
+                        "kernel_cpu|order|0", 1, "get_time",
+                        "kernel_cpu|maxheight|0", 1, "get_time",
+                        "kernel_cpu|count|0", 1, "get_time",
+                        "kernel_cpu|currKnode|0", 1, "get_time",
+                        "kernel_cpu|offset|0", 1, "get_time",
+                        "kernel_cpu|keys|0", 1, "get_time",
+                        "kernel_cpu|ans|0", 1, "get_time",
+                        "kernel_cpu|time0|0", 1, "get_time",
                         "kernel_cpu|time1|0", 1, "get_time",
                         "kernel_cpu|threadsPerBlock|0", 1, "get_time");
     return 0;

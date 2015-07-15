@@ -2,7 +2,6 @@
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|x|0 " float* " 64 1 0 1 embedded_fehlberg_7_8
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|xmax|0 " i32 " 32 0 0 1 embedded_fehlberg_7_8
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|params|0 " float* " 64 1 0 1 embedded_fehlberg_7_8
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|mode|0 " i32 " 32 0 0 1 embedded_fehlberg_7_8
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|err_exponent|0 " float " 32 0 0 1 embedded_fehlberg_7_8
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|last_interval|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|error|0 " i32 " 32 0 0 1 embedded_fehlberg_7_8

@@ -1,7 +1,7 @@
 seconds _Z7secondsv 0 DOES_NOT
 gettime _Z7gettimev 0 DOES_NOT
-main main 0 DOES runTest 84 5
-runTest _Z7runTestiPPc 0 DOES usage 200 3 seconds 210 25 runTest_helper1 212 5 checkpoint 216 5 runTest_helper2 219 5 checkpoint 223 5 seconds 225 23
+main main 0 DOES runTest 85 5
+runTest _Z7runTestiPPc 0 DOES usage 206 3 seconds 217 25 runTest_helper1 219 5 checkpoint 223 5 runTest_helper2 226 5 checkpoint 230 5 seconds 232 23
 usage _Z5usageiPPc 0 DOES_NOT
 runTest_helper1 _ZL15runTest_helper1PiiiS_ii 0 DOES_NOT
 runTest_helper2 _ZL15runTest_helper2iiiPiS_ 0 DOES_NOT

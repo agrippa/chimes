@@ -10,7 +10,7 @@ using namespace std;
 
 extern void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
         int is_cuda_alloc, int is_ptr, int is_struct, int elem_size,
-        int *ptr_field_offsets, int n_ptr_field_offsets);
+        int *ptr_field_offsets, int n_ptr_field_offsets, bool filled);
 extern void free_impl(const void *ptr);
 extern map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
 
@@ -20,7 +20,6 @@ __global__ void translate_pointers_kernel(void *arr, int nelems, int elem_size,
 
 void cudaMalloc_helper(cudaError_t err, void **ptr, size_t size, size_t group,
         int is_ptr, int is_struct, ...) {
-    // cudaError_t err = cudaMalloc(ptr, size);
     if (err != cudaSuccess) {
         return;
     }
@@ -34,21 +33,13 @@ void cudaMalloc_helper(cudaError_t err, void **ptr, size_t size, size_t group,
     }
 
     malloc_impl(*ptr, size, group, 1, is_ptr, is_struct, info.elem_size,
-            info.ptr_field_offsets, info.n_ptr_fields);
-
-    // return cudaSuccess;
+            info.ptr_field_offsets, info.n_ptr_fields, false);
 }
 
 void cudaFree_helper(cudaError_t err, void *ptr, size_t group) {
     if (err == cudaSuccess) {
         free_impl(ptr);
     }
-    // cudaError_t err = cudaFree(ptr);
-    // if (err != cudaSuccess) {
-    //     return err;
-    // }
-
-    // return cudaSuccess;
 }
 
 void translate_cuda_pointers(void *d_arr, int nelems, int elem_size,

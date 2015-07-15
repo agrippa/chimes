@@ -11,7 +11,7 @@ InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_mai
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 460 1 const int ____chimes_did_disable3 = new_stack((void *)(&bots_set_info), "bots_set_info", &____must_manage_bots_set_info, 0, 0); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 484 1 rm_stack(false, 0UL, "bots_set_info", &____must_manage_bots_set_info, ____alias_loc_id_11, ____chimes_did_disable3, false); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 543 61 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_12, ____chimes_did_disable4, false); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 491 1 const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397282UL)); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 491 1 const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397278UL)); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 544 1 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_12, ____chimes_did_disable4, false); 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 225 2 const int ____chimes_did_disable0 = new_stack((void *)(&bots_print_usage), "bots_print_usage", &____must_manage_bots_print_usage, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 225 137 
@@ -23,9 +23,7 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bo
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 450 183 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 460 2 const int ____chimes_did_disable3 = new_stack((void *)(&bots_set_info), "bots_set_info", &____must_manage_bots_set_info, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 460 128 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 465 5  int ____chimes_unroll_var_0;  ____chimes_unroll_var_0 = (omp_get_max_threads()) ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 465 56 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 491 2 const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397282UL)); ;
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 491 2 const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397278UL)); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 491 150 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 493 4 long bots_t_start; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 493 21 
@@ -42,7 +40,6 @@ InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_mai
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 429 16  call_lbl_6: 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 440 10  call_lbl_7: 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 451 4  call_lbl_0: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 465 36  call_lbl_0: 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 497 4  call_lbl_0: 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 498 4  call_lbl_1: 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 499 4  call_lbl_2: 
@@ -60,7 +57,7 @@ InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_mai
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 224 6 len=16 bots_print_usage_quick
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 225 136  ; 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 288 1 len=22 bots_get_params_common_quick
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 292 17  ({  calling((void*)bots_get_date, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(16260503078375397291UL)); (bots_get_date)(bots_exec_date); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 292 17  ({  calling((void*)bots_get_date, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(16260503078375397287UL)); (bots_get_date)(bots_exec_date); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 292 45 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 326 46 ({ calling_npm("bots_print_usage", 0); bots_print_usage_npm(); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 326 63 
@@ -82,21 +79,19 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bo
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 451 50 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 450 182  ; 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 459 6 len=13 bots_set_info_quick
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 465 76 (____chimes_does_checkpoint_omp_get_max_threads_npm ? ( ({  calling((void*)omp_get_max_threads, 0, 0, 0UL, 0); (omp_get_max_threads)(); }) ) : (({ calling_npm("omp_get_max_threads", 0); (*____chimes_extern_func_omp_get_max_threads)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 465 96 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 460 127  ; 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 490 1 len=4 main_quick
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 497 17 (____chimes_does_checkpoint_bots_get_params_npm ? ( ({  calling((void*)bots_get_params, 0, ____alias_loc_id_8, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397282UL)); (bots_get_params)(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_8); bots_get_params_npm(argc, argv); })))
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 497 17 (____chimes_does_checkpoint_bots_get_params_npm ? ( ({  calling((void*)bots_get_params, 0, ____alias_loc_id_8, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397278UL)); (bots_get_params)(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_8); bots_get_params_npm(argc, argv); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 497 42 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 498 17 (____chimes_does_checkpoint_pairalign_init_npm ? ( ({  calling((void*)pairalign_init, 1, ____alias_loc_id_7, 0UL, 1, (size_t)(16260503078375397308UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_7); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })))
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 498 17 (____chimes_does_checkpoint_pairalign_init_npm ? ( ({  calling((void*)pairalign_init, 1, ____alias_loc_id_6, 0UL, 1, (size_t)(16260503078375397304UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_6); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 498 45 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 499 17 (____chimes_does_checkpoint_bots_set_info_npm ? ( ({  calling((void*)bots_set_info, 2, 0, 0UL, 0); (bots_set_info)(); }) ) : (({ calling_npm("bots_set_info", 0); bots_set_info_npm(); })))
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 499 17 ({ calling_npm("bots_set_info", 0); bots_set_info_npm(); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 499 31 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 509 20 (____chimes_does_checkpoint_align_seq_init_npm ? ( ({  calling((void*)align_seq_init, 3, ____alias_loc_id_9, 0UL, 0); (align_seq_init)(); }) ) : (({ calling_npm("align_seq_init", ____alias_loc_id_9); (*____chimes_extern_func_align_seq_init)(); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 509 35 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 513 35 (____chimes_does_checkpoint_bots_usecs_npm ? ( ({  calling((void*)bots_usecs, 4, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 513 46 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 514 20 (____chimes_does_checkpoint_align_seq_npm ? ( ({  calling((void*)align_seq, 5, ____alias_loc_id_6, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_6); (*____chimes_extern_func_align_seq)(); })))
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 514 20 (____chimes_does_checkpoint_align_seq_npm ? ( ({  calling((void*)align_seq, 5, ____alias_loc_id_7, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_7); (*____chimes_extern_func_align_seq)(); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 514 30 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 515 33 (____chimes_does_checkpoint_bots_usecs_npm ? ( ({  calling((void*)bots_usecs, 6, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 515 44 
@@ -122,7 +117,7 @@ InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/commo
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 224 6 len=16 bots_print_usage_resumable
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 225 136  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 288 1 len=22 bots_get_params_common_resumable
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 292 17  ({  calling((void*)bots_get_date, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(16260503078375397291UL)); (bots_get_date)(bots_exec_date); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 292 17  ({  calling((void*)bots_get_date, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(16260503078375397287UL)); (bots_get_date)(bots_exec_date); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 292 45 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 326 46 ({ calling_npm("bots_print_usage", 0); bots_print_usage_npm(); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 326 63 
@@ -144,21 +139,19 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bo
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 451 50 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 450 182  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 459 6 len=13 bots_set_info_resumable
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 465 76 (____chimes_does_checkpoint_omp_get_max_threads_npm ? ( ({  calling((void*)omp_get_max_threads, 0, 0, 0UL, 0); (omp_get_max_threads)(); }) ) : (({ calling_npm("omp_get_max_threads", 0); (*____chimes_extern_func_omp_get_max_threads)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 465 96 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 460 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 460 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 490 1 len=4 main_resumable
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 497 17 (____chimes_does_checkpoint_bots_get_params_npm ? ( ({  calling((void*)bots_get_params, 0, ____alias_loc_id_8, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397282UL)); (bots_get_params)(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_8); bots_get_params_npm(argc, argv); })))
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 497 17 (____chimes_does_checkpoint_bots_get_params_npm ? ( ({  calling((void*)bots_get_params, 0, ____alias_loc_id_8, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397278UL)); (bots_get_params)(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_8); bots_get_params_npm(argc, argv); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 497 42 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 498 17 (____chimes_does_checkpoint_pairalign_init_npm ? ( ({  calling((void*)pairalign_init, 1, ____alias_loc_id_7, 0UL, 1, (size_t)(16260503078375397308UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_7); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })))
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 498 17 (____chimes_does_checkpoint_pairalign_init_npm ? ( ({  calling((void*)pairalign_init, 1, ____alias_loc_id_6, 0UL, 1, (size_t)(16260503078375397304UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_6); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 498 45 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 499 17 (____chimes_does_checkpoint_bots_set_info_npm ? ( ({  calling((void*)bots_set_info, 2, 0, 0UL, 0); (bots_set_info)(); }) ) : (({ calling_npm("bots_set_info", 0); bots_set_info_npm(); })))
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 499 17 ({ calling_npm("bots_set_info", 0); bots_set_info_npm(); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 499 31 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 509 20 (____chimes_does_checkpoint_align_seq_init_npm ? ( ({  calling((void*)align_seq_init, 3, ____alias_loc_id_9, 0UL, 0); (align_seq_init)(); }) ) : (({ calling_npm("align_seq_init", ____alias_loc_id_9); (*____chimes_extern_func_align_seq_init)(); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 509 35 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 513 35 (____chimes_does_checkpoint_bots_usecs_npm ? ( ({  calling((void*)bots_usecs, 4, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 513 46 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 514 20 (____chimes_does_checkpoint_align_seq_npm ? ( ({  calling((void*)align_seq, 5, ____alias_loc_id_6, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_6); (*____chimes_extern_func_align_seq)(); })))
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 514 20 (____chimes_does_checkpoint_align_seq_npm ? ( ({  calling((void*)align_seq, 5, ____alias_loc_id_7, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_7); (*____chimes_extern_func_align_seq)(); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 514 30 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 515 33 (____chimes_does_checkpoint_bots_usecs_npm ? ( ({  calling((void*)bots_usecs, 6, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 515 44 
@@ -180,4 +173,4 @@ RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bot
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 493 21 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 491 149  ; long bots_t_start;
 # 491
- if (____must_checkpoint_main_bots_t_start_0) { register_stack_vars(1, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_main_bots_t_start_0) { register_stack_vars(1, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } default: { chimes_error(); } }  }  

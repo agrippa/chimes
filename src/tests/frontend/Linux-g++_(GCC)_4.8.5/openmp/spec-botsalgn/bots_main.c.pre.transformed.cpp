@@ -21,7 +21,6 @@ static int ____chimes_does_checkpoint_align_verify_npm = 1;
 static int ____chimes_does_checkpoint_bots_get_date_npm = 1;
 static int ____chimes_does_checkpoint_bots_print_results_npm = 1;
 static int ____chimes_does_checkpoint_bots_usecs_npm = 1;
-static int ____chimes_does_checkpoint_omp_get_max_threads_npm = 1;
 static int ____chimes_does_checkpoint_pairalign_init_npm = 1;
 
 static int ____must_checkpoint_bots_get_params_common_argc_0 = 2;
@@ -4177,7 +4176,7 @@ bots_get_params_common_resumable(int argc, char **argv)
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    strcpy(bots_execname, __xpg_basename(argv[0]));
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_0: ({ calling((void*)bots_get_date, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(16260503078375397291UL)); (bots_get_date)(bots_exec_date); }) ;
+    call_lbl_0: ({ calling((void*)bots_get_date, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(16260503078375397287UL)); (bots_get_date)(bots_exec_date); }) ;
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    strcpy(bots_exec_message,"");
 # 294 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4353,11 +4352,11 @@ rm_stack(false, 0UL, "bots_get_params", &____must_manage_bots_get_params, 0, ___
 # 457 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 458 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 459 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-void bots_set_info_npm ();static int (*____chimes_extern_func_omp_get_max_threads)(void) = omp_get_max_threads;
+void bots_set_info_npm ();
 void bots_set_info_quick (); void bots_set_info ();
 void bots_set_info_resumable ()
 # 460 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&bots_set_info), "bots_set_info", &____must_manage_bots_set_info, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&bots_set_info), "bots_set_info", &____must_manage_bots_set_info, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 461 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 462 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    sprintf(bots_name,"Protein alignment (For version)");
@@ -4366,7 +4365,7 @@ void bots_set_info_resumable ()
 # 464 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    sprintf(bots_model,"OpenMP (using tasks)");
 # 465 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-     int ____chimes_unroll_var_0; call_lbl_0: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_omp_get_max_threads_npm ? ( ({ calling((void*)omp_get_max_threads, 0, 0, 0UL, 0); (omp_get_max_threads)(); }) ) : (({ calling_npm("omp_get_max_threads", 0); (*____chimes_extern_func_omp_get_max_threads)(); })))) ; sprintf(bots_resources,"%d", ____chimes_unroll_var_0);
+   sprintf(bots_resources,"%d", omp_get_max_threads());
 # 466 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 467 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 468 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4398,9 +4397,9 @@ int
 # 490 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 main_resumable(int argc, char* argv[])
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397282UL)) ; long bots_t_start;
+{const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397278UL)) ; long bots_t_start;
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
- if (____must_checkpoint_main_bots_t_start_0) { register_stack_vars(1, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_main_bots_t_start_0) { register_stack_vars(1, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } ; ;
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 493 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
     ;
@@ -4409,11 +4408,11 @@ main_resumable(int argc, char* argv[])
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_0: (____chimes_does_checkpoint_bots_get_params_npm ? ( ({ calling((void*)bots_get_params, 0, ____alias_loc_id_8, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397282UL)); (bots_get_params)(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_8); bots_get_params_npm(argc, argv); })));
+    call_lbl_0: (____chimes_does_checkpoint_bots_get_params_npm ? ( ({ calling((void*)bots_get_params, 0, ____alias_loc_id_8, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397278UL)); (bots_get_params)(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_8); bots_get_params_npm(argc, argv); })));
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_1: (____chimes_does_checkpoint_pairalign_init_npm ? ( ({ calling((void*)pairalign_init, 1, ____alias_loc_id_7, 0UL, 1, (size_t)(16260503078375397308UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_7); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })));
+    call_lbl_1: (____chimes_does_checkpoint_pairalign_init_npm ? ( ({ calling((void*)pairalign_init, 1, ____alias_loc_id_6, 0UL, 1, (size_t)(16260503078375397304UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_6); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })));
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_2: (____chimes_does_checkpoint_bots_set_info_npm ? ( ({ calling((void*)bots_set_info, 2, 0, 0UL, 0); (bots_set_info)(); }) ) : (({ calling_npm("bots_set_info", 0); bots_set_info_npm(); })));
+    call_lbl_2: ({ calling_npm("bots_set_info", 0); bots_set_info_npm(); });
 # 500 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 501 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4434,7 +4433,7 @@ main_resumable(int argc, char* argv[])
 # 513 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
        call_lbl_4: bots_t_start = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 4, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 514 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-       call_lbl_5: (____chimes_does_checkpoint_align_seq_npm ? ( ({ calling((void*)align_seq, 5, ____alias_loc_id_6, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_6); (*____chimes_extern_func_align_seq)(); })));
+       call_lbl_5: (____chimes_does_checkpoint_align_seq_npm ? ( ({ calling((void*)align_seq, 5, ____alias_loc_id_7, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_7); (*____chimes_extern_func_align_seq)(); })));
 # 515 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
        call_lbl_6: bots_t_end = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 6, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 516 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4556,7 +4555,7 @@ bots_get_params_common_quick(int argc, char **argv)
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    strcpy(bots_execname, __xpg_basename(argv[0]));
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_0: ({ calling((void*)bots_get_date, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(16260503078375397291UL)); (bots_get_date)(bots_exec_date); }) ;
+    call_lbl_0: ({ calling((void*)bots_get_date, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(16260503078375397287UL)); (bots_get_date)(bots_exec_date); }) ;
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    strcpy(bots_exec_message,"");
 # 294 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4741,7 +4740,7 @@ void bots_set_info_quick ()
 # 464 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    sprintf(bots_model,"OpenMP (using tasks)");
 # 465 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-     int ____chimes_unroll_var_0; call_lbl_0: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_omp_get_max_threads_npm ? ( ({ calling((void*)omp_get_max_threads, 0, 0, 0UL, 0); (omp_get_max_threads)(); }) ) : (({ calling_npm("omp_get_max_threads", 0); (*____chimes_extern_func_omp_get_max_threads)(); })))) ; sprintf(bots_resources,"%d", ____chimes_unroll_var_0);
+   sprintf(bots_resources,"%d", omp_get_max_threads());
 # 466 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 467 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 468 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4769,7 +4768,7 @@ int
 # 490 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 main_quick(int argc, char* argv[])
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397282UL)) ; long bots_t_start;
+{const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397278UL)) ; long bots_t_start;
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
  if (____must_checkpoint_main_bots_t_start_0) { register_stack_vars(1, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0); } ; ;
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4780,11 +4779,11 @@ main_quick(int argc, char* argv[])
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_0: (____chimes_does_checkpoint_bots_get_params_npm ? ( ({ calling((void*)bots_get_params, 0, ____alias_loc_id_8, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397282UL)); bots_get_params_quick(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_8); bots_get_params_npm(argc, argv); })));
+    call_lbl_0: (____chimes_does_checkpoint_bots_get_params_npm ? ( ({ calling((void*)bots_get_params, 0, ____alias_loc_id_8, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397278UL)); bots_get_params_quick(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_8); bots_get_params_npm(argc, argv); })));
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_1: (____chimes_does_checkpoint_pairalign_init_npm ? ( ({ calling((void*)pairalign_init, 1, ____alias_loc_id_7, 0UL, 1, (size_t)(16260503078375397308UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_7); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })));
+    call_lbl_1: (____chimes_does_checkpoint_pairalign_init_npm ? ( ({ calling((void*)pairalign_init, 1, ____alias_loc_id_6, 0UL, 1, (size_t)(16260503078375397304UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_6); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })));
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_2: (____chimes_does_checkpoint_bots_set_info_npm ? ( ({ calling((void*)bots_set_info, 2, 0, 0UL, 0); bots_set_info_quick(); }) ) : (({ calling_npm("bots_set_info", 0); bots_set_info_npm(); })));
+    call_lbl_2: ({ calling_npm("bots_set_info", 0); bots_set_info_npm(); });
 # 500 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 501 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4805,7 +4804,7 @@ main_quick(int argc, char* argv[])
 # 513 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
        call_lbl_4: bots_t_start = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 4, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 514 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-       call_lbl_5: (____chimes_does_checkpoint_align_seq_npm ? ( ({ calling((void*)align_seq, 5, ____alias_loc_id_6, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_6); (*____chimes_extern_func_align_seq)(); })));
+       call_lbl_5: (____chimes_does_checkpoint_align_seq_npm ? ( ({ calling((void*)align_seq, 5, ____alias_loc_id_7, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_7); (*____chimes_extern_func_align_seq)(); })));
 # 515 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
        call_lbl_6: bots_t_end = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 6, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 516 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -5106,7 +5105,7 @@ void bots_set_info_npm ()
 # 464 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    sprintf(bots_model,"OpenMP (using tasks)");
 # 465 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    int ____chimes_unroll_var_0 = (*____chimes_extern_func_omp_get_max_threads)(); sprintf(bots_resources,"%d", ____chimes_unroll_var_0);
+   sprintf(bots_resources,"%d", omp_get_max_threads());
 # 466 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 467 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 468 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -5133,23 +5132,23 @@ void bots_set_info_npm ()
 
 
 static int module_init() {
-    init_module(16260503078375396929UL, 5, 5, 3, 13, 4, 11, 15, 7, 16, 1,
-                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)1, (16260503078375396929UL + 52UL), (16260503078375396929UL + 53UL), (16260503078375396929UL + 362UL), "bots_get_date", (unsigned)1, (16260503078375396929UL + 362UL),
+    init_module(16260503078375396929UL, 5, 5, 3, 13, 4, 10, 14, 8, 14, 1,
+                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)1, (16260503078375396929UL + 52UL), (16260503078375396929UL + 53UL), (16260503078375396929UL + 358UL), "bots_get_date", (unsigned)1, (16260503078375396929UL + 358UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 261UL), (16260503078375396929UL + 262UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 356UL),
-                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 296UL), (16260503078375396929UL + 376UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 295UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 296UL), (16260503078375396929UL + 376UL),
-                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 295UL),
-                           &____alias_loc_id_7, (unsigned)0, (unsigned)0, (unsigned)1, "pairalign_init", (unsigned)1, (16260503078375396929UL + 379UL),
-                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)0, (16260503078375396929UL + 292UL), (16260503078375396929UL + 293UL), (16260503078375396929UL + 294UL),
-                           &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 356UL),
-                            &____alias_loc_id_10, (unsigned)5, (unsigned)0, (unsigned)0, (16260503078375396929UL + 54UL), (16260503078375396929UL + 62UL), (16260503078375396929UL + 356UL), (16260503078375396929UL + 362UL), (16260503078375396929UL + 379UL),
-                            &____alias_loc_id_11, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 273UL), (16260503078375396929UL + 362UL),
-                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 297UL),
-                            "bots_get_params_common", 0, "_Z22bots_get_params_commoniPPc", "_Z26bots_get_params_common_npmiPPc", 1, &____alias_loc_id_0, 2, 0UL, (16260503078375396929UL + 252UL), 0UL, 26, "__xpg_basename", 1, (16260503078375396929UL + 62UL), (16260503078375396929UL + 63UL), "strcpy", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 63UL), (16260503078375396929UL + 64UL), "bots_get_date", 1, (16260503078375396929UL + 362UL), 0UL, "strcpy", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 400UL), (16260503078375396929UL + 66UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 62UL), (16260503078375396929UL + 123UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 379UL), (16260503078375396929UL + 62UL), (16260503078375396929UL + 147UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (16260503078375396929UL + 62UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (16260503078375396929UL + 62UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 401UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 402UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 402UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL,
-                            "bots_set_info", 0, "_Z13bots_set_infov", "_Z17bots_set_info_npmv", 0, 0, 0UL, 12, "sprintf", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 402UL), 0UL, "sprintf", 3, (16260503078375396929UL + 362UL), (16260503078375396929UL + 404UL), (16260503078375396929UL + 379UL), 0UL, "sprintf", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 405UL), 0UL, "omp_get_max_threads", 0, 0UL, "sprintf", 3, (16260503078375396929UL + 362UL), (16260503078375396929UL + 404UL), 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 400UL), (16260503078375396929UL + 282UL), "strcpy", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 400UL), (16260503078375396929UL + 283UL), "strcpy", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 400UL), (16260503078375396929UL + 284UL), "strcpy", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 400UL), (16260503078375396929UL + 285UL), "strcpy", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 400UL), (16260503078375396929UL + 286UL), "strcpy", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 400UL), (16260503078375396929UL + 287UL), "strcpy", 2, (16260503078375396929UL + 362UL), (16260503078375396929UL + 407UL), (16260503078375396929UL + 288UL),
-                            "bots_print_usage", 0, "_Z16bots_print_usagev", "_Z20bots_print_usage_npmv", 0, 0, 0UL, 24, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 381UL), 0UL, "fprintf", 3, (16260503078375396929UL + 1UL), (16260503078375396929UL + 382UL), (16260503078375396929UL + 362UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 381UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 383UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 384UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 381UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 385UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 385UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 387UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 388UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 389UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 390UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 391UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 392UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 391UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 392UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 391UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 396UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 381UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 397UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 398UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 381UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 384UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 381UL), 0UL,
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 352UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 292UL), (16260503078375396929UL + 372UL),
+                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 291UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 292UL), (16260503078375396929UL + 372UL),
+                           &____alias_loc_id_6, (unsigned)0, (unsigned)0, (unsigned)1, "pairalign_init", (unsigned)1, (16260503078375396929UL + 375UL),
+                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 291UL),
+                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)0, (16260503078375396929UL + 288UL), (16260503078375396929UL + 289UL), (16260503078375396929UL + 290UL),
+                           &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 352UL),
+                            &____alias_loc_id_10, (unsigned)5, (unsigned)0, (unsigned)0, (16260503078375396929UL + 54UL), (16260503078375396929UL + 62UL), (16260503078375396929UL + 352UL), (16260503078375396929UL + 358UL), (16260503078375396929UL + 375UL),
+                            &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 358UL),
+                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 293UL),
+                            "bots_get_params_common", 0, "_Z22bots_get_params_commoniPPc", "_Z26bots_get_params_common_npmiPPc", 1, &____alias_loc_id_0, 2, 0UL, (16260503078375396929UL + 252UL), 0UL, 26, "__xpg_basename", 1, (16260503078375396929UL + 62UL), (16260503078375396929UL + 63UL), "strcpy", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 63UL), (16260503078375396929UL + 64UL), "bots_get_date", 1, (16260503078375396929UL + 358UL), 0UL, "strcpy", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 396UL), (16260503078375396929UL + 66UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 62UL), (16260503078375396929UL + 123UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 375UL), (16260503078375396929UL + 62UL), (16260503078375396929UL + 147UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (16260503078375396929UL + 62UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (16260503078375396929UL + 62UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 397UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 398UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 398UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL,
+                            "bots_set_info", 0, "_Z13bots_set_infov", "_Z17bots_set_info_npmv", 0, 0, 0UL, 12, "sprintf", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 398UL), 0UL, "sprintf", 3, (16260503078375396929UL + 358UL), (16260503078375396929UL + 400UL), (16260503078375396929UL + 375UL), 0UL, "sprintf", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 401UL), 0UL, "omp_get_max_threads", 0, 0UL, "sprintf", 3, (16260503078375396929UL + 358UL), (16260503078375396929UL + 400UL), 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 396UL), (16260503078375396929UL + 278UL), "strcpy", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 396UL), (16260503078375396929UL + 279UL), "strcpy", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 396UL), (16260503078375396929UL + 280UL), "strcpy", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 396UL), (16260503078375396929UL + 281UL), "strcpy", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 396UL), (16260503078375396929UL + 282UL), "strcpy", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 396UL), (16260503078375396929UL + 283UL), "strcpy", 2, (16260503078375396929UL + 358UL), (16260503078375396929UL + 403UL), (16260503078375396929UL + 284UL),
+                            "bots_print_usage", 0, "_Z16bots_print_usagev", "_Z20bots_print_usage_npmv", 0, 0, 0UL, 24, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 377UL), 0UL, "fprintf", 3, (16260503078375396929UL + 1UL), (16260503078375396929UL + 378UL), (16260503078375396929UL + 358UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 377UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 379UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 380UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 377UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 381UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 381UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 383UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 384UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 385UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 386UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 387UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 388UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 387UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 388UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 387UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 392UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 377UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 393UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 394UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 377UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 380UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 377UL), 0UL,
                             "bots_get_params", 0, "_Z15bots_get_paramsiPPc", "_Z19bots_get_params_npmiPPc", 1, &____alias_loc_id_1, 2, 0UL, (16260503078375396929UL + 272UL), 0UL, 1, "bots_get_params_common", 2, 0UL, (16260503078375396929UL + 272UL), 0UL,
                                "align", (void **)&(____chimes_extern_func_align),
                                "align_end", (void **)&(____chimes_extern_func_align_end),
@@ -5160,7 +5159,6 @@ static int module_init() {
                                "bots_get_date", (void **)&(____chimes_extern_func_bots_get_date),
                                "bots_print_results", (void **)&(____chimes_extern_func_bots_print_results),
                                "bots_usecs", (void **)&(____chimes_extern_func_bots_usecs),
-                               "omp_get_max_threads", (void **)&(____chimes_extern_func_omp_get_max_threads),
                                "pairalign_init", (void **)&(____chimes_extern_func_pairalign_init),
                            "bots_get_params_common", &(____chimes_does_checkpoint_bots_get_params_common_npm),
                            "bots_set_info", &(____chimes_does_checkpoint_bots_set_info_npm),
@@ -5175,17 +5173,16 @@ static int module_init() {
                            "bots_get_date", &(____chimes_does_checkpoint_bots_get_date_npm),
                            "bots_print_results", &(____chimes_does_checkpoint_bots_print_results_npm),
                            "bots_usecs", &(____chimes_does_checkpoint_bots_usecs_npm),
-                           "omp_get_max_threads", &(____chimes_does_checkpoint_omp_get_max_threads_npm),
                            "pairalign_init", &(____chimes_does_checkpoint_pairalign_init_npm),
                              (16260503078375396929UL + 252UL), (16260503078375396929UL + 62UL),
                              (16260503078375396929UL + 262UL), (16260503078375396929UL + 272UL),
-                             (16260503078375396929UL + 294UL), (16260503078375396929UL + 353UL),
-                             (16260503078375396929UL + 380UL), (16260503078375396929UL + 1UL),
+                             (16260503078375396929UL + 290UL), (16260503078375396929UL + 349UL),
                              (16260503078375396929UL + 53UL), (16260503078375396929UL + 252UL),
+                             (16260503078375396929UL + 376UL), (16260503078375396929UL + 1UL),
                      "bots_verbose_mode_t", 32UL, 0,
                              "main", "main", 14, "bots_get_params", "pairalign_init", "bots_set_info", "align_seq_init", "bots_usecs", "align_seq", "bots_usecs", "align_init", "bots_usecs", "align", "bots_usecs", "align_end", "align_verify", "bots_print_results",
                              "bots_get_params_common", "_Z22bots_get_params_commoniPPc", 8, "bots_get_date", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage",
-                             "bots_set_info", "_Z13bots_set_infov", 1, "omp_get_max_threads",
+                             "bots_set_info", "_Z13bots_set_infov", 0,
                              "bots_print_usage", "_Z16bots_print_usagev", 0,
                              "bots_get_params", "_Z15bots_get_paramsiPPc", 1, "bots_get_params_common",
                         "bots_get_params_common|argc|0", 1, "bots_get_date",
@@ -5198,11 +5195,10 @@ static int module_init() {
         "bots_print_usage", 0UL, (int)0,
         "bots_print_usage", 0UL, (int)0,
         "bots_print_usage", 0UL, (int)0,
-        "bots_get_params_common", 0UL, (int)2, 0UL, 16260503078375397201UL,
-        "omp_get_max_threads", 0UL, (int)0,
-        "bots_get_params", 0UL, (int)2, 0UL, 16260503078375397282UL,
-        "pairalign_init", 0UL, (int)1, 16260503078375397308UL,
         "bots_set_info", 0UL, (int)0,
+        "bots_get_params_common", 0UL, (int)2, 0UL, 16260503078375397201UL,
+        "bots_get_params", 0UL, (int)2, 0UL, 16260503078375397278UL,
+        "pairalign_init", 0UL, (int)1, 16260503078375397304UL,
         "align_seq_init", 0UL, (int)0,
         "bots_usecs", 0UL, (int)0,
         "align_seq", 0UL, (int)0,
