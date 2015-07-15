@@ -14,7 +14,7 @@ def get_first_line_containing(s, find, append=0):
 
     print('Failed to find "' + find + '" when searching in:\n')
     print(s)
-    print()
+    print('')
     sys.exit(1)
 
 def iso3d_parser(stdout, stderr):

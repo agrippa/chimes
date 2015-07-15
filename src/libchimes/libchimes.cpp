@@ -912,11 +912,11 @@ static void constructNPMContext(npm_context *ctx, string current_function,
 static void set_my_tid(int tid) {
     int *my_tid_ptr = (int *)malloc(sizeof(int));
     *my_tid_ptr = tid;
-    assert(pthread_setspecific(tid_key, my_tid_ptr) == 0);
+    VERIFY(pthread_setspecific(tid_key, my_tid_ptr) == 0);
 }
 
 static void set_my_thread_ctx(thread_ctx *ctx) {
-    assert(pthread_setspecific(thread_ctx_key, ctx) == 0);
+    VERIFY(pthread_setspecific(thread_ctx_key, ctx) == 0);
 }
 
 void init_chimes(int argc, char **argv) {

@@ -34,6 +34,7 @@ static unsigned long long count_thread_leaving = 0;
 static unsigned long long count_get_parent_vars_stack_depth = 0;
 static unsigned long long count_get_thread_stack_depth = 0;
 static unsigned long long count_checkpoint = 0;
+static unsigned long long count_translate_fptr = 0;
 #ifdef __CHIMES_DETAIL_PROFILE
 static map<int, size_t> calling_lbls;
 static pthread_mutex_t count_mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -75,6 +76,7 @@ void onexit() {
     fprintf(stderr, "get_parent_vars_stack_depth %llu\n", count_get_parent_vars_stack_depth);
     fprintf(stderr, "get_thread_stack_depth %llu\n", count_get_thread_stack_depth);
     fprintf(stderr, "checkpoint %llu\n", count_checkpoint);
+    fprintf(stderr, "translate_fptr %llu\n", count_translate_fptr);
     fprintf(stderr, "\n");
 #ifdef __CHIMES_DETAIL_PROFILE
     fprintf(stderr, "Calling stats:\n");
@@ -161,6 +163,7 @@ void calling(void *func_ptr, int lbl, unsigned loc_id, size_t set_return_alias,
 }
 
 int get_next_call() { return (0); }
+
 int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...) {
 #ifdef VERBOSE
@@ -177,6 +180,9 @@ void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
         int n_params, ...) {
 #ifdef VERBOSE
     fprintf(stderr, "translate_fptr: %u\n", loc_id);
+#endif
+#ifdef __CHIMES_PROFILE
+    __sync_fetch_and_add(&count_translate_fptr, 1);
 #endif
     map<void *, void *>::iterator exists = original_function_to_npm.find(fptr);
     if (exists != original_function_to_npm.end()) {
@@ -405,7 +411,6 @@ void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int i
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calloc_wrapper, 1);
 #endif
-    // return calloc(num, size);
 }
 
 void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t group, int is_ptr,
@@ -413,14 +418,12 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_realloc_wrapper, 1);
 #endif
-    // return realloc(ptr, nbytes);
 }
 
 void free_helper(const void *ptr, size_t group) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_free_wrapper, 1);
 #endif
-    // free(ptr);
 }
 
 bool disable_current_thread() {
