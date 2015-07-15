@@ -109,6 +109,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 1
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 189 126 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 193 5 int ____chimes_ret_var_5; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 193 29 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 4  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 4  call_lbl_1: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 31 5 len=9 getNRanks_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 32 115  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 36 5 len=9 getMyRank_quick
@@ -116,15 +118,11 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 45 5 len=9 printRank_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 46 115  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 51 6 len=16 timestampBarrier_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 4 ({ calling_npm("barrierParallel", 0); barrierParallel_npm(); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 20 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 10 ({ calling_npm("printRank", 0); printRank_npm(); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 20 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 13 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 52 169  ; time_t t;
-# 52
- if (____must_checkpoint_timestampBarrier_t_0) { register_stack_vars(1, "timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0);  }  
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 17 ({ calling_npm("barrierParallel", 0); barrierParallel_npm(); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 33 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 23 ({ calling_npm("printRank", 0); printRank_npm(); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 33 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 52 169  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 93 5 len=19 sendReceiveParallel_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 95 271  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 113 6 len=14 addIntParallel_quick
@@ -148,15 +146,11 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 45 5 len=9 printRank_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 46 115  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 51 6 len=16 timestampBarrier_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 4 ({ calling_npm("barrierParallel", 0); barrierParallel_npm(); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 20 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 10 ({ calling_npm("printRank", 0); printRank_npm(); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 20 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 13 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 52 169  ; time_t t;
-# 52
- if (____must_checkpoint_timestampBarrier_t_0) { register_stack_vars(1, "timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 17 ({ calling_npm("barrierParallel", 0); barrierParallel_npm(); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 33 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 23 ({ calling_npm("printRank", 0); printRank_npm(); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 33 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 52 169  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 93 5 len=19 sendReceiveParallel_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 95 271  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 113 6 len=14 addIntParallel_resumable

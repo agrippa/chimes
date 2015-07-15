@@ -24,6 +24,6 @@ releaseNodes _Z12releaseNodesP12stealStack_t 0 MAY ss_localDepth 1098 9 ss_setSt
 cb_init _Z7cb_initv 0 DOES_NOT
 cbarrier_wait _Z13cbarrier_waitv 0 DOES_NOT
 cbarrier_cancel _Z15cbarrier_cancelv 0 DOES_NOT
-parTreeSearch _Z13parTreeSearchP12stealStack_t 0 DOES initNode 1131 3 ss_localDepth 1136 22 ss_setState 1140 7 ss_top 1143 16 genChildren 1146 2 ss_pop 1155 9 releaseNodes 1160 7 ss_localDepth 1161 20 checkpoint 1168 11 ss_acquire 1180 9 ss_setState 1189 7 findwork 1190 18 ss_steal 1193 14 findwork 1194 30 ss_setState 1206 5 cbarrier_wait 1207 12
-showStats _Z9showStatsd 0 MAY uts_showStats 1281 3
-main main 0 DOES uts_parseParams 1378 3 cb_init 1386 3 uts_printParams 1396 7 ss_init 1421 5 initRootNode 1426 7 ss_push 1427 7 ss_initState 1435 5 uts_wctime 1436 10 parTreeSearch 1437 5 uts_wctime 1438 10 showStats 1451 7
+parTreeSearch _Z13parTreeSearchP12stealStack_t 0 MAY initNode 1131 3 ss_localDepth 1136 22 ss_setState 1140 7 ss_top 1143 16 genChildren 1146 2 ss_pop 1155 9 releaseNodes 1160 7 ss_localDepth 1161 20 ss_acquire 1167 9 ss_setState 1176 7 findwork 1177 18 ss_steal 1180 14 findwork 1181 30 ss_setState 1193 5 cbarrier_wait 1194 12
+showStats _Z9showStatsd 0 MAY uts_showStats 1268 3
+main main 0 DOES uts_parseParams 1365 3 cb_init 1373 3 uts_printParams 1383 7 ss_init 1408 5 initRootNode 1413 7 ss_push 1414 7 checkpoint 1422 5 ss_initState 1426 5 uts_wctime 1427 10 parTreeSearch 1428 5 uts_wctime 1429 10 checkpoint 1441 5 showStats 1446 7

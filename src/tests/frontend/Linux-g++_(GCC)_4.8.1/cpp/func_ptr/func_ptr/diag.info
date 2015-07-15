@@ -15,14 +15,14 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 5  int 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 23 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 15 6 int ____chimes_ret_var_1; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 15 30 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 14  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 13 5  call_lbl_2: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 14  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 13 5  call_lbl_1: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 5 5 len=3 foo_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 5 127  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 9 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 32 ((int (*)(int))(translate_fptr((void *)(*fptr), 1, 0, 0UL, 1, 0UL)))(6)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 32 ((int (*)(int))(translate_fptr((void *)(*fptr), 0, 0, 0UL, 1, 0UL)))(6)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 13 18 checkpoint_transformed(2, ____alias_loc_id_0)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 13 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 13 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 11 
@@ -32,12 +32,12 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 9 167 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 5 5 len=3 foo_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 5 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 9 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 32 ((int (*)(int))(translate_fptr((void *)(*fptr), 1, 0, 0UL, 1, 0UL)))(6)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 32 ((int (*)(int))(translate_fptr((void *)(*fptr), 0, 0, 0UL, 1, 0UL)))(6)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 13 18 checkpoint_transformed(2, ____alias_loc_id_0)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 13 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 13 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 11 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 9 167  ; int b;
 # 9
- register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
+ register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

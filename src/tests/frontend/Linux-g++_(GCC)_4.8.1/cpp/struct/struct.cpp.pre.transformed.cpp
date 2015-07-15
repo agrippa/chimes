@@ -55,13 +55,13 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern void register_constant(size_t const_id, void *address,
         size_t length);
 extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
+extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
@@ -2252,7 +2252,7 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 foo test;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
- register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
       ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
@@ -2262,14 +2262,14 @@ foo test;
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     test.c = __null;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-       test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 13553023217757812082UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c))) ;
+       test2 = ((foo *) ({ void *____chimes_tmp_ptr = malloc(sizeof(foo) * 3); malloc_helper(____chimes_tmp_ptr, sizeof(foo) * 3, 13553023217757812082UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); ____chimes_tmp_ptr; })) ;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     test2[0].a = 3;
 # 19 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     fprintf(stderr, "Hello before checkpointing\n");
 # 20 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 # 21 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-     call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
+     call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
 # 22 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 # 23 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     ((test.a == 3) ? static_cast<void> (0) : __assert_fail ("test.a == 3", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 23, __PRETTY_FUNCTION__));
@@ -2299,14 +2299,14 @@ foo test;
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     test.c = __null;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-       test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 13553023217757812082UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c))) ;
+       test2 = ((foo *) ({ void *____chimes_tmp_ptr = malloc(sizeof(foo) * 3); malloc_helper(____chimes_tmp_ptr, sizeof(foo) * 3, 13553023217757812082UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); ____chimes_tmp_ptr; })) ;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     test2[0].a = 3;
 # 19 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     fprintf(stderr, "Hello before checkpointing\n");
 # 20 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 # 21 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-     call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
+     call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
 # 22 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 # 23 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     ((test.a == 3) ? static_cast<void> (0) : __assert_fail ("test.a == 3", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 23, __PRETTY_FUNCTION__));

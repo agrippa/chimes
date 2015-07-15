@@ -87,7 +87,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 224 36 const in
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 224 335 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 225 3  int numChildren;  numChildren = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 225 22 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 253 5  int rootBF;  rootBF = ((int)ceil(b_0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 253 5  int rootBF;  rootBF = ((int) ceil(b_0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 253 33 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 268 4 int ____chimes_ret_var_4; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 268 28 
@@ -111,7 +111,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 308 5  double q
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 308 27 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 309 5  int m;  m = (nonLeafBF) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 309 22 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 310 5  double es;  es = ((1. / (1. - q * m))) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 310 5  double es;  es = ((1.0 / (1.0 - q * m))) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 310 38 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 325 4 int ____chimes_ret_var_10; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 325 29 
@@ -133,68 +133,66 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 405 4  char *__
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 405 51 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 429 102 const int ____chimes_did_disable12 = new_stack((void *)(&uts_showStats), "uts_showStats", &____must_manage_uts_showStats, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 429 319 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 112 3  call_lbl_2: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 154 3  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 163 12  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 213 3  call_lbl_6: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 230 74  call_lbl_2: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 237 7  call_lbl_3: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 50  call_lbl_4: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 102  call_lbl_5: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 246 5  call_lbl_6: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 283 5  call_lbl_5: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 293 37  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 3  call_lbl_11: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 335 5  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 336 5  call_lbl_2: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 346 9  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 347 9  call_lbl_2: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 355 47  call_lbl_5: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 400 5  call_lbl_20: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 405 37  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 424 3  call_lbl_19: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 112 3  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 154 3  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 163 12  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 164 15  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 213 3  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 214 3  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 230 74  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 237 7  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 50  call_lbl_2: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 102  call_lbl_3: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 246 5  call_lbl_4: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 283 5  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 293 37  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 3  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 335 5  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 336 5  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 346 9  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 347 9  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 355 47  call_lbl_2: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 400 5  call_lbl_3: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 405 37  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 424 3  call_lbl_1: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 110 6 len=9 uts_error_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 112 16  ({  calling((void*)impl_abort, 2, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (impl_abort)(1); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 112 16  ({  calling((void*)impl_abort, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (impl_abort)(1); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 112 28 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 110 175  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 133 8 len=10 uts_wctime_quick
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 134 4 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 134 21 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 133 138  ; struct timeval tv;
-# 133
- if (____must_checkpoint_uts_wctime_tv_0) { register_stack_vars(1, "uts_wctime|tv|0", &____must_checkpoint_uts_wctime_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 133 138  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 142 8 len=10 rng_toProb_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 142 158  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 150 6 len=12 uts_initRoot_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 154 16  ({  calling((void*)rng_init, 1, ____alias_loc_id_1, 0UL, 2, (size_t)(10372134782440949975UL), (size_t)(0UL)); (rng_init)(root->state.state, rootId); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 154 16  ({  calling((void*)rng_init, 0, ____alias_loc_id_1, 0UL, 2, (size_t)(10372134782440949975UL), (size_t)(0UL)); (rng_init)(root->state.state, rootId); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 154 50 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 150 444  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 161 5 len=19 uts_numChildren_bin_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 163 30  ({  calling((void*)rng_rand, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(10372134782440950008UL)); (rng_rand)(parent->state.state); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 163 30  ({  calling((void*)rng_rand, 0, ____alias_loc_id_2, 0UL, 1, (size_t)(10372134782440950008UL)); (rng_rand)(parent->state.state); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 163 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 164 20 ({ calling_npm("rng_toProb", 0); rng_toProb_npm(v); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 164 32 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 164 33 ({ calling_npm("rng_toProb", 0); rng_toProb_npm(v); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 164 45 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 161 218  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 170 5 len=19 uts_numChildren_geo_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 213 20  ({  calling((void*)rng_rand, 6, ____alias_loc_id_3, 0UL, 1, (size_t)(10372134782440950119UL)); (rng_rand)(parent->state.state); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 213 20  ({  calling((void*)rng_rand, 0, ____alias_loc_id_3, 0UL, 1, (size_t)(10372134782440950119UL)); (rng_rand)(parent->state.state); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 213 48 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 214 7 ({ calling_npm("rng_toProb", 0); rng_toProb_npm(h); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 214 19 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 214 20 ({ calling_npm("rng_toProb", 0); rng_toProb_npm(h); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 214 32 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 174 3 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 174 11 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 170 218  ; double p;
 # 170
  if (____must_checkpoint_uts_numChildren_geo_p_0) { register_stack_vars(1, "uts_numChildren_geo|p|0", &____must_checkpoint_uts_numChildren_geo_p_0, "double", (void *)(&p), (size_t)8, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 224 5 len=15 uts_numChildren_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 230 101  ({  calling((void*)uts_numChildren_bin, 2, ____alias_loc_id_4, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_bin)(parent); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 230 101  ({  calling((void*)uts_numChildren_bin, 0, ____alias_loc_id_4, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_bin)(parent); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 230 127 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 237 34  ({  calling((void*)uts_numChildren_geo, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_geo)(parent); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 237 34  ({  calling((void*)uts_numChildren_geo, 1, ____alias_loc_id_6, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_geo)(parent); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 237 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 77  ({  calling((void*)uts_numChildren_geo, 4, ____alias_loc_id_7, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_geo)(parent); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 77  ({  calling((void*)uts_numChildren_geo, 2, ____alias_loc_id_7, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_geo)(parent); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 103 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 142  ({  calling((void*)uts_numChildren_bin, 5, ____alias_loc_id_8, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_bin)(parent); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 142  ({  calling((void*)uts_numChildren_bin, 3, ____alias_loc_id_8, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_bin)(parent); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 168 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 247 7  ({  calling((void*)uts_error, 6, ____alias_loc_id_5, 0UL, 1, (size_t)(10372134782440950849UL)); (uts_error)("parTreeSearch(): Unknown tree type"); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 247 7  ({  calling((void*)uts_error, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(10372134782440950849UL)); (uts_error)("parTreeSearch(): Unknown tree type"); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 247 53 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 225 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 225 19 
@@ -202,19 +200,19 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 224 334  ; 
 # 224
  if (____must_checkpoint_uts_numChildren_numChildren_0) { register_stack_vars(1, "uts_numChildren|numChildren|0", &____must_checkpoint_uts_numChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 272 5 len=13 uts_childType_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 284 7  ({  calling((void*)uts_error, 5, ____alias_loc_id_9, 0UL, 1, (size_t)(10372134782440950852UL)); (uts_error)("uts_get_childtype(): Unknown tree type"); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 284 7  ({  calling((void*)uts_error, 0, ____alias_loc_id_9, 0UL, 1, (size_t)(10372134782440950852UL)); (uts_error)("uts_get_childtype(): Unknown tree type"); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 284 57 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 272 193  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 291 5 len=15 uts_paramsToStr_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 293 77  ({  calling((void*)impl_getName, 1, ____alias_loc_id_11, 10372134782440950278UL, 0); (impl_getName)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 293 77  ({  calling((void*)impl_getName, 0, ____alias_loc_id_11, 10372134782440950278UL, 0); (impl_getName)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 293 90 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 23  ({  calling((void*)rng_showtype, 11, ____alias_loc_id_10, 0UL, 2, (size_t)(10372134782440950421UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 47 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 22  ({  calling((void*)rng_showtype, 1, ____alias_loc_id_10, 0UL, 2, (size_t)(10372134782440950421UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 46 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 291 458  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 329 6 len=15 uts_printParams_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 335 24  ({  calling((void*)uts_paramsToStr, 1, ____alias_loc_id_13, 0UL, 2, (size_t)(10372134782440950427UL), (size_t)(0UL)); (uts_paramsToStr)(strBuf, ind); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 335 24  ({  calling((void*)uts_paramsToStr, 0, ____alias_loc_id_13, 0UL, 2, (size_t)(10372134782440950427UL), (size_t)(0UL)); (uts_paramsToStr)(strBuf, ind); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 335 51 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 336 24  ({  calling((void*)impl_paramsToStr, 2, ____alias_loc_id_12, 0UL, 2, (size_t)(10372134782440950427UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 336 24  ({  calling((void*)impl_paramsToStr, 1, ____alias_loc_id_12, 0UL, 2, (size_t)(10372134782440950427UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 336 52 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 330 3 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 330 20 
@@ -222,14 +220,14 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 329 156  ; 
 # 329
  if (____must_checkpoint_uts_printParams_strBuf_0) { register_stack_vars(1, "uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 341 6 len=15 uts_parseParams_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 346 22  ({  calling((void*)uts_helpMessage, 1, 0, 0UL, 0); (uts_helpMessage)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 346 22  ({  calling((void*)uts_helpMessage, 0, 0, 0UL, 0); (uts_helpMessage)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 346 38 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 347 22  ({  calling((void*)impl_abort, 2, 0, 0UL, 1, (size_t)(0UL)); (impl_abort)(0); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 347 22  ({  calling((void*)impl_abort, 1, 0, 0UL, 1, (size_t)(0UL)); (impl_abort)(0); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 347 34 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 355 65  ({  calling((void*)impl_parseParam, 5, ____alias_loc_id_14, 0UL, 2, (size_t)(10372134782440950697UL), (size_t)(10372134782440950697UL)); (impl_parseParam)(argv[i], argv[i + 1]); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 355 65  ({  calling((void*)impl_parseParam, 2, ____alias_loc_id_14, 0UL, 2, (size_t)(10372134782440950697UL), (size_t)(10372134782440950697UL)); (impl_parseParam)(argv[i], argv[i + 1]); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 355 99 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 400 19  ({  calling((void*)impl_abort, 20, ____alias_loc_id_15, 0UL, 1, (size_t)(0UL)); (impl_abort)(4); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 400 31 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 400 18  ({  calling((void*)impl_abort, 3, ____alias_loc_id_15, 0UL, 1, (size_t)(0UL)); (impl_abort)(4); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 400 30 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 342 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 342 9 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 343 4 
@@ -240,90 +238,86 @@ int i;
 # 341
  if (____must_checkpoint_uts_parseParams_err_0 || ____must_checkpoint_uts_parseParams_i_0) { register_stack_vars(2, "uts_parseParams|err|0", &____must_checkpoint_uts_parseParams_err_0, "i32", (void *)(&err), (size_t)4, 0, 0, 0, "uts_parseParams|i|0", &____must_checkpoint_uts_parseParams_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 404 6 len=15 uts_helpMessage_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 405 77  ({  calling((void*)impl_getName, 1, ____alias_loc_id_17, 10372134782440950721UL, 0); (impl_getName)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 405 77  ({  calling((void*)impl_getName, 0, ____alias_loc_id_17, 10372134782440950721UL, 0); (impl_getName)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 405 90 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 424 17  ({  calling((void*)impl_helpMessage, 19, ____alias_loc_id_16, 0UL, 0); (impl_helpMessage)(); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 424 34 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 424 16  ({  calling((void*)impl_helpMessage, 1, ____alias_loc_id_16, 0UL, 0); (impl_helpMessage)(); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 424 33 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 404 157  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 429 6 len=13 uts_showStats_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 429 318  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 110 6 len=9 uts_error_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 112 16  ({  calling((void*)impl_abort, 2, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (impl_abort)(1); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 112 16  ({  calling((void*)impl_abort, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (impl_abort)(1); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 112 28 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 110 175  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 110 175  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 133 8 len=10 uts_wctime_resumable
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 134 4 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 134 21 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 133 138  ; struct timeval tv;
-# 133
- if (____must_checkpoint_uts_wctime_tv_0) { register_stack_vars(1, "uts_wctime|tv|0", &____must_checkpoint_uts_wctime_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 133 138  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 142 8 len=10 rng_toProb_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 142 158  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 150 6 len=12 uts_initRoot_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 154 16  ({  uint8 * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (root->state.state);  }  calling((void*)rng_init, 1, ____alias_loc_id_1, 0UL, 2, (size_t)(10372134782440949975UL), (size_t)(0UL)); (rng_init)(____chimes_arg1, rootId); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 154 16  ({  uint8 * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (root->state.state);  }  calling((void*)rng_init, 0, ____alias_loc_id_1, 0UL, 2, (size_t)(10372134782440949975UL), (size_t)(0UL)); (rng_init)(____chimes_arg1, rootId); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 154 50 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 150 444  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 150 444  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 161 5 len=19 uts_numChildren_bin_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 163 30  ({  uint8 * ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg3 = (parent->state.state);  }  calling((void*)rng_rand, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(10372134782440950008UL)); (rng_rand)(____chimes_arg3); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 163 30  ({  uint8 * ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg3 = (parent->state.state);  }  calling((void*)rng_rand, 0, ____alias_loc_id_2, 0UL, 1, (size_t)(10372134782440950008UL)); (rng_rand)(____chimes_arg3); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 163 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 164 20 ({ calling_npm("rng_toProb", 0); rng_toProb_npm(v); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 164 32 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 161 218  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 164 33 ({ calling_npm("rng_toProb", 0); rng_toProb_npm(v); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 164 45 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 161 218  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 170 5 len=19 uts_numChildren_geo_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 213 20  ({  uint8 * ____chimes_arg4;  if (!____chimes_replaying) { ____chimes_arg4 = (parent->state.state);  }  calling((void*)rng_rand, 6, ____alias_loc_id_3, 0UL, 1, (size_t)(10372134782440950119UL)); (rng_rand)(____chimes_arg4); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 213 20  ({  uint8 * ____chimes_arg4;  if (!____chimes_replaying) { ____chimes_arg4 = (parent->state.state);  }  calling((void*)rng_rand, 0, ____alias_loc_id_3, 0UL, 1, (size_t)(10372134782440950119UL)); (rng_rand)(____chimes_arg4); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 213 48 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 214 7 ({ calling_npm("rng_toProb", 0); rng_toProb_npm(h); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 214 19 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 214 20 ({ calling_npm("rng_toProb", 0); rng_toProb_npm(h); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 214 32 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 174 3 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 174 11 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 170 218  ; double p;
 # 170
- if (____must_checkpoint_uts_numChildren_geo_p_0) { register_stack_vars(1, "uts_numChildren_geo|p|0", &____must_checkpoint_uts_numChildren_geo_p_0, "double", (void *)(&p), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_uts_numChildren_geo_p_0) { register_stack_vars(1, "uts_numChildren_geo|p|0", &____must_checkpoint_uts_numChildren_geo_p_0, "double", (void *)(&p), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 224 5 len=15 uts_numChildren_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 230 101  ({  calling((void*)uts_numChildren_bin, 2, ____alias_loc_id_4, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_bin)(parent); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 230 101  ({  calling((void*)uts_numChildren_bin, 0, ____alias_loc_id_4, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_bin)(parent); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 230 127 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 237 34  ({  calling((void*)uts_numChildren_geo, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_geo)(parent); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 237 34  ({  calling((void*)uts_numChildren_geo, 1, ____alias_loc_id_6, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_geo)(parent); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 237 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 77  ({  calling((void*)uts_numChildren_geo, 4, ____alias_loc_id_7, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_geo)(parent); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 77  ({  calling((void*)uts_numChildren_geo, 2, ____alias_loc_id_7, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_geo)(parent); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 103 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 142  ({  calling((void*)uts_numChildren_bin, 5, ____alias_loc_id_8, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_bin)(parent); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 142  ({  calling((void*)uts_numChildren_bin, 3, ____alias_loc_id_8, 0UL, 1, (size_t)(10372134782440950214UL)); (uts_numChildren_bin)(parent); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 168 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 247 7  ({  char * ____chimes_arg9;  if (!____chimes_replaying) { ____chimes_arg9 = ("parTreeSearch(): Unknown tree type");  }  calling((void*)uts_error, 6, ____alias_loc_id_5, 0UL, 1, (size_t)(10372134782440950849UL)); (uts_error)(____chimes_arg9); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 247 7  ({  char * ____chimes_arg9;  if (!____chimes_replaying) { ____chimes_arg9 = ("parTreeSearch(): Unknown tree type");  }  calling((void*)uts_error, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(10372134782440950849UL)); (uts_error)(____chimes_arg9); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 247 53 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 225 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 225 19 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 224 334  ; int numChildren;
 # 224
- if (____must_checkpoint_uts_numChildren_numChildren_0) { register_stack_vars(1, "uts_numChildren|numChildren|0", &____must_checkpoint_uts_numChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_uts_numChildren_numChildren_0) { register_stack_vars(1, "uts_numChildren|numChildren|0", &____must_checkpoint_uts_numChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 272 5 len=13 uts_childType_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 284 7  ({  char * ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg10 = ("uts_get_childtype(): Unknown tree type");  }  calling((void*)uts_error, 5, ____alias_loc_id_9, 0UL, 1, (size_t)(10372134782440950852UL)); (uts_error)(____chimes_arg10); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 284 7  ({  char * ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg10 = ("uts_get_childtype(): Unknown tree type");  }  calling((void*)uts_error, 0, ____alias_loc_id_9, 0UL, 1, (size_t)(10372134782440950852UL)); (uts_error)(____chimes_arg10); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 284 57 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 272 193  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 272 193  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 291 5 len=15 uts_paramsToStr_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 293 77  ({  calling((void*)impl_getName, 1, ____alias_loc_id_11, 10372134782440950278UL, 0); (impl_getName)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 293 77  ({  calling((void*)impl_getName, 0, ____alias_loc_id_11, 10372134782440950278UL, 0); (impl_getName)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 293 90 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 23  ({  calling((void*)rng_showtype, 11, ____alias_loc_id_10, 0UL, 2, (size_t)(10372134782440950421UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 47 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 291 458  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(11): { goto call_lbl_11; } default: { chimes_error(); } }  }  
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 22  ({  calling((void*)rng_showtype, 1, ____alias_loc_id_10, 0UL, 2, (size_t)(10372134782440950421UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 46 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 291 458  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 329 6 len=15 uts_printParams_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 335 24  ({  calling((void*)uts_paramsToStr, 1, ____alias_loc_id_13, 0UL, 2, (size_t)(10372134782440950427UL), (size_t)(0UL)); (uts_paramsToStr)(strBuf, ind); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 335 24  ({  calling((void*)uts_paramsToStr, 0, ____alias_loc_id_13, 0UL, 2, (size_t)(10372134782440950427UL), (size_t)(0UL)); (uts_paramsToStr)(strBuf, ind); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 335 51 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 336 24  ({  calling((void*)impl_paramsToStr, 2, ____alias_loc_id_12, 0UL, 2, (size_t)(10372134782440950427UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 336 24  ({  calling((void*)impl_paramsToStr, 1, ____alias_loc_id_12, 0UL, 2, (size_t)(10372134782440950427UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 336 52 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 330 3 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 330 20 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 329 156  ; char strBuf[5000];
 # 329
- if (____must_checkpoint_uts_printParams_strBuf_0) { register_stack_vars(1, "uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_uts_printParams_strBuf_0) { register_stack_vars(1, "uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 341 6 len=15 uts_parseParams_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 346 22  ({  calling((void*)uts_helpMessage, 1, 0, 0UL, 0); (uts_helpMessage)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 346 22  ({  calling((void*)uts_helpMessage, 0, 0, 0UL, 0); (uts_helpMessage)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 346 38 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 347 22  ({  calling((void*)impl_abort, 2, 0, 0UL, 1, (size_t)(0UL)); (impl_abort)(0); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 347 22  ({  calling((void*)impl_abort, 1, 0, 0UL, 1, (size_t)(0UL)); (impl_abort)(0); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 347 34 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 355 65  ({  char * ____chimes_arg18;  char * ____chimes_arg19;  if (!____chimes_replaying) { ____chimes_arg18 = (argv[i]); ____chimes_arg19 = (argv[i + 1]);  }  calling((void*)impl_parseParam, 5, ____alias_loc_id_14, 0UL, 2, (size_t)(10372134782440950697UL), (size_t)(10372134782440950697UL)); (impl_parseParam)(____chimes_arg18, ____chimes_arg19); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 355 65  ({  char * ____chimes_arg18;  char * ____chimes_arg19;  if (!____chimes_replaying) { ____chimes_arg18 = (argv[i]); ____chimes_arg19 = (argv[i + 1]);  }  calling((void*)impl_parseParam, 2, ____alias_loc_id_14, 0UL, 2, (size_t)(10372134782440950697UL), (size_t)(10372134782440950697UL)); (impl_parseParam)(____chimes_arg18, ____chimes_arg19); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 355 99 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 400 19  ({  calling((void*)impl_abort, 20, ____alias_loc_id_15, 0UL, 1, (size_t)(0UL)); (impl_abort)(4); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 400 31 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 400 18  ({  calling((void*)impl_abort, 3, ____alias_loc_id_15, 0UL, 1, (size_t)(0UL)); (impl_abort)(4); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 400 30 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 342 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 342 9 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 343 4 
@@ -332,12 +326,12 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 341 458  ; 
 # 341
 int i;
 # 341
- if (____must_checkpoint_uts_parseParams_err_0 || ____must_checkpoint_uts_parseParams_i_0) { register_stack_vars(2, "uts_parseParams|err|0", &____must_checkpoint_uts_parseParams_err_0, "i32", (void *)(&err), (size_t)4, 0, 0, 0, "uts_parseParams|i|0", &____must_checkpoint_uts_parseParams_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(20): { goto call_lbl_20; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_uts_parseParams_err_0 || ____must_checkpoint_uts_parseParams_i_0) { register_stack_vars(2, "uts_parseParams|err|0", &____must_checkpoint_uts_parseParams_err_0, "i32", (void *)(&err), (size_t)4, 0, 0, 0, "uts_parseParams|i|0", &____must_checkpoint_uts_parseParams_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 404 6 len=15 uts_helpMessage_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 405 77  ({  calling((void*)impl_getName, 1, ____alias_loc_id_17, 10372134782440950721UL, 0); (impl_getName)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 405 77  ({  calling((void*)impl_getName, 0, ____alias_loc_id_17, 10372134782440950721UL, 0); (impl_getName)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 405 90 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 424 17  ({  calling((void*)impl_helpMessage, 19, ____alias_loc_id_16, 0UL, 0); (impl_helpMessage)(); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 424 34 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 404 157  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(19): { goto call_lbl_19; } default: { chimes_error(); } }  }  
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 424 16  ({  calling((void*)impl_helpMessage, 1, ____alias_loc_id_16, 0UL, 0); (impl_helpMessage)(); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 424 33 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 404 157  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 429 6 len=13 uts_showStats_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts.c 429 318  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

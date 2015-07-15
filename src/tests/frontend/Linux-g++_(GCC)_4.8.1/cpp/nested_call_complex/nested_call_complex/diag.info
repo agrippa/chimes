@@ -27,19 +27,22 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 103 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 16 6 int ____chimes_ret_var_2; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 16 30 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 15 5  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 37  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 106  call_lbl_1: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 165  call_lbl_2: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 15 5  call_lbl_3: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 3 5 len=3 foo_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 3 127  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 7 5 len=3 bar_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 7 127  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 11 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 64 ({ calling_npm("bar", 0); bar_npm(a); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 69 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 133 ({ calling_npm("bar", 0); bar_npm(____chimes_unroll_var_0); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 160 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 169 ({ calling_npm("foo", 0); foo_npm(5 + ____chimes_unroll_var_1); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 200 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 15 18 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 77 ({ calling_npm("bar", 0); bar_npm(a); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 82 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 159 ({ calling_npm("bar", 0); bar_npm(____chimes_unroll_var_0); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 186 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 208 ({ calling_npm("foo", 0); foo_npm(5 + ____chimes_unroll_var_1); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 239 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 15 18 checkpoint_transformed(3, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 15 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 12 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 12 11 
@@ -51,16 +54,16 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 7 5 len=3 bar_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 7 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 11 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 64 ({ calling_npm("bar", 0); bar_npm(a); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 69 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 133 ({ calling_npm("bar", 0); bar_npm(____chimes_unroll_var_0); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 160 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 169 ({ calling_npm("foo", 0); foo_npm(5 + ____chimes_unroll_var_1); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 200 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 15 18 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 77 ({ calling_npm("bar", 0); bar_npm(a); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 82 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 159 ({ calling_npm("bar", 0); bar_npm(____chimes_unroll_var_0); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 186 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 208 ({ calling_npm("foo", 0); foo_npm(5 + ____chimes_unroll_var_1); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 14 239 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 15 18 checkpoint_transformed(3, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 15 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 12 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 12 11 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 11 168  ; int a;
 # 11
- register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
