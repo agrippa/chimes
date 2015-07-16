@@ -1,0 +1,51 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 6 6 len=3 fin_npm
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 15 18 const int ____chimes_did_disable0 = new_stack((void *)(&fin), "fin", &____must_manage_fin, 10, 0, (size_t)(5568490623024078538UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(5568490623024078543UL), (size_t)(5568490623024078544UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 110 1 rm_stack(false, 0UL, "fin", &____must_manage_fin, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 15 19 const int ____chimes_did_disable0 = new_stack((void *)(&fin), "fin", &____must_manage_fin, 10, 0, (size_t)(5568490623024078538UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(5568490623024078543UL), (size_t)(5568490623024078544UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 15 320 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 22 2 float BtotDyad; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 22 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 23 2 float CaMKIItotDyad; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 23 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 26 2 float Vmyo; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 26 12 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 27 2 float Vdyad; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 27 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 28 2 float VSL; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 28 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 29 2 float kDyadSL; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 29 15 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 30 2 float kSLmyo; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 30 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 31 2 float k0Boff; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 31 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 32 2 float k0Bon; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 32 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 33 2 float k2Boff; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 33 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 34 2 float k2Bon; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 34 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 35 2 float k4Boff; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 35 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 36 2 float k4Bon; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 36 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 37 2 float CaMtotDyad; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 37 18 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 38 2 float Bdyad; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 38 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 39 2 float J_cam_dyadSL; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 39 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 40 2 float J_ca2cam_dyadSL; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 40 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 41 2 float J_ca4cam_dyadSL; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 41 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 42 2 float J_cam_SLmyo; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 42 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 43 2 float J_ca2cam_SLmyo; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 43 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 44 2 float J_ca4cam_SLmyo; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 44 22 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 6 6 len=3 fin_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 15 319  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 6 6 len=3 fin_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/fin.c 15 319  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

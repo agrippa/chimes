@@ -1,0 +1,269 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 14 8 len=7 seconds_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 35 6 len=5 Usage_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 51 6 len=6 kernel_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Node) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(Node)*no_of_nodes, 17760651418308787334UL, 0, 1, (int)sizeof(struct Node), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 60 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17760651418308787333UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 59 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 37  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17760651418308787338UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 68 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17760651418308787336UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * edge_list_size); malloc_helper(____chimes_tmp_ptr, sizeof(int)*edge_list_size, 17760651418308787335UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 17760651418308787337UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 201 2  ({ free(h_graph_nodes); free_helper(h_graph_nodes, 17760651418308787334UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 201 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 202 2  ({ free(h_graph_edges); free_helper(h_graph_edges, 17760651418308787335UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 202 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 203 2  ({ free(h_graph_mask); free_helper(h_graph_mask, 17760651418308787333UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 203 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 204 2  ({ free(h_updating_graph_mask); free_helper(h_updating_graph_mask, 17760651418308787338UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 204 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 205 2  ({ free(h_graph_visited); free_helper(h_graph_visited, 17760651418308787336UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 205 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 206 2  ({ free(h_cost); free_helper(h_cost, 17760651418308787337UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 206 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Node) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(Node)*no_of_nodes, 17760651418308787334UL, 0, 1, (int)sizeof(struct Node), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 60 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17760651418308787333UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 59 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 37  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17760651418308787338UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 68 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 17760651418308787336UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * edge_list_size); malloc_helper(____chimes_tmp_ptr, sizeof(int)*edge_list_size, 17760651418308787335UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 17760651418308787337UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 201 2  ({ free(h_graph_nodes); free_helper(h_graph_nodes, 17760651418308787334UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 201 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 202 2  ({ free(h_graph_edges); free_helper(h_graph_edges, 17760651418308787335UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 202 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 203 2  ({ free(h_graph_mask); free_helper(h_graph_mask, 17760651418308787333UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 203 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 204 2  ({ free(h_updating_graph_mask); free_helper(h_updating_graph_mask, 17760651418308787338UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 204 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 205 2  ({ free(h_graph_visited); free_helper(h_graph_visited, 17760651418308787336UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 205 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 206 2  ({ free(h_cost); free_helper(h_cost, 17760651418308787337UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 206 14 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 18 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 14 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 19 1 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 35 33 const int ____chimes_did_disable1 = new_stack((void *)(&Usage), "Usage", &____must_manage_Usage, 2, 0, (size_t)(0UL), (size_t)(17760651418308787096UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 39 1 rm_stack(false, 0UL, "Usage", &____must_manage_Usage, ____alias_loc_id_3, ____chimes_did_disable1, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 48 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_4, ____chimes_did_disable2, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 44 1 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(17760651418308787118UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 49 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_4, ____chimes_did_disable2, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 87 64 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_6, ____chimes_did_disable3, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 53 38 const int ____chimes_did_disable3 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 7, 0, (size_t)(0UL), (size_t)(17760651418308787537UL), (size_t)(17760651418308787538UL), (size_t)(17760651418308787539UL), (size_t)(17760651418308787540UL), (size_t)(17760651418308787541UL), (size_t)(17760651418308787542UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 88 1 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_6, ____chimes_did_disable3, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 118 9 rm_stack(false, 0UL, "BFSGraph", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable4, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 94 1 const int ____chimes_did_disable4 = new_stack((void *)(&BFSGraph), "BFSGraph", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(17760651418308787372UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 208 1 rm_stack(false, 0UL, "BFSGraph", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable4, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 14 19 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 14 127 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 15 5  struct timeval tp; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 15 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 16 5  struct timezone tzp; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 16 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 17 5  int i;  i = (gettimeofday(&tp, &tzp)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 17 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 18 6 double ____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 18 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 35 34 const int ____chimes_did_disable1 = new_stack((void *)(&Usage), "Usage", &____must_manage_Usage, 2, 0, (size_t)(0UL), (size_t)(17760651418308787096UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 35 185 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 44 2 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17760651418308787118UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 44 139 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 48 6 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 48 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 53 39 const int ____chimes_did_disable3 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 7, 0, (size_t)(0UL), (size_t)(17760651418308787537UL), (size_t)(17760651418308787538UL), (size_t)(17760651418308787539UL), (size_t)(17760651418308787540UL), (size_t)(17760651418308787541UL), (size_t)(17760651418308787542UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 53 363 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 54 5 int i; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 54 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 55 5  bool stop;  stop = (false) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 55 20 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 61 5 {  int tid; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 75 5  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 61 9  tid = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 61 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 67 17  int id;  id = (h_graph_edges[i]) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 67 42 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 77 5 {  int tid; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 85 5  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 77 9  tid = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 77 18 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 87 6 bool ____chimes_ret_var_2; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 87 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 94 2 const int ____chimes_did_disable4 = new_stack((void *)(&BFSGraph), "BFSGraph", (int *)0, 2, 0, (size_t)(0UL), (size_t)(17760651418308787372UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 94 147 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 95 5 char *input_f; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 95 18 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 96 2 int num_omp_threads; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 96 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 98 5  double start_time;  start_time = (seconds()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 98 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 108 5 Node *h_graph_nodes; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 108 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 5 bool *h_graph_mask; bool *h_updating_graph_mask; bool *h_graph_visited; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 65 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 5 int *h_graph_edges; int *h_cost; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 32 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 121 5  int source;  source = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 121 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 33 void *____chimes_tmp_ptr = malloc(sizeof(Node) * no_of_nodes); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 94 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 32 void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 93 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 41 void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 102 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 35 void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 96 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 131 5 int start; int edgeno; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 131 22 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 133 5 {  unsigned int i; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 141 5  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 133 10  i = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 133 28 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 153 5 int id; int cost; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 153 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 32 void *____chimes_tmp_ptr = malloc(sizeof(int) * edge_list_size); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 95 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 155 5 {  int i; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 160 5  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 155 9  i = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 155 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 25 void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 85 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 168 5 {  int i; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 170 5  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 168 9  i = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 168 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 175 2 bool stop; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 175 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 190 5  double end_time;  end_time = (seconds()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 190 32 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 47 2  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 98 26  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 101 2  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 180 9  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 184 9  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 190 24  call_lbl_4: 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 14 8 len=7 seconds_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 14 126  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 35 6 len=5 Usage_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 35 184  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 43 5 len=4 main_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 47 15  ({  calling((void*)BFSGraph, 0, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(17760651418308787118UL)); (BFSGraph)(argc, argv); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 47 35 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 44 136  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 51 6 len=6 kernel_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 53 362  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 93 6 len=8 BFSGraph_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 98 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 98 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 101 15 ({ calling_npm("Usage", 0); Usage_npm(argc, argv); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 101 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 180 29 ({ calling_npm("kernel", 0); kernel_npm(num_omp_threads, h_graph_mask, h_graph_nodes, h_graph_edges, h_graph_visited, h_cost, h_updating_graph_mask); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 181 78 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 184 22 checkpoint_transformed(3, ____alias_loc_id_1)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 184 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 190 49 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 190 57 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 96 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 96 21 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 98 6 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 98 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 108 5 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 108 24 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 5 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 25 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 52 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 54 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 75 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 5 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 25 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 36 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 175 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 175 11 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 94 144  ; bool stop;
+# 94
+int *h_cost;
+# 94
+int *h_graph_edges;
+# 94
+bool *h_graph_visited;
+# 94
+bool *h_updating_graph_mask;
+# 94
+bool *h_graph_mask;
+# 94
+Node *h_graph_nodes;
+# 94
+double start_time;
+# 94
+int num_omp_threads;
+# 94
+ register_stack_vars(9, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|num_omp_threads|0", (int *)0x0, "i32", (void *)(&num_omp_threads), (size_t)4, 0, 0, 0);  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 14 8 len=7 seconds_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 14 126  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 35 6 len=5 Usage_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 35 184  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 43 5 len=4 main_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 47 15  ({  calling((void*)BFSGraph, 0, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(17760651418308787118UL)); (BFSGraph)(argc, argv); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 47 35 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 44 136  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 51 6 len=6 kernel_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 53 362  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 93 6 len=8 BFSGraph_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 98 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 98 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 101 15 ({ calling_npm("Usage", 0); Usage_npm(argc, argv); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 101 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 180 29 ({ calling_npm("kernel", 0); kernel_npm(num_omp_threads, h_graph_mask, h_graph_nodes, h_graph_edges, h_graph_visited, h_cost, h_updating_graph_mask); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 181 78 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 184 22 checkpoint_transformed(3, ____alias_loc_id_1)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 184 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 190 49 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 190 57 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 96 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 96 21 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 98 6 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 98 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 108 5 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 108 24 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 5 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 25 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 52 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 54 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 109 75 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 5 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 25 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 36 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 175 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 175 11 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 94 144  ; bool stop;
+# 94
+int *h_cost;
+# 94
+int *h_graph_edges;
+# 94
+bool *h_graph_visited;
+# 94
+bool *h_updating_graph_mask;
+# 94
+bool *h_graph_mask;
+# 94
+Node *h_graph_nodes;
+# 94
+double start_time;
+# 94
+int num_omp_threads;
+# 94
+ register_stack_vars(9, "BFSGraph|stop|0", (int *)0x0, "i8", (void *)(&stop), (size_t)1, 0, 0, 0, "BFSGraph|h_cost|0", (int *)0x0, "i32*", (void *)(&h_cost), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_edges|0", (int *)0x0, "i32*", (void *)(&h_graph_edges), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_visited|0", (int *)0x0, "i8*", (void *)(&h_graph_visited), (size_t)8, 1, 0, 0, "BFSGraph|h_updating_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_updating_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_mask|0", (int *)0x0, "i8*", (void *)(&h_graph_mask), (size_t)8, 1, 0, 0, "BFSGraph|h_graph_nodes|0", (int *)0x0, "%struct.Node*", (void *)(&h_graph_nodes), (size_t)8, 1, 0, 0, "BFSGraph|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "BFSGraph|num_omp_threads|0", (int *)0x0, "i32", (void *)(&num_omp_threads), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  

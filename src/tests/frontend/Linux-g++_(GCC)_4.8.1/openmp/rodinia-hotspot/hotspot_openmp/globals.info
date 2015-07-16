@@ -1,0 +1,5 @@
+t_chip " double " 64 0 0 0 
+chip_height " double " 64 0 0 0 
+chip_width " double " 64 0 0 0 
+amb_temp " double " 64 0 0 0 
+num_omp_threads " i32 " 32 0 0 0 

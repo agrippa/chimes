@@ -1,0 +1,590 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 32 7 len=4 drnd_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 38 7 len=4 dpn1_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 45 7 len=6 squash_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 57 8 len=12 alloc_1d_dbl_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 23  ({ void *____chimes_tmp_ptr = malloc((n * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (n * sizeof (float)), 18030399740950320995UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 52 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 72 9 len=12 alloc_2d_dbl_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 24  ({ void *____chimes_tmp_ptr = malloc((m * sizeof(float *))); malloc_helper(____chimes_tmp_ptr, (m * sizeof (float *)), 18030399740950321034UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 55 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 93 6 len=22 bpnn_randomize_weights_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 105 6 len=18 bpnn_randomize_row_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 115 6 len=17 bpnn_zero_weights_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 127 6 len=15 bpnn_initialize_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 134 7 len=20 bpnn_internal_create_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 138 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(BPNN)); malloc_helper(____chimes_tmp_ptr, sizeof (BPNN), 18030399740950322464UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 138 42 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 165 6 len=9 bpnn_free_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 3  ({ free((char *)net->input_units); free_helper((char *) net->input_units, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 173 3  ({ free((char *)net->hidden_units); free_helper((char *) net->hidden_units, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 173 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 3  ({ free((char *)net->output_units); free_helper((char *) net->output_units, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 3  ({ free((char *)net->hidden_delta); free_helper((char *) net->hidden_delta, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 177 3  ({ free((char *)net->output_delta); free_helper((char *) net->output_delta, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 177 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 178 3  ({ free((char *)net->target); free_helper((char *) net->target, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 178 28 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 3  ({ free((char *)net->input_weights[0]); free_helper((char *) net->input_weights[0], 18030399740950321400UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 38 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 181 3  ({ free((char *)net->input_prev_weights[0]); free_helper((char *) net->input_prev_weights[0], 18030399740950321400UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 181 43 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 3  ({ free((char *)net->input_weights); free_helper((char *) net->input_weights, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 35 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 3  ({ free((char *)net->input_prev_weights); free_helper((char *) net->input_prev_weights, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 40 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 3  ({ free((char *)net->hidden_weights[0]); free_helper((char *) net->hidden_weights[0], 18030399740950321400UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 39 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 3  ({ free((char *)net->hidden_prev_weights[0]); free_helper((char *) net->hidden_prev_weights[0], 18030399740950321400UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 195 3  ({ free((char *)net->hidden_weights); free_helper((char *) net->hidden_weights, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 195 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 196 3  ({ free((char *)net->hidden_prev_weights); free_helper((char *) net->hidden_prev_weights, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 196 41 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 198 3  ({ free((char *)net); free_helper((char *) net, 18030399740950321448UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 198 20 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 211 7 len=11 bpnn_create_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 231 6 len=17 bpnn_layerforward_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 255 6 len=17 bpnn_output_error_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 270 6 len=17 bpnn_hidden_error_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 295 6 len=19 bpnn_adjust_weights_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 320 6 len=16 bpnn_feedforward_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 337 6 len=10 bpnn_train_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 371 6 len=9 bpnn_save_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 403 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 18030399740950322164UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 403 70 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 413 3  ({ free(mem); free_helper(mem, 18030399740950322164UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 413 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 417 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 18030399740950322164UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 417 70 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 427 3  ({ free(mem); free_helper(mem, 18030399740950322164UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 427 11 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 434 7 len=9 bpnn_read_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 455 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 18030399740950322474UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 455 70 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 463 3  ({ free(mem); free_helper(mem, 18030399740950322474UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 463 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 468 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 18030399740950322474UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 468 70 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 3  ({ free(mem); free_helper(mem, 18030399740950322474UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 23  ({ void *____chimes_tmp_ptr = malloc((n * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (n * sizeof (float)), 18030399740950320995UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 24  ({ void *____chimes_tmp_ptr = malloc((m * sizeof(float *))); malloc_helper(____chimes_tmp_ptr, (m * sizeof (float *)), 18030399740950321034UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 55 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 138 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(BPNN)); malloc_helper(____chimes_tmp_ptr, sizeof (BPNN), 18030399740950322464UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 138 42 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 3  ({ free((char *)net->input_units); free_helper((char *) net->input_units, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 172 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 173 3  ({ free((char *)net->hidden_units); free_helper((char *) net->hidden_units, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 173 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 3  ({ free((char *)net->output_units); free_helper((char *) net->output_units, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 174 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 3  ({ free((char *)net->hidden_delta); free_helper((char *) net->hidden_delta, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 176 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 177 3  ({ free((char *)net->output_delta); free_helper((char *) net->output_delta, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 177 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 178 3  ({ free((char *)net->target); free_helper((char *) net->target, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 178 28 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 3  ({ free((char *)net->input_weights[0]); free_helper((char *) net->input_weights[0], 18030399740950321400UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 180 38 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 181 3  ({ free((char *)net->input_prev_weights[0]); free_helper((char *) net->input_prev_weights[0], 18030399740950321400UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 181 43 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 3  ({ free((char *)net->input_weights); free_helper((char *) net->input_weights, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 186 35 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 3  ({ free((char *)net->input_prev_weights); free_helper((char *) net->input_prev_weights, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 187 40 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 3  ({ free((char *)net->hidden_weights[0]); free_helper((char *) net->hidden_weights[0], 18030399740950321400UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 189 39 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 3  ({ free((char *)net->hidden_prev_weights[0]); free_helper((char *) net->hidden_prev_weights[0], 18030399740950321400UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 190 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 195 3  ({ free((char *)net->hidden_weights); free_helper((char *) net->hidden_weights, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 195 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 196 3  ({ free((char *)net->hidden_prev_weights); free_helper((char *) net->hidden_prev_weights, 18030399740950321368UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 196 41 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 198 3  ({ free((char *)net); free_helper((char *) net, 18030399740950321448UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 198 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 403 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 18030399740950322164UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 403 70 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 413 3  ({ free(mem); free_helper(mem, 18030399740950322164UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 413 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 417 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 18030399740950322164UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 417 70 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 427 3  ({ free(mem); free_helper(mem, 18030399740950322164UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 427 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 455 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 18030399740950322474UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 455 70 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 463 3  ({ free(mem); free_helper(mem, 18030399740950322474UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 463 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 468 18  ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 18030399740950322474UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 468 70 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 3  ({ free(mem); free_helper(mem, 18030399740950322474UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 476 11 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 34 96 rm_stack(false, 0UL, "drnd", &____must_manage_drnd, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 33 1 const int ____chimes_did_disable0 = new_stack((void *)(&drnd), "drnd", &____must_manage_drnd, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 35 1 rm_stack(false, 0UL, "drnd", &____must_manage_drnd, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 81 rm_stack(false, 0UL, "dpn1", &____must_manage_dpn1, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 39 1 const int ____chimes_did_disable1 = new_stack((void *)(&dpn1), "dpn1", &____must_manage_dpn1, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 41 1 rm_stack(false, 0UL, "dpn1", &____must_manage_dpn1, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 51 82 rm_stack(false, 0UL, "squash", &____must_manage_squash, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 46 1 const int ____chimes_did_disable2 = new_stack((void *)(&squash), "squash", &____must_manage_squash, 1, 0, (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 52 1 rm_stack(false, 0UL, "squash", &____must_manage_squash, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 64 71 rm_stack(true, 18030399740950320995UL, "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, ____alias_loc_id_3, ____chimes_did_disable3, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 66 70 rm_stack(true, 18030399740950320995UL, "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, ____alias_loc_id_3, ____chimes_did_disable3, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 58 1 const int ____chimes_did_disable3 = new_stack((void *)(&alloc_1d_dbl), "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, 1, 0, (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 67 1 rm_stack(true, 18030399740950320995UL, "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, ____alias_loc_id_3, ____chimes_did_disable3, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 80 72 rm_stack(true, 18030399740950321034UL, "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 89 71 rm_stack(true, 18030399740950321034UL, "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 73 1 const int ____chimes_did_disable4 = new_stack((void *)(&alloc_2d_dbl), "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, 2, 0, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 90 1 rm_stack(true, 18030399740950321034UL, "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 94 1 const int ____chimes_did_disable5 = new_stack((void *)(&bpnn_randomize_weights), "bpnn_randomize_weights", &____must_manage_bpnn_randomize_weights, 3, 0, (size_t)(18030399740950321130UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 103 1 rm_stack(false, 0UL, "bpnn_randomize_weights", &____must_manage_bpnn_randomize_weights, ____alias_loc_id_5, ____chimes_did_disable5, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 106 1 const int ____chimes_did_disable6 = new_stack((void *)(&bpnn_randomize_row), "bpnn_randomize_row", &____must_manage_bpnn_randomize_row, 2, 0, (size_t)(18030399740950321158UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 112 1 rm_stack(false, 0UL, "bpnn_randomize_row", &____must_manage_bpnn_randomize_row, ____alias_loc_id_6, ____chimes_did_disable6, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 116 1 const int ____chimes_did_disable7 = new_stack((void *)(&bpnn_zero_weights), "bpnn_zero_weights", &____must_manage_bpnn_zero_weights, 3, 0, (size_t)(18030399740950321205UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 124 1 rm_stack(false, 0UL, "bpnn_zero_weights", &____must_manage_bpnn_zero_weights, ____alias_loc_id_7, ____chimes_did_disable7, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 128 1 const int ____chimes_did_disable8 = new_stack((void *)(&bpnn_initialize), "bpnn_initialize", &____must_manage_bpnn_initialize, 1, 0, (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 131 1 rm_stack(false, 0UL, "bpnn_initialize", &____must_manage_bpnn_initialize, ____alias_loc_id_8, ____chimes_did_disable8, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 141 70 rm_stack(true, 18030399740950322464UL, "bpnn_internal_create", &____must_manage_bpnn_internal_create, ____alias_loc_id_9, ____chimes_did_disable9, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 161 68 rm_stack(true, 18030399740950322464UL, "bpnn_internal_create", &____must_manage_bpnn_internal_create, ____alias_loc_id_9, ____chimes_did_disable9, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 135 1 const int ____chimes_did_disable9 = new_stack((void *)(&bpnn_internal_create), "bpnn_internal_create", &____must_manage_bpnn_internal_create, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 162 1 rm_stack(true, 18030399740950322464UL, "bpnn_internal_create", &____must_manage_bpnn_internal_create, ____alias_loc_id_9, ____chimes_did_disable9, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 166 1 const int ____chimes_did_disable10 = new_stack((void *)(&bpnn_free), "bpnn_free", &____must_manage_bpnn_free, 1, 0, (size_t)(18030399740950321448UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 199 1 rm_stack(false, 0UL, "bpnn_free", &____must_manage_bpnn_free, ____alias_loc_id_10, ____chimes_did_disable10, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 227 68 rm_stack(true, 18030399740950321465UL, "bpnn_create", &____must_manage_bpnn_create, ____alias_loc_id_11, ____chimes_did_disable11, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 212 1 const int ____chimes_did_disable11 = new_stack((void *)(&bpnn_create), "bpnn_create", &____must_manage_bpnn_create, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 228 1 rm_stack(true, 18030399740950321465UL, "bpnn_create", &____must_manage_bpnn_create, ____alias_loc_id_11, ____chimes_did_disable11, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 232 1 const int ____chimes_did_disable12 = new_stack((void *)(&bpnn_layerforward), "bpnn_layerforward", &____must_manage_bpnn_layerforward, 5, 0, (size_t)(18030399740950321578UL), (size_t)(18030399740950321579UL), (size_t)(18030399740950321580UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 252 1 rm_stack(false, 0UL, "bpnn_layerforward", &____must_manage_bpnn_layerforward, ____alias_loc_id_12, ____chimes_did_disable12, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 256 1 const int ____chimes_did_disable13 = new_stack((void *)(&bpnn_output_error), "bpnn_output_error", &____must_manage_bpnn_output_error, 5, 0, (size_t)(18030399740950321659UL), (size_t)(18030399740950321678UL), (size_t)(18030399740950321679UL), (size_t)(0UL), (size_t)(18030399740950321681UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 267 1 rm_stack(false, 0UL, "bpnn_output_error", &____must_manage_bpnn_output_error, ____alias_loc_id_13, ____chimes_did_disable13, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 277 1 const int ____chimes_did_disable14 = new_stack((void *)(&bpnn_hidden_error), "bpnn_hidden_error", &____must_manage_bpnn_hidden_error, 7, 0, (size_t)(18030399740950321787UL), (size_t)(0UL), (size_t)(18030399740950321807UL), (size_t)(0UL), (size_t)(18030399740950321809UL), (size_t)(18030399740950321810UL), (size_t)(18030399740950321811UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 292 1 rm_stack(false, 0UL, "bpnn_hidden_error", &____must_manage_bpnn_hidden_error, ____alias_loc_id_14, ____chimes_did_disable14, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 296 1 const int ____chimes_did_disable15 = new_stack((void *)(&bpnn_adjust_weights), "bpnn_adjust_weights", &____must_manage_bpnn_adjust_weights, 6, 0, (size_t)(18030399740950321913UL), (size_t)(0UL), (size_t)(18030399740950321915UL), (size_t)(0UL), (size_t)(18030399740950321917UL), (size_t)(18030399740950321918UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 317 1 rm_stack(false, 0UL, "bpnn_adjust_weights", &____must_manage_bpnn_adjust_weights, ____alias_loc_id_15, ____chimes_did_disable15, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 321 1 const int ____chimes_did_disable16 = new_stack((void *)(&bpnn_feedforward), "bpnn_feedforward", &____must_manage_bpnn_feedforward, 1, 0, (size_t)(18030399740950321965UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 334 1 rm_stack(false, 0UL, "bpnn_feedforward", &____must_manage_bpnn_feedforward, ____alias_loc_id_16, ____chimes_did_disable16, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 338 1 const int ____chimes_did_disable17 = new_stack((void *)(&bpnn_train), "bpnn_train", &____must_manage_bpnn_train, 3, 0, (size_t)(18030399740950322084UL), (size_t)(18030399740950322085UL), (size_t)(18030399740950322086UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 366 1 rm_stack(false, 0UL, "bpnn_train", &____must_manage_bpnn_train, ____alias_loc_id_17, ____chimes_did_disable17, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 430 3 rm_stack(false, 0UL, "bpnn_save", &____must_manage_bpnn_save, ____alias_loc_id_18, ____chimes_did_disable18, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 372 1 const int ____chimes_did_disable18 = new_stack((void *)(&bpnn_save), "bpnn_save", &____must_manage_bpnn_save, 2, 0, (size_t)(18030399740950322349UL), (size_t)(18030399740950322350UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 441 72 rm_stack(true, 18030399740950322464UL, "bpnn_read", &____must_manage_bpnn_read, ____alias_loc_id_19, ____chimes_did_disable19, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 484 71 rm_stack(true, 18030399740950322464UL, "bpnn_read", &____must_manage_bpnn_read, ____alias_loc_id_19, ____chimes_did_disable19, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 435 1 const int ____chimes_did_disable19 = new_stack((void *)(&bpnn_read), "bpnn_read", &____must_manage_bpnn_read, 1, 0, (size_t)(18030399740950322630UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 485 1 rm_stack(true, 18030399740950322464UL, "bpnn_read", &____must_manage_bpnn_read, ____alias_loc_id_19, ____chimes_did_disable19, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 33 2 const int ____chimes_did_disable0 = new_stack((void *)(&drnd), "drnd", &____must_manage_drnd, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 33 101 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 34 4 float ____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 34 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 39 2 const int ____chimes_did_disable1 = new_stack((void *)(&dpn1), "dpn1", &____must_manage_dpn1, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 39 101 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 4 float ____chimes_ret_var_1; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 46 2 const int ____chimes_did_disable2 = new_stack((void *)(&squash), "squash", &____must_manage_squash, 1, 0, (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 46 122 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 47 3 float m; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 47 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 51 4 float ____chimes_ret_var_2; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 51 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 58 2 const int ____chimes_did_disable3 = new_stack((void *)(&alloc_1d_dbl), "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, 1, 0, (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 58 140 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 59 3 float *new_mem; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 59 17 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 27 void *____chimes_tmp_ptr = malloc((n * sizeof(float))); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 61 81 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 64 6 float *____chimes_ret_var_3; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 64 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 66 4 float *____chimes_ret_var_4; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 66 32 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 73 2 const int ____chimes_did_disable4 = new_stack((void *)(&alloc_2d_dbl), "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, 2, 0, (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 73 155 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 74 3 size_t i; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 74 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 75 3 float **new_mem; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 75 18 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 28 void *____chimes_tmp_ptr = malloc((m * sizeof(float *))); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 77 84 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 80 6 float **____chimes_ret_var_5; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 80 35 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 83 3  float *acc;  acc = (alloc_1d_dbl(m * n)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 83 35 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 89 4 float **____chimes_ret_var_6; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 89 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 94 2 const int ____chimes_did_disable5 = new_stack((void *)(&bpnn_randomize_weights), "bpnn_randomize_weights", &____must_manage_bpnn_randomize_weights, 3, 0, (size_t)(18030399740950321130UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 94 219 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 95 3 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 95 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 106 2 const int ____chimes_did_disable6 = new_stack((void *)(&bpnn_randomize_row), "bpnn_randomize_row", &____must_manage_bpnn_randomize_row, 2, 0, (size_t)(18030399740950321158UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 106 192 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 107 2 int i; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 107 7 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 116 2 const int ____chimes_did_disable7 = new_stack((void *)(&bpnn_zero_weights), "bpnn_zero_weights", &____must_manage_bpnn_zero_weights, 3, 0, (size_t)(18030399740950321205UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 116 204 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 117 3 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 117 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 128 2 const int ____chimes_did_disable8 = new_stack((void *)(&bpnn_initialize), "bpnn_initialize", &____must_manage_bpnn_initialize, 1, 0, (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 128 149 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 135 2 const int ____chimes_did_disable9 = new_stack((void *)(&bpnn_internal_create), "bpnn_internal_create", &____must_manage_bpnn_internal_create, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 135 194 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 3 BPNN *newnet; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 136 15 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 138 25 void *____chimes_tmp_ptr = malloc(sizeof(BPNN)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 138 72 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 141 6 BPNN *____chimes_ret_var_7; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 141 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 161 4 BPNN *____chimes_ret_var_8; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 161 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 166 2 const int ____chimes_did_disable10 = new_stack((void *)(&bpnn_free), "bpnn_free", &____must_manage_bpnn_free, 1, 0, (size_t)(18030399740950321448UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 166 151 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 167 3 int n1; int n2; int i; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 167 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 212 2 const int ____chimes_did_disable11 = new_stack((void *)(&bpnn_create), "bpnn_create", &____must_manage_bpnn_create, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 212 168 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 214 3 BPNN *newnet; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 214 15 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 227 4 BPNN *____chimes_ret_var_9; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 227 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 232 2 const int ____chimes_did_disable12 = new_stack((void *)(&bpnn_layerforward), "bpnn_layerforward", &____must_manage_bpnn_layerforward, 5, 0, (size_t)(18030399740950321578UL), (size_t)(18030399740950321579UL), (size_t)(18030399740950321580UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 232 273 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 233 3 float sum; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 233 12 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 234 3 int j; int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 234 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 256 2 const int ____chimes_did_disable13 = new_stack((void *)(&bpnn_output_error), "bpnn_output_error", &____must_manage_bpnn_output_error, 5, 0, (size_t)(18030399740950321659UL), (size_t)(18030399740950321678UL), (size_t)(18030399740950321679UL), (size_t)(0UL), (size_t)(18030399740950321681UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 256 292 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 257 3 int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 257 8 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 258 3 float o; float t; float errsum; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 258 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 277 2 const int ____chimes_did_disable14 = new_stack((void *)(&bpnn_hidden_error), "bpnn_hidden_error", &____must_manage_bpnn_hidden_error, 7, 0, (size_t)(18030399740950321787UL), (size_t)(0UL), (size_t)(18030399740950321807UL), (size_t)(0UL), (size_t)(18030399740950321809UL), (size_t)(18030399740950321810UL), (size_t)(18030399740950321811UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 277 341 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 278 3 int j; int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 278 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 279 3 float h; float sum; float errsum; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 279 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 296 2 const int ____chimes_did_disable15 = new_stack((void *)(&bpnn_adjust_weights), "bpnn_adjust_weights", &____must_manage_bpnn_adjust_weights, 6, 0, (size_t)(18030399740950321913UL), (size_t)(0UL), (size_t)(18030399740950321915UL), (size_t)(0UL), (size_t)(18030399740950321917UL), (size_t)(18030399740950321918UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 296 313 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 297 3 float new_dw; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 297 15 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 298 3 int k; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 298 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 321 2 const int ____chimes_did_disable16 = new_stack((void *)(&bpnn_feedforward), "bpnn_feedforward", &____must_manage_bpnn_feedforward, 1, 0, (size_t)(18030399740950321965UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 321 172 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 322 3 int in; int hid; int out; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 322 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 338 2 const int ____chimes_did_disable17 = new_stack((void *)(&bpnn_train), "bpnn_train", &____must_manage_bpnn_train, 3, 0, (size_t)(18030399740950322084UL), (size_t)(18030399740950322085UL), (size_t)(18030399740950322086UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 338 222 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 339 3 int in; int hid; int out; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 339 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 340 3 float out_err; float hid_err; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 340 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 372 2 const int ____chimes_did_disable18 = new_stack((void *)(&bpnn_save), "bpnn_save", &____must_manage_bpnn_save, 2, 0, (size_t)(18030399740950322349UL), (size_t)(18030399740950322350UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 372 185 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 373 3 int n1; int n2; int n3; int i; int j; int memcnt; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 373 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 374 3 float dvalue; float **w; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 374 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 375 3 char *mem; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 375 12 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 377 3 FILE *pFile; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 377 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 403 22 void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 403 108 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 9 register char *_to; register char *_from; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 36 register int _i; register int _l; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 407 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 417 22 void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 417 108 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 9 register char *_to; register char *_from; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 36 register int _i; register int _l; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 421 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 435 2 const int ____chimes_did_disable19 = new_stack((void *)(&bpnn_read), "bpnn_read", &____must_manage_bpnn_read, 1, 0, (size_t)(18030399740950322630UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 435 151 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 436 3 char *mem; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 436 12 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 437 3 BPNN *new_mem; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 437 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 438 3 int fd; int n1; int n2; int n3; int i; int j; int memcnt; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 438 35 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 441 6 BPNN *____chimes_ret_var_10; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 441 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 455 22 void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 455 108 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 459 9 register char *_to; register char *_from; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 459 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 459 36 register int _i; register int _l; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 459 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 468 22 void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 468 108 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 472 9 register char *_to; register char *_from; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 472 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 472 36 register int _i; register int _l; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 472 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 484 4 BPNN *____chimes_ret_var_11; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 484 32 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 34  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 83 17  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 3  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 148 3  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 3  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 3  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 152 3  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 3  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 155 3  call_lbl_6: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 3  call_lbl_7: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 158 3  call_lbl_8: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 159 3  call_lbl_9: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 216 3  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 221 3  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 223 3  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 224 3  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 225 3  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 226 3  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 250 5  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 329 3  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 331 3  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 347 3  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 349 3  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 353 3  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 355 3  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 361 3  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 363 3  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 3  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 481 3  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 482 3  call_lbl_2: 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 32 7 len=4 drnd_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 33 100  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 38 7 len=4 dpn1_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 73 ({ calling_npm("drnd", 0); drnd_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 78 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 39 100  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 45 7 len=6 squash_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 46 121  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 57 8 len=12 alloc_1d_dbl_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 58 139  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 72 9 len=12 alloc_2d_dbl_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 83 37 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(m * n); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 83 55 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 73 154  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 93 6 len=22 bpnn_randomize_weights_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 94 218  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 105 6 len=18 bpnn_randomize_row_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 106 191  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 115 6 len=17 bpnn_zero_weights_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 116 203  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 127 6 len=15 bpnn_initialize_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 128 148  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 134 7 len=20 bpnn_internal_create_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 38 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_in + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 59 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 148 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 148 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 152 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 152 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 33 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 55 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 155 40 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 155 75 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 41 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 77 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 158 45 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 158 80 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 159 46 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 159 82 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 135 193  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 165 6 len=9 bpnn_free_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 166 150  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 211 7 len=11 bpnn_create_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 216 25 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n_in, n_hidden, n_out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 216 67 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 221 16 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->input_weights, n_in, n_hidden); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 221 76 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 223 16 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->hidden_weights, n_hidden, n_out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 223 78 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 224 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->input_prev_weights, n_in, n_hidden); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 224 76 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 225 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->hidden_prev_weights, n_hidden, n_out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 225 78 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 226 16 ({ calling_npm("bpnn_randomize_row", 0); bpnn_randomize_row_npm(newnet->target, n_out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 226 56 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 212 167  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 231 6 len=17 bpnn_layerforward_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 250 26 ({ calling_npm("squash", 0); squash_npm(sum); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 250 36 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 243 29  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 251 3  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 232 272  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 255 6 len=17 bpnn_output_error_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 256 291  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 270 6 len=17 bpnn_hidden_error_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 277 340  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 295 6 len=19 bpnn_adjust_weights_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 310 33  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 316 3  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 296 312  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 320 6 len=16 bpnn_feedforward_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 329 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 330 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 331 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 332 36 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 321 171  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 337 6 len=10 bpnn_train_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 347 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 348 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 349 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 350 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 353 16 ({ calling_npm("bpnn_output_error", 0); bpnn_output_error_npm(net->output_delta, net->target, net->output_units, out, &out_err); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 354 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 355 16 ({ calling_npm("bpnn_hidden_error", 0); bpnn_hidden_error_npm(net->hidden_delta, hid, net->output_delta, out, net->hidden_weights, net->hidden_units, &hid_err); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 356 55 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 361 16 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->output_delta, out, net->hidden_units, hid, net->hidden_weights, net->hidden_prev_weights); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 362 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 363 16 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->hidden_delta, hid, net->input_units, in, net->input_weights, net->input_prev_weights); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 364 50 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 340 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 340 16 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 340 18 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 340 31 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 338 221  ; float hid_err;
+# 338
+float out_err;
+# 338
+ if (____must_checkpoint_bpnn_train_hid_err_0 || ____must_checkpoint_bpnn_train_out_err_0) { register_stack_vars(2, "bpnn_train|hid_err|0", &____must_checkpoint_bpnn_train_hid_err_0, "float", (void *)(&hid_err), (size_t)4, 0, 0, 0, "bpnn_train|out_err|0", &____must_checkpoint_bpnn_train_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0);  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 371 6 len=9 bpnn_save_quick
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 374 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 374 15 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 372 184  ; float dvalue;
+# 372
+ if (____must_checkpoint_bpnn_save_dvalue_0) { register_stack_vars(1, "bpnn_save|dvalue|0", &____must_checkpoint_bpnn_save_dvalue_0, "float", (void *)(&dvalue), (size_t)4, 0, 0, 0);  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 434 7 len=9 bpnn_read_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 26 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n1, n2, n3); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 57 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 481 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->input_prev_weights, n1, n2); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 481 69 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 482 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->hidden_prev_weights, n2, n3); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 482 70 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 435 150  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 32 7 len=4 drnd_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 33 100  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 38 7 len=4 dpn1_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 73 ({ calling_npm("drnd", 0); drnd_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 40 78 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 39 100  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 45 7 len=6 squash_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 46 121  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 57 8 len=12 alloc_1d_dbl_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 58 139  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 72 9 len=12 alloc_2d_dbl_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 83 37 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(m * n); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 83 55 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 73 154  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 93 6 len=22 bpnn_randomize_weights_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 94 218  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 105 6 len=18 bpnn_randomize_row_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 106 191  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 115 6 len=17 bpnn_zero_weights_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 116 203  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 127 6 len=15 bpnn_initialize_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 128 148  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 134 7 len=20 bpnn_internal_create_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 38 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_in + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 147 59 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 148 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 148 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 149 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_hidden + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 151 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 152 39 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 152 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 33 ({ calling_npm("alloc_1d_dbl", 0); alloc_1d_dbl_npm(n_out + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 153 55 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 155 40 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 155 75 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 41 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 156 77 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 158 45 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_in + 1, n_hidden + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 158 80 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 159 46 ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 159 82 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 135 193  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 165 6 len=9 bpnn_free_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 166 150  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 211 7 len=11 bpnn_create_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 216 25 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n_in, n_hidden, n_out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 216 67 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 221 16 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->input_weights, n_in, n_hidden); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 221 76 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 223 16 ({ calling_npm("bpnn_randomize_weights", 0); bpnn_randomize_weights_npm(newnet->hidden_weights, n_hidden, n_out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 223 78 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 224 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->input_prev_weights, n_in, n_hidden); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 224 76 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 225 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(newnet->hidden_prev_weights, n_hidden, n_out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 225 78 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 226 16 ({ calling_npm("bpnn_randomize_row", 0); bpnn_randomize_row_npm(newnet->target, n_out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 226 56 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 212 167  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 231 6 len=17 bpnn_layerforward_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 250 26 ({ calling_npm("squash", 0); squash_npm(sum); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 250 36 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 243 29  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 251 3  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 232 272  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 255 6 len=17 bpnn_output_error_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 256 291  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 270 6 len=17 bpnn_hidden_error_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 277 340  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 295 6 len=19 bpnn_adjust_weights_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 310 33  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 316 3  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 296 312  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 320 6 len=16 bpnn_feedforward_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 329 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 330 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 331 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 332 36 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 321 171  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 337 6 len=10 bpnn_train_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 347 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->input_units, net->hidden_units, net->input_weights, in, hid); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 348 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 349 16 ({ calling_npm("bpnn_layerforward", 0); bpnn_layerforward_npm(net->hidden_units, net->output_units, net->hidden_weights, hid, out); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 350 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 353 16 ({ calling_npm("bpnn_output_error", 0); bpnn_output_error_npm(net->output_delta, net->target, net->output_units, out, &out_err); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 354 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 355 16 ({ calling_npm("bpnn_hidden_error", 0); bpnn_hidden_error_npm(net->hidden_delta, hid, net->output_delta, out, net->hidden_weights, net->hidden_units, &hid_err); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 356 55 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 361 16 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->output_delta, out, net->hidden_units, hid, net->hidden_weights, net->hidden_prev_weights); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 362 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 363 16 ({ calling_npm("bpnn_adjust_weights", 0); bpnn_adjust_weights_npm(net->hidden_delta, hid, net->input_units, in, net->input_weights, net->input_prev_weights); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 364 50 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 340 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 340 16 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 340 18 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 340 31 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 338 221  ; float hid_err;
+# 338
+float out_err;
+# 338
+ if (____must_checkpoint_bpnn_train_hid_err_0 || ____must_checkpoint_bpnn_train_out_err_0) { register_stack_vars(2, "bpnn_train|hid_err|0", &____must_checkpoint_bpnn_train_hid_err_0, "float", (void *)(&hid_err), (size_t)4, 0, 0, 0, "bpnn_train|out_err|0", &____must_checkpoint_bpnn_train_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 371 6 len=9 bpnn_save_resumable
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 374 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 374 15 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 372 184  ; float dvalue;
+# 372
+ if (____must_checkpoint_bpnn_save_dvalue_0) { register_stack_vars(1, "bpnn_save|dvalue|0", &____must_checkpoint_bpnn_save_dvalue_0, "float", (void *)(&dvalue), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 434 7 len=9 bpnn_read_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 26 ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n1, n2, n3); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 449 57 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 481 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->input_prev_weights, n1, n2); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 481 69 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 482 16 ({ calling_npm("bpnn_zero_weights", 0); bpnn_zero_weights_npm(new_mem->hidden_prev_weights, n2, n3); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 482 70 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c 435 150  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

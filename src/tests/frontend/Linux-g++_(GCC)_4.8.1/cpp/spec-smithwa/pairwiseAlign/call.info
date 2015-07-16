@@ -1,0 +1,100 @@
+bubbleSort qSort 158 3 0 163 0 0
+bubbleSort_both qSort_both 218 3 0 295 296 0 0
+malloc pairwiseAlign 301 22 1963 0
+printf pairwiseAlign 302 5 0 2357
+exit pairwiseAlign 306 5 0 0
+malloc pairwiseAlign 339 31 2208 0
+printf pairwiseAlign 340 5 0 2358
+exit pairwiseAlign 344 5 0 0
+malloc pairwiseAlign 347 38 2208 0
+printf pairwiseAlign 349 5 0 2358
+exit pairwiseAlign 353 5 0 0
+malloc pairwiseAlign 356 31 2208 0
+printf pairwiseAlign 357 5 0 2360
+exit pairwiseAlign 361 5 0 0
+malloc pairwiseAlign 364 31 2208 0
+printf pairwiseAlign 365 5 0 2360
+exit pairwiseAlign 369 5 0 0
+gridInfo pairwiseAlign 405 5 0 437 438 435 436
+malloc pairwiseAlign 446 18 1410 0
+printf pairwiseAlign 447 2 0 2362 0
+exit pairwiseAlign 452 2 0 0
+malloc pairwiseAlign 455 31 1364 0
+printf pairwiseAlign 456 2 0 2363 0
+exit pairwiseAlign 461 2 0 0
+malloc pairwiseAlign 464 31 1432 0
+printf pairwiseAlign 465 2 0 2363 0
+exit pairwiseAlign 470 2 0 0
+malloc pairwiseAlign 483 34 1528 0
+printf pairwiseAlign 485 2 0 2365 0
+exit pairwiseAlign 490 2 0 0
+malloc pairwiseAlign 493 27 1866 0
+printf pairwiseAlign 494 2 0 2366 0
+exit pairwiseAlign 499 2 0 0
+malloc pairwiseAlign 502 25 1516 0
+printf pairwiseAlign 503 2 0 2367 0
+exit pairwiseAlign 508 2 0 0
+malloc pairwiseAlign 548 22 858 0
+printf pairwiseAlign 550 2 0 2368 0
+exit pairwiseAlign 555 2 0 0
+malloc pairwiseAlign 563 22 930 0
+printf pairwiseAlign 565 2 0 2369 0
+exit pairwiseAlign 570 2 0 0
+malloc pairwiseAlign 584 31 955 0
+printf pairwiseAlign 585 2 0 2368 0
+exit pairwiseAlign 590 2 0 0
+malloc pairwiseAlign 594 28 952 0
+printf pairwiseAlign 595 2 0 2371 0 0
+exit pairwiseAlign 600 2 0 0
+malloc pairwiseAlign 641 29 1135 0
+printf pairwiseAlign 643 2 0 2372 0
+exit pairwiseAlign 648 2 0 0
+malloc pairwiseAlign 655 29 1138 0
+printf pairwiseAlign 657 2 0 2372 0
+exit pairwiseAlign 662 2 0 0
+getSeconds pairwiseAlign 672 19 0
+abs pairwiseAlign 848 13 0 0
+qSort_both pairwiseAlign 912 8 0 1528 1866 1410 0
+qSort pairwiseAlign 915 8 0 1516 1866 0 0
+getSeconds pairwiseAlign 958 17 0
+printf pairwiseAlign 966 2 0 2374 0
+malloc pairwiseAlign 985 15 2208 0
+printf pairwiseAlign 986 6 0 2375 0
+exit pairwiseAlign 991 6 0 0
+malloc pairwiseAlign 995 9 2208 0
+printf pairwiseAlign 996 6 0 2375 0
+exit pairwiseAlign 1001 6 0 0
+malloc pairwiseAlign 1005 9 2208 0
+printf pairwiseAlign 1006 6 0 2375 0
+exit pairwiseAlign 1011 6 0 0
+qSort_both pairwiseAlign 1024 4 0 1528 1866 1410 0
+malloc pairwiseAlign 1049 15 2208 0
+printf pairwiseAlign 1051 6 0 2378 0
+exit pairwiseAlign 1056 6 0 0
+malloc pairwiseAlign 1060 9 2208 0
+printf pairwiseAlign 1061 6 0 2375 0
+exit pairwiseAlign 1066 6 0 0
+malloc pairwiseAlign 1070 9 2208 0
+printf pairwiseAlign 1071 6 0 2375 0
+exit pairwiseAlign 1076 6 0 0
+qSort_both pairwiseAlign 1089 4 0 1528 1866 1410 0
+free pairwiseAlign 1107 2 0 952
+free pairwiseAlign 1109 7 0 955
+free pairwiseAlign 1110 7 0 1410
+free pairwiseAlign 1111 7 0 1364
+free pairwiseAlign 1112 7 0 1432
+free pairwiseAlign 1113 7 0 1138
+free pairwiseAlign 1114 7 0 1135
+free pairwiseAlign 1115 7 0 1528
+free pairwiseAlign 1116 7 0 1866
+free pairwiseAlign 1117 7 0 1516
+free pairwiseAlign 1119 7 0 858
+free pairwiseAlign 1120 7 0 930
+free freeA 1136 7 0 2208
+free freeA 1142 4 0 2208
+free freeA 1146 7 0 2208
+free freeA 1152 4 0 2208
+free freeA 1156 7 0 2208
+free freeA 1162 4 0 2208
+free freeA 1166 7 0 2208
+free freeA 1169 5 0 2356

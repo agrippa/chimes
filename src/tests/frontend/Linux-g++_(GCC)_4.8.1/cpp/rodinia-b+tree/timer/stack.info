@@ -1,0 +1,1 @@
+/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c get_time|tv|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0

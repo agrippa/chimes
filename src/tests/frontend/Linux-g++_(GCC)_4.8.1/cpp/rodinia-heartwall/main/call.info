@@ -1,0 +1,95 @@
+gettimeofday seconds 29 13 0 1 2
+fopen write_data 63 8 62 197 1864
+printf write_data 65 3 0 1865
+fprintf write_data 73 7 0 62 1866 0
+fprintf write_data 74 7 0 62 1866 0
+fprintf write_data 75 7 0 62 1868 0
+fprintf write_data 76 7 0 62 1869 0
+fprintf write_data 79 6 0 62 1868 0
+fprintf write_data 80 6 0 62 1871 0
+fprintf write_data 82 8 0 62 1872 0
+fprintf write_data 84 6 0 62 1873
+fprintf write_data 87 8 0 62 1872 0
+fprintf write_data 89 6 0 62 1874 0
+fprintf write_data 92 8 0 62 1872 0
+fprintf write_data 94 6 0 62 1873
+fprintf write_data 97 8 0 62 1872 0
+fclose write_data 104 2 0 62
+seconds main 133 25 0
+printf main 137 3 0 1875
+exit main 138 3 0 0
+AVI_open_input_file main 144 28 1640 1630 0
+AVI_print_error main 146 6 0 1876
+AVI_video_frames main 151 15 0 1640
+AVI_video_height main 152 19 0 1640
+AVI_video_width main 153 19 0 1640
+AVI_close main 157 5 0 1640
+atoi main 164 21 0 1630
+printf main 166 3 0 1877 0 0
+atoi main 171 20 0 1630
+printf main 173 5 0 1878
+printf main 177 2 0 1879 0
+malloc main 189 25 849 0
+malloc main 210 25 849 0
+malloc main 231 29 849 0
+malloc main 232 29 849 0
+malloc main 240 24 849 0
+malloc main 272 24 849 0
+malloc main 304 28 849 0
+malloc main 305 28 849 0
+malloc main 327 37 849 0
+malloc main 328 41 849 0
+malloc main 329 34 849 0
+malloc main 330 32 849 0
+malloc main 343 28 849 0
+malloc main 344 32 849 0
+malloc main 357 31 849 0
+malloc main 358 31 849 0
+malloc main 365 25 849 0
+malloc main 366 24 849 0
+malloc main 404 29 849 0
+malloc main 426 32 849 0
+malloc main 450 32 849 0
+malloc main 471 37 849 0
+malloc main 506 30 849 0
+malloc main 536 34 849 0
+printf main 543 2 0 1880
+fflush main 544 2 0 1886
+AVI_open_input_file main 557 28 1640 1630 0
+__assert_fail main 558 47 0 1881 1882 0 1883
+get_frame main 559 17 849 1640 0 0 0 0
+AVI_close main 564 9 0 1640
+memcpy main 575 9 0 226 217 0
+kernel main 575 9 0 226 218
+free main 587 3 0 849
+printf main 593 3 0 1872 0
+fflush main 594 3 0 1886
+checkpoint main 597 5 0
+printf main 606 2 0 1873
+fflush main 607 2 0 1886
+seconds main 609 23 0
+printf main 610 5 0 1885 0
+free main 638 2 0 849
+free main 639 2 0 849
+free main 640 2 0 849
+free main 641 2 0 849
+free main 642 2 0 849
+free main 644 2 0 849
+free main 645 2 0 849
+free main 646 2 0 849
+free main 647 2 0 849
+free main 648 2 0 849
+free main 655 3 0 849
+free main 656 3 0 849
+free main 657 3 0 849
+free main 658 3 0 849
+free main 660 3 0 849
+free main 661 3 0 849
+free main 663 3 0 849
+free main 664 3 0 849
+free main 666 3 0 849
+free main 668 3 0 849
+free main 670 3 0 849
+free main 672 3 0 849
+free main 674 3 0 849
+free main 675 3 0 849

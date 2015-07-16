@@ -1,0 +1,19 @@
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|simMatrix|0 " %struct.simmat* " 64 1 0 1 gridInfo
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|seqData|0 " %struct.seqdat* " 64 1 0 1 gridInfo
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|minScore|0 " i32 " 32 0 0 1 gridInfo
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|minSeparation|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|myTaskID|0 " i32 " 32 0 0 1 gridInfo
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|matchLimit|0 " i32 " 32 0 0 1 gridInfo
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|globalNpRow|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|globalNpCol|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|iBeg|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|iEnd|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|jBeg|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|jEnd|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|myRow|0 " i32 " 32 0 0 1 verifyData
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|myCol|0 " i32 " 32 0 0 1 gridInfo
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|npRow|0 " i32 " 32 0 0 1 gridInfo
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|npCol|0 " i32 " 32 0 0 1 gridInfo
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|n|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|m|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c verifyData|comparisons|0 " i64 " 64 0 0 0

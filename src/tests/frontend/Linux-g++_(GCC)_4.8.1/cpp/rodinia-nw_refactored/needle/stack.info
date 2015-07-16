@@ -1,0 +1,48 @@
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp seconds|tzp|0 " %struct.timezone = type { i32, i32 } " 64 0 1 timezone 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp seconds|i|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp seconds|____chimes_ret_var_0|0 " double " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp gettime|t|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp gettime|____chimes_ret_var_1|0 " double " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp main|argc|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp main|argv|0 " i8** " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp main|____chimes_ret_var_2|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|argc|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|argv|0 " i8** " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|max_rows|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|max_cols|0 " i32 " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|penalty|0 " i32 " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|input_itemsets|0 " i32* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|output_itemsets|0 " i32* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|referrence|0 " i32* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|omp_num_threads|0 " i32 " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|nbytes|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|start_time|0 " double " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest|end_time|0 " double " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp usage|argc|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp usage|argv|0 " i8** " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|input_itemsets|0 " i32* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|max_cols|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|max_rows|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|referrence|0 " i32* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|omp_num_threads|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|penalty|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|idx|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|i|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|j|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|i|1 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|j|1 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|i|2 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|j|2 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|i|3 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|j|3 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|i|4 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper1|index|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|omp_num_threads|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|max_cols|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|penalty|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|input_itemsets|0 " i32* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|referrence|0 " i32* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|index|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|idx|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp runTest_helper2|i|0 " i32 " 32 0 0 0

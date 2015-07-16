@@ -1,0 +1,25 @@
+bots_sequential_flag " i32 " 32 0 0 0 
+bots_check_flag " i32 " 32 0 0 0 
+bots_verbose_mode " i32 " 32 0 0 0 
+bots_result " i32 " 32 0 0 0 
+bots_output_format " i32 " 32 0 0 0 
+bots_print_header " i32 " 32 0 0 0 
+bots_name " [128 x i8] " 1024 0 0 0 
+bots_execname " [128 x i8] " 1024 0 0 0 
+bots_parameters " [128 x i8] " 1024 0 0 0 
+bots_model " [128 x i8] " 1024 0 0 0 
+bots_resources " [128 x i8] " 1024 0 0 0 
+bots_exec_date " [128 x i8] " 1024 0 0 0 
+bots_exec_message " [128 x i8] " 1024 0 0 0 
+bots_comp_date " [128 x i8] " 1024 0 0 0 
+bots_comp_message " [128 x i8] " 1024 0 0 0 
+bots_cc " [128 x i8] " 1024 0 0 0 
+bots_cflags " [128 x i8] " 1024 0 0 0 
+bots_ld " [128 x i8] " 1024 0 0 0 
+bots_ldflags " [128 x i8] " 1024 0 0 0 
+bots_cutoff " [128 x i8] " 1024 0 0 0 
+bots_time_program " double " 64 0 0 0 
+bots_time_sequential " double " 64 0 0 0 
+bots_number_of_tasks " i32 " 32 0 0 0 
+bots_arg_size " i32 " 32 0 0 0 
+bots_arg_size_1 " i32 " 32 0 0 0 

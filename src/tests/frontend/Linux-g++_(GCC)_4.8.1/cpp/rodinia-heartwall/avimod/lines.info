@@ -1,0 +1,4 @@
+/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 119 11 : { 301 } {  } call:AVI_read_frame { AVI_read_frame { 297, 334, 363 } }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 115 2 : { 299 } {  } call:AVI_set_video_position { AVI_set_video_position { 363 } }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 15 : { 298 } {  } call:AVI_video_height { AVI_video_height { 363 } }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 110 14 : { 292, 293, 294, 295, 296 } {  } call:AVI_video_width { AVI_video_width { 363 } }

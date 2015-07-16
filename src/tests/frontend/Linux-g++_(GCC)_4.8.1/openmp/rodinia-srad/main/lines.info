@@ -1,0 +1,12 @@
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 381 11 : { 551 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 203 10 : { 542 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 154 10 : { 539, 540, 541 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 361 2 : { 550 } {  } call:write_graphics { write_graphics { 904, 1259 } }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 355 10 : { 549, 595, 904 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 344 10 : { 548, 594 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 338 9 : { 548, 594 } {  } call:checkpoint {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 324 10 : { 547, 595, 904 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 313 10 : { 546, 563, 564, 565, 566, 567, 571, 572, 573, 574, 576, 577, 578, 579, 589, 595, 596, 833, 840, 934, 935 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 259 2 : { 545, 557, 560 } {  } call:resize { resize { 904, 995 } }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 243 2 : { 544, 553, 554, 555, 556, 600 } {  } call:read_graphics { read_graphics { 601, 995 } }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 227 10 : { 543, 558, 559, 561, 562, 598 } {  } call:get_time {  }

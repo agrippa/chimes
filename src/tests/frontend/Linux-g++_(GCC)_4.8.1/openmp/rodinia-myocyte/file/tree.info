@@ -1,0 +1,2 @@
+myocyte_write _Z13myocyte_writePcPfiiii 0 DOES_NOT
+myocyte_read _Z12myocyte_readPcPfiii 0 DOES_NOT

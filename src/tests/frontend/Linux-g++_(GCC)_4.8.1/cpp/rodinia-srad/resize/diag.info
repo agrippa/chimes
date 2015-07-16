@@ -1,0 +1,13 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 8 6 len=6 resize_npm
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 14 16 const int ____chimes_did_disable0 = new_stack((void *)(&resize), "resize", &____must_manage_resize, 7, 0, (size_t)(6065301789804862068UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6065301789804862071UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 67 1 rm_stack(false, 0UL, "resize", &____must_manage_resize, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 14 17 const int ____chimes_did_disable0 = new_stack((void *)(&resize), "resize", &____must_manage_resize, 7, 0, (size_t)(6065301789804862068UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6065301789804862071UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 14 263 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 20 2 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 20 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 21 2 int i2; int j2; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 21 12 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 8 6 len=6 resize_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 14 262  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 8 6 len=6 resize_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 14 262  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

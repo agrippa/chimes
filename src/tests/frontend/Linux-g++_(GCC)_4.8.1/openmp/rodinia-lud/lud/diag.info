@@ -1,0 +1,110 @@
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 111 5  ({ free(mm); free_helper(mm, 11237237613718109848UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 111 12 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 114 3  ({ free(m); free_helper(m, 11237237613718109830UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 114 9 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 111 5  ({ free(mm); free_helper(mm, 11237237613718109848UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 111 12 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 114 3  ({ free(m); free_helper(m, 11237237613718109830UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 114 9 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 116 58 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 42 1 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(11237237613718109864UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 117 1 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 42 2 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(11237237613718109864UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 42 150 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 43 3  int matrix_dim;  matrix_dim = (32) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 43 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 44 3 int opt;  int option_index;  option_index = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 44 26 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 45 3 func_ret_t ret; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 45 17 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 46 3  const char *input_file;  input_file = (__null) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 46 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 47 3 float *m; float *mm; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 47 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 48 3  stopwatch sw; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 48 15 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 104 4  double ____chimes_unroll_var_0;  ____chimes_unroll_var_0 = (get_interval_by_sec(&sw)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 104 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 116 4 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 116 28 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 84 7  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 97 5  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 98 5  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 101 3  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 102 3  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 103 3  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 104 38  call_lbl_6: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 108 5  call_lbl_7: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 110 5  call_lbl_8: 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 41 1 len=4 main_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 84 26 (____chimes_does_checkpoint_create_matrix_from_file_npm ? ( ({  calling((void*)create_matrix_from_file, 0, ____alias_loc_id_6, 0UL, 3, (size_t)(11237237613718109722UL), (size_t)(11237237613718109914UL), (size_t)(11237237613718109717UL)); (create_matrix_from_file)(&m, input_file, &matrix_dim); }) ) : (({ calling_npm("create_matrix_from_file", ____alias_loc_id_6); (*____chimes_extern_func_create_matrix_from_file)(&m, input_file, &matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 84 77 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 97 18 (____chimes_does_checkpoint_print_matrix_npm ? ( ({  calling((void*)print_matrix, 1, ____alias_loc_id_8, 0UL, 2, (size_t)(11237237613718109830UL), (size_t)(0UL)); (print_matrix)(m, matrix_dim); }) ) : (({ calling_npm("print_matrix", ____alias_loc_id_8); (*____chimes_extern_func_print_matrix)(m, matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 97 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 98 18 (____chimes_does_checkpoint_matrix_duplicate_npm ? ( ({  calling((void*)matrix_duplicate, 2, ____alias_loc_id_7, 0UL, 3, (size_t)(11237237613718109830UL), (size_t)(11237237613718109723UL), (size_t)(0UL)); (matrix_duplicate)(m, &mm, matrix_dim); }) ) : (({ calling_npm("matrix_duplicate", ____alias_loc_id_7); (*____chimes_extern_func_matrix_duplicate)(m, &mm, matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 98 53 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 101 16 (____chimes_does_checkpoint_stopwatch_start_npm ? ( ({  calling((void*)stopwatch_start, 3, ____alias_loc_id_5, 0UL, 1, (size_t)(11237237613718109724UL)); (stopwatch_start)(&sw); }) ) : (({ calling_npm("stopwatch_start", ____alias_loc_id_5); (*____chimes_extern_func_stopwatch_start)(&sw); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 101 35 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 102 16 (____chimes_does_checkpoint_lud_base_npm ? ( ({  calling((void*)lud_base, 4, ____alias_loc_id_4, 0UL, 2, (size_t)(11237237613718109830UL), (size_t)(0UL)); (lud_base)(m, matrix_dim); }) ) : (({ calling_npm("lud_base", ____alias_loc_id_4); (*____chimes_extern_func_lud_base)(m, matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 102 38 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 103 16 (____chimes_does_checkpoint_stopwatch_stop_npm ? ( ({  calling((void*)stopwatch_stop, 5, ____alias_loc_id_3, 0UL, 1, (size_t)(11237237613718109724UL)); (stopwatch_stop)(&sw); }) ) : (({ calling_npm("stopwatch_stop", ____alias_loc_id_3); (*____chimes_extern_func_stopwatch_stop)(&sw); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 103 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 104 78 (____chimes_does_checkpoint_get_interval_by_sec_npm ? ( ({  calling((void*)get_interval_by_sec, 6, ____alias_loc_id_1, 0UL, 1, (size_t)(11237237613718109724UL)); (get_interval_by_sec)(&sw); }) ) : (({ calling_npm("get_interval_by_sec", ____alias_loc_id_1); (*____chimes_extern_func_get_interval_by_sec)(&sw); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 104 101 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 108 18 (____chimes_does_checkpoint_print_matrix_npm ? ( ({  calling((void*)print_matrix, 7, ____alias_loc_id_2, 0UL, 2, (size_t)(11237237613718109830UL), (size_t)(0UL)); (print_matrix)(m, matrix_dim); }) ) : (({ calling_npm("print_matrix", ____alias_loc_id_2); (*____chimes_extern_func_print_matrix)(m, matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 108 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 110 18 (____chimes_does_checkpoint_lud_verify_npm ? ( ({  calling((void*)lud_verify, 8, ____alias_loc_id_0, 0UL, 3, (size_t)(11237237613718109848UL), (size_t)(11237237613718109830UL), (size_t)(0UL)); (lud_verify)(mm, m, matrix_dim); }) ) : (({ calling_npm("lud_verify", ____alias_loc_id_0); (*____chimes_extern_func_lud_verify)(mm, m, matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 110 46 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 43 4 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 43 18 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 47 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 47 11 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 47 13 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 47 22 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 48 4 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 48 16 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 42 149  ; stopwatch sw;
+# 42
+float *mm;
+# 42
+float *m;
+# 42
+int matrix_dim;
+# 42
+ if (____must_checkpoint_main_sw_0 || ____must_checkpoint_main_mm_0 || ____must_checkpoint_main_m_0 || ____must_checkpoint_main_matrix_dim_0) { register_stack_vars(4, "main|sw|0", &____must_checkpoint_main_sw_0, "%struct.__stopwatch_t = type { %struct.timeval, %struct.timeval }", (void *)(&sw), (size_t)32, 0, 1, 0, "main|mm|0", &____must_checkpoint_main_mm_0, "float*", (void *)(&mm), (size_t)8, 1, 0, 0, "main|m|0", &____must_checkpoint_main_m_0, "float*", (void *)(&m), (size_t)8, 1, 0, 0, "main|matrix_dim|0", &____must_checkpoint_main_matrix_dim_0, "i32", (void *)(&matrix_dim), (size_t)4, 0, 0, 0);  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 41 1 len=4 main_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 84 26 (____chimes_does_checkpoint_create_matrix_from_file_npm ? ( ({  calling((void*)create_matrix_from_file, 0, ____alias_loc_id_6, 0UL, 3, (size_t)(11237237613718109722UL), (size_t)(11237237613718109914UL), (size_t)(11237237613718109717UL)); (create_matrix_from_file)(&m, input_file, &matrix_dim); }) ) : (({ calling_npm("create_matrix_from_file", ____alias_loc_id_6); (*____chimes_extern_func_create_matrix_from_file)(&m, input_file, &matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 84 77 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 97 18 (____chimes_does_checkpoint_print_matrix_npm ? ( ({  calling((void*)print_matrix, 1, ____alias_loc_id_8, 0UL, 2, (size_t)(11237237613718109830UL), (size_t)(0UL)); (print_matrix)(m, matrix_dim); }) ) : (({ calling_npm("print_matrix", ____alias_loc_id_8); (*____chimes_extern_func_print_matrix)(m, matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 97 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 98 18 (____chimes_does_checkpoint_matrix_duplicate_npm ? ( ({  calling((void*)matrix_duplicate, 2, ____alias_loc_id_7, 0UL, 3, (size_t)(11237237613718109830UL), (size_t)(11237237613718109723UL), (size_t)(0UL)); (matrix_duplicate)(m, &mm, matrix_dim); }) ) : (({ calling_npm("matrix_duplicate", ____alias_loc_id_7); (*____chimes_extern_func_matrix_duplicate)(m, &mm, matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 98 53 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 101 16 (____chimes_does_checkpoint_stopwatch_start_npm ? ( ({  calling((void*)stopwatch_start, 3, ____alias_loc_id_5, 0UL, 1, (size_t)(11237237613718109724UL)); (stopwatch_start)(&sw); }) ) : (({ calling_npm("stopwatch_start", ____alias_loc_id_5); (*____chimes_extern_func_stopwatch_start)(&sw); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 101 35 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 102 16 (____chimes_does_checkpoint_lud_base_npm ? ( ({  calling((void*)lud_base, 4, ____alias_loc_id_4, 0UL, 2, (size_t)(11237237613718109830UL), (size_t)(0UL)); (lud_base)(m, matrix_dim); }) ) : (({ calling_npm("lud_base", ____alias_loc_id_4); (*____chimes_extern_func_lud_base)(m, matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 102 38 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 103 16 (____chimes_does_checkpoint_stopwatch_stop_npm ? ( ({  calling((void*)stopwatch_stop, 5, ____alias_loc_id_3, 0UL, 1, (size_t)(11237237613718109724UL)); (stopwatch_stop)(&sw); }) ) : (({ calling_npm("stopwatch_stop", ____alias_loc_id_3); (*____chimes_extern_func_stopwatch_stop)(&sw); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 103 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 104 78 (____chimes_does_checkpoint_get_interval_by_sec_npm ? ( ({  calling((void*)get_interval_by_sec, 6, ____alias_loc_id_1, 0UL, 1, (size_t)(11237237613718109724UL)); (get_interval_by_sec)(&sw); }) ) : (({ calling_npm("get_interval_by_sec", ____alias_loc_id_1); (*____chimes_extern_func_get_interval_by_sec)(&sw); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 104 101 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 108 18 (____chimes_does_checkpoint_print_matrix_npm ? ( ({  calling((void*)print_matrix, 7, ____alias_loc_id_2, 0UL, 2, (size_t)(11237237613718109830UL), (size_t)(0UL)); (print_matrix)(m, matrix_dim); }) ) : (({ calling_npm("print_matrix", ____alias_loc_id_2); (*____chimes_extern_func_print_matrix)(m, matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 108 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 110 18 (____chimes_does_checkpoint_lud_verify_npm ? ( ({  calling((void*)lud_verify, 8, ____alias_loc_id_0, 0UL, 3, (size_t)(11237237613718109848UL), (size_t)(11237237613718109830UL), (size_t)(0UL)); (lud_verify)(mm, m, matrix_dim); }) ) : (({ calling_npm("lud_verify", ____alias_loc_id_0); (*____chimes_extern_func_lud_verify)(mm, m, matrix_dim); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 110 46 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 43 4 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 43 18 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 47 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 47 11 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 47 13 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 47 22 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 48 4 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 48 16 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 42 149  ; stopwatch sw;
+# 42
+float *mm;
+# 42
+float *m;
+# 42
+int matrix_dim;
+# 42
+ if (____must_checkpoint_main_sw_0 || ____must_checkpoint_main_mm_0 || ____must_checkpoint_main_m_0 || ____must_checkpoint_main_matrix_dim_0) { register_stack_vars(4, "main|sw|0", &____must_checkpoint_main_sw_0, "%struct.__stopwatch_t = type { %struct.timeval, %struct.timeval }", (void *)(&sw), (size_t)32, 0, 1, 0, "main|mm|0", &____must_checkpoint_main_mm_0, "float*", (void *)(&mm), (size_t)8, 1, 0, 0, "main|m|0", &____must_checkpoint_main_m_0, "float*", (void *)(&m), (size_t)8, 1, 0, 0, "main|matrix_dim|0", &____must_checkpoint_main_matrix_dim_0, "i32", (void *)(&matrix_dim), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { chimes_error(); } }  }  

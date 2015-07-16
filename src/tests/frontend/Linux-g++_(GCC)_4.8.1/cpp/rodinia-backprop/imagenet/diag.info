@@ -1,0 +1,13 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 8 6 len=4 load_npm
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 9 1 const int ____chimes_did_disable0 = new_stack((void *)(&load), "load", &____must_manage_load, 1, 0, (size_t)(7369176591518032173UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 23 1 rm_stack(false, 0UL, "load", &____must_manage_load, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 9 2 const int ____chimes_did_disable0 = new_stack((void *)(&load), "load", &____must_manage_load, 1, 0, (size_t)(7369176591518032173UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 9 134 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 10 3 float *units; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 10 15 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 11 3 int nr; int nc; int imgsize; int i; int j; int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 11 31 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 8 6 len=4 load_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 9 133  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 8 6 len=4 load_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/imagenet.c 9 133  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

@@ -1,0 +1,8 @@
+108 22 543 malloc 1 0
+109 26 543 malloc 1 0
+110 27 553 malloc
+113 28 545 malloc
+138 42 545 malloc
+138 100 545 realloc
+179 31 545 malloc
+183 7 548 free
