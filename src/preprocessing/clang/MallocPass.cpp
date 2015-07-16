@@ -151,9 +151,21 @@ void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     helper_ss << getMetadataArgs(&alloc);
                     helper_ss << "); ____chimes_tmp_ptr; }) ";
                 } else if (alloc.get_fname() == "free") {
-                    helper_ss << " ({ " << call_str << "; free_helper(" <<
-                        getArgString(call, 0) << ", " << alloc.get_group() <<
-                        "UL); }) ";
+                    /*
+                     * Because the allocation/freeing of memory with malloc/free
+                     * is not kept in the same protected transaction as CHIMES
+                     * heap inserts/deletions, it is necessary to ensure that
+                     * frees only come after free_helper and allocations only
+                     * come before malloc_helper. Otherwise, it is possible for
+                     * one thread to free a heap region, another thread to
+                     * allocate that same heap region, and the second thread to
+                     * enter malloc_helper before the first enters free_helper
+                     * (depending on scheduling). Right now we don't do the same
+                     * for cudaFree.
+                     */
+                    helper_ss << " ({ free_helper(" << getArgString(call, 0) <<
+                        ", " << alloc.get_group() << "UL);" << call_str <<
+                        ";  }) ";
                 } else if (alloc.get_fname() == "cudaMalloc") {
                     helper_ss << " ({ cudaError_t ____chimes_err = " <<
                         call_str << "; cudaMalloc_helper(____chimes_err, " <<
