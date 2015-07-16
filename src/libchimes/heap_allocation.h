@@ -121,20 +121,6 @@ class heap_allocation {
         unsigned n_hash_chunks;
         unsigned long long *hashes;
 
-        /*
-         * Because the allocation/freeing of memory with malloc/free is not kept
-         * in the same protected transaction as CHIMES heap inserts/deletions,
-         * it is possible for one thread to free a heap region, another thread
-         * to allocate that same heap region, and the second thread to enter
-         * malloc_helper before the first enters free_helper (depending on
-         * scheduling). If the malloc-ing thread finds that there is still an
-         * entry in the heap for an address, it inserts its updated entry but
-         * sets dont_free to true so that the freeing thread knows not to remove
-         * the updated entry. The freeing thread must then set dont_free to
-         * false.
-         */
-        bool dont_free;
-
     public:
         heap_allocation(void *set_address, size_t set_size,
                 size_t set_alias_group, int set_is_cuda_alloc,
@@ -145,14 +131,11 @@ class heap_allocation {
                 elem_is_struct(set_elem_is_struct), elem_size(0),
                 n_elem_ptr_offsets(0),
                 tmp_buffer(NULL), is_cuda_alloc(set_is_cuda_alloc),
-                invalid_hashes(true), dont_free(false) {
+                invalid_hashes(true) {
             n_hash_chunks = CHIMES_N_CHUNKS(size);
             hashes = (unsigned long long *)malloc(
                     n_hash_chunks * sizeof(unsigned long long));
         }
-
-        void set_dont_free() { dont_free = true; }
-        bool get_dont_free() { return dont_free; }
 
         void update_hashes() {
             for (unsigned i = 0; i < n_hash_chunks; i++) {
