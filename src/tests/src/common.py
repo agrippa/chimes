@@ -9,6 +9,7 @@ import random
 import socket
 import tempfile
 import platform
+import multiprocessing
 from subprocess import Popen, PIPE
 
 # If not properly managed, running multiple tests concurrently can cause clashes
@@ -172,6 +173,10 @@ def get_platform_directory():
     Get the platform-specific subdirectory for the frontend tests.
     """
     return platform.system() + '-' + get_compiler_label()
+
+
+def get_num_cores():
+    return multiprocessing.cpu_count()
 
 
 def get_compiler_label():

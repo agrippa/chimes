@@ -2958,7 +2958,13 @@ void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
     if (!ctx) {
         allocated_aliases.insert(group);
     }
-    VERIFY(heap.insert(pair<void *, heap_allocation *>((void *)new_ptr, alloc)).second);
+    pair<map<void *, heap_allocation *>::iterator, bool> result =
+        heap.insert(pair<void *, heap_allocation *>((void *)new_ptr, alloc));
+    if (!result.second) {
+        alloc->set_dont_free();
+        result.first->second = alloc;
+    }
+    // VERIFY(heap.insert(pair<void *, heap_allocation *>((void *)new_ptr, alloc)).second);
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 }
 
@@ -3141,7 +3147,9 @@ void free_impl(const void *ptr) {
 
     // Update heap metadata
     VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
-    heap.erase(in_heap);
+    if (!in_heap->second->get_dont_free()) {
+        heap.erase(in_heap);
+    }
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 }
 
