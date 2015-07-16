@@ -1,0 +1,32 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 20 6 len=13 myocyte_write_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 79 6 len=12 myocyte_read_npm
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 41 3 rm_stack(false, 0UL, "myocyte_write", &____must_manage_myocyte_write, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 21 const int ____chimes_did_disable0 = new_stack((void *)(&myocyte_write), "myocyte_write", &____must_manage_myocyte_write, 6, 0, (size_t)(9015230714143826045UL), (size_t)(9015230714143826046UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 73 1 rm_stack(false, 0UL, "myocyte_write", &____must_manage_myocyte_write, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 101 3 rm_stack(false, 0UL, "myocyte_read", &____must_manage_myocyte_read, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 16 const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(9015230714143826169UL), (size_t)(9015230714143826170UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 131 1 rm_stack(false, 0UL, "myocyte_read", &____must_manage_myocyte_read, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 22 const int ____chimes_did_disable0 = new_stack((void *)(&myocyte_write), "myocyte_write", &____must_manage_myocyte_write, 6, 0, (size_t)(9015230714143826045UL), (size_t)(9015230714143826046UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 274 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 31 2 FILE *fid; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 31 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 32 2 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 32 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 17 const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(9015230714143826169UL), (size_t)(9015230714143826170UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 251 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 89 2 FILE *fid; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 89 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 90 2 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 90 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 91 2 char c; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 91 8 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 2 float temp; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 12 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 20 6 len=13 myocyte_write_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 273  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 79 6 len=12 myocyte_read_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 250  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 20 6 len=13 myocyte_write_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 273  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 79 6 len=12 myocyte_read_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 250  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

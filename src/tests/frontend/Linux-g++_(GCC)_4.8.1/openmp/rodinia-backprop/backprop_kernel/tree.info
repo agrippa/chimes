@@ -1,0 +1,3 @@
+gettime _Z7gettimev 0 DOES_NOT
+main main 0 MAY setup 42 53
+bpnn_train_kernel _Z17bpnn_train_kernelP4BPNNPfS1_ 0 DOES bpnn_layerforward 56 3 checkpoint 59 3 bpnn_layerforward 63 3 checkpoint 66 3 bpnn_output_error 70 3 checkpoint 73 3 bpnn_hidden_error 77 3 checkpoint 80 3 bpnn_adjust_weights 84 3 checkpoint 87 3 bpnn_adjust_weights 91 3

@@ -1,0 +1,1 @@
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 57 5 : { 1, 2, 3, 4, 5, 6, 19 } {  } call:gridInfo { gridInfo { 13, 14, 15, 16 } }

@@ -1,0 +1,5 @@
+49 28 257 malloc
+81 38 257 malloc
+92 2 257 free
+118 28 334 malloc
+135 2 334 free

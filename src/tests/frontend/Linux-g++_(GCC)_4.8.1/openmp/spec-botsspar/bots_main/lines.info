@@ -1,0 +1,11 @@
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 292 4 : { 54, 55, 407 } {  } call:bots_get_date { bots_get_date { 407 } }
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 451 4 : { 289, 290 } {  } call:bots_get_params_common {  }
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 542 4 : { 401 } {  } call:bots_print_results {  }
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 536 20 : {  } {  } call:sparselu_check { sparselu_check { 367, 381 } }
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 532 4 : { 324, 421 } {  } call:sparselu_fini { sparselu_fini { 367, 456 } }
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 527 4 : { 323 } {  } call:sparselu_par_call { sparselu_par_call { 367 } }
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 522 4 : {  } {  } call:sparselu_init { sparselu_init { 326, 456 } }
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 497 4 : { 320, 321, 322 } {  } call:bots_get_params {  }
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 518 7 : { 324, 421 } {  } call:sparselu_fini { sparselu_fini { 381, 455 } }
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 514 7 : { 323 } {  } call:sparselu_seq_call { sparselu_seq_call { 381 } }
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 509 7 : { 401 } {  } call:sparselu_init { sparselu_init { 325, 455 } }

@@ -1,0 +1,2 @@
+kdnode 320 0 n "long long int" lo "%struct.kdnode*" hi "%struct.kdnode*" coord "[ 3 x int ]"
+timespec 128 0 tv_sec "long int" tv_nsec "long int"

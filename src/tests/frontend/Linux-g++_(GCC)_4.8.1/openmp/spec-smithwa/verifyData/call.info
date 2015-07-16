@@ -1,0 +1,12 @@
+gridInfo verifyData 57 5 0 15 16 13 14
+omp_get_thread_num verifyData 68 16 0
+printf verifyData 113 5 0 199
+printf verifyData 114 5 0 200 0
+printf verifyData 117 5 0 200 0
+printf verifyData 120 5 0 200 0
+printf verifyData 123 5 0 200 0
+printf verifyData 126 5 0 200 0
+printf verifyData 129 5 0 200 0
+printf verifyData 132 5 0 200 0
+printf verifyData 135 5 0 200 0
+printf verifyData 138 5 0 200 0

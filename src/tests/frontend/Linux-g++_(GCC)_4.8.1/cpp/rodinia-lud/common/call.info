@@ -1,0 +1,29 @@
+memset stopwatch_start 13 5 0 21 0 0
+memset stopwatch_start 14 5 0 21 0 0
+gettimeofday stopwatch_start 16 5 0 21 1029
+gettimeofday stopwatch_stop 23 5 0 43 1029
+fopen create_matrix_from_file 46 8 1027 236 1022
+fscanf create_matrix_from_file 51 3 0 1027 1023 137
+malloc create_matrix_from_file 53 16 200 0
+fclose create_matrix_from_file 55 7 0 1027
+fscanf create_matrix_from_file 61 11 0 1027 1023 200
+fclose create_matrix_from_file 65 3 0 1027
+time create_matrix_from_random 79 9 0 1028
+srand create_matrix_from_random 79 3 0 0
+malloc create_matrix_from_random 81 15 274 0
+malloc create_matrix_from_random 85 15 458 0
+free create_matrix_from_random 87 7 0 274
+rand create_matrix_from_random 94 38 0
+rand create_matrix_from_random 108 38 0
+free create_matrix_from_random 120 3 0 274
+free create_matrix_from_random 121 3 0 458
+malloc lud_verify 142 24 616 0
+fabs lud_verify 182 15 0 0
+printf lud_verify 182 70 0 1025 0 0 0 0
+free lud_verify 186 3 0 616
+malloc matrix_duplicate 192 25 807 0
+memcpy matrix_duplicate 193 4 0 807 821 0
+printf print_matrix 201 38 0 1023 0
+printf print_matrix 203 7 0 1026
+exp create_matrix 220 18 0 0
+malloc create_matrix 227 16 992 0

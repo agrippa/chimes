@@ -1,0 +1,1103 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 34 11 len=8 get_time_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 40 7 len=12 elapsed_time_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 47 8 len=11 roundDouble_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 63 6 len=5 setIf_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 82 8 len=5 randu_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 8 len=5 randn_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 112 6 len=8 addNoise_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 127 6 len=9 strelDisk_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 150 6 len=13 dilate_matrix_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 183 6 len=13 imdilate_disk_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 203 6 len=12 getneighbors_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 254 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 12566922966829692313UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 254 59 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 264 2  ({ free(newMatrix); free_helper(newMatrix, 12566922966829692313UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 264 16 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 8 len=17 calcLikelihoodSum_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 298 5 len=9 findIndex_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 322 5 len=12 findIndexBin_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 346 6 len=21 particleFilter_kernel_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 488 22  ({ void *____chimes_tmp_ptr = malloc(diameter * diameter * sizeof(int)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 12566922966829693450UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 488 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 499 29  ({ void *____chimes_tmp_ptr = malloc(countOnes * 2 * sizeof(double)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 12566922966829693670UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 499 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 505 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693538UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 505 63 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 34  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693663UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 66 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 30  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693625UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 30  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693631UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693666UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693667UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693668UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 59 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 25  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693669UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 57 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 20  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * countOnes * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 12566922966829693672UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 59 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 540 2  ({ free(disk); free_helper(disk, 12566922966829693450UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 540 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 541 2  ({ free(objxy); free_helper(objxy, 12566922966829693670UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 541 12 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 542 2  ({ free(weights); free_helper(weights, 12566922966829693538UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 542 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 543 2  ({ free(likelihood); free_helper(likelihood, 12566922966829693663UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 543 17 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 544 2  ({ free(xj); free_helper(xj, 12566922966829693666UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 544 9 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 545 2  ({ free(yj); free_helper(yj, 12566922966829693667UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 545 9 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 546 2  ({ free(arrayX); free_helper(arrayX, 12566922966829693625UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 546 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 547 2  ({ free(arrayY); free_helper(arrayY, 12566922966829693631UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 547 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 548 2  ({ free(CDF); free_helper(CDF, 12566922966829693668UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 548 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 549 2  ({ free(u); free_helper(u, 12566922966829693669UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 549 8 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 550 2  ({ free(ind); free_helper(ind, 12566922966829693672UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 550 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 613 22  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 12566922966829693910UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 613 51 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 618 19  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 12566922966829693928UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 618 51 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 635 2  ({ free(seed); free_helper(seed, 12566922966829693910UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 635 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 636 2  ({ free(I); free_helper(I, 12566922966829693928UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 636 8 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 254 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 12566922966829692313UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 254 59 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 264 2  ({ free(newMatrix); free_helper(newMatrix, 12566922966829692313UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 264 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 488 22  ({ void *____chimes_tmp_ptr = malloc(diameter * diameter * sizeof(int)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 12566922966829693450UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 488 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 499 29  ({ void *____chimes_tmp_ptr = malloc(countOnes * 2 * sizeof(double)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 12566922966829693670UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 499 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 505 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693538UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 505 63 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 34  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693663UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 66 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 30  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693625UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 30  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693631UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693666UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693667UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693668UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 59 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 25  ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693669UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 57 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 20  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * countOnes * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 12566922966829693672UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 59 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 540 2  ({ free(disk); free_helper(disk, 12566922966829693450UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 540 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 541 2  ({ free(objxy); free_helper(objxy, 12566922966829693670UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 541 12 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 542 2  ({ free(weights); free_helper(weights, 12566922966829693538UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 542 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 543 2  ({ free(likelihood); free_helper(likelihood, 12566922966829693663UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 543 17 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 544 2  ({ free(xj); free_helper(xj, 12566922966829693666UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 544 9 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 545 2  ({ free(yj); free_helper(yj, 12566922966829693667UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 545 9 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 546 2  ({ free(arrayX); free_helper(arrayX, 12566922966829693625UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 546 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 547 2  ({ free(arrayY); free_helper(arrayY, 12566922966829693631UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 547 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 548 2  ({ free(CDF); free_helper(CDF, 12566922966829693668UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 548 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 549 2  ({ free(u); free_helper(u, 12566922966829693669UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 549 8 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 550 2  ({ free(ind); free_helper(ind, 12566922966829693672UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 550 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 613 22  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 12566922966829693910UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 613 51 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 618 19  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 12566922966829693928UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 618 51 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 635 2  ({ free(seed); free_helper(seed, 12566922966829693910UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 635 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 636 2  ({ free(I); free_helper(I, 12566922966829693928UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 636 8 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 37 96 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_5, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 34 22 const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 38 1 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_5, ____chimes_did_disable0, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 41 112 rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_6, ____chimes_did_disable1, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 40 62 const int ____chimes_did_disable1 = new_stack((void *)(&elapsed_time), "elapsed_time", &____must_manage_elapsed_time, 2, 0, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 42 1 rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_6, ____chimes_did_disable1, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 49 95 rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_7, ____chimes_did_disable2, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 49 202 rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_7, ____chimes_did_disable2, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 47 33 const int ____chimes_did_disable2 = new_stack((void *)(&roundDouble), "roundDouble", &____must_manage_roundDouble, 1, 0, (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 53 1 rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_7, ____chimes_did_disable2, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 63 91 const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829691542UL), (size_t)(12566922966829691543UL), (size_t)(12566922966829691544UL), (size_t)(12566922966829691545UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 73 1 rm_stack(false, 0UL, "setIf", &____must_manage_setIf, ____alias_loc_id_8, ____chimes_did_disable3, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 86 89 rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_9, ____chimes_did_disable4, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 83 1 const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(12566922966829691589UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 87 1 rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_9, ____chimes_did_disable4, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 102 74 rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_10, ____chimes_did_disable5, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 36 const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(12566922966829691631UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 103 1 rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_10, ____chimes_did_disable5, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 112 77 const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(12566922966829691735UL), (size_t)(12566922966829691736UL), (size_t)(12566922966829691737UL), (size_t)(12566922966829691738UL), (size_t)(12566922966829691739UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 121 1 rm_stack(false, 0UL, "addNoise", &____must_manage_addNoise, ____alias_loc_id_11, ____chimes_did_disable6, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 128 1 const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(12566922966829691811UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 138 1 rm_stack(false, 0UL, "strelDisk", &____must_manage_strelDisk, ____alias_loc_id_12, ____chimes_did_disable7, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 151 1 const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(12566922966829691962UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 172 1 rm_stack(false, 0UL, "dilate_matrix", &____must_manage_dilate_matrix, ____alias_loc_id_13, ____chimes_did_disable8, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 184 1 const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(12566922966829692055UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829692060UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 195 1 rm_stack(false, 0UL, "imdilate_disk", &____must_manage_imdilate_disk, ____alias_loc_id_14, ____chimes_did_disable9, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 203 60 const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 3, 0, (size_t)(12566922966829692147UL), (size_t)(12566922966829692148UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 217 1 rm_stack(false, 0UL, "getneighbors", &____must_manage_getneighbors, ____alias_loc_id_15, ____chimes_did_disable10, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 230 69 const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", (int *)0x0, 5, 5, (size_t)(12566922966829692358UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829692362UL), "videoSequence|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "videoSequence|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "videoSequence|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "videoSequence|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "videoSequence|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 275 1 rm_stack(false, 0UL, "videoSequence", (int *)0x0, 0, ____chimes_did_disable11, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 288 72 rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_16, ____chimes_did_disable12, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 58 const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(12566922966829692426UL), (size_t)(12566922966829692427UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 289 1 rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_16, ____chimes_did_disable12, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 308 68 rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_17, ____chimes_did_disable13, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 310 61 rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_17, ____chimes_did_disable13, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 298 57 const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(12566922966829692486UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 311 1 rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_17, ____chimes_did_disable13, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 323 86 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 330 93 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 330 232 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 338 71 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 341 140 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 343 107 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 322 75 const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(12566922966829692627UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 344 1 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 350 31 const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter_kernel), "particleFilter_kernel", &____must_manage_particleFilter_kernel, 21, 0, (size_t)(12566922966829693347UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829693351UL), (size_t)(0UL), (size_t)(12566922966829693353UL), (size_t)(12566922966829693354UL), (size_t)(12566922966829693355UL), (size_t)(12566922966829693356UL), (size_t)(12566922966829693357UL), (size_t)(12566922966829693358UL), (size_t)(12566922966829693359UL), (size_t)(12566922966829693360UL), (size_t)(0UL), (size_t)(12566922966829693362UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829693365UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 1 rm_stack(false, 0UL, "particleFilter_kernel", &____must_manage_particleFilter_kernel, ____alias_loc_id_19, ____chimes_did_disable15, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 86 const int ____chimes_did_disable16 = new_stack((void *)(&particleFilter), "particleFilter", (int *)0x0, 6, 6, (size_t)(12566922966829693719UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829693723UL), (size_t)(0UL), "particleFilter|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "particleFilter|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "particleFilter|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "particleFilter|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "particleFilter|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "particleFilter|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 551 1 rm_stack(false, 0UL, "particleFilter", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 559 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 564 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 572 62 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 577 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 62 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 594 62 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 599 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 605 62 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 610 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 637 59 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 552 34 const int ____chimes_did_disable17 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(12566922966829693991UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 638 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 34 23 const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 34 134 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 35 2  struct timeval tv; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 35 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 37 3 long long ____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 37 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 40 63 const int ____chimes_did_disable1 = new_stack((void *)(&elapsed_time), "elapsed_time", &____must_manage_elapsed_time, 2, 0, (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 40 216 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 41 10 float ____chimes_ret_var_1; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 41 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 47 34 const int ____chimes_did_disable2 = new_stack((void *)(&roundDouble), "roundDouble", &____must_manage_roundDouble, 1, 0, (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 47 169 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 48 2  int newValue;  newValue = ((int)(value)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 48 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 49 31 double ____chimes_ret_var_2; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 49 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 49 255 double ____chimes_ret_var_3; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 49 282 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 63 92 const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829691542UL), (size_t)(12566922966829691543UL), (size_t)(12566922966829691544UL), (size_t)(12566922966829691545UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 63 360 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 64 2 int x; int y; int z; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 64 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 83 2 const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(12566922966829691589UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 83 153 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 84 2  int num;  num = (A*seed[index] + C) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 84 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 86 3 double ____chimes_ret_var_4; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 86 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 37 const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(12566922966829691631UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 188 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 98 2  double u;  u = (randu(seed, index)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 98 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 99 2  double v;  v = (randu(seed, index)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 99 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 100 2  double cosine;  cosine = (cos(2*3.1415926535897932*v)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 100 45 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 101 2  double rt;  rt = (-2*log(u)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 101 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 102 3 double ____chimes_ret_var_5; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 102 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 112 78 const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(12566922966829691735UL), (size_t)(12566922966829691736UL), (size_t)(12566922966829691737UL), (size_t)(12566922966829691738UL), (size_t)(12566922966829691739UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 112 359 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 113 2 int x; int y; int z; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 113 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 128 2 const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(12566922966829691811UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 128 165 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 129 2  int diameter;  diameter = (radius*2 - 1) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 129 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 130 2 int x; int y; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 130 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 133 4  double distance;  distance = (sqrt(pow((double)(x-radius+1),2) + pow((double)(y-radius+1),2))) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 133 85 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 151 2 const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(12566922966829691962UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 151 267 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 152 2  int startX;  startX = (posX - error) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 152 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 155 2  int startY;  startY = (posY - error) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 155 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 158 2  int endX;  endX = (posX + error) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 158 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 161 2  int endY;  endY = (posY + error) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 161 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 164 2 int x; int y; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 164 9 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 167 4  double distance;  distance = (sqrt( pow((double)(x-posX),2) + pow((double)(y-posY),2) )) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 167 79 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 184 2 const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(12566922966829692055UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829692060UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 184 256 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 185 2 int x; int y; int z; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 185 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 203 61 const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 3, 0, (size_t)(12566922966829692147UL), (size_t)(12566922966829692148UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 203 268 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 204 2 int x; int y; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 204 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 205 2  int neighY;  neighY = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 205 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 206 2  int center;  center = (radius - 1) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 206 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 207 2  int diameter;  diameter = (radius*2 -1) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 207 28 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 230 70 const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", (int *)0, 5, 5, (size_t)(12566922966829692358UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829692362UL), "videoSequence|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "videoSequence|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "videoSequence|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "videoSequence|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "videoSequence|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 230 684 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 2 int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 7 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 2  int max_size;  max_size = (IszX*IszY*Nfr) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 234 2  int x0;  x0 = ((int)roundDouble(IszY/2.0)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 234 37 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 235 2  int y0;  y0 = ((int)roundDouble(IszX/2.0)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 235 37 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 239 2 int xk; int yk; int pos; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 239 17 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 254 2  int *newMatrix;  newMatrix = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 12566922966829692313UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 254 214 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 256 2 int x; int y; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 256 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 59 const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(12566922966829692426UL), (size_t)(12566922966829692427UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 281 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 284 2  double likelihoodSum;  likelihoodSum = (0.0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 284 28 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 285 2 int y; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 285 7 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 288 3 double ____chimes_ret_var_6; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 288 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 298 58 const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(12566922966829692486UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 298 237 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 299 2  int index;  index = (-1) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 299 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 300 2 int x; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 300 7 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 308 4 int ____chimes_ret_var_7; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 308 28 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 310 3 int ____chimes_ret_var_8; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 310 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 322 76 const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(12566922966829692627UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 322 279 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 323 31 int ____chimes_ret_var_9; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 323 55 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 325 2  int middleIndex;  middleIndex = (beginIndex + ((endIndex - beginIndex)/2)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 325 60 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 330 27 int ____chimes_ret_var_10; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 330 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 330 289 int ____chimes_ret_var_11; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 330 314 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 338 5 int ____chimes_ret_var_12; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 338 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 341 34 int ____chimes_ret_var_13; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 341 59 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 343 3 int ____chimes_ret_var_14; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 343 28 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 350 32 const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter_kernel), "particleFilter_kernel", &____must_manage_particleFilter_kernel, 21, 0, (size_t)(12566922966829693347UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829693351UL), (size_t)(0UL), (size_t)(12566922966829693353UL), (size_t)(12566922966829693354UL), (size_t)(12566922966829693355UL), (size_t)(12566922966829693356UL), (size_t)(12566922966829693357UL), (size_t)(12566922966829693358UL), (size_t)(12566922966829693359UL), (size_t)(12566922966829693360UL), (size_t)(0UL), (size_t)(12566922966829693362UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829693365UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 350 727 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 351 5 int x; int y; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 351 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 352 5 int indX; int indY; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 352 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 353 5  long long set_arrays;  set_arrays = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 353 38 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 362 5  long long error;  error = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 362 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 363 6  float ____chimes_unroll_var_0;  ____chimes_unroll_var_0 = (elapsed_time(set_arrays, error)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 363 69 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 5  long long likelihood_time;  likelihood_time = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 43 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 6  float ____chimes_unroll_var_1;  ____chimes_unroll_var_1 = (elapsed_time(error, likelihood_time)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 74 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 392 5  long long exponential;  exponential = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 392 39 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 393 6  float ____chimes_unroll_var_2;  ____chimes_unroll_var_2 = (elapsed_time(likelihood_time, exponential)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 393 80 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 394 5  double sumWeights;  sumWeights = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 394 26 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 399 5  long long sum_time;  sum_time = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 399 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 400 6  float ____chimes_unroll_var_3;  ____chimes_unroll_var_3 = (elapsed_time(exponential, sum_time)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 400 73 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 5  long long normalize;  normalize = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 37 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 406 6  float ____chimes_unroll_var_4;  ____chimes_unroll_var_4 = (elapsed_time(sum_time, normalize)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 406 71 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 415 5  long long move_time;  move_time = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 415 37 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 416 6  float ____chimes_unroll_var_5;  ____chimes_unroll_var_5 = (elapsed_time(normalize, move_time)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 416 72 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 6  double ____chimes_unroll_var_6;  ____chimes_unroll_var_6 = (roundDouble(IszY/2.0)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 60 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 63  double ____chimes_unroll_var_7;  ____chimes_unroll_var_7 = (roundDouble(IszX/2.0)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 117 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 119  double distance;  distance = (sqrt( pow((double)(xe-(int)____chimes_unroll_var_6),2) + pow((double)(ye-(int)____chimes_unroll_var_7),2) )) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 244 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 432 5  long long cum_sum;  cum_sum = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 432 35 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 433 6  float ____chimes_unroll_var_8;  ____chimes_unroll_var_8 = (elapsed_time(move_time, cum_sum)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 433 70 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 434 5  double u1;  u1 = ((1/((double)(Nparticles)))*randu(seed, 0)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 434 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 439 5  long long u_time;  u_time = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 439 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 440 6  float ____chimes_unroll_var_9;  ____chimes_unroll_var_9 = (elapsed_time(cum_sum, u_time)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 440 67 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 441 5 int j; int i; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 441 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 452 5  long long xyj_time;  xyj_time = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 452 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 453 6  float ____chimes_unroll_var_10;  ____chimes_unroll_var_10 = (elapsed_time(u_time, xyj_time)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 453 69 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 462 5  long long reset;  reset = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 462 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 463 6  float ____chimes_unroll_var_11;  ____chimes_unroll_var_11 = (elapsed_time(xyj_time, reset)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 463 68 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 87 const int ____chimes_did_disable16 = new_stack((void *)(&particleFilter), "particleFilter", (int *)0, 6, 6, (size_t)(12566922966829693719UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829693723UL), (size_t)(0UL), "particleFilter|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "particleFilter|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "particleFilter|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "particleFilter|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "particleFilter|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "particleFilter|Nparticles|0", (int *)0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 816 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 2  int max_size;  max_size = (IszX*IszY*Nfr) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 480 2  long long start;  start = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 480 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 482 2  double xe;  xe = (roundDouble(IszY/2.0)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 482 35 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 483 2  double ye;  ye = (roundDouble(IszX/2.0)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 483 35 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 486 2  int radius;  radius = (5) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 486 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 487 2  int diameter;  diameter = (radius*2 - 1) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 487 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 488 2  int *disk;  disk = ((int *) ({ void *____chimes_tmp_ptr = malloc(diameter * diameter * sizeof(int)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 12566922966829693450UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 488 215 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 2  int countOnes;  countOnes = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 491 2 int x; int y; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 491 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 499 2  double *objxy;  objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc(countOnes * 2 * sizeof(double)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 12566922966829693670UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 499 216 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 502 2  long long get_neighbors;  get_neighbors = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 502 38 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 503 3  float ____chimes_unroll_var_12;  ____chimes_unroll_var_12 = (elapsed_time(start, get_neighbors)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 503 70 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 505 2  double *weights;  weights = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693538UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 505 214 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 2  long long get_weights;  get_weights = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 511 3  float ____chimes_unroll_var_13;  ____chimes_unroll_var_13 = (elapsed_time(get_neighbors, get_weights)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 511 76 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 2  double *likelihood;  likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693663UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 217 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 2  double *arrayX;  arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693625UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 213 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 2  double *arrayY;  arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693631UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 213 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 2  double *xj;  xj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693666UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 209 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 2  double *yj;  yj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693667UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 209 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 2  double *CDF;  CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693668UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 210 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 2  double *u;  u = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 12566922966829693669UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 208 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 2  int *ind;  ind = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * countOnes * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 12566922966829693672UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 219 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 526 2 int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 526 7 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 3  long long ____chimes_unroll_var_14;  ____chimes_unroll_var_14 = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 50 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 53  float ____chimes_unroll_var_15;  ____chimes_unroll_var_15 = (elapsed_time(get_weights, ____chimes_unroll_var_14)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 137 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 552 35 const int ____chimes_did_disable17 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12566922966829693991UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 552 173 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 554 2  char *usage;  usage = ("openmp.out -x <dimX> -y <dimY> -z <Nfr> -np <Nparticles>") ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 554 74 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 559 4 int ____chimes_ret_var_15; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 559 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 564 4 int ____chimes_ret_var_16; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 564 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 2 int IszX; int IszY; int Nfr; int Nparticles; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 572 6 int ____chimes_ret_var_17; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 572 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 577 4 int ____chimes_ret_var_18; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 577 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 6 int ____chimes_ret_var_19; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 4 int ____chimes_ret_var_20; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 594 6 int ____chimes_ret_var_21; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 594 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 599 4 int ____chimes_ret_var_22; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 599 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 605 6 int ____chimes_ret_var_23; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 605 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 610 4 int ____chimes_ret_var_24; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 610 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 613 2  int *seed;  seed = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 12566922966829693910UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 613 199 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 614 2 int i; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 614 7 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 618 2  int *I;  I = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 12566922966829693928UL, 0, 0); ____chimes_tmp_ptr; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 618 206 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 619 2  long long start;  start = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 619 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 622 2  long long endVideoSequence;  endVideoSequence = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 622 41 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 628 3  float ____chimes_unroll_var_16;  ____chimes_unroll_var_16 = (elapsed_time(start, endVideoSequence)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 628 73 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 631 2  long long endParticleFilter;  endParticleFilter = (get_time()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 631 42 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 632 3  float ____chimes_unroll_var_17;  ____chimes_unroll_var_17 = (elapsed_time(endVideoSequence, endParticleFilter)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 632 85 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 633 3  float ____chimes_unroll_var_18;  ____chimes_unroll_var_18 = (elapsed_time(start, endParticleFilter)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 633 74 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 637 3 int ____chimes_ret_var_25; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 637 28 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 98 14  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 99 14  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 117 5  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 190 6  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 234 12  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 235 12  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 250 9  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 255 2  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 267 9  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 271 2  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 2  call_lbl_6: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 274 2  call_lbl_7: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 341 63  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 343 32  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 353 29  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 359 9  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 360 9  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 362 24  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 363 39  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 373 13  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 374 13  call_lbl_6: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 34  call_lbl_7: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 39  call_lbl_8: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 392 30  call_lbl_9: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 393 39  call_lbl_10: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 399 27  call_lbl_11: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 400 39  call_lbl_12: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 28  call_lbl_13: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 406 39  call_lbl_14: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 415 28  call_lbl_15: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 416 39  call_lbl_16: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 40  call_lbl_17: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 127  call_lbl_18: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 432 26  call_lbl_19: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 433 39  call_lbl_20: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 434 18  call_lbl_21: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 439 25  call_lbl_22: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 440 39  call_lbl_23: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 445 9  call_lbl_24: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 452 27  call_lbl_25: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 453 40  call_lbl_26: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 462 24  call_lbl_27: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 463 40  call_lbl_28: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 480 21  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 482 15  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 483 15  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 489 2  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 500 2  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 502 29  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 503 37  call_lbl_6: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 27  call_lbl_7: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 511 37  call_lbl_8: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 41  call_lbl_9: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 118  call_lbl_10: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 532 9  call_lbl_11: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 9  call_lbl_12: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 619 21  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 621 2  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 622 32  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 628 37  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 630 2  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 631 33  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 632 37  call_lbl_6: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 633 37  call_lbl_7: 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 34 11 len=8 get_time_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 34 133  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 40 7 len=12 elapsed_time_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 40 215  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 47 8 len=11 roundDouble_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 47 168  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 63 6 len=5 setIf_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 63 359  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 82 8 len=5 randu_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 83 152  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 8 len=5 randn_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 98 32 ({ calling_npm("randu", 0); randu_npm(seed, index); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 98 49 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 99 32 ({ calling_npm("randu", 0); randu_npm(seed, index); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 99 49 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 187  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 112 6 len=8 addNoise_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 117 116 ({ calling_npm("randn", 0); randn_npm(seed, 0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 117 129 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 112 358  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 127 6 len=9 strelDisk_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 128 164  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 150 6 len=13 dilate_matrix_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 151 266  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 183 6 len=13 imdilate_disk_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 190 19 ({ calling_npm("dilate_matrix", 0); dilate_matrix_npm(newMatrix, x, y, z, dimX, dimY, dimZ, error); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 190 76 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 184 255  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 203 6 len=12 getneighbors_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 203 267  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 230 6 len=13 videoSequence_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 234 36 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 234 56 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 235 36 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 235 56 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 250 22 checkpoint_transformed(2, ____alias_loc_id_1)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 250 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 255 15 ({ calling_npm("imdilate_disk", 0); imdilate_disk_npm(I, IszX, IszY, Nfr, 5, newMatrix); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 255 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 267 22 checkpoint_transformed(4, ____alias_loc_id_0)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 267 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 271 15 ({ calling_npm("setIf", 0); setIf_npm(0, 100, I, &IszX, &IszY, &Nfr); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 271 50 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 15 ({ calling_npm("setIf", 0); setIf_npm(1, 228, I, &IszX, &IszY, &Nfr); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 50 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 274 15 ({ calling_npm("addNoise", 0); addNoise_npm(I, &IszX, &IszY, &Nfr, seed); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 274 51 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 230 671  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 8 len=17 calcLikelihoodSum_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 280  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 298 5 len=9 findIndex_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 298 236  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 322 5 len=12 findIndexBin_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 341 101 ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, beginIndex, middleIndex+1, value); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 341 151 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 343 70 ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, middleIndex-1, endIndex, value); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 343 118 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 322 278  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 346 6 len=21 particleFilter_kernel_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 353 56 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 353 65 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 359 41 ({ calling_npm("randn", 0); randn_npm(seed, x); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 359 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 360 42 ({ calling_npm("randn", 0); randn_npm(seed, x); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 360 55 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 362 46 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 362 55 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 363 79 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(set_arrays, error); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 363 109 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 373 33 ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayX[x]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 373 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 374 33 ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayY[x]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 374 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 66 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 75 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 79 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(error, likelihood_time); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 114 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 392 58 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 392 67 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 393 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(likelihood_time, exponential); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 393 121 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 399 53 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 399 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 400 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(exponential, sum_time); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 400 114 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 55 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 406 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(sum_time, normalize); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 406 112 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 415 55 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 415 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 416 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(normalize, move_time); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 416 113 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 81 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 101 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 182 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 202 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 432 51 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 432 60 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 433 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(move_time, cum_sum); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 433 111 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 434 65 ({ calling_npm("randu", 0); randu_npm(seed, 0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 434 78 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 439 49 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 439 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 440 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(cum_sum, u_time); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 440 108 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 445 27 ({ calling_npm("findIndex", 0); findIndex_npm(CDF, Nparticles, u[j]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 445 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 452 53 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 452 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 453 82 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(u_time, xyj_time); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 453 111 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 462 47 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 462 56 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 463 82 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(xyj_time, reset); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 463 110 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 358 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 361 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 366 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 383 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 389 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 391 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 396 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 398 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 402 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 404 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 411 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 414 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 436 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 438 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 444 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 350 726  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 6 len=14 particleFilter_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 480 43 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 480 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 482 34 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 482 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 483 34 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 483 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 489 15 ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 489 37 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 500 15 ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, objxy, radius); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 500 47 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 502 59 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 502 68 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 503 78 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 503 111 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 55 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 511 78 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 511 117 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 82 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 91 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 173 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_weights, ____chimes_unroll_var_14); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 223 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 532 23 ({ calling_npm("particleFilter_kernel", 0); particleFilter_kernel_npm(I, IszX, IszY, Nfr, seed, Nparticles, likelihood, arrayX, arrayY, xj, yj, CDF, u, objxy, countOnes, ind, k, max_size, weights, xe, ye); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 534 42 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 23 checkpoint_transformed(12, ____alias_loc_id_2)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 34 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 15 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 482 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 482 12 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 483 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 483 12 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 488 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 488 12 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 16 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 499 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 499 16 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 505 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 505 18 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 21 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 17 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 17 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 13 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 13 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 14 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 12 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 11 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 526 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 526 7 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 507 33  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 509 2  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 522 33  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 525 2  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 801  ; int k;
+# 477
+int *ind;
+# 477
+double *u;
+# 477
+double *CDF;
+# 477
+double *yj;
+# 477
+double *xj;
+# 477
+double *arrayY;
+# 477
+double *arrayX;
+# 477
+double *likelihood;
+# 477
+double *weights;
+# 477
+double *objxy;
+# 477
+int countOnes;
+# 477
+int *disk;
+# 477
+double ye;
+# 477
+double xe;
+# 477
+int max_size;
+# 477
+ register_stack_vars(16, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|ye|0", (int *)0x0, "double", (void *)(&ye), (size_t)8, 0, 0, 0, "particleFilter|xe|0", (int *)0x0, "double", (void *)(&xe), (size_t)8, 0, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0);  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 552 5 len=4 main_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 619 43 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 619 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 621 15  ({  calling((void*)videoSequence, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(12566922966829693928UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829693910UL)); (videoSequence)(I, IszX, IszY, Nfr, seed); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 621 53 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 622 65 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 622 74 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 628 78 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endVideoSequence); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 628 114 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 630 15  ({  calling((void*)particleFilter, 4, ____alias_loc_id_3, 0UL, 6, (size_t)(12566922966829693928UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829693910UL), (size_t)(0UL)); (particleFilter)(I, IszX, IszY, Nfr, seed, Nparticles); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 630 66 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 631 67 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 631 76 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 632 78 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(endVideoSequence, endParticleFilter); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 632 126 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 633 78 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 633 115 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 10 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 20 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 22 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 29 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 31 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 45 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 613 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 613 12 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 618 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 618 9 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 619 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 619 18 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 622 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 622 29 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 552 170  ; long long endVideoSequence;
+# 552
+long long start;
+# 552
+int *I;
+# 552
+int *seed;
+# 552
+int Nparticles;
+# 552
+int Nfr;
+# 552
+int IszY;
+# 552
+int IszX;
+# 552
+ register_stack_vars(8, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0);  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 34 11 len=8 get_time_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 34 133  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 40 7 len=12 elapsed_time_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 40 215  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 47 8 len=11 roundDouble_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 47 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 63 6 len=5 setIf_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 63 359  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 82 8 len=5 randu_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 83 152  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 8 len=5 randn_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 98 32 ({ calling_npm("randu", 0); randu_npm(seed, index); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 98 49 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 99 32 ({ calling_npm("randu", 0); randu_npm(seed, index); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 99 49 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 187  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 112 6 len=8 addNoise_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 117 116 ({ calling_npm("randn", 0); randn_npm(seed, 0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 117 129 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 112 358  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 127 6 len=9 strelDisk_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 128 164  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 150 6 len=13 dilate_matrix_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 151 266  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 183 6 len=13 imdilate_disk_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 190 19 ({ calling_npm("dilate_matrix", 0); dilate_matrix_npm(newMatrix, x, y, z, dimX, dimY, dimZ, error); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 190 76 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 184 255  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 203 6 len=12 getneighbors_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 203 267  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 230 6 len=13 videoSequence_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 234 36 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 234 56 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 235 36 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 235 56 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 250 22 checkpoint_transformed(2, ____alias_loc_id_1)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 250 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 255 15 ({ calling_npm("imdilate_disk", 0); imdilate_disk_npm(I, IszX, IszY, Nfr, 5, newMatrix); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 255 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 267 22 checkpoint_transformed(4, ____alias_loc_id_0)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 267 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 271 15 ({ calling_npm("setIf", 0); setIf_npm(0, 100, I, &IszX, &IszY, &Nfr); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 271 50 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 15 ({ calling_npm("setIf", 0); setIf_npm(1, 228, I, &IszX, &IszY, &Nfr); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 50 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 274 15 ({ calling_npm("addNoise", 0); addNoise_npm(I, &IszX, &IszY, &Nfr, seed); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 274 51 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 230 671  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 8 len=17 calcLikelihoodSum_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 283 280  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 298 5 len=9 findIndex_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 298 236  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 322 5 len=12 findIndexBin_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 341 101 ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, beginIndex, middleIndex+1, value); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 341 151 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 343 70 ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, middleIndex-1, endIndex, value); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 343 118 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 322 278  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 346 6 len=21 particleFilter_kernel_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 353 56 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 353 65 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 359 41 ({ calling_npm("randn", 0); randn_npm(seed, x); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 359 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 360 42 ({ calling_npm("randn", 0); randn_npm(seed, x); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 360 55 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 362 46 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 362 55 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 363 79 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(set_arrays, error); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 363 109 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 373 33 ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayX[x]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 373 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 374 33 ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayY[x]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 374 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 66 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 75 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 79 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(error, likelihood_time); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 114 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 392 58 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 392 67 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 393 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(likelihood_time, exponential); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 393 121 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 399 53 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 399 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 400 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(exponential, sum_time); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 400 114 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 55 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 406 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(sum_time, normalize); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 406 112 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 415 55 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 415 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 416 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(normalize, move_time); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 416 113 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 81 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 101 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 182 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 202 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 432 51 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 432 60 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 433 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(move_time, cum_sum); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 433 111 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 434 65 ({ calling_npm("randu", 0); randu_npm(seed, 0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 434 78 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 439 49 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 439 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 440 80 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(cum_sum, u_time); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 440 108 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 445 27 ({ calling_npm("findIndex", 0); findIndex_npm(CDF, Nparticles, u[j]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 445 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 452 53 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 452 62 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 453 82 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(u_time, xyj_time); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 453 111 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 462 47 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 462 56 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 463 82 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(xyj_time, reset); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 463 110 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 358 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 361 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 366 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 383 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 389 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 391 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 396 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 398 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 402 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 404 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 411 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 414 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 436 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 438 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 444 36  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 5  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 350 726  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 6 len=14 particleFilter_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 480 43 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 480 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 482 34 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 482 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 483 34 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 483 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 489 15 ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 489 37 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 500 15 ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, objxy, radius); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 500 47 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 502 59 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 502 68 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 503 78 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 503 111 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 55 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 511 78 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 511 117 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 82 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 91 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 173 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_weights, ____chimes_unroll_var_14); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 528 223 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 532 23 ({ calling_npm("particleFilter_kernel", 0); particleFilter_kernel_npm(I, IszX, IszY, Nfr, seed, Nparticles, likelihood, arrayX, arrayY, xj, yj, CDF, u, objxy, countOnes, ind, k, max_size, weights, xe, ye); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 534 42 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 23 checkpoint_transformed(12, ____alias_loc_id_2)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 34 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 15 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 482 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 482 12 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 483 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 483 12 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 488 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 488 12 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 16 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 499 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 499 16 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 505 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 505 18 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 21 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 17 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 17 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 13 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 13 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 14 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 12 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 11 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 526 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 526 7 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 507 33  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 509 2  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 522 33  { 
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 525 2  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 801  ; int k;
+# 477
+int *ind;
+# 477
+double *u;
+# 477
+double *CDF;
+# 477
+double *yj;
+# 477
+double *xj;
+# 477
+double *arrayY;
+# 477
+double *arrayX;
+# 477
+double *likelihood;
+# 477
+double *weights;
+# 477
+double *objxy;
+# 477
+int countOnes;
+# 477
+int *disk;
+# 477
+double ye;
+# 477
+double xe;
+# 477
+int max_size;
+# 477
+ register_stack_vars(16, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|ye|0", (int *)0x0, "double", (void *)(&ye), (size_t)8, 0, 0, 0, "particleFilter|xe|0", (int *)0x0, "double", (void *)(&xe), (size_t)8, 0, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(12): { goto call_lbl_12; } default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 552 5 len=4 main_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 619 43 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 619 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 621 15  ({  calling((void*)videoSequence, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(12566922966829693928UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829693910UL)); (videoSequence)(I, IszX, IszY, Nfr, seed); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 621 53 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 622 65 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 622 74 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 628 78 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endVideoSequence); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 628 114 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 630 15  ({  calling((void*)particleFilter, 4, ____alias_loc_id_3, 0UL, 6, (size_t)(12566922966829693928UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12566922966829693910UL), (size_t)(0UL)); (particleFilter)(I, IszX, IszY, Nfr, seed, Nparticles); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 630 66 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 631 67 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 631 76 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 632 78 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(endVideoSequence, endParticleFilter); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 632 126 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 633 78 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 633 115 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 10 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 20 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 22 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 29 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 31 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 567 45 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 613 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 613 12 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 618 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 618 9 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 619 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 619 18 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 622 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 622 29 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 552 170  ; long long endVideoSequence;
+# 552
+long long start;
+# 552
+int *I;
+# 552
+int *seed;
+# 552
+int Nparticles;
+# 552
+int Nfr;
+# 552
+int IszY;
+# 552
+int IszX;
+# 552
+ register_stack_vars(8, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  

@@ -1,0 +1,263 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 6 len=5 usage_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 8 len=7 seconds_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 69 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 79 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 69 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 79 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 5  ({ free(attributes); free_helper(attributes, 7980733884997753126UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 5  ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 7980733884997753360UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 28 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 5  ({ free(cluster_centres); free_helper(cluster_centres, 7980733884997753451UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 5  ({ free(buf); free_helper(buf, 7980733884997753276UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 69 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 79 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 69 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 79 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 5  ({ free(attributes); free_helper(attributes, 7980733884997753126UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 5  ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 7980733884997753360UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 28 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 5  ({ free(cluster_centres); free_helper(cluster_centres, 7980733884997753451UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 5  ({ free(buf); free_helper(buf, 7980733884997753276UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 13 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 25 const int ____chimes_did_disable0 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(7980733884997752949UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 103 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable0, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 109 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 18 const int ____chimes_did_disable1 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 110 1 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 259 62 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 33 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7980733884997753395UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 260 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 26 const int ____chimes_did_disable0 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(7980733884997752949UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 161 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 94 5  char *help;  help = ("Usage: %s [switches] -i filename\n"
+# 96
+        "       -i filename     		: file containing data to be clustered\n"
+# 97
+        "       -b                 	: input file is in binary format\n"
+# 98
+  "       -k                 	: number of clusters (default is 5) \n"
+# 99
+        "       -t threshold		: threshold value\n"
+# 100
+  "       -n no. of threads	: number of threads") ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 100 49 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 19 const int ____chimes_did_disable1 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 127 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 106 5  struct timeval tp; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 106 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 107 5  struct timezone tzp; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 107 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 108 5  int i;  i = (gettimeofday(&tp, &tzp)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 108 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 109 6 double ____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 109 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 34 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7980733884997753395UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 170 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 115 12 int opt; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 115 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 116 5 extern char *optarg; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 116 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 117 5 extern int optind; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 117 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 118 12  int nclusters;  nclusters = (5) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 118 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 119 12  char *filename;  filename = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 119 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 120 12 float *buf; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 120 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 121 12 float **attributes; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 121 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 122 12  float **cluster_centres;  cluster_centres = (__null) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 122 42 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 12 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 125 12 int numAttributes; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 125 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 126 12 int numObjects; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 126 26 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 127 12 char line[1024]; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 127 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 128 12  int isBinaryFile;  isBinaryFile = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 128 32 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 129 12  int nloops;  nloops = (20) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 129 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 12  float threshold;  threshold = (0.001) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 35 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 160 9 int infile; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 160 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 28 void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 105 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 35 void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 98 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 38 void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 115 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 9 FILE *infile; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 28 void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 105 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 35 void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 98 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 38 void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 115 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 5  double start_time;  start_time = (seconds()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 5  double end_time;  end_time = (seconds()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 32 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 259 6 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 259 30 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 145 23  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 147 13  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 153 25  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 26  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 224 9  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 9  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 24  call_lbl_6: 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 6 len=5 usage_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 160  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 8 len=7 seconds_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 126  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 5 len=4 main_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 145 36 ({ calling_npm("usage", 0); usage_npm(argv[0]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 145 49 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 147 35 ({ calling_npm("usage", 0); usage_npm(argv[0]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 147 48 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 153 38 ({ calling_npm("usage", 0); usage_npm(argv[0]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 153 51 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 224 22 (____chimes_does_checkpoint_cluster_npm ? ( ({  calling((void*)cluster, 4, ____alias_loc_id_0, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(7980733884997753126UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7980733884997752986UL)); (cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); }) ) : (({ calling_npm("cluster", ____alias_loc_id_0); (*____chimes_extern_func_cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 230 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 22 checkpoint_transformed(5, 0)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 49 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 57 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 118 13 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 118 26 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 120 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 120 22 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 121 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 121 30 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 122 13 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 122 36 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 17 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 125 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 125 29 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 126 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 126 26 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 127 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 127 27 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 129 13 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 129 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 13 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 28 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 6 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 23 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 167  ; double start_time;
+# 114
+float threshold;
+# 114
+int nloops;
+# 114
+char line[1024];
+# 114
+int numObjects;
+# 114
+int numAttributes;
+# 114
+int i;
+# 114
+float **cluster_centres;
+# 114
+float **attributes;
+# 114
+float *buf;
+# 114
+int nclusters;
+# 114
+ register_stack_vars(10, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|threshold|0", (int *)0x0, "float", (void *)(&threshold), (size_t)4, 0, 0, 0, "main|nloops|0", (int *)0x0, "i32", (void *)(&nloops), (size_t)4, 0, 0, 0, "main|numObjects|0", (int *)0x0, "i32", (void *)(&numObjects), (size_t)4, 0, 0, 0, "main|numAttributes|0", (int *)0x0, "i32", (void *)(&numAttributes), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|cluster_centres|0", (int *)0x0, "float**", (void *)(&cluster_centres), (size_t)8, 1, 0, 0, "main|attributes|0", (int *)0x0, "float**", (void *)(&attributes), (size_t)8, 1, 0, 0, "main|buf|0", (int *)0x0, "float*", (void *)(&buf), (size_t)8, 1, 0, 0, "main|nclusters|0", (int *)0x0, "i32", (void *)(&nclusters), (size_t)4, 0, 0, 0);  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 6 len=5 usage_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 160  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 8 len=7 seconds_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 126  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 5 len=4 main_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 145 36 ({ calling_npm("usage", 0); usage_npm(argv[0]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 145 49 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 147 35 ({ calling_npm("usage", 0); usage_npm(argv[0]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 147 48 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 153 38 ({ calling_npm("usage", 0); usage_npm(argv[0]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 153 51 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 224 22 (____chimes_does_checkpoint_cluster_npm ? ( ({  calling((void*)cluster, 4, ____alias_loc_id_0, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(7980733884997753126UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7980733884997752986UL)); (cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); }) ) : (({ calling_npm("cluster", ____alias_loc_id_0); (*____chimes_extern_func_cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 230 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 22 checkpoint_transformed(5, 0)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 232 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 49 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 57 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 118 13 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 118 26 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 120 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 120 22 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 121 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 121 30 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 122 13 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 122 36 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 123 17 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 125 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 125 29 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 126 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 126 26 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 127 12 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 127 27 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 129 13 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 129 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 13 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 28 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 6 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 23 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 114 167  ; double start_time;
+# 114
+float threshold;
+# 114
+int nloops;
+# 114
+char line[1024];
+# 114
+int numObjects;
+# 114
+int numAttributes;
+# 114
+int i;
+# 114
+float **cluster_centres;
+# 114
+float **attributes;
+# 114
+float *buf;
+# 114
+int nclusters;
+# 114
+ register_stack_vars(10, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|threshold|0", (int *)0x0, "float", (void *)(&threshold), (size_t)4, 0, 0, 0, "main|nloops|0", (int *)0x0, "i32", (void *)(&nloops), (size_t)4, 0, 0, 0, "main|numObjects|0", (int *)0x0, "i32", (void *)(&numObjects), (size_t)4, 0, 0, 0, "main|numAttributes|0", (int *)0x0, "i32", (void *)(&numAttributes), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|cluster_centres|0", (int *)0x0, "float**", (void *)(&cluster_centres), (size_t)8, 1, 0, 0, "main|attributes|0", (int *)0x0, "float**", (void *)(&attributes), (size_t)8, 1, 0, 0, "main|buf|0", (int *)0x0, "float*", (void *)(&buf), (size_t)8, 1, 0, 0, "main|nclusters|0", (int *)0x0, "i32", (void *)(&nclusters), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  }  

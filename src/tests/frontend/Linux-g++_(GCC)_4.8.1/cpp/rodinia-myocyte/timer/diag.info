@@ -1,0 +1,14 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 11 len=8 get_time_npm
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 10 96 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 22 const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 11 1 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 23 const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 134 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 8 2  struct timeval tv; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 8 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 10 3 long long ____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 10 33 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 11 len=8 get_time_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 133  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 11 len=8 get_time_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/timer.c 7 133  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

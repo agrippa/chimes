@@ -1,0 +1,7 @@
+printf verifyAlignment 145 7 0 349
+printf verifyAlignment 152 7 0 350
+fflush verifyAlignment 155 5 0 326
+strlen verifyAlignment 253 23 0 202
+fflush verifyAlignment 315 5 0 326
+printf verifyAlignment 355 5 0 352
+fflush verifyAlignment 356 5 0 326

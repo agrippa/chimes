@@ -1,0 +1,4 @@
+243 243 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(jj)
+253 253 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(ii)
+265 265 #pragma omp parallel shared(BENCH)
+267 267 #pragma omp for collapse(2)

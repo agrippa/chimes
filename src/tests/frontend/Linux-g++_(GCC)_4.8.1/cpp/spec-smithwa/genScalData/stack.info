@@ -1,0 +1,30 @@
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|randomSeed|0 " i32 " 32 0 0 1 spec_genrand_int32 spec_init_genrand
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|simMatrix|0 " %struct.simmat* " 64 1 0 1 insertValidation spec_genrand_int32 spec_init_genrand
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|mainLen|0 " i32 " 32 0 0 1 insertValidation spec_genrand_int32 spec_init_genrand
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|matchLen|0 " i32 " 32 0 0 1 insertValidation spec_genrand_int32 spec_init_genrand
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|simSize|0 " i32 " 32 0 0 1 insertValidation spec_genrand_int32 spec_init_genrand
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|seqData|0 " %struct.seqdat* " 64 1 0 1 insertValidation spec_genrand_int32 spec_init_genrand
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|i|0 " i32 " 32 0 0 1 spec_genrand_int32
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|maxLen|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|mainSelect|0 " [7 x i32] " 224 0 0 1 genScalData
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|matchSelect|0 " [7 x i32] " 224 0 0 1 genScalData
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|____chimes_unroll_var_1|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|____chimes_unroll_var_2|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|____chimes_ret_var_1|0 " %struct.seqdat* " 64 1 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|oldSeq|0 " i8* " 64 1 0 1 spec_genrand_int32
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|seqLen|0 " i32* " 64 1 0 1 spec_genrand_int32
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|insertionStrings|0 " i8** " 64 1 0 1 spec_genrand_int32
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|simMatrix|0 " %struct.simmat* " 64 1 0 1 spec_genrand_int32
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|firstLastSelect|0 " i32* " 64 1 0 1 spec_genrand_int32
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|i|0 " i32 " 32 0 0 1 spec_genrand_int32
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|j|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|k|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|len|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|start|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|startArray|0 " [7 x i32] " 224 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|codSeq|0 " i8* " 64 1 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|newSeq|0 " i8* " 64 1 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|____chimes_unroll_var_0|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|____chimes_ret_var_0|0 " i8* " 64 1 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c freeSeqData|S|0 " %struct.seqdat* " 64 1 0 0
+/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c freeSeqData|____chimes_ret_var_2|0 " %struct.seqdat* " 64 1 0 0

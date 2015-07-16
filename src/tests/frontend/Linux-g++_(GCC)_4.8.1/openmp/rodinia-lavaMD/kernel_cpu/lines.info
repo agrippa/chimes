@@ -1,0 +1,5 @@
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 199 10 : { 10, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 467 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 107 10 : { 9, 12, 13 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 98 10 : { 8 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 89 10 : { 7 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 55 10 : { 1, 2, 3, 4, 5, 6 } {  } call:get_time {  }

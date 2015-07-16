@@ -1,0 +1,12 @@
+126 29 277 malloc 0 1 Node
+127 28 276 malloc
+128 37 281 malloc
+129 31 279 malloc
+154 28 278 malloc
+167 21 280 malloc
+201 2 277 free
+202 2 278 free
+203 2 276 free
+204 2 281 free
+205 2 279 free
+206 2 280 free

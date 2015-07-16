@@ -1,0 +1,266 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 16 8 len=7 seconds_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 73 8 len=7 gettime_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 90 6 len=5 usage_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 99 13 len=15 runTest_helper1_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 164 13 len=15 runTest_helper2_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 22  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039614UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 37 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 29  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039618UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039622UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 42 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 2  ({ free(referrence); free_helper(referrence, 268606578347039614UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 17 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 2  ({ free(input_itemsets); free_helper(input_itemsets, 268606578347039618UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 2  ({ free(output_itemsets); free_helper(output_itemsets, 268606578347039622UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 22  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039614UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 37 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 29  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039618UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039622UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 42 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 2  ({ free(referrence); free_helper(referrence, 268606578347039614UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 17 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 2  ({ free(input_itemsets); free_helper(input_itemsets, 268606578347039618UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 2  ({ free(output_itemsets); free_helper(output_itemsets, 268606578347039622UL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 22 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 20 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 16 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 21 1 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 76 83 rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_3, ____chimes_did_disable1, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 73 18 const int ____chimes_did_disable1 = new_stack((void *)(&gettime), "gettime", &____must_manage_gettime, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 77 1 rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_3, ____chimes_did_disable1, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 87 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_4, ____chimes_did_disable2, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 84 1 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(268606578347039532UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 88 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_4, ____chimes_did_disable2, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 91 1 const int ____chimes_did_disable3 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(268606578347039683UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 97 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable3, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 100 60 const int ____chimes_did_disable4 = new_stack((void *)(&runTest_helper1), "runTest_helper1", &____must_manage_runTest_helper1, 6, 0, (size_t)(268606578347039838UL), (size_t)(0UL), (size_t)(0UL), (size_t)(268606578347039870UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 162 1 rm_stack(false, 0UL, "runTest_helper1", &____must_manage_runTest_helper1, ____alias_loc_id_6, ____chimes_did_disable4, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 165 47 const int ____chimes_did_disable5 = new_stack((void *)(&runTest_helper2), "runTest_helper2", &____must_manage_runTest_helper2, 5, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(268606578347040264UL), (size_t)(268606578347040221UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 181 1 rm_stack(false, 0UL, "runTest_helper2", &____must_manage_runTest_helper2, ____alias_loc_id_7, ____chimes_did_disable5, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 188 1 const int ____chimes_did_disable6 = new_stack((void *)(&runTest), "runTest", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(268606578347039661UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 240 1 rm_stack(false, 0UL, "runTest", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable6, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 16 19 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 16 127 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 17 5  struct timeval tp; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 17 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 18 5  struct timezone tzp; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 18 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 19 5  int i;  i = (gettimeofday(&tp, &tzp)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 19 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 20 6 double ____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 20 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 73 19 const int ____chimes_did_disable1 = new_stack((void *)(&gettime), "gettime", &____must_manage_gettime, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 73 127 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 74 3  struct timeval t; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 74 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 76 4 double ____chimes_ret_var_1; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 76 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 84 2 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(268606578347039532UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 84 137 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 87 6 int ____chimes_ret_var_2; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 87 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 91 2 const int ____chimes_did_disable3 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(268606578347039683UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 91 151 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 100 61 const int ____chimes_did_disable4 = new_stack((void *)(&runTest_helper1), "runTest_helper1", &____must_manage_runTest_helper1, 6, 0, (size_t)(268606578347039838UL), (size_t)(0UL), (size_t)(0UL), (size_t)(268606578347039870UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 100 317 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 101 5 int idx; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 101 12 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 110 5 {  int i; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 114 2  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 110 10  i = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 110 20 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 111 3 {  int j; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 113 3  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 111 8  j = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 111 18 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 118 2 {  int i; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 120 2  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 118 7  i = (1) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 118 14 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 121 5 {  int j; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 123 2  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 121 10  j = (1) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 121 17 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 127 2 {  int i; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 133 2  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 127 7  i = (1) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 127 17 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 128 3 {  int j; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 132 3  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 128 8  j = (1) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 128 18 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 137 5 {  int i; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 137 83  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 137 10  i = (1) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 137 19 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 139 2 {  int j; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 139 71  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 139 7  j = (1) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 139 16 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 148 5 {  int i; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 160 2  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 148 10  i = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 148 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 154 4  int index;  index = ((idx + 1) * max_cols + (i + 1 - idx)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 154 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 165 48 const int ____chimes_did_disable5 = new_stack((void *)(&runTest_helper2), "runTest_helper2", &____must_manage_runTest_helper2, 5, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(268606578347040264UL), (size_t)(268606578347040221UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 165 289 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 166 5 size_t index; size_t idx; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 166 22 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 169 2 {  int i; 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 180 2  }
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 169 7  i = (max_cols - 4) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 169 28 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 188 2 const int ____chimes_did_disable6 = new_stack((void *)(&runTest), "runTest", (int *)0, 2, 0, (size_t)(0UL), (size_t)(268606578347039661UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 188 143 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 189 5 int max_rows; int max_cols; int penalty; int idx; int index; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 189 47 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 5 int *input_itemsets; int *output_itemsets; int *referrence; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 55 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 191 2 int *matrix_cuda; int *matrix_cuda_out; int *referrence_cuda; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 191 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 192 2 int size; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 192 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 193 2 int omp_num_threads; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 193 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 211 5  size_t nbytes;  nbytes = ((size_t)max_rows * (size_t)max_cols * sizeof(int)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 211 70 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 26 void *____chimes_tmp_ptr = malloc(nbytes); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 67 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 33 void *____chimes_tmp_ptr = malloc(nbytes); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 74 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 31 void *____chimes_tmp_ptr = malloc(nbytes); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 72 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 5  double start_time;  start_time = (seconds()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 232 5  double end_time;  end_time = (seconds()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 232 32 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 85 5  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 206 3  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 26  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 219 5  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 223 5  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 226 5  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 230 5  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 232 24  call_lbl_6: 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 16 8 len=7 seconds_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 16 126  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 73 8 len=7 gettime_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 73 126  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 83 1 len=4 main_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 85 18  ({  calling((void*)runTest, 0, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(268606578347039532UL)); (runTest)(argc, argv); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 85 37 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 84 134  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 90 6 len=5 usage_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 91 150  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 99 13 len=15 runTest_helper1_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 100 316  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 164 13 len=15 runTest_helper2_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 165 288  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 187 1 len=7 runTest_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 206 16 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 206 32 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 219 18 ({ calling_npm("runTest_helper1", 0); runTest_helper1_npm(input_itemsets, max_cols, max_rows, referrence, omp_num_threads, penalty); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 220 37 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 223 18 checkpoint_transformed(3, ____alias_loc_id_1)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 223 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 226 18 ({ calling_npm("runTest_helper2", 0); runTest_helper2_npm(omp_num_threads, max_cols, penalty, input_itemsets, referrence); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 227 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 230 18 checkpoint_transformed(5, 0)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 230 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 232 49 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 232 57 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 189 19 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 189 31 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 189 33 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 189 44 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 5 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 24 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 26 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 46 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 48 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 63 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 193 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 193 21 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 6 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 23 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 188 140  ; double start_time;
+# 188
+int omp_num_threads;
+# 188
+int *referrence;
+# 188
+int *output_itemsets;
+# 188
+int *input_itemsets;
+# 188
+int penalty;
+# 188
+int max_cols;
+# 188
+ register_stack_vars(7, "runTest|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "runTest|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0);  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 16 8 len=7 seconds_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 16 126  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 73 8 len=7 gettime_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 73 126  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 83 1 len=4 main_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 85 18  ({  calling((void*)runTest, 0, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(268606578347039532UL)); (runTest)(argc, argv); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 85 37 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 84 134  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 90 6 len=5 usage_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 91 150  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 99 13 len=15 runTest_helper1_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 100 316  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 164 13 len=15 runTest_helper2_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 165 288  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 187 1 len=7 runTest_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 206 16 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 206 32 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 219 18 ({ calling_npm("runTest_helper1", 0); runTest_helper1_npm(input_itemsets, max_cols, max_rows, referrence, omp_num_threads, penalty); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 220 37 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 223 18 checkpoint_transformed(3, ____alias_loc_id_1)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 223 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 226 18 ({ calling_npm("runTest_helper2", 0); runTest_helper2_npm(omp_num_threads, max_cols, penalty, input_itemsets, referrence); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 227 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 230 18 checkpoint_transformed(5, 0)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 230 29 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 232 49 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 232 57 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 189 19 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 189 31 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 189 33 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 189 44 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 5 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 24 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 26 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 46 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 48 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 190 63 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 193 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 193 21 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 6 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 23 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 188 140  ; double start_time;
+# 188
+int omp_num_threads;
+# 188
+int *referrence;
+# 188
+int *output_itemsets;
+# 188
+int *input_itemsets;
+# 188
+int penalty;
+# 188
+int max_cols;
+# 188
+ register_stack_vars(7, "runTest|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "runTest|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  }  

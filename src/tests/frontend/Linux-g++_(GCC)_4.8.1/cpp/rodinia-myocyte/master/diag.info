@@ -1,0 +1,114 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 7 6 len=6 master_npm
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 10 22 const int ____chimes_did_disable0 = new_stack((void *)(&master), "master", &____must_manage_master, 4, 4, (size_t)(0UL), (size_t)(7350049616827220467UL), (size_t)(7350049616827220468UL), (size_t)(7350049616827220469UL), "master|timeinst|0", &____must_checkpoint_master_timeinst_0, "float", (void *)(&timeinst), (size_t)4, 0, 0, 0, "master|initvalu|0", &____must_checkpoint_master_initvalu_0, "float*", (void *)(&initvalu), (size_t)8, 1, 0, 0, "master|parameter|0", &____must_checkpoint_master_parameter_0, "float*", (void *)(&parameter), (size_t)8, 1, 0, 0, "master|finavalu|0", &____must_checkpoint_master_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 222 1 rm_stack(false, 0UL, "master", &____must_manage_master, ____alias_loc_id_5, ____chimes_did_disable0, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 10 23 const int ____chimes_did_disable0 = new_stack((void *)(&master), "master", &____must_manage_master, 4, 4, (size_t)(0UL), (size_t)(7350049616827220467UL), (size_t)(7350049616827220468UL), (size_t)(7350049616827220469UL), "master|timeinst|0", &____must_checkpoint_master_timeinst_0, "float", (void *)(&timeinst), (size_t)4, 0, 0, 0, "master|initvalu|0", &____must_checkpoint_master_initvalu_0, "float*", (void *)(&initvalu), (size_t)8, 1, 0, 0, "master|parameter|0", &____must_checkpoint_master_parameter_0, "float*", (void *)(&parameter), (size_t)8, 1, 0, 0, "master|finavalu|0", &____must_checkpoint_master_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 10 692 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 17 2 int i; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 17 7 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 20 2 float JCaDyad; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 20 15 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 21 2 float JCaSL; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 21 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 22 2 float JCaCyt; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 22 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 25 2 int initvalu_offset_batch; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 25 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 26 2 int initvalu_offset_ecc; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 26 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 27 2 int parameter_offset_ecc; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 27 26 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 28 2 int initvalu_offset_Dyad; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 28 26 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 29 2 int parameter_offset_Dyad; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 29 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 30 2 int initvalu_offset_SL; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 30 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 31 2 int parameter_offset_SL; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 31 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 32 2 int initvalu_offset_Cyt; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 32 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 33 2 int parameter_offset_Cyt; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 33 26 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 36 2 float CaDyad; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 36 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 37 2 float CaSL; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 37 12 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 38 2 float CaCyt; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 38 13 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 146 3  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 157 3  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 169 3  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 181 3  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 197 2  call_lbl_4: 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 7 6 len=6 master_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 146 16  ({  calling((void*)ecc, 0, ____alias_loc_id_4, 0UL, 6, (size_t)(0UL), (size_t)(7350049616827220467UL), (size_t)(0UL), (size_t)(7350049616827220468UL), (size_t)(0UL), (size_t)(7350049616827220469UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 151 18 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 157 26  ({  calling((void*)cam, 1, ____alias_loc_id_3, 0UL, 7, (size_t)(0UL), (size_t)(7350049616827220467UL), (size_t)(0UL), (size_t)(7350049616827220468UL), (size_t)(0UL), (size_t)(7350049616827220469UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 163 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 169 24  ({  calling((void*)cam, 2, ____alias_loc_id_2, 0UL, 7, (size_t)(0UL), (size_t)(7350049616827220467UL), (size_t)(0UL), (size_t)(7350049616827220468UL), (size_t)(0UL), (size_t)(7350049616827220469UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 175 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 181 25  ({  calling((void*)cam, 3, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(7350049616827220467UL), (size_t)(0UL), (size_t)(7350049616827220468UL), (size_t)(0UL), (size_t)(7350049616827220469UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 187 15 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 197 15  ({  calling((void*)fin, 4, ____alias_loc_id_0, 0UL, 10, (size_t)(7350049616827220467UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7350049616827220468UL), (size_t)(7350049616827220469UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 206 15 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 20 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 20 15 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 21 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 21 13 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 26 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 26 25 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 28 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 28 26 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 30 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 30 24 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 32 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 32 25 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 10 691  ; int initvalu_offset_Cyt;
+# 10
+int initvalu_offset_SL;
+# 10
+int initvalu_offset_Dyad;
+# 10
+int initvalu_offset_ecc;
+# 10
+float JCaSL;
+# 10
+float JCaDyad;
+# 10
+ if (____must_checkpoint_master_initvalu_offset_Cyt_0 || ____must_checkpoint_master_initvalu_offset_SL_0 || ____must_checkpoint_master_initvalu_offset_Dyad_0 || ____must_checkpoint_master_initvalu_offset_ecc_0 || ____must_checkpoint_master_JCaSL_0 || ____must_checkpoint_master_JCaDyad_0) { register_stack_vars(6, "master|initvalu_offset_Cyt|0", &____must_checkpoint_master_initvalu_offset_Cyt_0, "i32", (void *)(&initvalu_offset_Cyt), (size_t)4, 0, 0, 0, "master|initvalu_offset_SL|0", &____must_checkpoint_master_initvalu_offset_SL_0, "i32", (void *)(&initvalu_offset_SL), (size_t)4, 0, 0, 0, "master|initvalu_offset_Dyad|0", &____must_checkpoint_master_initvalu_offset_Dyad_0, "i32", (void *)(&initvalu_offset_Dyad), (size_t)4, 0, 0, 0, "master|initvalu_offset_ecc|0", &____must_checkpoint_master_initvalu_offset_ecc_0, "i32", (void *)(&initvalu_offset_ecc), (size_t)4, 0, 0, 0, "master|JCaSL|0", &____must_checkpoint_master_JCaSL_0, "float", (void *)(&JCaSL), (size_t)4, 0, 0, 0, "master|JCaDyad|0", &____must_checkpoint_master_JCaDyad_0, "float", (void *)(&JCaDyad), (size_t)4, 0, 0, 0);  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 7 6 len=6 master_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 146 16  ({  calling((void*)ecc, 0, ____alias_loc_id_4, 0UL, 6, (size_t)(0UL), (size_t)(7350049616827220467UL), (size_t)(0UL), (size_t)(7350049616827220468UL), (size_t)(0UL), (size_t)(7350049616827220469UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 151 18 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 157 26  ({  calling((void*)cam, 1, ____alias_loc_id_3, 0UL, 7, (size_t)(0UL), (size_t)(7350049616827220467UL), (size_t)(0UL), (size_t)(7350049616827220468UL), (size_t)(0UL), (size_t)(7350049616827220469UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 163 16 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 169 24  ({  calling((void*)cam, 2, ____alias_loc_id_2, 0UL, 7, (size_t)(0UL), (size_t)(7350049616827220467UL), (size_t)(0UL), (size_t)(7350049616827220468UL), (size_t)(0UL), (size_t)(7350049616827220469UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 175 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 181 25  ({  calling((void*)cam, 3, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(7350049616827220467UL), (size_t)(0UL), (size_t)(7350049616827220468UL), (size_t)(0UL), (size_t)(7350049616827220469UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 187 15 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 197 15  ({  calling((void*)fin, 4, ____alias_loc_id_0, 0UL, 10, (size_t)(7350049616827220467UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7350049616827220468UL), (size_t)(7350049616827220469UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 206 15 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 20 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 20 15 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 21 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 21 13 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 26 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 26 25 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 28 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 28 26 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 30 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 30 24 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 32 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 32 25 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/master.c 10 691  ; int initvalu_offset_Cyt;
+# 10
+int initvalu_offset_SL;
+# 10
+int initvalu_offset_Dyad;
+# 10
+int initvalu_offset_ecc;
+# 10
+float JCaSL;
+# 10
+float JCaDyad;
+# 10
+ if (____must_checkpoint_master_initvalu_offset_Cyt_0 || ____must_checkpoint_master_initvalu_offset_SL_0 || ____must_checkpoint_master_initvalu_offset_Dyad_0 || ____must_checkpoint_master_initvalu_offset_ecc_0 || ____must_checkpoint_master_JCaSL_0 || ____must_checkpoint_master_JCaDyad_0) { register_stack_vars(6, "master|initvalu_offset_Cyt|0", &____must_checkpoint_master_initvalu_offset_Cyt_0, "i32", (void *)(&initvalu_offset_Cyt), (size_t)4, 0, 0, 0, "master|initvalu_offset_SL|0", &____must_checkpoint_master_initvalu_offset_SL_0, "i32", (void *)(&initvalu_offset_SL), (size_t)4, 0, 0, 0, "master|initvalu_offset_Dyad|0", &____must_checkpoint_master_initvalu_offset_Dyad_0, "i32", (void *)(&initvalu_offset_Dyad), (size_t)4, 0, 0, 0, "master|initvalu_offset_ecc|0", &____must_checkpoint_master_initvalu_offset_ecc_0, "i32", (void *)(&initvalu_offset_ecc), (size_t)4, 0, 0, 0, "master|JCaSL|0", &____must_checkpoint_master_JCaSL_0, "float", (void *)(&JCaSL), (size_t)4, 0, 0, 0, "master|JCaDyad|0", &____must_checkpoint_master_JCaDyad_0, "float", (void *)(&JCaDyad), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
