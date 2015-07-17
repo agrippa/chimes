@@ -2979,9 +2979,9 @@ void destroyHaloExchange_resumable(HaloExchange** haloExchange)
 # 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&destroyHaloExchange), "destroyHaloExchange", &____must_manage_destroyHaloExchange, 1, 0, (size_t)(5897154831253371259UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free((*haloExchange)->parms); free_helper((*haloExchange)->parms, 5897154831253371250UL); }) ;
+    ({ free_helper((*haloExchange)->parms, 5897154831253371250UL);free((*haloExchange)->parms); }) ;
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(*haloExchange); free_helper(*haloExchange, 5897154831253371248UL); }) ;
+    ({ free_helper(*haloExchange, 5897154831253371248UL);free(*haloExchange); }) ;
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    *haloExchange = __null;
 # 251 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3101,13 +3101,13 @@ int faceM;
 # 308 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
     call_lbl_7: ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 7, 0, 0UL, 5, 5897154831253371413UL, 5897154831253371417UL, 0UL, 0UL, 5897154831253371391UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP);
 # 309 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(recvBufP); free_helper(recvBufP, 5897154831253371391UL); }) ;
+    ({ free_helper(recvBufP, 5897154831253371391UL);free(recvBufP); }) ;
 # 310 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(recvBufM); free_helper(recvBufM, 5897154831253371401UL); }) ;
+    ({ free_helper(recvBufM, 5897154831253371401UL);free(recvBufM); }) ;
 # 311 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(sendBufP); free_helper(sendBufP, 5897154831253371398UL); }) ;
+    ({ free_helper(sendBufP, 5897154831253371398UL);free(sendBufP); }) ;
 # 312 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(sendBufM); free_helper(sendBufM, 5897154831253371388UL); }) ;
+    ({ free_helper(sendBufM, 5897154831253371388UL);free(sendBufM); }) ;
 # 313 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 rm_stack(false, 0UL, "exchangeData", (int *)0x0, 0, ____chimes_did_disable5, false); }
 # 334 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3324,9 +3324,9 @@ void destroyAtomsExchange_resumable(void* vparms)
 # 442 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 443 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->pbcFactor[ii]); free_helper(parms->pbcFactor[ii], 5897154831253370142UL); }) ;
+       ({ free_helper(parms->pbcFactor[ii], 5897154831253370142UL);free(parms->pbcFactor[ii]); }) ;
 # 444 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->cellList[ii]); free_helper(parms->cellList[ii], 5897154831253370142UL); }) ;
+       ({ free_helper(parms->cellList[ii], 5897154831253370142UL);free(parms->cellList[ii]); }) ;
 # 445 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    } }
 # 446 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3660,9 +3660,9 @@ void destroyForceExchange_resumable(void* vparms)
 # 614 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 615 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->sendCells[ii]); free_helper(parms->sendCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper(parms->sendCells[ii], 5897154831253370832UL);free(parms->sendCells[ii]); }) ;
 # 616 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->recvCells[ii]); free_helper(parms->recvCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper(parms->recvCells[ii], 5897154831253370832UL);free(parms->recvCells[ii]); }) ;
 # 617 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    } }
 # 618 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3916,9 +3916,9 @@ void destroyHaloExchange_quick(HaloExchange** haloExchange)
 # 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&destroyHaloExchange), "destroyHaloExchange", &____must_manage_destroyHaloExchange, 1, 0, (size_t)(5897154831253371259UL)) ; ; ;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free((*haloExchange)->parms); free_helper((*haloExchange)->parms, 5897154831253371250UL); }) ;
+    ({ free_helper((*haloExchange)->parms, 5897154831253371250UL);free((*haloExchange)->parms); }) ;
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(*haloExchange); free_helper(*haloExchange, 5897154831253371248UL); }) ;
+    ({ free_helper(*haloExchange, 5897154831253371248UL);free(*haloExchange); }) ;
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    *haloExchange = __null;
 # 251 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4037,13 +4037,13 @@ int faceM;
 # 308 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
     call_lbl_7: ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 7, 0, 0UL, 5, 5897154831253371413UL, 5897154831253371417UL, 0UL, 0UL, 5897154831253371391UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP);
 # 309 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(recvBufP); free_helper(recvBufP, 5897154831253371391UL); }) ;
+    ({ free_helper(recvBufP, 5897154831253371391UL);free(recvBufP); }) ;
 # 310 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(recvBufM); free_helper(recvBufM, 5897154831253371401UL); }) ;
+    ({ free_helper(recvBufM, 5897154831253371401UL);free(recvBufM); }) ;
 # 311 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(sendBufP); free_helper(sendBufP, 5897154831253371398UL); }) ;
+    ({ free_helper(sendBufP, 5897154831253371398UL);free(sendBufP); }) ;
 # 312 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(sendBufM); free_helper(sendBufM, 5897154831253371388UL); }) ;
+    ({ free_helper(sendBufM, 5897154831253371388UL);free(sendBufM); }) ;
 # 313 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 rm_stack(false, 0UL, "exchangeData", (int *)0x0, 0, ____chimes_did_disable5, false); }
 
@@ -4257,9 +4257,9 @@ void destroyAtomsExchange_quick(void* vparms)
 # 442 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 443 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->pbcFactor[ii]); free_helper(parms->pbcFactor[ii], 5897154831253370142UL); }) ;
+       ({ free_helper(parms->pbcFactor[ii], 5897154831253370142UL);free(parms->pbcFactor[ii]); }) ;
 # 444 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->cellList[ii]); free_helper(parms->cellList[ii], 5897154831253370142UL); }) ;
+       ({ free_helper(parms->cellList[ii], 5897154831253370142UL);free(parms->cellList[ii]); }) ;
 # 445 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    } }
 # 446 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4580,9 +4580,9 @@ void destroyForceExchange_quick(void* vparms)
 # 614 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 615 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->sendCells[ii]); free_helper(parms->sendCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper(parms->sendCells[ii], 5897154831253370832UL);free(parms->sendCells[ii]); }) ;
 # 616 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->recvCells[ii]); free_helper(parms->recvCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper(parms->recvCells[ii], 5897154831253370832UL);free(parms->recvCells[ii]); }) ;
 # 617 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    } }
 # 618 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4817,9 +4817,9 @@ void destroyHaloExchange_npm(HaloExchange** haloExchange)
 # 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {
 # 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free((*haloExchange)->parms); free_helper((*haloExchange)->parms, 5897154831253371250UL); }) ;
+    ({ free_helper((*haloExchange)->parms, 5897154831253371250UL);free((*haloExchange)->parms); }) ;
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(*haloExchange); free_helper(*haloExchange, 5897154831253371248UL); }) ;
+    ({ free_helper(*haloExchange, 5897154831253371248UL);free(*haloExchange); }) ;
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    *haloExchange = __null;
 # 251 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -5024,9 +5024,9 @@ void destroyAtomsExchange_npm(void* vparms)
 # 442 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 443 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->pbcFactor[ii]); free_helper(parms->pbcFactor[ii], 5897154831253370142UL); }) ;
+       ({ free_helper(parms->pbcFactor[ii], 5897154831253370142UL);free(parms->pbcFactor[ii]); }) ;
 # 444 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->cellList[ii]); free_helper(parms->cellList[ii], 5897154831253370142UL); }) ;
+       ({ free_helper(parms->cellList[ii], 5897154831253370142UL);free(parms->cellList[ii]); }) ;
 # 445 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    }
 # 446 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -5297,9 +5297,9 @@ void destroyForceExchange_npm(void* vparms)
 # 614 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 615 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->sendCells[ii]); free_helper(parms->sendCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper(parms->sendCells[ii], 5897154831253370832UL);free(parms->sendCells[ii]); }) ;
 # 616 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->recvCells[ii]); free_helper(parms->recvCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper(parms->recvCells[ii], 5897154831253370832UL);free(parms->recvCells[ii]); }) ;
 # 617 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    }
 # 618 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"

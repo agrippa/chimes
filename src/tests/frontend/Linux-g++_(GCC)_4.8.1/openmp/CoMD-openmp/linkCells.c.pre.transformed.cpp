@@ -4187,9 +4187,9 @@ void destroyLinkCells_resumable(LinkCell** boxes)
    if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_4, ____chimes_did_disable1, false); return; };
 # 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free((*boxes)->nAtoms); free_helper((*boxes)->nAtoms, 15151216426301245612UL); }) ;
+    ({ free_helper((*boxes)->nAtoms, 15151216426301245612UL);free((*boxes)->nAtoms); }) ;
 # 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free(*boxes); free_helper(*boxes, 15151216426301245605UL); }) ;
+    ({ free_helper(*boxes, 15151216426301245605UL);free(*boxes); }) ;
 # 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    *boxes = __null;
 # 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -4759,9 +4759,9 @@ void destroyLinkCells_quick(LinkCell** boxes)
    if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_4, ____chimes_did_disable1, false); return; };
 # 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free((*boxes)->nAtoms); free_helper((*boxes)->nAtoms, 15151216426301245612UL); }) ;
+    ({ free_helper((*boxes)->nAtoms, 15151216426301245612UL);free((*boxes)->nAtoms); }) ;
 # 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free(*boxes); free_helper(*boxes, 15151216426301245605UL); }) ;
+    ({ free_helper(*boxes, 15151216426301245605UL);free(*boxes); }) ;
 # 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    *boxes = __null;
 # 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -5316,9 +5316,9 @@ void destroyLinkCells_npm(LinkCell** boxes)
    if (! *boxes) {return; };
 # 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free((*boxes)->nAtoms); free_helper((*boxes)->nAtoms, 15151216426301245612UL); }) ;
+    ({ free_helper((*boxes)->nAtoms, 15151216426301245612UL);free((*boxes)->nAtoms); }) ;
 # 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free(*boxes); free_helper(*boxes, 15151216426301245605UL); }) ;
+    ({ free_helper(*boxes, 15151216426301245605UL);free(*boxes); }) ;
 # 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    *boxes = __null;
 # 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"

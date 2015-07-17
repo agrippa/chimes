@@ -4746,7 +4746,7 @@ Command cmd;
 # 141 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_29: (____chimes_does_checkpoint_destroySimulation_npm ? ( ({ calling((void*)destroySimulation, 29, 0, 0UL, 1, (size_t)(9903828072463843262UL)); (destroySimulation)(&sim); }) ) : (({ calling_npm("destroySimulation", 0); destroySimulation_npm(&sim); })));
 # 142 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free(validate); free_helper(validate, 9903828072463843299UL); }) ;
+    ({ free_helper(validate, 9903828072463843299UL);free(validate); }) ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_30: (____chimes_does_checkpoint_finalizeSubsystems_npm ? ( ({ calling((void*)finalizeSubsystems, 30, 0, 0UL, 0); (finalizeSubsystems)(); }) ) : (({ calling_npm("finalizeSubsystems", 0); finalizeSubsystems_npm(); })));
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -4877,7 +4877,7 @@ void destroySimulation_resumable(SimFlat** ps)
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     BasePotential *pot; pot = (s->pot) ;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (pot) { ({ free(pot); free_helper(pot, 9903828072463844299UL); }) ; };
+   if (pot) { ({ free_helper(pot, 9903828072463844299UL);free(pot); }) ; };
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_0: (____chimes_does_checkpoint_destroyLinkCells_npm ? ( ({ LinkCell ** ____chimes_arg75; if (!____chimes_replaying) { ____chimes_arg75 = (&(s->boxes)); } calling((void*)destroyLinkCells, 0, ____alias_loc_id_44, 0UL, 1, (size_t)(9903828072463844290UL)); (destroyLinkCells)(____chimes_arg75); }) ) : (({ calling_npm("destroyLinkCells", ____alias_loc_id_44); (*____chimes_extern_func_destroyLinkCells)(&(s->boxes)); })));
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -4885,11 +4885,11 @@ void destroySimulation_resumable(SimFlat** ps)
 # 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_2: (____chimes_does_checkpoint_destroyHaloExchange_npm ? ( ({ HaloExchange ** ____chimes_arg77; if (!____chimes_replaying) { ____chimes_arg77 = (&(s->atomExchange)); } calling((void*)destroyHaloExchange, 2, ____alias_loc_id_42, 0UL, 1, (size_t)(9903828072463844290UL)); (destroyHaloExchange)(____chimes_arg77); }) ) : (({ calling_npm("destroyHaloExchange", ____alias_loc_id_42); (*____chimes_extern_func_destroyHaloExchange)(&(s->atomExchange)); })));
 # 230 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free(s->species); free_helper(s->species, 9903828072463844299UL); }) ;
+    ({ free_helper(s->species, 9903828072463844299UL);free(s->species); }) ;
 # 231 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free(s->domain); free_helper(s->domain, 9903828072463844299UL); }) ;
+    ({ free_helper(s->domain, 9903828072463844299UL);free(s->domain); }) ;
 # 232 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free(s); free_helper(s, 9903828072463844290UL); }) ;
+    ({ free_helper(s, 9903828072463844290UL);free(s); }) ;
 # 233 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    *ps = __null;
 # 234 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5455,7 +5455,7 @@ Command cmd;
 # 141 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_29: (____chimes_does_checkpoint_destroySimulation_npm ? ( ({ calling((void*)destroySimulation, 29, 0, 0UL, 1, (size_t)(9903828072463843262UL)); destroySimulation_quick(&sim); }) ) : (({ calling_npm("destroySimulation", 0); destroySimulation_npm(&sim); })));
 # 142 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free(validate); free_helper(validate, 9903828072463843299UL); }) ;
+    ({ free_helper(validate, 9903828072463843299UL);free(validate); }) ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_30: (____chimes_does_checkpoint_finalizeSubsystems_npm ? ( ({ calling((void*)finalizeSubsystems, 30, 0, 0UL, 0); finalizeSubsystems_quick(); }) ) : (({ calling_npm("finalizeSubsystems", 0); finalizeSubsystems_npm(); })));
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5584,7 +5584,7 @@ void destroySimulation_quick(SimFlat** ps)
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     BasePotential *pot; pot = (s->pot) ;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (pot) { ({ free(pot); free_helper(pot, 9903828072463844299UL); }) ; };
+   if (pot) { ({ free_helper(pot, 9903828072463844299UL);free(pot); }) ; };
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_0: (____chimes_does_checkpoint_destroyLinkCells_npm ? ( ({ calling((void*)destroyLinkCells, 0, ____alias_loc_id_44, 0UL, 1, (size_t)(9903828072463844290UL)); (destroyLinkCells)(&(s->boxes)); }) ) : (({ calling_npm("destroyLinkCells", ____alias_loc_id_44); (*____chimes_extern_func_destroyLinkCells)(&(s->boxes)); })));
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5592,11 +5592,11 @@ void destroySimulation_quick(SimFlat** ps)
 # 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_2: (____chimes_does_checkpoint_destroyHaloExchange_npm ? ( ({ calling((void*)destroyHaloExchange, 2, ____alias_loc_id_42, 0UL, 1, (size_t)(9903828072463844290UL)); (destroyHaloExchange)(&(s->atomExchange)); }) ) : (({ calling_npm("destroyHaloExchange", ____alias_loc_id_42); (*____chimes_extern_func_destroyHaloExchange)(&(s->atomExchange)); })));
 # 230 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free(s->species); free_helper(s->species, 9903828072463844299UL); }) ;
+    ({ free_helper(s->species, 9903828072463844299UL);free(s->species); }) ;
 # 231 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free(s->domain); free_helper(s->domain, 9903828072463844299UL); }) ;
+    ({ free_helper(s->domain, 9903828072463844299UL);free(s->domain); }) ;
 # 232 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free(s); free_helper(s, 9903828072463844290UL); }) ;
+    ({ free_helper(s, 9903828072463844290UL);free(s); }) ;
 # 233 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    *ps = __null;
 # 234 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6158,7 +6158,7 @@ void destroySimulation_npm(SimFlat** ps)
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    BasePotential* pot = s->pot;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (pot) { ({ free(pot); free_helper(pot, 9903828072463844299UL); }) ; };
+   if (pot) { ({ free_helper(pot, 9903828072463844299UL);free(pot); }) ; };
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    (*____chimes_extern_func_destroyLinkCells)(&(s->boxes));
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6166,11 +6166,11 @@ void destroySimulation_npm(SimFlat** ps)
 # 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    (*____chimes_extern_func_destroyHaloExchange)(&(s->atomExchange));
 # 230 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free(s->species); free_helper(s->species, 9903828072463844299UL); }) ;
+    ({ free_helper(s->species, 9903828072463844299UL);free(s->species); }) ;
 # 231 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free(s->domain); free_helper(s->domain, 9903828072463844299UL); }) ;
+    ({ free_helper(s->domain, 9903828072463844299UL);free(s->domain); }) ;
 # 232 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free(s); free_helper(s, 9903828072463844290UL); }) ;
+    ({ free_helper(s, 9903828072463844290UL);free(s); }) ;
 # 233 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    *ps = __null;
 # 234 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"

@@ -4754,7 +4754,7 @@ void eamDestroy_resumable(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     call_lbl_3: ({ HaloExchange ** ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = (&(pot->forceExchange)); } calling((void*)destroyHaloExchange, 3, ____alias_loc_id_4, 0UL, 1, (size_t)(5757654513590298067UL)); (destroyHaloExchange)(____chimes_arg7); }) ;
 # 397 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(pot); free_helper(pot, 5757654513590298067UL); }) ;
+    ({ free_helper(pot, 5757654513590298067UL);free(pot); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4889,11 +4889,11 @@ void destroyInterpolationObject_resumable(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-       ({ free((*a)->values); free_helper((*a)->values, 5757654513590298907UL); }) ;
+       ({ free_helper((*a)->values, 5757654513590298907UL);free((*a)->values); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(*a); free_helper(*a, 5757654513590298900UL); }) ;
+    ({ free_helper(*a, 5757654513590298900UL);free(*a); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5143,7 +5143,7 @@ char tmp[4096];
     call_lbl_4: pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 701 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298216UL); }) ;
+    ({ free_helper(buf, 5757654513590298216UL);free(buf); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5255,7 +5255,7 @@ char tmp[4096];
     call_lbl_3: pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298463UL); }) ;
+    ({ free_helper(buf, 5757654513590298463UL);free(buf); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5716,7 +5716,7 @@ void eamDestroy_quick(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     call_lbl_3: ({ calling((void*)destroyHaloExchange, 3, ____alias_loc_id_4, 0UL, 1, (size_t)(5757654513590298067UL)); (destroyHaloExchange)(&(pot->forceExchange)); }) ;
 # 397 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(pot); free_helper(pot, 5757654513590298067UL); }) ;
+    ({ free_helper(pot, 5757654513590298067UL);free(pot); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5836,11 +5836,11 @@ void destroyInterpolationObject_quick(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-       ({ free((*a)->values); free_helper((*a)->values, 5757654513590298907UL); }) ;
+       ({ free_helper((*a)->values, 5757654513590298907UL);free((*a)->values); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(*a); free_helper(*a, 5757654513590298900UL); }) ;
+    ({ free_helper(*a, 5757654513590298900UL);free(*a); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6054,7 +6054,7 @@ char tmp[4096];
     call_lbl_4: pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 701 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298216UL); }) ;
+    ({ free_helper(buf, 5757654513590298216UL);free(buf); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6167,7 +6167,7 @@ char tmp[4096];
     call_lbl_3: pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298463UL); }) ;
+    ({ free_helper(buf, 5757654513590298463UL);free(buf); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6599,7 +6599,7 @@ void eamDestroy_npm(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    (*____chimes_extern_func_destroyHaloExchange)(&(pot->forceExchange));
 # 397 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(pot); free_helper(pot, 5757654513590298067UL); }) ;
+    ({ free_helper(pot, 5757654513590298067UL);free(pot); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6711,11 +6711,11 @@ void destroyInterpolationObject_npm(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-       ({ free((*a)->values); free_helper((*a)->values, 5757654513590298907UL); }) ;
+       ({ free_helper((*a)->values, 5757654513590298907UL);free((*a)->values); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(*a); free_helper(*a, 5757654513590298900UL); }) ;
+    ({ free_helper(*a, 5757654513590298900UL);free(*a); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6917,7 +6917,7 @@ void eamReadSetfl_npm(EamPotential* pot, const char* dir, const char* potName)
    pot->phi = initInterpolationObject_npm(nR, x0, dR, buf);
 # 701 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298216UL); }) ;
+    ({ free_helper(buf, 5757654513590298216UL);free(buf); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -7022,7 +7022,7 @@ void eamReadFuncfl_npm(EamPotential* pot, const char* dir, const char* potName)
    pot->rho = initInterpolationObject_npm(nR, x0, dR, buf);
 # 812 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298463UL); }) ;
+    ({ free_helper(buf, 5757654513590298463UL);free(buf); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"

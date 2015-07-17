@@ -3558,11 +3558,11 @@ float** kmeans_clustering_resumable(float **feature,
 # 239 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 240 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 241 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free(new_centers[0]); free_helper(new_centers[0], 3125210765127600615UL); }) ;
+     ({ free_helper(new_centers[0], 3125210765127600615UL);free(new_centers[0]); }) ;
 # 242 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free(new_centers); free_helper(new_centers, 3125210765127600613UL); }) ;
+     ({ free_helper(new_centers, 3125210765127600613UL);free(new_centers); }) ;
 # 243 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free(new_centers_len); free_helper(new_centers_len, 3125210765127600621UL); }) ;
+     ({ free_helper(new_centers_len, 3125210765127600621UL);free(new_centers_len); }) ;
 # 244 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 245 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float **____chimes_ret_var_2; ; ____chimes_ret_var_2 = (clusters); rm_stack(true, 3125210765127600625UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
@@ -3823,11 +3823,11 @@ float** kmeans_clustering_quick(float **feature,
 # 239 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 240 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 241 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free(new_centers[0]); free_helper(new_centers[0], 3125210765127600615UL); }) ;
+     ({ free_helper(new_centers[0], 3125210765127600615UL);free(new_centers[0]); }) ;
 # 242 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free(new_centers); free_helper(new_centers, 3125210765127600613UL); }) ;
+     ({ free_helper(new_centers, 3125210765127600613UL);free(new_centers); }) ;
 # 243 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free(new_centers_len); free_helper(new_centers_len, 3125210765127600621UL); }) ;
+     ({ free_helper(new_centers_len, 3125210765127600621UL);free(new_centers_len); }) ;
 # 244 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 245 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float **____chimes_ret_var_2; ; ____chimes_ret_var_2 = (clusters); rm_stack(true, 3125210765127600625UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
@@ -4086,11 +4086,11 @@ float** kmeans_clustering_npm(float **feature,
 # 239 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 240 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 241 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free(new_centers[0]); free_helper(new_centers[0], 3125210765127600615UL); }) ;
+     ({ free_helper(new_centers[0], 3125210765127600615UL);free(new_centers[0]); }) ;
 # 242 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free(new_centers); free_helper(new_centers, 3125210765127600613UL); }) ;
+     ({ free_helper(new_centers, 3125210765127600613UL);free(new_centers); }) ;
 # 243 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free(new_centers_len); free_helper(new_centers_len, 3125210765127600621UL); }) ;
+     ({ free_helper(new_centers_len, 3125210765127600621UL);free(new_centers_len); }) ;
 # 244 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 245 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float ** ____chimes_ret_var_2; ____chimes_ret_var_2 = (clusters); return ____chimes_ret_var_2; ;

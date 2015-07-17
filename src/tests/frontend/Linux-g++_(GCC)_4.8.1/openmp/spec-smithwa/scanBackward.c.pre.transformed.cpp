@@ -4275,15 +4275,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 426 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 427 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+     ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 428 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+     ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 429 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+     ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 430 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+     ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 431 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+     ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 432 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = ((-2)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_15; ;
 # 433 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4357,15 +4357,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 479 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 480 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_16; ;
 # 486 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4378,15 +4378,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 491 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 492 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 493 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 494 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 495 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 496 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 497 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 498 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_17; ;
 # 499 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4405,15 +4405,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 524 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 525 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 526 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 527 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 528 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 529 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 530 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 531 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_18; ;
 # 532 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4426,15 +4426,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 537 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 538 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 539 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 540 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 541 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 542 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 543 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 544 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_19; ;
 # 545 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4458,15 +4458,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 564 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 565 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 566 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+      ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 567 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+      ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 568 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+      ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 569 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+      ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 570 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+      ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 571 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = ((-10)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_20; ;
 # 572 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4481,15 +4481,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 578 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 579 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 580 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 581 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 582 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 583 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 584 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 585 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = ((-11)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_21; ;
 # 586 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4502,15 +4502,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 599 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 600 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 601 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 602 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 603 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 604 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 605 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 606 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_22; ;
 # 607 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4523,15 +4523,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 612 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 613 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 614 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 615 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 616 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 617 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 618 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 619 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_23; ;
 # 620 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4548,15 +4548,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 631 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 632 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 633 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 634 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 635 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 636 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 637 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 638 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = ((-14)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_24; ;
 # 639 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4576,15 +4576,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
  bestScores[*bestR] = goal;
 # 667 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 667 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+  ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 668 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+  ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 669 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+  ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 670 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+  ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 671 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+  ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 672 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = ((0)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_25; ;
 # 673 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4614,15 +4614,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 692 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 693 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 694 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 695 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 696 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 697 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 698 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 699 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_26; ;
 # 700 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4635,15 +4635,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 705 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 706 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 707 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 708 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 709 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 710 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 711 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 712 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_27; ;
 # 713 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4688,15 +4688,15 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 738 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 739 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 740 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+   ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 741 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+   ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 742 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+   ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 743 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+   ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 744 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+   ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 745 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    int ____chimes_ret_var_28; ; ____chimes_ret_var_28 = ((-15)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_28; ;
 # 746 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5298,11 +5298,11 @@ int bestR;
 # 1264 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      for (i = 1; i <= sizeT; i++) {
 # 1265 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-        ({ free(T[i]); free_helper(T[i], 5254463157148590494UL); }) ;
+        ({ free_helper(T[i], 5254463157148590494UL);free(T[i]); }) ;
 # 1266 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      }
 # 1267 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(T); free_helper(T, 5254463157148590497UL); }) ;
+      ({ free_helper(T, 5254463157148590497UL);free(T); }) ;
 # 1268 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      sizeT *= 2;
 # 1269 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5585,52 +5585,52 @@ int bestR;
 # 1449 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1450 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1451 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestScores); free_helper(bestScores, 5254463157148590162UL); }) ;
+       ({ free_helper(bestScores, 5254463157148590162UL);free(bestScores); }) ;
 # 1452 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestStartsI); free_helper(bestStartsI, 5254463157148590182UL); }) ;
+       ({ free_helper(bestStartsI, 5254463157148590182UL);free(bestStartsI); }) ;
 # 1453 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestStartsJ); free_helper(bestStartsJ, 5254463157148590177UL); }) ;
+       ({ free_helper(bestStartsJ, 5254463157148590177UL);free(bestStartsJ); }) ;
 # 1454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestEndsI); free_helper(bestEndsI, 5254463157148590172UL); }) ;
+       ({ free_helper(bestEndsI, 5254463157148590172UL);free(bestEndsI); }) ;
 # 1455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestEndsJ); free_helper(bestEndsJ, 5254463157148590167UL); }) ;
+       ({ free_helper(bestEndsJ, 5254463157148590167UL);free(bestEndsJ); }) ;
 # 1456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= maxReports; i++) {
 # 1458 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(bestSeqsI[i]); free_helper(bestSeqsI[i], 5254463157148590189UL); }) ;
+  ({ free_helper(bestSeqsI[i], 5254463157148590189UL);free(bestSeqsI[i]); }) ;
 # 1459 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(bestSeqsJ[i]); free_helper(bestSeqsJ[i], 5254463157148590939UL); }) ;
+  ({ free_helper(bestSeqsJ[i], 5254463157148590939UL);free(bestSeqsJ[i]); }) ;
 # 1460 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1461 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1462 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestSeqsI); free_helper(bestSeqsI, 5254463157148590192UL); }) ;
+       ({ free_helper(bestSeqsI, 5254463157148590192UL);free(bestSeqsI); }) ;
 # 1463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestSeqsJ); free_helper(bestSeqsJ, 5254463157148590937UL); }) ;
+       ({ free_helper(bestSeqsJ, 5254463157148590937UL);free(bestSeqsJ); }) ;
 # 1464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1466 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(weights[i]); free_helper(weights[i], 5254463157148590396UL); }) ;
+  ({ free_helper(weights[i], 5254463157148590396UL);free(weights[i]); }) ;
 # 1467 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1468 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(weights); free_helper(weights, 5254463157148590399UL); }) ;
+       ({ free_helper(weights, 5254463157148590399UL);free(weights); }) ;
 # 1469 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1470 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= sizeT; i++) {
 # 1471 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(T[i]); free_helper(T[i], 5254463157148590494UL); }) ;
+  ({ free_helper(T[i], 5254463157148590494UL);free(T[i]); }) ;
 # 1472 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1473 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(T); free_helper(T, 5254463157148590497UL); }) ;
+       ({ free_helper(T, 5254463157148590497UL);free(T); }) ;
 # 1474 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1475 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(mainSeq); free_helper(mainSeq, 5254463157148590302UL); }) ;
+       ({ free_helper(mainSeq, 5254463157148590302UL);free(mainSeq); }) ;
 # 1476 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(matchSeq); free_helper(matchSeq, 5254463157148590374UL); }) ;
+       ({ free_helper(matchSeq, 5254463157148590374UL);free(matchSeq); }) ;
 # 1477 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5660,7 +5660,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1492 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestScores[i]) {
 # 1493 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestScores[i]); free_helper(B->bestScores[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestScores[i], 5254463157148592741UL);free(B->bestScores[i]); }) ;
 # 1494 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestScores[i] = __null;
 # 1495 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5668,7 +5668,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1496 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1497 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestScores); free_helper(B->bestScores, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestScores, 5254463157148592741UL);free(B->bestScores); }) ;
 # 1498 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestScores = __null;
 # 1499 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5680,7 +5680,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1502 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsI[i]) {
 # 1503 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestStartsI[i]); free_helper(B->bestStartsI[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestStartsI[i], 5254463157148592741UL);free(B->bestStartsI[i]); }) ;
 # 1504 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsI[i] = __null;
 # 1505 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5688,7 +5688,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1506 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1507 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestStartsI); free_helper(B->bestStartsI, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestStartsI, 5254463157148592741UL);free(B->bestStartsI); }) ;
 # 1508 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsI = __null;
 # 1509 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5700,7 +5700,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1512 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsJ[i]) {
 # 1513 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestStartsJ[i]); free_helper(B->bestStartsJ[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestStartsJ[i], 5254463157148592741UL);free(B->bestStartsJ[i]); }) ;
 # 1514 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsJ[i] = __null;
 # 1515 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5708,7 +5708,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1516 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1517 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestStartsJ); free_helper(B->bestStartsJ, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestStartsJ, 5254463157148592741UL);free(B->bestStartsJ); }) ;
 # 1518 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsJ = __null;
 # 1519 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5720,7 +5720,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1522 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsI[i]) {
 # 1523 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestEndsI[i]); free_helper(B->bestEndsI[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestEndsI[i], 5254463157148592741UL);free(B->bestEndsI[i]); }) ;
 # 1524 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsI[i] = __null;
 # 1525 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5728,7 +5728,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1526 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1527 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestEndsI); free_helper(B->bestEndsI, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestEndsI, 5254463157148592741UL);free(B->bestEndsI); }) ;
 # 1528 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsI = __null;
 # 1529 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5740,7 +5740,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1532 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsJ[i]) {
 # 1533 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestEndsJ[i]); free_helper(B->bestEndsJ[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestEndsJ[i], 5254463157148592741UL);free(B->bestEndsJ[i]); }) ;
 # 1534 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsJ[i] = __null;
 # 1535 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5748,7 +5748,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1536 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1537 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestEndsJ); free_helper(B->bestEndsJ, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestEndsJ, 5254463157148592741UL);free(B->bestEndsJ); }) ;
 # 1538 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsJ = __null;
 # 1539 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5764,7 +5764,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1544 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsI[i][j]) {
 # 1545 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-        ({ free(B->bestSeqsI[i][j]); free_helper(B->bestSeqsI[i][j], 5254463157148592741UL); }) ;
+        ({ free_helper(B->bestSeqsI[i][j], 5254463157148592741UL);free(B->bestSeqsI[i][j]); }) ;
 # 1546 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsI[i][j] = __null;
 # 1547 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5772,7 +5772,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1548 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1549 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestSeqsI[i]); free_helper(B->bestSeqsI[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestSeqsI[i], 5254463157148592741UL);free(B->bestSeqsI[i]); }) ;
 # 1550 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsI[i] = __null;
 # 1551 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5780,7 +5780,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1552 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1553 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestSeqsI); free_helper(B->bestSeqsI, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestSeqsI, 5254463157148592741UL);free(B->bestSeqsI); }) ;
 # 1554 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsI = __null;
 # 1555 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5796,7 +5796,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1560 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsJ[i][j]) {
 # 1561 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-        ({ free(B->bestSeqsJ[i][j]); free_helper(B->bestSeqsJ[i][j], 5254463157148592741UL); }) ;
+        ({ free_helper(B->bestSeqsJ[i][j], 5254463157148592741UL);free(B->bestSeqsJ[i][j]); }) ;
 # 1562 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsJ[i][j] = __null;
 # 1563 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5804,7 +5804,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1564 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1565 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestSeqsJ[i]); free_helper(B->bestSeqsJ[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestSeqsJ[i], 5254463157148592741UL);free(B->bestSeqsJ[i]); }) ;
 # 1566 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsJ[i] = __null;
 # 1567 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5812,7 +5812,7 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1568 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1569 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestSeqsJ); free_helper(B->bestSeqsJ, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestSeqsJ, 5254463157148592741UL);free(B->bestSeqsJ); }) ;
 # 1570 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsJ = __null;
 # 1571 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5820,13 +5820,13 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1572 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if (B->numReports) {
 # 1573 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->numReports); free_helper(B->numReports, 5254463157148592741UL); }) ;
+       ({ free_helper(B->numReports, 5254463157148592741UL);free(B->numReports); }) ;
 # 1574 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->numReports = __null;
 # 1575 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1576 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(B); free_helper(B, 5254463157148592933UL); }) ;
+     ({ free_helper(B, 5254463157148592933UL);free(B); }) ;
 # 1577 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 1578 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6226,15 +6226,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 426 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 427 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+     ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 428 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+     ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 429 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+     ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 430 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+     ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 431 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+     ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 432 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = ((-2)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_15; ;
 # 433 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6308,15 +6308,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 479 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 480 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_16; ;
 # 486 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6329,15 +6329,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 491 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 492 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 493 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 494 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 495 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 496 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 497 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 498 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_17; ;
 # 499 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6356,15 +6356,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 524 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 525 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 526 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 527 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 528 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 529 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 530 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 531 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_18; ;
 # 532 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6377,15 +6377,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 537 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 538 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 539 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 540 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 541 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 542 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 543 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 544 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_19; ;
 # 545 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6409,15 +6409,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 564 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 565 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 566 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+      ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 567 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+      ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 568 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+      ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 569 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+      ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 570 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+      ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 571 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = ((-10)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_20; ;
 # 572 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6432,15 +6432,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 578 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 579 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 580 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 581 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 582 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 583 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 584 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 585 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = ((-11)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_21; ;
 # 586 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6453,15 +6453,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 599 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 600 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 601 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 602 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 603 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 604 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 605 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 606 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_22; ;
 # 607 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6474,15 +6474,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 612 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 613 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 614 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 615 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 616 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 617 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 618 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 619 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_23; ;
 # 620 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6499,15 +6499,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 631 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 632 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 633 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 634 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 635 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 636 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 637 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 638 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = ((-14)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_24; ;
 # 639 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6527,15 +6527,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
  bestScores[*bestR] = goal;
 # 667 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 667 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+  ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 668 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+  ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 669 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+  ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 670 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+  ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 671 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+  ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 672 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = ((0)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_25; ;
 # 673 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6565,15 +6565,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 692 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 693 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 694 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 695 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 696 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 697 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 698 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 699 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_26; ;
 # 700 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6586,15 +6586,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 705 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 706 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 707 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 708 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 709 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 710 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 711 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 712 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_27; ;
 # 713 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6639,15 +6639,15 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 738 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 739 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 740 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+   ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 741 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+   ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 742 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+   ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 743 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+   ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 744 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+   ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 745 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    int ____chimes_ret_var_28; ; ____chimes_ret_var_28 = ((-15)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_28; ;
 # 746 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7272,11 +7272,11 @@ int bestR;
 # 1264 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      for (i = 1; i <= sizeT; i++) {
 # 1265 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-        ({ free(T[i]); free_helper(T[i], 5254463157148590494UL); }) ;
+        ({ free_helper(T[i], 5254463157148590494UL);free(T[i]); }) ;
 # 1266 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      }
 # 1267 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(T); free_helper(T, 5254463157148590497UL); }) ;
+      ({ free_helper(T, 5254463157148590497UL);free(T); }) ;
 # 1268 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      sizeT *= 2;
 # 1269 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7559,52 +7559,52 @@ int bestR;
 # 1449 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1450 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1451 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestScores); free_helper(bestScores, 5254463157148590162UL); }) ;
+       ({ free_helper(bestScores, 5254463157148590162UL);free(bestScores); }) ;
 # 1452 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestStartsI); free_helper(bestStartsI, 5254463157148590182UL); }) ;
+       ({ free_helper(bestStartsI, 5254463157148590182UL);free(bestStartsI); }) ;
 # 1453 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestStartsJ); free_helper(bestStartsJ, 5254463157148590177UL); }) ;
+       ({ free_helper(bestStartsJ, 5254463157148590177UL);free(bestStartsJ); }) ;
 # 1454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestEndsI); free_helper(bestEndsI, 5254463157148590172UL); }) ;
+       ({ free_helper(bestEndsI, 5254463157148590172UL);free(bestEndsI); }) ;
 # 1455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestEndsJ); free_helper(bestEndsJ, 5254463157148590167UL); }) ;
+       ({ free_helper(bestEndsJ, 5254463157148590167UL);free(bestEndsJ); }) ;
 # 1456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= maxReports; i++) {
 # 1458 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(bestSeqsI[i]); free_helper(bestSeqsI[i], 5254463157148590189UL); }) ;
+  ({ free_helper(bestSeqsI[i], 5254463157148590189UL);free(bestSeqsI[i]); }) ;
 # 1459 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(bestSeqsJ[i]); free_helper(bestSeqsJ[i], 5254463157148590939UL); }) ;
+  ({ free_helper(bestSeqsJ[i], 5254463157148590939UL);free(bestSeqsJ[i]); }) ;
 # 1460 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1461 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1462 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestSeqsI); free_helper(bestSeqsI, 5254463157148590192UL); }) ;
+       ({ free_helper(bestSeqsI, 5254463157148590192UL);free(bestSeqsI); }) ;
 # 1463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestSeqsJ); free_helper(bestSeqsJ, 5254463157148590937UL); }) ;
+       ({ free_helper(bestSeqsJ, 5254463157148590937UL);free(bestSeqsJ); }) ;
 # 1464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1466 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(weights[i]); free_helper(weights[i], 5254463157148590396UL); }) ;
+  ({ free_helper(weights[i], 5254463157148590396UL);free(weights[i]); }) ;
 # 1467 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1468 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(weights); free_helper(weights, 5254463157148590399UL); }) ;
+       ({ free_helper(weights, 5254463157148590399UL);free(weights); }) ;
 # 1469 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1470 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= sizeT; i++) {
 # 1471 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(T[i]); free_helper(T[i], 5254463157148590494UL); }) ;
+  ({ free_helper(T[i], 5254463157148590494UL);free(T[i]); }) ;
 # 1472 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1473 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(T); free_helper(T, 5254463157148590497UL); }) ;
+       ({ free_helper(T, 5254463157148590497UL);free(T); }) ;
 # 1474 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1475 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(mainSeq); free_helper(mainSeq, 5254463157148590302UL); }) ;
+       ({ free_helper(mainSeq, 5254463157148590302UL);free(mainSeq); }) ;
 # 1476 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(matchSeq); free_helper(matchSeq, 5254463157148590374UL); }) ;
+       ({ free_helper(matchSeq, 5254463157148590374UL);free(matchSeq); }) ;
 # 1477 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7631,7 +7631,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1492 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestScores[i]) {
 # 1493 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestScores[i]); free_helper(B->bestScores[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestScores[i], 5254463157148592741UL);free(B->bestScores[i]); }) ;
 # 1494 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestScores[i] = __null;
 # 1495 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7639,7 +7639,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1496 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1497 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestScores); free_helper(B->bestScores, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestScores, 5254463157148592741UL);free(B->bestScores); }) ;
 # 1498 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestScores = __null;
 # 1499 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7651,7 +7651,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1502 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsI[i]) {
 # 1503 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestStartsI[i]); free_helper(B->bestStartsI[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestStartsI[i], 5254463157148592741UL);free(B->bestStartsI[i]); }) ;
 # 1504 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsI[i] = __null;
 # 1505 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7659,7 +7659,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1506 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1507 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestStartsI); free_helper(B->bestStartsI, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestStartsI, 5254463157148592741UL);free(B->bestStartsI); }) ;
 # 1508 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsI = __null;
 # 1509 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7671,7 +7671,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1512 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsJ[i]) {
 # 1513 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestStartsJ[i]); free_helper(B->bestStartsJ[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestStartsJ[i], 5254463157148592741UL);free(B->bestStartsJ[i]); }) ;
 # 1514 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsJ[i] = __null;
 # 1515 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7679,7 +7679,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1516 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1517 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestStartsJ); free_helper(B->bestStartsJ, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestStartsJ, 5254463157148592741UL);free(B->bestStartsJ); }) ;
 # 1518 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsJ = __null;
 # 1519 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7691,7 +7691,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1522 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsI[i]) {
 # 1523 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestEndsI[i]); free_helper(B->bestEndsI[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestEndsI[i], 5254463157148592741UL);free(B->bestEndsI[i]); }) ;
 # 1524 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsI[i] = __null;
 # 1525 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7699,7 +7699,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1526 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1527 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestEndsI); free_helper(B->bestEndsI, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestEndsI, 5254463157148592741UL);free(B->bestEndsI); }) ;
 # 1528 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsI = __null;
 # 1529 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7711,7 +7711,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1532 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsJ[i]) {
 # 1533 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestEndsJ[i]); free_helper(B->bestEndsJ[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestEndsJ[i], 5254463157148592741UL);free(B->bestEndsJ[i]); }) ;
 # 1534 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsJ[i] = __null;
 # 1535 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7719,7 +7719,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1536 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1537 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestEndsJ); free_helper(B->bestEndsJ, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestEndsJ, 5254463157148592741UL);free(B->bestEndsJ); }) ;
 # 1538 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsJ = __null;
 # 1539 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7735,7 +7735,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1544 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsI[i][j]) {
 # 1545 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-        ({ free(B->bestSeqsI[i][j]); free_helper(B->bestSeqsI[i][j], 5254463157148592741UL); }) ;
+        ({ free_helper(B->bestSeqsI[i][j], 5254463157148592741UL);free(B->bestSeqsI[i][j]); }) ;
 # 1546 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsI[i][j] = __null;
 # 1547 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7743,7 +7743,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1548 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1549 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestSeqsI[i]); free_helper(B->bestSeqsI[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestSeqsI[i], 5254463157148592741UL);free(B->bestSeqsI[i]); }) ;
 # 1550 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsI[i] = __null;
 # 1551 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7751,7 +7751,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1552 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1553 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestSeqsI); free_helper(B->bestSeqsI, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestSeqsI, 5254463157148592741UL);free(B->bestSeqsI); }) ;
 # 1554 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsI = __null;
 # 1555 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7767,7 +7767,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1560 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsJ[i][j]) {
 # 1561 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-        ({ free(B->bestSeqsJ[i][j]); free_helper(B->bestSeqsJ[i][j], 5254463157148592741UL); }) ;
+        ({ free_helper(B->bestSeqsJ[i][j], 5254463157148592741UL);free(B->bestSeqsJ[i][j]); }) ;
 # 1562 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsJ[i][j] = __null;
 # 1563 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7775,7 +7775,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1564 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1565 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestSeqsJ[i]); free_helper(B->bestSeqsJ[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestSeqsJ[i], 5254463157148592741UL);free(B->bestSeqsJ[i]); }) ;
 # 1566 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsJ[i] = __null;
 # 1567 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7783,7 +7783,7 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1568 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1569 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestSeqsJ); free_helper(B->bestSeqsJ, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestSeqsJ, 5254463157148592741UL);free(B->bestSeqsJ); }) ;
 # 1570 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsJ = __null;
 # 1571 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7791,13 +7791,13 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1572 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if (B->numReports) {
 # 1573 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->numReports); free_helper(B->numReports, 5254463157148592741UL); }) ;
+       ({ free_helper(B->numReports, 5254463157148592741UL);free(B->numReports); }) ;
 # 1574 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->numReports = __null;
 # 1575 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1576 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(B); free_helper(B, 5254463157148592933UL); }) ;
+     ({ free_helper(B, 5254463157148592933UL);free(B); }) ;
 # 1577 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 1578 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8177,15 +8177,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 426 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 427 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+     ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 428 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+     ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 429 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+     ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 430 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+     ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 431 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+     ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 432 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      int ____chimes_ret_var_15; ____chimes_ret_var_15 = ((-2)); return ____chimes_ret_var_15; ;
 # 433 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8259,15 +8259,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 479 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 480 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_16; ____chimes_ret_var_16 = ((-1)); return ____chimes_ret_var_16; ;
 # 486 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8280,15 +8280,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 491 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 492 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 493 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 494 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 495 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 496 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 497 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 498 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_17; ____chimes_ret_var_17 = ((-1)); return ____chimes_ret_var_17; ;
 # 499 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8307,15 +8307,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 524 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 525 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 526 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 527 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 528 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 529 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 530 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 531 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_18; ____chimes_ret_var_18 = ((-1)); return ____chimes_ret_var_18; ;
 # 532 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8328,15 +8328,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 537 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 538 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 539 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 540 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 541 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 542 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 543 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 544 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_19; ____chimes_ret_var_19 = ((-1)); return ____chimes_ret_var_19; ;
 # 545 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8360,15 +8360,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 564 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 565 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 566 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+      ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 567 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+      ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 568 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+      ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 569 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+      ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 570 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+      ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 571 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       int ____chimes_ret_var_20; ____chimes_ret_var_20 = ((-10)); return ____chimes_ret_var_20; ;
 # 572 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8383,15 +8383,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 578 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 579 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 580 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 581 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 582 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 583 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 584 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 585 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_21; ____chimes_ret_var_21 = ((-11)); return ____chimes_ret_var_21; ;
 # 586 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8404,15 +8404,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 599 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 600 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 601 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 602 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 603 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 604 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 605 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 606 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_22; ____chimes_ret_var_22 = ((-1)); return ____chimes_ret_var_22; ;
 # 607 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8425,15 +8425,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 612 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 613 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 614 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 615 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 616 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 617 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 618 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 619 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_23; ____chimes_ret_var_23 = ((-1)); return ____chimes_ret_var_23; ;
 # 620 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8450,15 +8450,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 631 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 632 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 633 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 634 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 635 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 636 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 637 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 638 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_24; ____chimes_ret_var_24 = ((-14)); return ____chimes_ret_var_24; ;
 # 639 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8478,15 +8478,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
  bestScores[*bestR] = goal;
 # 667 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 667 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+  ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 668 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+  ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 669 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+  ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 670 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+  ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 671 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+  ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 672 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   int ____chimes_ret_var_25; ____chimes_ret_var_25 = ((0)); return ____chimes_ret_var_25; ;
 # 673 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8516,15 +8516,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 692 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 693 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 694 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 695 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 696 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 697 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 698 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 699 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_26; ____chimes_ret_var_26 = ((-1)); return ____chimes_ret_var_26; ;
 # 700 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8537,15 +8537,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 705 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 706 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 707 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+    ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 708 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+    ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 709 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+    ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 710 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+    ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 711 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+    ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 712 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     int ____chimes_ret_var_27; ____chimes_ret_var_27 = ((-1)); return ____chimes_ret_var_27; ;
 # 713 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -8590,15 +8590,15 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
 # 738 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 739 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 740 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(V[1]); free_helper(V[1], 5254463157148591735UL); }) ;
+   ({ free_helper(V[1], 5254463157148591735UL);free(V[1]); }) ;
 # 741 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(V[2]); free_helper(V[2], 5254463157148591735UL); }) ;
+   ({ free_helper(V[2], 5254463157148591735UL);free(V[2]); }) ;
 # 742 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(V); free_helper(V, 5254463157148591406UL); }) ;
+   ({ free_helper(V, 5254463157148591406UL);free(V); }) ;
 # 743 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(E); free_helper(E, 5254463157148592218UL); }) ;
+   ({ free_helper(E, 5254463157148592218UL);free(E); }) ;
 # 744 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   ({ free(F); free_helper(F, 5254463157148592223UL); }) ;
+   ({ free_helper(F, 5254463157148592223UL);free(F); }) ;
 # 745 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    int ____chimes_ret_var_28; ____chimes_ret_var_28 = ((-15)); return ____chimes_ret_var_28; ;
 # 746 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9181,11 +9181,11 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1264 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      for (i = 1; i <= sizeT; i++) {
 # 1265 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-        ({ free(T[i]); free_helper(T[i], 5254463157148590494UL); }) ;
+        ({ free_helper(T[i], 5254463157148590494UL);free(T[i]); }) ;
 # 1266 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      }
 # 1267 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      ({ free(T); free_helper(T, 5254463157148590497UL); }) ;
+      ({ free_helper(T, 5254463157148590497UL);free(T); }) ;
 # 1268 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      sizeT *= 2;
 # 1269 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9468,52 +9468,52 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
 # 1449 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1450 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1451 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestScores); free_helper(bestScores, 5254463157148590162UL); }) ;
+       ({ free_helper(bestScores, 5254463157148590162UL);free(bestScores); }) ;
 # 1452 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestStartsI); free_helper(bestStartsI, 5254463157148590182UL); }) ;
+       ({ free_helper(bestStartsI, 5254463157148590182UL);free(bestStartsI); }) ;
 # 1453 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestStartsJ); free_helper(bestStartsJ, 5254463157148590177UL); }) ;
+       ({ free_helper(bestStartsJ, 5254463157148590177UL);free(bestStartsJ); }) ;
 # 1454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestEndsI); free_helper(bestEndsI, 5254463157148590172UL); }) ;
+       ({ free_helper(bestEndsI, 5254463157148590172UL);free(bestEndsI); }) ;
 # 1455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestEndsJ); free_helper(bestEndsJ, 5254463157148590167UL); }) ;
+       ({ free_helper(bestEndsJ, 5254463157148590167UL);free(bestEndsJ); }) ;
 # 1456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= maxReports; i++) {
 # 1458 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(bestSeqsI[i]); free_helper(bestSeqsI[i], 5254463157148590189UL); }) ;
+  ({ free_helper(bestSeqsI[i], 5254463157148590189UL);free(bestSeqsI[i]); }) ;
 # 1459 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(bestSeqsJ[i]); free_helper(bestSeqsJ[i], 5254463157148590939UL); }) ;
+  ({ free_helper(bestSeqsJ[i], 5254463157148590939UL);free(bestSeqsJ[i]); }) ;
 # 1460 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1461 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1462 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestSeqsI); free_helper(bestSeqsI, 5254463157148590192UL); }) ;
+       ({ free_helper(bestSeqsI, 5254463157148590192UL);free(bestSeqsI); }) ;
 # 1463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(bestSeqsJ); free_helper(bestSeqsJ, 5254463157148590937UL); }) ;
+       ({ free_helper(bestSeqsJ, 5254463157148590937UL);free(bestSeqsJ); }) ;
 # 1464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1466 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(weights[i]); free_helper(weights[i], 5254463157148590396UL); }) ;
+  ({ free_helper(weights[i], 5254463157148590396UL);free(weights[i]); }) ;
 # 1467 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1468 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(weights); free_helper(weights, 5254463157148590399UL); }) ;
+       ({ free_helper(weights, 5254463157148590399UL);free(weights); }) ;
 # 1469 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1470 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       for (i = 1; i <= sizeT; i++) {
 # 1471 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  ({ free(T[i]); free_helper(T[i], 5254463157148590494UL); }) ;
+  ({ free_helper(T[i], 5254463157148590494UL);free(T[i]); }) ;
 # 1472 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1473 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(T); free_helper(T, 5254463157148590497UL); }) ;
+       ({ free_helper(T, 5254463157148590497UL);free(T); }) ;
 # 1474 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1475 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(mainSeq); free_helper(mainSeq, 5254463157148590302UL); }) ;
+       ({ free_helper(mainSeq, 5254463157148590302UL);free(mainSeq); }) ;
 # 1476 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(matchSeq); free_helper(matchSeq, 5254463157148590374UL); }) ;
+       ({ free_helper(matchSeq, 5254463157148590374UL);free(matchSeq); }) ;
 # 1477 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9538,7 +9538,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1492 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestScores[i]) {
 # 1493 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestScores[i]); free_helper(B->bestScores[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestScores[i], 5254463157148592741UL);free(B->bestScores[i]); }) ;
 # 1494 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestScores[i] = __null;
 # 1495 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9546,7 +9546,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1496 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1497 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestScores); free_helper(B->bestScores, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestScores, 5254463157148592741UL);free(B->bestScores); }) ;
 # 1498 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestScores = __null;
 # 1499 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9558,7 +9558,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1502 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsI[i]) {
 # 1503 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestStartsI[i]); free_helper(B->bestStartsI[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestStartsI[i], 5254463157148592741UL);free(B->bestStartsI[i]); }) ;
 # 1504 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsI[i] = __null;
 # 1505 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9566,7 +9566,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1506 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1507 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestStartsI); free_helper(B->bestStartsI, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestStartsI, 5254463157148592741UL);free(B->bestStartsI); }) ;
 # 1508 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsI = __null;
 # 1509 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9578,7 +9578,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1512 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestStartsJ[i]) {
 # 1513 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestStartsJ[i]); free_helper(B->bestStartsJ[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestStartsJ[i], 5254463157148592741UL);free(B->bestStartsJ[i]); }) ;
 # 1514 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestStartsJ[i] = __null;
 # 1515 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9586,7 +9586,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1516 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1517 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestStartsJ); free_helper(B->bestStartsJ, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestStartsJ, 5254463157148592741UL);free(B->bestStartsJ); }) ;
 # 1518 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestStartsJ = __null;
 # 1519 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9598,7 +9598,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1522 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsI[i]) {
 # 1523 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestEndsI[i]); free_helper(B->bestEndsI[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestEndsI[i], 5254463157148592741UL);free(B->bestEndsI[i]); }) ;
 # 1524 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsI[i] = __null;
 # 1525 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9606,7 +9606,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1526 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1527 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestEndsI); free_helper(B->bestEndsI, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestEndsI, 5254463157148592741UL);free(B->bestEndsI); }) ;
 # 1528 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsI = __null;
 # 1529 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9618,7 +9618,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1532 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (B->bestEndsJ[i]) {
 # 1533 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestEndsJ[i]); free_helper(B->bestEndsJ[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestEndsJ[i], 5254463157148592741UL);free(B->bestEndsJ[i]); }) ;
 # 1534 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestEndsJ[i] = __null;
 # 1535 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9626,7 +9626,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1536 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1537 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestEndsJ); free_helper(B->bestEndsJ, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestEndsJ, 5254463157148592741UL);free(B->bestEndsJ); }) ;
 # 1538 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestEndsJ = __null;
 # 1539 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9642,7 +9642,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1544 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsI[i][j]) {
 # 1545 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-        ({ free(B->bestSeqsI[i][j]); free_helper(B->bestSeqsI[i][j], 5254463157148592741UL); }) ;
+        ({ free_helper(B->bestSeqsI[i][j], 5254463157148592741UL);free(B->bestSeqsI[i][j]); }) ;
 # 1546 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsI[i][j] = __null;
 # 1547 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9650,7 +9650,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1548 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1549 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestSeqsI[i]); free_helper(B->bestSeqsI[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestSeqsI[i], 5254463157148592741UL);free(B->bestSeqsI[i]); }) ;
 # 1550 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsI[i] = __null;
 # 1551 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9658,7 +9658,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1552 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1553 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestSeqsI); free_helper(B->bestSeqsI, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestSeqsI, 5254463157148592741UL);free(B->bestSeqsI); }) ;
 # 1554 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsI = __null;
 # 1555 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9674,7 +9674,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1560 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      if (B->bestSeqsJ[i][j]) {
 # 1561 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-        ({ free(B->bestSeqsJ[i][j]); free_helper(B->bestSeqsJ[i][j], 5254463157148592741UL); }) ;
+        ({ free_helper(B->bestSeqsJ[i][j], 5254463157148592741UL);free(B->bestSeqsJ[i][j]); }) ;
 # 1562 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
        B->bestSeqsJ[i][j] = __null;
 # 1563 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9682,7 +9682,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1564 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 1565 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    ({ free(B->bestSeqsJ[i]); free_helper(B->bestSeqsJ[i], 5254463157148592741UL); }) ;
+    ({ free_helper(B->bestSeqsJ[i], 5254463157148592741UL);free(B->bestSeqsJ[i]); }) ;
 # 1566 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    B->bestSeqsJ[i] = __null;
 # 1567 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9690,7 +9690,7 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1568 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 1569 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->bestSeqsJ); free_helper(B->bestSeqsJ, 5254463157148592741UL); }) ;
+       ({ free_helper(B->bestSeqsJ, 5254463157148592741UL);free(B->bestSeqsJ); }) ;
 # 1570 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->bestSeqsJ = __null;
 # 1571 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9698,13 +9698,13 @@ BSTR_T *freeB_npm(BSTR_T *B) {
 # 1572 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     if (B->numReports) {
 # 1573 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       ({ free(B->numReports); free_helper(B->numReports, 5254463157148592741UL); }) ;
+       ({ free_helper(B->numReports, 5254463157148592741UL);free(B->numReports); }) ;
 # 1574 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       B->numReports = __null;
 # 1575 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 1576 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     ({ free(B); free_helper(B, 5254463157148592933UL); }) ;
+     ({ free_helper(B, 5254463157148592933UL);free(B); }) ;
 # 1577 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 1578 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"

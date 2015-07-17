@@ -4069,9 +4069,9 @@ int i;
 # 125 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 126 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 127 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(oldSeq); free_helper(oldSeq, 6613892181078039972UL); }) ;
+     ({ free_helper(oldSeq, 6613892181078039972UL);free(oldSeq); }) ;
 # 128 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(codSeq); free_helper(codSeq, 6613892181078039790UL); }) ;
+     ({ free_helper(codSeq, 6613892181078039790UL);free(codSeq); }) ;
 # 129 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     oldSeq = newSeq;
 # 130 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4382,7 +4382,7 @@ SEQDATA_T *freeSeqData_resumable(SEQDATA_T *S) {const int ____chimes_did_disable
 # 358 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->main) {
 # 359 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->main); free_helper(S->main, 6613892181078039999UL); }) ;
+       ({ free_helper(S->main, 6613892181078039999UL);free(S->main); }) ;
 # 360 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->main = __null;
 # 361 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4390,13 +4390,13 @@ SEQDATA_T *freeSeqData_resumable(SEQDATA_T *S) {const int ____chimes_did_disable
 # 362 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->match) {
 # 363 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->match); free_helper(S->match, 6613892181078039999UL); }) ;
+       ({ free_helper(S->match, 6613892181078039999UL);free(S->match); }) ;
 # 364 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->match = __null;
 # 365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     }
 # 366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(S); free_helper(S, 6613892181078040018UL); }) ;
+     ({ free_helper(S, 6613892181078040018UL);free(S); }) ;
 # 367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   }
 # 368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4532,9 +4532,9 @@ int i;
 # 125 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 126 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 127 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(oldSeq); free_helper(oldSeq, 6613892181078039972UL); }) ;
+     ({ free_helper(oldSeq, 6613892181078039972UL);free(oldSeq); }) ;
 # 128 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(codSeq); free_helper(codSeq, 6613892181078039790UL); }) ;
+     ({ free_helper(codSeq, 6613892181078039790UL);free(codSeq); }) ;
 # 129 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     oldSeq = newSeq;
 # 130 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4816,7 +4816,7 @@ SEQDATA_T *freeSeqData_quick(SEQDATA_T *S) {const int ____chimes_did_disable2 = 
 # 358 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->main) {
 # 359 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->main); free_helper(S->main, 6613892181078039999UL); }) ;
+       ({ free_helper(S->main, 6613892181078039999UL);free(S->main); }) ;
 # 360 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->main = __null;
 # 361 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4824,13 +4824,13 @@ SEQDATA_T *freeSeqData_quick(SEQDATA_T *S) {const int ____chimes_did_disable2 = 
 # 362 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->match) {
 # 363 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->match); free_helper(S->match, 6613892181078039999UL); }) ;
+       ({ free_helper(S->match, 6613892181078039999UL);free(S->match); }) ;
 # 364 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->match = __null;
 # 365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     }
 # 366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(S); free_helper(S, 6613892181078040018UL); }) ;
+     ({ free_helper(S, 6613892181078040018UL);free(S); }) ;
 # 367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   }
 # 368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4964,9 +4964,9 @@ unsigned char *insertValidation_npm(unsigned char *oldSeq, int *seqLen,
 # 125 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 126 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 127 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(oldSeq); free_helper(oldSeq, 6613892181078039972UL); }) ;
+     ({ free_helper(oldSeq, 6613892181078039972UL);free(oldSeq); }) ;
 # 128 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(codSeq); free_helper(codSeq, 6613892181078039790UL); }) ;
+     ({ free_helper(codSeq, 6613892181078039790UL);free(codSeq); }) ;
 # 129 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     oldSeq = newSeq;
 # 130 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5222,7 +5222,7 @@ SEQDATA_T *freeSeqData_npm(SEQDATA_T *S) {
 # 358 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->main) {
 # 359 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->main); free_helper(S->main, 6613892181078039999UL); }) ;
+       ({ free_helper(S->main, 6613892181078039999UL);free(S->main); }) ;
 # 360 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->main = __null;
 # 361 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5230,13 +5230,13 @@ SEQDATA_T *freeSeqData_npm(SEQDATA_T *S) {
 # 362 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->match) {
 # 363 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->match); free_helper(S->match, 6613892181078039999UL); }) ;
+       ({ free_helper(S->match, 6613892181078039999UL);free(S->match); }) ;
 # 364 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->match = __null;
 # 365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     }
 # 366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(S); free_helper(S, 6613892181078040018UL); }) ;
+     ({ free_helper(S, 6613892181078040018UL);free(S); }) ;
 # 367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   }
 # 368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"

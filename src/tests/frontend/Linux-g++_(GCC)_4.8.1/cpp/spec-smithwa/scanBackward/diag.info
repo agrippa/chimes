@@ -11,145 +11,145 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBack
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 398 59 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 406 26  ({ void *____chimes_tmp_ptr = malloc((m + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (m+1) * sizeof(long long), 5254463157148592222UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 406 60 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 5  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 5  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 14 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 5  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 5  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 14 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 5  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 5  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 5  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 5  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 5  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 5  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 6  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 6  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 15 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 6  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 6  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 15 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 6  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 6  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 12 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 6  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 6  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 12 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 6  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 6  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 12 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 2  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 2  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 2  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 2  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 2  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 2  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 8 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 2  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 2  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 8 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 2  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 2  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 8 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 3  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 3  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 12 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 3  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 3  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 12 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 3  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 3  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 9 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 3  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 3  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 9 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 3  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 3  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 9 
 ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 9 len=12 scanBackward_npm
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 845 22  ({ void *____chimes_tmp_ptr = malloc(sizeof(BSTR_T)); malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 5254463157148593410UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); ____chimes_tmp_ptr; }) 
@@ -200,9 +200,9 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBack
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1209 75 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1219 31  ({ void *____chimes_tmp_ptr = malloc((sizeT + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (sizeT+1)*sizeof(unsigned char), 5254463157148590493UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1219 69 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 8  ({ free(T[i]); free_helper(T[i], 5254463157148590493UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 8  ({ free_helper(T[i], 5254463157148590493UL);free(T[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 6  ({ free(T); free_helper(T, 5254463157148590496UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 6  ({ free_helper(T, 5254463157148590496UL);free(T);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 12 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1298 20  ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (bestR +1) * sizeof(long long), 5254463157148592740UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1298 57 
@@ -218,72 +218,72 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBack
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1352 68 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1364 25  ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (bestR + 1) * sizeof(unsigned char*), 5254463157148592740UL, 1, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1364 68 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 7  ({ free(bestScores); free_helper(bestScores, 5254463157148590161UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 7  ({ free_helper(bestScores, 5254463157148590161UL);free(bestScores);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 22 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 7  ({ free(bestStartsI); free_helper(bestStartsI, 5254463157148590181UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 7  ({ free_helper(bestStartsI, 5254463157148590181UL);free(bestStartsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 23 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 7  ({ free(bestStartsJ); free_helper(bestStartsJ, 5254463157148590176UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 7  ({ free_helper(bestStartsJ, 5254463157148590176UL);free(bestStartsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 23 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 7  ({ free(bestEndsI); free_helper(bestEndsI, 5254463157148590171UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 7  ({ free_helper(bestEndsI, 5254463157148590171UL);free(bestEndsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 7  ({ free(bestEndsJ); free_helper(bestEndsJ, 5254463157148590166UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 7  ({ free_helper(bestEndsJ, 5254463157148590166UL);free(bestEndsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 2  ({ free(bestSeqsI[i]); free_helper(bestSeqsI[i], 5254463157148590188UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 2  ({ free_helper(bestSeqsI[i], 5254463157148590188UL);free(bestSeqsI[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 2  ({ free(bestSeqsJ[i]); free_helper(bestSeqsJ[i], 5254463157148590938UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 2  ({ free_helper(bestSeqsJ[i], 5254463157148590938UL);free(bestSeqsJ[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 7  ({ free(bestSeqsI); free_helper(bestSeqsI, 5254463157148590191UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 7  ({ free_helper(bestSeqsI, 5254463157148590191UL);free(bestSeqsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 7  ({ free(bestSeqsJ); free_helper(bestSeqsJ, 5254463157148590936UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 7  ({ free_helper(bestSeqsJ, 5254463157148590936UL);free(bestSeqsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 2  ({ free(weights[i]); free_helper(weights[i], 5254463157148590395UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 2  ({ free_helper(weights[i], 5254463157148590395UL);free(weights[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 7  ({ free(weights); free_helper(weights, 5254463157148590398UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 7  ({ free_helper(weights, 5254463157148590398UL);free(weights);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 2  ({ free(T[i]); free_helper(T[i], 5254463157148590493UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 2  ({ free_helper(T[i], 5254463157148590493UL);free(T[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 7  ({ free(T); free_helper(T, 5254463157148590496UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 7  ({ free_helper(T, 5254463157148590496UL);free(T);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 7  ({ free(mainSeq); free_helper(mainSeq, 5254463157148590301UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 7  ({ free_helper(mainSeq, 5254463157148590301UL);free(mainSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 7  ({ free(matchSeq); free_helper(matchSeq, 5254463157148590373UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 7  ({ free_helper(matchSeq, 5254463157148590373UL);free(matchSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 20 
 ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 9 len=5 freeB_npm
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 4  ({ free(B->bestScores[i]); free_helper(B->bestScores[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 4  ({ free_helper(B->bestScores[i], 5254463157148592740UL);free(B->bestScores[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 7  ({ free(B->bestScores); free_helper(B->bestScores, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 7  ({ free_helper(B->bestScores, 5254463157148592740UL);free(B->bestScores);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 4  ({ free(B->bestStartsI[i]); free_helper(B->bestStartsI[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 4  ({ free_helper(B->bestStartsI[i], 5254463157148592740UL);free(B->bestStartsI[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 26 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 7  ({ free(B->bestStartsI); free_helper(B->bestStartsI, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 7  ({ free_helper(B->bestStartsI, 5254463157148592740UL);free(B->bestStartsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 26 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 4  ({ free(B->bestStartsJ[i]); free_helper(B->bestStartsJ[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 4  ({ free_helper(B->bestStartsJ[i], 5254463157148592740UL);free(B->bestStartsJ[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 26 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 7  ({ free(B->bestStartsJ); free_helper(B->bestStartsJ, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 7  ({ free_helper(B->bestStartsJ, 5254463157148592740UL);free(B->bestStartsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 26 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 4  ({ free(B->bestEndsI[i]); free_helper(B->bestEndsI[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 4  ({ free_helper(B->bestEndsI[i], 5254463157148592740UL);free(B->bestEndsI[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 7  ({ free(B->bestEndsI); free_helper(B->bestEndsI, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 7  ({ free_helper(B->bestEndsI, 5254463157148592740UL);free(B->bestEndsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 4  ({ free(B->bestEndsJ[i]); free_helper(B->bestEndsJ[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 4  ({ free_helper(B->bestEndsJ[i], 5254463157148592740UL);free(B->bestEndsJ[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 7  ({ free(B->bestEndsJ); free_helper(B->bestEndsJ, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 7  ({ free_helper(B->bestEndsJ, 5254463157148592740UL);free(B->bestEndsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 8  ({ free(B->bestSeqsI[i][j]); free_helper(B->bestSeqsI[i][j], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 8  ({ free_helper(B->bestSeqsI[i][j], 5254463157148592740UL);free(B->bestSeqsI[i][j]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 31 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 4  ({ free(B->bestSeqsI[i]); free_helper(B->bestSeqsI[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 4  ({ free_helper(B->bestSeqsI[i], 5254463157148592740UL);free(B->bestSeqsI[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 7  ({ free(B->bestSeqsI); free_helper(B->bestSeqsI, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 7  ({ free_helper(B->bestSeqsI, 5254463157148592740UL);free(B->bestSeqsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 8  ({ free(B->bestSeqsJ[i][j]); free_helper(B->bestSeqsJ[i][j], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 8  ({ free_helper(B->bestSeqsJ[i][j], 5254463157148592740UL);free(B->bestSeqsJ[i][j]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 31 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 4  ({ free(B->bestSeqsJ[i]); free_helper(B->bestSeqsJ[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 4  ({ free_helper(B->bestSeqsJ[i], 5254463157148592740UL);free(B->bestSeqsJ[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 7  ({ free(B->bestSeqsJ); free_helper(B->bestSeqsJ, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 7  ({ free_helper(B->bestSeqsJ, 5254463157148592740UL);free(B->bestSeqsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 7  ({ free(B->numReports); free_helper(B->numReports, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 7  ({ free_helper(B->numReports, 5254463157148592740UL);free(B->numReports);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 5  ({ free(B); free_helper(B, 5254463157148592932UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 5  ({ free_helper(B, 5254463157148592932UL);free(B);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 11 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 33 38  ({ void *____chimes_tmp_ptr = malloc((c + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (c+1)*sizeof(unsigned char), 5254463157148589683UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 33 74 
@@ -295,145 +295,145 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBack
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 398 59 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 406 26  ({ void *____chimes_tmp_ptr = malloc((m + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (m+1) * sizeof(long long), 5254463157148592222UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 406 60 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 5  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 5  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 14 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 5  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 5  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 14 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 5  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 5  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 5  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 5  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 5  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 5  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 6  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 6  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 15 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 6  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 6  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 15 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 6  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 6  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 12 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 6  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 6  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 12 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 6  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 6  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 12 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 2  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 2  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 2  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 2  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 2  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 2  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 8 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 2  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 2  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 8 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 2  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 2  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 8 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 4  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 4  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 4  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 4  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 4  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 4  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 4  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 4  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 4  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 4  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 10 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 3  ({ free(V[1]); free_helper(V[1], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 3  ({ free_helper(V[1], 5254463157148591734UL);free(V[1]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 12 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 3  ({ free(V[2]); free_helper(V[2], 5254463157148591734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 3  ({ free_helper(V[2], 5254463157148591734UL);free(V[2]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 12 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 3  ({ free(V); free_helper(V, 5254463157148591405UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 3  ({ free_helper(V, 5254463157148591405UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 9 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 3  ({ free(E); free_helper(E, 5254463157148592217UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 3  ({ free_helper(E, 5254463157148592217UL);free(E);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 9 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 3  ({ free(F); free_helper(F, 5254463157148592222UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 3  ({ free_helper(F, 5254463157148592222UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 9 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 845 22  ({ void *____chimes_tmp_ptr = malloc(sizeof(BSTR_T)); malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 5254463157148593410UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 845 45 
@@ -483,9 +483,9 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBack
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1209 75 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1219 31  ({ void *____chimes_tmp_ptr = malloc((sizeT + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (sizeT+1)*sizeof(unsigned char), 5254463157148590493UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1219 69 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 8  ({ free(T[i]); free_helper(T[i], 5254463157148590493UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 8  ({ free_helper(T[i], 5254463157148590493UL);free(T[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 6  ({ free(T); free_helper(T, 5254463157148590496UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 6  ({ free_helper(T, 5254463157148590496UL);free(T);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 12 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1298 20  ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (bestR +1) * sizeof(long long), 5254463157148592740UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1298 57 
@@ -501,71 +501,71 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBack
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1352 68 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1364 25  ({ void *____chimes_tmp_ptr = malloc((bestR + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (bestR + 1) * sizeof(unsigned char*), 5254463157148592740UL, 1, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1364 68 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 7  ({ free(bestScores); free_helper(bestScores, 5254463157148590161UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 7  ({ free_helper(bestScores, 5254463157148590161UL);free(bestScores);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 22 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 7  ({ free(bestStartsI); free_helper(bestStartsI, 5254463157148590181UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 7  ({ free_helper(bestStartsI, 5254463157148590181UL);free(bestStartsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 23 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 7  ({ free(bestStartsJ); free_helper(bestStartsJ, 5254463157148590176UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 7  ({ free_helper(bestStartsJ, 5254463157148590176UL);free(bestStartsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 23 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 7  ({ free(bestEndsI); free_helper(bestEndsI, 5254463157148590171UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 7  ({ free_helper(bestEndsI, 5254463157148590171UL);free(bestEndsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 7  ({ free(bestEndsJ); free_helper(bestEndsJ, 5254463157148590166UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 7  ({ free_helper(bestEndsJ, 5254463157148590166UL);free(bestEndsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 2  ({ free(bestSeqsI[i]); free_helper(bestSeqsI[i], 5254463157148590188UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 2  ({ free_helper(bestSeqsI[i], 5254463157148590188UL);free(bestSeqsI[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 2  ({ free(bestSeqsJ[i]); free_helper(bestSeqsJ[i], 5254463157148590938UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 2  ({ free_helper(bestSeqsJ[i], 5254463157148590938UL);free(bestSeqsJ[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 7  ({ free(bestSeqsI); free_helper(bestSeqsI, 5254463157148590191UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 7  ({ free_helper(bestSeqsI, 5254463157148590191UL);free(bestSeqsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 7  ({ free(bestSeqsJ); free_helper(bestSeqsJ, 5254463157148590936UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 7  ({ free_helper(bestSeqsJ, 5254463157148590936UL);free(bestSeqsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 2  ({ free(weights[i]); free_helper(weights[i], 5254463157148590395UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 2  ({ free_helper(weights[i], 5254463157148590395UL);free(weights[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 7  ({ free(weights); free_helper(weights, 5254463157148590398UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 7  ({ free_helper(weights, 5254463157148590398UL);free(weights);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 2  ({ free(T[i]); free_helper(T[i], 5254463157148590493UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 2  ({ free_helper(T[i], 5254463157148590493UL);free(T[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 7  ({ free(T); free_helper(T, 5254463157148590496UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 7  ({ free_helper(T, 5254463157148590496UL);free(T);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 7  ({ free(mainSeq); free_helper(mainSeq, 5254463157148590301UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 7  ({ free_helper(mainSeq, 5254463157148590301UL);free(mainSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 7  ({ free(matchSeq); free_helper(matchSeq, 5254463157148590373UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 7  ({ free_helper(matchSeq, 5254463157148590373UL);free(matchSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 20 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 4  ({ free(B->bestScores[i]); free_helper(B->bestScores[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 4  ({ free_helper(B->bestScores[i], 5254463157148592740UL);free(B->bestScores[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 7  ({ free(B->bestScores); free_helper(B->bestScores, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 7  ({ free_helper(B->bestScores, 5254463157148592740UL);free(B->bestScores);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 4  ({ free(B->bestStartsI[i]); free_helper(B->bestStartsI[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 4  ({ free_helper(B->bestStartsI[i], 5254463157148592740UL);free(B->bestStartsI[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 26 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 7  ({ free(B->bestStartsI); free_helper(B->bestStartsI, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 7  ({ free_helper(B->bestStartsI, 5254463157148592740UL);free(B->bestStartsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 26 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 4  ({ free(B->bestStartsJ[i]); free_helper(B->bestStartsJ[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 4  ({ free_helper(B->bestStartsJ[i], 5254463157148592740UL);free(B->bestStartsJ[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 26 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 7  ({ free(B->bestStartsJ); free_helper(B->bestStartsJ, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 7  ({ free_helper(B->bestStartsJ, 5254463157148592740UL);free(B->bestStartsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 26 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 4  ({ free(B->bestEndsI[i]); free_helper(B->bestEndsI[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 4  ({ free_helper(B->bestEndsI[i], 5254463157148592740UL);free(B->bestEndsI[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 7  ({ free(B->bestEndsI); free_helper(B->bestEndsI, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 7  ({ free_helper(B->bestEndsI, 5254463157148592740UL);free(B->bestEndsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 4  ({ free(B->bestEndsJ[i]); free_helper(B->bestEndsJ[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 4  ({ free_helper(B->bestEndsJ[i], 5254463157148592740UL);free(B->bestEndsJ[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 7  ({ free(B->bestEndsJ); free_helper(B->bestEndsJ, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 7  ({ free_helper(B->bestEndsJ, 5254463157148592740UL);free(B->bestEndsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 8  ({ free(B->bestSeqsI[i][j]); free_helper(B->bestSeqsI[i][j], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 8  ({ free_helper(B->bestSeqsI[i][j], 5254463157148592740UL);free(B->bestSeqsI[i][j]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 31 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 4  ({ free(B->bestSeqsI[i]); free_helper(B->bestSeqsI[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 4  ({ free_helper(B->bestSeqsI[i], 5254463157148592740UL);free(B->bestSeqsI[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 7  ({ free(B->bestSeqsI); free_helper(B->bestSeqsI, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 7  ({ free_helper(B->bestSeqsI, 5254463157148592740UL);free(B->bestSeqsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 8  ({ free(B->bestSeqsJ[i][j]); free_helper(B->bestSeqsJ[i][j], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 8  ({ free_helper(B->bestSeqsJ[i][j], 5254463157148592740UL);free(B->bestSeqsJ[i][j]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 31 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 4  ({ free(B->bestSeqsJ[i]); free_helper(B->bestSeqsJ[i], 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 4  ({ free_helper(B->bestSeqsJ[i], 5254463157148592740UL);free(B->bestSeqsJ[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 7  ({ free(B->bestSeqsJ); free_helper(B->bestSeqsJ, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 7  ({ free_helper(B->bestSeqsJ, 5254463157148592740UL);free(B->bestSeqsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 7  ({ free(B->numReports); free_helper(B->numReports, 5254463157148592740UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 7  ({ free_helper(B->numReports, 5254463157148592740UL);free(B->numReports);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 5  ({ free(B); free_helper(B, 5254463157148592932UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 5  ({ free_helper(B, 5254463157148592932UL);free(B);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 11 
 InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 43 80 rm_stack(true, 5254463157148589683UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 20 60 const int ____chimes_did_disable0 = new_stack((void *)(&copyStringR), "copyStringR", &____must_manage_copyStringR, 1, 0, (size_t)(5254463157148589701UL)); 

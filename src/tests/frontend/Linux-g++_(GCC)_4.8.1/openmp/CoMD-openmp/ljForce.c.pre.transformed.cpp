@@ -3175,7 +3175,7 @@ void ljDestroy_resumable(BasePotential** inppot)
 # 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0, false); return; };
 # 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    ({ free(pot); free_helper(pot, 9533241863568626243UL); }) ;
+    ({ free_helper(pot, 9533241863568626243UL);free(pot); }) ;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    *inppot = __null;
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3424,7 +3424,7 @@ void ljDestroy_quick(BasePotential** inppot)
 # 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0, false); return; };
 # 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    ({ free(pot); free_helper(pot, 9533241863568626243UL); }) ;
+    ({ free_helper(pot, 9533241863568626243UL);free(pot); }) ;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    *inppot = __null;
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3671,7 +3671,7 @@ void ljDestroy_npm(BasePotential** inppot)
 # 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    if (! pot) {return; };
 # 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    ({ free(pot); free_helper(pot, 9533241863568626243UL); }) ;
+    ({ free_helper(pot, 9533241863568626243UL);free(pot); }) ;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    *inppot = __null;
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"

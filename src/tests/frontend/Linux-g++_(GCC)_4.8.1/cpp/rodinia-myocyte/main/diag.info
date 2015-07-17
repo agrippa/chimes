@@ -13,19 +13,19 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 22  ({ vo
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 55 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 20  ({ void *____chimes_tmp_ptr = malloc(workload * 16 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, workload * 16 * sizeof(float), 9015230786879047557UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 56 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 9  ({ free(y[i][0]); free_helper(y[i][0], 9015230786879047513UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 9  ({ free_helper(y[i][0], 9015230786879047513UL);free(y[i][0]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 3  ({ free(y[i]); free_helper(y[i], 9015230786879047315UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 3  ({ free_helper(y[i], 9015230786879047315UL);free(y[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 2  ({ free(y); free_helper(y, 9015230786879047319UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 2  ({ free_helper(y, 9015230786879047319UL);free(y);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 8 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 5  ({ free(x[0]); free_helper(x[0], 9015230786879047557UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 5  ({ free_helper(x[0], 9015230786879047557UL);free(x[0]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 14 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 2  ({ free(x); free_helper(x, 9015230786879047555UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 2  ({ free_helper(x, 9015230786879047555UL);free(x);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 8 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 5  ({ free(params[0]); free_helper(params[0], 9015230786879047557UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 5  ({ free_helper(params[0], 9015230786879047557UL);free(params[0]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 2  ({ free(params); free_helper(params, 9015230786879047471UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 2  ({ free_helper(params, 9015230786879047471UL);free(params);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 13 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 18  ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float **)); malloc_helper(____chimes_tmp_ptr, workload* sizeof(float **), 9015230786879047319UL, 1, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 51 
@@ -41,19 +41,19 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 22  ({ vo
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 55 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 20  ({ void *____chimes_tmp_ptr = malloc(workload * 16 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, workload * 16 * sizeof(float), 9015230786879047557UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 56 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 9  ({ free(y[i][0]); free_helper(y[i][0], 9015230786879047513UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 9  ({ free_helper(y[i][0], 9015230786879047513UL);free(y[i][0]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 3  ({ free(y[i]); free_helper(y[i], 9015230786879047315UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 3  ({ free_helper(y[i], 9015230786879047315UL);free(y[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 2  ({ free(y); free_helper(y, 9015230786879047319UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 2  ({ free_helper(y, 9015230786879047319UL);free(y);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 8 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 5  ({ free(x[0]); free_helper(x[0], 9015230786879047557UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 5  ({ free_helper(x[0], 9015230786879047557UL);free(x[0]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 14 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 2  ({ free(x); free_helper(x, 9015230786879047555UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 2  ({ free_helper(x, 9015230786879047555UL);free(x);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 8 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 5  ({ free(params[0]); free_helper(params[0], 9015230786879047557UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 5  ({ free_helper(params[0], 9015230786879047557UL);free(params[0]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 2  ({ free(params); free_helper(params, 9015230786879047471UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 2  ({ free_helper(params, 9015230786879047471UL);free(params);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 13 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 109 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_10, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c 105 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 

@@ -9,11 +9,11 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 44 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039622UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 2  ({ free(referrence); free_helper(referrence, 268606578347039614UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 2  ({ free_helper(referrence, 268606578347039614UL);free(referrence);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 17 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 2  ({ free(input_itemsets); free_helper(input_itemsets, 268606578347039618UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 2  ({ free_helper(input_itemsets, 268606578347039618UL);free(input_itemsets);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 2  ({ free(output_itemsets); free_helper(output_itemsets, 268606578347039622UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 2  ({ free_helper(output_itemsets, 268606578347039622UL);free(output_itemsets);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 22 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 22  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039614UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 37 
@@ -21,11 +21,11 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 44 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039622UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 2  ({ free(referrence); free_helper(referrence, 268606578347039614UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 2  ({ free_helper(referrence, 268606578347039614UL);free(referrence);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 17 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 2  ({ free(input_itemsets); free_helper(input_itemsets, 268606578347039618UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 2  ({ free_helper(input_itemsets, 268606578347039618UL);free(input_itemsets);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 2  ({ free(output_itemsets); free_helper(output_itemsets, 268606578347039622UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 2  ({ free_helper(output_itemsets, 268606578347039622UL);free(output_itemsets);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 22 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 20 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 16 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 

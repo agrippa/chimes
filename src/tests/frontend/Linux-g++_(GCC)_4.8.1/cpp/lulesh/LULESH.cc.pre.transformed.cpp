@@ -5636,17 +5636,17 @@ Real_t x1[8];
    }
 # 1367 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1368 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(z8n); free_helper(z8n, 6311287552475753545UL); }) ;
+    ({ free_helper(z8n, 6311287552475753545UL);free(z8n); }) ;
 # 1369 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(y8n); free_helper(y8n, 6311287552475753538UL); }) ;
+    ({ free_helper(y8n, 6311287552475753538UL);free(y8n); }) ;
 # 1370 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(x8n); free_helper(x8n, 6311287552475753531UL); }) ;
+    ({ free_helper(x8n, 6311287552475753531UL);free(x8n); }) ;
 # 1371 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(dvdz); free_helper(dvdz, 6311287552475753524UL); }) ;
+    ({ free_helper(dvdz, 6311287552475753524UL);free(dvdz); }) ;
 # 1372 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(dvdy); free_helper(dvdy, 6311287552475753517UL); }) ;
+    ({ free_helper(dvdy, 6311287552475753517UL);free(dvdy); }) ;
 # 1373 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(dvdx); free_helper(dvdx, 6311287552475753510UL); }) ;
+    ({ free_helper(dvdx, 6311287552475753510UL);free(dvdx); }) ;
 # 1374 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1375 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    rm_stack(false, 0UL, "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, ____alias_loc_id_38, ____chimes_did_disable19, false); return ;
@@ -5701,13 +5701,13 @@ void CalcVolumeForceForElems_resumable()
        call_lbl_2: ({ calling_npm("CalcHourglassControlForElems", 0); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
 # 1404 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1405 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(determ); free_helper(determ, 6311287552475753185UL); }) ;
+       ({ free_helper(determ, 6311287552475753185UL);free(determ); }) ;
 # 1406 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(sigzz); free_helper(sigzz, 6311287552475753203UL); }) ;
+       ({ free_helper(sigzz, 6311287552475753203UL);free(sigzz); }) ;
 # 1407 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(sigyy); free_helper(sigyy, 6311287552475753206UL); }) ;
+       ({ free_helper(sigyy, 6311287552475753206UL);free(sigyy); }) ;
 # 1408 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(sigxx); free_helper(sigxx, 6311287552475753209UL); }) ;
+       ({ free_helper(sigxx, 6311287552475753209UL);free(sigxx); }) ;
 # 1409 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    }
 # 1410 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -7303,7 +7303,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    } }
 # 2331 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2332 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(pHalfStep); free_helper(pHalfStep, 6311287552475748362UL); }) ;
+    ({ free_helper(pHalfStep, 6311287552475748362UL);free(pHalfStep); }) ;
 # 2333 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2334 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    rm_stack(false, 0UL, "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, ____alias_loc_id_19, ____chimes_did_disable39, false); return ;
@@ -7532,33 +7532,33 @@ void EvalEOSForElems_resumable(Real_t *vnewc, Index_t length)
     call_lbl_1: ({ calling_npm("CalcSoundSpeedForElems", 0); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
 # 2459 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2460 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(pbvc); free_helper(pbvc, 6311287552475747825UL); }) ;
+    ({ free_helper(pbvc, 6311287552475747825UL);free(pbvc); }) ;
 # 2461 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(bvc); free_helper(bvc, 6311287552475747818UL); }) ;
+    ({ free_helper(bvc, 6311287552475747818UL);free(bvc); }) ;
 # 2462 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(q_new); free_helper(q_new, 6311287552475747811UL); }) ;
+    ({ free_helper(q_new, 6311287552475747811UL);free(q_new); }) ;
 # 2463 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(e_new); free_helper(e_new, 6311287552475747804UL); }) ;
+    ({ free_helper(e_new, 6311287552475747804UL);free(e_new); }) ;
 # 2464 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(p_new); free_helper(p_new, 6311287552475747797UL); }) ;
+    ({ free_helper(p_new, 6311287552475747797UL);free(p_new); }) ;
 # 2465 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(work); free_helper(work, 6311287552475747790UL); }) ;
+    ({ free_helper(work, 6311287552475747790UL);free(work); }) ;
 # 2466 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(ql); free_helper(ql, 6311287552475747783UL); }) ;
+    ({ free_helper(ql, 6311287552475747783UL);free(ql); }) ;
 # 2467 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(qq); free_helper(qq, 6311287552475747776UL); }) ;
+    ({ free_helper(qq, 6311287552475747776UL);free(qq); }) ;
 # 2468 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(compHalfStep); free_helper(compHalfStep, 6311287552475747769UL); }) ;
+    ({ free_helper(compHalfStep, 6311287552475747769UL);free(compHalfStep); }) ;
 # 2469 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(compression); free_helper(compression, 6311287552475747762UL); }) ;
+    ({ free_helper(compression, 6311287552475747762UL);free(compression); }) ;
 # 2470 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(q_old); free_helper(q_old, 6311287552475747755UL); }) ;
+    ({ free_helper(q_old, 6311287552475747755UL);free(q_old); }) ;
 # 2471 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(p_old); free_helper(p_old, 6311287552475747748UL); }) ;
+    ({ free_helper(p_old, 6311287552475747748UL);free(p_old); }) ;
 # 2472 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(delvc); free_helper(delvc, 6311287552475747741UL); }) ;
+    ({ free_helper(delvc, 6311287552475747741UL);free(delvc); }) ;
 # 2473 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(e_old); free_helper(e_old, 6311287552475747734UL); }) ;
+    ({ free_helper(e_old, 6311287552475747734UL);free(e_old); }) ;
 # 2474 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 rm_stack(false, 0UL, "EvalEOSForElems", &____must_manage_EvalEOSForElems, ____alias_loc_id_18, ____chimes_did_disable41, false); }
 # 2475 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -7645,7 +7645,7 @@ void ApplyMaterialPropertiesForElems_resumable()
      call_lbl_0: ({ calling_npm("EvalEOSForElems", 0); EvalEOSForElems_npm(vnewc, length); });
 # 2523 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2524 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-     ({ free(vnewc); free_helper(vnewc, 6311287552475747474UL); }) ;
+     ({ free_helper(vnewc, 6311287552475747474UL);free(vnewc); }) ;
 # 2525 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2526 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
   }
@@ -10183,17 +10183,17 @@ Real_t x1[8];
    }
 # 1367 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1368 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(z8n); free_helper(z8n, 6311287552475753545UL); }) ;
+    ({ free_helper(z8n, 6311287552475753545UL);free(z8n); }) ;
 # 1369 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(y8n); free_helper(y8n, 6311287552475753538UL); }) ;
+    ({ free_helper(y8n, 6311287552475753538UL);free(y8n); }) ;
 # 1370 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(x8n); free_helper(x8n, 6311287552475753531UL); }) ;
+    ({ free_helper(x8n, 6311287552475753531UL);free(x8n); }) ;
 # 1371 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(dvdz); free_helper(dvdz, 6311287552475753524UL); }) ;
+    ({ free_helper(dvdz, 6311287552475753524UL);free(dvdz); }) ;
 # 1372 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(dvdy); free_helper(dvdy, 6311287552475753517UL); }) ;
+    ({ free_helper(dvdy, 6311287552475753517UL);free(dvdy); }) ;
 # 1373 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(dvdx); free_helper(dvdx, 6311287552475753510UL); }) ;
+    ({ free_helper(dvdx, 6311287552475753510UL);free(dvdx); }) ;
 # 1374 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1375 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    rm_stack(false, 0UL, "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, ____alias_loc_id_38, ____chimes_did_disable19, false); return ;
@@ -10249,13 +10249,13 @@ void CalcVolumeForceForElems_quick()
        call_lbl_2: ({ calling_npm("CalcHourglassControlForElems", 0); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
 # 1404 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1405 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(determ); free_helper(determ, 6311287552475753185UL); }) ;
+       ({ free_helper(determ, 6311287552475753185UL);free(determ); }) ;
 # 1406 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(sigzz); free_helper(sigzz, 6311287552475753203UL); }) ;
+       ({ free_helper(sigzz, 6311287552475753203UL);free(sigzz); }) ;
 # 1407 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(sigyy); free_helper(sigyy, 6311287552475753206UL); }) ;
+       ({ free_helper(sigyy, 6311287552475753206UL);free(sigyy); }) ;
 # 1408 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(sigxx); free_helper(sigxx, 6311287552475753209UL); }) ;
+       ({ free_helper(sigxx, 6311287552475753209UL);free(sigxx); }) ;
 # 1409 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    }
 # 1410 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -11940,7 +11940,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    } }
 # 2331 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2332 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(pHalfStep); free_helper(pHalfStep, 6311287552475748362UL); }) ;
+    ({ free_helper(pHalfStep, 6311287552475748362UL);free(pHalfStep); }) ;
 # 2333 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2334 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    rm_stack(false, 0UL, "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, ____alias_loc_id_19, ____chimes_did_disable39, false); return ;
@@ -12193,33 +12193,33 @@ void EvalEOSForElems_quick(Real_t *vnewc, Index_t length)
     call_lbl_1: ({ calling_npm("CalcSoundSpeedForElems", 0); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
 # 2459 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2460 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(pbvc); free_helper(pbvc, 6311287552475747825UL); }) ;
+    ({ free_helper(pbvc, 6311287552475747825UL);free(pbvc); }) ;
 # 2461 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(bvc); free_helper(bvc, 6311287552475747818UL); }) ;
+    ({ free_helper(bvc, 6311287552475747818UL);free(bvc); }) ;
 # 2462 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(q_new); free_helper(q_new, 6311287552475747811UL); }) ;
+    ({ free_helper(q_new, 6311287552475747811UL);free(q_new); }) ;
 # 2463 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(e_new); free_helper(e_new, 6311287552475747804UL); }) ;
+    ({ free_helper(e_new, 6311287552475747804UL);free(e_new); }) ;
 # 2464 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(p_new); free_helper(p_new, 6311287552475747797UL); }) ;
+    ({ free_helper(p_new, 6311287552475747797UL);free(p_new); }) ;
 # 2465 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(work); free_helper(work, 6311287552475747790UL); }) ;
+    ({ free_helper(work, 6311287552475747790UL);free(work); }) ;
 # 2466 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(ql); free_helper(ql, 6311287552475747783UL); }) ;
+    ({ free_helper(ql, 6311287552475747783UL);free(ql); }) ;
 # 2467 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(qq); free_helper(qq, 6311287552475747776UL); }) ;
+    ({ free_helper(qq, 6311287552475747776UL);free(qq); }) ;
 # 2468 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(compHalfStep); free_helper(compHalfStep, 6311287552475747769UL); }) ;
+    ({ free_helper(compHalfStep, 6311287552475747769UL);free(compHalfStep); }) ;
 # 2469 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(compression); free_helper(compression, 6311287552475747762UL); }) ;
+    ({ free_helper(compression, 6311287552475747762UL);free(compression); }) ;
 # 2470 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(q_old); free_helper(q_old, 6311287552475747755UL); }) ;
+    ({ free_helper(q_old, 6311287552475747755UL);free(q_old); }) ;
 # 2471 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(p_old); free_helper(p_old, 6311287552475747748UL); }) ;
+    ({ free_helper(p_old, 6311287552475747748UL);free(p_old); }) ;
 # 2472 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(delvc); free_helper(delvc, 6311287552475747741UL); }) ;
+    ({ free_helper(delvc, 6311287552475747741UL);free(delvc); }) ;
 # 2473 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(e_old); free_helper(e_old, 6311287552475747734UL); }) ;
+    ({ free_helper(e_old, 6311287552475747734UL);free(e_old); }) ;
 # 2474 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 rm_stack(false, 0UL, "EvalEOSForElems", &____must_manage_EvalEOSForElems, ____alias_loc_id_18, ____chimes_did_disable41, false); }
 
@@ -12307,7 +12307,7 @@ void ApplyMaterialPropertiesForElems_quick()
      call_lbl_0: ({ calling_npm("EvalEOSForElems", 0); EvalEOSForElems_npm(vnewc, length); });
 # 2523 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2524 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-     ({ free(vnewc); free_helper(vnewc, 6311287552475747474UL); }) ;
+     ({ free_helper(vnewc, 6311287552475747474UL);free(vnewc); }) ;
 # 2525 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2526 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
   }
@@ -14659,17 +14659,17 @@ void CalcHourglassControlForElems_npm(Real_t determ[], Real_t hgcoef)
    }
 # 1367 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1368 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(z8n); free_helper(z8n, 6311287552475753545UL); }) ;
+    ({ free_helper(z8n, 6311287552475753545UL);free(z8n); }) ;
 # 1369 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(y8n); free_helper(y8n, 6311287552475753538UL); }) ;
+    ({ free_helper(y8n, 6311287552475753538UL);free(y8n); }) ;
 # 1370 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(x8n); free_helper(x8n, 6311287552475753531UL); }) ;
+    ({ free_helper(x8n, 6311287552475753531UL);free(x8n); }) ;
 # 1371 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(dvdz); free_helper(dvdz, 6311287552475753524UL); }) ;
+    ({ free_helper(dvdz, 6311287552475753524UL);free(dvdz); }) ;
 # 1372 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(dvdy); free_helper(dvdy, 6311287552475753517UL); }) ;
+    ({ free_helper(dvdy, 6311287552475753517UL);free(dvdy); }) ;
 # 1373 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(dvdx); free_helper(dvdx, 6311287552475753510UL); }) ;
+    ({ free_helper(dvdx, 6311287552475753510UL);free(dvdx); }) ;
 # 1374 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1375 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    return ;
@@ -14721,13 +14721,13 @@ void CalcVolumeForceForElems_npm()
       CalcHourglassControlForElems_npm(determ, hgcoef) ;
 # 1404 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1405 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(determ); free_helper(determ, 6311287552475753185UL); }) ;
+       ({ free_helper(determ, 6311287552475753185UL);free(determ); }) ;
 # 1406 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(sigzz); free_helper(sigzz, 6311287552475753203UL); }) ;
+       ({ free_helper(sigzz, 6311287552475753203UL);free(sigzz); }) ;
 # 1407 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(sigyy); free_helper(sigyy, 6311287552475753206UL); }) ;
+       ({ free_helper(sigyy, 6311287552475753206UL);free(sigyy); }) ;
 # 1408 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       ({ free(sigxx); free_helper(sigxx, 6311287552475753209UL); }) ;
+       ({ free_helper(sigxx, 6311287552475753209UL);free(sigxx); }) ;
 # 1409 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    }
 # 1410 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -16257,7 +16257,7 @@ void CalcEnergyForElems_npm(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    }
 # 2331 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2332 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(pHalfStep); free_helper(pHalfStep, 6311287552475748362UL); }) ;
+    ({ free_helper(pHalfStep, 6311287552475748362UL);free(pHalfStep); }) ;
 # 2333 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2334 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    return ;
@@ -16480,33 +16480,33 @@ void EvalEOSForElems_npm(Real_t *vnewc, Index_t length)
    CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length) ;
 # 2459 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2460 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(pbvc); free_helper(pbvc, 6311287552475747825UL); }) ;
+    ({ free_helper(pbvc, 6311287552475747825UL);free(pbvc); }) ;
 # 2461 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(bvc); free_helper(bvc, 6311287552475747818UL); }) ;
+    ({ free_helper(bvc, 6311287552475747818UL);free(bvc); }) ;
 # 2462 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(q_new); free_helper(q_new, 6311287552475747811UL); }) ;
+    ({ free_helper(q_new, 6311287552475747811UL);free(q_new); }) ;
 # 2463 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(e_new); free_helper(e_new, 6311287552475747804UL); }) ;
+    ({ free_helper(e_new, 6311287552475747804UL);free(e_new); }) ;
 # 2464 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(p_new); free_helper(p_new, 6311287552475747797UL); }) ;
+    ({ free_helper(p_new, 6311287552475747797UL);free(p_new); }) ;
 # 2465 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(work); free_helper(work, 6311287552475747790UL); }) ;
+    ({ free_helper(work, 6311287552475747790UL);free(work); }) ;
 # 2466 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(ql); free_helper(ql, 6311287552475747783UL); }) ;
+    ({ free_helper(ql, 6311287552475747783UL);free(ql); }) ;
 # 2467 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(qq); free_helper(qq, 6311287552475747776UL); }) ;
+    ({ free_helper(qq, 6311287552475747776UL);free(qq); }) ;
 # 2468 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(compHalfStep); free_helper(compHalfStep, 6311287552475747769UL); }) ;
+    ({ free_helper(compHalfStep, 6311287552475747769UL);free(compHalfStep); }) ;
 # 2469 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(compression); free_helper(compression, 6311287552475747762UL); }) ;
+    ({ free_helper(compression, 6311287552475747762UL);free(compression); }) ;
 # 2470 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(q_old); free_helper(q_old, 6311287552475747755UL); }) ;
+    ({ free_helper(q_old, 6311287552475747755UL);free(q_old); }) ;
 # 2471 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(p_old); free_helper(p_old, 6311287552475747748UL); }) ;
+    ({ free_helper(p_old, 6311287552475747748UL);free(p_old); }) ;
 # 2472 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(delvc); free_helper(delvc, 6311287552475747741UL); }) ;
+    ({ free_helper(delvc, 6311287552475747741UL);free(delvc); }) ;
 # 2473 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    ({ free(e_old); free_helper(e_old, 6311287552475747734UL); }) ;
+    ({ free_helper(e_old, 6311287552475747734UL);free(e_old); }) ;
 # 2474 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 }
 # 2476 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -16590,7 +16590,7 @@ void ApplyMaterialPropertiesForElems_npm()
     EvalEOSForElems_npm(vnewc, length);
 # 2523 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2524 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-     ({ free(vnewc); free_helper(vnewc, 6311287552475747474UL); }) ;
+     ({ free_helper(vnewc, 6311287552475747474UL);free(vnewc); }) ;
 # 2525 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2526 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
   }

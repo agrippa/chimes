@@ -14,13 +14,13 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 190 43 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 191 58 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 212 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(rgb) * conf.nx * conf.ny); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 10958632321634172044UL, 0, 1, (int)sizeof(struct _rgb), 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 212 64 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 295 5  ({ free(screen); free_helper(screen, 10958632321634172044UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 295 5  ({ free_helper(screen, 10958632321634172044UL);free(screen);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 295 16 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 190 43  ({ void *____chimes_tmp_ptr = realloc(conf->spheres, (conf->nspheres + 1) * sizeof(sphere)); realloc_helper(____chimes_tmp_ptr, conf->spheres, (conf->nspheres + 1) * sizeof(sphere), 10958632321634172280UL, 0, 1, (int)sizeof(struct _sphere), 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 191 58 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 212 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(rgb) * conf.nx * conf.ny); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 10958632321634172044UL, 0, 1, (int)sizeof(struct _rgb), 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 212 64 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 295 5  ({ free(screen); free_helper(screen, 10958632321634172044UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 295 5  ({ free_helper(screen, 10958632321634172044UL);free(screen);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 295 16 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 34 33 const int ____chimes_did_disable0 = new_stack((void *)(&init), "init", &____must_manage_init, 8, 0, (size_t)(10958632321634171132UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c 46 1 rm_stack(false, 0UL, "init", &____must_manage_init, ____alias_loc_id_1, ____chimes_did_disable0, false); 

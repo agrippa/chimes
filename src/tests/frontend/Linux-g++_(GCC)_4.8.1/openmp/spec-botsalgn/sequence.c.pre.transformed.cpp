@@ -3155,7 +3155,7 @@ int l1;
        call_lbl_3: ({ calling_npm("encode", 0); encode_npm(seq1, seq_array[i], l1); });
 # 182 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 183 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-       ({ free(seq1); free_helper(seq1, 17796869374098773734UL); }) ;
+       ({ free_helper(seq1, 17796869374098773734UL);free(seq1); }) ;
 # 184 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 185 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3404,7 +3404,7 @@ int l1;
        call_lbl_3: ({ calling_npm("encode", 0); encode_npm(seq1, seq_array[i], l1); });
 # 182 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 183 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-       ({ free(seq1); free_helper(seq1, 17796869374098773734UL); }) ;
+       ({ free_helper(seq1, 17796869374098773734UL);free(seq1); }) ;
 # 184 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 185 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3633,7 +3633,7 @@ int readseqs_npm(int first_seq, char *filename)
       encode_npm(seq1, seq_array[i], l1);
 # 182 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 183 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-       ({ free(seq1); free_helper(seq1, 17796869374098773734UL); }) ;
+       ({ free_helper(seq1, 17796869374098773734UL);free(seq1); }) ;
 # 184 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 185 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"

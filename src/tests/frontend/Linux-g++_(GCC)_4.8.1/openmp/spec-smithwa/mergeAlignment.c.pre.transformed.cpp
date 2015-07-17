@@ -3541,7 +3541,7 @@ long long *tempScores;
 # 589 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsI[producer][i]) {
 # 590 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free(P->bestSeqsI[producer][i]); free_helper(P->bestSeqsI[producer][i], 6290273773536189427UL); }) ;
+        ({ free_helper(P->bestSeqsI[producer][i], 6290273773536189427UL);free(P->bestSeqsI[producer][i]); }) ;
 # 591 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsI[producer][i] = __null;
 # 592 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3549,7 +3549,7 @@ long long *tempScores;
 # 593 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsJ[producer][i]) {
 # 594 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free(P->bestSeqsJ[producer][i]); free_helper(P->bestSeqsJ[producer][i], 6290273773536189427UL); }) ;
+        ({ free_helper(P->bestSeqsJ[producer][i], 6290273773536189427UL);free(P->bestSeqsJ[producer][i]); }) ;
 # 595 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsJ[producer][i] = __null;
 # 596 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3645,7 +3645,7 @@ long long *tempScores;
 # 900 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsI[ index[i] ]) {
 # 901 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free(tempSeqsI[index[i]]); free_helper(tempSeqsI[ index[i] ], 6290273773536189427UL); }) ;
+      ({ free_helper(tempSeqsI[ index[i] ], 6290273773536189427UL);free(tempSeqsI[index[i]]); }) ;
 # 902 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[ index[i] ] = __null;
 # 903 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3653,7 +3653,7 @@ long long *tempScores;
 # 904 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsJ[ index[i] ]) {
 # 905 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free(tempSeqsJ[index[i]]); free_helper(tempSeqsJ[ index[i] ], 6290273773536189427UL); }) ;
+      ({ free_helper(tempSeqsJ[ index[i] ], 6290273773536189427UL);free(tempSeqsJ[index[i]]); }) ;
 # 906 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[ index[i] ] = __null;
 # 907 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3963,7 +3963,7 @@ long long *tempScores;
 # 1304 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsI[i], (char*)tempSeqsI[i]);
 # 1305 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free(tempSeqsI[i]); free_helper(tempSeqsI[i], 6290273773536189427UL); }) ;
+  ({ free_helper(tempSeqsI[i], 6290273773536189427UL);free(tempSeqsI[i]); }) ;
 # 1306 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsI[i] = __null;
 # 1307 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4002,7 +4002,7 @@ long long *tempScores;
 # 1327 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsJ[i], (char*)tempSeqsJ[i]);
 # 1328 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free(tempSeqsJ[i]); free_helper(tempSeqsJ[i], 6290273773536189427UL); }) ;
+  ({ free_helper(tempSeqsJ[i], 6290273773536189427UL);free(tempSeqsJ[i]); }) ;
 # 1329 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsJ[i] = __null;
 # 1330 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4015,7 +4015,7 @@ long long *tempScores;
 # 1335 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempScores) {
 # 1336 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempScores); free_helper(tempScores, 6290273773536189425UL); }) ;
+       ({ free_helper(tempScores, 6290273773536189425UL);free(tempScores); }) ;
 # 1337 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = __null;
 # 1338 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4023,7 +4023,7 @@ long long *tempScores;
 # 1339 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsI) {
 # 1340 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempStartsI); free_helper(tempStartsI, 6290273773536189425UL); }) ;
+       ({ free_helper(tempStartsI, 6290273773536189425UL);free(tempStartsI); }) ;
 # 1341 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI = __null;
 # 1342 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4031,7 +4031,7 @@ long long *tempScores;
 # 1343 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsJ) {
 # 1344 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempStartsJ); free_helper(tempStartsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(tempStartsJ, 6290273773536189425UL);free(tempStartsJ); }) ;
 # 1345 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ = __null;
 # 1346 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4039,7 +4039,7 @@ long long *tempScores;
 # 1347 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsI) {
 # 1348 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempEndsI); free_helper(tempEndsI, 6290273773536189425UL); }) ;
+       ({ free_helper(tempEndsI, 6290273773536189425UL);free(tempEndsI); }) ;
 # 1349 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI = __null;
 # 1350 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4047,7 +4047,7 @@ long long *tempScores;
 # 1351 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsJ) {
 # 1352 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempEndsJ); free_helper(tempEndsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(tempEndsJ, 6290273773536189425UL);free(tempEndsJ); }) ;
 # 1353 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ = __null;
 # 1354 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4068,7 +4068,7 @@ long long *tempScores;
 # 1365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsI[i]) {
 # 1366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(tempSeqsI[i]); free_helper(tempSeqsI[i], 6290273773536189427UL); }) ;
+    ({ free_helper(tempSeqsI[i], 6290273773536189427UL);free(tempSeqsI[i]); }) ;
 # 1367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = __null;
 # 1368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4078,7 +4078,7 @@ long long *tempScores;
 # 1370 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1371 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempSeqsI); free_helper(tempSeqsI, 6290273773536189425UL); }) ;
+       ({ free_helper(tempSeqsI, 6290273773536189425UL);free(tempSeqsI); }) ;
 # 1372 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI = __null;
 # 1373 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4101,7 +4101,7 @@ long long *tempScores;
 # 1382 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsJ[i]) {
 # 1383 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(tempSeqsJ[i]); free_helper(tempSeqsJ[i], 6290273773536189427UL); }) ;
+    ({ free_helper(tempSeqsJ[i], 6290273773536189427UL);free(tempSeqsJ[i]); }) ;
 # 1384 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = __null;
 # 1385 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4111,7 +4111,7 @@ long long *tempScores;
 # 1387 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1388 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempSeqsJ); free_helper(tempSeqsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(tempSeqsJ, 6290273773536189425UL);free(tempSeqsJ); }) ;
 # 1389 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ = __null;
 # 1390 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4133,11 +4133,11 @@ long long *tempScores;
 # 1401 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
 # 1402 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(sequences); free_helper(sequences, 6290273773536188582UL); }) ;
+       ({ free_helper(sequences, 6290273773536188582UL);free(sequences); }) ;
 # 1403 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(scores); free_helper(scores, 6290273773536188254UL); }) ;
+       ({ free_helper(scores, 6290273773536188254UL);free(scores); }) ;
 # 1404 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(index); free_helper(index, 6290273773536188245UL); }) ;
+       ({ free_helper(index, 6290273773536188245UL);free(index); }) ;
 # 1405 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
 # 1406 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4152,26 +4152,26 @@ long long *tempScores;
 # 1413 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1414 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1415 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(reqack); free_helper(reqack, 6290273773536187785UL); }) ;
+   ({ free_helper(reqack, 6290273773536187785UL);free(reqack); }) ;
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->numReports); free_helper(P->numReports, 6290273773536188224UL); }) ;
+   ({ free_helper(P->numReports, 6290273773536188224UL);free(P->numReports); }) ;
 # 1426 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestScores); free_helper(P->bestScores, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestScores, 6290273773536188224UL);free(P->bestScores); }) ;
 # 1427 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestStartsI); free_helper(P->bestStartsI, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestStartsI, 6290273773536188224UL);free(P->bestStartsI); }) ;
 # 1428 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestStartsJ); free_helper(P->bestStartsJ, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestStartsJ, 6290273773536188224UL);free(P->bestStartsJ); }) ;
 # 1429 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestEndsI); free_helper(P->bestEndsI, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestEndsI, 6290273773536188224UL);free(P->bestEndsI); }) ;
 # 1430 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestEndsJ); free_helper(P->bestEndsJ, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestEndsJ, 6290273773536188224UL);free(P->bestEndsJ); }) ;
 # 1431 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestSeqsI); free_helper(P->bestSeqsI, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestSeqsI, 6290273773536188224UL);free(P->bestSeqsI); }) ;
 # 1432 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestSeqsJ); free_helper(P->bestSeqsJ, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestSeqsJ, 6290273773536188224UL);free(P->bestSeqsJ); }) ;
 # 1433 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P); free_helper(P, 6290273773536188222UL); }) ;
+   ({ free_helper(P, 6290273773536188222UL);free(P); }) ;
 # 1434 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1435 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1436 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4194,7 +4194,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1446 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalScores) {
 # 1447 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalScores); free_helper(C->finalScores, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalScores, 6290273773536189425UL);free(C->finalScores); }) ;
 # 1448 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
 # 1449 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4202,7 +4202,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1450 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsI) {
 # 1451 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalStartsI); free_helper(C->finalStartsI, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalStartsI, 6290273773536189425UL);free(C->finalStartsI); }) ;
 # 1452 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = __null;
 # 1453 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4210,7 +4210,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsJ) {
 # 1455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalStartsJ); free_helper(C->finalStartsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalStartsJ, 6290273773536189425UL);free(C->finalStartsJ); }) ;
 # 1456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsJ = __null;
 # 1457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4218,7 +4218,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1458 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsI) {
 # 1459 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalEndsI); free_helper(C->finalEndsI, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalEndsI, 6290273773536189425UL);free(C->finalEndsI); }) ;
 # 1460 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = __null;
 # 1461 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4226,7 +4226,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1462 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsJ) {
 # 1463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalEndsJ); free_helper(C->finalEndsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalEndsJ, 6290273773536189425UL);free(C->finalEndsJ); }) ;
 # 1464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsJ = __null;
 # 1465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4238,7 +4238,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1468 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsI[i]) {
 # 1469 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(C->finalSeqsI[i]); free_helper(C->finalSeqsI[i], 6290273773536189427UL); }) ;
+    ({ free_helper(C->finalSeqsI[i], 6290273773536189427UL);free(C->finalSeqsI[i]); }) ;
 # 1470 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsI[i] = __null;
 # 1471 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4246,7 +4246,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1472 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1473 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalSeqsI); free_helper(C->finalSeqsI, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalSeqsI, 6290273773536189425UL);free(C->finalSeqsI); }) ;
 # 1474 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = __null;
 # 1475 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4258,7 +4258,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsJ[i]) {
 # 1479 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(C->finalSeqsJ[i]); free_helper(C->finalSeqsJ[i], 6290273773536189427UL); }) ;
+    ({ free_helper(C->finalSeqsJ[i], 6290273773536189427UL);free(C->finalSeqsJ[i]); }) ;
 # 1480 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsJ[i] = __null;
 # 1481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4266,13 +4266,13 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalSeqsJ); free_helper(C->finalSeqsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalSeqsJ, 6290273773536189425UL);free(C->finalSeqsJ); }) ;
 # 1484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsJ = __null;
 # 1485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
 # 1486 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     ({ free(C); free_helper(C, 6290273773536189520UL); }) ;
+     ({ free_helper(C, 6290273773536189520UL);free(C); }) ;
 # 1487 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
 # 1488 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4914,7 +4914,7 @@ long long *tempScores;
 # 589 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsI[producer][i]) {
 # 590 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free(P->bestSeqsI[producer][i]); free_helper(P->bestSeqsI[producer][i], 6290273773536189427UL); }) ;
+        ({ free_helper(P->bestSeqsI[producer][i], 6290273773536189427UL);free(P->bestSeqsI[producer][i]); }) ;
 # 591 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsI[producer][i] = __null;
 # 592 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4922,7 +4922,7 @@ long long *tempScores;
 # 593 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsJ[producer][i]) {
 # 594 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free(P->bestSeqsJ[producer][i]); free_helper(P->bestSeqsJ[producer][i], 6290273773536189427UL); }) ;
+        ({ free_helper(P->bestSeqsJ[producer][i], 6290273773536189427UL);free(P->bestSeqsJ[producer][i]); }) ;
 # 595 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsJ[producer][i] = __null;
 # 596 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5018,7 +5018,7 @@ long long *tempScores;
 # 900 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsI[ index[i] ]) {
 # 901 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free(tempSeqsI[index[i]]); free_helper(tempSeqsI[ index[i] ], 6290273773536189427UL); }) ;
+      ({ free_helper(tempSeqsI[ index[i] ], 6290273773536189427UL);free(tempSeqsI[index[i]]); }) ;
 # 902 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[ index[i] ] = __null;
 # 903 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5026,7 +5026,7 @@ long long *tempScores;
 # 904 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsJ[ index[i] ]) {
 # 905 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free(tempSeqsJ[index[i]]); free_helper(tempSeqsJ[ index[i] ], 6290273773536189427UL); }) ;
+      ({ free_helper(tempSeqsJ[ index[i] ], 6290273773536189427UL);free(tempSeqsJ[index[i]]); }) ;
 # 906 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[ index[i] ] = __null;
 # 907 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5336,7 +5336,7 @@ long long *tempScores;
 # 1304 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsI[i], (char*)tempSeqsI[i]);
 # 1305 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free(tempSeqsI[i]); free_helper(tempSeqsI[i], 6290273773536189427UL); }) ;
+  ({ free_helper(tempSeqsI[i], 6290273773536189427UL);free(tempSeqsI[i]); }) ;
 # 1306 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsI[i] = __null;
 # 1307 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5375,7 +5375,7 @@ long long *tempScores;
 # 1327 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsJ[i], (char*)tempSeqsJ[i]);
 # 1328 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free(tempSeqsJ[i]); free_helper(tempSeqsJ[i], 6290273773536189427UL); }) ;
+  ({ free_helper(tempSeqsJ[i], 6290273773536189427UL);free(tempSeqsJ[i]); }) ;
 # 1329 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsJ[i] = __null;
 # 1330 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5388,7 +5388,7 @@ long long *tempScores;
 # 1335 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempScores) {
 # 1336 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempScores); free_helper(tempScores, 6290273773536189425UL); }) ;
+       ({ free_helper(tempScores, 6290273773536189425UL);free(tempScores); }) ;
 # 1337 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = __null;
 # 1338 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5396,7 +5396,7 @@ long long *tempScores;
 # 1339 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsI) {
 # 1340 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempStartsI); free_helper(tempStartsI, 6290273773536189425UL); }) ;
+       ({ free_helper(tempStartsI, 6290273773536189425UL);free(tempStartsI); }) ;
 # 1341 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI = __null;
 # 1342 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5404,7 +5404,7 @@ long long *tempScores;
 # 1343 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsJ) {
 # 1344 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempStartsJ); free_helper(tempStartsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(tempStartsJ, 6290273773536189425UL);free(tempStartsJ); }) ;
 # 1345 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ = __null;
 # 1346 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5412,7 +5412,7 @@ long long *tempScores;
 # 1347 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsI) {
 # 1348 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempEndsI); free_helper(tempEndsI, 6290273773536189425UL); }) ;
+       ({ free_helper(tempEndsI, 6290273773536189425UL);free(tempEndsI); }) ;
 # 1349 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI = __null;
 # 1350 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5420,7 +5420,7 @@ long long *tempScores;
 # 1351 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsJ) {
 # 1352 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempEndsJ); free_helper(tempEndsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(tempEndsJ, 6290273773536189425UL);free(tempEndsJ); }) ;
 # 1353 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ = __null;
 # 1354 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5441,7 +5441,7 @@ long long *tempScores;
 # 1365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsI[i]) {
 # 1366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(tempSeqsI[i]); free_helper(tempSeqsI[i], 6290273773536189427UL); }) ;
+    ({ free_helper(tempSeqsI[i], 6290273773536189427UL);free(tempSeqsI[i]); }) ;
 # 1367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = __null;
 # 1368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5451,7 +5451,7 @@ long long *tempScores;
 # 1370 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1371 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempSeqsI); free_helper(tempSeqsI, 6290273773536189425UL); }) ;
+       ({ free_helper(tempSeqsI, 6290273773536189425UL);free(tempSeqsI); }) ;
 # 1372 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI = __null;
 # 1373 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5474,7 +5474,7 @@ long long *tempScores;
 # 1382 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsJ[i]) {
 # 1383 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(tempSeqsJ[i]); free_helper(tempSeqsJ[i], 6290273773536189427UL); }) ;
+    ({ free_helper(tempSeqsJ[i], 6290273773536189427UL);free(tempSeqsJ[i]); }) ;
 # 1384 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = __null;
 # 1385 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5484,7 +5484,7 @@ long long *tempScores;
 # 1387 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1388 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempSeqsJ); free_helper(tempSeqsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(tempSeqsJ, 6290273773536189425UL);free(tempSeqsJ); }) ;
 # 1389 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ = __null;
 # 1390 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5506,11 +5506,11 @@ long long *tempScores;
 # 1401 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
 # 1402 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(sequences); free_helper(sequences, 6290273773536188582UL); }) ;
+       ({ free_helper(sequences, 6290273773536188582UL);free(sequences); }) ;
 # 1403 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(scores); free_helper(scores, 6290273773536188254UL); }) ;
+       ({ free_helper(scores, 6290273773536188254UL);free(scores); }) ;
 # 1404 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(index); free_helper(index, 6290273773536188245UL); }) ;
+       ({ free_helper(index, 6290273773536188245UL);free(index); }) ;
 # 1405 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
 # 1406 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5525,26 +5525,26 @@ long long *tempScores;
 # 1413 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1414 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1415 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(reqack); free_helper(reqack, 6290273773536187785UL); }) ;
+   ({ free_helper(reqack, 6290273773536187785UL);free(reqack); }) ;
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->numReports); free_helper(P->numReports, 6290273773536188224UL); }) ;
+   ({ free_helper(P->numReports, 6290273773536188224UL);free(P->numReports); }) ;
 # 1426 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestScores); free_helper(P->bestScores, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestScores, 6290273773536188224UL);free(P->bestScores); }) ;
 # 1427 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestStartsI); free_helper(P->bestStartsI, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestStartsI, 6290273773536188224UL);free(P->bestStartsI); }) ;
 # 1428 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestStartsJ); free_helper(P->bestStartsJ, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestStartsJ, 6290273773536188224UL);free(P->bestStartsJ); }) ;
 # 1429 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestEndsI); free_helper(P->bestEndsI, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestEndsI, 6290273773536188224UL);free(P->bestEndsI); }) ;
 # 1430 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestEndsJ); free_helper(P->bestEndsJ, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestEndsJ, 6290273773536188224UL);free(P->bestEndsJ); }) ;
 # 1431 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestSeqsI); free_helper(P->bestSeqsI, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestSeqsI, 6290273773536188224UL);free(P->bestSeqsI); }) ;
 # 1432 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestSeqsJ); free_helper(P->bestSeqsJ, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestSeqsJ, 6290273773536188224UL);free(P->bestSeqsJ); }) ;
 # 1433 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P); free_helper(P, 6290273773536188222UL); }) ;
+   ({ free_helper(P, 6290273773536188222UL);free(P); }) ;
 # 1434 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1435 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1436 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5564,7 +5564,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1446 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalScores) {
 # 1447 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalScores); free_helper(C->finalScores, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalScores, 6290273773536189425UL);free(C->finalScores); }) ;
 # 1448 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
 # 1449 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5572,7 +5572,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1450 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsI) {
 # 1451 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalStartsI); free_helper(C->finalStartsI, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalStartsI, 6290273773536189425UL);free(C->finalStartsI); }) ;
 # 1452 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = __null;
 # 1453 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5580,7 +5580,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsJ) {
 # 1455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalStartsJ); free_helper(C->finalStartsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalStartsJ, 6290273773536189425UL);free(C->finalStartsJ); }) ;
 # 1456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsJ = __null;
 # 1457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5588,7 +5588,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1458 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsI) {
 # 1459 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalEndsI); free_helper(C->finalEndsI, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalEndsI, 6290273773536189425UL);free(C->finalEndsI); }) ;
 # 1460 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = __null;
 # 1461 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5596,7 +5596,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1462 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsJ) {
 # 1463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalEndsJ); free_helper(C->finalEndsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalEndsJ, 6290273773536189425UL);free(C->finalEndsJ); }) ;
 # 1464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsJ = __null;
 # 1465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5608,7 +5608,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1468 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsI[i]) {
 # 1469 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(C->finalSeqsI[i]); free_helper(C->finalSeqsI[i], 6290273773536189427UL); }) ;
+    ({ free_helper(C->finalSeqsI[i], 6290273773536189427UL);free(C->finalSeqsI[i]); }) ;
 # 1470 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsI[i] = __null;
 # 1471 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5616,7 +5616,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1472 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1473 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalSeqsI); free_helper(C->finalSeqsI, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalSeqsI, 6290273773536189425UL);free(C->finalSeqsI); }) ;
 # 1474 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = __null;
 # 1475 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5628,7 +5628,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsJ[i]) {
 # 1479 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(C->finalSeqsJ[i]); free_helper(C->finalSeqsJ[i], 6290273773536189427UL); }) ;
+    ({ free_helper(C->finalSeqsJ[i], 6290273773536189427UL);free(C->finalSeqsJ[i]); }) ;
 # 1480 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsJ[i] = __null;
 # 1481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5636,13 +5636,13 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalSeqsJ); free_helper(C->finalSeqsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalSeqsJ, 6290273773536189425UL);free(C->finalSeqsJ); }) ;
 # 1484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsJ = __null;
 # 1485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
 # 1486 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     ({ free(C); free_helper(C, 6290273773536189520UL); }) ;
+     ({ free_helper(C, 6290273773536189520UL);free(C); }) ;
 # 1487 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
 # 1488 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6234,7 +6234,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 589 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsI[producer][i]) {
 # 590 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free(P->bestSeqsI[producer][i]); free_helper(P->bestSeqsI[producer][i], 6290273773536189427UL); }) ;
+        ({ free_helper(P->bestSeqsI[producer][i], 6290273773536189427UL);free(P->bestSeqsI[producer][i]); }) ;
 # 591 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsI[producer][i] = __null;
 # 592 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6242,7 +6242,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 593 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsJ[producer][i]) {
 # 594 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free(P->bestSeqsJ[producer][i]); free_helper(P->bestSeqsJ[producer][i], 6290273773536189427UL); }) ;
+        ({ free_helper(P->bestSeqsJ[producer][i], 6290273773536189427UL);free(P->bestSeqsJ[producer][i]); }) ;
 # 595 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsJ[producer][i] = __null;
 # 596 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6338,7 +6338,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 900 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsI[ index[i] ]) {
 # 901 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free(tempSeqsI[index[i]]); free_helper(tempSeqsI[ index[i] ], 6290273773536189427UL); }) ;
+      ({ free_helper(tempSeqsI[ index[i] ], 6290273773536189427UL);free(tempSeqsI[index[i]]); }) ;
 # 902 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[ index[i] ] = __null;
 # 903 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6346,7 +6346,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 904 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsJ[ index[i] ]) {
 # 905 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free(tempSeqsJ[index[i]]); free_helper(tempSeqsJ[ index[i] ], 6290273773536189427UL); }) ;
+      ({ free_helper(tempSeqsJ[ index[i] ], 6290273773536189427UL);free(tempSeqsJ[index[i]]); }) ;
 # 906 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[ index[i] ] = __null;
 # 907 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6656,7 +6656,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1304 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsI[i], (char*)tempSeqsI[i]);
 # 1305 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free(tempSeqsI[i]); free_helper(tempSeqsI[i], 6290273773536189427UL); }) ;
+  ({ free_helper(tempSeqsI[i], 6290273773536189427UL);free(tempSeqsI[i]); }) ;
 # 1306 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsI[i] = __null;
 # 1307 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6695,7 +6695,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1327 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsJ[i], (char*)tempSeqsJ[i]);
 # 1328 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free(tempSeqsJ[i]); free_helper(tempSeqsJ[i], 6290273773536189427UL); }) ;
+  ({ free_helper(tempSeqsJ[i], 6290273773536189427UL);free(tempSeqsJ[i]); }) ;
 # 1329 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsJ[i] = __null;
 # 1330 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6708,7 +6708,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1335 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempScores) {
 # 1336 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempScores); free_helper(tempScores, 6290273773536189425UL); }) ;
+       ({ free_helper(tempScores, 6290273773536189425UL);free(tempScores); }) ;
 # 1337 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = __null;
 # 1338 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6716,7 +6716,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1339 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsI) {
 # 1340 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempStartsI); free_helper(tempStartsI, 6290273773536189425UL); }) ;
+       ({ free_helper(tempStartsI, 6290273773536189425UL);free(tempStartsI); }) ;
 # 1341 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI = __null;
 # 1342 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6724,7 +6724,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1343 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsJ) {
 # 1344 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempStartsJ); free_helper(tempStartsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(tempStartsJ, 6290273773536189425UL);free(tempStartsJ); }) ;
 # 1345 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ = __null;
 # 1346 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6732,7 +6732,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1347 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsI) {
 # 1348 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempEndsI); free_helper(tempEndsI, 6290273773536189425UL); }) ;
+       ({ free_helper(tempEndsI, 6290273773536189425UL);free(tempEndsI); }) ;
 # 1349 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI = __null;
 # 1350 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6740,7 +6740,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1351 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsJ) {
 # 1352 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempEndsJ); free_helper(tempEndsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(tempEndsJ, 6290273773536189425UL);free(tempEndsJ); }) ;
 # 1353 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ = __null;
 # 1354 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6761,7 +6761,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsI[i]) {
 # 1366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(tempSeqsI[i]); free_helper(tempSeqsI[i], 6290273773536189427UL); }) ;
+    ({ free_helper(tempSeqsI[i], 6290273773536189427UL);free(tempSeqsI[i]); }) ;
 # 1367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = __null;
 # 1368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6771,7 +6771,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1370 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1371 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempSeqsI); free_helper(tempSeqsI, 6290273773536189425UL); }) ;
+       ({ free_helper(tempSeqsI, 6290273773536189425UL);free(tempSeqsI); }) ;
 # 1372 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI = __null;
 # 1373 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6794,7 +6794,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1382 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsJ[i]) {
 # 1383 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(tempSeqsJ[i]); free_helper(tempSeqsJ[i], 6290273773536189427UL); }) ;
+    ({ free_helper(tempSeqsJ[i], 6290273773536189427UL);free(tempSeqsJ[i]); }) ;
 # 1384 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = __null;
 # 1385 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6804,7 +6804,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1387 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1388 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(tempSeqsJ); free_helper(tempSeqsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(tempSeqsJ, 6290273773536189425UL);free(tempSeqsJ); }) ;
 # 1389 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ = __null;
 # 1390 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6826,11 +6826,11 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1401 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
 # 1402 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(sequences); free_helper(sequences, 6290273773536188582UL); }) ;
+       ({ free_helper(sequences, 6290273773536188582UL);free(sequences); }) ;
 # 1403 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(scores); free_helper(scores, 6290273773536188254UL); }) ;
+       ({ free_helper(scores, 6290273773536188254UL);free(scores); }) ;
 # 1404 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(index); free_helper(index, 6290273773536188245UL); }) ;
+       ({ free_helper(index, 6290273773536188245UL);free(index); }) ;
 # 1405 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
 # 1406 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6845,26 +6845,26 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1413 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1414 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1415 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(reqack); free_helper(reqack, 6290273773536187785UL); }) ;
+   ({ free_helper(reqack, 6290273773536187785UL);free(reqack); }) ;
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->numReports); free_helper(P->numReports, 6290273773536188224UL); }) ;
+   ({ free_helper(P->numReports, 6290273773536188224UL);free(P->numReports); }) ;
 # 1426 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestScores); free_helper(P->bestScores, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestScores, 6290273773536188224UL);free(P->bestScores); }) ;
 # 1427 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestStartsI); free_helper(P->bestStartsI, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestStartsI, 6290273773536188224UL);free(P->bestStartsI); }) ;
 # 1428 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestStartsJ); free_helper(P->bestStartsJ, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestStartsJ, 6290273773536188224UL);free(P->bestStartsJ); }) ;
 # 1429 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestEndsI); free_helper(P->bestEndsI, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestEndsI, 6290273773536188224UL);free(P->bestEndsI); }) ;
 # 1430 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestEndsJ); free_helper(P->bestEndsJ, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestEndsJ, 6290273773536188224UL);free(P->bestEndsJ); }) ;
 # 1431 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestSeqsI); free_helper(P->bestSeqsI, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestSeqsI, 6290273773536188224UL);free(P->bestSeqsI); }) ;
 # 1432 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P->bestSeqsJ); free_helper(P->bestSeqsJ, 6290273773536188224UL); }) ;
+   ({ free_helper(P->bestSeqsJ, 6290273773536188224UL);free(P->bestSeqsJ); }) ;
 # 1433 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free(P); free_helper(P, 6290273773536188222UL); }) ;
+   ({ free_helper(P, 6290273773536188222UL);free(P); }) ;
 # 1434 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1435 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1436 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6882,7 +6882,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1446 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalScores) {
 # 1447 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalScores); free_helper(C->finalScores, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalScores, 6290273773536189425UL);free(C->finalScores); }) ;
 # 1448 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
 # 1449 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6890,7 +6890,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1450 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsI) {
 # 1451 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalStartsI); free_helper(C->finalStartsI, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalStartsI, 6290273773536189425UL);free(C->finalStartsI); }) ;
 # 1452 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = __null;
 # 1453 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6898,7 +6898,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsJ) {
 # 1455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalStartsJ); free_helper(C->finalStartsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalStartsJ, 6290273773536189425UL);free(C->finalStartsJ); }) ;
 # 1456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsJ = __null;
 # 1457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6906,7 +6906,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1458 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsI) {
 # 1459 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalEndsI); free_helper(C->finalEndsI, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalEndsI, 6290273773536189425UL);free(C->finalEndsI); }) ;
 # 1460 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = __null;
 # 1461 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6914,7 +6914,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1462 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsJ) {
 # 1463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalEndsJ); free_helper(C->finalEndsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalEndsJ, 6290273773536189425UL);free(C->finalEndsJ); }) ;
 # 1464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsJ = __null;
 # 1465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6926,7 +6926,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1468 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsI[i]) {
 # 1469 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(C->finalSeqsI[i]); free_helper(C->finalSeqsI[i], 6290273773536189427UL); }) ;
+    ({ free_helper(C->finalSeqsI[i], 6290273773536189427UL);free(C->finalSeqsI[i]); }) ;
 # 1470 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsI[i] = __null;
 # 1471 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6934,7 +6934,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1472 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1473 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalSeqsI); free_helper(C->finalSeqsI, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalSeqsI, 6290273773536189425UL);free(C->finalSeqsI); }) ;
 # 1474 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = __null;
 # 1475 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6946,7 +6946,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsJ[i]) {
 # 1479 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free(C->finalSeqsJ[i]); free_helper(C->finalSeqsJ[i], 6290273773536189427UL); }) ;
+    ({ free_helper(C->finalSeqsJ[i], 6290273773536189427UL);free(C->finalSeqsJ[i]); }) ;
 # 1480 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsJ[i] = __null;
 # 1481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6954,13 +6954,13 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free(C->finalSeqsJ); free_helper(C->finalSeqsJ, 6290273773536189425UL); }) ;
+       ({ free_helper(C->finalSeqsJ, 6290273773536189425UL);free(C->finalSeqsJ); }) ;
 # 1484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsJ = __null;
 # 1485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
 # 1486 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     ({ free(C); free_helper(C, 6290273773536189520UL); }) ;
+     ({ free_helper(C, 6290273773536189520UL);free(C); }) ;
 # 1487 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
 # 1488 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"

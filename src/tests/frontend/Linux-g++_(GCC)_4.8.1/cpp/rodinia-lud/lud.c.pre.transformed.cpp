@@ -4193,12 +4193,12 @@ int matrix_dim;
 # 110 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
      call_lbl_8: (____chimes_does_checkpoint_lud_verify_npm ? ( ({ calling((void*)lud_verify, 8, ____alias_loc_id_0, 0UL, 3, (size_t)(11237237613718109848UL), (size_t)(11237237613718109830UL), (size_t)(0UL)); (lud_verify)(mm, m, matrix_dim); }) ) : (({ calling_npm("lud_verify", ____alias_loc_id_0); (*____chimes_extern_func_lud_verify)(mm, m, matrix_dim); })));
 # 111 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-     ({ free(mm); free_helper(mm, 11237237613718109848UL); }) ;
+     ({ free_helper(mm, 11237237613718109848UL);free(mm); }) ;
 # 112 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
   }
 # 113 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 114 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-   ({ free(m); free_helper(m, 11237237613718109830UL); }) ;
+   ({ free_helper(m, 11237237613718109830UL);free(m); }) ;
 # 115 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 116 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
@@ -4349,12 +4349,12 @@ int matrix_dim;
 # 110 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
      call_lbl_8: (____chimes_does_checkpoint_lud_verify_npm ? ( ({ calling((void*)lud_verify, 8, ____alias_loc_id_0, 0UL, 3, (size_t)(11237237613718109848UL), (size_t)(11237237613718109830UL), (size_t)(0UL)); (lud_verify)(mm, m, matrix_dim); }) ) : (({ calling_npm("lud_verify", ____alias_loc_id_0); (*____chimes_extern_func_lud_verify)(mm, m, matrix_dim); })));
 # 111 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-     ({ free(mm); free_helper(mm, 11237237613718109848UL); }) ;
+     ({ free_helper(mm, 11237237613718109848UL);free(mm); }) ;
 # 112 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
   }
 # 113 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 114 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-   ({ free(m); free_helper(m, 11237237613718109830UL); }) ;
+   ({ free_helper(m, 11237237613718109830UL);free(m); }) ;
 # 115 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 116 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;

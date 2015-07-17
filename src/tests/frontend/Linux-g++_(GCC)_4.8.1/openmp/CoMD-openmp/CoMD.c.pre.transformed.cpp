@@ -4748,7 +4748,7 @@ Command cmd;
 # 143 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_29: (____chimes_does_checkpoint_destroySimulation_npm ? ( ({ calling((void*)destroySimulation, 29, 0, 0UL, 1, (size_t)(9674039231704591387UL)); (destroySimulation)(&sim); }) ) : (({ calling_npm("destroySimulation", 0); destroySimulation_npm(&sim); })));
 # 144 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ free(validate); free_helper(validate, 9674039231704591424UL); }) ;
+    ({ free_helper(validate, 9674039231704591424UL);free(validate); }) ;
 # 145 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_30: (____chimes_does_checkpoint_finalizeSubsystems_npm ? ( ({ calling((void*)finalizeSubsystems, 30, 0, 0UL, 0); (finalizeSubsystems)(); }) ) : (({ calling_npm("finalizeSubsystems", 0); finalizeSubsystems_npm(); })));
 # 146 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -4879,7 +4879,7 @@ void destroySimulation_resumable(SimFlat** ps)
 # 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     BasePotential *pot; pot = (s->pot) ;
 # 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (pot) { ({ free(pot); free_helper(pot, 9674039231704592296UL); }) ; };
+   if (pot) { ({ free_helper(pot, 9674039231704592296UL);free(pot); }) ; };
 # 229 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_0: (____chimes_does_checkpoint_destroyLinkCells_npm ? ( ({ LinkCell ** ____chimes_arg75; if (!____chimes_replaying) { ____chimes_arg75 = (&(s->boxes)); } calling((void*)destroyLinkCells, 0, ____alias_loc_id_43, 0UL, 1, (size_t)(9674039231704592287UL)); (destroyLinkCells)(____chimes_arg75); }) ) : (({ calling_npm("destroyLinkCells", ____alias_loc_id_43); (*____chimes_extern_func_destroyLinkCells)(&(s->boxes)); })));
 # 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -4887,11 +4887,11 @@ void destroySimulation_resumable(SimFlat** ps)
 # 231 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_2: (____chimes_does_checkpoint_destroyHaloExchange_npm ? ( ({ HaloExchange ** ____chimes_arg77; if (!____chimes_replaying) { ____chimes_arg77 = (&(s->atomExchange)); } calling((void*)destroyHaloExchange, 2, ____alias_loc_id_41, 0UL, 1, (size_t)(9674039231704592287UL)); (destroyHaloExchange)(____chimes_arg77); }) ) : (({ calling_npm("destroyHaloExchange", ____alias_loc_id_41); (*____chimes_extern_func_destroyHaloExchange)(&(s->atomExchange)); })));
 # 232 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ free(s->species); free_helper(s->species, 9674039231704592296UL); }) ;
+    ({ free_helper(s->species, 9674039231704592296UL);free(s->species); }) ;
 # 233 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ free(s->domain); free_helper(s->domain, 9674039231704592296UL); }) ;
+    ({ free_helper(s->domain, 9674039231704592296UL);free(s->domain); }) ;
 # 234 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ free(s); free_helper(s, 9674039231704592287UL); }) ;
+    ({ free_helper(s, 9674039231704592287UL);free(s); }) ;
 # 235 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    *ps = __null;
 # 236 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -5415,7 +5415,7 @@ Command cmd;
 # 143 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_29: (____chimes_does_checkpoint_destroySimulation_npm ? ( ({ calling((void*)destroySimulation, 29, 0, 0UL, 1, (size_t)(9674039231704591387UL)); destroySimulation_quick(&sim); }) ) : (({ calling_npm("destroySimulation", 0); destroySimulation_npm(&sim); })));
 # 144 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ free(validate); free_helper(validate, 9674039231704591424UL); }) ;
+    ({ free_helper(validate, 9674039231704591424UL);free(validate); }) ;
 # 145 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_30: (____chimes_does_checkpoint_finalizeSubsystems_npm ? ( ({ calling((void*)finalizeSubsystems, 30, 0, 0UL, 0); finalizeSubsystems_quick(); }) ) : (({ calling_npm("finalizeSubsystems", 0); finalizeSubsystems_npm(); })));
 # 146 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -5544,7 +5544,7 @@ void destroySimulation_quick(SimFlat** ps)
 # 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     BasePotential *pot; pot = (s->pot) ;
 # 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (pot) { ({ free(pot); free_helper(pot, 9674039231704592296UL); }) ; };
+   if (pot) { ({ free_helper(pot, 9674039231704592296UL);free(pot); }) ; };
 # 229 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_0: (____chimes_does_checkpoint_destroyLinkCells_npm ? ( ({ calling((void*)destroyLinkCells, 0, ____alias_loc_id_43, 0UL, 1, (size_t)(9674039231704592287UL)); (destroyLinkCells)(&(s->boxes)); }) ) : (({ calling_npm("destroyLinkCells", ____alias_loc_id_43); (*____chimes_extern_func_destroyLinkCells)(&(s->boxes)); })));
 # 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -5552,11 +5552,11 @@ void destroySimulation_quick(SimFlat** ps)
 # 231 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_2: (____chimes_does_checkpoint_destroyHaloExchange_npm ? ( ({ calling((void*)destroyHaloExchange, 2, ____alias_loc_id_41, 0UL, 1, (size_t)(9674039231704592287UL)); (destroyHaloExchange)(&(s->atomExchange)); }) ) : (({ calling_npm("destroyHaloExchange", ____alias_loc_id_41); (*____chimes_extern_func_destroyHaloExchange)(&(s->atomExchange)); })));
 # 232 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ free(s->species); free_helper(s->species, 9674039231704592296UL); }) ;
+    ({ free_helper(s->species, 9674039231704592296UL);free(s->species); }) ;
 # 233 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ free(s->domain); free_helper(s->domain, 9674039231704592296UL); }) ;
+    ({ free_helper(s->domain, 9674039231704592296UL);free(s->domain); }) ;
 # 234 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ free(s); free_helper(s, 9674039231704592287UL); }) ;
+    ({ free_helper(s, 9674039231704592287UL);free(s); }) ;
 # 235 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    *ps = __null;
 # 236 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -6076,7 +6076,7 @@ void destroySimulation_npm(SimFlat** ps)
 # 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    BasePotential* pot = s->pot;
 # 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (pot) { ({ free(pot); free_helper(pot, 9674039231704592296UL); }) ; };
+   if (pot) { ({ free_helper(pot, 9674039231704592296UL);free(pot); }) ; };
 # 229 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    (*____chimes_extern_func_destroyLinkCells)(&(s->boxes));
 # 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -6084,11 +6084,11 @@ void destroySimulation_npm(SimFlat** ps)
 # 231 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    (*____chimes_extern_func_destroyHaloExchange)(&(s->atomExchange));
 # 232 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ free(s->species); free_helper(s->species, 9674039231704592296UL); }) ;
+    ({ free_helper(s->species, 9674039231704592296UL);free(s->species); }) ;
 # 233 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ free(s->domain); free_helper(s->domain, 9674039231704592296UL); }) ;
+    ({ free_helper(s->domain, 9674039231704592296UL);free(s->domain); }) ;
 # 234 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ free(s); free_helper(s, 9674039231704592287UL); }) ;
+    ({ free_helper(s, 9674039231704592287UL);free(s); }) ;
 # 235 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    *ps = __null;
 # 236 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"

@@ -2278,9 +2278,9 @@ int iter;
     fclose(fp);
 # 34 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 # 35 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-     ({ free(curr); free_helper(curr, 460194934375909758UL); }) ;
+     ({ free_helper(curr, 460194934375909758UL);free(curr); }) ;
 # 36 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-     ({ free(next); free_helper(next, 460194934375909758UL); }) ;
+     ({ free_helper(next, 460194934375909758UL);free(next); }) ;
 # 37 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 38 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
@@ -2349,9 +2349,9 @@ int iter;
     fclose(fp);
 # 34 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 # 35 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-     ({ free(curr); free_helper(curr, 460194934375909758UL); }) ;
+     ({ free_helper(curr, 460194934375909758UL);free(curr); }) ;
 # 36 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-     ({ free(next); free_helper(next, 460194934375909758UL); }) ;
+     ({ free_helper(next, 460194934375909758UL);free(next); }) ;
 # 37 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 38 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"

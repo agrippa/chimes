@@ -14,19 +14,19 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtom
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 34 24  ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 2774474540883984332UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 34 59 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 52 6 len=12 destroyAtoms_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 54 21  ({ free(atoms->gid); free_helper(atoms->gid, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 54 21  ({ free_helper(atoms->gid, 2774474540883984468UL);free(atoms->gid);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 54 36 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 57 26  ({ free(atoms->iSpecies); free_helper(atoms->iSpecies, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 57 26  ({ free_helper(atoms->iSpecies, 2774474540883984468UL);free(atoms->iSpecies);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 57 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 60 19  ({ free(atoms->r); free_helper(atoms->r, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 60 19  ({ free_helper(atoms->r, 2774474540883984468UL);free(atoms->r);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 60 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 63 19  ({ free(atoms->p); free_helper(atoms->p, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 63 19  ({ free_helper(atoms->p, 2774474540883984468UL);free(atoms->p);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 63 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 66 19  ({ free(atoms->f); free_helper(atoms->f, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 66 19  ({ free_helper(atoms->f, 2774474540883984468UL);free(atoms->f);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 66 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 69 19  ({ free(atoms->U); free_helper(atoms->U, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 69 19  ({ free_helper(atoms->U, 2774474540883984468UL);free(atoms->U);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 69 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 72 4  ({ free(atoms); free_helper(atoms, 2774474540883984554UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 72 4  ({ free_helper(atoms, 2774474540883984554UL);free(atoms);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 72 14 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 78 6 len=16 createFccLattice_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 125 6 len=6 setVcm_npm
@@ -47,19 +47,19 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAt
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 33 58 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 34 24  ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 2774474540883984332UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 34 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 54 21  ({ free(atoms->gid); free_helper(atoms->gid, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 54 21  ({ free_helper(atoms->gid, 2774474540883984468UL);free(atoms->gid);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 54 36 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 57 26  ({ free(atoms->iSpecies); free_helper(atoms->iSpecies, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 57 26  ({ free_helper(atoms->iSpecies, 2774474540883984468UL);free(atoms->iSpecies);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 57 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 60 19  ({ free(atoms->r); free_helper(atoms->r, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 60 19  ({ free_helper(atoms->r, 2774474540883984468UL);free(atoms->r);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 60 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 63 19  ({ free(atoms->p); free_helper(atoms->p, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 63 19  ({ free_helper(atoms->p, 2774474540883984468UL);free(atoms->p);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 63 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 66 19  ({ free(atoms->f); free_helper(atoms->f, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 66 19  ({ free_helper(atoms->f, 2774474540883984468UL);free(atoms->f);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 66 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 69 19  ({ free(atoms->U); free_helper(atoms->U, 2774474540883984468UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 69 19  ({ free_helper(atoms->U, 2774474540883984468UL);free(atoms->U);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 69 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 72 4  ({ free(atoms); free_helper(atoms, 2774474540883984554UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 72 4  ({ free_helper(atoms, 2774474540883984554UL);free(atoms);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 72 14 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 49 67 rm_stack(true, 2774474540883984320UL, "initAtoms", &____must_manage_initAtoms, ____alias_loc_id_17, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 24 1 const int ____chimes_did_disable0 = new_stack((void *)(&initAtoms), "initAtoms", &____must_manage_initAtoms, 1, 0, (size_t)(2774474540883984445UL)); 

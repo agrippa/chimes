@@ -12,17 +12,17 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 113 30  ({ void 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 113 63 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 126 23  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 6277575452893475592UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 126 54 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 193 2  ({ free(h_graph_nodes); free_helper(h_graph_nodes, 6277575452893475580UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 193 2  ({ free_helper(h_graph_nodes, 6277575452893475580UL);free(h_graph_nodes);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 193 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 194 2  ({ free(h_graph_edges); free_helper(h_graph_edges, 6277575452893475583UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 194 2  ({ free_helper(h_graph_edges, 6277575452893475583UL);free(h_graph_edges);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 194 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 195 2  ({ free(h_graph_mask); free_helper(h_graph_mask, 6277575452893475586UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 195 2  ({ free_helper(h_graph_mask, 6277575452893475586UL);free(h_graph_mask);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 195 20 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 196 2  ({ free(h_updating_graph_mask); free_helper(h_updating_graph_mask, 6277575452893475588UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 196 2  ({ free_helper(h_updating_graph_mask, 6277575452893475588UL);free(h_updating_graph_mask);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 196 29 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 197 2  ({ free(h_graph_visited); free_helper(h_graph_visited, 6277575452893475590UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 197 2  ({ free_helper(h_graph_visited, 6277575452893475590UL);free(h_graph_visited);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 197 23 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 198 2  ({ free(h_cost); free_helper(h_cost, 6277575452893475592UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 198 2  ({ free_helper(h_cost, 6277575452893475592UL);free(h_cost);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 198 14 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 85 32  ({ void *____chimes_tmp_ptr = malloc(sizeof(Node) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(Node)*no_of_nodes, 6277575452893475580UL, 0, 1, (int)sizeof(struct Node), 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 85 63 
@@ -36,17 +36,17 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 113 30  ({ void 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 113 63 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 126 23  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 6277575452893475592UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 126 54 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 193 2  ({ free(h_graph_nodes); free_helper(h_graph_nodes, 6277575452893475580UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 193 2  ({ free_helper(h_graph_nodes, 6277575452893475580UL);free(h_graph_nodes);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 193 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 194 2  ({ free(h_graph_edges); free_helper(h_graph_edges, 6277575452893475583UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 194 2  ({ free_helper(h_graph_edges, 6277575452893475583UL);free(h_graph_edges);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 194 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 195 2  ({ free(h_graph_mask); free_helper(h_graph_mask, 6277575452893475586UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 195 2  ({ free_helper(h_graph_mask, 6277575452893475586UL);free(h_graph_mask);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 195 20 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 196 2  ({ free(h_updating_graph_mask); free_helper(h_updating_graph_mask, 6277575452893475588UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 196 2  ({ free_helper(h_updating_graph_mask, 6277575452893475588UL);free(h_updating_graph_mask);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 196 29 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 197 2  ({ free(h_graph_visited); free_helper(h_graph_visited, 6277575452893475590UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 197 2  ({ free_helper(h_graph_visited, 6277575452893475590UL);free(h_graph_visited);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 197 23 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 198 2  ({ free(h_cost); free_helper(h_cost, 6277575452893475592UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 198 2  ({ free_helper(h_cost, 6277575452893475592UL);free(h_cost);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 198 14 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 18 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 14 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 

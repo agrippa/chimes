@@ -4382,16 +4382,16 @@ long long time0;
 # 372 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 373 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 374 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ({ free(image_ori); free_helper(image_ori, 12879499662222412110UL); }) ;
+  ({ free_helper(image_ori, 12879499662222412110UL);free(image_ori); }) ;
 # 375 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ({ free(image); free_helper(image, 12879499662222412019UL); }) ;
+  ({ free_helper(image, 12879499662222412019UL);free(image); }) ;
 # 376 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 377 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ({ free(iN); free_helper(iN, 12879499662222411948UL); }) ; ({ free(iS); free_helper(iS, 12879499662222411955UL); }) ; ({ free(jW); free_helper(jW, 12879499662222412050UL); }) ; ({ free(jE); free_helper(jE, 12879499662222412049UL); }) ;
+     ({ free_helper(iN, 12879499662222411948UL);free(iN); }) ; ({ free_helper(iS, 12879499662222411955UL);free(iS); }) ; ({ free_helper(jW, 12879499662222412050UL);free(jW); }) ; ({ free_helper(jE, 12879499662222412049UL);free(jE); }) ;
 # 378 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ({ free(dN); free_helper(dN, 12879499662222412051UL); }) ; ({ free(dS); free_helper(dS, 12879499662222412052UL); }) ; ({ free(dW); free_helper(dW, 12879499662222412053UL); }) ; ({ free(dE); free_helper(dE, 12879499662222412054UL); }) ;
+     ({ free_helper(dN, 12879499662222412051UL);free(dN); }) ; ({ free_helper(dS, 12879499662222412052UL);free(dS); }) ; ({ free_helper(dW, 12879499662222412053UL);free(dW); }) ; ({ free_helper(dE, 12879499662222412054UL);free(dE); }) ;
 # 379 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ({ free(c); free_helper(c, 12879499662222412061UL); }) ;
+     ({ free_helper(c, 12879499662222412061UL);free(c); }) ;
 # 380 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 381 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_15: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 15, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
@@ -4991,16 +4991,16 @@ long long time0;
 # 372 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 373 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 374 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ({ free(image_ori); free_helper(image_ori, 12879499662222412110UL); }) ;
+  ({ free_helper(image_ori, 12879499662222412110UL);free(image_ori); }) ;
 # 375 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ({ free(image); free_helper(image, 12879499662222412019UL); }) ;
+  ({ free_helper(image, 12879499662222412019UL);free(image); }) ;
 # 376 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 377 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ({ free(iN); free_helper(iN, 12879499662222411948UL); }) ; ({ free(iS); free_helper(iS, 12879499662222411955UL); }) ; ({ free(jW); free_helper(jW, 12879499662222412050UL); }) ; ({ free(jE); free_helper(jE, 12879499662222412049UL); }) ;
+     ({ free_helper(iN, 12879499662222411948UL);free(iN); }) ; ({ free_helper(iS, 12879499662222411955UL);free(iS); }) ; ({ free_helper(jW, 12879499662222412050UL);free(jW); }) ; ({ free_helper(jE, 12879499662222412049UL);free(jE); }) ;
 # 378 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ({ free(dN); free_helper(dN, 12879499662222412051UL); }) ; ({ free(dS); free_helper(dS, 12879499662222412052UL); }) ; ({ free(dW); free_helper(dW, 12879499662222412053UL); }) ; ({ free(dE); free_helper(dE, 12879499662222412054UL); }) ;
+     ({ free_helper(dN, 12879499662222412051UL);free(dN); }) ; ({ free_helper(dS, 12879499662222412052UL);free(dS); }) ; ({ free_helper(dW, 12879499662222412053UL);free(dW); }) ; ({ free_helper(dE, 12879499662222412054UL);free(dE); }) ;
 # 379 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ({ free(c); free_helper(c, 12879499662222412061UL); }) ;
+     ({ free_helper(c, 12879499662222412061UL);free(c); }) ;
 # 380 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 381 "/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_15: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 15, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));

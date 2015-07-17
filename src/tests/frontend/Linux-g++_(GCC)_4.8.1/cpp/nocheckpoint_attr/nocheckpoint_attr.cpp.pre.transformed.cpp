@@ -1478,9 +1478,9 @@ int *a;
     ((b[0] == 3) ? static_cast<void> (0) : __assert_fail ("b[0] == 3", "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp", 21, __PRETTY_FUNCTION__));
 # 22 "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp"
 # 23 "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp"
-     ({ free(a); free_helper(a, 513441829984432510UL); }) ;
+     ({ free_helper(a, 513441829984432510UL);free(a); }) ;
 # 24 "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp"
-     ({ free(b); free_helper(b, 513441829984432501UL); }) ;
+     ({ free_helper(b, 513441829984432501UL);free(b); }) ;
 # 25 "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp"
 # 26 "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
@@ -1519,9 +1519,9 @@ int *a;
     ((b[0] == 3) ? static_cast<void> (0) : __assert_fail ("b[0] == 3", "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp", 21, __PRETTY_FUNCTION__));
 # 22 "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp"
 # 23 "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp"
-     ({ free(a); free_helper(a, 513441829984432510UL); }) ;
+     ({ free_helper(a, 513441829984432510UL);free(a); }) ;
 # 24 "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp"
-     ({ free(b); free_helper(b, 513441829984432501UL); }) ;
+     ({ free_helper(b, 513441829984432501UL);free(b); }) ;
 # 25 "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp"
 # 26 "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;

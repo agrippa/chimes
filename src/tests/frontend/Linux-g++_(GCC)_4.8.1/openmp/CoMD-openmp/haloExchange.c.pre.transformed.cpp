@@ -2987,9 +2987,9 @@ void destroyHaloExchange_resumable(HaloExchange** haloExchange)
 # 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&destroyHaloExchange), "destroyHaloExchange", &____must_manage_destroyHaloExchange, 1, 0, (size_t)(12143118692030657336UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free((*haloExchange)->parms); free_helper((*haloExchange)->parms, 12143118692030657327UL); }) ;
+    ({ free_helper((*haloExchange)->parms, 12143118692030657327UL);free((*haloExchange)->parms); }) ;
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free(*haloExchange); free_helper(*haloExchange, 12143118692030657325UL); }) ;
+    ({ free_helper(*haloExchange, 12143118692030657325UL);free(*haloExchange); }) ;
 # 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    *haloExchange = __null;
 # 251 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3109,13 +3109,13 @@ int faceM;
 # 308 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
     call_lbl_7: ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 7, 0, 0UL, 5, 12143118692030657490UL, 12143118692030657494UL, 0UL, 0UL, 12143118692030657468UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP);
 # 309 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free(recvBufP); free_helper(recvBufP, 12143118692030657468UL); }) ;
+    ({ free_helper(recvBufP, 12143118692030657468UL);free(recvBufP); }) ;
 # 310 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free(recvBufM); free_helper(recvBufM, 12143118692030657478UL); }) ;
+    ({ free_helper(recvBufM, 12143118692030657478UL);free(recvBufM); }) ;
 # 311 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free(sendBufP); free_helper(sendBufP, 12143118692030657475UL); }) ;
+    ({ free_helper(sendBufP, 12143118692030657475UL);free(sendBufP); }) ;
 # 312 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free(sendBufM); free_helper(sendBufM, 12143118692030657465UL); }) ;
+    ({ free_helper(sendBufM, 12143118692030657465UL);free(sendBufM); }) ;
 # 313 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 rm_stack(false, 0UL, "exchangeData", (int *)0x0, 0, ____chimes_did_disable5, false); }
 # 334 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3332,9 +3332,9 @@ void destroyAtomsExchange_resumable(void* vparms)
 # 442 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    {
 # 443 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->pbcFactor[ii]); free_helper(parms->pbcFactor[ii], 12143118692030656219UL); }) ;
+       ({ free_helper(parms->pbcFactor[ii], 12143118692030656219UL);free(parms->pbcFactor[ii]); }) ;
 # 444 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->cellList[ii]); free_helper(parms->cellList[ii], 12143118692030656219UL); }) ;
+       ({ free_helper(parms->cellList[ii], 12143118692030656219UL);free(parms->cellList[ii]); }) ;
 # 445 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 446 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3668,9 +3668,9 @@ void destroyForceExchange_resumable(void* vparms)
 # 614 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    {
 # 615 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->sendCells[ii]); free_helper(parms->sendCells[ii], 12143118692030656909UL); }) ;
+       ({ free_helper(parms->sendCells[ii], 12143118692030656909UL);free(parms->sendCells[ii]); }) ;
 # 616 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->recvCells[ii]); free_helper(parms->recvCells[ii], 12143118692030656909UL); }) ;
+       ({ free_helper(parms->recvCells[ii], 12143118692030656909UL);free(parms->recvCells[ii]); }) ;
 # 617 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 618 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3924,9 +3924,9 @@ void destroyHaloExchange_quick(HaloExchange** haloExchange)
 # 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&destroyHaloExchange), "destroyHaloExchange", &____must_manage_destroyHaloExchange, 1, 0, (size_t)(12143118692030657336UL)) ; ; ;
 # 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free((*haloExchange)->parms); free_helper((*haloExchange)->parms, 12143118692030657327UL); }) ;
+    ({ free_helper((*haloExchange)->parms, 12143118692030657327UL);free((*haloExchange)->parms); }) ;
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free(*haloExchange); free_helper(*haloExchange, 12143118692030657325UL); }) ;
+    ({ free_helper(*haloExchange, 12143118692030657325UL);free(*haloExchange); }) ;
 # 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    *haloExchange = __null;
 # 251 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -4045,13 +4045,13 @@ int faceM;
 # 308 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
     call_lbl_7: ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 7, 0, 0UL, 5, 12143118692030657490UL, 12143118692030657494UL, 0UL, 0UL, 12143118692030657468UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP);
 # 309 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free(recvBufP); free_helper(recvBufP, 12143118692030657468UL); }) ;
+    ({ free_helper(recvBufP, 12143118692030657468UL);free(recvBufP); }) ;
 # 310 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free(recvBufM); free_helper(recvBufM, 12143118692030657478UL); }) ;
+    ({ free_helper(recvBufM, 12143118692030657478UL);free(recvBufM); }) ;
 # 311 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free(sendBufP); free_helper(sendBufP, 12143118692030657475UL); }) ;
+    ({ free_helper(sendBufP, 12143118692030657475UL);free(sendBufP); }) ;
 # 312 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free(sendBufM); free_helper(sendBufM, 12143118692030657465UL); }) ;
+    ({ free_helper(sendBufM, 12143118692030657465UL);free(sendBufM); }) ;
 # 313 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 rm_stack(false, 0UL, "exchangeData", (int *)0x0, 0, ____chimes_did_disable5, false); }
 
@@ -4265,9 +4265,9 @@ void destroyAtomsExchange_quick(void* vparms)
 # 442 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    {
 # 443 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->pbcFactor[ii]); free_helper(parms->pbcFactor[ii], 12143118692030656219UL); }) ;
+       ({ free_helper(parms->pbcFactor[ii], 12143118692030656219UL);free(parms->pbcFactor[ii]); }) ;
 # 444 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->cellList[ii]); free_helper(parms->cellList[ii], 12143118692030656219UL); }) ;
+       ({ free_helper(parms->cellList[ii], 12143118692030656219UL);free(parms->cellList[ii]); }) ;
 # 445 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 446 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -4588,9 +4588,9 @@ void destroyForceExchange_quick(void* vparms)
 # 614 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    {
 # 615 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->sendCells[ii]); free_helper(parms->sendCells[ii], 12143118692030656909UL); }) ;
+       ({ free_helper(parms->sendCells[ii], 12143118692030656909UL);free(parms->sendCells[ii]); }) ;
 # 616 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->recvCells[ii]); free_helper(parms->recvCells[ii], 12143118692030656909UL); }) ;
+       ({ free_helper(parms->recvCells[ii], 12143118692030656909UL);free(parms->recvCells[ii]); }) ;
 # 617 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 618 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -4825,9 +4825,9 @@ void destroyHaloExchange_npm(HaloExchange** haloExchange)
 # 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 {
 # 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free((*haloExchange)->parms); free_helper((*haloExchange)->parms, 12143118692030657327UL); }) ;
+    ({ free_helper((*haloExchange)->parms, 12143118692030657327UL);free((*haloExchange)->parms); }) ;
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ free(*haloExchange); free_helper(*haloExchange, 12143118692030657325UL); }) ;
+    ({ free_helper(*haloExchange, 12143118692030657325UL);free(*haloExchange); }) ;
 # 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    *haloExchange = __null;
 # 251 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -5032,9 +5032,9 @@ void destroyAtomsExchange_npm(void* vparms)
 # 442 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    {
 # 443 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->pbcFactor[ii]); free_helper(parms->pbcFactor[ii], 12143118692030656219UL); }) ;
+       ({ free_helper(parms->pbcFactor[ii], 12143118692030656219UL);free(parms->pbcFactor[ii]); }) ;
 # 444 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->cellList[ii]); free_helper(parms->cellList[ii], 12143118692030656219UL); }) ;
+       ({ free_helper(parms->cellList[ii], 12143118692030656219UL);free(parms->cellList[ii]); }) ;
 # 445 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    }
 # 446 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -5305,9 +5305,9 @@ void destroyForceExchange_npm(void* vparms)
 # 614 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    {
 # 615 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->sendCells[ii]); free_helper(parms->sendCells[ii], 12143118692030656909UL); }) ;
+       ({ free_helper(parms->sendCells[ii], 12143118692030656909UL);free(parms->sendCells[ii]); }) ;
 # 616 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-       ({ free(parms->recvCells[ii]); free_helper(parms->recvCells[ii], 12143118692030656909UL); }) ;
+       ({ free_helper(parms->recvCells[ii], 12143118692030656909UL);free(parms->recvCells[ii]); }) ;
 # 617 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    }
 # 618 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"

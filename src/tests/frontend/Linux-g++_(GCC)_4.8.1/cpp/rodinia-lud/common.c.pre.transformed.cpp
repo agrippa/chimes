@@ -4255,7 +4255,7 @@ create_matrix_from_random_resumable(float **mp, int size){const int ____chimes_d
 # 86 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( u == __null) {
 # 87 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-       ({ free(l); free_helper(l, 13323080938073225297UL); }) ;
+       ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
 # 88 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
        enum _FUNC_RETURN_CODE ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (RET_FAILURE); rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_8; ;
 # 89 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4315,9 +4315,9 @@ create_matrix_from_random_resumable(float **mp, int size){const int ____chimes_d
   }
 # 119 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 120 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free(l); free_helper(l, 13323080938073225297UL); }) ;
+   ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
 # 121 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free(u); free_helper(u, 13323080938073225481UL); }) ;
+   ({ free_helper(u, 13323080938073225481UL);free(u); }) ;
 # 122 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 123 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   *mp = m;
@@ -4385,7 +4385,7 @@ lud_verify_resumable(float *m, float *lu, int matrix_dim){const int ____chimes_d
 # 185 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   }
 # 186 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free(tmp); free_helper(tmp, 13323080938073225639UL); }) ;
+   ({ free_helper(tmp, 13323080938073225639UL);free(tmp); }) ;
 # 187 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 rm_stack(false, 0UL, "lud_verify", &____must_manage_lud_verify, ____alias_loc_id_7, ____chimes_did_disable7, false); }
 # 188 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4627,7 +4627,7 @@ create_matrix_from_random_quick(float **mp, int size){const int ____chimes_did_d
 # 86 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( u == __null) {
 # 87 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-       ({ free(l); free_helper(l, 13323080938073225297UL); }) ;
+       ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
 # 88 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
        enum _FUNC_RETURN_CODE ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (RET_FAILURE); rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_8; ;
 # 89 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4687,9 +4687,9 @@ create_matrix_from_random_quick(float **mp, int size){const int ____chimes_did_d
   }
 # 119 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 120 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free(l); free_helper(l, 13323080938073225297UL); }) ;
+   ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
 # 121 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free(u); free_helper(u, 13323080938073225481UL); }) ;
+   ({ free_helper(u, 13323080938073225481UL);free(u); }) ;
 # 122 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 123 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   *mp = m;
@@ -4759,7 +4759,7 @@ lud_verify_quick(float *m, float *lu, int matrix_dim){const int ____chimes_did_d
 # 185 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   }
 # 186 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free(tmp); free_helper(tmp, 13323080938073225639UL); }) ;
+   ({ free_helper(tmp, 13323080938073225639UL);free(tmp); }) ;
 # 187 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 rm_stack(false, 0UL, "lud_verify", &____must_manage_lud_verify, ____alias_loc_id_7, ____chimes_did_disable7, false); }
 
@@ -4989,7 +4989,7 @@ create_matrix_from_random_npm(float **mp, int size){
 # 86 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( u == __null) {
 # 87 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-       ({ free(l); free_helper(l, 13323080938073225297UL); }) ;
+       ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
 # 88 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
        enum _FUNC_RETURN_CODE ____chimes_ret_var_8; ____chimes_ret_var_8 = (RET_FAILURE); return ____chimes_ret_var_8; ;
 # 89 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -5049,9 +5049,9 @@ create_matrix_from_random_npm(float **mp, int size){
   }
 # 119 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 120 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free(l); free_helper(l, 13323080938073225297UL); }) ;
+   ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
 # 121 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free(u); free_helper(u, 13323080938073225481UL); }) ;
+   ({ free_helper(u, 13323080938073225481UL);free(u); }) ;
 # 122 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 123 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   *mp = m;
@@ -5113,7 +5113,7 @@ lud_verify_npm(float *m, float *lu, int matrix_dim){
 # 185 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   }
 # 186 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free(tmp); free_helper(tmp, 13323080938073225639UL); }) ;
+   ({ free_helper(tmp, 13323080938073225639UL);free(tmp); }) ;
 # 187 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 }
 # 189 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"

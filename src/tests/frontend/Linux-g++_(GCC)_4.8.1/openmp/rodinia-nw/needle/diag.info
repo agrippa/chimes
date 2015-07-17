@@ -7,11 +7,11 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 128 29  ({ voi
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 128 44 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 129 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 7317267487155702577UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 129 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 273 2  ({ free(referrence); free_helper(referrence, 7317267487155702345UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 273 2  ({ free_helper(referrence, 7317267487155702345UL);free(referrence);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 273 17 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 274 2  ({ free(input_itemsets); free_helper(input_itemsets, 7317267487155702390UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 274 2  ({ free_helper(input_itemsets, 7317267487155702390UL);free(input_itemsets);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 274 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 275 2  ({ free(output_itemsets); free_helper(output_itemsets, 7317267487155702577UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 275 2  ({ free_helper(output_itemsets, 7317267487155702577UL);free(output_itemsets);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 275 22 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 127 22  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 7317267487155702345UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 127 37 
@@ -19,11 +19,11 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 128 29  ({ voi
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 128 44 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 129 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 7317267487155702577UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 129 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 273 2  ({ free(referrence); free_helper(referrence, 7317267487155702345UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 273 2  ({ free_helper(referrence, 7317267487155702345UL);free(referrence);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 273 17 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 274 2  ({ free(input_itemsets); free_helper(input_itemsets, 7317267487155702390UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 274 2  ({ free_helper(input_itemsets, 7317267487155702390UL);free(input_itemsets);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 274 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 275 2  ({ free(output_itemsets); free_helper(output_itemsets, 7317267487155702577UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 275 2  ({ free_helper(output_itemsets, 7317267487155702577UL);free(output_itemsets);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 275 22 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 19 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_3, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp 15 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 

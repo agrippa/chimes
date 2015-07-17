@@ -3,9 +3,9 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalD
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 79 52 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 100 20  ({ void *____chimes_tmp_ptr = malloc((len + *seqLen + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 6613892181078039972UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 100 64 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 127 5  ({ free(oldSeq); free_helper(oldSeq, 6613892181078039972UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 127 5  ({ free_helper(oldSeq, 6613892181078039972UL);free(oldSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 127 16 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 128 5  ({ free(codSeq); free_helper(codSeq, 6613892181078039790UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 128 5  ({ free_helper(codSeq, 6613892181078039790UL);free(codSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 128 16 
 ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 197 12 len=11 genScalData_npm
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 225 32  ({ void *____chimes_tmp_ptr = malloc(sizeof(SEQDATA_T)); malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 6613892181078040045UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); ____chimes_tmp_ptr; }) 
@@ -15,19 +15,19 @@ ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalDat
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 251 18  ({ void *____chimes_tmp_ptr = malloc((seqData->matchLen + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 251 68 
 ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 355 12 len=11 freeSeqData_npm
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 359 7  ({ free(S->main); free_helper(S->main, 6613892181078039999UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 359 7  ({ free_helper(S->main, 6613892181078039999UL);free(S->main);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 359 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 363 7  ({ free(S->match); free_helper(S->match, 6613892181078039999UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 363 7  ({ free_helper(S->match, 6613892181078039999UL);free(S->match);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 363 20 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 366 5  ({ free(S); free_helper(S, 6613892181078040018UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 366 5  ({ free_helper(S, 6613892181078040018UL);free(S);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 366 11 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 79 20  ({ void *____chimes_tmp_ptr = malloc(len * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 6613892181078039790UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 79 52 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 100 20  ({ void *____chimes_tmp_ptr = malloc((len + *seqLen + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 6613892181078039972UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 100 64 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 127 5  ({ free(oldSeq); free_helper(oldSeq, 6613892181078039972UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 127 5  ({ free_helper(oldSeq, 6613892181078039972UL);free(oldSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 127 16 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 128 5  ({ free(codSeq); free_helper(codSeq, 6613892181078039790UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 128 5  ({ free_helper(codSeq, 6613892181078039790UL);free(codSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 128 16 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 225 32  ({ void *____chimes_tmp_ptr = malloc(sizeof(SEQDATA_T)); malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 6613892181078040045UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 225 58 
@@ -35,11 +35,11 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalD
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 240 67 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 251 18  ({ void *____chimes_tmp_ptr = malloc((seqData->matchLen + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 251 68 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 359 7  ({ free(S->main); free_helper(S->main, 6613892181078039999UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 359 7  ({ free_helper(S->main, 6613892181078039999UL);free(S->main);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 359 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 363 7  ({ free(S->match); free_helper(S->match, 6613892181078039999UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 363 7  ({ free_helper(S->match, 6613892181078039999UL);free(S->match);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 363 20 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 366 5  ({ free(S); free_helper(S, 6613892181078040018UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 366 5  ({ free_helper(S, 6613892181078040018UL);free(S);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 366 11 
 InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 146 77 rm_stack(true, 6613892181078039972UL, "insertValidation", &____must_manage_insertValidation, ____alias_loc_id_8, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 44 28 const int ____chimes_did_disable0 = new_stack((void *)(&insertValidation), "insertValidation", &____must_manage_insertValidation, 5, 5, (size_t)(6613892181078039972UL), (size_t)(6613892181078039973UL), (size_t)(6613892181078039974UL), (size_t)(6613892181078039975UL), (size_t)(6613892181078039976UL), "insertValidation|oldSeq|0", &____must_checkpoint_insertValidation_oldSeq_0, "i8*", (void *)(&oldSeq), (size_t)8, 1, 0, 0, "insertValidation|seqLen|0", &____must_checkpoint_insertValidation_seqLen_0, "i32*", (void *)(&seqLen), (size_t)8, 1, 0, 0, "insertValidation|insertionStrings|0", &____must_checkpoint_insertValidation_insertionStrings_0, "i8**", (void *)(&insertionStrings), (size_t)8, 1, 0, 0, "insertValidation|simMatrix|0", &____must_checkpoint_insertValidation_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "insertValidation|firstLastSelect|0", &____must_checkpoint_insertValidation_firstLastSelect_0, "i32*", (void *)(&firstLastSelect), (size_t)8, 1, 0, 0); 

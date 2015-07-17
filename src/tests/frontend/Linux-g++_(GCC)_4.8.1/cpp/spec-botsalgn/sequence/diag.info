@@ -18,7 +18,7 @@ ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks
 ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 154 5 len=8 readseqs_npm
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 179 31  ({ void *____chimes_tmp_ptr = malloc((l1 + 2) * sizeof(char)); malloc_helper(____chimes_tmp_ptr, (l1 + 2) * sizeof (char), 17796869374098773731UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 179 62 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 7  ({ free(seq1); free_helper(seq1, 17796869374098773734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 7  ({ free_helper(seq1, 17796869374098773734UL);free(seq1);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 16 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 108 22  ({ void *____chimes_tmp_ptr = malloc((nseqs + 1) * sizeof(char *)); malloc_helper(____chimes_tmp_ptr, (nseqs + 1) * sizeof(char *), 17796869374098773729UL, 1, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 108 57 
@@ -34,7 +34,7 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tas
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 146 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 179 31  ({ void *____chimes_tmp_ptr = malloc((l1 + 2) * sizeof(char)); malloc_helper(____chimes_tmp_ptr, (l1 + 2) * sizeof (char), 17796869374098773731UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 179 62 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 7  ({ free(seq1); free_helper(seq1, 17796869374098773734UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 7  ({ free_helper(seq1, 17796869374098773734UL);free(seq1);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 16 
 InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 60 74 rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 39 1 const int ____chimes_did_disable0 = new_stack((void *)(&strlcpy), "strlcpy", &____must_manage_strlcpy, 3, 0, (size_t)(17796869374098773260UL), (size_t)(17796869374098773261UL), (size_t)(0UL)); 

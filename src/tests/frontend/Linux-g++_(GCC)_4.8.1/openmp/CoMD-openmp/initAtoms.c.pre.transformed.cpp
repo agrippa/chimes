@@ -3827,37 +3827,37 @@ void destroyAtoms_resumable(Atoms *atoms)
 # 53 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&destroyAtoms), "destroyAtoms", &____must_manage_destroyAtoms, 1, 0, (size_t)(2774474540883984554UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 54 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->gid) { ({ free(atoms->gid); free_helper(atoms->gid, 2774474540883984468UL); }) ; };
+   if (atoms->gid) { ({ free_helper(atoms->gid, 2774474540883984468UL);free(atoms->gid); }) ; };
 # 55 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->gid = __null;
 # 56 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->iSpecies) { ({ free(atoms->iSpecies); free_helper(atoms->iSpecies, 2774474540883984468UL); }) ; };
+   if (atoms->iSpecies) { ({ free_helper(atoms->iSpecies, 2774474540883984468UL);free(atoms->iSpecies); }) ; };
 # 58 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->iSpecies = __null;
 # 59 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 60 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->r) { ({ free(atoms->r); free_helper(atoms->r, 2774474540883984468UL); }) ; };
+   if (atoms->r) { ({ free_helper(atoms->r, 2774474540883984468UL);free(atoms->r); }) ; };
 # 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->r = __null;
 # 62 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 63 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->p) { ({ free(atoms->p); free_helper(atoms->p, 2774474540883984468UL); }) ; };
+   if (atoms->p) { ({ free_helper(atoms->p, 2774474540883984468UL);free(atoms->p); }) ; };
 # 64 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->p = __null;
 # 65 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 66 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->f) { ({ free(atoms->f); free_helper(atoms->f, 2774474540883984468UL); }) ; };
+   if (atoms->f) { ({ free_helper(atoms->f, 2774474540883984468UL);free(atoms->f); }) ; };
 # 67 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->f = __null;
 # 68 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 69 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->U) { ({ free(atoms->U); free_helper(atoms->U, 2774474540883984468UL); }) ; };
+   if (atoms->U) { ({ free_helper(atoms->U, 2774474540883984468UL);free(atoms->U); }) ; };
 # 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->U = __null;
 # 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    ({ free(atoms); free_helper(atoms, 2774474540883984554UL); }) ;
+    ({ free_helper(atoms, 2774474540883984554UL);free(atoms); }) ;
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_loc_id_19, ____chimes_did_disable1, false); }
 # 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4306,37 +4306,37 @@ void destroyAtoms_quick(Atoms *atoms)
 # 53 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&destroyAtoms), "destroyAtoms", &____must_manage_destroyAtoms, 1, 0, (size_t)(2774474540883984554UL)) ; ; ;
 # 54 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->gid) { ({ free(atoms->gid); free_helper(atoms->gid, 2774474540883984468UL); }) ; };
+   if (atoms->gid) { ({ free_helper(atoms->gid, 2774474540883984468UL);free(atoms->gid); }) ; };
 # 55 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->gid = __null;
 # 56 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->iSpecies) { ({ free(atoms->iSpecies); free_helper(atoms->iSpecies, 2774474540883984468UL); }) ; };
+   if (atoms->iSpecies) { ({ free_helper(atoms->iSpecies, 2774474540883984468UL);free(atoms->iSpecies); }) ; };
 # 58 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->iSpecies = __null;
 # 59 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 60 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->r) { ({ free(atoms->r); free_helper(atoms->r, 2774474540883984468UL); }) ; };
+   if (atoms->r) { ({ free_helper(atoms->r, 2774474540883984468UL);free(atoms->r); }) ; };
 # 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->r = __null;
 # 62 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 63 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->p) { ({ free(atoms->p); free_helper(atoms->p, 2774474540883984468UL); }) ; };
+   if (atoms->p) { ({ free_helper(atoms->p, 2774474540883984468UL);free(atoms->p); }) ; };
 # 64 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->p = __null;
 # 65 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 66 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->f) { ({ free(atoms->f); free_helper(atoms->f, 2774474540883984468UL); }) ; };
+   if (atoms->f) { ({ free_helper(atoms->f, 2774474540883984468UL);free(atoms->f); }) ; };
 # 67 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->f = __null;
 # 68 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 69 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->U) { ({ free(atoms->U); free_helper(atoms->U, 2774474540883984468UL); }) ; };
+   if (atoms->U) { ({ free_helper(atoms->U, 2774474540883984468UL);free(atoms->U); }) ; };
 # 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->U = __null;
 # 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    ({ free(atoms); free_helper(atoms, 2774474540883984554UL); }) ;
+    ({ free_helper(atoms, 2774474540883984554UL);free(atoms); }) ;
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_loc_id_19, ____chimes_did_disable1, false); }
 
@@ -4771,37 +4771,37 @@ void destroyAtoms_npm(Atoms *atoms)
 # 53 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {
 # 54 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->gid) { ({ free(atoms->gid); free_helper(atoms->gid, 2774474540883984468UL); }) ; };
+   if (atoms->gid) { ({ free_helper(atoms->gid, 2774474540883984468UL);free(atoms->gid); }) ; };
 # 55 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->gid = __null;
 # 56 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->iSpecies) { ({ free(atoms->iSpecies); free_helper(atoms->iSpecies, 2774474540883984468UL); }) ; };
+   if (atoms->iSpecies) { ({ free_helper(atoms->iSpecies, 2774474540883984468UL);free(atoms->iSpecies); }) ; };
 # 58 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->iSpecies = __null;
 # 59 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 60 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->r) { ({ free(atoms->r); free_helper(atoms->r, 2774474540883984468UL); }) ; };
+   if (atoms->r) { ({ free_helper(atoms->r, 2774474540883984468UL);free(atoms->r); }) ; };
 # 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->r = __null;
 # 62 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 63 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->p) { ({ free(atoms->p); free_helper(atoms->p, 2774474540883984468UL); }) ; };
+   if (atoms->p) { ({ free_helper(atoms->p, 2774474540883984468UL);free(atoms->p); }) ; };
 # 64 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->p = __null;
 # 65 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 66 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->f) { ({ free(atoms->f); free_helper(atoms->f, 2774474540883984468UL); }) ; };
+   if (atoms->f) { ({ free_helper(atoms->f, 2774474540883984468UL);free(atoms->f); }) ; };
 # 67 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->f = __null;
 # 68 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 69 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (atoms->U) { ({ free(atoms->U); free_helper(atoms->U, 2774474540883984468UL); }) ; };
+   if (atoms->U) { ({ free_helper(atoms->U, 2774474540883984468UL);free(atoms->U); }) ; };
 # 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->U = __null;
 # 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    ({ free(atoms); free_helper(atoms, 2774474540883984554UL); }) ;
+    ({ free_helper(atoms, 2774474540883984554UL);free(atoms); }) ;
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 }
 # 78 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"

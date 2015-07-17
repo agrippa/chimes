@@ -4233,11 +4233,11 @@ int max_cols;
      double end_time; call_lbl_4: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 272 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 273 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(referrence); free_helper(referrence, 7317267487155702345UL); }) ;
+  ({ free_helper(referrence, 7317267487155702345UL);free(referrence); }) ;
 # 274 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(input_itemsets); free_helper(input_itemsets, 7317267487155702390UL); }) ;
+  ({ free_helper(input_itemsets, 7317267487155702390UL);free(input_itemsets); }) ;
 # 275 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(output_itemsets); free_helper(output_itemsets, 7317267487155702577UL); }) ;
+  ({ free_helper(output_itemsets, 7317267487155702577UL);free(output_itemsets); }) ;
 # 276 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 277 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
     printf("execution took %f s\n", end_time - start_time);
@@ -4507,11 +4507,11 @@ int max_cols;
      double end_time; call_lbl_4: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 272 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 273 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(referrence); free_helper(referrence, 7317267487155702345UL); }) ;
+  ({ free_helper(referrence, 7317267487155702345UL);free(referrence); }) ;
 # 274 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(input_itemsets); free_helper(input_itemsets, 7317267487155702390UL); }) ;
+  ({ free_helper(input_itemsets, 7317267487155702390UL);free(input_itemsets); }) ;
 # 275 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(output_itemsets); free_helper(output_itemsets, 7317267487155702577UL); }) ;
+  ({ free_helper(output_itemsets, 7317267487155702577UL);free(output_itemsets); }) ;
 # 276 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 277 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
     printf("execution took %f s\n", end_time - start_time);

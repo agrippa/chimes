@@ -2904,11 +2904,11 @@ static MyOption* myOptionFree_resumable(MyOption* o)
 # 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    r = ((MyOption*) o->next);
 # 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->longArg) { ({ free(o->longArg); free_helper(o->longArg, 4461972309412152088UL); }) ; };
+   if (o->longArg) { ({ free_helper(o->longArg, 4461972309412152088UL);free(o->longArg); }) ; };
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->help) { ({ free(o->help); free_helper(o->help, 4461972309412152088UL); }) ; };
+   if (o->help) { ({ free_helper(o->help, 4461972309412152088UL);free(o->help); }) ; };
 # 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free(o); free_helper(o, 4461972309412152122UL); }) ;
+    ({ free_helper(o, 4461972309412152122UL);free(o); }) ;
 # 75 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     MyOption *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (r); rm_stack(true, 4461972309412152088UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
 # 76 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -3200,9 +3200,9 @@ void processArgs_resumable(int argc, char** argv)
    }
 # 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 # 224 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free(opts); free_helper(opts, 4461972309412152253UL); }) ;
+    ({ free_helper(opts, 4461972309412152253UL);free(opts); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free(sArgs); free_helper(sArgs, 4461972309412152283UL); }) ;
+    ({ free_helper(sArgs, 4461972309412152283UL);free(sArgs); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 # 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8, false); return;
@@ -3281,11 +3281,11 @@ static MyOption* myOptionFree_quick(MyOption* o)
 # 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    r = ((MyOption*) o->next);
 # 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->longArg) { ({ free(o->longArg); free_helper(o->longArg, 4461972309412152088UL); }) ; };
+   if (o->longArg) { ({ free_helper(o->longArg, 4461972309412152088UL);free(o->longArg); }) ; };
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->help) { ({ free(o->help); free_helper(o->help, 4461972309412152088UL); }) ; };
+   if (o->help) { ({ free_helper(o->help, 4461972309412152088UL);free(o->help); }) ; };
 # 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free(o); free_helper(o, 4461972309412152122UL); }) ;
+    ({ free_helper(o, 4461972309412152122UL);free(o); }) ;
 # 75 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     MyOption *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (r); rm_stack(true, 4461972309412152088UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
 # 76 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -3573,9 +3573,9 @@ void processArgs_quick(int argc, char** argv)
    }
 # 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 # 224 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free(opts); free_helper(opts, 4461972309412152253UL); }) ;
+    ({ free_helper(opts, 4461972309412152253UL);free(opts); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free(sArgs); free_helper(sArgs, 4461972309412152283UL); }) ;
+    ({ free_helper(sArgs, 4461972309412152283UL);free(sArgs); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 # 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8, false); return;
@@ -3648,11 +3648,11 @@ static MyOption* myOptionFree_npm(MyOption* o)
 # 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    r = ((MyOption*) o->next);
 # 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->longArg) { ({ free(o->longArg); free_helper(o->longArg, 4461972309412152088UL); }) ; };
+   if (o->longArg) { ({ free_helper(o->longArg, 4461972309412152088UL);free(o->longArg); }) ; };
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->help) { ({ free(o->help); free_helper(o->help, 4461972309412152088UL); }) ; };
+   if (o->help) { ({ free_helper(o->help, 4461972309412152088UL);free(o->help); }) ; };
 # 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free(o); free_helper(o, 4461972309412152122UL); }) ;
+    ({ free_helper(o, 4461972309412152122UL);free(o); }) ;
 # 75 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     MyOption * ____chimes_ret_var_3; ____chimes_ret_var_3 = (r); return ____chimes_ret_var_3; ;
 # 76 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -3922,9 +3922,9 @@ void processArgs_npm(int argc, char** argv)
    }
 # 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 # 224 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free(opts); free_helper(opts, 4461972309412152253UL); }) ;
+    ({ free_helper(opts, 4461972309412152253UL);free(opts); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free(sArgs); free_helper(sArgs, 4461972309412152283UL); }) ;
+    ({ free_helper(sArgs, 4461972309412152283UL);free(sArgs); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 # 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    return;

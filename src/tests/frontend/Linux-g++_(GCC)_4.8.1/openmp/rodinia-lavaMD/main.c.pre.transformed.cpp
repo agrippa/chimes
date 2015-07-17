@@ -3608,13 +3608,13 @@ double start_time;
     printf("execution took %f s\n", end_time - start_time);
 # 341 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 341 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(rv_cpu); free_helper(rv_cpu, 8237081768666507310UL); }) ;
+  ({ free_helper(rv_cpu, 8237081768666507310UL);free(rv_cpu); }) ;
 # 342 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(qv_cpu); free_helper(qv_cpu, 8237081768666507372UL); }) ;
+  ({ free_helper(qv_cpu, 8237081768666507372UL);free(qv_cpu); }) ;
 # 343 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(fv_cpu); free_helper(fv_cpu, 8237081768666507395UL); }) ;
+  ({ free_helper(fv_cpu, 8237081768666507395UL);free(fv_cpu); }) ;
 # 344 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(box_cpu); free_helper(box_cpu, 8237081768666506971UL); }) ;
+  ({ free_helper(box_cpu, 8237081768666506971UL);free(box_cpu); }) ;
 # 345 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 346 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   call_lbl_14: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));
@@ -4031,13 +4031,13 @@ double start_time;
     printf("execution took %f s\n", end_time - start_time);
 # 341 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 341 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(rv_cpu); free_helper(rv_cpu, 8237081768666507310UL); }) ;
+  ({ free_helper(rv_cpu, 8237081768666507310UL);free(rv_cpu); }) ;
 # 342 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(qv_cpu); free_helper(qv_cpu, 8237081768666507372UL); }) ;
+  ({ free_helper(qv_cpu, 8237081768666507372UL);free(qv_cpu); }) ;
 # 343 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(fv_cpu); free_helper(fv_cpu, 8237081768666507395UL); }) ;
+  ({ free_helper(fv_cpu, 8237081768666507395UL);free(fv_cpu); }) ;
 # 344 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(box_cpu); free_helper(box_cpu, 8237081768666506971UL); }) ;
+  ({ free_helper(box_cpu, 8237081768666506971UL);free(box_cpu); }) ;
 # 345 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 346 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   call_lbl_14: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));

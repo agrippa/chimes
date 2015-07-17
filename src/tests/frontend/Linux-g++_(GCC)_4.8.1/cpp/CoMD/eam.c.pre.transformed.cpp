@@ -4651,7 +4651,7 @@ void eamDestroy_resumable(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
     call_lbl_3: ({ HaloExchange ** ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg13 = (&(pot->forceExchange)); } calling((void*)destroyHaloExchange, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(17996878689622963650UL)); (destroyHaloExchange)(____chimes_arg13); }) ;
 # 397 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(pot); free_helper(pot, 17996878689622963650UL); }) ;
+    ({ free_helper(pot, 17996878689622963650UL);free(pot); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -4786,11 +4786,11 @@ void destroyInterpolationObject_resumable(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-       ({ free((*a)->values); free_helper((*a)->values, 17996878689622964484UL); }) ;
+       ({ free_helper((*a)->values, 17996878689622964484UL);free((*a)->values); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(*a); free_helper(*a, 17996878689622964477UL); }) ;
+    ({ free_helper(*a, 17996878689622964477UL);free(*a); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5040,7 +5040,7 @@ char tmp[4096];
     call_lbl_4: pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 701 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(buf); free_helper(buf, 17996878689622963799UL); }) ;
+    ({ free_helper(buf, 17996878689622963799UL);free(buf); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5152,7 +5152,7 @@ char tmp[4096];
     call_lbl_3: pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(buf); free_helper(buf, 17996878689622964046UL); }) ;
+    ({ free_helper(buf, 17996878689622964046UL);free(buf); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5586,7 +5586,7 @@ void eamDestroy_quick(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
     call_lbl_3: ({ calling((void*)destroyHaloExchange, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(17996878689622963650UL)); (destroyHaloExchange)(&(pot->forceExchange)); }) ;
 # 397 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(pot); free_helper(pot, 17996878689622963650UL); }) ;
+    ({ free_helper(pot, 17996878689622963650UL);free(pot); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5706,11 +5706,11 @@ void destroyInterpolationObject_quick(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-       ({ free((*a)->values); free_helper((*a)->values, 17996878689622964484UL); }) ;
+       ({ free_helper((*a)->values, 17996878689622964484UL);free((*a)->values); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(*a); free_helper(*a, 17996878689622964477UL); }) ;
+    ({ free_helper(*a, 17996878689622964477UL);free(*a); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5924,7 +5924,7 @@ char tmp[4096];
     call_lbl_4: pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 701 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(buf); free_helper(buf, 17996878689622963799UL); }) ;
+    ({ free_helper(buf, 17996878689622963799UL);free(buf); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6037,7 +6037,7 @@ char tmp[4096];
     call_lbl_3: pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(buf); free_helper(buf, 17996878689622964046UL); }) ;
+    ({ free_helper(buf, 17996878689622964046UL);free(buf); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6450,7 +6450,7 @@ void eamDestroy_npm(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    (*____chimes_extern_func_destroyHaloExchange)(&(pot->forceExchange));
 # 397 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(pot); free_helper(pot, 17996878689622963650UL); }) ;
+    ({ free_helper(pot, 17996878689622963650UL);free(pot); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6562,11 +6562,11 @@ void destroyInterpolationObject_npm(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-       ({ free((*a)->values); free_helper((*a)->values, 17996878689622964484UL); }) ;
+       ({ free_helper((*a)->values, 17996878689622964484UL);free((*a)->values); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(*a); free_helper(*a, 17996878689622964477UL); }) ;
+    ({ free_helper(*a, 17996878689622964477UL);free(*a); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6768,7 +6768,7 @@ void eamReadSetfl_npm(EamPotential* pot, const char* dir, const char* potName)
    pot->phi = initInterpolationObject_npm(nR, x0, dR, buf);
 # 701 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(buf); free_helper(buf, 17996878689622963799UL); }) ;
+    ({ free_helper(buf, 17996878689622963799UL);free(buf); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6873,7 +6873,7 @@ void eamReadFuncfl_npm(EamPotential* pot, const char* dir, const char* potName)
    pot->rho = initInterpolationObject_npm(nR, x0, dR, buf);
 # 812 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free(buf); free_helper(buf, 17996878689622964046UL); }) ;
+    ({ free_helper(buf, 17996878689622964046UL);free(buf); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"

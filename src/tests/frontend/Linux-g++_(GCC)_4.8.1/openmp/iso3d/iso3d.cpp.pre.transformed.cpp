@@ -5445,21 +5445,21 @@ config conf;
     }
 # 157 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 158 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     ({ free(c_coeff); free_helper(c_coeff, 18208841949269014673UL); }) ;
+     ({ free_helper(c_coeff, 18208841949269014673UL);free(c_coeff); }) ;
 # 159 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     ({ free(curr); free_helper(curr, 18208841949269014670UL); }) ;
+     ({ free_helper(curr, 18208841949269014670UL);free(curr); }) ;
 # 160 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     ({ free(next); free_helper(next, 18208841949269014670UL); }) ;
+     ({ free_helper(next, 18208841949269014670UL);free(next); }) ;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     ({ free(vsq); free_helper(vsq, 18208841949269014672UL); }) ;
+     ({ free_helper(vsq, 18208841949269014672UL);free(vsq); }) ;
 # 162 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
     { int i; for ( i = (0) ; i < conf.nsrcs; i++) {
 # 163 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-         ({ free(srcs[i]); free_helper(srcs[i], 18208841949269014782UL); }) ;
+         ({ free_helper(srcs[i], 18208841949269014782UL);free(srcs[i]); }) ;
 # 164 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
     } }
 # 165 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     ({ free(srcs); free_helper(srcs, 18208841949269014780UL); }) ;
+     ({ free_helper(srcs, 18208841949269014780UL);free(srcs); }) ;
 # 166 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 167 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
      int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
@@ -5677,21 +5677,21 @@ config conf;
     }
 # 157 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 158 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     ({ free(c_coeff); free_helper(c_coeff, 18208841949269014673UL); }) ;
+     ({ free_helper(c_coeff, 18208841949269014673UL);free(c_coeff); }) ;
 # 159 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     ({ free(curr); free_helper(curr, 18208841949269014670UL); }) ;
+     ({ free_helper(curr, 18208841949269014670UL);free(curr); }) ;
 # 160 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     ({ free(next); free_helper(next, 18208841949269014670UL); }) ;
+     ({ free_helper(next, 18208841949269014670UL);free(next); }) ;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     ({ free(vsq); free_helper(vsq, 18208841949269014672UL); }) ;
+     ({ free_helper(vsq, 18208841949269014672UL);free(vsq); }) ;
 # 162 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
     { int i; for ( i = (0) ; i < conf.nsrcs; i++) {
 # 163 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-         ({ free(srcs[i]); free_helper(srcs[i], 18208841949269014782UL); }) ;
+         ({ free_helper(srcs[i], 18208841949269014782UL);free(srcs[i]); }) ;
 # 164 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
     } }
 # 165 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     ({ free(srcs); free_helper(srcs, 18208841949269014780UL); }) ;
+     ({ free_helper(srcs, 18208841949269014780UL);free(srcs); }) ;
 # 166 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 167 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
      int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
