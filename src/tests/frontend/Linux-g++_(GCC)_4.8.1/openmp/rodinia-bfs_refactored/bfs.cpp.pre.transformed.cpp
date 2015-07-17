@@ -4238,17 +4238,17 @@ int num_omp_threads;
 # 199 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
 # 200 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
 # 201 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_graph_nodes); free_helper(h_graph_nodes, 17760651418308787334UL); }) ;
+  ({ free_helper(h_graph_nodes, 17760651418308787334UL);free(h_graph_nodes); }) ;
 # 202 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_graph_edges); free_helper(h_graph_edges, 17760651418308787335UL); }) ;
+  ({ free_helper(h_graph_edges, 17760651418308787335UL);free(h_graph_edges); }) ;
 # 203 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_graph_mask); free_helper(h_graph_mask, 17760651418308787333UL); }) ;
+  ({ free_helper(h_graph_mask, 17760651418308787333UL);free(h_graph_mask); }) ;
 # 204 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_updating_graph_mask); free_helper(h_updating_graph_mask, 17760651418308787338UL); }) ;
+  ({ free_helper(h_updating_graph_mask, 17760651418308787338UL);free(h_updating_graph_mask); }) ;
 # 205 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_graph_visited); free_helper(h_graph_visited, 17760651418308787336UL); }) ;
+  ({ free_helper(h_graph_visited, 17760651418308787336UL);free(h_graph_visited); }) ;
 # 206 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_cost); free_helper(h_cost, 17760651418308787337UL); }) ;
+  ({ free_helper(h_cost, 17760651418308787337UL);free(h_cost); }) ;
 # 207 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
 # 208 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
 rm_stack(false, 0UL, "BFSGraph", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable4, false); }
@@ -4568,17 +4568,17 @@ int num_omp_threads;
 # 199 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
 # 200 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
 # 201 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_graph_nodes); free_helper(h_graph_nodes, 17760651418308787334UL); }) ;
+  ({ free_helper(h_graph_nodes, 17760651418308787334UL);free(h_graph_nodes); }) ;
 # 202 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_graph_edges); free_helper(h_graph_edges, 17760651418308787335UL); }) ;
+  ({ free_helper(h_graph_edges, 17760651418308787335UL);free(h_graph_edges); }) ;
 # 203 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_graph_mask); free_helper(h_graph_mask, 17760651418308787333UL); }) ;
+  ({ free_helper(h_graph_mask, 17760651418308787333UL);free(h_graph_mask); }) ;
 # 204 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_updating_graph_mask); free_helper(h_updating_graph_mask, 17760651418308787338UL); }) ;
+  ({ free_helper(h_updating_graph_mask, 17760651418308787338UL);free(h_updating_graph_mask); }) ;
 # 205 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_graph_visited); free_helper(h_graph_visited, 17760651418308787336UL); }) ;
+  ({ free_helper(h_graph_visited, 17760651418308787336UL);free(h_graph_visited); }) ;
 # 206 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
-  ({ free(h_cost); free_helper(h_cost, 17760651418308787337UL); }) ;
+  ({ free_helper(h_cost, 17760651418308787337UL);free(h_cost); }) ;
 # 207 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
 # 208 "/gpfs-biou/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp"
 rm_stack(false, 0UL, "BFSGraph", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable4, false); }

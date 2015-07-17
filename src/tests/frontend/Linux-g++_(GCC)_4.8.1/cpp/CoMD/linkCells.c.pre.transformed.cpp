@@ -4157,9 +4157,9 @@ void destroyLinkCells_resumable(LinkCell** boxes)
    if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1, false); return; };
 # 117 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 118 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-    ({ free((*boxes)->nAtoms); free_helper((*boxes)->nAtoms, 13307200203520302195UL); }) ;
+    ({ free_helper((*boxes)->nAtoms, 13307200203520302195UL);free((*boxes)->nAtoms); }) ;
 # 119 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-    ({ free(*boxes); free_helper(*boxes, 13307200203520302188UL); }) ;
+    ({ free_helper(*boxes, 13307200203520302188UL);free(*boxes); }) ;
 # 120 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    *boxes = __null;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4707,9 +4707,9 @@ void destroyLinkCells_quick(LinkCell** boxes)
    if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1, false); return; };
 # 117 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 118 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-    ({ free((*boxes)->nAtoms); free_helper((*boxes)->nAtoms, 13307200203520302195UL); }) ;
+    ({ free_helper((*boxes)->nAtoms, 13307200203520302195UL);free((*boxes)->nAtoms); }) ;
 # 119 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-    ({ free(*boxes); free_helper(*boxes, 13307200203520302188UL); }) ;
+    ({ free_helper(*boxes, 13307200203520302188UL);free(*boxes); }) ;
 # 120 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    *boxes = __null;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -5242,9 +5242,9 @@ void destroyLinkCells_npm(LinkCell** boxes)
    if (! *boxes) {return; };
 # 117 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 118 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-    ({ free((*boxes)->nAtoms); free_helper((*boxes)->nAtoms, 13307200203520302195UL); }) ;
+    ({ free_helper((*boxes)->nAtoms, 13307200203520302195UL);free((*boxes)->nAtoms); }) ;
 # 119 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-    ({ free(*boxes); free_helper(*boxes, 13307200203520302188UL); }) ;
+    ({ free_helper(*boxes, 13307200203520302188UL);free(*boxes); }) ;
 # 120 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    *boxes = __null;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"

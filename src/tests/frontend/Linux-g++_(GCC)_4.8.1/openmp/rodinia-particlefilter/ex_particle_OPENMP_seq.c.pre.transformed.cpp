@@ -4565,7 +4565,7 @@ void videoSequence_resumable(int * I, int IszX, int IszY, int Nfr, int * seed){c
 # 263 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 264 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(newMatrix); free_helper(newMatrix, 12566922966829692313UL); }) ;
+  ({ free_helper(newMatrix, 12566922966829692313UL);free(newMatrix); }) ;
 # 265 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 266 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 267 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5084,27 +5084,27 @@ int max_size;
 # 539 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 540 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(disk); free_helper(disk, 12566922966829693450UL); }) ;
+  ({ free_helper(disk, 12566922966829693450UL);free(disk); }) ;
 # 541 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(objxy); free_helper(objxy, 12566922966829693670UL); }) ;
+  ({ free_helper(objxy, 12566922966829693670UL);free(objxy); }) ;
 # 542 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(weights); free_helper(weights, 12566922966829693538UL); }) ;
+  ({ free_helper(weights, 12566922966829693538UL);free(weights); }) ;
 # 543 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(likelihood); free_helper(likelihood, 12566922966829693663UL); }) ;
+  ({ free_helper(likelihood, 12566922966829693663UL);free(likelihood); }) ;
 # 544 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(xj); free_helper(xj, 12566922966829693666UL); }) ;
+  ({ free_helper(xj, 12566922966829693666UL);free(xj); }) ;
 # 545 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(yj); free_helper(yj, 12566922966829693667UL); }) ;
+  ({ free_helper(yj, 12566922966829693667UL);free(yj); }) ;
 # 546 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayX); free_helper(arrayX, 12566922966829693625UL); }) ;
+  ({ free_helper(arrayX, 12566922966829693625UL);free(arrayX); }) ;
 # 547 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayY); free_helper(arrayY, 12566922966829693631UL); }) ;
+  ({ free_helper(arrayY, 12566922966829693631UL);free(arrayY); }) ;
 # 548 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(CDF); free_helper(CDF, 12566922966829693668UL); }) ;
+  ({ free_helper(CDF, 12566922966829693668UL);free(CDF); }) ;
 # 549 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(u); free_helper(u, 12566922966829693669UL); }) ;
+  ({ free_helper(u, 12566922966829693669UL);free(u); }) ;
 # 550 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(ind); free_helper(ind, 12566922966829693672UL); }) ;
+  ({ free_helper(ind, 12566922966829693672UL);free(ind); }) ;
 # 551 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "particleFilter", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); }
 # 552 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5263,9 +5263,9 @@ int IszX;
    float ____chimes_unroll_var_18; call_lbl_7: ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
 # 634 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 635 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(seed); free_helper(seed, 12566922966829693910UL); }) ;
+  ({ free_helper(seed, 12566922966829693910UL);free(seed); }) ;
 # 636 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(I); free_helper(I, 12566922966829693928UL); }) ;
+  ({ free_helper(I, 12566922966829693928UL);free(I); }) ;
 # 637 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_25; ;
 # 638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5564,7 +5564,7 @@ void videoSequence_quick(int * I, int IszX, int IszY, int Nfr, int * seed){const
 # 263 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 264 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(newMatrix); free_helper(newMatrix, 12566922966829692313UL); }) ;
+  ({ free_helper(newMatrix, 12566922966829692313UL);free(newMatrix); }) ;
 # 265 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 266 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 267 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6081,27 +6081,27 @@ int max_size;
 # 539 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 540 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(disk); free_helper(disk, 12566922966829693450UL); }) ;
+  ({ free_helper(disk, 12566922966829693450UL);free(disk); }) ;
 # 541 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(objxy); free_helper(objxy, 12566922966829693670UL); }) ;
+  ({ free_helper(objxy, 12566922966829693670UL);free(objxy); }) ;
 # 542 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(weights); free_helper(weights, 12566922966829693538UL); }) ;
+  ({ free_helper(weights, 12566922966829693538UL);free(weights); }) ;
 # 543 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(likelihood); free_helper(likelihood, 12566922966829693663UL); }) ;
+  ({ free_helper(likelihood, 12566922966829693663UL);free(likelihood); }) ;
 # 544 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(xj); free_helper(xj, 12566922966829693666UL); }) ;
+  ({ free_helper(xj, 12566922966829693666UL);free(xj); }) ;
 # 545 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(yj); free_helper(yj, 12566922966829693667UL); }) ;
+  ({ free_helper(yj, 12566922966829693667UL);free(yj); }) ;
 # 546 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayX); free_helper(arrayX, 12566922966829693625UL); }) ;
+  ({ free_helper(arrayX, 12566922966829693625UL);free(arrayX); }) ;
 # 547 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayY); free_helper(arrayY, 12566922966829693631UL); }) ;
+  ({ free_helper(arrayY, 12566922966829693631UL);free(arrayY); }) ;
 # 548 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(CDF); free_helper(CDF, 12566922966829693668UL); }) ;
+  ({ free_helper(CDF, 12566922966829693668UL);free(CDF); }) ;
 # 549 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(u); free_helper(u, 12566922966829693669UL); }) ;
+  ({ free_helper(u, 12566922966829693669UL);free(u); }) ;
 # 550 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(ind); free_helper(ind, 12566922966829693672UL); }) ;
+  ({ free_helper(ind, 12566922966829693672UL);free(ind); }) ;
 # 551 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "particleFilter", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); }
 
@@ -6261,9 +6261,9 @@ int IszX;
    float ____chimes_unroll_var_18; call_lbl_7: ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
 # 634 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 635 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(seed); free_helper(seed, 12566922966829693910UL); }) ;
+  ({ free_helper(seed, 12566922966829693910UL);free(seed); }) ;
 # 636 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(I); free_helper(I, 12566922966829693928UL); }) ;
+  ({ free_helper(I, 12566922966829693928UL);free(I); }) ;
 # 637 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_25; ;
 # 638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"

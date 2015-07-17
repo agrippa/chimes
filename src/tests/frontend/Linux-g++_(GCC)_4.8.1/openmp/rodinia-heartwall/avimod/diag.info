@@ -3,23 +3,23 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 28
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 73 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 38  ({ void *____chimes_tmp_ptr = malloc(height_new * width_new * sizeof(float)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 1795814175430277689UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 83 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 2  ({ free(result); free_helper(result, 1795814175430277689UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 2  ({ free_helper(result, 1795814175430277689UL);free(result);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 13 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 102 8 len=9 get_frame_npm
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 28  ({ void *____chimes_tmp_ptr = malloc(width * height * sizeof(char)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 1795814175430277766UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 64 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 2  ({ free(image_buf); free_helper(image_buf, 1795814175430277766UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 2  ({ free_helper(image_buf, 1795814175430277766UL);free(image_buf);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 16 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 119 2 alias_group_changed(____alias_loc_id_0); 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 28  ({ void *____chimes_tmp_ptr = malloc(height_new * width_new * sizeof(float)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 1795814175430277689UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 73 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 38  ({ void *____chimes_tmp_ptr = malloc(height_new * width_new * sizeof(float)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 1795814175430277689UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 83 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 2  ({ free(result); free_helper(result, 1795814175430277689UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 2  ({ free_helper(result, 1795814175430277689UL);free(result);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 13 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 28  ({ void *____chimes_tmp_ptr = malloc(width * height * sizeof(char)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 1795814175430277766UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 64 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 2  ({ free(image_buf); free_helper(image_buf, 1795814175430277766UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 2  ({ free_helper(image_buf, 1795814175430277766UL);free(image_buf);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 16 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 95 76 rm_stack(true, 1795814175430277689UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 21 24 const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(1795814175430277714UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 

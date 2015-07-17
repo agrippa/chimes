@@ -5118,7 +5118,7 @@ float* chop_flip_image_resumable( char *image,
 # 91 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  }
 # 92 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free(result); free_helper(result, 1795814175430277689UL); }) ;
+  ({ free_helper(result, 1795814175430277689UL);free(result); }) ;
 # 93 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 94 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 95 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5187,7 +5187,7 @@ int dummy;
 # 133 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 134 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 135 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free(image_buf); free_helper(image_buf, 1795814175430277766UL); }) ;
+  ({ free_helper(image_buf, 1795814175430277766UL);free(image_buf); }) ;
 # 136 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 137 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 138 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5336,7 +5336,7 @@ float* chop_flip_image_quick( char *image,
 # 91 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  }
 # 92 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free(result); free_helper(result, 1795814175430277689UL); }) ;
+  ({ free_helper(result, 1795814175430277689UL);free(result); }) ;
 # 93 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 94 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 95 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5410,7 +5410,7 @@ int dummy;
 # 133 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 134 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 135 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free(image_buf); free_helper(image_buf, 1795814175430277766UL); }) ;
+  ({ free_helper(image_buf, 1795814175430277766UL);free(image_buf); }) ;
 # 136 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 137 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 138 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5569,7 +5569,7 @@ float* chop_flip_image_npm( char *image,
 # 91 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  }
 # 92 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free(result); free_helper(result, 1795814175430277689UL); }) ;
+  ({ free_helper(result, 1795814175430277689UL);free(result); }) ;
 # 93 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 94 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 95 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5623,7 +5623,7 @@ float* get_frame_npm( avi_t* cell_file,
 # 133 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 134 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 135 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free(image_buf); free_helper(image_buf, 1795814175430277766UL); }) ;
+  ({ free_helper(image_buf, 1795814175430277766UL);free(image_buf); }) ;
 # 136 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 137 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 138 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"

@@ -21,27 +21,27 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 18  
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 41 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412059UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 40 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 2  ({ free(image_ori); free_helper(image_ori, 12879499662222412108UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 2  ({ free_helper(image_ori, 12879499662222412108UL);free(image_ori);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 16 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 2  ({ free(image); free_helper(image, 12879499662222412017UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 2  ({ free_helper(image, 12879499662222412017UL);free(image);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 5  ({ free(iN); free_helper(iN, 12879499662222411946UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 5  ({ free_helper(iN, 12879499662222411946UL);free(iN);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 15  ({ free(iS); free_helper(iS, 12879499662222411953UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 15  ({ free_helper(iS, 12879499662222411953UL);free(iS);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 22 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 25  ({ free(jW); free_helper(jW, 12879499662222412048UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 25  ({ free_helper(jW, 12879499662222412048UL);free(jW);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 32 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 35  ({ free(jE); free_helper(jE, 12879499662222412047UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 35  ({ free_helper(jE, 12879499662222412047UL);free(jE);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 5  ({ free(dN); free_helper(dN, 12879499662222412049UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 5  ({ free_helper(dN, 12879499662222412049UL);free(dN);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 15  ({ free(dS); free_helper(dS, 12879499662222412050UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 15  ({ free_helper(dS, 12879499662222412050UL);free(dS);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 22 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 25  ({ free(dW); free_helper(dW, 12879499662222412051UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 25  ({ free_helper(dW, 12879499662222412051UL);free(dW);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 32 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 35  ({ free(dE); free_helper(dE, 12879499662222412052UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 35  ({ free_helper(dE, 12879499662222412052UL);free(dE);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 5  ({ free(c); free_helper(c, 12879499662222412059UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 5  ({ free_helper(c, 12879499662222412059UL);free(c);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 11 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 22  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * image_ori_elem); malloc_helper(____chimes_tmp_ptr, sizeof(float) * image_ori_elem, 12879499662222412108UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 59 
@@ -65,27 +65,27 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 18  
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 41 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412059UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 40 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 2  ({ free(image_ori); free_helper(image_ori, 12879499662222412108UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 2  ({ free_helper(image_ori, 12879499662222412108UL);free(image_ori);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 16 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 2  ({ free(image); free_helper(image, 12879499662222412017UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 2  ({ free_helper(image, 12879499662222412017UL);free(image);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 5  ({ free(iN); free_helper(iN, 12879499662222411946UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 5  ({ free_helper(iN, 12879499662222411946UL);free(iN);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 15  ({ free(iS); free_helper(iS, 12879499662222411953UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 15  ({ free_helper(iS, 12879499662222411953UL);free(iS);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 22 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 25  ({ free(jW); free_helper(jW, 12879499662222412048UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 25  ({ free_helper(jW, 12879499662222412048UL);free(jW);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 32 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 35  ({ free(jE); free_helper(jE, 12879499662222412047UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 35  ({ free_helper(jE, 12879499662222412047UL);free(jE);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 5  ({ free(dN); free_helper(dN, 12879499662222412049UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 5  ({ free_helper(dN, 12879499662222412049UL);free(dN);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 15  ({ free(dS); free_helper(dS, 12879499662222412050UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 15  ({ free_helper(dS, 12879499662222412050UL);free(dS);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 22 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 25  ({ free(dW); free_helper(dW, 12879499662222412051UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 25  ({ free_helper(dW, 12879499662222412051UL);free(dW);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 32 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 35  ({ free(dE); free_helper(dE, 12879499662222412052UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 35  ({ free_helper(dE, 12879499662222412052UL);free(dE);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 5  ({ free(c); free_helper(c, 12879499662222412059UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 5  ({ free_helper(c, 12879499662222412059UL);free(c);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 11 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 47 84 const int ____chimes_did_disable0 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 24, 0, (size_t)(12879499662222411628UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12879499662222411631UL), (size_t)(12879499662222411632UL), (size_t)(12879499662222411633UL), (size_t)(12879499662222411634UL), (size_t)(12879499662222411635UL), (size_t)(12879499662222411636UL), (size_t)(12879499662222411637UL), (size_t)(12879499662222411638UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12879499662222411645UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 133 1 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_12, ____chimes_did_disable0, false); 

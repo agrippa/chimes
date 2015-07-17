@@ -1,12 +1,12 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 97 6 len=9 ljDestroy_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 102 4  ({ free(pot); free_helper(pot, 15692222973149250874UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 102 4  ({ free_helper(pot, 15692222973149250874UL);free(pot);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 102 12 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 109 16 len=9 initLjPot_npm
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 111 37  ({ void *____chimes_tmp_ptr = malloc(sizeof(LjPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 111 63 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 129 6 len=7 ljPrint_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 143 5 len=7 ljForce_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 102 4  ({ free(pot); free_helper(pot, 15692222973149250874UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 102 4  ({ free_helper(pot, 15692222973149250874UL);free(pot);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 102 12 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 111 37  ({ void *____chimes_tmp_ptr = malloc(sizeof(LjPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 111 63 

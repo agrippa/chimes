@@ -119,11 +119,11 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 855 61 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 856 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 5910949521487001228UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 856 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 924 2  ({ free(fz_elem); free_helper(fz_elem, 5910949521487001228UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 924 2  ({ free_helper(fz_elem, 5910949521487001228UL);free(fz_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 924 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 925 2  ({ free(fy_elem); free_helper(fy_elem, 5910949521487001221UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 925 2  ({ free_helper(fy_elem, 5910949521487001221UL);free(fy_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 925 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 926 2  ({ free(fx_elem); free_helper(fx_elem, 5910949521487001197UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 926 2  ({ free_helper(fx_elem, 5910949521487001197UL);free(fx_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 926 14 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 931 6 len=29 CollectDomainNodesToElemNodes_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 975 6 len=7 VoluDer_npm
@@ -136,11 +136,11 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1245 61 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1246 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 5910949521487002637UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1246 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1495 2  ({ free(fz_elem); free_helper(fz_elem, 5910949521487002637UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1495 2  ({ free_helper(fz_elem, 5910949521487002637UL);free(fz_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1495 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1496 2  ({ free(fy_elem); free_helper(fy_elem, 5910949521487002630UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1496 2  ({ free_helper(fy_elem, 5910949521487002630UL);free(fy_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1496 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1497 2  ({ free(fx_elem); free_helper(fx_elem, 5910949521487002606UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1497 2  ({ free_helper(fx_elem, 5910949521487002606UL);free(fx_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1497 14 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1501 6 len=28 CalcHourglassControlForElems_npm
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1505 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 5910949521487001502UL, 0, 0); ____chimes_tmp_ptr; }) 
@@ -155,17 +155,17 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1509 57 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1510 25  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 5910949521487001575UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1510 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1549 2  ({ free(z8n); free_helper(z8n, 5910949521487001575UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1549 2  ({ free_helper(z8n, 5910949521487001575UL);free(z8n);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1549 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1550 2  ({ free(y8n); free_helper(y8n, 5910949521487001568UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1550 2  ({ free_helper(y8n, 5910949521487001568UL);free(y8n);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1550 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1551 2  ({ free(x8n); free_helper(x8n, 5910949521487001561UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1551 2  ({ free_helper(x8n, 5910949521487001561UL);free(x8n);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1551 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1552 2  ({ free(dvdz); free_helper(dvdz, 5910949521487001554UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1552 2  ({ free_helper(dvdz, 5910949521487001554UL);free(dvdz);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1552 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1553 2  ({ free(dvdy); free_helper(dvdy, 5910949521487001547UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1553 2  ({ free_helper(dvdy, 5910949521487001547UL);free(dvdy);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1553 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1554 2  ({ free(dvdx); free_helper(dvdx, 5910949521487001502UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1554 2  ({ free_helper(dvdx, 5910949521487001502UL);free(dvdx);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1554 11 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1560 6 len=23 CalcVolumeForceForElems_npm
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1565 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 5910949521487001048UL, 0, 0); ____chimes_tmp_ptr; }) 
@@ -176,13 +176,13 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1567 59 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1568 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 5910949521487001040UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1568 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1588 3  ({ free(determ); free_helper(determ, 5910949521487001040UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1588 3  ({ free_helper(determ, 5910949521487001040UL);free(determ);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1588 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1589 3  ({ free(sigzz); free_helper(sigzz, 5910949521487001033UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1589 3  ({ free_helper(sigzz, 5910949521487001033UL);free(sigzz);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1589 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1590 3  ({ free(sigyy); free_helper(sigyy, 5910949521487001026UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1590 3  ({ free_helper(sigyy, 5910949521487001026UL);free(sigyy);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1590 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1591 3  ({ free(sigxx); free_helper(sigxx, 5910949521487001048UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1591 3  ({ free_helper(sigxx, 5910949521487001048UL);free(sigxx);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1591 13 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1595 20 len=17 CalcForceForNodes_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1614 6 len=24 CalcAccelerationForNodes_npm
@@ -205,7 +205,7 @@ ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2388
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2419 6 len=18 CalcEnergyForElems_npm
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2430 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 5910949521486996238UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2430 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2542 2  ({ free(pHalfStep); free_helper(pHalfStep, 5910949521486996238UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2542 2  ({ free_helper(pHalfStep, 5910949521486996238UL);free(pHalfStep);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2542 16 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2548 6 len=22 CalcSoundSpeedForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2568 6 len=15 EvalEOSForElems_npm
@@ -237,38 +237,38 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2593 55 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2594 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 5910949521486995699UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2594 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2706 2  ({ free(pbvc); free_helper(pbvc, 5910949521486995699UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2706 2  ({ free_helper(pbvc, 5910949521486995699UL);free(pbvc);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2706 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2707 2  ({ free(bvc); free_helper(bvc, 5910949521486995692UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2707 2  ({ free_helper(bvc, 5910949521486995692UL);free(bvc);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2707 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2708 2  ({ free(q_new); free_helper(q_new, 5910949521486995685UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2708 2  ({ free_helper(q_new, 5910949521486995685UL);free(q_new);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2708 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2709 2  ({ free(e_new); free_helper(e_new, 5910949521486995678UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2709 2  ({ free_helper(e_new, 5910949521486995678UL);free(e_new);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2709 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2710 2  ({ free(p_new); free_helper(p_new, 5910949521486995671UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2710 2  ({ free_helper(p_new, 5910949521486995671UL);free(p_new);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2710 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2711 2  ({ free(work); free_helper(work, 5910949521486995664UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2711 2  ({ free_helper(work, 5910949521486995664UL);free(work);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2711 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2712 2  ({ free(ql); free_helper(ql, 5910949521486995657UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2712 2  ({ free_helper(ql, 5910949521486995657UL);free(ql);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2712 9 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2713 2  ({ free(qq); free_helper(qq, 5910949521486995650UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2713 2  ({ free_helper(qq, 5910949521486995650UL);free(qq);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2713 9 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2714 2  ({ free(compHalfStep); free_helper(compHalfStep, 5910949521486995643UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2714 2  ({ free_helper(compHalfStep, 5910949521486995643UL);free(compHalfStep);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2714 19 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2715 2  ({ free(compression); free_helper(compression, 5910949521486995636UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2715 2  ({ free_helper(compression, 5910949521486995636UL);free(compression);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2715 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2716 2  ({ free(q_old); free_helper(q_old, 5910949521486995629UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2716 2  ({ free_helper(q_old, 5910949521486995629UL);free(q_old);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2716 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2717 2  ({ free(p_old); free_helper(p_old, 5910949521486995622UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2717 2  ({ free_helper(p_old, 5910949521486995622UL);free(p_old);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2717 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2718 2  ({ free(delvc); free_helper(delvc, 5910949521486995615UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2718 2  ({ free_helper(delvc, 5910949521486995615UL);free(delvc);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2718 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2719 2  ({ free(e_old); free_helper(e_old, 5910949521486995514UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2719 2  ({ free_helper(e_old, 5910949521486995514UL);free(e_old);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2719 12 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2723 6 len=31 ApplyMaterialPropertiesForElems_npm
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2731 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 5910949521486995251UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2731 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2782 3  ({ free(vnewc); free_helper(vnewc, 5910949521486995251UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2782 3  ({ free_helper(vnewc, 5910949521486995251UL);free(vnewc);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2782 13 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2788 6 len=21 UpdateVolumesForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2809 6 len=16 LagrangeElements_npm
@@ -383,11 +383,11 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 855 61 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 856 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 5910949521487001228UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 856 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 924 2  ({ free(fz_elem); free_helper(fz_elem, 5910949521487001228UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 924 2  ({ free_helper(fz_elem, 5910949521487001228UL);free(fz_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 924 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 925 2  ({ free(fy_elem); free_helper(fy_elem, 5910949521487001221UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 925 2  ({ free_helper(fy_elem, 5910949521487001221UL);free(fy_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 925 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 926 2  ({ free(fx_elem); free_helper(fx_elem, 5910949521487001197UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 926 2  ({ free_helper(fx_elem, 5910949521487001197UL);free(fx_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 926 14 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1244 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 5910949521487002606UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1244 61 
@@ -395,11 +395,11 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1245 61 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1246 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 5910949521487002637UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1246 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1495 2  ({ free(fz_elem); free_helper(fz_elem, 5910949521487002637UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1495 2  ({ free_helper(fz_elem, 5910949521487002637UL);free(fz_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1495 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1496 2  ({ free(fy_elem); free_helper(fy_elem, 5910949521487002630UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1496 2  ({ free_helper(fy_elem, 5910949521487002630UL);free(fy_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1496 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1497 2  ({ free(fx_elem); free_helper(fx_elem, 5910949521487002606UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1497 2  ({ free_helper(fx_elem, 5910949521487002606UL);free(fx_elem);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1497 14 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1505 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 5910949521487001502UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1505 58 
@@ -413,17 +413,17 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1509 57 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1510 25  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 5910949521487001575UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1510 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1549 2  ({ free(z8n); free_helper(z8n, 5910949521487001575UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1549 2  ({ free_helper(z8n, 5910949521487001575UL);free(z8n);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1549 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1550 2  ({ free(y8n); free_helper(y8n, 5910949521487001568UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1550 2  ({ free_helper(y8n, 5910949521487001568UL);free(y8n);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1550 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1551 2  ({ free(x8n); free_helper(x8n, 5910949521487001561UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1551 2  ({ free_helper(x8n, 5910949521487001561UL);free(x8n);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1551 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1552 2  ({ free(dvdz); free_helper(dvdz, 5910949521487001554UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1552 2  ({ free_helper(dvdz, 5910949521487001554UL);free(dvdz);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1552 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1553 2  ({ free(dvdy); free_helper(dvdy, 5910949521487001547UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1553 2  ({ free_helper(dvdy, 5910949521487001547UL);free(dvdy);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1553 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1554 2  ({ free(dvdx); free_helper(dvdx, 5910949521487001502UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1554 2  ({ free_helper(dvdx, 5910949521487001502UL);free(dvdx);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1554 11 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1565 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 5910949521487001048UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1565 59 
@@ -433,17 +433,17 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1567 59 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1568 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 5910949521487001040UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1568 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1588 3  ({ free(determ); free_helper(determ, 5910949521487001040UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1588 3  ({ free_helper(determ, 5910949521487001040UL);free(determ);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1588 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1589 3  ({ free(sigzz); free_helper(sigzz, 5910949521487001033UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1589 3  ({ free_helper(sigzz, 5910949521487001033UL);free(sigzz);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1589 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1590 3  ({ free(sigyy); free_helper(sigyy, 5910949521487001026UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1590 3  ({ free_helper(sigyy, 5910949521487001026UL);free(sigyy);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1590 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1591 3  ({ free(sigxx); free_helper(sigxx, 5910949521487001048UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1591 3  ({ free_helper(sigxx, 5910949521487001048UL);free(sigxx);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 1591 13 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2430 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 5910949521486996238UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2430 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2542 2  ({ free(pHalfStep); free_helper(pHalfStep, 5910949521486996238UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2542 2  ({ free_helper(pHalfStep, 5910949521486996238UL);free(pHalfStep);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2542 16 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2581 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 5910949521486995514UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2581 57 
@@ -473,37 +473,37 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2593 55 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2594 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 5910949521486995699UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2594 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2706 2  ({ free(pbvc); free_helper(pbvc, 5910949521486995699UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2706 2  ({ free_helper(pbvc, 5910949521486995699UL);free(pbvc);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2706 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2707 2  ({ free(bvc); free_helper(bvc, 5910949521486995692UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2707 2  ({ free_helper(bvc, 5910949521486995692UL);free(bvc);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2707 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2708 2  ({ free(q_new); free_helper(q_new, 5910949521486995685UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2708 2  ({ free_helper(q_new, 5910949521486995685UL);free(q_new);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2708 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2709 2  ({ free(e_new); free_helper(e_new, 5910949521486995678UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2709 2  ({ free_helper(e_new, 5910949521486995678UL);free(e_new);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2709 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2710 2  ({ free(p_new); free_helper(p_new, 5910949521486995671UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2710 2  ({ free_helper(p_new, 5910949521486995671UL);free(p_new);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2710 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2711 2  ({ free(work); free_helper(work, 5910949521486995664UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2711 2  ({ free_helper(work, 5910949521486995664UL);free(work);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2711 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2712 2  ({ free(ql); free_helper(ql, 5910949521486995657UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2712 2  ({ free_helper(ql, 5910949521486995657UL);free(ql);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2712 9 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2713 2  ({ free(qq); free_helper(qq, 5910949521486995650UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2713 2  ({ free_helper(qq, 5910949521486995650UL);free(qq);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2713 9 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2714 2  ({ free(compHalfStep); free_helper(compHalfStep, 5910949521486995643UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2714 2  ({ free_helper(compHalfStep, 5910949521486995643UL);free(compHalfStep);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2714 19 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2715 2  ({ free(compression); free_helper(compression, 5910949521486995636UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2715 2  ({ free_helper(compression, 5910949521486995636UL);free(compression);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2715 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2716 2  ({ free(q_old); free_helper(q_old, 5910949521486995629UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2716 2  ({ free_helper(q_old, 5910949521486995629UL);free(q_old);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2716 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2717 2  ({ free(p_old); free_helper(p_old, 5910949521486995622UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2717 2  ({ free_helper(p_old, 5910949521486995622UL);free(p_old);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2717 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2718 2  ({ free(delvc); free_helper(delvc, 5910949521486995615UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2718 2  ({ free_helper(delvc, 5910949521486995615UL);free(delvc);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2718 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2719 2  ({ free(e_old); free_helper(e_old, 5910949521486995514UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2719 2  ({ free_helper(e_old, 5910949521486995514UL);free(e_old);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2719 12 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2731 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 5910949521486995251UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2731 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2782 3  ({ free(vnewc); free_helper(vnewc, 5910949521486995251UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2782 3  ({ free_helper(vnewc, 5910949521486995251UL);free(vnewc);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 2782 13 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 103 98 rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_15, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc 103 30 const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)); 

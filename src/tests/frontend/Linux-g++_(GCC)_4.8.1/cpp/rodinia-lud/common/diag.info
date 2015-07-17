@@ -10,17 +10,17 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 81 15  (
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 81 45 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 85 15  ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225481UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 85 45 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 87 7  ({ free(l); free_helper(l, 13323080938073225297UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 87 7  ({ free_helper(l, 13323080938073225297UL);free(l);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 87 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 120 3  ({ free(l); free_helper(l, 13323080938073225297UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 120 3  ({ free_helper(l, 13323080938073225297UL);free(l);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 120 9 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 121 3  ({ free(u); free_helper(u, 13323080938073225481UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 121 3  ({ free_helper(u, 13323080938073225481UL);free(u);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 121 9 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 1 len=15 matrix_multiply_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 1 len=10 lud_verify_npm
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 142 24  ({ void *____chimes_tmp_ptr = malloc(matrix_dim * matrix_dim * sizeof(float)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 13323080938073225639UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 142 66 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 186 3  ({ free(tmp); free_helper(tmp, 13323080938073225639UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 186 3  ({ free_helper(tmp, 13323080938073225639UL);free(tmp);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 186 11 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 1 len=16 matrix_duplicate_npm
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 192 25  ({ void *____chimes_tmp_ptr = malloc(s); malloc_helper(____chimes_tmp_ptr, s, 13323080938073225830UL, 0, 0); ____chimes_tmp_ptr; }) 
@@ -35,15 +35,15 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 81 15  (
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 81 45 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 85 15  ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225481UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 85 45 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 87 7  ({ free(l); free_helper(l, 13323080938073225297UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 87 7  ({ free_helper(l, 13323080938073225297UL);free(l);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 87 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 120 3  ({ free(l); free_helper(l, 13323080938073225297UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 120 3  ({ free_helper(l, 13323080938073225297UL);free(l);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 120 9 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 121 3  ({ free(u); free_helper(u, 13323080938073225481UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 121 3  ({ free_helper(u, 13323080938073225481UL);free(u);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 121 9 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 142 24  ({ void *____chimes_tmp_ptr = malloc(matrix_dim * matrix_dim * sizeof(float)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 13323080938073225639UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 142 66 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 186 3  ({ free(tmp); free_helper(tmp, 13323080938073225639UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 186 3  ({ free_helper(tmp, 13323080938073225639UL);free(tmp);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 186 11 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 192 25  ({ void *____chimes_tmp_ptr = malloc(s); malloc_helper(____chimes_tmp_ptr, s, 13323080938073225830UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 192 34 

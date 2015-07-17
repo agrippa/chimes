@@ -7535,7 +7535,7 @@ int frames_processed;
          call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ public_struct ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg15 = (pub); } calling((void*)kernel, 10, ____alias_loc_id_3, 0UL, 2, (size_t)(1262408436119491676UL), (size_t)(1262408436119491668UL)); (kernel)(____chimes_arg15, priv); }) ) : (({ calling_npm("kernel", ____alias_loc_id_3); (*____chimes_extern_func_kernel)(pub, priv); })));
 # 587 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 587 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(pub.d_frame); free_helper(pub.d_frame, 1262408436119492299UL); }) ;
+   ({ free_helper(pub.d_frame, 1262408436119492299UL);free(pub.d_frame); }) ;
 # 588 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 589 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 590 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7569,26 +7569,26 @@ int frames_processed;
     printf("execution took %f s\n", end_time - start_time);
 # 638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoRow); free_helper(pub.d_endoRow, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_endoRow, 1262408436119492299UL);free(pub.d_endoRow); }) ;
 # 639 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoCol); free_helper(pub.d_endoCol, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_endoCol, 1262408436119492299UL);free(pub.d_endoCol); }) ;
 # 640 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEndoRowLoc); free_helper(pub.d_tEndoRowLoc, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_tEndoRowLoc, 1262408436119492299UL);free(pub.d_tEndoRowLoc); }) ;
 # 641 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEndoColLoc); free_helper(pub.d_tEndoColLoc, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_tEndoColLoc, 1262408436119492299UL);free(pub.d_tEndoColLoc); }) ;
 # 642 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoT); free_helper(pub.d_endoT, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_endoT, 1262408436119492299UL);free(pub.d_endoT); }) ;
 # 643 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 644 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiRow); free_helper(pub.d_epiRow, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_epiRow, 1262408436119492299UL);free(pub.d_epiRow); }) ;
 # 645 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiCol); free_helper(pub.d_epiCol, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_epiCol, 1262408436119492299UL);free(pub.d_epiCol); }) ;
 # 646 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEpiRowLoc); free_helper(pub.d_tEpiRowLoc, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_tEpiRowLoc, 1262408436119492299UL);free(pub.d_tEpiRowLoc); }) ;
 # 647 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEpiColLoc); free_helper(pub.d_tEpiColLoc, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_tEpiColLoc, 1262408436119492299UL);free(pub.d_tEpiColLoc); }) ;
 # 648 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiT); free_helper(pub.d_epiT, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_epiT, 1262408436119492299UL);free(pub.d_epiT); }) ;
 # 649 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 650 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 651 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7597,40 +7597,40 @@ int frames_processed;
 # 654 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 655 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].in_partial_sum); free_helper(priv[i].in_partial_sum, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].in_partial_sum, 1262408436119492299UL);free(priv[i].in_partial_sum); }) ;
 # 656 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].in_sqr_partial_sum); free_helper(priv[i].in_sqr_partial_sum, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].in_sqr_partial_sum, 1262408436119492299UL);free(priv[i].in_sqr_partial_sum); }) ;
 # 657 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].par_max_val); free_helper(priv[i].par_max_val, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].par_max_val, 1262408436119492299UL);free(priv[i].par_max_val); }) ;
 # 658 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].par_max_coo); free_helper(priv[i].par_max_coo, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].par_max_coo, 1262408436119492299UL);free(priv[i].par_max_coo); }) ;
 # 659 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 660 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2); free_helper(priv[i].d_in2, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in2, 1262408436119492299UL);free(priv[i].d_in2); }) ;
 # 661 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sqr); free_helper(priv[i].d_in2_sqr, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in2_sqr, 1262408436119492299UL);free(priv[i].d_in2_sqr); }) ;
 # 662 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 663 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_mod); free_helper(priv[i].d_in_mod, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in_mod, 1262408436119492299UL);free(priv[i].d_in_mod); }) ;
 # 664 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_sqr); free_helper(priv[i].d_in_sqr, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in_sqr, 1262408436119492299UL);free(priv[i].d_in_sqr); }) ;
 # 665 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 666 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_conv); free_helper(priv[i].d_conv, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_conv, 1262408436119492299UL);free(priv[i].d_conv); }) ;
 # 667 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 668 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_pad); free_helper(priv[i].d_in2_pad, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in2_pad, 1262408436119492299UL);free(priv[i].d_in2_pad); }) ;
 # 669 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 670 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub); free_helper(priv[i].d_in2_sub, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in2_sub, 1262408436119492299UL);free(priv[i].d_in2_sub); }) ;
 # 671 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 672 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub2_sqr); free_helper(priv[i].d_in2_sub2_sqr, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in2_sub2_sqr, 1262408436119492299UL);free(priv[i].d_in2_sub2_sqr); }) ;
 # 673 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 674 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_tMask); free_helper(priv[i].d_tMask, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_tMask, 1262408436119492299UL);free(priv[i].d_tMask); }) ;
 # 675 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_mask_conv); free_helper(priv[i].d_mask_conv, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_mask_conv, 1262408436119492299UL);free(priv[i].d_mask_conv); }) ;
 # 676 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 677 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8479,7 +8479,7 @@ int frames_processed;
          call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ calling((void*)kernel, 10, ____alias_loc_id_3, 0UL, 2, (size_t)(1262408436119491676UL), (size_t)(1262408436119491668UL)); (kernel)(pub, priv); }) ) : (({ calling_npm("kernel", ____alias_loc_id_3); (*____chimes_extern_func_kernel)(pub, priv); })));
 # 587 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 587 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(pub.d_frame); free_helper(pub.d_frame, 1262408436119492299UL); }) ;
+   ({ free_helper(pub.d_frame, 1262408436119492299UL);free(pub.d_frame); }) ;
 # 588 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 589 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 590 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8513,26 +8513,26 @@ int frames_processed;
     printf("execution took %f s\n", end_time - start_time);
 # 638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoRow); free_helper(pub.d_endoRow, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_endoRow, 1262408436119492299UL);free(pub.d_endoRow); }) ;
 # 639 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoCol); free_helper(pub.d_endoCol, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_endoCol, 1262408436119492299UL);free(pub.d_endoCol); }) ;
 # 640 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEndoRowLoc); free_helper(pub.d_tEndoRowLoc, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_tEndoRowLoc, 1262408436119492299UL);free(pub.d_tEndoRowLoc); }) ;
 # 641 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEndoColLoc); free_helper(pub.d_tEndoColLoc, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_tEndoColLoc, 1262408436119492299UL);free(pub.d_tEndoColLoc); }) ;
 # 642 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoT); free_helper(pub.d_endoT, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_endoT, 1262408436119492299UL);free(pub.d_endoT); }) ;
 # 643 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 644 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiRow); free_helper(pub.d_epiRow, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_epiRow, 1262408436119492299UL);free(pub.d_epiRow); }) ;
 # 645 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiCol); free_helper(pub.d_epiCol, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_epiCol, 1262408436119492299UL);free(pub.d_epiCol); }) ;
 # 646 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEpiRowLoc); free_helper(pub.d_tEpiRowLoc, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_tEpiRowLoc, 1262408436119492299UL);free(pub.d_tEpiRowLoc); }) ;
 # 647 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEpiColLoc); free_helper(pub.d_tEpiColLoc, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_tEpiColLoc, 1262408436119492299UL);free(pub.d_tEpiColLoc); }) ;
 # 648 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiT); free_helper(pub.d_epiT, 1262408436119492299UL); }) ;
+  ({ free_helper(pub.d_epiT, 1262408436119492299UL);free(pub.d_epiT); }) ;
 # 649 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 650 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 651 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8541,40 +8541,40 @@ int frames_processed;
 # 654 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 655 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].in_partial_sum); free_helper(priv[i].in_partial_sum, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].in_partial_sum, 1262408436119492299UL);free(priv[i].in_partial_sum); }) ;
 # 656 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].in_sqr_partial_sum); free_helper(priv[i].in_sqr_partial_sum, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].in_sqr_partial_sum, 1262408436119492299UL);free(priv[i].in_sqr_partial_sum); }) ;
 # 657 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].par_max_val); free_helper(priv[i].par_max_val, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].par_max_val, 1262408436119492299UL);free(priv[i].par_max_val); }) ;
 # 658 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].par_max_coo); free_helper(priv[i].par_max_coo, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].par_max_coo, 1262408436119492299UL);free(priv[i].par_max_coo); }) ;
 # 659 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 660 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2); free_helper(priv[i].d_in2, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in2, 1262408436119492299UL);free(priv[i].d_in2); }) ;
 # 661 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sqr); free_helper(priv[i].d_in2_sqr, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in2_sqr, 1262408436119492299UL);free(priv[i].d_in2_sqr); }) ;
 # 662 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 663 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_mod); free_helper(priv[i].d_in_mod, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in_mod, 1262408436119492299UL);free(priv[i].d_in_mod); }) ;
 # 664 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_sqr); free_helper(priv[i].d_in_sqr, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in_sqr, 1262408436119492299UL);free(priv[i].d_in_sqr); }) ;
 # 665 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 666 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_conv); free_helper(priv[i].d_conv, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_conv, 1262408436119492299UL);free(priv[i].d_conv); }) ;
 # 667 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 668 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_pad); free_helper(priv[i].d_in2_pad, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in2_pad, 1262408436119492299UL);free(priv[i].d_in2_pad); }) ;
 # 669 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 670 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub); free_helper(priv[i].d_in2_sub, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in2_sub, 1262408436119492299UL);free(priv[i].d_in2_sub); }) ;
 # 671 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 672 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub2_sqr); free_helper(priv[i].d_in2_sub2_sqr, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_in2_sub2_sqr, 1262408436119492299UL);free(priv[i].d_in2_sub2_sqr); }) ;
 # 673 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 674 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_tMask); free_helper(priv[i].d_tMask, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_tMask, 1262408436119492299UL);free(priv[i].d_tMask); }) ;
 # 675 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_mask_conv); free_helper(priv[i].d_mask_conv, 1262408436119492299UL); }) ;
+   ({ free_helper(priv[i].d_mask_conv, 1262408436119492299UL);free(priv[i].d_mask_conv); }) ;
 # 676 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 677 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c"

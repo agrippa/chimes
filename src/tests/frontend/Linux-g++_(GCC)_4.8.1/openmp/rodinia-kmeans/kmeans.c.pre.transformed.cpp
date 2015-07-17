@@ -5812,13 +5812,13 @@ int nclusters;
 # 253 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 254 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 255 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(attributes); free_helper(attributes, 7980733884997753126UL); }) ;
+     ({ free_helper(attributes, 7980733884997753126UL);free(attributes); }) ;
 # 256 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 7980733884997753360UL); }) ;
+     ({ free_helper(cluster_centres[0], 7980733884997753360UL);free(cluster_centres[0]); }) ;
 # 257 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(cluster_centres); free_helper(cluster_centres, 7980733884997753451UL); }) ;
+     ({ free_helper(cluster_centres, 7980733884997753451UL);free(cluster_centres); }) ;
 # 258 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(buf); free_helper(buf, 7980733884997753276UL); }) ;
+     ({ free_helper(buf, 7980733884997753276UL);free(buf); }) ;
 # 259 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
      int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
 # 260 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -6114,13 +6114,13 @@ int nclusters;
 # 253 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 254 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 255 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(attributes); free_helper(attributes, 7980733884997753126UL); }) ;
+     ({ free_helper(attributes, 7980733884997753126UL);free(attributes); }) ;
 # 256 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(cluster_centres[0]); free_helper(cluster_centres[0], 7980733884997753360UL); }) ;
+     ({ free_helper(cluster_centres[0], 7980733884997753360UL);free(cluster_centres[0]); }) ;
 # 257 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(cluster_centres); free_helper(cluster_centres, 7980733884997753451UL); }) ;
+     ({ free_helper(cluster_centres, 7980733884997753451UL);free(cluster_centres); }) ;
 # 258 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-     ({ free(buf); free_helper(buf, 7980733884997753276UL); }) ;
+     ({ free_helper(buf, 7980733884997753276UL);free(buf); }) ;
 # 259 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
      int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
 # 260 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"

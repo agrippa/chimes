@@ -3128,7 +3128,7 @@ SIMMATRIX_T *freeSimMatrix_resumable(SIMMATRIX_T *M) {const int ____chimes_did_d
 # 222 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     ({ free(M); free_helper(M, 10609085440105252783UL); }) ;
+     ({ free_helper(M, 10609085440105252783UL);free(M); }) ;
 # 224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3340,7 +3340,7 @@ SIMMATRIX_T *freeSimMatrix_quick(SIMMATRIX_T *M) {const int ____chimes_did_disab
 # 222 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     ({ free(M); free_helper(M, 10609085440105252783UL); }) ;
+     ({ free_helper(M, 10609085440105252783UL);free(M); }) ;
 # 224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3548,7 +3548,7 @@ SIMMATRIX_T *freeSimMatrix_npm(SIMMATRIX_T *M) {
 # 222 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     ({ free(M); free_helper(M, 10609085440105252783UL); }) ;
+     ({ free_helper(M, 10609085440105252783UL);free(M); }) ;
 # 224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"

@@ -50,46 +50,46 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwise
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 42 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 9  ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 42 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 2  ({ free(weights[i]); free_helper(weights[i], 7756732687571762543UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 2  ({ free_helper(weights[i], 7756732687571762543UL);free(weights[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 7  ({ free(weights); free_helper(weights, 7756732687571762546UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 7  ({ free_helper(weights, 7756732687571762546UL);free(weights);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 7  ({ free(goodScores); free_helper(goodScores, 7756732687571763001UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 7  ({ free_helper(goodScores, 7756732687571763001UL);free(goodScores);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 22 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 7  ({ free(goodEndsI); free_helper(goodEndsI, 7756732687571762955UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 7  ({ free_helper(goodEndsI, 7756732687571762955UL);free(goodEndsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 7  ({ free(goodEndsJ); free_helper(goodEndsJ, 7756732687571763023UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 7  ({ free_helper(goodEndsJ, 7756732687571763023UL);free(goodEndsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 7  ({ free(F); free_helper(F, 7756732687571762729UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 7  ({ free_helper(F, 7756732687571762729UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 7  ({ free(V); free_helper(V, 7756732687571762726UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 7  ({ free_helper(V, 7756732687571762726UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 7  ({ free(scores); free_helper(scores, 7756732687571763119UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 7  ({ free_helper(scores, 7756732687571763119UL);free(scores);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 18 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 7  ({ free(index); free_helper(index, 7756732687571763457UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 7  ({ free_helper(index, 7756732687571763457UL);free(index);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 7  ({ free(best); free_helper(best, 7756732687571763107UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 7  ({ free_helper(best, 7756732687571763107UL);free(best);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 16 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 7  ({ free(mainSeq); free_helper(mainSeq, 7756732687571762449UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 7  ({ free_helper(mainSeq, 7756732687571762449UL);free(mainSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 7  ({ free(matchSeq); free_helper(matchSeq, 7756732687571762521UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 7  ({ free_helper(matchSeq, 7756732687571762521UL);free(matchSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 20 
 ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 9 len=5 freeA_npm
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 7  ({ free(A->numReports); free_helper(A->numReports, 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 7  ({ free_helper(A->numReports, 7756732687571763799UL);free(A->numReports);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 4  ({ free(A->goodScores[i]); free_helper(A->goodScores[i], 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 4  ({ free_helper(A->goodScores[i], 7756732687571763799UL);free(A->goodScores[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 7  ({ free(A->goodScores); free_helper(A->goodScores, 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 7  ({ free_helper(A->goodScores, 7756732687571763799UL);free(A->goodScores);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 4  ({ free(A->goodEndsI[i]); free_helper(A->goodEndsI[i], 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 4  ({ free_helper(A->goodEndsI[i], 7756732687571763799UL);free(A->goodEndsI[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 7  ({ free(A->goodEndsI); free_helper(A->goodEndsI, 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 7  ({ free_helper(A->goodEndsI, 7756732687571763799UL);free(A->goodEndsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 4  ({ free(A->goodEndsJ[i]); free_helper(A->goodEndsJ[i], 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 4  ({ free_helper(A->goodEndsJ[i], 7756732687571763799UL);free(A->goodEndsJ[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 7  ({ free(A->goodEndsJ); free_helper(A->goodEndsJ, 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 7  ({ free_helper(A->goodEndsJ, 7756732687571763799UL);free(A->goodEndsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 5  ({ free(A); free_helper(A, 7756732687571763947UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 5  ({ free_helper(A, 7756732687571763947UL);free(A);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 11 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 22  ({ void *____chimes_tmp_ptr = malloc(sizeof(ASTR_T)); malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7756732687571763554UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 45 
@@ -137,45 +137,45 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwise
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 42 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 9  ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 42 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 2  ({ free(weights[i]); free_helper(weights[i], 7756732687571762543UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 2  ({ free_helper(weights[i], 7756732687571762543UL);free(weights[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 7  ({ free(weights); free_helper(weights, 7756732687571762546UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 7  ({ free_helper(weights, 7756732687571762546UL);free(weights);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 7  ({ free(goodScores); free_helper(goodScores, 7756732687571763001UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 7  ({ free_helper(goodScores, 7756732687571763001UL);free(goodScores);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 22 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 7  ({ free(goodEndsI); free_helper(goodEndsI, 7756732687571762955UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 7  ({ free_helper(goodEndsI, 7756732687571762955UL);free(goodEndsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 7  ({ free(goodEndsJ); free_helper(goodEndsJ, 7756732687571763023UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 7  ({ free_helper(goodEndsJ, 7756732687571763023UL);free(goodEndsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 7  ({ free(F); free_helper(F, 7756732687571762729UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 7  ({ free_helper(F, 7756732687571762729UL);free(F);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 7  ({ free(V); free_helper(V, 7756732687571762726UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 7  ({ free_helper(V, 7756732687571762726UL);free(V);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 7  ({ free(scores); free_helper(scores, 7756732687571763119UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 7  ({ free_helper(scores, 7756732687571763119UL);free(scores);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 18 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 7  ({ free(index); free_helper(index, 7756732687571763457UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 7  ({ free_helper(index, 7756732687571763457UL);free(index);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 7  ({ free(best); free_helper(best, 7756732687571763107UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 7  ({ free_helper(best, 7756732687571763107UL);free(best);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 16 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 7  ({ free(mainSeq); free_helper(mainSeq, 7756732687571762449UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 7  ({ free_helper(mainSeq, 7756732687571762449UL);free(mainSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 7  ({ free(matchSeq); free_helper(matchSeq, 7756732687571762521UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 7  ({ free_helper(matchSeq, 7756732687571762521UL);free(matchSeq);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 20 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 7  ({ free(A->numReports); free_helper(A->numReports, 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 7  ({ free_helper(A->numReports, 7756732687571763799UL);free(A->numReports);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 4  ({ free(A->goodScores[i]); free_helper(A->goodScores[i], 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 4  ({ free_helper(A->goodScores[i], 7756732687571763799UL);free(A->goodScores[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 7  ({ free(A->goodScores); free_helper(A->goodScores, 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 7  ({ free_helper(A->goodScores, 7756732687571763799UL);free(A->goodScores);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 4  ({ free(A->goodEndsI[i]); free_helper(A->goodEndsI[i], 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 4  ({ free_helper(A->goodEndsI[i], 7756732687571763799UL);free(A->goodEndsI[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 7  ({ free(A->goodEndsI); free_helper(A->goodEndsI, 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 7  ({ free_helper(A->goodEndsI, 7756732687571763799UL);free(A->goodEndsI);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 4  ({ free(A->goodEndsJ[i]); free_helper(A->goodEndsJ[i], 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 4  ({ free_helper(A->goodEndsJ[i], 7756732687571763799UL);free(A->goodEndsJ[i]);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 7  ({ free(A->goodEndsJ); free_helper(A->goodEndsJ, 7756732687571763799UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 7  ({ free_helper(A->goodEndsJ, 7756732687571763799UL);free(A->goodEndsJ);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 5  ({ free(A); free_helper(A, 7756732687571763947UL); }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 5  ({ free_helper(A, 7756732687571763947UL);free(A);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 11 
 InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 100 82 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 104 63 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); 

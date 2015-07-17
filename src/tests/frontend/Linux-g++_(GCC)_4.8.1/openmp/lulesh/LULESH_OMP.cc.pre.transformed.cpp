@@ -4935,11 +4935,11 @@ Real_t B[3][8];
  }
 # 923 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 924 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fz_elem); free_helper(fz_elem, 5910949521487001228UL); }) ;
+  ({ free_helper(fz_elem, 5910949521487001228UL);free(fz_elem); }) ;
 # 925 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fy_elem); free_helper(fy_elem, 5910949521487001221UL); }) ;
+  ({ free_helper(fy_elem, 5910949521487001221UL);free(fy_elem); }) ;
 # 926 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fx_elem); free_helper(fx_elem, 5910949521487001197UL); }) ;
+  ({ free_helper(fx_elem, 5910949521487001197UL);free(fx_elem); }) ;
 # 927 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 rm_stack(false, 0UL, "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, ____alias_loc_id_39, ____chimes_did_disable14, false); }
 # 928 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
@@ -5898,11 +5898,11 @@ Real_t gamma[4][8];
  }
 # 1494 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1495 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fz_elem); free_helper(fz_elem, 5910949521487002637UL); }) ;
+  ({ free_helper(fz_elem, 5910949521487002637UL);free(fz_elem); }) ;
 # 1496 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fy_elem); free_helper(fy_elem, 5910949521487002630UL); }) ;
+  ({ free_helper(fy_elem, 5910949521487002630UL);free(fy_elem); }) ;
 # 1497 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fx_elem); free_helper(fx_elem, 5910949521487002606UL); }) ;
+  ({ free_helper(fx_elem, 5910949521487002606UL);free(fx_elem); }) ;
 # 1498 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 rm_stack(false, 0UL, "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, ____alias_loc_id_43, ____chimes_did_disable19, false); }
 # 1499 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
@@ -6013,17 +6013,17 @@ Real_t x1[8];
  }
 # 1548 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1549 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(z8n); free_helper(z8n, 5910949521487001575UL); }) ;
+  ({ free_helper(z8n, 5910949521487001575UL);free(z8n); }) ;
 # 1550 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(y8n); free_helper(y8n, 5910949521487001568UL); }) ;
+  ({ free_helper(y8n, 5910949521487001568UL);free(y8n); }) ;
 # 1551 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(x8n); free_helper(x8n, 5910949521487001561UL); }) ;
+  ({ free_helper(x8n, 5910949521487001561UL);free(x8n); }) ;
 # 1552 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(dvdz); free_helper(dvdz, 5910949521487001554UL); }) ;
+  ({ free_helper(dvdz, 5910949521487001554UL);free(dvdz); }) ;
 # 1553 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(dvdy); free_helper(dvdy, 5910949521487001547UL); }) ;
+  ({ free_helper(dvdy, 5910949521487001547UL);free(dvdy); }) ;
 # 1554 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(dvdx); free_helper(dvdx, 5910949521487001502UL); }) ;
+  ({ free_helper(dvdx, 5910949521487001502UL);free(dvdx); }) ;
 # 1555 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1556 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  rm_stack(false, 0UL, "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, ____alias_loc_id_40, ____chimes_did_disable20, false); return ;
@@ -6088,13 +6088,13 @@ void CalcVolumeForceForElems_resumable()
    call_lbl_2: ({ calling_npm("CalcHourglassControlForElems", 0); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
 # 1587 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1588 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(determ); free_helper(determ, 5910949521487001040UL); }) ;
+   ({ free_helper(determ, 5910949521487001040UL);free(determ); }) ;
 # 1589 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(sigzz); free_helper(sigzz, 5910949521487001033UL); }) ;
+   ({ free_helper(sigzz, 5910949521487001033UL);free(sigzz); }) ;
 # 1590 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(sigyy); free_helper(sigyy, 5910949521487001026UL); }) ;
+   ({ free_helper(sigyy, 5910949521487001026UL);free(sigyy); }) ;
 # 1591 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(sigxx); free_helper(sigxx, 5910949521487001048UL); }) ;
+   ({ free_helper(sigxx, 5910949521487001048UL);free(sigxx); }) ;
 # 1592 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  }
 # 1593 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
@@ -7856,7 +7856,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
   } } } leaving_omp_parallel(____chimes_call_stack_depth22, ____chimes_region_id22, 1); reenable_current_thread(____chimes_disable25); }
 # 2541 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2542 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(pHalfStep); free_helper(pHalfStep, 5910949521486996238UL); }) ;
+  ({ free_helper(pHalfStep, 5910949521486996238UL);free(pHalfStep); }) ;
 # 2543 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2544 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  rm_stack(false, 0UL, "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, ____alias_loc_id_21, ____chimes_did_disable40, false); return ;
@@ -8241,33 +8241,33 @@ bool ____chimes_disable39; ____chimes_disable39 = disable_current_thread();
   call_lbl_1: ({ calling_npm("CalcSoundSpeedForElems", 0); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
 # 2705 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2706 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(pbvc); free_helper(pbvc, 5910949521486995699UL); }) ;
+  ({ free_helper(pbvc, 5910949521486995699UL);free(pbvc); }) ;
 # 2707 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(bvc); free_helper(bvc, 5910949521486995692UL); }) ;
+  ({ free_helper(bvc, 5910949521486995692UL);free(bvc); }) ;
 # 2708 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(q_new); free_helper(q_new, 5910949521486995685UL); }) ;
+  ({ free_helper(q_new, 5910949521486995685UL);free(q_new); }) ;
 # 2709 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(e_new); free_helper(e_new, 5910949521486995678UL); }) ;
+  ({ free_helper(e_new, 5910949521486995678UL);free(e_new); }) ;
 # 2710 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(p_new); free_helper(p_new, 5910949521486995671UL); }) ;
+  ({ free_helper(p_new, 5910949521486995671UL);free(p_new); }) ;
 # 2711 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(work); free_helper(work, 5910949521486995664UL); }) ;
+  ({ free_helper(work, 5910949521486995664UL);free(work); }) ;
 # 2712 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(ql); free_helper(ql, 5910949521486995657UL); }) ;
+  ({ free_helper(ql, 5910949521486995657UL);free(ql); }) ;
 # 2713 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(qq); free_helper(qq, 5910949521486995650UL); }) ;
+  ({ free_helper(qq, 5910949521486995650UL);free(qq); }) ;
 # 2714 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(compHalfStep); free_helper(compHalfStep, 5910949521486995643UL); }) ;
+  ({ free_helper(compHalfStep, 5910949521486995643UL);free(compHalfStep); }) ;
 # 2715 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(compression); free_helper(compression, 5910949521486995636UL); }) ;
+  ({ free_helper(compression, 5910949521486995636UL);free(compression); }) ;
 # 2716 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(q_old); free_helper(q_old, 5910949521486995629UL); }) ;
+  ({ free_helper(q_old, 5910949521486995629UL);free(q_old); }) ;
 # 2717 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(p_old); free_helper(p_old, 5910949521486995622UL); }) ;
+  ({ free_helper(p_old, 5910949521486995622UL);free(p_old); }) ;
 # 2718 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(delvc); free_helper(delvc, 5910949521486995615UL); }) ;
+  ({ free_helper(delvc, 5910949521486995615UL);free(delvc); }) ;
 # 2719 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(e_old); free_helper(e_old, 5910949521486995514UL); }) ;
+  ({ free_helper(e_old, 5910949521486995514UL);free(e_old); }) ;
 # 2720 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 rm_stack(false, 0UL, "EvalEOSForElems", &____must_manage_EvalEOSForElems, ____alias_loc_id_20, ____chimes_did_disable42, false); }
 # 2721 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
@@ -8408,7 +8408,7 @@ bool ____chimes_disable44; ____chimes_disable44 = disable_current_thread();
    call_lbl_0: ({ calling_npm("EvalEOSForElems", 0); EvalEOSForElems_npm(vnewc, length); });
 # 2781 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2782 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(vnewc); free_helper(vnewc, 5910949521486995251UL); }) ;
+   ({ free_helper(vnewc, 5910949521486995251UL);free(vnewc); }) ;
 # 2783 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2784 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  }
@@ -10212,11 +10212,11 @@ Real_t B[3][8];
  }
 # 923 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 924 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fz_elem); free_helper(fz_elem, 5910949521487001228UL); }) ;
+  ({ free_helper(fz_elem, 5910949521487001228UL);free(fz_elem); }) ;
 # 925 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fy_elem); free_helper(fy_elem, 5910949521487001221UL); }) ;
+  ({ free_helper(fy_elem, 5910949521487001221UL);free(fy_elem); }) ;
 # 926 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fx_elem); free_helper(fx_elem, 5910949521487001197UL); }) ;
+  ({ free_helper(fx_elem, 5910949521487001197UL);free(fx_elem); }) ;
 # 927 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 rm_stack(false, 0UL, "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, ____alias_loc_id_39, ____chimes_did_disable14, false); }
 
@@ -11219,11 +11219,11 @@ Real_t gamma[4][8];
  }
 # 1494 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1495 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fz_elem); free_helper(fz_elem, 5910949521487002637UL); }) ;
+  ({ free_helper(fz_elem, 5910949521487002637UL);free(fz_elem); }) ;
 # 1496 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fy_elem); free_helper(fy_elem, 5910949521487002630UL); }) ;
+  ({ free_helper(fy_elem, 5910949521487002630UL);free(fy_elem); }) ;
 # 1497 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fx_elem); free_helper(fx_elem, 5910949521487002606UL); }) ;
+  ({ free_helper(fx_elem, 5910949521487002606UL);free(fx_elem); }) ;
 # 1498 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 rm_stack(false, 0UL, "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, ____alias_loc_id_43, ____chimes_did_disable19, false); }
 
@@ -11341,17 +11341,17 @@ Real_t x1[8];
  }
 # 1548 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1549 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(z8n); free_helper(z8n, 5910949521487001575UL); }) ;
+  ({ free_helper(z8n, 5910949521487001575UL);free(z8n); }) ;
 # 1550 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(y8n); free_helper(y8n, 5910949521487001568UL); }) ;
+  ({ free_helper(y8n, 5910949521487001568UL);free(y8n); }) ;
 # 1551 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(x8n); free_helper(x8n, 5910949521487001561UL); }) ;
+  ({ free_helper(x8n, 5910949521487001561UL);free(x8n); }) ;
 # 1552 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(dvdz); free_helper(dvdz, 5910949521487001554UL); }) ;
+  ({ free_helper(dvdz, 5910949521487001554UL);free(dvdz); }) ;
 # 1553 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(dvdy); free_helper(dvdy, 5910949521487001547UL); }) ;
+  ({ free_helper(dvdy, 5910949521487001547UL);free(dvdy); }) ;
 # 1554 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(dvdx); free_helper(dvdx, 5910949521487001502UL); }) ;
+  ({ free_helper(dvdx, 5910949521487001502UL);free(dvdx); }) ;
 # 1555 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1556 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  rm_stack(false, 0UL, "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, ____alias_loc_id_40, ____chimes_did_disable20, false); return ;
@@ -11417,13 +11417,13 @@ void CalcVolumeForceForElems_quick()
    call_lbl_2: ({ calling_npm("CalcHourglassControlForElems", 0); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
 # 1587 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1588 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(determ); free_helper(determ, 5910949521487001040UL); }) ;
+   ({ free_helper(determ, 5910949521487001040UL);free(determ); }) ;
 # 1589 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(sigzz); free_helper(sigzz, 5910949521487001033UL); }) ;
+   ({ free_helper(sigzz, 5910949521487001033UL);free(sigzz); }) ;
 # 1590 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(sigyy); free_helper(sigyy, 5910949521487001026UL); }) ;
+   ({ free_helper(sigyy, 5910949521487001026UL);free(sigyy); }) ;
 # 1591 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(sigxx); free_helper(sigxx, 5910949521487001048UL); }) ;
+   ({ free_helper(sigxx, 5910949521487001048UL);free(sigxx); }) ;
 # 1592 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  }
 # 1593 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
@@ -13273,7 +13273,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
   } } } leaving_omp_parallel(____chimes_call_stack_depth22, ____chimes_region_id22, 1); reenable_current_thread(____chimes_disable25); }
 # 2541 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2542 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(pHalfStep); free_helper(pHalfStep, 5910949521486996238UL); }) ;
+  ({ free_helper(pHalfStep, 5910949521486996238UL);free(pHalfStep); }) ;
 # 2543 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2544 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  rm_stack(false, 0UL, "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, ____alias_loc_id_21, ____chimes_did_disable40, false); return ;
@@ -13682,33 +13682,33 @@ bool ____chimes_disable39; ____chimes_disable39 = disable_current_thread();
   call_lbl_1: ({ calling_npm("CalcSoundSpeedForElems", 0); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
 # 2705 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2706 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(pbvc); free_helper(pbvc, 5910949521486995699UL); }) ;
+  ({ free_helper(pbvc, 5910949521486995699UL);free(pbvc); }) ;
 # 2707 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(bvc); free_helper(bvc, 5910949521486995692UL); }) ;
+  ({ free_helper(bvc, 5910949521486995692UL);free(bvc); }) ;
 # 2708 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(q_new); free_helper(q_new, 5910949521486995685UL); }) ;
+  ({ free_helper(q_new, 5910949521486995685UL);free(q_new); }) ;
 # 2709 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(e_new); free_helper(e_new, 5910949521486995678UL); }) ;
+  ({ free_helper(e_new, 5910949521486995678UL);free(e_new); }) ;
 # 2710 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(p_new); free_helper(p_new, 5910949521486995671UL); }) ;
+  ({ free_helper(p_new, 5910949521486995671UL);free(p_new); }) ;
 # 2711 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(work); free_helper(work, 5910949521486995664UL); }) ;
+  ({ free_helper(work, 5910949521486995664UL);free(work); }) ;
 # 2712 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(ql); free_helper(ql, 5910949521486995657UL); }) ;
+  ({ free_helper(ql, 5910949521486995657UL);free(ql); }) ;
 # 2713 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(qq); free_helper(qq, 5910949521486995650UL); }) ;
+  ({ free_helper(qq, 5910949521486995650UL);free(qq); }) ;
 # 2714 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(compHalfStep); free_helper(compHalfStep, 5910949521486995643UL); }) ;
+  ({ free_helper(compHalfStep, 5910949521486995643UL);free(compHalfStep); }) ;
 # 2715 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(compression); free_helper(compression, 5910949521486995636UL); }) ;
+  ({ free_helper(compression, 5910949521486995636UL);free(compression); }) ;
 # 2716 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(q_old); free_helper(q_old, 5910949521486995629UL); }) ;
+  ({ free_helper(q_old, 5910949521486995629UL);free(q_old); }) ;
 # 2717 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(p_old); free_helper(p_old, 5910949521486995622UL); }) ;
+  ({ free_helper(p_old, 5910949521486995622UL);free(p_old); }) ;
 # 2718 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(delvc); free_helper(delvc, 5910949521486995615UL); }) ;
+  ({ free_helper(delvc, 5910949521486995615UL);free(delvc); }) ;
 # 2719 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(e_old); free_helper(e_old, 5910949521486995514UL); }) ;
+  ({ free_helper(e_old, 5910949521486995514UL);free(e_old); }) ;
 # 2720 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 rm_stack(false, 0UL, "EvalEOSForElems", &____must_manage_EvalEOSForElems, ____alias_loc_id_20, ____chimes_did_disable42, false); }
 
@@ -13850,7 +13850,7 @@ bool ____chimes_disable44; ____chimes_disable44 = disable_current_thread();
    call_lbl_0: ({ calling_npm("EvalEOSForElems", 0); EvalEOSForElems_npm(vnewc, length); });
 # 2781 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2782 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(vnewc); free_helper(vnewc, 5910949521486995251UL); }) ;
+   ({ free_helper(vnewc, 5910949521486995251UL);free(vnewc); }) ;
 # 2783 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2784 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  }
@@ -15563,11 +15563,11 @@ void IntegrateStressForElems_npm( Index_t numElem,
  }
 # 923 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 924 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fz_elem); free_helper(fz_elem, 5910949521487001228UL); }) ;
+  ({ free_helper(fz_elem, 5910949521487001228UL);free(fz_elem); }) ;
 # 925 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fy_elem); free_helper(fy_elem, 5910949521487001221UL); }) ;
+  ({ free_helper(fy_elem, 5910949521487001221UL);free(fy_elem); }) ;
 # 926 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fx_elem); free_helper(fx_elem, 5910949521487001197UL); }) ;
+  ({ free_helper(fx_elem, 5910949521487001197UL);free(fx_elem); }) ;
 # 927 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 }
 # 930 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
@@ -16490,11 +16490,11 @@ void CalcFBHourglassForceForElems_npm(Real_t *determ,
  }
 # 1494 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1495 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fz_elem); free_helper(fz_elem, 5910949521487002637UL); }) ;
+  ({ free_helper(fz_elem, 5910949521487002637UL);free(fz_elem); }) ;
 # 1496 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fy_elem); free_helper(fy_elem, 5910949521487002630UL); }) ;
+  ({ free_helper(fy_elem, 5910949521487002630UL);free(fy_elem); }) ;
 # 1497 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(fx_elem); free_helper(fx_elem, 5910949521487002606UL); }) ;
+  ({ free_helper(fx_elem, 5910949521487002606UL);free(fx_elem); }) ;
 # 1498 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 }
 # 1500 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
@@ -16588,17 +16588,17 @@ void CalcHourglassControlForElems_npm(Real_t determ[], Real_t hgcoef)
  }
 # 1548 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1549 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(z8n); free_helper(z8n, 5910949521487001575UL); }) ;
+  ({ free_helper(z8n, 5910949521487001575UL);free(z8n); }) ;
 # 1550 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(y8n); free_helper(y8n, 5910949521487001568UL); }) ;
+  ({ free_helper(y8n, 5910949521487001568UL);free(y8n); }) ;
 # 1551 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(x8n); free_helper(x8n, 5910949521487001561UL); }) ;
+  ({ free_helper(x8n, 5910949521487001561UL);free(x8n); }) ;
 # 1552 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(dvdz); free_helper(dvdz, 5910949521487001554UL); }) ;
+  ({ free_helper(dvdz, 5910949521487001554UL);free(dvdz); }) ;
 # 1553 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(dvdy); free_helper(dvdy, 5910949521487001547UL); }) ;
+  ({ free_helper(dvdy, 5910949521487001547UL);free(dvdy); }) ;
 # 1554 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(dvdx); free_helper(dvdx, 5910949521487001502UL); }) ;
+  ({ free_helper(dvdx, 5910949521487001502UL);free(dvdx); }) ;
 # 1555 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1556 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  return ;
@@ -16658,13 +16658,13 @@ void CalcVolumeForceForElems_npm()
   CalcHourglassControlForElems_npm(determ, hgcoef) ;
 # 1587 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 1588 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(determ); free_helper(determ, 5910949521487001040UL); }) ;
+   ({ free_helper(determ, 5910949521487001040UL);free(determ); }) ;
 # 1589 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(sigzz); free_helper(sigzz, 5910949521487001033UL); }) ;
+   ({ free_helper(sigzz, 5910949521487001033UL);free(sigzz); }) ;
 # 1590 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(sigyy); free_helper(sigyy, 5910949521487001026UL); }) ;
+   ({ free_helper(sigyy, 5910949521487001026UL);free(sigyy); }) ;
 # 1591 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(sigxx); free_helper(sigxx, 5910949521487001048UL); }) ;
+   ({ free_helper(sigxx, 5910949521487001048UL);free(sigxx); }) ;
 # 1592 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  }
 # 1593 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
@@ -18321,7 +18321,7 @@ void CalcEnergyForElems_npm(Real_t* p_new, Real_t* e_new, Real_t* q_new,
  }
 # 2541 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2542 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(pHalfStep); free_helper(pHalfStep, 5910949521486996238UL); }) ;
+  ({ free_helper(pHalfStep, 5910949521486996238UL);free(pHalfStep); }) ;
 # 2543 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2544 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  return ;
@@ -18672,33 +18672,33 @@ void EvalEOSForElems_npm(Real_t *vnewc, Index_t length)
  CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length) ;
 # 2705 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2706 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(pbvc); free_helper(pbvc, 5910949521486995699UL); }) ;
+  ({ free_helper(pbvc, 5910949521486995699UL);free(pbvc); }) ;
 # 2707 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(bvc); free_helper(bvc, 5910949521486995692UL); }) ;
+  ({ free_helper(bvc, 5910949521486995692UL);free(bvc); }) ;
 # 2708 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(q_new); free_helper(q_new, 5910949521486995685UL); }) ;
+  ({ free_helper(q_new, 5910949521486995685UL);free(q_new); }) ;
 # 2709 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(e_new); free_helper(e_new, 5910949521486995678UL); }) ;
+  ({ free_helper(e_new, 5910949521486995678UL);free(e_new); }) ;
 # 2710 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(p_new); free_helper(p_new, 5910949521486995671UL); }) ;
+  ({ free_helper(p_new, 5910949521486995671UL);free(p_new); }) ;
 # 2711 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(work); free_helper(work, 5910949521486995664UL); }) ;
+  ({ free_helper(work, 5910949521486995664UL);free(work); }) ;
 # 2712 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(ql); free_helper(ql, 5910949521486995657UL); }) ;
+  ({ free_helper(ql, 5910949521486995657UL);free(ql); }) ;
 # 2713 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(qq); free_helper(qq, 5910949521486995650UL); }) ;
+  ({ free_helper(qq, 5910949521486995650UL);free(qq); }) ;
 # 2714 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(compHalfStep); free_helper(compHalfStep, 5910949521486995643UL); }) ;
+  ({ free_helper(compHalfStep, 5910949521486995643UL);free(compHalfStep); }) ;
 # 2715 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(compression); free_helper(compression, 5910949521486995636UL); }) ;
+  ({ free_helper(compression, 5910949521486995636UL);free(compression); }) ;
 # 2716 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(q_old); free_helper(q_old, 5910949521486995629UL); }) ;
+  ({ free_helper(q_old, 5910949521486995629UL);free(q_old); }) ;
 # 2717 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(p_old); free_helper(p_old, 5910949521486995622UL); }) ;
+  ({ free_helper(p_old, 5910949521486995622UL);free(p_old); }) ;
 # 2718 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(delvc); free_helper(delvc, 5910949521486995615UL); }) ;
+  ({ free_helper(delvc, 5910949521486995615UL);free(delvc); }) ;
 # 2719 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-  ({ free(e_old); free_helper(e_old, 5910949521486995514UL); }) ;
+  ({ free_helper(e_old, 5910949521486995514UL);free(e_old); }) ;
 # 2720 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 }
 # 2722 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
@@ -18826,7 +18826,7 @@ void ApplyMaterialPropertiesForElems_npm()
   EvalEOSForElems_npm(vnewc, length);
 # 2781 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2782 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
-   ({ free(vnewc); free_helper(vnewc, 5910949521486995251UL); }) ;
+   ({ free_helper(vnewc, 5910949521486995251UL);free(vnewc); }) ;
 # 2783 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
 # 2784 "/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc"
  }

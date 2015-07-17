@@ -5412,21 +5412,21 @@ config conf;
     }
 # 140 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
 # 141 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-     ({ free(c_coeff); free_helper(c_coeff, 9340484127959108576UL); }) ;
+     ({ free_helper(c_coeff, 9340484127959108576UL);free(c_coeff); }) ;
 # 142 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-     ({ free(curr); free_helper(curr, 9340484127959108573UL); }) ;
+     ({ free_helper(curr, 9340484127959108573UL);free(curr); }) ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-     ({ free(next); free_helper(next, 9340484127959108573UL); }) ;
+     ({ free_helper(next, 9340484127959108573UL);free(next); }) ;
 # 144 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-     ({ free(vsq); free_helper(vsq, 9340484127959108575UL); }) ;
+     ({ free_helper(vsq, 9340484127959108575UL);free(vsq); }) ;
 # 145 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
     { int i; for ( i = (0) ; i < conf.nsrcs; i++) {
 # 146 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-         ({ free(srcs[i]); free_helper(srcs[i], 9340484127959108679UL); }) ;
+         ({ free_helper(srcs[i], 9340484127959108679UL);free(srcs[i]); }) ;
 # 147 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
     } }
 # 148 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-     ({ free(srcs); free_helper(srcs, 9340484127959108677UL); }) ;
+     ({ free_helper(srcs, 9340484127959108677UL);free(srcs); }) ;
 # 149 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
 # 150 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
      int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
@@ -5617,21 +5617,21 @@ config conf;
     }
 # 140 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
 # 141 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-     ({ free(c_coeff); free_helper(c_coeff, 9340484127959108576UL); }) ;
+     ({ free_helper(c_coeff, 9340484127959108576UL);free(c_coeff); }) ;
 # 142 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-     ({ free(curr); free_helper(curr, 9340484127959108573UL); }) ;
+     ({ free_helper(curr, 9340484127959108573UL);free(curr); }) ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-     ({ free(next); free_helper(next, 9340484127959108573UL); }) ;
+     ({ free_helper(next, 9340484127959108573UL);free(next); }) ;
 # 144 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-     ({ free(vsq); free_helper(vsq, 9340484127959108575UL); }) ;
+     ({ free_helper(vsq, 9340484127959108575UL);free(vsq); }) ;
 # 145 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
     { int i; for ( i = (0) ; i < conf.nsrcs; i++) {
 # 146 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-         ({ free(srcs[i]); free_helper(srcs[i], 9340484127959108679UL); }) ;
+         ({ free_helper(srcs[i], 9340484127959108679UL);free(srcs[i]); }) ;
 # 147 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
     } }
 # 148 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
-     ({ free(srcs); free_helper(srcs, 9340484127959108677UL); }) ;
+     ({ free_helper(srcs, 9340484127959108677UL);free(srcs); }) ;
 # 149 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
 # 150 "/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp"
      int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;

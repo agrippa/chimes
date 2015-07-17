@@ -4240,7 +4240,7 @@ void finish_progress_resumable() {const int ____chimes_did_disable7 = new_stack(
     fprintf(stderr, "\n");
 # 224 "/home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
 # 225 "/home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-     ({ free(progress_buffer); free_helper(progress_buffer, 7032591211095680570UL); }) ;
+     ({ free_helper(progress_buffer, 7032591211095680570UL);free(progress_buffer); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7, false); }
 # 44 "/home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
@@ -4584,7 +4584,7 @@ void finish_progress_quick() {const int ____chimes_did_disable7 = new_stack((voi
     fprintf(stderr, "\n");
 # 224 "/home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
 # 225 "/home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-     ({ free(progress_buffer); free_helper(progress_buffer, 7032591211095680570UL); }) ;
+     ({ free_helper(progress_buffer, 7032591211095680570UL);free(progress_buffer); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7, false); }
 
@@ -4916,7 +4916,7 @@ void finish_progress_npm() {
     fprintf(stderr, "\n");
 # 224 "/home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
 # 225 "/home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-     ({ free(progress_buffer); free_helper(progress_buffer, 7032591211095680570UL); }) ;
+     ({ free_helper(progress_buffer, 7032591211095680570UL);free(progress_buffer); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
 }
 

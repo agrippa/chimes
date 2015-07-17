@@ -5636,7 +5636,7 @@ config conf;
     } }
 # 294 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 295 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-     ({ free(screen); free_helper(screen, 10958632321634172044UL); }) ;
+     ({ free_helper(screen, 10958632321634172044UL);free(screen); }) ;
 # 296 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12, false); return ____chimes_ret_var_4; ;
 # 297 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
@@ -6141,7 +6141,7 @@ config conf;
     } }
 # 294 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
 # 295 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
-     ({ free(screen); free_helper(screen, 10958632321634172044UL); }) ;
+     ({ free_helper(screen, 10958632321634172044UL);free(screen); }) ;
 # 296 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12, false); return ____chimes_ret_var_4; ;
 # 297 "/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c"

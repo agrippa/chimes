@@ -5444,7 +5444,7 @@ list_item_delete_resumable( list_item_t *li,
   }
 # 549 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 550 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(li); free_helper(li, 17493500875420195752UL); }) ;
+   ({ free_helper(li, 17493500875420195752UL);free(li); }) ;
 # 551 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_item_delete", (int *)0x0, ____alias_loc_id_28, ____chimes_did_disable28, false); }
 # 552 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6566,9 +6566,9 @@ insert_into_leaf_after_splitting_resumable( node* root,
  }
 # 1174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_pointers); free_helper(temp_pointers, 17493500875420198886UL); }) ;
+  ({ free_helper(temp_pointers, 17493500875420198886UL);free(temp_pointers); }) ;
 # 1176 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_keys); free_helper(temp_keys, 17493500875420198898UL); }) ;
+  ({ free_helper(temp_keys, 17493500875420198898UL);free(temp_keys); }) ;
 # 1177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_leaf->pointers[order - 1] = leaf->pointers[order - 1];
@@ -6738,9 +6738,9 @@ insert_into_node_after_splitting_resumable( node* root,
 # 1279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->pointers[j] = temp_pointers[i];
 # 1280 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_pointers); free_helper(temp_pointers, 17493500875420199424UL); }) ;
+  ({ free_helper(temp_pointers, 17493500875420199424UL);free(temp_pointers); }) ;
 # 1281 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_keys); free_helper(temp_keys, 17493500875420199437UL); }) ;
+  ({ free_helper(temp_keys, 17493500875420199437UL);free(temp_keys); }) ;
 # 1282 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->parent = old_node->parent;
 # 1283 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7044,11 +7044,11 @@ adjust_root_resumable(node* root)
  }; } else {new_root = __null; } ;
 # 1505 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1506 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->keys); free_helper(root->keys, 17493500875420201550UL); }) ;
+  ({ free_helper(root->keys, 17493500875420201550UL);free(root->keys); }) ;
 # 1507 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->pointers); free_helper(root->pointers, 17493500875420201550UL); }) ;
+  ({ free_helper(root->pointers, 17493500875420201550UL);free(root->pointers); }) ;
 # 1508 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root); free_helper(root, 17493500875420201550UL); }) ;
+  ({ free_helper(root, 17493500875420201550UL);free(root); }) ;
 # 1509 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1510 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *____chimes_ret_var_49; ; ____chimes_ret_var_49 = (new_root); rm_stack(true, 17493500875420201550UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_89, ____chimes_did_disable70, false); return ____chimes_ret_var_49; ;
@@ -7226,11 +7226,11 @@ coalesce_nodes_resumable( node* root,
 # 1638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_1: root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, n->parent, k_prime, n); });
 # 1639 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(n->keys); free_helper(n->keys, 17493500875420200439UL); }) ;
+   ({ free_helper(n->keys, 17493500875420200439UL);free(n->keys); }) ;
 # 1640 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(n->pointers); free_helper(n->pointers, 17493500875420200439UL); }) ;
+   ({ free_helper(n->pointers, 17493500875420200439UL);free(n->pointers); }) ;
 # 1641 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(n); free_helper(n, 17493500875420200439UL); }) ;
+   ({ free_helper(n, 17493500875420200439UL);free(n); }) ;
 # 1642 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }; } else {for (i = 0; i < n->parent->num_keys; i++) { if (n->parent->pointers[i + 1] == n) {
 # 1646 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7469,7 +7469,7 @@ deleteVal_resumable( node* root,
 # 1816 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (key_record != __null && key_leaf != __null) {
 # 1817 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(key_record); free_helper(key_record, 17493500875420201059UL); }) ;
+   ({ free_helper(key_record, 17493500875420201059UL);free(key_record); }) ;
 # 1818 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_2: root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, key_leaf, key, key_record); });
 # 1819 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7491,13 +7491,13 @@ destroy_tree_nodes_resumable(node* root)
 # 1827 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
 # 1828 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free(root->pointers[i]); free_helper(root->pointers[i], 17493500875420201113UL); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { call_lbl_0: ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
+ if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free_helper(root->pointers[i], 17493500875420201113UL);free(root->pointers[i]); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { call_lbl_0: ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
 # 1834 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->pointers); free_helper(root->pointers, 17493500875420201111UL); }) ;
+  ({ free_helper(root->pointers, 17493500875420201111UL);free(root->pointers); }) ;
 # 1835 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->keys); free_helper(root->keys, 17493500875420201111UL); }) ;
+  ({ free_helper(root->keys, 17493500875420201111UL);free(root->keys); }) ;
 # 1836 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root); free_helper(root, 17493500875420201159UL); }) ;
+  ({ free_helper(root, 17493500875420201159UL);free(root); }) ;
 # 1837 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, ____alias_loc_id_94, ____chimes_did_disable75, false); }
 # 1838 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8129,13 +8129,13 @@ int cur_arg;
 # 2246 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2247 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2248 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(currKnode); free_helper(currKnode, 17493500875420201873UL); }) ;
+     ({ free_helper(currKnode, 17493500875420201873UL);free(currKnode); }) ;
 # 2249 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(offset); free_helper(offset, 17493500875420201874UL); }) ;
+     ({ free_helper(offset, 17493500875420201874UL);free(offset); }) ;
 # 2250 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(keys); free_helper(keys, 17493500875420201823UL); }) ;
+     ({ free_helper(keys, 17493500875420201823UL);free(keys); }) ;
 # 2251 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(ans); free_helper(ans, 17493500875420201857UL); }) ;
+     ({ free_helper(ans, 17493500875420201857UL);free(ans); }) ;
 # 2252 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2253 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2254 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8178,7 +8178,7 @@ int cur_arg;
       uint32_t ____chimes_unroll_var_7; call_lbl_29: ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
 # 2276 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2277 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(ansList); free_helper(ansList, 17493500875420201951UL); }) ;
+     ({ free_helper(ansList, 17493500875420201951UL);free(ansList); }) ;
 # 2278 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     break;
 # 2279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8349,21 +8349,21 @@ int cur_arg;
 # 2403 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2404 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2405 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(currKnode); free_helper(currKnode, 17493500875420202307UL); }) ;
+     ({ free_helper(currKnode, 17493500875420202307UL);free(currKnode); }) ;
 # 2406 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(offset); free_helper(offset, 17493500875420202308UL); }) ;
+     ({ free_helper(offset, 17493500875420202308UL);free(offset); }) ;
 # 2407 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(lastKnode); free_helper(lastKnode, 17493500875420202309UL); }) ;
+     ({ free_helper(lastKnode, 17493500875420202309UL);free(lastKnode); }) ;
 # 2408 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(offset_2); free_helper(offset_2, 17493500875420202310UL); }) ;
+     ({ free_helper(offset_2, 17493500875420202310UL);free(offset_2); }) ;
 # 2409 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(start); free_helper(start, 17493500875420202185UL); }) ;
+     ({ free_helper(start, 17493500875420202185UL);free(start); }) ;
 # 2410 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(end); free_helper(end, 17493500875420202197UL); }) ;
+     ({ free_helper(end, 17493500875420202197UL);free(end); }) ;
 # 2411 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(recstart); free_helper(recstart, 17493500875420202288UL); }) ;
+     ({ free_helper(recstart, 17493500875420202288UL);free(recstart); }) ;
 # 2412 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(reclength); free_helper(reclength, 17493500875420202293UL); }) ;
+     ({ free_helper(reclength, 17493500875420202293UL);free(reclength); }) ;
 # 2413 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2414 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2415 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8412,7 +8412,7 @@ int cur_arg;
 # 2445 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2446 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2447 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(mem); free_helper(mem, 17493500875420201867UL); }) ;
+  ({ free_helper(mem, 17493500875420201867UL);free(mem); }) ;
 # 2448 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int ____chimes_ret_var_64; ; ____chimes_ret_var_64 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_96, ____chimes_did_disable77, false); return ____chimes_ret_var_64; ;
 # 2449 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9291,7 +9291,7 @@ list_item_delete_quick( list_item_t *li,
   }
 # 549 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 550 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(li); free_helper(li, 17493500875420195752UL); }) ;
+   ({ free_helper(li, 17493500875420195752UL);free(li); }) ;
 # 551 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_item_delete", (int *)0x0, ____alias_loc_id_28, ____chimes_did_disable28, false); }
 
@@ -10442,9 +10442,9 @@ insert_into_leaf_after_splitting_quick( node* root,
  }
 # 1174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_pointers); free_helper(temp_pointers, 17493500875420198886UL); }) ;
+  ({ free_helper(temp_pointers, 17493500875420198886UL);free(temp_pointers); }) ;
 # 1176 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_keys); free_helper(temp_keys, 17493500875420198898UL); }) ;
+  ({ free_helper(temp_keys, 17493500875420198898UL);free(temp_keys); }) ;
 # 1177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_leaf->pointers[order - 1] = leaf->pointers[order - 1];
@@ -10628,9 +10628,9 @@ insert_into_node_after_splitting_quick( node* root,
 # 1279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->pointers[j] = temp_pointers[i];
 # 1280 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_pointers); free_helper(temp_pointers, 17493500875420199424UL); }) ;
+  ({ free_helper(temp_pointers, 17493500875420199424UL);free(temp_pointers); }) ;
 # 1281 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_keys); free_helper(temp_keys, 17493500875420199437UL); }) ;
+  ({ free_helper(temp_keys, 17493500875420199437UL);free(temp_keys); }) ;
 # 1282 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->parent = old_node->parent;
 # 1283 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10960,11 +10960,11 @@ adjust_root_quick(node* root)
  }; } else {new_root = __null; } ;
 # 1505 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1506 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->keys); free_helper(root->keys, 17493500875420201550UL); }) ;
+  ({ free_helper(root->keys, 17493500875420201550UL);free(root->keys); }) ;
 # 1507 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->pointers); free_helper(root->pointers, 17493500875420201550UL); }) ;
+  ({ free_helper(root->pointers, 17493500875420201550UL);free(root->pointers); }) ;
 # 1508 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root); free_helper(root, 17493500875420201550UL); }) ;
+  ({ free_helper(root, 17493500875420201550UL);free(root); }) ;
 # 1509 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1510 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *____chimes_ret_var_49; ; ____chimes_ret_var_49 = (new_root); rm_stack(true, 17493500875420201550UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_89, ____chimes_did_disable70, false); return ____chimes_ret_var_49; ;
@@ -11142,11 +11142,11 @@ coalesce_nodes_quick( node* root,
 # 1638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_1: root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, n->parent, k_prime, n); });
 # 1639 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(n->keys); free_helper(n->keys, 17493500875420200439UL); }) ;
+   ({ free_helper(n->keys, 17493500875420200439UL);free(n->keys); }) ;
 # 1640 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(n->pointers); free_helper(n->pointers, 17493500875420200439UL); }) ;
+   ({ free_helper(n->pointers, 17493500875420200439UL);free(n->pointers); }) ;
 # 1641 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(n); free_helper(n, 17493500875420200439UL); }) ;
+   ({ free_helper(n, 17493500875420200439UL);free(n); }) ;
 # 1642 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }; } else {for (i = 0; i < n->parent->num_keys; i++) { if (n->parent->pointers[i + 1] == n) {
 # 1646 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11411,7 +11411,7 @@ deleteVal_quick( node* root,
 # 1816 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (key_record != __null && key_leaf != __null) {
 # 1817 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(key_record); free_helper(key_record, 17493500875420201059UL); }) ;
+   ({ free_helper(key_record, 17493500875420201059UL);free(key_record); }) ;
 # 1818 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_2: root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, key_leaf, key, key_record); });
 # 1819 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11435,13 +11435,13 @@ destroy_tree_nodes_quick(node* root)
 # 1827 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
 # 1828 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free(root->pointers[i]); free_helper(root->pointers[i], 17493500875420201113UL); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { call_lbl_0: ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
+ if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free_helper(root->pointers[i], 17493500875420201113UL);free(root->pointers[i]); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { call_lbl_0: ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
 # 1834 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->pointers); free_helper(root->pointers, 17493500875420201111UL); }) ;
+  ({ free_helper(root->pointers, 17493500875420201111UL);free(root->pointers); }) ;
 # 1835 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->keys); free_helper(root->keys, 17493500875420201111UL); }) ;
+  ({ free_helper(root->keys, 17493500875420201111UL);free(root->keys); }) ;
 # 1836 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root); free_helper(root, 17493500875420201159UL); }) ;
+  ({ free_helper(root, 17493500875420201159UL);free(root); }) ;
 # 1837 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, ____alias_loc_id_94, ____chimes_did_disable75, false); }
 
@@ -12074,13 +12074,13 @@ int cur_arg;
 # 2246 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2247 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2248 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(currKnode); free_helper(currKnode, 17493500875420201873UL); }) ;
+     ({ free_helper(currKnode, 17493500875420201873UL);free(currKnode); }) ;
 # 2249 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(offset); free_helper(offset, 17493500875420201874UL); }) ;
+     ({ free_helper(offset, 17493500875420201874UL);free(offset); }) ;
 # 2250 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(keys); free_helper(keys, 17493500875420201823UL); }) ;
+     ({ free_helper(keys, 17493500875420201823UL);free(keys); }) ;
 # 2251 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(ans); free_helper(ans, 17493500875420201857UL); }) ;
+     ({ free_helper(ans, 17493500875420201857UL);free(ans); }) ;
 # 2252 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2253 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2254 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12123,7 +12123,7 @@ int cur_arg;
       uint32_t ____chimes_unroll_var_7; call_lbl_29: ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
 # 2276 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2277 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(ansList); free_helper(ansList, 17493500875420201951UL); }) ;
+     ({ free_helper(ansList, 17493500875420201951UL);free(ansList); }) ;
 # 2278 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     break;
 # 2279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12294,21 +12294,21 @@ int cur_arg;
 # 2403 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2404 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2405 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(currKnode); free_helper(currKnode, 17493500875420202307UL); }) ;
+     ({ free_helper(currKnode, 17493500875420202307UL);free(currKnode); }) ;
 # 2406 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(offset); free_helper(offset, 17493500875420202308UL); }) ;
+     ({ free_helper(offset, 17493500875420202308UL);free(offset); }) ;
 # 2407 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(lastKnode); free_helper(lastKnode, 17493500875420202309UL); }) ;
+     ({ free_helper(lastKnode, 17493500875420202309UL);free(lastKnode); }) ;
 # 2408 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(offset_2); free_helper(offset_2, 17493500875420202310UL); }) ;
+     ({ free_helper(offset_2, 17493500875420202310UL);free(offset_2); }) ;
 # 2409 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(start); free_helper(start, 17493500875420202185UL); }) ;
+     ({ free_helper(start, 17493500875420202185UL);free(start); }) ;
 # 2410 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(end); free_helper(end, 17493500875420202197UL); }) ;
+     ({ free_helper(end, 17493500875420202197UL);free(end); }) ;
 # 2411 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(recstart); free_helper(recstart, 17493500875420202288UL); }) ;
+     ({ free_helper(recstart, 17493500875420202288UL);free(recstart); }) ;
 # 2412 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free(reclength); free_helper(reclength, 17493500875420202293UL); }) ;
+     ({ free_helper(reclength, 17493500875420202293UL);free(reclength); }) ;
 # 2413 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2414 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2415 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12357,7 +12357,7 @@ int cur_arg;
 # 2445 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2446 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2447 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(mem); free_helper(mem, 17493500875420201867UL); }) ;
+  ({ free_helper(mem, 17493500875420201867UL);free(mem); }) ;
 # 2448 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int ____chimes_ret_var_64; ; ____chimes_ret_var_64 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_96, ____chimes_did_disable77, false); return ____chimes_ret_var_64; ;
 # 2449 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13793,9 +13793,9 @@ insert_into_leaf_after_splitting_npm( node* root,
  }
 # 1174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_pointers); free_helper(temp_pointers, 17493500875420198886UL); }) ;
+  ({ free_helper(temp_pointers, 17493500875420198886UL);free(temp_pointers); }) ;
 # 1176 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_keys); free_helper(temp_keys, 17493500875420198898UL); }) ;
+  ({ free_helper(temp_keys, 17493500875420198898UL);free(temp_keys); }) ;
 # 1177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_leaf->pointers[order - 1] = leaf->pointers[order - 1];
@@ -13957,9 +13957,9 @@ insert_into_node_after_splitting_npm( node* root,
 # 1279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->pointers[j] = temp_pointers[i];
 # 1280 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_pointers); free_helper(temp_pointers, 17493500875420199424UL); }) ;
+  ({ free_helper(temp_pointers, 17493500875420199424UL);free(temp_pointers); }) ;
 # 1281 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(temp_keys); free_helper(temp_keys, 17493500875420199437UL); }) ;
+  ({ free_helper(temp_keys, 17493500875420199437UL);free(temp_keys); }) ;
 # 1282 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->parent = old_node->parent;
 # 1283 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -14233,11 +14233,11 @@ adjust_root_npm(node* root)
  }; } else {new_root = __null; } ;
 # 1505 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1506 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->keys); free_helper(root->keys, 17493500875420201550UL); }) ;
+  ({ free_helper(root->keys, 17493500875420201550UL);free(root->keys); }) ;
 # 1507 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->pointers); free_helper(root->pointers, 17493500875420201550UL); }) ;
+  ({ free_helper(root->pointers, 17493500875420201550UL);free(root->pointers); }) ;
 # 1508 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root); free_helper(root, 17493500875420201550UL); }) ;
+  ({ free_helper(root, 17493500875420201550UL);free(root); }) ;
 # 1509 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1510 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node * ____chimes_ret_var_49; ____chimes_ret_var_49 = (new_root); return ____chimes_ret_var_49; ;
@@ -14411,11 +14411,11 @@ coalesce_nodes_npm( node* root,
 # 1638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   root = delete_entry_npm(root, n->parent, k_prime, n);
 # 1639 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(n->keys); free_helper(n->keys, 17493500875420200439UL); }) ;
+   ({ free_helper(n->keys, 17493500875420200439UL);free(n->keys); }) ;
 # 1640 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(n->pointers); free_helper(n->pointers, 17493500875420200439UL); }) ;
+   ({ free_helper(n->pointers, 17493500875420200439UL);free(n->pointers); }) ;
 # 1641 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(n); free_helper(n, 17493500875420200439UL); }) ;
+   ({ free_helper(n, 17493500875420200439UL);free(n); }) ;
 # 1642 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }; } else {for (i = 0; i < n->parent->num_keys; i++) { if (n->parent->pointers[i + 1] == n) {
 # 1646 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -14644,7 +14644,7 @@ deleteVal_npm( node* root,
 # 1816 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (key_record != __null && key_leaf != __null) {
 # 1817 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free(key_record); free_helper(key_record, 17493500875420201059UL); }) ;
+   ({ free_helper(key_record, 17493500875420201059UL);free(key_record); }) ;
 # 1818 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   root = delete_entry_npm(root, key_leaf, key, key_record);
 # 1819 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -14662,13 +14662,13 @@ destroy_tree_nodes_npm(node* root)
 # 1827 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i;
 # 1828 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free(root->pointers[i]); free_helper(root->pointers[i], 17493500875420201113UL); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { destroy_tree_nodes_npm((node *) root->pointers[i]); }; } ;
+ if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free_helper(root->pointers[i], 17493500875420201113UL);free(root->pointers[i]); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { destroy_tree_nodes_npm((node *) root->pointers[i]); }; } ;
 # 1834 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->pointers); free_helper(root->pointers, 17493500875420201111UL); }) ;
+  ({ free_helper(root->pointers, 17493500875420201111UL);free(root->pointers); }) ;
 # 1835 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root->keys); free_helper(root->keys, 17493500875420201111UL); }) ;
+  ({ free_helper(root->keys, 17493500875420201111UL);free(root->keys); }) ;
 # 1836 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free(root); free_helper(root, 17493500875420201159UL); }) ;
+  ({ free_helper(root, 17493500875420201159UL);free(root); }) ;
 # 1837 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 # 1840 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"

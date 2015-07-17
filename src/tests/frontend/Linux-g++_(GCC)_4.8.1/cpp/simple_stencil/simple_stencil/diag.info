@@ -2,17 +2,17 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 2
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 46 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 24  ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 5  ({ free(curr); free_helper(curr, 460194934375909758UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 5  ({ free_helper(curr, 460194934375909758UL);free(curr);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 5  ({ free(next); free_helper(next, 460194934375909758UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 5  ({ free_helper(next, 460194934375909758UL);free(next);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 14 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 24  ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 46 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 24  ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 5  ({ free(curr); free_helper(curr, 460194934375909758UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 5  ({ free_helper(curr, 460194934375909758UL);free(curr);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 5  ({ free(next); free_helper(next, 460194934375909758UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 5  ({ free_helper(next, 460194934375909758UL);free(next);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 14 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 37 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 6 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(460194934375909885UL)); 

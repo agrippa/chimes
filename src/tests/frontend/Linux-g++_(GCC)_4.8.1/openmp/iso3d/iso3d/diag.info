@@ -7,17 +7,17 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 111 28  ({
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 111 41 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 112 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 18208841949269014672UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 112 40 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 158 5  ({ free(c_coeff); free_helper(c_coeff, 18208841949269014673UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 158 5  ({ free_helper(c_coeff, 18208841949269014673UL);free(c_coeff);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 158 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 159 5  ({ free(curr); free_helper(curr, 18208841949269014670UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 159 5  ({ free_helper(curr, 18208841949269014670UL);free(curr);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 159 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 160 5  ({ free(next); free_helper(next, 18208841949269014670UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 160 5  ({ free_helper(next, 18208841949269014670UL);free(next);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 160 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 161 5  ({ free(vsq); free_helper(vsq, 18208841949269014672UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 161 5  ({ free_helper(vsq, 18208841949269014672UL);free(vsq);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 161 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 163 9  ({ free(srcs[i]); free_helper(srcs[i], 18208841949269014782UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 163 9  ({ free_helper(srcs[i], 18208841949269014782UL);free(srcs[i]);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 163 21 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 165 5  ({ free(srcs); free_helper(srcs, 18208841949269014780UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 165 5  ({ free_helper(srcs, 18208841949269014780UL);free(srcs);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 165 14 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 145 5 alias_group_changed(____alias_loc_id_3); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 109 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * 20); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 20, 18208841949269014673UL, 0, 0); ____chimes_tmp_ptr; }) 
@@ -28,17 +28,17 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 111 28  ({
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 111 41 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 112 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 18208841949269014672UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 112 40 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 158 5  ({ free(c_coeff); free_helper(c_coeff, 18208841949269014673UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 158 5  ({ free_helper(c_coeff, 18208841949269014673UL);free(c_coeff);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 158 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 159 5  ({ free(curr); free_helper(curr, 18208841949269014670UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 159 5  ({ free_helper(curr, 18208841949269014670UL);free(curr);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 159 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 160 5  ({ free(next); free_helper(next, 18208841949269014670UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 160 5  ({ free_helper(next, 18208841949269014670UL);free(next);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 160 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 161 5  ({ free(vsq); free_helper(vsq, 18208841949269014672UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 161 5  ({ free_helper(vsq, 18208841949269014672UL);free(vsq);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 161 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 163 9  ({ free(srcs[i]); free_helper(srcs[i], 18208841949269014782UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 163 9  ({ free_helper(srcs[i], 18208841949269014782UL);free(srcs[i]);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 163 21 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 165 5  ({ free(srcs); free_helper(srcs, 18208841949269014780UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 165 5  ({ free_helper(srcs, 18208841949269014780UL);free(srcs);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 165 14 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 54 21 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(18208841949269015167UL), (size_t)(18208841949269015168UL), (size_t)(18208841949269015169UL), (size_t)(18208841949269015170UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 87 1 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_9, ____chimes_did_disable0, false); 

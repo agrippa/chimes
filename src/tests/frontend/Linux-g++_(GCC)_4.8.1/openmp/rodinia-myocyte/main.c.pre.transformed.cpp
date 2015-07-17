@@ -4337,34 +4337,34 @@ long long time0;
 # 367 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  for (i= 0; i< workload; i++){
 # 368 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-         ({ free(y[i][0]); free_helper(y[i][0], 9015230786879047568UL); }) ;
+         ({ free_helper(y[i][0], 9015230786879047568UL);free(y[i][0]); }) ;
 # 369 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 370 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 371 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 372 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   ({ free(y[i]); free_helper(y[i], 9015230786879047370UL); }) ;
+   ({ free_helper(y[i], 9015230786879047370UL);free(y[i]); }) ;
 # 373 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
 # 374 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free(y); free_helper(y, 9015230786879047374UL); }) ;
+  ({ free_helper(y, 9015230786879047374UL);free(y); }) ;
 # 375 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 376 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 377 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     ({ free(x[0]); free_helper(x[0], 9015230786879047453UL); }) ;
+     ({ free_helper(x[0], 9015230786879047453UL);free(x[0]); }) ;
 # 378 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 379 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 380 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 381 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free(x); free_helper(x, 9015230786879047479UL); }) ;
+  ({ free_helper(x, 9015230786879047479UL);free(x); }) ;
 # 382 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 383 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 384 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     ({ free(params[0]); free_helper(params[0], 9015230786879047453UL); }) ;
+     ({ free_helper(params[0], 9015230786879047453UL);free(params[0]); }) ;
 # 385 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 386 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 387 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 388 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free(params); free_helper(params, 9015230786879047526UL); }) ;
+  ({ free_helper(params, 9015230786879047526UL);free(params); }) ;
 # 389 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 390 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   call_lbl_11: time5= (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));
@@ -4723,34 +4723,34 @@ long long time0;
 # 367 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  for (i= 0; i< workload; i++){
 # 368 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-         ({ free(y[i][0]); free_helper(y[i][0], 9015230786879047568UL); }) ;
+         ({ free_helper(y[i][0], 9015230786879047568UL);free(y[i][0]); }) ;
 # 369 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 370 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 371 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 372 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   ({ free(y[i]); free_helper(y[i], 9015230786879047370UL); }) ;
+   ({ free_helper(y[i], 9015230786879047370UL);free(y[i]); }) ;
 # 373 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
 # 374 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free(y); free_helper(y, 9015230786879047374UL); }) ;
+  ({ free_helper(y, 9015230786879047374UL);free(y); }) ;
 # 375 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 376 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 377 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     ({ free(x[0]); free_helper(x[0], 9015230786879047453UL); }) ;
+     ({ free_helper(x[0], 9015230786879047453UL);free(x[0]); }) ;
 # 378 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 379 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 380 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 381 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free(x); free_helper(x, 9015230786879047479UL); }) ;
+  ({ free_helper(x, 9015230786879047479UL);free(x); }) ;
 # 382 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 383 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 384 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     ({ free(params[0]); free_helper(params[0], 9015230786879047453UL); }) ;
+     ({ free_helper(params[0], 9015230786879047453UL);free(params[0]); }) ;
 # 385 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 386 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 387 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 388 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free(params); free_helper(params, 9015230786879047526UL); }) ;
+  ({ free_helper(params, 9015230786879047526UL);free(params); }) ;
 # 389 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 390 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   call_lbl_11: time5= (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));

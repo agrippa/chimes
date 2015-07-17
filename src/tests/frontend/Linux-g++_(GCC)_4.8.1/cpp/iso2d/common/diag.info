@@ -14,7 +14,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 161 31  
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 161 65 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 178 6 len=15 update_progress_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 217 6 len=15 finish_progress_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 225 5  ({ free(progress_buffer); free_helper(progress_buffer, 2057649082944448358UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 225 5  ({ free_helper(progress_buffer, 2057649082944448358UL);free(progress_buffer);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 225 25 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 97 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(source)); malloc_helper(____chimes_tmp_ptr, sizeof(source), 2057649082944448162UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 97 48 
@@ -24,7 +24,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 135 35  
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 135 64 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 161 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(char) * (length + 3)); malloc_helper(____chimes_tmp_ptr, sizeof(char) * (length + 3), 2057649082944448358UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 161 65 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 225 5  ({ free(progress_buffer); free_helper(progress_buffer, 2057649082944448358UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 225 5  ({ free_helper(progress_buffer, 2057649082944448358UL);free(progress_buffer);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 225 25 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 48 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp 44 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 

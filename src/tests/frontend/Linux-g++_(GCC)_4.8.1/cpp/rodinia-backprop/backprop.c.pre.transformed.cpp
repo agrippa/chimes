@@ -5176,47 +5176,47 @@ void bpnn_free_resumable(BPNN *net)
   n2 = net->hidden_n;
 # 171 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 172 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_units); free_helper((char *) net->input_units, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->input_units, 18030399740950321368UL);free((char *)net->input_units); }) ;
 # 173 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_units); free_helper((char *) net->hidden_units, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_units, 18030399740950321368UL);free((char *)net->hidden_units); }) ;
 # 174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_units); free_helper((char *) net->output_units, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->output_units, 18030399740950321368UL);free((char *)net->output_units); }) ;
 # 175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 176 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_delta); free_helper((char *) net->hidden_delta, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_delta, 18030399740950321368UL);free((char *)net->hidden_delta); }) ;
 # 177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_delta); free_helper((char *) net->output_delta, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->output_delta, 18030399740950321368UL);free((char *)net->output_delta); }) ;
 # 178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->target); free_helper((char *) net->target, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->target, 18030399740950321368UL);free((char *)net->target); }) ;
 # 179 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 180 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights[0]); free_helper((char *) net->input_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->input_weights[0], 18030399740950321400UL);free((char *)net->input_weights[0]); }) ;
 # 181 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights[0]); free_helper((char *) net->input_prev_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->input_prev_weights[0], 18030399740950321400UL);free((char *)net->input_prev_weights[0]); }) ;
 # 182 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 183 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 184 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 185 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 186 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights); free_helper((char *) net->input_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->input_weights, 18030399740950321368UL);free((char *)net->input_weights); }) ;
 # 187 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights); free_helper((char *) net->input_prev_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->input_prev_weights, 18030399740950321368UL);free((char *)net->input_prev_weights); }) ;
 # 188 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 189 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights[0]); free_helper((char *) net->hidden_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->hidden_weights[0], 18030399740950321400UL);free((char *)net->hidden_weights[0]); }) ;
 # 190 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights[0]); free_helper((char *) net->hidden_prev_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->hidden_prev_weights[0], 18030399740950321400UL);free((char *)net->hidden_prev_weights[0]); }) ;
 # 191 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 192 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 193 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 194 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 195 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights); free_helper((char *) net->hidden_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_weights, 18030399740950321368UL);free((char *)net->hidden_weights); }) ;
 # 196 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights); free_helper((char *) net->hidden_prev_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_prev_weights, 18030399740950321368UL);free((char *)net->hidden_prev_weights); }) ;
 # 197 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 198 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net); free_helper((char *) net, 18030399740950321448UL); }) ;
+   ({ free_helper((char *) net, 18030399740950321448UL);free((char *)net); }) ;
 # 199 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 rm_stack(false, 0UL, "bpnn_free", &____must_manage_bpnn_free, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 # 211 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5551,7 +5551,7 @@ void bpnn_save_resumable(BPNN *net, char *filename)
 # 412 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , (unsigned)(sizeof(float)), (unsigned) ((n1+1) * (n2+1) * sizeof(float)) , pFile);
 # 413 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322161UL); }) ;
+   ({ free_helper(mem, 18030399740950322161UL);free(mem); }) ;
 # 414 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 415 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
@@ -5577,7 +5577,7 @@ void bpnn_save_resumable(BPNN *net, char *filename)
 # 426 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , sizeof(float), (unsigned) ((n2+1) * (n3+1) * sizeof(float)) , pFile);
 # 427 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322161UL); }) ;
+   ({ free_helper(mem, 18030399740950322161UL);free(mem); }) ;
 # 428 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 429 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fclose(pFile);
@@ -5643,7 +5643,7 @@ BPNN *bpnn_read_resumable(char *filename)
 # 462 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 463 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322471UL); }) ;
+   ({ free_helper(mem, 18030399740950322471UL);free(mem); }) ;
 # 464 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 465 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   printf("Done\nReading hidden weights...");
@@ -5667,7 +5667,7 @@ BPNN *bpnn_read_resumable(char *filename)
 # 475 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 476 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322471UL); }) ;
+   ({ free_helper(mem, 18030399740950322471UL);free(mem); }) ;
 # 477 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   close(fd);
 # 478 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5916,47 +5916,47 @@ void bpnn_free_quick(BPNN *net)
   n2 = net->hidden_n;
 # 171 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 172 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_units); free_helper((char *) net->input_units, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->input_units, 18030399740950321368UL);free((char *)net->input_units); }) ;
 # 173 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_units); free_helper((char *) net->hidden_units, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_units, 18030399740950321368UL);free((char *)net->hidden_units); }) ;
 # 174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_units); free_helper((char *) net->output_units, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->output_units, 18030399740950321368UL);free((char *)net->output_units); }) ;
 # 175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 176 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_delta); free_helper((char *) net->hidden_delta, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_delta, 18030399740950321368UL);free((char *)net->hidden_delta); }) ;
 # 177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_delta); free_helper((char *) net->output_delta, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->output_delta, 18030399740950321368UL);free((char *)net->output_delta); }) ;
 # 178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->target); free_helper((char *) net->target, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->target, 18030399740950321368UL);free((char *)net->target); }) ;
 # 179 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 180 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights[0]); free_helper((char *) net->input_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->input_weights[0], 18030399740950321400UL);free((char *)net->input_weights[0]); }) ;
 # 181 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights[0]); free_helper((char *) net->input_prev_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->input_prev_weights[0], 18030399740950321400UL);free((char *)net->input_prev_weights[0]); }) ;
 # 182 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 183 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 184 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 185 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 186 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights); free_helper((char *) net->input_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->input_weights, 18030399740950321368UL);free((char *)net->input_weights); }) ;
 # 187 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights); free_helper((char *) net->input_prev_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->input_prev_weights, 18030399740950321368UL);free((char *)net->input_prev_weights); }) ;
 # 188 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 189 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights[0]); free_helper((char *) net->hidden_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->hidden_weights[0], 18030399740950321400UL);free((char *)net->hidden_weights[0]); }) ;
 # 190 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights[0]); free_helper((char *) net->hidden_prev_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->hidden_prev_weights[0], 18030399740950321400UL);free((char *)net->hidden_prev_weights[0]); }) ;
 # 191 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 192 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 193 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 194 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 195 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights); free_helper((char *) net->hidden_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_weights, 18030399740950321368UL);free((char *)net->hidden_weights); }) ;
 # 196 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights); free_helper((char *) net->hidden_prev_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_prev_weights, 18030399740950321368UL);free((char *)net->hidden_prev_weights); }) ;
 # 197 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 198 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net); free_helper((char *) net, 18030399740950321448UL); }) ;
+   ({ free_helper((char *) net, 18030399740950321448UL);free((char *)net); }) ;
 # 199 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 rm_stack(false, 0UL, "bpnn_free", &____must_manage_bpnn_free, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 
@@ -6286,7 +6286,7 @@ void bpnn_save_quick(BPNN *net, char *filename)
 # 412 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , (unsigned)(sizeof(float)), (unsigned) ((n1+1) * (n2+1) * sizeof(float)) , pFile);
 # 413 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322161UL); }) ;
+   ({ free_helper(mem, 18030399740950322161UL);free(mem); }) ;
 # 414 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 415 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
@@ -6312,7 +6312,7 @@ void bpnn_save_quick(BPNN *net, char *filename)
 # 426 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , sizeof(float), (unsigned) ((n2+1) * (n3+1) * sizeof(float)) , pFile);
 # 427 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322161UL); }) ;
+   ({ free_helper(mem, 18030399740950322161UL);free(mem); }) ;
 # 428 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 429 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fclose(pFile);
@@ -6376,7 +6376,7 @@ BPNN *bpnn_read_quick(char *filename)
 # 462 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 463 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322471UL); }) ;
+   ({ free_helper(mem, 18030399740950322471UL);free(mem); }) ;
 # 464 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 465 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   printf("Done\nReading hidden weights...");
@@ -6400,7 +6400,7 @@ BPNN *bpnn_read_quick(char *filename)
 # 475 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 476 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322471UL); }) ;
+   ({ free_helper(mem, 18030399740950322471UL);free(mem); }) ;
 # 477 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   close(fd);
 # 478 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6631,47 +6631,47 @@ void bpnn_free_npm(BPNN *net)
   n2 = net->hidden_n;
 # 171 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 172 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_units); free_helper((char *) net->input_units, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->input_units, 18030399740950321368UL);free((char *)net->input_units); }) ;
 # 173 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_units); free_helper((char *) net->hidden_units, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_units, 18030399740950321368UL);free((char *)net->hidden_units); }) ;
 # 174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_units); free_helper((char *) net->output_units, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->output_units, 18030399740950321368UL);free((char *)net->output_units); }) ;
 # 175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 176 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_delta); free_helper((char *) net->hidden_delta, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_delta, 18030399740950321368UL);free((char *)net->hidden_delta); }) ;
 # 177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_delta); free_helper((char *) net->output_delta, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->output_delta, 18030399740950321368UL);free((char *)net->output_delta); }) ;
 # 178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->target); free_helper((char *) net->target, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->target, 18030399740950321368UL);free((char *)net->target); }) ;
 # 179 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 180 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights[0]); free_helper((char *) net->input_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->input_weights[0], 18030399740950321400UL);free((char *)net->input_weights[0]); }) ;
 # 181 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights[0]); free_helper((char *) net->input_prev_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->input_prev_weights[0], 18030399740950321400UL);free((char *)net->input_prev_weights[0]); }) ;
 # 182 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 183 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 184 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 185 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 186 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights); free_helper((char *) net->input_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->input_weights, 18030399740950321368UL);free((char *)net->input_weights); }) ;
 # 187 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights); free_helper((char *) net->input_prev_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->input_prev_weights, 18030399740950321368UL);free((char *)net->input_prev_weights); }) ;
 # 188 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 189 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights[0]); free_helper((char *) net->hidden_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->hidden_weights[0], 18030399740950321400UL);free((char *)net->hidden_weights[0]); }) ;
 # 190 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights[0]); free_helper((char *) net->hidden_prev_weights[0], 18030399740950321400UL); }) ;
+   ({ free_helper((char *) net->hidden_prev_weights[0], 18030399740950321400UL);free((char *)net->hidden_prev_weights[0]); }) ;
 # 191 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 192 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 193 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 194 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 195 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights); free_helper((char *) net->hidden_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_weights, 18030399740950321368UL);free((char *)net->hidden_weights); }) ;
 # 196 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights); free_helper((char *) net->hidden_prev_weights, 18030399740950321368UL); }) ;
+   ({ free_helper((char *) net->hidden_prev_weights, 18030399740950321368UL);free((char *)net->hidden_prev_weights); }) ;
 # 197 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 198 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net); free_helper((char *) net, 18030399740950321448UL); }) ;
+   ({ free_helper((char *) net, 18030399740950321448UL);free((char *)net); }) ;
 # 199 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 # 211 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6967,7 +6967,7 @@ void bpnn_save_npm(BPNN *net, char *filename)
 # 412 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , (unsigned)(sizeof(float)), (unsigned) ((n1+1) * (n2+1) * sizeof(float)) , pFile);
 # 413 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322161UL); }) ;
+   ({ free_helper(mem, 18030399740950322161UL);free(mem); }) ;
 # 414 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 415 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
@@ -6993,7 +6993,7 @@ void bpnn_save_npm(BPNN *net, char *filename)
 # 426 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , sizeof(float), (unsigned) ((n2+1) * (n3+1) * sizeof(float)) , pFile);
 # 427 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322161UL); }) ;
+   ({ free_helper(mem, 18030399740950322161UL);free(mem); }) ;
 # 428 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 429 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fclose(pFile);
@@ -7055,7 +7055,7 @@ BPNN *bpnn_read_npm(char *filename)
 # 462 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 463 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322471UL); }) ;
+   ({ free_helper(mem, 18030399740950322471UL);free(mem); }) ;
 # 464 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 465 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   printf("Done\nReading hidden weights...");
@@ -7079,7 +7079,7 @@ BPNN *bpnn_read_npm(char *filename)
 # 475 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 476 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 18030399740950322471UL); }) ;
+   ({ free_helper(mem, 18030399740950322471UL);free(mem); }) ;
 # 477 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   close(fd);
 # 478 "/gpfs-biou/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
