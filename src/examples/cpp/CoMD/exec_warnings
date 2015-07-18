@@ -8,6 +8,7 @@ WARNING: Unable to load address of function initInterpolationObject, likely beca
 WARNING: Unable to load address of function interpolate, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function eamReadSetfl, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function bcastInterpolationObject, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
+WARNING: Unable to load address of function zeroReal3, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function eamBcastPotential, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function typeNotSupported, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function notAlloyReady, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
@@ -43,4 +44,4 @@ WARNING: Unable to load address of function sumAtoms, likely because it is a sta
 WARNING: Unable to load address of function initValidate, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function printThings, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
 WARNING: Unable to load address of function destroySimulation, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
-WARNING: Mismatch in expected function and function that we entered for function haloExchange. Possibly passed through a third-party library.
+WARNING: Mismatch in expected function and function that we entered for function sortAtomsById. Possibly passed through a third-party library.

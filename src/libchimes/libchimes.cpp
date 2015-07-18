@@ -1060,8 +1060,9 @@ void init_chimes(int argc, char **argv) {
              * and which we can therefore run in NPM mode.
              */
 #ifdef VERBOSE
-            fprintf(stderr, "Setting conditional NPM variables for %s\n",
-                    i->first.c_str());
+            fprintf(stderr, "Setting conditional NPM variables for %s, does "
+                    "checkpoint? %d\n", i->first.c_str(),
+                    does_checkpoint.at(i->first));
 #endif
             if (!does_checkpoint.at(i->first)) {
                 for (vector<int *>::iterator ii = i->second.begin(),
@@ -1598,6 +1599,7 @@ void init_chimes(int argc, char **argv) {
 #ifdef __CHIMES_PROFILE
     pp.add_time(INIT_CHIMES, __start_time);
 #endif
+    exit(1);
 }
 
 static void *translate_old_ptr(void *ptr,
@@ -2477,6 +2479,10 @@ static void calling_helper(void *func_ptr, int lbl, unsigned loc_id,
 #endif
 }
 
+/*
+ * Translates the original function pointer to the NPM function pointer (if
+ * available) and returns it.
+ */
 void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
         int n_params, ...) {
 #ifdef __CHIMES_PROFILE
@@ -2489,10 +2495,17 @@ void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
     va_list vl;
     va_start(vl, n_params);
     if (exists != original_function_to_npm.end()) {
+#ifdef VERBOSE
+        fprintf(stderr, "translate_fptr successfully entering NPM function for "
+                "%s\n", exists->second.second.c_str());
+#endif
         calling_npm_helper(exists->second.second.c_str(), loc_id, true,
                 return_alias, n_params, &vl);
         result = exists->second.first;
     } else {
+#ifdef VERBOSE
+        fprintf(stderr, "translate_fptr failed entering NPM function\n");
+#endif
         calling_helper(fptr, lbl, loc_id, return_alias, n_params, &vl);
         result = fptr;
     }
@@ -3438,16 +3451,16 @@ bool within_overhead_bounds() {
     for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
             e = thread_ctxs.end(); i != e; i++) {
         unsigned long long thread_elapsed_time = i->second->elapsed_time();
-// #ifdef VERBOSE
+#ifdef VERBOSE
         fprintf(stderr, "  thread %u, elapsed time = %llu\n", i->first,
                 thread_elapsed_time);
-// #endif
+#endif
         running_time += (thread_elapsed_time / thread_ctxs.size());
     }
     VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
-// #ifdef VERBOSE
+#ifdef VERBOSE
     fprintf(stderr, "  running_time = %llu\n", running_time);
-// #endif
+#endif
     */
 
     unsigned long long curr_chimes_overhead = __sync_fetch_and_add(&chimes_overhead, 0);

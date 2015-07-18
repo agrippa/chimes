@@ -110,13 +110,6 @@ CallingAndOMPPass::CallingAndOMPPass(bool set_gen_quick) :
     supported_omp_pragmas.insert("atomic");
 }
 
-std::string CallingAndOMPPass::get_unique_argument_varname() {
-    std::stringstream ss;
-    ss << "____chimes_arg" << arg_counter;
-    arg_counter++;
-    return ss.str();
-}
-
 std::string CallingAndOMPPass::get_unique_parent_stack_depth_varname() {
     std::stringstream ss;
     ss << "____chimes_parent_stack_depth" << parent_stack_depth_varname_counter;
@@ -791,142 +784,13 @@ std::string CallingAndOMPPass::get_region_cleanup_code(bool is_parallel_for,
     return (leaving_stream.str());
 }
 
-bool CallingAndOMPPass::has_side_effects(const Expr *arg) {
-    switch (arg->getStmtClass()) {
-        case (clang::Stmt::ImplicitCastExprClass): {
-            const Expr *sub = dyn_cast<ImplicitCastExpr>(arg)->getSubExpr();
-
-            if (isa<clang::DeclRefExpr>(sub) ||
-                    isa<clang::StringLiteral>(sub)) {
-                return false;
-            }
-            if (isa<clang::ImplicitCastExpr>(sub)) {
-                const Expr *sub_sub =
-                    dyn_cast<ImplicitCastExpr>(sub)->getSubExpr();
-                if (isa<clang::DeclRefExpr>(sub_sub)) {
-                    return false;
-                } else {
-#ifdef VERBOSE
-                    std::string st = dyn_cast<clang::ImplicitCastExpr>(
-                            sub)->getSubExpr()->getStmtClassName();
-                    llvm::errs() << "    Doubly nested ImplicitCast " << st <<
-                        "\n";
-#endif
-                }
-            }
-#ifdef VERBOSE
-            llvm::errs() << "  ImplicitCast NESTED " <<
-                sub->getStmtClassName() << "\n";
-#endif
-            break;
-        }
-        case (clang::Stmt::DeclRefExprClass): {
-            return false;
-        }
-        case (clang::Stmt::IntegerLiteralClass): {
-            return false;
-        }
-        case (clang::Stmt::UnaryOperatorClass): {
-            const UnaryOperator *unary = dyn_cast<UnaryOperator>(arg);
-            const Expr *sub = unary->getSubExpr();
-            switch (unary->getOpcode()) {
-                case (UO_AddrOf): {
-                    switch (sub->getStmtClass()) {
-                        case (clang::Stmt::DeclRefExprClass):
-                            // Address of a variable
-                            return false;
-                        case (clang::Stmt::ParenExprClass):
-#ifdef VERBOSE
-                            llvm::errs() << "Paren child is " <<
-                                dyn_cast<ParenExpr>(
-                                        sub)->getSubExpr()->getStmtClassName()
-                                << "\n";
-#endif
-                            break;
-                    }
-                }
-            }
-#ifdef VERBOSE
-            llvm::errs() << "  UnaryOp NESTED " << sub->getStmtClassName() <<
-                " " << "opcode=" << unary->getOpcode() << "\n";
-#endif
-            break;
-        }
-    }
-#ifdef VERBOSE
-    llvm::errs() << "ARG is a " << arg->getStmtClassName() << "\n";
-#endif
-    return true;
-}
-
-std::string CallingAndOMPPass::get_func_symbol(const CallExpr *call,
-        CallLocation *loc) {
-    std::string func_symbol;
-    if (loc->get_funcname() == "anon") {
-        func_symbol = stmtToString(call->getCallee());
-    } else {
-        func_symbol = loc->get_funcname();
-    }
-    return (func_symbol);
-}
-
-bool CallingAndOMPPass::needsToBeHoisted(std::string funcname, const Expr *arg) {
-    bool may_cause_checkpoint = true;
-    if (funcname != "anon") {
-        may_cause_checkpoint = insertions->may_cause_checkpoint(funcname);
-    }
-
-    return (!gen_quick && may_cause_checkpoint && has_side_effects(arg));
-}
-
-int CallingAndOMPPass::extractArgsWithSideEffects(const CallExpr *call,
-        CallLocation *loc, int nargs, std::stringstream *ss,
-        std::vector<std::string> *arg_varnames) {
-    int count_args_with_side_effects = 0;
-
-    for (int i = 0; i < nargs; i++) {
-        std::string varname = get_unique_argument_varname();
-        const Expr *arg = call->getArg(i);
-        assert(!isa<CXXDefaultArgExpr>(arg));
-
-        if (needsToBeHoisted(loc->get_funcname(), arg)) {
-            std::string type_str = arg->getType().getAsString();
-            if (type_str.find("(*)") != std::string::npos) {
-                /*
-                 * If one of the arguments is a multi-dimensional stack
-                 * array, we need to special case the declaration of its
-                 * copy.
-                 */
-                assert(type_str.find("(*)") == type_str.rfind("(*)"));
-                size_t index = type_str.find("(*)");
-                type_str.insert(index + 2, varname);
-                *ss << " " << type_str << ";";
-            } else {
-                *ss << " " << arg->getType().getAsString() << " " <<
-                    varname << "; ";
-            }
-            arg_varnames->push_back(varname);
-            count_args_with_side_effects++;
-        } else {
-            std::string arg_str = stmtToString(arg);
-#ifdef VERBOSE
-            llvm::errs() << "Deciding " << arg_str <<
-                " does not have side effects, class=" <<
-                arg->getStmtClassName() << "\n";
-#endif
-            arg_varnames->push_back(arg_str);
-        }
-    }
-
-    return (count_args_with_side_effects);
-}
-
 static std::string get_external_func_name(std::string fname) {
     return ("____chimes_extern_func_" + fname);
 }
 
-std::string CallingAndOMPPass::get_loc_arg(const CallExpr *call,
-        std::string func_name) {
+std::string CallingAndOMPPass::get_loc_arg(const CallExpr *call) {
+    std::string func_name = get_callee_name(call);
+
     clang::PresumedLoc call_start_loc = SM->getPresumedLoc(
             call->getLocStart());
     if (change_loc_iters.find(func_name) == change_loc_iters.end()) {
@@ -956,38 +820,11 @@ std::string CallingAndOMPPass::get_loc_arg(const CallExpr *call,
     }
 }
 
-std::string CallingAndOMPPass::generateFunctionPointerCall(const CallExpr *call,
-        CallLocation loc, AliasesPassedToCallSite callsite, CallLabel lbl) {
-    std::stringstream ss;
-    std::string fptr_type = call->getCallee()->getType().getAsString();
-
-    std::string loc_arg = get_loc_arg(call, loc.get_funcname());
-
-    ss << "((" << fptr_type << ")(translate_fptr((void *)" <<
-        stmtToString(call->getCallee()) << ", " << lbl.get_lbl() << ", " <<
-        loc_arg << ", " << callsite.get_return_alias() << "UL, " <<
-        callsite.nparams();
-
-    for (int i = 0; i < callsite.nparams(); i++) {
-        ss << ", " << callsite.alias_no_for(i) << "UL";
-    }
-    ss << ")))(";
-
-    for (int a = 0; a < call->getNumArgs(); a++) {
-        const Expr *arg = call->getArg(a);
-        if (a != 0) ss << ", ";
-        ss << getRewrittenText(clang::SourceRange(
-                    arg->getLocStart(), arg->getLocEnd()));
-    }
-    ss << ")";
-    return ss.str();
-}
-
 std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
         AliasesPassedToCallSite callsite, const CallExpr *call,
         bool use_function_pointer) {
     std::stringstream ss;
-    std::string loc_arg = get_loc_arg(call, loc.get_funcname());
+    std::string loc_arg = get_loc_arg(call);
 
     ss << "({ calling_npm(\"" << loc.get_funcname() << "\", " << loc_arg <<
         "); ";
@@ -1005,66 +842,6 @@ std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
     }
     ss << "); })";
     return ss.str();
-}
-
-static size_t get_return_alias(std::string fname,
-        AliasesPassedToCallSite callsite) {
-    return (insertions->isAllocator(fname) ? 0 : callsite.get_return_alias());
-}
-
-std::string CallingAndOMPPass::generateNormalCall(const CallExpr *call,
-        CallLocation loc, CallLabel lbl, AliasesPassedToCallSite callsite) {
-    std::string func_symbol = get_func_symbol(call, &loc);
-
-    /*
-     * Default parameters cannot be checkpointed, nor are they
-     * printable.
-     */
-    int nargs = call->getNumArgs();
-    while (nargs > 0 &&
-            isa<CXXDefaultArgExpr>(call->getArg(
-                    nargs - 1))) {
-        nargs--;
-    }
-
-    std::stringstream ss;
-    std::vector<string> arg_varnames;
-    int count_args_with_side_effects =
-        extractArgsWithSideEffects(call, &loc, nargs, &ss,
-                &arg_varnames);
-
-    std::stringstream replace_func_call;
-    replace_func_call << "(" << func_symbol << ")(";
-
-    if (count_args_with_side_effects > 0) {
-        ss << " if (!____chimes_replaying) { ";
-    }
-    for (int i = 0; i < nargs; i++) {
-        const Expr *arg = call->getArg(i);
-        if (needsToBeHoisted(loc.get_funcname(), arg)) {
-            ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
-                "); ";
-        }
-
-        if (i > 0) replace_func_call << ", ";
-        replace_func_call << arg_varnames[i];
-    }
-    if (count_args_with_side_effects > 0) {
-        ss << " } ";
-    }
-    replace_func_call << ")";
-
-    std::string loc_arg = get_loc_arg(call, loc.get_funcname());
-
-    ss << " calling((void*)" << func_symbol << ", " << lbl.get_lbl() << ", " <<
-        loc_arg << ", " << get_return_alias(loc.get_funcname(), callsite) <<
-        "UL, " << callsite.nparams();
-    for (unsigned a = 0; a < callsite.nparams(); a++) {
-        ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
-    }
-    ss << "); ";
-
-    return (" ({ " + ss.str() + replace_func_call.str() + "; }) ");
 }
 
 void CallingAndOMPPass::addDynamicMerge(AliasesPassedToCallSite callsite,
@@ -1332,6 +1109,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                         loc.get_funcname());
             bool always_checkpoints = insertions->always_checkpoints(
                     loc.get_funcname());
+            bool callee_always_checkpoints = insertions->always_checkpoints(
+                    curr_func);
             bool calls_unknown = insertions->calls_unknown_functions(
                     loc.get_funcname());
             /*
@@ -1378,13 +1157,14 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
              *      either does not or may).
              *   3) The callee does not call any function pointers.
              *   4) This call is within a certain distance of main on the
-             *      call stack.
+             *      call stack OR this call is in the same method as a
+             *      checkpoint().
              */
             const int main_dist = (insertions->have_main_in_call_tree() ?
                     insertions->get_distance_from_main(curr_func) : -1);
             if (call->getDirectCallee() && !always_checkpoints &&
                     !calls_unknown &&
-                    (main_dist != -1 && main_dist < 2) &&
+                    ((main_dist != -1 && main_dist < 2) || callee_always_checkpoints) &&
                     loc.get_funcname() != "checkpoint") {
 #ifdef VERBOSE
                 llvm::errs() << "generating conditional NPM call for call "
@@ -1399,8 +1179,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                 std::string npm_call = generateNPMCall(loc, callsite, call,
                         npm_functions.find(loc.get_funcname()) ==
                             npm_functions.end());
-                std::string regular_call = generateNormalCall(call, loc,
-                        lbl, callsite);
+                std::string regular_call = generateNormalCall(call,
+                        lbl.get_lbl(), callsite, gen_quick, get_loc_arg(call));
                 std::string cond_call = "(____chimes_does_checkpoint_" +
                     loc.get_funcname() + "_npm ? (" + regular_call +
                     ") : (" + npm_call + "))";
@@ -1423,7 +1203,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                 llvm::errs() << "generating function pointer translation call\n";
 #endif
                 std::string ptr_call = generateFunctionPointerCall(call,
-                        loc, callsite, lbl);
+                        callsite, lbl.get_lbl(), get_loc_arg(call));
                 clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());
                 ReplaceText(replace_range, ptr_call);
                 ompTree->add_function_call(call, lbl.get_lbl());
@@ -1441,13 +1221,14 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                         ss << "if (0) { ";
                     }
                     ss << "checkpoint_transformed(" << lbl.get_lbl() <<
-                        ", " << get_loc_arg(call, loc.get_funcname()) << ")";
+                        ", " << get_loc_arg(call) << ")";
                     if (blockCheckpoints) {
                         ss << "; } ";
                     }
                     new_call = ss.str();
                 } else {
-                    new_call = generateNormalCall(call, loc, lbl, callsite);
+                    new_call = generateNormalCall(call, lbl.get_lbl(), callsite,
+                            gen_quick, get_loc_arg(call));
                 }
 
                 clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());

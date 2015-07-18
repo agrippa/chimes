@@ -8,9 +8,10 @@ typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "timestep.c.pre.transformed.cpp"
 static int ____chimes_does_checkpoint_advancePosition_npm = 1;
-static int ____chimes_does_checkpoint_kineticEnergy_npm = 1;
 static int ____chimes_does_checkpoint_advanceVelocity_npm = 1;
+static int ____chimes_does_checkpoint_computeForce_npm = 1;
 static int ____chimes_does_checkpoint_redistributeAtoms_npm = 1;
+static int ____chimes_does_checkpoint_kineticEnergy_npm = 1;
 static int ____chimes_does_checkpoint_addRealParallel_npm = 1;
 static int ____chimes_does_checkpoint_haloExchange_npm = 1;
 static int ____chimes_does_checkpoint_profileStart_npm = 1;
@@ -979,111 +980,6 @@ extern int ftrylockfile (FILE *__stream) throw () ;
 
 
 extern void funlockfile (FILE *__stream) throw ();
-# 929 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/bits/stdio.h" 1 3 4
-# 36 "/usr/include/bits/stdio.h" 3 4
-extern __inline __attribute__ ((__gnu_inline__)) int
-vprintf (__const char *__restrict __fmt, __gnuc_va_list __arg)
-{
-  return vfprintf (stdout, __fmt, __arg);
-}
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-getchar (void)
-{
-  return _IO_getc (stdin);
-}
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-fgetc_unlocked (FILE *__fp)
-{
-  return (__builtin_expect (((__fp)->_IO_read_ptr >= (__fp)->_IO_read_end), 0) ? __uflow (__fp) : *(unsigned char *) (__fp)->_IO_read_ptr++);
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-getc_unlocked (FILE *__fp)
-{
-  return (__builtin_expect (((__fp)->_IO_read_ptr >= (__fp)->_IO_read_end), 0) ? __uflow (__fp) : *(unsigned char *) (__fp)->_IO_read_ptr++);
-}
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-getchar_unlocked (void)
-{
-  return (__builtin_expect (((stdin)->_IO_read_ptr >= (stdin)->_IO_read_end), 0) ? __uflow (stdin) : *(unsigned char *) (stdin)->_IO_read_ptr++);
-}
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-putchar (int __c)
-{
-  return _IO_putc (__c, stdout);
-}
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-fputc_unlocked (int __c, FILE *__stream)
-{
-  return (__builtin_expect (((__stream)->_IO_write_ptr >= (__stream)->_IO_write_end), 0) ? __overflow (__stream, (unsigned char) (__c)) : (unsigned char) (*(__stream)->_IO_write_ptr++ = (__c)));
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-putc_unlocked (int __c, FILE *__stream)
-{
-  return (__builtin_expect (((__stream)->_IO_write_ptr >= (__stream)->_IO_write_end), 0) ? __overflow (__stream, (unsigned char) (__c)) : (unsigned char) (*(__stream)->_IO_write_ptr++ = (__c)));
-}
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-putchar_unlocked (int __c)
-{
-  return (__builtin_expect (((stdout)->_IO_write_ptr >= (stdout)->_IO_write_end), 0) ? __overflow (stdout, (unsigned char) (__c)) : (unsigned char) (*(stdout)->_IO_write_ptr++ = (__c)));
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) __ssize_t
-getline (char **__lineptr, size_t *__n, FILE *__stream)
-{
-  return __getdelim (__lineptr, __n, '\n', __stream);
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-feof_unlocked (FILE *__stream) throw ()
-{
-  return (((__stream)->_flags & 0x10) != 0);
-}
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-ferror_unlocked (FILE *__stream) throw ()
-{
-  return (((__stream)->_flags & 0x20) != 0);
-}
-# 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
 # 8 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
@@ -1124,12 +1020,12 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
-   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
 # 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
 
 
    void* parms;
@@ -1259,9 +1155,9 @@ typedef struct BasePotentialSt
    char latticeType[8];
    char name[3];
    int atomicNo;
-   int (*force)(struct SimFlatSt* s);
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot);
+   int (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint));
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint));
 } BasePotential;
 
 
@@ -1705,35 +1601,6 @@ extern long double strtold_l (__const char *__restrict __nptr,
          char **__restrict __endptr,
          __locale_t __loc)
      throw () __attribute__ ((__nonnull__ (1, 3))) ;
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) double
-atof (__const char *__nptr) throw ()
-{
-  return strtod (__nptr, (char **) __null);
-}
-extern __inline __attribute__ ((__gnu_inline__)) int
-atoi (__const char *__nptr) throw ()
-{
-  return (int) strtol (__nptr, (char **) __null, 10);
-}
-extern __inline __attribute__ ((__gnu_inline__)) long int
-atol (__const char *__nptr) throw ()
-{
-  return strtol (__nptr, (char **) __null, 10);
-}
-
-
-
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) long long int
-atoll (__const char *__nptr) throw ()
-{
-  return strtoll (__nptr, (char **) __null, 10);
-}
 # 311 "/usr/include/stdlib.h" 3 4
 extern char *l64a (long int __n) throw () ;
 
@@ -1964,27 +1831,6 @@ __extension__
 extern unsigned long long int gnu_dev_makedev (unsigned int __major,
             unsigned int __minor)
      throw ();
-
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
-gnu_dev_major (unsigned long long int __dev) throw ()
-{
-  return ((__dev >> 8) & 0xfff) | ((unsigned int) (__dev >> 32) & ~0xfff);
-}
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
-gnu_dev_minor (unsigned long long int __dev) throw ()
-{
-  return (__dev & 0xff) | ((unsigned int) (__dev >> 12) & ~0xff);
-}
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned long long int
-gnu_dev_makedev (unsigned int __major, unsigned int __minor) throw ()
-{
-  return ((__minor & 0xff) | ((__major & 0xfff) << 8)
-   | (((unsigned long long int) (__minor & ~0xff)) << 12)
-   | (((unsigned long long int) (__major & ~0xfff)) << 32));
-}
 # 224 "/usr/include/sys/types.h" 2 3 4
 
 
@@ -2669,7 +2515,7 @@ static void advanceVelocity(SimFlat* s, int nBoxes, real_t dt);
 static void advancePosition(SimFlat* s, int nBoxes, real_t dt);
 # 37 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 37 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-void advanceVelocity_npm(SimFlat* s, int nBoxes, real_t dt);void advancePosition_npm(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_npm(SimFlat* s);void redistributeAtoms_npm(SimFlat* sim);static void (*____chimes_extern_func_profileStart)(enum TimerHandle) = profileStart;static void (*____chimes_extern_func_profileStop)(enum TimerHandle) = profileStop;
+void computeForce_npm(SimFlat* s);void advanceVelocity_npm(SimFlat* s, int nBoxes, real_t dt);void advancePosition_npm(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_npm(SimFlat* s);void redistributeAtoms_npm(SimFlat* sim);static void (*____chimes_extern_func_profileStart)(enum TimerHandle) = profileStart;static void (*____chimes_extern_func_profileStop)(enum TimerHandle) = profileStop;
 double timestep_quick(SimFlat* s, int nSteps, real_t dt); double timestep(SimFlat* s, int nSteps, real_t dt);void computeForce_quick(SimFlat* s); void computeForce(SimFlat* s);void advanceVelocity_quick(SimFlat* s, int nBoxes, real_t dt); void advanceVelocity(SimFlat* s, int nBoxes, real_t dt);void advancePosition_quick(SimFlat* s, int nBoxes, real_t dt); void advancePosition(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_quick(SimFlat* s); void kineticEnergy(SimFlat* s);void redistributeAtoms_quick(SimFlat* sim); void redistributeAtoms(SimFlat* sim);
 double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 38 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2681,11 +2527,11 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 40 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
    {
 # 41 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_0: ({ calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_0: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ) : (({ calling_npm("profileStart", ____alias_loc_id_1); (*____chimes_extern_func_profileStart)(velocityTimer); }))); } while(0);
 # 42 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_1: ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 43 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_2: ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_2: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(velocityTimer); }))); } while(0);
 # 44 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 45 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 46 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2693,11 +2539,11 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 48 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 49 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_4: ({ calling((void*)profileStart, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
+      do { call_lbl_4: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(positionTimer); }))); } while(0);
 # 50 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_5: ({ calling_npm("advancePosition", 0); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
 # 51 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_6: ({ calling((void*)profileStop, 6, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
+      do { call_lbl_6: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 6, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(positionTimer); }))); } while(0);
 # 52 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 53 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 54 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2705,11 +2551,11 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 55 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 56 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_8: ({ calling((void*)profileStart, 8, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_8: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 8, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(redistributeTimer); }))); } while(0);
 # 58 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-       call_lbl_9: ({ calling((void*)redistributeAtoms, 9, 0, 0UL, 1, (size_t)(12369560726904678488UL)); (redistributeAtoms)(s); }) ;
+       call_lbl_9: (____chimes_does_checkpoint_redistributeAtoms_npm ? ( ({ calling((void*)redistributeAtoms, 9, 0, 0UL, 1, (size_t)(12369560726904678488UL)); (redistributeAtoms)(s); }) ) : (({ calling_npm("redistributeAtoms", 0); redistributeAtoms_npm(s); })));
 # 59 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_10: ({ calling((void*)profileStop, 10, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_10: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 10, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(redistributeTimer); }))); } while(0);
 # 60 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 62 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2717,11 +2563,11 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 63 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 64 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 65 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_12: ({ calling((void*)profileStart, 12, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_12: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 12, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(computeForceTimer); }))); } while(0);
 # 66 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_13: ({ calling((void*)computeForce, 13, 0, 0UL, 1, (size_t)(12369560726904678488UL)); (computeForce)(s); }) ;
 # 67 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_14: ({ calling((void*)profileStop, 14, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_14: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 14, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(computeForceTimer); }))); } while(0);
 # 68 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 69 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2729,11 +2575,11 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_16: ({ calling((void*)profileStart, 16, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_16: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 16, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(velocityTimer); }))); } while(0);
 # 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_17: ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 75 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_18: ({ calling((void*)profileStop, 18, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_18: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 18, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(velocityTimer); }))); } while(0);
 # 76 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 77 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 78 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2743,7 +2589,7 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
    } }
 # 81 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 82 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-    call_lbl_20: ({ calling((void*)kineticEnergy, 20, ____alias_loc_id_0, 0UL, 1, (size_t)(12369560726904678488UL)); (kineticEnergy)(s); }) ;
+    call_lbl_20: (____chimes_does_checkpoint_kineticEnergy_npm ? ( ({ calling((void*)kineticEnergy, 20, ____alias_loc_id_0, 0UL, 1, (size_t)(12369560726904678488UL)); (kineticEnergy)(s); }) ) : (({ calling_npm("kineticEnergy", ____alias_loc_id_0); kineticEnergy_npm(s); })));
 # 83 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 84 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
     real_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (s->ePotential); rm_stack(false, 0UL, "timestep", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
@@ -2937,11 +2783,11 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
 # 40 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
    {
 # 41 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_0: ({ calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_0: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ) : (({ calling_npm("profileStart", ____alias_loc_id_1); (*____chimes_extern_func_profileStart)(velocityTimer); }))); } while(0);
 # 42 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_1: ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 43 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_2: ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_2: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(velocityTimer); }))); } while(0);
 # 44 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 45 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 46 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2949,11 +2795,11 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
 # 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 48 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 49 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_4: ({ calling((void*)profileStart, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
+      do { call_lbl_4: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(positionTimer); }))); } while(0);
 # 50 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_5: ({ calling_npm("advancePosition", 0); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
 # 51 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_6: ({ calling((void*)profileStop, 6, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
+      do { call_lbl_6: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 6, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(positionTimer); }))); } while(0);
 # 52 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 53 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 54 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2961,11 +2807,11 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
 # 55 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 56 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_8: ({ calling((void*)profileStart, 8, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_8: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 8, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(redistributeTimer); }))); } while(0);
 # 58 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-       call_lbl_9: ({ calling((void*)redistributeAtoms, 9, 0, 0UL, 1, (size_t)(12369560726904678488UL)); redistributeAtoms_quick(s); }) ;
+       call_lbl_9: (____chimes_does_checkpoint_redistributeAtoms_npm ? ( ({ calling((void*)redistributeAtoms, 9, 0, 0UL, 1, (size_t)(12369560726904678488UL)); redistributeAtoms_quick(s); }) ) : (({ calling_npm("redistributeAtoms", 0); redistributeAtoms_npm(s); })));
 # 59 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_10: ({ calling((void*)profileStop, 10, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_10: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 10, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(redistributeTimer); }))); } while(0);
 # 60 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 62 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2973,11 +2819,11 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
 # 63 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 64 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 65 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_12: ({ calling((void*)profileStart, 12, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_12: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 12, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(computeForceTimer); }))); } while(0);
 # 66 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_13: ({ calling((void*)computeForce, 13, 0, 0UL, 1, (size_t)(12369560726904678488UL)); computeForce_quick(s); }) ;
 # 67 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_14: ({ calling((void*)profileStop, 14, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_14: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 14, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(computeForceTimer); }))); } while(0);
 # 68 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 69 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2985,11 +2831,11 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
 # 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_16: ({ calling((void*)profileStart, 16, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_16: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 16, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(velocityTimer); }))); } while(0);
 # 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_17: ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 75 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-      do { call_lbl_18: ({ calling((void*)profileStop, 18, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_18: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 18, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(velocityTimer); }))); } while(0);
 # 76 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 77 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 78 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2999,7 +2845,7 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
    } }
 # 81 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 82 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-    call_lbl_20: ({ calling((void*)kineticEnergy, 20, ____alias_loc_id_0, 0UL, 1, (size_t)(12369560726904678488UL)); kineticEnergy_quick(s); }) ;
+    call_lbl_20: (____chimes_does_checkpoint_kineticEnergy_npm ? ( ({ calling((void*)kineticEnergy, 20, ____alias_loc_id_0, 0UL, 1, (size_t)(12369560726904678488UL)); kineticEnergy_quick(s); }) ) : (({ calling_npm("kineticEnergy", ____alias_loc_id_0); kineticEnergy_npm(s); })));
 # 83 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 84 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
     real_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (s->ePotential); rm_stack(false, 0UL, "timestep", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
@@ -3184,6 +3030,14 @@ void redistributeAtoms_quick(SimFlat* sim)
 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_11, ____chimes_did_disable5, false); }
 
 void redistributeAtoms(SimFlat* sim) { (____chimes_replaying ? redistributeAtoms_resumable(sim) : redistributeAtoms_quick(sim)); }
+# 87 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+void computeForce_npm(SimFlat* s)
+# 88 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+{
+# 89 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, -1, 0, 0UL, 1, 12369560726904678915UL)))(s);
+# 90 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+}
 # 93 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void advanceVelocity_npm(SimFlat* s, int nBoxes, real_t dt)
 # 94 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -3337,7 +3191,7 @@ void redistributeAtoms_npm(SimFlat* sim)
 
 
 static int module_init() {
-    init_module(12369560726904678466UL, 16, 6, 5, 13, 4, 6, 10, 3, 0, 10,
+    init_module(12369560726904678466UL, 16, 6, 5, 13, 5, 6, 11, 3, 12, 9,
                            &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (12369560726904678466UL + 1UL), (12369560726904678466UL + 2UL), (12369560726904678466UL + 3UL), (12369560726904678466UL + 4UL),
                            &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)0, (12369560726904678466UL + 1UL), (12369560726904678466UL + 2UL), (12369560726904678466UL + 3UL), (12369560726904678466UL + 4UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (12369560726904678466UL + 390UL), "sortAtomsInCell", (unsigned)1, (12369560726904678466UL + 405UL),
@@ -3352,9 +3206,10 @@ static int module_init() {
                             &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)0, (12369560726904678466UL + 390UL),
                             &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)0, (12369560726904678466UL + 621UL),
                             "advancePosition", 1, (void *)(&advancePosition_npm), (void *)__null, 0, 3, (12369560726904678466UL + 386UL), 0UL, 0UL, 0UL, 0,
-                            "kineticEnergy", 0, "_Z13kineticEnergyP9SimFlatSt", "_Z17kineticEnergy_npmP9SimFlatSt", 2, &____alias_loc_id_6, &____alias_loc_id_7, 1, (12369560726904678466UL + 621UL), 0UL, 3, "profileStart", 1, 0UL, 0UL, "addRealParallel", 3, (12369560726904678466UL + 451UL), (12369560726904678466UL + 458UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL,
                             "advanceVelocity", 1, (void *)(&advanceVelocity_npm), (void *)__null, 0, 3, (12369560726904678466UL + 228UL), 0UL, 0UL, 0UL, 0,
+                            "computeForce", 0, "_Z12computeForceP9SimFlatSt", "_Z16computeForce_npmP9SimFlatSt", 1, &____alias_loc_id_5, 1, (12369560726904678466UL + 449UL), 0UL, 1, "anon", 1, (12369560726904678466UL + 449UL), 0UL,
                             "redistributeAtoms", 0, "_Z17redistributeAtomsP9SimFlatSt", "_Z21redistributeAtoms_npmP9SimFlatSt", 3, &____alias_loc_id_2, &____alias_loc_id_3, &____alias_loc_id_4, 1, (12369560726904678466UL + 403UL), 0UL, 5, "updateLinkCells", 2, (12369560726904678466UL + 405UL), (12369560726904678466UL + 405UL), 0UL, "profileStart", 1, 0UL, 0UL, "haloExchange", 2, (12369560726904678466UL + 405UL), (12369560726904678466UL + 403UL), 0UL, "profileStop", 1, 0UL, 0UL, "sortAtomsInCell", 3, (12369560726904678466UL + 405UL), (12369560726904678466UL + 405UL), 0UL, 0UL,
+                            "kineticEnergy", 0, "_Z13kineticEnergyP9SimFlatSt", "_Z17kineticEnergy_npmP9SimFlatSt", 2, &____alias_loc_id_6, &____alias_loc_id_7, 1, (12369560726904678466UL + 621UL), 0UL, 3, "profileStart", 1, 0UL, 0UL, "addRealParallel", 3, (12369560726904678466UL + 451UL), (12369560726904678466UL + 458UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL,
                                "addRealParallel", (void **)&(____chimes_extern_func_addRealParallel),
                                "haloExchange", (void **)&(____chimes_extern_func_haloExchange),
                                "profileStart", (void **)&(____chimes_extern_func_profileStart),
@@ -3362,9 +3217,10 @@ static int module_init() {
                                "sortAtomsInCell", (void **)&(____chimes_extern_func_sortAtomsInCell),
                                "updateLinkCells", (void **)&(____chimes_extern_func_updateLinkCells),
                            "advancePosition", &(____chimes_does_checkpoint_advancePosition_npm),
-                           "kineticEnergy", &(____chimes_does_checkpoint_kineticEnergy_npm),
                            "advanceVelocity", &(____chimes_does_checkpoint_advanceVelocity_npm),
+                           "computeForce", &(____chimes_does_checkpoint_computeForce_npm),
                            "redistributeAtoms", &(____chimes_does_checkpoint_redistributeAtoms_npm),
+                           "kineticEnergy", &(____chimes_does_checkpoint_kineticEnergy_npm),
                            "addRealParallel", &(____chimes_does_checkpoint_addRealParallel_npm),
                            "haloExchange", &(____chimes_does_checkpoint_haloExchange_npm),
                            "profileStart", &(____chimes_does_checkpoint_profileStart_npm),
@@ -3395,8 +3251,7 @@ static int module_init() {
                      "SimFlatSt", 640UL, 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange),
                      "SpeciesDataSt", 128UL, 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass),
                      "TimerHandle", 32UL, 0,
-                     "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
-                     "_IO_marker", 0UL, 0,
+                     "_IO_FILE", 0UL, 0,
                              "timestep", "_Z8timestepP9SimFlatStid", 21, "profileStart", "advanceVelocity", "profileStop", "checkpoint", "profileStart", "advancePosition", "profileStop", "checkpoint", "profileStart", "redistributeAtoms", "profileStop", "checkpoint", "profileStart", "computeForce", "profileStop", "checkpoint", "profileStart", "advanceVelocity", "profileStop", "checkpoint", "kineticEnergy",
                              "advancePosition", "_ZL15advancePositionP9SimFlatStid", 0,
                              "kineticEnergy", "_Z13kineticEnergyP9SimFlatSt", 3, "profileStart", "addRealParallel", "profileStop",
@@ -3410,7 +3265,19 @@ static int module_init() {
                         "kineticEnergy|eSum|0", 3, "profileStop", "profileStart", "addRealParallel",
         "advanceVelocity", 0UL, (int)3, 12369560726904678488UL, 0UL, 0UL,
         "advancePosition", 0UL, (int)3, 12369560726904678488UL, 0UL, 0UL,
-        "advanceVelocity", 0UL, (int)3, 12369560726904678488UL, 0UL, 0UL);
+        "advanceVelocity", 0UL, (int)3, 12369560726904678488UL, 0UL, 0UL,
+        "profileStart", 0UL, (int)1, 0UL,
+        "profileStop", 0UL, (int)1, 0UL,
+        "profileStart", 0UL, (int)1, 0UL,
+        "profileStop", 0UL, (int)1, 0UL,
+        "profileStart", 0UL, (int)1, 0UL,
+        "redistributeAtoms", 0UL, (int)1, 12369560726904678488UL,
+        "profileStop", 0UL, (int)1, 0UL,
+        "profileStart", 0UL, (int)1, 0UL,
+        "profileStop", 0UL, (int)1, 0UL,
+        "profileStart", 0UL, (int)1, 0UL,
+        "profileStop", 0UL, (int)1, 0UL,
+        "kineticEnergy", 0UL, (int)1, 12369560726904678488UL);
     return 0;
 }
 

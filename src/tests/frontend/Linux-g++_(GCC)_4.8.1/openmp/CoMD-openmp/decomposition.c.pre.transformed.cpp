@@ -364,35 +364,6 @@ extern long double strtold_l (__const char *__restrict __nptr,
          char **__restrict __endptr,
          __locale_t __loc)
      throw () __attribute__ ((__nonnull__ (1, 3))) ;
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) double
-atof (__const char *__nptr) throw ()
-{
-  return strtod (__nptr, (char **) __null);
-}
-extern __inline __attribute__ ((__gnu_inline__)) int
-atoi (__const char *__nptr) throw ()
-{
-  return (int) strtol (__nptr, (char **) __null, 10);
-}
-extern __inline __attribute__ ((__gnu_inline__)) long int
-atol (__const char *__nptr) throw ()
-{
-  return strtol (__nptr, (char **) __null, 10);
-}
-
-
-
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) long long int
-atoll (__const char *__nptr) throw ()
-{
-  return strtoll (__nptr, (char **) __null, 10);
-}
 # 311 "/usr/include/stdlib.h" 3 4
 extern char *l64a (long int __n) throw () ;
 
@@ -742,27 +713,6 @@ __extension__
 extern unsigned long long int gnu_dev_makedev (unsigned int __major,
             unsigned int __minor)
      throw ();
-
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
-gnu_dev_major (unsigned long long int __dev) throw ()
-{
-  return ((__dev >> 8) & 0xfff) | ((unsigned int) (__dev >> 32) & ~0xfff);
-}
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
-gnu_dev_minor (unsigned long long int __dev) throw ()
-{
-  return (__dev & 0xff) | ((unsigned int) (__dev >> 12) & ~0xff);
-}
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned long long int
-gnu_dev_makedev (unsigned int __major, unsigned int __minor) throw ()
-{
-  return ((__minor & 0xff) | ((__major & 0xfff) << 8)
-   | (((unsigned long long int) (__minor & ~0xff)) << 12)
-   | (((unsigned long long int) (__major & ~0xfff)) << 32));
-}
 # 224 "/usr/include/sys/types.h" 2 3 4
 
 

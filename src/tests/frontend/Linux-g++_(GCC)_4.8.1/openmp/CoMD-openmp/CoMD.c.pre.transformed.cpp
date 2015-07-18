@@ -13,6 +13,7 @@ static int ____chimes_does_checkpoint_initSimulation_npm = 1;
 static int ____chimes_does_checkpoint_initSpecies_npm = 1;
 static int ____chimes_does_checkpoint_initSubsystems_npm = 1;
 static int ____chimes_does_checkpoint_sanityChecks_npm = 1;
+static int ____chimes_does_checkpoint_printSimulationDataYaml_npm = 1;
 static int ____chimes_does_checkpoint_initPotential_npm = 1;
 static int ____chimes_does_checkpoint_initValidate_npm = 1;
 static int ____chimes_does_checkpoint_validateResult_npm = 1;
@@ -1079,111 +1080,6 @@ extern int ftrylockfile (FILE *__stream) throw () ;
 
 
 extern void funlockfile (FILE *__stream) throw ();
-# 929 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/bits/stdio.h" 1 3 4
-# 36 "/usr/include/bits/stdio.h" 3 4
-extern __inline __attribute__ ((__gnu_inline__)) int
-vprintf (__const char *__restrict __fmt, __gnuc_va_list __arg)
-{
-  return vfprintf (stdout, __fmt, __arg);
-}
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-getchar (void)
-{
-  return _IO_getc (stdin);
-}
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-fgetc_unlocked (FILE *__fp)
-{
-  return (__builtin_expect (((__fp)->_IO_read_ptr >= (__fp)->_IO_read_end), 0) ? __uflow (__fp) : *(unsigned char *) (__fp)->_IO_read_ptr++);
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-getc_unlocked (FILE *__fp)
-{
-  return (__builtin_expect (((__fp)->_IO_read_ptr >= (__fp)->_IO_read_end), 0) ? __uflow (__fp) : *(unsigned char *) (__fp)->_IO_read_ptr++);
-}
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-getchar_unlocked (void)
-{
-  return (__builtin_expect (((stdin)->_IO_read_ptr >= (stdin)->_IO_read_end), 0) ? __uflow (stdin) : *(unsigned char *) (stdin)->_IO_read_ptr++);
-}
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-putchar (int __c)
-{
-  return _IO_putc (__c, stdout);
-}
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-fputc_unlocked (int __c, FILE *__stream)
-{
-  return (__builtin_expect (((__stream)->_IO_write_ptr >= (__stream)->_IO_write_end), 0) ? __overflow (__stream, (unsigned char) (__c)) : (unsigned char) (*(__stream)->_IO_write_ptr++ = (__c)));
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-putc_unlocked (int __c, FILE *__stream)
-{
-  return (__builtin_expect (((__stream)->_IO_write_ptr >= (__stream)->_IO_write_end), 0) ? __overflow (__stream, (unsigned char) (__c)) : (unsigned char) (*(__stream)->_IO_write_ptr++ = (__c)));
-}
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-putchar_unlocked (int __c)
-{
-  return (__builtin_expect (((stdout)->_IO_write_ptr >= (stdout)->_IO_write_end), 0) ? __overflow (stdout, (unsigned char) (__c)) : (unsigned char) (*(stdout)->_IO_write_ptr++ = (__c)));
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) __ssize_t
-getline (char **__lineptr, size_t *__n, FILE *__stream)
-{
-  return __getdelim (__lineptr, __n, '\n', __stream);
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-feof_unlocked (FILE *__stream) throw ()
-{
-  return (((__stream)->_flags & 0x10) != 0);
-}
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-ferror_unlocked (FILE *__stream) throw ()
-{
-  return (((__stream)->_flags & 0x20) != 0);
-}
-# 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
 # 45 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c" 2
@@ -1408,35 +1304,6 @@ extern long double strtold_l (__const char *__restrict __nptr,
          char **__restrict __endptr,
          __locale_t __loc)
      throw () __attribute__ ((__nonnull__ (1, 3))) ;
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) double
-atof (__const char *__nptr) throw ()
-{
-  return strtod (__nptr, (char **) __null);
-}
-extern __inline __attribute__ ((__gnu_inline__)) int
-atoi (__const char *__nptr) throw ()
-{
-  return (int) strtol (__nptr, (char **) __null, 10);
-}
-extern __inline __attribute__ ((__gnu_inline__)) long int
-atol (__const char *__nptr) throw ()
-{
-  return strtol (__nptr, (char **) __null, 10);
-}
-
-
-
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) long long int
-atoll (__const char *__nptr) throw ()
-{
-  return strtoll (__nptr, (char **) __null, 10);
-}
 # 311 "/usr/include/stdlib.h" 3 4
 extern char *l64a (long int __n) throw () ;
 
@@ -1667,27 +1534,6 @@ __extension__
 extern unsigned long long int gnu_dev_makedev (unsigned int __major,
             unsigned int __minor)
      throw ();
-
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
-gnu_dev_major (unsigned long long int __dev) throw ()
-{
-  return ((__dev >> 8) & 0xfff) | ((unsigned int) (__dev >> 32) & ~0xfff);
-}
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
-gnu_dev_minor (unsigned long long int __dev) throw ()
-{
-  return (__dev & 0xff) | ((unsigned int) (__dev >> 12) & ~0xff);
-}
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned long long int
-gnu_dev_makedev (unsigned int __major, unsigned int __minor) throw ()
-{
-  return ((__minor & 0xff) | ((__major & 0xfff) << 8)
-   | (((unsigned long long int) (__minor & ~0xff)) << 12)
-   | (((unsigned long long int) (__major & ~0xfff)) << 32));
-}
 # 224 "/usr/include/sys/types.h" 2 3 4
 
 
@@ -2402,20 +2248,7 @@ extern void *memchr (void *__s, int __c, size_t __n)
       throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern __const void *memchr (__const void *__s, int __c, size_t __n)
       throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) void *
-memchr (void *__s, int __c, size_t __n) throw ()
-{
-  return __builtin_memchr (__s, __c, __n);
-}
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const void *
-memchr (__const void *__s, int __c, size_t __n) throw ()
-{
-  return __builtin_memchr (__s, __c, __n);
-}
-
+# 93 "/usr/include/string.h" 3 4
 }
 # 104 "/usr/include/string.h" 3 4
 extern "C++" void *rawmemchr (void *__s, int __c)
@@ -2493,20 +2326,7 @@ extern char *strchr (char *__s, int __c)
      throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern __const char *strchr (__const char *__s, int __c)
      throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
-strchr (char *__s, int __c) throw ()
-{
-  return __builtin_strchr (__s, __c);
-}
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
-strchr (__const char *__s, int __c) throw ()
-{
-  return __builtin_strchr (__s, __c);
-}
-
+# 233 "/usr/include/string.h" 3 4
 }
 
 
@@ -2520,20 +2340,7 @@ extern char *strrchr (char *__s, int __c)
      throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern __const char *strrchr (__const char *__s, int __c)
      throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
-strrchr (char *__s, int __c) throw ()
-{
-  return __builtin_strrchr (__s, __c);
-}
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
-strrchr (__const char *__s, int __c) throw ()
-{
-  return __builtin_strrchr (__s, __c);
-}
-
+# 260 "/usr/include/string.h" 3 4
 }
 # 271 "/usr/include/string.h" 3 4
 extern "C++" char *strchrnul (char *__s, int __c)
@@ -2555,20 +2362,7 @@ extern char *strpbrk (char *__s, __const char *__accept)
      throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 extern __const char *strpbrk (__const char *__s, __const char *__accept)
      throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
-strpbrk (char *__s, __const char *__accept) throw ()
-{
-  return __builtin_strpbrk (__s, __accept);
-}
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
-strpbrk (__const char *__s, __const char *__accept) throw ()
-{
-  return __builtin_strpbrk (__s, __accept);
-}
-
+# 312 "/usr/include/string.h" 3 4
 }
 
 
@@ -2583,20 +2377,7 @@ extern char *strstr (char *__haystack, __const char *__needle)
 extern __const char *strstr (__const char *__haystack,
         __const char *__needle)
      throw () __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
-strstr (char *__haystack, __const char *__needle) throw ()
-{
-  return __builtin_strstr (__haystack, __needle);
-}
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
-strstr (__const char *__haystack, __const char *__needle) throw ()
-{
-  return __builtin_strstr (__haystack, __needle);
-}
-
+# 340 "/usr/include/string.h" 3 4
 }
 
 
@@ -2698,20 +2479,7 @@ extern char *index (char *__s, int __c)
      throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern __const char *index (__const char *__s, int __c)
      throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
-index (char *__s, int __c) throw ()
-{
-  return __builtin_index (__s, __c);
-}
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
-index (__const char *__s, int __c) throw ()
-{
-  return __builtin_index (__s, __c);
-}
-
+# 487 "/usr/include/string.h" 3 4
 }
 
 
@@ -2726,20 +2494,7 @@ extern char *rindex (char *__s, int __c)
      throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern __const char *rindex (__const char *__s, int __c)
      throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
-rindex (char *__s, int __c) throw ()
-{
-  return __builtin_rindex (__s, __c);
-}
-
-extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
-rindex (__const char *__s, int __c) throw ()
-{
-  return __builtin_rindex (__s, __c);
-}
-
+# 515 "/usr/include/string.h" 3 4
 }
 
 
@@ -4238,12 +3993,12 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
-   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
 # 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
 
 
    void* parms;
@@ -4373,9 +4128,9 @@ typedef struct BasePotentialSt
    char latticeType[8];
    char name[3];
    int atomicNo;
-   int (*force)(struct SimFlatSt* s);
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot);
+   int (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint));
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint));
 } BasePotential;
 
 
@@ -4640,7 +4395,7 @@ static int iStepPrev = -1;
 static int firstCall = 1;
 # 86 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 87 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-SimFlat* initSimulation_npm(Command cmd);void destroySimulation_npm(SimFlat** ps);void initSubsystems_npm(void);void finalizeSubsystems_npm(void);Validate* initValidate_npm(SimFlat* sim);void validateResult_npm(const Validate* val, SimFlat* sim);void sumAtoms_npm(SimFlat* s);void printThings_npm(SimFlat* s, int iStep, double elapsedTime);static void (*____chimes_extern_func_destroyParallel)(void) = destroyParallel;static double (*____chimes_extern_func_getElapsedTime)(enum TimerHandle) = getElapsedTime;static void (*____chimes_extern_func_initParallel)(int *, char ***) = initParallel;static struct CommandSt (*____chimes_extern_func_parseCommandLine)(int, char **) = parseCommandLine;static void (*____chimes_extern_func_printCmdYaml)(struct _IO_FILE *, struct CommandSt *) = printCmdYaml;static void (*____chimes_extern_func_printPerformanceResults)(int, int) = printPerformanceResults;static void (*____chimes_extern_func_profileStart)(enum TimerHandle) = profileStart;static void (*____chimes_extern_func_profileStop)(enum TimerHandle) = profileStop;static void (*____chimes_extern_func_timestampBarrier)(const char *) = timestampBarrier;static double (*____chimes_extern_func_timestep)(struct SimFlatSt *, int, double) = timestep;static void (*____chimes_extern_func_yamlAppInfo)(struct _IO_FILE *) = yamlAppInfo;
+SimFlat* initSimulation_npm(Command cmd);void destroySimulation_npm(SimFlat** ps);void initSubsystems_npm(void);void finalizeSubsystems_npm(void);Validate* initValidate_npm(SimFlat* sim);void validateResult_npm(const Validate* val, SimFlat* sim);void sumAtoms_npm(SimFlat* s);void printThings_npm(SimFlat* s, int iStep, double elapsedTime);void printSimulationDataYaml_npm(FILE* file, SimFlat* s);static void (*____chimes_extern_func_destroyParallel)(void) = destroyParallel;static double (*____chimes_extern_func_getElapsedTime)(enum TimerHandle) = getElapsedTime;static void (*____chimes_extern_func_initParallel)(int *, char ***) = initParallel;static struct CommandSt (*____chimes_extern_func_parseCommandLine)(int, char **) = parseCommandLine;static void (*____chimes_extern_func_printCmdYaml)(struct _IO_FILE *, struct CommandSt *) = printCmdYaml;static void (*____chimes_extern_func_printPerformanceResults)(int, int) = printPerformanceResults;static void (*____chimes_extern_func_profileStart)(enum TimerHandle) = profileStart;static void (*____chimes_extern_func_profileStop)(enum TimerHandle) = profileStop;static void (*____chimes_extern_func_timestampBarrier)(const char *) = timestampBarrier;static double (*____chimes_extern_func_timestep)(struct SimFlatSt *, int, double) = timestep;static void (*____chimes_extern_func_yamlAppInfo)(struct _IO_FILE *) = yamlAppInfo;
 int main_quick(int argc, char** argv); int main(int argc, char** argv);SimFlat* initSimulation_quick(Command cmd); SimFlat* initSimulation(Command cmd);void destroySimulation_quick(SimFlat** ps); void destroySimulation(SimFlat** ps);void initSubsystems_quick(void); void initSubsystems(void);void finalizeSubsystems_quick(void); void finalizeSubsystems(void);Validate* initValidate_quick(SimFlat* sim); Validate* initValidate(SimFlat* sim);void validateResult_quick(const Validate* val, SimFlat* sim); void validateResult(const Validate* val, SimFlat* sim);void sumAtoms_quick(SimFlat* s); void sumAtoms(SimFlat* s);void printThings_quick(SimFlat* s, int iStep, double elapsedTime); void printThings(SimFlat* s, int iStep, double elapsedTime);void printSimulationDataYaml_quick(FILE* file, SimFlat* s); void printSimulationDataYaml(FILE* file, SimFlat* s);
 int main_resumable(int argc, char** argv)
 # 88 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -6315,6 +6070,73 @@ void printThings_npm(SimFlat* s, int iStep, double elapsedTime)
            iStep, time, eTotal, eU, eK, Temp, timePerAtom, s->atoms->nGlobal);
 # 376 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 }
+# 380 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+void printSimulationDataYaml_npm(FILE* file, SimFlat* s)
+# 381 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+{
+# 382 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+# 383 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   int maxOcc = (*____chimes_extern_func_maxOccupancy)(s->boxes);
+# 384 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+# 385 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+# 386 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   if (! (*____chimes_extern_func_printRank)()) {return; };
+# 388 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+# 389 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fprintf(file,"Simulation data: \n");
+# 390 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fprintf(file,"  Total atoms        : %d\n",
+# 391 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+           s->atoms->nGlobal);
+# 392 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fprintf(file,"  Min global bounds  : [ %14.10f, %14.10f, %14.10f ]\n",
+# 393 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+           s->domain->globalMin[0], s->domain->globalMin[1], s->domain->globalMin[2]);
+# 394 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fprintf(file,"  Max global bounds  : [ %14.10f, %14.10f, %14.10f ]\n",
+# 395 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+           s->domain->globalMax[0], s->domain->globalMax[1], s->domain->globalMax[2]);
+# 396 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   (*____chimes_extern_func_printSeparator)(file);
+# 397 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fprintf(file,"Decomposition data: \n");
+# 398 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fprintf(file,"  Processors         : %6d,%6d,%6d\n",
+# 399 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+           s->domain->procGrid[0], s->domain->procGrid[1], s->domain->procGrid[2]);
+# 400 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fprintf(file,"  Local boxes        : %6d,%6d,%6d = %8d\n",
+# 401 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+           s->boxes->gridSize[0], s->boxes->gridSize[1], s->boxes->gridSize[2],
+# 402 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+           s->boxes->gridSize[0]*s->boxes->gridSize[1]*s->boxes->gridSize[2]);
+# 403 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fprintf(file,"  Box size           : [ %14.10f, %14.10f, %14.10f ]\n",
+# 404 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+           s->boxes->boxSize[0], s->boxes->boxSize[1], s->boxes->boxSize[2]);
+# 405 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fprintf(file,"  Box factor         : [ %14.10f, %14.10f, %14.10f ] \n",
+# 406 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+           s->boxes->boxSize[0]/s->pot->cutoff,
+# 407 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+           s->boxes->boxSize[1]/s->pot->cutoff,
+# 408 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+           s->boxes->boxSize[2]/s->pot->cutoff);
+# 409 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fprintf(file, "  Max Link Cell Occupancy: %d of %d\n",
+# 410 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+           maxOcc, 64);
+# 411 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   (*____chimes_extern_func_printSeparator)(file);
+# 412 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fprintf(file,"Potential data: \n");
+# 413 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   ((void (*)(FILE *, struct BasePotentialSt *))(translate_fptr((void *)s->pot->print, -1, 0, 0UL, 2, 9674039231704591938UL, 9674039231704591739UL)))(file, s->pot);
+# 414 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+# 415 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+   fflush(file);
+# 416 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
+}
 # 419 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 void sanityChecks_npm(Command cmd, double cutoff, double latticeConst, char latticeType[8])
 # 420 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -6403,7 +6225,7 @@ void sanityChecks_npm(Command cmd, double cutoff, double latticeConst, char latt
 
 
 static int module_init() {
-    init_module(9674039231704591382UL, 38, 13, 33, 59, 11, 34, 45, 1, 65, 12,
+    init_module(9674039231704591382UL, 38, 13, 33, 59, 12, 34, 46, 1, 65, 12,
                            &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "timestampBarrier", (unsigned)1, (9674039231704591382UL + 1239UL),
                            &____alias_loc_id_1, (unsigned)0, (unsigned)0, (unsigned)1, "timestampBarrier", (unsigned)1, (9674039231704591382UL + 1238UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (9674039231704591382UL + 12UL),
@@ -6469,6 +6291,7 @@ static int module_init() {
                             "initSpecies", 1, (void *)(&initSpecies_npm), (void *)__null, 0, 1, (9674039231704591382UL + 1197UL), (9674039231704591382UL + 1170UL), 2, "malloc", 1, 0UL, (9674039231704591382UL + 1170UL), "strcpy", 2, (9674039231704591382UL + 1170UL), (9674039231704591382UL + 1197UL), (9674039231704591382UL + 1179UL),
                             "initSubsystems", 1, (void *)(&initSubsystems_npm), (void *)__null, 0, 0, 0UL, 1, "yamlBegin", 0, 0UL,
                             "sanityChecks", 1, (void *)(&sanityChecks_npm), (void *)__null, 5, &____alias_loc_id_46, &____alias_loc_id_47, &____alias_loc_id_48, &____alias_loc_id_49, &____alias_loc_id_50, 4, (9674039231704591382UL + 1160UL), 0UL, 0UL, (9674039231704591382UL + 1163UL), 0UL, 11, "getNRanks", 0, 0UL, "printRank", 0, 0UL, "fprintf", 2, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1248UL), 0UL, "printRank", 0, 0UL, "fprintf", 5, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1265UL), 0UL, 0UL, 0UL, 0UL, "strcasecmp", 2, (9674039231704591382UL + 1163UL), (9674039231704591382UL + 1266UL), 0UL, "printRank", 0, 0UL, "fprintf", 3, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1254UL), (9674039231704591382UL + 1163UL), 0UL, "bcastParallel", 3, (9674039231704591382UL + 1021UL), 0UL, 0UL, 0UL, "__assert_fail", 4, (9674039231704591382UL + 1244UL), (9674039231704591382UL + 1269UL), 0UL, (9674039231704591382UL + 1270UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "printSimulationDataYaml", 1, (void *)(&printSimulationDataYaml_npm), (void *)__null, 5, &____alias_loc_id_29, &____alias_loc_id_30, &____alias_loc_id_31, &____alias_loc_id_32, &____alias_loc_id_33, 2, (9674039231704591382UL + 556UL), (9674039231704591382UL + 557UL), 0UL, 17, "maxOccupancy", 1, (9674039231704591382UL + 357UL), 0UL, "printRank", 0, 0UL, "fprintf", 2, (9674039231704591382UL + 556UL), (9674039231704591382UL + 1238UL), 0UL, "fprintf", 3, (9674039231704591382UL + 556UL), (9674039231704591382UL + 1241UL), 0UL, 0UL, "fprintf", 5, (9674039231704591382UL + 556UL), (9674039231704591382UL + 1242UL), 0UL, 0UL, 0UL, 0UL, "fprintf", 5, (9674039231704591382UL + 556UL), (9674039231704591382UL + 1242UL), 0UL, 0UL, 0UL, 0UL, "printSeparator", 1, (9674039231704591382UL + 556UL), 0UL, "fprintf", 2, (9674039231704591382UL + 556UL), (9674039231704591382UL + 1244UL), 0UL, "fprintf", 5, (9674039231704591382UL + 556UL), (9674039231704591382UL + 1245UL), 0UL, 0UL, 0UL, 0UL, "fprintf", 6, (9674039231704591382UL + 556UL), (9674039231704591382UL + 1246UL), 0UL, 0UL, 0UL, 0UL, 0UL, "fprintf", 5, (9674039231704591382UL + 556UL), (9674039231704591382UL + 1242UL), 0UL, 0UL, 0UL, 0UL, "fprintf", 5, (9674039231704591382UL + 556UL), (9674039231704591382UL + 1248UL), 0UL, 0UL, 0UL, 0UL, "fprintf", 4, (9674039231704591382UL + 556UL), (9674039231704591382UL + 1249UL), 0UL, 0UL, 0UL, "printSeparator", 1, (9674039231704591382UL + 556UL), 0UL, "fprintf", 2, (9674039231704591382UL + 556UL), (9674039231704591382UL + 1250UL), 0UL, "anon", 2, (9674039231704591382UL + 556UL), (9674039231704591382UL + 357UL), 0UL, "fflush", 1, (9674039231704591382UL + 556UL), 0UL,
                             "initPotential", 1, (void *)(&initPotential_npm), (void *)__null, 2, &____alias_loc_id_44, &____alias_loc_id_45, 4, 0UL, (9674039231704591382UL + 1007UL), (9674039231704591382UL + 1008UL), (9674039231704591382UL + 1009UL), (9674039231704591382UL + 1002UL), 3, "initEamPot", 3, (9674039231704591382UL + 1007UL), (9674039231704591382UL + 1008UL), (9674039231704591382UL + 1009UL), (9674039231704591382UL + 1002UL), "initLjPot", 0, (9674039231704591382UL + 1002UL), "__assert_fail", 4, (9674039231704591382UL + 1266UL), (9674039231704591382UL + 1269UL), 0UL, (9674039231704591382UL + 1272UL), 0UL,
                             "initValidate", 1, (void *)(&initValidate_npm), (void *)__null, 3, &____alias_loc_id_34, &____alias_loc_id_35, &____alias_loc_id_36, 1, (9674039231704591382UL + 617UL), (9674039231704591382UL + 566UL), 7, "sumAtoms", 1, (9674039231704591382UL + 617UL), 0UL, "malloc", 1, 0UL, (9674039231704591382UL + 566UL), "printRank", 0, 0UL, "fprintf", 2, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1255UL), 0UL, "printSeparator", 1, (9674039231704591382UL + 788UL), 0UL, "fprintf", 4, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1263UL), 0UL, 0UL, 0UL, "fprintf", 2, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1255UL), 0UL,
                             "validateResult", 1, (void *)(&validateResult_npm), (void *)__null, 1, &____alias_loc_id_40, 2, (9674039231704591382UL + 890UL), (9674039231704591382UL + 891UL), 0UL, 11, "printRank", 0, 0UL, "fprintf", 2, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1255UL), 0UL, "fprintf", 2, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1255UL), 0UL, "fprintf", 2, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1256UL), 0UL, "fprintf", 3, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1257UL), 0UL, 0UL, "fprintf", 3, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1257UL), 0UL, 0UL, "fprintf", 3, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1256UL), 0UL, 0UL, "fprintf", 3, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1260UL), 0UL, 0UL, "fprintf", 2, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1261UL), 0UL, "fprintf", 3, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1257UL), 0UL, 0UL, "fprintf", 2, (9674039231704591382UL + 788UL), (9674039231704591382UL + 1261UL), 0UL,
@@ -6514,6 +6337,7 @@ static int module_init() {
                            "initSpecies", &(____chimes_does_checkpoint_initSpecies_npm),
                            "initSubsystems", &(____chimes_does_checkpoint_initSubsystems_npm),
                            "sanityChecks", &(____chimes_does_checkpoint_sanityChecks_npm),
+                           "printSimulationDataYaml", &(____chimes_does_checkpoint_printSimulationDataYaml_npm),
                            "initPotential", &(____chimes_does_checkpoint_initPotential_npm),
                            "initValidate", &(____chimes_does_checkpoint_initValidate_npm),
                            "validateResult", &(____chimes_does_checkpoint_validateResult_npm),

@@ -205,6 +205,7 @@ class AliasesPassedToCallSite {
         std::string get_funcname() { return funcname; }
         std::string get_caller_name() { return caller_name; }
         int get_line() { return line; }
+        int get_col() { return col; }
         void update_line(int set_line) { line = set_line; }
         void add_alias_no(size_t alias_no) { alias_nos.push_back(alias_no); }
         int nparams() { return alias_nos.size(); }
@@ -394,7 +395,7 @@ class FunctionCallees {
                 CREATES_CHECKPOINT set_may_checkpoint) : name(set_name),
                 mangled_name(set_mangled_name),
                 calls_unknown_functions(set_calls_unknown_functions),
-                may_checkpoint(set_may_checkpoint) { }
+                may_checkpoint(set_may_checkpoint), noncheckpointing(false) { }
 
         void add_checkpoint_cause(std::string cause, int line, int col) {
             checkpoint_causes.push_back(CheckpointCause(cause, line, col));
@@ -415,10 +416,18 @@ class FunctionCallees {
         void sort_checkpoint_causes() {
             std::sort(checkpoint_causes.begin(), checkpoint_causes.end());
         }
+
+        void set_noncheckpointing() {
+            noncheckpointing = true;
+        }
+        bool get_noncheckpointing() {
+            return noncheckpointing;
+        }
     private:
         std::string name;
         std::string mangled_name;
         bool calls_unknown_functions;
+        bool noncheckpointing;
         CREATES_CHECKPOINT may_checkpoint;
         std::vector<CheckpointCause> checkpoint_causes;
 };
@@ -561,7 +570,8 @@ class DesiredInsertions {
                 const char *func_filename, const char *call_filename,
                 const char *exit_filename, const char *reachable_filename,
                 const char *omp_filename, const char *firstprivate_filename,
-                const char *call_tree_filename, const char *allocator_filename) :
+                const char *call_tree_filename, const char *allocator_filename,
+                const char *noncheckpointing_filename) :
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
@@ -570,7 +580,9 @@ class DesiredInsertions {
             func_file(func_filename), call_file(call_filename),
             exit_file(exit_filename), reachable_file(reachable_filename),
             omp_file(omp_filename), firstprivate_file(firstprivate_filename),
-            call_tree_file(call_tree_filename), allocator_file(allocator_filename),
+            call_tree_file(call_tree_filename),
+            allocator_file(allocator_filename),
+            noncheckpointing_file(noncheckpointing_filename),
             state_change_insertions(NULL), func_exits(NULL) {
                 module_id = hash(module_name);
                 // parseStateChangeInsertions must be called before parseFunctionExits
@@ -585,6 +597,8 @@ class DesiredInsertions {
                 omp_pragmas = parseOMPPragmas();
                 call_tree = parseCallTree();
                 allocators = parseAllocators();
+                // Must be run after parseCallTree
+                parseNoncheckpointing();
 
                 diagnostics.open(diagnostic_file);
                 firstprivate.open(firstprivate_file);
@@ -652,6 +666,8 @@ class DesiredInsertions {
         std::vector<AliasesPassedToCallSite>::iterator getCallsiteStart();
         std::vector<AliasesPassedToCallSite>::iterator getCallsiteEnd();
 
+        AliasesPassedToCallSite findExactMatchingCallsite(int line,
+                int col);
         std::vector<AliasesPassedToCallSite>::iterator findFirstMatchingCallsiteAfter(
                 int line, std::string callee_name,
                 std::vector<AliasesPassedToCallSite>::iterator start);
@@ -691,7 +707,8 @@ class DesiredInsertions {
         std::string lines_info_file, struct_info_file,
             stack_allocs_file, heap_file, original_file, diagnostic_file,
             working_dir, func_file, call_file, exit_file, reachable_file,
-            omp_file, firstprivate_file, call_tree_file, allocator_file;
+            omp_file, firstprivate_file, call_tree_file, allocator_file,
+            noncheckpointing_file;
         std::ofstream diagnostics;
         std::ofstream firstprivate;
         std::ofstream omp_inserts;
@@ -722,6 +739,7 @@ class DesiredInsertions {
         std::vector<OpenMPPragma> *parseOMPPragmas();
         std::map<std::string, FunctionCallees *> *parseCallTree();
         std::set<std::string> *parseAllocators();
+        void parseNoncheckpointing();
 
         size_t module_id;
 

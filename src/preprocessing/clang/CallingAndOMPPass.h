@@ -120,9 +120,8 @@ private:
     std::string get_unique_parent_stack_depth_varname();
     std::string get_unique_call_stack_depth_varname();
     std::string get_unique_region_varname();
-    std::string get_unique_argument_varname();
     std::string get_unique_disable_varname();
-    std::string get_loc_arg(const CallExpr *call, std::string func_name);
+    std::string get_loc_arg(const CallExpr *call);
 
     /*
      * Map from line containing a OMP pragma to its immediate predessor. It is
@@ -147,10 +146,6 @@ private:
     std::string generateNPMCall(CallLocation loc,
             AliasesPassedToCallSite callsite, const CallExpr *call,
             bool use_function_pointer);
-    std::string generateNormalCall(const CallExpr *call,
-            CallLocation loc, CallLabel lbl, AliasesPassedToCallSite callsite);
-    std::string generateFunctionPointerCall(const CallExpr *call,
-            CallLocation loc, AliasesPassedToCallSite callsite, CallLabel lbl);
 
     std::set<std::string> get_private_vars(std::map<std::string,
             std::vector<std::string> > *clauses);
@@ -170,11 +165,6 @@ private:
             std::string disable_varname, std::string call_depth_varname,
             std::string region_id_varname);
     bool has_side_effects(const Expr *arg);
-    int extractArgsWithSideEffects(const CallExpr *call,
-            CallLocation *loc, int nargs, std::stringstream *ss,
-            std::vector<std::string> *arg_varnames);
-    bool needsToBeHoisted(std::string funcname, const Expr *arg);
-    std::string get_func_symbol(const CallExpr *call, CallLocation *loc);
     void collectCallAliasPairings(
             std::string callee, AliasesPassedToCallSite callsite,
             std::vector<std::pair<size_t, size_t> > *new_aliases,
@@ -195,7 +185,6 @@ private:
     int call_stack_depth_varname_counter = 0;
     int region_varname_counter = 0;
     int disable_varname_counter = 0;
-    int arg_counter = 0;
 
     bool gen_quick;
 

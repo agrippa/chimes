@@ -143,6 +143,7 @@ FUNCTION_UNROLL=${CHIMES_HOME}/src/preprocessing/function_unroll/function_unroll
 RETURN_UNROLL=${CHIMES_HOME}/src/preprocessing/return_unroll/return_unroll
 CALL_TRANSLATE=${CHIMES_HOME}/src/preprocessing/call_translate/call_translate
 FIND_ALLOCATORS=${CHIMES_HOME}/src/preprocessing/find_allocators/find_allocators
+FIND_NONCHKPTING=${CHIMES_HOME}/src/preprocessing/find_nonchkpting_fptrs/find_nonchkpting_fptrs
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 OMP_INSERTER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_inserter.py
 OMP_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp_appender/openmp_appender
@@ -218,10 +219,19 @@ for INPUT in ${ABS_INPUTS[@]}; do
     fi
 
     echo Searching for allocators in ${PREPROCESS_FILE}
-    cd ${WORK_DIR} && ${FIND_ALLOCATORS} -o ${PREPROCESS_FILE}.garbage \
+    FIND_ALLOCATORS_CMD="${FIND_ALLOCATORS} -o ${PREPROCESS_FILE}.garbage \
         -a ${INFO_FILE_PREFIX}.allocators.info ${PREPROCESS_FILE} -- \
         -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
-        ${CHIMES_DEF} ${DEFINES}
+        ${CHIMES_DEF} ${DEFINES}"
+    cd ${WORK_DIR} && ${FIND_ALLOCATORS_CMD}
+
+    echo Looking for non-checkpointing allocators in ${PREPROCESS_FILE}
+    FIND_NONCHKPTING_CMD="${FIND_NONCHKPTING} \
+        -n ${INFO_FILE_PREFIX}.non_chkpting.info ${PREPROCESS_FILE} -- \
+        -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+        ${CHIMES_DEF} ${DEFINES}"
+    echo $FIND_NONCHKPTING_CMD
+    cd ${WORK_DIR} && ${FIND_NONCHKPTING_CMD}
 
     echo Inserting line pragmas in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && cat ${PREPROCESS_FILE} | python ${INSERT_LINES} ${INPUT} > \
@@ -300,6 +310,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -j ${INFO_FILE_PREFIX}.fptrs \
             -u ${INFO_FILE_PREFIX}.merge \
             -y ${INFO_FILE_PREFIX}.allocators.info \
+            -z ${INFO_FILE_PREFIX}.non_chkpting.info \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}"
     [[ ! $VERBOSE ]] || echo $TRANSFORM_CMD

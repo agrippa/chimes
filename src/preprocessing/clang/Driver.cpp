@@ -27,74 +27,78 @@ using namespace clang::driver;
 using namespace clang::tooling;
 
 static llvm::cl::OptionCategory ToolingSampleCategory("chimes options");
-static llvm::cl::opt<std::string> line_info_file("l",
-        llvm::cl::desc("Line info filename"), llvm::cl::value_desc("line_file"));
-static llvm::cl::opt<std::string> struct_file("s",
-        llvm::cl::desc("Struct info filename"),
-        llvm::cl::value_desc("struct_file"));
 static llvm::cl::opt<std::string> stack_allocs_file("a",
         llvm::cl::desc("Stack allocations info filename"),
         llvm::cl::value_desc("stack_allocs_file"));
-static llvm::cl::opt<std::string> original_file("i",
-        llvm::cl::desc("Original input file"),
-        llvm::cl::value_desc("original_file"));
-static llvm::cl::opt<std::string> heap_file("m",
-        llvm::cl::desc("Heap info file"),
-        llvm::cl::value_desc("heap_file"));
-static llvm::cl::opt<std::string> diag_file("d",
-        llvm::cl::desc("Diagnostics file"),
-        llvm::cl::value_desc("diag_file"));
-static llvm::cl::opt<std::string> working_directory("w",
-        llvm::cl::desc("Working directory"),
-        llvm::cl::value_desc("work_dir"));
-static llvm::cl::opt<std::string> no_checkpoint("c",
-        llvm::cl::desc("No checkpoint"),
-        llvm::cl::value_desc("no_checkpoint"));
-static llvm::cl::opt<std::string> func_file("f",
-        llvm::cl::desc("Function info file"),
-        llvm::cl::value_desc("func_info"));
-static llvm::cl::opt<std::string> call_file("k",
-        llvm::cl::desc("Callsite info file"),
-        llvm::cl::value_desc("call_info"));
-static llvm::cl::opt<std::string> exit_file("x",
-        llvm::cl::desc("Function exit info file"),
-        llvm::cl::value_desc("exit_info"));
-static llvm::cl::opt<std::string> reachable_file("r",
-        llvm::cl::desc("Reachable info file"),
-        llvm::cl::value_desc("reachable_info"));
-static llvm::cl::opt<std::string> module_id_file("o",
-        llvm::cl::desc("Module ID file"),
-        llvm::cl::value_desc("module_info"));
-static llvm::cl::opt<std::string> omp_file("t",
-        llvm::cl::desc("OpenMP file"),
-        llvm::cl::value_desc("omp_info"));
-static llvm::cl::opt<std::string> firstprivate_file("v",
-        llvm::cl::desc("firstprivate file"),
-        llvm::cl::value_desc("firstprivate_info"));
 static llvm::cl::opt<std::string> call_tree_file("b",
         llvm::cl::desc("call tree file"),
         llvm::cl::value_desc("call_tree_info"));
-static llvm::cl::opt<std::string> quick_version_file("q",
-        llvm::cl::desc("quick version file"),
-        llvm::cl::value_desc("quick_version"));
-static llvm::cl::opt<std::string> npm_dump_file("n",
-        llvm::cl::desc("NPM dump file"),
-        llvm::cl::value_desc("npm_dump_file"));
+static llvm::cl::opt<std::string> no_checkpoint("c",
+        llvm::cl::desc("No checkpoint"),
+        llvm::cl::value_desc("no_checkpoint"));
+static llvm::cl::opt<std::string> diag_file("d",
+        llvm::cl::desc("Diagnostics file"),
+        llvm::cl::value_desc("diag_file"));
 static llvm::cl::opt<std::string> loc_file("e",
         llvm::cl::desc("Alias locs dump file"),
         llvm::cl::value_desc("alias_locs_dump_file"));
+static llvm::cl::opt<std::string> func_file("f",
+        llvm::cl::desc("Function info file"),
+        llvm::cl::value_desc("func_info"));
 static llvm::cl::opt<std::string> list_of_externs_file("g",
         llvm::cl::desc("List of externs file"),
         llvm::cl::value_desc("list_of_externs_file"));
+static llvm::cl::opt<std::string> original_file("i",
+        llvm::cl::desc("Original input file"),
+        llvm::cl::value_desc("original_file"));
 static llvm::cl::opt<std::string> function_pointers_loaded_file("j",
         llvm::cl::desc("Function pointers loaded file"),
         llvm::cl::value_desc("function_pointers_loaded_file"));
+static llvm::cl::opt<std::string> call_file("k",
+        llvm::cl::desc("Callsite info file"),
+        llvm::cl::value_desc("call_info"));
+static llvm::cl::opt<std::string> line_info_file("l",
+        llvm::cl::desc("Line info filename"),
+        llvm::cl::value_desc("line_file"));
+static llvm::cl::opt<std::string> heap_file("m",
+        llvm::cl::desc("Heap info file"),
+        llvm::cl::value_desc("heap_file"));
+static llvm::cl::opt<std::string> npm_dump_file("n",
+        llvm::cl::desc("NPM dump file"),
+        llvm::cl::value_desc("npm_dump_file"));
+static llvm::cl::opt<std::string> module_id_file("o",
+        llvm::cl::desc("Module ID file"),
+        llvm::cl::value_desc("module_info"));
+static llvm::cl::opt<std::string> quick_version_file("q",
+        llvm::cl::desc("quick version file"),
+        llvm::cl::value_desc("quick_version"));
+static llvm::cl::opt<std::string> reachable_file("r",
+        llvm::cl::desc("Reachable info file"),
+        llvm::cl::value_desc("reachable_info"));
+static llvm::cl::opt<std::string> struct_file("s",
+        llvm::cl::desc("Struct info filename"),
+        llvm::cl::value_desc("struct_file"));
+static llvm::cl::opt<std::string> omp_file("t",
+        llvm::cl::desc("OpenMP file"),
+        llvm::cl::value_desc("omp_info"));
 static llvm::cl::opt<std::string> merge_file("u",
         llvm::cl::desc("Merge file"),
         llvm::cl::value_desc("merge_file"));
+static llvm::cl::opt<std::string> firstprivate_file("v",
+        llvm::cl::desc("firstprivate file"),
+        llvm::cl::value_desc("firstprivate_info"));
+static llvm::cl::opt<std::string> working_directory("w",
+        llvm::cl::desc("Working directory"),
+        llvm::cl::value_desc("work_dir"));
+static llvm::cl::opt<std::string> exit_file("x",
+        llvm::cl::desc("Function exit info file"),
+        llvm::cl::value_desc("exit_info"));
 static llvm::cl::opt<std::string> allocator_file("y",
         llvm::cl::desc("Allocator file"),
         llvm::cl::value_desc("allocator_file"));
+static llvm::cl::opt<std::string> noncheckpointing_file("z",
+        llvm::cl::desc("Non-checkpointing file"),
+        llvm::cl::value_desc("noncheckpointing_file"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -542,6 +546,7 @@ int main(int argc, const char **argv) {
   check_opt(function_pointers_loaded_file, "Function pointers loaded file");
   check_opt(merge_file, "Merge file");
   check_opt(allocator_file, "Allocator file");
+  check_opt(noncheckpointing_file, "Non-checkpointing file");
 
   merge_filename = std::string(merge_file.c_str());
 
@@ -584,7 +589,7 @@ int main(int argc, const char **argv) {
               working_directory.c_str(), func_file.c_str(), call_file.c_str(),
               exit_file.c_str(), reachable_file.c_str(), omp_file.c_str(),
               firstprivate_file.c_str(), call_tree_file.c_str(),
-              allocator_file.c_str());
+              allocator_file.c_str(), noncheckpointing_file.c_str());
 
   // Dump module ID
   std::ofstream module_id_stream;
@@ -604,7 +609,7 @@ int main(int argc, const char **argv) {
    * This pass also gets messed up if the input filename isn't the original
    * file.
    */
-  passes.push_back(new Pass(new MallocPass(true), ".garbage",
+  passes.push_back(new Pass(new MallocPass(true), ".malloc_garbage",
               npm_dump_file.c_str(), "_npm"));
   passes.push_back(new Pass(new AliasChangedPass(), ".alias", "", ""));
   passes.push_back(new Pass(new MallocPass(false), ".malloc", "", ""));
@@ -621,7 +626,7 @@ int main(int argc, const char **argv) {
    * general.
    */
   passes.push_back(new Pass(new CallLabelInsertPass(), ".lbl", "", ""));
-  passes.push_back(new Pass(new CallingAndOMPPass(true), ".garbage",
+  passes.push_back(new Pass(new CallingAndOMPPass(true), ".calling_garbage",
               quick_version_file.c_str(), "_quick"));
   passes.push_back(new Pass(new CallingAndOMPPass(false), ".register", "", ""));
 
