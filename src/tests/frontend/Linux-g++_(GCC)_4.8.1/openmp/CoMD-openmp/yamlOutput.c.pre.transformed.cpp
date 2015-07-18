@@ -956,111 +956,6 @@ extern int ftrylockfile (FILE *__stream) throw () ;
 
 
 extern void funlockfile (FILE *__stream) throw ();
-# 929 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/bits/stdio.h" 1 3 4
-# 36 "/usr/include/bits/stdio.h" 3 4
-extern __inline __attribute__ ((__gnu_inline__)) int
-vprintf (__const char *__restrict __fmt, __gnuc_va_list __arg)
-{
-  return vfprintf (stdout, __fmt, __arg);
-}
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-getchar (void)
-{
-  return _IO_getc (stdin);
-}
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-fgetc_unlocked (FILE *__fp)
-{
-  return (__builtin_expect (((__fp)->_IO_read_ptr >= (__fp)->_IO_read_end), 0) ? __uflow (__fp) : *(unsigned char *) (__fp)->_IO_read_ptr++);
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-getc_unlocked (FILE *__fp)
-{
-  return (__builtin_expect (((__fp)->_IO_read_ptr >= (__fp)->_IO_read_end), 0) ? __uflow (__fp) : *(unsigned char *) (__fp)->_IO_read_ptr++);
-}
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-getchar_unlocked (void)
-{
-  return (__builtin_expect (((stdin)->_IO_read_ptr >= (stdin)->_IO_read_end), 0) ? __uflow (stdin) : *(unsigned char *) (stdin)->_IO_read_ptr++);
-}
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-putchar (int __c)
-{
-  return _IO_putc (__c, stdout);
-}
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-fputc_unlocked (int __c, FILE *__stream)
-{
-  return (__builtin_expect (((__stream)->_IO_write_ptr >= (__stream)->_IO_write_end), 0) ? __overflow (__stream, (unsigned char) (__c)) : (unsigned char) (*(__stream)->_IO_write_ptr++ = (__c)));
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-putc_unlocked (int __c, FILE *__stream)
-{
-  return (__builtin_expect (((__stream)->_IO_write_ptr >= (__stream)->_IO_write_end), 0) ? __overflow (__stream, (unsigned char) (__c)) : (unsigned char) (*(__stream)->_IO_write_ptr++ = (__c)));
-}
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-putchar_unlocked (int __c)
-{
-  return (__builtin_expect (((stdout)->_IO_write_ptr >= (stdout)->_IO_write_end), 0) ? __overflow (stdout, (unsigned char) (__c)) : (unsigned char) (*(stdout)->_IO_write_ptr++ = (__c)));
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) __ssize_t
-getline (char **__lineptr, size_t *__n, FILE *__stream)
-{
-  return __getdelim (__lineptr, __n, '\n', __stream);
-}
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-feof_unlocked (FILE *__stream) throw ()
-{
-  return (((__stream)->_flags & 0x10) != 0);
-}
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-ferror_unlocked (FILE *__stream) throw ()
-{
-  return (((__stream)->_flags & 0x20) != 0);
-}
-# 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
 # 8 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.h" 2
@@ -1298,35 +1193,6 @@ extern long double strtold_l (__const char *__restrict __nptr,
          char **__restrict __endptr,
          __locale_t __loc)
      throw () __attribute__ ((__nonnull__ (1, 3))) ;
-
-
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) double
-atof (__const char *__nptr) throw ()
-{
-  return strtod (__nptr, (char **) __null);
-}
-extern __inline __attribute__ ((__gnu_inline__)) int
-atoi (__const char *__nptr) throw ()
-{
-  return (int) strtol (__nptr, (char **) __null, 10);
-}
-extern __inline __attribute__ ((__gnu_inline__)) long int
-atol (__const char *__nptr) throw ()
-{
-  return strtol (__nptr, (char **) __null, 10);
-}
-
-
-
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) long long int
-atoll (__const char *__nptr) throw ()
-{
-  return strtoll (__nptr, (char **) __null, 10);
-}
 # 311 "/usr/include/stdlib.h" 3 4
 extern char *l64a (long int __n) throw () ;
 
@@ -1557,27 +1423,6 @@ __extension__
 extern unsigned long long int gnu_dev_makedev (unsigned int __major,
             unsigned int __minor)
      throw ();
-
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
-gnu_dev_major (unsigned long long int __dev) throw ()
-{
-  return ((__dev >> 8) & 0xfff) | ((unsigned int) (__dev >> 32) & ~0xfff);
-}
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
-gnu_dev_minor (unsigned long long int __dev) throw ()
-{
-  return (__dev & 0xff) | ((unsigned int) (__dev >> 12) & ~0xff);
-}
-
-__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned long long int
-gnu_dev_makedev (unsigned int __major, unsigned int __minor) throw ()
-{
-  return ((__minor & 0xff) | ((__major & 0xfff) << 8)
-   | (((unsigned long long int) (__minor & ~0xff)) << 12)
-   | (((unsigned long long int) (__major & ~0xfff)) << 32));
-}
 # 224 "/usr/include/sys/types.h" 2 3 4
 
 

@@ -218,7 +218,6 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
                     }
                 }
 
-
                 if (supportedAllocationFunctions.find(funcname) !=
                         supportedAllocationFunctions.end()) {
                     if (found_allocs.find(start_line) == found_allocs.end()) {
@@ -235,6 +234,26 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
 
                     per_func->push_back(FoundAlloc(start_col, call));
                 }
+            }
+
+            if (npm_pass && callee == NULL) {
+                /*
+                 * Function pointer call in an NPM function, will only get
+                 * written out if all function pointer calls in this function
+                 * are to pointers marked as non-checkpointing.
+                 */
+                clang::PresumedLoc presumed_start = SM->getPresumedLoc(
+                        call->getLocStart());
+                AliasesPassedToCallSite callsite =
+                    insertions->findExactMatchingCallsite(
+                            presumed_start.getLine(),
+                            presumed_start.getColumn());
+                // std::string regular_call = generateNormalCall(call, -1,
+                //         callsite, false, "0");
+                std::string regular_call = generateFunctionPointerCall(call,
+                        callsite, -1, "0");
+                ReplaceText(clang::SourceRange(call->getLocStart(),
+                            call->getLocEnd()), regular_call);
             }
         }
     }

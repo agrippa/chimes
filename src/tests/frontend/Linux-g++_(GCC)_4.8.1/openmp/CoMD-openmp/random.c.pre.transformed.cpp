@@ -1195,43 +1195,6 @@ struct __exception
 
 
 extern int matherr (struct __exception *__exc) throw ();
-# 416 "/usr/include/math.h" 3 4
-# 1 "/usr/include/bits/mathinline.h" 1 3 4
-# 63 "/usr/include/bits/mathinline.h" 3 4
-extern __inline __attribute__ ((__gnu_inline__)) int
-__signbitf (float __x) throw ()
-{
-  __extension__ union { float __f; int __i; } __u = { __f: __x };
-  return __u.__i < 0;
-}
-extern __inline __attribute__ ((__gnu_inline__)) int
-__signbit (double __x) throw ()
-{
-  __extension__ union { double __d; int __i[2]; } __u = { __d: __x };
-  return __u.__i[0] < 0;
-}
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-__signbitl (long double __x) throw ()
-{
-  __extension__ union { long double __d; int __i[4]; } __u = { __d: __x };
-  return __u.__i[0] < 0;
-}
-# 116 "/usr/include/bits/mathinline.h" 3 4
-extern __inline __attribute__ ((__gnu_inline__)) double fdim (double __x, double __y) throw ();
-extern __inline __attribute__ ((__gnu_inline__)) double
-fdim (double __x, double __y) throw ()
-{
-  return __x <= __y ? 0 : __x - __y;
-}
-
-extern __inline __attribute__ ((__gnu_inline__)) float fdimf (float __x, float __y) throw ();
-extern __inline __attribute__ ((__gnu_inline__)) float
-fdimf (float __x, float __y) throw ()
-{
-  return __x <= __y ? 0 : __x - __y;
-}
-# 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
 # 10 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c" 2

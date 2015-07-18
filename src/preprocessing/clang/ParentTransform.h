@@ -97,6 +97,23 @@ protected:
     std::string get_callee_name(const CallExpr *call);
     bool should_be_labelled(const CallExpr *call);
 
+    int arg_counter = 0;
+    bool has_side_effects(const Expr *arg);
+    bool needsToBeHoisted(std::string funcname, const Expr *arg,
+            bool gen_quick);
+    std::string get_unique_argument_varname();
+    int extractArgsWithSideEffects(const CallExpr *call,
+            std::string funcname, int nargs, std::stringstream *ss,
+            std::vector<std::string> *arg_varnames, bool gen_quick);
+    std::string get_func_symbol(const CallExpr *call);
+    std::string generateNormalCall(const CallExpr *call,
+            int lbl, AliasesPassedToCallSite callsite, bool gen_quick,
+            std::string loc_arg);
+    std::string generateFunctionPointerCall(const CallExpr *call,
+            AliasesPassedToCallSite callsite, int lbl, std::string loc_arg);
+    size_t get_return_alias(std::string fname,
+            AliasesPassedToCallSite callsite);
+
 private:
     clang::Rewriter *rewriter;
     std::map<const clang::Stmt *, const clang::Stmt *> parentMap;

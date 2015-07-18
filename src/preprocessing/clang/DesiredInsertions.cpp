@@ -655,6 +655,19 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
     return allocs;
 }
 
+void DesiredInsertions::parseNoncheckpointing() {
+    std::ifstream fp;
+    fp.open(noncheckpointing_file, std::ios::in);
+
+    std::string line;
+    while (getline(fp, line)) {
+        assert(call_tree->find(line) != call_tree->end());
+        call_tree->at(line)->set_noncheckpointing();
+    }
+
+    fp.close();
+}
+
 std::map<std::string, FunctionCallees *> *DesiredInsertions::parseCallTree() {
     std::ifstream fp;
     fp.open(call_tree_file, std::ios::in);
@@ -1162,6 +1175,26 @@ std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::findFirstMatch
     return i;
 }
 
+/*
+ * NOTE: This function is dangerous to use pretty much anywhere following a pass
+ * that does any transformations. Any code change that might change the column
+ * number of a statement (which is pretty much anything) would cause this
+ * function to fail or return invalid results.
+ */
+AliasesPassedToCallSite DesiredInsertions::findExactMatchingCallsite(int line,
+        int col) {
+    for (std::vector<AliasesPassedToCallSite>::iterator i = callsites->begin(),
+            e = callsites->end(); i != e; i++) {
+        AliasesPassedToCallSite curr = *i;
+        if (curr.get_line() == line && curr.get_col() == col) {
+            return curr;
+        }
+    }
+
+    llvm::errs() << line << ":" << col << "\n";
+    assert(false);
+}
+
 FunctionArgumentAliasGroups* DesiredInsertions::findMatchingFunctionNullReturn(
         std::string func) {
     for (std::vector<FunctionArgumentAliasGroups>::iterator i =
@@ -1445,7 +1478,12 @@ bool DesiredInsertions::no_children_call_function_ptrs(std::string fname,
     visited->insert(fname);
 
     if (call_tree->find(fname) != call_tree->end()) {
-        if (call_tree->at(fname)->get_calls_unknown_functions()) {
+        /*
+         * Check if this function calls any function pointers which are not
+         * marked non-checkpointing.
+         */
+        if (call_tree->at(fname)->get_calls_unknown_functions() &&
+                !call_tree->at(fname)->get_noncheckpointing()) {
             return false;
         }
 
