@@ -225,12 +225,10 @@ static void safe_read(int fd, void *ptr, size_t size, const char *msg,
 static void skip(int fd, ssize_t size, const char *msg, const char *filename);
 static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
         const char *filename);
-static void *translate_old_ptr(void *ptr,
-        // std::map<void *, ptr_and_size *> *old_to_new,
-        heap_tree *old_to_new,
+static void *translate_old_ptr(void *ptr, heap_tree *old_to_new,
         void *container);
-static void fix_stack_or_global_pointer(void *container, string type, int nesting);
-// map<void *, heap_allocation *>::iterator find_in_global_heap(void *ptr);
+static void fix_stack_or_global_pointer(void *container, string type,
+        int nesting);
 heap_allocation *free_impl(const void *ptr, heap_allocation *alloc);
 static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
@@ -276,12 +274,8 @@ pthread_key_t thread_heap_key;
 pthread_key_t tid_key;
 
 /*
- * Globally shared heap representation used by all threads.
+ * Per-thread heap data.
  */
-// static map<void *, heap_allocation *> global_heap;
-// static set<size_t> allocated_aliases;
-// static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
-
 static map<pthread_t, thread_local_allocations *> thread_heaps;
 static pthread_t main_thread;
 static pthread_rwlock_t thread_heaps_lock = PTHREAD_RWLOCK_INITIALIZER;
@@ -3109,10 +3103,7 @@ void realloc_helper(const void *new_ptr, const void *ptr, void *header,
          * be re-allocing the same heap space from two different threads anyway.
          */
         heap_allocation *alloc = *((heap_allocation **)new_ptr);
-        // map<void *, heap_allocation *>::iterator alloc_ptr =
-        //     find_in_global_heap((void *)ptr);
 
-        // heap_allocation *alloc = alloc_ptr->second;
         old_size = alloc->get_size();
         assert(alloc->get_alias_group() == group);
         alloc->update_size(nbytes);
@@ -3186,32 +3177,12 @@ heap_allocation *free_impl(const void *ptr, heap_allocation *alloc) {
     fprintf(stderr, "free_impl: ptr=%p, alloc->get_address()=%p\n", ptr, alloc->get_address());
 #endif
     // Update heap metadata
-    // heap_allocation *alloc = *((heap_allocation **)ptr);
     assert(alloc->get_address() == ((unsigned char *)ptr) + sizeof(void *));
     thread_local_allocations *owner = alloc->get_owner();
     owner->remove_allocation(alloc);
 
-    // VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
-    // map<void *, heap_allocation *>::iterator in_heap = global_heap.find((void *)ptr);
-    // assert(in_heap != global_heap.end() &&
-    //         in_heap->second->get_address() == ptr);
-    // global_heap.erase(in_heap);
-    // heap_allocation *alloc = in_heap->second;
-    // VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
     return alloc;
 }
-
-// map<void *, heap_allocation *>::iterator find_in_global_heap(void *ptr) {
-// 
-//     VERIFY(pthread_rwlock_rdlock(&heap_lock) == 0);
-//     map<void *, heap_allocation *>::iterator in_heap = global_heap.find(ptr);
-//     assert(in_heap != global_heap.end());
-//     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
-// 
-//     assert(in_heap->second->get_address() == ptr);
-// 
-//     return in_heap;
-// }
 
 void free_helper(const void *ptr, size_t group) {
 #ifdef VERBOSE
@@ -4127,7 +4098,6 @@ static void brute_force_pointer_fixing(void *ptr, heap_allocation *alloc,
             void *address = *container;
             heap_allocation **alloc_ptr = (heap_allocation **)(((unsigned char *)address) - sizeof(void *));
             heap_allocation *alloc = *alloc_ptr;
-            // heap_allocation *alloc = global_heap.at(*container);
             brute_force_pointer_fixing(*container, alloc, visited);
         }
     }
@@ -4177,7 +4147,6 @@ static void fix_stack_or_global_pointer(void *container, string type,
                 heap_allocation **alloc_ptr = (heap_allocation **)
                     (((unsigned char *)(*nested_container)) - sizeof(void *));
                 heap_allocation *alloc = *alloc_ptr;
-                // heap_allocation *alloc = global_heap.at(*nested_container);
 
                 /*
                  * Since its a pointer to void, we just take a look at each
