@@ -62,8 +62,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -82,7 +83,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1422,7 +1423,7 @@ void *haha_this_sux_part_deux_npm();
 void *haha_this_sux_part_deux_quick(); void *haha_this_sux_part_deux();
 void *haha_this_sux_part_deux_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux_part_deux), "haha_this_sux_part_deux", &____must_manage_haha_this_sux_part_deux, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp"
-     int *A; A = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     int *A; A = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp"
      void *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (A); rm_stack(true, 12223054536323561879UL, "haha_this_sux_part_deux", &____must_manage_haha_this_sux_part_deux, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp"
@@ -1444,7 +1445,7 @@ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disa
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp"
 void *haha_this_sux_part_deux_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux_part_deux), "haha_this_sux_part_deux", &____must_manage_haha_this_sux_part_deux, 0, 0) ; ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp"
-     int *A; A = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     int *A; A = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp"
      void *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (A); rm_stack(true, 12223054536323561879UL, "haha_this_sux_part_deux", &____must_manage_haha_this_sux_part_deux, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp"
@@ -1468,7 +1469,7 @@ int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_re
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp"
 void *haha_this_sux_part_deux_npm() {
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp"
-    int *A = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    int *A = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp"
      void * ____chimes_ret_var_0; ____chimes_ret_var_0 = (A); return ____chimes_ret_var_0; ;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp"

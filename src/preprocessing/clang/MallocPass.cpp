@@ -125,31 +125,51 @@ void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
                 assert(callee->getNameAsString() == alloc.get_fname());
 
-                std::string call_str = stmtToString(call);
+                // std::string call_str = stmtToString(call);
 
                 std::stringstream helper_ss;
 
+                std::string ret_val_str = "(____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr)";
+
                 if (alloc.get_fname() == "malloc") {
+                    std::string call_str = "malloc((" +
+                        stmtToString(call->getArg(0)) + ") + sizeof(void *))";
                     helper_ss << " ({ void *____chimes_tmp_ptr = " << call_str <<
                         "; ";
                     helper_ss << "malloc_helper(____chimes_tmp_ptr, " <<
                         getArgString(call, 0);
                     helper_ss << getMetadataArgs(&alloc);
-                    helper_ss << "); ____chimes_tmp_ptr; }) ";
+                    helper_ss << "); " << ret_val_str << "; }) ";
                 } else if (alloc.get_fname() == "calloc") {
+                    std::string num_str = stmtToString(call->getArg(0));
+                    std::string size_str = stmtToString(call->getArg(1));
+                    std::string increase_by = "(sizeof(void *) + " + size_str +
+                        " - 1) / " + size_str;
+                    std::string call_str = "calloc((" + num_str + ") + (" +
+                        increase_by + "), " + size_str + ")";
                     helper_ss << " ({ void *____chimes_tmp_ptr = " << call_str <<
                         "; ";
                     helper_ss << "calloc_helper(____chimes_tmp_ptr, " <<
                         getArgString(call, 0) << ", " << getArgString(call, 1);
                     helper_ss << getMetadataArgs(&alloc);
-                    helper_ss << "); ____chimes_tmp_ptr; }) ";
+                    helper_ss << "); " << ret_val_str << "; }) ";
                 } else if (alloc.get_fname() == "realloc") {
-                    helper_ss << " ({ void *____chimes_tmp_ptr = " << call_str <<
-                        "; ";
+                    std::string old_base_ptr = stmtToString(call->getArg(0));
+                    std::string old_ptr_str = "(" + old_base_ptr +
+                        " ? (((unsigned char *)" + old_base_ptr +
+                        ") - sizeof(void *)) : (unsigned char *)(" + old_base_ptr + "))";
+                    std::string size_str = "(" + stmtToString(call->getArg(1)) +
+                        ") + sizeof(void *)";
+                    std::string call_str = "realloc(" + old_ptr_str + ", " +
+                        size_str + ")";
+                    helper_ss << " ({ void *____chimes_tmp_header = " << stmtToString(call->getArg(0)) << "; " <<
+                        "if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } " <<
+                        "void *____chimes_tmp_ptr = " << call_str << "; ";
                     helper_ss << "realloc_helper(____chimes_tmp_ptr, " <<
-                        getArgString(call, 0) << ", " << getArgString(call, 1);
+                        old_ptr_str << ", ____chimes_tmp_header, " <<
+                        getArgString(call, 1);
                     helper_ss << getMetadataArgs(&alloc);
-                    helper_ss << "); ____chimes_tmp_ptr; }) ";
+                    helper_ss << "); " << ret_val_str << "; }) ";
                 } else if (alloc.get_fname() == "free") {
                     /*
                      * Because the allocation/freeing of memory with malloc/free
@@ -163,16 +183,21 @@ void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                      * (depending on scheduling). Right now we don't do the same
                      * for cudaFree.
                      */
-                    helper_ss << " ({ free_helper(" << getArgString(call, 0) <<
+                    std::string ptr_str = "(((unsigned char *)" +
+                        stmtToString(call->getArg(0)) + ") - sizeof(void *))";
+                    std::string call_str = "free(" + ptr_str + ")";
+                    helper_ss << " ({ free_helper(" << ptr_str <<
                         ", " << alloc.get_group() << "UL);" << call_str <<
                         ";  }) ";
                 } else if (alloc.get_fname() == "cudaMalloc") {
+                    std::string call_str = stmtToString(call);
                     helper_ss << " ({ cudaError_t ____chimes_err = " <<
                         call_str << "; cudaMalloc_helper(____chimes_err, " <<
                         getArgString(call, 0) << ", " <<
                         getArgString(call, 1) << getMetadataArgs(&alloc) <<
                         "); ____chimes_err; }) ";
                 } else if (alloc.get_fname() == "cudaFree") {
+                    std::string call_str = stmtToString(call);
                     helper_ss << " ({ cudaError_t ____chimes_err = " <<
                         call_str << "; cudaFree_helper(____chimes_err, " <<
                         getArgString(call, 0) << "); ____chimes_err; }) ";

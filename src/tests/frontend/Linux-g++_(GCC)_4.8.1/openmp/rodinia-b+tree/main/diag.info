@@ -7,20 +7,20 @@ ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 248 1 len=22 list_i
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 275 150 ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, -1, 0, 0UL, 2, 17493500875420196008UL, 17493500875420196012UL)))(____chimes_unroll_var_0, ____chimes_unroll_var_1)
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 276 31 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 298 1 len=16 list_insert_head_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 50  ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 68 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 318 1 len=16 list_insert_tail_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 50  ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 68 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 338 1 len=18 list_insert_before_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 50  ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 68 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 364 1 len=17 list_insert_after_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 50  ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 68 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 401 150 ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, -1, 0, 0UL, 2, 17493500875420196492UL, 17493500875420196496UL)))(____chimes_unroll_var_2, ____chimes_unroll_var_3)
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 402 31 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 50  ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 68 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 462 87 ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, -1, 0, 0UL, 2, 17493500875420196740UL, 17493500875420196708UL)))(datum, ____chimes_unroll_var_4)
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 462 128 
@@ -38,7 +38,7 @@ ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 133
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 535 1 len=14 list_item_init_npm
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 547 5 ((void (*)(void *))(translate_fptr((void *)datum_delete, -1, 0, 0UL, 1, 17493500875420195745UL)))(li->datum)
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 547 27 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 550 3  ({ free_helper(li, 17493500875420195752UL);free(li);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 550 3  ({ free_helper((((unsigned char *)li) - sizeof(void *)), 17493500875420195752UL);free((((unsigned char *)li) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 550 10 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 554 1 len=19 list_item_get_datum_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 560 1 len=18 list_iterator_init_npm
@@ -55,10 +55,10 @@ ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 626 1 len=31 list_r
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 632 1 len=30 list_reverse_iterator_is_valid_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 643 1 len=7 kmalloc_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 658 1 len=17 transform_to_cuda_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 43  ({ void *____chimes_tmp_ptr = malloc(malloc_size); malloc_helper(____chimes_tmp_ptr, malloc_size, 17493500875420201867UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 43  ({ void *____chimes_tmp_ptr = malloc((malloc_size) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, malloc_size, 17493500875420201867UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 61 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 765 1 len=9 findRange_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 775 59  ({ void *____chimes_tmp_ptr = malloc(sizeof(list_t)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 775 59  ({ void *____chimes_tmp_ptr = malloc((sizeof(list_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 775 80 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 799 1 len=7 usage_1_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 815 1 len=7 usage_2_npm
@@ -72,36 +72,36 @@ ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 964 1 len=9 find_le
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1004 1 len=4 find_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1023 1 len=3 cut_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1037 1 len=11 make_record_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1039 62  ({ void *____chimes_tmp_ptr = malloc(sizeof(record)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1039 62  ({ void *____chimes_tmp_ptr = malloc((sizeof(record)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1039 83 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1052 1 len=9 make_node_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 50  ({ void *____chimes_tmp_ptr = malloc(sizeof(node)); malloc_helper(____chimes_tmp_ptr, sizeof(node), 17493500875420198448UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 50  ({ void *____chimes_tmp_ptr = malloc((sizeof(node)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(node), 17493500875420198448UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 69 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 55  ({ void *____chimes_tmp_ptr = malloc((order - 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (order - 1) * sizeof(int), 17493500875420201550UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 55  ({ void *____chimes_tmp_ptr = malloc(((order - 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (order - 1) * sizeof(int), 17493500875420201550UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 87 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 61  ({ void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420201550UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 61  ({ void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420201550UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 90 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1079 1 len=9 make_leaf_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1088 1 len=14 get_left_index_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1100 1 len=16 insert_into_leaf_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1121 1 len=32 insert_into_leaf_after_splitting_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 50  ({ void *____chimes_tmp_ptr = malloc(order * sizeof(int)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420198898UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 50  ({ void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420198898UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 76 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 56  ({ void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420198886UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 56  ({ void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420198886UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 85 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1175 2  ({ free_helper(temp_pointers, 17493500875420198886UL);free(temp_pointers);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1175 2  ({ free_helper((((unsigned char *)temp_pointers) - sizeof(void *)), 17493500875420198886UL);free((((unsigned char *)temp_pointers) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1175 20 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1176 2  ({ free_helper(temp_keys, 17493500875420198898UL);free(temp_keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1176 2  ({ free_helper((((unsigned char *)temp_keys) - sizeof(void *)), 17493500875420198898UL);free((((unsigned char *)temp_keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1176 16 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1194 1 len=16 insert_into_node_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1215 1 len=32 insert_into_node_after_splitting_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 56  ({ void *____chimes_tmp_ptr = malloc((order + 1) * sizeof(node *)); malloc_helper(____chimes_tmp_ptr, (order + 1) * sizeof(node *), 17493500875420199424UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 56  ({ void *____chimes_tmp_ptr = malloc(((order + 1) * sizeof(node *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (order + 1) * sizeof(node *), 17493500875420199424UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 91 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 50  ({ void *____chimes_tmp_ptr = malloc(order * sizeof(int)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420199437UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 50  ({ void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420199437UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 76 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1280 2  ({ free_helper(temp_pointers, 17493500875420199424UL);free(temp_pointers);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1280 2  ({ free_helper((((unsigned char *)temp_pointers) - sizeof(void *)), 17493500875420199424UL);free((((unsigned char *)temp_pointers) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1280 20 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1281 2  ({ free_helper(temp_keys, 17493500875420199437UL);free(temp_keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1281 2  ({ free_helper((((unsigned char *)temp_keys) - sizeof(void *)), 17493500875420199437UL);free((((unsigned char *)temp_keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1281 16 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1298 1 len=18 insert_into_parent_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1340 1 len=20 insert_into_new_root_npm
@@ -110,87 +110,87 @@ ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1373 1 len=6 insert
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1411 1 len=18 get_neighbor_index_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1434 1 len=22 remove_entry_from_node_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1475 1 len=11 adjust_root_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1506 2  ({ free_helper(root->keys, 17493500875420201550UL);free(root->keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1506 2  ({ free_helper((((unsigned char *)root->keys) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root->keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1506 17 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1507 2  ({ free_helper(root->pointers, 17493500875420201550UL);free(root->pointers);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1507 2  ({ free_helper((((unsigned char *)root->pointers) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root->pointers) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1507 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1508 2  ({ free_helper(root, 17493500875420201550UL);free(root);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1508 2  ({ free_helper((((unsigned char *)root) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1508 11 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1515 1 len=14 coalesce_nodes_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1639 3  ({ free_helper(n->keys, 17493500875420200439UL);free(n->keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1639 3  ({ free_helper((((unsigned char *)n->keys) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n->keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1639 15 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1640 3  ({ free_helper(n->pointers, 17493500875420200439UL);free(n->pointers);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1640 3  ({ free_helper((((unsigned char *)n->pointers) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n->pointers) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1640 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1641 3  ({ free_helper(n, 17493500875420200439UL);free(n);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1641 3  ({ free_helper((((unsigned char *)n) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1641 9 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1656 1 len=18 redistribute_nodes_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1734 1 len=12 delete_entry_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1807 1 len=9 deleteVal_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1817 3  ({ free_helper(key_record, 17493500875420201059UL);free(key_record);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1817 3  ({ free_helper((((unsigned char *)key_record) - sizeof(void *)), 17493500875420201059UL);free((((unsigned char *)key_record) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1817 18 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1825 1 len=18 destroy_tree_nodes_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 61  ({ free_helper(root->pointers[i], 17493500875420201113UL);free(root->pointers[i]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 61  ({ free_helper((((unsigned char *)root->pointers[i]) - sizeof(void *)), 17493500875420201113UL);free((((unsigned char *)root->pointers[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 83 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1834 2  ({ free_helper(root->pointers, 17493500875420201111UL);free(root->pointers);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1834 2  ({ free_helper((((unsigned char *)root->pointers) - sizeof(void *)), 17493500875420201111UL);free((((unsigned char *)root->pointers) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1834 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1835 2  ({ free_helper(root->keys, 17493500875420201111UL);free(root->keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1835 2  ({ free_helper((((unsigned char *)root->keys) - sizeof(void *)), 17493500875420201111UL);free((((unsigned char *)root->keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1835 17 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1836 2  ({ free_helper(root, 17493500875420201159UL);free(root);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1836 2  ({ free_helper((((unsigned char *)root) - sizeof(void *)), 17493500875420201159UL);free((((unsigned char *)root) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1836 11 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1841 1 len=12 destroy_tree_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 58  ({ void *____chimes_tmp_ptr = malloc(sizeof(char) * (lSize + 1)); malloc_helper(____chimes_tmp_ptr, sizeof(char)*(lSize + 1), 17493500875420201565UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 58  ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (lSize + 1)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(char)*(lSize + 1), 17493500875420201565UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 89 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 53  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201873UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 53  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201873UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 78 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 50  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201874UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 50  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201874UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 75 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 47  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420201823UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 47  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420201823UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 71 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 57  ({ void *____chimes_tmp_ptr = malloc(sizeof(record) * count); malloc_helper(____chimes_tmp_ptr, sizeof(record)*count, 17493500875420201857UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 57  ({ void *____chimes_tmp_ptr = malloc((sizeof(record) * count) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(record)*count, 17493500875420201857UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 84 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2248 5  ({ free_helper(currKnode, 17493500875420201873UL);free(currKnode);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2248 5  ({ free_helper((((unsigned char *)currKnode) - sizeof(void *)), 17493500875420201873UL);free((((unsigned char *)currKnode) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2248 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2249 5  ({ free_helper(offset, 17493500875420201874UL);free(offset);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2249 5  ({ free_helper((((unsigned char *)offset) - sizeof(void *)), 17493500875420201874UL);free((((unsigned char *)offset) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2249 16 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2250 5  ({ free_helper(keys, 17493500875420201823UL);free(keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2250 5  ({ free_helper((((unsigned char *)keys) - sizeof(void *)), 17493500875420201823UL);free((((unsigned char *)keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2250 14 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2251 5  ({ free_helper(ans, 17493500875420201857UL);free(ans);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2251 5  ({ free_helper((((unsigned char *)ans) - sizeof(void *)), 17493500875420201857UL);free((((unsigned char *)ans) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2251 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2277 5  ({ free_helper(ansList, 17493500875420201951UL);free(ansList);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2277 5  ({ free_helper((((unsigned char *)ansList) - sizeof(void *)), 17493500875420201951UL);free((((unsigned char *)ansList) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2277 17 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 53  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202307UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 53  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202307UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 78 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 50  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202308UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 50  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202308UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 75 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 53  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202309UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 53  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202309UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 78 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 52  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202310UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 52  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202310UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 77 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 48  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202185UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 48  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202185UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 72 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 46  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202197UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 46  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202197UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 70 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 51  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202288UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 51  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202288UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 75 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 52  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202293UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 52  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202293UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 76 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2405 5  ({ free_helper(currKnode, 17493500875420202307UL);free(currKnode);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2405 5  ({ free_helper((((unsigned char *)currKnode) - sizeof(void *)), 17493500875420202307UL);free((((unsigned char *)currKnode) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2405 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2406 5  ({ free_helper(offset, 17493500875420202308UL);free(offset);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2406 5  ({ free_helper((((unsigned char *)offset) - sizeof(void *)), 17493500875420202308UL);free((((unsigned char *)offset) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2406 16 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2407 5  ({ free_helper(lastKnode, 17493500875420202309UL);free(lastKnode);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2407 5  ({ free_helper((((unsigned char *)lastKnode) - sizeof(void *)), 17493500875420202309UL);free((((unsigned char *)lastKnode) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2407 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2408 5  ({ free_helper(offset_2, 17493500875420202310UL);free(offset_2);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2408 5  ({ free_helper((((unsigned char *)offset_2) - sizeof(void *)), 17493500875420202310UL);free((((unsigned char *)offset_2) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2408 18 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2409 5  ({ free_helper(start, 17493500875420202185UL);free(start);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2409 5  ({ free_helper((((unsigned char *)start) - sizeof(void *)), 17493500875420202185UL);free((((unsigned char *)start) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2409 15 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2410 5  ({ free_helper(end, 17493500875420202197UL);free(end);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2410 5  ({ free_helper((((unsigned char *)end) - sizeof(void *)), 17493500875420202197UL);free((((unsigned char *)end) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2410 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2411 5  ({ free_helper(recstart, 17493500875420202288UL);free(recstart);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2411 5  ({ free_helper((((unsigned char *)recstart) - sizeof(void *)), 17493500875420202288UL);free((((unsigned char *)recstart) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2411 18 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2412 5  ({ free_helper(reclength, 17493500875420202293UL);free(reclength);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2412 5  ({ free_helper((((unsigned char *)reclength) - sizeof(void *)), 17493500875420202293UL);free((((unsigned char *)reclength) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2412 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2447 2  ({ free_helper(mem, 17493500875420201867UL);free(mem);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2447 2  ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 17493500875420201867UL);free((((unsigned char *)mem) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2447 10 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 275 123 alias_group_changed(____alias_loc_id_3); 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 401 123 alias_group_changed(____alias_loc_id_4); 
@@ -202,121 +202,121 @@ InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2110 5 alias_group_c
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2121 5 alias_group_changed(____alias_loc_id_16); 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2132 5 alias_group_changed(____alias_loc_id_17); 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2143 5 alias_group_changed(____alias_loc_id_13); 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 50  ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 68 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 50  ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 68 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 50  ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 68 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 50  ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 68 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 50  ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 68 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 550 3  ({ free_helper(li, 17493500875420195752UL);free(li);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 550 3  ({ free_helper((((unsigned char *)li) - sizeof(void *)), 17493500875420195752UL);free((((unsigned char *)li) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 550 10 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 43  ({ void *____chimes_tmp_ptr = malloc(malloc_size); malloc_helper(____chimes_tmp_ptr, malloc_size, 17493500875420201867UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 43  ({ void *____chimes_tmp_ptr = malloc((malloc_size) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, malloc_size, 17493500875420201867UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 61 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 775 59  ({ void *____chimes_tmp_ptr = malloc(sizeof(list_t)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 775 59  ({ void *____chimes_tmp_ptr = malloc((sizeof(list_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 775 80 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1039 62  ({ void *____chimes_tmp_ptr = malloc(sizeof(record)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1039 62  ({ void *____chimes_tmp_ptr = malloc((sizeof(record)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1039 83 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 50  ({ void *____chimes_tmp_ptr = malloc(sizeof(node)); malloc_helper(____chimes_tmp_ptr, sizeof(node), 17493500875420198448UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 50  ({ void *____chimes_tmp_ptr = malloc((sizeof(node)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(node), 17493500875420198448UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 69 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 55  ({ void *____chimes_tmp_ptr = malloc((order - 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (order - 1) * sizeof(int), 17493500875420201550UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 55  ({ void *____chimes_tmp_ptr = malloc(((order - 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (order - 1) * sizeof(int), 17493500875420201550UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 87 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 61  ({ void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420201550UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 61  ({ void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420201550UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 90 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 50  ({ void *____chimes_tmp_ptr = malloc(order * sizeof(int)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420198898UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 50  ({ void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420198898UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 76 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 56  ({ void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420198886UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 56  ({ void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420198886UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 85 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1175 2  ({ free_helper(temp_pointers, 17493500875420198886UL);free(temp_pointers);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1175 2  ({ free_helper((((unsigned char *)temp_pointers) - sizeof(void *)), 17493500875420198886UL);free((((unsigned char *)temp_pointers) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1175 20 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1176 2  ({ free_helper(temp_keys, 17493500875420198898UL);free(temp_keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1176 2  ({ free_helper((((unsigned char *)temp_keys) - sizeof(void *)), 17493500875420198898UL);free((((unsigned char *)temp_keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1176 16 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 56  ({ void *____chimes_tmp_ptr = malloc((order + 1) * sizeof(node *)); malloc_helper(____chimes_tmp_ptr, (order + 1) * sizeof(node *), 17493500875420199424UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 56  ({ void *____chimes_tmp_ptr = malloc(((order + 1) * sizeof(node *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (order + 1) * sizeof(node *), 17493500875420199424UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 91 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 50  ({ void *____chimes_tmp_ptr = malloc(order * sizeof(int)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420199437UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 50  ({ void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420199437UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 76 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1280 2  ({ free_helper(temp_pointers, 17493500875420199424UL);free(temp_pointers);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1280 2  ({ free_helper((((unsigned char *)temp_pointers) - sizeof(void *)), 17493500875420199424UL);free((((unsigned char *)temp_pointers) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1280 20 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1281 2  ({ free_helper(temp_keys, 17493500875420199437UL);free(temp_keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1281 2  ({ free_helper((((unsigned char *)temp_keys) - sizeof(void *)), 17493500875420199437UL);free((((unsigned char *)temp_keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1281 16 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1506 2  ({ free_helper(root->keys, 17493500875420201550UL);free(root->keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1506 2  ({ free_helper((((unsigned char *)root->keys) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root->keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1506 17 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1507 2  ({ free_helper(root->pointers, 17493500875420201550UL);free(root->pointers);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1507 2  ({ free_helper((((unsigned char *)root->pointers) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root->pointers) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1507 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1508 2  ({ free_helper(root, 17493500875420201550UL);free(root);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1508 2  ({ free_helper((((unsigned char *)root) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1508 11 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1639 3  ({ free_helper(n->keys, 17493500875420200439UL);free(n->keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1639 3  ({ free_helper((((unsigned char *)n->keys) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n->keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1639 15 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1640 3  ({ free_helper(n->pointers, 17493500875420200439UL);free(n->pointers);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1640 3  ({ free_helper((((unsigned char *)n->pointers) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n->pointers) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1640 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1641 3  ({ free_helper(n, 17493500875420200439UL);free(n);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1641 3  ({ free_helper((((unsigned char *)n) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1641 9 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1817 3  ({ free_helper(key_record, 17493500875420201059UL);free(key_record);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1817 3  ({ free_helper((((unsigned char *)key_record) - sizeof(void *)), 17493500875420201059UL);free((((unsigned char *)key_record) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1817 18 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 61  ({ free_helper(root->pointers[i], 17493500875420201113UL);free(root->pointers[i]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 61  ({ free_helper((((unsigned char *)root->pointers[i]) - sizeof(void *)), 17493500875420201113UL);free((((unsigned char *)root->pointers[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 83 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1834 2  ({ free_helper(root->pointers, 17493500875420201111UL);free(root->pointers);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1834 2  ({ free_helper((((unsigned char *)root->pointers) - sizeof(void *)), 17493500875420201111UL);free((((unsigned char *)root->pointers) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1834 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1835 2  ({ free_helper(root->keys, 17493500875420201111UL);free(root->keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1835 2  ({ free_helper((((unsigned char *)root->keys) - sizeof(void *)), 17493500875420201111UL);free((((unsigned char *)root->keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1835 17 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1836 2  ({ free_helper(root, 17493500875420201159UL);free(root);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1836 2  ({ free_helper((((unsigned char *)root) - sizeof(void *)), 17493500875420201159UL);free((((unsigned char *)root) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1836 11 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 58  ({ void *____chimes_tmp_ptr = malloc(sizeof(char) * (lSize + 1)); malloc_helper(____chimes_tmp_ptr, sizeof(char)*(lSize + 1), 17493500875420201565UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 58  ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (lSize + 1)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(char)*(lSize + 1), 17493500875420201565UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 89 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 53  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201873UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 53  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201873UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 78 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 50  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201874UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 50  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201874UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 75 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 47  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420201823UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 47  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420201823UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 71 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 57  ({ void *____chimes_tmp_ptr = malloc(sizeof(record) * count); malloc_helper(____chimes_tmp_ptr, sizeof(record)*count, 17493500875420201857UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 57  ({ void *____chimes_tmp_ptr = malloc((sizeof(record) * count) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(record)*count, 17493500875420201857UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 84 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2248 5  ({ free_helper(currKnode, 17493500875420201873UL);free(currKnode);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2248 5  ({ free_helper((((unsigned char *)currKnode) - sizeof(void *)), 17493500875420201873UL);free((((unsigned char *)currKnode) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2248 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2249 5  ({ free_helper(offset, 17493500875420201874UL);free(offset);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2249 5  ({ free_helper((((unsigned char *)offset) - sizeof(void *)), 17493500875420201874UL);free((((unsigned char *)offset) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2249 16 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2250 5  ({ free_helper(keys, 17493500875420201823UL);free(keys);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2250 5  ({ free_helper((((unsigned char *)keys) - sizeof(void *)), 17493500875420201823UL);free((((unsigned char *)keys) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2250 14 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2251 5  ({ free_helper(ans, 17493500875420201857UL);free(ans);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2251 5  ({ free_helper((((unsigned char *)ans) - sizeof(void *)), 17493500875420201857UL);free((((unsigned char *)ans) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2251 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2277 5  ({ free_helper(ansList, 17493500875420201951UL);free(ansList);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2277 5  ({ free_helper((((unsigned char *)ansList) - sizeof(void *)), 17493500875420201951UL);free((((unsigned char *)ansList) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2277 17 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 53  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202307UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 53  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202307UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 78 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 50  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202308UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 50  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202308UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 75 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 53  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202309UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 53  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202309UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 78 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 52  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202310UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 52  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202310UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 77 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 48  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202185UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 48  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202185UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 72 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 46  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202197UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 46  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202197UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 70 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 51  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202288UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 51  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202288UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 75 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 52  ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202293UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 52  ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202293UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 76 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2405 5  ({ free_helper(currKnode, 17493500875420202307UL);free(currKnode);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2405 5  ({ free_helper((((unsigned char *)currKnode) - sizeof(void *)), 17493500875420202307UL);free((((unsigned char *)currKnode) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2405 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2406 5  ({ free_helper(offset, 17493500875420202308UL);free(offset);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2406 5  ({ free_helper((((unsigned char *)offset) - sizeof(void *)), 17493500875420202308UL);free((((unsigned char *)offset) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2406 16 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2407 5  ({ free_helper(lastKnode, 17493500875420202309UL);free(lastKnode);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2407 5  ({ free_helper((((unsigned char *)lastKnode) - sizeof(void *)), 17493500875420202309UL);free((((unsigned char *)lastKnode) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2407 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2408 5  ({ free_helper(offset_2, 17493500875420202310UL);free(offset_2);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2408 5  ({ free_helper((((unsigned char *)offset_2) - sizeof(void *)), 17493500875420202310UL);free((((unsigned char *)offset_2) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2408 18 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2409 5  ({ free_helper(start, 17493500875420202185UL);free(start);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2409 5  ({ free_helper((((unsigned char *)start) - sizeof(void *)), 17493500875420202185UL);free((((unsigned char *)start) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2409 15 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2410 5  ({ free_helper(end, 17493500875420202197UL);free(end);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2410 5  ({ free_helper((((unsigned char *)end) - sizeof(void *)), 17493500875420202197UL);free((((unsigned char *)end) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2410 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2411 5  ({ free_helper(recstart, 17493500875420202288UL);free(recstart);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2411 5  ({ free_helper((((unsigned char *)recstart) - sizeof(void *)), 17493500875420202288UL);free((((unsigned char *)recstart) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2411 18 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2412 5  ({ free_helper(reclength, 17493500875420202293UL);free(reclength);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2412 5  ({ free_helper((((unsigned char *)reclength) - sizeof(void *)), 17493500875420202293UL);free((((unsigned char *)reclength) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2412 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2447 2  ({ free_helper(mem, 17493500875420201867UL);free(mem);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2447 2  ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 17493500875420201867UL);free((((unsigned char *)mem) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2447 10 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 148 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_25, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 144 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
@@ -581,32 +581,32 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 301 3 list_ite
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 301 17 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 25 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 35 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 54 void *____chimes_tmp_ptr = malloc(sizeof (*i)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 100 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 54 void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 119 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 320 2 const int ____chimes_did_disable10 = new_stack((void *)(&list_insert_tail), "list_insert_tail", &____must_manage_list_insert_tail, 2, 0, (size_t)(17493500875420196288UL), (size_t)(17493500875420196289UL)); ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 320 206 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 321 3 list_item_t *i; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 321 17 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 25 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 35 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 54 void *____chimes_tmp_ptr = malloc(sizeof (*i)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 100 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 54 void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 323 119 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 341 2 const int ____chimes_did_disable11 = new_stack((void *)(&list_insert_before), "list_insert_before", &____must_manage_list_insert_before, 3, 0, (size_t)(17493500875420196369UL), (size_t)(17493500875420197042UL), (size_t)(17493500875420196371UL)); ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 341 246 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 342 3 list_item_t *i; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 342 17 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 25 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 35 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 54 void *____chimes_tmp_ptr = malloc(sizeof (*i)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 100 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 54 void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 119 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 367 2 const int ____chimes_did_disable12 = new_stack((void *)(&list_insert_after), "list_insert_after", &____must_manage_list_insert_after, 3, 0, (size_t)(17493500875420196451UL), (size_t)(17493500875420197042UL), (size_t)(17493500875420196453UL)); ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 367 243 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 368 3 list_item_t *i; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 368 17 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 25 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 35 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 54 void *____chimes_tmp_ptr = malloc(sizeof (*i)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 100 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 54 void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 119 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 392 2 const int ____chimes_did_disable13 = new_stack((void *)(&list_insert_sorted), "list_insert_sorted", (int *)0, 2, 1, (size_t)(17493500875420196587UL), (size_t)(17493500875420196588UL), "list_insert_sorted|l|0", &____must_checkpoint_list_insert_sorted_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0); ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 392 311 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 393 3 list_item_t *itr; ;
@@ -615,8 +615,8 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 394 3 list_ite
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 394 17 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 25 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 35 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 54 void *____chimes_tmp_ptr = malloc(sizeof (*i)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 100 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 54 void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 119 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 401 6  void *____chimes_unroll_var_2;  ____chimes_unroll_var_2 = (list_item_get_datum(i)) ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 401 61 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 401 64  void *____chimes_unroll_var_3;  ____chimes_unroll_var_3 = (list_item_get_datum(itr)) ;
@@ -733,8 +733,8 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 665 2  long ma
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 665 68 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 18 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 28 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 47 void *____chimes_tmp_ptr = malloc(malloc_size); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 93 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 47 void *____chimes_tmp_ptr = malloc((malloc_size) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 667 112 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 681 2 node *n; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 681 10 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 682 2 knode *k; ;
@@ -763,8 +763,8 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 771 2  node *c
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 771 44 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 773 21 list_t *____chimes_ret_var_17; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 773 51 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 775 2  list_t *retList;  retList = ((list_t *)({ void *_tmp; if (!(_tmp =  ({ void *____chimes_tmp_ptr = malloc(sizeof(list_t)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 775); exit(-1); } _tmp; })) ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 775 350 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 775 2  list_t *retList;  retList = ((list_t *)({ void *_tmp; if (!(_tmp =  ({ void *____chimes_tmp_ptr = malloc((sizeof(list_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 775); exit(-1); } _tmp; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 775 459 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 778 2  int counter;  counter = (0) ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 778 17 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 779 2  bool cont;  cont = (true) ;
@@ -847,8 +847,8 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1025 235 int _
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1025 260 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1038 2 const int ____chimes_did_disable56 = new_stack((void *)(&make_record), "make_record", &____must_manage_make_record, 1, 0, (size_t)(0UL)); ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1038 138 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1039 2  record *new_record;  new_record = ((record *)({ void *_tmp; if (!(_tmp =  ({ void *____chimes_tmp_ptr = malloc(sizeof(record)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1039); exit(-1); } _tmp; })) ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1039 354 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1039 2  record *new_record;  new_record = ((record *)({ void *_tmp; if (!(_tmp =  ({ void *____chimes_tmp_ptr = malloc((sizeof(record)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1039); exit(-1); } _tmp; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1039 463 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1047 3 record *____chimes_ret_var_29; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1047 33 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1053 2 const int ____chimes_did_disable57 = new_stack((void *)(&make_node), "make_node", &____must_manage_make_node, 0, 0); ;
@@ -857,16 +857,16 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1054 2 node *n
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1054 17 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 25 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 35 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 54 void *____chimes_tmp_ptr = malloc(sizeof(node)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 101 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 54 void *____chimes_tmp_ptr = malloc((sizeof(node)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1055 120 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 30 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 40 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 59 void *____chimes_tmp_ptr = malloc((order - 1) * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 119 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 59 void *____chimes_tmp_ptr = malloc(((order - 1) * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1060 138 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 36 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 46 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 65 void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 122 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 65 void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1065 141 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1074 3 node *____chimes_ret_var_30; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1074 31 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1080 2 const int ____chimes_did_disable58 = new_stack((void *)(&make_leaf), "make_leaf", &____must_manage_make_leaf, 0, 0); ;
@@ -899,12 +899,12 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1130 2 int ins
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1130 43 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 25 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 35 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 54 void *____chimes_tmp_ptr = malloc(order * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 108 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 54 void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1134 127 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 31 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 41 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 60 void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 117 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 60 void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1140 136 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1189 3 node *____chimes_ret_var_34; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1189 31 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1199 2 const int ____chimes_did_disable62 = new_stack((void *)(&insert_into_node), "insert_into_node", &____must_manage_insert_into_node, 5, 0, (size_t)(17493500875420199229UL), (size_t)(17493500875420199230UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17493500875420199172UL)); ;
@@ -925,12 +925,12 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1225 2 node **
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1225 23 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 31 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 41 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 60 void *____chimes_tmp_ptr = malloc((order + 1) * sizeof(node *)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 123 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 60 void *____chimes_tmp_ptr = malloc(((order + 1) * sizeof(node *)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1236 142 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 25 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 35 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 54 void *____chimes_tmp_ptr = malloc(order * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 108 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 54 void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1241 127 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1293 3 node *____chimes_ret_var_36; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1293 31 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1302 2 const int ____chimes_did_disable64 = new_stack((void *)(&insert_into_parent), "insert_into_parent", &____must_manage_insert_into_parent, 4, 0, (size_t)(17493500875420199135UL), (size_t)(17493500875420199136UL), (size_t)(0UL), (size_t)(17493500875420199138UL)); ;
@@ -1077,8 +1077,8 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1928 6 size_t 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1928 19 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 33 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 43 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 62 void *____chimes_tmp_ptr = malloc(sizeof(char) * (lSize + 1)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 123 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 62 void *____chimes_tmp_ptr = malloc((sizeof(char) * (lSize + 1)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1939 142 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1953 6  char *sPointer;  sPointer = (commandBuffer) ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1953 34 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1972 2 FILE *file_pointer; ;
@@ -1121,24 +1121,24 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 5 long *c
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2180 20 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 28 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 38 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 57 void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 112 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 57 void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2181 131 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 5 long *offset; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2186 17 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 25 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 35 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 54 void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 109 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 54 void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2187 128 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2192 5 int *keys; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2192 14 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 22 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 32 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 51 void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 105 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 51 void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2193 124 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2195 5 int i; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2195 10 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 5  record *ans;  ans = ((record *)({ void *_tmp; if (!(_tmp =  ({ void *____chimes_tmp_ptr = malloc(sizeof(record) * count); malloc_helper(____chimes_tmp_ptr, sizeof(record)*count, 17493500875420201857UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2201); exit(-1); } _tmp; })) ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 363 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 5  record *ans;  ans = ((record *)({ void *_tmp; if (!(_tmp =  ({ void *____chimes_tmp_ptr = malloc((sizeof(record) * count) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(record)*count, 17493500875420201857UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2201); exit(-1); } _tmp; })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2201 472 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 5 int start; int end; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2264 19 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2273 5 list_t *ansList; ;
@@ -1159,52 +1159,52 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 5 long *c
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2313 20 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 28 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 38 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 57 void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 112 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 57 void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2314 131 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 5 long *offset; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2319 17 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 25 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 35 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 54 void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 109 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 54 void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2320 128 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2325 5 long *lastKnode; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2325 20 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 28 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 38 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 57 void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 112 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 57 void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2326 131 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2331 5 long *offset_2; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2331 19 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 27 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 37 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 56 void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 111 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 56 void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2332 130 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 5 int *start; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2337 15 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 23 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 33 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 52 void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 106 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 52 void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2338 125 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 5 int *end; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2339 13 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 21 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 31 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 50 void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 104 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 50 void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2340 123 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2342 5 int i; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2342 10 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2353 5 int *recstart; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2353 18 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 26 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 36 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 55 void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 109 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 55 void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2354 128 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2355 5 int *reclength; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2355 19 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 27 void *_tmp; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 37 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 56 void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 110 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 56 void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2356 129 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2440 5  double end_time;  end_time = (seconds()) ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2440 32 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2448 3 int ____chimes_ret_var_64; ;
@@ -1276,7 +1276,7 @@ InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1796 384  call_lbl_6
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1814 2  call_lbl_0: 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1815 2  call_lbl_1: 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1818 3  call_lbl_2: 
-InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 206  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 282  call_lbl_0: 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1843 2  call_lbl_0: 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1874 8  call_lbl_0: 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 2006 4  call_lbl_1: 
@@ -1648,8 +1648,8 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1818 23 ({ cal
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1818 67 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1809 165  ; 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1825 1 len=18 destroy_tree_nodes_quick
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 219 ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); })
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 264 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 295 ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 340 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1826 177  ; 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1841 1 len=12 destroy_tree_quick
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1843 15 ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm(root); })
@@ -2166,8 +2166,8 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1818 23 ({ cal
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1818 67 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1809 165  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1825 1 len=18 destroy_tree_nodes_resumable
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 219 ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); })
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 264 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 295 ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1828 340 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1826 177  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1841 1 len=12 destroy_tree_resumable
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 1843 15 ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm(root); })

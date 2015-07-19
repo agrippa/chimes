@@ -59,8 +59,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -79,7 +80,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1421,7 +1422,7 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
 # 3 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
  register_stack_vars(1, "main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
-       alloc = ((int *) ({ void *____chimes_tmp_ptr = calloc(10, sizeof(int)); calloc_helper(____chimes_tmp_ptr, 10, sizeof(int), 14294407443907813601UL, 0, 0); ____chimes_tmp_ptr; })) ;
+       alloc = ((int *) ({ void *____chimes_tmp_ptr = calloc((10) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); calloc_helper(____chimes_tmp_ptr, 10, sizeof(int), 14294407443907813601UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
      call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
@@ -1440,7 +1441,7 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
 # 3 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
  register_stack_vars(1, "main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0); ; ;
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
-       alloc = ((int *) ({ void *____chimes_tmp_ptr = calloc(10, sizeof(int)); calloc_helper(____chimes_tmp_ptr, 10, sizeof(int), 14294407443907813601UL, 0, 0); ____chimes_tmp_ptr; })) ;
+       alloc = ((int *) ({ void *____chimes_tmp_ptr = calloc((10) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); calloc_helper(____chimes_tmp_ptr, 10, sizeof(int), 14294407443907813601UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
      call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);

@@ -10,17 +10,17 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 101 8 len=18 ge
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 108 6 len=5 usage_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 114 6 len=19 parse_three_doubles_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 128 6 len=12 parse_config_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 190 43  ({ void *____chimes_tmp_ptr = realloc(conf->spheres, (conf->nspheres + 1) * sizeof(sphere)); realloc_helper(____chimes_tmp_ptr, conf->spheres, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 190 43  ({ void *____chimes_tmp_header = conf->spheres; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, (conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ____chimes_tmp_header, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 191 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 212 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(rgb) * conf.nx * conf.ny); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 212 26  ({ void *____chimes_tmp_ptr = malloc((sizeof(rgb) * conf.nx * conf.ny) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 212 64 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 295 5  ({ free_helper(screen, 11205885433679075224UL);free(screen);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 295 5  ({ free_helper((((unsigned char *)screen) - sizeof(void *)), 11205885433679075224UL);free((((unsigned char *)screen) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 295 16 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 190 43  ({ void *____chimes_tmp_ptr = realloc(conf->spheres, (conf->nspheres + 1) * sizeof(sphere)); realloc_helper(____chimes_tmp_ptr, conf->spheres, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 190 43  ({ void *____chimes_tmp_header = conf->spheres; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, (conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ____chimes_tmp_header, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 191 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 212 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(rgb) * conf.nx * conf.ny); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 212 26  ({ void *____chimes_tmp_ptr = malloc((sizeof(rgb) * conf.nx * conf.ny) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 212 64 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 295 5  ({ free_helper(screen, 11205885433679075224UL);free(screen);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 295 5  ({ free_helper((((unsigned char *)screen) - sizeof(void *)), 11205885433679075224UL);free((((unsigned char *)screen) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 295 16 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 34 33 const int ____chimes_did_disable0 = new_stack((void *)(&init), "init", &____must_manage_init, 8, 0, (size_t)(11205885433679074312UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 46 1 rm_stack(false, 0UL, "init", &____must_manage_init, ____alias_loc_id_1, ____chimes_did_disable0, false); 
@@ -137,14 +137,16 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 178 17  ch
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 178 66 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 180 17  char *sixth_comma;  sixth_comma = (strchr(fifth_comma + 1, ',')) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 180 65 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 190 47 void *____chimes_tmp_ptr = realloc(conf->spheres, (conf->nspheres + 1) * sizeof(sphere)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 190 135 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 190 47  void *____chimes_tmp_header;  ____chimes_tmp_header = (conf->spheres) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 190 90 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 190 220 void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 190 418 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 209 34 const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11205885433679075652UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 209 172 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 210 5  config conf; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 210 16 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 212 5  rgb *screen;  screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc(sizeof(rgb) * conf.nx * conf.ny); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 212 248 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 212 5  rgb *screen;  screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc((sizeof(rgb) * conf.nx * conf.ny) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 212 357 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 214 5  double f_max;  f_max = (200.0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 214 25 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c 215 5 {  int t; 

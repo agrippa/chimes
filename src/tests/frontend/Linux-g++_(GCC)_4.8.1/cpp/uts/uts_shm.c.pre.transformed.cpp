@@ -216,8 +216,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -236,7 +237,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4314,7 +4315,7 @@ void ss_init_resumable(StealStack *s, int nelts) {const int ____chimes_did_disab
 # 444 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 445 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 446 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 8860909695567162318UL, 0, 1, (int)sizeof(struct node_t), 0); ____chimes_tmp_ptr; }) ;
+  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 8860909695567162318UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 447 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   s->stack = (Node *) s->stack_g;
 # 448 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -5357,7 +5358,7 @@ Node root;
     }
 # 1406 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1406 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-    stealStack[0] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc(sizeof(StealStack)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 8860909695567163371UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); ____chimes_tmp_ptr; }) ;
+    stealStack[0] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 8860909695567163371UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1407 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
     ss = (StealStack *) stealStack[0];
 # 1408 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -5573,7 +5574,7 @@ void ss_init_quick(StealStack *s, int nelts) {const int ____chimes_did_disable7 
 # 444 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 445 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 446 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 8860909695567162318UL, 0, 1, (int)sizeof(struct node_t), 0); ____chimes_tmp_ptr; }) ;
+  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 8860909695567162318UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 447 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   s->stack = (Node *) s->stack_g;
 # 448 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -6555,7 +6556,7 @@ Node root;
     }
 # 1406 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1406 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-    stealStack[0] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc(sizeof(StealStack)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 8860909695567163371UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); ____chimes_tmp_ptr; }) ;
+    stealStack[0] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 8860909695567163371UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1407 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
     ss = (StealStack *) stealStack[0];
 # 1408 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -6757,7 +6758,7 @@ void ss_init_npm(StealStack *s, int nelts) {
 # 444 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 445 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 446 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 8860909695567162318UL, 0, 1, (int)sizeof(struct node_t), 0); ____chimes_tmp_ptr; }) ;
+  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 8860909695567162318UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 447 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   s->stack = (Node *) s->stack_g;
 # 448 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"

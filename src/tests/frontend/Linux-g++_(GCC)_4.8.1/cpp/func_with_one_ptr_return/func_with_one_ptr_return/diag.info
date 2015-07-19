@@ -1,7 +1,7 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 4 7 len=23 haha_this_sux_part_deux_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 5 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 5 21  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 5 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 5 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 5 21  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 5 44 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 6 63 rm_stack(true, 12223054536323561879UL, "haha_this_sux_part_deux", &____must_manage_haha_this_sux_part_deux, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 4 33 const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux_part_deux), "haha_this_sux_part_deux", &____must_manage_haha_this_sux_part_deux, 0, 0); 
@@ -11,8 +11,8 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_r
 InsertText /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 13 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 4 34 const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux_part_deux), "haha_this_sux_part_deux", &____must_manage_haha_this_sux_part_deux, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 4 190 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 5 5  int *A;  A = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 5 184 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 5 5  int *A;  A = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 12223054536323561879UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 5 293 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 6 6 void *____chimes_ret_var_0; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 6 33 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_with_one_ptr_return.cpp 9 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12223054536323561914UL)); ;

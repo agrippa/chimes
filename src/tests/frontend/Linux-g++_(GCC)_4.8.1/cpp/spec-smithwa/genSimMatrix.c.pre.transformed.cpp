@@ -63,8 +63,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -83,7 +84,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2857,7 +2858,7 @@ SIMMATRIX_T *genSimMatrix_resumable(int exact, int similar, int dissimilar,
   int i; int j; int k; int ccode; int ccode2; ;
 # 107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SIMMATRIX_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 10609085440105252876UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SIMMATRIX_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 10609085440105252876UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 108 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     printf("genSimMatrix: cannot allocate simMatrix\n");
 # 109 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3046,7 +3047,7 @@ SIMMATRIX_T *freeSimMatrix_resumable(SIMMATRIX_T *M) {const int ____chimes_did_d
 # 222 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     ({ free_helper(M, 10609085440105252783UL);free(M); }) ;
+     ({ free_helper((((unsigned char *)M) - sizeof(void *)), 10609085440105252783UL);free((((unsigned char *)M) - sizeof(void *))); }) ;
 # 224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3068,7 +3069,7 @@ SIMMATRIX_T *genSimMatrix_quick(int exact, int similar, int dissimilar,
   int i; int j; int k; int ccode; int ccode2; ;
 # 107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SIMMATRIX_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 10609085440105252876UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SIMMATRIX_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 10609085440105252876UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 108 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     printf("genSimMatrix: cannot allocate simMatrix\n");
 # 109 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3258,7 +3259,7 @@ SIMMATRIX_T *freeSimMatrix_quick(SIMMATRIX_T *M) {const int ____chimes_did_disab
 # 222 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     ({ free_helper(M, 10609085440105252783UL);free(M); }) ;
+     ({ free_helper((((unsigned char *)M) - sizeof(void *)), 10609085440105252783UL);free((((unsigned char *)M) - sizeof(void *))); }) ;
 # 224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3282,7 +3283,7 @@ SIMMATRIX_T *genSimMatrix_npm(int exact, int similar, int dissimilar,
   int i, j, k, ccode, ccode2;
 # 107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SIMMATRIX_T)); malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 10609085440105252876UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SIMMATRIX_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 10609085440105252876UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 108 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     printf("genSimMatrix: cannot allocate simMatrix\n");
 # 109 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3466,7 +3467,7 @@ SIMMATRIX_T *freeSimMatrix_npm(SIMMATRIX_T *M) {
 # 222 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     ({ free_helper(M, 10609085440105252783UL);free(M); }) ;
+     ({ free_helper((((unsigned char *)M) - sizeof(void *)), 10609085440105252783UL);free((((unsigned char *)M) - sizeof(void *))); }) ;
 # 224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"

@@ -1,18 +1,18 @@
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 24  ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 24  ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 24  ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 24  ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 5  ({ free_helper(curr, 460194934375909758UL);free(curr);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 5  ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)curr) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 5  ({ free_helper(next, 460194934375909758UL);free(next);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 5  ({ free_helper((((unsigned char *)next) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)next) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 24  ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 24  ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 24  ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 24  ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 46 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 5  ({ free_helper(curr, 460194934375909758UL);free(curr);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 5  ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)curr) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 35 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 5  ({ free_helper(next, 460194934375909758UL);free(next);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 5  ({ free_helper((((unsigned char *)next) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)next) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 36 14 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 37 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 6 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(460194934375909885UL)); 
@@ -25,10 +25,10 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 8 5 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 8 17 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 9 5  int niters;  niters = (10000) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 9 23 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 5  int *curr;  curr = ((int *) ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 183 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 5  int *next;  next = ((int *) ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 183 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 5  int *curr;  curr = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 11 292 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 5  int *next;  next = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 12 292 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 22 9  int *tmp;  tmp = (curr) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 22 24 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp 29 5  FILE *fp;  fp = (fopen("dump.out", "w")) ;

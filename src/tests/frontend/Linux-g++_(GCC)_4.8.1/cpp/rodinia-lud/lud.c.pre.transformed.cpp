@@ -80,8 +80,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -100,7 +101,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4193,12 +4194,12 @@ int matrix_dim;
 # 110 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
      call_lbl_8: (____chimes_does_checkpoint_lud_verify_npm ? ( ({ calling((void*)lud_verify, 8, ____alias_loc_id_0, 0UL, 3, (size_t)(11237237613718109848UL), (size_t)(11237237613718109830UL), (size_t)(0UL)); (lud_verify)(mm, m, matrix_dim); }) ) : (({ calling_npm("lud_verify", ____alias_loc_id_0); (*____chimes_extern_func_lud_verify)(mm, m, matrix_dim); })));
 # 111 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-     ({ free_helper(mm, 11237237613718109848UL);free(mm); }) ;
+     ({ free_helper((((unsigned char *)mm) - sizeof(void *)), 11237237613718109848UL);free((((unsigned char *)mm) - sizeof(void *))); }) ;
 # 112 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
   }
 # 113 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 114 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-   ({ free_helper(m, 11237237613718109830UL);free(m); }) ;
+   ({ free_helper((((unsigned char *)m) - sizeof(void *)), 11237237613718109830UL);free((((unsigned char *)m) - sizeof(void *))); }) ;
 # 115 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 116 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
@@ -4349,12 +4350,12 @@ int matrix_dim;
 # 110 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
      call_lbl_8: (____chimes_does_checkpoint_lud_verify_npm ? ( ({ calling((void*)lud_verify, 8, ____alias_loc_id_0, 0UL, 3, (size_t)(11237237613718109848UL), (size_t)(11237237613718109830UL), (size_t)(0UL)); (lud_verify)(mm, m, matrix_dim); }) ) : (({ calling_npm("lud_verify", ____alias_loc_id_0); (*____chimes_extern_func_lud_verify)(mm, m, matrix_dim); })));
 # 111 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-     ({ free_helper(mm, 11237237613718109848UL);free(mm); }) ;
+     ({ free_helper((((unsigned char *)mm) - sizeof(void *)), 11237237613718109848UL);free((((unsigned char *)mm) - sizeof(void *))); }) ;
 # 112 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
   }
 # 113 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 114 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-   ({ free_helper(m, 11237237613718109830UL);free(m); }) ;
+   ({ free_helper((((unsigned char *)m) - sizeof(void *)), 11237237613718109830UL);free((((unsigned char *)m) - sizeof(void *))); }) ;
 # 115 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 116 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;

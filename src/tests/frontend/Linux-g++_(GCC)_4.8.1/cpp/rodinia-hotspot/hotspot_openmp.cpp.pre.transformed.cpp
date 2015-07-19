@@ -77,8 +77,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -97,7 +98,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2782,11 +2783,11 @@ double *temp;
 # 233 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 234 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 235 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- temp = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617312UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ temp = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617312UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 236 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- power = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617319UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ power = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617319UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 237 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- result = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617326UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ result = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617326UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 238 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if (!temp || !power) { call_lbl_3: ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
 # 240 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
@@ -2813,9 +2814,9 @@ double *temp;
     printf("execution took %f s\n", end_time - start_time);
 # 264 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 264 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free_helper(temp, 12769076878968617312UL);free(temp); }) ;
+  ({ free_helper((((unsigned char *)temp) - sizeof(void *)), 12769076878968617312UL);free((((unsigned char *)temp) - sizeof(void *))); }) ;
 # 265 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free_helper(power, 12769076878968617319UL);free(power); }) ;
+  ({ free_helper((((unsigned char *)power) - sizeof(void *)), 12769076878968617319UL);free((((unsigned char *)power) - sizeof(void *))); }) ;
 # 266 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 267 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6, false); return ____chimes_ret_var_1; ;
@@ -3164,11 +3165,11 @@ double *temp;
 # 233 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 234 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 235 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- temp = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617312UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ temp = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617312UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 236 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- power = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617319UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ power = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617319UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 237 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- result = (double *) ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617326UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ result = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617326UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 238 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if (!temp || !power) { call_lbl_3: ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
 # 240 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
@@ -3195,9 +3196,9 @@ double *temp;
     printf("execution took %f s\n", end_time - start_time);
 # 264 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 264 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free_helper(temp, 12769076878968617312UL);free(temp); }) ;
+  ({ free_helper((((unsigned char *)temp) - sizeof(void *)), 12769076878968617312UL);free((((unsigned char *)temp) - sizeof(void *))); }) ;
 # 265 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free_helper(power, 12769076878968617319UL);free(power); }) ;
+  ({ free_helper((((unsigned char *)power) - sizeof(void *)), 12769076878968617319UL);free((((unsigned char *)power) - sizeof(void *))); }) ;
 # 266 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 267 "/gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6, false); return ____chimes_ret_var_1; ;

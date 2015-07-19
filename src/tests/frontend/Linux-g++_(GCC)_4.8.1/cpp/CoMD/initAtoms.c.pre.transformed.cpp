@@ -145,8 +145,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -165,7 +166,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3765,23 +3766,23 @@ Atoms* initAtoms_resumable(LinkCell* boxes)
 # 24 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&initAtoms), "initAtoms", &____must_manage_initAtoms, 1, 0, (size_t)(930458318103041180UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 25 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-    Atoms *atoms; atoms = ((Atoms*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Atoms)); malloc_helper(____chimes_tmp_ptr, sizeof(Atoms), 930458318103041055UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U)); ____chimes_tmp_ptr; })) ;
+    Atoms *atoms; atoms = ((Atoms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Atoms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Atoms), 930458318103041055UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 26 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 27 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
     int maxTotalAtoms; maxTotalAtoms = (64*boxes->nTotalBoxes) ;
 # 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->gid = (int*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->gid = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 30 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->iSpecies = (int*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->iSpecies = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 31 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->r = (real3*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real3)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->r = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 32 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->p = (real3*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real3)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->p = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 33 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->f = (real3*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real3)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->f = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 34 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->U = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->U = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 35 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 36 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->nLocal = 0;
@@ -3819,37 +3820,37 @@ void destroyAtoms_resumable(Atoms *atoms)
 # 53 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&destroyAtoms), "destroyAtoms", &____must_manage_destroyAtoms, 1, 0, (size_t)(930458318103041289UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 54 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->gid) { ({ free_helper(atoms->gid, 930458318103041203UL);free(atoms->gid); }) ; };
+   if (atoms->gid) { ({ free_helper((((unsigned char *)atoms->gid) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->gid) - sizeof(void *))); }) ; };
 # 55 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->gid = __null;
 # 56 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 57 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->iSpecies) { ({ free_helper(atoms->iSpecies, 930458318103041203UL);free(atoms->iSpecies); }) ; };
+   if (atoms->iSpecies) { ({ free_helper((((unsigned char *)atoms->iSpecies) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->iSpecies) - sizeof(void *))); }) ; };
 # 58 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->iSpecies = __null;
 # 59 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 60 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->r) { ({ free_helper(atoms->r, 930458318103041203UL);free(atoms->r); }) ; };
+   if (atoms->r) { ({ free_helper((((unsigned char *)atoms->r) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->r) - sizeof(void *))); }) ; };
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->r = __null;
 # 62 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 63 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->p) { ({ free_helper(atoms->p, 930458318103041203UL);free(atoms->p); }) ; };
+   if (atoms->p) { ({ free_helper((((unsigned char *)atoms->p) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->p) - sizeof(void *))); }) ; };
 # 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->p = __null;
 # 65 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 66 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->f) { ({ free_helper(atoms->f, 930458318103041203UL);free(atoms->f); }) ; };
+   if (atoms->f) { ({ free_helper((((unsigned char *)atoms->f) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->f) - sizeof(void *))); }) ; };
 # 67 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->f = __null;
 # 68 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 69 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->U) { ({ free_helper(atoms->U, 930458318103041203UL);free(atoms->U); }) ; };
+   if (atoms->U) { ({ free_helper((((unsigned char *)atoms->U) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->U) - sizeof(void *))); }) ; };
 # 70 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->U = __null;
 # 71 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 72 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-    ({ free_helper(atoms, 930458318103041289UL);free(atoms); }) ;
+    ({ free_helper((((unsigned char *)atoms) - sizeof(void *)), 930458318103041289UL);free((((unsigned char *)atoms) - sizeof(void *))); }) ;
 # 73 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_loc_id_19, ____chimes_did_disable1, false); }
 # 74 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4190,23 +4191,23 @@ Atoms* initAtoms_quick(LinkCell* boxes)
 # 24 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&initAtoms), "initAtoms", &____must_manage_initAtoms, 1, 0, (size_t)(930458318103041180UL)) ; ; ;
 # 25 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-    Atoms *atoms; atoms = ((Atoms*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Atoms)); malloc_helper(____chimes_tmp_ptr, sizeof(Atoms), 930458318103041055UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U)); ____chimes_tmp_ptr; })) ;
+    Atoms *atoms; atoms = ((Atoms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Atoms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Atoms), 930458318103041055UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 26 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 27 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
     int maxTotalAtoms; maxTotalAtoms = (64*boxes->nTotalBoxes) ;
 # 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->gid = (int*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->gid = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 30 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->iSpecies = (int*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->iSpecies = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 31 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->r = (real3*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real3)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->r = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 32 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->p = (real3*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real3)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->p = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 33 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->f = (real3*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real3)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->f = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 34 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->U = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->U = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 35 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 36 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->nLocal = 0;
@@ -4243,37 +4244,37 @@ void destroyAtoms_quick(Atoms *atoms)
 # 53 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&destroyAtoms), "destroyAtoms", &____must_manage_destroyAtoms, 1, 0, (size_t)(930458318103041289UL)) ; ; ;
 # 54 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->gid) { ({ free_helper(atoms->gid, 930458318103041203UL);free(atoms->gid); }) ; };
+   if (atoms->gid) { ({ free_helper((((unsigned char *)atoms->gid) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->gid) - sizeof(void *))); }) ; };
 # 55 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->gid = __null;
 # 56 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 57 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->iSpecies) { ({ free_helper(atoms->iSpecies, 930458318103041203UL);free(atoms->iSpecies); }) ; };
+   if (atoms->iSpecies) { ({ free_helper((((unsigned char *)atoms->iSpecies) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->iSpecies) - sizeof(void *))); }) ; };
 # 58 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->iSpecies = __null;
 # 59 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 60 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->r) { ({ free_helper(atoms->r, 930458318103041203UL);free(atoms->r); }) ; };
+   if (atoms->r) { ({ free_helper((((unsigned char *)atoms->r) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->r) - sizeof(void *))); }) ; };
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->r = __null;
 # 62 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 63 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->p) { ({ free_helper(atoms->p, 930458318103041203UL);free(atoms->p); }) ; };
+   if (atoms->p) { ({ free_helper((((unsigned char *)atoms->p) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->p) - sizeof(void *))); }) ; };
 # 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->p = __null;
 # 65 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 66 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->f) { ({ free_helper(atoms->f, 930458318103041203UL);free(atoms->f); }) ; };
+   if (atoms->f) { ({ free_helper((((unsigned char *)atoms->f) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->f) - sizeof(void *))); }) ; };
 # 67 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->f = __null;
 # 68 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 69 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->U) { ({ free_helper(atoms->U, 930458318103041203UL);free(atoms->U); }) ; };
+   if (atoms->U) { ({ free_helper((((unsigned char *)atoms->U) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->U) - sizeof(void *))); }) ; };
 # 70 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->U = __null;
 # 71 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 72 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-    ({ free_helper(atoms, 930458318103041289UL);free(atoms); }) ;
+    ({ free_helper((((unsigned char *)atoms) - sizeof(void *)), 930458318103041289UL);free((((unsigned char *)atoms) - sizeof(void *))); }) ;
 # 73 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_loc_id_19, ____chimes_did_disable1, false); }
 
@@ -4602,23 +4603,23 @@ Atoms* initAtoms_npm(LinkCell* boxes)
 # 24 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 {
 # 25 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   Atoms* atoms = (Atoms*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Atoms)); malloc_helper(____chimes_tmp_ptr, sizeof(Atoms), 930458318103041055UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U)); ____chimes_tmp_ptr; }) ;
+   Atoms* atoms = (Atoms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Atoms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Atoms), 930458318103041055UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 26 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 27 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    int maxTotalAtoms = 64*boxes->nTotalBoxes;
 # 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->gid = (int*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(int)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->gid = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 30 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->iSpecies = (int*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(int)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->iSpecies = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 31 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->r = (real3*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real3)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->r = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 32 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->p = (real3*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real3)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->p = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 33 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->f = (real3*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real3)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->f = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 34 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   atoms->U = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 930458318103041067UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   atoms->U = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 930458318103041067UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 35 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 36 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->nLocal = 0;
@@ -4653,37 +4654,37 @@ void destroyAtoms_npm(Atoms *atoms)
 # 53 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 {
 # 54 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->gid) { ({ free_helper(atoms->gid, 930458318103041203UL);free(atoms->gid); }) ; };
+   if (atoms->gid) { ({ free_helper((((unsigned char *)atoms->gid) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->gid) - sizeof(void *))); }) ; };
 # 55 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->gid = __null;
 # 56 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 57 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->iSpecies) { ({ free_helper(atoms->iSpecies, 930458318103041203UL);free(atoms->iSpecies); }) ; };
+   if (atoms->iSpecies) { ({ free_helper((((unsigned char *)atoms->iSpecies) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->iSpecies) - sizeof(void *))); }) ; };
 # 58 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->iSpecies = __null;
 # 59 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 60 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->r) { ({ free_helper(atoms->r, 930458318103041203UL);free(atoms->r); }) ; };
+   if (atoms->r) { ({ free_helper((((unsigned char *)atoms->r) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->r) - sizeof(void *))); }) ; };
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->r = __null;
 # 62 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 63 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->p) { ({ free_helper(atoms->p, 930458318103041203UL);free(atoms->p); }) ; };
+   if (atoms->p) { ({ free_helper((((unsigned char *)atoms->p) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->p) - sizeof(void *))); }) ; };
 # 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->p = __null;
 # 65 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 66 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->f) { ({ free_helper(atoms->f, 930458318103041203UL);free(atoms->f); }) ; };
+   if (atoms->f) { ({ free_helper((((unsigned char *)atoms->f) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->f) - sizeof(void *))); }) ; };
 # 67 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->f = __null;
 # 68 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 69 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   if (atoms->U) { ({ free_helper(atoms->U, 930458318103041203UL);free(atoms->U); }) ; };
+   if (atoms->U) { ({ free_helper((((unsigned char *)atoms->U) - sizeof(void *)), 930458318103041203UL);free((((unsigned char *)atoms->U) - sizeof(void *))); }) ; };
 # 70 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    atoms->U = __null;
 # 71 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 72 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-    ({ free_helper(atoms, 930458318103041289UL);free(atoms); }) ;
+    ({ free_helper((((unsigned char *)atoms) - sizeof(void *)), 930458318103041289UL);free((((unsigned char *)atoms) - sizeof(void *))); }) ;
 # 73 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 }
 # 78 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"

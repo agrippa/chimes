@@ -90,8 +90,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -110,7 +111,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -3991,7 +3992,7 @@ int i;
 # 78 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (codSeq =
 # 79 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(len * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 6613892181078039790UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 6613892181078039790UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 80 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       printf("insertValidation: cannot allocate codSeq\n");
 # 81 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4027,7 +4028,7 @@ int i;
 # 99 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (newSeq =
 # 100 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len + *seqLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 6613892181078039972UL, 0, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((len + *seqLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 6613892181078039972UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 101 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   == __null ) {
 # 102 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4069,9 +4070,9 @@ int i;
 # 125 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 126 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 127 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free_helper(oldSeq, 6613892181078039972UL);free(oldSeq); }) ;
+     ({ free_helper((((unsigned char *)oldSeq) - sizeof(void *)), 6613892181078039972UL);free((((unsigned char *)oldSeq) - sizeof(void *))); }) ;
 # 128 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free_helper(codSeq, 6613892181078039790UL);free(codSeq); }) ;
+     ({ free_helper((((unsigned char *)codSeq) - sizeof(void *)), 6613892181078039790UL);free((((unsigned char *)codSeq) - sizeof(void *))); }) ;
 # 129 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     oldSeq = newSeq;
 # 130 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4175,7 +4176,7 @@ SEQDATA_T *seqData;
 # 223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SEQDATA_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 6613892181078040045UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SEQDATA_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 6613892181078040045UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 226 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     printf("genScalData: cannot allocate seqData\n");
 # 227 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4196,7 +4197,7 @@ SEQDATA_T *seqData;
 # 239 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->main =
 # 240 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->mainLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->mainLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 241 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 242 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4214,7 +4215,7 @@ SEQDATA_T *seqData;
 # 250 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->match =
 # 251 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->matchLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->matchLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 252 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 253 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4382,7 +4383,7 @@ SEQDATA_T *freeSeqData_resumable(SEQDATA_T *S) {const int ____chimes_did_disable
 # 358 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->main) {
 # 359 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free_helper(S->main, 6613892181078039999UL);free(S->main); }) ;
+       ({ free_helper((((unsigned char *)S->main) - sizeof(void *)), 6613892181078039999UL);free((((unsigned char *)S->main) - sizeof(void *))); }) ;
 # 360 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->main = __null;
 # 361 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4390,13 +4391,13 @@ SEQDATA_T *freeSeqData_resumable(SEQDATA_T *S) {const int ____chimes_did_disable
 # 362 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->match) {
 # 363 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free_helper(S->match, 6613892181078039999UL);free(S->match); }) ;
+       ({ free_helper((((unsigned char *)S->match) - sizeof(void *)), 6613892181078039999UL);free((((unsigned char *)S->match) - sizeof(void *))); }) ;
 # 364 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->match = __null;
 # 365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     }
 # 366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free_helper(S, 6613892181078040018UL);free(S); }) ;
+     ({ free_helper((((unsigned char *)S) - sizeof(void *)), 6613892181078040018UL);free((((unsigned char *)S) - sizeof(void *))); }) ;
 # 367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   }
 # 368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4454,7 +4455,7 @@ int i;
 # 78 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (codSeq =
 # 79 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(len * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 6613892181078039790UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 6613892181078039790UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 80 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       printf("insertValidation: cannot allocate codSeq\n");
 # 81 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4490,7 +4491,7 @@ int i;
 # 99 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (newSeq =
 # 100 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len + *seqLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 6613892181078039972UL, 0, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((len + *seqLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 6613892181078039972UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 101 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   == __null ) {
 # 102 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4532,9 +4533,9 @@ int i;
 # 125 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 126 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 127 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free_helper(oldSeq, 6613892181078039972UL);free(oldSeq); }) ;
+     ({ free_helper((((unsigned char *)oldSeq) - sizeof(void *)), 6613892181078039972UL);free((((unsigned char *)oldSeq) - sizeof(void *))); }) ;
 # 128 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free_helper(codSeq, 6613892181078039790UL);free(codSeq); }) ;
+     ({ free_helper((((unsigned char *)codSeq) - sizeof(void *)), 6613892181078039790UL);free((((unsigned char *)codSeq) - sizeof(void *))); }) ;
 # 129 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     oldSeq = newSeq;
 # 130 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4606,7 +4607,7 @@ SEQDATA_T *seqData;
 # 223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SEQDATA_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 6613892181078040045UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SEQDATA_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 6613892181078040045UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 226 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     printf("genScalData: cannot allocate seqData\n");
 # 227 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4627,7 +4628,7 @@ SEQDATA_T *seqData;
 # 239 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->main =
 # 240 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->mainLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->mainLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 241 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 242 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4645,7 +4646,7 @@ SEQDATA_T *seqData;
 # 250 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->match =
 # 251 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->matchLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->matchLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 252 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 253 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4816,7 +4817,7 @@ SEQDATA_T *freeSeqData_quick(SEQDATA_T *S) {const int ____chimes_did_disable2 = 
 # 358 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->main) {
 # 359 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free_helper(S->main, 6613892181078039999UL);free(S->main); }) ;
+       ({ free_helper((((unsigned char *)S->main) - sizeof(void *)), 6613892181078039999UL);free((((unsigned char *)S->main) - sizeof(void *))); }) ;
 # 360 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->main = __null;
 # 361 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4824,13 +4825,13 @@ SEQDATA_T *freeSeqData_quick(SEQDATA_T *S) {const int ____chimes_did_disable2 = 
 # 362 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->match) {
 # 363 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free_helper(S->match, 6613892181078039999UL);free(S->match); }) ;
+       ({ free_helper((((unsigned char *)S->match) - sizeof(void *)), 6613892181078039999UL);free((((unsigned char *)S->match) - sizeof(void *))); }) ;
 # 364 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->match = __null;
 # 365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     }
 # 366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free_helper(S, 6613892181078040018UL);free(S); }) ;
+     ({ free_helper((((unsigned char *)S) - sizeof(void *)), 6613892181078040018UL);free((((unsigned char *)S) - sizeof(void *))); }) ;
 # 367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   }
 # 368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4886,7 +4887,7 @@ unsigned char *insertValidation_npm(unsigned char *oldSeq, int *seqLen,
 # 78 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (codSeq =
 # 79 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(len * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 6613892181078039790UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 6613892181078039790UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 80 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       printf("insertValidation: cannot allocate codSeq\n");
 # 81 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4922,7 +4923,7 @@ unsigned char *insertValidation_npm(unsigned char *oldSeq, int *seqLen,
 # 99 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (newSeq =
 # 100 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len + *seqLen + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 6613892181078039972UL, 0, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((len + *seqLen + 1) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 6613892181078039972UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 101 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   == __null ) {
 # 102 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4964,9 +4965,9 @@ unsigned char *insertValidation_npm(unsigned char *oldSeq, int *seqLen,
 # 125 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 126 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 127 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free_helper(oldSeq, 6613892181078039972UL);free(oldSeq); }) ;
+     ({ free_helper((((unsigned char *)oldSeq) - sizeof(void *)), 6613892181078039972UL);free((((unsigned char *)oldSeq) - sizeof(void *))); }) ;
 # 128 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free_helper(codSeq, 6613892181078039790UL);free(codSeq); }) ;
+     ({ free_helper((((unsigned char *)codSeq) - sizeof(void *)), 6613892181078039790UL);free((((unsigned char *)codSeq) - sizeof(void *))); }) ;
 # 129 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     oldSeq = newSeq;
 # 130 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5020,7 +5021,7 @@ SEQDATA_T *genScalData_npm(unsigned int randomSeed,
 # 223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SEQDATA_T)); malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 6613892181078040045UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SEQDATA_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 6613892181078040045UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 226 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     printf("genScalData: cannot allocate seqData\n");
 # 227 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5041,7 +5042,7 @@ SEQDATA_T *genScalData_npm(unsigned int randomSeed,
 # 239 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->main =
 # 240 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->mainLen + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->mainLen + 1) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 241 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 242 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5059,7 +5060,7 @@ SEQDATA_T *genScalData_npm(unsigned int randomSeed,
 # 250 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->match =
 # 251 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->matchLen + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->matchLen + 1) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 6613892181078039467UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 252 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 253 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5222,7 +5223,7 @@ SEQDATA_T *freeSeqData_npm(SEQDATA_T *S) {
 # 358 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->main) {
 # 359 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free_helper(S->main, 6613892181078039999UL);free(S->main); }) ;
+       ({ free_helper((((unsigned char *)S->main) - sizeof(void *)), 6613892181078039999UL);free((((unsigned char *)S->main) - sizeof(void *))); }) ;
 # 360 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->main = __null;
 # 361 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5230,13 +5231,13 @@ SEQDATA_T *freeSeqData_npm(SEQDATA_T *S) {
 # 362 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->match) {
 # 363 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free_helper(S->match, 6613892181078039999UL);free(S->match); }) ;
+       ({ free_helper((((unsigned char *)S->match) - sizeof(void *)), 6613892181078039999UL);free((((unsigned char *)S->match) - sizeof(void *))); }) ;
 # 364 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->match = __null;
 # 365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     }
 # 366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free_helper(S, 6613892181078040018UL);free(S); }) ;
+     ({ free_helper((((unsigned char *)S) - sizeof(void *)), 6613892181078040018UL);free((((unsigned char *)S) - sizeof(void *))); }) ;
 # 367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   }
 # 368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"

@@ -108,8 +108,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -128,7 +129,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3631,7 +3632,7 @@ int sortReports;
 # 299 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 300 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 301 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A = (ASTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ASTR_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7756732687571763550UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A = (ASTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ASTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7756732687571763550UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 302 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A\n");
 # 303 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3670,7 +3671,7 @@ int sortReports;
   A->numThreads = maxThreads;
 # 338 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 339 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 340 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->numReports\n");
 # 341 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3682,7 +3683,7 @@ int sortReports;
   }
 # 346 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 347 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodScores = (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7756732687571763795UL, 1, 0); ____chimes_tmp_ptr; }) )
+  if ( (A->goodScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7756732687571763795UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 348 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        == __null ) {
 # 349 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3696,7 +3697,7 @@ int sortReports;
   }
 # 355 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 356 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A->goodEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 357 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsI\n");
 # 358 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3708,7 +3709,7 @@ int sortReports;
   }
 # 363 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 364 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A->goodEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsJ\n");
 # 366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3767,7 +3768,7 @@ int sortReports;
 # 445 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (goodScores =
 # 446 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571762997UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+     (long long*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571762997UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 447 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodScores for thread %d\n",
 # 448 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3781,7 +3782,7 @@ int sortReports;
       }
 # 454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571762951UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (goodEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571762951UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsI for thread %d\n",
 # 457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3795,7 +3796,7 @@ int sortReports;
       }
 # 463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763019UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (goodEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763019UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsJ for thread %d\n",
 # 466 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3823,7 +3824,7 @@ int sortReports;
 # 481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763115UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763115UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  == __null ) {
 # 485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3839,7 +3840,7 @@ int sortReports;
       }
 # 492 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 493 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763453UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763453UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 494 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate index for thread %d\n",
 # 495 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3853,7 +3854,7 @@ int sortReports;
       }
 # 501 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 502 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if( (best = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763103UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if( (best = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763103UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 503 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate best for thread %d\n",
 # 504 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3888,7 +3889,7 @@ int sortReports;
 # 547 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (mainSeq =
 # 548 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7756732687571762445UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((iEnd - iBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7756732687571762445UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 549 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 550 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3913,7 +3914,7 @@ int sortReports;
 # 562 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (matchSeq =
 # 563 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7756732687571762517UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7756732687571762517UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 564 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
          == __null ) {
 # 565 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3936,7 +3937,7 @@ int sortReports;
       }
 # 584 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 584 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7756732687571762542UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7756732687571762542UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 585 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights for thread %d\n",
 # 586 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3952,7 +3953,7 @@ int sortReports;
 # 593 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 594 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7756732687571762539UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+ if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7756732687571762539UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 595 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights[%d] for thread %d\n",
 # 596 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3975,7 +3976,7 @@ int sortReports;
       }
 # 641 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 641 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (V = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762722UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (V = (long long*) ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762722UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 642 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 643 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -3998,7 +3999,7 @@ int sortReports;
       }
 # 654 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 655 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (F = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762725UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (F = (long long*) ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762725UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 656 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 657 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4237,7 +4238,7 @@ int sortReports;
 # 984 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 985 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (long long*) ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 986 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: can't allocate A->goodScores for thread %d\n",
 # 987 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4253,7 +4254,7 @@ int sortReports;
 # 994 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 995 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 996 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 997 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4269,7 +4270,7 @@ int sortReports;
 # 1004 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1005 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1006 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1007 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4320,7 +4321,7 @@ int sortReports;
 # 1048 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 1049 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) ==
+  (long long*) ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) ==
 # 1050 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
         __null ) {
 # 1051 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4338,7 +4339,7 @@ int sortReports;
 # 1059 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 1060 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1061 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 1062 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4354,7 +4355,7 @@ int sortReports;
 # 1069 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1070 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1071 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1072 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4398,32 +4399,32 @@ int sortReports;
 # 1106 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  ({ free_helper(weights[i], 7756732687571762539UL);free(weights[i]); }) ;
+  ({ free_helper((((unsigned char *)weights[i]) - sizeof(void *)), 7756732687571762539UL);free((((unsigned char *)weights[i]) - sizeof(void *))); }) ;
 # 1108 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1109 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(weights, 7756732687571762542UL);free(weights); }) ;
+       ({ free_helper((((unsigned char *)weights) - sizeof(void *)), 7756732687571762542UL);free((((unsigned char *)weights) - sizeof(void *))); }) ;
 # 1110 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(goodScores, 7756732687571762997UL);free(goodScores); }) ;
+       ({ free_helper((((unsigned char *)goodScores) - sizeof(void *)), 7756732687571762997UL);free((((unsigned char *)goodScores) - sizeof(void *))); }) ;
 # 1111 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(goodEndsI, 7756732687571762951UL);free(goodEndsI); }) ;
+       ({ free_helper((((unsigned char *)goodEndsI) - sizeof(void *)), 7756732687571762951UL);free((((unsigned char *)goodEndsI) - sizeof(void *))); }) ;
 # 1112 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(goodEndsJ, 7756732687571763019UL);free(goodEndsJ); }) ;
+       ({ free_helper((((unsigned char *)goodEndsJ) - sizeof(void *)), 7756732687571763019UL);free((((unsigned char *)goodEndsJ) - sizeof(void *))); }) ;
 # 1113 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(F, 7756732687571762725UL);free(F); }) ;
+       ({ free_helper((((unsigned char *)F) - sizeof(void *)), 7756732687571762725UL);free((((unsigned char *)F) - sizeof(void *))); }) ;
 # 1114 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(V, 7756732687571762722UL);free(V); }) ;
+       ({ free_helper((((unsigned char *)V) - sizeof(void *)), 7756732687571762722UL);free((((unsigned char *)V) - sizeof(void *))); }) ;
 # 1115 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(scores, 7756732687571763115UL);free(scores); }) ;
+       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 7756732687571763115UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
 # 1116 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(index, 7756732687571763453UL);free(index); }) ;
+       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 7756732687571763453UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
 # 1117 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(best, 7756732687571763103UL);free(best); }) ;
+       ({ free_helper((((unsigned char *)best) - sizeof(void *)), 7756732687571763103UL);free((((unsigned char *)best) - sizeof(void *))); }) ;
 # 1118 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1119 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(mainSeq, 7756732687571762445UL);free(mainSeq); }) ;
+       ({ free_helper((((unsigned char *)mainSeq) - sizeof(void *)), 7756732687571762445UL);free((((unsigned char *)mainSeq) - sizeof(void *))); }) ;
 # 1120 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(matchSeq, 7756732687571762517UL);free(matchSeq); }) ;
+       ({ free_helper((((unsigned char *)matchSeq) - sizeof(void *)), 7756732687571762517UL);free((((unsigned char *)matchSeq) - sizeof(void *))); }) ;
 # 1121 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1122 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
@@ -4450,7 +4451,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1135 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     if (A->numReports) {
 # 1136 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->numReports, 7756732687571763795UL);free(A->numReports); }) ;
+       ({ free_helper((((unsigned char *)A->numReports) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->numReports) - sizeof(void *))); }) ;
 # 1137 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->numReports = __null;
 # 1138 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4462,7 +4463,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1141 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodScores[i]) {
 # 1142 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    ({ free_helper(A->goodScores[i], 7756732687571763795UL);free(A->goodScores[i]); }) ;
+    ({ free_helper((((unsigned char *)A->goodScores[i]) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodScores[i]) - sizeof(void *))); }) ;
 # 1143 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodScores[i] = __null;
 # 1144 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4470,7 +4471,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1145 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1146 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->goodScores, 7756732687571763795UL);free(A->goodScores); }) ;
+       ({ free_helper((((unsigned char *)A->goodScores) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodScores) - sizeof(void *))); }) ;
 # 1147 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodScores = __null;
 # 1148 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4482,7 +4483,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1151 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsI[i]) {
 # 1152 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    ({ free_helper(A->goodEndsI[i], 7756732687571763795UL);free(A->goodEndsI[i]); }) ;
+    ({ free_helper((((unsigned char *)A->goodEndsI[i]) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsI[i]) - sizeof(void *))); }) ;
 # 1153 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsI[i] = __null;
 # 1154 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4490,7 +4491,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1155 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1156 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->goodEndsI, 7756732687571763795UL);free(A->goodEndsI); }) ;
+       ({ free_helper((((unsigned char *)A->goodEndsI) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsI) - sizeof(void *))); }) ;
 # 1157 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsI = __null;
 # 1158 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4502,7 +4503,7 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1161 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsJ[i]) {
 # 1162 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    ({ free_helper(A->goodEndsJ[i], 7756732687571763795UL);free(A->goodEndsJ[i]); }) ;
+    ({ free_helper((((unsigned char *)A->goodEndsJ[i]) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsJ[i]) - sizeof(void *))); }) ;
 # 1163 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsJ[i] = __null;
 # 1164 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4510,13 +4511,13 @@ ASTR_T *freeA_resumable(ASTR_T *A) {const int ____chimes_did_disable6 = new_stac
 # 1165 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1166 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->goodEndsJ, 7756732687571763795UL);free(A->goodEndsJ); }) ;
+       ({ free_helper((((unsigned char *)A->goodEndsJ) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsJ) - sizeof(void *))); }) ;
 # 1167 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsJ = __null;
 # 1168 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
 # 1169 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     ({ free_helper(A, 7756732687571763943UL);free(A); }) ;
+     ({ free_helper((((unsigned char *)A) - sizeof(void *)), 7756732687571763943UL);free((((unsigned char *)A) - sizeof(void *))); }) ;
 # 1170 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 1171 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4795,7 +4796,7 @@ int sortReports;
 # 299 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 300 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 301 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A = (ASTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ASTR_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7756732687571763550UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A = (ASTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ASTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7756732687571763550UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 302 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A\n");
 # 303 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4834,7 +4835,7 @@ int sortReports;
   A->numThreads = maxThreads;
 # 338 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 339 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 340 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->numReports\n");
 # 341 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4846,7 +4847,7 @@ int sortReports;
   }
 # 346 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 347 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodScores = (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7756732687571763795UL, 1, 0); ____chimes_tmp_ptr; }) )
+  if ( (A->goodScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7756732687571763795UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 348 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        == __null ) {
 # 349 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4860,7 +4861,7 @@ int sortReports;
   }
 # 355 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 356 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A->goodEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 357 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsI\n");
 # 358 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4872,7 +4873,7 @@ int sortReports;
   }
 # 363 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 364 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A->goodEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsJ\n");
 # 366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4931,7 +4932,7 @@ int sortReports;
 # 445 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (goodScores =
 # 446 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571762997UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+     (long long*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571762997UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 447 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodScores for thread %d\n",
 # 448 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4945,7 +4946,7 @@ int sortReports;
       }
 # 454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571762951UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (goodEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571762951UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsI for thread %d\n",
 # 457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4959,7 +4960,7 @@ int sortReports;
       }
 # 463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763019UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (goodEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763019UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsJ for thread %d\n",
 # 466 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -4987,7 +4988,7 @@ int sortReports;
 # 481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763115UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763115UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  == __null ) {
 # 485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5003,7 +5004,7 @@ int sortReports;
       }
 # 492 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 493 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763453UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763453UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 494 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate index for thread %d\n",
 # 495 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5017,7 +5018,7 @@ int sortReports;
       }
 # 501 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 502 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if( (best = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763103UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if( (best = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763103UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 503 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate best for thread %d\n",
 # 504 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5052,7 +5053,7 @@ int sortReports;
 # 547 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (mainSeq =
 # 548 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7756732687571762445UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((iEnd - iBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7756732687571762445UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 549 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 550 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5077,7 +5078,7 @@ int sortReports;
 # 562 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (matchSeq =
 # 563 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7756732687571762517UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7756732687571762517UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 564 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
          == __null ) {
 # 565 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5100,7 +5101,7 @@ int sortReports;
       }
 # 584 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 584 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7756732687571762542UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7756732687571762542UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 585 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights for thread %d\n",
 # 586 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5116,7 +5117,7 @@ int sortReports;
 # 593 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 594 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7756732687571762539UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+ if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7756732687571762539UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 595 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights[%d] for thread %d\n",
 # 596 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5139,7 +5140,7 @@ int sortReports;
       }
 # 641 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 641 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (V = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762722UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (V = (long long*) ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762722UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 642 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 643 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5162,7 +5163,7 @@ int sortReports;
       }
 # 654 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 655 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (F = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762725UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (F = (long long*) ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762725UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 656 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 657 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5401,7 +5402,7 @@ int sortReports;
 # 984 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 985 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (long long*) ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 986 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: can't allocate A->goodScores for thread %d\n",
 # 987 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5417,7 +5418,7 @@ int sortReports;
 # 994 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 995 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 996 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 997 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5433,7 +5434,7 @@ int sortReports;
 # 1004 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1005 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1006 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1007 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5484,7 +5485,7 @@ int sortReports;
 # 1048 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 1049 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) ==
+  (long long*) ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) ==
 # 1050 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
         __null ) {
 # 1051 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5502,7 +5503,7 @@ int sortReports;
 # 1059 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 1060 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1061 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 1062 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5518,7 +5519,7 @@ int sortReports;
 # 1069 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1070 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1071 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1072 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5562,32 +5563,32 @@ int sortReports;
 # 1106 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  ({ free_helper(weights[i], 7756732687571762539UL);free(weights[i]); }) ;
+  ({ free_helper((((unsigned char *)weights[i]) - sizeof(void *)), 7756732687571762539UL);free((((unsigned char *)weights[i]) - sizeof(void *))); }) ;
 # 1108 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1109 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(weights, 7756732687571762542UL);free(weights); }) ;
+       ({ free_helper((((unsigned char *)weights) - sizeof(void *)), 7756732687571762542UL);free((((unsigned char *)weights) - sizeof(void *))); }) ;
 # 1110 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(goodScores, 7756732687571762997UL);free(goodScores); }) ;
+       ({ free_helper((((unsigned char *)goodScores) - sizeof(void *)), 7756732687571762997UL);free((((unsigned char *)goodScores) - sizeof(void *))); }) ;
 # 1111 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(goodEndsI, 7756732687571762951UL);free(goodEndsI); }) ;
+       ({ free_helper((((unsigned char *)goodEndsI) - sizeof(void *)), 7756732687571762951UL);free((((unsigned char *)goodEndsI) - sizeof(void *))); }) ;
 # 1112 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(goodEndsJ, 7756732687571763019UL);free(goodEndsJ); }) ;
+       ({ free_helper((((unsigned char *)goodEndsJ) - sizeof(void *)), 7756732687571763019UL);free((((unsigned char *)goodEndsJ) - sizeof(void *))); }) ;
 # 1113 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(F, 7756732687571762725UL);free(F); }) ;
+       ({ free_helper((((unsigned char *)F) - sizeof(void *)), 7756732687571762725UL);free((((unsigned char *)F) - sizeof(void *))); }) ;
 # 1114 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(V, 7756732687571762722UL);free(V); }) ;
+       ({ free_helper((((unsigned char *)V) - sizeof(void *)), 7756732687571762722UL);free((((unsigned char *)V) - sizeof(void *))); }) ;
 # 1115 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(scores, 7756732687571763115UL);free(scores); }) ;
+       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 7756732687571763115UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
 # 1116 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(index, 7756732687571763453UL);free(index); }) ;
+       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 7756732687571763453UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
 # 1117 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(best, 7756732687571763103UL);free(best); }) ;
+       ({ free_helper((((unsigned char *)best) - sizeof(void *)), 7756732687571763103UL);free((((unsigned char *)best) - sizeof(void *))); }) ;
 # 1118 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1119 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(mainSeq, 7756732687571762445UL);free(mainSeq); }) ;
+       ({ free_helper((((unsigned char *)mainSeq) - sizeof(void *)), 7756732687571762445UL);free((((unsigned char *)mainSeq) - sizeof(void *))); }) ;
 # 1120 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(matchSeq, 7756732687571762517UL);free(matchSeq); }) ;
+       ({ free_helper((((unsigned char *)matchSeq) - sizeof(void *)), 7756732687571762517UL);free((((unsigned char *)matchSeq) - sizeof(void *))); }) ;
 # 1121 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1122 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
@@ -5613,7 +5614,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1135 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     if (A->numReports) {
 # 1136 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->numReports, 7756732687571763795UL);free(A->numReports); }) ;
+       ({ free_helper((((unsigned char *)A->numReports) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->numReports) - sizeof(void *))); }) ;
 # 1137 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->numReports = __null;
 # 1138 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5625,7 +5626,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1141 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodScores[i]) {
 # 1142 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    ({ free_helper(A->goodScores[i], 7756732687571763795UL);free(A->goodScores[i]); }) ;
+    ({ free_helper((((unsigned char *)A->goodScores[i]) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodScores[i]) - sizeof(void *))); }) ;
 # 1143 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodScores[i] = __null;
 # 1144 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5633,7 +5634,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1145 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1146 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->goodScores, 7756732687571763795UL);free(A->goodScores); }) ;
+       ({ free_helper((((unsigned char *)A->goodScores) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodScores) - sizeof(void *))); }) ;
 # 1147 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodScores = __null;
 # 1148 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5645,7 +5646,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1151 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsI[i]) {
 # 1152 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    ({ free_helper(A->goodEndsI[i], 7756732687571763795UL);free(A->goodEndsI[i]); }) ;
+    ({ free_helper((((unsigned char *)A->goodEndsI[i]) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsI[i]) - sizeof(void *))); }) ;
 # 1153 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsI[i] = __null;
 # 1154 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5653,7 +5654,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1155 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1156 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->goodEndsI, 7756732687571763795UL);free(A->goodEndsI); }) ;
+       ({ free_helper((((unsigned char *)A->goodEndsI) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsI) - sizeof(void *))); }) ;
 # 1157 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsI = __null;
 # 1158 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5665,7 +5666,7 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1161 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsJ[i]) {
 # 1162 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    ({ free_helper(A->goodEndsJ[i], 7756732687571763795UL);free(A->goodEndsJ[i]); }) ;
+    ({ free_helper((((unsigned char *)A->goodEndsJ[i]) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsJ[i]) - sizeof(void *))); }) ;
 # 1163 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsJ[i] = __null;
 # 1164 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5673,13 +5674,13 @@ ASTR_T *freeA_quick(ASTR_T *A) {const int ____chimes_did_disable6 = new_stack((v
 # 1165 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1166 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->goodEndsJ, 7756732687571763795UL);free(A->goodEndsJ); }) ;
+       ({ free_helper((((unsigned char *)A->goodEndsJ) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsJ) - sizeof(void *))); }) ;
 # 1167 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsJ = __null;
 # 1168 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
 # 1169 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     ({ free_helper(A, 7756732687571763943UL);free(A); }) ;
+     ({ free_helper((((unsigned char *)A) - sizeof(void *)), 7756732687571763943UL);free((((unsigned char *)A) - sizeof(void *))); }) ;
 # 1170 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 1171 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5896,7 +5897,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 299 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 300 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 301 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A = (ASTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ASTR_T)); malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7756732687571763550UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A = (ASTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ASTR_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7756732687571763550UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 302 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A\n");
 # 303 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5935,7 +5936,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
   A->numThreads = maxThreads;
 # 338 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 339 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 340 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->numReports\n");
 # 341 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5947,7 +5948,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
   }
 # 346 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 347 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodScores = (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7756732687571763795UL, 1, 0); ____chimes_tmp_ptr; }) )
+  if ( (A->goodScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7756732687571763795UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 348 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
        == __null ) {
 # 349 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5961,7 +5962,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
   }
 # 355 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 356 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A->goodEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 357 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsI\n");
 # 358 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -5973,7 +5974,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
   }
 # 363 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 364 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  if ( (A->goodEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (A->goodEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763795UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     printf("pairwiseAlign: cannot allocate A->goodEndsJ\n");
 # 366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6032,7 +6033,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 445 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (goodScores =
 # 446 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571762997UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+     (long long*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571762997UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 447 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodScores for thread %d\n",
 # 448 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6046,7 +6047,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571762951UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (goodEndsI = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571762951UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsI for thread %d\n",
 # 457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6060,7 +6061,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (goodEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763019UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (goodEndsJ = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763019UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate goodEndsJ for thread %d\n",
 # 466 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6088,7 +6089,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763115UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763115UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  == __null ) {
 # 485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6104,7 +6105,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 492 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 493 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763453UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763453UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 494 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate index for thread %d\n",
 # 495 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6118,7 +6119,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 501 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 502 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if( (best = (int*) ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763103UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if( (best = (int*) ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763103UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 503 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate best for thread %d\n",
 # 504 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6153,7 +6154,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 547 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (mainSeq =
 # 548 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7756732687571762445UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((iEnd - iBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7756732687571762445UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 549 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 550 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6178,7 +6179,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 562 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       if ( (matchSeq =
 # 563 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7756732687571762517UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7756732687571762517UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 564 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
          == __null ) {
 # 565 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6201,7 +6202,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 584 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 584 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7756732687571762542UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (weights = (char**) ({ void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7756732687571762542UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 585 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights for thread %d\n",
 # 586 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6217,7 +6218,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 593 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 594 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
- if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7756732687571762539UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+ if ( (weights[i] = (char*) ({ void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7756732687571762539UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 595 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  printf("pairwiseAlign: cannot allocate weights[%d] for thread %d\n",
 # 596 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6240,7 +6241,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 641 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 641 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (V = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762722UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (V = (long long*) ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762722UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 642 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 643 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6263,7 +6264,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
       }
 # 654 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 655 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-      if ( (F = (long long*) ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762725UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (F = (long long*) ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762725UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 656 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     == __null ) {
 # 657 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6502,7 +6503,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 984 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 985 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (long long*) ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 986 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: can't allocate A->goodScores for thread %d\n",
 # 987 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6518,7 +6519,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 994 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 995 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 996 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 997 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6534,7 +6535,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 1004 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1005 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1006 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1007 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6585,7 +6586,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 1048 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodScores[threadNum] =
 # 1049 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (long long*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) ==
+  (long long*) ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) ==
 # 1050 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
         __null ) {
 # 1051 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6603,7 +6604,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 1059 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsI[threadNum] =
 # 1060 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1061 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsI for thread %d\n",
 # 1062 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6619,7 +6620,7 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 1069 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    if ( (A->goodEndsJ[threadNum] =
 # 1070 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  (int*) ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  (int*) ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1071 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
      printf("pairwiseAlign: cannot allocate A->goodEndsJ for thread %d\n",
 # 1072 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6663,32 +6664,32 @@ ASTR_T *pairwiseAlign_npm(SEQDATA_T *seqData, SIMMATRIX_T *simMatrix,
 # 1106 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       for (i = 1; i < ((64) + 1); i++) {
 # 1107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-  ({ free_helper(weights[i], 7756732687571762539UL);free(weights[i]); }) ;
+  ({ free_helper((((unsigned char *)weights[i]) - sizeof(void *)), 7756732687571762539UL);free((((unsigned char *)weights[i]) - sizeof(void *))); }) ;
 # 1108 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1109 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(weights, 7756732687571762542UL);free(weights); }) ;
+       ({ free_helper((((unsigned char *)weights) - sizeof(void *)), 7756732687571762542UL);free((((unsigned char *)weights) - sizeof(void *))); }) ;
 # 1110 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(goodScores, 7756732687571762997UL);free(goodScores); }) ;
+       ({ free_helper((((unsigned char *)goodScores) - sizeof(void *)), 7756732687571762997UL);free((((unsigned char *)goodScores) - sizeof(void *))); }) ;
 # 1111 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(goodEndsI, 7756732687571762951UL);free(goodEndsI); }) ;
+       ({ free_helper((((unsigned char *)goodEndsI) - sizeof(void *)), 7756732687571762951UL);free((((unsigned char *)goodEndsI) - sizeof(void *))); }) ;
 # 1112 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(goodEndsJ, 7756732687571763019UL);free(goodEndsJ); }) ;
+       ({ free_helper((((unsigned char *)goodEndsJ) - sizeof(void *)), 7756732687571763019UL);free((((unsigned char *)goodEndsJ) - sizeof(void *))); }) ;
 # 1113 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(F, 7756732687571762725UL);free(F); }) ;
+       ({ free_helper((((unsigned char *)F) - sizeof(void *)), 7756732687571762725UL);free((((unsigned char *)F) - sizeof(void *))); }) ;
 # 1114 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(V, 7756732687571762722UL);free(V); }) ;
+       ({ free_helper((((unsigned char *)V) - sizeof(void *)), 7756732687571762722UL);free((((unsigned char *)V) - sizeof(void *))); }) ;
 # 1115 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(scores, 7756732687571763115UL);free(scores); }) ;
+       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 7756732687571763115UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
 # 1116 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(index, 7756732687571763453UL);free(index); }) ;
+       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 7756732687571763453UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
 # 1117 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(best, 7756732687571763103UL);free(best); }) ;
+       ({ free_helper((((unsigned char *)best) - sizeof(void *)), 7756732687571763103UL);free((((unsigned char *)best) - sizeof(void *))); }) ;
 # 1118 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1119 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(mainSeq, 7756732687571762445UL);free(mainSeq); }) ;
+       ({ free_helper((((unsigned char *)mainSeq) - sizeof(void *)), 7756732687571762445UL);free((((unsigned char *)mainSeq) - sizeof(void *))); }) ;
 # 1120 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(matchSeq, 7756732687571762517UL);free(matchSeq); }) ;
+       ({ free_helper((((unsigned char *)matchSeq) - sizeof(void *)), 7756732687571762517UL);free((((unsigned char *)matchSeq) - sizeof(void *))); }) ;
 # 1121 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
 # 1122 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
@@ -6710,7 +6711,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1135 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     if (A->numReports) {
 # 1136 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->numReports, 7756732687571763795UL);free(A->numReports); }) ;
+       ({ free_helper((((unsigned char *)A->numReports) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->numReports) - sizeof(void *))); }) ;
 # 1137 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->numReports = __null;
 # 1138 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6722,7 +6723,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1141 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodScores[i]) {
 # 1142 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    ({ free_helper(A->goodScores[i], 7756732687571763795UL);free(A->goodScores[i]); }) ;
+    ({ free_helper((((unsigned char *)A->goodScores[i]) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodScores[i]) - sizeof(void *))); }) ;
 # 1143 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodScores[i] = __null;
 # 1144 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6730,7 +6731,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1145 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1146 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->goodScores, 7756732687571763795UL);free(A->goodScores); }) ;
+       ({ free_helper((((unsigned char *)A->goodScores) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodScores) - sizeof(void *))); }) ;
 # 1147 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodScores = __null;
 # 1148 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6742,7 +6743,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1151 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsI[i]) {
 # 1152 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    ({ free_helper(A->goodEndsI[i], 7756732687571763795UL);free(A->goodEndsI[i]); }) ;
+    ({ free_helper((((unsigned char *)A->goodEndsI[i]) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsI[i]) - sizeof(void *))); }) ;
 # 1153 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsI[i] = __null;
 # 1154 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6750,7 +6751,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1155 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1156 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->goodEndsI, 7756732687571763795UL);free(A->goodEndsI); }) ;
+       ({ free_helper((((unsigned char *)A->goodEndsI) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsI) - sizeof(void *))); }) ;
 # 1157 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsI = __null;
 # 1158 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6762,7 +6763,7 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1161 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
  if (A->goodEndsJ[i]) {
 # 1162 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-    ({ free_helper(A->goodEndsJ[i], 7756732687571763795UL);free(A->goodEndsJ[i]); }) ;
+    ({ free_helper((((unsigned char *)A->goodEndsJ[i]) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsJ[i]) - sizeof(void *))); }) ;
 # 1163 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
    A->goodEndsJ[i] = __null;
 # 1164 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
@@ -6770,13 +6771,13 @@ ASTR_T *freeA_npm(ASTR_T *A) {
 # 1165 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       }
 # 1166 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-       ({ free_helper(A->goodEndsJ, 7756732687571763795UL);free(A->goodEndsJ); }) ;
+       ({ free_helper((((unsigned char *)A->goodEndsJ) - sizeof(void *)), 7756732687571763795UL);free((((unsigned char *)A->goodEndsJ) - sizeof(void *))); }) ;
 # 1167 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
       A->goodEndsJ = __null;
 # 1168 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
     }
 # 1169 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
-     ({ free_helper(A, 7756732687571763943UL);free(A); }) ;
+     ({ free_helper((((unsigned char *)A) - sizeof(void *)), 7756732687571763943UL);free((((unsigned char *)A) - sizeof(void *))); }) ;
 # 1170 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"
   }
 # 1171 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c"

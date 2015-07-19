@@ -213,8 +213,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -233,7 +234,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4747,7 +4748,7 @@ Command cmd;
 # 141 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_29: (____chimes_does_checkpoint_destroySimulation_npm ? ( ({ calling((void*)destroySimulation, 29, 0, 0UL, 1, (size_t)(9903828072463843262UL)); (destroySimulation)(&sim); }) ) : (({ calling_npm("destroySimulation", 0); destroySimulation_npm(&sim); })));
 # 142 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free_helper(validate, 9903828072463843299UL);free(validate); }) ;
+    ({ free_helper((((unsigned char *)validate) - sizeof(void *)), 9903828072463843299UL);free((((unsigned char *)validate) - sizeof(void *))); }) ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_30: (____chimes_does_checkpoint_finalizeSubsystems_npm ? ( ({ calling((void*)finalizeSubsystems, 30, 0, 0UL, 0); (finalizeSubsystems)(); }) ) : (({ calling_npm("finalizeSubsystems", 0); finalizeSubsystems_npm(); })));
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -4774,7 +4775,7 @@ SimFlat *sim;
 # 163 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
  if (____must_checkpoint_initSimulation_globalExtent_0 || ____must_checkpoint_initSimulation_latticeConstant_0 || ____must_checkpoint_initSimulation_sim_0) { register_stack_vars(3, "initSimulation|globalExtent|0", &____must_checkpoint_initSimulation_globalExtent_0, "[3 x double]", (void *)(globalExtent), (size_t)24, 0, 0, 0, "initSimulation|latticeConstant|0", &____must_checkpoint_initSimulation_latticeConstant_0, "double", (void *)(&latticeConstant), (size_t)8, 0, 0, 0, "initSimulation|sim|0", &____must_checkpoint_initSimulation_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } default: { chimes_error(); } } } ; ;
 # 164 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      sim = ((SimFlat*) ({ void *____chimes_tmp_ptr = malloc(sizeof(SimFlat)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9903828072463843578UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); ____chimes_tmp_ptr; })) ;
+      sim = ((SimFlat*) ({ void *____chimes_tmp_ptr = malloc((sizeof(SimFlat)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9903828072463843578UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    sim->nSteps = cmd.nSteps;
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -4878,7 +4879,7 @@ void destroySimulation_resumable(SimFlat** ps)
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     BasePotential *pot; pot = (s->pot) ;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (pot) { ({ free_helper(pot, 9903828072463844299UL);free(pot); }) ; };
+   if (pot) { ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 9903828072463844299UL);free((((unsigned char *)pot) - sizeof(void *))); }) ; };
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_0: (____chimes_does_checkpoint_destroyLinkCells_npm ? ( ({ LinkCell ** ____chimes_arg75; if (!____chimes_replaying) { ____chimes_arg75 = (&(s->boxes)); } calling((void*)destroyLinkCells, 0, ____alias_loc_id_44, 0UL, 1, (size_t)(9903828072463844290UL)); (destroyLinkCells)(____chimes_arg75); }) ) : (({ calling_npm("destroyLinkCells", ____alias_loc_id_44); (*____chimes_extern_func_destroyLinkCells)(&(s->boxes)); })));
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -4886,11 +4887,11 @@ void destroySimulation_resumable(SimFlat** ps)
 # 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_2: (____chimes_does_checkpoint_destroyHaloExchange_npm ? ( ({ HaloExchange ** ____chimes_arg77; if (!____chimes_replaying) { ____chimes_arg77 = (&(s->atomExchange)); } calling((void*)destroyHaloExchange, 2, ____alias_loc_id_42, 0UL, 1, (size_t)(9903828072463844290UL)); (destroyHaloExchange)(____chimes_arg77); }) ) : (({ calling_npm("destroyHaloExchange", ____alias_loc_id_42); (*____chimes_extern_func_destroyHaloExchange)(&(s->atomExchange)); })));
 # 230 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free_helper(s->species, 9903828072463844299UL);free(s->species); }) ;
+    ({ free_helper((((unsigned char *)s->species) - sizeof(void *)), 9903828072463844299UL);free((((unsigned char *)s->species) - sizeof(void *))); }) ;
 # 231 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free_helper(s->domain, 9903828072463844299UL);free(s->domain); }) ;
+    ({ free_helper((((unsigned char *)s->domain) - sizeof(void *)), 9903828072463844299UL);free((((unsigned char *)s->domain) - sizeof(void *))); }) ;
 # 232 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free_helper(s, 9903828072463844290UL);free(s); }) ;
+    ({ free_helper((((unsigned char *)s) - sizeof(void *)), 9903828072463844290UL);free((((unsigned char *)s) - sizeof(void *))); }) ;
 # 233 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    *ps = __null;
 # 234 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -4951,7 +4952,7 @@ SpeciesData* initSpecies_resumable(BasePotential* pot)
 # 270 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&initSpecies), "initSpecies", &____must_manage_initSpecies, 1, 0, (size_t)(9903828072463844582UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 271 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    SpeciesData *species; species = ((SpeciesData*) ({ void *____chimes_tmp_ptr = malloc(sizeof(SpeciesData)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9903828072463844555UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); ____chimes_tmp_ptr; })) ;
+    SpeciesData *species; species = ((SpeciesData*) ({ void *____chimes_tmp_ptr = malloc((sizeof(SpeciesData)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9903828072463844555UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 272 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 273 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    strcpy(species->name, pot->name);
@@ -4975,7 +4976,7 @@ Validate* initValidate_resumable(SimFlat* sim)
 # 282 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_0: (____chimes_does_checkpoint_sumAtoms_npm ? ( ({ calling((void*)sumAtoms, 0, ____alias_loc_id_37, 0UL, 1, (size_t)(9903828072463844002UL)); (sumAtoms)(sim); }) ) : (({ calling_npm("sumAtoms", ____alias_loc_id_37); sumAtoms_npm(sim); })));
 # 283 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      val = ((Validate*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Validate)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9903828072463843951UL, 0, 1, (int)sizeof(struct ValidateSt), 0); ____chimes_tmp_ptr; })) ;
+      val = ((Validate*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Validate)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9903828072463843951UL, 0, 1, (int)sizeof(struct ValidateSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 284 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    val->eTot0 = (sim->ePotential + sim->eKinetic) / sim->atoms->nGlobal;
 # 285 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5456,7 +5457,7 @@ Command cmd;
 # 141 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_29: (____chimes_does_checkpoint_destroySimulation_npm ? ( ({ calling((void*)destroySimulation, 29, 0, 0UL, 1, (size_t)(9903828072463843262UL)); destroySimulation_quick(&sim); }) ) : (({ calling_npm("destroySimulation", 0); destroySimulation_npm(&sim); })));
 # 142 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free_helper(validate, 9903828072463843299UL);free(validate); }) ;
+    ({ free_helper((((unsigned char *)validate) - sizeof(void *)), 9903828072463843299UL);free((((unsigned char *)validate) - sizeof(void *))); }) ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_30: (____chimes_does_checkpoint_finalizeSubsystems_npm ? ( ({ calling((void*)finalizeSubsystems, 30, 0, 0UL, 0); finalizeSubsystems_quick(); }) ) : (({ calling_npm("finalizeSubsystems", 0); finalizeSubsystems_npm(); })));
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5482,7 +5483,7 @@ SimFlat *sim;
 # 163 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
  if (____must_checkpoint_initSimulation_globalExtent_0 || ____must_checkpoint_initSimulation_latticeConstant_0 || ____must_checkpoint_initSimulation_sim_0) { register_stack_vars(3, "initSimulation|globalExtent|0", &____must_checkpoint_initSimulation_globalExtent_0, "[3 x double]", (void *)(globalExtent), (size_t)24, 0, 0, 0, "initSimulation|latticeConstant|0", &____must_checkpoint_initSimulation_latticeConstant_0, "double", (void *)(&latticeConstant), (size_t)8, 0, 0, 0, "initSimulation|sim|0", &____must_checkpoint_initSimulation_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); } ; ;
 # 164 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      sim = ((SimFlat*) ({ void *____chimes_tmp_ptr = malloc(sizeof(SimFlat)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9903828072463843578UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); ____chimes_tmp_ptr; })) ;
+      sim = ((SimFlat*) ({ void *____chimes_tmp_ptr = malloc((sizeof(SimFlat)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9903828072463843578UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    sim->nSteps = cmd.nSteps;
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5585,7 +5586,7 @@ void destroySimulation_quick(SimFlat** ps)
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     BasePotential *pot; pot = (s->pot) ;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (pot) { ({ free_helper(pot, 9903828072463844299UL);free(pot); }) ; };
+   if (pot) { ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 9903828072463844299UL);free((((unsigned char *)pot) - sizeof(void *))); }) ; };
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_0: (____chimes_does_checkpoint_destroyLinkCells_npm ? ( ({ calling((void*)destroyLinkCells, 0, ____alias_loc_id_44, 0UL, 1, (size_t)(9903828072463844290UL)); (destroyLinkCells)(&(s->boxes)); }) ) : (({ calling_npm("destroyLinkCells", ____alias_loc_id_44); (*____chimes_extern_func_destroyLinkCells)(&(s->boxes)); })));
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5593,11 +5594,11 @@ void destroySimulation_quick(SimFlat** ps)
 # 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_2: (____chimes_does_checkpoint_destroyHaloExchange_npm ? ( ({ calling((void*)destroyHaloExchange, 2, ____alias_loc_id_42, 0UL, 1, (size_t)(9903828072463844290UL)); (destroyHaloExchange)(&(s->atomExchange)); }) ) : (({ calling_npm("destroyHaloExchange", ____alias_loc_id_42); (*____chimes_extern_func_destroyHaloExchange)(&(s->atomExchange)); })));
 # 230 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free_helper(s->species, 9903828072463844299UL);free(s->species); }) ;
+    ({ free_helper((((unsigned char *)s->species) - sizeof(void *)), 9903828072463844299UL);free((((unsigned char *)s->species) - sizeof(void *))); }) ;
 # 231 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free_helper(s->domain, 9903828072463844299UL);free(s->domain); }) ;
+    ({ free_helper((((unsigned char *)s->domain) - sizeof(void *)), 9903828072463844299UL);free((((unsigned char *)s->domain) - sizeof(void *))); }) ;
 # 232 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free_helper(s, 9903828072463844290UL);free(s); }) ;
+    ({ free_helper((((unsigned char *)s) - sizeof(void *)), 9903828072463844290UL);free((((unsigned char *)s) - sizeof(void *))); }) ;
 # 233 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    *ps = __null;
 # 234 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5660,7 +5661,7 @@ SpeciesData* initSpecies_quick(BasePotential* pot)
 # 270 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&initSpecies), "initSpecies", &____must_manage_initSpecies, 1, 0, (size_t)(9903828072463844582UL)) ; ; ;
 # 271 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    SpeciesData *species; species = ((SpeciesData*) ({ void *____chimes_tmp_ptr = malloc(sizeof(SpeciesData)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9903828072463844555UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); ____chimes_tmp_ptr; })) ;
+    SpeciesData *species; species = ((SpeciesData*) ({ void *____chimes_tmp_ptr = malloc((sizeof(SpeciesData)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9903828072463844555UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 272 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 273 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    strcpy(species->name, pot->name);
@@ -5684,7 +5685,7 @@ Validate* initValidate_quick(SimFlat* sim)
 # 282 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     call_lbl_0: (____chimes_does_checkpoint_sumAtoms_npm ? ( ({ calling((void*)sumAtoms, 0, ____alias_loc_id_37, 0UL, 1, (size_t)(9903828072463844002UL)); sumAtoms_quick(sim); }) ) : (({ calling_npm("sumAtoms", ____alias_loc_id_37); sumAtoms_npm(sim); })));
 # 283 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      val = ((Validate*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Validate)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9903828072463843951UL, 0, 1, (int)sizeof(struct ValidateSt), 0); ____chimes_tmp_ptr; })) ;
+      val = ((Validate*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Validate)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9903828072463843951UL, 0, 1, (int)sizeof(struct ValidateSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 284 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    val->eTot0 = (sim->ePotential + sim->eKinetic) / sim->atoms->nGlobal;
 # 285 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6060,7 +6061,7 @@ SimFlat* initSimulation_npm(Command cmd)
 # 163 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 {
 # 164 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   SimFlat* sim = (SimFlat*) ({ void *____chimes_tmp_ptr = malloc(sizeof(SimFlat)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9903828072463843578UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); ____chimes_tmp_ptr; }) ;
+   SimFlat* sim = (SimFlat*) ({ void *____chimes_tmp_ptr = malloc((sizeof(SimFlat)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9903828072463843578UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    sim->nSteps = cmd.nSteps;
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6159,7 +6160,7 @@ void destroySimulation_npm(SimFlat** ps)
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    BasePotential* pot = s->pot;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (pot) { ({ free_helper(pot, 9903828072463844299UL);free(pot); }) ; };
+   if (pot) { ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 9903828072463844299UL);free((((unsigned char *)pot) - sizeof(void *))); }) ; };
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    (*____chimes_extern_func_destroyLinkCells)(&(s->boxes));
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6167,11 +6168,11 @@ void destroySimulation_npm(SimFlat** ps)
 # 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    (*____chimes_extern_func_destroyHaloExchange)(&(s->atomExchange));
 # 230 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free_helper(s->species, 9903828072463844299UL);free(s->species); }) ;
+    ({ free_helper((((unsigned char *)s->species) - sizeof(void *)), 9903828072463844299UL);free((((unsigned char *)s->species) - sizeof(void *))); }) ;
 # 231 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free_helper(s->domain, 9903828072463844299UL);free(s->domain); }) ;
+    ({ free_helper((((unsigned char *)s->domain) - sizeof(void *)), 9903828072463844299UL);free((((unsigned char *)s->domain) - sizeof(void *))); }) ;
 # 232 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-    ({ free_helper(s, 9903828072463844290UL);free(s); }) ;
+    ({ free_helper((((unsigned char *)s) - sizeof(void *)), 9903828072463844290UL);free((((unsigned char *)s) - sizeof(void *))); }) ;
 # 233 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    *ps = __null;
 # 234 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6224,7 +6225,7 @@ SpeciesData* initSpecies_npm(BasePotential* pot)
 # 270 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 {
 # 271 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   SpeciesData* species = (SpeciesData*) ({ void *____chimes_tmp_ptr = malloc(sizeof(SpeciesData)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9903828072463844555UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); ____chimes_tmp_ptr; }) ;
+   SpeciesData* species = (SpeciesData*) ({ void *____chimes_tmp_ptr = malloc((sizeof(SpeciesData)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9903828072463844555UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 272 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 273 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    strcpy(species->name, pot->name);
@@ -6244,7 +6245,7 @@ Validate* initValidate_npm(SimFlat* sim)
 # 282 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    sumAtoms_npm(sim);
 # 283 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   Validate* val = (Validate*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Validate)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9903828072463843951UL, 0, 1, (int)sizeof(struct ValidateSt), 0); ____chimes_tmp_ptr; }) ;
+   Validate* val = (Validate*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Validate)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9903828072463843951UL, 0, 1, (int)sizeof(struct ValidateSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 284 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    val->eTot0 = (sim->ePotential + sim->eKinetic) / sim->atoms->nGlobal;
 # 285 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"

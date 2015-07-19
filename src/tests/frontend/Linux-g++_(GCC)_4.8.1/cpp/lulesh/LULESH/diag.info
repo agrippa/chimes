@@ -2,102 +2,102 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 14 len=4
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 96 14 len=4 CBRT_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 98 14 len=4 FABS_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 354 9 len=23 AllocateNodalPersistent_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 356 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 356 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 356 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 357 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 357 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 357 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 358 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 358 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 358 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 360 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 360 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 360 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 361 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 361 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 361 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 362 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 362 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 362 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 367 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 367 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 367 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 368 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 368 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 368 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 369 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 369 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 369 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 374 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 374 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 374 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 375 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 375 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 375 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 376 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 376 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 376 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 378 35  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 378 35  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 378 63 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 382 9 len=22 AllocateElemPersistent_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 384 38  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 384 38  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 384 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 385 34  ({ void *____chimes_tmp_ptr = malloc(size * 8 * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * 8 * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 385 34  ({ void *____chimes_tmp_ptr = malloc((size * 8 * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * 8 * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 385 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 387 30  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 387 30  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 387 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 388 30  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 388 30  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 388 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 389 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 389 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 389 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 390 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 390 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 390 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 391 32  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 391 32  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 391 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 392 32  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 392 32  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 392 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 394 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Int_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Int_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 394 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Int_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Int_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 394 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 396 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 396 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 396 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 399 26  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 399 26  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 399 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 401 26  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 401 26  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 401 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 402 26  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 402 26  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 402 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 403 26  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 403 26  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 403 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 405 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 405 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 405 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 408 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 408 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 408 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 409 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 409 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 409 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 410 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 410 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 410 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 412 32  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 412 32  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 412 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 414 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 414 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 414 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 416 33  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 416 33  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 416 61 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 421 9 len=21 AllocateElemTemporary_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 423 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 423 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 423 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 424 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 424 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 424 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 425 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 425 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 425 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 427 32  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 427 32  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 427 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 428 33  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 428 33  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 428 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 429 34  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 429 34  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 429 62 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 431 32  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 431 32  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 431 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 432 33  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 432 33  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 432 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 433 33  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 433 33  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 433 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 435 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 435 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 435 57 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 438 9 len=16 AllocateNodesets_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 440 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 440 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 440 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 441 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 441 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 441 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 60 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 476 6 len=13 TimeIncrement_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 525 6 len=23 InitStressTermsForElems_npm
@@ -112,46 +112,46 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 893 6 len=2
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 935 6 len=24 CalcElemFBHourglassForce_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1118 6 len=28 CalcFBHourglassForceForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1322 6 len=28 CalcHourglassControlForElems_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753510UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753510UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753517UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753517UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753524UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753524UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753531UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753531UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753538UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753538UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753545UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753545UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 4  ({ free_helper(z8n, 6311287552475753545UL);free(z8n);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 4  ({ free_helper((((unsigned char *)z8n) - sizeof(void *)), 6311287552475753545UL);free((((unsigned char *)z8n) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 4  ({ free_helper(y8n, 6311287552475753538UL);free(y8n);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 4  ({ free_helper((((unsigned char *)y8n) - sizeof(void *)), 6311287552475753538UL);free((((unsigned char *)y8n) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 4  ({ free_helper(x8n, 6311287552475753531UL);free(x8n);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 4  ({ free_helper((((unsigned char *)x8n) - sizeof(void *)), 6311287552475753531UL);free((((unsigned char *)x8n) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 4  ({ free_helper(dvdz, 6311287552475753524UL);free(dvdz);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 4  ({ free_helper((((unsigned char *)dvdz) - sizeof(void *)), 6311287552475753524UL);free((((unsigned char *)dvdz) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 4  ({ free_helper(dvdy, 6311287552475753517UL);free(dvdy);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 4  ({ free_helper((((unsigned char *)dvdy) - sizeof(void *)), 6311287552475753517UL);free((((unsigned char *)dvdy) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 4  ({ free_helper(dvdx, 6311287552475753510UL);free(dvdx);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 4  ({ free_helper((((unsigned char *)dvdx) - sizeof(void *)), 6311287552475753510UL);free((((unsigned char *)dvdx) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 13 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1379 6 len=23 CalcVolumeForceForElems_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 32  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753209UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 32  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753209UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 63 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 32  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753206UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 32  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753206UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 63 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 32  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753203UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 32  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753203UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 63 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 33  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 33  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 64 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 7  ({ free_helper(determ, 6311287552475753185UL);free(determ);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 7  ({ free_helper((((unsigned char *)determ) - sizeof(void *)), 6311287552475753185UL);free((((unsigned char *)determ) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 7  ({ free_helper(sigzz, 6311287552475753203UL);free(sigzz);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 7  ({ free_helper((((unsigned char *)sigzz) - sizeof(void *)), 6311287552475753203UL);free((((unsigned char *)sigzz) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 7  ({ free_helper(sigyy, 6311287552475753206UL);free(sigyy);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 7  ({ free_helper((((unsigned char *)sigyy) - sizeof(void *)), 6311287552475753206UL);free((((unsigned char *)sigyy) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 7  ({ free_helper(sigxx, 6311287552475753209UL);free(sigxx);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 7  ({ free_helper((((unsigned char *)sigxx) - sizeof(void *)), 6311287552475753209UL);free((((unsigned char *)sigxx) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 17 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1412 20 len=17 CalcForceForNodes_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1430 6 len=24 CalcAccelerationForNodes_npm
@@ -172,72 +172,72 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2126 6 len=
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2155 6 len=13 CalcQForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2188 6 len=20 CalcPressureForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2216 6 len=18 CalcEnergyForElems_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 33  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475748362UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 33  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475748362UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 4  ({ free_helper(pHalfStep, 6311287552475748362UL);free(pHalfStep);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 4  ({ free_helper((((unsigned char *)pHalfStep) - sizeof(void *)), 6311287552475748362UL);free((((unsigned char *)pHalfStep) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 18 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2338 6 len=22 CalcSoundSpeedForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2354 6 len=15 EvalEOSForElems_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747734UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747734UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747741UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747741UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747748UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747748UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747755UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747755UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 35  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747762UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 35  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747762UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 63 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 36  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747769UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 36  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747769UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 64 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747776UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 26  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747776UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747783UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 26  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747783UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747790UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747790UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747797UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747797UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747804UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747804UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747811UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747811UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747818UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747818UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747825UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747825UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 4  ({ free_helper(pbvc, 6311287552475747825UL);free(pbvc);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 4  ({ free_helper((((unsigned char *)pbvc) - sizeof(void *)), 6311287552475747825UL);free((((unsigned char *)pbvc) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 4  ({ free_helper(bvc, 6311287552475747818UL);free(bvc);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 4  ({ free_helper((((unsigned char *)bvc) - sizeof(void *)), 6311287552475747818UL);free((((unsigned char *)bvc) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 4  ({ free_helper(q_new, 6311287552475747811UL);free(q_new);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 4  ({ free_helper((((unsigned char *)q_new) - sizeof(void *)), 6311287552475747811UL);free((((unsigned char *)q_new) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 4  ({ free_helper(e_new, 6311287552475747804UL);free(e_new);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 4  ({ free_helper((((unsigned char *)e_new) - sizeof(void *)), 6311287552475747804UL);free((((unsigned char *)e_new) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 4  ({ free_helper(p_new, 6311287552475747797UL);free(p_new);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 4  ({ free_helper((((unsigned char *)p_new) - sizeof(void *)), 6311287552475747797UL);free((((unsigned char *)p_new) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 4  ({ free_helper(work, 6311287552475747790UL);free(work);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 4  ({ free_helper((((unsigned char *)work) - sizeof(void *)), 6311287552475747790UL);free((((unsigned char *)work) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 4  ({ free_helper(ql, 6311287552475747783UL);free(ql);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 4  ({ free_helper((((unsigned char *)ql) - sizeof(void *)), 6311287552475747783UL);free((((unsigned char *)ql) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 4  ({ free_helper(qq, 6311287552475747776UL);free(qq);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 4  ({ free_helper((((unsigned char *)qq) - sizeof(void *)), 6311287552475747776UL);free((((unsigned char *)qq) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 4  ({ free_helper(compHalfStep, 6311287552475747769UL);free(compHalfStep);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 4  ({ free_helper((((unsigned char *)compHalfStep) - sizeof(void *)), 6311287552475747769UL);free((((unsigned char *)compHalfStep) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 21 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 4  ({ free_helper(compression, 6311287552475747762UL);free(compression);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 4  ({ free_helper((((unsigned char *)compression) - sizeof(void *)), 6311287552475747762UL);free((((unsigned char *)compression) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 20 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 4  ({ free_helper(q_old, 6311287552475747755UL);free(q_old);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 4  ({ free_helper((((unsigned char *)q_old) - sizeof(void *)), 6311287552475747755UL);free((((unsigned char *)q_old) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 4  ({ free_helper(p_old, 6311287552475747748UL);free(p_old);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 4  ({ free_helper((((unsigned char *)p_old) - sizeof(void *)), 6311287552475747748UL);free((((unsigned char *)p_old) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 4  ({ free_helper(delvc, 6311287552475747741UL);free(delvc);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 4  ({ free_helper((((unsigned char *)delvc) - sizeof(void *)), 6311287552475747741UL);free((((unsigned char *)delvc) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 4  ({ free_helper(e_old, 6311287552475747734UL);free(e_old);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 4  ({ free_helper((((unsigned char *)e_old) - sizeof(void *)), 6311287552475747734UL);free((((unsigned char *)e_old) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 14 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2477 6 len=31 ApplyMaterialPropertiesForElems_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 30  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747474UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 30  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747474UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 5  ({ free_helper(vnewc, 6311287552475747474UL);free(vnewc);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 5  ({ free_helper((((unsigned char *)vnewc) - sizeof(void *)), 6311287552475747474UL);free((((unsigned char *)vnewc) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 15 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2530 6 len=21 UpdateVolumesForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2550 6 len=16 LagrangeElements_npm
@@ -245,203 +245,203 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2565 6 len=
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2609 6 len=27 CalcHydroConstraintForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2636 6 len=27 CalcTimeConstraintsForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2645 6 len=16 LagrangeLeapFrog_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 356 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 356 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 356 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 357 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 357 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 357 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 358 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 358 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 358 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 360 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 360 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 360 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 361 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 361 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 361 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 362 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 362 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 362 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 367 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 367 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 367 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 368 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 368 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 368 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 369 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 369 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 369 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 374 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 374 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 374 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 375 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 375 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 375 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 376 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 376 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 376 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 378 35  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 378 35  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745400UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 378 63 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 384 38  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 384 38  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 384 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 385 34  ({ void *____chimes_tmp_ptr = malloc(size * 8 * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * 8 * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 385 34  ({ void *____chimes_tmp_ptr = malloc((size * 8 * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * 8 * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 385 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 387 30  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 387 30  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 387 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 388 30  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 388 30  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 388 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 389 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 389 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 389 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 390 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 390 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 390 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 391 32  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 391 32  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 391 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 392 32  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 392 32  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 392 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 394 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Int_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Int_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 394 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Int_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Int_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 394 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 396 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 396 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 396 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 399 26  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 399 26  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 399 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 401 26  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 401 26  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 401 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 402 26  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 402 26  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 402 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 403 26  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 403 26  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 403 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 405 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 405 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 405 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 408 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 408 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 408 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 409 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 409 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 409 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 410 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 410 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 410 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 412 32  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 412 32  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 412 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 414 27  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 414 27  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 414 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 416 33  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 416 33  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745558UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 416 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 423 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 423 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 423 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 424 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 424 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 424 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 425 28  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 425 28  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 425 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 427 32  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 427 32  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 427 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 428 33  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 428 33  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 428 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 429 34  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 429 34  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 429 62 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 431 32  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 431 32  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 431 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 432 33  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 432 33  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 432 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 433 33  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 433 33  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 433 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 435 29  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 435 29  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Real_t), 6311287552475745749UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 435 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 440 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 440 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 440 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 441 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 441 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 441 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 31  ({ void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 31  ({ void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size * sizeof(Index_t), 6311287552475745828UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753510UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753510UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753517UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753517UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753524UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753524UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753531UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753531UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753538UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753538UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753545UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753545UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 4  ({ free_helper(z8n, 6311287552475753545UL);free(z8n);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 4  ({ free_helper((((unsigned char *)z8n) - sizeof(void *)), 6311287552475753545UL);free((((unsigned char *)z8n) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 4  ({ free_helper(y8n, 6311287552475753538UL);free(y8n);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 4  ({ free_helper((((unsigned char *)y8n) - sizeof(void *)), 6311287552475753538UL);free((((unsigned char *)y8n) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 4  ({ free_helper(x8n, 6311287552475753531UL);free(x8n);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 4  ({ free_helper((((unsigned char *)x8n) - sizeof(void *)), 6311287552475753531UL);free((((unsigned char *)x8n) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 4  ({ free_helper(dvdz, 6311287552475753524UL);free(dvdz);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 4  ({ free_helper((((unsigned char *)dvdz) - sizeof(void *)), 6311287552475753524UL);free((((unsigned char *)dvdz) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 4  ({ free_helper(dvdy, 6311287552475753517UL);free(dvdy);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 4  ({ free_helper((((unsigned char *)dvdy) - sizeof(void *)), 6311287552475753517UL);free((((unsigned char *)dvdy) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 4  ({ free_helper(dvdx, 6311287552475753510UL);free(dvdx);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 4  ({ free_helper((((unsigned char *)dvdx) - sizeof(void *)), 6311287552475753510UL);free((((unsigned char *)dvdx) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 32  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753209UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 32  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753209UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 63 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 32  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753206UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 32  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753206UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 63 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 32  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753203UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 32  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753203UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 63 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 33  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 33  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 64 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 7  ({ free_helper(determ, 6311287552475753185UL);free(determ);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 7  ({ free_helper((((unsigned char *)determ) - sizeof(void *)), 6311287552475753185UL);free((((unsigned char *)determ) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 7  ({ free_helper(sigzz, 6311287552475753203UL);free(sigzz);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 7  ({ free_helper((((unsigned char *)sigzz) - sizeof(void *)), 6311287552475753203UL);free((((unsigned char *)sigzz) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 7  ({ free_helper(sigyy, 6311287552475753206UL);free(sigyy);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 7  ({ free_helper((((unsigned char *)sigyy) - sizeof(void *)), 6311287552475753206UL);free((((unsigned char *)sigyy) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 7  ({ free_helper(sigxx, 6311287552475753209UL);free(sigxx);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 7  ({ free_helper((((unsigned char *)sigxx) - sizeof(void *)), 6311287552475753209UL);free((((unsigned char *)sigxx) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 33  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475748362UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 33  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475748362UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 4  ({ free_helper(pHalfStep, 6311287552475748362UL);free(pHalfStep);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 4  ({ free_helper((((unsigned char *)pHalfStep) - sizeof(void *)), 6311287552475748362UL);free((((unsigned char *)pHalfStep) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747734UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747734UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747741UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747741UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747748UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747748UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747755UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747755UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 35  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747762UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 35  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747762UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 63 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 36  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747769UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 36  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747769UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 64 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747776UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 26  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747776UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 26  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747783UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 26  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747783UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747790UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747790UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747797UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747797UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747804UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747804UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747811UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747811UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747818UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747818UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747825UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747825UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 58 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 4  ({ free_helper(pbvc, 6311287552475747825UL);free(pbvc);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 4  ({ free_helper((((unsigned char *)pbvc) - sizeof(void *)), 6311287552475747825UL);free((((unsigned char *)pbvc) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 4  ({ free_helper(bvc, 6311287552475747818UL);free(bvc);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 4  ({ free_helper((((unsigned char *)bvc) - sizeof(void *)), 6311287552475747818UL);free((((unsigned char *)bvc) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 12 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 4  ({ free_helper(q_new, 6311287552475747811UL);free(q_new);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 4  ({ free_helper((((unsigned char *)q_new) - sizeof(void *)), 6311287552475747811UL);free((((unsigned char *)q_new) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 4  ({ free_helper(e_new, 6311287552475747804UL);free(e_new);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 4  ({ free_helper((((unsigned char *)e_new) - sizeof(void *)), 6311287552475747804UL);free((((unsigned char *)e_new) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 4  ({ free_helper(p_new, 6311287552475747797UL);free(p_new);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 4  ({ free_helper((((unsigned char *)p_new) - sizeof(void *)), 6311287552475747797UL);free((((unsigned char *)p_new) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 4  ({ free_helper(work, 6311287552475747790UL);free(work);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 4  ({ free_helper((((unsigned char *)work) - sizeof(void *)), 6311287552475747790UL);free((((unsigned char *)work) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 4  ({ free_helper(ql, 6311287552475747783UL);free(ql);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 4  ({ free_helper((((unsigned char *)ql) - sizeof(void *)), 6311287552475747783UL);free((((unsigned char *)ql) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 4  ({ free_helper(qq, 6311287552475747776UL);free(qq);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 4  ({ free_helper((((unsigned char *)qq) - sizeof(void *)), 6311287552475747776UL);free((((unsigned char *)qq) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 4  ({ free_helper(compHalfStep, 6311287552475747769UL);free(compHalfStep);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 4  ({ free_helper((((unsigned char *)compHalfStep) - sizeof(void *)), 6311287552475747769UL);free((((unsigned char *)compHalfStep) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 21 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 4  ({ free_helper(compression, 6311287552475747762UL);free(compression);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 4  ({ free_helper((((unsigned char *)compression) - sizeof(void *)), 6311287552475747762UL);free((((unsigned char *)compression) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 20 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 4  ({ free_helper(q_old, 6311287552475747755UL);free(q_old);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 4  ({ free_helper((((unsigned char *)q_old) - sizeof(void *)), 6311287552475747755UL);free((((unsigned char *)q_old) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 4  ({ free_helper(p_old, 6311287552475747748UL);free(p_old);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 4  ({ free_helper((((unsigned char *)p_old) - sizeof(void *)), 6311287552475747748UL);free((((unsigned char *)p_old) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 4  ({ free_helper(delvc, 6311287552475747741UL);free(delvc);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 4  ({ free_helper((((unsigned char *)delvc) - sizeof(void *)), 6311287552475747741UL);free((((unsigned char *)delvc) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 4  ({ free_helper(e_old, 6311287552475747734UL);free(e_old);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 4  ({ free_helper((((unsigned char *)e_old) - sizeof(void *)), 6311287552475747734UL);free((((unsigned char *)e_old) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 30  ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747474UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 30  ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747474UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 60 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 5  ({ free_helper(vnewc, 6311287552475747474UL);free(vnewc);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 5  ({ free_helper((((unsigned char *)vnewc) - sizeof(void *)), 6311287552475747474UL);free((((unsigned char *)vnewc) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 15 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 98 rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_13, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 30 const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)); 
@@ -565,110 +565,110 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 98 149
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 98 176 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 355 5 const int ____chimes_did_disable3 = new_stack((void *)(&AllocateNodalPersistent), "AllocateNodalPersistent", &____must_manage_AllocateNodalPersistent, 2, 0, (size_t)(6311287552475745539UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 355 209 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 356 31 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 356 87 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 357 31 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 357 87 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 358 31 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 358 87 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 360 32 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 360 88 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 361 32 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 361 88 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 362 32 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 362 88 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 367 33 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 367 89 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 368 33 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 368 89 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 369 33 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 369 89 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 374 32 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 374 88 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 375 32 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 375 88 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 376 32 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 376 88 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 378 39 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 378 95 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 356 31 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 356 106 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 357 31 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 357 106 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 358 31 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 358 106 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 360 32 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 360 107 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 361 32 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 361 107 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 362 32 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 362 107 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 367 33 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 367 108 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 368 33 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 368 108 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 369 33 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 369 108 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 374 32 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 374 107 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 375 32 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 375 107 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 376 32 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 376 107 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 378 39 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 378 114 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 383 5 const int ____chimes_did_disable4 = new_stack((void *)(&AllocateElemPersistent), "AllocateElemPersistent", &____must_manage_AllocateElemPersistent, 2, 0, (size_t)(6311287552475745739UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 383 206 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 384 42 void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 384 99 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 385 38 void *____chimes_tmp_ptr = malloc(size * 8 * sizeof(Index_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 385 99 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 387 34 void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 387 91 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 388 34 void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 388 91 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 389 35 void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 389 92 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 390 35 void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 390 92 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 391 36 void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 391 93 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 392 36 void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 392 93 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 394 35 void *____chimes_tmp_ptr = malloc(size * sizeof(Int_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 394 90 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 396 31 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 396 87 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 399 30 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 399 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 401 30 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 401 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 402 30 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 402 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 403 30 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 403 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 405 31 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 405 87 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 384 42 void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 384 118 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 385 38 void *____chimes_tmp_ptr = malloc((size * 8 * sizeof(Index_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 385 118 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 387 34 void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 387 110 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 388 34 void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 388 110 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 389 35 void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 389 111 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 390 35 void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 390 111 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 391 36 void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 391 112 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 392 36 void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 392 112 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 394 35 void *____chimes_tmp_ptr = malloc((size * sizeof(Int_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 394 109 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 396 31 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 396 106 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 399 30 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 399 105 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 401 30 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 401 105 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 402 30 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 402 105 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 403 30 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 403 105 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 405 31 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 405 106 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 406 7 {  int i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 406 59  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 406 12  i = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 406 21 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 408 33 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 408 89 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 409 33 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 409 89 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 410 33 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 410 89 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 412 36 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 412 92 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 414 31 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 414 87 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 416 37 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 416 93 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 408 33 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 408 108 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 409 33 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 409 108 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 410 33 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 410 108 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 412 36 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 412 111 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 414 31 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 414 106 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 416 37 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 416 112 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 422 5 const int ____chimes_did_disable5 = new_stack((void *)(&AllocateElemTemporary), "AllocateElemTemporary", &____must_manage_AllocateElemTemporary, 2, 0, (size_t)(6311287552475745818UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 422 203 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 423 32 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 423 88 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 424 32 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 424 88 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 425 32 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 425 88 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 427 36 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 427 92 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 428 37 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 428 93 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 429 38 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 429 94 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 431 36 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 431 92 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 432 37 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 432 93 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 433 37 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 433 93 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 435 33 void *____chimes_tmp_ptr = malloc(size * sizeof(Real_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 435 89 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 423 32 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 423 107 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 424 32 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 424 107 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 425 32 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 425 107 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 427 36 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 427 111 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 428 37 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 428 112 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 429 38 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 429 113 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 431 36 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 431 111 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 432 37 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 432 112 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 433 37 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 433 112 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 435 33 void *____chimes_tmp_ptr = malloc((size * sizeof(Real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 435 108 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 439 5 const int ____chimes_did_disable6 = new_stack((void *)(&AllocateNodesets), "AllocateNodesets", &____must_manage_AllocateNodesets, 2, 0, (size_t)(6311287552475745848UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 439 188 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 440 35 void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 440 92 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 441 35 void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 441 92 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 35 void *____chimes_tmp_ptr = malloc(size * sizeof(Index_t)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 92 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 440 35 void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 440 111 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 441 35 void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 441 111 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 35 void *____chimes_tmp_ptr = malloc((size * sizeof(Index_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 111 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 477 2 const int ____chimes_did_disable7 = new_stack((void *)(&TimeIncrement), "TimeIncrement", &____must_manage_TimeIncrement, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 477 128 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 478 4  Real_t targetdt;  targetdt = (mesh.stoptime - mesh.time) ;
@@ -1007,18 +1007,18 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1327 4
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1327 35 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1328 4  Index_t numElem8;  numElem8 = (numElem * 8) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1328 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 4  Real_t *dvdx;  dvdx = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753510UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 209 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 4  Real_t *dvdy;  dvdy = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753517UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 209 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 4  Real_t *dvdz;  dvdz = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753524UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 209 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 4  Real_t *x8n;  x8n = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753531UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 208 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 4  Real_t *y8n;  y8n = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753538UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 208 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 4  Real_t *z8n;  z8n = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem8); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753545UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 208 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 4  Real_t *dvdx;  dvdx = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753510UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 318 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 4  Real_t *dvdy;  dvdy = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753517UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 318 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 4  Real_t *dvdz;  dvdz = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753524UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 318 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 4  Real_t *x8n;  x8n = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753531UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 317 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 4  Real_t *y8n;  y8n = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753538UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 317 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 4  Real_t *z8n;  z8n = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem8) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem8, 6311287552475753545UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 317 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1339 7  Index_t *elemToNode;  elemToNode = (&mesh.nodelist[8 * i]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1339 50 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1380 2 const int ____chimes_did_disable20 = new_stack((void *)(&CalcVolumeForceForElems), "CalcVolumeForceForElems", &____must_manage_CalcVolumeForceForElems, 0, 0); ;
@@ -1027,14 +1027,14 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1381 4
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1381 35 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1383 7  Real_t hgcoef;  hgcoef = (mesh.hgcoef) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1383 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 7  Real_t *sigxx;  sigxx = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753209UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 211 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 7  Real_t *sigyy;  sigyy = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753206UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 211 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 7  Real_t *sigzz;  sigzz = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753203UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 211 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 7  Real_t *determ;  determ = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * numElem); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 212 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 7  Real_t *sigxx;  sigxx = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753209UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 320 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 7  Real_t *sigyy;  sigyy = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753206UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 320 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 7  Real_t *sigzz;  sigzz = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753203UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 320 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 7  Real_t *determ;  determ = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * numElem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 321 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1397 7 {  Index_t k; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1401 7  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1397 13  k = (0) ;
@@ -1511,8 +1511,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2226 2
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2226 760 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2227 4  Real_t sixth;  sixth = (Real_t(1.0) / Real_t(6.0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2227 45 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 4  Real_t *pHalfStep;  pHalfStep = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475748362UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 208 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 4  Real_t *pHalfStep;  pHalfStep = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475748362UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 317 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2230 4 {  Index_t i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2237 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2230 9  i = (0) ;
@@ -1581,34 +1581,34 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2364 4
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2364 28 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2365 4  Real_t rho0;  rho0 = (mesh.refdens) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2365 31 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 4  Real_t *e_old;  e_old = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747734UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 204 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 4  Real_t *delvc;  delvc = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747741UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 204 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 4  Real_t *p_old;  p_old = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747748UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 204 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 4  Real_t *q_old;  q_old = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747755UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 204 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 4  Real_t *compression;  compression = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747762UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 210 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 4  Real_t *compHalfStep;  compHalfStep = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747769UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 211 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 4  Real_t *qq;  qq = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747776UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 203 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 4  Real_t *ql;  ql = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747783UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 203 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 4  Real_t *work;  work = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747790UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 205 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 4  Real_t *p_new;  p_new = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747797UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 206 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 4  Real_t *e_new;  e_new = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747804UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 206 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 4  Real_t *q_new;  q_new = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747811UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 206 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 4  Real_t *bvc;  bvc = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747818UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 204 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 4  Real_t *pbvc;  pbvc = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747825UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 205 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 4  Real_t *e_old;  e_old = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747734UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 313 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 4  Real_t *delvc;  delvc = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747741UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 313 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 4  Real_t *p_old;  p_old = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747748UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 313 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 4  Real_t *q_old;  q_old = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747755UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 313 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 4  Real_t *compression;  compression = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747762UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 319 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 4  Real_t *compHalfStep;  compHalfStep = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t)*length, 6311287552475747769UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 320 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 4  Real_t *qq;  qq = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747776UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 312 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 4  Real_t *ql;  ql = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747783UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 312 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 4  Real_t *work;  work = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747790UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 314 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 4  Real_t *p_new;  p_new = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747797UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 315 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 4  Real_t *e_new;  e_new = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747804UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 315 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 4  Real_t *q_new;  q_new = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747811UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 315 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 4  Real_t *bvc;  bvc = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747818UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 313 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 4  Real_t *pbvc;  pbvc = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747825UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 314 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2383 4 {  Index_t i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2386 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2383 9  i = (0) ;
@@ -1679,8 +1679,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2483 5
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2483 35 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2484 5  Real_t eosvmax;  eosvmax = (mesh.eosvmax) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2484 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 5  Real_t *vnewc;  vnewc = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Real_t) * length); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747474UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 207 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 5  Real_t *vnewc;  vnewc = ((Real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Real_t) * length) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Real_t) * length, 6311287552475747474UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 316 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2487 5 {  Index_t i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2490 5  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2487 10  i = (0) ;

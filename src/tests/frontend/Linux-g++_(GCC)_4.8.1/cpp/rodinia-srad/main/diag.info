@@ -1,91 +1,91 @@
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 45 6 len=6 kernel_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 22  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * image_ori_elem); malloc_helper(____chimes_tmp_ptr, sizeof(float) * image_ori_elem, 12879499662222412108UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 22  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * image_ori_elem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * image_ori_elem, 12879499662222412108UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 59 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 257 18  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float) * Ne, 12879499662222412017UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 257 18  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * Ne, 12879499662222412017UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 257 43 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 282 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nr); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nr, 12879499662222411946UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 282 17  ({ void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nr, 12879499662222411946UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 282 39 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 283 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nr); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nr, 12879499662222411953UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 283 17  ({ void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nr, 12879499662222411953UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 283 39 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 284 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nc); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nc, 12879499662222412048UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 284 17  ({ void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nc) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nc, 12879499662222412048UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 284 39 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 285 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nc); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nc, 12879499662222412047UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 285 17  ({ void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nc) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nc, 12879499662222412047UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 285 39 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 288 15  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412049UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 288 15  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412049UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 288 38 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 289 18  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412050UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 289 18  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412050UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 289 41 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 290 18  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412051UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 290 18  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412051UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 290 41 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 18  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412052UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 18  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412052UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 41 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412059UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 17  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412059UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 40 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 2  ({ free_helper(image_ori, 12879499662222412108UL);free(image_ori);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 2  ({ free_helper((((unsigned char *)image_ori) - sizeof(void *)), 12879499662222412108UL);free((((unsigned char *)image_ori) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 16 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 2  ({ free_helper(image, 12879499662222412017UL);free(image);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 2  ({ free_helper((((unsigned char *)image) - sizeof(void *)), 12879499662222412017UL);free((((unsigned char *)image) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 5  ({ free_helper(iN, 12879499662222411946UL);free(iN);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 5  ({ free_helper((((unsigned char *)iN) - sizeof(void *)), 12879499662222411946UL);free((((unsigned char *)iN) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 15  ({ free_helper(iS, 12879499662222411953UL);free(iS);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 15  ({ free_helper((((unsigned char *)iS) - sizeof(void *)), 12879499662222411953UL);free((((unsigned char *)iS) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 22 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 25  ({ free_helper(jW, 12879499662222412048UL);free(jW);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 25  ({ free_helper((((unsigned char *)jW) - sizeof(void *)), 12879499662222412048UL);free((((unsigned char *)jW) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 32 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 35  ({ free_helper(jE, 12879499662222412047UL);free(jE);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 35  ({ free_helper((((unsigned char *)jE) - sizeof(void *)), 12879499662222412047UL);free((((unsigned char *)jE) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 5  ({ free_helper(dN, 12879499662222412049UL);free(dN);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 5  ({ free_helper((((unsigned char *)dN) - sizeof(void *)), 12879499662222412049UL);free((((unsigned char *)dN) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 15  ({ free_helper(dS, 12879499662222412050UL);free(dS);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 15  ({ free_helper((((unsigned char *)dS) - sizeof(void *)), 12879499662222412050UL);free((((unsigned char *)dS) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 22 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 25  ({ free_helper(dW, 12879499662222412051UL);free(dW);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 25  ({ free_helper((((unsigned char *)dW) - sizeof(void *)), 12879499662222412051UL);free((((unsigned char *)dW) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 32 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 35  ({ free_helper(dE, 12879499662222412052UL);free(dE);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 35  ({ free_helper((((unsigned char *)dE) - sizeof(void *)), 12879499662222412052UL);free((((unsigned char *)dE) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 5  ({ free_helper(c, 12879499662222412059UL);free(c);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 5  ({ free_helper((((unsigned char *)c) - sizeof(void *)), 12879499662222412059UL);free((((unsigned char *)c) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 11 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 22  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * image_ori_elem); malloc_helper(____chimes_tmp_ptr, sizeof(float) * image_ori_elem, 12879499662222412108UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 22  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * image_ori_elem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * image_ori_elem, 12879499662222412108UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 59 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 257 18  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float) * Ne, 12879499662222412017UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 257 18  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * Ne, 12879499662222412017UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 257 43 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 282 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nr); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nr, 12879499662222411946UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 282 17  ({ void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nr, 12879499662222411946UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 282 39 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 283 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nr); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nr, 12879499662222411953UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 283 17  ({ void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nr, 12879499662222411953UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 283 39 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 284 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nc); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nc, 12879499662222412048UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 284 17  ({ void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nc) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nc, 12879499662222412048UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 284 39 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 285 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nc); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nc, 12879499662222412047UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 285 17  ({ void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nc) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int*)*Nc, 12879499662222412047UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 285 39 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 288 15  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412049UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 288 15  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412049UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 288 38 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 289 18  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412050UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 289 18  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412050UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 289 41 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 290 18  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412051UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 290 18  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412051UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 290 41 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 18  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412052UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 18  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412052UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 41 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 17  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412059UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 17  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*Ne, 12879499662222412059UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 40 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 2  ({ free_helper(image_ori, 12879499662222412108UL);free(image_ori);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 2  ({ free_helper((((unsigned char *)image_ori) - sizeof(void *)), 12879499662222412108UL);free((((unsigned char *)image_ori) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 374 16 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 2  ({ free_helper(image, 12879499662222412017UL);free(image);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 2  ({ free_helper((((unsigned char *)image) - sizeof(void *)), 12879499662222412017UL);free((((unsigned char *)image) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 375 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 5  ({ free_helper(iN, 12879499662222411946UL);free(iN);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 5  ({ free_helper((((unsigned char *)iN) - sizeof(void *)), 12879499662222411946UL);free((((unsigned char *)iN) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 15  ({ free_helper(iS, 12879499662222411953UL);free(iS);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 15  ({ free_helper((((unsigned char *)iS) - sizeof(void *)), 12879499662222411953UL);free((((unsigned char *)iS) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 22 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 25  ({ free_helper(jW, 12879499662222412048UL);free(jW);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 25  ({ free_helper((((unsigned char *)jW) - sizeof(void *)), 12879499662222412048UL);free((((unsigned char *)jW) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 32 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 35  ({ free_helper(jE, 12879499662222412047UL);free(jE);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 35  ({ free_helper((((unsigned char *)jE) - sizeof(void *)), 12879499662222412047UL);free((((unsigned char *)jE) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 377 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 5  ({ free_helper(dN, 12879499662222412049UL);free(dN);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 5  ({ free_helper((((unsigned char *)dN) - sizeof(void *)), 12879499662222412049UL);free((((unsigned char *)dN) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 15  ({ free_helper(dS, 12879499662222412050UL);free(dS);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 15  ({ free_helper((((unsigned char *)dS) - sizeof(void *)), 12879499662222412050UL);free((((unsigned char *)dS) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 22 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 25  ({ free_helper(dW, 12879499662222412051UL);free(dW);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 25  ({ free_helper((((unsigned char *)dW) - sizeof(void *)), 12879499662222412051UL);free((((unsigned char *)dW) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 32 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 35  ({ free_helper(dE, 12879499662222412052UL);free(dE);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 35  ({ free_helper((((unsigned char *)dE) - sizeof(void *)), 12879499662222412052UL);free((((unsigned char *)dE) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 378 42 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 5  ({ free_helper(c, 12879499662222412059UL);free(c);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 5  ({ free_helper((((unsigned char *)c) - sizeof(void *)), 12879499662222412059UL);free((((unsigned char *)c) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 379 11 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 47 84 const int ____chimes_did_disable0 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 24, 0, (size_t)(12879499662222411628UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12879499662222411631UL), (size_t)(12879499662222411632UL), (size_t)(12879499662222411633UL), (size_t)(12879499662222411634UL), (size_t)(12879499662222411635UL), (size_t)(12879499662222411636UL), (size_t)(12879499662222411637UL), (size_t)(12879499662222411638UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12879499662222411645UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 133 1 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_12, ____chimes_did_disable0, false); 
@@ -191,32 +191,32 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 201 2 in
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 201 13 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 211 4 int ____chimes_ret_var_0; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 211 28 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 26 void *____chimes_tmp_ptr = malloc(sizeof(float) * image_ori_elem); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 91 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 26 void *____chimes_tmp_ptr = malloc((sizeof(float) * image_ori_elem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 238 110 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 240 5  char *RODINIA_HOME;  RODINIA_HOME = (getenv("RODINIA_HOME")) ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 240 48 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 241 5 char image_path[256]; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 241 25 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 257 22 void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 257 75 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 282 21 void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nr); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 282 74 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 283 21 void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nr); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 283 74 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 284 21 void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nc); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 284 74 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 285 21 void *____chimes_tmp_ptr = malloc(sizeof(int *) * Nc); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 285 74 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 288 19 void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 288 72 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 289 22 void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 289 75 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 290 22 void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 290 75 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 22 void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 75 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 21 void *____chimes_tmp_ptr = malloc(sizeof(float) * Ne); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 74 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 257 22 void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 257 94 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 282 21 void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nr) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 282 93 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 283 21 void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nr) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 283 93 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 284 21 void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nc) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 284 93 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 285 21 void *____chimes_tmp_ptr = malloc((sizeof(int *) * Nc) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 285 93 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 288 19 void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 288 91 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 289 22 void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 289 94 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 290 22 void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 290 94 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 22 void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 291 94 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 21 void *____chimes_tmp_ptr = malloc((sizeof(float) * Ne) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 294 93 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 403 6 int ____chimes_ret_var_1; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 403 30 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 154 2  call_lbl_0: 

@@ -79,8 +79,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -99,7 +100,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4179,17 +4180,17 @@ long long time0;
  memory = workload*(xmax+1)*91*4;
 # 252 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 252 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- y = (float ***) ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float **)); ; malloc_helper(____chimes_tmp_ptr, workload* sizeof(float **), 9015230786879047319UL, 1, 0); ____chimes_tmp_ptr; }) ;
+ y = (float ***) ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, workload* sizeof(float **), 9015230786879047319UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 253 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
     ((y) ? static_cast<void> (0) : __assert_fail ("y", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 253, __PRETTY_FUNCTION__));
 # 254 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  for(i=0; i<workload; i++){
 # 255 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  y[i] = (float**) ({ void *____chimes_tmp_ptr = malloc((1 + xmax) * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, (1+xmax)*sizeof(float*), 9015230786879047315UL, 1, 0); ____chimes_tmp_ptr; }) ;
+  y[i] = (float**) ({ void *____chimes_tmp_ptr = malloc(((1 + xmax) * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (1+xmax)*sizeof(float*), 9015230786879047315UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 256 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
         ((y[i]) ? static_cast<void> (0) : __assert_fail ("y[i]", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 256, __PRETTY_FUNCTION__));
 # 257 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-         float *tmp; tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc((1 + xmax) * 91 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, (1 + xmax) * 91 * sizeof(float), 9015230786879047513UL, 0, 0); ____chimes_tmp_ptr; })) ;
+         float *tmp; tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc(((1 + xmax) * 91 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (1 + xmax) * 91 * sizeof(float), 9015230786879047513UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 258 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
         ((tmp) ? static_cast<void> (0) : __assert_fail ("tmp", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 258, __PRETTY_FUNCTION__));
 # 259 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
@@ -4204,11 +4205,11 @@ long long time0;
  }
 # 265 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 266 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- x = (float **) ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 9015230786879047555UL, 1, 0); ____chimes_tmp_ptr; }) ;
+ x = (float **) ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 9015230786879047555UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 267 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
     ((x) ? static_cast<void> (0) : __assert_fail ("x", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 267, __PRETTY_FUNCTION__));
 # 268 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     float *tmp; tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc(workload * (1 + xmax) * sizeof(float)); malloc_helper(____chimes_tmp_ptr, workload * (1 + xmax) * sizeof(float), 9015230786879047557UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     float *tmp; tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc((workload * (1 + xmax) * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload * (1 + xmax) * sizeof(float), 9015230786879047557UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 269 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
     ((tmp) ? static_cast<void> (0) : __assert_fail ("tmp", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 269, __PRETTY_FUNCTION__));
 # 270 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
@@ -4220,11 +4221,11 @@ long long time0;
  }
 # 274 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 275 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- params = (float **) ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 9015230786879047471UL, 1, 0); ____chimes_tmp_ptr; }) ;
+ params = (float **) ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 9015230786879047471UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 276 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
     ((params) ? static_cast<void> (0) : __assert_fail ("params", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 276, __PRETTY_FUNCTION__));
 # 277 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    tmp = (float *) ({ void *____chimes_tmp_ptr = malloc(workload * 16 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, workload * 16 * sizeof(float), 9015230786879047557UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    tmp = (float *) ({ void *____chimes_tmp_ptr = malloc((workload * 16 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, workload * 16 * sizeof(float), 9015230786879047557UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 278 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
     ((tmp) ? static_cast<void> (0) : __assert_fail ("tmp", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 278, __PRETTY_FUNCTION__));
 # 279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
@@ -4303,34 +4304,34 @@ long long time0;
 # 367 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  for (i= 0; i< workload; i++){
 # 368 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-         ({ free_helper(y[i][0], 9015230786879047513UL);free(y[i][0]); }) ;
+         ({ free_helper((((unsigned char *)y[i][0]) - sizeof(void *)), 9015230786879047513UL);free((((unsigned char *)y[i][0]) - sizeof(void *))); }) ;
 # 369 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 370 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 371 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 372 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   ({ free_helper(y[i], 9015230786879047315UL);free(y[i]); }) ;
+   ({ free_helper((((unsigned char *)y[i]) - sizeof(void *)), 9015230786879047315UL);free((((unsigned char *)y[i]) - sizeof(void *))); }) ;
 # 373 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
 # 374 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free_helper(y, 9015230786879047319UL);free(y); }) ;
+  ({ free_helper((((unsigned char *)y) - sizeof(void *)), 9015230786879047319UL);free((((unsigned char *)y) - sizeof(void *))); }) ;
 # 375 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 376 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 377 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     ({ free_helper(x[0], 9015230786879047557UL);free(x[0]); }) ;
+     ({ free_helper((((unsigned char *)x[0]) - sizeof(void *)), 9015230786879047557UL);free((((unsigned char *)x[0]) - sizeof(void *))); }) ;
 # 378 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 379 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 380 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 381 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free_helper(x, 9015230786879047555UL);free(x); }) ;
+  ({ free_helper((((unsigned char *)x) - sizeof(void *)), 9015230786879047555UL);free((((unsigned char *)x) - sizeof(void *))); }) ;
 # 382 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 383 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 384 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     ({ free_helper(params[0], 9015230786879047557UL);free(params[0]); }) ;
+     ({ free_helper((((unsigned char *)params[0]) - sizeof(void *)), 9015230786879047557UL);free((((unsigned char *)params[0]) - sizeof(void *))); }) ;
 # 385 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 386 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 387 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 388 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free_helper(params, 9015230786879047471UL);free(params); }) ;
+  ({ free_helper((((unsigned char *)params) - sizeof(void *)), 9015230786879047471UL);free((((unsigned char *)params) - sizeof(void *))); }) ;
 # 389 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 390 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   call_lbl_10: time5= (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 10, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
@@ -4550,17 +4551,17 @@ long long time0;
  memory = workload*(xmax+1)*91*4;
 # 252 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 252 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- y = (float ***) ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float **)); ; malloc_helper(____chimes_tmp_ptr, workload* sizeof(float **), 9015230786879047319UL, 1, 0); ____chimes_tmp_ptr; }) ;
+ y = (float ***) ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, workload* sizeof(float **), 9015230786879047319UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 253 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
     ((y) ? static_cast<void> (0) : __assert_fail ("y", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 253, __PRETTY_FUNCTION__));
 # 254 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  for(i=0; i<workload; i++){
 # 255 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  y[i] = (float**) ({ void *____chimes_tmp_ptr = malloc((1 + xmax) * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, (1+xmax)*sizeof(float*), 9015230786879047315UL, 1, 0); ____chimes_tmp_ptr; }) ;
+  y[i] = (float**) ({ void *____chimes_tmp_ptr = malloc(((1 + xmax) * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (1+xmax)*sizeof(float*), 9015230786879047315UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 256 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
         ((y[i]) ? static_cast<void> (0) : __assert_fail ("y[i]", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 256, __PRETTY_FUNCTION__));
 # 257 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-         float *tmp; tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc((1 + xmax) * 91 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, (1 + xmax) * 91 * sizeof(float), 9015230786879047513UL, 0, 0); ____chimes_tmp_ptr; })) ;
+         float *tmp; tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc(((1 + xmax) * 91 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (1 + xmax) * 91 * sizeof(float), 9015230786879047513UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 258 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
         ((tmp) ? static_cast<void> (0) : __assert_fail ("tmp", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 258, __PRETTY_FUNCTION__));
 # 259 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
@@ -4575,11 +4576,11 @@ long long time0;
  }
 # 265 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 266 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- x = (float **) ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 9015230786879047555UL, 1, 0); ____chimes_tmp_ptr; }) ;
+ x = (float **) ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 9015230786879047555UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 267 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
     ((x) ? static_cast<void> (0) : __assert_fail ("x", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 267, __PRETTY_FUNCTION__));
 # 268 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     float *tmp; tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc(workload * (1 + xmax) * sizeof(float)); malloc_helper(____chimes_tmp_ptr, workload * (1 + xmax) * sizeof(float), 9015230786879047557UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     float *tmp; tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc((workload * (1 + xmax) * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload * (1 + xmax) * sizeof(float), 9015230786879047557UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 269 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
     ((tmp) ? static_cast<void> (0) : __assert_fail ("tmp", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 269, __PRETTY_FUNCTION__));
 # 270 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
@@ -4591,11 +4592,11 @@ long long time0;
  }
 # 274 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 275 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
- params = (float **) ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 9015230786879047471UL, 1, 0); ____chimes_tmp_ptr; }) ;
+ params = (float **) ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 9015230786879047471UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 276 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
     ((params) ? static_cast<void> (0) : __assert_fail ("params", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 276, __PRETTY_FUNCTION__));
 # 277 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-    tmp = (float *) ({ void *____chimes_tmp_ptr = malloc(workload * 16 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, workload * 16 * sizeof(float), 9015230786879047557UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    tmp = (float *) ({ void *____chimes_tmp_ptr = malloc((workload * 16 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, workload * 16 * sizeof(float), 9015230786879047557UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 278 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
     ((tmp) ? static_cast<void> (0) : __assert_fail ("tmp", "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c", 278, __PRETTY_FUNCTION__));
 # 279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
@@ -4674,34 +4675,34 @@ long long time0;
 # 367 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  for (i= 0; i< workload; i++){
 # 368 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-         ({ free_helper(y[i][0], 9015230786879047513UL);free(y[i][0]); }) ;
+         ({ free_helper((((unsigned char *)y[i][0]) - sizeof(void *)), 9015230786879047513UL);free((((unsigned char *)y[i][0]) - sizeof(void *))); }) ;
 # 369 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 370 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 371 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 372 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-   ({ free_helper(y[i], 9015230786879047315UL);free(y[i]); }) ;
+   ({ free_helper((((unsigned char *)y[i]) - sizeof(void *)), 9015230786879047315UL);free((((unsigned char *)y[i]) - sizeof(void *))); }) ;
 # 373 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
  }
 # 374 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free_helper(y, 9015230786879047319UL);free(y); }) ;
+  ({ free_helper((((unsigned char *)y) - sizeof(void *)), 9015230786879047319UL);free((((unsigned char *)y) - sizeof(void *))); }) ;
 # 375 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 376 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 377 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     ({ free_helper(x[0], 9015230786879047557UL);free(x[0]); }) ;
+     ({ free_helper((((unsigned char *)x[0]) - sizeof(void *)), 9015230786879047557UL);free((((unsigned char *)x[0]) - sizeof(void *))); }) ;
 # 378 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 379 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 380 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 381 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free_helper(x, 9015230786879047555UL);free(x); }) ;
+  ({ free_helper((((unsigned char *)x) - sizeof(void *)), 9015230786879047555UL);free((((unsigned char *)x) - sizeof(void *))); }) ;
 # 382 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 383 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 384 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-     ({ free_helper(params[0], 9015230786879047557UL);free(params[0]); }) ;
+     ({ free_helper((((unsigned char *)params[0]) - sizeof(void *)), 9015230786879047557UL);free((((unsigned char *)params[0]) - sizeof(void *))); }) ;
 # 385 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 386 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 387 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 388 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
-  ({ free_helper(params, 9015230786879047471UL);free(params); }) ;
+  ({ free_helper((((unsigned char *)params) - sizeof(void *)), 9015230786879047471UL);free((((unsigned char *)params) - sizeof(void *))); }) ;
 # 389 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
 # 390 "/gpfs-biou/jmg3/rodinia_3.0/openmp/myocyte/main.c"
   call_lbl_10: time5= (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 10, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));

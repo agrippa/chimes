@@ -145,8 +145,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -165,7 +166,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4269,7 +4270,7 @@ BasePotential* initEamPot_resumable(const char* dir, const char* file, const cha
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
  if (____must_checkpoint_initEamPot_pot_0) { register_stack_vars(1, "initEamPot|pot|0", &____must_checkpoint_initEamPot_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      pot = ((EamPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(EamPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 17996878689622962632UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); ____chimes_tmp_ptr; })) ;
+      pot = ((EamPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(EamPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 17996878689622962632UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    ((pot) ? static_cast<void> (0) : __assert_fail ("pot", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 173, __PRETTY_FUNCTION__));
 # 174 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -4347,13 +4348,13 @@ EamPotential *pot;
 # 222 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
        int maxTotalAtoms; maxTotalAtoms = (64*s->boxes->nTotalBoxes) ;
 # 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
        call_lbl_0: pot->forceExchange = ({ Domain * ____chimes_arg1; LinkCell * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg1 = (s->domain); ____chimes_arg2 = (s->boxes); } calling((void*)initForceHaloExchange, 0, ____alias_loc_id_4, 17996878689622962770UL, 2, (size_t)(17996878689622962770UL), (size_t)(17996878689622962770UL)); (initForceHaloExchange)(____chimes_arg1, ____chimes_arg2); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ForceExchangeData)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 17996878689622962770UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); ____chimes_tmp_ptr; }) ;
+      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeData)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 17996878689622962770UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       pot->forceExchangeData->dfEmbed = pot->dfEmbed;
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -4651,7 +4652,7 @@ void eamDestroy_resumable(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
     call_lbl_3: ({ HaloExchange ** ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg13 = (&(pot->forceExchange)); } calling((void*)destroyHaloExchange, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(17996878689622963650UL)); (destroyHaloExchange)(____chimes_arg13); }) ;
 # 397 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(pot, 17996878689622963650UL);free(pot); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 17996878689622963650UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -4740,12 +4741,12 @@ InterpolationObject* initInterpolationObject_resumable(
 # 454 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&initInterpolationObject), "initInterpolationObject", &____must_manage_initInterpolationObject, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17996878689622964667UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 455 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    InterpolationObject *table; table = ((InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964572UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; })) ;
+    InterpolationObject *table; table = ((InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964572UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 457 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    ((table) ? static_cast<void> (0) : __assert_fail ("table", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 457, __PRETTY_FUNCTION__));
 # 458 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 459 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc(1, (n + 3) * sizeof(real_t)); ; calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 17996878689622964570UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + (n + 3) * sizeof(real_t) - 1) / (n + 3) * sizeof(real_t)), (n + 3) * sizeof(real_t)); ; calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 17996878689622964570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 460 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    ((table->values) ? static_cast<void> (0) : __assert_fail ("table->values", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 460, __PRETTY_FUNCTION__));
 # 461 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -4786,11 +4787,11 @@ void destroyInterpolationObject_resumable(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-       ({ free_helper((*a)->values, 17996878689622964484UL);free((*a)->values); }) ;
+       ({ free_helper((((unsigned char *)(*a)->values) - sizeof(void *)), 17996878689622964484UL);free((((unsigned char *)(*a)->values) - sizeof(void *))); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(*a, 17996878689622964477UL);free(*a); }) ;
+    ({ free_helper((((unsigned char *)*a) - sizeof(void *)), 17996878689622964477UL);free((((unsigned char *)*a) - sizeof(void *))); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -4880,7 +4881,7 @@ void bcastInterpolationObject_resumable(InterpolationObject** table)
 # 563 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       ((*table == __null) ? static_cast<void> (0) : __assert_fail ("*table == __null", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 563, __PRETTY_FUNCTION__));
 # 564 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); ; malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964725UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; }) ;
+      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964725UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 565 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*table)->n = buf.n;
 # 566 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -4888,7 +4889,7 @@ void bcastInterpolationObject_resumable(InterpolationObject** table)
 # 567 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*table)->invDx = buf.invDx;
 # 568 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(real_t) * (buf.n + 3)); ; malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 17996878689622964752UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(real_t) * (buf.n + 3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 17996878689622964752UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 569 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*table)->values++;
 # 570 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5005,7 +5006,7 @@ char tmp[4096];
 # 677 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
     int bufSize; bufSize = (((nRho) > (nR) ? (nRho) : (nR))) ;
 # 678 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622963799UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622963799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 679 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
     real_t x0; x0 = (0.0) ;
 # 680 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5040,7 +5041,7 @@ char tmp[4096];
     call_lbl_4: pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 701 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(buf, 17996878689622963799UL);free(buf); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 17996878689622963799UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5117,7 +5118,7 @@ char tmp[4096];
 # 788 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
     int bufSize; bufSize = (((nRho) > (nR) ? (nRho) : (nR))) ;
 # 789 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622964046UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622964046UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 790 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 791 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 792 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5152,7 +5153,7 @@ char tmp[4096];
     call_lbl_3: pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(buf, 17996878689622964046UL);free(buf); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 17996878689622964046UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5207,7 +5208,7 @@ BasePotential* initEamPot_quick(const char* dir, const char* file, const char* t
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
  if (____must_checkpoint_initEamPot_pot_0) { register_stack_vars(1, "initEamPot|pot|0", &____must_checkpoint_initEamPot_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); } ; ;
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      pot = ((EamPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(EamPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 17996878689622962632UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); ____chimes_tmp_ptr; })) ;
+      pot = ((EamPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(EamPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 17996878689622962632UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    ((pot) ? static_cast<void> (0) : __assert_fail ("pot", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 173, __PRETTY_FUNCTION__));
 # 174 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5284,13 +5285,13 @@ EamPotential *pot;
 # 222 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
        int maxTotalAtoms; maxTotalAtoms = (64*s->boxes->nTotalBoxes) ;
 # 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
        call_lbl_0: pot->forceExchange = ({ calling((void*)initForceHaloExchange, 0, ____alias_loc_id_4, 17996878689622962770UL, 2, (size_t)(17996878689622962770UL), (size_t)(17996878689622962770UL)); (initForceHaloExchange)(s->domain, s->boxes); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ForceExchangeData)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 17996878689622962770UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); ____chimes_tmp_ptr; }) ;
+      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeData)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 17996878689622962770UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       pot->forceExchangeData->dfEmbed = pot->dfEmbed;
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5586,7 +5587,7 @@ void eamDestroy_quick(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
     call_lbl_3: ({ calling((void*)destroyHaloExchange, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(17996878689622963650UL)); (destroyHaloExchange)(&(pot->forceExchange)); }) ;
 # 397 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(pot, 17996878689622963650UL);free(pot); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 17996878689622963650UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5657,12 +5658,12 @@ InterpolationObject* initInterpolationObject_quick(
 # 454 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&initInterpolationObject), "initInterpolationObject", &____must_manage_initInterpolationObject, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17996878689622964667UL)) ; ; ;
 # 455 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    InterpolationObject *table; table = ((InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964572UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; })) ;
+    InterpolationObject *table; table = ((InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964572UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 457 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    ((table) ? static_cast<void> (0) : __assert_fail ("table", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 457, __PRETTY_FUNCTION__));
 # 458 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 459 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc(1, (n + 3) * sizeof(real_t)); ; calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 17996878689622964570UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + (n + 3) * sizeof(real_t) - 1) / (n + 3) * sizeof(real_t)), (n + 3) * sizeof(real_t)); ; calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 17996878689622964570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 460 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    ((table->values) ? static_cast<void> (0) : __assert_fail ("table->values", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 460, __PRETTY_FUNCTION__));
 # 461 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5706,11 +5707,11 @@ void destroyInterpolationObject_quick(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-       ({ free_helper((*a)->values, 17996878689622964484UL);free((*a)->values); }) ;
+       ({ free_helper((((unsigned char *)(*a)->values) - sizeof(void *)), 17996878689622964484UL);free((((unsigned char *)(*a)->values) - sizeof(void *))); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(*a, 17996878689622964477UL);free(*a); }) ;
+    ({ free_helper((((unsigned char *)*a) - sizeof(void *)), 17996878689622964477UL);free((((unsigned char *)*a) - sizeof(void *))); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5793,7 +5794,7 @@ void bcastInterpolationObject_quick(InterpolationObject** table)
 # 563 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       ((*table == __null) ? static_cast<void> (0) : __assert_fail ("*table == __null", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 563, __PRETTY_FUNCTION__));
 # 564 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); ; malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964725UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; }) ;
+      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964725UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 565 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*table)->n = buf.n;
 # 566 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5801,7 +5802,7 @@ void bcastInterpolationObject_quick(InterpolationObject** table)
 # 567 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*table)->invDx = buf.invDx;
 # 568 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(real_t) * (buf.n + 3)); ; malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 17996878689622964752UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(real_t) * (buf.n + 3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 17996878689622964752UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 569 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*table)->values++;
 # 570 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5889,7 +5890,7 @@ char tmp[4096];
 # 677 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
     int bufSize; bufSize = (((nRho) > (nR) ? (nRho) : (nR))) ;
 # 678 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622963799UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622963799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 679 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
     real_t x0; x0 = (0.0) ;
 # 680 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5924,7 +5925,7 @@ char tmp[4096];
     call_lbl_4: pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 701 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(buf, 17996878689622963799UL);free(buf); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 17996878689622963799UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6002,7 +6003,7 @@ char tmp[4096];
 # 788 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
     int bufSize; bufSize = (((nRho) > (nR) ? (nRho) : (nR))) ;
 # 789 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622964046UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622964046UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 790 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 791 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 792 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6037,7 +6038,7 @@ char tmp[4096];
     call_lbl_3: pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(buf, 17996878689622964046UL);free(buf); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 17996878689622964046UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6095,7 +6096,7 @@ BasePotential* initEamPot_npm(const char* dir, const char* file, const char* typ
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 {
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-   EamPotential* pot = (EamPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(EamPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 17996878689622962632UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); ____chimes_tmp_ptr; }) ;
+   EamPotential* pot = (EamPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(EamPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 17996878689622962632UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    ((pot) ? static_cast<void> (0) : __assert_fail ("pot", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 173, __PRETTY_FUNCTION__));
 # 174 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6154,13 +6155,13 @@ int eamForce_npm(SimFlat* s)
 # 222 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       int maxTotalAtoms = 64*s->boxes->nTotalBoxes;
 # 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 17996878689622962770UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       pot->forceExchange = (*____chimes_extern_func_initForceHaloExchange)(s->domain, s->boxes);
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ForceExchangeData)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 17996878689622962770UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); ____chimes_tmp_ptr; }) ;
+      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeData)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 17996878689622962770UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       pot->forceExchangeData->dfEmbed = pot->dfEmbed;
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6450,7 +6451,7 @@ void eamDestroy_npm(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    (*____chimes_extern_func_destroyHaloExchange)(&(pot->forceExchange));
 # 397 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(pot, 17996878689622963650UL);free(pot); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 17996878689622963650UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6517,12 +6518,12 @@ InterpolationObject* initInterpolationObject_npm(
 # 455 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    InterpolationObject* table =
 # 456 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      (InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964572UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; }) ;
+      (InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964572UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 457 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    ((table) ? static_cast<void> (0) : __assert_fail ("table", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 457, __PRETTY_FUNCTION__));
 # 458 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 459 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc(1, (n + 3) * sizeof(real_t)); calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 17996878689622964570UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + (n + 3) * sizeof(real_t) - 1) / (n + 3) * sizeof(real_t)), (n + 3) * sizeof(real_t)); calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 17996878689622964570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 460 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    ((table->values) ? static_cast<void> (0) : __assert_fail ("table->values", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 460, __PRETTY_FUNCTION__));
 # 461 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6562,11 +6563,11 @@ void destroyInterpolationObject_npm(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-       ({ free_helper((*a)->values, 17996878689622964484UL);free((*a)->values); }) ;
+       ({ free_helper((((unsigned char *)(*a)->values) - sizeof(void *)), 17996878689622964484UL);free((((unsigned char *)(*a)->values) - sizeof(void *))); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(*a, 17996878689622964477UL);free(*a); }) ;
+    ({ free_helper((((unsigned char *)*a) - sizeof(void *)), 17996878689622964477UL);free((((unsigned char *)*a) - sizeof(void *))); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6643,7 +6644,7 @@ void bcastInterpolationObject_npm(InterpolationObject** table)
 # 563 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       ((*table == __null) ? static_cast<void> (0) : __assert_fail ("*table == __null", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c", 563, __PRETTY_FUNCTION__));
 # 564 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964725UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; }) ;
+      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 17996878689622964725UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 565 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*table)->n = buf.n;
 # 566 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6651,7 +6652,7 @@ void bcastInterpolationObject_npm(InterpolationObject** table)
 # 567 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*table)->invDx = buf.invDx;
 # 568 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(real_t) * (buf.n + 3)); malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 17996878689622964752UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(real_t) * (buf.n + 3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 17996878689622964752UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 569 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       (*table)->values++;
 # 570 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6733,7 +6734,7 @@ void eamReadSetfl_npm(EamPotential* pot, const char* dir, const char* potName)
 # 677 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    int bufSize = ((nRho) > (nR) ? (nRho) : (nR));
 # 678 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-   real_t* buf = (real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622963799UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   real_t* buf = (real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622963799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 679 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    real_t x0 = 0.0;
 # 680 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6768,7 +6769,7 @@ void eamReadSetfl_npm(EamPotential* pot, const char* dir, const char* potName)
    pot->phi = initInterpolationObject_npm(nR, x0, dR, buf);
 # 701 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(buf, 17996878689622963799UL);free(buf); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 17996878689622963799UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6838,7 +6839,7 @@ void eamReadFuncfl_npm(EamPotential* pot, const char* dir, const char* potName)
 # 788 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    int bufSize = ((nRho) > (nR) ? (nRho) : (nR));
 # 789 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-   real_t* buf = (real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622964046UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   real_t* buf = (real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 17996878689622964046UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 790 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 791 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 792 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -6873,7 +6874,7 @@ void eamReadFuncfl_npm(EamPotential* pot, const char* dir, const char* potName)
    pot->rho = initInterpolationObject_npm(nR, x0, dR, buf);
 # 812 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    ({ free_helper(buf, 17996878689622964046UL);free(buf); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 17996878689622964046UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
