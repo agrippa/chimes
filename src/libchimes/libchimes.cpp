@@ -231,7 +231,7 @@ static void *translate_old_ptr(void *ptr,
         void *container);
 static void fix_stack_or_global_pointer(void *container, string type, int nesting);
 map<void *, heap_allocation *>::iterator find_in_global_heap(void *ptr);
-void free_impl(const void *ptr);
+heap_allocation *free_impl(const void *ptr);
 static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         va_list *vl);
@@ -3078,7 +3078,6 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
         perf_profile::current_time_ns();
     assert(valid_group(group));
 
-    // void *new_ptr = realloc(ptr, nbytes);
     unsigned long long old_size = 0;
 
     if (ptr != NULL && new_ptr == ptr) {
@@ -3111,10 +3110,8 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
              * Remove the existing entry in the heap but re-use the information
              * in it to avoid the overhead of re-parsing the allocation type.
              */
-            map<void *, heap_allocation *>::iterator alloc_ptr = 
-                find_in_global_heap((void *)ptr);
+            heap_allocation *alloc = free_impl(ptr);
 
-            heap_allocation *alloc = alloc_ptr->second;
             assert(alloc->get_alias_group() == group);
             old_size = alloc->get_size();
 
@@ -3127,7 +3124,6 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
                     ptr_field_offsets[i] = (alloc->get_ptr_field_offsets())[i];
                 }
             }
-            free_impl(ptr);
         } else {
             /*
              * A realloc of a NULL pointer, equivalent to a fresh malloc.
@@ -3161,17 +3157,19 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
 #endif
 }
 
-void free_impl(const void *ptr) {
+heap_allocation *free_impl(const void *ptr) {
 #ifdef VERBOSE
     fprintf(stderr, "free_impl: ptr=%p\n", ptr);
 #endif
-    map<void *, heap_allocation *>::iterator in_heap =
-        find_in_global_heap((void *)ptr);
-
     // Update heap metadata
     VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
+    map<void *, heap_allocation *>::iterator in_heap = global_heap.find((void *)ptr);
+    assert(in_heap != global_heap.end() &&
+            in_heap->second->get_address() == ptr);
     global_heap.erase(in_heap);
+    heap_allocation *alloc = in_heap->second;
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
+    return alloc;
 }
 
 map<void *, heap_allocation *>::iterator find_in_global_heap(void *ptr) {
@@ -3203,9 +3201,9 @@ void free_helper(const void *ptr, size_t group) {
          * applications, for example when the host application does a 0-byte
          * allocation and then frees it.
          */
-        map<void *, heap_allocation *>::iterator in_heap =
-            find_in_global_heap((void *)ptr);
-        size_t original_group = in_heap->second->get_alias_group();
+        heap_allocation *alloc = free_impl(ptr);
+
+        size_t original_group = alloc->get_alias_group();
 
 #ifdef VERBOSE
         fprintf(stderr, "free_wrapper: asserting that original_group=%lu and "
@@ -3213,9 +3211,7 @@ void free_helper(const void *ptr, size_t group) {
 #endif
         assert(aliased(original_group, group, true));
 
-        __sync_fetch_and_sub(&total_allocations, in_heap->second->get_size());
-
-        free_impl(ptr);
+        __sync_fetch_and_sub(&total_allocations, alloc->get_size());
     }
 
     ADD_TO_OVERHEAD
@@ -5139,12 +5135,6 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
             }
         }
     }
-
-    // for (vector<map<unsigned, thread_ctx *>::iterator>::iterator i =
-    //         to_erase.begin(), e = to_erase.end(); i != e; i++) {
-    //     map<unsigned, thread_ctx *>::iterator curr = *i;
-    //     thread_ctxs.erase(curr);
-    // }
 
     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
     
