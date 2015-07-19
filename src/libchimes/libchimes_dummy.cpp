@@ -413,8 +413,8 @@ void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int i
 #endif
 }
 
-void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...) {
+void realloc_helper(const void *new_ptr, const void *ptr, void *header,
+        size_t nbytes, size_t group, int is_ptr, int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_realloc_wrapper, 1);
 #endif

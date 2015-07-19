@@ -235,8 +235,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -255,7 +256,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5295,7 +5296,7 @@ static int avi_add_index_entry_resumable(avi_t *AVI, unsigned char *tag, long fl
 # 180 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 181 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-     ptr = ({ void *____chimes_tmp_ptr = realloc((void *)AVI->idx, (AVI->max_idx + 4096) * 16); ; realloc_helper(____chimes_tmp_ptr, (void *)AVI->idx, (AVI->max_idx+4096)*16, 1795814175320016815UL, 0, 0); ____chimes_tmp_ptr; }) ;
+     ptr = ({ void *____chimes_tmp_header; ____chimes_tmp_header = ((void *)AVI->idx) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc(((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ((AVI->max_idx + 4096) * 16) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, ((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ____chimes_tmp_header, (AVI->max_idx+4096)*16, 1795814175320016815UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 182 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 183 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      if(ptr == 0) {
@@ -5360,7 +5361,7 @@ avi_t* AVI_open_output_file_resumable(char * filename)
 # 225 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 226 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 227 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI==0)
 # 229 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5383,7 +5384,7 @@ avi_t* AVI_open_output_file_resumable(char * filename)
 # 245 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 246 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free_helper(AVI, 1795814175320014837UL);free(AVI); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320014837UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 247 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 1795814175320014837UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 248 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5405,7 +5406,7 @@ avi_t* AVI_open_output_file_resumable(char * filename)
 # 258 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 4;
 # 259 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free_helper(AVI, 1795814175320014837UL);free(AVI); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320014837UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 260 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 1795814175320014837UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 261 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6579,13 +6580,13 @@ int AVI_close_resumable(avi_t *AVI)
 # 1053 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    close(AVI->fdes);
 # 1054 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->idx) ({ free_helper(AVI->idx, 1795814175320017219UL);free(AVI->idx); }) ;
+   if(AVI->idx) ({ free_helper((((unsigned char *)AVI->idx) - sizeof(void *)), 1795814175320017219UL);free((((unsigned char *)AVI->idx) - sizeof(void *))); }) ;
 # 1055 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_index) ({ free_helper(AVI->video_index, 1795814175320017219UL);free(AVI->video_index); }) ;
+   if(AVI->video_index) ({ free_helper((((unsigned char *)AVI->video_index) - sizeof(void *)), 1795814175320017219UL);free((((unsigned char *)AVI->video_index) - sizeof(void *))); }) ;
 # 1056 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1057 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1058 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free_helper(AVI, 1795814175320017244UL);free(AVI); }) ;
+    ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320017244UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1059 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1060 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, ____alias_loc_id_18, ____chimes_did_disable22, false); return ret;
@@ -6604,7 +6605,7 @@ avi_t *AVI_open_input_file_resumable(char *filename, int getIndex)
 # 1075 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1076 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1077 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1078 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1079 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6632,7 +6633,7 @@ avi_t *AVI_open_input_file_resumable(char *filename, int getIndex)
 # 1092 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 1093 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free_helper(AVI, 1795814175320014837UL);free(AVI); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320014837UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1094 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 1795814175320014837UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23, false); return 0;
 # 1095 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6661,7 +6662,7 @@ avi_t *AVI_open_fd_resumable(int fd, int getIndex)
 # 1108 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1109 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1110 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1111 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1112 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6773,7 +6774,7 @@ long nai[8];
 # 1172 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             hdrl_len = n;
 # 1173 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 1795814175320018984UL, 0, 0); ____chimes_tmp_ptr; }) ;
+            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n, 1795814175320018984UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             if(hdrl_data==0) { call_lbl_7: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6812,7 +6813,7 @@ long nai[8];
 # 1195 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1196 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 1795814175320019454UL, 0, 0); ____chimes_tmp_ptr; }) ;
+         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n, 1795814175320019454UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1197 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          if(AVI->idx==0) { call_lbl_10: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1198 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7000,7 +7001,7 @@ long nai[8];
    }
 # 1305 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1306 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free_helper(hdrl_data, 1795814175320018984UL);free(hdrl_data); }) ;
+    ({ free_helper((((unsigned char *)hdrl_data) - sizeof(void *)), 1795814175320018984UL);free((((unsigned char *)hdrl_data) - sizeof(void *))); }) ;
 # 1307 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1308 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(!vids_strh_seen || !vids_strf_seen) { call_lbl_28: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
@@ -7191,7 +7192,7 @@ long nai[8];
 # 1422 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_frames==0) { call_lbl_41: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1423 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nvi * sizeof(video_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(video_index_entry), 0); ____chimes_tmp_ptr; }) ;
+   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nvi * sizeof(video_index_entry)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(video_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1424 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_index==0) { call_lbl_42: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1425 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7200,7 +7201,7 @@ long nai[8];
 # 1427 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1428 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nai[j] * sizeof(audio_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(audio_index_entry), 0); ____chimes_tmp_ptr; }) ;
+    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nai[j] * sizeof(audio_index_entry)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(audio_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1429 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     if(AVI->track[j].audio_index==0) { call_lbl_43: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1430 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8149,7 +8150,7 @@ static int avi_add_index_entry_quick(avi_t *AVI, unsigned char *tag, long flags,
 # 180 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 181 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-     ptr = ({ void *____chimes_tmp_ptr = realloc((void *)AVI->idx, (AVI->max_idx + 4096) * 16); ; realloc_helper(____chimes_tmp_ptr, (void *)AVI->idx, (AVI->max_idx+4096)*16, 1795814175320016815UL, 0, 0); ____chimes_tmp_ptr; }) ;
+     ptr = ({ void *____chimes_tmp_header; ____chimes_tmp_header = ((void *)AVI->idx) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc(((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ((AVI->max_idx + 4096) * 16) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, ((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ____chimes_tmp_header, (AVI->max_idx+4096)*16, 1795814175320016815UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 182 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 183 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      if(ptr == 0) {
@@ -8213,7 +8214,7 @@ avi_t* AVI_open_output_file_quick(char * filename)
 # 225 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 226 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 227 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI==0)
 # 229 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8236,7 +8237,7 @@ avi_t* AVI_open_output_file_quick(char * filename)
 # 245 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 246 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free_helper(AVI, 1795814175320014837UL);free(AVI); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320014837UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 247 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 1795814175320014837UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 248 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8258,7 +8259,7 @@ avi_t* AVI_open_output_file_quick(char * filename)
 # 258 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 4;
 # 259 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free_helper(AVI, 1795814175320014837UL);free(AVI); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320014837UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 260 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 1795814175320014837UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 261 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9413,13 +9414,13 @@ int AVI_close_quick(avi_t *AVI)
 # 1053 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    close(AVI->fdes);
 # 1054 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->idx) ({ free_helper(AVI->idx, 1795814175320017219UL);free(AVI->idx); }) ;
+   if(AVI->idx) ({ free_helper((((unsigned char *)AVI->idx) - sizeof(void *)), 1795814175320017219UL);free((((unsigned char *)AVI->idx) - sizeof(void *))); }) ;
 # 1055 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_index) ({ free_helper(AVI->video_index, 1795814175320017219UL);free(AVI->video_index); }) ;
+   if(AVI->video_index) ({ free_helper((((unsigned char *)AVI->video_index) - sizeof(void *)), 1795814175320017219UL);free((((unsigned char *)AVI->video_index) - sizeof(void *))); }) ;
 # 1056 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1057 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1058 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free_helper(AVI, 1795814175320017244UL);free(AVI); }) ;
+    ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320017244UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1059 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1060 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, ____alias_loc_id_18, ____chimes_did_disable22, false); return ret;
@@ -9437,7 +9438,7 @@ avi_t *AVI_open_input_file_quick(char *filename, int getIndex)
 # 1075 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1076 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1077 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1078 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1079 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9465,7 +9466,7 @@ avi_t *AVI_open_input_file_quick(char *filename, int getIndex)
 # 1092 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 1093 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free_helper(AVI, 1795814175320014837UL);free(AVI); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320014837UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1094 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 1795814175320014837UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23, false); return 0;
 # 1095 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9493,7 +9494,7 @@ avi_t *AVI_open_fd_quick(int fd, int getIndex)
 # 1108 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1109 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1110 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1111 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1112 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9606,7 +9607,7 @@ long nai[8];
 # 1172 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             hdrl_len = n;
 # 1173 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 1795814175320018984UL, 0, 0); ____chimes_tmp_ptr; }) ;
+            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n, 1795814175320018984UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             if(hdrl_data==0) { call_lbl_7: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9645,7 +9646,7 @@ long nai[8];
 # 1195 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1196 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 1795814175320019454UL, 0, 0); ____chimes_tmp_ptr; }) ;
+         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n, 1795814175320019454UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1197 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          if(AVI->idx==0) { call_lbl_10: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1198 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9833,7 +9834,7 @@ long nai[8];
    }
 # 1305 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1306 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free_helper(hdrl_data, 1795814175320018984UL);free(hdrl_data); }) ;
+    ({ free_helper((((unsigned char *)hdrl_data) - sizeof(void *)), 1795814175320018984UL);free((((unsigned char *)hdrl_data) - sizeof(void *))); }) ;
 # 1307 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1308 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(!vids_strh_seen || !vids_strf_seen) { call_lbl_28: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
@@ -10024,7 +10025,7 @@ long nai[8];
 # 1422 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_frames==0) { call_lbl_41: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1423 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nvi * sizeof(video_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(video_index_entry), 0); ____chimes_tmp_ptr; }) ;
+   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nvi * sizeof(video_index_entry)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(video_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1424 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_index==0) { call_lbl_42: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1425 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10033,7 +10034,7 @@ long nai[8];
 # 1427 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1428 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nai[j] * sizeof(audio_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(audio_index_entry), 0); ____chimes_tmp_ptr; }) ;
+    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nai[j] * sizeof(audio_index_entry)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(audio_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1429 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     if(AVI->track[j].audio_index==0) { call_lbl_43: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1430 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10892,7 +10893,7 @@ static int avi_add_index_entry_npm(avi_t *AVI, unsigned char *tag, long flags, u
 # 180 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 181 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-     ptr = ({ void *____chimes_tmp_ptr = realloc((void *)AVI->idx, (AVI->max_idx + 4096) * 16); realloc_helper(____chimes_tmp_ptr, (void *)AVI->idx, (AVI->max_idx+4096)*16, 1795814175320016815UL, 0, 0); ____chimes_tmp_ptr; }) ;
+     ptr = ({ void *____chimes_tmp_header = (void *)AVI->idx; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc(((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ((AVI->max_idx + 4096) * 16) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, ((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ____chimes_tmp_header, (AVI->max_idx+4096)*16, 1795814175320016815UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 182 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 183 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      if(ptr == 0) {
@@ -10952,7 +10953,7 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 225 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 226 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 227 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI==0)
 # 229 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10975,7 +10976,7 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 245 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 246 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free_helper(AVI, 1795814175320014837UL);free(AVI); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320014837UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 247 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       return 0;
 # 248 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10997,7 +10998,7 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 258 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 4;
 # 259 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free_helper(AVI, 1795814175320014837UL);free(AVI); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320014837UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 260 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       return 0;
 # 261 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12116,13 +12117,13 @@ int AVI_close_npm(avi_t *AVI)
 # 1053 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    close(AVI->fdes);
 # 1054 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->idx) ({ free_helper(AVI->idx, 1795814175320017219UL);free(AVI->idx); }) ;
+   if(AVI->idx) ({ free_helper((((unsigned char *)AVI->idx) - sizeof(void *)), 1795814175320017219UL);free((((unsigned char *)AVI->idx) - sizeof(void *))); }) ;
 # 1055 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_index) ({ free_helper(AVI->video_index, 1795814175320017219UL);free(AVI->video_index); }) ;
+   if(AVI->video_index) ({ free_helper((((unsigned char *)AVI->video_index) - sizeof(void *)), 1795814175320017219UL);free((((unsigned char *)AVI->video_index) - sizeof(void *))); }) ;
 # 1056 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1057 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1058 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free_helper(AVI, 1795814175320017244UL);free(AVI); }) ;
+    ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320017244UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1059 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1060 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    return ret;
@@ -12138,7 +12139,7 @@ avi_t *AVI_open_input_file_npm(char *filename, int getIndex)
 # 1075 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1076 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1077 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1078 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1079 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12166,7 +12167,7 @@ avi_t *AVI_open_input_file_npm(char *filename, int getIndex)
 # 1092 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 1093 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free_helper(AVI, 1795814175320014837UL);free(AVI); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 1795814175320014837UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1094 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       return 0;
 # 1095 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12192,7 +12193,7 @@ avi_t *AVI_open_fd_npm(int fd, int getIndex)
 # 1108 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1109 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1110 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 1795814175320014837UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1111 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1112 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12297,7 +12298,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1172 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             hdrl_len = n;
 # 1173 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc(n); malloc_helper(____chimes_tmp_ptr, n, 1795814175320018984UL, 0, 0); ____chimes_tmp_ptr; }) ;
+            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n, 1795814175320018984UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             if(hdrl_data==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
 # 1175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12336,7 +12337,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1195 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1196 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc(n); malloc_helper(____chimes_tmp_ptr, n, 1795814175320019454UL, 0, 0); ____chimes_tmp_ptr; }) ;
+         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n, 1795814175320019454UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1197 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          if(AVI->idx==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; }
 # 1198 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12524,7 +12525,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
    }
 # 1305 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1306 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free_helper(hdrl_data, 1795814175320018984UL);free(hdrl_data); }) ;
+    ({ free_helper((((unsigned char *)hdrl_data) - sizeof(void *)), 1795814175320018984UL);free((((unsigned char *)hdrl_data) - sizeof(void *))); }) ;
 # 1307 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1308 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(!vids_strh_seen || !vids_strf_seen) { AVI_close_npm(AVI); AVI_errno = 12; return 0; }
@@ -12715,7 +12716,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1422 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_frames==0) { AVI_close_npm(AVI); AVI_errno = 12; return 0; };
 # 1423 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nvi * sizeof(video_index_entry)); malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(video_index_entry), 0); ____chimes_tmp_ptr; }) ;
+   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nvi * sizeof(video_index_entry)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(video_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1424 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_index==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
 # 1425 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12724,7 +12725,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1427 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1428 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nai[j] * sizeof(audio_index_entry)); malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(audio_index_entry), 0); ____chimes_tmp_ptr; }) ;
+    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nai[j] * sizeof(audio_index_entry)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 1795814175320019454UL, 0, 1, (int)sizeof(audio_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1429 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     if(AVI->track[j].audio_index==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
 # 1430 "/gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"

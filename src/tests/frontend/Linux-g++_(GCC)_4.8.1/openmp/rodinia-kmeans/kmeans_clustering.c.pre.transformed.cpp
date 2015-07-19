@@ -66,8 +66,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -86,7 +87,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -3421,9 +3422,9 @@ float** kmeans_clustering_resumable(float **feature,
 # 136 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 137 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 138 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc(nclusters * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600628UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600628UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 139 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc(nclusters * nfeatures * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 3125210765127600096UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc((nclusters * nfeatures * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 3125210765127600096UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 140 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { clusters[i] = clusters[i-1] + nfeatures; };
 # 142 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
@@ -3443,27 +3444,27 @@ float** kmeans_clustering_resumable(float **feature,
 # 153 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 154 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 155 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc(nclusters, sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 3125210765127600624UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc((nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 3125210765127600624UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 156 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 157 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc(nclusters * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600616UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600616UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 158 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc(nclusters * nfeatures, sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 3125210765127600618UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc((nclusters * nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 3125210765127600618UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 159 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { new_centers[i] = new_centers[i-1] + nfeatures; };
 # 161 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 162 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 163 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc(nthreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 3125210765127600456UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 3125210765127600456UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 164 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc(nthreads * nclusters, sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 3125210765127600458UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc((nthreads * nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 3125210765127600458UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 165 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers_len[i] = partial_new_centers_len[i-1]+nclusters; };
 # 167 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 168 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
- partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc(nthreads * sizeof(float **)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 3125210765127600331UL, 1, 0); ____chimes_tmp_ptr; }) ;
+ partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(float **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 3125210765127600331UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 169 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc(nthreads * nclusters * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 3125210765127600333UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc((nthreads * nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 3125210765127600333UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 170 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers[i] = partial_new_centers[i-1] + nclusters; };
 # 172 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
@@ -3472,7 +3473,7 @@ float** kmeans_clustering_resumable(float **feature,
 # 174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  {
 # 175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc(nfeatures, sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 3125210765127600325UL, 0, 0); ____chimes_tmp_ptr; }) ; };
+        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc((nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 3125210765127600325UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ; };
 # 177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  }
 # 178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
@@ -3575,11 +3576,11 @@ bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread();
 # 239 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 240 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 241 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper(new_centers[0], 3125210765127600618UL);free(new_centers[0]); }) ;
+     ({ free_helper((((unsigned char *)new_centers[0]) - sizeof(void *)), 3125210765127600618UL);free((((unsigned char *)new_centers[0]) - sizeof(void *))); }) ;
 # 242 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper(new_centers, 3125210765127600616UL);free(new_centers); }) ;
+     ({ free_helper((((unsigned char *)new_centers) - sizeof(void *)), 3125210765127600616UL);free((((unsigned char *)new_centers) - sizeof(void *))); }) ;
 # 243 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper(new_centers_len, 3125210765127600624UL);free(new_centers_len); }) ;
+     ({ free_helper((((unsigned char *)new_centers_len) - sizeof(void *)), 3125210765127600624UL);free((((unsigned char *)new_centers_len) - sizeof(void *))); }) ;
 # 244 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 245 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float **____chimes_ret_var_2; ; ____chimes_ret_var_2 = (clusters); rm_stack(true, 3125210765127600628UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
@@ -3696,9 +3697,9 @@ float** kmeans_clustering_quick(float **feature,
 # 136 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 137 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 138 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc(nclusters * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600628UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600628UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 139 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc(nclusters * nfeatures * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 3125210765127600096UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc((nclusters * nfeatures * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 3125210765127600096UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 140 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { clusters[i] = clusters[i-1] + nfeatures; };
 # 142 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
@@ -3718,27 +3719,27 @@ float** kmeans_clustering_quick(float **feature,
 # 153 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 154 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 155 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc(nclusters, sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 3125210765127600624UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc((nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 3125210765127600624UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 156 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 157 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc(nclusters * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600616UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600616UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 158 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc(nclusters * nfeatures, sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 3125210765127600618UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc((nclusters * nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 3125210765127600618UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 159 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { new_centers[i] = new_centers[i-1] + nfeatures; };
 # 161 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 162 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 163 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc(nthreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 3125210765127600456UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 3125210765127600456UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 164 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc(nthreads * nclusters, sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 3125210765127600458UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc((nthreads * nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 3125210765127600458UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 165 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers_len[i] = partial_new_centers_len[i-1]+nclusters; };
 # 167 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 168 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
- partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc(nthreads * sizeof(float **)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 3125210765127600331UL, 1, 0); ____chimes_tmp_ptr; }) ;
+ partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(float **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 3125210765127600331UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 169 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc(nthreads * nclusters * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 3125210765127600333UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc((nthreads * nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 3125210765127600333UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 170 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers[i] = partial_new_centers[i-1] + nclusters; };
 # 172 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
@@ -3747,7 +3748,7 @@ float** kmeans_clustering_quick(float **feature,
 # 174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  {
 # 175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc(nfeatures, sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 3125210765127600325UL, 0, 0); ____chimes_tmp_ptr; }) ; };
+        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc((nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 3125210765127600325UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ; };
 # 177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  }
 # 178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
@@ -3850,11 +3851,11 @@ bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread();
 # 239 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 240 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 241 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper(new_centers[0], 3125210765127600618UL);free(new_centers[0]); }) ;
+     ({ free_helper((((unsigned char *)new_centers[0]) - sizeof(void *)), 3125210765127600618UL);free((((unsigned char *)new_centers[0]) - sizeof(void *))); }) ;
 # 242 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper(new_centers, 3125210765127600616UL);free(new_centers); }) ;
+     ({ free_helper((((unsigned char *)new_centers) - sizeof(void *)), 3125210765127600616UL);free((((unsigned char *)new_centers) - sizeof(void *))); }) ;
 # 243 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper(new_centers_len, 3125210765127600624UL);free(new_centers_len); }) ;
+     ({ free_helper((((unsigned char *)new_centers_len) - sizeof(void *)), 3125210765127600624UL);free((((unsigned char *)new_centers_len) - sizeof(void *))); }) ;
 # 244 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 245 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float **____chimes_ret_var_2; ; ____chimes_ret_var_2 = (clusters); rm_stack(true, 3125210765127600628UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
@@ -3969,9 +3970,9 @@ float** kmeans_clustering_npm(float **feature,
 # 136 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 137 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 138 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc(nclusters * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600628UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600628UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 139 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc(nclusters * nfeatures * sizeof(float)); malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 3125210765127600096UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc((nclusters * nfeatures * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 3125210765127600096UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 140 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { clusters[i] = clusters[i-1] + nfeatures; };
 # 142 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
@@ -3991,27 +3992,27 @@ float** kmeans_clustering_npm(float **feature,
 # 153 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 154 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 155 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc(nclusters, sizeof(int)); calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 3125210765127600624UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc((nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 3125210765127600624UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 156 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 157 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc(nclusters * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600616UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 3125210765127600616UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 158 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc(nclusters * nfeatures, sizeof(float)); calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 3125210765127600618UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc((nclusters * nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 3125210765127600618UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 159 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { new_centers[i] = new_centers[i-1] + nfeatures; };
 # 161 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 162 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 163 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc(nthreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 3125210765127600456UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 3125210765127600456UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 164 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc(nthreads * nclusters, sizeof(int)); calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 3125210765127600458UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc((nthreads * nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 3125210765127600458UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 165 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers_len[i] = partial_new_centers_len[i-1]+nclusters; };
 # 167 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 168 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
- partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc(nthreads * sizeof(float **)); malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 3125210765127600331UL, 1, 0); ____chimes_tmp_ptr; }) ;
+ partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(float **)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 3125210765127600331UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 169 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc(nthreads * nclusters * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 3125210765127600333UL, 1, 0); ____chimes_tmp_ptr; }) ;
+    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc((nthreads * nclusters * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 3125210765127600333UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 170 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers[i] = partial_new_centers[i-1] + nclusters; };
 # 172 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
@@ -4020,7 +4021,7 @@ float** kmeans_clustering_npm(float **feature,
 # 174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  {
 # 175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc(nfeatures, sizeof(float)); calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 3125210765127600325UL, 0, 0); ____chimes_tmp_ptr; }) ; };
+        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc((nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 3125210765127600325UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ; };
 # 177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  }
 # 178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
@@ -4119,11 +4120,11 @@ float** kmeans_clustering_npm(float **feature,
 # 239 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 240 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 241 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper(new_centers[0], 3125210765127600618UL);free(new_centers[0]); }) ;
+     ({ free_helper((((unsigned char *)new_centers[0]) - sizeof(void *)), 3125210765127600618UL);free((((unsigned char *)new_centers[0]) - sizeof(void *))); }) ;
 # 242 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper(new_centers, 3125210765127600616UL);free(new_centers); }) ;
+     ({ free_helper((((unsigned char *)new_centers) - sizeof(void *)), 3125210765127600616UL);free((((unsigned char *)new_centers) - sizeof(void *))); }) ;
 # 243 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper(new_centers_len, 3125210765127600624UL);free(new_centers_len); }) ;
+     ({ free_helper((((unsigned char *)new_centers_len) - sizeof(void *)), 3125210765127600624UL);free((((unsigned char *)new_centers_len) - sizeof(void *))); }) ;
 # 244 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 245 "/gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float ** ____chimes_ret_var_2; ____chimes_ret_var_2 = (clusters); return ____chimes_ret_var_2; ;

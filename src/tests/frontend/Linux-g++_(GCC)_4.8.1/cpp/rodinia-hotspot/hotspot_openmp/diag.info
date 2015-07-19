@@ -3,25 +3,25 @@ ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 43 6 l
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 175 6 len=5 fatal_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 181 6 len=10 read_input_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 204 6 len=5 usage_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 20  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617312UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 20  ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617312UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 65 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 21  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617319UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 21  ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617319UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 66 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 22  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617326UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 22  ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617326UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 67 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 2  ({ free_helper(temp, 12769076878968617312UL);free(temp);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 2  ({ free_helper((((unsigned char *)temp) - sizeof(void *)), 12769076878968617312UL);free((((unsigned char *)temp) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 11 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 2  ({ free_helper(power, 12769076878968617319UL);free(power);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 2  ({ free_helper((((unsigned char *)power) - sizeof(void *)), 12769076878968617319UL);free((((unsigned char *)power) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 20  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617312UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 20  ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617312UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 65 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 21  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617319UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 21  ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617319UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 66 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 22  ({ void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617326UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 22  ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 12769076878968617326UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 67 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 2  ({ free_helper(temp, 12769076878968617312UL);free(temp);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 2  ({ free_helper((((unsigned char *)temp) - sizeof(void *)), 12769076878968617312UL);free((((unsigned char *)temp) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 264 11 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 2  ({ free_helper(power, 12769076878968617319UL);free(power);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 2  ({ free_helper((((unsigned char *)power) - sizeof(void *)), 12769076878968617319UL);free((((unsigned char *)power) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 265 12 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 26 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 22 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
@@ -103,12 +103,12 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 2
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 220 21 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 5  double start_time;  start_time = (seconds()) ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 222 34 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 24 void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 96 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 25 void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 97 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 26 void *____chimes_tmp_ptr = calloc(grid_rows * grid_cols, sizeof(double)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 98 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 24 void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 235 157 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 25 void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 236 158 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 26 void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 237 159 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 251 5  double end_time;  end_time = (seconds()) ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 251 32 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 267 3 int ____chimes_ret_var_1; ;

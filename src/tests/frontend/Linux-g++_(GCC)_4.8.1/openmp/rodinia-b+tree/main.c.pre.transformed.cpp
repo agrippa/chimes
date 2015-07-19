@@ -339,8 +339,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -359,7 +360,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4966,7 +4967,7 @@ list_insert_head_resumable( list_t *l,
 # 301 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i; ;
 # 302 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 302); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 302); exit(-1); } _tmp; });
 # 303 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_0: ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 304 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5007,7 +5008,7 @@ list_insert_tail_resumable( list_t *l,
   list_item_t *i; ;
 # 322 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 323 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 323); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 323); exit(-1); } _tmp; });
 # 324 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_0: ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 325 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5049,7 +5050,7 @@ list_insert_before_resumable( list_t *l,
   list_item_t *i; ;
 # 343 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 344 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 344); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 344); exit(-1); } _tmp; });
 # 345 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_0: ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 346 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5098,7 +5099,7 @@ list_insert_after_resumable( list_t *l,
   list_item_t *i; ;
 # 369 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 370 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 370); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 370); exit(-1); } _tmp; });
 # 371 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_0: ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 372 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5154,7 +5155,7 @@ list_item_t *itr;
    ;
 # 395 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 396 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 396); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 396); exit(-1); } _tmp; });
 # 397 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_0: ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 398 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5451,7 +5452,7 @@ list_item_delete_resumable( list_item_t *li,
   }
 # 549 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 550 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(li, 17493500875420195752UL);free(li); }) ;
+   ({ free_helper((((unsigned char *)li) - sizeof(void *)), 17493500875420195752UL);free((((unsigned char *)li) - sizeof(void *))); }) ;
 # 551 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_item_delete", (int *)0x0, ____alias_loc_id_28, ____chimes_did_disable28, false); }
 # 552 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5685,7 +5686,7 @@ transform_to_cuda_resumable( node * root,
 # 666 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  malloc_size = size*sizeof(record) + max_nodes*sizeof(knode);
 # 667 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- mem = (char*)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(malloc_size); ; malloc_helper(____chimes_tmp_ptr, malloc_size, 17493500875420201867UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 667); exit(-1); } _tmp; });
+ mem = (char*)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((malloc_size) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, malloc_size, 17493500875420201867UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 667); exit(-1); } _tmp; });
 # 668 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if(mem==__null){
 # 669 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5868,7 +5869,7 @@ findRange_resumable( node * root,
  if (c == __null) { list_t *____chimes_ret_var_17; ; ____chimes_ret_var_17 = (__null); rm_stack(true, 17493500875420202575UL, "findRange", &____must_manage_findRange, ____alias_loc_id_67, ____chimes_did_disable44, false); return ____chimes_ret_var_17; ; };
 # 774 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 775 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  list_t *retList; retList = ((list_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(list_t)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 775); exit(-1); } _tmp; })) ;
+  list_t *retList; retList = ((list_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(list_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 775); exit(-1); } _tmp; })) ;
 # 776 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   call_lbl_1: ({ calling_npm("list_init", 0); list_init_npm(retList, __null, __null); });
 # 777 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6317,7 +6318,7 @@ make_record_resumable(int value)
 # 1038 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {const int ____chimes_did_disable56 = new_stack((void *)(&make_record), "make_record", &____must_manage_make_record, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1039 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  record *new_record; new_record = ((record *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(record)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1039); exit(-1); } _tmp; })) ;
+  record *new_record; new_record = ((record *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(record)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1039); exit(-1); } _tmp; })) ;
 # 1040 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_record == __null) {
 # 1041 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6349,7 +6350,7 @@ make_node_resumable( void )
 # 1054 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *new_node; ;
 # 1055 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node = (node *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(node)); ; malloc_helper(____chimes_tmp_ptr, sizeof(node), 17493500875420198448UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1055); exit(-1); } _tmp; });
+ new_node = (node *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(node)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(node), 17493500875420198448UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1055); exit(-1); } _tmp; });
 # 1056 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node == __null) {
 # 1057 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6359,7 +6360,7 @@ make_node_resumable( void )
 # 1059 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1060 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order - 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (order - 1) * sizeof(int), 17493500875420201550UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1060); exit(-1); } _tmp; });
+ new_node->keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(((order - 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (order - 1) * sizeof(int), 17493500875420201550UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1060); exit(-1); } _tmp; });
 # 1061 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->keys == __null) {
 # 1062 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6369,7 +6370,7 @@ make_node_resumable( void )
 # 1064 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1065 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->pointers = (void **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420201550UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1065); exit(-1); } _tmp; });
+ new_node->pointers = (void **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420201550UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1065); exit(-1); } _tmp; });
 # 1066 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->pointers == __null) {
 # 1067 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6500,7 +6501,7 @@ insert_into_leaf_after_splitting_resumable( node* root,
   call_lbl_0: new_leaf = ({ calling_npm("make_leaf", 0); make_leaf_npm(); });
 # 1133 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1134 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420198898UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1134); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420198898UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1134); exit(-1); } _tmp; });
 # 1135 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1136 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6511,7 +6512,7 @@ insert_into_leaf_after_splitting_resumable( node* root,
  }
 # 1139 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1140 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (void **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420198886UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1140); exit(-1); } _tmp; });
+ temp_pointers = (void **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420198886UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1140); exit(-1); } _tmp; });
 # 1141 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1142 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6573,9 +6574,9 @@ insert_into_leaf_after_splitting_resumable( node* root,
  }
 # 1174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_pointers, 17493500875420198886UL);free(temp_pointers); }) ;
+  ({ free_helper((((unsigned char *)temp_pointers) - sizeof(void *)), 17493500875420198886UL);free((((unsigned char *)temp_pointers) - sizeof(void *))); }) ;
 # 1176 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_keys, 17493500875420198898UL);free(temp_keys); }) ;
+  ({ free_helper((((unsigned char *)temp_keys) - sizeof(void *)), 17493500875420198898UL);free((((unsigned char *)temp_keys) - sizeof(void *))); }) ;
 # 1177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_leaf->pointers[order - 1] = leaf->pointers[order - 1];
@@ -6665,7 +6666,7 @@ insert_into_node_after_splitting_resumable( node* root,
  node **temp_pointers; ;
 # 1236 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1236 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (node **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order + 1) * sizeof(node *)); ; malloc_helper(____chimes_tmp_ptr, (order + 1) * sizeof(node *), 17493500875420199424UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1236); exit(-1); } _tmp; });
+ temp_pointers = (node **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(((order + 1) * sizeof(node *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (order + 1) * sizeof(node *), 17493500875420199424UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1236); exit(-1); } _tmp; });
 # 1237 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1238 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6675,7 +6676,7 @@ insert_into_node_after_splitting_resumable( node* root,
 # 1240 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1241 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420199437UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1241); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420199437UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1241); exit(-1); } _tmp; });
 # 1242 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1243 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6745,9 +6746,9 @@ insert_into_node_after_splitting_resumable( node* root,
 # 1279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->pointers[j] = temp_pointers[i];
 # 1280 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_pointers, 17493500875420199424UL);free(temp_pointers); }) ;
+  ({ free_helper((((unsigned char *)temp_pointers) - sizeof(void *)), 17493500875420199424UL);free((((unsigned char *)temp_pointers) - sizeof(void *))); }) ;
 # 1281 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_keys, 17493500875420199437UL);free(temp_keys); }) ;
+  ({ free_helper((((unsigned char *)temp_keys) - sizeof(void *)), 17493500875420199437UL);free((((unsigned char *)temp_keys) - sizeof(void *))); }) ;
 # 1282 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->parent = old_node->parent;
 # 1283 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7051,11 +7052,11 @@ adjust_root_resumable(node* root)
  }; } else {new_root = __null; } ;
 # 1505 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1506 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->keys, 17493500875420201550UL);free(root->keys); }) ;
+  ({ free_helper((((unsigned char *)root->keys) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root->keys) - sizeof(void *))); }) ;
 # 1507 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->pointers, 17493500875420201550UL);free(root->pointers); }) ;
+  ({ free_helper((((unsigned char *)root->pointers) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root->pointers) - sizeof(void *))); }) ;
 # 1508 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root, 17493500875420201550UL);free(root); }) ;
+  ({ free_helper((((unsigned char *)root) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root) - sizeof(void *))); }) ;
 # 1509 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1510 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *____chimes_ret_var_49; ; ____chimes_ret_var_49 = (new_root); rm_stack(true, 17493500875420201550UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_89, ____chimes_did_disable70, false); return ____chimes_ret_var_49; ;
@@ -7233,11 +7234,11 @@ coalesce_nodes_resumable( node* root,
 # 1638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_1: root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, n->parent, k_prime, n); });
 # 1639 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(n->keys, 17493500875420200439UL);free(n->keys); }) ;
+   ({ free_helper((((unsigned char *)n->keys) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n->keys) - sizeof(void *))); }) ;
 # 1640 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(n->pointers, 17493500875420200439UL);free(n->pointers); }) ;
+   ({ free_helper((((unsigned char *)n->pointers) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n->pointers) - sizeof(void *))); }) ;
 # 1641 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(n, 17493500875420200439UL);free(n); }) ;
+   ({ free_helper((((unsigned char *)n) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n) - sizeof(void *))); }) ;
 # 1642 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }; } else {for (i = 0; i < n->parent->num_keys; i++) { if (n->parent->pointers[i + 1] == n) {
 # 1646 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7476,7 +7477,7 @@ deleteVal_resumable( node* root,
 # 1816 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (key_record != __null && key_leaf != __null) {
 # 1817 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(key_record, 17493500875420201059UL);free(key_record); }) ;
+   ({ free_helper((((unsigned char *)key_record) - sizeof(void *)), 17493500875420201059UL);free((((unsigned char *)key_record) - sizeof(void *))); }) ;
 # 1818 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_2: root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, key_leaf, key, key_record); });
 # 1819 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7498,13 +7499,13 @@ destroy_tree_nodes_resumable(node* root)
 # 1827 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
 # 1828 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free_helper(root->pointers[i], 17493500875420201113UL);free(root->pointers[i]); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { call_lbl_0: ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
+ if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free_helper((((unsigned char *)root->pointers[i]) - sizeof(void *)), 17493500875420201113UL);free((((unsigned char *)root->pointers[i]) - sizeof(void *))); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { call_lbl_0: ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
 # 1834 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->pointers, 17493500875420201111UL);free(root->pointers); }) ;
+  ({ free_helper((((unsigned char *)root->pointers) - sizeof(void *)), 17493500875420201111UL);free((((unsigned char *)root->pointers) - sizeof(void *))); }) ;
 # 1835 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->keys, 17493500875420201111UL);free(root->keys); }) ;
+  ({ free_helper((((unsigned char *)root->keys) - sizeof(void *)), 17493500875420201111UL);free((((unsigned char *)root->keys) - sizeof(void *))); }) ;
 # 1836 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root, 17493500875420201159UL);free(root); }) ;
+  ({ free_helper((((unsigned char *)root) - sizeof(void *)), 17493500875420201159UL);free((((unsigned char *)root) - sizeof(void *))); }) ;
 # 1837 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, ____alias_loc_id_94, ____chimes_did_disable75, false); }
 # 1838 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7703,7 +7704,7 @@ int cur_arg;
 # 1937 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1938 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1939 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     commandBuffer = (char*) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(char) * (lSize + 1)); ; malloc_helper(____chimes_tmp_ptr, sizeof(char)*(lSize + 1), 17493500875420201565UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1939); exit(-1); } _tmp; });
+     commandBuffer = (char*) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (lSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(char)*(lSize + 1), 17493500875420201565UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1939); exit(-1); } _tmp; });
 # 1940 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      if (commandBuffer == __null) {fprintf (stderr, "Command Buffer memory error",stderr); exit (2);}
 # 1941 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8064,7 +8065,7 @@ int cur_arg;
 # 2180 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_1: long *currKnode; if (____must_checkpoint_main_currKnode_0 != 0) { register_stack_var("main|currKnode|0", &____must_checkpoint_main_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_2; } ;
 # 2181 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201873UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2181); exit(-1); } _tmp; });
+    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201873UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2181); exit(-1); } _tmp; });
 # 2182 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2183 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset(currKnode, 0, count*sizeof(long));
@@ -8073,7 +8074,7 @@ int cur_arg;
 # 2186 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_2: long *offset; if (____must_checkpoint_main_offset_0 != 0) { register_stack_var("main|offset|0", &____must_checkpoint_main_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_3; } ;
 # 2187 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201874UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2187); exit(-1); } _tmp; });
+    offset = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201874UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2187); exit(-1); } _tmp; });
 # 2188 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2189 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset(offset, 0, count*sizeof(long));
@@ -8082,7 +8083,7 @@ int cur_arg;
 # 2192 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2193 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    keys = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420201823UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2193); exit(-1); } _tmp; });
+    keys = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420201823UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2193); exit(-1); } _tmp; });
 # 2194 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2195 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     int i; ;
@@ -8095,7 +8096,7 @@ int cur_arg;
 # 2199 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2200 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2201 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       ans = ((record *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(record) * count); malloc_helper(____chimes_tmp_ptr, sizeof(record)*count, 17493500875420201857UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2201); exit(-1); } _tmp; })) ;
+       ans = ((record *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(record) * count) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(record)*count, 17493500875420201857UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2201); exit(-1); } _tmp; })) ;
 # 2202 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2203 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     for(i = 0; i < count; i++){
@@ -8136,13 +8137,13 @@ int cur_arg;
 # 2246 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2247 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2248 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(currKnode, 17493500875420201873UL);free(currKnode); }) ;
+     ({ free_helper((((unsigned char *)currKnode) - sizeof(void *)), 17493500875420201873UL);free((((unsigned char *)currKnode) - sizeof(void *))); }) ;
 # 2249 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(offset, 17493500875420201874UL);free(offset); }) ;
+     ({ free_helper((((unsigned char *)offset) - sizeof(void *)), 17493500875420201874UL);free((((unsigned char *)offset) - sizeof(void *))); }) ;
 # 2250 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(keys, 17493500875420201823UL);free(keys); }) ;
+     ({ free_helper((((unsigned char *)keys) - sizeof(void *)), 17493500875420201823UL);free((((unsigned char *)keys) - sizeof(void *))); }) ;
 # 2251 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(ans, 17493500875420201857UL);free(ans); }) ;
+     ({ free_helper((((unsigned char *)ans) - sizeof(void *)), 17493500875420201857UL);free((((unsigned char *)ans) - sizeof(void *))); }) ;
 # 2252 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2253 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2254 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8185,7 +8186,7 @@ int cur_arg;
       uint32_t ____chimes_unroll_var_7; call_lbl_29: ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
 # 2276 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2277 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(ansList, 17493500875420201951UL);free(ansList); }) ;
+     ({ free_helper((((unsigned char *)ansList) - sizeof(void *)), 17493500875420201951UL);free((((unsigned char *)ansList) - sizeof(void *))); }) ;
 # 2278 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     break;
 # 2279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8244,7 +8245,7 @@ int cur_arg;
 # 2313 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_6: long *currKnode; if (____must_checkpoint_main_currKnode_1 != 0) { register_stack_var("main|currKnode|1", &____must_checkpoint_main_currKnode_1, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_7; } ;
 # 2314 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202307UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2314); exit(-1); } _tmp; });
+    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202307UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2314); exit(-1); } _tmp; });
 # 2315 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2316 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (currKnode, 0, count*sizeof(long));
@@ -8253,7 +8254,7 @@ int cur_arg;
 # 2319 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_7: long *offset; if (____must_checkpoint_main_offset_1 != 0) { register_stack_var("main|offset|1", &____must_checkpoint_main_offset_1, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_8; } ;
 # 2320 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202308UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2320); exit(-1); } _tmp; });
+    offset = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202308UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2320); exit(-1); } _tmp; });
 # 2321 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2322 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (offset, 0, count*sizeof(long));
@@ -8262,7 +8263,7 @@ int cur_arg;
 # 2325 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2326 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    lastKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202309UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2326); exit(-1); } _tmp; });
+    lastKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202309UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2326); exit(-1); } _tmp; });
 # 2327 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2328 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (lastKnode, 0, count*sizeof(long));
@@ -8271,7 +8272,7 @@ int cur_arg;
 # 2331 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2332 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset_2 = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202310UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2332); exit(-1); } _tmp; });
+    offset_2 = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202310UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2332); exit(-1); } _tmp; });
 # 2333 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2334 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (offset_2, 0, count*sizeof(long));
@@ -8280,11 +8281,11 @@ int cur_arg;
 # 2337 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_8: int *start; if (____must_checkpoint_main_start_1 != 0) { register_stack_var("main|start|1", &____must_checkpoint_main_start_1, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_9; } ;
 # 2338 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    start = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202185UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2338); exit(-1); } _tmp; });
+    start = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202185UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2338); exit(-1); } _tmp; });
 # 2339 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_9: int *end; if (____must_checkpoint_main_end_1 != 0) { register_stack_var("main|end|1", &____must_checkpoint_main_end_1, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(16): { goto call_lbl_16; } case(19): { goto call_lbl_19; } case(21): { goto call_lbl_21; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } default: { chimes_error(); } } } ;
 # 2340 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    end = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202197UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2340); exit(-1); } _tmp; });
+    end = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202197UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2340); exit(-1); } _tmp; });
 # 2341 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2342 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     int i; ;
@@ -8309,11 +8310,11 @@ int cur_arg;
 # 2353 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2354 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    recstart = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202288UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2354); exit(-1); } _tmp; });
+    recstart = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202288UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2354); exit(-1); } _tmp; });
 # 2355 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2356 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    reclength = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202293UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2356); exit(-1); } _tmp; });
+    reclength = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202293UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2356); exit(-1); } _tmp; });
 # 2357 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2358 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     for(i = 0; i < count; i++){
@@ -8356,21 +8357,21 @@ int cur_arg;
 # 2403 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2404 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2405 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(currKnode, 17493500875420202307UL);free(currKnode); }) ;
+     ({ free_helper((((unsigned char *)currKnode) - sizeof(void *)), 17493500875420202307UL);free((((unsigned char *)currKnode) - sizeof(void *))); }) ;
 # 2406 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(offset, 17493500875420202308UL);free(offset); }) ;
+     ({ free_helper((((unsigned char *)offset) - sizeof(void *)), 17493500875420202308UL);free((((unsigned char *)offset) - sizeof(void *))); }) ;
 # 2407 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(lastKnode, 17493500875420202309UL);free(lastKnode); }) ;
+     ({ free_helper((((unsigned char *)lastKnode) - sizeof(void *)), 17493500875420202309UL);free((((unsigned char *)lastKnode) - sizeof(void *))); }) ;
 # 2408 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(offset_2, 17493500875420202310UL);free(offset_2); }) ;
+     ({ free_helper((((unsigned char *)offset_2) - sizeof(void *)), 17493500875420202310UL);free((((unsigned char *)offset_2) - sizeof(void *))); }) ;
 # 2409 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(start, 17493500875420202185UL);free(start); }) ;
+     ({ free_helper((((unsigned char *)start) - sizeof(void *)), 17493500875420202185UL);free((((unsigned char *)start) - sizeof(void *))); }) ;
 # 2410 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(end, 17493500875420202197UL);free(end); }) ;
+     ({ free_helper((((unsigned char *)end) - sizeof(void *)), 17493500875420202197UL);free((((unsigned char *)end) - sizeof(void *))); }) ;
 # 2411 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(recstart, 17493500875420202288UL);free(recstart); }) ;
+     ({ free_helper((((unsigned char *)recstart) - sizeof(void *)), 17493500875420202288UL);free((((unsigned char *)recstart) - sizeof(void *))); }) ;
 # 2412 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(reclength, 17493500875420202293UL);free(reclength); }) ;
+     ({ free_helper((((unsigned char *)reclength) - sizeof(void *)), 17493500875420202293UL);free((((unsigned char *)reclength) - sizeof(void *))); }) ;
 # 2413 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2414 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2415 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8419,7 +8420,7 @@ int cur_arg;
 # 2445 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2446 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2447 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(mem, 17493500875420201867UL);free(mem); }) ;
+  ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 17493500875420201867UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 2448 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int ____chimes_ret_var_64; ; ____chimes_ret_var_64 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_96, ____chimes_did_disable77, false); return ____chimes_ret_var_64; ;
 # 2449 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8755,7 +8756,7 @@ list_insert_head_quick( list_t *l,
 # 301 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i; ;
 # 302 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 302); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 302); exit(-1); } _tmp; });
 # 303 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_0: ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 304 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8799,7 +8800,7 @@ list_insert_tail_quick( list_t *l,
   list_item_t *i; ;
 # 322 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 323 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 323); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 323); exit(-1); } _tmp; });
 # 324 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_0: ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 325 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8844,7 +8845,7 @@ list_insert_before_quick( list_t *l,
   list_item_t *i; ;
 # 343 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 344 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 344); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 344); exit(-1); } _tmp; });
 # 345 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_0: ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 346 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8898,7 +8899,7 @@ list_insert_after_quick( list_t *l,
   list_item_t *i; ;
 # 369 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 370 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 370); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 370); exit(-1); } _tmp; });
 # 371 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_0: ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 372 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8960,7 +8961,7 @@ list_item_t *itr;
    ;
 # 395 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 396 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 396); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 396); exit(-1); } _tmp; });
 # 397 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_0: ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 398 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9298,7 +9299,7 @@ list_item_delete_quick( list_item_t *li,
   }
 # 549 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 550 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(li, 17493500875420195752UL);free(li); }) ;
+   ({ free_helper((((unsigned char *)li) - sizeof(void *)), 17493500875420195752UL);free((((unsigned char *)li) - sizeof(void *))); }) ;
 # 551 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_item_delete", (int *)0x0, ____alias_loc_id_28, ____chimes_did_disable28, false); }
 
@@ -9553,7 +9554,7 @@ transform_to_cuda_quick( node * root,
 # 666 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  malloc_size = size*sizeof(record) + max_nodes*sizeof(knode);
 # 667 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- mem = (char*)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(malloc_size); ; malloc_helper(____chimes_tmp_ptr, malloc_size, 17493500875420201867UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 667); exit(-1); } _tmp; });
+ mem = (char*)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((malloc_size) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, malloc_size, 17493500875420201867UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 667); exit(-1); } _tmp; });
 # 668 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if(mem==__null){
 # 669 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9738,7 +9739,7 @@ findRange_quick( node * root,
  if (c == __null) { list_t *____chimes_ret_var_17; ; ____chimes_ret_var_17 = (__null); rm_stack(true, 17493500875420202575UL, "findRange", &____must_manage_findRange, ____alias_loc_id_67, ____chimes_did_disable44, false); return ____chimes_ret_var_17; ; };
 # 774 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 775 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  list_t *retList; retList = ((list_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(list_t)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 775); exit(-1); } _tmp; })) ;
+  list_t *retList; retList = ((list_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(list_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 775); exit(-1); } _tmp; })) ;
 # 776 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   call_lbl_1: ({ calling_npm("list_init", 0); list_init_npm(retList, __null, __null); });
 # 777 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10193,7 +10194,7 @@ make_record_quick(int value)
 # 1038 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {const int ____chimes_did_disable56 = new_stack((void *)(&make_record), "make_record", &____must_manage_make_record, 1, 0, (size_t)(0UL)) ; ; ;
 # 1039 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  record *new_record; new_record = ((record *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(record)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1039); exit(-1); } _tmp; })) ;
+  record *new_record; new_record = ((record *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(record)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1039); exit(-1); } _tmp; })) ;
 # 1040 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_record == __null) {
 # 1041 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10225,7 +10226,7 @@ make_node_quick( void )
 # 1054 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *new_node; ;
 # 1055 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node = (node *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(node)); ; malloc_helper(____chimes_tmp_ptr, sizeof(node), 17493500875420198448UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1055); exit(-1); } _tmp; });
+ new_node = (node *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(node)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(node), 17493500875420198448UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1055); exit(-1); } _tmp; });
 # 1056 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node == __null) {
 # 1057 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10235,7 +10236,7 @@ make_node_quick( void )
 # 1059 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1060 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order - 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (order - 1) * sizeof(int), 17493500875420201550UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1060); exit(-1); } _tmp; });
+ new_node->keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(((order - 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (order - 1) * sizeof(int), 17493500875420201550UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1060); exit(-1); } _tmp; });
 # 1061 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->keys == __null) {
 # 1062 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10245,7 +10246,7 @@ make_node_quick( void )
 # 1064 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1065 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->pointers = (void **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420201550UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1065); exit(-1); } _tmp; });
+ new_node->pointers = (void **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420201550UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1065); exit(-1); } _tmp; });
 # 1066 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->pointers == __null) {
 # 1067 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10376,7 +10377,7 @@ insert_into_leaf_after_splitting_quick( node* root,
   call_lbl_0: new_leaf = ({ calling_npm("make_leaf", 0); make_leaf_npm(); });
 # 1133 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1134 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420198898UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1134); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420198898UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1134); exit(-1); } _tmp; });
 # 1135 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1136 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10387,7 +10388,7 @@ insert_into_leaf_after_splitting_quick( node* root,
  }
 # 1139 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1140 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (void **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420198886UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1140); exit(-1); } _tmp; });
+ temp_pointers = (void **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420198886UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1140); exit(-1); } _tmp; });
 # 1141 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1142 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10449,9 +10450,9 @@ insert_into_leaf_after_splitting_quick( node* root,
  }
 # 1174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_pointers, 17493500875420198886UL);free(temp_pointers); }) ;
+  ({ free_helper((((unsigned char *)temp_pointers) - sizeof(void *)), 17493500875420198886UL);free((((unsigned char *)temp_pointers) - sizeof(void *))); }) ;
 # 1176 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_keys, 17493500875420198898UL);free(temp_keys); }) ;
+  ({ free_helper((((unsigned char *)temp_keys) - sizeof(void *)), 17493500875420198898UL);free((((unsigned char *)temp_keys) - sizeof(void *))); }) ;
 # 1177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_leaf->pointers[order - 1] = leaf->pointers[order - 1];
@@ -10555,7 +10556,7 @@ insert_into_node_after_splitting_quick( node* root,
  node **temp_pointers; ;
 # 1236 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1236 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (node **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order + 1) * sizeof(node *)); ; malloc_helper(____chimes_tmp_ptr, (order + 1) * sizeof(node *), 17493500875420199424UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1236); exit(-1); } _tmp; });
+ temp_pointers = (node **) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(((order + 1) * sizeof(node *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (order + 1) * sizeof(node *), 17493500875420199424UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1236); exit(-1); } _tmp; });
 # 1237 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1238 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10565,7 +10566,7 @@ insert_into_node_after_splitting_quick( node* root,
 # 1240 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1241 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420199437UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1241); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420199437UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1241); exit(-1); } _tmp; });
 # 1242 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1243 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10635,9 +10636,9 @@ insert_into_node_after_splitting_quick( node* root,
 # 1279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->pointers[j] = temp_pointers[i];
 # 1280 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_pointers, 17493500875420199424UL);free(temp_pointers); }) ;
+  ({ free_helper((((unsigned char *)temp_pointers) - sizeof(void *)), 17493500875420199424UL);free((((unsigned char *)temp_pointers) - sizeof(void *))); }) ;
 # 1281 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_keys, 17493500875420199437UL);free(temp_keys); }) ;
+  ({ free_helper((((unsigned char *)temp_keys) - sizeof(void *)), 17493500875420199437UL);free((((unsigned char *)temp_keys) - sizeof(void *))); }) ;
 # 1282 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->parent = old_node->parent;
 # 1283 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10967,11 +10968,11 @@ adjust_root_quick(node* root)
  }; } else {new_root = __null; } ;
 # 1505 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1506 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->keys, 17493500875420201550UL);free(root->keys); }) ;
+  ({ free_helper((((unsigned char *)root->keys) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root->keys) - sizeof(void *))); }) ;
 # 1507 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->pointers, 17493500875420201550UL);free(root->pointers); }) ;
+  ({ free_helper((((unsigned char *)root->pointers) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root->pointers) - sizeof(void *))); }) ;
 # 1508 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root, 17493500875420201550UL);free(root); }) ;
+  ({ free_helper((((unsigned char *)root) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root) - sizeof(void *))); }) ;
 # 1509 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1510 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *____chimes_ret_var_49; ; ____chimes_ret_var_49 = (new_root); rm_stack(true, 17493500875420201550UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_89, ____chimes_did_disable70, false); return ____chimes_ret_var_49; ;
@@ -11149,11 +11150,11 @@ coalesce_nodes_quick( node* root,
 # 1638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_1: root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, n->parent, k_prime, n); });
 # 1639 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(n->keys, 17493500875420200439UL);free(n->keys); }) ;
+   ({ free_helper((((unsigned char *)n->keys) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n->keys) - sizeof(void *))); }) ;
 # 1640 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(n->pointers, 17493500875420200439UL);free(n->pointers); }) ;
+   ({ free_helper((((unsigned char *)n->pointers) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n->pointers) - sizeof(void *))); }) ;
 # 1641 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(n, 17493500875420200439UL);free(n); }) ;
+   ({ free_helper((((unsigned char *)n) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n) - sizeof(void *))); }) ;
 # 1642 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }; } else {for (i = 0; i < n->parent->num_keys; i++) { if (n->parent->pointers[i + 1] == n) {
 # 1646 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11418,7 +11419,7 @@ deleteVal_quick( node* root,
 # 1816 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (key_record != __null && key_leaf != __null) {
 # 1817 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(key_record, 17493500875420201059UL);free(key_record); }) ;
+   ({ free_helper((((unsigned char *)key_record) - sizeof(void *)), 17493500875420201059UL);free((((unsigned char *)key_record) - sizeof(void *))); }) ;
 # 1818 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    call_lbl_2: root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, key_leaf, key, key_record); });
 # 1819 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11442,13 +11443,13 @@ destroy_tree_nodes_quick(node* root)
 # 1827 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
 # 1828 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free_helper(root->pointers[i], 17493500875420201113UL);free(root->pointers[i]); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { call_lbl_0: ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
+ if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free_helper((((unsigned char *)root->pointers[i]) - sizeof(void *)), 17493500875420201113UL);free((((unsigned char *)root->pointers[i]) - sizeof(void *))); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { call_lbl_0: ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
 # 1834 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->pointers, 17493500875420201111UL);free(root->pointers); }) ;
+  ({ free_helper((((unsigned char *)root->pointers) - sizeof(void *)), 17493500875420201111UL);free((((unsigned char *)root->pointers) - sizeof(void *))); }) ;
 # 1835 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->keys, 17493500875420201111UL);free(root->keys); }) ;
+  ({ free_helper((((unsigned char *)root->keys) - sizeof(void *)), 17493500875420201111UL);free((((unsigned char *)root->keys) - sizeof(void *))); }) ;
 # 1836 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root, 17493500875420201159UL);free(root); }) ;
+  ({ free_helper((((unsigned char *)root) - sizeof(void *)), 17493500875420201159UL);free((((unsigned char *)root) - sizeof(void *))); }) ;
 # 1837 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, ____alias_loc_id_94, ____chimes_did_disable75, false); }
 
@@ -11648,7 +11649,7 @@ int cur_arg;
 # 1937 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1938 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1939 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     commandBuffer = (char*) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(char) * (lSize + 1)); ; malloc_helper(____chimes_tmp_ptr, sizeof(char)*(lSize + 1), 17493500875420201565UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1939); exit(-1); } _tmp; });
+     commandBuffer = (char*) ({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (lSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(char)*(lSize + 1), 17493500875420201565UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1939); exit(-1); } _tmp; });
 # 1940 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      if (commandBuffer == __null) {fprintf (stderr, "Command Buffer memory error",stderr); exit (2);}
 # 1941 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12009,7 +12010,7 @@ int cur_arg;
 # 2180 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_1: long *currKnode; if (____must_checkpoint_main_currKnode_0 != 0) { register_stack_var("main|currKnode|0", &____must_checkpoint_main_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } ;
 # 2181 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201873UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2181); exit(-1); } _tmp; });
+    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201873UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2181); exit(-1); } _tmp; });
 # 2182 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2183 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset(currKnode, 0, count*sizeof(long));
@@ -12018,7 +12019,7 @@ int cur_arg;
 # 2186 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_2: long *offset; if (____must_checkpoint_main_offset_0 != 0) { register_stack_var("main|offset|0", &____must_checkpoint_main_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } ;
 # 2187 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201874UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2187); exit(-1); } _tmp; });
+    offset = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420201874UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2187); exit(-1); } _tmp; });
 # 2188 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2189 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset(offset, 0, count*sizeof(long));
@@ -12027,7 +12028,7 @@ int cur_arg;
 # 2192 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2193 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    keys = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420201823UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2193); exit(-1); } _tmp; });
+    keys = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420201823UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2193); exit(-1); } _tmp; });
 # 2194 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2195 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     int i; ;
@@ -12040,7 +12041,7 @@ int cur_arg;
 # 2199 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2200 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2201 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       ans = ((record *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(record) * count); malloc_helper(____chimes_tmp_ptr, sizeof(record)*count, 17493500875420201857UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2201); exit(-1); } _tmp; })) ;
+       ans = ((record *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(record) * count) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(record)*count, 17493500875420201857UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2201); exit(-1); } _tmp; })) ;
 # 2202 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2203 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     for(i = 0; i < count; i++){
@@ -12081,13 +12082,13 @@ int cur_arg;
 # 2246 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2247 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2248 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(currKnode, 17493500875420201873UL);free(currKnode); }) ;
+     ({ free_helper((((unsigned char *)currKnode) - sizeof(void *)), 17493500875420201873UL);free((((unsigned char *)currKnode) - sizeof(void *))); }) ;
 # 2249 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(offset, 17493500875420201874UL);free(offset); }) ;
+     ({ free_helper((((unsigned char *)offset) - sizeof(void *)), 17493500875420201874UL);free((((unsigned char *)offset) - sizeof(void *))); }) ;
 # 2250 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(keys, 17493500875420201823UL);free(keys); }) ;
+     ({ free_helper((((unsigned char *)keys) - sizeof(void *)), 17493500875420201823UL);free((((unsigned char *)keys) - sizeof(void *))); }) ;
 # 2251 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(ans, 17493500875420201857UL);free(ans); }) ;
+     ({ free_helper((((unsigned char *)ans) - sizeof(void *)), 17493500875420201857UL);free((((unsigned char *)ans) - sizeof(void *))); }) ;
 # 2252 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2253 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2254 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12130,7 +12131,7 @@ int cur_arg;
       uint32_t ____chimes_unroll_var_7; call_lbl_29: ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
 # 2276 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2277 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(ansList, 17493500875420201951UL);free(ansList); }) ;
+     ({ free_helper((((unsigned char *)ansList) - sizeof(void *)), 17493500875420201951UL);free((((unsigned char *)ansList) - sizeof(void *))); }) ;
 # 2278 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     break;
 # 2279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12189,7 +12190,7 @@ int cur_arg;
 # 2313 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_6: long *currKnode; if (____must_checkpoint_main_currKnode_1 != 0) { register_stack_var("main|currKnode|1", &____must_checkpoint_main_currKnode_1, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } ;
 # 2314 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202307UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2314); exit(-1); } _tmp; });
+    currKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202307UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2314); exit(-1); } _tmp; });
 # 2315 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2316 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (currKnode, 0, count*sizeof(long));
@@ -12198,7 +12199,7 @@ int cur_arg;
 # 2319 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_7: long *offset; if (____must_checkpoint_main_offset_1 != 0) { register_stack_var("main|offset|1", &____must_checkpoint_main_offset_1, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } ;
 # 2320 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202308UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2320); exit(-1); } _tmp; });
+    offset = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202308UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2320); exit(-1); } _tmp; });
 # 2321 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2322 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (offset, 0, count*sizeof(long));
@@ -12207,7 +12208,7 @@ int cur_arg;
 # 2325 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2326 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    lastKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202309UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2326); exit(-1); } _tmp; });
+    lastKnode = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202309UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2326); exit(-1); } _tmp; });
 # 2327 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2328 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (lastKnode, 0, count*sizeof(long));
@@ -12216,7 +12217,7 @@ int cur_arg;
 # 2331 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2332 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset_2 = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(long)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202310UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2332); exit(-1); } _tmp; });
+    offset_2 = (long *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(long), 17493500875420202310UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2332); exit(-1); } _tmp; });
 # 2333 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2334 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     memset (offset_2, 0, count*sizeof(long));
@@ -12225,11 +12226,11 @@ int cur_arg;
 # 2337 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_8: int *start; if (____must_checkpoint_main_start_1 != 0) { register_stack_var("main|start|1", &____must_checkpoint_main_start_1, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); } ;
 # 2338 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    start = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202185UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2338); exit(-1); } _tmp; });
+    start = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202185UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2338); exit(-1); } _tmp; });
 # 2339 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lbl_9: int *end; if (____must_checkpoint_main_end_1 != 0) { register_stack_var("main|end|1", &____must_checkpoint_main_end_1, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); } ;
 # 2340 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    end = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202197UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2340); exit(-1); } _tmp; });
+    end = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202197UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2340); exit(-1); } _tmp; });
 # 2341 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2342 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     int i; ;
@@ -12254,11 +12255,11 @@ int cur_arg;
 # 2353 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2354 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    recstart = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202288UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2354); exit(-1); } _tmp; });
+    recstart = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202288UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2354); exit(-1); } _tmp; });
 # 2355 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
 # 2356 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    reclength = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(count * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202293UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2356); exit(-1); } _tmp; });
+    reclength = (int *)({ void *_tmp; ; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((count * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, count*sizeof(int), 17493500875420202293UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2356); exit(-1); } _tmp; });
 # 2357 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2358 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     for(i = 0; i < count; i++){
@@ -12301,21 +12302,21 @@ int cur_arg;
 # 2403 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2404 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2405 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(currKnode, 17493500875420202307UL);free(currKnode); }) ;
+     ({ free_helper((((unsigned char *)currKnode) - sizeof(void *)), 17493500875420202307UL);free((((unsigned char *)currKnode) - sizeof(void *))); }) ;
 # 2406 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(offset, 17493500875420202308UL);free(offset); }) ;
+     ({ free_helper((((unsigned char *)offset) - sizeof(void *)), 17493500875420202308UL);free((((unsigned char *)offset) - sizeof(void *))); }) ;
 # 2407 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(lastKnode, 17493500875420202309UL);free(lastKnode); }) ;
+     ({ free_helper((((unsigned char *)lastKnode) - sizeof(void *)), 17493500875420202309UL);free((((unsigned char *)lastKnode) - sizeof(void *))); }) ;
 # 2408 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(offset_2, 17493500875420202310UL);free(offset_2); }) ;
+     ({ free_helper((((unsigned char *)offset_2) - sizeof(void *)), 17493500875420202310UL);free((((unsigned char *)offset_2) - sizeof(void *))); }) ;
 # 2409 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(start, 17493500875420202185UL);free(start); }) ;
+     ({ free_helper((((unsigned char *)start) - sizeof(void *)), 17493500875420202185UL);free((((unsigned char *)start) - sizeof(void *))); }) ;
 # 2410 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(end, 17493500875420202197UL);free(end); }) ;
+     ({ free_helper((((unsigned char *)end) - sizeof(void *)), 17493500875420202197UL);free((((unsigned char *)end) - sizeof(void *))); }) ;
 # 2411 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(recstart, 17493500875420202288UL);free(recstart); }) ;
+     ({ free_helper((((unsigned char *)recstart) - sizeof(void *)), 17493500875420202288UL);free((((unsigned char *)recstart) - sizeof(void *))); }) ;
 # 2412 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ({ free_helper(reclength, 17493500875420202293UL);free(reclength); }) ;
+     ({ free_helper((((unsigned char *)reclength) - sizeof(void *)), 17493500875420202293UL);free((((unsigned char *)reclength) - sizeof(void *))); }) ;
 # 2413 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2414 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2415 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12364,7 +12365,7 @@ int cur_arg;
 # 2445 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2446 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2447 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(mem, 17493500875420201867UL);free(mem); }) ;
+  ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 17493500875420201867UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 2448 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int ____chimes_ret_var_64; ; ____chimes_ret_var_64 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_96, ____chimes_did_disable77, false); return ____chimes_ret_var_64; ;
 # 2449 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12557,7 +12558,7 @@ list_insert_head_npm( list_t *l,
 # 301 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i;
 # 302 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 302); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 302); exit(-1); } _tmp; });
 # 303 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_init_npm(i, v);
 # 304 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12595,7 +12596,7 @@ list_insert_tail_npm( list_t *l,
   list_item_t *i;
 # 322 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 323 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 323); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 323); exit(-1); } _tmp; });
 # 324 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_init_npm(i, v);
 # 325 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12634,7 +12635,7 @@ list_insert_before_npm( list_t *l,
   list_item_t *i;
 # 343 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 344 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 344); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 344); exit(-1); } _tmp; });
 # 345 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_init_npm(i, v);
 # 346 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12680,7 +12681,7 @@ list_insert_after_npm( list_t *l,
   list_item_t *i;
 # 369 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 370 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 370); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof (*i)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 370); exit(-1); } _tmp; });
 # 371 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_init_npm(i, v);
 # 372 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12982,7 +12983,7 @@ transform_to_cuda_npm( node * root,
 # 666 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  malloc_size = size*sizeof(record) + max_nodes*sizeof(knode);
 # 667 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- mem = (char*)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(malloc_size); malloc_helper(____chimes_tmp_ptr, malloc_size, 17493500875420201867UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 667); exit(-1); } _tmp; });
+ mem = (char*)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((malloc_size) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, malloc_size, 17493500875420201867UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 667); exit(-1); } _tmp; });
 # 668 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if(mem==__null){
 # 669 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13161,7 +13162,7 @@ findRange_npm( node * root,
  if (c == __null) { list_t * ____chimes_ret_var_17; ____chimes_ret_var_17 = (__null); return ____chimes_ret_var_17; ; };
 # 774 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 775 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- list_t * retList = (list_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(list_t)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 775); exit(-1); } _tmp; });
+ list_t * retList = (list_t *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(list_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(list_t), 17493500875420202575UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 775); exit(-1); } _tmp; });
 # 776 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  list_init_npm(retList, __null, __null);
 # 777 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13564,7 +13565,7 @@ make_record_npm(int value)
 # 1038 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 1039 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- record * new_record = (record *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(record)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1039); exit(-1); } _tmp; });
+ record * new_record = (record *)({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(record)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(record), 17493500875420198427UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1039); exit(-1); } _tmp; });
 # 1040 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_record == __null) {
 # 1041 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13592,7 +13593,7 @@ make_node_npm( void )
 # 1054 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node * new_node;
 # 1055 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node = (node *) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(sizeof(node)); malloc_helper(____chimes_tmp_ptr, sizeof(node), 17493500875420198448UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1055); exit(-1); } _tmp; });
+ new_node = (node *) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((sizeof(node)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(node), 17493500875420198448UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1055); exit(-1); } _tmp; });
 # 1056 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node == __null) {
 # 1057 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13602,7 +13603,7 @@ make_node_npm( void )
 # 1059 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1060 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->keys = (int *) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order - 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (order - 1) * sizeof(int), 17493500875420201550UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1060); exit(-1); } _tmp; });
+ new_node->keys = (int *) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(((order - 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (order - 1) * sizeof(int), 17493500875420201550UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1060); exit(-1); } _tmp; });
 # 1061 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->keys == __null) {
 # 1062 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13612,7 +13613,7 @@ make_node_npm( void )
 # 1064 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1065 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->pointers = (void **) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420201550UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1065); exit(-1); } _tmp; });
+ new_node->pointers = (void **) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420201550UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1065); exit(-1); } _tmp; });
 # 1066 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->pointers == __null) {
 # 1067 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13727,7 +13728,7 @@ insert_into_leaf_after_splitting_npm( node* root,
  new_leaf = make_leaf_npm();
 # 1133 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1134 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(int)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420198898UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1134); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420198898UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1134); exit(-1); } _tmp; });
 # 1135 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1136 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13738,7 +13739,7 @@ insert_into_leaf_after_splitting_npm( node* root,
  }
 # 1139 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1140 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (void **) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420198886UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1140); exit(-1); } _tmp; });
+ temp_pointers = (void **) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(void *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(void *), 17493500875420198886UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1140); exit(-1); } _tmp; });
 # 1141 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1142 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13800,9 +13801,9 @@ insert_into_leaf_after_splitting_npm( node* root,
  }
 # 1174 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1175 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_pointers, 17493500875420198886UL);free(temp_pointers); }) ;
+  ({ free_helper((((unsigned char *)temp_pointers) - sizeof(void *)), 17493500875420198886UL);free((((unsigned char *)temp_pointers) - sizeof(void *))); }) ;
 # 1176 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_keys, 17493500875420198898UL);free(temp_keys); }) ;
+  ({ free_helper((((unsigned char *)temp_keys) - sizeof(void *)), 17493500875420198898UL);free((((unsigned char *)temp_keys) - sizeof(void *))); }) ;
 # 1177 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1178 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_leaf->pointers[order - 1] = leaf->pointers[order - 1];
@@ -13884,7 +13885,7 @@ insert_into_node_after_splitting_npm( node* root,
  node ** temp_pointers;
 # 1236 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1236 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (node **) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order + 1) * sizeof(node *)); malloc_helper(____chimes_tmp_ptr, (order + 1) * sizeof(node *), 17493500875420199424UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1236); exit(-1); } _tmp; });
+ temp_pointers = (node **) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(((order + 1) * sizeof(node *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (order + 1) * sizeof(node *), 17493500875420199424UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1236); exit(-1); } _tmp; });
 # 1237 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1238 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13894,7 +13895,7 @@ insert_into_node_after_splitting_npm( node* root,
 # 1240 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1241 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc(order * sizeof(int)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420199437UL, 0, 0); ____chimes_tmp_ptr; }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1241); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; if (!(_tmp = ({ void *____chimes_tmp_ptr = malloc((order * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, order * sizeof(int), 17493500875420199437UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1241); exit(-1); } _tmp; });
 # 1242 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1243 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13964,9 +13965,9 @@ insert_into_node_after_splitting_npm( node* root,
 # 1279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->pointers[j] = temp_pointers[i];
 # 1280 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_pointers, 17493500875420199424UL);free(temp_pointers); }) ;
+  ({ free_helper((((unsigned char *)temp_pointers) - sizeof(void *)), 17493500875420199424UL);free((((unsigned char *)temp_pointers) - sizeof(void *))); }) ;
 # 1281 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(temp_keys, 17493500875420199437UL);free(temp_keys); }) ;
+  ({ free_helper((((unsigned char *)temp_keys) - sizeof(void *)), 17493500875420199437UL);free((((unsigned char *)temp_keys) - sizeof(void *))); }) ;
 # 1282 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->parent = old_node->parent;
 # 1283 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -14240,11 +14241,11 @@ adjust_root_npm(node* root)
  }; } else {new_root = __null; } ;
 # 1505 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1506 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->keys, 17493500875420201550UL);free(root->keys); }) ;
+  ({ free_helper((((unsigned char *)root->keys) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root->keys) - sizeof(void *))); }) ;
 # 1507 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->pointers, 17493500875420201550UL);free(root->pointers); }) ;
+  ({ free_helper((((unsigned char *)root->pointers) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root->pointers) - sizeof(void *))); }) ;
 # 1508 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root, 17493500875420201550UL);free(root); }) ;
+  ({ free_helper((((unsigned char *)root) - sizeof(void *)), 17493500875420201550UL);free((((unsigned char *)root) - sizeof(void *))); }) ;
 # 1509 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1510 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node * ____chimes_ret_var_49; ____chimes_ret_var_49 = (new_root); return ____chimes_ret_var_49; ;
@@ -14418,11 +14419,11 @@ coalesce_nodes_npm( node* root,
 # 1638 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   root = delete_entry_npm(root, n->parent, k_prime, n);
 # 1639 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(n->keys, 17493500875420200439UL);free(n->keys); }) ;
+   ({ free_helper((((unsigned char *)n->keys) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n->keys) - sizeof(void *))); }) ;
 # 1640 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(n->pointers, 17493500875420200439UL);free(n->pointers); }) ;
+   ({ free_helper((((unsigned char *)n->pointers) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n->pointers) - sizeof(void *))); }) ;
 # 1641 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(n, 17493500875420200439UL);free(n); }) ;
+   ({ free_helper((((unsigned char *)n) - sizeof(void *)), 17493500875420200439UL);free((((unsigned char *)n) - sizeof(void *))); }) ;
 # 1642 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }; } else {for (i = 0; i < n->parent->num_keys; i++) { if (n->parent->pointers[i + 1] == n) {
 # 1646 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -14651,7 +14652,7 @@ deleteVal_npm( node* root,
 # 1816 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (key_record != __null && key_leaf != __null) {
 # 1817 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   ({ free_helper(key_record, 17493500875420201059UL);free(key_record); }) ;
+   ({ free_helper((((unsigned char *)key_record) - sizeof(void *)), 17493500875420201059UL);free((((unsigned char *)key_record) - sizeof(void *))); }) ;
 # 1818 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   root = delete_entry_npm(root, key_leaf, key, key_record);
 # 1819 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -14669,13 +14670,13 @@ destroy_tree_nodes_npm(node* root)
 # 1827 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i;
 # 1828 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free_helper(root->pointers[i], 17493500875420201113UL);free(root->pointers[i]); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { destroy_tree_nodes_npm((node *) root->pointers[i]); }; } ;
+ if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { ({ free_helper((((unsigned char *)root->pointers[i]) - sizeof(void *)), 17493500875420201113UL);free((((unsigned char *)root->pointers[i]) - sizeof(void *))); }) ; }; } else {for (i = 0; i < root->num_keys + 1; i++) { destroy_tree_nodes_npm((node *) root->pointers[i]); }; } ;
 # 1834 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->pointers, 17493500875420201111UL);free(root->pointers); }) ;
+  ({ free_helper((((unsigned char *)root->pointers) - sizeof(void *)), 17493500875420201111UL);free((((unsigned char *)root->pointers) - sizeof(void *))); }) ;
 # 1835 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root->keys, 17493500875420201111UL);free(root->keys); }) ;
+  ({ free_helper((((unsigned char *)root->keys) - sizeof(void *)), 17493500875420201111UL);free((((unsigned char *)root->keys) - sizeof(void *))); }) ;
 # 1836 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ({ free_helper(root, 17493500875420201159UL);free(root); }) ;
+  ({ free_helper((((unsigned char *)root) - sizeof(void *)), 17493500875420201159UL);free((((unsigned char *)root) - sizeof(void *))); }) ;
 # 1837 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 # 1840 "/gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c"

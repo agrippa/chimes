@@ -90,8 +90,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -110,7 +111,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4196,7 +4197,7 @@ create_matrix_from_file_resumable(float **mp, const char* filename, int *size_p)
   fscanf(fp, "%d\n", &size);
 # 52 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 53 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073225223UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073225223UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 54 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 55 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4246,16 +4247,16 @@ create_matrix_from_random_resumable(float **mp, int size){const int ____chimes_d
   srand(time(__null));
 # 80 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 81 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  l = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225297UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  l = (float*) ({ void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225297UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 82 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if (l == __null) { enum _FUNC_RETURN_CODE ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (RET_FAILURE); rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_7; ; };
 # 84 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 85 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  u = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225481UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  u = (float*) ({ void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225481UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 86 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( u == __null) {
 # 87 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-       ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
+       ({ free_helper((((unsigned char *)l) - sizeof(void *)), 13323080938073225297UL);free((((unsigned char *)l) - sizeof(void *))); }) ;
 # 88 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
        enum _FUNC_RETURN_CODE ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (RET_FAILURE); rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_8; ;
 # 89 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4315,9 +4316,9 @@ create_matrix_from_random_resumable(float **mp, int size){const int ____chimes_d
   }
 # 119 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 120 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
+   ({ free_helper((((unsigned char *)l) - sizeof(void *)), 13323080938073225297UL);free((((unsigned char *)l) - sizeof(void *))); }) ;
 # 121 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free_helper(u, 13323080938073225481UL);free(u); }) ;
+   ({ free_helper((((unsigned char *)u) - sizeof(void *)), 13323080938073225481UL);free((((unsigned char *)u) - sizeof(void *))); }) ;
 # 122 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 123 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   *mp = m;
@@ -4351,7 +4352,7 @@ lud_verify_resumable(float *m, float *lu, int matrix_dim){const int ____chimes_d
 # 141 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   int i; int j; int k; ;
 # 142 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   float *tmp; tmp = ((float*) ({ void *____chimes_tmp_ptr = malloc(matrix_dim * matrix_dim * sizeof(float)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 13323080938073225639UL, 0, 0); ____chimes_tmp_ptr; })) ;
+   float *tmp; tmp = ((float*) ({ void *____chimes_tmp_ptr = malloc((matrix_dim * matrix_dim * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 13323080938073225639UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 143 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 144 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   for (i=0; i < matrix_dim; i ++) { for (j=0; j< matrix_dim; j++) {
@@ -4385,7 +4386,7 @@ lud_verify_resumable(float *m, float *lu, int matrix_dim){const int ____chimes_d
 # 185 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   }
 # 186 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free_helper(tmp, 13323080938073225639UL);free(tmp); }) ;
+   ({ free_helper((((unsigned char *)tmp) - sizeof(void *)), 13323080938073225639UL);free((((unsigned char *)tmp) - sizeof(void *))); }) ;
 # 187 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 rm_stack(false, 0UL, "lud_verify", &____must_manage_lud_verify, ____alias_loc_id_7, ____chimes_did_disable7, false); }
 # 188 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4398,7 +4399,7 @@ matrix_duplicate_resumable(float *src, float **dst, int matrix_dim) {const int _
 # 191 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
      int s; s = (matrix_dim*matrix_dim*sizeof(float)) ;
 # 192 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-    float *p; p = ((float *) ({ void *____chimes_tmp_ptr = malloc(s); malloc_helper(____chimes_tmp_ptr, s, 13323080938073225830UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    float *p; p = ((float *) ({ void *____chimes_tmp_ptr = malloc((s) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, s, 13323080938073225830UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 193 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
    memcpy(p, src, s);
 # 194 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4463,7 +4464,7 @@ create_matrix_resumable(float **mp, int size){const int ____chimes_did_disable10
     }
 # 226 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 227 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073226015UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073226015UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 229 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4568,7 +4569,7 @@ create_matrix_from_file_quick(float **mp, const char* filename, int *size_p){con
   fscanf(fp, "%d\n", &size);
 # 52 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 53 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073225223UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073225223UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 54 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 55 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4618,16 +4619,16 @@ create_matrix_from_random_quick(float **mp, int size){const int ____chimes_did_d
   srand(time(__null));
 # 80 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 81 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  l = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225297UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  l = (float*) ({ void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225297UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 82 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if (l == __null) { enum _FUNC_RETURN_CODE ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (RET_FAILURE); rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_7; ; };
 # 84 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 85 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  u = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225481UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  u = (float*) ({ void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225481UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 86 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( u == __null) {
 # 87 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-       ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
+       ({ free_helper((((unsigned char *)l) - sizeof(void *)), 13323080938073225297UL);free((((unsigned char *)l) - sizeof(void *))); }) ;
 # 88 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
        enum _FUNC_RETURN_CODE ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (RET_FAILURE); rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_8; ;
 # 89 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4687,9 +4688,9 @@ create_matrix_from_random_quick(float **mp, int size){const int ____chimes_did_d
   }
 # 119 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 120 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
+   ({ free_helper((((unsigned char *)l) - sizeof(void *)), 13323080938073225297UL);free((((unsigned char *)l) - sizeof(void *))); }) ;
 # 121 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free_helper(u, 13323080938073225481UL);free(u); }) ;
+   ({ free_helper((((unsigned char *)u) - sizeof(void *)), 13323080938073225481UL);free((((unsigned char *)u) - sizeof(void *))); }) ;
 # 122 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 123 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   *mp = m;
@@ -4725,7 +4726,7 @@ lud_verify_quick(float *m, float *lu, int matrix_dim){const int ____chimes_did_d
 # 141 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   int i; int j; int k; ;
 # 142 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   float *tmp; tmp = ((float*) ({ void *____chimes_tmp_ptr = malloc(matrix_dim * matrix_dim * sizeof(float)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 13323080938073225639UL, 0, 0); ____chimes_tmp_ptr; })) ;
+   float *tmp; tmp = ((float*) ({ void *____chimes_tmp_ptr = malloc((matrix_dim * matrix_dim * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 13323080938073225639UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 143 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 144 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   for (i=0; i < matrix_dim; i ++) { for (j=0; j< matrix_dim; j++) {
@@ -4759,7 +4760,7 @@ lud_verify_quick(float *m, float *lu, int matrix_dim){const int ____chimes_did_d
 # 185 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   }
 # 186 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free_helper(tmp, 13323080938073225639UL);free(tmp); }) ;
+   ({ free_helper((((unsigned char *)tmp) - sizeof(void *)), 13323080938073225639UL);free((((unsigned char *)tmp) - sizeof(void *))); }) ;
 # 187 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 rm_stack(false, 0UL, "lud_verify", &____must_manage_lud_verify, ____alias_loc_id_7, ____chimes_did_disable7, false); }
 
@@ -4773,7 +4774,7 @@ matrix_duplicate_quick(float *src, float **dst, int matrix_dim) {const int ____c
 # 191 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
      int s; s = (matrix_dim*matrix_dim*sizeof(float)) ;
 # 192 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-    float *p; p = ((float *) ({ void *____chimes_tmp_ptr = malloc(s); malloc_helper(____chimes_tmp_ptr, s, 13323080938073225830UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    float *p; p = ((float *) ({ void *____chimes_tmp_ptr = malloc((s) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, s, 13323080938073225830UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 193 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
    memcpy(p, src, s);
 # 194 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4837,7 +4838,7 @@ create_matrix_quick(float **mp, int size){const int ____chimes_did_disable10 = n
     }
 # 226 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 227 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073226015UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073226015UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 229 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4934,7 +4935,7 @@ create_matrix_from_file_npm(float **mp, const char* filename, int *size_p){
   fscanf(fp, "%d\n", &size);
 # 52 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 53 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073225223UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073225223UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 54 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 55 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -4980,16 +4981,16 @@ create_matrix_from_random_npm(float **mp, int size){
   srand(time(__null));
 # 80 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 81 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  l = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225297UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  l = (float*) ({ void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225297UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 82 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if (l == __null) { enum _FUNC_RETURN_CODE ____chimes_ret_var_7; ____chimes_ret_var_7 = (RET_FAILURE); return ____chimes_ret_var_7; ; };
 # 84 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 85 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  u = (float*) ({ void *____chimes_tmp_ptr = malloc(size * size * sizeof(float)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225481UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  u = (float*) ({ void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225481UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 86 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( u == __null) {
 # 87 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-       ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
+       ({ free_helper((((unsigned char *)l) - sizeof(void *)), 13323080938073225297UL);free((((unsigned char *)l) - sizeof(void *))); }) ;
 # 88 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
        enum _FUNC_RETURN_CODE ____chimes_ret_var_8; ____chimes_ret_var_8 = (RET_FAILURE); return ____chimes_ret_var_8; ;
 # 89 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -5049,9 +5050,9 @@ create_matrix_from_random_npm(float **mp, int size){
   }
 # 119 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 120 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free_helper(l, 13323080938073225297UL);free(l); }) ;
+   ({ free_helper((((unsigned char *)l) - sizeof(void *)), 13323080938073225297UL);free((((unsigned char *)l) - sizeof(void *))); }) ;
 # 121 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free_helper(u, 13323080938073225481UL);free(u); }) ;
+   ({ free_helper((((unsigned char *)u) - sizeof(void *)), 13323080938073225481UL);free((((unsigned char *)u) - sizeof(void *))); }) ;
 # 122 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 123 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   *mp = m;
@@ -5079,7 +5080,7 @@ lud_verify_npm(float *m, float *lu, int matrix_dim){
 # 141 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   int i,j,k;
 # 142 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  float *tmp = (float*) ({ void *____chimes_tmp_ptr = malloc(matrix_dim * matrix_dim * sizeof(float)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 13323080938073225639UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  float *tmp = (float*) ({ void *____chimes_tmp_ptr = malloc((matrix_dim * matrix_dim * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 13323080938073225639UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 143 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 144 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   for (i=0; i < matrix_dim; i ++) { for (j=0; j< matrix_dim; j++) {
@@ -5113,7 +5114,7 @@ lud_verify_npm(float *m, float *lu, int matrix_dim){
 # 185 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   }
 # 186 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   ({ free_helper(tmp, 13323080938073225639UL);free(tmp); }) ;
+   ({ free_helper((((unsigned char *)tmp) - sizeof(void *)), 13323080938073225639UL);free((((unsigned char *)tmp) - sizeof(void *))); }) ;
 # 187 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 }
 # 189 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -5123,7 +5124,7 @@ matrix_duplicate_npm(float *src, float **dst, int matrix_dim) {
 # 191 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
     int s = matrix_dim*matrix_dim*sizeof(float);
 # 192 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-   float *p = (float *) ({ void *____chimes_tmp_ptr = malloc(s); malloc_helper(____chimes_tmp_ptr, s, 13323080938073225830UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   float *p = (float *) ({ void *____chimes_tmp_ptr = malloc((s) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, s, 13323080938073225830UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 193 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
    memcpy(p, src, s);
 # 194 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
@@ -5179,7 +5180,7 @@ create_matrix_npm(float **mp, int size){
     }
 # 226 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
 # 227 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
-  m = (float*) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * size * size); malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073226015UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  m = (float*) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073226015UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"
   if ( m == __null) {
 # 229 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c"

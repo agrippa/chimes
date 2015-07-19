@@ -230,8 +230,8 @@ static void *translate_old_ptr(void *ptr,
         heap_tree *old_to_new,
         void *container);
 static void fix_stack_or_global_pointer(void *container, string type, int nesting);
-map<void *, heap_allocation *>::iterator find_in_global_heap(void *ptr);
-heap_allocation *free_impl(const void *ptr);
+// map<void *, heap_allocation *>::iterator find_in_global_heap(void *ptr);
+heap_allocation *free_impl(const void *ptr, heap_allocation *alloc);
 static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         va_list *vl);
@@ -246,11 +246,13 @@ static void merge_npm_aliases(string fname, size_t return_alias,
         vector<size_t> param_aliases);
 static void *checkpoint_func(void *data);
 static void destroy_thread_ctx(void *thread_ctx_ptr);
+static void cleanup_thread_heap(void *thread_heap_ptr);
 
 static std::vector<stack_frame *> *get_my_stack();
 static unsigned get_my_tid();
 static thread_ctx *get_my_context();
 static thread_ctx *get_my_context_may_fail();
+static thread_local_allocations *get_my_thread_heap();
 static bool wait_for_all_threads(clock_t *entry_time, checkpoint_ctx **out,
         bool *should_abort);
 
@@ -270,14 +272,19 @@ static map<unsigned, unsigned> trace_indices;
  * every thread's state.
  */
 pthread_key_t thread_ctx_key;
+pthread_key_t thread_heap_key;
 pthread_key_t tid_key;
 
 /*
  * Globally shared heap representation used by all threads.
  */
-static map<void *, heap_allocation *> global_heap;
-static set<size_t> allocated_aliases;
-static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
+// static map<void *, heap_allocation *> global_heap;
+// static set<size_t> allocated_aliases;
+// static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
+
+static map<pthread_t, thread_local_allocations *> thread_heaps;
+static pthread_t main_thread;
+static pthread_rwlock_t thread_heaps_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
  * Mapping from heap groups to the other heap groups they may be aliased with.
@@ -704,7 +711,7 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
             if (is_cuda_alloc) {
                 CHECK(cudaMalloc((void **)&new_address, size));
             } else {
-                new_address = malloc(size);
+                new_address = malloc(size + sizeof(void *));
                 assert(new_address != NULL);
             }
 #ifdef VERBOSE
@@ -712,21 +719,25 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
                     "new_address=%p\n", new_address);
 #endif
 
-            alloc = new heap_allocation(new_address, size,
+            alloc = new heap_allocation(
+                    ((unsigned char *)new_address) + sizeof(void *), size,
                     group, is_cuda_alloc, elem_is_ptr, elem_is_struct);
             if (elem_is_struct) {
                 alloc->add_struct_elem_size(elem_size);
                 alloc->set_pointer_offsets(&elem_ptr_offsets);
             }
 
+            if (!is_cuda_alloc) {
+                *((heap_allocation **)new_address) = alloc;
+            }
+
             already_filled = new memory_filled(size);
 
             new_heap->push_back(alloc);
 
-            VERIFY(global_heap.insert(pair<void *, heap_allocation *>(
-                            alloc->get_address(), alloc)).second);
+            get_my_thread_heap()->add_allocation(alloc, true);
 
-            old_to_new->insert(old_address, new_address, size);
+            old_to_new->insert(old_address, alloc->get_address(), size);
             filled->insert(pair<void *, memory_filled *>(old_address,
                         already_filled));
             old_to_alloc->insert(pair<void *, heap_allocation *>(old_address,
@@ -922,6 +933,15 @@ static void set_my_thread_ctx(thread_ctx *ctx) {
     VERIFY(pthread_setspecific(thread_ctx_key, ctx) == 0);
 }
 
+static void set_my_thread_heap(thread_local_allocations *heap) {
+    VERIFY(pthread_setspecific(thread_heap_key, heap) == 0);
+
+    VERIFY(pthread_rwlock_wrlock(&thread_heaps_lock) == 0);
+    VERIFY(thread_heaps.insert(pair<pthread_t, thread_local_allocations *>(
+                    pthread_self(), heap)).second);
+    VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
+}
+
 void init_chimes(int argc, char **argv) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
@@ -937,8 +957,9 @@ void init_chimes(int argc, char **argv) {
                 strlen(argv[arg]) + 1);
     }
 
-    assert(pthread_key_create(&thread_ctx_key, destroy_thread_ctx) == 0);
-    assert(pthread_key_create(&tid_key, free) == 0);
+    VERIFY(pthread_key_create(&thread_ctx_key, destroy_thread_ctx) == 0);
+    VERIFY(pthread_key_create(&tid_key, free) == 0);
+    VERIFY(pthread_key_create(&thread_heap_key, cleanup_thread_heap) == 0);
 
     pthread_create(&checkpoint_thread, NULL, checkpoint_func,
             &running_checkpoint_ctx);
@@ -948,6 +969,8 @@ void init_chimes(int argc, char **argv) {
     pthread_to_id[self] = 0; set_my_tid(0);
     thread_ctx *ctx = new thread_ctx(self, count_change_locations);
     thread_ctxs[0] = ctx; set_my_thread_ctx(ctx);
+    set_my_thread_heap(new thread_local_allocations());
+    main_thread = pthread_self();
     program_start_time = perf_profile::current_time_ns();
 
     char *chimes_disable_throttling = getenv("CHIMES_DISABLE_THROTTLING");
@@ -2957,7 +2980,7 @@ int alias_group_changed(unsigned loc_id) {
     return 0;
 }
 
-void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
+void malloc_impl(void *new_ptr, size_t nbytes, size_t group,
         int is_cuda_alloc, int is_ptr, int is_struct, int elem_size,
         int *ptr_field_offsets, int n_ptr_field_offsets, bool filled) {
     assert(valid_group(group) || is_cuda_alloc);
@@ -2966,7 +2989,8 @@ void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
             fprintf(stderr, "creating new heap allocation address=%p size=%lu "
                     "group=%lu\n", new_ptr, nbytes, group);
 #endif
-    heap_allocation *alloc = new heap_allocation((void *)new_ptr, nbytes, group,
+    heap_allocation *alloc = new heap_allocation(
+            ((unsigned char *)new_ptr) + sizeof(void *), nbytes, group,
             is_cuda_alloc, is_ptr, is_struct);
 
     if (is_struct) {
@@ -2977,18 +3001,10 @@ void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
         if (n_ptr_field_offsets > 0) free(ptr_field_offsets);
     }
 
-    thread_ctx *ctx = get_my_context_may_fail();
-    if (ctx) {
-        ctx->add_changed_alias(group);
+    if (!is_cuda_alloc) {
+        *((heap_allocation **)new_ptr) = alloc;
     }
-
-    VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
-    if (!ctx) {
-        allocated_aliases.insert(group);
-    }
-    VERIFY(global_heap.insert(pair<void *, heap_allocation *>(
-                    (void *)new_ptr, alloc)).second);
-    VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
+    get_my_thread_heap()->add_allocation(alloc);
 }
 
 /*
@@ -3029,7 +3045,7 @@ void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr, int
             parse_type_info(&vl, &info);
             va_end(vl);
         }
-        malloc_impl(ptr, nbytes, group, 0, is_ptr, is_struct, info.elem_size,
+        malloc_impl((void *)ptr, nbytes, group, 0, is_ptr, is_struct, info.elem_size,
                 info.ptr_field_offsets, info.n_ptr_fields, false);
     }
 
@@ -3059,7 +3075,7 @@ void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int i
             parse_type_info(&vl, &info);
             va_end(vl);
         }
-        malloc_impl(ptr, num * size, group, 0, is_ptr, is_struct,
+        malloc_impl((void *)ptr, num * size, group, 0, is_ptr, is_struct,
                 info.elem_size, info.ptr_field_offsets, info.n_ptr_fields, true);
     }
 
@@ -3069,8 +3085,14 @@ void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int i
 #endif
 }
 
-void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t group,
-        int is_ptr, int is_struct, ...) {
+/*
+ * new_ptr is the newly allocated memory (possibly NULL), including the header
+ * space for storing a heap_allocation*. ptr is the old pointer, including the
+ * header. nbytes is the number of bytes requested by the application, not
+ * including space for the header.
+ */
+void realloc_helper(const void *new_ptr, const void *ptr, void *header,
+        size_t nbytes, size_t group, int is_ptr, int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -3083,12 +3105,14 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
     if (ptr != NULL && new_ptr == ptr) {
         /*
          * The location in memory of a previous allocation did not change, only
-         * the size was extended.
+         * the size was extended. No need to lock here, as it would be unsafe to
+         * be re-allocing the same heap space from two different threads anyway.
          */
-        map<void *, heap_allocation *>::iterator alloc_ptr =
-            find_in_global_heap((void *)ptr);
+        heap_allocation *alloc = *((heap_allocation **)new_ptr);
+        // map<void *, heap_allocation *>::iterator alloc_ptr =
+        //     find_in_global_heap((void *)ptr);
 
-        heap_allocation *alloc = alloc_ptr->second;
+        // heap_allocation *alloc = alloc_ptr->second;
         old_size = alloc->get_size();
         assert(alloc->get_alias_group() == group);
         alloc->update_size(nbytes);
@@ -3109,8 +3133,8 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
              * An actual realloc, because the original pointer is non-NULL.
              * Remove the existing entry in the heap but re-use the information
              * in it to avoid the overhead of re-parsing the allocation type.
-             */
-            heap_allocation *alloc = free_impl(ptr);
+        0     */
+            heap_allocation *alloc = free_impl(ptr, (heap_allocation *)header);
 
             assert(alloc->get_alias_group() == group);
             old_size = alloc->get_size();
@@ -3141,7 +3165,7 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
             n_struct_ptr_fields = info.n_ptr_fields;
         }
 
-        malloc_impl(new_ptr, nbytes, group, 0, is_ptr, is_struct,
+        malloc_impl((void *)new_ptr, nbytes, group, 0, is_ptr, is_struct,
                 elem_size, ptr_field_offsets, n_struct_ptr_fields, false);
     }
 
@@ -3157,32 +3181,37 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
 #endif
 }
 
-heap_allocation *free_impl(const void *ptr) {
+heap_allocation *free_impl(const void *ptr, heap_allocation *alloc) {
 #ifdef VERBOSE
     fprintf(stderr, "free_impl: ptr=%p\n", ptr);
 #endif
     // Update heap metadata
-    VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
-    map<void *, heap_allocation *>::iterator in_heap = global_heap.find((void *)ptr);
-    assert(in_heap != global_heap.end() &&
-            in_heap->second->get_address() == ptr);
-    global_heap.erase(in_heap);
-    heap_allocation *alloc = in_heap->second;
-    VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
+    // heap_allocation *alloc = *((heap_allocation **)ptr);
+    assert(alloc->get_address() == ((unsigned char *)ptr) + sizeof(void *));
+    thread_local_allocations *owner = alloc->get_owner();
+    owner->remove_allocation(alloc);
+
+    // VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
+    // map<void *, heap_allocation *>::iterator in_heap = global_heap.find((void *)ptr);
+    // assert(in_heap != global_heap.end() &&
+    //         in_heap->second->get_address() == ptr);
+    // global_heap.erase(in_heap);
+    // heap_allocation *alloc = in_heap->second;
+    // VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
     return alloc;
 }
 
-map<void *, heap_allocation *>::iterator find_in_global_heap(void *ptr) {
-
-    VERIFY(pthread_rwlock_rdlock(&heap_lock) == 0);
-    map<void *, heap_allocation *>::iterator in_heap = global_heap.find(ptr);
-    assert(in_heap != global_heap.end());
-    VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
-
-    assert(in_heap->second->get_address() == ptr);
-
-    return in_heap;
-}
+// map<void *, heap_allocation *>::iterator find_in_global_heap(void *ptr) {
+// 
+//     VERIFY(pthread_rwlock_rdlock(&heap_lock) == 0);
+//     map<void *, heap_allocation *>::iterator in_heap = global_heap.find(ptr);
+//     assert(in_heap != global_heap.end());
+//     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
+// 
+//     assert(in_heap->second->get_address() == ptr);
+// 
+//     return in_heap;
+// }
 
 void free_helper(const void *ptr, size_t group) {
 #ifdef VERBOSE
@@ -3201,7 +3230,7 @@ void free_helper(const void *ptr, size_t group) {
          * applications, for example when the host application does a 0-byte
          * allocation and then frees it.
          */
-        heap_allocation *alloc = free_impl(ptr);
+        heap_allocation *alloc = free_impl(ptr, *((heap_allocation **)ptr));
 
         size_t original_group = alloc->get_alias_group();
 
@@ -3757,10 +3786,20 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 
                 set<size_t> *all_changed = new set<size_t>();
 
-                for (set<size_t>::iterator i = allocated_aliases.begin(),
-                        e = allocated_aliases.end(); i != e; i++) {
-                    all_changed->insert(*i);
+                for (map<pthread_t, thread_local_allocations *>::iterator i =
+                        thread_heaps.begin(), e = thread_heaps.end(); i != e;
+                        i++) {
+                    for (set<size_t>::iterator ii =
+                            i->second->allocated_aliases_begin(), ee =
+                            i->second->allocated_aliases_end(); ii != ee;
+                            ii++) {
+                        all_changed->insert(*ii);
+                    }
                 }
+                // for (set<size_t>::iterator i = allocated_aliases.begin(),
+                //         e = allocated_aliases.end(); i != e; i++) {
+                //     all_changed->insert(*i);
+                // }
 
                 bool any_unknown_func_calls = false;
                 for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
@@ -3833,9 +3872,13 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 #endif
 
                 vector<pair<size_t, heap_allocation *> > heap_to_checkpoint_sorted;
-                heap_to_checkpoint_sorted.reserve(global_heap.size());
-                collect_heap_to_checkpoint(&heap_to_checkpoint_sorted,
-                        global_heap.begin(), global_heap.end(), all_changed);
+                for (map<pthread_t, thread_local_allocations *>::iterator i =
+                        thread_heaps.begin(), e = thread_heaps.end(); i != e;
+                        i++) {
+                    collect_heap_to_checkpoint(&heap_to_checkpoint_sorted,
+                            i->second->begin(), i->second->end(),
+                            all_changed);
+                }
 
                 std::sort(heap_to_checkpoint_sorted.begin(),
                         heap_to_checkpoint_sorted.end(), compare_heap_allocations);
@@ -4082,7 +4125,10 @@ static void brute_force_pointer_fixing(void *ptr, heap_allocation *alloc,
         }
 
         if (already_translated->find(container) != already_translated->end()) {
-            heap_allocation *alloc = global_heap.at(*container);
+            void *address = *container;
+            heap_allocation **alloc_ptr = (heap_allocation **)(((unsigned char *)address) - sizeof(void *));
+            heap_allocation *alloc = *alloc_ptr;
+            // heap_allocation *alloc = global_heap.at(*container);
             brute_force_pointer_fixing(*container, alloc, visited);
         }
     }
@@ -4129,11 +4175,10 @@ static void fix_stack_or_global_pointer(void *container, string type,
 #endif
 
             if (points_to == "void") {
-#ifdef VERBOSE
-                fprintf(stderr, "  void pointer... matching heap allocation? "
-                        "%d\n", (global_heap.find(*nested_container) != global_heap.end()));
-#endif
-                heap_allocation *alloc = global_heap.at(*nested_container);
+                heap_allocation **alloc_ptr = (heap_allocation **)
+                    (((unsigned char *)(*nested_container)) - sizeof(void *));
+                heap_allocation *alloc = *alloc_ptr;
+                // heap_allocation *alloc = global_heap.at(*nested_container);
 
                 /*
                  * Since its a pointer to void, we just take a look at each
@@ -4936,6 +4981,8 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent, void *
             set_my_thread_ctx(new_ctx);
             VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 
+            set_my_thread_heap(new thread_local_allocations());
+
             pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
             set_my_tid(global_tid);
         } else {
@@ -4958,6 +5005,8 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent, void *
             thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid, new_ctx));
             set_my_thread_ctx(new_ctx);
             VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+
+            set_my_thread_heap(new thread_local_allocations());
 
             // Store the mapping from pthread_t to self
             pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
@@ -5039,6 +5088,24 @@ void thread_leaving() {
 #ifdef __CHIMES_PROFILE
     pp.add_time(THREAD_LEAVING, __start_time);
 #endif
+}
+
+static void cleanup_thread_heap(void *thread_heap_ptr) {
+    thread_local_allocations *thread_heap =
+        (thread_local_allocations *)thread_heap_ptr;
+
+    VERIFY(pthread_rwlock_rdlock(&thread_heaps_lock) == 0);
+    thread_local_allocations *main_thread_heap = thread_heaps.at(main_thread);
+    VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
+
+    main_thread_heap->wrlock();
+    for (map<void *, heap_allocation *>::iterator i = thread_heap->begin(),
+            e = thread_heap->end(); i != e; i++) {
+        main_thread_heap->add_allocation(i->second, true);
+    }
+    main_thread_heap->unlock();
+
+    delete thread_heap;
 }
 
 static void destroy_thread_ctx(void *thread_ctx_ptr) {
@@ -5181,6 +5248,16 @@ static unsigned get_my_tid() {
     int *tid_ptr = (int *)pthread_getspecific(tid_key);
     assert(tid_ptr);
     return *tid_ptr;
+}
+
+static thread_local_allocations *get_my_thread_heap() {
+    thread_local_allocations *local =
+        (thread_local_allocations *)pthread_getspecific(thread_heap_key);
+    if (local == NULL) {
+        local = new thread_local_allocations();
+        set_my_thread_heap(local);
+    }
+    return local;
 }
 
 static thread_ctx *get_my_context_may_fail() {

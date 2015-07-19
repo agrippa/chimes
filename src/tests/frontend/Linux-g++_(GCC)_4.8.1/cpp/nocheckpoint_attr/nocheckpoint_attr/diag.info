@@ -1,28 +1,28 @@
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 7 21  ({ void *____chimes_tmp_ptr = malloc(10 * sizeof(int)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432510UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 7 21  ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432510UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 7 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 8 21  ({ void *____chimes_tmp_ptr = malloc(10 * sizeof(int)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432501UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 8 21  ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432501UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 8 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 23 5  ({ free_helper(a, 513441829984432510UL);free(a);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 23 5  ({ free_helper((((unsigned char *)a) - sizeof(void *)), 513441829984432510UL);free((((unsigned char *)a) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 23 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 24 5  ({ free_helper(b, 513441829984432501UL);free(b);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 24 5  ({ free_helper((((unsigned char *)b) - sizeof(void *)), 513441829984432501UL);free((((unsigned char *)b) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 24 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 7 21  ({ void *____chimes_tmp_ptr = malloc(10 * sizeof(int)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432510UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 7 21  ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432510UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 7 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 8 21  ({ void *____chimes_tmp_ptr = malloc(10 * sizeof(int)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432501UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 8 21  ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432501UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 8 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 23 5  ({ free_helper(a, 513441829984432510UL);free(a);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 23 5  ({ free_helper((((unsigned char *)a) - sizeof(void *)), 513441829984432510UL);free((((unsigned char *)a) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 23 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 24 5  ({ free_helper(b, 513441829984432501UL);free(b);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 24 5  ({ free_helper((((unsigned char *)b) - sizeof(void *)), 513441829984432501UL);free((((unsigned char *)b) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 24 11 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 26 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 6 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(513441829984432521UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 27 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 6 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(513441829984432521UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 6 169 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 7 5  int *a;  a = ((int *) ({ void *____chimes_tmp_ptr = malloc(10 * sizeof(int)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432510UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 7 182 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 8 5  int *b;  b = ((int *) ({ void *____chimes_tmp_ptr = malloc(10 * sizeof(int)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432501UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 8 182 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 7 5  int *a;  a = ((int *) ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432510UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 7 291 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 8 5  int *b;  b = ((int *) ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432501UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 8 291 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 13 5  int c;  c = (foo(b)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 13 19 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp 26 6 int ____chimes_ret_var_0; ;

@@ -4,178 +4,178 @@ ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign
 ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 175 6 len=15 bubbleSort_both_npm
 ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 6 len=10 qSort_both_npm
 ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 277 9 len=13 pairwiseAlign_npm
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 22  ({ void *____chimes_tmp_ptr = malloc(sizeof(ASTR_T)); malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7756732687571763554UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 22  ({ void *____chimes_tmp_ptr = malloc((sizeof(ASTR_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7756732687571763554UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 45 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 31  ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 31  ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 62 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 38  ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7756732687571763799UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 38  ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7756732687571763799UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 76 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 31  ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763799UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 31  ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763799UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 63 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 31  ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763799UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 31  ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763799UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 63 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 18  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763001UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 18  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763001UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 58 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 31  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571762955UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 31  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571762955UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 65 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 31  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763023UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 31  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763023UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 65 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 34  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763119UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 34  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763119UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 74 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 27  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763457UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 27  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763457UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 61 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 25  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763107UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 25  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763107UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 59 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 22  ({ void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7756732687571762449UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 22  ({ void *____chimes_tmp_ptr = malloc(((iEnd - iBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7756732687571762449UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 70 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 22  ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7756732687571762521UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 22  ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7756732687571762521UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 70 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 31  ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7756732687571762546UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 31  ({ void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7756732687571762546UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 63 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 28  ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7756732687571762543UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 28  ({ void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7756732687571762543UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 59 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 29  ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762726UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 29  ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762726UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 74 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 29  ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762729UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 29  ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762729UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 74 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 15  ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 15  ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 50 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 9  ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 9  ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 38 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 9  ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 9  ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 38 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 15  ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 15  ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 54 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 9  ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 9  ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 42 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 9  ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 9  ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 42 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 2  ({ free_helper(weights[i], 7756732687571762543UL);free(weights[i]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 2  ({ free_helper((((unsigned char *)weights[i]) - sizeof(void *)), 7756732687571762543UL);free((((unsigned char *)weights[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 7  ({ free_helper(weights, 7756732687571762546UL);free(weights);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 7  ({ free_helper((((unsigned char *)weights) - sizeof(void *)), 7756732687571762546UL);free((((unsigned char *)weights) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 7  ({ free_helper(goodScores, 7756732687571763001UL);free(goodScores);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 7  ({ free_helper((((unsigned char *)goodScores) - sizeof(void *)), 7756732687571763001UL);free((((unsigned char *)goodScores) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 22 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 7  ({ free_helper(goodEndsI, 7756732687571762955UL);free(goodEndsI);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 7  ({ free_helper((((unsigned char *)goodEndsI) - sizeof(void *)), 7756732687571762955UL);free((((unsigned char *)goodEndsI) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 7  ({ free_helper(goodEndsJ, 7756732687571763023UL);free(goodEndsJ);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 7  ({ free_helper((((unsigned char *)goodEndsJ) - sizeof(void *)), 7756732687571763023UL);free((((unsigned char *)goodEndsJ) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 7  ({ free_helper(F, 7756732687571762729UL);free(F);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 7  ({ free_helper((((unsigned char *)F) - sizeof(void *)), 7756732687571762729UL);free((((unsigned char *)F) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 7  ({ free_helper(V, 7756732687571762726UL);free(V);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 7  ({ free_helper((((unsigned char *)V) - sizeof(void *)), 7756732687571762726UL);free((((unsigned char *)V) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 7  ({ free_helper(scores, 7756732687571763119UL);free(scores);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 7  ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 7756732687571763119UL);free((((unsigned char *)scores) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 18 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 7  ({ free_helper(index, 7756732687571763457UL);free(index);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 7  ({ free_helper((((unsigned char *)index) - sizeof(void *)), 7756732687571763457UL);free((((unsigned char *)index) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 7  ({ free_helper(best, 7756732687571763107UL);free(best);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 7  ({ free_helper((((unsigned char *)best) - sizeof(void *)), 7756732687571763107UL);free((((unsigned char *)best) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 16 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 7  ({ free_helper(mainSeq, 7756732687571762449UL);free(mainSeq);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 7  ({ free_helper((((unsigned char *)mainSeq) - sizeof(void *)), 7756732687571762449UL);free((((unsigned char *)mainSeq) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 7  ({ free_helper(matchSeq, 7756732687571762521UL);free(matchSeq);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 7  ({ free_helper((((unsigned char *)matchSeq) - sizeof(void *)), 7756732687571762521UL);free((((unsigned char *)matchSeq) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 20 
 ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 9 len=5 freeA_npm
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 7  ({ free_helper(A->numReports, 7756732687571763799UL);free(A->numReports);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 7  ({ free_helper((((unsigned char *)A->numReports) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->numReports) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 4  ({ free_helper(A->goodScores[i], 7756732687571763799UL);free(A->goodScores[i]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 4  ({ free_helper((((unsigned char *)A->goodScores[i]) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodScores[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 7  ({ free_helper(A->goodScores, 7756732687571763799UL);free(A->goodScores);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 7  ({ free_helper((((unsigned char *)A->goodScores) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodScores) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 4  ({ free_helper(A->goodEndsI[i], 7756732687571763799UL);free(A->goodEndsI[i]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 4  ({ free_helper((((unsigned char *)A->goodEndsI[i]) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodEndsI[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 7  ({ free_helper(A->goodEndsI, 7756732687571763799UL);free(A->goodEndsI);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 7  ({ free_helper((((unsigned char *)A->goodEndsI) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodEndsI) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 4  ({ free_helper(A->goodEndsJ[i], 7756732687571763799UL);free(A->goodEndsJ[i]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 4  ({ free_helper((((unsigned char *)A->goodEndsJ[i]) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodEndsJ[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 7  ({ free_helper(A->goodEndsJ, 7756732687571763799UL);free(A->goodEndsJ);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 7  ({ free_helper((((unsigned char *)A->goodEndsJ) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodEndsJ) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 5  ({ free_helper(A, 7756732687571763947UL);free(A);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 5  ({ free_helper((((unsigned char *)A) - sizeof(void *)), 7756732687571763947UL);free((((unsigned char *)A) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 11 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 22  ({ void *____chimes_tmp_ptr = malloc(sizeof(ASTR_T)); malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7756732687571763554UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 22  ({ void *____chimes_tmp_ptr = malloc((sizeof(ASTR_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(ASTR_T), 7756732687571763554UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 45 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 31  ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 31  ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 62 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 38  ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7756732687571763799UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 38  ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(long long*), 7756732687571763799UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 76 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 31  ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763799UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 31  ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763799UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 63 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 31  ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763799UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 31  ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int*), 7756732687571763799UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 63 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 18  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763001UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 18  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763001UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 58 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 31  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571762955UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 31  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571762955UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 65 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 31  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763023UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 31  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763023UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 65 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 34  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763119UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 34  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(long long), 7756732687571763119UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 74 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 27  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763457UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 27  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763457UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 61 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 25  ({ void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763107UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 25  ({ void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (sortReports+1)*sizeof(int), 7756732687571763107UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 59 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 22  ({ void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7756732687571762449UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 22  ({ void *____chimes_tmp_ptr = malloc(((iEnd - iBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (iEnd - iBeg + 2) * sizeof(unsigned char), 7756732687571762449UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 70 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 22  ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7756732687571762521UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 22  ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(unsigned char), 7756732687571762521UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 70 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 31  ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7756732687571762546UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 31  ({ void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char*), 7756732687571762546UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 63 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 28  ({ void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7756732687571762543UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 28  ({ void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ((64) + 1)*sizeof(char), 7756732687571762543UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 59 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 29  ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762726UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 29  ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762726UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 74 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 29  ({ void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762729UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 29  ({ void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (jEnd - jBeg + 2) * sizeof(long long), 7756732687571762729UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 74 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 15  ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 15  ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(long long), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 50 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 9  ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 9  ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 38 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 9  ({ void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 9  ({ void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (report+1)*sizeof(int), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 38 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 15  ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 15  ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(long long), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 54 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 9  ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 9  ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 42 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 9  ({ void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763799UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 9  ({ void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (maxReports+1)*sizeof(int), 7756732687571763799UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 42 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 2  ({ free_helper(weights[i], 7756732687571762543UL);free(weights[i]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 2  ({ free_helper((((unsigned char *)weights[i]) - sizeof(void *)), 7756732687571762543UL);free((((unsigned char *)weights[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 7  ({ free_helper(weights, 7756732687571762546UL);free(weights);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 7  ({ free_helper((((unsigned char *)weights) - sizeof(void *)), 7756732687571762546UL);free((((unsigned char *)weights) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 7  ({ free_helper(goodScores, 7756732687571763001UL);free(goodScores);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 7  ({ free_helper((((unsigned char *)goodScores) - sizeof(void *)), 7756732687571763001UL);free((((unsigned char *)goodScores) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 22 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 7  ({ free_helper(goodEndsI, 7756732687571762955UL);free(goodEndsI);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 7  ({ free_helper((((unsigned char *)goodEndsI) - sizeof(void *)), 7756732687571762955UL);free((((unsigned char *)goodEndsI) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 7  ({ free_helper(goodEndsJ, 7756732687571763023UL);free(goodEndsJ);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 7  ({ free_helper((((unsigned char *)goodEndsJ) - sizeof(void *)), 7756732687571763023UL);free((((unsigned char *)goodEndsJ) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 21 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 7  ({ free_helper(F, 7756732687571762729UL);free(F);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 7  ({ free_helper((((unsigned char *)F) - sizeof(void *)), 7756732687571762729UL);free((((unsigned char *)F) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 7  ({ free_helper(V, 7756732687571762726UL);free(V);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 7  ({ free_helper((((unsigned char *)V) - sizeof(void *)), 7756732687571762726UL);free((((unsigned char *)V) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 13 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 7  ({ free_helper(scores, 7756732687571763119UL);free(scores);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 7  ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 7756732687571763119UL);free((((unsigned char *)scores) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 18 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 7  ({ free_helper(index, 7756732687571763457UL);free(index);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 7  ({ free_helper((((unsigned char *)index) - sizeof(void *)), 7756732687571763457UL);free((((unsigned char *)index) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 17 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 7  ({ free_helper(best, 7756732687571763107UL);free(best);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 7  ({ free_helper((((unsigned char *)best) - sizeof(void *)), 7756732687571763107UL);free((((unsigned char *)best) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 16 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 7  ({ free_helper(mainSeq, 7756732687571762449UL);free(mainSeq);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 7  ({ free_helper((((unsigned char *)mainSeq) - sizeof(void *)), 7756732687571762449UL);free((((unsigned char *)mainSeq) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 19 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 7  ({ free_helper(matchSeq, 7756732687571762521UL);free(matchSeq);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 7  ({ free_helper((((unsigned char *)matchSeq) - sizeof(void *)), 7756732687571762521UL);free((((unsigned char *)matchSeq) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 20 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 7  ({ free_helper(A->numReports, 7756732687571763799UL);free(A->numReports);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 7  ({ free_helper((((unsigned char *)A->numReports) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->numReports) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 4  ({ free_helper(A->goodScores[i], 7756732687571763799UL);free(A->goodScores[i]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 4  ({ free_helper((((unsigned char *)A->goodScores[i]) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodScores[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 7  ({ free_helper(A->goodScores, 7756732687571763799UL);free(A->goodScores);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 7  ({ free_helper((((unsigned char *)A->goodScores) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodScores) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 25 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 4  ({ free_helper(A->goodEndsI[i], 7756732687571763799UL);free(A->goodEndsI[i]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 4  ({ free_helper((((unsigned char *)A->goodEndsI[i]) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodEndsI[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 7  ({ free_helper(A->goodEndsI, 7756732687571763799UL);free(A->goodEndsI);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 7  ({ free_helper((((unsigned char *)A->goodEndsI) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodEndsI) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 4  ({ free_helper(A->goodEndsJ[i], 7756732687571763799UL);free(A->goodEndsJ[i]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 4  ({ free_helper((((unsigned char *)A->goodEndsJ[i]) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodEndsJ[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 7  ({ free_helper(A->goodEndsJ, 7756732687571763799UL);free(A->goodEndsJ);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 7  ({ free_helper((((unsigned char *)A->goodEndsJ) - sizeof(void *)), 7756732687571763799UL);free((((unsigned char *)A->goodEndsJ) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 24 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 5  ({ free_helper(A, 7756732687571763947UL);free(A);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 5  ({ free_helper((((unsigned char *)A) - sizeof(void *)), 7756732687571763947UL);free((((unsigned char *)A) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 11 
 InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 100 82 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 104 63 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0, false); 
@@ -243,52 +243,52 @@ ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwise
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 288 19 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 289 3 double beginTime; double endTime; ;
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 289 28 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 26 void *____chimes_tmp_ptr = malloc(sizeof(ASTR_T)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 75 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 35 void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 94 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 42 void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 109 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 35 void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 96 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 35 void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 96 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 22 void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 94 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 35 void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 101 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 35 void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 101 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 38 void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(long long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 110 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 31 void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 97 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 29 void *____chimes_tmp_ptr = malloc((sortReports + 1) * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 95 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 26 void *____chimes_tmp_ptr = malloc((iEnd - iBeg + 2) * sizeof(unsigned char)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 102 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 26 void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(unsigned char)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 102 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 35 void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char *)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 97 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 32 void *____chimes_tmp_ptr = malloc(((64) + 1) * sizeof(char)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 92 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 33 void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 105 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 33 void *____chimes_tmp_ptr = malloc((jEnd - jBeg + 2) * sizeof(long long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 105 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 19 void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(long long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 86 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 13 void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 74 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 13 void *____chimes_tmp_ptr = malloc((report + 1) * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 74 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 19 void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(long long)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 90 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 13 void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 78 
-ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 13 void *____chimes_tmp_ptr = malloc((maxReports + 1) * sizeof(int)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 78 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 26 void *____chimes_tmp_ptr = malloc((sizeof(ASTR_T)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 94 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 35 void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 113 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 42 void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 128 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 35 void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 115 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 35 void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 115 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 22 void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 113 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 35 void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 120 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 35 void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 120 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 38 void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(long long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 129 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 31 void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 116 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 29 void *____chimes_tmp_ptr = malloc(((sortReports + 1) * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 114 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 26 void *____chimes_tmp_ptr = malloc(((iEnd - iBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 121 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 26 void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(unsigned char)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 121 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 35 void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char *)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 116 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 32 void *____chimes_tmp_ptr = malloc((((64) + 1) * sizeof(char)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 111 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 33 void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 124 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 33 void *____chimes_tmp_ptr = malloc(((jEnd - jBeg + 2) * sizeof(long long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 124 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 19 void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(long long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 105 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 13 void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 93 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 13 void *____chimes_tmp_ptr = malloc(((report + 1) * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 93 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 19 void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(long long)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 109 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 13 void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 97 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 13 void *____chimes_tmp_ptr = malloc(((maxReports + 1) * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 97 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1125 4 ASTR_T *____chimes_ret_var_2; ;
 ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1125 33 
 ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 27 const int ____chimes_did_disable6 = new_stack((void *)(&freeA), "freeA", &____must_manage_freeA, 1, 0, (size_t)(7756732687571763947UL)); ;

@@ -59,8 +59,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -79,7 +80,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2234,9 +2235,9 @@ int iter;
        niters = (10000) ;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-       curr = ((int *) ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; })) ;
+       curr = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-       next = ((int *) ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; })) ;
+       next = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
     for (i = 0; i < N; i++) {
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
@@ -2278,9 +2279,9 @@ int iter;
     fclose(fp);
 # 34 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 # 35 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-     ({ free_helper(curr, 460194934375909758UL);free(curr); }) ;
+     ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)curr) - sizeof(void *))); }) ;
 # 36 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-     ({ free_helper(next, 460194934375909758UL);free(next); }) ;
+     ({ free_helper((((unsigned char *)next) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)next) - sizeof(void *))); }) ;
 # 37 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 38 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
@@ -2305,9 +2306,9 @@ int iter;
        niters = (10000) ;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-       curr = ((int *) ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; })) ;
+       curr = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-       next = ((int *) ({ void *____chimes_tmp_ptr = malloc(N * sizeof(int)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); ____chimes_tmp_ptr; })) ;
+       next = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
     for (i = 0; i < N; i++) {
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
@@ -2349,9 +2350,9 @@ int iter;
     fclose(fp);
 # 34 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
 # 35 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-     ({ free_helper(curr, 460194934375909758UL);free(curr); }) ;
+     ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)curr) - sizeof(void *))); }) ;
 # 36 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
-     ({ free_helper(next, 460194934375909758UL);free(next); }) ;
+     ({ free_helper((((unsigned char *)next) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)next) - sizeof(void *))); }) ;
 # 37 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 38 "/home/jmg3/num-debug/src/examples/cpp/./simple_stencil.cpp"

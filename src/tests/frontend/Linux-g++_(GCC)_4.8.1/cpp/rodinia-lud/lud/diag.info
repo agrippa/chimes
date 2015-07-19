@@ -1,10 +1,10 @@
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 111 5  ({ free_helper(mm, 11237237613718109848UL);free(mm);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 111 5  ({ free_helper((((unsigned char *)mm) - sizeof(void *)), 11237237613718109848UL);free((((unsigned char *)mm) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 111 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 114 3  ({ free_helper(m, 11237237613718109830UL);free(m);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 114 3  ({ free_helper((((unsigned char *)m) - sizeof(void *)), 11237237613718109830UL);free((((unsigned char *)m) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 114 9 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 111 5  ({ free_helper(mm, 11237237613718109848UL);free(mm);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 111 5  ({ free_helper((((unsigned char *)mm) - sizeof(void *)), 11237237613718109848UL);free((((unsigned char *)mm) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 111 12 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 114 3  ({ free_helper(m, 11237237613718109830UL);free(m);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 114 3  ({ free_helper((((unsigned char *)m) - sizeof(void *)), 11237237613718109830UL);free((((unsigned char *)m) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 114 9 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 116 58 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud.c 42 1 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(11237237613718109864UL)); 

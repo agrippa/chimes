@@ -1,12 +1,12 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 83 11 len=13 initLinkCells_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 30  ({ void *____chimes_tmp_ptr = malloc(sizeof(LinkCell)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 30  ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 53 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 23  ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 13307200203520302136UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 23  ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 13307200203520302136UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 57 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 113 6 len=16 destroyLinkCells_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 4  ({ free_helper((*boxes)->nAtoms, 13307200203520302195UL);free((*boxes)->nAtoms);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 4  ({ free_helper((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)), 13307200203520302195UL);free((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 25 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 4  ({ free_helper(*boxes, 13307200203520302188UL);free(*boxes);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 4  ({ free_helper((((unsigned char *)*boxes) - sizeof(void *)), 13307200203520302188UL);free((((unsigned char *)*boxes) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 15 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 131 5 len=16 getNeighborBoxes_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 159 6 len=12 putAtomInBox_npm
@@ -18,13 +18,13 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 315 6
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 337 5 len=15 getBoxFromCoord_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 6 len=14 emptyHaloCells_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 387 6 len=8 getTuple_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 30  ({ void *____chimes_tmp_ptr = malloc(sizeof(LinkCell)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 30  ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 53 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 23  ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 13307200203520302136UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 23  ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 13307200203520302136UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 4  ({ free_helper((*boxes)->nAtoms, 13307200203520302195UL);free((*boxes)->nAtoms);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 4  ({ free_helper((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)), 13307200203520302195UL);free((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 25 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 4  ({ free_helper(*boxes, 13307200203520302188UL);free(*boxes);  }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 4  ({ free_helper((((unsigned char *)*boxes) - sizeof(void *)), 13307200203520302188UL);free((((unsigned char *)*boxes) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 15 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 110 67 rm_stack(true, 13307200203520301970UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 1 const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302171UL), (size_t)(0UL)); 
@@ -59,14 +59,14 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCell
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 459 1 rm_stack(false, 0UL, "getTuple", &____must_manage_getTuple, ____alias_loc_id_5, ____chimes_did_disable11, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 2 const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302171UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 177 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 4  LinkCell *ll;  ll = ((LinkCell*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LinkCell)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 280 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 4  LinkCell *ll;  ll = ((LinkCell*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 389 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 4 {  int i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 95 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 9  i = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 27 void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 91 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 27 void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 110 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 4 {  int iBox; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 74  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 9  iBox = (0) ;

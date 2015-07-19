@@ -99,8 +99,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -119,7 +120,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4035,7 +4036,7 @@ kdnode *empty_kdnode_npm();
 kdnode *empty_kdnode_quick(); kdnode *empty_kdnode();
 kdnode *empty_kdnode_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&empty_kdnode), "empty_kdnode", &____must_manage_empty_kdnode, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 64 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308872UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308872UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 65 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 66 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4052,7 +4053,7 @@ kdnode *init_kdnode_npm(long long nn);
 kdnode *init_kdnode_quick(long long nn); kdnode *init_kdnode(long long nn);
 kdnode *init_kdnode_resumable(long long nn) {const int ____chimes_did_disable1 = new_stack((void *)(&init_kdnode), "init_kdnode", &____must_manage_init_kdnode, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 74 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308897UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308897UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 75 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 76 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4709,7 +4710,7 @@ int **xyzw;
    cutoff2 = cutoff * cutoff;
 # 748 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 748 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310076UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   xi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310076UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 749 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xi == __null) {
 # 750 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4720,7 +4721,7 @@ int **xyzw;
    }
 # 753 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 754 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310072UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   yi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310072UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 755 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (yi == __null) {
 # 756 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4731,7 +4732,7 @@ int **xyzw;
    }
 # 759 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 760 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   zi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310068UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   zi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310068UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 761 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (zi == __null) {
 # 762 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4742,7 +4743,7 @@ int **xyzw;
    }
 # 765 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 766 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ti = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310204UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   ti = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310204UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 767 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (ti == __null) {
 # 768 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4753,7 +4754,7 @@ int **xyzw;
    }
 # 771 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 772 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   wi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310203UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   wi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310203UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 773 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (wi == __null) {
 # 774 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4786,7 +4787,7 @@ int **xyzw;
 # 792 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 793 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 794 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xyzw = (int **) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(int *), 6702685019445310138UL, 1, 0); ____chimes_tmp_ptr; }) ;
+   xyzw = (int **) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(int *), 6702685019445310138UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 795 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xyzw == __null) {
 # 796 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4802,7 +4803,7 @@ int **xyzw;
 # 802 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 803 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 804 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    int *tmp; tmp = ((int *) ({ void *____chimes_tmp_ptr = malloc(n * (3) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, n * (3) * sizeof(int), 6702685019445310140UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    int *tmp; tmp = ((int *) ({ void *____chimes_tmp_ptr = malloc((n * (3) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n * (3) * sizeof(int), 6702685019445310140UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 805 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 806 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 807 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4957,7 +4958,7 @@ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_19, ____chimes_did_dis
 # 63 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *empty_kdnode_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&empty_kdnode), "empty_kdnode", &____must_manage_empty_kdnode, 0, 0) ; ; ;
 # 64 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308872UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308872UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 65 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 66 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4973,7 +4974,7 @@ kdnode *empty_kdnode() { return (____chimes_replaying ? empty_kdnode_resumable()
 # 73 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *init_kdnode_quick(long long nn) {const int ____chimes_did_disable1 = new_stack((void *)(&init_kdnode), "init_kdnode", &____must_manage_init_kdnode, 1, 0, (size_t)(0UL)) ; ; ;
 # 74 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308897UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308897UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 75 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 76 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5631,7 +5632,7 @@ int **xyzw;
    cutoff2 = cutoff * cutoff;
 # 748 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 748 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310076UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   xi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310076UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 749 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xi == __null) {
 # 750 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5642,7 +5643,7 @@ int **xyzw;
    }
 # 753 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 754 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310072UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   yi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310072UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 755 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (yi == __null) {
 # 756 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5653,7 +5654,7 @@ int **xyzw;
    }
 # 759 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 760 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   zi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310068UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   zi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310068UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 761 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (zi == __null) {
 # 762 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5664,7 +5665,7 @@ int **xyzw;
    }
 # 765 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 766 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ti = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310204UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   ti = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310204UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 767 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (ti == __null) {
 # 768 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5675,7 +5676,7 @@ int **xyzw;
    }
 # 771 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 772 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   wi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310203UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   wi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 6702685019445310203UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 773 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (wi == __null) {
 # 774 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5708,7 +5709,7 @@ int **xyzw;
 # 792 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 793 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 794 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xyzw = (int **) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(int *), 6702685019445310138UL, 1, 0); ____chimes_tmp_ptr; }) ;
+   xyzw = (int **) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(int *), 6702685019445310138UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 795 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xyzw == __null) {
 # 796 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5724,7 +5725,7 @@ int **xyzw;
 # 802 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 803 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 804 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    int *tmp; tmp = ((int *) ({ void *____chimes_tmp_ptr = malloc(n * (3) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, n * (3) * sizeof(int), 6702685019445310140UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    int *tmp; tmp = ((int *) ({ void *____chimes_tmp_ptr = malloc((n * (3) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n * (3) * sizeof(int), 6702685019445310140UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 805 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 806 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 807 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5881,7 +5882,7 @@ int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_re
 # 63 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *empty_kdnode_npm() {
 # 64 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    kdnode *empty = (kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308872UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; }) ;
+    kdnode *empty = (kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308872UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 65 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 66 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5895,7 +5896,7 @@ kdnode *empty_kdnode_npm() {
 # 73 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *init_kdnode_npm(long long nn) {
 # 74 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    kdnode *empty = (kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308897UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; }) ;
+    kdnode *empty = (kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 6702685019445308897UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 75 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 76 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"

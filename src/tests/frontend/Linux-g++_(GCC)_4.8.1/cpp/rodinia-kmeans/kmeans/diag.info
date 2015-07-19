@@ -1,44 +1,44 @@
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 6 len=5 usage_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 105 8 len=7 seconds_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 24  ({ void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 69 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 31  ({ void *____chimes_tmp_ptr = malloc((numObjects * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 64 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 34  ({ void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 79 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 24  ({ void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 69 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 31  ({ void *____chimes_tmp_ptr = malloc((numObjects * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 64 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 34  ({ void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 79 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 5  ({ free_helper(attributes, 7980733884997753126UL);free(attributes);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 5  ({ free_helper((((unsigned char *)attributes) - sizeof(void *)), 7980733884997753126UL);free((((unsigned char *)attributes) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 20 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 5  ({ free_helper(cluster_centres[0], 7980733884997753360UL);free(cluster_centres[0]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 5  ({ free_helper((((unsigned char *)cluster_centres[0]) - sizeof(void *)), 7980733884997753360UL);free((((unsigned char *)cluster_centres[0]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 28 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 5  ({ free_helper(cluster_centres, 7980733884997753451UL);free(cluster_centres);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 5  ({ free_helper((((unsigned char *)cluster_centres) - sizeof(void *)), 7980733884997753451UL);free((((unsigned char *)cluster_centres) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 25 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 5  ({ free_helper(buf, 7980733884997753276UL);free(buf);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 5  ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 7980733884997753276UL);free((((unsigned char *)buf) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 24  ({ void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 69 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 31  ({ void *____chimes_tmp_ptr = malloc((numObjects * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 64 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 34  ({ void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 79 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 24  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 24  ({ void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753276UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 69 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 31  ({ void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 31  ({ void *____chimes_tmp_ptr = malloc((numObjects * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects* sizeof(float*), 7980733884997753126UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 64 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 34  ({ void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 34  ({ void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects*numAttributes*sizeof(float), 7980733884997753128UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 79 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 5  ({ free_helper(attributes, 7980733884997753126UL);free(attributes);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 5  ({ free_helper((((unsigned char *)attributes) - sizeof(void *)), 7980733884997753126UL);free((((unsigned char *)attributes) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 255 20 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 5  ({ free_helper(cluster_centres[0], 7980733884997753360UL);free(cluster_centres[0]);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 5  ({ free_helper((((unsigned char *)cluster_centres[0]) - sizeof(void *)), 7980733884997753360UL);free((((unsigned char *)cluster_centres[0]) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 256 28 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 5  ({ free_helper(cluster_centres, 7980733884997753451UL);free(cluster_centres);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 5  ({ free_helper((((unsigned char *)cluster_centres) - sizeof(void *)), 7980733884997753451UL);free((((unsigned char *)cluster_centres) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 257 25 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 5  ({ free_helper(buf, 7980733884997753276UL);free(buf);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 5  ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 7980733884997753276UL);free((((unsigned char *)buf) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 258 13 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 93 25 const int ____chimes_did_disable0 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(7980733884997752949UL)); 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 103 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable0, false); 
@@ -106,20 +106,20 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 130 35 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 160 9 int infile; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 160 19 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 28 void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 105 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 35 void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 98 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 38 void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 115 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 28 void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 170 124 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 35 void *____chimes_tmp_ptr = malloc((numObjects * sizeof(float *)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 171 117 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 38 void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 172 134 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 9 FILE *infile; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 21 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 28 void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 105 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 35 void *____chimes_tmp_ptr = malloc(numObjects * sizeof(float *)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 98 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 38 void *____chimes_tmp_ptr = malloc(numObjects * numAttributes * sizeof(float)); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 115 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 28 void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 200 124 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 35 void *____chimes_tmp_ptr = malloc((numObjects * sizeof(float *)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 201 117 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 38 void *____chimes_tmp_ptr = malloc((numObjects * numAttributes * sizeof(float)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 202 134 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 5  double start_time;  start_time = (seconds()) ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 220 34 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 236 5  double end_time;  end_time = (seconds()) ;

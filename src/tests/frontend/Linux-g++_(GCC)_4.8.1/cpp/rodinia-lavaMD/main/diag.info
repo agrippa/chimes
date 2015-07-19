@@ -1,37 +1,37 @@
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 53 8 len=7 seconds_npm
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 206 22  ({ void *____chimes_tmp_ptr = malloc(dim_cpu.box_mem); malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 8237081768666506971UL, 0, 1, (int)sizeof(struct box_str), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 206 22  ({ void *____chimes_tmp_ptr = malloc((dim_cpu.box_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 8237081768666506971UL, 0, 1, (int)sizeof(struct box_str), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 206 44 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 272 25  ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507310UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 272 25  ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507310UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 272 49 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 281 20  ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem2); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 8237081768666507372UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 281 20  ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem2) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 8237081768666507372UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 281 45 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 287 25  ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507395UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 287 25  ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507395UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 287 49 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 341 2  ({ free_helper(rv_cpu, 8237081768666507310UL);free(rv_cpu);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 341 2  ({ free_helper((((unsigned char *)rv_cpu) - sizeof(void *)), 8237081768666507310UL);free((((unsigned char *)rv_cpu) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 341 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 342 2  ({ free_helper(qv_cpu, 8237081768666507372UL);free(qv_cpu);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 342 2  ({ free_helper((((unsigned char *)qv_cpu) - sizeof(void *)), 8237081768666507372UL);free((((unsigned char *)qv_cpu) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 342 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 343 2  ({ free_helper(fv_cpu, 8237081768666507395UL);free(fv_cpu);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 343 2  ({ free_helper((((unsigned char *)fv_cpu) - sizeof(void *)), 8237081768666507395UL);free((((unsigned char *)fv_cpu) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 343 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 344 2  ({ free_helper(box_cpu, 8237081768666506971UL);free(box_cpu);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 344 2  ({ free_helper((((unsigned char *)box_cpu) - sizeof(void *)), 8237081768666506971UL);free((((unsigned char *)box_cpu) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 344 14 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 115 8 alias_group_changed(____alias_loc_id_0) || 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 140 8 alias_group_changed(____alias_loc_id_2) || 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 206 22  ({ void *____chimes_tmp_ptr = malloc(dim_cpu.box_mem); malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 8237081768666506971UL, 0, 1, (int)sizeof(struct box_str), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 206 22  ({ void *____chimes_tmp_ptr = malloc((dim_cpu.box_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 8237081768666506971UL, 0, 1, (int)sizeof(struct box_str), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 206 44 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 272 25  ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507310UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 272 25  ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507310UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 272 49 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 281 20  ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem2); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 8237081768666507372UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 281 20  ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem2) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 8237081768666507372UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 281 45 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 287 25  ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507395UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 287 25  ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507395UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 287 49 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 341 2  ({ free_helper(rv_cpu, 8237081768666507310UL);free(rv_cpu);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 341 2  ({ free_helper((((unsigned char *)rv_cpu) - sizeof(void *)), 8237081768666507310UL);free((((unsigned char *)rv_cpu) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 341 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 342 2  ({ free_helper(qv_cpu, 8237081768666507372UL);free(qv_cpu);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 342 2  ({ free_helper((((unsigned char *)qv_cpu) - sizeof(void *)), 8237081768666507372UL);free((((unsigned char *)qv_cpu) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 342 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 343 2  ({ free_helper(fv_cpu, 8237081768666507395UL);free(fv_cpu);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 343 2  ({ free_helper((((unsigned char *)fv_cpu) - sizeof(void *)), 8237081768666507395UL);free((((unsigned char *)fv_cpu) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 343 13 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 344 2  ({ free_helper(box_cpu, 8237081768666506971UL);free(box_cpu);  }) 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 344 2  ({ free_helper((((unsigned char *)box_cpu) - sizeof(void *)), 8237081768666506971UL);free((((unsigned char *)box_cpu) - sizeof(void *)));  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 344 14 
 InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 57 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_11, ____chimes_did_disable0, false); 
 InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 53 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
@@ -106,14 +106,14 @@ ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 157 6 int ____
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 157 30 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 163 5 int ____chimes_ret_var_7; ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 163 29 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 206 26 void *____chimes_tmp_ptr = malloc(dim_cpu.box_mem); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 206 76 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 272 29 void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 272 81 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 281 24 void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem2); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 281 77 
-ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 287 29 void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); ;
-ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 287 81 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 206 26 void *____chimes_tmp_ptr = malloc((dim_cpu.box_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 206 95 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 272 29 void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 272 100 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 281 24 void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem2) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 281 96 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 287 29 void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 287 100 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 322 5  double end_time;  end_time = (seconds()) ;
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 322 32 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 371 3 int ____chimes_ret_var_8; ;

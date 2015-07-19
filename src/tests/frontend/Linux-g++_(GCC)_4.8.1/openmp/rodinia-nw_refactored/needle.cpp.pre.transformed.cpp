@@ -75,8 +75,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -95,7 +96,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4272,11 +4273,11 @@ int max_cols;
 # 212 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
     fprintf(stderr, "nbytes=%lu, allocating 3 arrays of that\n", nbytes);
 # 213 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
- referrence = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039614UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ referrence = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039614UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 214 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
-    input_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039618UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    input_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039618UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 215 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
- output_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039622UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ output_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039622UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 216 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
 # 217 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
         call_lbl_1: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
@@ -4300,11 +4301,11 @@ int max_cols;
      double end_time; call_lbl_6: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 233 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
 # 234 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
-  ({ free_helper(referrence, 268606578347039614UL);free(referrence); }) ;
+  ({ free_helper((((unsigned char *)referrence) - sizeof(void *)), 268606578347039614UL);free((((unsigned char *)referrence) - sizeof(void *))); }) ;
 # 235 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
-  ({ free_helper(input_itemsets, 268606578347039618UL);free(input_itemsets); }) ;
+  ({ free_helper((((unsigned char *)input_itemsets) - sizeof(void *)), 268606578347039618UL);free((((unsigned char *)input_itemsets) - sizeof(void *))); }) ;
 # 236 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
-  ({ free_helper(output_itemsets, 268606578347039622UL);free(output_itemsets); }) ;
+  ({ free_helper((((unsigned char *)output_itemsets) - sizeof(void *)), 268606578347039622UL);free((((unsigned char *)output_itemsets) - sizeof(void *))); }) ;
 # 237 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
 # 238 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
     printf("execution took %f s\n", end_time - start_time);
@@ -4586,11 +4587,11 @@ int max_cols;
 # 212 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
     fprintf(stderr, "nbytes=%lu, allocating 3 arrays of that\n", nbytes);
 # 213 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
- referrence = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039614UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ referrence = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039614UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 214 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
-    input_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039618UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    input_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039618UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 215 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
- output_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039622UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ output_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 268606578347039622UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 216 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
 # 217 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
         call_lbl_1: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
@@ -4614,11 +4615,11 @@ int max_cols;
      double end_time; call_lbl_6: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 233 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
 # 234 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
-  ({ free_helper(referrence, 268606578347039614UL);free(referrence); }) ;
+  ({ free_helper((((unsigned char *)referrence) - sizeof(void *)), 268606578347039614UL);free((((unsigned char *)referrence) - sizeof(void *))); }) ;
 # 235 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
-  ({ free_helper(input_itemsets, 268606578347039618UL);free(input_itemsets); }) ;
+  ({ free_helper((((unsigned char *)input_itemsets) - sizeof(void *)), 268606578347039618UL);free((((unsigned char *)input_itemsets) - sizeof(void *))); }) ;
 # 236 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
-  ({ free_helper(output_itemsets, 268606578347039622UL);free(output_itemsets); }) ;
+  ({ free_helper((((unsigned char *)output_itemsets) - sizeof(void *)), 268606578347039622UL);free((((unsigned char *)output_itemsets) - sizeof(void *))); }) ;
 # 237 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
 # 238 "/gpfs-biou/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp"
     printf("execution took %f s\n", end_time - start_time);

@@ -1,5 +1,5 @@
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 57 14 len=21 omp_global_lock_alloc_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 37  ({ void *____chimes_tmp_ptr = malloc(sizeof(omp_lock_t) + 128); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 37  ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 68 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 293 8 len=12 impl_getName_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 300 5 len=16 impl_paramsToStr_npm
@@ -9,7 +9,7 @@ ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 377 6 len=10 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 422 6 len=10 ss_mkEmpty_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 432 6 len=8 ss_error_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 438 6 len=7 ss_init_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 447 26  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 447 26  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 447 40 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 479 6 len=7 ss_push_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 493 8 len=6 ss_top_npm
@@ -31,13 +31,13 @@ ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1085 6 len=15
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1097 6 len=12 releaseNodes_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1126 6 len=13 parTreeSearch_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1227 6 len=9 showStats_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 56  ({ void *____chimes_tmp_ptr = malloc(sizeof(StealStack)); malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12146000192742679325UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 56  ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12146000192742679325UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 82 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 37  ({ void *____chimes_tmp_ptr = malloc(sizeof(omp_lock_t) + 128); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 37  ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 68 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 447 26  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 447 26  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 447 40 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 56  ({ void *____chimes_tmp_ptr = malloc(sizeof(StealStack)); malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12146000192742679325UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 56  ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12146000192742679325UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 82 
 InsertText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 60 70 rm_stack(true, 12146000192742677284UL, "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, ____alias_loc_id_25, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 57 38 const int ____chimes_did_disable0 = new_stack((void *)(&omp_global_lock_alloc), "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, 0, 0); 
@@ -115,8 +115,8 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1359
 InsertText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1468 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_50, ____chimes_did_disable29, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 57 39 const int ____chimes_did_disable0 = new_stack((void *)(&omp_global_lock_alloc), "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 57 189 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 3  omp_lock_t *lock;  lock = ((omp_lock_t *)  ({ void *____chimes_tmp_ptr = malloc(sizeof(omp_lock_t) + 128); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 244 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 3  omp_lock_t *lock;  lock = ((omp_lock_t *)  ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 353 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 60 4 omp_lock_t *____chimes_ret_var_0; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 60 37 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 293 24 const int ____chimes_did_disable1 = new_stack((void *)(&impl_getName), "impl_getName", &____must_manage_impl_getName, 0, 0); ;
@@ -147,8 +147,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 438 41 c
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 438 198 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 439 3  int nbytes;  nbytes = (nelts * sizeof(Node)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 439 36 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 447 30 void *____chimes_tmp_ptr = malloc(nbytes); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 447 71 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 447 30 void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 447 90 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 479 39 const int ____chimes_did_disable9 = new_stack((void *)(&ss_push), "ss_push", &____must_manage_ss_push, 2, 2, (size_t)(12146000192742677672UL), (size_t)(12146000192742677678UL), "ss_push|s|0", &____must_checkpoint_ss_push_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_push|c|0", &____must_checkpoint_ss_push_c_0, "%struct.node_t*", (void *)(&c), (size_t)8, 1, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 479 425 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 482 20  char *____chimes_unroll_var_0;  ____chimes_unroll_var_0 = (rng_showstate(c->state.state, debug_str)) ;
@@ -283,8 +283,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1395 5 d
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1395 22 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1396 5 StealStack *ss; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1396 20 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 60 void *____chimes_tmp_ptr = malloc(sizeof(StealStack)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 113 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 60 void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 132 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1467 4 int ____chimes_ret_var_12; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1467 29 
 InsertText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 457 5  call_lbl_0: 

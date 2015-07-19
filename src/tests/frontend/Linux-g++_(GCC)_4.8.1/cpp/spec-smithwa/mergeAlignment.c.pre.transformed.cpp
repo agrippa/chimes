@@ -97,8 +97,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -117,7 +118,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2905,7 +2906,7 @@ long long *tempScores;
   maxThreads = B->numThreads;
 # 89 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 89 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(BSTR_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 6290273773536188176UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(BSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 6290273773536188176UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 90 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P\n");
 # 91 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -2914,7 +2915,7 @@ long long *tempScores;
   }
 # 93 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 94 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 6290273773536188178UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 6290273773536188178UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 95 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->numReports\n");
 # 96 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -2923,7 +2924,7 @@ long long *tempScores;
   }
 # 98 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 99 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) )
+  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 100 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
 # 101 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -2934,7 +2935,7 @@ long long *tempScores;
   }
 # 104 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 105 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 106 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsI\n");
 # 107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -2943,7 +2944,7 @@ long long *tempScores;
   }
 # 109 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 110 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 111 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsJ\n");
 # 112 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -2952,7 +2953,7 @@ long long *tempScores;
   }
 # 114 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 115 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 116 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsI\n");
 # 117 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -2961,7 +2962,7 @@ long long *tempScores;
   }
 # 119 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 120 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 121 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsJ\n");
 # 122 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -2972,7 +2973,7 @@ long long *tempScores;
 # 125 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsI =
 # 126 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 127 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
 # 128 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -2985,7 +2986,7 @@ long long *tempScores;
 # 132 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsJ =
 # 133 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 134 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
 # 135 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3009,7 +3010,7 @@ long long *tempScores;
 # 195 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempScores =
 # 196 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (long long*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) )
+   (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 197 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
 # 198 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3027,7 +3028,7 @@ long long *tempScores;
 # 206 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsI =
 # 207 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 208 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsI for thread %d\n",
 # 209 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3043,7 +3044,7 @@ long long *tempScores;
 # 216 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsJ =
 # 217 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 218 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsJ for thread %d\n",
 # 219 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3059,7 +3060,7 @@ long long *tempScores;
 # 226 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsI =
 # 227 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 228 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsI for thread %d\n",
 # 229 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3075,7 +3076,7 @@ long long *tempScores;
 # 236 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsJ =
 # 237 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 238 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsJ for thread %d\n",
 # 239 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3091,7 +3092,7 @@ long long *tempScores;
 # 246 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsI =
 # 247 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 248 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
 # 249 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3109,7 +3110,7 @@ long long *tempScores;
 # 257 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsJ =
 # 258 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 259 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
 # 260 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3157,7 +3158,7 @@ long long *tempScores;
 # 294 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (sequences =
 # 295 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536188536UL, 1, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536188536UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 296 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 297 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3173,7 +3174,7 @@ long long *tempScores;
       }
 # 304 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 305 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536188208UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536188208UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 306 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 307 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3189,7 +3190,7 @@ long long *tempScores;
       }
 # 314 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 315 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536188199UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536188199UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 316 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate index for thread %d\n",
 # 317 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3260,7 +3261,7 @@ long long *tempScores;
 # 402 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsI[i] =
 # 403 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 404 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 405 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3295,7 +3296,7 @@ long long *tempScores;
 # 420 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsJ[i] =
 # 421 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 422 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 423 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3385,7 +3386,7 @@ long long *tempScores;
 # 589 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsI[producer][i]) {
 # 590 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper(P->bestSeqsI[producer][i], 6290273773536189332UL);free(P->bestSeqsI[producer][i]); }) ;
+        ({ free_helper((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *))); }) ;
 # 591 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsI[producer][i] = __null;
 # 592 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3393,7 +3394,7 @@ long long *tempScores;
 # 593 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsJ[producer][i]) {
 # 594 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper(P->bestSeqsJ[producer][i], 6290273773536189332UL);free(P->bestSeqsJ[producer][i]); }) ;
+        ({ free_helper((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *))); }) ;
 # 595 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsJ[producer][i] = __null;
 # 596 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3489,7 +3490,7 @@ long long *tempScores;
 # 900 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsI[ index[i] ]) {
 # 901 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper(tempSeqsI[ index[i] ], 6290273773536189332UL);free(tempSeqsI[index[i]]); }) ;
+      ({ free_helper((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *))); }) ;
 # 902 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[ index[i] ] = __null;
 # 903 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3497,7 +3498,7 @@ long long *tempScores;
 # 904 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsJ[ index[i] ]) {
 # 905 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper(tempSeqsJ[ index[i] ], 6290273773536189332UL);free(tempSeqsJ[index[i]]); }) ;
+      ({ free_helper((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *))); }) ;
 # 906 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[ index[i] ] = __null;
 # 907 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3577,7 +3578,7 @@ long long *tempScores;
     if (threadNum == 0) {
 # 1198 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1199 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(CSTR_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 6290273773536189468UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(CSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 6290273773536189468UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1200 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C\n");
 # 1201 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3604,7 +3605,7 @@ long long *tempScores;
 # 1214 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalScores =
 # 1215 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (long long*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+     (long long*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1216 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalScores\n");
 # 1217 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3618,7 +3619,7 @@ long long *tempScores;
 # 1223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsI =
 # 1224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsI\n");
 # 1226 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3632,7 +3633,7 @@ long long *tempScores;
 # 1232 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsJ =
 # 1233 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1234 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsJ\n");
 # 1235 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3646,7 +3647,7 @@ long long *tempScores;
 # 1241 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsI =
 # 1242 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1243 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsI\n");
 # 1244 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3660,7 +3661,7 @@ long long *tempScores;
 # 1250 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsJ =
 # 1251 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1252 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsJ\n");
 # 1253 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3674,7 +3675,7 @@ long long *tempScores;
 # 1259 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsI =
 # 1260 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1261 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
 # 1262 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3690,7 +3691,7 @@ long long *tempScores;
 # 1269 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsJ =
 # 1270 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1271 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
 # 1272 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3733,7 +3734,7 @@ long long *tempScores;
 # 1294 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsI[i] =
 # 1295 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1296 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
 # 1297 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3750,7 +3751,7 @@ long long *tempScores;
 # 1304 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsI[i], (char*)tempSeqsI[i]);
 # 1305 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper(tempSeqsI[i], 6290273773536189332UL);free(tempSeqsI[i]); }) ;
+  ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
 # 1306 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsI[i] = __null;
 # 1307 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3772,7 +3773,7 @@ long long *tempScores;
 # 1317 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsJ[i] =
 # 1318 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1319 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
 # 1320 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3789,7 +3790,7 @@ long long *tempScores;
 # 1327 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsJ[i], (char*)tempSeqsJ[i]);
 # 1328 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper(tempSeqsJ[i], 6290273773536189332UL);free(tempSeqsJ[i]); }) ;
+  ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
 # 1329 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsJ[i] = __null;
 # 1330 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3802,7 +3803,7 @@ long long *tempScores;
 # 1335 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempScores) {
 # 1336 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempScores, 6290273773536189330UL);free(tempScores); }) ;
+       ({ free_helper((((unsigned char *)tempScores) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempScores) - sizeof(void *))); }) ;
 # 1337 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = __null;
 # 1338 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3810,7 +3811,7 @@ long long *tempScores;
 # 1339 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsI) {
 # 1340 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempStartsI, 6290273773536189330UL);free(tempStartsI); }) ;
+       ({ free_helper((((unsigned char *)tempStartsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempStartsI) - sizeof(void *))); }) ;
 # 1341 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI = __null;
 # 1342 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3818,7 +3819,7 @@ long long *tempScores;
 # 1343 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsJ) {
 # 1344 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempStartsJ, 6290273773536189330UL);free(tempStartsJ); }) ;
+       ({ free_helper((((unsigned char *)tempStartsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempStartsJ) - sizeof(void *))); }) ;
 # 1345 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ = __null;
 # 1346 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3826,7 +3827,7 @@ long long *tempScores;
 # 1347 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsI) {
 # 1348 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempEndsI, 6290273773536189330UL);free(tempEndsI); }) ;
+       ({ free_helper((((unsigned char *)tempEndsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempEndsI) - sizeof(void *))); }) ;
 # 1349 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI = __null;
 # 1350 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3834,7 +3835,7 @@ long long *tempScores;
 # 1351 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsJ) {
 # 1352 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempEndsJ, 6290273773536189330UL);free(tempEndsJ); }) ;
+       ({ free_helper((((unsigned char *)tempEndsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempEndsJ) - sizeof(void *))); }) ;
 # 1353 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ = __null;
 # 1354 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3855,7 +3856,7 @@ long long *tempScores;
 # 1365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsI[i]) {
 # 1366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(tempSeqsI[i], 6290273773536189332UL);free(tempSeqsI[i]); }) ;
+    ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
 # 1367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = __null;
 # 1368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3865,7 +3866,7 @@ long long *tempScores;
 # 1370 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1371 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempSeqsI, 6290273773536189330UL);free(tempSeqsI); }) ;
+       ({ free_helper((((unsigned char *)tempSeqsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempSeqsI) - sizeof(void *))); }) ;
 # 1372 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI = __null;
 # 1373 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3888,7 +3889,7 @@ long long *tempScores;
 # 1382 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsJ[i]) {
 # 1383 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(tempSeqsJ[i], 6290273773536189332UL);free(tempSeqsJ[i]); }) ;
+    ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
 # 1384 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = __null;
 # 1385 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3898,7 +3899,7 @@ long long *tempScores;
 # 1387 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1388 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempSeqsJ, 6290273773536189330UL);free(tempSeqsJ); }) ;
+       ({ free_helper((((unsigned char *)tempSeqsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempSeqsJ) - sizeof(void *))); }) ;
 # 1389 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ = __null;
 # 1390 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3920,11 +3921,11 @@ long long *tempScores;
 # 1401 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
 # 1402 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(sequences, 6290273773536188536UL);free(sequences); }) ;
+       ({ free_helper((((unsigned char *)sequences) - sizeof(void *)), 6290273773536188536UL);free((((unsigned char *)sequences) - sizeof(void *))); }) ;
 # 1403 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(scores, 6290273773536188208UL);free(scores); }) ;
+       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 6290273773536188208UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
 # 1404 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(index, 6290273773536188199UL);free(index); }) ;
+       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 6290273773536188199UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
 # 1405 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
 # 1406 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3936,23 +3937,23 @@ long long *tempScores;
   }
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->numReports, 6290273773536188178UL);free(P->numReports); }) ;
+   ({ free_helper((((unsigned char *)P->numReports) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->numReports) - sizeof(void *))); }) ;
 # 1426 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestScores, 6290273773536188178UL);free(P->bestScores); }) ;
+   ({ free_helper((((unsigned char *)P->bestScores) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestScores) - sizeof(void *))); }) ;
 # 1427 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestStartsI, 6290273773536188178UL);free(P->bestStartsI); }) ;
+   ({ free_helper((((unsigned char *)P->bestStartsI) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestStartsI) - sizeof(void *))); }) ;
 # 1428 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestStartsJ, 6290273773536188178UL);free(P->bestStartsJ); }) ;
+   ({ free_helper((((unsigned char *)P->bestStartsJ) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestStartsJ) - sizeof(void *))); }) ;
 # 1429 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestEndsI, 6290273773536188178UL);free(P->bestEndsI); }) ;
+   ({ free_helper((((unsigned char *)P->bestEndsI) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestEndsI) - sizeof(void *))); }) ;
 # 1430 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestEndsJ, 6290273773536188178UL);free(P->bestEndsJ); }) ;
+   ({ free_helper((((unsigned char *)P->bestEndsJ) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestEndsJ) - sizeof(void *))); }) ;
 # 1431 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestSeqsI, 6290273773536188178UL);free(P->bestSeqsI); }) ;
+   ({ free_helper((((unsigned char *)P->bestSeqsI) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestSeqsI) - sizeof(void *))); }) ;
 # 1432 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestSeqsJ, 6290273773536188178UL);free(P->bestSeqsJ); }) ;
+   ({ free_helper((((unsigned char *)P->bestSeqsJ) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestSeqsJ) - sizeof(void *))); }) ;
 # 1433 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P, 6290273773536188176UL);free(P); }) ;
+   ({ free_helper((((unsigned char *)P) - sizeof(void *)), 6290273773536188176UL);free((((unsigned char *)P) - sizeof(void *))); }) ;
 # 1434 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1435 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1436 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3975,7 +3976,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1446 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalScores) {
 # 1447 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalScores, 6290273773536189330UL);free(C->finalScores); }) ;
+       ({ free_helper((((unsigned char *)C->finalScores) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalScores) - sizeof(void *))); }) ;
 # 1448 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
 # 1449 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3983,7 +3984,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1450 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsI) {
 # 1451 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalStartsI, 6290273773536189330UL);free(C->finalStartsI); }) ;
+       ({ free_helper((((unsigned char *)C->finalStartsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalStartsI) - sizeof(void *))); }) ;
 # 1452 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = __null;
 # 1453 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3991,7 +3992,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsJ) {
 # 1455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalStartsJ, 6290273773536189330UL);free(C->finalStartsJ); }) ;
+       ({ free_helper((((unsigned char *)C->finalStartsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalStartsJ) - sizeof(void *))); }) ;
 # 1456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsJ = __null;
 # 1457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3999,7 +4000,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1458 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsI) {
 # 1459 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalEndsI, 6290273773536189330UL);free(C->finalEndsI); }) ;
+       ({ free_helper((((unsigned char *)C->finalEndsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalEndsI) - sizeof(void *))); }) ;
 # 1460 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = __null;
 # 1461 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4007,7 +4008,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1462 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsJ) {
 # 1463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalEndsJ, 6290273773536189330UL);free(C->finalEndsJ); }) ;
+       ({ free_helper((((unsigned char *)C->finalEndsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalEndsJ) - sizeof(void *))); }) ;
 # 1464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsJ = __null;
 # 1465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4019,7 +4020,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1468 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsI[i]) {
 # 1469 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(C->finalSeqsI[i], 6290273773536189332UL);free(C->finalSeqsI[i]); }) ;
+    ({ free_helper((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *))); }) ;
 # 1470 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsI[i] = __null;
 # 1471 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4027,7 +4028,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1472 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1473 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalSeqsI, 6290273773536189330UL);free(C->finalSeqsI); }) ;
+       ({ free_helper((((unsigned char *)C->finalSeqsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalSeqsI) - sizeof(void *))); }) ;
 # 1474 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = __null;
 # 1475 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4039,7 +4040,7 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsJ[i]) {
 # 1479 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(C->finalSeqsJ[i], 6290273773536189332UL);free(C->finalSeqsJ[i]); }) ;
+    ({ free_helper((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *))); }) ;
 # 1480 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsJ[i] = __null;
 # 1481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4047,13 +4048,13 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalSeqsJ, 6290273773536189330UL);free(C->finalSeqsJ); }) ;
+       ({ free_helper((((unsigned char *)C->finalSeqsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalSeqsJ) - sizeof(void *))); }) ;
 # 1484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsJ = __null;
 # 1485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
 # 1486 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     ({ free_helper(C, 6290273773536189425UL);free(C); }) ;
+     ({ free_helper((((unsigned char *)C) - sizeof(void *)), 6290273773536189425UL);free((((unsigned char *)C) - sizeof(void *))); }) ;
 # 1487 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
 # 1488 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4142,7 +4143,7 @@ long long *tempScores;
   maxThreads = B->numThreads;
 # 89 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 89 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(BSTR_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 6290273773536188176UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(BSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 6290273773536188176UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 90 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P\n");
 # 91 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4151,7 +4152,7 @@ long long *tempScores;
   }
 # 93 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 94 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 6290273773536188178UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 6290273773536188178UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 95 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->numReports\n");
 # 96 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4160,7 +4161,7 @@ long long *tempScores;
   }
 # 98 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 99 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) )
+  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 100 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
 # 101 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4171,7 +4172,7 @@ long long *tempScores;
   }
 # 104 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 105 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 106 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsI\n");
 # 107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4180,7 +4181,7 @@ long long *tempScores;
   }
 # 109 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 110 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 111 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsJ\n");
 # 112 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4189,7 +4190,7 @@ long long *tempScores;
   }
 # 114 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 115 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 116 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsI\n");
 # 117 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4198,7 +4199,7 @@ long long *tempScores;
   }
 # 119 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 120 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 121 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsJ\n");
 # 122 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4209,7 +4210,7 @@ long long *tempScores;
 # 125 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsI =
 # 126 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 127 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
 # 128 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4222,7 +4223,7 @@ long long *tempScores;
 # 132 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsJ =
 # 133 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 134 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
 # 135 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4246,7 +4247,7 @@ long long *tempScores;
 # 195 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempScores =
 # 196 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (long long*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) )
+   (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 197 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
 # 198 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4264,7 +4265,7 @@ long long *tempScores;
 # 206 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsI =
 # 207 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 208 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsI for thread %d\n",
 # 209 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4280,7 +4281,7 @@ long long *tempScores;
 # 216 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsJ =
 # 217 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 218 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsJ for thread %d\n",
 # 219 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4296,7 +4297,7 @@ long long *tempScores;
 # 226 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsI =
 # 227 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 228 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsI for thread %d\n",
 # 229 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4312,7 +4313,7 @@ long long *tempScores;
 # 236 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsJ =
 # 237 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 238 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsJ for thread %d\n",
 # 239 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4328,7 +4329,7 @@ long long *tempScores;
 # 246 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsI =
 # 247 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 248 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
 # 249 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4346,7 +4347,7 @@ long long *tempScores;
 # 257 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsJ =
 # 258 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 259 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
 # 260 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4394,7 +4395,7 @@ long long *tempScores;
 # 294 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (sequences =
 # 295 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536188536UL, 1, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536188536UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 296 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 297 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4410,7 +4411,7 @@ long long *tempScores;
       }
 # 304 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 305 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536188208UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536188208UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 306 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 307 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4426,7 +4427,7 @@ long long *tempScores;
       }
 # 314 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 315 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536188199UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536188199UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 316 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate index for thread %d\n",
 # 317 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4497,7 +4498,7 @@ long long *tempScores;
 # 402 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsI[i] =
 # 403 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 404 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 405 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4532,7 +4533,7 @@ long long *tempScores;
 # 420 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsJ[i] =
 # 421 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 422 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 423 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4622,7 +4623,7 @@ long long *tempScores;
 # 589 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsI[producer][i]) {
 # 590 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper(P->bestSeqsI[producer][i], 6290273773536189332UL);free(P->bestSeqsI[producer][i]); }) ;
+        ({ free_helper((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *))); }) ;
 # 591 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsI[producer][i] = __null;
 # 592 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4630,7 +4631,7 @@ long long *tempScores;
 # 593 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsJ[producer][i]) {
 # 594 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper(P->bestSeqsJ[producer][i], 6290273773536189332UL);free(P->bestSeqsJ[producer][i]); }) ;
+        ({ free_helper((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *))); }) ;
 # 595 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsJ[producer][i] = __null;
 # 596 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4726,7 +4727,7 @@ long long *tempScores;
 # 900 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsI[ index[i] ]) {
 # 901 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper(tempSeqsI[ index[i] ], 6290273773536189332UL);free(tempSeqsI[index[i]]); }) ;
+      ({ free_helper((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *))); }) ;
 # 902 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[ index[i] ] = __null;
 # 903 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4734,7 +4735,7 @@ long long *tempScores;
 # 904 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsJ[ index[i] ]) {
 # 905 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper(tempSeqsJ[ index[i] ], 6290273773536189332UL);free(tempSeqsJ[index[i]]); }) ;
+      ({ free_helper((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *))); }) ;
 # 906 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[ index[i] ] = __null;
 # 907 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4814,7 +4815,7 @@ long long *tempScores;
     if (threadNum == 0) {
 # 1198 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1199 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(CSTR_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 6290273773536189468UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(CSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 6290273773536189468UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1200 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C\n");
 # 1201 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4841,7 +4842,7 @@ long long *tempScores;
 # 1214 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalScores =
 # 1215 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (long long*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+     (long long*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1216 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalScores\n");
 # 1217 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4855,7 +4856,7 @@ long long *tempScores;
 # 1223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsI =
 # 1224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsI\n");
 # 1226 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4869,7 +4870,7 @@ long long *tempScores;
 # 1232 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsJ =
 # 1233 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1234 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsJ\n");
 # 1235 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4883,7 +4884,7 @@ long long *tempScores;
 # 1241 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsI =
 # 1242 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1243 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsI\n");
 # 1244 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4897,7 +4898,7 @@ long long *tempScores;
 # 1250 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsJ =
 # 1251 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1252 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsJ\n");
 # 1253 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4911,7 +4912,7 @@ long long *tempScores;
 # 1259 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsI =
 # 1260 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1261 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
 # 1262 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4927,7 +4928,7 @@ long long *tempScores;
 # 1269 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsJ =
 # 1270 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(unsigned char *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1271 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
 # 1272 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4970,7 +4971,7 @@ long long *tempScores;
 # 1294 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsI[i] =
 # 1295 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1296 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
 # 1297 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4987,7 +4988,7 @@ long long *tempScores;
 # 1304 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsI[i], (char*)tempSeqsI[i]);
 # 1305 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper(tempSeqsI[i], 6290273773536189332UL);free(tempSeqsI[i]); }) ;
+  ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
 # 1306 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsI[i] = __null;
 # 1307 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5009,7 +5010,7 @@ long long *tempScores;
 # 1317 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsJ[i] =
 # 1318 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1319 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
 # 1320 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5026,7 +5027,7 @@ long long *tempScores;
 # 1327 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsJ[i], (char*)tempSeqsJ[i]);
 # 1328 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper(tempSeqsJ[i], 6290273773536189332UL);free(tempSeqsJ[i]); }) ;
+  ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
 # 1329 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsJ[i] = __null;
 # 1330 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5039,7 +5040,7 @@ long long *tempScores;
 # 1335 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempScores) {
 # 1336 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempScores, 6290273773536189330UL);free(tempScores); }) ;
+       ({ free_helper((((unsigned char *)tempScores) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempScores) - sizeof(void *))); }) ;
 # 1337 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = __null;
 # 1338 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5047,7 +5048,7 @@ long long *tempScores;
 # 1339 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsI) {
 # 1340 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempStartsI, 6290273773536189330UL);free(tempStartsI); }) ;
+       ({ free_helper((((unsigned char *)tempStartsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempStartsI) - sizeof(void *))); }) ;
 # 1341 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI = __null;
 # 1342 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5055,7 +5056,7 @@ long long *tempScores;
 # 1343 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsJ) {
 # 1344 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempStartsJ, 6290273773536189330UL);free(tempStartsJ); }) ;
+       ({ free_helper((((unsigned char *)tempStartsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempStartsJ) - sizeof(void *))); }) ;
 # 1345 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ = __null;
 # 1346 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5063,7 +5064,7 @@ long long *tempScores;
 # 1347 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsI) {
 # 1348 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempEndsI, 6290273773536189330UL);free(tempEndsI); }) ;
+       ({ free_helper((((unsigned char *)tempEndsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempEndsI) - sizeof(void *))); }) ;
 # 1349 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI = __null;
 # 1350 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5071,7 +5072,7 @@ long long *tempScores;
 # 1351 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsJ) {
 # 1352 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempEndsJ, 6290273773536189330UL);free(tempEndsJ); }) ;
+       ({ free_helper((((unsigned char *)tempEndsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempEndsJ) - sizeof(void *))); }) ;
 # 1353 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ = __null;
 # 1354 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5092,7 +5093,7 @@ long long *tempScores;
 # 1365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsI[i]) {
 # 1366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(tempSeqsI[i], 6290273773536189332UL);free(tempSeqsI[i]); }) ;
+    ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
 # 1367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = __null;
 # 1368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5102,7 +5103,7 @@ long long *tempScores;
 # 1370 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1371 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempSeqsI, 6290273773536189330UL);free(tempSeqsI); }) ;
+       ({ free_helper((((unsigned char *)tempSeqsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempSeqsI) - sizeof(void *))); }) ;
 # 1372 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI = __null;
 # 1373 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5125,7 +5126,7 @@ long long *tempScores;
 # 1382 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsJ[i]) {
 # 1383 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(tempSeqsJ[i], 6290273773536189332UL);free(tempSeqsJ[i]); }) ;
+    ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
 # 1384 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = __null;
 # 1385 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5135,7 +5136,7 @@ long long *tempScores;
 # 1387 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1388 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempSeqsJ, 6290273773536189330UL);free(tempSeqsJ); }) ;
+       ({ free_helper((((unsigned char *)tempSeqsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempSeqsJ) - sizeof(void *))); }) ;
 # 1389 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ = __null;
 # 1390 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5157,11 +5158,11 @@ long long *tempScores;
 # 1401 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
 # 1402 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(sequences, 6290273773536188536UL);free(sequences); }) ;
+       ({ free_helper((((unsigned char *)sequences) - sizeof(void *)), 6290273773536188536UL);free((((unsigned char *)sequences) - sizeof(void *))); }) ;
 # 1403 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(scores, 6290273773536188208UL);free(scores); }) ;
+       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 6290273773536188208UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
 # 1404 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(index, 6290273773536188199UL);free(index); }) ;
+       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 6290273773536188199UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
 # 1405 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
 # 1406 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5173,23 +5174,23 @@ long long *tempScores;
   }
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->numReports, 6290273773536188178UL);free(P->numReports); }) ;
+   ({ free_helper((((unsigned char *)P->numReports) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->numReports) - sizeof(void *))); }) ;
 # 1426 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestScores, 6290273773536188178UL);free(P->bestScores); }) ;
+   ({ free_helper((((unsigned char *)P->bestScores) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestScores) - sizeof(void *))); }) ;
 # 1427 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestStartsI, 6290273773536188178UL);free(P->bestStartsI); }) ;
+   ({ free_helper((((unsigned char *)P->bestStartsI) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestStartsI) - sizeof(void *))); }) ;
 # 1428 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestStartsJ, 6290273773536188178UL);free(P->bestStartsJ); }) ;
+   ({ free_helper((((unsigned char *)P->bestStartsJ) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestStartsJ) - sizeof(void *))); }) ;
 # 1429 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestEndsI, 6290273773536188178UL);free(P->bestEndsI); }) ;
+   ({ free_helper((((unsigned char *)P->bestEndsI) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestEndsI) - sizeof(void *))); }) ;
 # 1430 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestEndsJ, 6290273773536188178UL);free(P->bestEndsJ); }) ;
+   ({ free_helper((((unsigned char *)P->bestEndsJ) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestEndsJ) - sizeof(void *))); }) ;
 # 1431 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestSeqsI, 6290273773536188178UL);free(P->bestSeqsI); }) ;
+   ({ free_helper((((unsigned char *)P->bestSeqsI) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestSeqsI) - sizeof(void *))); }) ;
 # 1432 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestSeqsJ, 6290273773536188178UL);free(P->bestSeqsJ); }) ;
+   ({ free_helper((((unsigned char *)P->bestSeqsJ) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestSeqsJ) - sizeof(void *))); }) ;
 # 1433 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P, 6290273773536188176UL);free(P); }) ;
+   ({ free_helper((((unsigned char *)P) - sizeof(void *)), 6290273773536188176UL);free((((unsigned char *)P) - sizeof(void *))); }) ;
 # 1434 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1435 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1436 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5209,7 +5210,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1446 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalScores) {
 # 1447 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalScores, 6290273773536189330UL);free(C->finalScores); }) ;
+       ({ free_helper((((unsigned char *)C->finalScores) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalScores) - sizeof(void *))); }) ;
 # 1448 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
 # 1449 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5217,7 +5218,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1450 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsI) {
 # 1451 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalStartsI, 6290273773536189330UL);free(C->finalStartsI); }) ;
+       ({ free_helper((((unsigned char *)C->finalStartsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalStartsI) - sizeof(void *))); }) ;
 # 1452 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = __null;
 # 1453 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5225,7 +5226,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsJ) {
 # 1455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalStartsJ, 6290273773536189330UL);free(C->finalStartsJ); }) ;
+       ({ free_helper((((unsigned char *)C->finalStartsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalStartsJ) - sizeof(void *))); }) ;
 # 1456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsJ = __null;
 # 1457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5233,7 +5234,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1458 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsI) {
 # 1459 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalEndsI, 6290273773536189330UL);free(C->finalEndsI); }) ;
+       ({ free_helper((((unsigned char *)C->finalEndsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalEndsI) - sizeof(void *))); }) ;
 # 1460 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = __null;
 # 1461 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5241,7 +5242,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1462 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsJ) {
 # 1463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalEndsJ, 6290273773536189330UL);free(C->finalEndsJ); }) ;
+       ({ free_helper((((unsigned char *)C->finalEndsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalEndsJ) - sizeof(void *))); }) ;
 # 1464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsJ = __null;
 # 1465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5253,7 +5254,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1468 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsI[i]) {
 # 1469 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(C->finalSeqsI[i], 6290273773536189332UL);free(C->finalSeqsI[i]); }) ;
+    ({ free_helper((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *))); }) ;
 # 1470 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsI[i] = __null;
 # 1471 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5261,7 +5262,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1472 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1473 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalSeqsI, 6290273773536189330UL);free(C->finalSeqsI); }) ;
+       ({ free_helper((((unsigned char *)C->finalSeqsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalSeqsI) - sizeof(void *))); }) ;
 # 1474 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = __null;
 # 1475 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5273,7 +5274,7 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsJ[i]) {
 # 1479 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(C->finalSeqsJ[i], 6290273773536189332UL);free(C->finalSeqsJ[i]); }) ;
+    ({ free_helper((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *))); }) ;
 # 1480 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsJ[i] = __null;
 # 1481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5281,13 +5282,13 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalSeqsJ, 6290273773536189330UL);free(C->finalSeqsJ); }) ;
+       ({ free_helper((((unsigned char *)C->finalSeqsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalSeqsJ) - sizeof(void *))); }) ;
 # 1484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsJ = __null;
 # 1485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
 # 1486 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     ({ free_helper(C, 6290273773536189425UL);free(C); }) ;
+     ({ free_helper((((unsigned char *)C) - sizeof(void *)), 6290273773536189425UL);free((((unsigned char *)C) - sizeof(void *))); }) ;
 # 1487 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
 # 1488 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5330,7 +5331,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
   maxThreads = B->numThreads;
 # 89 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 89 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(BSTR_T)); malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 6290273773536188176UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(BSTR_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 6290273773536188176UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 90 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P\n");
 # 91 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5339,7 +5340,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
   }
 # 93 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 94 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 6290273773536188178UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 6290273773536188178UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 95 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->numReports\n");
 # 96 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5348,7 +5349,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
   }
 # 98 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 99 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(long long *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) )
+  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 100 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
 # 101 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5359,7 +5360,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
   }
 # 104 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 105 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 106 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsI\n");
 # 107 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5368,7 +5369,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
   }
 # 109 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 110 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 111 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsJ\n");
 # 112 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5377,7 +5378,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
   }
 # 114 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 115 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 116 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsI\n");
 # 117 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5386,7 +5387,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
   }
 # 119 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 120 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 121 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsJ\n");
 # 122 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5397,7 +5398,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 125 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsI =
 # 126 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 127 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
 # 128 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5410,7 +5411,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 132 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsJ =
 # 133 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc(maxThreads * sizeof(unsigned char **)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 6290273773536188178UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 134 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
 # 135 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5434,7 +5435,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 195 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempScores =
 # 196 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (long long*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) )
+   (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 197 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
 # 198 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5452,7 +5453,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 206 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsI =
 # 207 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 208 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsI for thread %d\n",
 # 209 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5468,7 +5469,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 216 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsJ =
 # 217 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 218 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsJ for thread %d\n",
 # 219 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5484,7 +5485,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 226 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsI =
 # 227 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 228 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsI for thread %d\n",
 # 229 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5500,7 +5501,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 236 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsJ =
 # 237 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 238 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsJ for thread %d\n",
 # 239 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5516,7 +5517,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 246 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsI =
 # 247 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 248 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
 # 249 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5534,7 +5535,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 257 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsJ =
 # 258 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 259 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
 # 260 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5582,7 +5583,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 294 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (sequences =
 # 295 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536188536UL, 1, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 6290273773536188536UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 296 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 297 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5598,7 +5599,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
       }
 # 304 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 305 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536188208UL, 0, 0); ____chimes_tmp_ptr; }) )
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 6290273773536188208UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 306 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 307 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5614,7 +5615,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
       }
 # 314 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 315 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc((2 * maxReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536188199UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 6290273773536188199UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 316 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate index for thread %d\n",
 # 317 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5685,7 +5686,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 402 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsI[i] =
 # 403 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 404 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 405 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5720,7 +5721,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 420 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsJ[i] =
 # 421 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 422 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
 # 423 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5810,7 +5811,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 589 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsI[producer][i]) {
 # 590 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper(P->bestSeqsI[producer][i], 6290273773536189332UL);free(P->bestSeqsI[producer][i]); }) ;
+        ({ free_helper((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *))); }) ;
 # 591 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsI[producer][i] = __null;
 # 592 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5818,7 +5819,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 593 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsJ[producer][i]) {
 # 594 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper(P->bestSeqsJ[producer][i], 6290273773536189332UL);free(P->bestSeqsJ[producer][i]); }) ;
+        ({ free_helper((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *))); }) ;
 # 595 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsJ[producer][i] = __null;
 # 596 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5914,7 +5915,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 900 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsI[ index[i] ]) {
 # 901 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper(tempSeqsI[ index[i] ], 6290273773536189332UL);free(tempSeqsI[index[i]]); }) ;
+      ({ free_helper((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *))); }) ;
 # 902 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[ index[i] ] = __null;
 # 903 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5922,7 +5923,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 904 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsJ[ index[i] ]) {
 # 905 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper(tempSeqsJ[ index[i] ], 6290273773536189332UL);free(tempSeqsJ[index[i]]); }) ;
+      ({ free_helper((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *))); }) ;
 # 906 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[ index[i] ] = __null;
 # 907 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6002,7 +6003,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
     if (threadNum == 0) {
 # 1198 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1199 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc(sizeof(CSTR_T)); malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 6290273773536189468UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); ____chimes_tmp_ptr; }) ) == __null ) {
+      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(CSTR_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 6290273773536189468UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1200 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C\n");
 # 1201 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6029,7 +6030,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1214 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalScores =
 # 1215 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (long long*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(long long)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+     (long long*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 1216 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalScores\n");
 # 1217 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6043,7 +6044,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1223 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsI =
 # 1224 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1225 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsI\n");
 # 1226 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6057,7 +6058,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1232 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsJ =
 # 1233 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1234 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsJ\n");
 # 1235 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6071,7 +6072,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1241 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsI =
 # 1242 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1243 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsI\n");
 # 1244 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6085,7 +6086,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1250 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsJ =
 # 1251 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null) {
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 6290273773536189330UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
 # 1252 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsJ\n");
 # 1253 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6099,7 +6100,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1259 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsI =
 # 1260 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1261 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
 # 1262 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6115,7 +6116,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1269 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsJ =
 # 1270 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc((numReports + 1) * sizeof(unsigned char *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); ____chimes_tmp_ptr; }) )
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 6290273773536189330UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1271 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
 # 1272 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6158,7 +6159,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1294 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsI[i] =
 # 1295 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1296 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
 # 1297 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6175,7 +6176,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1304 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsI[i], (char*)tempSeqsI[i]);
 # 1305 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper(tempSeqsI[i], 6290273773536189332UL);free(tempSeqsI[i]); }) ;
+  ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
 # 1306 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsI[i] = __null;
 # 1307 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6197,7 +6198,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1317 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsJ[i] =
 # 1318 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(length * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); ____chimes_tmp_ptr; }) )
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 6290273773536189332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 1319 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
 # 1320 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6214,7 +6215,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1327 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsJ[i], (char*)tempSeqsJ[i]);
 # 1328 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper(tempSeqsJ[i], 6290273773536189332UL);free(tempSeqsJ[i]); }) ;
+  ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
 # 1329 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsJ[i] = __null;
 # 1330 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6227,7 +6228,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1335 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempScores) {
 # 1336 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempScores, 6290273773536189330UL);free(tempScores); }) ;
+       ({ free_helper((((unsigned char *)tempScores) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempScores) - sizeof(void *))); }) ;
 # 1337 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = __null;
 # 1338 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6235,7 +6236,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1339 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsI) {
 # 1340 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempStartsI, 6290273773536189330UL);free(tempStartsI); }) ;
+       ({ free_helper((((unsigned char *)tempStartsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempStartsI) - sizeof(void *))); }) ;
 # 1341 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI = __null;
 # 1342 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6243,7 +6244,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1343 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsJ) {
 # 1344 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempStartsJ, 6290273773536189330UL);free(tempStartsJ); }) ;
+       ({ free_helper((((unsigned char *)tempStartsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempStartsJ) - sizeof(void *))); }) ;
 # 1345 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ = __null;
 # 1346 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6251,7 +6252,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1347 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsI) {
 # 1348 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempEndsI, 6290273773536189330UL);free(tempEndsI); }) ;
+       ({ free_helper((((unsigned char *)tempEndsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempEndsI) - sizeof(void *))); }) ;
 # 1349 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI = __null;
 # 1350 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6259,7 +6260,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1351 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsJ) {
 # 1352 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempEndsJ, 6290273773536189330UL);free(tempEndsJ); }) ;
+       ({ free_helper((((unsigned char *)tempEndsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempEndsJ) - sizeof(void *))); }) ;
 # 1353 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ = __null;
 # 1354 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6280,7 +6281,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1365 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsI[i]) {
 # 1366 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(tempSeqsI[i], 6290273773536189332UL);free(tempSeqsI[i]); }) ;
+    ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
 # 1367 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = __null;
 # 1368 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6290,7 +6291,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1370 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1371 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempSeqsI, 6290273773536189330UL);free(tempSeqsI); }) ;
+       ({ free_helper((((unsigned char *)tempSeqsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempSeqsI) - sizeof(void *))); }) ;
 # 1372 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI = __null;
 # 1373 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6313,7 +6314,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1382 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsJ[i]) {
 # 1383 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(tempSeqsJ[i], 6290273773536189332UL);free(tempSeqsJ[i]); }) ;
+    ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
 # 1384 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = __null;
 # 1385 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6323,7 +6324,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1387 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1388 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(tempSeqsJ, 6290273773536189330UL);free(tempSeqsJ); }) ;
+       ({ free_helper((((unsigned char *)tempSeqsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)tempSeqsJ) - sizeof(void *))); }) ;
 # 1389 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ = __null;
 # 1390 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6345,11 +6346,11 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 1401 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
 # 1402 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(sequences, 6290273773536188536UL);free(sequences); }) ;
+       ({ free_helper((((unsigned char *)sequences) - sizeof(void *)), 6290273773536188536UL);free((((unsigned char *)sequences) - sizeof(void *))); }) ;
 # 1403 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(scores, 6290273773536188208UL);free(scores); }) ;
+       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 6290273773536188208UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
 # 1404 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(index, 6290273773536188199UL);free(index); }) ;
+       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 6290273773536188199UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
 # 1405 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
 # 1406 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6361,23 +6362,23 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
   }
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1425 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->numReports, 6290273773536188178UL);free(P->numReports); }) ;
+   ({ free_helper((((unsigned char *)P->numReports) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->numReports) - sizeof(void *))); }) ;
 # 1426 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestScores, 6290273773536188178UL);free(P->bestScores); }) ;
+   ({ free_helper((((unsigned char *)P->bestScores) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestScores) - sizeof(void *))); }) ;
 # 1427 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestStartsI, 6290273773536188178UL);free(P->bestStartsI); }) ;
+   ({ free_helper((((unsigned char *)P->bestStartsI) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestStartsI) - sizeof(void *))); }) ;
 # 1428 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestStartsJ, 6290273773536188178UL);free(P->bestStartsJ); }) ;
+   ({ free_helper((((unsigned char *)P->bestStartsJ) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestStartsJ) - sizeof(void *))); }) ;
 # 1429 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestEndsI, 6290273773536188178UL);free(P->bestEndsI); }) ;
+   ({ free_helper((((unsigned char *)P->bestEndsI) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestEndsI) - sizeof(void *))); }) ;
 # 1430 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestEndsJ, 6290273773536188178UL);free(P->bestEndsJ); }) ;
+   ({ free_helper((((unsigned char *)P->bestEndsJ) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestEndsJ) - sizeof(void *))); }) ;
 # 1431 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestSeqsI, 6290273773536188178UL);free(P->bestSeqsI); }) ;
+   ({ free_helper((((unsigned char *)P->bestSeqsI) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestSeqsI) - sizeof(void *))); }) ;
 # 1432 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P->bestSeqsJ, 6290273773536188178UL);free(P->bestSeqsJ); }) ;
+   ({ free_helper((((unsigned char *)P->bestSeqsJ) - sizeof(void *)), 6290273773536188178UL);free((((unsigned char *)P->bestSeqsJ) - sizeof(void *))); }) ;
 # 1433 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper(P, 6290273773536188176UL);free(P); }) ;
+   ({ free_helper((((unsigned char *)P) - sizeof(void *)), 6290273773536188176UL);free((((unsigned char *)P) - sizeof(void *))); }) ;
 # 1434 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1435 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1436 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6395,7 +6396,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1446 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalScores) {
 # 1447 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalScores, 6290273773536189330UL);free(C->finalScores); }) ;
+       ({ free_helper((((unsigned char *)C->finalScores) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalScores) - sizeof(void *))); }) ;
 # 1448 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
 # 1449 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6403,7 +6404,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1450 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsI) {
 # 1451 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalStartsI, 6290273773536189330UL);free(C->finalStartsI); }) ;
+       ({ free_helper((((unsigned char *)C->finalStartsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalStartsI) - sizeof(void *))); }) ;
 # 1452 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = __null;
 # 1453 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6411,7 +6412,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1454 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsJ) {
 # 1455 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalStartsJ, 6290273773536189330UL);free(C->finalStartsJ); }) ;
+       ({ free_helper((((unsigned char *)C->finalStartsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalStartsJ) - sizeof(void *))); }) ;
 # 1456 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsJ = __null;
 # 1457 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6419,7 +6420,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1458 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsI) {
 # 1459 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalEndsI, 6290273773536189330UL);free(C->finalEndsI); }) ;
+       ({ free_helper((((unsigned char *)C->finalEndsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalEndsI) - sizeof(void *))); }) ;
 # 1460 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = __null;
 # 1461 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6427,7 +6428,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1462 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsJ) {
 # 1463 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalEndsJ, 6290273773536189330UL);free(C->finalEndsJ); }) ;
+       ({ free_helper((((unsigned char *)C->finalEndsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalEndsJ) - sizeof(void *))); }) ;
 # 1464 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsJ = __null;
 # 1465 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6439,7 +6440,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1468 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsI[i]) {
 # 1469 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(C->finalSeqsI[i], 6290273773536189332UL);free(C->finalSeqsI[i]); }) ;
+    ({ free_helper((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *))); }) ;
 # 1470 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsI[i] = __null;
 # 1471 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6447,7 +6448,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1472 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1473 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalSeqsI, 6290273773536189330UL);free(C->finalSeqsI); }) ;
+       ({ free_helper((((unsigned char *)C->finalSeqsI) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalSeqsI) - sizeof(void *))); }) ;
 # 1474 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = __null;
 # 1475 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6459,7 +6460,7 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1478 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsJ[i]) {
 # 1479 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper(C->finalSeqsJ[i], 6290273773536189332UL);free(C->finalSeqsJ[i]); }) ;
+    ({ free_helper((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *)), 6290273773536189332UL);free((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *))); }) ;
 # 1480 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsJ[i] = __null;
 # 1481 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6467,13 +6468,13 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 # 1482 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
 # 1483 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper(C->finalSeqsJ, 6290273773536189330UL);free(C->finalSeqsJ); }) ;
+       ({ free_helper((((unsigned char *)C->finalSeqsJ) - sizeof(void *)), 6290273773536189330UL);free((((unsigned char *)C->finalSeqsJ) - sizeof(void *))); }) ;
 # 1484 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsJ = __null;
 # 1485 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
 # 1486 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     ({ free_helper(C, 6290273773536189425UL);free(C); }) ;
+     ({ free_helper((((unsigned char *)C) - sizeof(void *)), 6290273773536189425UL);free((((unsigned char *)C) - sizeof(void *))); }) ;
 # 1487 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
 # 1488 "/gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"

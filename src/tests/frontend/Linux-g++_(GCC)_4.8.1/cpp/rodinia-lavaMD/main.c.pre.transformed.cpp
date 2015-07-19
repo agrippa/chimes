@@ -79,8 +79,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -99,7 +100,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3437,7 +3438,7 @@ double start_time;
   call_lbl_7: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 7, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
 # 206 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 206 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.box_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 8237081768666506971UL, 0, 1, (int)sizeof(struct box_str), 0); ____chimes_tmp_ptr; }) ;
+ box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.box_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 8237081768666506971UL, 0, 1, (int)sizeof(struct box_str), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 207 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 208 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 209 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3536,7 +3537,7 @@ double start_time;
 # 270 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 271 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 272 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507310UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) ;
+ rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507310UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 273 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 274 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3552,7 +3553,7 @@ double start_time;
 # 279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 280 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 281 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem2); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 8237081768666507372UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem2) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 8237081768666507372UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 282 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 283 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3562,7 +3563,7 @@ double start_time;
 # 285 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 286 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 287 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507395UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) ;
+ fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507395UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 288 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 289 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3601,13 +3602,13 @@ double start_time;
     printf("execution took %f s\n", end_time - start_time);
 # 341 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 341 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper(rv_cpu, 8237081768666507310UL);free(rv_cpu); }) ;
+  ({ free_helper((((unsigned char *)rv_cpu) - sizeof(void *)), 8237081768666507310UL);free((((unsigned char *)rv_cpu) - sizeof(void *))); }) ;
 # 342 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper(qv_cpu, 8237081768666507372UL);free(qv_cpu); }) ;
+  ({ free_helper((((unsigned char *)qv_cpu) - sizeof(void *)), 8237081768666507372UL);free((((unsigned char *)qv_cpu) - sizeof(void *))); }) ;
 # 343 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper(fv_cpu, 8237081768666507395UL);free(fv_cpu); }) ;
+  ({ free_helper((((unsigned char *)fv_cpu) - sizeof(void *)), 8237081768666507395UL);free((((unsigned char *)fv_cpu) - sizeof(void *))); }) ;
 # 344 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper(box_cpu, 8237081768666506971UL);free(box_cpu); }) ;
+  ({ free_helper((((unsigned char *)box_cpu) - sizeof(void *)), 8237081768666506971UL);free((((unsigned char *)box_cpu) - sizeof(void *))); }) ;
 # 345 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 346 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   call_lbl_14: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));
@@ -3860,7 +3861,7 @@ double start_time;
   call_lbl_7: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 7, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
 # 206 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 206 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.box_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 8237081768666506971UL, 0, 1, (int)sizeof(struct box_str), 0); ____chimes_tmp_ptr; }) ;
+ box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.box_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 8237081768666506971UL, 0, 1, (int)sizeof(struct box_str), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 207 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 208 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 209 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3959,7 +3960,7 @@ double start_time;
 # 270 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 271 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 272 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507310UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) ;
+ rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507310UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 273 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 274 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3975,7 +3976,7 @@ double start_time;
 # 279 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 280 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 281 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem2); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 8237081768666507372UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem2) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 8237081768666507372UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 282 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 283 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3985,7 +3986,7 @@ double start_time;
 # 285 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 286 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 287 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507395UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) ;
+ fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 8237081768666507395UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 288 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 289 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -4024,13 +4025,13 @@ double start_time;
     printf("execution took %f s\n", end_time - start_time);
 # 341 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 341 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper(rv_cpu, 8237081768666507310UL);free(rv_cpu); }) ;
+  ({ free_helper((((unsigned char *)rv_cpu) - sizeof(void *)), 8237081768666507310UL);free((((unsigned char *)rv_cpu) - sizeof(void *))); }) ;
 # 342 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper(qv_cpu, 8237081768666507372UL);free(qv_cpu); }) ;
+  ({ free_helper((((unsigned char *)qv_cpu) - sizeof(void *)), 8237081768666507372UL);free((((unsigned char *)qv_cpu) - sizeof(void *))); }) ;
 # 343 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper(fv_cpu, 8237081768666507395UL);free(fv_cpu); }) ;
+  ({ free_helper((((unsigned char *)fv_cpu) - sizeof(void *)), 8237081768666507395UL);free((((unsigned char *)fv_cpu) - sizeof(void *))); }) ;
 # 344 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper(box_cpu, 8237081768666506971UL);free(box_cpu); }) ;
+  ({ free_helper((((unsigned char *)box_cpu) - sizeof(void *)), 8237081768666506971UL);free((((unsigned char *)box_cpu) - sizeof(void *))); }) ;
 # 345 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 346 "/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   call_lbl_14: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));
