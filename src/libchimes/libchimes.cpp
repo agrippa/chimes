@@ -3183,7 +3183,7 @@ void realloc_helper(const void *new_ptr, const void *ptr, void *header,
 
 heap_allocation *free_impl(const void *ptr, heap_allocation *alloc) {
 #ifdef VERBOSE
-    fprintf(stderr, "free_impl: ptr=%p\n", ptr);
+    fprintf(stderr, "free_impl: ptr=%p, alloc->get_address()=%p\n", ptr, alloc->get_address());
 #endif
     // Update heap metadata
     // heap_allocation *alloc = *((heap_allocation **)ptr);
@@ -3233,7 +3233,6 @@ void free_helper(const void *ptr, size_t group) {
         heap_allocation *alloc = free_impl(ptr, *((heap_allocation **)ptr));
 
         size_t original_group = alloc->get_alias_group();
-
 #ifdef VERBOSE
         fprintf(stderr, "free_wrapper: asserting that original_group=%lu and "
                 "group=%lu are aliased\n", original_group, group);
@@ -5104,6 +5103,17 @@ static void cleanup_thread_heap(void *thread_heap_ptr) {
         main_thread_heap->add_allocation(i->second, true);
     }
     main_thread_heap->unlock();
+
+    VERIFY(pthread_rwlock_wrlock(&thread_heaps_lock) == 0);
+    map<pthread_t, thread_local_allocations *>::iterator iter = thread_heaps.begin();
+    while (iter != thread_heaps.end()) {
+        if (iter->second == thread_heap) {
+            break;
+        }
+    }
+    assert(iter != thread_heaps.end());
+    thread_heaps.erase(iter);
+    VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
 
     delete thread_heap;
 }
