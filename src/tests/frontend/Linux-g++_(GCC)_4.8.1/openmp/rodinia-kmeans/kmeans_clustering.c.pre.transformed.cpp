@@ -4164,9 +4164,9 @@ static int module_init() {
                              (3125210765127599910UL + 423UL), (3125210765127599910UL + 415UL),
                              (3125210765127599910UL + 722UL), (3125210765127599910UL + 453UL),
                              (3125210765127599910UL + 546UL), (3125210765127599910UL + 548UL),
-                             "euclid_dist_2", "_Z13euclid_dist_2PfS_i", 0,
-                             "find_nearest_point", "_Z18find_nearest_pointPfiPS_i", 1, "euclid_dist_2",
-                             "kmeans_clustering", "_Z17kmeans_clusteringPPfiiifPi", 1, "find_nearest_point",
+                             "euclid_dist_2", "_Z13euclid_dist_2PfS_i", 0, 0,
+                             "find_nearest_point", "_Z18find_nearest_pointPfiPS_i", 0, 1, "euclid_dist_2",
+                             "kmeans_clustering", "_Z17kmeans_clusteringPPfiiifPi", 0, 1, "find_nearest_point",
         "euclid_dist_2", 0UL, (int)3, 3125210765127599967UL, 3125210765127599944UL, 0UL,
         "find_nearest_point", 0UL, (int)4, 3125210765127600363UL, 0UL, 3125210765127600628UL, 0UL);
     return 0;

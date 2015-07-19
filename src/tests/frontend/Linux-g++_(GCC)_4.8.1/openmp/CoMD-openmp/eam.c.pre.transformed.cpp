@@ -468,6 +468,35 @@ extern long double strtold_l (__const char *__restrict __nptr,
          char **__restrict __endptr,
          __locale_t __loc)
      throw () __attribute__ ((__nonnull__ (1, 3))) ;
+
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) double
+atof (__const char *__nptr) throw ()
+{
+  return strtod (__nptr, (char **) __null);
+}
+extern __inline __attribute__ ((__gnu_inline__)) int
+atoi (__const char *__nptr) throw ()
+{
+  return (int) strtol (__nptr, (char **) __null, 10);
+}
+extern __inline __attribute__ ((__gnu_inline__)) long int
+atol (__const char *__nptr) throw ()
+{
+  return strtol (__nptr, (char **) __null, 10);
+}
+
+
+
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) long long int
+atoll (__const char *__nptr) throw ()
+{
+  return strtoll (__nptr, (char **) __null, 10);
+}
 # 311 "/usr/include/stdlib.h" 3 4
 extern char *l64a (long int __n) throw () ;
 
@@ -817,6 +846,27 @@ __extension__
 extern unsigned long long int gnu_dev_makedev (unsigned int __major,
             unsigned int __minor)
      throw ();
+
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
+gnu_dev_major (unsigned long long int __dev) throw ()
+{
+  return ((__dev >> 8) & 0xfff) | ((unsigned int) (__dev >> 32) & ~0xfff);
+}
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
+gnu_dev_minor (unsigned long long int __dev) throw ()
+{
+  return (__dev & 0xff) | ((unsigned int) (__dev >> 12) & ~0xff);
+}
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned long long int
+gnu_dev_makedev (unsigned int __major, unsigned int __minor) throw ()
+{
+  return ((__minor & 0xff) | ((__major & 0xfff) << 8)
+   | (((unsigned long long int) (__minor & ~0xff)) << 12)
+   | (((unsigned long long int) (__major & ~0xfff)) << 32));
+}
 # 224 "/usr/include/sys/types.h" 2 3 4
 
 
@@ -1531,7 +1581,20 @@ extern void *memchr (void *__s, int __c, size_t __n)
       throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern __const void *memchr (__const void *__s, int __c, size_t __n)
       throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 93 "/usr/include/string.h" 3 4
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) void *
+memchr (void *__s, int __c, size_t __n) throw ()
+{
+  return __builtin_memchr (__s, __c, __n);
+}
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const void *
+memchr (__const void *__s, int __c, size_t __n) throw ()
+{
+  return __builtin_memchr (__s, __c, __n);
+}
+
 }
 # 104 "/usr/include/string.h" 3 4
 extern "C++" void *rawmemchr (void *__s, int __c)
@@ -1609,7 +1672,20 @@ extern char *strchr (char *__s, int __c)
      throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern __const char *strchr (__const char *__s, int __c)
      throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 233 "/usr/include/string.h" 3 4
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
+strchr (char *__s, int __c) throw ()
+{
+  return __builtin_strchr (__s, __c);
+}
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
+strchr (__const char *__s, int __c) throw ()
+{
+  return __builtin_strchr (__s, __c);
+}
+
 }
 
 
@@ -1623,7 +1699,20 @@ extern char *strrchr (char *__s, int __c)
      throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern __const char *strrchr (__const char *__s, int __c)
      throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 260 "/usr/include/string.h" 3 4
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
+strrchr (char *__s, int __c) throw ()
+{
+  return __builtin_strrchr (__s, __c);
+}
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
+strrchr (__const char *__s, int __c) throw ()
+{
+  return __builtin_strrchr (__s, __c);
+}
+
 }
 # 271 "/usr/include/string.h" 3 4
 extern "C++" char *strchrnul (char *__s, int __c)
@@ -1645,7 +1734,20 @@ extern char *strpbrk (char *__s, __const char *__accept)
      throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 extern __const char *strpbrk (__const char *__s, __const char *__accept)
      throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-# 312 "/usr/include/string.h" 3 4
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
+strpbrk (char *__s, __const char *__accept) throw ()
+{
+  return __builtin_strpbrk (__s, __accept);
+}
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
+strpbrk (__const char *__s, __const char *__accept) throw ()
+{
+  return __builtin_strpbrk (__s, __accept);
+}
+
 }
 
 
@@ -1660,7 +1762,20 @@ extern char *strstr (char *__haystack, __const char *__needle)
 extern __const char *strstr (__const char *__haystack,
         __const char *__needle)
      throw () __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-# 340 "/usr/include/string.h" 3 4
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
+strstr (char *__haystack, __const char *__needle) throw ()
+{
+  return __builtin_strstr (__haystack, __needle);
+}
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
+strstr (__const char *__haystack, __const char *__needle) throw ()
+{
+  return __builtin_strstr (__haystack, __needle);
+}
+
 }
 
 
@@ -1762,7 +1877,20 @@ extern char *index (char *__s, int __c)
      throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern __const char *index (__const char *__s, int __c)
      throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 487 "/usr/include/string.h" 3 4
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
+index (char *__s, int __c) throw ()
+{
+  return __builtin_index (__s, __c);
+}
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
+index (__const char *__s, int __c) throw ()
+{
+  return __builtin_index (__s, __c);
+}
+
 }
 
 
@@ -1777,7 +1905,20 @@ extern char *rindex (char *__s, int __c)
      throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern __const char *rindex (__const char *__s, int __c)
      throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 515 "/usr/include/string.h" 3 4
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) char *
+rindex (char *__s, int __c) throw ()
+{
+  return __builtin_rindex (__s, __c);
+}
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__, __artificial__)) __const char *
+rindex (__const char *__s, int __c) throw ()
+{
+  return __builtin_rindex (__s, __c);
+}
+
 }
 
 
@@ -2831,6 +2972,43 @@ struct __exception
 
 
 extern int matherr (struct __exception *__exc) throw ();
+# 416 "/usr/include/math.h" 3 4
+# 1 "/usr/include/bits/mathinline.h" 1 3 4
+# 63 "/usr/include/bits/mathinline.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) int
+__signbitf (float __x) throw ()
+{
+  __extension__ union { float __f; int __i; } __u = { __f: __x };
+  return __u.__i < 0;
+}
+extern __inline __attribute__ ((__gnu_inline__)) int
+__signbit (double __x) throw ()
+{
+  __extension__ union { double __d; int __i[2]; } __u = { __d: __x };
+  return __u.__i[0] < 0;
+}
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+__signbitl (long double __x) throw ()
+{
+  __extension__ union { long double __d; int __i[4]; } __u = { __d: __x };
+  return __u.__i[0] < 0;
+}
+# 116 "/usr/include/bits/mathinline.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) double fdim (double __x, double __y) throw ();
+extern __inline __attribute__ ((__gnu_inline__)) double
+fdim (double __x, double __y) throw ()
+{
+  return __x <= __y ? 0 : __x - __y;
+}
+
+extern __inline __attribute__ ((__gnu_inline__)) float fdimf (float __x, float __y) throw ();
+extern __inline __attribute__ ((__gnu_inline__)) float
+fdimf (float __x, float __y) throw ()
+{
+  return __x <= __y ? 0 : __x - __y;
+}
+# 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
 # 93 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c" 2
@@ -3751,6 +3929,111 @@ extern int ftrylockfile (FILE *__stream) throw () ;
 
 
 extern void funlockfile (FILE *__stream) throw ();
+# 929 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/bits/stdio.h" 1 3 4
+# 36 "/usr/include/bits/stdio.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) int
+vprintf (__const char *__restrict __fmt, __gnuc_va_list __arg)
+{
+  return vfprintf (stdout, __fmt, __arg);
+}
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+getchar (void)
+{
+  return _IO_getc (stdin);
+}
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+fgetc_unlocked (FILE *__fp)
+{
+  return (__builtin_expect (((__fp)->_IO_read_ptr >= (__fp)->_IO_read_end), 0) ? __uflow (__fp) : *(unsigned char *) (__fp)->_IO_read_ptr++);
+}
+
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+getc_unlocked (FILE *__fp)
+{
+  return (__builtin_expect (((__fp)->_IO_read_ptr >= (__fp)->_IO_read_end), 0) ? __uflow (__fp) : *(unsigned char *) (__fp)->_IO_read_ptr++);
+}
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+getchar_unlocked (void)
+{
+  return (__builtin_expect (((stdin)->_IO_read_ptr >= (stdin)->_IO_read_end), 0) ? __uflow (stdin) : *(unsigned char *) (stdin)->_IO_read_ptr++);
+}
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+putchar (int __c)
+{
+  return _IO_putc (__c, stdout);
+}
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+fputc_unlocked (int __c, FILE *__stream)
+{
+  return (__builtin_expect (((__stream)->_IO_write_ptr >= (__stream)->_IO_write_end), 0) ? __overflow (__stream, (unsigned char) (__c)) : (unsigned char) (*(__stream)->_IO_write_ptr++ = (__c)));
+}
+
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+putc_unlocked (int __c, FILE *__stream)
+{
+  return (__builtin_expect (((__stream)->_IO_write_ptr >= (__stream)->_IO_write_end), 0) ? __overflow (__stream, (unsigned char) (__c)) : (unsigned char) (*(__stream)->_IO_write_ptr++ = (__c)));
+}
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+putchar_unlocked (int __c)
+{
+  return (__builtin_expect (((stdout)->_IO_write_ptr >= (stdout)->_IO_write_end), 0) ? __overflow (stdout, (unsigned char) (__c)) : (unsigned char) (*(stdout)->_IO_write_ptr++ = (__c)));
+}
+
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) __ssize_t
+getline (char **__lineptr, size_t *__n, FILE *__stream)
+{
+  return __getdelim (__lineptr, __n, '\n', __stream);
+}
+
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+feof_unlocked (FILE *__stream) throw ()
+{
+  return (((__stream)->_flags & 0x10) != 0);
+}
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+ferror_unlocked (FILE *__stream) throw ()
+{
+  return (((__stream)->_flags & 0x20) != 0);
+}
+# 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
 # 8 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
@@ -6922,21 +7205,21 @@ static int module_init() {
                      "_IO_marker", 0UL, 0,
                      "_buf_2_t", 192UL, 3, "int", (int)__builtin_offsetof (struct _buf_2_t, n), "double", (int)__builtin_offsetof (struct _buf_2_t, x0), "double", (int)__builtin_offsetof (struct _buf_2_t, invDx),
                      "_buf_t", 320UL, 6, "double", (int)__builtin_offsetof (struct _buf_t, cutoff), "double", (int)__builtin_offsetof (struct _buf_t, mass), "double", (int)__builtin_offsetof (struct _buf_t, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct _buf_t, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct _buf_t, name), "int", (int)__builtin_offsetof (struct _buf_t, atomicNo),
-                             "eamPrint", "_Z8eamPrintP8_IO_FILEP15BasePotentialSt", 0,
-                             "eamReadFuncfl", "_ZL13eamReadFuncflP14EamPotentialStPKcS2_", 4, "fileNotFound", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
-                             "fileNotFound", "_ZL12fileNotFoundPKcS0_", 0,
-                             "initInterpolationObject", "_ZL23initInterpolationObjectiddPd", 0,
-                             "initEamPot", "_Z10initEamPotPKcS0_S0_", 5, "getMyRank", "eamReadSetfl", "eamReadFuncfl", "typeNotSupported", "eamBcastPotential",
-                             "interpolate", "_ZL11interpolateP21InterpolationObjectStdPdS1_", 0,
-                             "eamReadSetfl", "_ZL12eamReadSetflP14EamPotentialStPKcS2_", 5, "fileNotFound", "notAlloyReady", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
-                             "eamForce", "_Z8eamForceP9SimFlatSt", 9, "initForceHaloExchange", "zeroReal3", "interpolate", "interpolate", "interpolate", "profileStart", "haloExchange", "profileStop", "interpolate",
-                             "bcastInterpolationObject", "_ZL24bcastInterpolationObjectPP21InterpolationObjectSt", 4, "getMyRank", "bcastParallel", "getMyRank", "bcastParallel",
-                             "zeroReal3", "_ZL9zeroReal3Pd", 0,
-                             "eamBcastPotential", "_ZL17eamBcastPotentialP14EamPotentialSt", 5, "getMyRank", "bcastParallel", "bcastInterpolationObject", "bcastInterpolationObject", "bcastInterpolationObject",
-                             "typeNotSupported", "_ZL16typeNotSupportedPKcS0_", 0,
-                             "notAlloyReady", "_ZL13notAlloyReadyPKc", 0,
-                             "eamDestroy", "_Z10eamDestroyPP15BasePotentialSt", 4, "destroyInterpolationObject", "destroyInterpolationObject", "destroyInterpolationObject", "destroyHaloExchange",
-                             "destroyInterpolationObject", "_ZL26destroyInterpolationObjectPP21InterpolationObjectSt", 0,
+                             "eamPrint", "_Z8eamPrintP8_IO_FILEP15BasePotentialSt", 0, 0,
+                             "eamReadFuncfl", "_ZL13eamReadFuncflP14EamPotentialStPKcS2_", 0, 4, "fileNotFound", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
+                             "fileNotFound", "_ZL12fileNotFoundPKcS0_", 0, 0,
+                             "initInterpolationObject", "_ZL23initInterpolationObjectiddPd", 0, 0,
+                             "initEamPot", "_Z10initEamPotPKcS0_S0_", 0, 5, "getMyRank", "eamReadSetfl", "eamReadFuncfl", "typeNotSupported", "eamBcastPotential",
+                             "interpolate", "_ZL11interpolateP21InterpolationObjectStdPdS1_", 0, 0,
+                             "eamReadSetfl", "_ZL12eamReadSetflP14EamPotentialStPKcS2_", 0, 5, "fileNotFound", "notAlloyReady", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
+                             "eamForce", "_Z8eamForceP9SimFlatSt", 0, 9, "initForceHaloExchange", "zeroReal3", "interpolate", "interpolate", "interpolate", "profileStart", "haloExchange", "profileStop", "interpolate",
+                             "bcastInterpolationObject", "_ZL24bcastInterpolationObjectPP21InterpolationObjectSt", 0, 4, "getMyRank", "bcastParallel", "getMyRank", "bcastParallel",
+                             "zeroReal3", "_ZL9zeroReal3Pd", 0, 0,
+                             "eamBcastPotential", "_ZL17eamBcastPotentialP14EamPotentialSt", 0, 5, "getMyRank", "bcastParallel", "bcastInterpolationObject", "bcastInterpolationObject", "bcastInterpolationObject",
+                             "typeNotSupported", "_ZL16typeNotSupportedPKcS0_", 0, 0,
+                             "notAlloyReady", "_ZL13notAlloyReadyPKc", 0, 0,
+                             "eamDestroy", "_Z10eamDestroyPP15BasePotentialSt", 0, 4, "destroyInterpolationObject", "destroyInterpolationObject", "destroyInterpolationObject", "destroyHaloExchange",
+                             "destroyInterpolationObject", "_ZL26destroyInterpolationObjectPP21InterpolationObjectSt", 0, 0,
                         "initEamPot|dir|0", 1, "getMyRank",
                         "initEamPot|file|0", 1, "getMyRank",
                         "initEamPot|type|0", 1, "getMyRank",

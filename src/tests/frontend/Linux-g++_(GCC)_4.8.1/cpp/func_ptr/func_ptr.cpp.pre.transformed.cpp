@@ -1495,8 +1495,8 @@ static int module_init() {
                            "foo", &(____chimes_does_checkpoint_foo_npm),
                              (1118257419494346108UL + 37UL), (1118257419494346108UL + 38UL),
                              (1118257419494346108UL + 16UL), (1118257419494346108UL + 36UL),
-                             "main", "main", 1, "checkpoint",
-                             "foo", "_Z3fooi", 0);
+                             "main", "main", 1, 1, "checkpoint",
+                             "foo", "_Z3fooi", 0, 0);
     register_global_var("global|fptr", "i32 (i32)*", (void *)(&fptr), 8, 1, 0, (1118257419494346108UL + 37UL), 0);
     return 0;
 }

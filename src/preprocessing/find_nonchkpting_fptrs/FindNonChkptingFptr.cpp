@@ -28,6 +28,12 @@ const clang::Decl *FindNonChkptingFptr::getRootDecl(const clang::Expr *curr) {
     } else if (const clang::MemberExpr *mem =
             clang::dyn_cast<clang::MemberExpr>(curr)) {
         return mem->getMemberDecl();
+    } else if (const clang::ParenExpr *paren =
+            clang::dyn_cast<clang::ParenExpr>(curr)) {
+        return getRootDecl(paren->getSubExpr());
+    } else if (const clang::UnaryOperator *unary =
+            clang::dyn_cast<clang::UnaryOperator>(curr)) {
+        return getRootDecl(unary->getSubExpr());
     } else {
         curr->dump();
         assert(false);

@@ -1502,8 +1502,8 @@ static int module_init() {
                             "haha_this_sux2", 0, "_Z14haha_this_sux2v", "_Z18haha_this_sux2_npmv", 0, 0, 0UL, 0,
                            "haha_this_sux2", &(____chimes_does_checkpoint_haha_this_sux2_npm),
                              (18305889038884447142UL + 9UL), (18305889038884447142UL + 23UL),
-                             "haha_this_sux2", "_Z14haha_this_sux2v", 0,
-                             "main", "main", 2, "haha_this_sux2", "checkpoint",
+                             "haha_this_sux2", "_Z14haha_this_sux2v", 0, 0,
+                             "main", "main", 0, 2, "haha_this_sux2", "checkpoint",
         "haha_this_sux2", 0UL, (int)0);
     register_global_var("global|a", "i32", (void *)(&a), 4, 0, 0, 0UL, 0);
     return 0;

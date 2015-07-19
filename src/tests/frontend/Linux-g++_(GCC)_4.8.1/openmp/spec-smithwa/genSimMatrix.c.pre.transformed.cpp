@@ -3577,8 +3577,8 @@ static int module_init() {
                              (10609085440105252384UL + 8UL), (10609085440105252384UL + 492UL),
                              (10609085440105252384UL + 492UL), (10609085440105252384UL + 402UL),
                      "simmat", 40960UL, 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
-                             "freeSimMatrix", "_Z13freeSimMatrixP6simmat", 0,
-                             "genSimMatrix", "_Z12genSimMatrixiiiiiii", 0);
+                             "freeSimMatrix", "_Z13freeSimMatrixP6simmat", 0, 0,
+                             "genSimMatrix", "_Z12genSimMatrixiiiiiii", 0, 0);
     register_global_var("global|similarities", "[22 x [9 x i8*]]", (void *)(&similarities), 1584, 0, 0, 0UL, 0);
     register_constant(10609085440105252384UL + 0UL, (void *)((((similarities)[21]))[0]), 1);
     register_constant(10609085440105252384UL + 1UL, (void *)((((similarities)[1]))[1]), 2);

@@ -1545,7 +1545,7 @@ static int module_init() {
                              (513441829984432454UL + 3UL), (513441829984432454UL + 67UL),
                              (513441829984432454UL + 5UL), (513441829984432454UL + 47UL),
                              (513441829984432454UL + 4UL), (513441829984432454UL + 56UL),
-                             "main", "main", 2, "foo", "checkpoint",
+                             "main", "main", 0, 2, "foo", "checkpoint",
         "foo", 0UL, (int)1, 513441829984432501UL);
     return 0;
 }

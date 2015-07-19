@@ -1544,8 +1544,8 @@ static int module_init() {
                              (1944833083709766336UL + 2UL), (1944833083709766336UL + 13UL),
                              (1944833083709766336UL + 19UL), (1944833083709766336UL + 28UL),
                      "_foo", 32UL, 1, "int", (int)__builtin_offsetof (struct _foo, a),
-                             "main", "main", 1, "checkpoint",
-                             "handler", "_Z7handlerPv", 0);
+                             "main", "main", 0, 1, "checkpoint",
+                             "handler", "_Z7handlerPv", 0, 0);
     return 0;
 }
 

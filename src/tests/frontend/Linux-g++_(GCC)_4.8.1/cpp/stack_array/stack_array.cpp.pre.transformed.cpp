@@ -1513,7 +1513,7 @@ static int module_init() {
                            &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (7217384500467208887UL + 1UL), (7217384500467208887UL + 2UL), (7217384500467208887UL + 3UL), (7217384500467208887UL + 4UL),
                            &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (7217384500467208887UL + 5UL),
                              (7217384500467208887UL + 3UL), (7217384500467208887UL + 68UL),
-                             "main", "main", 1, "checkpoint",
+                             "main", "main", 0, 1, "checkpoint",
                         "main|a|0", 1, "main");
     return 0;
 }

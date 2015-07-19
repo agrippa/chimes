@@ -2480,7 +2480,7 @@ static int module_init() {
     init_module(3803651465693704543UL, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0,
                             "getUserParameters", 0, "_Z17getUserParametersv", "_Z21getUserParameters_npmv", 0, 0, 0UL, 0,
                            "getUserParameters", &(____chimes_does_checkpoint_getUserParameters_npm),
-                             "getUserParameters", "_Z17getUserParametersv", 0);
+                             "getUserParameters", "_Z17getUserParametersv", 0, 0);
     return 0;
 }
 

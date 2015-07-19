@@ -2404,8 +2404,8 @@ static int module_init() {
                            &____alias_loc_id_0, (unsigned)8, (unsigned)0, (unsigned)0, (8458064826126135466UL + 3UL), (8458064826126135466UL + 4UL), (8458064826126135466UL + 5UL), (8458064826126135466UL + 6UL), (8458064826126135466UL + 7UL), (8458064826126135466UL + 8UL), (8458064826126135466UL + 9UL), (8458064826126135466UL + 10UL),
                            &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (8458064826126135466UL + 11UL),
                              (8458064826126135466UL + 5UL), (8458064826126135466UL + 36UL),
-                             "main", "main", 1, "foo",
-                             "foo", "_Z3foov", 1, "checkpoint");
+                             "main", "main", 0, 1, "foo",
+                             "foo", "_Z3foov", 0, 1, "checkpoint");
     return 0;
 }
 

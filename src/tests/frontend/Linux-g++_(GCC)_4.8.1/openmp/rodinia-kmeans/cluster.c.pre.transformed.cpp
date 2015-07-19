@@ -4009,7 +4009,7 @@ static int module_init() {
                              (12757408639391715078UL + 7UL), (12757408639391715078UL + 27UL),
                              (12757408639391715078UL + 69UL), (12757408639391715078UL + 40UL),
                              (12757408639391715078UL + 8UL), (12757408639391715078UL + 40UL),
-                             "cluster", "_Z7clusteriiPPfifPS0_", 1, "kmeans_clustering",
+                             "cluster", "_Z7clusteriiPPfifPS0_", 0, 1, "kmeans_clustering",
                         "cluster|cluster_centres|0", 1, "kmeans_clustering",
                         "cluster|membership|0", 1, "kmeans_clustering");
     return 0;

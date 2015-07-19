@@ -1,7 +1,7 @@
 include ${CHIMES_HOME}/src/common.conf
 
 NVCC=nvcc
-GXX_FLAGS=-fPIC -Wall -O3 -DVERBOSE
+GXX_FLAGS=-fPIC -Wall -O3
 NVCC_FLAGS=-Xcompiler -fPIC -arch=sm_20
 SRC=libchimes.cpp stack_frame.cpp stack_serialization.cpp \
 	global_serialization.cpp chimes_stack.cpp heap_allocation.cpp \
@@ -31,6 +31,7 @@ else
 endif
 
 CHIMES_LIB=libchimes.so
+CHIMES_PROFILE_LIB=libchimes_profile.so
 CHIMES_DUMMY_LIB=libchimes_dummy.so
 CHIMES_STATIC_LIB=libchimes.a
 CHIMES_DUMMY_STATIC_LIB=libchimes_dummy.a
@@ -38,13 +39,16 @@ CHIMES_CPP_LIB=libchimes_cpp.so
 CHIMES_DUMMY_CPP_LIB=libchimes_dummy_cpp.so
 
 all: ${CHIMES_CPP_LIB} ${CHIMES_LIB} ${CHIMES_STATIC_LIB} ${CHIMES_DUMMY_LIB} \
-		${CHIMES_DUMMY_STATIC_LIB} benchmark_timers
+		${CHIMES_DUMMY_STATIC_LIB} ${CHIMES_PROFILE_LIB} benchmark_timers
 
 benchmark_timers: benchmark_timers.cpp
 	${GXX} ${GXX_FLAGS} -o benchmark_timers benchmark_timers.cpp
 
 ${CHIMES_CPP_LIB}: ${SRC} build-xxhash
 	${GXX} ${GXX_FLAGS} -shared ${SRC} -o ${CHIMES_CPP_LIB} ${OMP_LIB} -Lxxhash/ -lxxhash
+
+${CHIMES_PROFILE_LIB}: ${SRC} build-xxhash
+	${GXX} -D__CHIMES_PROFILE ${GXX_FLAGS} -shared ${SRC} -o ${CHIMES_PROFILE_LIB} ${OMP_LIB} -Lxxhash/ -lxxhash
 
 ${CHIMES_LIB}: ${SRC} libchimes_cuda.o build-xxhash
 	${GXX} ${GXX_FLAGS} -shared ${SRC} libchimes_cuda.o -o ${CHIMES_LIB} \

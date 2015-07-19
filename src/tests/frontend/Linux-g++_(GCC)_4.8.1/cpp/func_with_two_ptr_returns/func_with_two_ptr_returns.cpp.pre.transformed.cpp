@@ -1539,8 +1539,8 @@ static int module_init() {
                              (4570275958605664434UL + 3UL), (4570275958605664434UL + 55UL),
                              (4570275958605664434UL + 2UL), (4570275958605664434UL + 55UL),
                              (4570275958605664434UL + 4UL), (4570275958605664434UL + 55UL),
-                             "main", "main", 2, "haha_this_sux_part_trois", "checkpoint",
-                             "haha_this_sux_part_trois", "_Z24haha_this_sux_part_troisv", 0,
+                             "main", "main", 0, 2, "haha_this_sux_part_trois", "checkpoint",
+                             "haha_this_sux_part_trois", "_Z24haha_this_sux_part_troisv", 0, 0,
         "haha_this_sux_part_trois", 4570275958605664476UL, (int)0);
     return 0;
 }

@@ -71,7 +71,7 @@ PERF_CLI_ARGS = {'Iso3D': '-x 1024 -y 1024 -z 256 -i 30',
                  'SmithWaterman': '1204000 7000 700',
                  'SmithWaterman-OMP': '1204000 7000 12040 700',
                  'Lulesh': '20',
-                 'Lulesh-OMP': '50',
+                 'Lulesh-OMP': '60',
                  'CoMD': '-N 100 -x 100 -y 100 -z 20',
                  'UTS': '-t 1 -g 20 -b 1.8 -d 80'
                 }

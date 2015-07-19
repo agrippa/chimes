@@ -417,7 +417,7 @@ static int module_init() {
                            "resize", &(____chimes_does_checkpoint_resize_npm),
                              (6065301789804861900UL + 1UL), (6065301789804861900UL + 168UL),
                              (6065301789804861900UL + 4UL), (6065301789804861900UL + 171UL),
-                             "resize", "_Z6resizePfiiS_iii", 0);
+                             "resize", "_Z6resizePfiiS_iii", 0, 0);
     return 0;
 }
 

@@ -3983,12 +3983,12 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
 
 
    void* parms;
@@ -4079,9 +4079,9 @@ typedef struct BasePotentialSt
    char latticeType[8];
    char name[3];
    int atomicNo;
-   int (*force)(struct SimFlatSt* s);
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot);
+   int (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint));
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint));
 } BasePotential;
 
 
@@ -7056,20 +7056,20 @@ static int module_init() {
                      "_IO_marker", 0UL, 0,
                      "_buf_2_t", 192UL, 3, "int", (int)__builtin_offsetof (struct _buf_2_t, n), "double", (int)__builtin_offsetof (struct _buf_2_t, x0), "double", (int)__builtin_offsetof (struct _buf_2_t, invDx),
                      "_buf_t", 320UL, 6, "double", (int)__builtin_offsetof (struct _buf_t, cutoff), "double", (int)__builtin_offsetof (struct _buf_t, mass), "double", (int)__builtin_offsetof (struct _buf_t, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct _buf_t, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct _buf_t, name), "int", (int)__builtin_offsetof (struct _buf_t, atomicNo),
-                             "eamPrint", "_Z8eamPrintP8_IO_FILEP15BasePotentialSt", 0,
-                             "eamReadFuncfl", "_ZL13eamReadFuncflP14EamPotentialStPKcS2_", 4, "fileNotFound", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
-                             "fileNotFound", "_ZL12fileNotFoundPKcS0_", 0,
-                             "initInterpolationObject", "_ZL23initInterpolationObjectiddPd", 0,
-                             "initEamPot", "_Z10initEamPotPKcS0_S0_", 5, "getMyRank", "eamReadSetfl", "eamReadFuncfl", "typeNotSupported", "eamBcastPotential",
-                             "interpolate", "_ZL11interpolateP21InterpolationObjectStdPdS1_", 0,
-                             "eamReadSetfl", "_ZL12eamReadSetflP14EamPotentialStPKcS2_", 5, "fileNotFound", "notAlloyReady", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
-                             "eamForce", "_Z8eamForceP9SimFlatSt", 10, "initForceHaloExchange", "getNeighborBoxes", "interpolate", "interpolate", "interpolate", "profileStart", "haloExchange", "profileStop", "getNeighborBoxes", "interpolate",
-                             "bcastInterpolationObject", "_ZL24bcastInterpolationObjectPP21InterpolationObjectSt", 4, "getMyRank", "bcastParallel", "getMyRank", "bcastParallel",
-                             "eamBcastPotential", "_ZL17eamBcastPotentialP14EamPotentialSt", 5, "getMyRank", "bcastParallel", "bcastInterpolationObject", "bcastInterpolationObject", "bcastInterpolationObject",
-                             "typeNotSupported", "_ZL16typeNotSupportedPKcS0_", 0,
-                             "notAlloyReady", "_ZL13notAlloyReadyPKc", 0,
-                             "eamDestroy", "_Z10eamDestroyPP15BasePotentialSt", 4, "destroyInterpolationObject", "destroyInterpolationObject", "destroyInterpolationObject", "destroyHaloExchange",
-                             "destroyInterpolationObject", "_ZL26destroyInterpolationObjectPP21InterpolationObjectSt", 0,
+                             "eamPrint", "_Z8eamPrintP8_IO_FILEP15BasePotentialSt", 0, 0,
+                             "eamReadFuncfl", "_ZL13eamReadFuncflP14EamPotentialStPKcS2_", 0, 4, "fileNotFound", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
+                             "fileNotFound", "_ZL12fileNotFoundPKcS0_", 0, 0,
+                             "initInterpolationObject", "_ZL23initInterpolationObjectiddPd", 0, 0,
+                             "initEamPot", "_Z10initEamPotPKcS0_S0_", 0, 5, "getMyRank", "eamReadSetfl", "eamReadFuncfl", "typeNotSupported", "eamBcastPotential",
+                             "interpolate", "_ZL11interpolateP21InterpolationObjectStdPdS1_", 0, 0,
+                             "eamReadSetfl", "_ZL12eamReadSetflP14EamPotentialStPKcS2_", 0, 5, "fileNotFound", "notAlloyReady", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
+                             "eamForce", "_Z8eamForceP9SimFlatSt", 0, 10, "initForceHaloExchange", "getNeighborBoxes", "interpolate", "interpolate", "interpolate", "profileStart", "haloExchange", "profileStop", "getNeighborBoxes", "interpolate",
+                             "bcastInterpolationObject", "_ZL24bcastInterpolationObjectPP21InterpolationObjectSt", 0, 4, "getMyRank", "bcastParallel", "getMyRank", "bcastParallel",
+                             "eamBcastPotential", "_ZL17eamBcastPotentialP14EamPotentialSt", 0, 5, "getMyRank", "bcastParallel", "bcastInterpolationObject", "bcastInterpolationObject", "bcastInterpolationObject",
+                             "typeNotSupported", "_ZL16typeNotSupportedPKcS0_", 0, 0,
+                             "notAlloyReady", "_ZL13notAlloyReadyPKc", 0, 0,
+                             "eamDestroy", "_Z10eamDestroyPP15BasePotentialSt", 0, 4, "destroyInterpolationObject", "destroyInterpolationObject", "destroyInterpolationObject", "destroyHaloExchange",
+                             "destroyInterpolationObject", "_ZL26destroyInterpolationObjectPP21InterpolationObjectSt", 0, 0,
                         "initEamPot|dir|0", 1, "getMyRank",
                         "initEamPot|file|0", 1, "getMyRank",
                         "initEamPot|type|0", 1, "getMyRank",

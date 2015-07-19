@@ -1525,7 +1525,7 @@ static int module_init() {
                            &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)0, (12945330961080303431UL + 1UL), (12945330961080303431UL + 2UL), (12945330961080303431UL + 3UL), (12945330961080303431UL + 4UL), (12945330961080303431UL + 5UL), (12945330961080303431UL + 6UL), (12945330961080303431UL + 169UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (12945330961080303431UL + 1UL), (12945330961080303431UL + 2UL), (12945330961080303431UL + 3UL),
                              (12945330961080303431UL + 1UL), (12945330961080303431UL + 169UL),
-                             "lud_base", "_Z8lud_basePfi", 1, "checkpoint");
+                             "lud_base", "_Z8lud_basePfi", 0, 1, "checkpoint");
     return 0;
 }
 

@@ -2339,7 +2339,7 @@ static int module_init() {
                              (13553023217757812028UL + 4UL), (13553023217757812028UL + 39UL),
                              (13553023217757812028UL + 79UL), (13553023217757812028UL + 27UL),
                      "_foo", 192UL, 3, "int", (int)__builtin_offsetof (struct _foo, a), "int*", (int)__builtin_offsetof (struct _foo, b), "int**", (int)__builtin_offsetof (struct _foo, c),
-                             "main", "main", 1, "checkpoint");
+                             "main", "main", 0, 1, "checkpoint");
     return 0;
 }
 

@@ -1469,7 +1469,7 @@ static int module_init() {
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (14294407443907813589UL + 5UL), (14294407443907813589UL + 12UL),
                              (14294407443907813589UL + 3UL), (14294407443907813589UL + 30UL),
                              (14294407443907813589UL + 4UL), (14294407443907813589UL + 12UL),
-                             "main", "main", 1, "checkpoint");
+                             "main", "main", 0, 1, "checkpoint");
     return 0;
 }
 

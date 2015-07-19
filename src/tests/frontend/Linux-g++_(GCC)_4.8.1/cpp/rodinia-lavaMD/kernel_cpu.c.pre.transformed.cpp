@@ -4248,7 +4248,7 @@ static int module_init() {
                      "dim_str", 448UL, 9, "int", (int)__builtin_offsetof (struct dim_str, cur_arg), "int", (int)__builtin_offsetof (struct dim_str, arch_arg), "int", (int)__builtin_offsetof (struct dim_str, cores_arg), "int", (int)__builtin_offsetof (struct dim_str, boxes1d_arg), "long int", (int)__builtin_offsetof (struct dim_str, number_boxes), "long int", (int)__builtin_offsetof (struct dim_str, box_mem), "long int", (int)__builtin_offsetof (struct dim_str, space_elem), "long int", (int)__builtin_offsetof (struct dim_str, space_mem), "long int", (int)__builtin_offsetof (struct dim_str, space_mem2),
                      "nei_str", 192UL, 5, "int", (int)__builtin_offsetof (struct nei_str, x), "int", (int)__builtin_offsetof (struct nei_str, y), "int", (int)__builtin_offsetof (struct nei_str, z), "int", (int)__builtin_offsetof (struct nei_str, number), "long int", (int)__builtin_offsetof (struct nei_str, offset),
                      "par_str", 64UL, 1, "double", (int)__builtin_offsetof (struct par_str, alpha),
-                             "kernel_cpu", "kernel_cpu", 5, "get_time", "get_time", "get_time", "get_time", "get_time",
+                             "kernel_cpu", "kernel_cpu", 0, 5, "get_time", "get_time", "get_time", "get_time", "get_time",
                         "kernel_cpu|par|0", 1, "get_time",
                         "kernel_cpu|dim|0", 1, "get_time",
                         "kernel_cpu|box|0", 1, "get_time",

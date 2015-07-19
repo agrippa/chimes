@@ -3493,7 +3493,7 @@ static int module_init() {
                              (7350707685958010222UL + 2UL), (7350707685958010222UL + 396UL),
                              (7350707685958010222UL + 5UL), (7350707685958010222UL + 399UL),
                              (7350707685958010222UL + 396UL), (7350707685958010222UL + 138UL),
-                             "solver", "_Z6solverPPfS_iS_", 1, "embedded_fehlberg_7_8",
+                             "solver", "_Z6solverPPfS_iS_", 0, 1, "embedded_fehlberg_7_8",
                         "solver|y|0", 1, "embedded_fehlberg_7_8",
                         "solver|x|0", 1, "embedded_fehlberg_7_8",
                         "solver|xmax|0", 1, "embedded_fehlberg_7_8",

@@ -4447,8 +4447,8 @@ static int module_init() {
                      "neighbor", 512UL, 2, "[ 49 x char ]", (int)__builtin_offsetof (struct neighbor, entry), "double", (int)__builtin_offsetof (struct neighbor, dist),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "timezone", 64UL, 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
-                             "seconds", "_Z7secondsv", 0,
-                             "main", "main", 3, "seconds", "checkpoint", "seconds",
+                             "seconds", "_Z7secondsv", 0, 0,
+                             "main", "main", 0, 3, "seconds", "checkpoint", "seconds",
         "seconds", 0UL, (int)0,
         "seconds", 0UL, (int)0);
     return 0;

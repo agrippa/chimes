@@ -3625,12 +3625,12 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
 
 
    void* parms;
@@ -3666,9 +3666,9 @@ typedef struct BasePotentialSt
    char latticeType[8];
    char name[3];
    int atomicNo;
-   int (*force)(struct SimFlatSt* s);
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot);
+   int (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint));
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint));
 } BasePotential;
 
 
@@ -5049,14 +5049,14 @@ static int module_init() {
                      "SimFlatSt", 640UL, 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange),
                      "SpeciesDataSt", 128UL, 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass),
                      "TimerHandle", 32UL, 0,
-                             "setTemperature", "_Z14setTemperatureP9SimFlatStd", 7, "mkSeed", "gasdev", "gasdev", "gasdev", "setVcm", "kineticEnergy", "kineticEnergy",
-                             "setVcm", "_Z6setVcmP9SimFlatStPd", 1, "computeVcm",
-                             "createFccLattice", "_Z16createFccLatticeiiidP9SimFlatSt", 4, "putAtomInBox", "profileStart", "addIntParallel", "profileStop",
-                             "destroyAtoms", "_Z12destroyAtomsP7AtomsSt", 0,
-                             "initAtoms", "_Z9initAtomsP10LinkCellSt", 3, "zeroReal3", "zeroReal3", "zeroReal3",
-                             "zeroReal3", "_ZL9zeroReal3Pd", 0,
-                             "randomDisplacements", "_Z19randomDisplacementsP9SimFlatStd", 4, "mkSeed", "lcg61", "lcg61", "lcg61",
-                             "computeVcm", "_ZL10computeVcmP9SimFlatStPd", 3, "profileStart", "addRealParallel", "profileStop",
+                             "setTemperature", "_Z14setTemperatureP9SimFlatStd", 0, 7, "mkSeed", "gasdev", "gasdev", "gasdev", "setVcm", "kineticEnergy", "kineticEnergy",
+                             "setVcm", "_Z6setVcmP9SimFlatStPd", 0, 1, "computeVcm",
+                             "createFccLattice", "_Z16createFccLatticeiiidP9SimFlatSt", 0, 4, "putAtomInBox", "profileStart", "addIntParallel", "profileStop",
+                             "destroyAtoms", "_Z12destroyAtomsP7AtomsSt", 0, 0,
+                             "initAtoms", "_Z9initAtomsP10LinkCellSt", 0, 3, "zeroReal3", "zeroReal3", "zeroReal3",
+                             "zeroReal3", "_ZL9zeroReal3Pd", 0, 0,
+                             "randomDisplacements", "_Z19randomDisplacementsP9SimFlatStd", 0, 4, "mkSeed", "lcg61", "lcg61", "lcg61",
+                             "computeVcm", "_ZL10computeVcmP9SimFlatStPd", 0, 3, "profileStart", "addRealParallel", "profileStop",
                         "createFccLattice|nx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
                         "createFccLattice|ny|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
                         "createFccLattice|nz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",

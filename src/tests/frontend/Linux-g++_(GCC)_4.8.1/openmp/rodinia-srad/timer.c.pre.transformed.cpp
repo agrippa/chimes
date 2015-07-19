@@ -1566,7 +1566,7 @@ static int module_init() {
                             "get_time", 0, "_Z8get_timev", "_Z12get_time_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (9557388239924425019UL + 1UL), (9557388239924425019UL + 19UL), 0UL,
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                             "get_time", "_Z8get_timev", 0);
+                             "get_time", "_Z8get_timev", 0, 0);
     return 0;
 }
 

@@ -6,4 +6,5 @@ LinkCellSt 1088 0 gridSize "[ 3 x int ]" nLocalBoxes "int" nHaloBoxes "int" nTot
 SimFlatSt 640 0 nSteps "int" printRate "int" dt "double" domain "%struct.DomainSt*" boxes "%struct.LinkCellSt*" atoms "%struct.AtomsSt*" species "%struct.SpeciesDataSt*" ePotential "double" eKinetic "double" pot "%struct.BasePotentialSt*" atomExchange "%struct.HaloExchangeSt*"
 SpeciesDataSt 128 0 name "[ 3 x char ]" atomicNo "int" mass "double"
 TimerHandle 32 0
-_IO_FILE 0 0
+_IO_FILE 1728 0 _flags "int" _IO_read_ptr "char*" _IO_read_end "char*" _IO_read_base "char*" _IO_write_base "char*" _IO_write_ptr "char*" _IO_write_end "char*" _IO_buf_base "char*" _IO_buf_end "char*" _IO_save_base "char*" _IO_backup_base "char*" _IO_save_end "char*" _markers "%struct._IO_marker*" _chain "%struct._IO_FILE*" _fileno "int" _flags2 "int" _old_offset "long int" _cur_column "unsigned short" _vtable_offset "signed char" _shortbuf "[ 1 x char ]" _lock "void*" _offset "long int" __pad1 "void*" __pad2 "void*" __pad3 "void*" __pad4 "void*" __pad5 "long unsigned int" _mode "int" _unused2 "[ 20 x char ]"
+_IO_marker 0 0

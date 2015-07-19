@@ -3958,12 +3958,12 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
 
 
    void* parms;
@@ -4030,9 +4030,9 @@ typedef struct BasePotentialSt
    char latticeType[8];
    char name[3];
    int atomicNo;
-   int (*force)(struct SimFlatSt* s);
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot);
+   int (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint));
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint));
 } BasePotential;
 
 
@@ -5775,18 +5775,18 @@ static int module_init() {
                      "DomainSt", 1344UL, 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent),
                      "LinkCellSt", 1024UL, 9, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms),
                      "TimerHandle", 32UL, 0,
-                             "getNeighborBoxes", "_Z16getNeighborBoxesP10LinkCellStiPi", 2, "getTuple", "getBoxFromTuple",
-                             "initLinkCells", "_Z13initLinkCellsPK8DomainStd", 0,
-                             "getBoxFromCoord", "_ZL15getBoxFromCoordP10LinkCellStPd", 1, "getBoxFromTuple",
-                             "getTuple", "_ZL8getTupleP10LinkCellStiPiS1_S1_", 0,
-                             "copyAtom", "_ZL8copyAtomP10LinkCellStP7AtomsStiiii", 0,
-                             "updateLinkCells", "_Z15updateLinkCellsP10LinkCellStP7AtomsSt", 3, "emptyHaloCells", "getBoxFromCoord", "moveAtom",
-                             "emptyHaloCells", "_ZL14emptyHaloCellsP10LinkCellSt", 0,
-                             "maxOccupancy", "_Z12maxOccupancyP10LinkCellSt", 3, "profileStart", "maxIntParallel", "profileStop",
-                             "putAtomInBox", "_Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd", 1, "getBoxFromCoord",
-                             "destroyLinkCells", "_Z16destroyLinkCellsPP10LinkCellSt", 0,
-                             "getBoxFromTuple", "_Z15getBoxFromTupleP10LinkCellStiii", 0,
-                             "moveAtom", "_Z8moveAtomP10LinkCellStP7AtomsStiii", 2, "copyAtom", "copyAtom",
+                             "getNeighborBoxes", "_Z16getNeighborBoxesP10LinkCellStiPi", 0, 2, "getTuple", "getBoxFromTuple",
+                             "initLinkCells", "_Z13initLinkCellsPK8DomainStd", 0, 0,
+                             "getBoxFromCoord", "_ZL15getBoxFromCoordP10LinkCellStPd", 0, 1, "getBoxFromTuple",
+                             "getTuple", "_ZL8getTupleP10LinkCellStiPiS1_S1_", 0, 0,
+                             "copyAtom", "_ZL8copyAtomP10LinkCellStP7AtomsStiiii", 0, 0,
+                             "updateLinkCells", "_Z15updateLinkCellsP10LinkCellStP7AtomsSt", 0, 3, "emptyHaloCells", "getBoxFromCoord", "moveAtom",
+                             "emptyHaloCells", "_ZL14emptyHaloCellsP10LinkCellSt", 0, 0,
+                             "maxOccupancy", "_Z12maxOccupancyP10LinkCellSt", 0, 3, "profileStart", "maxIntParallel", "profileStop",
+                             "putAtomInBox", "_Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd", 0, 1, "getBoxFromCoord",
+                             "destroyLinkCells", "_Z16destroyLinkCellsPP10LinkCellSt", 0, 0,
+                             "getBoxFromTuple", "_Z15getBoxFromTupleP10LinkCellStiii", 0, 0,
+                             "moveAtom", "_Z8moveAtomP10LinkCellStP7AtomsStiii", 0, 2, "copyAtom", "copyAtom",
                         "getNeighborBoxes|ix|0", 1, "getNeighborBoxes",
                         "putAtomInBox|xyz|0", 1, "putAtomInBox",
                         "maxOccupancy|localMax|0", 1, "maxOccupancy",

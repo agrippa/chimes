@@ -2264,7 +2264,7 @@ static int module_init() {
                                "foo", (void **)&(____chimes_extern_func_foo),
                            "foo", &(____chimes_does_checkpoint_foo_npm),
                              (11918420205256332548UL + 3UL), (11918420205256332548UL + 20UL),
-                             "main", "main", 2, "foo", "checkpoint",
+                             "main", "main", 0, 2, "foo", "checkpoint",
                         "main|b|0", 1, "main",
         "foo", 0UL, (int)1, 11918420205256332552UL);
     return 0;

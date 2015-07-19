@@ -364,6 +364,35 @@ extern long double strtold_l (__const char *__restrict __nptr,
          char **__restrict __endptr,
          __locale_t __loc)
      throw () __attribute__ ((__nonnull__ (1, 3))) ;
+
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) double
+atof (__const char *__nptr) throw ()
+{
+  return strtod (__nptr, (char **) __null);
+}
+extern __inline __attribute__ ((__gnu_inline__)) int
+atoi (__const char *__nptr) throw ()
+{
+  return (int) strtol (__nptr, (char **) __null, 10);
+}
+extern __inline __attribute__ ((__gnu_inline__)) long int
+atol (__const char *__nptr) throw ()
+{
+  return strtol (__nptr, (char **) __null, 10);
+}
+
+
+
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) long long int
+atoll (__const char *__nptr) throw ()
+{
+  return strtoll (__nptr, (char **) __null, 10);
+}
 # 311 "/usr/include/stdlib.h" 3 4
 extern char *l64a (long int __n) throw () ;
 
@@ -713,6 +742,27 @@ __extension__
 extern unsigned long long int gnu_dev_makedev (unsigned int __major,
             unsigned int __minor)
      throw ();
+
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
+gnu_dev_major (unsigned long long int __dev) throw ()
+{
+  return ((__dev >> 8) & 0xfff) | ((unsigned int) (__dev >> 32) & ~0xfff);
+}
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
+gnu_dev_minor (unsigned long long int __dev) throw ()
+{
+  return (__dev & 0xff) | ((unsigned int) (__dev >> 12) & ~0xff);
+}
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned long long int
+gnu_dev_makedev (unsigned int __major, unsigned int __minor) throw ()
+{
+  return ((__minor & 0xff) | ((__major & 0xfff) << 8)
+   | (((unsigned long long int) (__minor & ~0xff)) << 12)
+   | (((unsigned long long int) (__major & ~0xfff)) << 32));
+}
 # 224 "/usr/include/sys/types.h" 2 3 4
 
 
@@ -1798,8 +1848,8 @@ static int module_init() {
                              (9341214929697525360UL + 9UL), (9341214929697525360UL + 31UL),
                              (9341214929697525360UL + 5UL), (9341214929697525360UL + 31UL),
                      "DomainSt", 1344UL, 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent),
-                             "processorNum", "_Z12processorNumP8DomainStiii", 0,
-                             "initDecomposition", "_Z17initDecompositioniiiPd", 2, "getNRanks", "getMyRank",
+                             "processorNum", "_Z12processorNumP8DomainStiii", 0, 0,
+                             "initDecomposition", "_Z17initDecompositioniiiPd", 0, 2, "getNRanks", "getMyRank",
                         "initDecomposition|xproc|0", 1, "getNRanks",
                         "initDecomposition|yproc|0", 1, "getNRanks",
                         "initDecomposition|zproc|0", 1, "getNRanks",
