@@ -3467,7 +3467,7 @@ static int module_init() {
                              (1156429504487977131UL + 9UL), (1156429504487977131UL + 438UL),
                              (1156429504487977131UL + 8UL), (1156429504487977131UL + 437UL),
                      "knode", 32672UL, 5, "int", (int)__builtin_offsetof (struct knode, location), "[ 509 x int ]", (int)__builtin_offsetof (struct knode, indices), "[ 509 x int ]", (int)__builtin_offsetof (struct knode, keys), "bool", (int)__builtin_offsetof (struct knode, is_leaf), "int", (int)__builtin_offsetof (struct knode, num_keys),
-                             "kernel_cpu_2", "_Z12kernel_cpu_2iP5knodeliliPlS1_S1_S1_PiS2_S2_S2_", 3, "get_time", "get_time", "get_time",
+                             "kernel_cpu_2", "_Z12kernel_cpu_2iP5knodeliliPlS1_S1_S1_PiS2_S2_S2_", 0, 3, "get_time", "get_time", "get_time",
                         "kernel_cpu_2|cores_arg|0", 1, "get_time",
                         "kernel_cpu_2|knodes|0", 1, "get_time",
                         "kernel_cpu_2|knodes_elem|0", 1, "get_time",

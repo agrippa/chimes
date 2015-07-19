@@ -4,6 +4,8 @@ ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 195 1 len=21 list_i
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 211 1 len=21 list_insert_item_tail_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 227 1 len=23 list_insert_item_before_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 248 1 len=22 list_insert_item_after_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 275 150 ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, -1, 0, 0UL, 2, 17493500875420196008UL, 17493500875420196012UL)))(____chimes_unroll_var_0, ____chimes_unroll_var_1)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 276 31 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 298 1 len=16 list_insert_head_npm
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 302 68 
@@ -16,16 +18,26 @@ ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 344 68
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 364 1 len=17 list_insert_after_npm
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 370 68 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 401 150 ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, -1, 0, 0UL, 2, 17493500875420196492UL, 17493500875420196496UL)))(____chimes_unroll_var_2, ____chimes_unroll_var_3)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 402 31 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 50  ({ void *____chimes_tmp_ptr = malloc(sizeof (*i)); malloc_helper(____chimes_tmp_ptr, sizeof (*i), 17493500875420197042UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 396 68 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 462 87 ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, -1, 0, 0UL, 2, 17493500875420196740UL, 17493500875420196708UL)))(datum, ____chimes_unroll_var_4)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 462 128 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 470 1 len=18 list_get_head_item_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 476 1 len=18 list_get_tail_item_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 487 87 ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, -1, 0, 0UL, 2, 17493500875420196817UL, 17493500875420196777UL)))(datum, ____chimes_unroll_var_5)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 487 128 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 495 1 len=13 list_get_head_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 501 1 len=13 list_get_tail_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 507 1 len=15 list_get_length_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 513 1 len=13 list_is_empty_npm
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 519 1 len=14 list_not_empty_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 102 ((void (*)(void *))(translate_fptr((void *)visitor, -1, 0, 0UL, 1, 17493500875420196923UL)))(____chimes_unroll_var_6)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 133 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 535 1 len=14 list_item_init_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 547 5 ((void (*)(void *))(translate_fptr((void *)datum_delete, -1, 0, 0UL, 1, 17493500875420195745UL)))(li->datum)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 547 27 
 ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 550 3  ({ free_helper(li, 17493500875420195752UL);free(li);  }) 
 ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 550 10 
 ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/b+tree/main.c 554 1 len=19 list_item_get_datum_npm

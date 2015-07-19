@@ -1576,8 +1576,8 @@ static int module_init() {
                              (1131839765304168615UL + 2UL), (1131839765304168615UL + 22UL),
                              (1131839765304168615UL + 28UL), (1131839765304168615UL + 37UL),
                              (1131839765304168615UL + 29UL), (1131839765304168615UL + 57UL),
-                             "main", "main", 2, "bar", "checkpoint",
-                             "bar", "_Z3barPiS_", 0,
+                             "main", "main", 0, 2, "bar", "checkpoint",
+                             "bar", "_Z3barPiS_", 0, 0,
         "bar", 0UL, (int)2, 1131839765304168652UL, 1131839765304168672UL);
     return 0;
 }

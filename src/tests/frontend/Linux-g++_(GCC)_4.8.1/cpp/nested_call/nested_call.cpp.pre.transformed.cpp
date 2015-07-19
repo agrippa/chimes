@@ -1516,9 +1516,9 @@ static int module_init() {
                            "foo", &(____chimes_does_checkpoint_foo_npm),
                            "bar", &(____chimes_does_checkpoint_bar_npm),
                              (7709126126479029277UL + 27UL), (7709126126479029277UL + 52UL),
-                             "main", "main", 3, "bar", "foo", "checkpoint",
-                             "foo", "_Z3fooi", 0,
-                             "bar", "_Z3bari", 0,
+                             "main", "main", 0, 3, "bar", "foo", "checkpoint",
+                             "foo", "_Z3fooi", 0, 0,
+                             "bar", "_Z3bari", 0, 0,
         "bar", 0UL, (int)1, 0UL,
         "foo", 0UL, (int)1, 0UL);
     return 0;

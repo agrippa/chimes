@@ -8,9 +8,10 @@ typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "timestep.c.pre.transformed.cpp"
 static int ____chimes_does_checkpoint_advancePosition_npm = 1;
-static int ____chimes_does_checkpoint_kineticEnergy_npm = 1;
 static int ____chimes_does_checkpoint_advanceVelocity_npm = 1;
+static int ____chimes_does_checkpoint_computeForce_npm = 1;
 static int ____chimes_does_checkpoint_redistributeAtoms_npm = 1;
+static int ____chimes_does_checkpoint_kineticEnergy_npm = 1;
 static int ____chimes_does_checkpoint_addRealParallel_npm = 1;
 static int ____chimes_does_checkpoint_haloExchange_npm = 1;
 static int ____chimes_does_checkpoint_profileStart_npm = 1;
@@ -1117,12 +1118,12 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
 
 
    void* parms;
@@ -1251,9 +1252,9 @@ typedef struct BasePotentialSt
    char latticeType[8];
    char name[3];
    int atomicNo;
-   int (*force)(struct SimFlatSt* s);
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot);
+   int (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint));
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint));
 } BasePotential;
 
 
@@ -2587,7 +2588,7 @@ static void advanceVelocity(SimFlat* s, int nBoxes, real_t dt);
 static void advancePosition(SimFlat* s, int nBoxes, real_t dt);
 # 35 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 35 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-void advanceVelocity_npm(SimFlat* s, int nBoxes, real_t dt);void advancePosition_npm(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_npm(SimFlat* s);void redistributeAtoms_npm(SimFlat* sim);static void (*____chimes_extern_func_profileStart)(enum TimerHandle) = profileStart;static void (*____chimes_extern_func_profileStop)(enum TimerHandle) = profileStop;
+void computeForce_npm(SimFlat* s);void advanceVelocity_npm(SimFlat* s, int nBoxes, real_t dt);void advancePosition_npm(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_npm(SimFlat* s);void redistributeAtoms_npm(SimFlat* sim);static void (*____chimes_extern_func_profileStart)(enum TimerHandle) = profileStart;static void (*____chimes_extern_func_profileStop)(enum TimerHandle) = profileStop;
 double timestep_quick(SimFlat* s, int nSteps, real_t dt); double timestep(SimFlat* s, int nSteps, real_t dt);void computeForce_quick(SimFlat* s); void computeForce(SimFlat* s);void advanceVelocity_quick(SimFlat* s, int nBoxes, real_t dt); void advanceVelocity(SimFlat* s, int nBoxes, real_t dt);void advancePosition_quick(SimFlat* s, int nBoxes, real_t dt); void advancePosition(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_quick(SimFlat* s); void kineticEnergy(SimFlat* s);void redistributeAtoms_quick(SimFlat* sim); void redistributeAtoms(SimFlat* sim);
 double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 36 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -3032,6 +3033,14 @@ void redistributeAtoms_quick(SimFlat* sim)
 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_11, ____chimes_did_disable5, false); }
 
 void redistributeAtoms(SimFlat* sim) { (____chimes_replaying ? redistributeAtoms_resumable(sim) : redistributeAtoms_quick(sim)); }
+# 85 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
+void computeForce_npm(SimFlat* s)
+# 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
+{
+# 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
+   ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, -1, 0, 0UL, 1, 7237354288423011702UL)))(s);
+# 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
+}
 # 91 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 void advanceVelocity_npm(SimFlat* s, int nBoxes, real_t dt)
 # 92 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -3156,7 +3165,7 @@ void redistributeAtoms_npm(SimFlat* sim)
 
 
 static int module_init() {
-    init_module(7237354288423011253UL, 16, 6, 5, 13, 4, 6, 10, 3, 12, 10,
+    init_module(7237354288423011253UL, 16, 6, 5, 13, 5, 6, 11, 3, 12, 10,
                            &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (7237354288423011253UL + 1UL), (7237354288423011253UL + 2UL), (7237354288423011253UL + 3UL), (7237354288423011253UL + 4UL),
                            &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)0, (7237354288423011253UL + 1UL), (7237354288423011253UL + 2UL), (7237354288423011253UL + 3UL), (7237354288423011253UL + 4UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (7237354288423011253UL + 390UL), "sortAtomsInCell", (unsigned)1, (7237354288423011253UL + 405UL),
@@ -3171,9 +3180,10 @@ static int module_init() {
                             &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)0, (7237354288423011253UL + 390UL),
                             &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)0, (7237354288423011253UL + 616UL),
                             "advancePosition", 1, (void *)(&advancePosition_npm), (void *)__null, 0, 3, (7237354288423011253UL + 386UL), 0UL, 0UL, 0UL, 0,
-                            "kineticEnergy", 0, "_Z13kineticEnergyP9SimFlatSt", "_Z17kineticEnergy_npmP9SimFlatSt", 2, &____alias_loc_id_6, &____alias_loc_id_7, 1, (7237354288423011253UL + 616UL), 0UL, 3, "profileStart", 1, 0UL, 0UL, "addRealParallel", 3, (7237354288423011253UL + 451UL), (7237354288423011253UL + 457UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL,
                             "advanceVelocity", 1, (void *)(&advanceVelocity_npm), (void *)__null, 0, 3, (7237354288423011253UL + 228UL), 0UL, 0UL, 0UL, 0,
+                            "computeForce", 0, "_Z12computeForceP9SimFlatSt", "_Z16computeForce_npmP9SimFlatSt", 1, &____alias_loc_id_5, 1, (7237354288423011253UL + 449UL), 0UL, 1, "anon", 1, (7237354288423011253UL + 449UL), 0UL,
                             "redistributeAtoms", 0, "_Z17redistributeAtomsP9SimFlatSt", "_Z21redistributeAtoms_npmP9SimFlatSt", 3, &____alias_loc_id_2, &____alias_loc_id_3, &____alias_loc_id_4, 1, (7237354288423011253UL + 403UL), 0UL, 5, "updateLinkCells", 2, (7237354288423011253UL + 405UL), (7237354288423011253UL + 405UL), 0UL, "profileStart", 1, 0UL, 0UL, "haloExchange", 2, (7237354288423011253UL + 405UL), (7237354288423011253UL + 403UL), 0UL, "profileStop", 1, 0UL, 0UL, "sortAtomsInCell", 3, (7237354288423011253UL + 405UL), (7237354288423011253UL + 405UL), 0UL, 0UL,
+                            "kineticEnergy", 0, "_Z13kineticEnergyP9SimFlatSt", "_Z17kineticEnergy_npmP9SimFlatSt", 2, &____alias_loc_id_6, &____alias_loc_id_7, 1, (7237354288423011253UL + 616UL), 0UL, 3, "profileStart", 1, 0UL, 0UL, "addRealParallel", 3, (7237354288423011253UL + 451UL), (7237354288423011253UL + 457UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL,
                                "addRealParallel", (void **)&(____chimes_extern_func_addRealParallel),
                                "haloExchange", (void **)&(____chimes_extern_func_haloExchange),
                                "profileStart", (void **)&(____chimes_extern_func_profileStart),
@@ -3181,9 +3191,10 @@ static int module_init() {
                                "sortAtomsInCell", (void **)&(____chimes_extern_func_sortAtomsInCell),
                                "updateLinkCells", (void **)&(____chimes_extern_func_updateLinkCells),
                            "advancePosition", &(____chimes_does_checkpoint_advancePosition_npm),
-                           "kineticEnergy", &(____chimes_does_checkpoint_kineticEnergy_npm),
                            "advanceVelocity", &(____chimes_does_checkpoint_advanceVelocity_npm),
+                           "computeForce", &(____chimes_does_checkpoint_computeForce_npm),
                            "redistributeAtoms", &(____chimes_does_checkpoint_redistributeAtoms_npm),
+                           "kineticEnergy", &(____chimes_does_checkpoint_kineticEnergy_npm),
                            "addRealParallel", &(____chimes_does_checkpoint_addRealParallel_npm),
                            "haloExchange", &(____chimes_does_checkpoint_haloExchange_npm),
                            "profileStart", &(____chimes_does_checkpoint_profileStart_npm),
@@ -3216,12 +3227,12 @@ static int module_init() {
                      "TimerHandle", 32UL, 0,
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
-                             "timestep", "_Z8timestepP9SimFlatStid", 21, "profileStart", "advanceVelocity", "profileStop", "checkpoint", "profileStart", "advancePosition", "profileStop", "checkpoint", "profileStart", "redistributeAtoms", "profileStop", "checkpoint", "profileStart", "computeForce", "profileStop", "checkpoint", "profileStart", "advanceVelocity", "profileStop", "checkpoint", "kineticEnergy",
-                             "advancePosition", "_ZL15advancePositionP9SimFlatStid", 0,
-                             "kineticEnergy", "_Z13kineticEnergyP9SimFlatSt", 3, "profileStart", "addRealParallel", "profileStop",
-                             "computeForce", "_Z12computeForceP9SimFlatSt", 0,
-                             "redistributeAtoms", "_Z17redistributeAtomsP9SimFlatSt", 5, "updateLinkCells", "profileStart", "haloExchange", "profileStop", "sortAtomsInCell",
-                             "advanceVelocity", "_ZL15advanceVelocityP9SimFlatStid", 0,
+                             "timestep", "_Z8timestepP9SimFlatStid", 0, 21, "profileStart", "advanceVelocity", "profileStop", "checkpoint", "profileStart", "advancePosition", "profileStop", "checkpoint", "profileStart", "redistributeAtoms", "profileStop", "checkpoint", "profileStart", "computeForce", "profileStop", "checkpoint", "profileStart", "advanceVelocity", "profileStop", "checkpoint", "kineticEnergy",
+                             "advancePosition", "_ZL15advancePositionP9SimFlatStid", 0, 0,
+                             "kineticEnergy", "_Z13kineticEnergyP9SimFlatSt", 0, 3, "profileStart", "addRealParallel", "profileStop",
+                             "computeForce", "_Z12computeForceP9SimFlatSt", 0, 0,
+                             "redistributeAtoms", "_Z17redistributeAtomsP9SimFlatSt", 0, 5, "updateLinkCells", "profileStart", "haloExchange", "profileStop", "sortAtomsInCell",
+                             "advanceVelocity", "_ZL15advanceVelocityP9SimFlatStid", 0, 0,
                         "redistributeAtoms|sim|0", 5, "updateLinkCells", "sortAtomsInCell", "profileStop", "profileStart", "haloExchange",
                         "redistributeAtoms|ii|0", 1, "sortAtomsInCell",
                         "kineticEnergy|s|0", 3, "profileStop", "profileStart", "addRealParallel",

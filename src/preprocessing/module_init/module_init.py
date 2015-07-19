@@ -28,6 +28,7 @@ class ModuleInitConfig(object):
         self.static_merge_filename = None
         self.dynamic_merge_filename = None
         self.abi_filename = None
+        self.non_chkpting_filename = None
 
     def check(self):
         if self.input_filename is None:
@@ -89,6 +90,9 @@ class ModuleInitConfig(object):
             usage()
         if self.abi_filename is None:
             print('ABI filename')
+            usage()
+        if self.non_chkpting_filename is None:
+            print('Non-checkpointing filename')
             usage()
 
 
@@ -447,34 +451,6 @@ def get_mangled_function_name(fname, func_symbols):
     raise(Exception('Failed to find mangled version of "' + fname + '"'))
 
 
-# def mangle_function_name(fname, call_tree):
-#     entry = call_tree[fname]
-#     mangled = entry.mangled_name
-#     # Once instance of the function name
-#     assert mangled.find(fname) == mangled.rfind(fname)
-# 
-#     return mangled
-# 
-# 
-# def mangle_npm_function_name(fname, call_tree):
-#     mangled = mangle_function_name(fname, call_tree)
-# 
-#     if mangled.startswith('_Z'):
-#         len_start = 2
-#         len_end = 3
-#         while mangled[len_end] >= '0' and mangled[len_end] <= '9':
-#             len_end += 1
-#         name_length = int(mangled[len_start:len_end])
-#         assert name_length == len(fname), 'fname=' + fname + ', name_length=' + \
-#                             str(name_length)
-#         assert mangled.find(fname) == len_end
-# 
-#         insert_at = mangled.find(fname) + len(fname)
-#         return '_Z' + str(name_length + 4) + fname + '_npm' + mangled[insert_at:]
-#     else:
-#         return mangled + '_npm'
-
-
 def get_func_symbols(abi_filename):
     symbols = []
     fp = open(abi_filename, 'r')
@@ -497,6 +473,16 @@ def get_func_symbols(abi_filename):
     fp.close()
     return symbols
 
+
+def get_noncheckpointing(filename):
+    non_checkpointing = []
+    fp = open(filename, 'r')
+    for line in fp:
+        non_checkpointing.append(line.strip())
+    fp.close()
+    return non_checkpointing
+
+
 def usage():
     print('usage: python module_init.py ' +
           '-i input-file ' +
@@ -518,7 +504,8 @@ def usage():
           '-j fptrs-loaded-filename ' +
           '-ms static-merge-filename ' +
           '-md dynamic-merge-filename' + 
-          '-a ABI-filename')
+          '-a ABI-filename' +
+          '-nc Non-checkpointing filename')
     sys.exit(1)
 
 
@@ -566,6 +553,8 @@ def configure(cfg, argv):
             cfg.dynamic_merge_filename = argv[index + 1]
         elif t == '-a':
             cfg.abi_filename = argv[index + 1]
+        elif t == '-nc':
+            cfg.non_chkpting_filename = argv[index + 1]
         else:
             print('Unrecognized command line argument "' + t + '"')
             sys.exit(1)
@@ -596,6 +585,7 @@ if __name__ == '__main__':
     static_merges = get_merges(cfg.static_merge_filename)
     dynamic_merges = get_merges(cfg.dynamic_merge_filename)
     func_symbols = get_func_symbols(cfg.abi_filename)
+    non_checkpointing = get_noncheckpointing(cfg.non_chkpting_filename)
 
     n_change_locs = len(changed)
     for e in exits:
@@ -762,8 +752,11 @@ if __name__ == '__main__':
                 output_file.write(', (int)offsetof(struct ' + s.name + ', ' + field.name + ')')
 
     for c in call_tree.values():
+        calls_unknown_checkpointing = (c.calls_unknown and not c.name in non_checkpointing)
         output_file.write(',\n        /* call tree info */ "' + c.name +
-                          '", "' + c.mangled_name + '", ' + str(len(c.callees)))
+                '", "' + c.mangled_name + '", ' +
+                ('1' if calls_unknown_checkpointing else '0') + ', ' +
+                str(len(c.callees)))
         for callee in c.callees:
             output_file.write(', "' + callee + '"')
 

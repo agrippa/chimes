@@ -1510,9 +1510,9 @@ static int module_init() {
                            "bar", &(____chimes_does_checkpoint_bar_npm),
                              (10590874921352380140UL + 27UL), (10590874921352380140UL + 45UL),
                              (10590874921352380140UL + 14UL), (10590874921352380140UL + 24UL),
-                             "main", "main", 2, "foo", "checkpoint",
-                             "foo", "_Z3fooPFiiE", 0,
-                             "bar", "_Z3bari", 0);
+                             "main", "main", 0, 2, "foo", "checkpoint",
+                             "foo", "_Z3fooPFiiE", 1, 0,
+                             "bar", "_Z3bari", 0, 0);
     return 0;
 }
 

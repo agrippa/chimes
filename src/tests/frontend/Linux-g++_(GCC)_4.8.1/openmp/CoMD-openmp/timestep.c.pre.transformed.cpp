@@ -980,6 +980,111 @@ extern int ftrylockfile (FILE *__stream) throw () ;
 
 
 extern void funlockfile (FILE *__stream) throw ();
+# 929 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/bits/stdio.h" 1 3 4
+# 36 "/usr/include/bits/stdio.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) int
+vprintf (__const char *__restrict __fmt, __gnuc_va_list __arg)
+{
+  return vfprintf (stdout, __fmt, __arg);
+}
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+getchar (void)
+{
+  return _IO_getc (stdin);
+}
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+fgetc_unlocked (FILE *__fp)
+{
+  return (__builtin_expect (((__fp)->_IO_read_ptr >= (__fp)->_IO_read_end), 0) ? __uflow (__fp) : *(unsigned char *) (__fp)->_IO_read_ptr++);
+}
+
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+getc_unlocked (FILE *__fp)
+{
+  return (__builtin_expect (((__fp)->_IO_read_ptr >= (__fp)->_IO_read_end), 0) ? __uflow (__fp) : *(unsigned char *) (__fp)->_IO_read_ptr++);
+}
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+getchar_unlocked (void)
+{
+  return (__builtin_expect (((stdin)->_IO_read_ptr >= (stdin)->_IO_read_end), 0) ? __uflow (stdin) : *(unsigned char *) (stdin)->_IO_read_ptr++);
+}
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+putchar (int __c)
+{
+  return _IO_putc (__c, stdout);
+}
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+fputc_unlocked (int __c, FILE *__stream)
+{
+  return (__builtin_expect (((__stream)->_IO_write_ptr >= (__stream)->_IO_write_end), 0) ? __overflow (__stream, (unsigned char) (__c)) : (unsigned char) (*(__stream)->_IO_write_ptr++ = (__c)));
+}
+
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+putc_unlocked (int __c, FILE *__stream)
+{
+  return (__builtin_expect (((__stream)->_IO_write_ptr >= (__stream)->_IO_write_end), 0) ? __overflow (__stream, (unsigned char) (__c)) : (unsigned char) (*(__stream)->_IO_write_ptr++ = (__c)));
+}
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+putchar_unlocked (int __c)
+{
+  return (__builtin_expect (((stdout)->_IO_write_ptr >= (stdout)->_IO_write_end), 0) ? __overflow (stdout, (unsigned char) (__c)) : (unsigned char) (*(stdout)->_IO_write_ptr++ = (__c)));
+}
+
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) __ssize_t
+getline (char **__lineptr, size_t *__n, FILE *__stream)
+{
+  return __getdelim (__lineptr, __n, '\n', __stream);
+}
+
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+feof_unlocked (FILE *__stream) throw ()
+{
+  return (((__stream)->_flags & 0x10) != 0);
+}
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+ferror_unlocked (FILE *__stream) throw ()
+{
+  return (((__stream)->_flags & 0x20) != 0);
+}
+# 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
 # 8 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
@@ -1601,6 +1706,35 @@ extern long double strtold_l (__const char *__restrict __nptr,
          char **__restrict __endptr,
          __locale_t __loc)
      throw () __attribute__ ((__nonnull__ (1, 3))) ;
+
+
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) double
+atof (__const char *__nptr) throw ()
+{
+  return strtod (__nptr, (char **) __null);
+}
+extern __inline __attribute__ ((__gnu_inline__)) int
+atoi (__const char *__nptr) throw ()
+{
+  return (int) strtol (__nptr, (char **) __null, 10);
+}
+extern __inline __attribute__ ((__gnu_inline__)) long int
+atol (__const char *__nptr) throw ()
+{
+  return strtol (__nptr, (char **) __null, 10);
+}
+
+
+
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) long long int
+atoll (__const char *__nptr) throw ()
+{
+  return strtoll (__nptr, (char **) __null, 10);
+}
 # 311 "/usr/include/stdlib.h" 3 4
 extern char *l64a (long int __n) throw () ;
 
@@ -1831,6 +1965,27 @@ __extension__
 extern unsigned long long int gnu_dev_makedev (unsigned int __major,
             unsigned int __minor)
      throw ();
+
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
+gnu_dev_major (unsigned long long int __dev) throw ()
+{
+  return ((__dev >> 8) & 0xfff) | ((unsigned int) (__dev >> 32) & ~0xfff);
+}
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned int
+gnu_dev_minor (unsigned long long int __dev) throw ()
+{
+  return (__dev & 0xff) | ((unsigned int) (__dev >> 12) & ~0xff);
+}
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) unsigned long long int
+gnu_dev_makedev (unsigned int __major, unsigned int __minor) throw ()
+{
+  return ((__minor & 0xff) | ((__major & 0xfff) << 8)
+   | (((unsigned long long int) (__minor & ~0xff)) << 12)
+   | (((unsigned long long int) (__major & ~0xfff)) << 32));
+}
 # 224 "/usr/include/sys/types.h" 2 3 4
 
 
@@ -3191,7 +3346,7 @@ void redistributeAtoms_npm(SimFlat* sim)
 
 
 static int module_init() {
-    init_module(12369560726904678466UL, 16, 6, 5, 13, 5, 6, 11, 3, 12, 9,
+    init_module(12369560726904678466UL, 16, 6, 5, 13, 5, 6, 11, 3, 12, 10,
                            &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (12369560726904678466UL + 1UL), (12369560726904678466UL + 2UL), (12369560726904678466UL + 3UL), (12369560726904678466UL + 4UL),
                            &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)0, (12369560726904678466UL + 1UL), (12369560726904678466UL + 2UL), (12369560726904678466UL + 3UL), (12369560726904678466UL + 4UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (12369560726904678466UL + 390UL), "sortAtomsInCell", (unsigned)1, (12369560726904678466UL + 405UL),
@@ -3251,13 +3406,14 @@ static int module_init() {
                      "SimFlatSt", 640UL, 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange),
                      "SpeciesDataSt", 128UL, 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass),
                      "TimerHandle", 32UL, 0,
-                     "_IO_FILE", 0UL, 0,
-                             "timestep", "_Z8timestepP9SimFlatStid", 21, "profileStart", "advanceVelocity", "profileStop", "checkpoint", "profileStart", "advancePosition", "profileStop", "checkpoint", "profileStart", "redistributeAtoms", "profileStop", "checkpoint", "profileStart", "computeForce", "profileStop", "checkpoint", "profileStart", "advanceVelocity", "profileStop", "checkpoint", "kineticEnergy",
-                             "advancePosition", "_ZL15advancePositionP9SimFlatStid", 0,
-                             "kineticEnergy", "_Z13kineticEnergyP9SimFlatSt", 3, "profileStart", "addRealParallel", "profileStop",
-                             "computeForce", "_Z12computeForceP9SimFlatSt", 0,
-                             "redistributeAtoms", "_Z17redistributeAtomsP9SimFlatSt", 5, "updateLinkCells", "profileStart", "haloExchange", "profileStop", "sortAtomsInCell",
-                             "advanceVelocity", "_ZL15advanceVelocityP9SimFlatStid", 0,
+                     "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
+                     "_IO_marker", 0UL, 0,
+                             "timestep", "_Z8timestepP9SimFlatStid", 0, 21, "profileStart", "advanceVelocity", "profileStop", "checkpoint", "profileStart", "advancePosition", "profileStop", "checkpoint", "profileStart", "redistributeAtoms", "profileStop", "checkpoint", "profileStart", "computeForce", "profileStop", "checkpoint", "profileStart", "advanceVelocity", "profileStop", "checkpoint", "kineticEnergy",
+                             "advancePosition", "_ZL15advancePositionP9SimFlatStid", 0, 0,
+                             "kineticEnergy", "_Z13kineticEnergyP9SimFlatSt", 0, 3, "profileStart", "addRealParallel", "profileStop",
+                             "computeForce", "_Z12computeForceP9SimFlatSt", 0, 0,
+                             "redistributeAtoms", "_Z17redistributeAtomsP9SimFlatSt", 0, 5, "updateLinkCells", "profileStart", "haloExchange", "profileStop", "sortAtomsInCell",
+                             "advanceVelocity", "_ZL15advanceVelocityP9SimFlatStid", 0, 0,
                         "redistributeAtoms|sim|0", 5, "updateLinkCells", "sortAtomsInCell", "profileStop", "profileStart", "haloExchange",
                         "redistributeAtoms|ii|0", 1, "sortAtomsInCell",
                         "kineticEnergy|s|0", 3, "profileStop", "profileStart", "addRealParallel",

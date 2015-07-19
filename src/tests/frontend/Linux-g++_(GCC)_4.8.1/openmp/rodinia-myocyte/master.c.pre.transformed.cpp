@@ -2978,7 +2978,7 @@ static int module_init() {
                              (7350049616827220307UL + 3UL), (7350049616827220307UL + 161UL),
                              (7350049616827220307UL + 2UL), (7350049616827220307UL + 160UL),
                              (7350049616827220307UL + 4UL), (7350049616827220307UL + 162UL),
-                             "master", "_Z6masterfPfS_S_", 5, "ecc", "cam", "cam", "cam", "fin",
+                             "master", "_Z6masterfPfS_S_", 0, 5, "ecc", "cam", "cam", "cam", "fin",
                         "master|timeinst|0", 2, "ecc", "cam",
                         "master|initvalu|0", 2, "ecc", "cam",
                         "master|parameter|0", 2, "ecc", "cam",

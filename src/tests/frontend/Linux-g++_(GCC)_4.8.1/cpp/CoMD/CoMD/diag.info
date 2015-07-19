@@ -26,6 +26,7 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 327 6 len=
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 345 6 len=11 printThings_npm
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 4 ((void (*)(FILE *, struct BasePotentialSt *))(translate_fptr((void *)s->pot->print, -1, 0, 0UL, 2, 9903828072463843941UL, 9903828072463843622UL)))(file, s->pot)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 30 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 378 6 len=23 printSimulationDataYaml_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 435 6 len=12 sanityChecks_npm
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 96 4 alias_group_changed(____alias_loc_id_11); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 8 alias_group_changed(____alias_loc_id_35) || 

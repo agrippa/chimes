@@ -1,5 +1,6 @@
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 87 4 ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, -1, 0, 0UL, 1, 7237354288423011702UL)))(s)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 87 19 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 85 6 len=12 computeForce_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 91 6 len=15 advanceVelocity_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 104 6 len=15 advancePosition_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 121 6 len=13 kineticEnergy_npm

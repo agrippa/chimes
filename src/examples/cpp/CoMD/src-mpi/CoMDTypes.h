@@ -33,9 +33,9 @@ typedef struct BasePotentialSt
    char latticeType[8];    //!< lattice type, e.g. FCC, BCC, etc.
    char  name[3];	   //!< element name
    int	 atomicNo;	   //!< atomic number  
-   int  (*force)(struct SimFlatSt* s); //!< function pointer to force routine
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot); //!< destruction of the potential
+   int  (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint)); //!< function pointer to force routine
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint)); //!< destruction of the potential
 } BasePotential;
 
 

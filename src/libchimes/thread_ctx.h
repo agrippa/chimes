@@ -6,6 +6,7 @@
 #include <set>
 #include <stdarg.h>
 
+#include "chimes_common.h"
 #include "set_of_aliases.h"
 #include "perf_profile.h"
 #include "stack_frame.h"

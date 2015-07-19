@@ -24,9 +24,13 @@ LINKER_FLAGS=
 GXX_FLAGS="-O3"
 DEFINES=
 ADDED_INCLUDES=
+CHIMES_PROFILE=0
 
-while getopts ":kci:I:L:l:o:w:vpx:y:sD:dnf:b" opt; do
+while getopts ":kci:I:L:l:o:w:vpx:y:sD:dnf:bg" opt; do
     case $opt in 
+        g)
+            CHIMES_PROFILE=1
+            ;;
         d)
             DUMMY=1
             ;;
@@ -164,7 +168,9 @@ if [[ $COMPILE == 1 && ${#INPUTS[@]} != 1 ]]; then
 fi
 
 LCHIMES=
-if [[ -f ${CHIMES_HOME}/src/libchimes/libchimes.so ]]; then
+if [[ $CHIMES_PROFILE == 1 ]]; then
+    LCHIMES=-lchimes_profile
+elif [[ -f ${CHIMES_HOME}/src/libchimes/libchimes.so ]]; then
     LCHIMES=-lchimes
 elif [[ -f ${CHIMES_HOME}/src/libchimes/libchimes_cpp.so ]]; then
     LCHIMES=-lchimes_cpp
@@ -382,7 +388,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -e ${INFO_FILE_PREFIX}.list_of_externs -n ${INFO_FILE_PREFIX}.npm.decls \
         -d ${INFO_FILE_PREFIX}.call.info -h ${INFO_FILE_PREFIX}.locs \
         -j ${INFO_FILE_PREFIX}.fptrs -ms ${INFO_FILE_PREFIX}.merge.static \
-        -md ${INFO_FILE_PREFIX}.merge.dynamic -a ${ABI_FILE}
+        -md ${INFO_FILE_PREFIX}.merge.dynamic -a ${ABI_FILE} \
+        -nc ${INFO_FILE_PREFIX}.non_chkpting.info
 
     echo Postprocessing ${FINAL_FILE}
     cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} ${DEFINES} \

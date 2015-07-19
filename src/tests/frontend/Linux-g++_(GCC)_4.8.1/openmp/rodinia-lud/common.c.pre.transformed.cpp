@@ -5287,17 +5287,17 @@ static int module_init() {
                      "_IO_marker", 0UL, 0,
                      "__stopwatch_t", 256UL, 2, "%struct.timeval", (int)__builtin_offsetof (struct __stopwatch_t, begin), "%struct.timeval", (int)__builtin_offsetof (struct __stopwatch_t, end),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                             "create_matrix", "create_matrix", 0,
-                             "matrix_multiply", "matrix_multiply", 0,
-                             "stopwatch_stop", "stopwatch_stop", 0,
-                             "print_matrix", "print_matrix", 0,
-                             "matrix_duplicate", "matrix_duplicate", 0,
-                             "stopwatch_start", "stopwatch_start", 0,
-                             "create_matrix_from_random", "create_matrix_from_random", 0,
-                             "get_interval_by_usec", "get_interval_by_usec", 0,
-                             "get_interval_by_sec", "get_interval_by_sec", 0,
-                             "lud_verify", "lud_verify", 0,
-                             "create_matrix_from_file", "create_matrix_from_file", 0);
+                             "create_matrix", "create_matrix", 0, 0,
+                             "matrix_multiply", "matrix_multiply", 0, 0,
+                             "stopwatch_stop", "stopwatch_stop", 0, 0,
+                             "print_matrix", "print_matrix", 0, 0,
+                             "matrix_duplicate", "matrix_duplicate", 0, 0,
+                             "stopwatch_start", "stopwatch_start", 0, 0,
+                             "create_matrix_from_random", "create_matrix_from_random", 0, 0,
+                             "get_interval_by_usec", "get_interval_by_usec", 0, 0,
+                             "get_interval_by_sec", "get_interval_by_sec", 0, 0,
+                             "lud_verify", "lud_verify", 0, 0,
+                             "create_matrix_from_file", "create_matrix_from_file", 0, 0);
     return 0;
 }
 

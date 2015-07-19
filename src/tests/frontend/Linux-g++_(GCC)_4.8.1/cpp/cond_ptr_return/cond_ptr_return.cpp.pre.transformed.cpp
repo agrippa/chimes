@@ -1517,8 +1517,8 @@ static int module_init() {
                              (1528448604885476947UL + 3UL), (1528448604885476947UL + 54UL),
                              (1528448604885476947UL + 2UL), (1528448604885476947UL + 54UL),
                              (1528448604885476947UL + 4UL), (1528448604885476947UL + 54UL),
-                             "main", "main", 2, "foo", "checkpoint",
-                             "foo", "_Z3foov", 0,
+                             "main", "main", 0, 2, "foo", "checkpoint",
+                             "foo", "_Z3foov", 0, 0,
         "foo", 1528448604885476992UL, (int)0);
     return 0;
 }

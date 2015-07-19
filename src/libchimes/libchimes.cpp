@@ -230,7 +230,7 @@ static void *translate_old_ptr(void *ptr,
         heap_tree *old_to_new,
         void *container);
 static void fix_stack_or_global_pointer(void *container, string type, int nesting);
-map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
+map<void *, heap_allocation *>::iterator find_in_global_heap(void *ptr);
 void free_impl(const void *ptr);
 static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
@@ -275,7 +275,7 @@ pthread_key_t tid_key;
 /*
  * Globally shared heap representation used by all threads.
  */
-static map<void *, heap_allocation *> heap;
+static map<void *, heap_allocation *> global_heap;
 static set<size_t> allocated_aliases;
 static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
 
@@ -381,6 +381,7 @@ static unsigned long long regions_executed = 0;
  * mapping cannot be made complete.
  */
 static map<string, set<string> > call_tree;
+static map<string, bool> calls_unknown_checkpointing;
 
 /*
  * A mapping from function name to true/false, whether calling that function may
@@ -722,8 +723,8 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
 
             new_heap->push_back(alloc);
 
-            assert(heap.find(alloc->get_address()) == heap.end());
-            heap[alloc->get_address()] = alloc;
+            VERIFY(global_heap.insert(pair<void *, heap_allocation *>(
+                            alloc->get_address(), alloc)).second);
 
             old_to_new->insert(old_address, new_address, size);
             filled->insert(pair<void *, memory_filled *>(old_address,
@@ -986,24 +987,32 @@ void init_chimes(int argc, char **argv) {
 #ifdef VERBOSE
             std::string checkpoint_causer;
 #endif
-            for (set<string>::iterator callee_iter = i->second.begin(),
-                    callee_end = i->second.end(); callee_iter != callee_end;
-                    callee_iter++) {
-                string callee = *callee_iter;
-                /*
-                 * If this is either a function that we don't know about (and
-                 * therefore can't know if it will checkpoint or not), or a
-                 * function that we think will checkpoint, then apply that
-                 * property transitively to the current function.
-                 */
-                if (call_tree.find(callee) == call_tree.end() ||
-                        (does_checkpoint.find(callee) != does_checkpoint.end() &&
-                        does_checkpoint[callee])) {
-                    causes_checkpoint = true;
+
+            if (calls_unknown_checkpointing.at(func)) {
+                causes_checkpoint = true;
 #ifdef VERBOSE
-                    checkpoint_causer = callee;
+                checkpoint_causer = "function pointer call";
 #endif
-                    break;
+            } else {
+                for (set<string>::iterator callee_iter = i->second.begin(),
+                        callee_end = i->second.end(); callee_iter != callee_end;
+                        callee_iter++) {
+                    string callee = *callee_iter;
+                    /*
+                     * If this is either a function that we don't know about (and
+                     * therefore can't know if it will checkpoint or not), or a
+                     * function that we think will checkpoint, then apply that
+                     * property transitively to the current function.
+                     */
+                    if (call_tree.find(callee) == call_tree.end() ||
+                            (does_checkpoint.find(callee) != does_checkpoint.end() &&
+                            does_checkpoint[callee])) {
+                        causes_checkpoint = true;
+#ifdef VERBOSE
+                        checkpoint_causer = callee;
+#endif
+                        break;
+                    }
                 }
             }
 
@@ -1599,7 +1608,6 @@ void init_chimes(int argc, char **argv) {
 #ifdef __CHIMES_PROFILE
     pp.add_time(INIT_CHIMES, __start_time);
 #endif
-    exit(1);
 }
 
 static void *translate_old_ptr(void *ptr,
@@ -2086,6 +2094,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     for (int i = 0; i < nfunctions; i++) {
         char *func_name = va_arg(vl, char *);
         char *mangled_func_name = va_arg(vl, char *);
+        bool this_calls_unknown_checkpointing =
+            (va_arg(vl, int) == 0 ? false : true);
         unsigned n_callees = va_arg(vl, unsigned);
 
         string func_name_str(func_name);
@@ -2112,6 +2122,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
                 assert(call_tree[func_name_str].find(callee_name_str) !=
                         call_tree[func_name_str].end());
             }
+            assert(calls_unknown_checkpointing.at(func_name_str) ==
+                    this_calls_unknown_checkpointing);
         } else {
             call_tree.insert(pair<string, set<string> >(func_name_str,
                         set<string>()));
@@ -2122,6 +2134,9 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
                 call_tree[func_name_str].insert(callee_name_str);
             }
+            VERIFY(calls_unknown_checkpointing.insert(pair<string, bool>(
+                            func_name_str,
+                            this_calls_unknown_checkpointing)).second);
         }
     }
 
@@ -2971,7 +2986,8 @@ void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
     if (!ctx) {
         allocated_aliases.insert(group);
     }
-    VERIFY(heap.insert(pair<void *, heap_allocation *>((void *)new_ptr, alloc)).second);
+    VERIFY(global_heap.insert(pair<void *, heap_allocation *>(
+                    (void *)new_ptr, alloc)).second);
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 }
 
@@ -3070,7 +3086,8 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
          * The location in memory of a previous allocation did not change, only
          * the size was extended.
          */
-        map<void *, heap_allocation *>::iterator alloc_ptr = find_in_heap((void *)ptr);
+        map<void *, heap_allocation *>::iterator alloc_ptr =
+            find_in_global_heap((void *)ptr);
 
         heap_allocation *alloc = alloc_ptr->second;
         old_size = alloc->get_size();
@@ -3094,8 +3111,9 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
              * Remove the existing entry in the heap but re-use the information
              * in it to avoid the overhead of re-parsing the allocation type.
              */
-            map<void *, heap_allocation *>::iterator alloc_ptr =
-                find_in_heap((void *)ptr);
+            map<void *, heap_allocation *>::iterator alloc_ptr = 
+                find_in_global_heap((void *)ptr);
+
             heap_allocation *alloc = alloc_ptr->second;
             assert(alloc->get_alias_group() == group);
             old_size = alloc->get_size();
@@ -3141,8 +3159,6 @@ void realloc_helper(const void *new_ptr, const void *ptr, size_t nbytes, size_t 
 #ifdef __CHIMES_PROFILE
     pp.add_time(REALLOC_WRAPPER, __start_time);
 #endif
-
-    // return new_ptr;
 }
 
 void free_impl(const void *ptr) {
@@ -3150,19 +3166,19 @@ void free_impl(const void *ptr) {
     fprintf(stderr, "free_impl: ptr=%p\n", ptr);
 #endif
     map<void *, heap_allocation *>::iterator in_heap =
-        find_in_heap((void *)ptr);
+        find_in_global_heap((void *)ptr);
 
     // Update heap metadata
     VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
-    heap.erase(in_heap);
+    global_heap.erase(in_heap);
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 }
 
-map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
+map<void *, heap_allocation *>::iterator find_in_global_heap(void *ptr) {
 
     VERIFY(pthread_rwlock_rdlock(&heap_lock) == 0);
-    map<void *, heap_allocation *>::iterator in_heap = heap.find(ptr);
-    assert(in_heap != heap.end());
+    map<void *, heap_allocation *>::iterator in_heap = global_heap.find(ptr);
+    assert(in_heap != global_heap.end());
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 
     assert(in_heap->second->get_address() == ptr);
@@ -3187,7 +3203,8 @@ void free_helper(const void *ptr, size_t group) {
          * applications, for example when the host application does a 0-byte
          * allocation and then frees it.
          */
-        map<void *, heap_allocation *>::iterator in_heap = find_in_heap((void *)ptr);
+        map<void *, heap_allocation *>::iterator in_heap =
+            find_in_global_heap((void *)ptr);
         size_t original_group = in_heap->second->get_alias_group();
 
 #ifdef VERBOSE
@@ -3531,6 +3548,36 @@ void reenable_current_thread(bool was_disabled) {
     }
 }
 
+void collect_heap_to_checkpoint(
+        vector<pair<size_t, heap_allocation *> > *heap_to_checkpoint_sorted,
+        map<void *, heap_allocation *>::iterator heap_begin,
+        map<void *, heap_allocation *>::iterator heap_end,
+        set<size_t> *all_changed) {
+    for (map<void *, heap_allocation *>::iterator heap_iter =
+            heap_begin; heap_iter != heap_end; heap_iter++) {
+        heap_allocation *curr = heap_iter->second;
+        /*
+         * At the moment, we don't calculate alias groups for CUDA
+         * allocations because they are never dereferenced from the
+         * host. In future TODO work, we could track which allocations
+         * are passed to kernels and use that as a way to reduce the
+         * number of CUDA allocations that need to be checkpointed.
+         */
+        if (all_changed->find(curr->get_alias_group()) !=
+                all_changed->end() || curr->get_is_cuda_alloc()) {
+#ifdef VERBOSE
+            fprintf(stderr, "  because of group %lu we checkpoint heap "
+                    "allocation %p, size=%lu\n",
+                    curr->get_alias_group(), curr->get_address(),
+                    curr->get_size());
+#endif
+            heap_to_checkpoint_sorted->push_back(
+                    pair<size_t, heap_allocation *>(curr->get_size(),
+                        curr));
+        }
+    }
+}
+
 // The code transformer should replace any calls to checkpoint
 void checkpoint() {
     assert(false);
@@ -3790,31 +3837,9 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 #endif
 
                 vector<pair<size_t, heap_allocation *> > heap_to_checkpoint_sorted;
-                heap_to_checkpoint_sorted.reserve(heap.size());
-                for (map<void *, heap_allocation *>::iterator heap_iter =
-                        heap.begin(), heap_end = heap.end(); heap_iter != heap_end;
-                        heap_iter++) {
-                    heap_allocation *curr = heap_iter->second;
-                    /*
-                     * At the moment, we don't calculate alias groups for CUDA
-                     * allocations because they are never dereferenced from the
-                     * host. In future TODO work, we could track which allocations
-                     * are passed to kernels and use that as a way to reduce the
-                     * number of CUDA allocations that need to be checkpointed.
-                     */
-                    if (all_changed->find(curr->get_alias_group()) !=
-                            all_changed->end() || curr->get_is_cuda_alloc()) {
-#ifdef VERBOSE
-                        fprintf(stderr, "  because of group %lu we checkpoint heap "
-                                "allocation %p, size=%lu\n",
-                                curr->get_alias_group(), curr->get_address(),
-                                curr->get_size());
-#endif
-                        heap_to_checkpoint_sorted.push_back(
-                                pair<size_t, heap_allocation *>(curr->get_size(),
-                                    curr));
-                    }
-                }
+                heap_to_checkpoint_sorted.reserve(global_heap.size());
+                collect_heap_to_checkpoint(&heap_to_checkpoint_sorted,
+                        global_heap.begin(), global_heap.end(), all_changed);
 
                 std::sort(heap_to_checkpoint_sorted.begin(),
                         heap_to_checkpoint_sorted.end(), compare_heap_allocations);
@@ -4061,8 +4086,7 @@ static void brute_force_pointer_fixing(void *ptr, heap_allocation *alloc,
         }
 
         if (already_translated->find(container) != already_translated->end()) {
-            assert(heap.find(*container) != heap.end());
-            heap_allocation *alloc = heap[*container];
+            heap_allocation *alloc = global_heap.at(*container);
             brute_force_pointer_fixing(*container, alloc, visited);
         }
     }
@@ -4111,9 +4135,9 @@ static void fix_stack_or_global_pointer(void *container, string type,
             if (points_to == "void") {
 #ifdef VERBOSE
                 fprintf(stderr, "  void pointer... matching heap allocation? "
-                        "%d\n", (heap.find(*nested_container) != heap.end()));
+                        "%d\n", (global_heap.find(*nested_container) != global_heap.end()));
 #endif
-                heap_allocation *alloc = heap.at(*nested_container);
+                heap_allocation *alloc = global_heap.at(*nested_container);
 
                 /*
                  * Since its a pointer to void, we just take a look at each

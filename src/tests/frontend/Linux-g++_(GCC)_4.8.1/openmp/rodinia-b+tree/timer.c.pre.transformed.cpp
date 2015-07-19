@@ -1577,7 +1577,7 @@ static int module_init() {
                             "get_time", 0, "get_time", "get_time_npm", 0, 0, 0UL, 1, "gettimeofday", 2, (8530989265170789096UL + 1UL), (8530989265170789096UL + 15UL), 0UL,
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                             "get_time", "get_time", 0);
+                             "get_time", "get_time", 0, 0);
     return 0;
 }
 

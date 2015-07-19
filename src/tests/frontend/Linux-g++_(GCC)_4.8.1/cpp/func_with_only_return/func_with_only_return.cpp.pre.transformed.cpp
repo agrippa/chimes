@@ -1479,8 +1479,8 @@ static int module_init() {
                              (17129812071925488562UL + 1UL), (17129812071925488562UL + 28UL),
                              (17129812071925488562UL + 10UL), (17129812071925488562UL + 27UL),
                              (17129812071925488562UL + 11UL), (17129812071925488562UL + 19UL),
-                             "main", "main", 2, "haha_this_sux", "checkpoint",
-                             "haha_this_sux", "_Z13haha_this_suxv", 0,
+                             "main", "main", 0, 2, "haha_this_sux", "checkpoint",
+                             "haha_this_sux", "_Z13haha_this_suxv", 0, 0,
         "haha_this_sux", 17129812071925488581UL, (int)0);
     return 0;
 }

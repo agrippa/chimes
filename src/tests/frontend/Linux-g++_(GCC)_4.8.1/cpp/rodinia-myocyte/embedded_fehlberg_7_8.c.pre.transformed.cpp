@@ -3639,7 +3639,7 @@ static int module_init() {
                              (6599527376914383336UL + 4UL), (6599527376914383336UL + 1004UL),
                              (6599527376914383336UL + 7UL), (6599527376914383336UL + 1007UL),
                              (6599527376914383336UL + 6UL), (6599527376914383336UL + 1006UL),
-                             "embedded_fehlberg_7_8", "_Z21embedded_fehlberg_7_8ffPfS_S_S_", 13, "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master",
+                             "embedded_fehlberg_7_8", "_Z21embedded_fehlberg_7_8ffPfS_S_S_", 0, 13, "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master", "master",
                         "embedded_fehlberg_7_8|initvalu_temp|0", 1, "embedded_fehlberg_7_8");
     return 0;
 }

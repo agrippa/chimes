@@ -104,7 +104,8 @@ SPEC_PERF_CLI_ARGS = \
                                                     'run', 'run_base_test_davinci.0000',
                                                     'botsalgn'),
          'SPECBotsSpar':          '-n 200 -m 100',
-         'SPECSmithwa':           '32',
+         'SPECSmithwa':           '64',
+         # 'SPECSmithwa':           '32',
          # 'SPECKDTree':            '3000000 10 2'
          'SPECKDTree':            '200000 10 2'
         }

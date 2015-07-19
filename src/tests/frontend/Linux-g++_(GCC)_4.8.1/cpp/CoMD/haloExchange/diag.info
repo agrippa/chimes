@@ -11,6 +11,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 248 31 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 249 4  ({ free_helper(*haloExchange, 5897154831253371248UL);free(*haloExchange);  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 249 22 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 253 6 len=12 haloExchange_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 260 15 len=16 initHaloExchange_npm
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 262 38  ({ void *____chimes_tmp_ptr = malloc(sizeof(HaloExchange)); malloc_helper(____chimes_tmp_ptr, sizeof(HaloExchange), 5897154831253369626UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms)); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 262 65 
@@ -22,6 +23,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 307 81 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 308 4 ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, -1, 0, 0UL, 5, 5897154831253371413UL, 5897154831253371417UL, 0UL, 0UL, 5897154831253371391UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 308 81 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 284 6 len=12 exchangeData_npm
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 289 28  ({ void *____chimes_tmp_ptr = malloc(haloExchange->bufCapacity); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371388UL, 0, 0); ____chimes_tmp_ptr; }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 289 60 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 290 28  ({ void *____chimes_tmp_ptr = malloc(haloExchange->bufCapacity); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371398UL, 0, 0); ____chimes_tmp_ptr; }) 

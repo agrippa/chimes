@@ -58,7 +58,8 @@ class TestConfig(object):
     Encapsulates configuration that can be changed at the command line
     """
     def __init__(self, keep, verbose, targets, update_tests, just_compile,
-                 force_update, dummy, quiet, repeats, block_checkpoints):
+                 force_update, dummy, quiet, repeats, block_checkpoints,
+                 chimes_profile):
         assert repeats >= 1, str(repeats)
 
         self.keep = keep
@@ -74,6 +75,7 @@ class TestConfig(object):
         self.quiet = quiet
         self.repeats = repeats
         self.block_checkpoints = block_checkpoints
+        self.chimes_profile = chimes_profile
 
     def set_force_sequential(self):
         self.force_sequential = True
@@ -360,6 +362,7 @@ def parse_argv(argv):
     block_checkpoints = False
     quiet = False
     repeats = 1
+    chimes_profile = False
 
     i = 1
     while i < len(argv):
@@ -377,6 +380,8 @@ def parse_argv(argv):
             force_update = True
         elif argv[i] == '-q':
             quiet = True
+        elif argv[i] == '-p':
+            chimes_profile = True
         elif argv[i] == '-t':
             assert len(argv) >= i + 2
             for target in argv[i + 1].split(','):
@@ -395,7 +400,8 @@ def parse_argv(argv):
         i += 1
 
     return TestConfig(keep, verbose, targets, update_tests, just_compile,
-                      force_update, dummy, quiet, repeats, block_checkpoints)
+                      force_update, dummy, quiet, repeats, block_checkpoints,
+                      chimes_profile)
 
 
 def print_and_abort(stdout, stderr, abort=True):
@@ -667,11 +673,14 @@ def check_warnings(testname, stderr, input_dir, output_dir, warnings_filename,
 
 
 def build_compile_cmd(compile_script_path, test, output_file, inputs_dir,
-                      config, dummy, block_checkpoints, env):
+                      config, dummy, block_checkpoints, chimes_profile, env):
     compile_cmd = compile_script_path + ' ' + test.extra_compile_args
 
     if config.force_sequential:
-        compile_cmd += ' -s '
+        compile_cmd += ' -s'
+
+    if chimes_profile:
+        compile_cmd += ' -g'
 
     if dummy:
         compile_cmd += ' -d'
@@ -903,7 +912,8 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
     compile_cmd = build_compile_cmd(compile_script_path, test, RUNTIME_BIN,
                                     inputs_dir, config, config.dummy,
-                                    config.block_checkpoints, env)
+                                    config.block_checkpoints,
+                                    config.chimes_profile, env)
 
     if config.verbose:
         print(compile_cmd)
@@ -1030,10 +1040,11 @@ def run_perf_test(test, compile_script_path, normal_compile_script_path,
     chimes_compile_cmd = build_compile_cmd(compile_script_path, test,
                                            CHIMES_PERF_BIN, inputs_dir, config,
                                            config.dummy,
-                                           config.block_checkpoints, env)
+                                           config.block_checkpoints,
+                                           config.chimes_profile, env)
     normal_compile_cmd = build_compile_cmd(normal_compile_script_path, test,
                                            NORMAL_PERF_BIN, inputs_dir, config,
-                                           False, False, env)
+                                           False, False, False, env)
     if config.verbose:
         print(chimes_compile_cmd)
         print(normal_compile_cmd)

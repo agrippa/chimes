@@ -226,7 +226,7 @@ static int module_init() {
                             "isInteger", 0, "isInteger", "isInteger_npm", 0, 1, (15864270494885910878UL + 39UL), 0UL, 0,
                            "isInteger", &(____chimes_does_checkpoint_isInteger_npm),
                              (15864270494885910878UL + 2UL), (15864270494885910878UL + 39UL),
-                             "isInteger", "isInteger", 0);
+                             "isInteger", "isInteger", 0, 0);
     return 0;
 }
 

@@ -1195,6 +1195,43 @@ struct __exception
 
 
 extern int matherr (struct __exception *__exc) throw ();
+# 416 "/usr/include/math.h" 3 4
+# 1 "/usr/include/bits/mathinline.h" 1 3 4
+# 63 "/usr/include/bits/mathinline.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) int
+__signbitf (float __x) throw ()
+{
+  __extension__ union { float __f; int __i; } __u = { __f: __x };
+  return __u.__i < 0;
+}
+extern __inline __attribute__ ((__gnu_inline__)) int
+__signbit (double __x) throw ()
+{
+  __extension__ union { double __d; int __i[2]; } __u = { __d: __x };
+  return __u.__i[0] < 0;
+}
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+__signbitl (long double __x) throw ()
+{
+  __extension__ union { long double __d; int __i[4]; } __u = { __d: __x };
+  return __u.__i[0] < 0;
+}
+# 116 "/usr/include/bits/mathinline.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) double fdim (double __x, double __y) throw ();
+extern __inline __attribute__ ((__gnu_inline__)) double
+fdim (double __x, double __y) throw ()
+{
+  return __x <= __y ? 0 : __x - __y;
+}
+
+extern __inline __attribute__ ((__gnu_inline__)) float fdimf (float __x, float __y) throw ();
+extern __inline __attribute__ ((__gnu_inline__)) float
+fdimf (float __x, float __y) throw ()
+{
+  return __x <= __y ? 0 : __x - __y;
+}
+# 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
 # 10 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c" 2
@@ -1404,9 +1441,9 @@ static int module_init() {
                            "mkSeed", &(____chimes_does_checkpoint_mkSeed_npm),
                              (13245176871248214016UL + 1UL), (13245176871248214016UL + 12UL),
                              (13245176871248214016UL + 54UL), (13245176871248214016UL + 75UL),
-                             "gasdev", "_Z6gasdevPm", 2, "lcg61", "lcg61",
-                             "lcg61", "_Z5lcg61Pm", 0,
-                             "mkSeed", "_Z6mkSeedjj", 1, "lcg61",
+                             "gasdev", "_Z6gasdevPm", 0, 2, "lcg61", "lcg61",
+                             "lcg61", "_Z5lcg61Pm", 0, 0,
+                             "mkSeed", "_Z6mkSeedjj", 0, 1, "lcg61",
                         "mkSeed|iSeed|0", 1, "mkSeed",
         "lcg61", 0UL, (int)1, 13245176871248214028UL,
         "lcg61", 0UL, (int)1, 13245176871248214028UL,

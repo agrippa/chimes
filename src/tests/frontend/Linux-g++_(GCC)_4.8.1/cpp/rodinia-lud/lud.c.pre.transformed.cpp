@@ -4410,7 +4410,7 @@ static int module_init() {
                      "__stopwatch_t", 256UL, 2, "%struct.timeval", (int)__builtin_offsetof (struct __stopwatch_t, begin), "%struct.timeval", (int)__builtin_offsetof (struct __stopwatch_t, end),
                      "option", 256UL, 4, "char*", (int)__builtin_offsetof (struct option, name), "int", (int)__builtin_offsetof (struct option, has_arg), "int*", (int)__builtin_offsetof (struct option, flag), "int", (int)__builtin_offsetof (struct option, val),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                             "main", "main", 9, "create_matrix_from_file", "print_matrix", "matrix_duplicate", "stopwatch_start", "lud_base", "stopwatch_stop", "get_interval_by_sec", "print_matrix", "lud_verify",
+                             "main", "main", 0, 9, "create_matrix_from_file", "print_matrix", "matrix_duplicate", "stopwatch_start", "lud_base", "stopwatch_stop", "get_interval_by_sec", "print_matrix", "lud_verify",
                         "main|matrix_dim|0", 1, "main",
                         "main|m|0", 8, "stopwatch_stop", "stopwatch_start", "print_matrix", "matrix_duplicate", "lud_verify", "lud_base", "get_interval_by_sec", "create_matrix_from_file",
                         "main|mm|0", 1, "main",

@@ -2263,7 +2263,7 @@ static int module_init() {
                            &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (16078043286575642275UL + 4UL),
                              (16078043286575642275UL + 3UL), (16078043286575642275UL + 23UL),
                              (16078043286575642275UL + 30UL), (16078043286575642275UL + 11UL),
-                             "main", "main", 1, "checkpoint");
+                             "main", "main", 0, 1, "checkpoint");
     register_global_var("global|a", "i32", (void *)(&a), 4, 0, 0, 0UL, 0);
     register_global_var("global|b", "i32", (void *)(&b), 4, 0, 0, 0UL, 0);
     register_global_var("global|hello_world", "i8*", (void *)(&hello_world), 8, 1, 0, (16078043286575642275UL + 30UL), 0);

@@ -2690,8 +2690,8 @@ static int module_init() {
                             "getSeconds", 0, "_Z10getSecondsv", "_Z14getSeconds_npmv", 0, 0, 0UL, 0,
                            "dispElapsedTime", &(____chimes_does_checkpoint_dispElapsedTime_npm),
                            "getSeconds", &(____chimes_does_checkpoint_getSeconds_npm),
-                             "dispElapsedTime", "_Z15dispElapsedTimed", 0,
-                             "getSeconds", "_Z10getSecondsv", 0);
+                             "dispElapsedTime", "_Z15dispElapsedTimed", 0, 0,
+                             "getSeconds", "_Z10getSecondsv", 0, 0);
     return 0;
 }
 
