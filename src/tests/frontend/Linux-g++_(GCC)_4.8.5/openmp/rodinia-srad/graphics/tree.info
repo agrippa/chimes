@@ -1,0 +1,2 @@
+write_graphics _Z14write_graphicsPcPfiiii 0 DOES_NOT
+read_graphics _Z13read_graphicsPcPfiii 0 MAY fgetc 123 7

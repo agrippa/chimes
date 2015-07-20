@@ -44,7 +44,7 @@ typedef struct HaloExchangeSt
    /// \param [in] face  Specifies the face across which data is being sent.
    /// \param [in] buf   The send buffer to be loaded
    /// \return The number of bytes loaded into the send buffer.
-   int  (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int  (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
    /// Pointer to a sub-class specific function to unload the recv buffer.
    /// \param [in] parms The parms member of the structure.  This is a
    ///                   pointer to a sub-class specific structure that can
@@ -58,10 +58,10 @@ typedef struct HaloExchangeSt
    /// \param [in] face  Specifies the face across which data is being sent.
    /// \param [in] bufSize The number of bytes in the recv buffer.
    /// \param [in] buf   The recv buffer to be unloaded.
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
    /// Pointer to a function to deallocate any memory used by the
    /// sub-class parms.  Essentially this is a virtual destructor.
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
    /// A pointer to a sub-class specific structure that contains
    /// additional data members needed by the sub-class.
    void* parms;

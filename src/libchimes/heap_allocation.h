@@ -3,9 +3,14 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <assert.h>
 #include <vector>
+#include <map>
+#include <set>
+#include <pthread.h>
 
+#include "chimes_common.h"
 #include "hash_chunker.h"
 #include "xxhash/xxhash.h"
 
@@ -96,7 +101,12 @@ class memory_filled {
         size_t length;
 };
 
+#define MAX_PTR_ELEMS 16
+
+class thread_local_allocations;
+
 class heap_allocation {
+    // public:
     private:
         void *address;
         size_t size;
@@ -105,7 +115,9 @@ class heap_allocation {
         int elem_is_ptr;
         int elem_is_struct;
         size_t elem_size;
-        std::vector<int> elem_ptr_offsets;
+
+        int n_elem_ptr_offsets;
+        int elem_ptr_offsets[MAX_PTR_ELEMS];
 
         void *tmp_buffer;
 
@@ -114,40 +126,25 @@ class heap_allocation {
         bool invalid_hashes;
         unsigned n_hash_chunks;
         unsigned long long *hashes;
-        size_t *hash_chunk_start;
-        size_t *hash_chunk_end;
+
+        thread_local_allocations *owner;
 
     public:
         heap_allocation(void *set_address, size_t set_size,
                 size_t set_alias_group, int set_is_cuda_alloc,
-                int set_elem_is_ptr, int set_elem_is_struct,
-                hash_chunker& chunker) :
+                int set_elem_is_ptr, int set_elem_is_struct) :
                 address(set_address), size(set_size),
                 alias_group(set_alias_group),
                 elem_is_ptr(set_elem_is_ptr),
                 elem_is_struct(set_elem_is_struct), elem_size(0),
+                n_elem_ptr_offsets(0),
                 tmp_buffer(NULL), is_cuda_alloc(set_is_cuda_alloc),
-                invalid_hashes(true), n_hash_chunks(0), hashes(NULL),
-                hash_chunk_start(NULL), hash_chunk_end(NULL) {
-            gen_hash_parameters(chunker);
+                invalid_hashes(true), owner(NULL) {
+            n_hash_chunks = CHIMES_N_CHUNKS(size);
+            hashes = (unsigned long long *)malloc(
+                    n_hash_chunks * sizeof(unsigned long long));
         }
 
-        void gen_hash_parameters(hash_chunker& chunker) {
-            invalid_hashes = true;
-            n_hash_chunks = chunker.get_n_chunks(size);
-            hashes = (unsigned long long *)realloc(hashes,
-                    n_hash_chunks * sizeof(unsigned long long));
-            hash_chunk_start = (size_t *)realloc(hash_chunk_start,
-                    n_hash_chunks * sizeof(size_t));
-            hash_chunk_end = (size_t *)realloc(hash_chunk_end,
-                    n_hash_chunks * sizeof(size_t));
-            for (unsigned i = 0; i < n_hash_chunks; i++) {
-                hash_chunk_start[i] = chunker.get_chunk_start(i, n_hash_chunks,
-                        size);
-                hash_chunk_end[i] = chunker.get_chunk_end(i, n_hash_chunks,
-                        size);
-            }
-        }
         void update_hashes() {
             for (unsigned i = 0; i < n_hash_chunks; i++) {
                 update_hash(i, calculate_hash(i));
@@ -155,11 +152,11 @@ class heap_allocation {
         }
         size_t get_hash_chunk_start(unsigned index) {
             assert(index < n_hash_chunks);
-            return hash_chunk_start[index];
+            return CHIMES_CHUNK_START(index);
         }
         size_t get_hash_chunk_end(unsigned index) {
             assert(index < n_hash_chunks);
-            return hash_chunk_end[index];
+            return CHIMES_CHUNK_END(index, size);
         }
         unsigned long long get_hash(unsigned index) {
             assert(index < n_hash_chunks);
@@ -173,8 +170,8 @@ class heap_allocation {
             assert(index < n_hash_chunks);
 
             const void *chunk_start = ((unsigned char *)address) +
-                hash_chunk_start[index];
-            size_t chunk_len = hash_chunk_end[index] - hash_chunk_start[index];
+                CHIMES_CHUNK_START(index);
+            size_t chunk_len = CHIMES_CHUNK_LEN(index, size);
             return XXH64(chunk_start, chunk_len, 1);
         }
         void invalidate_hashes() {
@@ -199,15 +196,29 @@ class heap_allocation {
             assert(!elem_is_ptr && elem_is_struct);
             return elem_size;
         }
-        std::vector<int> *get_ptr_field_offsets() {
+        unsigned get_n_ptr_fields() {
+            return n_elem_ptr_offsets;
+        }
+        int *get_ptr_field_offsets() { 
             assert(!elem_is_ptr && elem_is_struct);
-            return &elem_ptr_offsets;
+            return elem_ptr_offsets;
         }
         void *get_tmp_buffer() { return tmp_buffer; }
+        void set_tmp_buffer(void *s) {
+            assert(tmp_buffer == NULL);
+            assert(s);
+            tmp_buffer = s;
+        }
         int get_is_cuda_alloc() { return is_cuda_alloc; }
 
         // Size can be updated on a realloc
-        void update_size(size_t new_size) { size = new_size; }
+        void update_size(size_t new_size) {
+            size = new_size;
+            n_hash_chunks = CHIMES_N_CHUNKS(size);
+            hashes = (unsigned long long *)realloc(hashes,
+                    n_hash_chunks * sizeof(unsigned long long));
+            invalid_hashes = true;
+        }
         size_t get_size() { return size; }
 
         // Struct info
@@ -217,13 +228,88 @@ class heap_allocation {
         }
         void add_pointer_offset(int offset);
         void set_pointer_offsets(std::vector<int> *s) {
-            assert(elem_ptr_offsets.size() == 0);
-            for (std::vector<int>::iterator i = s->begin(), e = s->end(); i != e; i++) {
-                elem_ptr_offsets.push_back(*i);
+            assert(s->size() < MAX_PTR_ELEMS);
+            assert(n_elem_ptr_offsets == 0);
+            for (unsigned i = 0; i < s->size(); i++) {
+                elem_ptr_offsets[i] = s->at(i);
             }
+            n_elem_ptr_offsets = s->size();
         }
 
         void copy(heap_allocation *dst);
+
+        void set_owner(thread_local_allocations *s) {
+            owner = s;
+        }
+        thread_local_allocations *get_owner() {
+            assert(owner);
+            return owner;
+        }
+};
+
+class thread_local_allocations {
+    public:
+        thread_local_allocations() {
+            pthread_rwlock_init(&lock, NULL);
+        }
+        void rdlock() {
+            VERIFY(pthread_rwlock_rdlock(&lock) == 0);
+        }
+        void wrlock() {
+            VERIFY(pthread_rwlock_wrlock(&lock) == 0);
+        }
+        void unlock() {
+            VERIFY(pthread_rwlock_unlock(&lock) == 0);
+        }
+
+        map<void *, heap_allocation *>::iterator begin() {
+            return heap.begin();
+        }
+        map<void *, heap_allocation *>::iterator end() {
+            return heap.end();
+        }
+
+        heap_allocation *find(void *ptr) {
+            heap_allocation *result = NULL;
+
+            rdlock();
+            map<void *, heap_allocation *>::iterator exists = heap.find(ptr);
+            if (exists != heap.end()) {
+                result = exists->second;
+            }
+            unlock();
+
+            return result;
+        }
+
+        void add_allocation(heap_allocation *alloc, bool loaded = false) {
+            alloc->set_owner(this);
+
+            wrlock();
+            VERIFY(heap.insert(pair<void *, heap_allocation *>(
+                            alloc->get_address(), alloc)).second);
+            if (!loaded) {
+                allocated_aliases.insert(alloc->get_alias_group());
+            }
+            unlock();
+        }
+        void remove_allocation(heap_allocation *alloc) {
+            wrlock();
+            heap.erase(alloc->get_address());
+            unlock();
+        }
+
+        set<size_t>::iterator allocated_aliases_begin() {
+            return allocated_aliases.begin();
+        }
+        set<size_t>::iterator allocated_aliases_end() {
+            return allocated_aliases.end();
+        }
+
+    private:
+        pthread_rwlock_t lock;
+        map<void *, heap_allocation *> heap;
+        set<size_t> allocated_aliases;
 };
 
 #endif

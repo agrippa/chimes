@@ -1,0 +1,11 @@
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c resize|input|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c resize|input_rows|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c resize|input_cols|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c resize|output|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c resize|output_rows|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c resize|output_cols|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c resize|major|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c resize|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c resize|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c resize|i2|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c resize|j2|0 " i32 " 32 0 0 0

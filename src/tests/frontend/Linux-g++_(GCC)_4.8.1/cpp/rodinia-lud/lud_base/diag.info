@@ -1,0 +1,25 @@
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 7 1 const int ____chimes_did_disable0 = new_stack((void *)(&lud_base), "lud_base", (int *)0x0, 2, 2, (size_t)(12945330961080303600UL), (size_t)(0UL), "lud_base|a|0", (int *)0x0, "float*", (void *)(&a), (size_t)8, 1, 0, 0, "lud_base|size|0", (int *)0x0, "i32", (void *)(&size), (size_t)4, 0, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 27 1 rm_stack(false, 0UL, "lud_base", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 7 2 const int ____chimes_did_disable0 = new_stack((void *)(&lud_base), "lud_base", (int *)0, 2, 2, (size_t)(12945330961080303600UL), (size_t)(0UL), "lud_base|a|0", (int *)0, "float*", (void *)(&a), (size_t)8, 1, 0, 0, "lud_base|size|0", (int *)0, "i32", (void *)(&size), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 7 294 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 6 int i; int j; int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 15 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 9 6 float sum; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 9 15 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 24 10  call_lbl_0: 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 6 6 len=8 lud_base_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 24 23 checkpoint_transformed(0, ____alias_loc_id_0)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 24 34 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 6 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 11 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 7 287  ; int i;
+# 7
+ register_stack_vars(1, "lud_base|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 6 6 len=8 lud_base_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 24 23 checkpoint_transformed(0, ____alias_loc_id_0)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 24 34 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 6 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 11 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 7 287  ; int i;
+# 7
+ register_stack_vars(1, "lud_base|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  

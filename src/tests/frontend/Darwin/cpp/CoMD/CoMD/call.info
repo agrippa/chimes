@@ -1,127 +1,127 @@
-_Z12initParallelPiPPPc 88 4 0 2 3
-_Z12profileStart11TimerHandle 89 4 0 0
-_ZL14initSubsystemsv 90 4 0
-_Z16timestampBarrierPKc 91 4 0 1352
-_Z11yamlAppInfoP7__sFILE 94 4 0 904
-_Z16parseCommandLineiPPc 96 18 0 4 0 128
-_Z12printCmdYamlP7__sFILEP9CommandSt 98 4 0 904 4
-memcpy 100 19 0 6 4 0
-_ZL14initSimulation9CommandSt 100 19 66 6
-_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt 102 4 0 904 66
-_ZL12initValidateP9SimFlatSt 104 25 41 66
-_Z16timestampBarrierPKc 105 4 0 1352
-_Z16timestampBarrierPKc 107 4 0 1355
-_Z12profileStart11TimerHandle 113 4 0 0
-_Z12profileStart11TimerHandle 116 12 0 0
-_ZL8sumAtomsP9SimFlatSt 117 7 0 66
-_Z11profileStop11TimerHandle 118 12 0 0
-_Z14getElapsedTime11TimerHandle 120 41 0 0
-_ZL11printThingsP9SimFlatStid 120 72 0 66 0 0
-_Z12profileStart11TimerHandle 122 12 0 0
-_Z8timestepP9SimFlatStid 123 7 0 66 0 0
-_Z11profileStop11TimerHandle 124 12 0 0
-_Z11profileStop11TimerHandle 128 4 0 0
-_ZL8sumAtomsP9SimFlatSt 130 4 0 66
-_Z14getElapsedTime11TimerHandle 131 38 0 0
-_ZL11printThingsP9SimFlatStid 131 69 0 66 0 0
-_Z16timestampBarrierPKc 132 4 0 1356
-_ZL14validateResultPK10ValidateStP9SimFlatSt 135 4 0 41 66
-_Z11profileStop11TimerHandle 136 4 0 0
-_Z23printPerformanceResultsii 138 4 0 0 0
-_ZL17destroySimulationPP9SimFlatSt 141 4 0 5
-free 142 4 0 41
-_ZL18finalizeSubsystemsv 143 4 0
-_Z16timestampBarrierPKc 145 4 0 1357
-_Z15destroyParallelv 146 4 0
-_Z9yamlBeginv 244 4 0
-malloc 164 29 316 0
-_ZL13initPotentialiPKcS0_S0_ 175 15 1397 0 333 333 333
-memcpy 181 4 0 145 333 0
-_ZL12sanityChecks9CommandStddPc 181 4 0 145 0 0 1397
-_ZL11initSpeciesP15BasePotentialSt 183 19 1397 1397
-_Z17initDecompositioniiiPd 190 18 1397 0 0 0 146
-_Z13initLinkCellsPK8DomainStd 193 17 1397 1397 0
-_Z9initAtomsP10LinkCellSt 194 17 1397 1397
-_Z16createFccLatticeiiidP9SimFlatSt 197 4 0 0 0 0 0 316
-_Z14setTemperatureP9SimFlatStd 198 4 0 316 0
-_Z19randomDisplacementsP9SimFlatStd 199 4 0 316 0
-_Z20initAtomHaloExchangeP8DomainStP10LinkCellSt 201 24 1397 1397 1397
-_Z12profileStart11TimerHandle 204 9 0 0
-_Z17redistributeAtomsP9SimFlatSt 205 4 0 316
-_Z11profileStop11TimerHandle 206 9 0 0
-_Z12profileStart11TimerHandle 208 9 0 0
-_Z12computeForceP9SimFlatSt 209 4 0 316
-_Z11profileStop11TimerHandle 210 9 0 0
-_Z13kineticEnergyP9SimFlatSt 212 4 0 316
-_Z12maxOccupancyP10LinkCellSt 381 17 0 357
-_Z9printRankv 384 9 0
-fprintf 387 4 0 676 1356
-fprintf 388 4 0 676 1359 0
-fprintf 390 4 0 676 1360 0 0 0
-fprintf 392 4 0 676 1360 0 0 0
-_Z14printSeparatorP7__sFILE 394 4 0 676
-fprintf 395 4 0 676 1362
-fprintf 396 4 0 676 1363 0 0 0
-fprintf 398 4 0 676 1364 0 0 0 0
-fprintf 401 4 0 676 1360 0 0 0
-fprintf 403 4 0 676 1366 0 0 0
-fprintf 407 4 0 676 1367 0 0
-_Z14printSeparatorP7__sFILE 409 4 0 676
-fprintf 410 4 0 676 1368
-anon 411 4 0 676 357
-_Z14printSeparatorP7__sFILE 424 4 0 676
-fprintf 425 4 0 676 1369
-fprintf 426 4 0 676 1364 0
-fprintf 427 4 0 676 1366 0 0
-fprintf 428 4 0 676 1372 0
-fprintf 429 4 0 676 1373 0
-fflush 431 4 0 676
-_ZL8sumAtomsP9SimFlatSt 282 4 0 733
-malloc 283 31 685 0
-_Z9printRankv 287 8 0
-fprintf 289 7 0 904 1378
-_Z14printSeparatorP7__sFILE 290 7 0 904
-fprintf 291 7 0 904 1372 0 0
-fprintf 293 7 0 904 1378
-_Z12profileStart11TimerHandle 336 9 0 0
-_Z14addIntParallelPiS_i 337 4 0 780 780 0
-_Z11profileStop11TimerHandle 338 9 0 0
-_Z9printRankv 352 9 0
-fprintf 358 7 0 904 1376
-fflush 361 7 0 904
-fprintf 372 4 0 904 1377 0 0 0 0 0 0 0 0
-_Z9printRankv 300 8 0
-fprintf 306 7 0 904 1378
-fprintf 307 7 0 904 1378
-fprintf 308 7 0 904 1379
-fprintf 310 7 0 904 1380 0
-fprintf 311 7 0 904 1380 0
-fprintf 312 7 0 904 1379 0
-fprintf 315 10 0 904 1383 0
-fprintf 320 10 0 904 1384
-fprintf 321 10 0 904 1380 0
-fprintf 322 10 0 904 1384
-free 226 14 0 1030
-_Z16destroyLinkCellsPP10LinkCellSt 227 4 0 1021
-_Z12destroyAtomsP7AtomsSt 228 4 0 1030
-_Z19destroyHaloExchangePP14HaloExchangeSt 229 4 0 1021
-free 230 4 0 1030
-free 231 4 0 1030
-free 232 4 0 1021
-_Z7yamlEndv 252 4 0
-_Z10initEamPotPKcS0_S0_ 261 22 1120 1123 1124 1125
-_Z9initLjPotv 261 75 1120
-__assert_rtn 265 35 0 1394 1392 0 1389
-_Z9getNRanksv 441 18 0
-_Z9printRankv 444 11 0
-fprintf 444 25 0 904 1366
-_Z9printRankv 460 11 0
-fprintf 460 25 0 904 1388 0 0 0
-strcasecmp 468 8 0 1283 1389
-_Z9printRankv 471 11 0
-fprintf 471 25 0 904 1377 1283
-_Z13bcastParallelPvii 477 4 0 1137 0 0
-__assert_rtn 480 53 0 1357 1392 0 1362
-exit 482 24 0 0
-malloc 271 41 1289 0
-strcpy 273 4 1298 1289 1313
+initParallel main 88 4 0 2 3
+profileStart main 89 4 0 0
+initSubsystems main 90 4 0
+timestampBarrier main 91 4 0 1352
+yamlAppInfo main 94 4 0 904
+parseCommandLine main 96 18 0 4 0 128
+printCmdYaml main 98 4 0 904 4
+memcpy main 100 19 0 6 4 0
+initSimulation main 100 19 66 6
+printSimulationDataYaml main 102 4 0 904 66
+initValidate main 104 25 41 66
+timestampBarrier main 105 4 0 1352
+timestampBarrier main 107 4 0 1355
+profileStart main 113 4 0 0
+profileStart main 116 12 0 0
+sumAtoms main 117 7 0 66
+profileStop main 118 12 0 0
+getElapsedTime main 120 41 0 0
+printThings main 120 72 0 66 0 0
+profileStart main 122 12 0 0
+timestep main 123 7 0 66 0 0
+profileStop main 124 12 0 0
+profileStop main 128 4 0 0
+sumAtoms main 130 4 0 66
+getElapsedTime main 131 38 0 0
+printThings main 131 69 0 66 0 0
+timestampBarrier main 132 4 0 1356
+validateResult main 135 4 0 41 66
+profileStop main 136 4 0 0
+printPerformanceResults main 138 4 0 0 0
+destroySimulation main 141 4 0 5
+free main 142 4 0 41
+finalizeSubsystems main 143 4 0
+timestampBarrier main 145 4 0 1357
+destroyParallel main 146 4 0
+yamlBegin initSubsystems 244 4 0
+malloc initSimulation 164 29 316 0
+initPotential initSimulation 175 15 1397 0 333 333 333
+memcpy initSimulation 181 4 0 145 333 0
+sanityChecks initSimulation 181 4 0 145 0 0 1397
+initSpecies initSimulation 183 19 1397 1397
+initDecomposition initSimulation 190 18 1397 0 0 0 146
+initLinkCells initSimulation 193 17 1397 1397 0
+initAtoms initSimulation 194 17 1397 1397
+createFccLattice initSimulation 197 4 0 0 0 0 0 316
+setTemperature initSimulation 198 4 0 316 0
+randomDisplacements initSimulation 199 4 0 316 0
+initAtomHaloExchange initSimulation 201 24 1397 1397 1397
+profileStart initSimulation 204 9 0 0
+redistributeAtoms initSimulation 205 4 0 316
+profileStop initSimulation 206 9 0 0
+profileStart initSimulation 208 9 0 0
+computeForce initSimulation 209 4 0 316
+profileStop initSimulation 210 9 0 0
+kineticEnergy initSimulation 212 4 0 316
+maxOccupancy printSimulationDataYaml 381 17 0 357
+printRank printSimulationDataYaml 384 10 0
+fprintf printSimulationDataYaml 387 4 0 676 1356
+fprintf printSimulationDataYaml 388 4 0 676 1359 0
+fprintf printSimulationDataYaml 390 4 0 676 1360 0 0 0
+fprintf printSimulationDataYaml 392 4 0 676 1360 0 0 0
+printSeparator printSimulationDataYaml 394 4 0 676
+fprintf printSimulationDataYaml 395 4 0 676 1362
+fprintf printSimulationDataYaml 396 4 0 676 1363 0 0 0
+fprintf printSimulationDataYaml 398 4 0 676 1364 0 0 0 0
+fprintf printSimulationDataYaml 401 4 0 676 1360 0 0 0
+fprintf printSimulationDataYaml 403 4 0 676 1366 0 0 0
+fprintf printSimulationDataYaml 407 4 0 676 1367 0 0
+printSeparator printSimulationDataYaml 409 4 0 676
+fprintf printSimulationDataYaml 410 4 0 676 1368
+anon printSimulationDataYaml 411 4 0 676 357
+printSeparator printSimulationDataYaml 424 4 0 676
+fprintf printSimulationDataYaml 425 4 0 676 1369
+fprintf printSimulationDataYaml 426 4 0 676 1364 0
+fprintf printSimulationDataYaml 427 4 0 676 1366 0 0
+fprintf printSimulationDataYaml 428 4 0 676 1372 0
+fprintf printSimulationDataYaml 429 4 0 676 1373 0
+fflush printSimulationDataYaml 431 4 0 676
+sumAtoms initValidate 282 4 0 733
+malloc initValidate 283 31 685 0
+printRank initValidate 287 8 0
+fprintf initValidate 289 7 0 904 1378
+printSeparator initValidate 290 7 0 904
+fprintf initValidate 291 7 0 904 1372 0 0
+fprintf initValidate 293 7 0 904 1378
+profileStart sumAtoms 336 9 0 0
+addIntParallel sumAtoms 337 4 0 780 780 0
+profileStop sumAtoms 338 9 0 0
+printRank printThings 352 10 0
+fprintf printThings 358 7 0 904 1376
+fflush printThings 361 7 0 904
+fprintf printThings 372 4 0 904 1377 0 0 0 0 0 0 0 0
+printRank validateResult 300 8 0
+fprintf validateResult 306 7 0 904 1378
+fprintf validateResult 307 7 0 904 1378
+fprintf validateResult 308 7 0 904 1379
+fprintf validateResult 310 7 0 904 1380 0
+fprintf validateResult 311 7 0 904 1380 0
+fprintf validateResult 312 7 0 904 1379 0
+fprintf validateResult 315 10 0 904 1383 0
+fprintf validateResult 320 10 0 904 1384
+fprintf validateResult 321 10 0 904 1380 0
+fprintf validateResult 322 10 0 904 1384
+free destroySimulation 226 14 0 1030
+destroyLinkCells destroySimulation 227 4 0 1021
+destroyAtoms destroySimulation 228 4 0 1030
+destroyHaloExchange destroySimulation 229 4 0 1021
+free destroySimulation 230 4 0 1030
+free destroySimulation 231 4 0 1030
+free destroySimulation 232 4 0 1021
+yamlEnd finalizeSubsystems 252 4 0
+initEamPot initPotential 261 22 1120 1123 1124 1125
+initLjPot initPotential 261 75 1120
+__assert_rtn initPotential 265 35 0 1394 1392 0 1389
+getNRanks sanityChecks 441 18 0
+printRank sanityChecks 444 11 0
+fprintf sanityChecks 444 25 0 904 1366
+printRank sanityChecks 460 11 0
+fprintf sanityChecks 460 25 0 904 1388 0 0 0
+strcasecmp sanityChecks 468 8 0 1283 1389
+printRank sanityChecks 471 11 0
+fprintf sanityChecks 471 25 0 904 1377 1283
+bcastParallel sanityChecks 477 4 0 1137 0 0
+__assert_rtn sanityChecks 480 53 0 1357 1392 0 1362
+exit sanityChecks 482 24 0 0
+malloc initSpecies 271 41 1289 0
+strcpy initSpecies 273 4 1298 1289 1313

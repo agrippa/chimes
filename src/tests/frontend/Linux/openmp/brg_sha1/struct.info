@@ -1,2 +1,0 @@
-sha1_ctx_s 0 count "[ 2 x unsigned int ]" hash "[ 5 x unsigned int ]" wbuf "[ 16 x unsigned int ]"
-state_t 0 state "[ 20 x unsigned char ]"

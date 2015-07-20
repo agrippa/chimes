@@ -1,0 +1,17 @@
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 42 6 len=15 verifyAlignment_npm
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 42 73 const int ____chimes_did_disable0 = new_stack((void *)(&verifyAlignment), "verifyAlignment", &____must_manage_verifyAlignment, 3, 0, (size_t)(6158440427830137697UL), (size_t)(6158440427830137463UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 358 1 rm_stack(false, 0UL, "verifyAlignment", &____must_manage_verifyAlignment, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 42 74 const int ____chimes_did_disable0 = new_stack((void *)(&verifyAlignment), "verifyAlignment", &____must_manage_verifyAlignment, 3, 0, (size_t)(6158440427830137697UL), (size_t)(6158440427830137463UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 42 287 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 44 3 int t; int r; int c; int numReports; int maxThreads; int mainMatch; int matchMatch; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 44 61 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 45 3 int myTaskID; int numTasks; int thread; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 45 33 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 46 3 char *main; char *match; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 46 21 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 47 3 long long score; long long minScore; long long maxScore; long long largestScore; long long smallestScore; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 47 67 
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 42 6 len=15 verifyAlignment_quick
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 42 286  ; 
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 42 6 len=15 verifyAlignment_resumable
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c 42 286  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

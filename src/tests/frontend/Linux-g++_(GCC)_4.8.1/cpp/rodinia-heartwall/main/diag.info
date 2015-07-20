@@ -1,0 +1,430 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 8 len=7 seconds_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 41 6 len=10 write_data_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 189 25  ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 189 46 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 210 25  ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 210 46 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 231 29  ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 231 63 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 232 29  ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 232 63 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 240 24  ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 240 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 272 24  ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 272 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 304 28  ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 304 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 305 28  ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 305 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 327 37  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 327 73 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 328 41  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 328 77 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 329 34  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * (2*pub.tSize+2*pub.sSize+1), 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 329 84 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 330 32  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * (2*pub.tSize+2*pub.sSize+1), 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 330 80 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 343 28  ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 343 46 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 344 32  ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 344 50 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 357 31  ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 357 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 358 31  ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 358 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 365 25  ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.endoPoints) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.endoPoints, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 365 63 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 366 24  ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.epiPoints) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.epiPoints, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 366 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 404 29  ({ void *____chimes_tmp_ptr = malloc((pub.conv_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.conv_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 404 48 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 426 32  ({ void *____chimes_tmp_ptr = malloc((pub.in2_pad_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in2_pad_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 426 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 450 32  ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in2_sub_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 450 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 471 37  ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub2_sqr_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in2_sub2_sqr_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 471 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 506 30  ({ void *____chimes_tmp_ptr = malloc((pub.tMask_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.tMask_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 506 50 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 536 34  ({ void *____chimes_tmp_ptr = malloc((pub.mask_conv_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.mask_conv_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 536 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 587 3  ({ free_helper((((unsigned char *)pub.d_frame) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_frame) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 587 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 638 2  ({ free_helper((((unsigned char *)pub.d_endoRow) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_endoRow) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 638 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 639 2  ({ free_helper((((unsigned char *)pub.d_endoCol) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_endoCol) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 639 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 640 2  ({ free_helper((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 640 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 641 2  ({ free_helper((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 641 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 642 2  ({ free_helper((((unsigned char *)pub.d_endoT) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_endoT) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 642 18 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 644 2  ({ free_helper((((unsigned char *)pub.d_epiRow) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_epiRow) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 644 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 645 2  ({ free_helper((((unsigned char *)pub.d_epiCol) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_epiCol) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 645 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 646 2  ({ free_helper((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 646 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 647 2  ({ free_helper((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 647 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 648 2  ({ free_helper((((unsigned char *)pub.d_epiT) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_epiT) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 648 17 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 655 3  ({ free_helper((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 655 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 656 3  ({ free_helper((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 656 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 657 3  ({ free_helper((((unsigned char *)priv[i].par_max_val) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].par_max_val) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 657 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 658 3  ({ free_helper((((unsigned char *)priv[i].par_max_coo) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].par_max_coo) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 658 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 660 3  ({ free_helper((((unsigned char *)priv[i].d_in2) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in2) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 660 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 661 3  ({ free_helper((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 661 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 663 3  ({ free_helper((((unsigned char *)priv[i].d_in_mod) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in_mod) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 663 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 664 3  ({ free_helper((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 664 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 666 3  ({ free_helper((((unsigned char *)priv[i].d_conv) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_conv) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 666 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 668 3  ({ free_helper((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 668 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 670 3  ({ free_helper((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 670 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 672 3  ({ free_helper((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 672 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 674 3  ({ free_helper((((unsigned char *)priv[i].d_tMask) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_tMask) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 674 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 675 3  ({ free_helper((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 675 27 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 2 alias_group_changed(____alias_loc_id_7); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 189 25  ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 189 46 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 210 25  ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 210 46 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 231 29  ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 231 63 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 232 29  ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 232 63 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 240 24  ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 240 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 272 24  ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 272 44 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 304 28  ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 304 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 305 28  ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 305 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 327 37  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 327 73 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 328 41  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 328 77 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 329 34  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * (2*pub.tSize+2*pub.sSize+1), 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 329 84 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 330 32  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * (2*pub.tSize+2*pub.sSize+1), 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 330 80 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 343 28  ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 343 46 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 344 32  ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 344 50 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 357 31  ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 357 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 358 31  ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 358 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 365 25  ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.endoPoints) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.endoPoints, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 365 63 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 366 24  ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.epiPoints) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.epiPoints, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 366 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 404 29  ({ void *____chimes_tmp_ptr = malloc((pub.conv_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.conv_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 404 48 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 426 32  ({ void *____chimes_tmp_ptr = malloc((pub.in2_pad_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in2_pad_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 426 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 450 32  ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in2_sub_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 450 54 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 471 37  ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub2_sqr_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.in2_sub2_sqr_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 471 64 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 506 30  ({ void *____chimes_tmp_ptr = malloc((pub.tMask_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.tMask_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 506 50 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 536 34  ({ void *____chimes_tmp_ptr = malloc((pub.mask_conv_mem) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, pub.mask_conv_mem, 1262408436119492299UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 536 58 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 587 3  ({ free_helper((((unsigned char *)pub.d_frame) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_frame) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 587 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 638 2  ({ free_helper((((unsigned char *)pub.d_endoRow) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_endoRow) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 638 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 639 2  ({ free_helper((((unsigned char *)pub.d_endoCol) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_endoCol) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 639 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 640 2  ({ free_helper((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 640 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 641 2  ({ free_helper((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 641 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 642 2  ({ free_helper((((unsigned char *)pub.d_endoT) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_endoT) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 642 18 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 644 2  ({ free_helper((((unsigned char *)pub.d_epiRow) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_epiRow) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 644 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 645 2  ({ free_helper((((unsigned char *)pub.d_epiCol) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_epiCol) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 645 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 646 2  ({ free_helper((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 646 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 647 2  ({ free_helper((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 647 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 648 2  ({ free_helper((((unsigned char *)pub.d_epiT) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)pub.d_epiT) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 648 17 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 655 3  ({ free_helper((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 655 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 656 3  ({ free_helper((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 656 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 657 3  ({ free_helper((((unsigned char *)priv[i].par_max_val) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].par_max_val) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 657 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 658 3  ({ free_helper((((unsigned char *)priv[i].par_max_coo) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].par_max_coo) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 658 27 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 660 3  ({ free_helper((((unsigned char *)priv[i].d_in2) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in2) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 660 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 661 3  ({ free_helper((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 661 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 663 3  ({ free_helper((((unsigned char *)priv[i].d_in_mod) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in_mod) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 663 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 664 3  ({ free_helper((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 664 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 666 3  ({ free_helper((((unsigned char *)priv[i].d_conv) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_conv) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 666 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 668 3  ({ free_helper((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 668 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 670 3  ({ free_helper((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 670 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 672 3  ({ free_helper((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 672 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 674 3  ({ free_helper((((unsigned char *)priv[i].d_tMask) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_tMask) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 674 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 675 3  ({ free_helper((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *)), 1262408436119492299UL);free((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 675 27 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 30 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_10, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 31 1 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_10, ____chimes_did_disable0, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 66 3 rm_stack(false, 0UL, "write_data", &____must_manage_write_data, ____alias_loc_id_11, ____chimes_did_disable1, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 49 18 const int ____chimes_did_disable1 = new_stack((void *)(&write_data), "write_data", &____must_manage_write_data, 9, 0, (size_t)(1262408436119491647UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1262408436119491651UL), (size_t)(1262408436119491652UL), (size_t)(0UL), (size_t)(1262408436119491654UL), (size_t)(1262408436119491655UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 106 1 rm_stack(false, 0UL, "write_data", &____must_manage_write_data, ____alias_loc_id_11, ____chimes_did_disable1, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 147 62 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 167 58 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 174 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 677 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 34 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 1, (size_t)(0UL), (size_t)(1262408436119493285UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 678 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 19 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 127 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 27 5  struct timeval tp; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 27 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 28 5  struct timezone tzp; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 28 24 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 29 5  int i;  i = (gettimeofday(&tp, &tzp)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 29 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 30 6 double ____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 30 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 49 19 const int ____chimes_did_disable1 = new_stack((void *)(&write_data), "write_data", &____must_manage_write_data, 9, 0, (size_t)(1262408436119491647UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1262408436119491651UL), (size_t)(1262408436119491652UL), (size_t)(0UL), (size_t)(1262408436119491654UL), (size_t)(1262408436119491655UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 49 361 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 55 2 FILE *fid; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 55 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 56 2 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 56 9 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 57 2 char c; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 57 8 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 35 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(1262408436119493285UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 265 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 121 2 int i; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 121 7 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 2 int frames_processed; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 2  public_struct pub; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 2  private_struct priv[51]; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 25 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 133 5  double start_time;  start_time = (seconds()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 133 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 141 2 char *video_file_name; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 141 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 2  avi_t *d_frames;  d_frames = ((avi_t*)AVI_open_input_file(video_file_name, 1)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 67 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 147 7 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 147 31 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 167 4 int ____chimes_ret_var_2; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 167 28 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 170 2 int omp_num_threads; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 170 21 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 174 6 int ____chimes_ret_var_3; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 174 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 189 29 void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 189 97 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 210 29 void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 210 97 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 231 33 void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 231 114 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 232 33 void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 232 114 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 240 28 void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 240 95 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 272 28 void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 272 95 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 304 32 void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 304 112 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 305 32 void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 305 112 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 327 41 void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 327 128 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 328 45 void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 328 132 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 329 38 void *____chimes_tmp_ptr = malloc((sizeof(float) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 329 143 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 330 36 void *____chimes_tmp_ptr = malloc((sizeof(int) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 330 139 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 343 32 void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 343 97 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 344 36 void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 344 101 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 357 35 void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 357 103 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 358 35 void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 358 103 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 365 29 void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.endoPoints) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 365 114 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 366 28 void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.epiPoints) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 366 112 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 404 33 void *____chimes_tmp_ptr = malloc((pub.conv_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 404 99 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 426 36 void *____chimes_tmp_ptr = malloc((pub.in2_pad_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 426 105 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 450 36 void *____chimes_tmp_ptr = malloc((pub.in2_sub_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 450 105 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 471 41 void *____chimes_tmp_ptr = malloc((pub.in2_sub2_sqr_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 471 115 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 506 34 void *____chimes_tmp_ptr = malloc((pub.tMask_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 506 101 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 536 38 void *____chimes_tmp_ptr = malloc((pub.mask_conv_mem) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 536 109 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 609 5  double end_time;  end_time = (seconds()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 609 32 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 677 6 int ____chimes_ret_var_4; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 677 30 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 133 26  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 21  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 146 6  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 43  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 152 2  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 153 2  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 157 5  call_lbl_6: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 557 9  call_lbl_7: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 559 3  call_lbl_8: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 564 9  call_lbl_9: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 575 9  call_lbl_10: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 597 5  call_lbl_11: 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 609 24  call_lbl_12: 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 8 len=7 seconds_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 126  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 41 6 len=10 write_data_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 49 360  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 5 len=4 main_quick
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 133 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 133 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 54 (____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({  calling((void*)AVI_open_input_file, 1, ____alias_loc_id_4, 1262408436119493090UL, 2, (size_t)(1262408436119493080UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_4); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 92 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 146 19 (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({  calling((void*)AVI_print_error, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(1262408436119493326UL)); (AVI_print_error)((char *)"Error with AVI_open_input_file"); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_1); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 146 76 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 69 (____chimes_does_checkpoint_AVI_video_frames_npm ? ( ({  calling((void*)AVI_video_frames, 3, ____alias_loc_id_7, 0UL, 1, (size_t)(1262408436119493090UL)); (AVI_video_frames)(d_frames); }) ) : (({ calling_npm("AVI_video_frames", ____alias_loc_id_7); (*____chimes_extern_func_AVI_video_frames)(d_frames); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 94 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 152 32 (____chimes_does_checkpoint_AVI_video_height_npm ? ( ({  calling((void*)AVI_video_height, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(1262408436119493090UL)); (AVI_video_height)(d_frames); }) ) : (({ calling_npm("AVI_video_height", ____alias_loc_id_5); (*____chimes_extern_func_AVI_video_height)(d_frames); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 152 57 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 153 32 (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({  calling((void*)AVI_video_width, 5, ____alias_loc_id_2, 0UL, 1, (size_t)(1262408436119493090UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_2); (*____chimes_extern_func_AVI_video_width)(d_frames); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 153 56 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 157 18 (____chimes_does_checkpoint_AVI_close_npm ? ( ({  calling((void*)AVI_close, 6, ____alias_loc_id_0, 0UL, 1, (size_t)(1262408436119493090UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_0); (*____chimes_extern_func_AVI_close)(d_frames); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 157 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 557 41 (____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({  calling((void*)AVI_open_input_file, 7, ____alias_loc_id_9, 1262408436119493090UL, 2, (size_t)(1262408436119493080UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_9); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 557 79 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 559 30 (____chimes_does_checkpoint_get_frame_npm ? ( ({  calling((void*)get_frame, 8, ____alias_loc_id_8, 1262408436119492299UL, 5, (size_t)(1262408436119493090UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_frame)(d_frames, pub.frame_no, 0, 0, 1); }) ) : (({ calling_npm("get_frame", ____alias_loc_id_8); (*____chimes_extern_func_get_frame)(d_frames, pub.frame_no, 0, 0, 1); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 563 18 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 564 22 (____chimes_does_checkpoint_AVI_close_npm ? ( ({  calling((void*)AVI_close, 9, ____alias_loc_id_6, 0UL, 1, (size_t)(1262408436119493090UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_6); (*____chimes_extern_func_AVI_close)(d_frames); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 564 40 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 575 23 (____chimes_does_checkpoint_kernel_npm ? ( ({  calling((void*)kernel, 10, ____alias_loc_id_3, 0UL, 2, (size_t)(1262408436119491676UL), (size_t)(1262408436119491668UL)); (kernel)(pub, priv); }) ) : (({ calling_npm("kernel", ____alias_loc_id_3); (*____chimes_extern_func_kernel)(pub, priv); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 575 39 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 597 19 checkpoint_transformed(11, 0)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 597 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 609 50 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 609 58 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 22 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 20 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 26 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 133 6 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 133 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 141 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 141 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 18 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 262  ; avi_t *d_frames;
+# 114
+char *video_file_name;
+# 114
+double start_time;
+# 114
+private_struct priv[51];
+# 114
+public_struct pub;
+# 114
+int frames_processed;
+# 114
+ register_stack_vars(6, "main|d_frames|0", &____must_checkpoint_main_d_frames_0, "%struct.avi_t*", (void *)(&d_frames), (size_t)8, 1, 0, 0, "main|video_file_name|0", (int *)0x0, "i8*", (void *)(&video_file_name), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|priv|0", (int *)0x0, "[51 x %struct._private_struct]", (void *)(priv), (size_t)8160, 0, 0, 0, "main|pub|0", (int *)0x0, "%struct._public_struct = type { i32, i32, i32, float, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32, float*, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 }", (void *)(&pub), (size_t)384, 0, 1, 11, (int)__builtin_offsetof(struct _public_struct, d_endoRow), (int)__builtin_offsetof(struct _public_struct, d_endoCol), (int)__builtin_offsetof(struct _public_struct, d_tEndoRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEndoColLoc), (int)__builtin_offsetof(struct _public_struct, d_endoT), (int)__builtin_offsetof(struct _public_struct, d_epiRow), (int)__builtin_offsetof(struct _public_struct, d_epiCol), (int)__builtin_offsetof(struct _public_struct, d_tEpiRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEpiColLoc), (int)__builtin_offsetof(struct _public_struct, d_epiT), (int)__builtin_offsetof(struct _public_struct, d_frame), "main|frames_processed|0", (int *)0x0, "i32", (void *)(&frames_processed), (size_t)4, 0, 0, 0);  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 8 len=7 seconds_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 126  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 41 6 len=10 write_data_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 49 360  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 5 len=4 main_resumable
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 133 53 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 133 61 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 54 (____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({  calling((void*)AVI_open_input_file, 1, ____alias_loc_id_4, 1262408436119493090UL, 2, (size_t)(1262408436119493080UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_4); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 92 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 146 19 (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({  char * ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg2 = ((char *)"Error with AVI_open_input_file");  }  calling((void*)AVI_print_error, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(1262408436119493326UL)); (AVI_print_error)(____chimes_arg2); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_1); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 146 76 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 69 (____chimes_does_checkpoint_AVI_video_frames_npm ? ( ({  calling((void*)AVI_video_frames, 3, ____alias_loc_id_7, 0UL, 1, (size_t)(1262408436119493090UL)); (AVI_video_frames)(d_frames); }) ) : (({ calling_npm("AVI_video_frames", ____alias_loc_id_7); (*____chimes_extern_func_AVI_video_frames)(d_frames); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 94 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 152 32 (____chimes_does_checkpoint_AVI_video_height_npm ? ( ({  calling((void*)AVI_video_height, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(1262408436119493090UL)); (AVI_video_height)(d_frames); }) ) : (({ calling_npm("AVI_video_height", ____alias_loc_id_5); (*____chimes_extern_func_AVI_video_height)(d_frames); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 152 57 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 153 32 (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({  calling((void*)AVI_video_width, 5, ____alias_loc_id_2, 0UL, 1, (size_t)(1262408436119493090UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_2); (*____chimes_extern_func_AVI_video_width)(d_frames); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 153 56 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 157 18 (____chimes_does_checkpoint_AVI_close_npm ? ( ({  calling((void*)AVI_close, 6, ____alias_loc_id_0, 0UL, 1, (size_t)(1262408436119493090UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_0); (*____chimes_extern_func_AVI_close)(d_frames); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 157 36 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 557 41 (____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({  calling((void*)AVI_open_input_file, 7, ____alias_loc_id_9, 1262408436119493090UL, 2, (size_t)(1262408436119493080UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_9); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 557 79 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 559 30 (____chimes_does_checkpoint_get_frame_npm ? ( ({  int ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg10 = (pub.frame_no);  }  calling((void*)get_frame, 8, ____alias_loc_id_8, 1262408436119492299UL, 5, (size_t)(1262408436119493090UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_frame)(d_frames, ____chimes_arg10, 0, 0, 1); }) ) : (({ calling_npm("get_frame", ____alias_loc_id_8); (*____chimes_extern_func_get_frame)(d_frames, pub.frame_no, 0, 0, 1); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 563 18 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 564 22 (____chimes_does_checkpoint_AVI_close_npm ? ( ({  calling((void*)AVI_close, 9, ____alias_loc_id_6, 0UL, 1, (size_t)(1262408436119493090UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_6); (*____chimes_extern_func_AVI_close)(d_frames); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 564 40 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 575 23 (____chimes_does_checkpoint_kernel_npm ? ( ({  public_struct ____chimes_arg15;  if (!____chimes_replaying) { ____chimes_arg15 = (pub);  }  calling((void*)kernel, 10, ____alias_loc_id_3, 0UL, 2, (size_t)(1262408436119491676UL), (size_t)(1262408436119491668UL)); (kernel)(____chimes_arg15, priv); }) ) : (({ calling_npm("kernel", ____alias_loc_id_3); (*____chimes_extern_func_kernel)(pub, priv); })))
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 575 39 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 597 19 checkpoint_transformed(11, 0)
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 597 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 609 50 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 609 58 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 22 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 20 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 26 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 133 6 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 133 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 141 2 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 141 23 
+RemoveTextBegin /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 3 
+RemoveTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 18 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 262  ; avi_t *d_frames;
+# 114
+char *video_file_name;
+# 114
+double start_time;
+# 114
+private_struct priv[51];
+# 114
+public_struct pub;
+# 114
+int frames_processed;
+# 114
+ register_stack_vars(6, "main|d_frames|0", &____must_checkpoint_main_d_frames_0, "%struct.avi_t*", (void *)(&d_frames), (size_t)8, 1, 0, 0, "main|video_file_name|0", (int *)0x0, "i8*", (void *)(&video_file_name), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|priv|0", (int *)0x0, "[51 x %struct._private_struct]", (void *)(priv), (size_t)8160, 0, 0, 0, "main|pub|0", (int *)0x0, "%struct._public_struct = type { i32, i32, i32, float, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32, float*, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 }", (void *)(&pub), (size_t)384, 0, 1, 11, (int)__builtin_offsetof(struct _public_struct, d_endoRow), (int)__builtin_offsetof(struct _public_struct, d_endoCol), (int)__builtin_offsetof(struct _public_struct, d_tEndoRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEndoColLoc), (int)__builtin_offsetof(struct _public_struct, d_endoT), (int)__builtin_offsetof(struct _public_struct, d_epiRow), (int)__builtin_offsetof(struct _public_struct, d_epiCol), (int)__builtin_offsetof(struct _public_struct, d_tEpiRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEpiColLoc), (int)__builtin_offsetof(struct _public_struct, d_epiT), (int)__builtin_offsetof(struct _public_struct, d_frame), "main|frames_processed|0", (int *)0x0, "i32", (void *)(&frames_processed), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { chimes_error(); } }  }  

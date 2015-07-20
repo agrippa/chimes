@@ -1,0 +1,68 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 34 1 len=10 kernel_cpu_npm
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 48 1 const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu), "kernel_cpu", &____must_manage_kernel_cpu, 11, 11, (size_t)(0UL), (size_t)(7567338248737025366UL), (size_t)(7567338248737025367UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7567338248737025372UL), (size_t)(7567338248737025373UL), (size_t)(7567338248737025374UL), (size_t)(7567338248737025375UL), "kernel_cpu|cores_arg|0", &____must_checkpoint_kernel_cpu_cores_arg_0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "kernel_cpu|records|0", &____must_checkpoint_kernel_cpu_records_0, "%struct.record*", (void *)(&records), (size_t)8, 1, 0, 0, "kernel_cpu|knodes|0", &____must_checkpoint_kernel_cpu_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0, "kernel_cpu|knodes_elem|0", &____must_checkpoint_kernel_cpu_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0, "kernel_cpu|order|0", &____must_checkpoint_kernel_cpu_order_0, "i32", (void *)(&order), (size_t)4, 0, 0, 0, "kernel_cpu|maxheight|0", &____must_checkpoint_kernel_cpu_maxheight_0, "i64", (void *)(&maxheight), (size_t)8, 0, 0, 0, "kernel_cpu|count|0", &____must_checkpoint_kernel_cpu_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "kernel_cpu|currKnode|0", &____must_checkpoint_kernel_cpu_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0, "kernel_cpu|offset|0", &____must_checkpoint_kernel_cpu_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0, "kernel_cpu|keys|0", &____must_checkpoint_kernel_cpu_keys_0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "kernel_cpu|ans|0", &____must_checkpoint_kernel_cpu_ans_0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 145 1 rm_stack(false, 0UL, "kernel_cpu", &____must_manage_kernel_cpu, ____alias_loc_id_3, ____chimes_did_disable0, false); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 48 2 const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu), "kernel_cpu", &____must_manage_kernel_cpu, 11, 11, (size_t)(0UL), (size_t)(7567338248737025366UL), (size_t)(7567338248737025367UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7567338248737025372UL), (size_t)(7567338248737025373UL), (size_t)(7567338248737025374UL), (size_t)(7567338248737025375UL), "kernel_cpu|cores_arg|0", &____must_checkpoint_kernel_cpu_cores_arg_0, "i32", (void *)(&cores_arg), (size_t)4, 0, 0, 0, "kernel_cpu|records|0", &____must_checkpoint_kernel_cpu_records_0, "%struct.record*", (void *)(&records), (size_t)8, 1, 0, 0, "kernel_cpu|knodes|0", &____must_checkpoint_kernel_cpu_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0, "kernel_cpu|knodes_elem|0", &____must_checkpoint_kernel_cpu_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0, "kernel_cpu|order|0", &____must_checkpoint_kernel_cpu_order_0, "i32", (void *)(&order), (size_t)4, 0, 0, 0, "kernel_cpu|maxheight|0", &____must_checkpoint_kernel_cpu_maxheight_0, "i64", (void *)(&maxheight), (size_t)8, 0, 0, 0, "kernel_cpu|count|0", &____must_checkpoint_kernel_cpu_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "kernel_cpu|currKnode|0", &____must_checkpoint_kernel_cpu_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0, "kernel_cpu|offset|0", &____must_checkpoint_kernel_cpu_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0, "kernel_cpu|keys|0", &____must_checkpoint_kernel_cpu_keys_0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "kernel_cpu|ans|0", &____must_checkpoint_kernel_cpu_ans_0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 48 1677 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 55 2 long long time0; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 55 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 56 2 long long time1; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 56 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 57 2 long long time2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 57 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 65 2 int max_nthreads; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 65 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 77 2 int threadsPerBlock; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 77 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 87 2 int thid; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 87 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 88 2 int bid; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 88 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 89 2 int i; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 89 7 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 2  call_lbl_0: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 2  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 2  call_lbl_2: 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 34 1 len=10 kernel_cpu_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 23  ({  calling((void*)get_time, 0, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 32 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 23  ({  calling((void*)get_time, 1, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 32 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 23  ({  calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 32 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 55 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 55 17 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 56 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 56 17 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 77 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 77 21 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 93 34  { 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 129 2  } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 48 1676  ; int threadsPerBlock;
+# 48
+long long time1;
+# 48
+long long time0;
+# 48
+ if (____must_checkpoint_kernel_cpu_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_time1_0 || ____must_checkpoint_kernel_cpu_time0_0) { register_stack_vars(3, "kernel_cpu|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu|time1|0", &____must_checkpoint_kernel_cpu_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu|time0|0", &____must_checkpoint_kernel_cpu_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 34 1 len=10 kernel_cpu_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 23  ({  calling((void*)get_time, 0, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 59 32 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 23  ({  calling((void*)get_time, 1, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 80 32 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 23  ({  calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 131 32 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 55 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 55 17 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 56 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 56 17 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 77 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 77 21 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 93 34  { 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 129 2  } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c 48 1676  ; int threadsPerBlock;
+# 48
+long long time1;
+# 48
+long long time0;
+# 48
+ if (____must_checkpoint_kernel_cpu_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_time1_0 || ____must_checkpoint_kernel_cpu_time0_0) { register_stack_vars(3, "kernel_cpu|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu|time1|0", &____must_checkpoint_kernel_cpu_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu|time0|0", &____must_checkpoint_kernel_cpu_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  

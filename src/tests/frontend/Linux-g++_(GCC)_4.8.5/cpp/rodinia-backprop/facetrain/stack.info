@@ -1,0 +1,12 @@
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c seconds|tzp|0 " %struct.timezone = type { i32, i32 } " 64 0 1 timezone 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c seconds|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c seconds|____chimes_ret_var_0|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c backprop_face|net|0 " %struct.BPNN* " 64 1 0 1 bpnn_train_kernel load
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c backprop_face|out_err|0 " float " 32 0 0 1 backprop_face
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c backprop_face|hid_err|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c backprop_face|start|0 " double " 64 0 0 1 bpnn_create bpnn_free bpnn_train_kernel load
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c backprop_face|end|0 " double " 64 0 0 1 bpnn_free
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c setup|argc|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c setup|argv|0 " i8** " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c setup|seed|0 " i32 " 32 0 0 0

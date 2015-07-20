@@ -1,0 +1,3 @@
+BPNN 768 1 input_n "int" hidden_n "int" output_n "int" input_units "float*" hidden_units "float*" output_units "float*" hidden_delta "float*" output_delta "float*" target "float*" input_weights "float**" hidden_weights "float**" input_prev_weights "float**" hidden_prev_weights "float**"
+timeval 128 0 tv_sec "long int" tv_usec "long int"
+timezone 64 0 tz_minuteswest "int" tz_dsttime "int"

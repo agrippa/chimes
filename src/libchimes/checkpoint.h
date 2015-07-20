@@ -12,6 +12,6 @@ extern void checkpoint();
 // TESTING ONLY
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
-        void (*fp)(void *));
+        void (*____chimes_fp)(void *));
 
 #endif

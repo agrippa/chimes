@@ -1,0 +1,18 @@
+del _Z3deliPiS_S_ 0 DOES_NOT
+add _Z3addiPiS_S_ 0 DOES_NOT
+calc_score _Z10calc_scoreiiiiii 0 DOES_NOT
+get_matrix _Z10get_matrixPiS_i 0 DOES_NOT
+forward_pass _Z12forward_passPcS_iiPiS0_S0_ii 0 DOES_NOT
+reverse_pass _Z12reverse_passPcS_iiPiS0_iii 0 DOES_NOT
+diff _Z4diffiiiiiiPiS_S_iiii 0 DOES_NOT del 279 29 add 283 20 calc_score 292 15 del 297 10 add 298 10 add 300 25 add 302 25 calc_score 326 19 calc_score 351 19 diff 381 7 diff 382 7 diff 384 7 del 385 7 diff 386 7
+tracepath _Z9tracepathiiPiS_S_ii 0 DOES_NOT
+pairalign _Z9pairaligniiii 0 DOES get_matrix 434 13 forward_pass 472 19 reverse_pass 473 19 diff 478 19 tracepath 479 30 checkpoint 495 4
+pairalign_seq _Z13pairalign_seqiiii 0 DOES get_matrix 510 13 forward_pass 538 16 reverse_pass 539 16 diff 544 16 tracepath 545 27 checkpoint 555 7
+init_matrix _Z11init_matrixv 0 DOES_NOT
+pairalign_init _Z14pairalign_initPc 0 MAY bots_error 586 7 init_matrix 589 4 readseqs 592 12
+align_init _Z10align_initv 0 DOES_NOT
+align _Z5alignv 0 DOES pairalign 620 4
+align_seq_init _Z14align_seq_initv 0 DOES_NOT
+align_seq _Z9align_seqv 0 DOES pairalign_seq 636 4
+align_end _Z9align_endv 0 DOES_NOT
+align_verify _Z12align_verifyv 0 DOES_NOT

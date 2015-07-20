@@ -1,14 +1,14 @@
-initEamPot 26 1 2 3 4
-eamForce 0 96 97 128 130 131 132 133 134 135 136 137 138 139 140 141 144 166 984
-eamPrint 0 985 986 987
-eamDestroy 0 1032 1033 1068
-eamReadSetfl 0 1071 1072 1073 1075 1086 1087 1088 1089 1090 1091 1092 1093 1192 1321
-eamReadFuncfl 0 1324 1325 1326 1328 1339 1340 1341 1342 1343 1344 1345 1346 1439 1579
-typeNotSupported 0 1582 1583
-eamBcastPotential 0 1597
-fileNotFound 0 1701 1702
-initInterpolationObject 1760 1725 1726 1727 1728 1729 1730 1758 1760
-notAlloyReady 0 1860
-bcastInterpolationObject 0
-destroyInterpolationObject 0 1978 1986 2017
-interpolate 0 2030 2031 2032 2033 2034 2035 2036 2037 2183 2184
+initEamPot 26 4 1 2 3 4 4 eamBcastPotential 1 26 eamReadFuncfl 3 26 84 85 eamReadSetfl 3 26 84 85 typeNotSupported 2 86 2190
+eamForce 0 18 96 97 128 130 131 132 133 134 135 136 137 138 139 140 141 144 166 984 3 getNeighborBoxes 2 101 166 haloExchange 1 166 interpolate 3 142 143 166
+eamPrint 0 3 985 986 987 0
+eamDestroy 0 3 1032 1033 1068 2 destroyHaloExchange 1 1043 destroyInterpolationObject 1 1043
+eamReadSetfl 0 15 1071 1072 1073 1074 1075 1086 1087 1088 1089 1090 1091 1092 1093 1192 1321 3 fileNotFound 2 1074 2216 initInterpolationObject 1 1192 notAlloyReady 1 2216
+eamReadFuncfl 0 15 1324 1325 1326 1327 1328 1339 1340 1341 1342 1343 1344 1345 1346 1439 1579 2 fileNotFound 2 1327 2207 initInterpolationObject 1 1439
+typeNotSupported 0 2 1582 1583 0
+eamBcastPotential 0 1 1597 1 bcastInterpolationObject 1 1693
+interpolate 0 10 1705 1706 1707 1708 1709 1710 1711 1712 1858 1859 0
+destroyInterpolationObject 0 3 1866 1874 1905 0
+fileNotFound 0 2 1913 1914 0
+initInterpolationObject 1972 8 1937 1938 1939 1940 1941 1942 1970 1972 0
+notAlloyReady 0 1 2071 0
+bcastInterpolationObject 0 0 1 bcastParallel 2 2086 2157

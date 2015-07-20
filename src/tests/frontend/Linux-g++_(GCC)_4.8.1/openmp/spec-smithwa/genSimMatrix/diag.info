@@ -1,0 +1,40 @@
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 86 14 len=12 genSimMatrix_npm
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 107 36  ({ void *____chimes_tmp_ptr = malloc((sizeof(SIMMATRIX_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 10609085440105252876UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 107 64 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 14 len=13 freeSimMatrix_npm
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 223 5  ({ free_helper((((unsigned char *)M) - sizeof(void *)), 10609085440105252783UL);free((((unsigned char *)M) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 223 11 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 107 36  ({ void *____chimes_tmp_ptr = malloc((sizeof(SIMMATRIX_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 10609085440105252876UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 107 64 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 223 5  ({ free_helper((((unsigned char *)M) - sizeof(void *)), 10609085440105252783UL);free((((unsigned char *)M) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 223 11 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 215 78 rm_stack(true, 10609085440105252876UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 88 19 const int ____chimes_did_disable0 = new_stack((void *)(&genSimMatrix), "genSimMatrix", &____must_manage_genSimMatrix, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 216 1 rm_stack(true, 10609085440105252876UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 225 75 rm_stack(true, 10609085440105252876UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 44 const int ____chimes_did_disable1 = new_stack((void *)(&freeSimMatrix), "freeSimMatrix", &____must_manage_freeSimMatrix, 1, 0, (size_t)(10609085440105252783UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 226 1 rm_stack(true, 10609085440105252876UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 88 20 const int ____chimes_did_disable0 = new_stack((void *)(&genSimMatrix), "genSimMatrix", &____must_manage_genSimMatrix, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 88 248 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 90 3  SIMMATRIX_T *simMatrix;  simMatrix = (__null) ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 90 32 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 91 3 char *aa; char *codon; char base; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 91 25 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 92 3 int i; int j; int k; int ccode; int ccode2; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 92 29 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 107 40 void *____chimes_tmp_ptr = malloc((sizeof(SIMMATRIX_T)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 107 113 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 215 4 SIMMATRIX_T *____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 215 38 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 45 const int ____chimes_did_disable1 = new_stack((void *)(&freeSimMatrix), "freeSimMatrix", &____must_manage_freeSimMatrix, 1, 0, (size_t)(10609085440105252783UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 205 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 225 4 SIMMATRIX_T *____chimes_ret_var_1; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 225 38 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 86 14 len=12 genSimMatrix_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 88 247  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 14 len=13 freeSimMatrix_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 204  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 86 14 len=12 genSimMatrix_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 88 247  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 14 len=13 freeSimMatrix_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 204  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

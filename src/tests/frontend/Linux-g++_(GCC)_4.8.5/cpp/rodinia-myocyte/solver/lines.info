@@ -1,0 +1,1 @@
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 176 4 : { 8, 9, 10, 14, 15, 17, 18, 19, 20, 397 } {  } call:embedded_fehlberg_7_8 { embedded_fehlberg_7_8 { 16, 138, 399 } }

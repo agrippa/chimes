@@ -1,0 +1,46 @@
+gettimeofday seconds 56 13 0 1 2
+seconds main 73 25 0
+get_time main 75 10 0
+get_time main 98 10 0
+strcmp main 111 7 0 112 844
+isInteger main 115 8 0 112
+atoi main 116 26 0 112
+printf main 118 7 0 845
+printf main 125 6 0 846
+printf main 131 5 0 847
+strcmp main 134 16 0 112 848
+isInteger main 140 8 0 112
+atoi main 141 28 0 112
+printf main 143 7 0 849
+printf main 150 6 0 850
+printf main 156 5 0 851
+printf main 162 4 0 852
+printf main 168 2 0 853 0 0
+get_time main 170 10 0
+get_time main 178 10 0
+get_time main 195 10 0
+malloc main 206 22 324 0
+time main 269 8 0 855
+srand main 269 2 0 0
+malloc main 272 25 663 0
+rand main 274 18 0
+rand main 275 18 0
+rand main 276 18 0
+rand main 277 18 0
+malloc main 281 20 725 0
+rand main 283 16 0
+malloc main 287 25 748 0
+checkpoint main 296 5 0
+get_time main 299 10 0
+memcpy main 309 2 0 58 44 0
+memcpy main 309 2 0 59 45 0
+kernel_cpu main 309 2 0 0 59 324 663 725 748
+get_time main 316 10 0
+checkpoint main 319 5 0
+seconds main 322 23 0
+printf main 323 5 0 854 0
+free main 341 2 0 663
+free main 342 2 0 725
+free main 343 2 0 748
+free main 344 2 0 324
+get_time main 346 10 0

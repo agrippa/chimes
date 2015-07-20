@@ -1,0 +1,7 @@
+/Users/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 77 5 : { 1, 2, 3 } direct:call:setup_config { setup_config { 4, 342 } }
+/Users/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 103 5 : { 5, 6, 7, 8, 9, 10, 11, 12, 13 } prop:call:config_sources { config_sources { 4 } }
+/Users/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 106 5 : { 14 } direct:call:init_data { config_sources { 4 }, init_data { 220, 222, 223 }, sample_sources { 165 } }
+/Users/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 124 9 : { 11, 12, 15, 16, 17, 18, 19, 220 } prop:call:checkpoint { fwd { 220, 222, 223 } }
+/Users/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 129 24 : { 11, 12, 15, 16, 17, 18, 19, 220 } prop:call:seconds { fwd { 220, 222, 223 } }
+/Users/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 131 5 : { 20 } direct:call:finish_progress {  }
+/Users/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 138 9 : { 21 } prop:call:save_text { save_text { 220, 604 } }

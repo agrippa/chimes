@@ -56,9 +56,12 @@ if __name__ == '__main__':
 
             tokens = acc.split()
 
-            line = int(tokens[2])
+            func_name = tokens[0]
             filename = tokens[1]
-            insertion = ' '.join(tokens[3:])
+            line = int(tokens[2])
+            assert tokens[3] == '0' or tokens[3] == '1'
+            is_static = (tokens[3] == '1')
+            insertion = ' '.join(tokens[4:])
             insertions.append(Insertion(line, filename, insertion))
 
             line = data.readline()

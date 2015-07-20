@@ -1,0 +1,6 @@
+86 30 22 malloc 0 1 LinkCellSt nAtoms nbrBoxes
+105 23 223 malloc
+112 26 223 malloc 1 0
+115 34 269 malloc
+131 4 396 free
+132 4 389 free

@@ -1,0 +1,125 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 9 6 len=6 kernel_npm
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 27 const int ____chimes_did_disable0 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 2, 0, (size_t)(7611249383129672685UL), (size_t)(7611249383129672686UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 656 1 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 28 const int ____chimes_did_disable0 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 2, 0, (size_t)(7611249383129672685UL), (size_t)(7611249383129672686UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 199 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 17 5 {  int ii; 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 655 5  }
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 17 10  ii = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 17 20 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 18 9  private_struct priv;  priv = private_struct(privs[ii]) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 18 40 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 20 2 int ei_new; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 20 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 21 2 float *d_in; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 21 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 22 2 int rot_row; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 22 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 23 2 int rot_col; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 23 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 24 2 int in2_rowlow; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 24 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 25 2 int in2_collow; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 25 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 26 2 int ic; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 26 8 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 27 2 int jc; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 27 8 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 28 2 int jp1; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 28 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 29 2 int ja1; int ja2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 29 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 30 2 int ip1; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 30 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 31 2 int ia1; int ia2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 31 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 32 2 int ja; int jb; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 32 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 33 2 int ia; int ib; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 33 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 34 2 float s; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 34 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 35 2 int i; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 35 7 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 36 2 int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 36 7 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 37 2 int row; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 37 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 38 2 int col; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 38 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 39 2 int ori_row; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 39 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 40 2 int ori_col; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 40 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 41 2 int position; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 41 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 42 2 float sum; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 42 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 43 2 int pos_ori; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 43 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 44 2 float temp; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 44 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 45 2 float temp2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 45 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 46 2 int location; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 46 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 47 2 int cent; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 47 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 48 2 int tMask_row; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 48 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 49 2 int tMask_col; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 49 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 50 2  float largest_value_current;  largest_value_current = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 50 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 51 2  float largest_value;  largest_value = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 51 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 52 2  int largest_coordinate_current;  largest_coordinate_current = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 52 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 53 2  int largest_coordinate;  largest_coordinate = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 53 28 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 54 2  float fin_max_val;  fin_max_val = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 54 23 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 55 2  int fin_max_coo;  fin_max_coo = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 55 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 56 2 int largest_row; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 56 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 57 2 int largest_col; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 57 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 58 2 int offset_row; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 58 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 59 2 int offset_col; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 59 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 60 2 float in_final_sum; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 60 20 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 61 2 float in_sqr_final_sum; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 61 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 62 2 float mean; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 62 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 63 2 float mean_sqr; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 63 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 64 2 float variance; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 64 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 65 2 float deviation; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 65 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 66 2 float denomT; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 66 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 67 2 int pointer; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 67 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 68 2 int ori_pointer; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 68 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 69 2 int loc_pointer; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 69 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 70 2 int ei_mod; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 70 12 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 9 6 len=6 kernel_quick
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 18 10 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 18 29 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 198  ; private_struct priv;
+# 10
+ if (____must_checkpoint_kernel_priv_0) { register_stack_vars(1, "kernel|priv|0", &____must_checkpoint_kernel_priv_0, "%struct._private_struct = type { i32, i32, i32*, i32*, i32*, i32*, float*, float*, float*, float*, float*, float*, float*, float*, float*, float*, float*, float*, float*, float*, i32* }", (void *)(&priv), (size_t)160, 0, 1, 19, (int)__builtin_offsetof(struct _private_struct, d_Row), (int)__builtin_offsetof(struct _private_struct, d_Col), (int)__builtin_offsetof(struct _private_struct, d_tRowLoc), (int)__builtin_offsetof(struct _private_struct, d_tColLoc), (int)__builtin_offsetof(struct _private_struct, d_T), (int)__builtin_offsetof(struct _private_struct, d_in2), (int)__builtin_offsetof(struct _private_struct, d_in2_sqr), (int)__builtin_offsetof(struct _private_struct, d_in_mod), (int)__builtin_offsetof(struct _private_struct, d_in_sqr), (int)__builtin_offsetof(struct _private_struct, d_conv), (int)__builtin_offsetof(struct _private_struct, d_in2_pad), (int)__builtin_offsetof(struct _private_struct, d_in2_sub), (int)__builtin_offsetof(struct _private_struct, d_in2_sub2_sqr), (int)__builtin_offsetof(struct _private_struct, d_tMask), (int)__builtin_offsetof(struct _private_struct, d_mask_conv), (int)__builtin_offsetof(struct _private_struct, in_partial_sum), (int)__builtin_offsetof(struct _private_struct, in_sqr_partial_sum), (int)__builtin_offsetof(struct _private_struct, par_max_val), (int)__builtin_offsetof(struct _private_struct, par_max_coo));  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 9 6 len=6 kernel_resumable
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 18 10 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 18 29 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 198  ; private_struct priv;
+# 10
+ if (____must_checkpoint_kernel_priv_0) { register_stack_vars(1, "kernel|priv|0", &____must_checkpoint_kernel_priv_0, "%struct._private_struct = type { i32, i32, i32*, i32*, i32*, i32*, float*, float*, float*, float*, float*, float*, float*, float*, float*, float*, float*, float*, float*, float*, i32* }", (void *)(&priv), (size_t)160, 0, 1, 19, (int)__builtin_offsetof(struct _private_struct, d_Row), (int)__builtin_offsetof(struct _private_struct, d_Col), (int)__builtin_offsetof(struct _private_struct, d_tRowLoc), (int)__builtin_offsetof(struct _private_struct, d_tColLoc), (int)__builtin_offsetof(struct _private_struct, d_T), (int)__builtin_offsetof(struct _private_struct, d_in2), (int)__builtin_offsetof(struct _private_struct, d_in2_sqr), (int)__builtin_offsetof(struct _private_struct, d_in_mod), (int)__builtin_offsetof(struct _private_struct, d_in_sqr), (int)__builtin_offsetof(struct _private_struct, d_conv), (int)__builtin_offsetof(struct _private_struct, d_in2_pad), (int)__builtin_offsetof(struct _private_struct, d_in2_sub), (int)__builtin_offsetof(struct _private_struct, d_in2_sub2_sqr), (int)__builtin_offsetof(struct _private_struct, d_tMask), (int)__builtin_offsetof(struct _private_struct, d_mask_conv), (int)__builtin_offsetof(struct _private_struct, in_partial_sum), (int)__builtin_offsetof(struct _private_struct, in_sqr_partial_sum), (int)__builtin_offsetof(struct _private_struct, par_max_val), (int)__builtin_offsetof(struct _private_struct, par_max_coo));  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

@@ -120,9 +120,8 @@ private:
     std::string get_unique_parent_stack_depth_varname();
     std::string get_unique_call_stack_depth_varname();
     std::string get_unique_region_varname();
-    std::string get_unique_argument_varname();
     std::string get_unique_disable_varname();
-    std::string get_loc_arg(const CallExpr *call, std::string func_name);
+    std::string get_loc_arg(const CallExpr *call);
 
     /*
      * Map from line containing a OMP pragma to its immediate predessor. It is
@@ -139,44 +138,42 @@ private:
             std::string *force);
     std::string constructStartingRegistrations(
             std::vector<DeclarationInfo> *vars, unsigned n_hoisted,
-            std::string *transition_str_ptr, bool has_callbacks);
-    void VisitRegion(OMPRegion *region);
+            std::string *transition_str_ptr, bool has_callbacks,
+            int insert_at_line);
+    void VisitRegion(OMPRegion *region, int new_stack_line);
     void verify_supported_clauses(std::string pragma_name,
-            std::map<std::string, std::vector<std::string> > *clauses);
+            std::map<std::string, std::vector<std::string> > *clauses, int line);
     std::string generateNPMCall(CallLocation loc,
             AliasesPassedToCallSite callsite, const CallExpr *call,
             bool use_function_pointer);
-    std::string generateNormalCall(const CallExpr *call,
-            CallLocation loc, CallLabel lbl, AliasesPassedToCallSite callsite);
-    std::string generateFunctionPointerCall(const CallExpr *call,
-            CallLocation loc, AliasesPassedToCallSite callsite, CallLabel lbl);
 
     std::set<std::string> get_private_vars(std::map<std::string,
             std::vector<std::string> > *clauses);
     std::string get_region_setup_code(std::set<std::string> private_vars,
             bool is_parallel_for, std::string disable_varname,
-            std::string blocker_varname, std::string parent_thread_varname, std::string parent_ctx_varname,
+            std::string blocker_varname, std::string parent_thread_varname,
+            std::string parent_ctx_varname,
             std::string stack_depth_varname, std::string region_id_varname,
             std::string call_depth_varname, OMPRegion *region,
             OpenMPPragma pragma);
     std::string get_region_interior_code(bool is_parallel_for,
-            std::string blocker_varname, std::string parent_thread_varname, std::string parent_ctx_varname,
+            std::string blocker_varname, std::string parent_thread_varname,
+            std::string parent_ctx_varname,
             std::string stack_depth_varname, std::string region_id_varname,
             std::set<std::string> private_vars);
     std::string get_region_cleanup_code(bool is_parallel_for,
             std::string disable_varname, std::string call_depth_varname,
             std::string region_id_varname);
     bool has_side_effects(const Expr *arg);
-    int extractArgsWithSideEffects(const CallExpr *call,
-            CallLocation *loc, int nargs, std::stringstream *ss,
-            std::vector<std::string> *arg_varnames);
-    bool needsToBeHoisted(std::string funcname, const Expr *arg);
-    std::string get_func_symbol(const CallExpr *call, CallLocation *loc);
     void collectCallAliasPairings(
             std::string callee, AliasesPassedToCallSite callsite,
             std::vector<std::pair<size_t, size_t> > *new_aliases,
             std::set<std::string> *changed_alias_locs,
             std::set<std::string> *visited);
+
+    clang::SourceLocation adjustInnerOMPLoc(
+            clang::SourceLocation loc, int target_line);
+    void addInsertsForRegion(OMPRegion *region);
 
     std::map<std::string, std::map<int, std::vector<StateChangeInsertion *>::iterator> > change_loc_iters;
     std::map<std::string, std::set<std::string> > supported_omp_clauses;
@@ -188,7 +185,6 @@ private:
     int call_stack_depth_varname_counter = 0;
     int region_varname_counter = 0;
     int disable_varname_counter = 0;
-    int arg_counter = 0;
 
     bool gen_quick;
 

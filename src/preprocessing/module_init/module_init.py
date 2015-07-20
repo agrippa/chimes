@@ -27,6 +27,8 @@ class ModuleInitConfig(object):
         self.fptrs_loaded_filename = None
         self.static_merge_filename = None
         self.dynamic_merge_filename = None
+        self.abi_filename = None
+        self.non_chkpting_filename = None
 
     def check(self):
         if self.input_filename is None:
@@ -86,6 +88,12 @@ class ModuleInitConfig(object):
         if self.dynamic_merge_filename is None:
             print('Dynamic merge filename')
             usage()
+        if self.abi_filename is None:
+            print('ABI filename')
+            usage()
+        if self.non_chkpting_filename is None:
+            print('Non-checkpointing filename')
+            usage()
 
 
 class Merge(object):
@@ -130,12 +138,14 @@ class FunctionInfo(object):
 
 
 class GlobalVar(object):
-    def __init__(self, name, full_type, type_size_in_bits, is_ptr, is_struct):
+    def __init__(self, name, full_type, type_size_in_bits, is_ptr, is_struct,
+                 group):
         self.name = name
         self.full_type = full_type
         self.type_size_in_bits = type_size_in_bits
         self.is_ptr = is_ptr
         self.is_struct = is_struct
+        self.group = group
         self.struct_type_name = None
         self.struct_ptr_fields = []
 
@@ -161,10 +171,11 @@ class StructField(object):
 
 
 class StructFields(object):
-    def __init__(self, name, unnamed):
+    def __init__(self, name, unnamed, size_in_bits):
         self.name = name # string
         self.unnamed = unnamed # boolean
         self.fields = []
+        self.size_in_bits = size_in_bits # int
 
     def add_field(self, field_name, field_type):
         self.fields.append(StructField(field_name, field_type))
@@ -293,13 +304,18 @@ def get_globals(globals_filename):
 
         is_struct = int(tokens[index + 3])
 
+        group = tokens[index + 4]
+
         curr = GlobalVar(mangled_name, full_type, type_size_in_bits, is_ptr,
-                         is_struct)
+                         is_struct, group)
 
-        if is_struct > 0:
-            curr.set_struct_type_name(tokens[index + 4])
+        # It is possible no struct name is passed here if it has none (is a
+        # literal, once-defined struct). Not sure there's anything we can do
+        # about these.... TODO
+        if is_struct > 0 and len(tokens) > index + 5:
+            curr.set_struct_type_name(tokens[index + 5])
 
-            for t in tokens[index + 5:]:
+            for t in tokens[index + 6:]:
                 curr.add_struct_ptr_field(t)
 
         glbls.append(curr)
@@ -336,10 +352,10 @@ def get_structs(structs_filename):
     for line in fp:
         tokens = line.split()
 
-        assert tokens[1] == '1' or tokens[1] == '0'
-        s = StructFields(tokens[0], tokens[1] == '1')
+        assert tokens[2] == '1' or tokens[2] == '0'
+        s = StructFields(tokens[0], tokens[2] == '1', int(tokens[1]))
 
-        field_info_str = ' '.join(tokens[2:])
+        field_info_str = ' '.join(tokens[3:])
         tokens = field_info_str.split('"')
         remove_empties = [i for i in tokens if len(i) > 0]
         assert len(remove_empties) % 2 == 0
@@ -369,11 +385,12 @@ def get_merges(filename):
     return merges
 
 
-def write_global(g, func_name, var_label):
+def write_global(g, func_name, var_label, module_id_str):
     output_file.write('    ' + func_name + '("' + var_label + '|' + g.name + '", "' +
                       g.full_type + '", (void *)(&' + g.name + '), ' +
                       str(g.type_size_in_bits / 8) + ', ' + str(g.is_ptr) +
                       ', ' + str(g.is_struct) + ', ' +
+                      get_alias_str(module_id_str, g.group) + ', ' +
                       str(len(g.struct_ptr_fields)))
     for field_name in g.struct_ptr_fields:
         output_file.write(', (int)offsetof(struct ' + g.struct_type_name + \
@@ -418,6 +435,54 @@ def write_merges(output_file, merges):
             output_file.write(', ' + alias + 'UL')
 
 
+def get_mangled_function_name(fname, func_symbols):
+    for sym in func_symbols:
+        if fname == sym:
+            return sym
+        elif sym.startswith('_Z') and not sym.startswith('_ZL'):
+            len_start = 2
+            len_end = 3
+            while sym[len_end] >= '0' and sym[len_end] <= '9':
+                len_end += 1
+            name_length = int(sym[len_start:len_end])
+
+            if name_length == len(fname) and sym[len_end:len_end + name_length] == fname:
+                return sym
+    raise(Exception('Failed to find mangled version of "' + fname + '"'))
+
+
+def get_func_symbols(abi_filename):
+    symbols = []
+    fp = open(abi_filename, 'r')
+
+    found_symbol_table = False
+    for line in fp:
+        if len(line) > 0:
+            if line.startswith('SYMBOL TABLE:'):
+                found_symbol_table = True
+            elif found_symbol_table:
+                tokens = line.split()
+                if len(tokens) == 6:
+                    descriptor = tokens[2]
+                    region = tokens[3]
+                    sym = tokens[5]
+
+                    if descriptor == 'F' and (region == '.text' or region == '.opd'):
+                        symbols.append(sym)
+
+    fp.close()
+    return symbols
+
+
+def get_noncheckpointing(filename):
+    non_checkpointing = []
+    fp = open(filename, 'r')
+    for line in fp:
+        non_checkpointing.append(line.strip())
+    fp.close()
+    return non_checkpointing
+
+
 def usage():
     print('usage: python module_init.py ' +
           '-i input-file ' +
@@ -438,7 +503,9 @@ def usage():
           '-h locs-filename ' +
           '-j fptrs-loaded-filename ' +
           '-ms static-merge-filename ' +
-          '-md dynamic-merge-filename')
+          '-md dynamic-merge-filename' + 
+          '-a ABI-filename' +
+          '-nc Non-checkpointing filename')
     sys.exit(1)
 
 
@@ -484,6 +551,10 @@ def configure(cfg, argv):
             cfg.static_merge_filename = argv[index + 1]
         elif t == '-md':
             cfg.dynamic_merge_filename = argv[index + 1]
+        elif t == '-a':
+            cfg.abi_filename = argv[index + 1]
+        elif t == '-nc':
+            cfg.non_chkpting_filename = argv[index + 1]
         else:
             print('Unrecognized command line argument "' + t + '"')
             sys.exit(1)
@@ -513,17 +584,17 @@ if __name__ == '__main__':
     fptrs_loaded = get_fptrs_loaded(cfg.fptrs_loaded_filename)
     static_merges = get_merges(cfg.static_merge_filename)
     dynamic_merges = get_merges(cfg.dynamic_merge_filename)
+    func_symbols = get_func_symbols(cfg.abi_filename)
+    non_checkpointing = get_noncheckpointing(cfg.non_chkpting_filename)
 
     # n_change_locs = len(changed)
     # for e in exits:
-    #     if len(e.groups_changed) > 0 or len(e.possible_groups_changed) > 0:
+    #     if len(e.groups_changed) > 0 or len(e.possible_groups_changed) > 0 or \
+    #             len(e.groups_and_children_changed) > 0:
     #         n_change_locs += 1
 
     input_file = open(cfg.input_filename, 'r')
     output_file = open(cfg.output_filename, 'w')
-
-    # output_file.write('extern char __executable_start;\n')
-    # output_file.write('extern char __etext;\n')
 
     transfer(input_file, output_file)
 
@@ -552,99 +623,14 @@ if __name__ == '__main__':
 
     # We must traverse changed before exits to ensure consistency in the
     # location IDs generated here with the ones generated by the clang pass.
-    # count = 0
-    # for change_set in changed:
-    #     output_file.write(',\n         /* alias loc ' + str(count) + ' */ &' + get_alias_loc_var(count) +
-    #                       ', (unsigned)' +
-    #                       str(len(change_set.aliases_changed)) +
-    #                       ', (unsigned)' +
-    #                       str(len(change_set.possible_aliases_changed)))
-    #     for alias in change_set.aliases_changed:
-    #         output_file.write(', ' + get_alias_str(module_id_str, alias))
-
-    #     write_possible_changes(output_file, change_set.possible_aliases_changed,
-    #                            module_id_str)
-    #     count += 1
-
-    # for ex in exits:
-    #     if len(ex.groups_changed) > 0 or len(ex.possible_groups_changed) > 0:
-    #         output_file.write(',\n         /* alias loc ' + str(count) +
-    #                           ' */ &' + get_alias_loc_var(count) +
-    #                           ', (unsigned)' + str(len(ex.groups_changed)) +
-    #                           ', (unsigned)' +
-    #                           str(len(ex.possible_groups_changed)))
-    #         for alias in ex.groups_changed:
-    #             output_file.write(', ' + get_alias_str(module_id_str, alias))
-    #         write_possible_changes(output_file, ex.possible_groups_changed,
-    #                                module_id_str)
-    #         count += 1
-
-    # for fname in defined_npms:
-
-    #     assert fname in functions, fname
-    #     func_info = functions[fname]
-    #     func_exit_info = find_in_exits(fname, exits)
-
-    #     if fname in fptrs_loaded:
-    #         normal_fptr = '(void *)(' + fname + ')'
-    #     else:
-    #         normal_fptr = '(void *)NULL'
-
-    #     output_file.write(',\n         /* provided NPM */ "' + fname +
-    #                       '", (void *)(&' + fname + '_npm), ' + normal_fptr)
-
-    #     # If no assignments are made in a function (e.g. if it's simply a return
-    #     # statement) it may not have any change locations.
-    #     if fname not in change_loc_vars:
-    #         output_file.write(', 0')
-    #     else:
-    #         locs = change_loc_vars[fname]
-    #         output_file.write(', ' + str(locs.size()))
-    #         for var in locs.varnames:
-    #             output_file.write(', &' + var)
-
-    #     output_file.write(', ' + str(len(func_info.arg_aliases_str)))
-    #     for alias in func_info.arg_aliases_str:
-    #         output_file.write(', ' + get_alias_str(module_id_str, alias))
-    #     output_file.write(', ' + get_alias_str(module_id_str,
-    #                                            func_exit_info.return_alias))
-
-    #     # If there is no entry in callsites for fname, it is because fname calls
-    #     # no functions.
-    #     if fname not in callsites:
-    #         output_file.write(', 0')
-    #     else:
-    #         calls = callsites[fname]
-    #         output_file.write(', ' + str(len(calls)))
-    #         for c in calls:
-    #             output_file.write(', "' + c.callee_name + '", ' +
-    #                               str(len(c.param_aliases_str)))
-    #             for arg_alias in c.param_aliases_str:
-    #                 output_file.write(', ' + get_alias_str(module_id_str,
-    #                                                        arg_alias))
-    #             output_file.write(', ' + get_alias_str(module_id_str,
-    #                                                    c.parent_return_alias_str))
-
-
-    # for ex in externs:
-    #     output_file.write(',\n        /* external NPM dep */ "' +
-    #                       ex.original_fname + '", (void **)&(' + ex.varname +
-    #                       ')')
-
-    # for npm in defined_npms:
-    #     output_file.write(',\n        /* NPM cond var */ "' + npm + '", &(____chimes_does_checkpoint_' +
-    #                       npm + '_npm)')
-    # for ex in externs:
-    #     output_file.write(',\n        /* NPM cond var */ "' + ex.original_fname + '", &(____chimes_does_checkpoint_' +
-    #                       ex.original_fname + '_npm)')
-        
 
     for k in reachable.keys():
         output_file.write(',\n        /* reachable pair */ ' + get_alias_str(module_id_str, k) + ', ' +
                           get_alias_str(module_id_str, reachable[k]))
 
     for s in structs:
-        output_file.write(',\n        /* struct */ "' + s.name + '", ' + str(len(s.fields)))
+        output_file.write(',\n        /* struct */ "' + s.name + '", ' +
+                          str(s.size_in_bits) + 'UL, ' + str(len(s.fields)))
         for field in s.fields:
             output_file.write(', "' + field.ty + '"')
             if s.unnamed:
@@ -653,7 +639,11 @@ if __name__ == '__main__':
                 output_file.write(', (int)offsetof(struct ' + s.name + ', ' + field.name + ')')
 
     for c in call_tree.values():
-        output_file.write(',\n        /* call tree info */ "' + c.name + '", ' + str(len(c.callees)))
+        calls_unknown_checkpointing = (c.calls_unknown and not c.name in non_checkpointing)
+        output_file.write(',\n        /* call tree info */ "' + c.name +
+                '", "' + c.mangled_name + '", ' +
+                ('1' if calls_unknown_checkpointing else '0') + ', ' +
+                str(len(c.callees)))
         for callee in c.callees:
             output_file.write(', "' + callee + '"')
 
@@ -669,13 +659,10 @@ if __name__ == '__main__':
     output_file.write(');\n')
 
     for g in glbls:
-        write_global(g, 'register_global_var', 'global')
+        write_global(g, 'register_global_var', 'global', module_id_str)
 
     for c in constants:
         write_constant(c, module_id_str)
-
-    # output_file.write('    register_text((void *)&__executable_start, ' +
-    #                   '(size_t)((&__etext) - (&__executable_start)));\n')
 
     output_file.write('    return 0;\n')
     output_file.write('}\n')

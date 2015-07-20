@@ -8,18 +8,21 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "linkCells.c.pre.transformed.cpp"
-int ____chimes_does_checkpoint_initLinkCells_npm = 1;
-int ____chimes_does_checkpoint_destroyLinkCells_npm = 1;
-int ____chimes_does_checkpoint_getNeighborBoxes_npm = 1;
-int ____chimes_does_checkpoint_putAtomInBox_npm = 1;
-int ____chimes_does_checkpoint_getBoxFromTuple_npm = 1;
-int ____chimes_does_checkpoint_moveAtom_npm = 1;
-int ____chimes_does_checkpoint_updateLinkCells_npm = 1;
-int ____chimes_does_checkpoint_maxOccupancy_npm = 1;
-int ____chimes_does_checkpoint_copyAtom_npm = 1;
-int ____chimes_does_checkpoint_getBoxFromCoord_npm = 1;
-int ____chimes_does_checkpoint_emptyHaloCells_npm = 1;
-int ____chimes_does_checkpoint_getTuple_npm = 1;
+static int ____chimes_does_checkpoint_initLinkCells_npm = 1;
+static int ____chimes_does_checkpoint_destroyLinkCells_npm = 1;
+static int ____chimes_does_checkpoint_getNeighborBoxes_npm = 1;
+static int ____chimes_does_checkpoint_putAtomInBox_npm = 1;
+static int ____chimes_does_checkpoint_getBoxFromTuple_npm = 1;
+static int ____chimes_does_checkpoint_moveAtom_npm = 1;
+static int ____chimes_does_checkpoint_updateLinkCells_npm = 1;
+static int ____chimes_does_checkpoint_maxOccupancy_npm = 1;
+static int ____chimes_does_checkpoint_copyAtom_npm = 1;
+static int ____chimes_does_checkpoint_getBoxFromCoord_npm = 1;
+static int ____chimes_does_checkpoint_emptyHaloCells_npm = 1;
+static int ____chimes_does_checkpoint_getTuple_npm = 1;
+static int ____chimes_does_checkpoint_maxIntParallel_npm = 1;
+static int ____chimes_does_checkpoint_profileStart_npm = 1;
+static int ____chimes_does_checkpoint_profileStop_npm = 1;
 
 static int ____must_checkpoint_getNeighborBoxes_ix_0 = 2;
 static int ____must_checkpoint_putAtomInBox_xyz_0 = 2;
@@ -50,6 +53,7 @@ static unsigned ____alias_loc_id_8;
 static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
 static unsigned ____alias_loc_id_11;
+static unsigned ____alias_loc_id_12;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -64,8 +68,87 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 64 "/usr/include/stdio.h" 3 4
+
+
+extern void init_chimes();
+extern void checkpoint_transformed(int lbl, unsigned loc_id);
+
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
+extern int get_next_call();
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
+extern void *get_thread_ctx();
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
+        unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id, int is_parallel_for);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+# 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 61 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 62 "/usr/include/stdlib.h" 2 3 4
+
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 32 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -73,17 +156,7 @@ typedef long unsigned int size_t;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 65 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 66 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 33 "/usr/include/sys/_types.h" 3 4
+# 33 "/usr/include/sys/_types.h" 2 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -253,323 +326,8 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 68 "/usr/include/stdio.h" 2 3 4
+# 64 "/usr/include/stdlib.h" 2 3 4
 
-
-
-# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
-# 31 "/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 72 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 73 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 74 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/sys/stdio.h" 1 3 4
-# 37 "/usr/include/sys/stdio.h" 3 4
-extern "C" {
-
-int renameat(int, const char *, int, const char *) ;
-
-}
-# 76 "/usr/include/stdio.h" 2 3 4
-
-typedef __darwin_off_t fpos_t;
-# 88 "/usr/include/stdio.h" 3 4
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 122 "/usr/include/stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char *_p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (*_close)(void *);
- int (*_read) (void *, char *, int);
- fpos_t (*_seek) (void *, fpos_t, int);
- int (*_write)(void *, const char *, int);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-
-extern "C" {
-extern FILE *__stdinp;
-extern FILE *__stdoutp;
-extern FILE *__stderrp;
-}
-# 230 "/usr/include/stdio.h" 3 4
-extern "C" {
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * , fpos_t *);
-char *fgets(char * , int, FILE *);
-
-
-
-FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
-
-int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs" );
-size_t fread(void * , size_t, size_t, FILE * );
-FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen" );
-int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
-int getc(FILE *);
-int getchar(void);
-char *gets(char *);
-void perror(const char *);
-int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *, const char *);
-void rewind(FILE *);
-int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * , char * );
-int setvbuf(FILE * , char * , int, size_t);
-int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tmpnam(char *);
-int ungetc(int, FILE *);
-int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
-int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-}
-# 292 "/usr/include/stdio.h" 3 4
-extern "C" {
-
-
-
-char *ctermid(char *);
-
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen" );
-
-int fileno(FILE *);
-}
-# 314 "/usr/include/stdio.h" 3 4
-extern "C" {
-int pclose(FILE *);
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen" );
-
-}
-# 336 "/usr/include/stdio.h" 3 4
-extern "C" {
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-}
-
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
-}
-# 373 "/usr/include/stdio.h" 3 4
-extern "C" {
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tempnam(const char *, const char *) __asm("_" "tempnam" );
-}
-# 411 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 412 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-}
-
-
-
-extern "C" {
-int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-}
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
-ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
-ssize_t getline(char ** , size_t * , FILE * ) ;
-}
-
-
-
-
-
-
-
-extern "C" {
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-char *ctermid_r(char *);
-char *fgetln(FILE *, size_t *);
-const char *fmtcheck(const char *, const char *);
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int);
-int setlinebuf(FILE *);
-int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-FILE *zopen(const char *, const char *, int);
-
-
-
-
-
-FILE *funopen(const void *,
-                 int (*)(void *, char *, int),
-                 int (*)(void *, const char *, int),
-                 fpos_t (*)(void *, fpos_t, int),
-                 int (*)(void *));
-}
-# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling_npm(const char *name, size_t return_alias, int n_params,
-        ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
-extern int get_next_call();
-extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_stack_vars(int nvars, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern void register_functions(int nfunctions, const char *module_name, ...);
-extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-extern bool disable_current_thread();
-extern void reenable_current_thread(bool was_disabled);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
-        unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 63 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-# 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-# 1 "/usr/include/stdlib.h" 1 3 4
-# 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
 # 79 "/usr/include/sys/wait.h" 3 4
 typedef enum {
@@ -1035,7 +793,8 @@ typedef struct __darwin_ucontext ucontext_t;
 # 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
 typedef __darwin_sigset_t sigset_t;
 # 154 "/usr/include/sys/signal.h" 2 3 4
-
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 155 "/usr/include/sys/signal.h" 2 3 4
 # 1 "/usr/include/sys/_types/_uid_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uid_t.h" 3 4
 typedef __darwin_uid_t uid_t;
@@ -1496,6 +1255,10 @@ typedef struct {
  long long quot;
  long long rem;
 } lldiv_t;
+
+
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 100 "/usr/include/stdlib.h" 2 3 4
 # 117 "/usr/include/stdlib.h" 3 4
 extern int __mb_cur_max;
 # 127 "/usr/include/stdlib.h" 3 4
@@ -1797,8 +1560,254 @@ void updateLinkCells(LinkCell* boxes, struct AtomsSt* atoms);
 int maxOccupancy(LinkCell* boxes);
 # 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c" 2
 # 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-# 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 
+# 1 "/usr/include/stdio.h" 1 3 4
+# 71 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
+# 31 "/usr/include/sys/_types/_va_list.h" 3 4
+typedef __darwin_va_list va_list;
+# 72 "/usr/include/stdio.h" 2 3 4
+
+
+
+# 1 "/usr/include/sys/stdio.h" 1 3 4
+# 37 "/usr/include/sys/stdio.h" 3 4
+extern "C" {
+
+int renameat(int, const char *, int, const char *) ;
+
+}
+# 76 "/usr/include/stdio.h" 2 3 4
+
+typedef __darwin_off_t fpos_t;
+# 88 "/usr/include/stdio.h" 3 4
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+
+
+struct __sFILEX;
+# 122 "/usr/include/stdio.h" 3 4
+typedef struct __sFILE {
+ unsigned char *_p;
+ int _r;
+ int _w;
+ short _flags;
+ short _file;
+ struct __sbuf _bf;
+ int _lbfsize;
+
+
+ void *_cookie;
+ int (*_close)(void *);
+ int (*_read) (void *, char *, int);
+ fpos_t (*_seek) (void *, fpos_t, int);
+ int (*_write)(void *, const char *, int);
+
+
+ struct __sbuf _ub;
+ struct __sFILEX *_extra;
+ int _ur;
+
+
+ unsigned char _ubuf[3];
+ unsigned char _nbuf[1];
+
+
+ struct __sbuf _lb;
+
+
+ int _blksize;
+ fpos_t _offset;
+} FILE;
+
+extern "C" {
+extern FILE *__stdinp;
+extern FILE *__stdoutp;
+extern FILE *__stderrp;
+}
+# 230 "/usr/include/stdio.h" 3 4
+extern "C" {
+void clearerr(FILE *);
+int fclose(FILE *);
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+int fgetc(FILE *);
+int fgetpos(FILE * , fpos_t *);
+char *fgets(char * , int, FILE *);
+
+
+
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
+
+int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int fputc(int, FILE *);
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
+size_t fread(void * , size_t, size_t, FILE * );
+FILE *freopen(const char * , const char * ,
+                 FILE * ) __asm("_" "freopen" );
+int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+int fseek(FILE *, long, int);
+int fsetpos(FILE *, const fpos_t *);
+long ftell(FILE *);
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
+int getc(FILE *);
+int getchar(void);
+char *gets(char *);
+void perror(const char *);
+int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
+int putc(int, FILE *);
+int putchar(int);
+int puts(const char *);
+int remove(const char *);
+int rename (const char *, const char *);
+void rewind(FILE *);
+int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
+void setbuf(FILE * , char * );
+int setvbuf(FILE * , char * , int, size_t);
+int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+FILE *tmpfile(void);
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tmpnam(char *);
+int ungetc(int, FILE *);
+int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
+int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+}
+# 292 "/usr/include/stdio.h" 3 4
+extern "C" {
+
+
+
+char *ctermid(char *);
+
+
+
+
+
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
+
+int fileno(FILE *);
+}
+# 314 "/usr/include/stdio.h" 3 4
+extern "C" {
+int pclose(FILE *);
+
+
+
+FILE *popen(const char *, const char *) __asm("_" "popen" );
+
+}
+# 336 "/usr/include/stdio.h" 3 4
+extern "C" {
+int __srget(FILE *);
+int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int __swbuf(int, FILE *);
+}
+
+
+
+
+
+
+
+inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
+ if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
+  return (*_p->_p++ = _c);
+ else
+  return (__swbuf(_c, _p));
+}
+# 373 "/usr/include/stdio.h" 3 4
+extern "C" {
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+
+
+
+int getw(FILE *);
+int putw(int, FILE *);
+
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
+}
+# 411 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_off_t.h" 3 4
+typedef __darwin_off_t off_t;
+# 412 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+}
+
+
+
+extern "C" {
+int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
+int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
+int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
+int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+}
+# 436 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 437 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
+int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
+ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
+ssize_t getline(char ** , size_t * , FILE * ) ;
+}
+
+
+
+
+
+
+
+extern "C" {
+extern const int sys_nerr;
+extern const char *const sys_errlist[];
+
+int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+char *ctermid_r(char *);
+char *fgetln(FILE *, size_t *);
+const char *fmtcheck(const char *, const char *);
+int fpurge(FILE *);
+void setbuffer(FILE *, char *, int);
+int setlinebuf(FILE *);
+int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+FILE *zopen(const char *, const char *, int);
+
+
+
+
+
+FILE *funopen(const void *,
+                 int (*)(void *, char *, int),
+                 int (*)(void *, const char *, int),
+                 fpos_t (*)(void *, fpos_t, int),
+                 int (*)(void *));
+}
+# 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 69 "/usr/include/string.h" 3 4
 extern "C" {
@@ -2661,7 +2670,7 @@ LinkCell* initLinkCells_resumable(const Domain* domain, real_t cutoff)
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 7636406165860813809UL, 0, 0);
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int iBox; for ( iBox = (0) ;iBox < ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
+   { int iBox; for ( iBox = (0) ;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    (__builtin_expect(!((ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 109, "(ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)") : (void)0);
@@ -2683,7 +2692,7 @@ LinkCell* initLinkCells_resumable(const Domain* domain, real_t cutoff)
 # 119 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    {
 # 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-       int nNbrBoxes; nNbrBoxes = (({ calling_npm("getNeighborBoxes", 0UL, 3, 7636406165860813602UL, 0UL, 7636406165860813855UL); getNeighborBoxes_npm(ll, iBox, ll->nbrBoxes[iBox]); })) ;
+       int nNbrBoxes; nNbrBoxes = (({ calling_npm("getNeighborBoxes", 0); getNeighborBoxes_npm(ll, iBox, ll->nbrBoxes[iBox]); })) ;
 # 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    } }
 # 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -2699,9 +2708,9 @@ void destroyLinkCells_resumable(LinkCell** boxes)
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(7636406165860813988UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return;; };
+   if (! boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!*boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return;; };
+   if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    free_wrapper((*boxes)->nAtoms, 7636406165860813977UL);
@@ -2731,7 +2740,7 @@ int getNeighborBoxes_resumable(LinkCell* boxes, int iBox, int* nbrBoxes)
 # 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int iy; int iz; ;
 # 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ({ calling_npm("getTuple", 0UL, 5, 7636406165860813959UL, 0UL, 7636406165860813879UL, 7636406165860813880UL, 7636406165860813881UL); getTuple_npm(boxes, iBox, &ix, &iy, &iz); });
+   ({ calling_npm("getTuple", 0); getTuple_npm(boxes, iBox, &ix, &iy, &iz); });
 # 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 149 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int count; count = (0) ;
@@ -2742,7 +2751,7 @@ int getNeighborBoxes_resumable(LinkCell* boxes, int iBox, int* nbrBoxes)
 # 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
          { int k; for ( k = (iz - 1) ; k<=iz+1; k++) {
 # 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-            nbrBoxes[count++] = ({ calling_npm("getBoxFromTuple", 0UL, 4, 7636406165860813959UL, 0UL, 0UL, 0UL); getBoxFromTuple_npm(boxes, i, j, k); });
+            nbrBoxes[count++] = ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, i, j, k); });
 # 154 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
          } }
 # 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -2773,7 +2782,7 @@ void putAtomInBox_resumable(LinkCell* boxes, Atoms* atoms,
 # 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    int iBox; iBox = (({ calling_npm("getBoxFromCoord", 0UL, 2, 7636406165860814700UL, 7636406165860814556UL); getBoxFromCoord_npm(boxes, xyz); })) ;
+    int iBox; iBox = (({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, xyz); })) ;
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int iOff; iOff = (iBox * 64) ;
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -2822,7 +2831,48 @@ int getBoxFromTuple_resumable(LinkCell* boxes, int ix, int iy, int iz)
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (iz == gridSize[2]) {{ iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (gridSize[1] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); }; } else if (iz == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); } else if (iy == gridSize[1]) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * iz + (ix + 1); } else if (iy == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + iz * (gridSize[0] + 2) + (ix + 1); } else if (ix == gridSize[0]) { iBox = boxes->nLocalBoxes + gridSize[1] * gridSize[2] + iz * gridSize[1] + iy; } else if (ix == -1) { iBox = boxes->nLocalBoxes + iz * gridSize[1] + iy; } else { iBox = ix + gridSize[0] * iy + gridSize[0] * gridSize[1] * iz; }
+   if (iz == gridSize[2]) {{
+# 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(gridSize[1]+2) + (gridSize[0]+2)*(iy+1) + (ix+1);
+# 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iz == -1) {{
+# 220 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 221 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(iy+1) + (ix+1);
+# 222 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == gridSize[1]) {{
+# 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + gridSize[2]*(gridSize[0]+2) +
+# 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*iz + (ix+1);
+# 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == -1) {{
+# 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + iz*(gridSize[0]+2) + (ix+1);
+# 233 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == gridSize[0]) {{
+# 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + gridSize[1]*gridSize[2] + iz*gridSize[1] + iy;
+# 238 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == -1)
+# 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 242 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + iz*gridSize[1] + iy;
+# 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
+# 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+# 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   else
+# 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = ix + gridSize[0]*iy + gridSize[0]*gridSize[1]*iz;
+# 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    (__builtin_expect(!(iBox >= 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 249, "iBox >= 0") : (void)0);
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -2846,7 +2896,7 @@ void moveAtom_resumable(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jB
 # 261 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int nj; nj = (boxes->nAtoms[jBox]) ;
 # 262 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ({ calling_npm("copyAtom", 0UL, 6, 7636406165860814936UL, 7636406165860814977UL, 0UL, 0UL, 0UL, 0UL); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); });
+   ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); });
 # 263 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    boxes->nAtoms[jBox]++;
 # 264 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -2858,7 +2908,7 @@ void moveAtom_resumable(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jB
 # 268 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int ni; ni = (boxes->nAtoms[iBox]) ;
 # 269 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (ni) {({ calling_npm("copyAtom", 0UL, 6, 7636406165860814936UL, 7636406165860814977UL, 0UL, 0UL, 0UL, 0UL); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); }); };
+   if (ni) {({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); }); };
 # 270 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 271 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    if (jBox > boxes->nLocalBoxes) {--atoms->nLocal; };
@@ -2875,7 +2925,7 @@ void updateLinkCells_resumable(LinkCell* boxes, Atoms* atoms)
 # 291 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(7636406165860815181UL), (size_t)(7636406165860815182UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 292 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ({ calling_npm("emptyHaloCells", 0UL, 1, 7636406165860815181UL); emptyHaloCells_npm(boxes); });
+   ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); });
 # 293 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 294 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    { int iBox; for ( iBox = (0) ; iBox<boxes->nLocalBoxes; ++iBox)
@@ -2890,9 +2940,9 @@ void updateLinkCells_resumable(LinkCell* boxes, Atoms* atoms)
 # 299 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       {
 # 300 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-          int jBox; jBox = (({ calling_npm("getBoxFromCoord", 0UL, 2, 7636406165860815181UL, 7636406165860815154UL); getBoxFromCoord_npm(boxes, atoms->r[iOff + ii]); })) ;
+          int jBox; jBox = (({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, atoms->r[iOff + ii]); })) ;
 # 301 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-         if (jBox != iBox) {({ calling_npm("moveAtom", 0UL, 5, 7636406165860815181UL, 7636406165860815182UL, 0UL, 0UL, 0UL); moveAtom_npm(boxes, atoms, ii, iBox, jBox); }); } else {++ii; } ;
+         if (jBox != iBox) {({ calling_npm("moveAtom", 0); moveAtom_npm(boxes, atoms, ii, iBox, jBox); }); } else {++ii; } ;
 # 305 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       }
 # 306 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -2902,7 +2952,7 @@ rm_stack(false, 0UL, "updateLinkCells", &____must_manage_updateLinkCells, ____al
 # 308 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 309 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 310 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-int maxOccupancy_npm(LinkCell* boxes);
+int maxOccupancy_npm(LinkCell* boxes);static void (*____chimes_extern_func_maxIntParallel)(int *, int *, int) = maxIntParallel;static void (*____chimes_extern_func_profileStart)(enum TimerHandle) = profileStart;static void (*____chimes_extern_func_profileStop)(enum TimerHandle) = profileStop;
 int maxOccupancy_quick(LinkCell* boxes); int maxOccupancy(LinkCell* boxes);
 int maxOccupancy_resumable(LinkCell* boxes)
 # 311 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -2911,17 +2961,17 @@ int maxOccupancy_resumable(LinkCell* boxes)
 # 312 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       localMax = (0) ;
 # 313 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int ii; for ( ii = (0) ;ii < boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); } };
+   { int ii; for ( ii = (0) ;ii<boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); } };
 # 315 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 316 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    int globalMax; ;
 # 317 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 318 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_0, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 319 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    call_lbl_2: ({ calling((void*)maxIntParallel, 2, 0UL, 0, 3, (size_t)(7636406165860815214UL), (size_t)(7636406165860815216UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) ;
+    call_lbl_2: ({ calling((void*)maxIntParallel, 2, 0, 0UL, 3, (size_t)(7636406165860815214UL), (size_t)(7636406165860815216UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) ;
 # 320 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 321 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 322 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, 0, ____chimes_did_disable7); return globalMax;
@@ -2975,14 +3025,26 @@ int getBoxFromCoord_resumable(LinkCell* boxes, real_t rr[3])
 # 360 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 361 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 362 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[0] < localMax[0]) {{ if (ix == gridSize[0]) ix = gridSize[0] - 1; }; } else {ix = gridSize[0]; } ;
+   if (rr[0] < localMax[0]) {{
+# 364 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (ix == gridSize[0]) {ix = gridSize[0] - 1; };
+# 365 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {ix = gridSize[0]; } ;
 # 368 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[1] < localMax[1]) {{ if (iy == gridSize[1]) iy = gridSize[1] - 1; }; } else {iy = gridSize[1]; } ;
+   if (rr[1] < localMax[1]) {{
+# 370 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iy == gridSize[1]) {iy = gridSize[1] - 1; };
+# 371 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iy = gridSize[1]; } ;
 # 374 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[2] < localMax[2]) {{ if (iz == gridSize[2]) iz = gridSize[2] - 1; }; } else {iz = gridSize[2]; } ;
+   if (rr[2] < localMax[2]) {{
+# 376 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iz == gridSize[2]) {iz = gridSize[2] - 1; };
+# 377 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iz = gridSize[2]; } ;
 # 380 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 381 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    int result; result = (({ calling_npm("getBoxFromTuple", 0UL, 4, 7636406165860814873UL, 0UL, 0UL, 0UL); getBoxFromTuple_npm(boxes, ix, iy, iz); })) ;
+    int result; result = (({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })) ;
 # 382 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_7, ____chimes_did_disable9); return result;
 # 383 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -2994,7 +3056,7 @@ void emptyHaloCells_resumable(LinkCell* boxes)
 # 387 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(7636406165860815212UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 388 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int ii; for ( ii = (boxes->nLocalBoxes) ;ii < boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; } };
+   { int ii; for ( ii = (boxes->nLocalBoxes) ;ii<boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; } };
 # 390 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 rm_stack(false, 0UL, "emptyHaloCells", &____must_manage_emptyHaloCells, ____alias_loc_id_11, ____chimes_did_disable10); }
 # 400 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3032,7 +3094,89 @@ void getTuple_resumable(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 # 417 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       ink = iBox - boxes->nLocalBoxes;
 # 418 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-      if (ink < 2 * gridSize[1] * gridSize[2]) {{ if (ink < gridSize[1] * gridSize[2]) { ix = 0; } else { ink -= gridSize[1] * gridSize[2]; ix = gridSize[0] + 1; } iy = 1 + ink % gridSize[1]; iz = 1 + ink / gridSize[1]; }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2))) { ink -= 2 * gridSize[2] * gridSize[1]; if (ink < ((gridSize[0] + 2) * gridSize[2])) { iy = 0; } else { ink -= (gridSize[0] + 2) * gridSize[2]; iy = gridSize[1] + 1; } ix = ink % (gridSize[0] + 2); iz = 1 + ink / (gridSize[0] + 2); } else { ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2); if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2))) { iz = 0; } else { ink -= (gridSize[0] + 2) * (gridSize[1] + 2); iz = gridSize[2] + 1; } ix = ink % (gridSize[0] + 2); iy = ink / (gridSize[0] + 2); }
+      if (ink < 2*gridSize[1]*gridSize[2]) {{
+# 420 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < gridSize[1]*gridSize[2])
+# 421 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 422 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = 0;
+# 423 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 424 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 425 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 426 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= gridSize[1]*gridSize[2];
+# 427 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = gridSize[0] + 1;
+# 428 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 429 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = 1 + ink % gridSize[1];
+# 430 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / gridSize[1];
+# 431 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2)))
+# 433 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 434 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * gridSize[1];
+# 435 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) *gridSize[2]))
+# 436 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 437 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = 0;
+# 438 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 439 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 440 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 441 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * gridSize[2];
+# 442 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = gridSize[1] + 1;
+# 443 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 444 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 445 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / (gridSize[0] + 2);
+# 446 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
+# 447 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      else
+# 448 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 449 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2);
+# 450 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2)))
+# 451 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 452 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = 0;
+# 453 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 454 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 455 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 456 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * (gridSize[1] + 2);
+# 457 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = gridSize[2] + 1;
+# 458 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 459 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 460 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = ink / (gridSize[0] + 2);
+# 461 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
 # 462 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 463 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 464 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3093,7 +3237,7 @@ LinkCell* initLinkCells_quick(const Domain* domain, real_t cutoff)
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 7636406165860813809UL, 0, 0);
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int iBox; for ( iBox = (0) ;iBox < ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
+   { int iBox; for ( iBox = (0) ;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    (__builtin_expect(!((ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 109, "(ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)") : (void)0);
@@ -3115,7 +3259,7 @@ LinkCell* initLinkCells_quick(const Domain* domain, real_t cutoff)
 # 119 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    {
 # 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-       int nNbrBoxes; nNbrBoxes = (({ calling_npm("getNeighborBoxes", 0UL, 3, 7636406165860813602UL, 0UL, 7636406165860813855UL); getNeighborBoxes_npm(ll, iBox, ll->nbrBoxes[iBox]); })) ;
+       int nNbrBoxes; nNbrBoxes = (({ calling_npm("getNeighborBoxes", 0); getNeighborBoxes_npm(ll, iBox, ll->nbrBoxes[iBox]); })) ;
 # 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    } }
 # 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3130,9 +3274,9 @@ void destroyLinkCells_quick(LinkCell** boxes)
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(7636406165860813988UL)) ; ; ;
 # 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return;; };
+   if (! boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!*boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return;; };
+   if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    free_wrapper((*boxes)->nAtoms, 7636406165860813977UL);
@@ -3155,7 +3299,7 @@ int getNeighborBoxes_quick(LinkCell* boxes, int iBox, int* nbrBoxes)
 # 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int iy; int iz; ;
 # 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ({ calling_npm("getTuple", 0UL, 5, 7636406165860813959UL, 0UL, 7636406165860813879UL, 7636406165860813880UL, 7636406165860813881UL); getTuple_npm(boxes, iBox, &ix, &iy, &iz); });
+   ({ calling_npm("getTuple", 0); getTuple_npm(boxes, iBox, &ix, &iy, &iz); });
 # 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 149 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int count; count = (0) ;
@@ -3166,7 +3310,7 @@ int getNeighborBoxes_quick(LinkCell* boxes, int iBox, int* nbrBoxes)
 # 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
          { int k; for ( k = (iz - 1) ; k<=iz+1; k++) {
 # 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-            nbrBoxes[count++] = ({ calling_npm("getBoxFromTuple", 0UL, 4, 7636406165860813959UL, 0UL, 0UL, 0UL); getBoxFromTuple_npm(boxes, i, j, k); });
+            nbrBoxes[count++] = ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, i, j, k); });
 # 154 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
          } }
 # 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3196,7 +3340,7 @@ void putAtomInBox_quick(LinkCell* boxes, Atoms* atoms,
 # 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    int iBox; iBox = (({ calling_npm("getBoxFromCoord", 0UL, 2, 7636406165860814700UL, 7636406165860814556UL); getBoxFromCoord_npm(boxes, xyz); })) ;
+    int iBox; iBox = (({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, xyz); })) ;
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int iOff; iOff = (iBox * 64) ;
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3246,7 +3390,48 @@ int getBoxFromTuple_quick(LinkCell* boxes, int ix, int iy, int iz)
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (iz == gridSize[2]) {{ iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (gridSize[1] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); }; } else if (iz == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); } else if (iy == gridSize[1]) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * iz + (ix + 1); } else if (iy == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + iz * (gridSize[0] + 2) + (ix + 1); } else if (ix == gridSize[0]) { iBox = boxes->nLocalBoxes + gridSize[1] * gridSize[2] + iz * gridSize[1] + iy; } else if (ix == -1) { iBox = boxes->nLocalBoxes + iz * gridSize[1] + iy; } else { iBox = ix + gridSize[0] * iy + gridSize[0] * gridSize[1] * iz; }
+   if (iz == gridSize[2]) {{
+# 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(gridSize[1]+2) + (gridSize[0]+2)*(iy+1) + (ix+1);
+# 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iz == -1) {{
+# 220 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 221 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(iy+1) + (ix+1);
+# 222 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == gridSize[1]) {{
+# 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + gridSize[2]*(gridSize[0]+2) +
+# 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*iz + (ix+1);
+# 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == -1) {{
+# 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + iz*(gridSize[0]+2) + (ix+1);
+# 233 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == gridSize[0]) {{
+# 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + gridSize[1]*gridSize[2] + iz*gridSize[1] + iy;
+# 238 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == -1)
+# 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 242 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + iz*gridSize[1] + iy;
+# 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
+# 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+# 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   else
+# 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = ix + gridSize[0]*iy + gridSize[0]*gridSize[1]*iz;
+# 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    (__builtin_expect(!(iBox >= 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 249, "iBox >= 0") : (void)0);
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3265,7 +3450,7 @@ void moveAtom_quick(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jBox)
 # 261 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int nj; nj = (boxes->nAtoms[jBox]) ;
 # 262 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ({ calling_npm("copyAtom", 0UL, 6, 7636406165860814936UL, 7636406165860814977UL, 0UL, 0UL, 0UL, 0UL); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); });
+   ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); });
 # 263 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    boxes->nAtoms[jBox]++;
 # 264 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3277,7 +3462,7 @@ void moveAtom_quick(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jBox)
 # 268 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int ni; ni = (boxes->nAtoms[iBox]) ;
 # 269 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (ni) {({ calling_npm("copyAtom", 0UL, 6, 7636406165860814936UL, 7636406165860814977UL, 0UL, 0UL, 0UL, 0UL); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); }); };
+   if (ni) {({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); }); };
 # 270 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 271 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    if (jBox > boxes->nLocalBoxes) {--atoms->nLocal; };
@@ -3293,7 +3478,7 @@ void updateLinkCells_quick(LinkCell* boxes, Atoms* atoms)
 # 291 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(7636406165860815181UL), (size_t)(7636406165860815182UL)) ; ; ;
 # 292 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ({ calling_npm("emptyHaloCells", 0UL, 1, 7636406165860815181UL); emptyHaloCells_npm(boxes); });
+   ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); });
 # 293 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 294 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    { int iBox; for ( iBox = (0) ; iBox<boxes->nLocalBoxes; ++iBox)
@@ -3308,9 +3493,9 @@ void updateLinkCells_quick(LinkCell* boxes, Atoms* atoms)
 # 299 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       {
 # 300 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-          int jBox; jBox = (({ calling_npm("getBoxFromCoord", 0UL, 2, 7636406165860815181UL, 7636406165860815154UL); getBoxFromCoord_npm(boxes, atoms->r[iOff + ii]); })) ;
+          int jBox; jBox = (({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, atoms->r[iOff + ii]); })) ;
 # 301 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-         if (jBox != iBox) {({ calling_npm("moveAtom", 0UL, 5, 7636406165860815181UL, 7636406165860815182UL, 0UL, 0UL, 0UL); moveAtom_npm(boxes, atoms, ii, iBox, jBox); }); } else {++ii; } ;
+         if (jBox != iBox) {({ calling_npm("moveAtom", 0); moveAtom_npm(boxes, atoms, ii, iBox, jBox); }); } else {++ii; } ;
 # 305 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       }
 # 306 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3327,17 +3512,17 @@ int maxOccupancy_quick(LinkCell* boxes)
 # 312 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       localMax = (0) ;
 # 313 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int ii; for ( ii = (0) ;ii < boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); } };
+   { int ii; for ( ii = (0) ;ii<boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); } };
 # 315 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 316 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    int globalMax; ;
 # 317 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 318 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_0, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 319 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    call_lbl_2: ({ calling((void*)maxIntParallel, 2, 0UL, 0, 3, (size_t)(7636406165860815214UL), (size_t)(7636406165860815216UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) ;
+    call_lbl_2: ({ calling((void*)maxIntParallel, 2, 0, 0UL, 3, (size_t)(7636406165860815214UL), (size_t)(7636406165860815216UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) ;
 # 320 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 321 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 322 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, 0, ____chimes_did_disable7); return globalMax;
@@ -3390,14 +3575,26 @@ int getBoxFromCoord_quick(LinkCell* boxes, real_t rr[3])
 # 360 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 361 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 362 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[0] < localMax[0]) {{ if (ix == gridSize[0]) ix = gridSize[0] - 1; }; } else {ix = gridSize[0]; } ;
+   if (rr[0] < localMax[0]) {{
+# 364 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (ix == gridSize[0]) {ix = gridSize[0] - 1; };
+# 365 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {ix = gridSize[0]; } ;
 # 368 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[1] < localMax[1]) {{ if (iy == gridSize[1]) iy = gridSize[1] - 1; }; } else {iy = gridSize[1]; } ;
+   if (rr[1] < localMax[1]) {{
+# 370 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iy == gridSize[1]) {iy = gridSize[1] - 1; };
+# 371 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iy = gridSize[1]; } ;
 # 374 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[2] < localMax[2]) {{ if (iz == gridSize[2]) iz = gridSize[2] - 1; }; } else {iz = gridSize[2]; } ;
+   if (rr[2] < localMax[2]) {{
+# 376 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iz == gridSize[2]) {iz = gridSize[2] - 1; };
+# 377 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iz = gridSize[2]; } ;
 # 380 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 381 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    int result; result = (({ calling_npm("getBoxFromTuple", 0UL, 4, 7636406165860814873UL, 0UL, 0UL, 0UL); getBoxFromTuple_npm(boxes, ix, iy, iz); })) ;
+    int result; result = (({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })) ;
 # 382 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_7, ____chimes_did_disable9); return result;
 # 383 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3409,7 +3606,7 @@ void emptyHaloCells_quick(LinkCell* boxes)
 # 387 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(7636406165860815212UL)) ; ; ;
 # 388 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int ii; for ( ii = (boxes->nLocalBoxes) ;ii < boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; } };
+   { int ii; for ( ii = (boxes->nLocalBoxes) ;ii<boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; } };
 # 390 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 rm_stack(false, 0UL, "emptyHaloCells", &____must_manage_emptyHaloCells, ____alias_loc_id_11, ____chimes_did_disable10); }
 
@@ -3448,7 +3645,89 @@ void getTuple_quick(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 # 417 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       ink = iBox - boxes->nLocalBoxes;
 # 418 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-      if (ink < 2 * gridSize[1] * gridSize[2]) {{ if (ink < gridSize[1] * gridSize[2]) { ix = 0; } else { ink -= gridSize[1] * gridSize[2]; ix = gridSize[0] + 1; } iy = 1 + ink % gridSize[1]; iz = 1 + ink / gridSize[1]; }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2))) { ink -= 2 * gridSize[2] * gridSize[1]; if (ink < ((gridSize[0] + 2) * gridSize[2])) { iy = 0; } else { ink -= (gridSize[0] + 2) * gridSize[2]; iy = gridSize[1] + 1; } ix = ink % (gridSize[0] + 2); iz = 1 + ink / (gridSize[0] + 2); } else { ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2); if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2))) { iz = 0; } else { ink -= (gridSize[0] + 2) * (gridSize[1] + 2); iz = gridSize[2] + 1; } ix = ink % (gridSize[0] + 2); iy = ink / (gridSize[0] + 2); }
+      if (ink < 2*gridSize[1]*gridSize[2]) {{
+# 420 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < gridSize[1]*gridSize[2])
+# 421 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 422 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = 0;
+# 423 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 424 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 425 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 426 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= gridSize[1]*gridSize[2];
+# 427 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = gridSize[0] + 1;
+# 428 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 429 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = 1 + ink % gridSize[1];
+# 430 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / gridSize[1];
+# 431 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2)))
+# 433 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 434 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * gridSize[1];
+# 435 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) *gridSize[2]))
+# 436 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 437 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = 0;
+# 438 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 439 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 440 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 441 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * gridSize[2];
+# 442 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = gridSize[1] + 1;
+# 443 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 444 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 445 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / (gridSize[0] + 2);
+# 446 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
+# 447 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      else
+# 448 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 449 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2);
+# 450 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2)))
+# 451 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 452 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = 0;
+# 453 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 454 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 455 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 456 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * (gridSize[1] + 2);
+# 457 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = gridSize[2] + 1;
+# 458 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 459 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 460 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = ink / (gridSize[0] + 2);
+# 461 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
 # 462 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 463 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 464 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3514,7 +3793,7 @@ LinkCell* initLinkCells_npm(const Domain* domain, real_t cutoff)
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 7636406165860813809UL, 0, 0);
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   for (int iBox = 0;iBox < ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; };
+   for (int iBox=0;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; };
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    (__builtin_expect(!((ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 109, "(ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)") : (void)0);
@@ -3549,9 +3828,9 @@ void destroyLinkCells_npm(LinkCell** boxes)
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {
 # 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!boxes) {return;; };
+   if (! boxes) {return; };
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!*boxes) {return;; };
+   if (! *boxes) {return; };
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    free_wrapper((*boxes)->nAtoms, 7636406165860813977UL);
@@ -3651,7 +3930,48 @@ int getBoxFromTuple_npm(LinkCell* boxes, int ix, int iy, int iz)
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (iz == gridSize[2]) {{ iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (gridSize[1] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); }; } else if (iz == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); } else if (iy == gridSize[1]) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * iz + (ix + 1); } else if (iy == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + iz * (gridSize[0] + 2) + (ix + 1); } else if (ix == gridSize[0]) { iBox = boxes->nLocalBoxes + gridSize[1] * gridSize[2] + iz * gridSize[1] + iy; } else if (ix == -1) { iBox = boxes->nLocalBoxes + iz * gridSize[1] + iy; } else { iBox = ix + gridSize[0] * iy + gridSize[0] * gridSize[1] * iz; }
+   if (iz == gridSize[2]) {{
+# 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(gridSize[1]+2) + (gridSize[0]+2)*(iy+1) + (ix+1);
+# 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iz == -1) {{
+# 220 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 221 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(iy+1) + (ix+1);
+# 222 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == gridSize[1]) {{
+# 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + gridSize[2]*(gridSize[0]+2) +
+# 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*iz + (ix+1);
+# 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == -1) {{
+# 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + iz*(gridSize[0]+2) + (ix+1);
+# 233 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == gridSize[0]) {{
+# 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + gridSize[1]*gridSize[2] + iz*gridSize[1] + iy;
+# 238 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == -1)
+# 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 242 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + iz*gridSize[1] + iy;
+# 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
+# 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+# 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   else
+# 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = ix + gridSize[0]*iy + gridSize[0]*gridSize[1]*iz;
+# 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    (__builtin_expect(!(iBox >= 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 249, "iBox >= 0") : (void)0);
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3725,17 +4045,17 @@ int maxOccupancy_npm(LinkCell* boxes)
 # 312 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    int localMax = 0;
 # 313 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   for (int ii = 0;ii < boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); };
+   for (int ii=0;ii<boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); };
 # 315 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 316 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    int globalMax;
 # 317 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 318 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   do { profileStart(commReduceTimer); } while(0);
+   do { (*____chimes_extern_func_profileStart)(commReduceTimer); } while(0);
 # 319 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   maxIntParallel(&localMax, &globalMax, 1);
+   (*____chimes_extern_func_maxIntParallel)(&localMax, &globalMax, 1);
 # 320 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   do { profileStop(commReduceTimer); } while(0);
+   do { (*____chimes_extern_func_profileStop)(commReduceTimer); } while(0);
 # 321 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 322 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    return globalMax;
@@ -3784,11 +4104,23 @@ int getBoxFromCoord_npm(LinkCell* boxes, real_t rr[3])
 # 360 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 361 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 362 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[0] < localMax[0]) {{ if (ix == gridSize[0]) ix = gridSize[0] - 1; }; } else {ix = gridSize[0]; } ;
+   if (rr[0] < localMax[0]) {{
+# 364 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (ix == gridSize[0]) {ix = gridSize[0] - 1; };
+# 365 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {ix = gridSize[0]; } ;
 # 368 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[1] < localMax[1]) {{ if (iy == gridSize[1]) iy = gridSize[1] - 1; }; } else {iy = gridSize[1]; } ;
+   if (rr[1] < localMax[1]) {{
+# 370 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iy == gridSize[1]) {iy = gridSize[1] - 1; };
+# 371 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iy = gridSize[1]; } ;
 # 374 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[2] < localMax[2]) {{ if (iz == gridSize[2]) iz = gridSize[2] - 1; }; } else {iz = gridSize[2]; } ;
+   if (rr[2] < localMax[2]) {{
+# 376 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iz == gridSize[2]) {iz = gridSize[2] - 1; };
+# 377 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iz = gridSize[2]; } ;
 # 380 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 381 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    int result = getBoxFromTuple_npm(boxes, ix, iy, iz);
@@ -3801,7 +4133,7 @@ void emptyHaloCells_npm(LinkCell* boxes)
 # 387 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {
 # 388 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   for (int ii = boxes->nLocalBoxes;ii < boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; };
+   for (int ii=boxes->nLocalBoxes;ii<boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; };
 # 390 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 }
 
@@ -3838,7 +4170,89 @@ void getTuple_npm(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 # 417 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       ink = iBox - boxes->nLocalBoxes;
 # 418 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-      if (ink < 2 * gridSize[1] * gridSize[2]) {{ if (ink < gridSize[1] * gridSize[2]) { ix = 0; } else { ink -= gridSize[1] * gridSize[2]; ix = gridSize[0] + 1; } iy = 1 + ink % gridSize[1]; iz = 1 + ink / gridSize[1]; }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2))) { ink -= 2 * gridSize[2] * gridSize[1]; if (ink < ((gridSize[0] + 2) * gridSize[2])) { iy = 0; } else { ink -= (gridSize[0] + 2) * gridSize[2]; iy = gridSize[1] + 1; } ix = ink % (gridSize[0] + 2); iz = 1 + ink / (gridSize[0] + 2); } else { ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2); if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2))) { iz = 0; } else { ink -= (gridSize[0] + 2) * (gridSize[1] + 2); iz = gridSize[2] + 1; } ix = ink % (gridSize[0] + 2); iy = ink / (gridSize[0] + 2); }
+      if (ink < 2*gridSize[1]*gridSize[2]) {{
+# 420 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < gridSize[1]*gridSize[2])
+# 421 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 422 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = 0;
+# 423 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 424 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 425 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 426 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= gridSize[1]*gridSize[2];
+# 427 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = gridSize[0] + 1;
+# 428 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 429 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = 1 + ink % gridSize[1];
+# 430 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / gridSize[1];
+# 431 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2)))
+# 433 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 434 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * gridSize[1];
+# 435 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) *gridSize[2]))
+# 436 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 437 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = 0;
+# 438 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 439 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 440 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 441 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * gridSize[2];
+# 442 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = gridSize[1] + 1;
+# 443 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 444 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 445 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / (gridSize[0] + 2);
+# 446 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
+# 447 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      else
+# 448 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 449 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2);
+# 450 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2)))
+# 451 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 452 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = 0;
+# 453 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 454 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 455 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 456 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * (gridSize[1] + 2);
+# 457 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = gridSize[2] + 1;
+# 458 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 459 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 460 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = ink / (gridSize[0] + 2);
+# 461 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
 # 462 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 463 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 464 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -3864,9 +4278,119 @@ void getTuple_npm(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 
 
 static int module_init() {
-    init_module(7636406165860813577UL, 39, 12, 3, 12, 12, 0, 12, 4, &____alias_loc_id_0, (unsigned)3, (7636406165860813577UL + 1636UL), (7636406165860813577UL + 1637UL), (7636406165860813577UL + 1638UL), &____alias_loc_id_1, (unsigned)10, (7636406165860813577UL + 1UL), (7636406165860813577UL + 2UL), (7636406165860813577UL + 3UL), (7636406165860813577UL + 4UL), (7636406165860813577UL + 5UL), (7636406165860813577UL + 6UL), (7636406165860813577UL + 7UL), (7636406165860813577UL + 8UL), (7636406165860813577UL + 25UL), (7636406165860813577UL + 232UL), &____alias_loc_id_2, (unsigned)8, (7636406165860813577UL + 299UL), (7636406165860813577UL + 300UL), (7636406165860813577UL + 301UL), (7636406165860813577UL + 305UL), (7636406165860813577UL + 306UL), (7636406165860813577UL + 307UL), (7636406165860813577UL + 308UL), (7636406165860813577UL + 384UL), &____alias_loc_id_3, (unsigned)2, (7636406165860813577UL + 385UL), (7636406165860813577UL + 411UL), &____alias_loc_id_4, (unsigned)13, (7636406165860813577UL + 413UL), (7636406165860813577UL + 414UL), (7636406165860813577UL + 415UL), (7636406165860813577UL + 416UL), (7636406165860813577UL + 417UL), (7636406165860813577UL + 418UL), (7636406165860813577UL + 419UL), (7636406165860813577UL + 420UL), (7636406165860813577UL + 421UL), (7636406165860813577UL + 422UL), (7636406165860813577UL + 692UL), (7636406165860813577UL + 693UL), (7636406165860813577UL + 694UL), &____alias_loc_id_5, (unsigned)6, (7636406165860813577UL + 695UL), (7636406165860813577UL + 696UL), (7636406165860813577UL + 697UL), (7636406165860813577UL + 698UL), (7636406165860813577UL + 699UL), (7636406165860813577UL + 700UL), &____alias_loc_id_6, (unsigned)16, (7636406165860813577UL + 969UL), (7636406165860813577UL + 970UL), (7636406165860813577UL + 971UL), (7636406165860813577UL + 972UL), (7636406165860813577UL + 973UL), (7636406165860813577UL + 974UL), (7636406165860813577UL + 975UL), (7636406165860813577UL + 976UL), (7636406165860813577UL + 977UL), (7636406165860813577UL + 978UL), (7636406165860813577UL + 979UL), (7636406165860813577UL + 980UL), (7636406165860813577UL + 981UL), (7636406165860813577UL + 1025UL), (7636406165860813577UL + 1057UL), (7636406165860813577UL + 1124UL), &____alias_loc_id_7, (unsigned)9, (7636406165860813577UL + 1133UL), (7636406165860813577UL + 1134UL), (7636406165860813577UL + 1135UL), (7636406165860813577UL + 1136UL), (7636406165860813577UL + 1137UL), (7636406165860813577UL + 1138UL), (7636406165860813577UL + 1139UL), (7636406165860813577UL + 1140UL), (7636406165860813577UL + 1141UL), &____alias_loc_id_8, (unsigned)9, (7636406165860813577UL + 1298UL), (7636406165860813577UL + 1299UL), (7636406165860813577UL + 1300UL), (7636406165860813577UL + 1301UL), (7636406165860813577UL + 1302UL), (7636406165860813577UL + 1303UL), (7636406165860813577UL + 1304UL), (7636406165860813577UL + 1361UL), (7636406165860813577UL + 1400UL), &____alias_loc_id_9, (unsigned)9, (7636406165860813577UL + 1404UL), (7636406165860813577UL + 1405UL), (7636406165860813577UL + 1406UL), (7636406165860813577UL + 1407UL), (7636406165860813577UL + 1408UL), (7636406165860813577UL + 1409UL), (7636406165860813577UL + 1410UL), (7636406165860813577UL + 1411UL), (7636406165860813577UL + 1440UL), &____alias_loc_id_10, (unsigned)6, (7636406165860813577UL + 1531UL), (7636406165860813577UL + 1532UL), (7636406165860813577UL + 1533UL), (7636406165860813577UL + 1534UL), (7636406165860813577UL + 1535UL), (7636406165860813577UL + 1536UL), &____alias_loc_id_11, (unsigned)3, (7636406165860813577UL + 1606UL), (7636406165860813577UL + 1607UL), (7636406165860813577UL + 1626UL), "initLinkCells", (void *)(initLinkCells_npm), 0, 2, (7636406165860813577UL + 288UL), 0UL, (7636406165860813577UL + 25UL), 7, "__assert_rtn", 4, (7636406165860813577UL + 1702UL), (7636406165860813577UL + 1703UL), 0UL, (7636406165860813577UL + 1704UL), 0UL, "malloc", 1, 0UL, (7636406165860813577UL + 25UL), "malloc", 1, 0UL, (7636406165860813577UL + 232UL), "__assert_rtn", 4, (7636406165860813577UL + 1702UL), (7636406165860813577UL + 1703UL), 0UL, (7636406165860813577UL + 1705UL), 0UL, "malloc", 1, 0UL, (7636406165860813577UL + 232UL), "malloc", 1, 0UL, (7636406165860813577UL + 278UL), "getNeighborBoxes", 3, (7636406165860813577UL + 25UL), 0UL, (7636406165860813577UL + 278UL), 0UL, "destroyLinkCells", (void *)(destroyLinkCells_npm), 0, 1, (7636406165860813577UL + 411UL), 0UL, 2, "free", 1, (7636406165860813577UL + 400UL), 0UL, "free", 1, (7636406165860813577UL + 393UL), 0UL, "getNeighborBoxes", (void *)(getNeighborBoxes_npm), 0, 3, (7636406165860813577UL + 382UL), 0UL, (7636406165860813577UL + 384UL), 0UL, 2, "getTuple", 5, (7636406165860813577UL + 382UL), 0UL, (7636406165860813577UL + 302UL), (7636406165860813577UL + 303UL), (7636406165860813577UL + 304UL), 0UL, "getBoxFromTuple", 4, (7636406165860813577UL + 382UL), 0UL, 0UL, 0UL, 0UL, "putAtomInBox", (void *)(putAtomInBox_npm), 0, 10, (7636406165860813577UL + 1123UL), (7636406165860813577UL + 1124UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 1, "getBoxFromCoord", 2, (7636406165860813577UL + 1123UL), (7636406165860813577UL + 979UL), 0UL, "getBoxFromTuple", (void *)(getBoxFromTuple_npm), 0, 4, (7636406165860813577UL + 950UL), 0UL, 0UL, 0UL, 0UL, 2, "__assert_rtn", 4, (7636406165860813577UL + 1706UL), (7636406165860813577UL + 1703UL), 0UL, (7636406165860813577UL + 1707UL), 0UL, "__assert_rtn", 4, (7636406165860813577UL + 1706UL), (7636406165860813577UL + 1703UL), 0UL, (7636406165860813577UL + 1708UL), 0UL, "moveAtom", (void *)(moveAtom_npm), 0, 5, (7636406165860813577UL + 1359UL), (7636406165860813577UL + 1400UL), 0UL, 0UL, 0UL, 0UL, 3, "copyAtom", 6, (7636406165860813577UL + 1359UL), (7636406165860813577UL + 1400UL), 0UL, 0UL, 0UL, 0UL, 0UL, "__assert_rtn", 4, (7636406165860813577UL + 1709UL), (7636406165860813577UL + 1703UL), 0UL, (7636406165860813577UL + 1710UL), 0UL, "copyAtom", 6, (7636406165860813577UL + 1359UL), (7636406165860813577UL + 1400UL), 0UL, 0UL, 0UL, 0UL, 0UL, "updateLinkCells", (void *)(updateLinkCells_npm), 0, 2, (7636406165860813577UL + 1604UL), (7636406165860813577UL + 1605UL), 0UL, 3, "emptyHaloCells", 1, (7636406165860813577UL + 1604UL), 0UL, "getBoxFromCoord", 2, (7636406165860813577UL + 1604UL), (7636406165860813577UL + 1577UL), 0UL, "moveAtom", 5, (7636406165860813577UL + 1604UL), (7636406165860813577UL + 1605UL), 0UL, 0UL, 0UL, 0UL, "maxOccupancy", (void *)(maxOccupancy_npm), 1, &____alias_loc_id_0, 1, (7636406165860813577UL + 1667UL), 0UL, 3, "profileStart", 1, 0UL, 0UL, "maxIntParallel", 3, (7636406165860813577UL + 1637UL), (7636406165860813577UL + 1639UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL, "copyAtom", (void *)(copyAtom_npm), 0, 6, (7636406165860813577UL + 1525UL), (7636406165860813577UL + 1526UL), 0UL, 0UL, 0UL, 0UL, 0UL, 4, "memcpy", 3, (7636406165860813577UL + 1440UL), (7636406165860813577UL + 1440UL), 0UL, 0UL, "memcpy", 3, (7636406165860813577UL + 1440UL), (7636406165860813577UL + 1440UL), 0UL, 0UL, "memcpy", 3, (7636406165860813577UL + 1440UL), (7636406165860813577UL + 1440UL), 0UL, 0UL, "memcpy", 3, (7636406165860813577UL + 1440UL), (7636406165860813577UL + 1440UL), 0UL, 0UL, "getBoxFromCoord", (void *)(getBoxFromCoord_npm), 0, 2, (7636406165860813577UL + 1296UL), (7636406165860813577UL + 1297UL), 0UL, 4, "floor", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL, "getBoxFromTuple", 4, (7636406165860813577UL + 1296UL), 0UL, 0UL, 0UL, 0UL, "emptyHaloCells", (void *)(emptyHaloCells_npm), 0, 1, (7636406165860813577UL + 1635UL), 0UL, 0, "getTuple", (void *)(getTuple_npm), 0, 5, (7636406165860813577UL + 690UL), 0UL, (7636406165860813577UL + 692UL), (7636406165860813577UL + 693UL), (7636406165860813577UL + 694UL), 0UL, 0, "initLinkCells", &(____chimes_does_checkpoint_initLinkCells_npm), "destroyLinkCells", &(____chimes_does_checkpoint_destroyLinkCells_npm), "getNeighborBoxes", &(____chimes_does_checkpoint_getNeighborBoxes_npm), "putAtomInBox", &(____chimes_does_checkpoint_putAtomInBox_npm), "getBoxFromTuple", &(____chimes_does_checkpoint_getBoxFromTuple_npm), "moveAtom", &(____chimes_does_checkpoint_moveAtom_npm), "updateLinkCells", &(____chimes_does_checkpoint_updateLinkCells_npm), "maxOccupancy", &(____chimes_does_checkpoint_maxOccupancy_npm), "copyAtom", &(____chimes_does_checkpoint_copyAtom_npm), "getBoxFromCoord", &(____chimes_does_checkpoint_getBoxFromCoord_npm), "emptyHaloCells", &(____chimes_does_checkpoint_emptyHaloCells_npm), "getTuple", &(____chimes_does_checkpoint_getTuple_npm), (7636406165860813577UL + 1532UL), (7636406165860813577UL + 1605UL), (7636406165860813577UL + 1123UL), (7636406165860813577UL + 1025UL), (7636406165860813577UL + 1124UL), (7636406165860813577UL + 1057UL), (7636406165860813577UL + 1359UL), (7636406165860813577UL + 1361UL), (7636406165860813577UL + 1604UL), (7636406165860813577UL + 1564UL), (7636406165860813577UL + 393UL), (7636406165860813577UL + 400UL), (7636406165860813577UL + 1526UL), (7636406165860813577UL + 1440UL), (7636406165860813577UL + 232UL), (7636406165860813577UL + 278UL), (7636406165860813577UL + 25UL), (7636406165860813577UL + 232UL), (7636406165860813577UL + 1635UL), (7636406165860813577UL + 1626UL), (7636406165860813577UL + 1636UL), (7636406165860813577UL + 1667UL), (7636406165860813577UL + 695UL), (7636406165860813577UL + 950UL), (7636406165860813577UL + 1298UL), (7636406165860813577UL + 1359UL), (7636406165860813577UL + 1UL), (7636406165860813577UL + 288UL), (7636406165860813577UL + 3UL), (7636406165860813577UL + 25UL), (7636406165860813577UL + 1299UL), (7636406165860813577UL + 1400UL), (7636406165860813577UL + 421UL), (7636406165860813577UL + 690UL), (7636406165860813577UL + 1405UL), (7636406165860813577UL + 1526UL), (7636406165860813577UL + 1404UL), (7636406165860813577UL + 1525UL), (7636406165860813577UL + 700UL), (7636406165860813577UL + 950UL), (7636406165860813577UL + 1133UL), (7636406165860813577UL + 1296UL), (7636406165860813577UL + 301UL), (7636406165860813577UL + 384UL), (7636406165860813577UL + 299UL), (7636406165860813577UL + 382UL), (7636406165860813577UL + 1137UL), (7636406165860813577UL + 1296UL), (7636406165860813577UL + 1136UL), (7636406165860813577UL + 1296UL), (7636406165860813577UL + 1135UL), (7636406165860813577UL + 1296UL), (7636406165860813577UL + 1134UL), (7636406165860813577UL + 1297UL), (7636406165860813577UL + 385UL), (7636406165860813577UL + 411UL), (7636406165860813577UL + 970UL), (7636406165860813577UL + 1124UL), (7636406165860813577UL + 1605UL), (7636406165860813577UL + 1577UL), (7636406165860813577UL + 969UL), (7636406165860813577UL + 1123UL), (7636406165860813577UL + 1606UL), (7636406165860813577UL + 1635UL), (7636406165860813577UL + 415UL), (7636406165860813577UL + 692UL), (7636406165860813577UL + 416UL), (7636406165860813577UL + 693UL), (7636406165860813577UL + 417UL), (7636406165860813577UL + 694UL), (7636406165860813577UL + 411UL), (7636406165860813577UL + 393UL), (7636406165860813577UL + 1531UL), (7636406165860813577UL + 1604UL), (7636406165860813577UL + 413UL), (7636406165860813577UL + 690UL), (7636406165860813577UL + 1667UL), (7636406165860813577UL + 1669UL), "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes), "TimerHandle", 0, "getNeighborBoxes", 2, "getTuple", "getBoxFromTuple", "initLinkCells", 1, "getNeighborBoxes", "getBoxFromCoord", 1, "getBoxFromTuple", "getTuple", 0, "copyAtom", 0, "updateLinkCells", 3, "emptyHaloCells", "getBoxFromCoord", "moveAtom", "emptyHaloCells", 0, "maxOccupancy", 3, "profileStart", "maxIntParallel", "profileStop", "putAtomInBox", 1, "getBoxFromCoord", "destroyLinkCells", 0, "getBoxFromTuple", 0, "moveAtom", 2, "copyAtom", "copyAtom", "getNeighborBoxes|ix|0", 1, "getNeighborBoxes", "putAtomInBox|xyz|0", 1, "putAtomInBox", "maxOccupancy|localMax|0", 1, "maxOccupancy");
-    register_functions(12, "linkCells.c.pre.extern_ptrs.cpp", "getNeighborBoxes", &getNeighborBoxes, "initLinkCells", &initLinkCells, "getBoxFromCoord", &getBoxFromCoord, "getTuple", &getTuple, "copyAtom", &copyAtom, "updateLinkCells", &updateLinkCells, "emptyHaloCells", &emptyHaloCells, "maxOccupancy", &maxOccupancy, "putAtomInBox", &putAtomInBox, "destroyLinkCells", &destroyLinkCells, "getBoxFromTuple", &getBoxFromTuple, "moveAtom", &moveAtom);
+    init_module(7636406165860813577UL, 39, 12, 3, 13, 12, 3, 15, 10, 0, 4,
+                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (7636406165860813577UL + 1636UL), (7636406165860813577UL + 1637UL), (7636406165860813577UL + 1638UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)1, (7636406165860813577UL + 1UL), (7636406165860813577UL + 2UL), (7636406165860813577UL + 3UL), (7636406165860813577UL + 4UL), (7636406165860813577UL + 5UL), (7636406165860813577UL + 6UL), (7636406165860813577UL + 7UL), (7636406165860813577UL + 8UL), (7636406165860813577UL + 25UL), (7636406165860813577UL + 232UL), "getNeighborBoxes", (unsigned)2, (7636406165860813577UL + 25UL), (7636406165860813577UL + 278UL),
+                           &____alias_loc_id_2, (unsigned)8, (unsigned)2, (7636406165860813577UL + 299UL), (7636406165860813577UL + 300UL), (7636406165860813577UL + 301UL), (7636406165860813577UL + 305UL), (7636406165860813577UL + 306UL), (7636406165860813577UL + 307UL), (7636406165860813577UL + 308UL), (7636406165860813577UL + 384UL), "getBoxFromTuple", (unsigned)1, (7636406165860813577UL + 382UL), "getTuple", (unsigned)4, (7636406165860813577UL + 302UL), (7636406165860813577UL + 303UL), (7636406165860813577UL + 304UL), (7636406165860813577UL + 382UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (7636406165860813577UL + 385UL), (7636406165860813577UL + 411UL),
+                           &____alias_loc_id_4, (unsigned)13, (unsigned)0, (7636406165860813577UL + 413UL), (7636406165860813577UL + 414UL), (7636406165860813577UL + 415UL), (7636406165860813577UL + 416UL), (7636406165860813577UL + 417UL), (7636406165860813577UL + 418UL), (7636406165860813577UL + 419UL), (7636406165860813577UL + 420UL), (7636406165860813577UL + 421UL), (7636406165860813577UL + 422UL), (7636406165860813577UL + 692UL), (7636406165860813577UL + 693UL), (7636406165860813577UL + 694UL),
+                           &____alias_loc_id_5, (unsigned)6, (unsigned)0, (7636406165860813577UL + 695UL), (7636406165860813577UL + 696UL), (7636406165860813577UL + 697UL), (7636406165860813577UL + 698UL), (7636406165860813577UL + 699UL), (7636406165860813577UL + 700UL),
+                           &____alias_loc_id_6, (unsigned)16, (unsigned)1, (7636406165860813577UL + 969UL), (7636406165860813577UL + 970UL), (7636406165860813577UL + 971UL), (7636406165860813577UL + 972UL), (7636406165860813577UL + 973UL), (7636406165860813577UL + 974UL), (7636406165860813577UL + 975UL), (7636406165860813577UL + 976UL), (7636406165860813577UL + 977UL), (7636406165860813577UL + 978UL), (7636406165860813577UL + 979UL), (7636406165860813577UL + 980UL), (7636406165860813577UL + 981UL), (7636406165860813577UL + 1025UL), (7636406165860813577UL + 1057UL), (7636406165860813577UL + 1124UL), "getBoxFromCoord", (unsigned)2, (7636406165860813577UL + 979UL), (7636406165860813577UL + 1123UL),
+                           &____alias_loc_id_7, (unsigned)9, (unsigned)1, (7636406165860813577UL + 1133UL), (7636406165860813577UL + 1134UL), (7636406165860813577UL + 1135UL), (7636406165860813577UL + 1136UL), (7636406165860813577UL + 1137UL), (7636406165860813577UL + 1138UL), (7636406165860813577UL + 1139UL), (7636406165860813577UL + 1140UL), (7636406165860813577UL + 1141UL), "getBoxFromTuple", (unsigned)1, (7636406165860813577UL + 1296UL),
+                           &____alias_loc_id_8, (unsigned)9, (unsigned)1, (7636406165860813577UL + 1298UL), (7636406165860813577UL + 1299UL), (7636406165860813577UL + 1300UL), (7636406165860813577UL + 1301UL), (7636406165860813577UL + 1302UL), (7636406165860813577UL + 1303UL), (7636406165860813577UL + 1304UL), (7636406165860813577UL + 1361UL), (7636406165860813577UL + 1400UL), "copyAtom", (unsigned)2, (7636406165860813577UL + 1359UL), (7636406165860813577UL + 1400UL),
+                           &____alias_loc_id_9, (unsigned)9, (unsigned)0, (7636406165860813577UL + 1404UL), (7636406165860813577UL + 1405UL), (7636406165860813577UL + 1406UL), (7636406165860813577UL + 1407UL), (7636406165860813577UL + 1408UL), (7636406165860813577UL + 1409UL), (7636406165860813577UL + 1410UL), (7636406165860813577UL + 1411UL), (7636406165860813577UL + 1440UL),
+                            &____alias_loc_id_10, (unsigned)6, (unsigned)3, (7636406165860813577UL + 1531UL), (7636406165860813577UL + 1532UL), (7636406165860813577UL + 1533UL), (7636406165860813577UL + 1534UL), (7636406165860813577UL + 1535UL), (7636406165860813577UL + 1536UL), "moveAtom", (unsigned)2, (7636406165860813577UL + 1604UL), (7636406165860813577UL + 1605UL), "emptyHaloCells", (unsigned)1, (7636406165860813577UL + 1604UL), "getBoxFromCoord", (unsigned)2, (7636406165860813577UL + 1577UL), (7636406165860813577UL + 1604UL),
+                            &____alias_loc_id_11, (unsigned)3, (unsigned)0, (7636406165860813577UL + 1606UL), (7636406165860813577UL + 1607UL), (7636406165860813577UL + 1626UL),
+                            &____alias_loc_id_12, (unsigned)0, (unsigned)1, "maxIntParallel", (unsigned)2, (7636406165860813577UL + 1637UL), (7636406165860813577UL + 1639UL),
+                            "initLinkCells", (void *)(&initLinkCells_npm), (void *)__null, 0, 2, (7636406165860813577UL + 288UL), 0UL, (7636406165860813577UL + 25UL), 7, "__assert_rtn", 4, (7636406165860813577UL + 1702UL), (7636406165860813577UL + 1703UL), 0UL, (7636406165860813577UL + 1704UL), 0UL, "malloc", 1, 0UL, (7636406165860813577UL + 25UL), "malloc", 1, 0UL, (7636406165860813577UL + 232UL), "__assert_rtn", 4, (7636406165860813577UL + 1702UL), (7636406165860813577UL + 1703UL), 0UL, (7636406165860813577UL + 1705UL), 0UL, "malloc", 1, 0UL, (7636406165860813577UL + 232UL), "malloc", 1, 0UL, (7636406165860813577UL + 278UL), "getNeighborBoxes", 3, (7636406165860813577UL + 25UL), 0UL, (7636406165860813577UL + 278UL), 0UL,
+                            "destroyLinkCells", (void *)(&destroyLinkCells_npm), (void *)__null, 0, 1, (7636406165860813577UL + 411UL), 0UL, 2, "free", 1, (7636406165860813577UL + 400UL), 0UL, "free", 1, (7636406165860813577UL + 393UL), 0UL,
+                            "getNeighborBoxes", (void *)(&getNeighborBoxes_npm), (void *)__null, 0, 3, (7636406165860813577UL + 382UL), 0UL, (7636406165860813577UL + 384UL), 0UL, 2, "getTuple", 5, (7636406165860813577UL + 382UL), 0UL, (7636406165860813577UL + 302UL), (7636406165860813577UL + 303UL), (7636406165860813577UL + 304UL), 0UL, "getBoxFromTuple", 4, (7636406165860813577UL + 382UL), 0UL, 0UL, 0UL, 0UL,
+                            "putAtomInBox", (void *)(&putAtomInBox_npm), (void *)__null, 0, 10, (7636406165860813577UL + 1123UL), (7636406165860813577UL + 1124UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 1, "getBoxFromCoord", 2, (7636406165860813577UL + 1123UL), (7636406165860813577UL + 979UL), 0UL,
+                            "getBoxFromTuple", (void *)(&getBoxFromTuple_npm), (void *)__null, 0, 4, (7636406165860813577UL + 950UL), 0UL, 0UL, 0UL, 0UL, 2, "__assert_rtn", 4, (7636406165860813577UL + 1706UL), (7636406165860813577UL + 1703UL), 0UL, (7636406165860813577UL + 1707UL), 0UL, "__assert_rtn", 4, (7636406165860813577UL + 1706UL), (7636406165860813577UL + 1703UL), 0UL, (7636406165860813577UL + 1708UL), 0UL,
+                            "moveAtom", (void *)(&moveAtom_npm), (void *)__null, 0, 5, (7636406165860813577UL + 1359UL), (7636406165860813577UL + 1400UL), 0UL, 0UL, 0UL, 0UL, 3, "copyAtom", 6, (7636406165860813577UL + 1359UL), (7636406165860813577UL + 1400UL), 0UL, 0UL, 0UL, 0UL, 0UL, "__assert_rtn", 4, (7636406165860813577UL + 1709UL), (7636406165860813577UL + 1703UL), 0UL, (7636406165860813577UL + 1710UL), 0UL, "copyAtom", 6, (7636406165860813577UL + 1359UL), (7636406165860813577UL + 1400UL), 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "updateLinkCells", (void *)(&updateLinkCells_npm), (void *)__null, 0, 2, (7636406165860813577UL + 1604UL), (7636406165860813577UL + 1605UL), 0UL, 3, "emptyHaloCells", 1, (7636406165860813577UL + 1604UL), 0UL, "getBoxFromCoord", 2, (7636406165860813577UL + 1604UL), (7636406165860813577UL + 1577UL), 0UL, "moveAtom", 5, (7636406165860813577UL + 1604UL), (7636406165860813577UL + 1605UL), 0UL, 0UL, 0UL, 0UL,
+                            "maxOccupancy", (void *)(&maxOccupancy_npm), (void *)__null, 1, &____alias_loc_id_0, 1, (7636406165860813577UL + 1667UL), 0UL, 3, "profileStart", 1, 0UL, 0UL, "maxIntParallel", 3, (7636406165860813577UL + 1637UL), (7636406165860813577UL + 1639UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL,
+                            "copyAtom", (void *)(&copyAtom_npm), (void *)__null, 0, 6, (7636406165860813577UL + 1525UL), (7636406165860813577UL + 1526UL), 0UL, 0UL, 0UL, 0UL, 0UL, 4, "memcpy", 3, (7636406165860813577UL + 1440UL), (7636406165860813577UL + 1440UL), 0UL, 0UL, "memcpy", 3, (7636406165860813577UL + 1440UL), (7636406165860813577UL + 1440UL), 0UL, 0UL, "memcpy", 3, (7636406165860813577UL + 1440UL), (7636406165860813577UL + 1440UL), 0UL, 0UL, "memcpy", 3, (7636406165860813577UL + 1440UL), (7636406165860813577UL + 1440UL), 0UL, 0UL,
+                            "getBoxFromCoord", (void *)(&getBoxFromCoord_npm), (void *)__null, 0, 2, (7636406165860813577UL + 1296UL), (7636406165860813577UL + 1297UL), 0UL, 4, "floor", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL, "getBoxFromTuple", 4, (7636406165860813577UL + 1296UL), 0UL, 0UL, 0UL, 0UL,
+                            "emptyHaloCells", (void *)(&emptyHaloCells_npm), (void *)__null, 0, 1, (7636406165860813577UL + 1635UL), 0UL, 0,
+                            "getTuple", (void *)(&getTuple_npm), (void *)__null, 0, 5, (7636406165860813577UL + 690UL), 0UL, (7636406165860813577UL + 692UL), (7636406165860813577UL + 693UL), (7636406165860813577UL + 694UL), 0UL, 0,
+                               "maxIntParallel", (void **)&(____chimes_extern_func_maxIntParallel),
+                               "profileStart", (void **)&(____chimes_extern_func_profileStart),
+                               "profileStop", (void **)&(____chimes_extern_func_profileStop),
+                           "initLinkCells", &(____chimes_does_checkpoint_initLinkCells_npm),
+                           "destroyLinkCells", &(____chimes_does_checkpoint_destroyLinkCells_npm),
+                           "getNeighborBoxes", &(____chimes_does_checkpoint_getNeighborBoxes_npm),
+                           "putAtomInBox", &(____chimes_does_checkpoint_putAtomInBox_npm),
+                           "getBoxFromTuple", &(____chimes_does_checkpoint_getBoxFromTuple_npm),
+                           "moveAtom", &(____chimes_does_checkpoint_moveAtom_npm),
+                           "updateLinkCells", &(____chimes_does_checkpoint_updateLinkCells_npm),
+                           "maxOccupancy", &(____chimes_does_checkpoint_maxOccupancy_npm),
+                           "copyAtom", &(____chimes_does_checkpoint_copyAtom_npm),
+                           "getBoxFromCoord", &(____chimes_does_checkpoint_getBoxFromCoord_npm),
+                           "emptyHaloCells", &(____chimes_does_checkpoint_emptyHaloCells_npm),
+                           "getTuple", &(____chimes_does_checkpoint_getTuple_npm),
+                           "maxIntParallel", &(____chimes_does_checkpoint_maxIntParallel_npm),
+                           "profileStart", &(____chimes_does_checkpoint_profileStart_npm),
+                           "profileStop", &(____chimes_does_checkpoint_profileStop_npm),
+                             (7636406165860813577UL + 1532UL), (7636406165860813577UL + 1605UL),
+                             (7636406165860813577UL + 1123UL), (7636406165860813577UL + 1025UL),
+                             (7636406165860813577UL + 1124UL), (7636406165860813577UL + 1057UL),
+                             (7636406165860813577UL + 1359UL), (7636406165860813577UL + 1361UL),
+                             (7636406165860813577UL + 1604UL), (7636406165860813577UL + 1564UL),
+                             (7636406165860813577UL + 393UL), (7636406165860813577UL + 400UL),
+                             (7636406165860813577UL + 1526UL), (7636406165860813577UL + 1440UL),
+                             (7636406165860813577UL + 232UL), (7636406165860813577UL + 278UL),
+                             (7636406165860813577UL + 25UL), (7636406165860813577UL + 232UL),
+                             (7636406165860813577UL + 1635UL), (7636406165860813577UL + 1626UL),
+                             (7636406165860813577UL + 1636UL), (7636406165860813577UL + 1667UL),
+                             (7636406165860813577UL + 695UL), (7636406165860813577UL + 950UL),
+                             (7636406165860813577UL + 1298UL), (7636406165860813577UL + 1359UL),
+                             (7636406165860813577UL + 1UL), (7636406165860813577UL + 288UL),
+                             (7636406165860813577UL + 3UL), (7636406165860813577UL + 25UL),
+                             (7636406165860813577UL + 1299UL), (7636406165860813577UL + 1400UL),
+                             (7636406165860813577UL + 421UL), (7636406165860813577UL + 690UL),
+                             (7636406165860813577UL + 1405UL), (7636406165860813577UL + 1526UL),
+                             (7636406165860813577UL + 1404UL), (7636406165860813577UL + 1525UL),
+                             (7636406165860813577UL + 700UL), (7636406165860813577UL + 950UL),
+                             (7636406165860813577UL + 1133UL), (7636406165860813577UL + 1296UL),
+                             (7636406165860813577UL + 301UL), (7636406165860813577UL + 384UL),
+                             (7636406165860813577UL + 299UL), (7636406165860813577UL + 382UL),
+                             (7636406165860813577UL + 1137UL), (7636406165860813577UL + 1296UL),
+                             (7636406165860813577UL + 1136UL), (7636406165860813577UL + 1296UL),
+                             (7636406165860813577UL + 1135UL), (7636406165860813577UL + 1296UL),
+                             (7636406165860813577UL + 1134UL), (7636406165860813577UL + 1297UL),
+                             (7636406165860813577UL + 385UL), (7636406165860813577UL + 411UL),
+                             (7636406165860813577UL + 970UL), (7636406165860813577UL + 1124UL),
+                             (7636406165860813577UL + 1605UL), (7636406165860813577UL + 1577UL),
+                             (7636406165860813577UL + 969UL), (7636406165860813577UL + 1123UL),
+                             (7636406165860813577UL + 1606UL), (7636406165860813577UL + 1635UL),
+                             (7636406165860813577UL + 415UL), (7636406165860813577UL + 692UL),
+                             (7636406165860813577UL + 416UL), (7636406165860813577UL + 693UL),
+                             (7636406165860813577UL + 417UL), (7636406165860813577UL + 694UL),
+                             (7636406165860813577UL + 411UL), (7636406165860813577UL + 393UL),
+                             (7636406165860813577UL + 1531UL), (7636406165860813577UL + 1604UL),
+                             (7636406165860813577UL + 413UL), (7636406165860813577UL + 690UL),
+                             (7636406165860813577UL + 1667UL), (7636406165860813577UL + 1669UL),
+                     "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U),
+                     "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent),
+                     "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes),
+                     "TimerHandle", 0,
+                             "getNeighborBoxes", "_Z16getNeighborBoxesP10LinkCellStiPi", 2, "getTuple", "getBoxFromTuple",
+                             "initLinkCells", "_Z13initLinkCellsPK8DomainStd", 1, "getNeighborBoxes",
+                             "getBoxFromCoord", "_ZL15getBoxFromCoordP10LinkCellStPd", 1, "getBoxFromTuple",
+                             "getTuple", "_ZL8getTupleP10LinkCellStiPiS1_S1_", 0,
+                             "copyAtom", "_ZL8copyAtomP10LinkCellStP7AtomsStiiii", 0,
+                             "updateLinkCells", "_Z15updateLinkCellsP10LinkCellStP7AtomsSt", 3, "emptyHaloCells", "getBoxFromCoord", "moveAtom",
+                             "emptyHaloCells", "_ZL14emptyHaloCellsP10LinkCellSt", 0,
+                             "maxOccupancy", "_Z12maxOccupancyP10LinkCellSt", 3, "profileStart", "maxIntParallel", "profileStop",
+                             "putAtomInBox", "_Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd", 1, "getBoxFromCoord",
+                             "destroyLinkCells", "_Z16destroyLinkCellsPP10LinkCellSt", 0,
+                             "getBoxFromTuple", "_Z15getBoxFromTupleP10LinkCellStiii", 0,
+                             "moveAtom", "_Z8moveAtomP10LinkCellStP7AtomsStiii", 2, "copyAtom", "copyAtom",
+                        "getNeighborBoxes|ix|0", 1, "getNeighborBoxes",
+                        "putAtomInBox|xyz|0", 1, "putAtomInBox",
+                        "maxOccupancy|localMax|0", 1, "maxOccupancy",
+        "getNeighborBoxes", 0UL, (int)3, 7636406165860813602UL, 0UL, 7636406165860813855UL,
+        "getTuple", 0UL, (int)5, 7636406165860813959UL, 0UL, 7636406165860813879UL, 7636406165860813880UL, 7636406165860813881UL,
+        "getBoxFromTuple", 0UL, (int)4, 7636406165860813959UL, 0UL, 0UL, 0UL,
+        "getBoxFromCoord", 0UL, (int)2, 7636406165860814700UL, 7636406165860814556UL,
+        "copyAtom", 0UL, (int)6, 7636406165860814936UL, 7636406165860814977UL, 0UL, 0UL, 0UL, 0UL,
+        "copyAtom", 0UL, (int)6, 7636406165860814936UL, 7636406165860814977UL, 0UL, 0UL, 0UL, 0UL,
+        "emptyHaloCells", 0UL, (int)1, 7636406165860815181UL,
+        "getBoxFromCoord", 0UL, (int)2, 7636406165860815181UL, 7636406165860815154UL,
+        "moveAtom", 0UL, (int)5, 7636406165860815181UL, 7636406165860815182UL, 0UL, 0UL, 0UL,
+        "getBoxFromTuple", 0UL, (int)4, 7636406165860814873UL, 0UL, 0UL, 0UL);
     return 0;
 }
 
-static int __libchimes_module_init = module_init();
+static const int __libchimes_module_init = module_init();

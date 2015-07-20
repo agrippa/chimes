@@ -1,8 +1,0 @@
-profileStart 0 2 1 774 0
-getTime 0 2 14 15 0
-profileStop 0 3 29 30 774 0
-getElapsedTime 0 3 67 68 774 0
-getTick 0 1 89 0
-printPerformanceResults 0 2 103 784 0
-timerStats 0 3 331 332 774 1 addDoubleParallel 2 320 321
-printPerformanceResultsYaml 0 4 549 550 551 552 0

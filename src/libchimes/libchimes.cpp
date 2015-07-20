@@ -16,6 +16,7 @@
 #include <sys/types.h>
 #include <aio.h>
 #include <errno.h>
+#include <dlfcn.h>
 
 #ifdef CUDA_SUPPORT
 #include <cuda_runtime.h>
@@ -37,6 +38,7 @@
 #include "thread_serialization.h"
 #include "global_serialization.h"
 #include "constant_serialization.h"
+#include "function_serialization.h"
 #include "trace_serialization.h"
 #include "container_serialization.h"
 #include "alias_groups_serialization.h"
@@ -45,15 +47,16 @@
 #include "already_updated_ptrs.h"
 #include "chimes_stack.h"
 #include "heap_allocation.h"
-#include "checkpointable_heap_allocation.h"
 #include "type_info.h"
 #include "thread_ctx.h"
+#include "heap_tree.h"
 
 #include "xxhash/xxhash.h"
 
 using namespace std;
 
 // #define HASHING_DIAGNOSTICS
+// #define OVERHEAD_DIAGNOSTICS
 
 /*
  * A note on OMP nested parallelism and how that maps to pthreads.
@@ -113,15 +116,25 @@ typedef struct _checkpoint_thread_ctx {
     unsigned char *stacks_serialized;
     unsigned char *globals_serialized;
     unsigned char *constants_serialized;
+    unsigned char *function_addresses_serialized;
     unsigned char *thread_hierarchy_serialized;
     uint64_t stacks_serialized_len;
     uint64_t globals_serialized_len;
     uint64_t constants_serialized_len;
+    uint64_t function_addresses_serialized_len;
     uint64_t thread_hierarchy_serialized_len;
+
+    /*
+     * Used on resume to reconfigure the OpenMP runtime with the appropriate
+     * number of threads if the host application manually configured this
+     * tunable. It's ugly that we have to add this explicit tie in to OpenMP...
+     */
+    int n_omp_threads;
 
     std::vector<std::pair<unsigned, clock_t> > *checkpoint_entry_times;
 
-    vector<checkpointable_heap_allocation> *heap_to_checkpoint;
+    heap_serialization_wrapper *heap_to_checkpoint;
+    size_t n_heap_to_checkpoint;
 
     void *contains_serialized;
     size_t contains_serialized_len;
@@ -195,21 +208,12 @@ class checkpoint_ctx {
 int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
         unsigned n_local_arg_aliases, /* unsigned n_args, */ ...);
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, /* int *conditional, unsigned loc_id */int did_disable, bool is_allocator);
+        const char *funcname, /* int *conditional, unsigned loc_id */ bool is_allocator);
 void register_stack_var(const char *mangled_name, int *cond_registration,
         unsigned thread, const char *full_type, void *ptr, size_t size,
         int is_ptr, int is_struct, int n_ptr_fields, ...);
 void register_stack_vars(int nvars, ...);
 int alias_group_changed(unsigned loc_id);
-void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
-        ...);
-void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-void free_wrapper(void *ptr, size_t group);
-
-void onexit();
 
 static void safe_write(int fd, void *ptr, size_t size, const char *msg,
         const char *filename);
@@ -218,18 +222,18 @@ static void safe_read(int fd, void *ptr, size_t size, const char *msg,
 static void skip(int fd, ssize_t size, const char *msg, const char *filename);
 static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
         const char *filename);
-static void *translate_old_ptr(void *ptr,
-        std::map<void *, ptr_and_size *> *old_to_new, void *container);
-static void fix_stack_or_global_pointer(void *container, string type, int nesting);
-map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
-void free_helper(void *ptr);
+static void *translate_old_ptr(void *ptr, heap_tree *old_to_new,
+        void *container);
+static void fix_stack_or_global_pointer(void *container, string type,
+        int nesting);
+heap_allocation *free_impl(const void *ptr, heap_allocation *alloc);
 static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        va_list vl);
+        va_list *vl);
 static bool need_to_register(int *cond_registration, string mangled_name);
 inline void register_stack_var_helper(std::string mangled_name_str,
         int *cond_registration, const char *full_type, void *ptr, size_t size,
-        int is_ptr, int is_struct, int n_ptr_fields, va_list vl,
+        int is_ptr, int is_struct, int n_ptr_fields, va_list *vl,
         std::vector<stack_frame *> *program_stack);
 static inline void alias_group_changed_helper(unsigned loc_id,
         thread_ctx *ctx);
@@ -237,11 +241,13 @@ static void merge_npm_aliases(string fname, size_t return_alias,
         vector<size_t> param_aliases);
 // static void *checkpoint_func(void *data);
 static void destroy_thread_ctx(void *thread_ctx_ptr);
+static void cleanup_thread_heap(void *thread_heap_ptr);
 
 static std::vector<stack_frame *> *get_my_stack();
 static unsigned get_my_tid();
 static thread_ctx *get_my_context();
 static thread_ctx *get_my_context_may_fail();
+static thread_local_allocations *get_my_thread_heap();
 static bool wait_for_all_threads(clock_t *entry_time, checkpoint_ctx **out,
         bool *should_abort);
 
@@ -261,14 +267,15 @@ static map<unsigned, unsigned> trace_indices;
  * every thread's state.
  */
 pthread_key_t thread_ctx_key;
+pthread_key_t thread_heap_key;
 pthread_key_t tid_key;
 
 /*
- * Globally shared heap representation used by all threads.
+ * Per-thread heap data.
  */
-static map<void *, heap_allocation *> heap;
-static map<size_t, vector<heap_allocation *> *> alias_to_heap;
-static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
+static map<pthread_t, thread_local_allocations *> thread_heaps;
+static pthread_t main_thread;
+static pthread_rwlock_t thread_heaps_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
  * Mapping from heap groups to the other heap groups they may be aliased with.
@@ -281,6 +288,7 @@ static pthread_rwlock_t aliased_groups_lock = PTHREAD_RWLOCK_INITIALIZER;
  * declared inside a function.
  */
 static map<std::string, stack_var *> global_vars;
+static set<size_t> global_aliases;
 static pthread_rwlock_t globals_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
@@ -288,17 +296,16 @@ static pthread_rwlock_t globals_lock = PTHREAD_RWLOCK_INITIALIZER;
  * the analysis pass. These are only constants which have a pointer type.
  */
 static map<size_t, constant_var *> constants;
+static size_t max_constant_id = 0;
 static pthread_rwlock_t constants_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
- * The start and end of the TEXT region of the running executable. This
- * information can be used to update function pointers without getting the
- * address of every function in the compilation unit (which messes with compiler
- * inter-procedural analysis).
+ * A mapping from plain function name to its address in the TEXT region,
+ * gathered using ldopen/ldsym. We use ldopen/ldsym rather than simply passing
+ * the address of the functions to a library function because taking the
+ * function pointer in the code severely hamper compiler optimizations.
  */
-static void *text_start = NULL;
-static size_t text_len = 0;
-static set<string> all_functions;
+static map<string, void *> function_addresses;
 
 /*
  * A mapping from alias groups to the alias group that they may contain (in the
@@ -327,6 +334,7 @@ static pthread_rwlock_t thread_ctxs_lock = PTHREAD_RWLOCK_INITIALIZER;
  */
 static std::map<pthread_t, unsigned> pthread_to_id;
 static pthread_rwlock_t pthread_to_id_lock = PTHREAD_RWLOCK_INITIALIZER;
+static unsigned long long program_start_time = 0;
 
 /*
  * count_threads is used to assign every pthread created a unique ID that we use
@@ -371,6 +379,7 @@ static unsigned long long regions_executed = 0;
  * mapping cannot be made complete.
  */
 static map<string, set<string> > call_tree;
+static map<string, bool> calls_unknown_checkpointing;
 
 /*
  * A mapping from function name to true/false, whether calling that function may
@@ -410,6 +419,7 @@ static map<string, bool> need_to_checkpoint;
  * modified by that location.
  */
 static map<unsigned, set<size_t> > change_loc_id_to_aliases;
+static map<unsigned, set<size_t> > change_loc_id_to_aliases_and_children;
 static unsigned count_change_locations = 1;
 
 /*
@@ -497,8 +507,6 @@ static map<string, vector<merge_info> > npm_callee_to_static_merge_info;
  * in-memory.
  */
 static unsigned long long total_allocations = 0;
-static hash_chunker *hash_chunker = new fixed_chunk_size_chunker(
-        16 * 1024UL * 1024UL);
 // Just dump things smaller than this, don't waste time hashing.
 static const size_t DONT_HASH_SIZE = 1024UL * 1024UL;
 // static const size_t DONT_HASH_SIZE = 16 * 1024UL * 1024UL;
@@ -508,7 +516,7 @@ static double target_checkpoint_size_perc = 0.2;
 // The target amount of overhead to add to the host program.
 static bool disable_throttling = false;
 static double target_time_overhead = 0.05;
-static unsigned long long max_checkpoint_latency_ns = 60000000ULL;
+static unsigned long long max_checkpoint_latency_ns = 60000000000ULL;
 static unsigned long long last_checkpoint = 0;
 static unsigned long long chimes_overhead = 0;
 static unsigned long long dead_thread_time = 0;
@@ -528,7 +536,7 @@ enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
     LEAVING_OMP_PARALLEL, REGISTER_THREAD_LOCAL_STACK_VARS,
     ENTERING_OMP_PARALLEL, CHECKPOINT_THREAD, CHECKPOINT, INIT_CHIMES,
     WAIT_FOR_ALL_THREADS, HASHING, REGISTER_STACK_VARS, REGISTER_TEXT,
-    THREAD_LEAVING, CHECKPOINT_PREP, ONEXIT, CALLING_NPM, TRANSLATE_FPTR,
+    THREAD_LEAVING, CHECKPOINT_PREP, CALLING_NPM, TRANSLATE_FPTR,
     N_LABELS };
 static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
     "register_stack_var", "calling", "init_module", "register_global_var",
@@ -537,7 +545,7 @@ static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
     "leaving_omp_parallel", "register_thread_local_stack_vars",
     "entering_omp_parallel", "checkpoint_thread", "checkpoint", "init_chimes",
     "wait_for_all_threads", "hashing", "register_stack_vars",
-    "register_text", "thread_leaving", "checkpoint_prep", "onexit",
+    "register_text", "thread_leaving", "checkpoint_prep",
     "calling_npm", "translate_fptr" };
 
 perf_profile pp(PROFILE_LABELS, N_LABELS);
@@ -553,9 +561,11 @@ static map<unsigned, clock_t> *checkpoint_entry_deltas;
  * corrected pointers during the sweep over heap allocations.
  */
 static vector<already_updated_ptrs *> already_updated;
-static std::map<void *, ptr_and_size *> *old_to_new;
+// static std::map<void *, ptr_and_size *> *old_to_new;
+heap_tree *old_to_new;
 
-static std::map<std::string, std::vector<struct_field> *> structs;
+// static std::map<std::string, std::vector<struct_field> *> structs;
+static std::map<std::string, struct_info *> structs;
 
 // static pthread_t checkpoint_thread;
 // static checkpoint_thread_ctx running_checkpoint_ctx;
@@ -597,6 +607,22 @@ static void print_aliases(bool need_to_lock) {
 
 static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
     bool result = false;
+
+#ifdef VERBOSE
+    fprintf(stderr, "Checking if group1=%lu and group2=%lu are aliased\n",
+            group1, group2);
+    for (map<size_t, vector<size_t> *>::iterator i = aliased_groups.begin(),
+            e = aliased_groups.end(); i != e; i++) {
+        fprintf(stderr, "  %lu -> {\n", i->first);
+        vector<size_t> *aliases = i->second;
+        for (vector<size_t>::iterator ii = aliases->begin(),
+                ee = aliases->end(); ii != ee; ii++) {
+            fprintf(stderr, "    %lu\n", *ii);
+        }
+        fprintf(stderr, "    }\n");
+    }
+#endif
+
     if (group1 == group2) {
         result = true;
     } else {
@@ -607,7 +633,7 @@ static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
         if (aliased_groups.find(group1) != aliased_groups.end() &&
                 aliased_groups.find(group2) != aliased_groups.end()) {
             // Can just do a pointer comparison here
-            result = (aliased_groups[group1] == aliased_groups[group2]);
+            result = (aliased_groups.at(group1) == aliased_groups.at(group2));
         }
 
         if (need_to_lock) {
@@ -655,7 +681,7 @@ bool any_aliased(int ngroups, ...) {
 }
 
 static void read_heap_from_file(int fd, char *checkpoint_file,
-        std::map<void *, ptr_and_size *> *old_to_new,
+        heap_tree *old_to_new,
         std::vector<heap_allocation *> *new_heap,
         std::map<void *, memory_filled *> *filled,
         std::map<void *, heap_allocation *> *old_to_alloc) {
@@ -730,7 +756,7 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
          * necessary). Later we actually populate the data from buffer, based on
          * ranges.
          */
-        if (old_to_new->find(old_address) == old_to_new->end()) {
+        if (old_to_new->exact_search(old_address) == NULL) {
             assert(filled->find(old_address) == filled->end());
             assert(old_to_alloc->find(old_address) == old_to_alloc->end());
 
@@ -738,7 +764,7 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
             if (is_cuda_alloc) {
                 CHECK(cudaMalloc((void **)&new_address, size));
             } else {
-                new_address = malloc(size);
+                new_address = malloc(size + sizeof(void *));
                 assert(new_address != NULL);
             }
 #ifdef VERBOSE
@@ -746,29 +772,25 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
                     "new_address=%p\n", new_address);
 #endif
 
-            alloc = new heap_allocation(new_address, size,
-                    group, is_cuda_alloc, elem_is_ptr, elem_is_struct,
-                    *hash_chunker);
+            alloc = new heap_allocation(
+                    ((unsigned char *)new_address) + sizeof(void *), size,
+                    group, is_cuda_alloc, elem_is_ptr, elem_is_struct);
             if (elem_is_struct) {
                 alloc->add_struct_elem_size(elem_size);
                 alloc->set_pointer_offsets(&elem_ptr_offsets);
+            }
+
+            if (!is_cuda_alloc) {
+                *((heap_allocation **)new_address) = alloc;
             }
 
             already_filled = new memory_filled(size);
 
             new_heap->push_back(alloc);
 
-            assert(heap.find(alloc->get_address()) == heap.end());
-            heap[alloc->get_address()] = alloc;
+            get_my_thread_heap()->add_allocation(alloc, true);
 
-            if (alias_to_heap.find(group) == alias_to_heap.end()) {
-                alias_to_heap[group] = new vector<heap_allocation *>();
-            }
-            alias_to_heap[group]->push_back(alloc);
-
-            assert(old_to_new->find(old_address) == old_to_new->end());
-            old_to_new->insert(pair<void *, ptr_and_size *>(old_address,
-                        new ptr_and_size(new_address, size)));
+            old_to_new->insert(old_address, alloc->get_address(), size);
             filled->insert(pair<void *, memory_filled *>(old_address,
                         already_filled));
             old_to_alloc->insert(pair<void *, heap_allocation *>(old_address,
@@ -839,7 +861,8 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
 
 static void read_heap_from_previous_checkpoint(
         char checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN],
-        std::map<void *, ptr_and_size *> *old_to_new,
+        // std::map<void *, ptr_and_size *> *old_to_new,
+        heap_tree *old_to_new,
         std::vector<heap_allocation *> *new_heap,
         std::map<void *, memory_filled *> *filled,
         std::map<void *, heap_allocation *> *old_to_alloc) {
@@ -956,25 +979,39 @@ static void constructNPMContext(npm_context *ctx, string current_function,
 static void set_my_tid(int tid) {
     int *my_tid_ptr = (int *)malloc(sizeof(int));
     *my_tid_ptr = tid;
-    assert(pthread_setspecific(tid_key, my_tid_ptr) == 0);
+    VERIFY(pthread_setspecific(tid_key, my_tid_ptr) == 0);
 }
 
 static void set_my_thread_ctx(thread_ctx *ctx) {
-    assert(pthread_setspecific(thread_ctx_key, ctx) == 0);
+    VERIFY(pthread_setspecific(thread_ctx_key, ctx) == 0);
 }
 
-void init_chimes() {
+static void set_my_thread_heap(thread_local_allocations *heap) {
+    VERIFY(pthread_setspecific(thread_heap_key, heap) == 0);
+
+    VERIFY(pthread_rwlock_wrlock(&thread_heaps_lock) == 0);
+    VERIFY(thread_heaps.insert(pair<pthread_t, thread_local_allocations *>(
+                    pthread_self(), heap)).second);
+    VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
+}
+
+void init_chimes(int argc, char **argv) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ns();
-    atexit(onexit);
 
     register_custom_init_handler("omp_lock_t", init_omp_lock);
 
+    for (int arg = 1; arg < argc; arg++) {
+        register_constant(max_constant_id + 1 + arg, argv[arg],
+                strlen(argv[arg]) + 1);
+    }
+
     VERIFY(pthread_key_create(&thread_ctx_key, destroy_thread_ctx) == 0);
     VERIFY(pthread_key_create(&tid_key, free) == 0);
+    VERIFY(pthread_key_create(&thread_heap_key, cleanup_thread_heap) == 0);
 
     // pthread_create(&checkpoint_thread, NULL, checkpoint_func,
     //         &running_checkpoint_ctx);
@@ -984,16 +1021,13 @@ void init_chimes() {
     pthread_to_id[self] = 0; set_my_tid(0);
     thread_ctx *ctx = new thread_ctx(self, count_change_locations);
     thread_ctxs[0] = ctx; set_my_thread_ctx(ctx);
+    set_my_thread_heap(new thread_local_allocations());
+    main_thread = pthread_self();
+    program_start_time = perf_profile::current_time_ns();
 
     char *chimes_disable_throttling = getenv("CHIMES_DISABLE_THROTTLING");
     if (chimes_disable_throttling && strlen(chimes_disable_throttling) > 0) {
         disable_throttling = true;
-    }
-
-    char *chunk_size = getenv("CHIMES_CHUNK_SIZE_MB");
-    if (chunk_size != NULL) {
-        hash_chunker = new fixed_chunk_size_chunker(
-                atoi(chunk_size) * 1024UL * 1024UL);
     }
 
     char *checkpoint_dir = getenv("CHIMES_CHECKPOINT_DIR");
@@ -1028,24 +1062,32 @@ void init_chimes() {
 #ifdef VERBOSE
             std::string checkpoint_causer;
 #endif
-            for (set<string>::iterator callee_iter = i->second.begin(),
-                    callee_end = i->second.end(); callee_iter != callee_end;
-                    callee_iter++) {
-                string callee = *callee_iter;
-                /*
-                 * If this is either a function that we don't know about (and
-                 * therefore can't know if it will checkpoint or not), or a
-                 * function that we think will checkpoint, then apply that
-                 * property transitively to the current function.
-                 */
-                if (call_tree.find(callee) == call_tree.end() ||
-                        (does_checkpoint.find(callee) != does_checkpoint.end() &&
-                        does_checkpoint[callee])) {
-                    causes_checkpoint = true;
+
+            if (calls_unknown_checkpointing.at(func)) {
+                causes_checkpoint = true;
 #ifdef VERBOSE
-                    checkpoint_causer = callee;
+                checkpoint_causer = "function pointer call";
 #endif
-                    break;
+            } else {
+                for (set<string>::iterator callee_iter = i->second.begin(),
+                        callee_end = i->second.end(); callee_iter != callee_end;
+                        callee_iter++) {
+                    string callee = *callee_iter;
+                    /*
+                     * If this is either a function that we don't know about (and
+                     * therefore can't know if it will checkpoint or not), or a
+                     * function that we think will checkpoint, then apply that
+                     * property transitively to the current function.
+                     */
+                    if (call_tree.find(callee) == call_tree.end() ||
+                            (does_checkpoint.find(callee) != does_checkpoint.end() &&
+                            does_checkpoint[callee])) {
+                        causes_checkpoint = true;
+#ifdef VERBOSE
+                        checkpoint_causer = callee;
+#endif
+                        break;
+                    }
                 }
             }
 
@@ -1102,8 +1144,9 @@ void init_chimes() {
              * and which we can therefore run in NPM mode.
              */
 #ifdef VERBOSE
-            fprintf(stderr, "Setting conditional NPM variables for %s\n",
-                    i->first.c_str());
+            fprintf(stderr, "Setting conditional NPM variables for %s, does "
+                    "checkpoint? %d\n", i->first.c_str(),
+                    does_checkpoint.at(i->first));
 #endif
             if (!does_checkpoint.at(i->first)) {
                 for (vector<int *>::iterator ii = i->second.begin(),
@@ -1174,6 +1217,17 @@ void init_chimes() {
          * time, as they will always be inserted at runtime by calling(). Hence,
          * we check if callee is in the provided NPM functions here.
          */
+#ifdef VERBOSE
+        fprintf(stderr, "Looking at dynamically merging aliases for NPM %s\n", callee_name.c_str());
+        fprintf(stderr, "  has entry in does_checkpoint? %d\n",
+            (does_checkpoint.find(callee_name) != does_checkpoint.end()));
+        fprintf(stderr, "  NPM version provided? %d\n",
+            (provided_npm_functions.find(callee_name) !=
+             provided_npm_functions.end()));
+        if (does_checkpoint.find(callee_name) != does_checkpoint.end()) {
+            fprintf(stderr, "  does checkpoint? %d\n", does_checkpoint.at(callee_name));
+        }
+#endif
         if (does_checkpoint.find(callee_name) != does_checkpoint.end() &&
                 provided_npm_functions.find(callee_name) !=
                     provided_npm_functions.end() &&
@@ -1264,7 +1318,7 @@ void init_chimes() {
             string funcname = ii->first;
             set<size_t> aliases = ii->second;
 
-            if (all_functions.find(funcname) == all_functions.end()) {
+            if (function_addresses.find(funcname) == function_addresses.end()) {
 #ifdef VERBOSE
                 fprintf(stderr, "Missing function %s causes conservative alias "
                         "change groups for location %u\n", funcname.c_str(),
@@ -1272,7 +1326,8 @@ void init_chimes() {
 #endif
                 for (set<size_t>::iterator iii = aliases.begin(),
                         eee = aliases.end(); iii != eee; iii++) {
-                    change_loc_id_to_aliases.at(loc_id).insert(*iii);
+                    change_loc_id_to_aliases_and_children.at(loc_id).insert(
+                            *iii);
                 }
             } else {
 #ifdef VERBOSE
@@ -1315,6 +1370,11 @@ void init_chimes() {
         size_t heap_offset;
         safe_read(fd, &heap_offset, sizeof(heap_offset), "heap_offset",
                 checkpoint_file);
+
+        int n_omp_threads;
+        safe_read(fd, &n_omp_threads, sizeof(n_omp_threads), "n_omp_threads",
+                checkpoint_file);
+        omp_set_num_threads(n_omp_threads);
 
         // Read heap entry times from checkpoint
         checkpoint_entry_deltas =
@@ -1394,12 +1454,17 @@ void init_chimes() {
                 constants_serialized_len);
 
         // read in function pointers from previous program execution
-        void *unpacked_text_start;
-        size_t unpacked_text_len;
-        safe_read(fd, &unpacked_text_start, sizeof(unpacked_text_start),
-                "text_start", checkpoint_file);
-        safe_read(fd, &unpacked_text_len, sizeof(unpacked_text_len), "text_len",
-                checkpoint_file);
+        uint64_t func_addresses_serialized_len;
+        safe_read(fd, &func_addresses_serialized_len,
+                sizeof(func_addresses_serialized_len),
+                "func_addresses_serialized_len", checkpoint_file);
+        unsigned char *func_addresses_serialized = (unsigned char *)malloc(
+                func_addresses_serialized_len);
+        safe_read(fd, func_addresses_serialized, func_addresses_serialized_len,
+                "func_addresses_serialized", checkpoint_file);
+        map<string, void *> *unpacked_function_addresses =
+            deserialize_function_addresses(func_addresses_serialized,
+                    func_addresses_serialized_len);
 
         // read in thread state
         uint64_t thread_hierarchy_serialized_len;
@@ -1415,7 +1480,7 @@ void init_chimes() {
                 thread_hierarchy_serialized, thread_hierarchy_serialized_len);
 
         // read in heap serialization
-        old_to_new = new std::map<void *, ptr_and_size *>();
+        old_to_new = new heap_tree();
         std::vector<heap_allocation *> *new_heap =
             new std::vector<heap_allocation *>();
         std::map<void *, memory_filled *> *filled = new std::map<void *,
@@ -1459,6 +1524,11 @@ void init_chimes() {
         delete filled;
         delete old_to_alloc;
 
+        /*
+         * Add all constant variables to the mapping from old to new addresses,
+         * so that any variables which point to them from the stack or heap can
+         * be updated.
+         */
         for (map<size_t, constant_var*>::iterator i = constants.begin(),
                 e = constants.end(); i != e; i++) {
             size_t id = i->first;
@@ -1467,18 +1537,30 @@ void init_chimes() {
             assert(unpacked_constants->find(id) != unpacked_constants->end());
             constant_var *dead = unpacked_constants->at(id);
 
+#ifdef VERBOSE
+            fprintf(stderr, "Read constant %lu at address %p with length %lu\n",
+                    id, dead->get_address(), dead->get_length());
+#endif
+
             assert(dead->get_length() == live->get_length());
 
-            assert(old_to_new->find(dead->get_address()) == old_to_new->end());
-            old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
-                        new ptr_and_size(live->get_address(),
-                            live->get_length())));
+            old_to_new->insert(dead->get_address(), live->get_address(), live->get_length());
         }
 
-        assert(old_to_new->find(unpacked_text_start) == old_to_new->end());
-        assert(unpacked_text_len == text_len); // This is very strict
-        old_to_new->insert(pair<void *, ptr_and_size *>(unpacked_text_start,
-                    new ptr_and_size(text_start, text_len)));
+        /*
+         * Do the same for function pointers, so that any pointers to them can
+         * be updated.
+         */
+        assert(unpacked_function_addresses->size() == function_addresses.size());
+        for (map<string, void *>::iterator i =
+                unpacked_function_addresses->begin(), e =
+                unpacked_function_addresses->end(); i != e; i++) {
+            void *live = function_addresses.at(i->first);
+            void *dead = i->second;
+
+            old_to_new->insert(dead, live, 1);
+        }
+        delete unpacked_function_addresses;
 
         /*
          * find pointers in the heap and restore them to point to the correct
@@ -1498,9 +1580,9 @@ void init_chimes() {
                 int nelems = alloc->get_size() / sizeof(void *);
                 if (alloc->get_is_cuda_alloc()) {
 #ifdef CUDA_SUPPORT
-                    vector<int> ptr_offsets; ptr_offsets.push_back(0);
+                    int ptr_offsets[1] = { 0 };
                     translate_cuda_pointers(alloc->get_address(), nelems,
-                            sizeof(void *), ptr_offsets, old_to_new);
+                            sizeof(void *), ptr_offsets, 1, old_to_new);
 #else
                     VERIFY(false);
 #endif
@@ -1523,16 +1605,17 @@ void init_chimes() {
 
             } else if (alloc->check_elem_is_struct()) {
                 int elem_size = alloc->get_elem_size();
-                std::vector<int> *ptr_field_offsets = alloc->get_ptr_field_offsets();
-                if (ptr_field_offsets->size() > 0) {
+                int *ptr_field_offsets = alloc->get_ptr_field_offsets();
+                unsigned n_ptr_fields = alloc->get_n_ptr_fields();
+                if (n_ptr_fields > 0) {
                     assert(alloc->get_size() % elem_size == 0);
 
                     int nelems = alloc->get_size() / elem_size;
                     if (alloc->get_is_cuda_alloc()) {
 #ifdef CUDA_SUPPORT
                         translate_cuda_pointers(alloc->get_address(),
-                                nelems, elem_size, *ptr_field_offsets,
-                                old_to_new);
+                                nelems, elem_size, ptr_field_offsets,
+                                n_ptr_fields, old_to_new);
 #else
                         VERIFY(false);
 #endif
@@ -1548,22 +1631,17 @@ void init_chimes() {
                         unsigned char *raw_arr = (unsigned char *)(alloc->get_address());
                         for (int i = 0; i < nelems; i++) {
                             unsigned char *this_struct = raw_arr + (elem_size * i);
-                            for (std::vector<int>::iterator f_iter =
-                                    ptr_field_offsets->begin(), f_end =
-                                    ptr_field_offsets->end(); f_iter != f_end;
-                                    f_iter++) {
-                                unsigned char *field_address = this_struct + *f_iter;
+                            for (unsigned f_iter = 0; f_iter < n_ptr_fields; f_iter++) {
+                                unsigned char *field_address = this_struct +
+                                    ptr_field_offsets[f_iter];
                                 void **ptr_address = (void **)field_address;
                                 void *new_address = translate_old_ptr(*ptr_address, old_to_new, ptr_address);
                                 if (new_address != NULL) *ptr_address = new_address;
                             }
                         }
 
-                        for (std::vector<int>::iterator f_iter =
-                                ptr_field_offsets->begin(), f_end =
-                                ptr_field_offsets->end(); f_iter != f_end;
-                                f_iter++) {
-                            int field_offset = *f_iter;
+                        for (unsigned f_iter = 0; f_iter < n_ptr_fields; f_iter++) {
+                            int field_offset = ptr_field_offsets[f_iter];
                             unsigned char *base = raw_arr + field_offset;
 
                             already_updated_ptrs *updated =
@@ -1608,7 +1686,9 @@ void init_chimes() {
 }
 
 static void *translate_old_ptr(void *ptr,
-        std::map<void *, ptr_and_size *> *old_to_new, void *container) {
+        heap_tree *old_to_new,
+        // std::map<void *, ptr_and_size *> *old_to_new,
+        void *container) {
     assert(already_translated);
 
     if (already_translated->find(container) != already_translated->end()) {
@@ -1621,6 +1701,15 @@ static void *translate_old_ptr(void *ptr,
         return NULL;
     }
 
+    void *translated;
+    bool found = old_to_new->search(ptr, container, &translated, already_translated);
+    if (found) {
+        return translated;
+    } else {
+        return NULL;
+    }
+
+    /*
     unsigned char *c_ptr = (unsigned char *)ptr;
     for (std::map<void *, ptr_and_size *>::iterator i = old_to_new->begin(),
             e = old_to_new->end(); i != e; i++) {
@@ -1638,6 +1727,7 @@ static void *translate_old_ptr(void *ptr,
         }
     }
     return NULL;
+    */
 }
 
 static map<size_t, size_t>::iterator find_alias_in_contains(size_t alias,
@@ -1660,11 +1750,19 @@ static map<size_t, size_t>::iterator find_alias_in_contains(size_t alias,
     return contains.end();
 }
 
-static void merge_alias_groups(size_t alias1, size_t alias2) {
+static void merge_alias_groups_helper(size_t alias1, size_t alias2,
+        set<pair<size_t, size_t> > *merged) {
     assert(valid_group(alias1));
     assert(valid_group(alias2));
 
-    if (aliased(alias1, alias2, false)) return;
+    if (aliased(alias1, alias2, false) ||
+            merged->find(pair<size_t, size_t>(alias1, alias2)) !=
+                merged->end()) {
+        return;
+    }
+
+    merged->insert(pair<size_t, size_t>(alias1, alias2));
+    merged->insert(pair<size_t, size_t>(alias2, alias1));
 
     VERIFY(pthread_rwlock_rdlock(&contains_lock) == 0);
     size_t alias1_alias, alias2_alias;
@@ -1687,9 +1785,9 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
          * children (e.g. if you cast a pointer to store it in itself). This
          * doesn't really fix the problem except for in trivial cases, so TODO.
          */
-        if (child1 != alias1 || child2 != alias2) {
-            merge_alias_groups(child1, child2);
-        }
+        // if (child1 != alias1 || child2 != alias2) {
+            merge_alias_groups_helper(child1, child2, merged);
+        // }
     }
     VERIFY(pthread_rwlock_unlock(&contains_lock) == 0);
 
@@ -1752,12 +1850,17 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
     }
 }
 
-static void parse_merges(int n_merges, va_list vl,
+static void merge_alias_groups(size_t alias1, size_t alias2) {
+    set<pair<size_t, size_t> > merged;
+    merge_alias_groups_helper(alias1, alias2, &merged);
+}
+
+static void parse_merges(int n_merges, va_list *vl,
         map<string, vector<merge_info> > *out) {
     for (int i = 0; i < n_merges; i++) {
-        std::string callee_name(va_arg(vl, const char *));
-        size_t return_alias = va_arg(vl, size_t);
-        int n_param_aliases = va_arg(vl, int);
+        std::string callee_name(va_arg(*vl, const char *));
+        size_t return_alias = va_arg(*vl, size_t);
+        int n_param_aliases = va_arg(*vl, int);
 #ifdef VERBOSE
         fprintf(stderr, "Parsing NPM merges for callee=%s return_alias=%lu "
                 "n_param_aliases=%d\n", callee_name.c_str(), return_alias,
@@ -1766,7 +1869,7 @@ static void parse_merges(int n_merges, va_list vl,
 
         vector<size_t> param_aliases;
         for (int j = 0; j < n_param_aliases; j++) {
-            size_t alias = va_arg(vl, size_t);
+            size_t alias = va_arg(*vl, size_t);
 #ifdef VERBOSE
             fprintf(stderr, "  param alias %d: %lu\n", j, alias);
 #endif
@@ -1799,172 +1902,6 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     assert(!initialized);
     initialized_modules.insert(module_id);
 
-    // Generate unique IDs for each change location
-    // for (int i = 0; i < n_change_locs; i++) {
-    //     // Unique ID for this location
-    //     unsigned this_loc_id = count_change_locations++;
-
-    //     /*
-    //      * Location in the host application to store the integer ID of this
-    //      * location.
-    //      */
-    //     unsigned *change_loc_id_ptr = va_arg(vl, unsigned *);
-    //     // Number of aliases that have definitely changed at this location
-    //     const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
-    //     /*
-    //      * Number of aliases which may have to be marked changed at this
-    //      * location. These are groups that are passed to externally defined
-    //      * functions. If we do not get that function registered at runtime, we
-    //      * have to conservatively assume these groups have changed.
-    //      */
-    //     const unsigned n_possible_aliases_at_loc = va_arg(vl, unsigned);
-
-#ifdef VERBOSE
-    //     fprintf(stderr, "Change location %u has %u aliases, %u more possible "
-    //             "aliases\n", this_loc_id, n_aliases_at_loc,
-    //             n_possible_aliases_at_loc);
-#endif
-
-    //     // Read definite changes
-    //     set<size_t> aliases_changed;
-    //     for (unsigned j = 0; j < n_aliases_at_loc; j++) {
-    //         size_t alias = va_arg(vl, size_t);
-    //         aliases_changed.insert(alias);
-    //     }
-    //     change_loc_id_to_aliases.insert(pair<unsigned, set<size_t> >(
-    //                 this_loc_id, aliases_changed));
-
-    //     /*
-    //      * Read a mapping from externally defined function name to the aliases
-    //      * it is passed which it may (or may not) change.
-    //      */
-    //     map<string, set<size_t> > possible_aliases;
-    //     for (unsigned j = 0; j < n_possible_aliases_at_loc; j++) {
-    //         std::string funcname(va_arg(vl, const char *));
-    //         unsigned naliases = va_arg(vl, unsigned);
-
-    //         assert(possible_aliases.find(funcname) == possible_aliases.end());
-    //         possible_aliases.insert(pair<string, set<size_t> >(funcname,
-    //                     set<size_t>()));
-
-    //         for (unsigned k = 0; k < naliases; k++) {
-    //             size_t alias = va_arg(vl, size_t);
-    //             possible_aliases.at(funcname).insert(alias);
-    //         }
-    //     }
-
-    //     possible_alias_changes.insert(
-    //             pair<unsigned, map<string, set<size_t> > >(this_loc_id,
-    //                 possible_aliases));
-
-    //     *change_loc_id_ptr = this_loc_id;
-    // }
-
-    // Iterate over the NPM functions defined inside this compilation unit.
-    // for (int i = 0; i < n_provided_npm_functions; i++) {
-    //     std::string fname(va_arg(vl, char *));
-    //     void *fptr = va_arg(vl, void *);
-    //     void *original_fptr = va_arg(vl, void *);
-
-    //     /*
-    //      * original_fptr will be NULL for any functions whose addresses are not
-    //      * taken within the same compilation unit. This serves as an
-    //      * optimization to help the compiler with inter-procedural analysis --
-    //      * code runs much more slowly when you load the function address for
-    //      * every function in a compilation unit, forcing the compiler to make
-    //      * more conservative decisions.
-    //      */
-    //     if (original_fptr) {
-    //         assert(fname_to_original_function.find(fname) ==
-    //                 fname_to_original_function.end());
-    //         fname_to_original_function[fname] = original_fptr;
-    //     }
-
-    //     // Alias locations that are stored in this function
-    //     const int n_alias_locs = va_arg(vl, int);
-    //     set<unsigned> alias_locs;
-    //     for (int j = 0; j < n_alias_locs; j++) {
-    //         unsigned *loc_id_ptr = va_arg(vl, unsigned *);
-    //         alias_locs.insert(*loc_id_ptr);
-    //     }
-
-    //     /*
-    //      * The aliases that this function assigns to its input parameters and
-    //      * its returned value.
-    //      */
-    //     vector<size_t> param_aliases;
-    //     size_t return_alias;
-    //     const int n_param_aliases = va_arg(vl, int);
-    //     for (int j = 0; j < n_param_aliases; j++) {
-    //         param_aliases.push_back(va_arg(vl, size_t));
-    //     }
-    //     return_alias = va_arg(vl, size_t);
-    //     function_io_aliases outer_aliases(param_aliases, return_alias);
-
-    //     /*
-    //      * The set of calls made from the current function, including the name
-    //      * of the function called, the number of arguments passed, the aliases
-    //      * assigned to each of those arguments, and the return alias assigned to
-    //      * any value that is returned.
-    //      */
-    //     const int n_calls_made = va_arg(vl, int);
-    //     vector<call_aliases> calls;
-    //     for (int j = 0; j < n_calls_made; j++) {
-    //         vector<size_t> arg_aliases;
-    //         size_t return_alias;
-
-    //         string callee_name(va_arg(vl, const char *));
-    //         const int n_args = va_arg(vl, int);
-    //         for (int k = 0; k < n_args; k++) {
-    //             arg_aliases.push_back(va_arg(vl, size_t));
-    //         }
-    //         return_alias = va_arg(vl, size_t);
-    //         calls.push_back(call_aliases(callee_name, arg_aliases,
-    //                     return_alias));
-    //     }
-
-    //     VERIFY(provided_npm_functions.insert(pair<string, void *>(fname,
-    //                     fptr)).second);
-    //     VERIFY(fname_to_alias_locs.insert(pair<string, set<unsigned> >(fname,
-    //                     alias_locs)).second);
-    //     VERIFY(fname_to_outer_aliases.insert(pair<string, function_io_aliases>(
-    //                     fname, outer_aliases)).second);
-    //     VERIFY(fname_to_calls_made.insert(pair<string, vector<call_aliases> >(
-    //                     fname, calls)).second);
-    // }
-
-    // Iterate over the NPM functions that this compilation unit depends on
-    /* 
-    for (int i = 0; i < n_external_npm_functions; i++) {
-        std::string npm_fname(va_arg(vl, const char *));
-        void **fptr = va_arg(vl, void **);
-
-        if (requested_npm_functions.find(npm_fname) ==
-                requested_npm_functions.end()) {
-            requested_npm_functions.insert(pair<string, vector<void **> >(
-                        npm_fname, vector<void **>()));
-        }
-
-        requested_npm_functions.at(npm_fname).push_back(fptr);
-    }
-    */
-
-    /*
-     * Get the addresses of the global variables which prevent conditional NPM
-     * execution.
-     */
-    // for (int i = 0; i < n_npm_conditionals; i++) {
-    //     std::string func_name(va_arg(vl, const char *));
-    //     int *conditional = va_arg(vl, int *);
-
-    //     if (npm_conditional_pointers.find(func_name) ==
-    //             npm_conditional_pointers.end()) {
-    //         VERIFY(npm_conditional_pointers.insert(pair<string, vector<int *> >(
-    //                         func_name, vector<int *>())).second);
-    //     }
-    //     npm_conditional_pointers.at(func_name).push_back(conditional);
-    // }
-
     // Read an initial parent-child relationship of alias groups
     for (int i = 0; i < n_contains_mappings; i++) {
         size_t container = va_arg(vl, size_t);
@@ -1978,6 +1915,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
     for (int i = 0; i < nstructs; i++) {
         char *struct_name = va_arg(vl, char *);
+        size_t size_in_bits = va_arg(vl, size_t);
         int nfields = va_arg(vl, int);
         string struct_name_str(struct_name);
 
@@ -1992,7 +1930,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         bool insert_new = false;
         if (structs.find(struct_name_str) == structs.end()) {
             insert_new = true;
-            structs[struct_name_str] = new std::vector<struct_field>();
+            VERIFY(structs.insert(pair<string, struct_info *>(struct_name_str,
+                        new struct_info(size_in_bits))).second);
         }
 
 #ifdef VERBOSE
@@ -2000,7 +1939,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
                 struct_name_str.c_str(), nfields, insert_new);
 #endif
         if (!insert_new) {
-            assert((unsigned)nfields == structs[struct_name_str]->size());
+            assert((unsigned)nfields == structs.at(struct_name_str)->size());
         }
 
         for (int j = 0; j < nfields; j++) {
@@ -2010,11 +1949,10 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
             assert(offset >= 0);
             if (insert_new) {
-                structs[struct_name_str]->push_back(struct_field(offset,
-                            ty_str));
+                structs.at(struct_name_str)->add_field(offset, ty_str);
             } else {
-                assert(structs[struct_name_str]->at(j).get_offset() == offset);
-                assert(structs[struct_name_str]->at(j).get_ty() == ty_str);
+                assert(structs.at(struct_name_str)->at(j).get_offset() == offset);
+                assert(structs.at(struct_name_str)->at(j).get_ty() == ty_str);
             }
 #ifdef VERBOSE
             fprintf(stderr, " %d", offset);
@@ -2028,9 +1966,25 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     // Parse call tree from arguments.
     for (int i = 0; i < nfunctions; i++) {
         char *func_name = va_arg(vl, char *);
+        char *mangled_func_name = va_arg(vl, char *);
+        bool this_calls_unknown_checkpointing =
+            (va_arg(vl, int) == 0 ? false : true);
         unsigned n_callees = va_arg(vl, unsigned);
 
         string func_name_str(func_name);
+
+        dlerror(); // Clear existing errors
+        void *func_addr = dlsym(app_handle, mangled_func_name);
+        char *ld_err;
+        if ((ld_err = dlerror()) != NULL) {
+            fprintf(stderr, "WARNING: Unable to load address of function %s, "
+                    "likely because it is a static function. CHIMES will not be "
+                    "able to restore pointers to this function on resume.\n",
+                    func_name);
+        } else {
+            assert(function_addresses.find(func_name_str) == function_addresses.end());
+            function_addresses.insert(pair<string, void *>(func_name_str, func_addr));
+        }
 
         if (call_tree.find(func_name_str) != call_tree.end()) {
             assert(n_callees == call_tree[func_name_str].size());
@@ -2041,6 +1995,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
                 assert(call_tree[func_name_str].find(callee_name_str) !=
                         call_tree[func_name_str].end());
             }
+            assert(calls_unknown_checkpointing.at(func_name_str) ==
+                    this_calls_unknown_checkpointing);
         } else {
             call_tree.insert(pair<string, set<string> >(func_name_str,
                         set<string>()));
@@ -2051,8 +2007,13 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
                 call_tree[func_name_str].insert(callee_name_str);
             }
+            VERIFY(calls_unknown_checkpointing.insert(pair<string, bool>(
+                            func_name_str,
+                            this_calls_unknown_checkpointing)).second);
         }
     }
+
+    VERIFY(dlclose(app_handle) == 0);
 
     // Parse checkpoint causes from the arguments
     for (int i = 0; i < nvars; i++) {
@@ -2074,8 +2035,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         }
     }
 
-    parse_merges(n_static_merges, vl, &npm_callee_to_static_merge_info);
-    parse_merges(n_dynamic_merges, vl, &npm_callee_to_dynamic_merge_info);
+    parse_merges(n_static_merges, &vl, &npm_callee_to_static_merge_info);
+    parse_merges(n_dynamic_merges, &vl, &npm_callee_to_dynamic_merge_info);
 
     va_end(vl);
 
@@ -2105,10 +2066,10 @@ static bool need_to_manage_stack(int *conditional, string funcname) {
 }
 
 static void add_argument_aliases(unsigned n_local_arg_aliases, thread_ctx *ctx,
-        va_list vl, bool pre_stack_increment) {
+        va_list *vl, bool pre_stack_increment) {
     const unsigned stack_minimum = (pre_stack_increment ? 0 : 1);
     for (unsigned i = 0; i < n_local_arg_aliases; i++) {
-        size_t alias = va_arg(vl, size_t);
+        size_t alias = va_arg(*vl, size_t);
         // if (ctx->get_stack()->size() > stack_minimum) {
 #ifdef VERBOSE
             fprintf(stderr, "  In callee, argument %d, parent alias %llu, "
@@ -2127,6 +2088,10 @@ enum DISABLED_THREAD { DISABLED, NOT_DISABLED, ALREADY_DISABLED };
 
 int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
         unsigned int n_local_arg_aliases, /* unsigned int nargs, */ ...) {
+#ifdef VERBOSE
+    fprintf(stderr, "new_stack: %s\n", funcname);
+#endif
+
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -2145,7 +2110,7 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
 
     if (program_stack->size() > 0 && func_ptr != ctx->get_func_ptr()) {
-        if (!ctx->get_printed_func_ptr_mismatch()) {
+        if (!ctx->is_disabled() && !ctx->get_printed_func_ptr_mismatch()) {
             /*
              * Reasons we can get here:
              *   1. Control passed through a third-party function which used a
@@ -2154,10 +2119,9 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
              *   3. Function call from inside a non-resumable parallel section
              *      (e.g. an omp for).
              */
-            fprintf(stderr, "WARNING: Mismatch in expected function (%p) and "
-                    "function that we entered (%p) for function %s. Possibly passed"
-                    " through a third-party library.\n", ctx->get_func_ptr(),
-                    func_ptr, funcname);
+            fprintf(stderr, "WARNING: Mismatch in expected function and "
+                    "function that we entered for function %s. Possibly passed"
+                    " through a third-party library.\n", funcname);
             ctx->set_printed_func_ptr_mismatch(true);
         }
         if (disable_current_thread()) {
@@ -2177,7 +2141,7 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
                 n_local_arg_aliases == ctx->get_n_parent_aliases());
         va_list vl;
         va_start(vl, nargs);
-        add_argument_aliases(n_local_arg_aliases, ctx, vl, true);
+        add_argument_aliases(n_local_arg_aliases, ctx, &vl, true);
         va_end(vl);
 
         ctx->push_return_alias();
@@ -2211,24 +2175,23 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
     va_list vl;
     va_start(vl, n_local_arg_aliases);
 
-    if (strcmp(funcname, "main")) {
-        if (n_local_arg_aliases != ctx->get_n_parent_aliases()) {
-            if (!ctx->get_printed_func_args_mismatch()) {
-                fprintf(stderr, "WARNING: Mismatch in # passed aliases (%lu) and # "
-                        "expected aliases (%u), ignoring\n",
-                        ctx->get_n_parent_aliases(), n_local_arg_aliases);
-                ctx->set_printed_func_args_mismatch(true);
-            }
+    if (program_stack->size() != 1 && 
+            n_local_arg_aliases != ctx->get_n_parent_aliases()) {
+        if (!ctx->get_printed_func_args_mismatch()) {
+            fprintf(stderr, "WARNING: Mismatch in # passed aliases (%lu) and # "
+                    "expected aliases (%u), ignoring\n",
+                    ctx->get_n_parent_aliases(), n_local_arg_aliases);
+            ctx->set_printed_func_args_mismatch(true);
+        }    
 
-            for (unsigned i = 0; i < n_local_arg_aliases; i++) {
-                va_arg(vl, size_t);
-            }
-        } else {
-            add_argument_aliases(n_local_arg_aliases, ctx, vl, false);
-        }
+        for (unsigned i = 0; i < n_local_arg_aliases; i++) {
+            va_arg(vl, size_t);
+        }    
+    } else {
+        add_argument_aliases(n_local_arg_aliases, ctx, &vl, false);
+    }    
 
-        ctx->push_return_alias();
-    }
+    ctx->push_return_alias();
 
     /*
     for (unsigned i = 0; i < nargs; i++) {
@@ -2241,10 +2204,20 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
         int is_struct = va_arg(vl, int);
         int n_ptr_fields = va_arg(vl, int);
 
+#ifdef VERBOSE
+        fprintf(stderr, "mangled_name=%p\n", mangled_name);
+        fprintf(stderr, "cond_registration=%p\n", cond_registration);
+        fprintf(stderr, "size=%lu\n", size);
+        fprintf(stderr, "is_ptr=%d\n", is_ptr);
+        fprintf(stderr, "is_struct=%d\n", is_struct);
+        fprintf(stderr, "n_ptr_fields=%d\n", n_ptr_fields);
+        fprintf(stderr, "mangled_name=%c\n", mangled_name[0]);
+#endif
+
         std::string mangled_name_str(mangled_name);
         if (need_to_register(cond_registration, mangled_name_str)) {
             register_stack_var_helper(mangled_name_str, cond_registration,
-                    full_type, ptr, size, is_ptr, is_struct, n_ptr_fields, vl,
+                    full_type, ptr, size, is_ptr, is_struct, n_ptr_fields, &vl,
                     program_stack);
         }
     }
@@ -2285,6 +2258,9 @@ static void merge_npm_aliases(string fname, size_t return_alias,
 
         assert(valid_group(parent) && valid_group(child));
         merge_alias_groups(parent, child);
+#ifdef VERBOSE
+        fprintf(stderr, "    merging parent=%lu and child=%lu\n", parent, child);
+#endif
     }
 
     if (return_alias == 0UL || callee.get_return_alias() == 0UL) {
@@ -2303,12 +2279,16 @@ static void merge_npm_aliases(string fname, size_t return_alias,
             assert(parent == 0UL && child == 0UL);
         } else {
             merge_alias_groups(parent, child);
+#ifdef VERBOSE
+            fprintf(stderr, "    merging params parent=%lu and child=%lu\n",
+                    parent, child);
+#endif
         }
     }
 }
 
 static void calling_npm_helper(const char *name, /* unsigned loc_id, */
-        bool has_alias_info, size_t return_alias, int n_params, va_list vl) {
+        bool has_alias_info, size_t return_alias, int n_params, va_list *vl) {
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ns();
 
@@ -2330,7 +2310,7 @@ static void calling_npm_helper(const char *name, /* unsigned loc_id, */
     if (has_alias_info) {
         vector<size_t> param_aliases;
         for (int i = 0; i < n_params; i++) {
-            size_t alias = va_arg(vl, size_t);
+            size_t alias = va_arg(*vl, size_t);
             param_aliases.push_back(alias);
         }
         merge_npm_aliases(fname, return_alias, param_aliases);
@@ -2339,6 +2319,9 @@ static void calling_npm_helper(const char *name, /* unsigned loc_id, */
 }
 
 void calling_npm(const char *name /* , unsigned loc_id */ ) {
+#ifdef VERBOSE
+    fprintf(stderr, "calling_npm: %s\n", name);
+#endif
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -2349,7 +2332,7 @@ void calling_npm(const char *name /* , unsigned loc_id */ ) {
 }
 
 static void calling_helper(void *func_ptr, int lbl, /* unsigned loc_id, */
-        size_t set_return_alias, unsigned naliases, va_list vl) {
+        size_t set_return_alias, unsigned naliases, va_list *vl) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -2395,6 +2378,10 @@ static void calling_helper(void *func_ptr, int lbl, /* unsigned loc_id, */
 #endif
 }
 
+/*
+ * Translates the original function pointer to the NPM function pointer (if
+ * available) and returns it.
+ */
 void *translate_fptr(void *fptr, int lbl, /* unsigned loc_id, */ size_t return_alias,
         int n_params, ...) {
 #ifdef __CHIMES_PROFILE
@@ -2407,11 +2394,18 @@ void *translate_fptr(void *fptr, int lbl, /* unsigned loc_id, */ size_t return_a
     va_list vl;
     va_start(vl, n_params);
     if (exists != original_function_to_npm.end()) {
+#ifdef VERBOSE
+        fprintf(stderr, "translate_fptr successfully entering NPM function for "
+                "%s\n", exists->second.second.c_str());
+#endif
         calling_npm_helper(exists->second.second.c_str(), /* loc_id, */ true,
-                return_alias, n_params, vl);
+                return_alias, n_params, &vl);
         result = exists->second.first;
     } else {
-        calling_helper(fptr, lbl, /* loc_id, */ return_alias, n_params, vl);
+#ifdef VERBOSE
+        fprintf(stderr, "translate_fptr failed entering NPM function\n");
+#endif
+        calling_helper(fptr, lbl, /* loc_id, */ return_alias, n_params, &vl);
         result = fptr;
     }
     va_end(vl);
@@ -2425,7 +2419,7 @@ void calling(void *func_ptr, int lbl, /* unsigned loc_id, */ size_t return_alias
         unsigned naliases, ...) {
     va_list vl;
     va_start(vl, naliases);
-    calling_helper(func_ptr, lbl, /* loc_id, */ return_alias, naliases, vl);
+    calling_helper(func_ptr, lbl, /* loc_id, */ return_alias, naliases, &vl);
     va_end(vl);
 #ifdef VERBOSE
     print_aliases(true);
@@ -2435,7 +2429,7 @@ void calling(void *func_ptr, int lbl, /* unsigned loc_id, */ size_t return_alias
 static void add_return_alias(bool has_return_alias, size_t returned_alias,
         thread_ctx *ctx, bool is_allocator) {
     size_t this_return_alias = ctx->pop_return_alias();
-    if (!valid_group(this_return_alias)) {
+    if (is_allocator || !valid_group(this_return_alias)) {
         /*
          * is_allocator indicates that the function we are currently inside is simply
          * used as a utility to allocate memory. These functions can cause a lot of
@@ -2476,6 +2470,10 @@ static inline void alias_group_changed_helper(unsigned loc_id,
 void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, /* int *conditional, unsigned loc_id, */
         int did_disable, bool is_allocator) {
+#ifdef VERBOSE
+    fprintf(stderr, "rm_stack: funcname=%s\n", funcname);
+#endif
+
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -2497,7 +2495,7 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
             alias_group_changed_helper(loc_id, ctx);
         }
         if (did_disable == NOT_DISABLED) {
-            add_return_alias(has_return_alias, returned_alias, ctx);
+            add_return_alias(has_return_alias, returned_alias, ctx, is_allocator);
         }
 
         reenable_current_thread(did_disable == DISABLED);
@@ -2543,6 +2541,10 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
             exit(55);
         }
     }
+#ifdef VERBOSE
+    fprintf(stderr, "rm_stack: completed funcname=%s\n", funcname);
+#endif
+
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(RM_STACK, __start_time);
@@ -2554,6 +2556,10 @@ int get_next_call() {
     assert(trace_indices[tid] < traces->at(tid).size());
     int ele = traces->at(tid)[trace_indices[tid]];
     trace_indices[tid] = trace_indices[tid] + 1;
+#ifdef VERBOSE
+    fprintf(stderr, "next trace element for thread %u is %d, %d/%d trace "
+            "elements\n", tid, ele, trace_indices[tid], traces->at(tid).size());
+#endif
     return ele;
 }
 
@@ -2618,7 +2624,7 @@ static bool is_struct_type(string type) {
 
 static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        va_list vl) {
+        va_list *vl) {
     // Basic checks in case the code generation breaks
     assert(is_ptr == 0 || is_ptr == 1);
     assert(is_struct == 0 || is_struct == 1);
@@ -2628,7 +2634,7 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
     stack_var *new_var = new stack_var(mangled_name, full_type, ptr, size,
             is_ptr);
     for (int i = 0; i < n_ptr_fields; i++) {
-        int offset = va_arg(vl, int);
+        int offset = va_arg(*vl, int);
         assert(offset >= 0);
         new_var->add_pointer_offset(offset);
     }
@@ -2662,7 +2668,7 @@ static bool need_to_register(int *cond_registration, string mangled_name) {
 
 inline void register_stack_var_helper(std::string mangled_name_str,
         int *cond_registration, const char *full_type, void *ptr, size_t size,
-        int is_ptr, int is_struct, int n_ptr_fields, va_list vl,
+        int is_ptr, int is_struct, int n_ptr_fields, va_list *vl,
         std::vector<stack_frame *> *program_stack) {
 
 #ifdef VERBOSE
@@ -2716,7 +2722,7 @@ void register_stack_vars(int nvars, ...) {
             }
         } else {
             register_stack_var_helper(mangled_name_str, cond_registration,
-                    full_type, ptr, size, is_ptr, is_struct, n_ptr_fields, vl,
+                    full_type, ptr, size, is_ptr, is_struct, n_ptr_fields, &vl,
                     program_stack);
         }
     }
@@ -2759,7 +2765,7 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
     va_start(vl, n_ptr_fields);
     std::vector<stack_frame *> *program_stack = get_my_stack();
     register_stack_var_helper(mangled_name_str, cond_registration, full_type,
-            ptr, size, is_ptr, is_struct, n_ptr_fields, vl, program_stack);
+            ptr, size, is_ptr, is_struct, n_ptr_fields, &vl, program_stack);
     va_end(vl);
 
     ADD_TO_OVERHEAD
@@ -2769,22 +2775,25 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
 }
 
 void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...) {
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group,
+        int n_ptr_fields, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     va_list vl;
     va_start(vl, n_ptr_fields);
     stack_var *new_var = get_var(mangled_name, full_type, ptr, size, is_ptr,
-            is_struct, n_ptr_fields, vl);
+            is_struct, n_ptr_fields, &vl);
     va_end(vl);
 
     std::string mangled_name_str(mangled_name);
 
     VERIFY(pthread_rwlock_wrlock(&globals_lock) == 0);
-    assert(global_vars.find(mangled_name_str) == global_vars.end());
-    global_vars[mangled_name_str] = new_var;
+    VERIFY(global_vars.insert(pair<string, stack_var *>(mangled_name_str,
+                    new_var)).second);
+    if (group) {
+        global_aliases.insert(group);
+    }
     VERIFY(pthread_rwlock_unlock(&globals_lock) == 0);
 
 #ifdef __CHIMES_PROFILE
@@ -2801,23 +2810,13 @@ void register_constant(size_t const_id, void *address, size_t length) {
     constant_var *var = new constant_var(const_id, address, length);
 
     VERIFY(pthread_rwlock_wrlock(&constants_lock) == 0);
-    assert(constants.find(const_id) == constants.end());
-    constants[const_id] = var;
+    VERIFY(constants.insert(pair<size_t, constant_var *>(const_id, var)).second);
+    max_constant_id = (const_id > max_constant_id ? const_id : max_constant_id);
     VERIFY(pthread_rwlock_unlock(&constants_lock) == 0);
 
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_CONSTANT, __start_time);
 #endif
-}
-
-void register_text(void *start, size_t len) {
-    if (text_start == NULL) {
-        text_start = start;
-        text_len = len;
-    } else {
-        assert(text_start == start);
-        assert(text_len == len);
-    }
 }
 
 int alias_group_changed(unsigned loc_id) {
@@ -2849,15 +2848,18 @@ int alias_group_changed(unsigned loc_id) {
     return 0;
 }
 
-void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
+void malloc_impl(void *new_ptr, size_t nbytes, size_t group,
         int is_cuda_alloc, int is_ptr, int is_struct, int elem_size,
-        int *ptr_field_offsets, int n_ptr_field_offsets) {
+        int *ptr_field_offsets, int n_ptr_field_offsets, bool filled) {
     assert(valid_group(group) || is_cuda_alloc);
 
-    heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
-            is_cuda_alloc, is_ptr, is_struct, *hash_chunker);
-
-    get_my_context()->add_changed_alias(group);
+#ifdef VERBOSE
+            fprintf(stderr, "creating new heap allocation address=%p size=%lu "
+                    "group=%lu\n", new_ptr, nbytes, group);
+#endif
+    heap_allocation *alloc = new heap_allocation(
+            ((unsigned char *)new_ptr) + sizeof(void *), nbytes, group,
+            is_cuda_alloc, is_ptr, is_struct);
 
     if (is_struct) {
         alloc->add_struct_elem_size(elem_size);
@@ -2867,14 +2869,10 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
         if (n_ptr_field_offsets > 0) free(ptr_field_offsets);
     }
 
-    VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
-    assert(heap.find(new_ptr) == heap.end());
-    heap.insert(pair<void *, heap_allocation *>(new_ptr, alloc));
-    if (alias_to_heap.find(group) == alias_to_heap.end()) {
-        alias_to_heap[group] = new vector<heap_allocation *>();
+    if (!is_cuda_alloc) {
+        *((heap_allocation **)new_ptr) = alloc;
     }
-    alias_to_heap[group]->push_back(alloc);
-    VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
+    get_my_thread_heap()->add_allocation(alloc);
 }
 
 /*
@@ -2890,7 +2888,7 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
  * followed by n_ptr_fields int arguments, each of which is an offset in the
  * struct at which a pointer can be found.
  */
-void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
+void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr, int is_struct,
         ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
@@ -2900,11 +2898,9 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
     assert(valid_group(group));
 
 #ifdef VERBOSE
-    fprintf(stderr, "malloc_wrapper: nbytes=%lu group=%lu is_ptr=%d "
-            "is_struct=%d\n", nbytes, group, is_ptr, is_struct);
+    fprintf(stderr, "malloc_wrapper: nbytes=%lu group=%lu ptr=%p is_ptr=%d "
+            "is_struct=%d\n", nbytes, group, ptr, is_ptr, is_struct);
 #endif
-
-    void *ptr = malloc(nbytes);
 
     if (nbytes > 0 && ptr != NULL) {
         chimes_type_info info; memset(&info, 0x00, sizeof(info));
@@ -2914,22 +2910,20 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         if (is_struct) {
             va_list vl;
             va_start(vl, is_struct);
-            parse_type_info(vl, &info);
+            parse_type_info(&vl, &info);
             va_end(vl);
         }
-        malloc_helper(ptr, nbytes, group, 0, is_ptr, is_struct, info.elem_size,
-                info.ptr_field_offsets, info.n_ptr_fields);
+        malloc_impl((void *)ptr, nbytes, group, 0, is_ptr, is_struct, info.elem_size,
+                info.ptr_field_offsets, info.n_ptr_fields, false);
     }
 
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(MALLOC_WRAPPER, __start_time);
 #endif
-
-    return ptr;
 }
 
-void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
@@ -2937,8 +2931,6 @@ void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ns();
     assert(valid_group(group));
-
-    void *ptr = calloc(num, size);
 
     if (ptr != NULL) {
         chimes_type_info info; memset(&info, 0x00, sizeof(info));
@@ -2948,24 +2940,27 @@ void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
         if (is_struct) {
             va_list vl;
             va_start(vl, is_struct);
-            parse_type_info(vl, &info);
+            parse_type_info(&vl, &info);
             va_end(vl);
         }
-        malloc_helper(ptr, num * size, group, 0, is_ptr, is_struct,
-                info.elem_size, info.ptr_field_offsets, info.n_ptr_fields);
+        malloc_impl((void *)ptr, num * size, group, 0, is_ptr, is_struct,
+                info.elem_size, info.ptr_field_offsets, info.n_ptr_fields, true);
     }
 
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CALLOC_WRAPPER, __start_time);
 #endif
-
-    return ptr;
-
 }
 
-void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...) {
+/*
+ * new_ptr is the newly allocated memory (possibly NULL), including the header
+ * space for storing a heap_allocation*. ptr is the old pointer, including the
+ * header. nbytes is the number of bytes requested by the application, not
+ * including space for the header.
+ */
+void realloc_helper(const void *new_ptr, const void *ptr, void *header,
+        size_t nbytes, size_t group, int is_ptr, int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -2973,17 +2968,16 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         perf_profile::current_time_ns();
     assert(valid_group(group));
 
-    void *new_ptr = realloc(ptr, nbytes);
     unsigned long long old_size = 0;
 
     if (ptr != NULL && new_ptr == ptr) {
         /*
          * The location in memory of a previous allocation did not change, only
-         * the size was extended.
+         * the size was extended. No need to lock here, as it would be unsafe to
+         * be re-allocing the same heap space from two different threads anyway.
          */
-        map<void *, heap_allocation *>::iterator alloc_ptr = find_in_heap(ptr);
+        heap_allocation *alloc = *((heap_allocation **)new_ptr);
 
-        heap_allocation *alloc = alloc_ptr->second;
         old_size = alloc->get_size();
         assert(alloc->get_alias_group() == group);
         alloc->update_size(nbytes);
@@ -3004,23 +2998,21 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
              * An actual realloc, because the original pointer is non-NULL.
              * Remove the existing entry in the heap but re-use the information
              * in it to avoid the overhead of re-parsing the allocation type.
-             */
-            map<void *, heap_allocation *>::iterator alloc_ptr =
-                find_in_heap(ptr);
-            heap_allocation *alloc = alloc_ptr->second;
+        0     */
+            heap_allocation *alloc = free_impl(ptr, (heap_allocation *)header);
+
             assert(alloc->get_alias_group() == group);
             old_size = alloc->get_size();
 
             if (alloc->check_elem_is_struct()) {
                 elem_size = alloc->get_elem_size();
-                n_struct_ptr_fields = alloc->get_ptr_field_offsets()->size();
+                n_struct_ptr_fields = alloc->get_n_ptr_fields();
                 ptr_field_offsets = (int *)malloc(sizeof(int) *
                         n_struct_ptr_fields);
                 for (int i = 0; i < n_struct_ptr_fields; i++) {
-                    ptr_field_offsets[i] = (*alloc->get_ptr_field_offsets())[i];
+                    ptr_field_offsets[i] = (alloc->get_ptr_field_offsets())[i];
                 }
             }
-            free_helper(ptr);
         } else {
             /*
              * A realloc of a NULL pointer, equivalent to a fresh malloc.
@@ -3030,7 +3022,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
             if (is_struct) {
                 va_list vl;
                 va_start(vl, is_struct);
-                parse_type_info(vl, &info);
+                parse_type_info(&vl, &info);
                 va_end(vl);
             }
             elem_size = info.elem_size;
@@ -3038,8 +3030,8 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
             n_struct_ptr_fields = info.n_ptr_fields;
         }
 
-        malloc_helper(new_ptr, nbytes, group, 0, is_ptr, is_struct,
-                elem_size, ptr_field_offsets, n_struct_ptr_fields);
+        malloc_impl((void *)new_ptr, nbytes, group, 0, is_ptr, is_struct,
+                elem_size, ptr_field_offsets, n_struct_ptr_fields, false);
     }
 
     if (old_size < nbytes) {
@@ -3052,57 +3044,55 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
 #ifdef __CHIMES_PROFILE
     pp.add_time(REALLOC_WRAPPER, __start_time);
 #endif
-
-    return new_ptr;
 }
 
-void free_helper(void *ptr) {
-    map<void *, heap_allocation *>::iterator in_heap =
-        find_in_heap(ptr);
-    size_t group = in_heap->second->get_alias_group();
-
+heap_allocation *free_impl(const void *ptr, heap_allocation *alloc) {
+#ifdef VERBOSE
+    fprintf(stderr, "free_impl: ptr=%p, alloc->get_address()=%p\n", ptr, alloc->get_address());
+#endif
     // Update heap metadata
-    VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
-    vector<heap_allocation *>::iterator in_alias_to_heap =
-        std::find(alias_to_heap[group]->begin(), alias_to_heap[group]->end(),
-                in_heap->second);
-    assert(in_alias_to_heap != alias_to_heap[group]->end());
-    alias_to_heap[group]->erase(in_alias_to_heap);
+    assert(alloc->get_address() == ((unsigned char *)ptr) + sizeof(void *));
+    thread_local_allocations *owner = alloc->get_owner();
+    owner->remove_allocation(alloc);
 
-    heap.erase(in_heap);
-    VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
+    return alloc;
 }
 
-map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
+void free_helper(const void *ptr, size_t group) {
+#ifdef VERBOSE
+    fprintf(stderr, "free_wrapper: ptr=%p group=%lu\n", ptr, group);
+#endif
 
-    VERIFY(pthread_rwlock_rdlock(&heap_lock) == 0);
-    map<void *, heap_allocation *>::iterator in_heap = heap.find(ptr);
-    assert(in_heap != heap.end());
-    VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
-
-    assert(in_heap->second->get_address() == ptr);
-
-    return in_heap;
-}
-
-void free_wrapper(void *ptr, size_t group) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ns();
-    map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
-    size_t original_group = in_heap->second->get_alias_group();
 
-    assert(aliased(original_group, group, true));
+    if (ptr != NULL) {
+        /*
+         * free is a no-op on NULL pointers. I've seen this behavior in some
+         * applications, for example when the host application does a 0-byte
+         * allocation and then frees it.
+         */
+        heap_allocation *alloc = free_impl(ptr, *((heap_allocation **)ptr));
 
-    __sync_fetch_and_sub(&total_allocations, in_heap->second->get_size());
+        size_t original_group = alloc->get_alias_group();
+#ifdef VERBOSE
+        fprintf(stderr, "free_wrapper: asserting that original_group=%lu and "
+                "group=%lu are aliased\n", original_group, group);
+#endif
+        assert(aliased(original_group, group, true));
 
-    free_helper(ptr);
-    free(ptr);
+        __sync_fetch_and_sub(&total_allocations, alloc->get_size());
+    }
+
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(FREE_WRAPPER, __start_time);
+#endif
+#ifdef VERBOSE
+    fprintf(stderr, "free_wrapper: complete\n");
 #endif
 }
 
@@ -3116,8 +3106,9 @@ void free_wrapper(void *ptr, size_t group) {
 
 static void update_live_var(string name, stack_var *dead, stack_var *live) {
 #ifdef VERBOSE
-    fprintf(stderr, "Restoring variable %s with size %lu at %p\n", name.c_str(),
-            live->get_size(), live->get_address());
+    fprintf(stderr, "Restoring variable %s with size %lu at %p, dead variable "
+            "was at %p\n", name.c_str(), live->get_size(), live->get_address(),
+            dead->get_address());
 #endif
 
     assert(live->get_name() == dead->get_name());
@@ -3127,7 +3118,10 @@ static void update_live_var(string name, stack_var *dead, stack_var *live) {
     assert(live->get_ptr_offsets()->size() == dead->get_ptr_offsets()->size());
     assert(dead->get_tmp_buffer() != NULL);
 
-    memcpy(live->get_address(), dead->get_tmp_buffer(), live->get_size());
+    // Don't modify the state of argc or argv as they are initialized externally
+    if (live->get_name() != "main|argc|0" && live->get_name() != "main|argv|0") {
+        memcpy(live->get_address(), dead->get_tmp_buffer(), live->get_size());
+    }
     dead->clear_tmp_buffer();
 
     /*
@@ -3139,13 +3133,43 @@ static void update_live_var(string name, stack_var *dead, stack_var *live) {
      * that the mapping we would insert is the same that already exists, and
      * therefore the state of the variable will be updated appropriately.
      */
-    if (old_to_new->find(dead->get_address()) != old_to_new->end()) {
-        ptr_and_size *existing = old_to_new->at(dead->get_address());
-        assert(existing->get_ptr() == live->get_address());
-        existing->update_size(live->get_size());
+    heap_tree_node *found = old_to_new->exact_search(dead->get_address());
+    if (found != NULL) {
+        if (found->new_address != live->get_address()) {
+            /*
+             * Because we use two different versions of the same function to for
+             * executing and resuming, the live ranges of variables may be
+             * different between the two. In that case, in the original
+             * execution two variables may have shared space on the stack but in
+             * the new execution (with all the jump labels increasing live
+             * ranges) their locations on the stack may be different. However,
+             * if this is the case we can safely assume that only one is
+             * actually live in the running program and the value stored in the
+             * other is never referenced. Therefore, we can restore both live
+             * variables at different locations on the stack without worrying
+             * about one being referenced with incorrect contents. However, we
+             * now have a one-to-many mapping of one dead address to more than
+             * one live address. For now, we assume that the last registered
+             * stack allocation in the original run provides the correct mapping
+             * from old to new because it is lexicographically the latest.
+             * Because this is called while we iterate over the unpacked stack
+             * variables in registration order, we just always grab the latest
+             * here.
+             */
+            /*
+             * Old print statement
+             * fprintf(stderr, "expected two stack allocations with the same old "
+             *         "address to have the same new address, but instead got "
+             *         "new addresses (existing %p, current %p) for old addresses (existing %p, "
+             *         "current %p)\n", found->new_address, live->get_address(),
+             *         found->old_address, dead->get_address());
+             */
+            found->new_address = live->get_address();
+        }
+        found->size = (live->get_size() > found->size ? live->get_size() :
+                found->size);
     } else {
-        old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
-                    new ptr_and_size(live->get_address(), live->get_size())));
+        old_to_new->insert(dead->get_address(), live->get_address(), live->get_size());
     }
 }
 
@@ -3300,19 +3324,48 @@ bool within_overhead_bounds() {
         return true;
     }
 
-    unsigned long long running_time = dead_thread_time;
+    // unsigned long long running_time = dead_thread_time;
+    unsigned long long running_time = perf_profile::current_time_ns() -
+        program_start_time;
+
+#if defined(VERBOSE) || defined(OVERHEAD_DIAGNOSTICS)
+    fprintf(stderr, "Calculating CHIMES overhead:\n");
+    fprintf(stderr, "  running_time = %llu\n", running_time);
+#endif
+/*
     VERIFY(pthread_rwlock_rdlock(&thread_ctxs_lock) == 0);
     for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
             e = thread_ctxs.end(); i != e; i++) {
-        running_time += i->second->elapsed_time();
+        unsigned long long thread_elapsed_time = i->second->elapsed_time();
+#ifdef VERBOSE
+        fprintf(stderr, "  thread %u, elapsed time = %llu\n", i->first,
+                thread_elapsed_time);
+#endif
+        running_time += (thread_elapsed_time / thread_ctxs.size());
     }
     VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+#ifdef VERBOSE
+    fprintf(stderr, "  running_time = %llu\n", running_time);
+#endif
+    */
 
-    double curr_percent_overhead = (double)chimes_overhead /
+    unsigned long long curr_chimes_overhead = __sync_fetch_and_add(&chimes_overhead, 0);
+#if defined(VERBOSE) || defined(OVERHEAD_DIAGNOSTICS)
+    fprintf(stderr, "  curr_chimes_overhead = %llu\n", curr_chimes_overhead);
+#endif
+    double curr_percent_overhead = (double)curr_chimes_overhead /
         (double)running_time;
-    return (curr_percent_overhead < target_time_overhead ||
+    bool should_checkpoint = (curr_percent_overhead < target_time_overhead ||
             perf_profile::current_time_ns() - last_checkpoint >
                 max_checkpoint_latency_ns);
+#if defined(VERBOSE) || defined(OVERHEAD_DIAGNOSTICS)
+    fprintf(stderr, "  should_checkpoint=%d curr_percent_overhead=%f "
+            "target_time_overhead=%f since last=%llu max latency=%llu\n",
+            should_checkpoint, curr_percent_overhead, target_time_overhead,
+            perf_profile::current_time_ns() - last_checkpoint,
+            max_checkpoint_latency_ns);
+#endif
+    return should_checkpoint;
 }
 
 static void collect_all_aliases(size_t group, set<size_t> *all_changed) {
@@ -3326,6 +3379,20 @@ static void collect_all_aliases(size_t group, set<size_t> *all_changed) {
     } else {
         all_changed->insert(group);
     }
+}
+
+static void collect_all_aliases_and_children(size_t group, set<size_t> *all_changed) {
+    set<size_t> full_hierarchy;
+
+    size_t curr = group;
+    while (contains.find(curr) != contains.end() && full_hierarchy.find(curr) == full_hierarchy.end()) {
+        full_hierarchy.insert(curr);
+
+        collect_all_aliases(curr, all_changed);
+
+        curr = contains.at(curr);
+    }
+    collect_all_aliases(curr, all_changed);
 }
 
 bool disable_current_thread() {
@@ -3347,6 +3414,36 @@ void reenable_current_thread(bool was_disabled) {
     if (was_disabled) {
         assert(stack->size() == ctx->get_disabled_nesting());
         ctx->set_disabled_nesting(0);
+    }
+}
+
+void collect_heap_to_checkpoint(
+        vector<pair<size_t, heap_allocation *> > *heap_to_checkpoint_sorted,
+        map<void *, heap_allocation *>::iterator heap_begin,
+        map<void *, heap_allocation *>::iterator heap_end,
+        set<size_t> *all_changed) {
+    for (map<void *, heap_allocation *>::iterator heap_iter =
+            heap_begin; heap_iter != heap_end; heap_iter++) {
+        heap_allocation *curr = heap_iter->second;
+        /*
+         * At the moment, we don't calculate alias groups for CUDA
+         * allocations because they are never dereferenced from the
+         * host. In future TODO work, we could track which allocations
+         * are passed to kernels and use that as a way to reduce the
+         * number of CUDA allocations that need to be checkpointed.
+         */
+        if (all_changed->find(curr->get_alias_group()) !=
+                all_changed->end() || curr->get_is_cuda_alloc()) {
+#ifdef VERBOSE
+            fprintf(stderr, "  because of group %lu we checkpoint heap "
+                    "allocation %p, size=%lu\n",
+                    curr->get_alias_group(), curr->get_address(),
+                    curr->get_size());
+#endif
+            heap_to_checkpoint_sorted->push_back(
+                    pair<size_t, heap_allocation *>(curr->get_size(),
+                        curr));
+        }
     }
 }
 
@@ -3836,8 +3933,9 @@ static void brute_force_pointer_fixing(void *ptr, heap_allocation *alloc,
         }
 
         if (already_translated->find(container) != already_translated->end()) {
-            assert(heap.find(*container) != heap.end());
-            heap_allocation *alloc = heap[*container];
+            void *address = *container;
+            heap_allocation **alloc_ptr = (heap_allocation **)(((unsigned char *)address) - sizeof(void *));
+            heap_allocation *alloc = *alloc_ptr;
             brute_force_pointer_fixing(*container, alloc, visited);
         }
     }
@@ -3884,12 +3982,9 @@ static void fix_stack_or_global_pointer(void *container, string type,
 #endif
 
             if (points_to == "void") {
-#ifdef VERBOSE
-                fprintf(stderr, "  void pointer... matching heap allocation? "
-                        "%d\n", (heap.find(*nested_container) != heap.end()));
-#endif
-                assert(heap.find(*nested_container) != heap.end());
-                heap_allocation *alloc = heap[*nested_container];
+                heap_allocation **alloc_ptr = (heap_allocation **)
+                    (((unsigned char *)(*nested_container)) - sizeof(void *));
+                heap_allocation *alloc = *alloc_ptr;
 
                 /*
                  * Since its a pointer to void, we just take a look at each
@@ -3935,19 +4030,22 @@ static void fix_stack_or_global_pointer(void *container, string type,
                     "type %s\n", struct_name.c_str());
 #endif
 
-            std::vector<struct_field> *fields = structs.at(struct_name);
+            struct_info *fields = structs.at(struct_name);
 
             for (unsigned field_index = 0; field_index < fields->size();
                     field_index++) {
                 string curr = fields->at(field_index).get_ty();
                 unsigned char *field_ptr = ((unsigned char *)container) +
-                    (*fields)[field_index].get_offset();
+                    fields->at(field_index).get_offset();
                 fix_stack_or_global_pointer((void *)field_ptr, curr, nesting +
                         1);
             }
         }
     } else if (is_array_type(type)) {
         string nested = get_nested_array_type(type);
+#ifdef VERBOSE
+        fprintf(stderr, "  nested=%s\n", nested.c_str());
+#endif
         if (is_pointer_type(nested)) {
             int array_length = get_array_length(type);
             void **ptr_container = (void **)container;
@@ -3955,6 +4053,20 @@ static void fix_stack_or_global_pointer(void *container, string type,
             for (int i = 0; i < array_length; i++) {
                 fix_stack_or_global_pointer(ptr_container + i, nested,
                         nesting + 1);
+            }
+        } else if (is_struct_type(nested)) {
+            std::string struct_str("%struct.");
+            int array_length = get_array_length(type);
+            assert(nested.find(struct_str) == 0);
+            int ele_size = structs.at(nested.substr(struct_str.size()))->get_size_in_bits() / 8;
+#ifdef VERBOSE
+            fprintf(stderr, "    array_length=%d ele_size=%d\n", array_length, ele_size);
+#endif
+            unsigned char *byte_addressable = (unsigned char *)container;
+
+            for (int i = 0; i < array_length; i++) {
+                fix_stack_or_global_pointer(byte_addressable + (i * ele_size),
+                        nested, nesting + 1);
             }
         }
     }
@@ -4064,7 +4176,7 @@ static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
     return (result);
 }
 
-static int wait_for_running_writes(struct aiocb * aio_list[],
+static int wait_for_running_writes(struct aiocb **aio_list,
         int n_writes_running, off_t *count_bytes, char dump_filename[],
         vector<aiocb *> *async_tokens) {
 #ifdef VERBOSE
@@ -4125,284 +4237,6 @@ static int wait_for_running_writes(struct aiocb * aio_list[],
 
     return (n_left_running);
 }
-
-// void *checkpoint_func(void *data) {
-//     checkpoint_thread_ctx *ctx = (checkpoint_thread_ctx *)data;
-// 
-//     while (true) {
-//         VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-// 
-//         while (checkpoint_thread_running == 0) {
-//             VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
-//         }
-// 
-//         VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-// 
-//         /*
-//          * Main thread will signal checkpoint thread to exit by setting an
-//          * invalid value.
-//          */
-//         if (checkpoint_thread_running == -1) break;
-// 
-// #ifdef __CHIMES_PROFILE
-//         const unsigned long long __start_time = perf_profile::current_time_ns();
-// #endif
-//         unsigned char *stacks_serialized = ctx->stacks_serialized;
-//         uint64_t stacks_serialized_len = ctx->stacks_serialized_len;
-//         unsigned char *globals_serialized = ctx->globals_serialized;
-//         uint64_t globals_serialized_len = ctx->globals_serialized_len;
-//         unsigned char *constants_serialized = ctx->constants_serialized;
-//         uint64_t constants_serialized_len = ctx->constants_serialized_len;
-//         unsigned char *thread_hierarchy_serialized =
-//             ctx->thread_hierarchy_serialized;
-//         uint64_t thread_hierarchy_serialized_len =
-//             ctx->thread_hierarchy_serialized_len;
-//         vector<checkpointable_heap_allocation> *to_checkpoint =
-//             ctx->heap_to_checkpoint;
-//         void *contains_serialized = ctx->contains_serialized;
-//         size_t contains_serialized_len = ctx->contains_serialized_len;
-//         void *serialized_alias_groups = ctx->serialized_alias_groups;
-//         size_t serialized_alias_groups_len = ctx->serialized_alias_groups_len;
-// 
-//         vector<aiocb *> async_tokens;
-//         off_t count_bytes = 0;
-// 
-//         /*
-//          * Until we implement the planned client-server architecture, just dump
-//          * checkpoints to a file locally. Right now, we naively dump everything.
-//          */
-// 
-//         // Total number of async writes issued below
-//         int n_writes_running = 0;
-// 
-//         // Find a unique file for this checkpoint
-//         int count = 0;
-//         char dump_filename[MAX_CHECKPOINT_FILENAME_LEN];
-//         sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
-//         int fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
-//         while (fd < 0) {
-//             count++;
-//             sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
-//             fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
-//         }
-// 
-// #ifdef VERBOSE
-//         fprintf(stderr, "Creating checkpoint in \"%s\", previous_checkpoint="
-//                 "\"%s\"\n", dump_filename, previous_checkpoint_filename);
-// #endif
-// 
-//         // Write the name of the preceding checkpoint file out
-//         size_t filename_length = strlen(previous_checkpoint_filename) + 1;
-//         prep_async_safe_write(fd, &filename_length,
-//                 sizeof(filename_length), count_bytes, &count_bytes, "filename_length", &async_tokens);
-//         prep_async_safe_write(fd, previous_checkpoint_filename,
-//                 filename_length, count_bytes, &count_bytes, "previous_checkpoint_filename", &async_tokens);
-// 
-//         size_t heap_offset = -1; // placeholder until we figure out the actual value
-//         off_t heap_offset_offset = sizeof(filename_length) + filename_length;
-//         prep_async_safe_write(fd, &heap_offset,
-//                     sizeof(heap_offset), count_bytes, &count_bytes, "heap_offset", &async_tokens);
-// 
-//         // Write the heap entry times to the dump file, sorted by entry order
-//         int n_checkpoint_times = ctx->checkpoint_entry_times->size();
-//         prep_async_safe_write(fd, &n_checkpoint_times, sizeof(n_checkpoint_times), count_bytes,
-//                     &count_bytes, "n_checkpoint_times", &async_tokens);
-//         serialized_checkpoint_time *serialized_times = (serialized_checkpoint_time *)malloc(
-//                 n_checkpoint_times * sizeof(serialized_checkpoint_time));
-//         assert(serialized_times);
-// 
-//         int index = 0;
-//         clock_t baseline;
-//         for (vector<pair<unsigned, clock_t> >::iterator i =
-//                 ctx->checkpoint_entry_times->begin(),
-//                 e = ctx->checkpoint_entry_times->end(); i != e; i++) {
-//             unsigned tid = i->first;
-//             clock_t t = i->second;
-//             if (index == 0) {
-//                 baseline = t;
-//             }
-//             clock_t delta = t - baseline;
-//             serialized_times[index].tid = tid;
-//             serialized_times[index].delta = delta;
-//             index++;
-//         }
-//         prep_async_safe_write(fd, serialized_times,
-//                     n_checkpoint_times * sizeof(serialized_checkpoint_time), count_bytes,
-//                     &count_bytes, "serialized_times", &async_tokens);
-// 
-//         // Write the trace of function calls out
-//         size_t serialized_traces_len;
-//         void *serialized_traces = serialize_traces(ctx->stack_trackers,
-//                 &serialized_traces_len);
-//         prep_async_safe_write(fd, &serialized_traces_len,
-//                     sizeof(serialized_traces_len), count_bytes, &count_bytes, "serialized_traces_len", &async_tokens);
-//         prep_async_safe_write(fd, serialized_traces,
-//                     serialized_traces_len, count_bytes, &count_bytes, "serialized_traces", &async_tokens);
-// 
-//         // Write the serialized stack out
-//         prep_async_safe_write(fd, &stacks_serialized_len,
-//                     sizeof(stacks_serialized_len), count_bytes, &count_bytes, "stacks_serialized_len", &async_tokens);
-//         prep_async_safe_write(fd, stacks_serialized,
-//                     ctx->stacks_serialized_len, count_bytes, &count_bytes, "stacks_serialized", &async_tokens);
-// 
-//         // Write the serialized globals out
-//         prep_async_safe_write(fd, &globals_serialized_len,
-//                     sizeof(globals_serialized_len), count_bytes, &count_bytes, "globals_serialized_len", &async_tokens);
-//         prep_async_safe_write(fd, globals_serialized,
-//                 globals_serialized_len, count_bytes, &count_bytes, "globals_serialized", &async_tokens);
-// 
-//         // Write the constants out
-//         prep_async_safe_write(fd, &constants_serialized_len,
-//                 sizeof(constants_serialized_len), count_bytes, &count_bytes, "constants_serialized_len", &async_tokens);
-//         prep_async_safe_write(fd, constants_serialized,
-//                 constants_serialized_len, count_bytes, &count_bytes, "constants_serialized", &async_tokens);
-// 
-//         // Write the function pointers out
-//         prep_async_safe_write(fd, &text_start, sizeof(text_start), count_bytes,
-//                 &count_bytes, "text_start", &async_tokens);
-//         prep_async_safe_write(fd, &text_len, sizeof(text_len), count_bytes,
-//                 &count_bytes, "text_len", &async_tokens);
-// 
-//         // Write out the thread hierarchy
-//         prep_async_safe_write(fd, &thread_hierarchy_serialized_len,
-//                 sizeof(thread_hierarchy_serialized_len), count_bytes, &count_bytes, "thread_hierarchy_serialized_len", &async_tokens);
-//         prep_async_safe_write(fd, thread_hierarchy_serialized,
-//                 thread_hierarchy_serialized_len, count_bytes, &count_bytes, "thread_hierarchy_serialized", &async_tokens);
-// 
-//         /*
-//          * At the end (after all asynchronous I/Os have completed) we write a
-//          * pointer to the heap offset into the file near the front.
-//          *
-//          * TODO
-//          */
-//         heap_offset = count_bytes;
-// 
-//         // Write the heap allocations out
-//         uint64_t n_heap_allocs = to_checkpoint->size();
-//         prep_async_safe_write(fd, &n_heap_allocs,
-//                     sizeof(n_heap_allocs), count_bytes, &count_bytes, "n_heap_allocs", &async_tokens);
-//         vector<serialized_heap_var> *serialized_heap_vars =
-//             serialize_checkpointable_heap(to_checkpoint);
-//         assert(serialized_heap_vars->size() == to_checkpoint->size());
-// 
-//         for (unsigned i = 0; i < to_checkpoint->size(); i++) {
-//             prep_async_safe_write(fd,
-//                         serialized_heap_vars->at(i).get_serialized(),
-//                         serialized_heap_vars->at(i).get_serialized_len(), count_bytes,
-//                         &count_bytes, "serialized_heap_vars", &async_tokens);
-//             prep_async_safe_write(fd,
-//                         to_checkpoint->at(i).get_buffer(),
-//                         serialized_heap_vars->at(i).get_buffer_len(), count_bytes,
-//                         &count_bytes, "to_checkpoint", &async_tokens);
-//         }
-// 
-//         prep_async_safe_write(fd, &contains_serialized_len,
-//                 sizeof(contains_serialized_len), count_bytes, &count_bytes,
-//                 "contains_serialized_len", &async_tokens);
-//         prep_async_safe_write(fd, contains_serialized, contains_serialized_len,
-//                     count_bytes, &count_bytes, "serialized_contains",
-//                     &async_tokens);
-// 
-//         prep_async_safe_write(fd, &serialized_alias_groups_len,
-//                     sizeof(serialized_alias_groups_len), count_bytes, &count_bytes,
-//                     "serialized_alias_groups_len", &async_tokens);
-//         prep_async_safe_write(fd, serialized_alias_groups,
-//                     serialized_alias_groups_len, count_bytes, &count_bytes,
-//                     "serialized_alias_groups", &async_tokens);
-// 
-//         /*
-//          * Done! Wait for async I/Os and finally write the heap offset info in the
-//          * header of the checkpoint file.
-//          *
-//          * Iterate in reverse so we wait for the last ones first.
-//          */
-//         struct aiocb * aio_list[async_tokens.size()];
-//         while (!async_tokens.empty()) {
-//             aiocb *torun = async_tokens.front();
-//             async_tokens.erase(async_tokens.begin());
-// 
-//             /*
-//              * Some writes may be empty (e.g. if there are no globals then the
-//              * serialized globals len will be == 0).
-//              */
-//             if (torun->aio_nbytes == 0) {
-//                 free(torun);
-//                 continue;
-//             }
-// 
-//             int err = aio_write(torun);
-// 
-//             if (err == -1) {
-//                 async_tokens.push_back(torun);
-//                 if (errno == EAGAIN) {
-//                     if (n_writes_running) {
-//                         n_writes_running = wait_for_running_writes(aio_list,
-//                                 n_writes_running, &count_bytes, dump_filename, &async_tokens);
-//                     }
-//                 } else {
-//                     fprintf(stderr, "Unexpected error while writing asynchronously "
-//                             "to %s\n", dump_filename);
-//                     perror(NULL);
-//                     exit(1);
-//                 }
-//             } else {
-//                 aio_list[n_writes_running++] = torun;
-//             }
-//         }
-// 
-//         while (n_writes_running > 0) {
-//             n_writes_running = wait_for_running_writes(aio_list, n_writes_running,
-//                     &count_bytes, dump_filename, &async_tokens);
-//         }
-// 
-//         VERIFY(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
-//                 dump_filename) == heap_offset_offset);
-//         safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_final",
-//                 dump_filename);
-//         close(fd);
-// 
-//         for (unsigned i = 0; i < to_checkpoint->size(); i++) {
-//             free(to_checkpoint->at(i).get_buffer());
-//             free(serialized_heap_vars->at(i).get_serialized());
-//         }
-// 
-//         free(stacks_serialized);
-//         free(globals_serialized);
-//         free(constants_serialized);
-//         free(thread_hierarchy_serialized);
-//         free(serialized_times);
-//         free(serialized_traces);
-//         free(contains_serialized);
-//         free(serialized_alias_groups);
-//         delete to_checkpoint;
-//         delete ctx->stack_trackers;
-//         delete ctx->checkpoint_entry_times;
-//         delete serialized_heap_vars;
-// 
-//         strcpy(previous_checkpoint_filename, dump_filename);
-// 
-//         VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-//         assert(checkpoint_thread_running == 1 ||
-//                 checkpoint_thread_running == -1);
-//         if (checkpoint_thread_running == -1) break;
-// 
-//         checkpoint_thread_running = 0;
-//         /*
-//          * This signal isn't necessary for correctness, it is simply used to
-//          * signal wait_for_checkpoint during tests. It's okay to signal here in
-//          * normal execution because the checkpoint thread is the only thing that
-//          * waits on checkpoint_cond, and it can't signal itself.
-//          */
-//         VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
-//         VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-// 
-// #ifdef __CHIMES_PROFILE
-//         pp.add_time(CHECKPOINT_THREAD, __start_time);
-// #endif
-//     }
-// 
-//     return (NULL);
-// }
 
 static stack_var *find_var(void *addr,
         vector<stack_frame *> *parent_stack) {
@@ -4526,6 +4360,10 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent, void *
          * Use the loaded thread hierarchy to figure out what ID this thread was
          * assigned previously.
          */
+#ifdef VERBOSE
+        fprintf(stderr, "While restoring, searching for thread with relation "
+                "%u to parent %u\n", relation, parent);
+#endif
         bool found = false;
         for (map<unsigned, pair<unsigned, unsigned> >::iterator i =
                 unpacked_thread_hierarchy->begin(), e =
@@ -4534,6 +4372,11 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent, void *
             pair<unsigned, unsigned> info = i->second;
             unsigned stored_parent = info.first;
             unsigned stored_relation = info.second;
+
+#ifdef VERBOSE
+            fprintf(stderr, "  comparing to parent=%u relation=%u\n",
+                    stored_parent, stored_relation);
+#endif
 
             if (relation == stored_relation && parent == stored_parent) {
                 global_tid = id;
@@ -4565,6 +4408,8 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent, void *
             set_my_thread_ctx(new_ctx);
             VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 
+            set_my_thread_heap(new thread_local_allocations());
+
             pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
             set_my_tid(global_tid);
         } else {
@@ -4587,6 +4432,8 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent, void *
             thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid, new_ctx));
             set_my_thread_ctx(new_ctx);
             VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+
+            set_my_thread_heap(new thread_local_allocations());
 
             // Store the mapping from pthread_t to self
             pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
@@ -4670,6 +4517,35 @@ void thread_leaving() {
 #endif
 }
 
+static void cleanup_thread_heap(void *thread_heap_ptr) {
+    thread_local_allocations *thread_heap =
+        (thread_local_allocations *)thread_heap_ptr;
+
+    VERIFY(pthread_rwlock_rdlock(&thread_heaps_lock) == 0);
+    thread_local_allocations *main_thread_heap = thread_heaps.at(main_thread);
+    VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
+
+    main_thread_heap->wrlock();
+    for (map<void *, heap_allocation *>::iterator i = thread_heap->begin(),
+            e = thread_heap->end(); i != e; i++) {
+        main_thread_heap->add_allocation(i->second, true);
+    }
+    main_thread_heap->unlock();
+
+    VERIFY(pthread_rwlock_wrlock(&thread_heaps_lock) == 0);
+    map<pthread_t, thread_local_allocations *>::iterator iter = thread_heaps.begin();
+    while (iter != thread_heaps.end()) {
+        if (iter->second == thread_heap) {
+            break;
+        }
+    }
+    assert(iter != thread_heaps.end());
+    thread_heaps.erase(iter);
+    VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
+
+    delete thread_heap;
+}
+
 static void destroy_thread_ctx(void *thread_ctx_ptr) {
     thread_ctx *ctx = (thread_ctx *)thread_ctx_ptr;
 
@@ -4682,6 +4558,10 @@ static void destroy_thread_ctx(void *thread_ctx_ptr) {
     pthread_to_id.erase(found);
     VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
 
+#ifdef VERBOSE
+    fprintf(stderr, "adding dead thread time elapsed_time=%llu\n",
+            ctx->elapsed_time());
+#endif
     __sync_fetch_and_add(&dead_thread_time, ctx->elapsed_time());
 
     VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
@@ -4717,7 +4597,7 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
      * number of threads, some threads from the outer omp parallel region will
      * not receive work.
      */
-    if (my_ctx->get_parent_region() == region_id) {
+    if (my_ctx->has_parent() && my_ctx->get_parent_region() == region_id) {
         assert(my_ctx->get_stack()->size() ==
                 (expected_parent_stack_depth + 1U));
     } else {
@@ -4761,12 +4641,6 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
             }
         }
     }
-
-    // for (vector<map<unsigned, thread_ctx *>::iterator>::iterator i =
-    //         to_erase.begin(), e = to_erase.end(); i != e; i++) {
-    //     map<unsigned, thread_ctx *>::iterator curr = *i;
-    //     thread_ctxs.erase(curr);
-    // }
 
     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
     
@@ -4815,6 +4689,16 @@ static unsigned get_my_tid() {
     return *tid_ptr;
 }
 
+static thread_local_allocations *get_my_thread_heap() {
+    thread_local_allocations *local =
+        (thread_local_allocations *)pthread_getspecific(thread_heap_key);
+    if (local == NULL) {
+        local = new thread_local_allocations();
+        set_my_thread_heap(local);
+    }
+    return local;
+}
+
 static thread_ctx *get_my_context_may_fail() {
     return (thread_ctx *)pthread_getspecific(thread_ctx_key);
 }
@@ -4827,42 +4711,4 @@ static thread_ctx *get_my_context() {
 
 static std::vector<stack_frame *> *get_my_stack() {
     return get_my_context()->get_stack();
-}
-
-void onexit() {
-// #ifdef VERBOSE
-//     fprintf(stderr, "Locking...\n");
-// #endif
-//     VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-// #ifdef VERBOSE
-//     fprintf(stderr, "Done\n");
-// #endif
-//     checkpoint_thread_running = -1;
-// #ifdef VERBOSE
-//     fprintf(stderr, "Signalling...\n");
-// #endif
-//     VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
-// #ifdef VERBOSE
-//     fprintf(stderr, "Unlocking...\n");
-// #endif
-//     VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-// #ifdef VERBOSE
-//     fprintf(stderr, "Joining\n");
-// #endif
-// 
-// #ifdef __CHIMES_PROFILE
-//     const unsigned long long __start_time = perf_profile::current_time_ns();
-// #endif
-//     pthread_join(checkpoint_thread, NULL);
-// #ifdef __CHIMES_PROFILE
-//     pp.add_time(ONEXIT, __start_time);
-// #endif
-
-#ifdef __CHIMES_PROFILE
-    fprintf(stderr, "%s\n", pp.tostr().c_str());
-#endif
-
-// #ifdef VERBOSE
-//     fprintf(stderr, "Done\n");
-// #endif
 }

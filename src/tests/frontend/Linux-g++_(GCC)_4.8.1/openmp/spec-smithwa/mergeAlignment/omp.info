@@ -1,0 +1,10 @@
+160 160 #pragma omp parallel firstprivate(maxReports, minSeparation) private(tempScores, tempStartsI, tempStartsJ, tempEndsI, tempEndsJ, tempSeqsI, tempSeqsJ, sequences, threadNum, numThreads, numReports, i, j, iter, mask, consumer, producer, totalReports, flag, indexB, scores, index, myRow, myCol, npRow, npCol, beginTime, endTime, length, count)
+448 448 #pragma omp flush
+533 533 #pragma omp flush
+535 535 #pragma omp flush
+950 950 #pragma omp flush
+952 952 #pragma omp flush
+987 987 #pragma omp flush
+990 990 #pragma omp flush
+993 993 #pragma omp flush
+996 996 #pragma omp flush

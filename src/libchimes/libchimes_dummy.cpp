@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <assert.h>
+#include <dlfcn.h>
 
 #include <set>
 #include <string>
@@ -33,6 +34,7 @@ static unsigned long long count_thread_leaving = 0;
 static unsigned long long count_get_parent_vars_stack_depth = 0;
 static unsigned long long count_get_thread_stack_depth = 0;
 static unsigned long long count_checkpoint = 0;
+static unsigned long long count_translate_fptr = 0;
 #ifdef __CHIMES_DETAIL_PROFILE
 static map<int, size_t> calling_lbls;
 static pthread_mutex_t count_mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -74,6 +76,7 @@ void onexit() {
     fprintf(stderr, "get_parent_vars_stack_depth %llu\n", count_get_parent_vars_stack_depth);
     fprintf(stderr, "get_thread_stack_depth %llu\n", count_get_thread_stack_depth);
     fprintf(stderr, "checkpoint %llu\n", count_checkpoint);
+    fprintf(stderr, "translate_fptr %llu\n", count_translate_fptr);
     fprintf(stderr, "\n");
 #ifdef __CHIMES_DETAIL_PROFILE
     fprintf(stderr, "Calling stats:\n");
@@ -85,7 +88,7 @@ void onexit() {
 }
 #endif
 
-void init_chimes() {
+void init_chimes(int argc, char **argv) {
 #ifdef __CHIMES_PROFILE
     atexit(onexit);
 #endif
@@ -128,6 +131,10 @@ void init_chimes() {
 }
 
 void calling_npm(const char *name /* , unsigned loc_id */ ) {
+#ifdef VERBOSE
+    fprintf(stderr, "calling_npm: %s\n", name);
+#endif
+
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling_npm, 1);
 #endif
@@ -135,6 +142,10 @@ void calling_npm(const char *name /* , unsigned loc_id */ ) {
 
 void calling(void *func_ptr, int lbl, /* unsigned loc_id, */ size_t set_return_alias,
         unsigned naliases, ...) {
+#ifdef VERBOSE
+    fprintf(stderr, "calling: %u\n", lbl);
+#endif
+
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling, 1);
 
@@ -155,6 +166,9 @@ int get_next_call() { return (0); }
 int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
         unsigned n_local_arg_aliases, /* unsigned nargs, */ ...) {
     // if (conditional) { *conditional = 0; }
+#ifdef VERBOSE
+    fprintf(stderr, "new_stack: %s\n", funcname);
+#endif
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_new_stack, 1);
 #endif
@@ -163,6 +177,12 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
 
 void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
         int n_params, ...) {
+#ifdef VERBOSE
+    fprintf(stderr, "translate_fptr: %u\n", loc_id);
+#endif
+#ifdef __CHIMES_PROFILE
+    __sync_fetch_and_add(&count_translate_fptr, 1);
+#endif
     map<void *, void *>::iterator exists = original_function_to_npm.find(fptr);
     if (exists != original_function_to_npm.end()) {
         return exists->second;
@@ -183,9 +203,14 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
     //     va_arg(vl, unsigned *);
     //     const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
+    //     const unsigned n_aliases_and_children_at_loc = va_arg(vl, unsigned);
     //     const unsigned n_possible_aliases_at_loc = va_arg(vl, unsigned);
 
     //     for (unsigned j = 0; j < n_aliases_at_loc; j++) {
+    //         va_arg(vl, size_t);
+    //     }
+
+    //     for (unsigned j = 0; j < n_aliases_and_children_at_loc; j++) {
     //         va_arg(vl, size_t);
     //     }
 
@@ -198,11 +223,43 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     //     }
     // }
 
+    void *app_handle = dlopen(NULL, RTLD_LAZY);
+    assert(app_handle != NULL);
+
     // Iterate over the NPM functions defined inside this compilation unit.
     // for (int i = 0; i < n_provided_npm_functions; i++) {
     //     std::string fname(va_arg(vl, char *));
-    //     void *fptr = va_arg(vl, void *);
-    //     void *original_fptr = va_arg(vl, void *);
+    //     int is_static = va_arg(vl, int);
+
+    //     void *fptr, *original_fptr;
+    //     if (is_static) {
+#ifdef VERBOSE
+    //         fprintf(stderr, "WARNING: Had to take function addresses for "
+    //                 "function %s\n", fname.c_str());
+#endif
+    //         fptr = va_arg(vl, void *);
+    //         original_fptr = va_arg(vl, void *);
+    //     } else {
+    //         std::string mangled_fname(va_arg(vl, char *));
+    //         std::string mangled_npm_fname(va_arg(vl, char *));
+
+    //         dlerror(); // Clear existing errors
+    //         original_fptr = dlsym(app_handle, mangled_fname.c_str());
+    //         char *ld_err;
+    //         if ((ld_err = dlerror()) != NULL) {
+    //             fprintf(stderr, "Unable to load function address for %s, %s\n",
+    //                     fname.c_str(), mangled_fname.c_str());
+    //             exit(1);
+    //         }
+
+    //         dlerror(); // Clear existing errors
+    //         fptr = dlsym(app_handle, mangled_npm_fname.c_str());
+    //         if ((ld_err = dlerror()) != NULL) {
+    //             fprintf(stderr, "Unable to load NPM function address for %s, %s\n",
+    //                     fname.c_str(), mangled_npm_fname.c_str());
+    //             exit(1);
+    //         }
+    //     }
 
     //     if (original_fptr) {
     //         assert(original_function_to_npm.find(original_fptr) ==
@@ -249,6 +306,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     //     }
     // }
 
+    VERIFY(dlclose(app_handle) == 0);
+
     // Iterate over the NPM functions that this compilation unit depends on
     /* 
     for (int i = 0; i < n_external_npm_functions; i++) {
@@ -281,6 +340,9 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, /* int *conditional, unsigned loc_id, */ int disabled, bool is_allocator) {
+#ifdef VERBOSE
+    fprintf(stderr, "rm_stack: %s\n", funcname);
+#endif
     // if (conditional) { *conditional = 0; }
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_rm_stack, 1);
@@ -324,13 +386,11 @@ void register_stack_vars(int nvars, ...) {
 }
 
 void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...) { }
 
 void register_constant(size_t const_id, void *address,
         size_t length) { }
-
-void register_text(void *start, size_t len) { }
 
 int alias_group_changed(unsigned loc_id) {
 #ifdef __CHIMES_PROFILE
@@ -339,35 +399,31 @@ int alias_group_changed(unsigned loc_id) {
     return 0;
 }
 
-void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...) {
+void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_malloc_wrapper, 1);
 #endif
-    return malloc(nbytes);
 }
 
-void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calloc_wrapper, 1);
 #endif
-    return calloc(num, size);
 }
 
-void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...) {
+void realloc_helper(const void *new_ptr, const void *ptr, void *header,
+        size_t nbytes, size_t group, int is_ptr, int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_realloc_wrapper, 1);
 #endif
-    return realloc(ptr, nbytes);
 }
 
-void free_wrapper(void *ptr, size_t group) {
+void free_helper(const void *ptr, size_t group) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_free_wrapper, 1);
 #endif
-    free(ptr);
 }
 
 bool disable_current_thread() {

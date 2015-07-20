@@ -1,0 +1,1 @@
+58 58 #pragma omp parallel for

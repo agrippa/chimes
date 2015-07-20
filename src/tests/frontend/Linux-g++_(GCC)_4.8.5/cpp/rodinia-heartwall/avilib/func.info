@@ -1,0 +1,57 @@
+AVI_open_output_file 99
+avi_write 0 158 0
+AVI_set_video 219 0 0 0 223
+avi_update_header 1549
+AVI_set_audio 1651 0 0 0 0 0
+long2str 1694 0
+avi_sampsize 1730 0
+AVI_write_frame 1791 1792 0 0
+avi_write_data 1895 1896 0 0 0
+AVI_dup_frame 1943
+avi_add_index_entry 2064 2065 0 0 0
+AVI_write_audio 2111 2112 0
+AVI_append_audio 2254 2255 0
+str2ulong 2284
+AVI_bytes_remain 2310
+AVI_bytes_written 2335
+AVI_set_audio_track 2363 0
+AVI_get_audio_track 2372
+AVI_close 2421
+avi_close_output_file 3838
+AVI_open_input_file 3892 0
+avi_parse_input_file 5081 0
+AVI_open_fd 0 0
+avi_read 0 5415 0
+str2ushort 5435
+AVI_video_frames 5443
+AVI_video_width 5452
+AVI_video_height 5461
+AVI_frame_rate 5469
+AVI_video_compressor 5477
+AVI_max_video_chunk 5485
+AVI_audio_tracks 5493
+AVI_audio_channels 5508
+AVI_audio_mp3rate 5522
+AVI_audio_bits 5537
+AVI_audio_format 5552
+AVI_audio_rate 5566
+AVI_audio_bytes 5580
+AVI_audio_chunks 5594
+AVI_audio_codech_offset 5608
+AVI_audio_codecf_offset 5622
+AVI_video_codech_offset 5630
+AVI_video_codecf_offset 5638
+AVI_frame_size 5684 0
+AVI_audio_size 5749 0
+AVI_get_video_position 5796 0
+AVI_seek_start 5825
+AVI_set_video_position 5862 0
+AVI_set_audio_bitrate 5893 0
+AVI_read_frame 5998 5999 6000
+AVI_set_audio_position 6124 0
+AVI_read_audio 6340 6341 0
+AVI_read_data 6510 6511 0 6513 0 6515
+AVI_print_error 6539
+AVI_strerror
+AVI_max_size
+avi_add_chunk 6692 6693 6694 0

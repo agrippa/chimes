@@ -1,0 +1,67 @@
+__assert_fail init 35 36 0 1377 1378 0 1379
+sqrt modv 53 59 0 0
+cos rot_x 69 27 0 0
+sin rot_x 69 51 0 0
+sin rot_x 70 27 0 0
+cos rot_x 70 51 0 0
+cos rot_y 76 25 0 0
+sin rot_y 76 49 0 0
+sin rot_y 77 25 0 0
+cos rot_y 77 49 0 0
+sqrt get_sphere_intersec 94 25 0 0
+sqrt get_sphere_intersec 95 25 0 0
+modv get_cos_angle_v1v2 103 16 0 0 0 0
+modv get_cos_angle_v1v2 104 16 0 0 0 0
+fprintf usage 109 5 0 876 1381 553
+exit usage 111 5 0 0
+strchr parse_three_doubles 115 25 588 603 0
+__assert_fail parse_three_doubles 116 46 0 1382 1378 0 1383
+strchr parse_three_doubles 117 26 590 588 0
+__assert_fail parse_three_doubles 118 47 0 1384 1378 0 1383
+atof parse_three_doubles 123 10 0 603
+atof parse_three_doubles 124 10 0 588
+atof parse_three_doubles 125 10 0 590
+getopt parse_config 144 17 0 0 887 1386
+atoi parse_config 147 28 0 849
+atoi parse_config 150 28 0 849
+atoi parse_config 153 28 0 849
+parse_three_doubles parse_config 156 17 0 849 826 826 826
+parse_three_doubles parse_config 159 17 0 849 826 826 826
+parse_three_doubles parse_config 162 17 0 849 826 826 826
+parse_three_doubles parse_config 165 17 0 849 826 826 826
+strchr parse_config 170 37 755 849 0
+__assert_fail parse_config 171 58 0 1382 1378 0 1388
+strchr parse_config 172 38 757 755 0
+__assert_fail parse_config 173 59 0 1384 1378 0 1388
+strchr parse_config 174 37 769 757 0
+__assert_fail parse_config 175 58 0 1382 1378 0 1388
+strchr parse_config 176 38 781 769 0
+__assert_fail parse_config 177 59 0 1384 1378 0 1388
+strchr parse_config 178 37 793 781 0
+__assert_fail parse_config 179 58 0 1382 1378 0 1388
+strchr parse_config 180 37 805 793 0
+__assert_fail parse_config 181 58 0 1382 1378 0 1388
+realloc parse_config 190 43 1181 1181 0
+atof parse_config 192 54 0 849
+atof parse_config 193 21 0 755
+atof parse_config 193 44 0 757
+atof parse_config 194 21 0 769
+atof parse_config 194 44 0 781
+atof parse_config 195 21 0 793
+atof parse_config 195 44 0 805
+init parse_config 192 17 0 1181 0 0 0 0 0 0 0
+fprintf parse_config 201 13 0 876 1393 0
+usage parse_config 204 13 0 887
+parse_config main 211 5 0 0 1373 898
+malloc main 212 26 945 0
+get_coord main 220 20 0 0 0 0 0 0
+get_coord main 221 20 0 0 0 0 0 0
+modv main 227 24 0 0 0 0
+get_sphere_intersec main 236 25 0 0 0 0 0 0 0 0 0 0 0
+get_sphere_intersec main 251 27 0 0 0 0 0 0 0 0 0 0 0
+get_sphere_intersec main 258 31 0 0 0 0 0 0 0 0 0 0 0
+get_cos_angle_v1v2 main 268 25 0 0 0 0 0 0 0
+move main 285 11 0 1181 0 0 0
+checkpoint main 289 9 0
+printf main 292 7 0 1395 0 0
+free main 295 5 0 945

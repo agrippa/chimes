@@ -1,0 +1,14 @@
+get_time
+get_frame 96 0 0 0
+chop_flip_image 274 0 0 0 0 0 0 0
+ellipsematching 632 633
+structuring_element 0
+dilate_f 913 914
+TMatrix 0 0
+uniformseg 1602 1603 1604 1605
+m_min 1670
+m_max 1734
+getsampling 1769 0
+getfdriv 2123 0
+linear_interp2 2587 2588 2589
+splineenergyform01 4774 4775 4776 4777 0 0 0 0

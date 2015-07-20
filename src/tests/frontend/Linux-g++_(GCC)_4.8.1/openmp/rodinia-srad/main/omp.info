@@ -1,0 +1,2 @@
+65 65 #pragma omp parallel for shared(image, dN, dS, dW, dE, c, Nr, Nc, iN, iS, jW, jE) private(i, j, k, Jc, G2, L, num, den, qsqr)
+107 107 #pragma omp parallel for shared(image, c, Nr, Nc, lambda) private(i, j, k)

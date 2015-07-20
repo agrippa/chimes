@@ -1,0 +1,1 @@
+/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 171 9 : { 336, 337, 338, 339, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 473, 636 } prop:call:checkpoint { kernel { 473 }, random_init { 235 } }

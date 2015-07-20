@@ -1,7 +1,0 @@
-char_mapping 0 DOES_NOT
-print_matrix 0 DOES_NOT
-clear_whitespaces_do_mapping 0 DOES_NOT char_mapping 60 42
-read_file 0 DOES_NOT clear_whitespaces_do_mapping 79 16
-kernel 0 DOES_NOT
-main 0 DOES random_init 142 5 random_init 143 5 kernel 160 9 checkpoint 171 9
-random_init 0 DOES_NOT

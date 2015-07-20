@@ -1,4 +1,4 @@
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c timestampBarrier|msg|0 " i8* " 64 1 0 1 ctime time
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c timestampBarrier|msg|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c timestampBarrier|t|0 " i64 " 64 0 0 1 timestampBarrier
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c timestampBarrier|timeString|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c initParallel|argc|0 " i32* " 64 1 0 0

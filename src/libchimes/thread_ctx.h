@@ -6,6 +6,7 @@
 #include <set>
 #include <stdarg.h>
 
+#include "chimes_common.h"
 #include "set_of_aliases.h"
 #include "perf_profile.h"
 #include "stack_frame.h"
@@ -75,7 +76,7 @@ class thread_ctx {
             parent_aliases_length = 0;
         }
 
-        void init_parent_aliases(va_list vl, unsigned naliases) {
+        void init_parent_aliases(va_list *vl, unsigned naliases) {
             if (naliases > parent_aliases_capacity) {
                 parent_aliases_capacity *= 2;
                 parent_aliases = (size_t *)realloc(parent_aliases,
@@ -84,7 +85,7 @@ class thread_ctx {
             }
 
             for (unsigned i = 0; i < naliases; i++) {
-                parent_aliases[i] = va_arg(vl, size_t);
+                parent_aliases[i] = va_arg(*vl, size_t);
 #ifdef VERBOSE
                 fprintf(stderr, "  Parent alias %d is %llu\n", i, parent_aliases[i]);
 #endif

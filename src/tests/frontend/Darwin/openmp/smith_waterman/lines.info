@@ -1,3 +1,0 @@
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 318 22 : { 330, 331 } direct:call:ftell
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 430 14 : { 920, 921, 922 } direct:call:omp_get_num_threads
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 609 9 : { 141, 529, 550, 552, 741, 923, 924, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 1376, 1385, 1683, 1685, 1691, 1693, 1695, 1703 } prop:call:checkpoint

@@ -49,6 +49,8 @@ public:
     bool requiresMangledVarsReset() { return false; }
     bool transformsOriginal() { return false; }
 private:
+    std::string getMetadataArgs(HeapAlloc *alloc);
+
     std::set<std::string> supportedAllocationFunctions;
 
     // Mapping from line number -> function name -> function call information

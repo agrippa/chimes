@@ -170,13 +170,18 @@ void destroySimulation(SimFlat** ps)
     if ( ! s ) return;
 
     BasePotential* pot = s->pot;
+    fprintf(stderr, "freeing pot\n");
     if ( pot) free(pot);
     destroyLinkCells(&(s->boxes));
     // destroyAtoms(s->atoms);
     // destroyHaloExchange(&(s->atomExchange));
+    fprintf(stderr, "freeing species\n");
     free(s->species);
+    fprintf(stderr, "freeing domain\n");
     free(s->domain);
+    fprintf(stderr, "freeing s\n");
     free(s);
+    fprintf(stderr, "freeing done\n");
     *ps = NULL;
 
     return;

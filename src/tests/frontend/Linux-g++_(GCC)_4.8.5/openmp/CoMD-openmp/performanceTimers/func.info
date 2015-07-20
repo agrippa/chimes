@@ -1,0 +1,8 @@
+profileStart 0
+getTime
+profileStop 0
+getElapsedTime 0
+getTick
+printPerformanceResults 0 0
+timerStats
+printPerformanceResultsYaml 761

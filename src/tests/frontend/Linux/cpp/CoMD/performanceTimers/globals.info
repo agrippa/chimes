@@ -1,3 +1,0 @@
-timerName " [11 x i8*] " 704 0 0 
-perfTimer " [11 x %struct.TimersSt] " 6336 0 0 
-perfGlobal " %struct.TimerGlobalSt = type { double, double, double } " 192 0 1 TimerGlobalSt 

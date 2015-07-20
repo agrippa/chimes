@@ -1,4 +1,0 @@
-node_t 0 type "int" height "int" numChildren "int" state "%struct.state_t"
-omp_lock_t 1 _x "[ 4 x unsigned char ]"
-state_t 0 state "[ 20 x unsigned char ]"
-stealStack_t 0 stackSize "int" workAvail "int" sharedStart "int" local "int" top "int" maxStackDepth "int" nNodes "int" maxTreeDepth "int" nLeaves "int" nAcquire "int" nRelease "int" nSteal "int" nFail "int" wakeups "int" falseWakeups "int" nNodes_last "int" time "[ 5 x double ]" timeLast "double" entries "[ 5 x int ]" curState "int" stackLock "%struct.omp_lock_t*" stack "%struct.node_t*" stack_g "%struct.node_t*"

@@ -1,0 +1,2 @@
+175 175 #pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index)
+194 194 #pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index)

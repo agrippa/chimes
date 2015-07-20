@@ -1,0 +1,288 @@
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 37 5 len=8 checkmat_npm
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 62 6 len=6 genmat_npm
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 87 48  ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 14523017231334616286UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 87 100 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 123 6 len=15 print_structure_npm
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 139 9 len=20 allocate_clean_block_npm
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 144 17  ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 14523017231334616457UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 144 69 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 162 6 len=3 lu0_npm
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 180 6 len=4 bdiv_npm
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 196 6 len=4 bmod_npm
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 211 6 len=3 fwd_npm
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 222 6 len=13 sparselu_init_npm
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 224 25  ({ void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 14523017231334616925UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 224 75 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 303 6 len=17 sparselu_seq_call_npm
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 332 6 len=13 sparselu_fini_npm
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 365 5 len=14 sparselu_check_npm
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 379 5 len=9 checkmat1_npm
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 87 48  ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 14523017231334616286UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 87 100 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 144 17  ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 14523017231334616457UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 144 69 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 224 25  ({ void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 14523017231334616925UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 224 75 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 53 68 rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 57 59 rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 38 1 const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(14523017231334616122UL), (size_t)(14523017231334616123UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 58 1 rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 63 1 const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 0, (size_t)(14523017231334616359UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 119 1 rm_stack(false, 0UL, "genmat", &____must_manage_genmat, ____alias_loc_id_2, ____chimes_did_disable1, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 124 1 const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(14523017231334616441UL), (size_t)(14523017231334616442UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 135 1 rm_stack(false, 0UL, "print_structure", &____must_manage_print_structure, ____alias_loc_id_3, ____chimes_did_disable2, false); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 156 64 rm_stack(true, 14523017231334616457UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 140 1 const int ____chimes_did_disable3 = new_stack((void *)(&allocate_clean_block), "allocate_clean_block", &____must_manage_allocate_clean_block, 0, 0); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 157 1 rm_stack(true, 14523017231334616457UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 163 1 const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(14523017231334616619UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 175 1 rm_stack(false, 0UL, "lu0", &____must_manage_lu0, ____alias_loc_id_5, ____chimes_did_disable4, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 181 1 const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(14523017231334616734UL), (size_t)(14523017231334616735UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 192 1 rm_stack(false, 0UL, "bdiv", &____must_manage_bdiv, ____alias_loc_id_6, ____chimes_did_disable5, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 197 1 const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(14523017231334616823UL), (size_t)(14523017231334616824UL), (size_t)(14523017231334616825UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 207 1 rm_stack(false, 0UL, "bmod", &____must_manage_bmod, ____alias_loc_id_7, ____chimes_did_disable6, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 212 1 const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(14523017231334616912UL), (size_t)(14523017231334616913UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 219 1 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_did_disable7, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 223 1 const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(14523017231334616933UL), (size_t)(14523017231334616934UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 227 1 rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, ____alias_loc_id_9, ____chimes_did_disable8, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 230 1 const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0x0, 1, 1, (size_t)(14523017231334617196UL), "sparselu_par_call|BENCH|0", (int *)0x0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 300 1 rm_stack(false, 0UL, "sparselu_par_call", (int *)0x0, ____alias_loc_id_10, ____chimes_did_disable9, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 304 1 const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(14523017231334617416UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 330 1 rm_stack(false, 0UL, "sparselu_seq_call", &____must_manage_sparselu_seq_call, ____alias_loc_id_11, ____chimes_did_disable10, false); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 335 4 rm_stack(false, 0UL, "sparselu_fini", &____must_manage_sparselu_fini, ____alias_loc_id_12, ____chimes_did_disable11, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 333 1 const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(14523017231334617424UL), (size_t)(14523017231334617425UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 377 59 rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_13, ____chimes_did_disable12, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 366 1 const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(14523017231334617483UL), (size_t)(14523017231334617484UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 378 1 rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_13, ____chimes_did_disable12, false); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 391 59 rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_14, ____chimes_did_disable13, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 380 1 const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(14523017231334617537UL)); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 392 1 rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_14, ____chimes_did_disable13, false); 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 38 2 const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(14523017231334616122UL), (size_t)(14523017231334616123UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 38 181 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 39 4 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 39 12 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 40 4 float r_err; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 40 15 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 53 14 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 53 38 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 57 5 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 57 29 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 63 2 const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 0, (size_t)(14523017231334616359UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 63 141 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 64 4 int null_entry; int init_val; int i; int j; int ii; int jj; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 64 42 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 65 4 float *p; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 65 12 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 66 4 float *prow; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 66 15 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 67 4 float rowsum; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 67 16 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 87 52 void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 87 155 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 124 2 const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(14523017231334616441UL), (size_t)(14523017231334616442UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 124 202 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 125 4 int ii; int jj; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 125 14 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 140 2 const int ____chimes_did_disable3 = new_stack((void *)(&allocate_clean_block), "allocate_clean_block", &____must_manage_allocate_clean_block, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 140 149 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 141 3 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 141 10 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 142 3 float *p; float *q; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 142 15 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 144 21 void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 144 124 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 156 4 float *____chimes_ret_var_2; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 156 32 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 163 2 const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(14523017231334616619UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 163 132 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 164 4 int i; int j; int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 164 15 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 181 2 const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(14523017231334616734UL), (size_t)(14523017231334616735UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 181 169 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 183 4 int i; int j; int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 183 15 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 197 2 const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(14523017231334616823UL), (size_t)(14523017231334616824UL), (size_t)(14523017231334616825UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 197 203 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 199 4 int i; int j; int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 199 15 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 212 2 const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(14523017231334616912UL), (size_t)(14523017231334616913UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 212 166 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 214 4 int i; int j; int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 214 15 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 223 2 const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(14523017231334616933UL), (size_t)(14523017231334616934UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 223 196 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 224 29 void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 224 130 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 230 2 const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(14523017231334617196UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 230 240 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 4 int ii; int jj; int kk; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 18 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 275 35  float *block;  block = (allocate_clean_block()) ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 275 72 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 304 2 const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(14523017231334617416UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 304 175 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 305 4 int ii; int jj; int kk; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 305 18 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 333 2 const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(14523017231334617424UL), (size_t)(14523017231334617425UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 333 197 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 366 2 const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(14523017231334617483UL), (size_t)(14523017231334617484UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 366 200 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 367 4 int i; int j; int ok; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 367 16 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 377 5 int ____chimes_ret_var_3; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 377 29 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 380 2 const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(14523017231334617537UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 380 151 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 381 4 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 381 12 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 391 5 int ____chimes_ret_var_4; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 391 29 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 225 4  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 241 7  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 248 15  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 258 15  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 275 51  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 276 35  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 280 35  call_lbl_5: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 293 7  call_lbl_6: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 309 7  call_lbl_0: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 313 13  call_lbl_1: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 318 13  call_lbl_2: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 325 63  call_lbl_3: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 326 22  call_lbl_4: 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 374 13  call_lbl_0: 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 37 5 len=8 checkmat_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 38 180  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 62 6 len=6 genmat_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 63 140  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 123 6 len=15 print_structure_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 124 201  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 139 9 len=20 allocate_clean_block_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 140 148  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 162 6 len=3 lu0_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 163 131  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 180 6 len=4 bdiv_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 181 168  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 196 6 len=4 bmod_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 197 202  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 211 6 len=3 fwd_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 212 165  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 222 6 len=13 sparselu_init_quick
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 225 17 ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 225 31 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 223 195  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 229 6 len=17 sparselu_par_call_quick
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 241 20 ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 241 50 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 248 28 ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 248 86 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 258 28 ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 258 88 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 275 73 ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 275 94 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 276 48 ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 277 76 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 280 48 ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 282 69 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 293 20 checkpoint_transformed(6, ____alias_loc_id_0)
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 293 31 
+RemoveTextBegin /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 20 
+RemoveTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 26 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 244 45  { 
+InsertTextBefore /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 251 7  } 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 254 45  { 
+InsertTextBefore /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 261 7  } 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 268 49  { 
+InsertTextBefore /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 288 11  } 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 266 7  { 
+InsertTextBefore /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 289 7  } 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 230 235  ; int kk;
+# 230
+ register_stack_vars(1, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0);  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 303 6 len=17 sparselu_seq_call_quick
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 309 20 ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 309 50 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 313 26 ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 313 84 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 318 26 ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 318 86 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 325 105 ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 325 126 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 326 35 ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 326 122 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 304 174  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 332 6 len=13 sparselu_fini_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 333 196  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 365 5 len=14 sparselu_check_quick
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 374 31 ({ calling_npm("checkmat1", 0); checkmat1_npm(BENCH[i*bots_arg_size+j]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 374 65 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 366 199  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 379 5 len=9 checkmat1_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 380 150  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 37 5 len=8 checkmat_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 38 180  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 62 6 len=6 genmat_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 63 140  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 123 6 len=15 print_structure_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 124 201  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 139 9 len=20 allocate_clean_block_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 140 148  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 162 6 len=3 lu0_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 163 131  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 180 6 len=4 bdiv_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 181 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 196 6 len=4 bmod_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 197 202  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 211 6 len=3 fwd_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 212 165  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 222 6 len=13 sparselu_init_resumable
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 225 17 ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 225 31 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 223 195  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 229 6 len=17 sparselu_par_call_resumable
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 241 20 ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 241 50 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 248 28 ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 248 86 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 258 28 ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 258 88 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 275 73 ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 275 94 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 276 48 ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 277 76 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 280 48 ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 282 69 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 293 20 checkpoint_transformed(6, ____alias_loc_id_0)
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 293 31 
+RemoveTextBegin /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 20 
+RemoveTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 231 26 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 244 45  { 
+InsertTextBefore /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 251 7  } 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 254 45  { 
+InsertTextBefore /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 261 7  } 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 268 49  { 
+InsertTextBefore /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 288 11  } 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 266 7  { 
+InsertTextBefore /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 289 7  } 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 230 235  ; int kk;
+# 230
+ register_stack_vars(1, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(9): { goto call_lbl_9; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 303 6 len=17 sparselu_seq_call_resumable
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 309 20 ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 309 50 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 313 26 ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 313 84 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 318 26 ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 318 86 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 325 105 ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 325 126 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 326 35 ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 326 122 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 304 174  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 332 6 len=13 sparselu_fini_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 333 196  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 365 5 len=14 sparselu_check_resumable
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 374 31 ({ calling_npm("checkmat1", 0); checkmat1_npm(BENCH[i*bots_arg_size+j]); })
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 374 65 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 366 199  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 379 5 len=9 checkmat1_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 380 150  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

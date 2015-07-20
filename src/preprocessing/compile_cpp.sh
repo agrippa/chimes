@@ -4,12 +4,14 @@ set -e
 
 script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
+source ${CHIMES_HOME}/src/common.conf
 
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info constants.info tree.info accessed.info"
 ENABLE_OMP=1
 KEEP=0
 PROFILE=0
 DUMMY=0
+BLOCK_CHECKPOINTS="false"
 COMPILE=0
 INPUTS=()
 INCLUDES=
@@ -21,11 +23,19 @@ VERBOSE=0
 LINKER_FLAGS=
 GXX_FLAGS="-O3"
 DEFINES=
+ADDED_INCLUDES=
+CHIMES_PROFILE=0
 
-while getopts ":kci:I:L:l:o:w:vpx:y:sD:d" opt; do
+while getopts ":kci:I:L:l:o:w:vpx:y:sD:dnf:bg" opt; do
     case $opt in 
+        g)
+            CHIMES_PROFILE=1
+            ;;
         d)
             DUMMY=1
+            ;;
+        b)
+            BLOCK_CHECKPOINTS="true"
             ;;
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -69,6 +79,12 @@ while getopts ":kci:I:L:l:o:w:vpx:y:sD:d" opt; do
         D)
             DEFINES="$DEFINES -D${OPTARG}"
             ;;
+        n)
+            GXX=${GCC}
+            ;;
+        f)
+            ADDED_INCLUDES="$ADDED_INCLUDES -include ${OPTARG}"
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -108,25 +124,35 @@ echo ${ABS_INPUTS[@]}
 
 LAST_FILES=()
 OBJ_FILES=()
-OUTPUT=$(pwd)/${OUTPUT_FILE}
+if [[ $OUTPUT_FILE = /* ]]; then
+    OUTPUT=$OUTPUT_FILE
+else
+    OUTPUT=$(pwd)/${OUTPUT_FILE}
+fi
 
 if [[ -z ${WORK_DIR} ]]; then
     WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
+else
+    # In case it doesn't exist
+    mkdir -p $WORK_DIR
 fi
 
 echo WORK_DIR = $WORK_DIR
 
 OPT=$(find_opt)
-GXX=${GXX:-/usr/bin/g++}
 CLANG=$(find_clang)
 TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
 BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
 FUNCTION_UNROLL=${CHIMES_HOME}/src/preprocessing/function_unroll/function_unroll
+RETURN_UNROLL=${CHIMES_HOME}/src/preprocessing/return_unroll/return_unroll
 CALL_TRANSLATE=${CHIMES_HOME}/src/preprocessing/call_translate/call_translate
 FIND_ALLOCATORS=${CHIMES_HOME}/src/preprocessing/find_allocators/find_allocators
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 SCOP_FINDER=${CHIMES_HOME}/src/preprocessing/scop/find_scop.py
 SCOP_INSERT=${CHIMES_HOME}/src/preprocessing/scop/insert_scop_conditional.py
+FIND_NONCHKPTING=${CHIMES_HOME}/src/preprocessing/find_nonchkpting_fptrs/find_nonchkpting_fptrs
+OMP_INSERTER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_inserter.py
+OMP_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp_appender/openmp_appender
 REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 ADD_QUICK_VERSIONS=${CHIMES_HOME}/src/preprocessing/module_init/add_quick_versions.py
@@ -138,16 +164,33 @@ LLVM_LIB=$(get_llvm_lib)
 
 echo Using GXX ${GXX}
 
+if [[ $COMPILE == 1 && ${#INPUTS[@]} != 1 ]]; then
+    echo 'You cannot specify -c with multiple input files'
+    exit 1
+fi
+
+LCHIMES=
+if [[ $CHIMES_PROFILE == 1 ]]; then
+    LCHIMES=-lchimes_profile
+elif [[ -f ${CHIMES_HOME}/src/libchimes/libchimes.so ]]; then
+    LCHIMES=-lchimes
+elif [[ -f ${CHIMES_HOME}/src/libchimes/libchimes_cpp.so ]]; then
+    LCHIMES=-lchimes_cpp
+else
+    echo Unable to find lchimes
+    exit 1
+fi
+
 if [[ $PROFILE == 1 && $DUMMY == 1 ]]; then
-    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes_dummy.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash"
+    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes_dummy.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash ${LINKER_FLAGS}"
     GXX_FLAGS="${GXX_FLAGS} -pg"
 elif [[ $PROFILE == 1 ]]; then
-    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash"
+    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash ${LINKER_FLAGS}"
     GXX_FLAGS="${GXX_FLAGS} -pg"
 elif [[ $DUMMY == 1 ]]; then
-    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes_dummy"
+    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes_dummy ${LINKER_FLAGS}"
 else
-    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes"
+    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes ${LCHIMES} ${LINKER_FLAGS}"
 fi
 
 if [[ $ENABLE_OMP == 1 ]]; then
@@ -163,21 +206,43 @@ for INPUT in ${ABS_INPUTS[@]}; do
     TMP_OBJ_FILE=${WORK_DIR}/$(basename ${INPUT}).o
     ANALYSIS_LOG_FILE=${WORK_DIR}/$(basename ${INPUT}).analysis.log
 
-    if [[ $ENABLE_OMP == 1 ]]; then
-        echo Looking for OpenMP pragmas in ${INPUT}
-        cd ${WORK_DIR} && python ${OMP_FINDER} ${INPUT} > ${INFO_FILE_PREFIX}.omp.info
-    else
-        touch ${INFO_FILE_PREFIX}.omp.info
+    if [[ -f ${WORK_DIR}/${PREPROCESS_FILE} ]]; then
+        echo Duplicate input filename $INPUT in source tree?
+        exit 1
     fi
 
     cd ${WORK_DIR} && python ${SCOP_FINDER} ${INPUT} ${INFO_FILE_PREFIX}.scop.info
 
     echo Preprocessing ${INPUT} into ${PREPROCESS_FILE}
-    cd ${WORK_DIR} && ${GXX} -I${CUDA_HOME}/include \
+    PREPROC_CMD="${GXX} -I${CUDA_HOME}/include \
            -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -E ${INPUT} \
            -o ${PREPROCESS_FILE} -g ${GXX_FLAGS} \
-           -include${CHIMES_HOME}/src/libchimes/libchimes.h \
-           ${CHIMES_DEF} ${DEFINES}
+           -include ${CHIMES_HOME}/src/libchimes/libchimes.h \
+           ${CHIMES_DEF} ${DEFINES} ${ADDED_INCLUDES}"
+    [[ ! $VERBOSE ]] || echo $PREPROC_CMD
+    cd ${WORK_DIR} && ${PREPROC_CMD}
+
+    if [[ $ENABLE_OMP == 1 ]]; then
+        echo Looking for OpenMP pragmas in ${PREPROCESS_FILE}
+        cd ${WORK_DIR} && python ${OMP_FINDER} ${PREPROCESS_FILE} > ${INFO_FILE_PREFIX}.omp.info
+    else
+        cd ${WORK_DIR} && touch ${INFO_FILE_PREFIX}.omp.info
+    fi
+
+    echo Searching for allocators in ${PREPROCESS_FILE}
+    FIND_ALLOCATORS_CMD="${FIND_ALLOCATORS} -o ${PREPROCESS_FILE}.garbage \
+        -a ${INFO_FILE_PREFIX}.allocators.info ${PREPROCESS_FILE} -- \
+        -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+        ${CHIMES_DEF} ${DEFINES}"
+    cd ${WORK_DIR} && ${FIND_ALLOCATORS_CMD}
+
+    echo Looking for non-checkpointing allocators in ${PREPROCESS_FILE}
+    FIND_NONCHKPTING_CMD="${FIND_NONCHKPTING} \
+        -n ${INFO_FILE_PREFIX}.non_chkpting.info ${PREPROCESS_FILE} -- \
+        -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+        ${CHIMES_DEF} ${DEFINES}"
+    echo $FIND_NONCHKPTING_CMD
+    cd ${WORK_DIR} && ${FIND_NONCHKPTING_CMD}
 
     echo Searching for allocators in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${FIND_ALLOCATORS} -o ${PREPROCESS_FILE}.garbage \
@@ -193,14 +258,21 @@ for INPUT in ${ABS_INPUTS[@]}; do
     echo Inserting braces in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${BRACE_INSERT} -o ${PREPROCESS_FILE}.braces \
         ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-        -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
+        -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES} &> \
+        ${WORK_DIR}/$(basename ${INPUT}).brace_insert.log
     cp ${PREPROCESS_FILE}.braces ${PREPROCESS_FILE}
 
-    echo Unrolling functions in ${PREPROCESS_FILE}
-    cd ${WORK_DIR} && ${FUNCTION_UNROLL} -o ${PREPROCESS_FILE}.unroll \
+    echo Unrolling returns in ${PREPROCESS_FILE}
+    cd ${WORK_DIR} && ${RETURN_UNROLL} -o ${PREPROCESS_FILE}.ret_unroll \
         -a ${PREPROCESS_FILE}.attrs ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
         -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
-    cp ${PREPROCESS_FILE}.unroll ${PREPROCESS_FILE}
+    cp ${PREPROCESS_FILE}.ret_unroll ${PREPROCESS_FILE}
+
+    echo Unrolling functions in ${PREPROCESS_FILE}
+    cd ${WORK_DIR} && ${FUNCTION_UNROLL} -o ${PREPROCESS_FILE}.func_unroll \
+        -a ${PREPROCESS_FILE}.attrs ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
+        -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
+    cp ${PREPROCESS_FILE}.func_unroll ${PREPROCESS_FILE}
 
     echo Generating bitcode for ${PREPROCESS_FILE} into ${BITCODE_FILE}
     cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
@@ -229,7 +301,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
 #        ${INFO_FILE_PREFIX}.exit.info
 #    mv ${PREPROCESSED_WITH_CONDS_FILE} ${PREPROCESS_FILE}
 
-    ${TRANSFORM} \
+    TRANSFORM_CMD="${TRANSFORM} \
             -l ${INFO_FILE_PREFIX}.lines.info \
             -s ${INFO_FILE_PREFIX}.struct.info \
             -a ${INFO_FILE_PREFIX}.stack.info \
@@ -242,7 +314,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -r ${INFO_FILE_PREFIX}.reachable.info \
             -o ${INFO_FILE_PREFIX}.module.info \
             -w ${WORK_DIR} \
-            -c true \
+            -c ${BLOCK_CHECKPOINTS} \
             -t ${INFO_FILE_PREFIX}.omp.info \
             -v ${INFO_FILE_PREFIX}.firstprivate.info \
             -b ${INFO_FILE_PREFIX}.tree.info \
@@ -253,17 +325,23 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -j ${INFO_FILE_PREFIX}.fptrs \
             -u ${INFO_FILE_PREFIX}.merge \
             -y ${INFO_FILE_PREFIX}.allocators.info \
+            -z ${INFO_FILE_PREFIX}.non_chkpting.info \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-            -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
+            -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}"
+    [[ ! $VERBOSE ]] || echo $TRANSFORM_CMD
+    echo Running main transformation kernel on ${PREPROCESS_FILE}
+    $TRANSFORM_CMD
 
     TRANSFORMED_FILE=$(basename ${PREPROCESS_FILE})
     EXT="${TRANSFORMED_FILE##*.}"
     NAME="${TRANSFORMED_FILE%.*}"
     TRANSFORMED_FILE=${NAME}.register.${EXT}
+    OMP_FILE=${NAME}.omp.${EXT}
     INCLUDE_QUICK_FILE=${NAME}.quick.${EXT}
     FIRSTPRIVATE_FILE=${NAME}.fp.${EXT}
     NPM_FILE=${NAME}.npm.${EXT}
     HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
+    ABI_FILE=${INFO_FILE_PREFIX}.abi
     NPM_CONDS_FILE=${NAME}.npm_conds.${EXT}
     FINAL_FILE=${NAME}.transformed.${EXT}
     SCOP_FILE=${NAME}.scop.${EXT}
@@ -302,7 +380,56 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -f ${INFO_FILE_PREFIX}.func.info \
         -d ${INFO_FILE_PREFIX}.call.info -h ${INFO_FILE_PREFIX}.locs \
         -j ${INFO_FILE_PREFIX}.fptrs -ms ${INFO_FILE_PREFIX}.merge.static \
-        -md ${INFO_FILE_PREFIX}.merge.dynamic
+        -md ${INFO_FILE_PREFIX}.merge.dynamic -a ${ABI_FILE} \
+        -nc ${INFO_FILE_PREFIX}.non_chkpting.info
+
+# =======
+# 
+#     echo Adding quick function declarations and bodies to $TRANSFORMED_FILE
+#     cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${TRANSFORMED_FILE} \
+#         ${INCLUDE_QUICK_FILE} -b ${INFO_FILE_PREFIX}.quick.bodies \
+#         -d ${INFO_FILE_PREFIX}.quick.decls
+# 
+#     echo Appending OMP callbacks to ${INCLUDE_QUICK_FILE}
+#     cd ${WORK_DIR} && $OMP_APPENDER -m ${INFO_FILE_PREFIX}.omp.info.inserts \
+#         -o ${INCLUDE_QUICK_FILE}.omp ${INCLUDE_QUICK_FILE} -- \
+#         -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+#         ${CHIMES_DEF} ${DEFINES} &> ${INFO_FILE_PREFIX}.omp_appender.log
+# 
+#     echo Inserting OMP callbacks in ${INCLUDE_QUICK_FILE}.omp
+#     cd ${WORK_DIR} && python ${OMP_INSERTER} ${INCLUDE_QUICK_FILE}.omp \
+#         ${INFO_FILE_PREFIX}.omp.info.inserts ${OMP_FILE}
+# 
+#     echo Adding firstprivate clauses to parallel for loops in ${OMP_FILE}
+#     cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${OMP_FILE} \
+#         ${INFO_FILE_PREFIX}.firstprivate.info > ${FIRSTPRIVATE_FILE}
+# 
+#     echo Adding NPM function declarations, bodies, and pointers to ${FIRSTPRIVATE_FILE}
+#     cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${FIRSTPRIVATE_FILE} ${NPM_FILE} \
+#         -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls \
+#         -e ${INFO_FILE_PREFIX}.list_of_externs 
+# 
+#     echo Adding NPM conditionals to ${NPM_FILE}
+#     cd ${WORK_DIR} && python ${ADD_NPM_CONDS} ${NPM_FILE} \
+#         ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls \
+#         ${INFO_FILE_PREFIX}.list_of_externs
+# 
+#     echo Hardcoding quick/resumable/npm calls when possible in ${NPM_CONDS_FILE}
+#     cd ${WORK_DIR} && ${CALL_TRANSLATE} -o ${HARDCODED_CALLS_FILE} \
+#         -q ${INFO_FILE_PREFIX}.quick.decls -n ${INFO_FILE_PREFIX}.npm.decls \
+#         -e ${INFO_FILE_PREFIX}.externs ${NPM_CONDS_FILE} -- \
+#         -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+#         ${CHIMES_DEF} ${DEFINES}
+# 
+#     echo Fetching ABI information from ${HARDCODED_CALLS_FILE}
+#     cd ${WORK_DIR} && ${GXX} --compile ${HARDCODED_CALLS_FILE} ${CHIMES_DEF} \
+#         ${DEFINES} -o abi.o
+#     cd ${WORK_DIR} && objdump -t abi.o > ${ABI_FILE}
+#     cd ${WORK_DIR} && rm -f abi.o
+# 
+#     echo Setting up module initialization for ${HARDCODED_CALLS_FILE}
+#     cd ${WORK_DIR} && python ${MODULE_INIT} -i ${HARDCODED_CALLS_FILE} -o ${FINAL_FILE} \
+# >>>>>>> master
 
     cd ${WORK_DIR} && python ${SCOP_INSERT} ${FINAL_FILE} \
         ${INFO_FILE_PREFIX}.accessed.info ${INFO_FILE_PREFIX}.scop.info \
@@ -323,26 +450,30 @@ for f in ${LAST_FILES[@]}; do
 done
 
 if [[ $COMPILE == 1 ]]; then
-    for FINAL_FILE in ${LAST_FILES[@]}; do
-        OBJ_FILE=${FINAL_FILE}.o
+    # Last files must only have one entry, checked by a conditional above
+    FINAL_FILE=${LAST_FILES[0]}
+    OBJ_FILE=${FINAL_FILE}.o
+    if [[ "$OUTPUT_FILE" -ne "a.out" ]]; then
+        # If user specified output file, use that one
+        OBJ_FILE=$OUTPUT_FILE
+    fi
 
-        ${GXX} -c -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
-            -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
+    ${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -c -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
+        -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
 
-        if [[ ! -f ${OBJ_FILE} ]]; then
-            echo "Missing object file $OBJ_FILE for input $INPUT"
-            exit 1
-        fi
+    if [[ ! -f ${OBJ_FILE} ]]; then
+        echo "Missing object file $OBJ_FILE for input $INPUT"
+        exit 1
+    fi
 
-        echo $OBJ_FILE
-    done
+    echo $OBJ_FILE
 else
     FILES_STR=""
     for f in ${LAST_FILES[@]}; do
         FILES_STR="${FILES_STR} $f"
     done
 
-    COMPILE_CMD="${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
+    COMPILE_CMD="${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -ldl -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
         -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
         ${LINKER_FLAGS}"
     # [[ ! $VERBOSE ]] || echo $COMPILE_CMD

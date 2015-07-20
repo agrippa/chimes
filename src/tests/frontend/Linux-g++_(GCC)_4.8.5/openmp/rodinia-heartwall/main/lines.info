@@ -1,0 +1,10 @@
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 157 5 : { 217 } {  } call:AVI_close { AVI_close { 1640 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 146 6 : { 221 } {  } call:AVI_print_error { AVI_print_error { 1879 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 153 19 : { 217 } {  } call:AVI_video_width { AVI_video_width { 1640 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 575 9 : {  } {  } call:kernel { kernel { 218, 226 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 28 : { 212, 213, 214, 219, 220 } {  } call:AVI_open_input_file { AVI_open_input_file { 1630, 1640 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 152 19 : { 217 } {  } call:AVI_video_height { AVI_video_height { 1640 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 564 9 : { 217 } {  } call:AVI_close { AVI_close { 1640 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 15 : { 221 } {  } call:AVI_video_frames { AVI_video_frames { 1640 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 559 17 : { 221 } {  } call:get_frame { get_frame { 849, 1640 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 557 28 : { 215, 216, 217, 218, 224, 849 } {  } call:AVI_open_input_file { AVI_open_input_file { 1630, 1640 } }

@@ -55,6 +55,21 @@ class OMPRegion {
             return parent->resumable();
         }
 
+        /*
+         * insert_before_region();
+         * #pragma omp parallel
+         * {
+         *    insert_at_region_start();
+         *    ...
+         *    insert_at_region_end();
+         * }
+         * insert_after_region();
+         */
+        std::vector<std::string> insert_before_region;
+        std::vector<std::string> insert_at_region_start;
+        std::vector<std::string> insert_at_region_end;
+        std::vector<std::string> insert_after_region;
+
     private:
         OMPRegion *parent;
         std::vector<OMPRegion *> children;

@@ -1,0 +1,2 @@
+/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 166 9 : { 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 865 } {  } call:checkpoint {  }
+/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 248 2 : { 1085, 1086, 1087, 1088, 1089, 1090, 1092, 1093, 1094, 1095, 1096, 1097, 1160, 1167, 1174, 1240 } {  } call:compute_tran_temp {  }

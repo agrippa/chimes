@@ -1,0 +1,20 @@
+drnd _Z4drndv 0 DOES_NOT
+dpn1 _Z4dpn1v 0 DOES_NOT drnd 40 58
+squash _Z6squashf 0 DOES_NOT
+alloc_1d_dbl _Z12alloc_1d_dblm 0 DOES_NOT
+alloc_2d_dbl _Z12alloc_2d_dblmm 0 DOES_NOT alloc_1d_dbl 83 16
+bpnn_randomize_weights _Z22bpnn_randomize_weightsPPfii 0 DOES_NOT
+bpnn_randomize_row _Z18bpnn_randomize_rowPfi 0 DOES_NOT
+bpnn_zero_weights _Z17bpnn_zero_weightsPPfii 0 DOES_NOT
+bpnn_initialize _Z15bpnn_initializei 0 DOES_NOT
+bpnn_internal_create _Z20bpnn_internal_createiii 0 DOES_NOT alloc_1d_dbl 147 25 alloc_1d_dbl 148 26 alloc_1d_dbl 149 26 alloc_1d_dbl 151 26 alloc_1d_dbl 152 26 alloc_1d_dbl 153 20 alloc_2d_dbl 155 27 alloc_2d_dbl 156 28 alloc_2d_dbl 158 32 alloc_2d_dbl 159 33
+bpnn_free _Z9bpnn_freeP4BPNN 0 DOES_NOT
+bpnn_create _Z11bpnn_createiii 0 DOES_NOT bpnn_internal_create 216 12 bpnn_randomize_weights 221 3 bpnn_randomize_weights 223 3 bpnn_zero_weights 224 3 bpnn_zero_weights 225 3 bpnn_randomize_row 226 3
+bpnn_layerforward _Z17bpnn_layerforwardPfS_PS_ii 0 DOES_NOT squash 250 13
+bpnn_output_error _Z17bpnn_output_errorPfS_S_iS_ 0 DOES_NOT
+bpnn_hidden_error _Z17bpnn_hidden_errorPfiS_iPS_S_S_ 0 DOES_NOT
+bpnn_adjust_weights _Z19bpnn_adjust_weightsPfiS_iPS_S0_ 0 DOES_NOT
+bpnn_feedforward _Z16bpnn_feedforwardP4BPNN 0 DOES_NOT bpnn_layerforward 329 3 bpnn_layerforward 331 3
+bpnn_train _Z10bpnn_trainP4BPNNPfS1_ 0 DOES_NOT bpnn_layerforward 347 3 bpnn_layerforward 349 3 bpnn_output_error 353 3 bpnn_hidden_error 355 3 bpnn_adjust_weights 361 3 bpnn_adjust_weights 363 3
+bpnn_save _Z9bpnn_saveP4BPNNPc 0 DOES_NOT
+bpnn_read _Z9bpnn_readPc 0 DOES_NOT bpnn_internal_create 449 13 bpnn_zero_weights 481 3 bpnn_zero_weights 482 3

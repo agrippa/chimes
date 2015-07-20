@@ -1,0 +1,4 @@
+astr 448 0 seqData "%struct.seqdat*" simMatrix "%struct.simmat*" goodScores "long long int**" numThreads "int" numReports "int*" goodEndsI "int**" goodEndsJ "int**"
+bstr 576 0 bestScores "long long int**" numThreads "int" numReports "int*" bestStartsI "int**" bestStartsJ "int**" bestEndsI "int**" bestEndsJ "int**" bestSeqsI "unsigned char***" bestSeqsJ "unsigned char***"
+seqdat 256 0 main "unsigned char*" match "unsigned char*" mainLen "int" matchLen "int" maxValidation "int"
+simmat 40960 0 similarity "[ 4225 x char ]" aminoAcid "[ 66 x char ]" bases "char*" codon "[ 66 x char* ]" encode "[ 129 x unsigned char ]" encode_first "[ 129 x unsigned char ]" hyphen "char" star "char" exact "int" similar "int" dissimilar "int" gapStart "int" gapExtend "int" matchLimit "int"

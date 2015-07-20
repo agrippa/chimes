@@ -76,6 +76,7 @@ protected:
     std::string getRewrittenText(clang::SourceRange range);
 
     std::string stmtToString(const clang::Stmt* s);
+    std::string getArgString(const clang::CallExpr *call, int arg);
 
     bool is_omp_for_iter_declaration(const Stmt *s);
 
@@ -93,11 +94,25 @@ protected:
     int startingLine(const clang::Stmt *stmt);
     int endingLine(const clang::Stmt *stmt);
 
-    bool currently_inside_function_arguments() {
-        return inside_function_arguments;
-    }
-
     std::string get_callee_name(const CallExpr *call);
+    bool should_be_labelled(const CallExpr *call);
+
+    int arg_counter = 0;
+    bool has_side_effects(const Expr *arg);
+    bool needsToBeHoisted(std::string funcname, const Expr *arg,
+            bool gen_quick);
+    std::string get_unique_argument_varname();
+    int extractArgsWithSideEffects(const CallExpr *call,
+            std::string funcname, int nargs, std::stringstream *ss,
+            std::vector<std::string> *arg_varnames, bool gen_quick);
+    std::string get_func_symbol(const CallExpr *call);
+    std::string generateNormalCall(const CallExpr *call,
+            int lbl, AliasesPassedToCallSite callsite, bool gen_quick,
+            std::string loc_arg);
+    std::string generateFunctionPointerCall(const CallExpr *call,
+            AliasesPassedToCallSite callsite, int lbl, std::string loc_arg);
+    size_t get_return_alias(std::string fname,
+            AliasesPassedToCallSite callsite);
 
 private:
     clang::Rewriter *rewriter;
@@ -109,8 +124,6 @@ private:
     int curr_register_label = 0;
     int curr_function_label = 0;
     bool root_flag;
-
-    bool inside_function_arguments = false;
 };
 
 #endif

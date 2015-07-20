@@ -31,12 +31,23 @@ static bool matched(int line, int col, const char *filename) {
     return false;
 }
 
+/*
+ * This function tries to figure out if prev is the RHS of an assignment, curr.
+ * It is used to see if a reference to a function is being stored from the
+ * bottom up, starting at the reference. For each of these cases, the important
+ * thing to ask is "If I hit this type of expression on the way up the AST, is
+ * it still possible the value at the leaf will hit an assignment operator at
+ * the top without modification?".
+ */
 bool AliasChangedPass::isRValueOfAssignment(const clang::Stmt *curr,
         const clang::Stmt *prev) {
     switch (curr->getStmtClass()) {
         case (clang::Stmt::ImplicitCastExprClass):
+        case (clang::Stmt::CStyleCastExprClass):
+        case (clang::Stmt::ParenExprClass):
             return isRValueOfAssignment(getParent(curr), curr);
         case (clang::Stmt::CallExprClass):
+        case (clang::Stmt::CXXOperatorCallExprClass):
             return false;
         case (clang::Stmt::BinaryOperatorClass): {
             const clang::BinaryOperator *binop =
@@ -100,7 +111,7 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                         std::set<std::string>>(curr_func,
                             std::set<std::string>()));
             }
-            func_to_alias_locs[curr_func].insert(insertions->get_alias_loc_var(
+            func_to_alias_locs.at(curr_func).insert(insertions->get_alias_loc_var(
                         loc_id));
 
             bool do_insert = true;
@@ -138,8 +149,9 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                             InsertText(start, ss.str(), true, true);
                             ninserted = ss.str().length();
                         } else if (f->getCond() == s) {
-                            llvm::errs() << "Unsupported\n";
-                            assert(false);
+                            ss << " || ";
+                            InsertText(start, ss.str(), true, true);
+                            ninserted = ss.str().length();
                         } else {
                             llvm::errs() << "Unsupported\n";
                             assert(false);

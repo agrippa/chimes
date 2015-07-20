@@ -8,6 +8,6 @@ typedef struct _chimes_type_info {
     int *ptr_field_offsets;
 } chimes_type_info;
 
-extern void parse_type_info(va_list vl, chimes_type_info *info);
+extern void parse_type_info(va_list *vl, chimes_type_info *info);
 
 #endif

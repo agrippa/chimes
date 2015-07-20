@@ -1,7 +1,0 @@
-malloc 17 25 65 0
-fprintf 19 5 0 26 94
-_Z10checkpointv 21 5 0
-__assert_rtn 23 44 0 95 96 0 97
-__assert_rtn 24 49 0 95 96 0 98
-__assert_rtn 25 49 0 95 96 0 98
-__assert_rtn 26 48 0 95 96 0 100

@@ -1,0 +1,13 @@
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 25 8 len=10 getSeconds_npm
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 54 6 len=15 dispElapsedTime_npm
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 48 79 rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 26 1 const int ____chimes_did_disable0 = new_stack((void *)(&getSeconds), "getSeconds", &____must_manage_getSeconds, 0, 0); 
+InsertText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 50 1 rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 26 2 const int ____chimes_did_disable0 = new_stack((void *)(&getSeconds), "getSeconds", &____must_manage_getSeconds, 0, 0); ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 26 119 
+ReplaceTextStart /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 48 4 double ____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 48 31 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 25 8 len=10 getSeconds_quick
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 26 118  ; 
+ReplaceText /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 25 8 len=10 getSeconds_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 26 118  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

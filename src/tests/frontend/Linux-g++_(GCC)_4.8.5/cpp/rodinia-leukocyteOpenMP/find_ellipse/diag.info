@@ -1,0 +1,1341 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 22 11 len=8 get_time_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 33 7 len=9 get_frame_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 37 47 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 37 62 , 8194319462526367117UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 57 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 57 7 , 8194319462526367117UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 64 7 len=15 chop_flip_image_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 86 7 len=15 ellipsematching_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 165 7 len=19 structuring_element_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 184 7 len=8 dilate_f_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 224 7 len=7 TMatrix_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 230 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 230 37 , 8194319462526368025UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 231 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 231 37 , 8194319462526368031UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 232 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 232 37 , 8194319462526368037UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 233 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 233 37 , 8194319462526368043UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 290 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 290 7 , 8194319462526368043UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 291 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 291 7 , 8194319462526368037UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 292 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 292 7 , 8194319462526368031UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 293 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 293 7 , 8194319462526368025UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 298 6 len=10 uniformseg_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 339 8 len=5 m_min_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 356 8 len=5 m_max_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 372 7 len=11 getsampling_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 379 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 379 37 , 8194319462526368859UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 380 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 380 37 , 8194319462526368865UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 381 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 381 37 , 8194319462526368871UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 382 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 382 37 , 8194319462526368877UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 416 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 416 7 , 8194319462526368877UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 417 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 417 7 , 8194319462526368871UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 418 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 418 7 , 8194319462526368865UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 419 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 419 7 , 8194319462526368859UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 424 7 len=8 getfdriv_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 431 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 431 37 , 8194319462526369213UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 432 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 432 37 , 8194319462526369219UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 433 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 433 37 , 8194319462526369225UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 434 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 434 37 , 8194319462526369231UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 468 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 468 7 , 8194319462526369231UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 469 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 469 7 , 8194319462526369225UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 470 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 470 7 , 8194319462526369219UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 471 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 471 7 , 8194319462526369213UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 477 7 len=14 linear_interp2_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 509 6 len=18 splineenergyform01_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 563 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 563 37 , 8194319462526370169UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 564 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 564 37 , 8194319462526370191UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 565 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 565 37 , 8194319462526370210UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 566 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 566 37 , 8194319462526370235UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 7 , 8194319462526370235UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 16 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 21 , 8194319462526370210UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 30 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 35 , 8194319462526370191UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 44 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 49 , 8194319462526370169UL
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 43 5 alias_group_changed(____alias_loc_id_0) || 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 37 47 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 37 62 , 8194319462526367117UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 57 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 57 7 , 8194319462526367117UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 230 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 230 37 , 8194319462526368025UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 231 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 231 37 , 8194319462526368031UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 232 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 232 37 , 8194319462526368037UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 233 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 233 37 , 8194319462526368043UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 290 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 290 7 , 8194319462526368043UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 291 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 291 7 , 8194319462526368037UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 292 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 292 7 , 8194319462526368031UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 293 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 293 7 , 8194319462526368025UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 379 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 379 37 , 8194319462526368859UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 380 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 380 37 , 8194319462526368865UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 381 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 381 37 , 8194319462526368871UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 382 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 382 37 , 8194319462526368877UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 416 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 416 7 , 8194319462526368877UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 417 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 417 7 , 8194319462526368871UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 418 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 418 7 , 8194319462526368865UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 419 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 419 7 , 8194319462526368859UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 431 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 431 37 , 8194319462526369213UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 432 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 432 37 , 8194319462526369219UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 433 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 433 37 , 8194319462526369225UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 434 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 434 37 , 8194319462526369231UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 468 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 468 7 , 8194319462526369231UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 469 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 469 7 , 8194319462526369225UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 470 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 470 7 , 8194319462526369219UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 471 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 471 7 , 8194319462526369213UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 563 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 563 37 , 8194319462526370169UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 564 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 564 37 , 8194319462526370191UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 565 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 565 37 , 8194319462526370210UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 566 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 566 37 , 8194319462526370235UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 7 , 8194319462526370235UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 16 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 21 , 8194319462526370210UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 30 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 35 , 8194319462526370191UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 44 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 703 49 , 8194319462526370169UL
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 25 96 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_71, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 22 22 const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 26 1 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_71, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 59 71 rm_stack(true, 8194319462526367152UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_72, ____chimes_did_disable1); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 33 75 const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 4, 4, (size_t)(8194319462526367162UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 60 1 rm_stack(true, 8194319462526367152UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_72, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 80 64 rm_stack(true, 8194319462526367214UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_73, ____chimes_did_disable2); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 64 122 const int ____chimes_did_disable2 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 8, 8, (size_t)(8194319462526367340UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "chop_flip_image|image|0", &____must_checkpoint_chop_flip_image_image_0, "i8*", (void *)(&image), (size_t)8, 1, 0, 0, "chop_flip_image|height|0", &____must_checkpoint_chop_flip_image_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "chop_flip_image|width|0", &____must_checkpoint_chop_flip_image_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "chop_flip_image|top|0", &____must_checkpoint_chop_flip_image_top_0, "i32", (void *)(&top), (size_t)4, 0, 0, 0, "chop_flip_image|bottom|0", &____must_checkpoint_chop_flip_image_bottom_0, "i32", (void *)(&bottom), (size_t)4, 0, 0, 0, "chop_flip_image|left|0", &____must_checkpoint_chop_flip_image_left_0, "i32", (void *)(&left), (size_t)4, 0, 0, 0, "chop_flip_image|right|0", &____must_checkpoint_chop_flip_image_right_0, "i32", (void *)(&right), (size_t)4, 0, 0, 0, "chop_flip_image|scaled|0", &____must_checkpoint_chop_flip_image_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 81 1 rm_stack(true, 8194319462526367214UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_73, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 160 63 rm_stack(true, 8194319462526367694UL, "ellipsematching", &____must_manage_ellipsematching, ____alias_loc_id_74, ____chimes_did_disable3); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 86 51 const int ____chimes_did_disable3 = new_stack((void *)(&ellipsematching), "ellipsematching", &____must_manage_ellipsematching, 2, 2, (size_t)(8194319462526367698UL), (size_t)(8194319462526367699UL), "ellipsematching|grad_x|0", &____must_checkpoint_ellipsematching_grad_x_0, "%struct.MAT*", (void *)(&grad_x), (size_t)8, 1, 0, 0, "ellipsematching|grad_y|0", &____must_checkpoint_ellipsematching_grad_y_0, "%struct.MAT*", (void *)(&grad_y), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 161 1 rm_stack(true, 8194319462526367694UL, "ellipsematching", &____must_manage_ellipsematching, ____alias_loc_id_74, ____chimes_did_disable3); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 178 64 rm_stack(true, 8194319462526367717UL, "structuring_element", &____must_manage_structuring_element, ____alias_loc_id_75, ____chimes_did_disable4); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 165 39 const int ____chimes_did_disable4 = new_stack((void *)(&structuring_element), "structuring_element", &____must_manage_structuring_element, 1, 1, (size_t)(0UL), "structuring_element|radius|0", &____must_checkpoint_structuring_element_radius_0, "i32", (void *)(&radius), (size_t)4, 0, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 179 1 rm_stack(true, 8194319462526367717UL, "structuring_element", &____must_manage_structuring_element, ____alias_loc_id_75, ____chimes_did_disable4); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 217 65 rm_stack(true, 8194319462526367824UL, "dilate_f", &____must_manage_dilate_f, ____alias_loc_id_76, ____chimes_did_disable5); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 184 43 const int ____chimes_did_disable5 = new_stack((void *)(&dilate_f), "dilate_f", &____must_manage_dilate_f, 2, 2, (size_t)(8194319462526367979UL), (size_t)(8194319462526367980UL), "dilate_f|img_in|0", &____must_checkpoint_dilate_f_img_in_0, "%struct.MAT*", (void *)(&img_in), (size_t)8, 1, 0, 0, "dilate_f|strel|0", &____must_checkpoint_dilate_f_strel_0, "%struct.MAT*", (void *)(&strel), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 218 1 rm_stack(true, 8194319462526367824UL, "dilate_f", &____must_manage_dilate_f, ____alias_loc_id_76, ____chimes_did_disable5); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 295 63 rm_stack(true, 8194319462526371853UL, "TMatrix", &____must_manage_TMatrix, ____alias_loc_id_77, ____chimes_did_disable6); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 225 1 const int ____chimes_did_disable6 = new_stack((void *)(&TMatrix), "TMatrix", &____must_manage_TMatrix, 2, 2, (size_t)(0UL), (size_t)(0UL), "TMatrix|N|0", &____must_checkpoint_TMatrix_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "TMatrix|M|0", &____must_checkpoint_TMatrix_M_0, "i32", (void *)(&M), (size_t)4, 0, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 296 1 rm_stack(true, 8194319462526371853UL, "TMatrix", &____must_manage_TMatrix, ____alias_loc_id_77, ____chimes_did_disable6); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 299 1 const int ____chimes_did_disable7 = new_stack((void *)(&uniformseg), "uniformseg", &____must_manage_uniformseg, 4, 0, (size_t)(8194319462526368668UL), (size_t)(8194319462526368669UL), (size_t)(8194319462526368670UL), (size_t)(8194319462526368671UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 336 1 rm_stack(false, 0UL, "uniformseg", &____must_manage_uniformseg, ____alias_loc_id_78, ____chimes_did_disable7); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 352 66 rm_stack(false, 0UL, "m_min", &____must_manage_m_min, ____alias_loc_id_79, ____chimes_did_disable8); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 340 1 const int ____chimes_did_disable8 = new_stack((void *)(&m_min), "m_min", &____must_manage_m_min, 1, 0, (size_t)(8194319462526368736UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 353 1 rm_stack(false, 0UL, "m_min", &____must_manage_m_min, ____alias_loc_id_79, ____chimes_did_disable8); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 369 66 rm_stack(false, 0UL, "m_max", &____must_manage_m_max, ____alias_loc_id_80, ____chimes_did_disable9); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 357 1 const int ____chimes_did_disable9 = new_stack((void *)(&m_max), "m_max", &____must_manage_m_max, 1, 0, (size_t)(8194319462526368800UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 370 1 rm_stack(false, 0UL, "m_max", &____must_manage_m_max, ____alias_loc_id_80, ____chimes_did_disable9); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 421 64 rm_stack(true, 8194319462526368854UL, "getsampling", &____must_manage_getsampling, ____alias_loc_id_81, ____chimes_did_disable10); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 373 1 const int ____chimes_did_disable10 = new_stack((void *)(&getsampling), "getsampling", &____must_manage_getsampling, 2, 1, (size_t)(8194319462526368835UL), (size_t)(0UL), "getsampling|m|0", &____must_checkpoint_getsampling_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 422 1 rm_stack(true, 8194319462526368854UL, "getsampling", &____must_manage_getsampling, ____alias_loc_id_81, ____chimes_did_disable10); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 473 66 rm_stack(true, 8194319462526369208UL, "getfdriv", &____must_manage_getfdriv, ____alias_loc_id_82, ____chimes_did_disable11); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 425 1 const int ____chimes_did_disable11 = new_stack((void *)(&getfdriv), "getfdriv", &____must_manage_getfdriv, 2, 1, (size_t)(8194319462526369189UL), (size_t)(0UL), "getfdriv|m|0", &____must_checkpoint_getfdriv_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 474 1 rm_stack(true, 8194319462526369208UL, "getfdriv", &____must_manage_getfdriv, ____alias_loc_id_82, ____chimes_did_disable11); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 506 66 rm_stack(true, 8194319462526369511UL, "linear_interp2", &____must_manage_linear_interp2, ____alias_loc_id_83, ____chimes_did_disable12); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 478 1 const int ____chimes_did_disable12 = new_stack((void *)(&linear_interp2), "linear_interp2", &____must_manage_linear_interp2, 3, 3, (size_t)(8194319462526369653UL), (size_t)(8194319462526369654UL), (size_t)(8194319462526369655UL), "linear_interp2|m|0", &____must_checkpoint_linear_interp2_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0, "linear_interp2|X|0", &____must_checkpoint_linear_interp2_X_0, "%struct.VEC*", (void *)(&X), (size_t)8, 1, 0, 0, "linear_interp2|Y|0", &____must_checkpoint_linear_interp2_Y_0, "%struct.VEC*", (void *)(&Y), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 507 1 rm_stack(true, 8194319462526369511UL, "linear_interp2", &____must_manage_linear_interp2, ____alias_loc_id_83, ____chimes_did_disable12); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 510 1 const int ____chimes_did_disable13 = new_stack((void *)(&splineenergyform01), "splineenergyform01", &____must_manage_splineenergyform01, 8, 8, (size_t)(8194319462526371840UL), (size_t)(8194319462526371841UL), (size_t)(8194319462526371842UL), (size_t)(8194319462526371843UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "splineenergyform01|Cx|0", &____must_checkpoint_splineenergyform01_Cx_0, "%struct.MAT*", (void *)(&Cx), (size_t)8, 1, 0, 0, "splineenergyform01|Cy|0", &____must_checkpoint_splineenergyform01_Cy_0, "%struct.MAT*", (void *)(&Cy), (size_t)8, 1, 0, 0, "splineenergyform01|Ix|0", &____must_checkpoint_splineenergyform01_Ix_0, "%struct.MAT*", (void *)(&Ix), (size_t)8, 1, 0, 0, "splineenergyform01|Iy|0", &____must_checkpoint_splineenergyform01_Iy_0, "%struct.MAT*", (void *)(&Iy), (size_t)8, 1, 0, 0, "splineenergyform01|ns|0", &____must_checkpoint_splineenergyform01_ns_0, "i32", (void *)(&ns), (size_t)4, 0, 0, 0, "splineenergyform01|delta|0", &____must_checkpoint_splineenergyform01_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0, "splineenergyform01|dt|0", &____must_checkpoint_splineenergyform01_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0, "splineenergyform01|typeofcell|0", &____must_checkpoint_splineenergyform01_typeofcell_0, "i32", (void *)(&typeofcell), (size_t)4, 0, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 710 1 rm_stack(false, 0UL, "splineenergyform01", &____must_manage_splineenergyform01, 0, ____chimes_did_disable13); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 22 23 const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 22 134 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 23 2  struct timeval tv; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 23 19 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 25 3 long long ____chimes_ret_var_0; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 25 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 33 76 const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 4, 4, (size_t)(8194319462526367162UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 33 736 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 34 2 int dummy; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 34 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 35 2  int width;  width = (AVI_video_width(cell_file)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 35 40 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 36 2  int height;  height = (AVI_video_height(cell_file)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 36 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 37 2  unsigned char *image_buf;  image_buf = ((unsigned char *)malloc_wrapper(width * height, 8194319462526367117UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 37 106 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 48 2 MAT *image_chopped; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 48 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 59 3 MAT *____chimes_ret_var_1; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 59 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 64 123 const int ____chimes_did_disable2 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 8, 8, (size_t)(8194319462526367340UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "chop_flip_image|image|0", &____must_checkpoint_chop_flip_image_image_0, "i8*", (void *)(&image), (size_t)8, 1, 0, 0, "chop_flip_image|height|0", &____must_checkpoint_chop_flip_image_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "chop_flip_image|width|0", &____must_checkpoint_chop_flip_image_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "chop_flip_image|top|0", &____must_checkpoint_chop_flip_image_top_0, "i32", (void *)(&top), (size_t)4, 0, 0, 0, "chop_flip_image|bottom|0", &____must_checkpoint_chop_flip_image_bottom_0, "i32", (void *)(&bottom), (size_t)4, 0, 0, 0, "chop_flip_image|left|0", &____must_checkpoint_chop_flip_image_left_0, "i32", (void *)(&left), (size_t)4, 0, 0, 0, "chop_flip_image|right|0", &____must_checkpoint_chop_flip_image_right_0, "i32", (void *)(&right), (size_t)4, 0, 0, 0, "chop_flip_image|scaled|0", &____must_checkpoint_chop_flip_image_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 64 1337 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 65 2  MAT *result;  result = (m_get(bottom - top + 1, right - left + 1)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 65 58 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 66 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 66 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 68 3  double scale;  scale = (1. / 255.) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 68 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 80 3 MAT *____chimes_ret_var_2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 80 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 86 52 const int ____chimes_did_disable3 = new_stack((void *)(&ellipsematching), "ellipsematching", &____must_manage_ellipsematching, 2, 2, (size_t)(8194319462526367698UL), (size_t)(8194319462526367699UL), "ellipsematching|grad_x|0", &____must_checkpoint_ellipsematching_grad_x_0, "%struct.MAT*", (void *)(&grad_x), (size_t)8, 1, 0, 0, "ellipsematching|grad_y|0", &____must_checkpoint_ellipsematching_grad_y_0, "%struct.MAT*", (void *)(&grad_y), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 86 510 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 87 2 int i; int n; int k; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 87 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 2 double sin_angle[150]; double cos_angle[150]; double theta[150]; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 98 2 int tX[7][150]; int tY[7][150]; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 98 28 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 100 3  double rad;  rad = ((double)(10 - 2 + 2 * k)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 100 41 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 107 2  int MaxR;  MaxR = (10 * 2 + 2) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 107 23 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 110 2  int height;  int width;  height = (grad_x->m)  ; width = (grad_x->n) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 110 43 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 111 2  MAT *gicov;  gicov = (m_get(height, width)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 111 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 119 3 double Grad[150]; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 119 19 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 120 3 int j; int k; int n; int x; int y; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 120 20 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 124 4  double max_GICOV;  max_GICOV = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 124 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 139 5  double sum;  sum = (0.) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 139 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 141 5  double mean;  mean = (sum / (double)150) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 141 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 144 5  double var;  var = (0.) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 144 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 160 3 MAT *____chimes_ret_var_3; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 160 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 165 40 const int ____chimes_did_disable4 = new_stack((void *)(&structuring_element), "structuring_element", &____must_manage_structuring_element, 1, 1, (size_t)(0UL), "structuring_element|radius|0", &____must_checkpoint_structuring_element_radius_0, "i32", (void *)(&radius), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 165 328 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 166 2  MAT *result;  result = (m_get(radius * 2 + 1, radius * 2 + 1)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 166 46 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 168 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 168 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 178 3 MAT *____chimes_ret_var_4; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 178 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 184 44 const int ____chimes_did_disable5 = new_stack((void *)(&dilate_f), "dilate_f", &____must_manage_dilate_f, 2, 2, (size_t)(8194319462526367979UL), (size_t)(8194319462526367980UL), "dilate_f|img_in|0", &____must_checkpoint_dilate_f_img_in_0, "%struct.MAT*", (void *)(&img_in), (size_t)8, 1, 0, 0, "dilate_f|strel|0", &____must_checkpoint_dilate_f_strel_0, "%struct.MAT*", (void *)(&strel), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 184 450 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 185 2  MAT *dilated;  dilated = (m_get(img_in->m, img_in->n)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 185 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 188 2  int el_center_i;  int el_center_j; int i;  el_center_i = (strel->m / 2)  ; el_center_j = (strel->n / 2) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 188 63 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 196 3 int j; int el_i; int el_j; int x; int y; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 196 26 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 198 4  double max; double temp;  max = (0.) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 198 26 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 217 3 MAT *____chimes_ret_var_5; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 217 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 225 2 const int ____chimes_did_disable6 = new_stack((void *)(&TMatrix), "TMatrix", &____must_manage_TMatrix, 2, 2, (size_t)(0UL), (size_t)(0UL), "TMatrix|N|0", &____must_checkpoint_TMatrix_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "TMatrix|M|0", &____must_checkpoint_TMatrix_M_0, "i32", (void *)(&M), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 225 320 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 2  MAT *B;  MAT *LB;  MAT *B_TEMP;  MAT *B_TEMP_INV;  MAT *B_RET;  B = (__null)  ; LB = (__null)  ; B_TEMP = (__null)  ; B_TEMP_INV = (__null)  ; B_RET = (__null) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 93 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 2 int *aindex; int *bindex; int *cindex; int *dindex; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 44 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 228 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 228 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 261 4  double s;  s = ((double)j / (double)M) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 261 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 4 double a; double b; double c; double d; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 274 3 int m; int n; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 274 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 295 3 MAT *____chimes_ret_var_6; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 295 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 299 2 const int ____chimes_did_disable7 = new_stack((void *)(&uniformseg), "uniformseg", &____must_manage_uniformseg, 4, 0, (size_t)(8194319462526368668UL), (size_t)(8194319462526368669UL), (size_t)(8194319462526368670UL), (size_t)(8194319462526368671UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 299 251 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 2 double dx[36]; double dy[36]; double dist[36]; double dsum[36];  double perm; double uperm;  perm = (0.) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 62 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 301 2 int i; int j; int index[36]; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 301 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 317 3  double minimum; double temp;  minimum = (double(1.79769313486231570815E+308L)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 317 60 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 318 3  int min_index;  min_index = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 318 20 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 340 2 const int ____chimes_did_disable8 = new_stack((void *)(&m_min), "m_min", &____must_manage_m_min, 1, 0, (size_t)(8194319462526368736UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 340 137 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 341 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 341 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 342 2  double minimum; double temp;  minimum = (double(1.79769313486231570815E+308L)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 342 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 352 3 double ____chimes_ret_var_7; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 352 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 357 2 const int ____chimes_did_disable9 = new_stack((void *)(&m_max), "m_max", &____must_manage_m_max, 1, 0, (size_t)(8194319462526368800UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 357 137 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 358 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 358 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 359 2  double maximum; double temp;  maximum = (double(2.22507385850720138309E-308L)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 359 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 369 3 double ____chimes_ret_var_8; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 369 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 373 2 const int ____chimes_did_disable10 = new_stack((void *)(&getsampling), "getsampling", &____must_manage_getsampling, 2, 1, (size_t)(8194319462526368835UL), (size_t)(0UL), "getsampling|m|0", &____must_checkpoint_getsampling_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 373 278 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 374 2  int N;  int M;  N = (m->n > m->m ? m->n : m->m)  ; M = (ns) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 374 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 375 2 int *aindex; int *bindex; int *cindex; int *dindex; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 375 44 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 376 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 376 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 377 2  VEC *retval;  retval = (v_get(N * M)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 377 27 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 404 4  double s;  s = ((double)j / (double)M) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 404 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 405 4 double a; double b; double c; double d; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 405 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 421 3 VEC *____chimes_ret_var_9; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 421 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 425 2 const int ____chimes_did_disable11 = new_stack((void *)(&getfdriv), "getfdriv", &____must_manage_getfdriv, 2, 1, (size_t)(8194319462526369189UL), (size_t)(0UL), "getfdriv|m|0", &____must_checkpoint_getfdriv_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 425 263 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 426 2  int N;  int M;  N = (m->n > m->m ? m->n : m->m)  ; M = (ns) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 426 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 427 2 int *aindex; int *bindex; int *cindex; int *dindex; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 427 44 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 428 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 428 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 429 2  VEC *retval;  retval = (v_get(N * M)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 429 27 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 456 4  double s;  s = ((double)j / (double)M) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 456 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 457 4 double a; double b; double c; double d; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 457 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 473 3 VEC *____chimes_ret_var_10; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 473 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 478 2 const int ____chimes_did_disable12 = new_stack((void *)(&linear_interp2), "linear_interp2", &____must_manage_linear_interp2, 3, 3, (size_t)(8194319462526369653UL), (size_t)(8194319462526369654UL), (size_t)(8194319462526369655UL), "linear_interp2|m|0", &____must_checkpoint_linear_interp2_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0, "linear_interp2|X|0", &____must_checkpoint_linear_interp2_X_0, "%struct.VEC*", (void *)(&X), (size_t)8, 1, 0, 0, "linear_interp2|Y|0", &____must_checkpoint_linear_interp2_Y_0, "%struct.VEC*", (void *)(&Y), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 478 570 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 481 2  MAT *retval;  retval = (m_get(1, X->dim)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 481 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 482 2 double x_coord; double y_coord; double new_val; double a; double b; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 482 40 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 483 2 int l; int k; int i; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 483 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 506 3 MAT *____chimes_ret_var_11; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 506 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 510 2 const int ____chimes_did_disable13 = new_stack((void *)(&splineenergyform01), "splineenergyform01", &____must_manage_splineenergyform01, 8, 8, (size_t)(8194319462526371840UL), (size_t)(8194319462526371841UL), (size_t)(8194319462526371842UL), (size_t)(8194319462526371843UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "splineenergyform01|Cx|0", &____must_checkpoint_splineenergyform01_Cx_0, "%struct.MAT*", (void *)(&Cx), (size_t)8, 1, 0, 0, "splineenergyform01|Cy|0", &____must_checkpoint_splineenergyform01_Cy_0, "%struct.MAT*", (void *)(&Cy), (size_t)8, 1, 0, 0, "splineenergyform01|Ix|0", &____must_checkpoint_splineenergyform01_Ix_0, "%struct.MAT*", (void *)(&Ix), (size_t)8, 1, 0, 0, "splineenergyform01|Iy|0", &____must_checkpoint_splineenergyform01_Iy_0, "%struct.MAT*", (void *)(&Iy), (size_t)8, 1, 0, 0, "splineenergyform01|ns|0", &____must_checkpoint_splineenergyform01_ns_0, "i32", (void *)(&ns), (size_t)4, 0, 0, 0, "splineenergyform01|delta|0", &____must_checkpoint_splineenergyform01_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0, "splineenergyform01|dt|0", &____must_checkpoint_splineenergyform01_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0, "splineenergyform01|typeofcell|0", &____must_checkpoint_splineenergyform01_typeofcell_0, "i32", (void *)(&typeofcell), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 510 1331 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 2 VEC *X; VEC *Y; VEC *Xs; VEC *Ys; VEC *Nx; VEC *Ny; VEC *X1; VEC *Y1; VEC *X2; VEC *Y2; VEC *XY; VEC *XX; VEC *YY; VEC *dCx; VEC *dCy; VEC *Ix1; VEC *Ix2; VEC *Iy1; VEC *Iy2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 120 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 2 MAT *Ix1_mat; MAT *Ix2_mat; MAT *Iy1_mat; MAT *Iy2_mat; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 48 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 2 int i; int j; int N; int *aindex; int *bindex; int *cindex; int *dindex; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 52 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 604 4  double s;  s = ((double)j / (double)ns) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 604 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 4 double A1; double A2; double A3; double A4; double B1; double B2; double B3; double B4; double D; double D_3; double Tx1; double Tx2; double Tx3; double Tx4; double Ty1; double Ty2; double Ty3; double Ty4; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 89 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 606 4 int k; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 606 9 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 35 15  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 36 16  call_lbl_2: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 40 2  call_lbl_4: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 43 2  call_lbl_6: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 44 3  call_lbl_7: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 51 3  call_lbl_9: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 54 3  call_lbl_10: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 65 17  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 111 16  call_lbl_5: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 166 17  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 185 18  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 252 2  call_lbl_5: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 253 2  call_lbl_6: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 257 3  call_lbl_7: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 281 2  call_lbl_8: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 282 2  call_lbl_9: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 283 2  call_lbl_10: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 285 2  call_lbl_11: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 286 2  call_lbl_12: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 287 2  call_lbl_13: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 288 2  call_lbl_14: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 377 17  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 429 17  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 481 17  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 515 2  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 516 2  call_lbl_2: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 517 2  call_lbl_3: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 518 2  call_lbl_4: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 520 2  call_lbl_5: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 524 2  call_lbl_7: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 528 2  call_lbl_9: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 532 2  call_lbl_10: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 536 2  call_lbl_11: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 540 2  call_lbl_12: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 544 2  call_lbl_13: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 545 2  call_lbl_14: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 546 2  call_lbl_15: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 547 2  call_lbl_16: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 549 2  call_lbl_17: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 550 2  call_lbl_18: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 551 2  call_lbl_19: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 552 2  call_lbl_20: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 554 2  call_lbl_21: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 555 2  call_lbl_22: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 556 2  call_lbl_23: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 557 2  call_lbl_24: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 584 2  call_lbl_29: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 588 2  call_lbl_30: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 592 2  call_lbl_31: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 596 2  call_lbl_32: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 597 2  call_lbl_33: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 2  call_lbl_35: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 15  call_lbl_36: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 28  call_lbl_37: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 40  call_lbl_38: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 52  call_lbl_39: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 2  call_lbl_44: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 15  call_lbl_45: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 28  call_lbl_46: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 41  call_lbl_47: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 2  call_lbl_48: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 19  call_lbl_49: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 36  call_lbl_50: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 53  call_lbl_51: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 2  call_lbl_52: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 14  call_lbl_53: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 26  call_lbl_54: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 38  call_lbl_55: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 50  call_lbl_56: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 62  call_lbl_57: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 74  call_lbl_58: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 86  call_lbl_59: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 98  call_lbl_60: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 109  call_lbl_61: 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 22 11 len=8 get_time_quick
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 23 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 23 20 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 22 133  ; struct timeval tv;
+ if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 33 7 len=9 get_frame_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 35 37  ({  calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(8194319462526367162UL)); (AVI_video_width)(cell_file); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 35 62 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 36 39  ({  calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(8194319462526367162UL)); (AVI_video_height)(cell_file); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 36 65 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 40 15  ({  calling((void*)AVI_set_video_position, 4, ____alias_loc_id_1, 0UL, 2, (size_t)(8194319462526367162UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 40 58 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 43 61  ({  calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(8194319462526367162UL), (size_t)(8194319462526367117UL), (size_t)(8194319462526367089UL)); (AVI_read_frame)(cell_file, (char *)image_buf, &dummy); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 43 112 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 44 16  ({  calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(8194319462526371852UL)); (AVI_print_error)("Error with AVI_read_frame"); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 44 59 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 51 32  ({  calling((void*)chop_flip_image, 9, 0, 8194319462526367152UL, 8, (size_t)(8194319462526367117UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (chop_flip_image)(image_buf, height, width, 110, 328, 0, width - 1, scaled); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 51 104 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 54 33  ({  calling((void*)chop_flip_image, 10, 0, 8194319462526367152UL, 8, (size_t)(8194319462526367117UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (chop_flip_image)(image_buf, height, width, 0, height - 1, 0, width - 1, scaled); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 54 110 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 34 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 34 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 35 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 35 12 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 36 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 36 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 37 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 37 27 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 33 735  ; unsigned char *image_buf;
+int height;
+int width;
+int dummy;
+ if (____must_checkpoint_get_frame_image_buf_0 || ____must_checkpoint_get_frame_height_0 || ____must_checkpoint_get_frame_width_0 || ____must_checkpoint_get_frame_dummy_0) { register_stack_vars(4, "get_frame|image_buf|0", &____must_checkpoint_get_frame_image_buf_0, "i8*", (void *)(&image_buf), (size_t)8, 1, 0, 0, "get_frame|height|0", &____must_checkpoint_get_frame_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "get_frame|width|0", &____must_checkpoint_get_frame_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "get_frame|dummy|0", &____must_checkpoint_get_frame_dummy_0, "i32", (void *)(&dummy), (size_t)4, 0, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 64 7 len=15 chop_flip_image_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 65 40  ({  calling((void*)m_get, 1, ____alias_loc_id_4, 8194319462526367214UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(bottom - top + 1, right - left + 1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 65 80 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 64 1336  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 86 7 len=15 ellipsematching_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 111 38  ({  calling((void*)m_get, 5, ____alias_loc_id_5, 8194319462526367694UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(height, width); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 111 57 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 23 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 25 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 46 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 48 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 65 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 98 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 98 16 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 98 18 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 98 32 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 107 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 107 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 110 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 110 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 110 16 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 110 25 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 119 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 119 19 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 86 509  ; double Grad[150];
+int width;
+int height;
+int MaxR;
+int tY[7][150];
+int tX[7][150];
+double theta[150];
+double cos_angle[150];
+double sin_angle[150];
+ if (____must_checkpoint_ellipsematching_width_0 || ____must_checkpoint_ellipsematching_height_0 || ____must_checkpoint_ellipsematching_MaxR_0 || ____must_checkpoint_ellipsematching_tY_0 || ____must_checkpoint_ellipsematching_tX_0 || ____must_checkpoint_ellipsematching_cos_angle_0 || ____must_checkpoint_ellipsematching_sin_angle_0) { register_stack_vars(7, "ellipsematching|width|0", &____must_checkpoint_ellipsematching_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "ellipsematching|height|0", &____must_checkpoint_ellipsematching_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "ellipsematching|MaxR|0", &____must_checkpoint_ellipsematching_MaxR_0, "i32", (void *)(&MaxR), (size_t)4, 0, 0, 0, "ellipsematching|tY|0", &____must_checkpoint_ellipsematching_tY_0, "[7 x [150 x i32]]", (void *)(tY), (size_t)4200, 0, 0, 0, "ellipsematching|tX|0", &____must_checkpoint_ellipsematching_tX_0, "[7 x [150 x i32]]", (void *)(tX), (size_t)4200, 0, 0, 0, "ellipsematching|cos_angle|0", &____must_checkpoint_ellipsematching_cos_angle_0, "[150 x double]", (void *)(cos_angle), (size_t)1200, 0, 0, 0, "ellipsematching|sin_angle|0", &____must_checkpoint_ellipsematching_sin_angle_0, "[150 x double]", (void *)(sin_angle), (size_t)1200, 0, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 165 7 len=19 structuring_element_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 166 40  ({  calling((void*)m_get, 1, ____alias_loc_id_6, 8194319462526367717UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(radius * 2 + 1, radius * 2 + 1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 166 76 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 165 327  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 184 7 len=8 dilate_f_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 185 42  ({  calling((void*)m_get, 1, ____alias_loc_id_7, 8194319462526367824UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(img_in->m, img_in->n); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 185 68 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 184 449  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 224 7 len=7 TMatrix_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 252 19  ({  calling((void*)m_get, 5, ____alias_loc_id_17, 8194319462526371853UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(N * M, N); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 252 31 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 253 20  ({  calling((void*)m_get, 6, ____alias_loc_id_15, 8194319462526371853UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(M, N); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 253 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 257 16  ({  calling((void*)m_zero, 7, ____alias_loc_id_16, 8194319462526368159UL, 1, (size_t)(8194319462526371853UL)); (m_zero)(LB); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 257 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 281 24  ({  calling((void*)mtrm_mlt, 8, ____alias_loc_id_14, 8194319462526371853UL, 3, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (mtrm_mlt)(B, B, B_TEMP); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 281 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 282 28  ({  calling((void*)m_inverse, 9, ____alias_loc_id_13, 8194319462526371853UL, 2, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (m_inverse)(B_TEMP, B_TEMP_INV); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 282 56 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 283 24  ({  calling((void*)mmtr_mlt, 10, ____alias_loc_id_12, 8194319462526371853UL, 3, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (mmtr_mlt)(B_TEMP_INV, B, B_RET); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 283 53 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 285 16  ({  calling((void*)m_free, 11, ____alias_loc_id_11, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 285 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 286 16  ({  calling((void*)m_free, 12, ____alias_loc_id_10, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(LB); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 286 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 287 16  ({  calling((void*)m_free, 13, ____alias_loc_id_9, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B_TEMP); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 287 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 288 16  ({  calling((void*)m_free, 14, ____alias_loc_id_8, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B_TEMP_INV); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 288 33 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 12 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 19 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 22 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 33 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 36 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 51 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 54 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 64 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 15 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 26 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 28 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 39 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 41 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 52 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 228 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 228 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 228 9 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 228 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 261 5 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 261 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 4 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 12 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 14 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 22 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 24 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 32 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 34 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 42 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 274 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 274 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 274 10 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 274 15 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 225 319  ; int n;
+int m;
+double d;
+double c;
+double b;
+double a;
+double s;
+int j;
+int i;
+int *dindex;
+int *cindex;
+int *bindex;
+int *aindex;
+MAT *B_RET;
+MAT *B_TEMP_INV;
+MAT *B_TEMP;
+MAT *LB;
+MAT *B;
+ if (____must_checkpoint_TMatrix_n_0 || ____must_checkpoint_TMatrix_m_0 || ____must_checkpoint_TMatrix_d_0 || ____must_checkpoint_TMatrix_c_0 || ____must_checkpoint_TMatrix_b_0 || ____must_checkpoint_TMatrix_a_0 || ____must_checkpoint_TMatrix_s_0 || ____must_checkpoint_TMatrix_j_0 || ____must_checkpoint_TMatrix_i_0 || ____must_checkpoint_TMatrix_dindex_0 || ____must_checkpoint_TMatrix_cindex_0 || ____must_checkpoint_TMatrix_bindex_0 || ____must_checkpoint_TMatrix_aindex_0 || ____must_checkpoint_TMatrix_B_RET_0 || ____must_checkpoint_TMatrix_B_TEMP_INV_0 || ____must_checkpoint_TMatrix_B_TEMP_0 || ____must_checkpoint_TMatrix_LB_0 || ____must_checkpoint_TMatrix_B_0) { register_stack_vars(18, "TMatrix|n|0", &____must_checkpoint_TMatrix_n_0, "i32", (void *)(&n), (size_t)4, 0, 0, 0, "TMatrix|m|0", &____must_checkpoint_TMatrix_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "TMatrix|d|0", &____must_checkpoint_TMatrix_d_0, "double", (void *)(&d), (size_t)8, 0, 0, 0, "TMatrix|c|0", &____must_checkpoint_TMatrix_c_0, "double", (void *)(&c), (size_t)8, 0, 0, 0, "TMatrix|b|0", &____must_checkpoint_TMatrix_b_0, "double", (void *)(&b), (size_t)8, 0, 0, 0, "TMatrix|a|0", &____must_checkpoint_TMatrix_a_0, "double", (void *)(&a), (size_t)8, 0, 0, 0, "TMatrix|s|0", &____must_checkpoint_TMatrix_s_0, "double", (void *)(&s), (size_t)8, 0, 0, 0, "TMatrix|j|0", &____must_checkpoint_TMatrix_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "TMatrix|i|0", &____must_checkpoint_TMatrix_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "TMatrix|dindex|0", &____must_checkpoint_TMatrix_dindex_0, "i32*", (void *)(&dindex), (size_t)8, 1, 0, 0, "TMatrix|cindex|0", &____must_checkpoint_TMatrix_cindex_0, "i32*", (void *)(&cindex), (size_t)8, 1, 0, 0, "TMatrix|bindex|0", &____must_checkpoint_TMatrix_bindex_0, "i32*", (void *)(&bindex), (size_t)8, 1, 0, 0, "TMatrix|aindex|0", &____must_checkpoint_TMatrix_aindex_0, "i32*", (void *)(&aindex), (size_t)8, 1, 0, 0, "TMatrix|B_RET|0", &____must_checkpoint_TMatrix_B_RET_0, "%struct.MAT*", (void *)(&B_RET), (size_t)8, 1, 0, 0, "TMatrix|B_TEMP_INV|0", &____must_checkpoint_TMatrix_B_TEMP_INV_0, "%struct.MAT*", (void *)(&B_TEMP_INV), (size_t)8, 1, 0, 0, "TMatrix|B_TEMP|0", &____must_checkpoint_TMatrix_B_TEMP_0, "%struct.MAT*", (void *)(&B_TEMP), (size_t)8, 1, 0, 0, "TMatrix|LB|0", &____must_checkpoint_TMatrix_LB_0, "%struct.MAT*", (void *)(&LB), (size_t)8, 1, 0, 0, "TMatrix|B|0", &____must_checkpoint_TMatrix_B_0, "%struct.MAT*", (void *)(&B), (size_t)8, 1, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 298 6 len=10 uniformseg_quick
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 15 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 17 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 30 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 32 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 47 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 49 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 64 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 301 16 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 301 29 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 299 250  ; int index[36];
+double dsum[36];
+double dist[36];
+double dy[36];
+double dx[36];
+ 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 339 8 len=5 m_min_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 340 136  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 356 8 len=5 m_max_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 357 136  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 372 7 len=11 getsampling_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 377 40  ({  calling((void*)v_get, 1, ____alias_loc_id_18, 8194319462526368854UL, 1, (size_t)(0UL)); (v_get)(N * M); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 377 51 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 374 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 374 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 374 11 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 374 16 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 373 277  ; int M;
+int N;
+ if (____must_checkpoint_getsampling_M_0 || ____must_checkpoint_getsampling_N_0) { register_stack_vars(2, "getsampling|M|0", &____must_checkpoint_getsampling_M_0, "i32", (void *)(&M), (size_t)4, 0, 0, 0, "getsampling|N|0", &____must_checkpoint_getsampling_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 424 7 len=8 getfdriv_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 429 40  ({  calling((void*)v_get, 1, ____alias_loc_id_19, 8194319462526369208UL, 1, (size_t)(0UL)); (v_get)(N * M); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 429 51 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 426 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 426 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 426 11 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 426 16 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 425 262  ; int M;
+int N;
+ if (____must_checkpoint_getfdriv_M_0 || ____must_checkpoint_getfdriv_N_0) { register_stack_vars(2, "getfdriv|M|0", &____must_checkpoint_getfdriv_M_0, "i32", (void *)(&M), (size_t)4, 0, 0, 0, "getfdriv|N|0", &____must_checkpoint_getfdriv_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 477 7 len=14 linear_interp2_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 481 40  ({  calling((void*)m_get, 1, ____alias_loc_id_20, 8194319462526369511UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(1, X->dim); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 481 55 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 478 569  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 509 6 len=18 splineenergyform01_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 515 19  ({  calling((void*)getsampling, 1, ____alias_loc_id_70, 8194319462526369762UL, 2, (size_t)(8194319462526371840UL), (size_t)(0UL)); (getsampling)(Cx, ns); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 515 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 516 19  ({  calling((void*)getsampling, 2, ____alias_loc_id_69, 8194319462526369766UL, 2, (size_t)(8194319462526371841UL), (size_t)(0UL)); (getsampling)(Cy, ns); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 516 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 517 20  ({  calling((void*)getfdriv, 3, ____alias_loc_id_68, 8194319462526369770UL, 2, (size_t)(8194319462526371840UL), (size_t)(0UL)); (getfdriv)(Cx, ns); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 517 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 518 20  ({  calling((void*)getfdriv, 4, ____alias_loc_id_67, 8194319462526369774UL, 2, (size_t)(8194319462526371841UL), (size_t)(0UL)); (getfdriv)(Cy, ns); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 518 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 520 20  ({  calling((void*)v_get, 5, ____alias_loc_id_66, 8194319462526369779UL, 1, (size_t)(0UL)); (v_get)(Ys->dim); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 520 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 524 20  ({  calling((void*)v_get, 7, ____alias_loc_id_65, 8194319462526370056UL, 1, (size_t)(0UL)); (v_get)(Xs->dim); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 524 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 528 20  ({  calling((void*)v_get, 9, ____alias_loc_id_64, 8194319462526369939UL, 1, (size_t)(0UL)); (v_get)(Nx->dim); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 528 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 532 21  ({  calling((void*)v_get, 10, ____alias_loc_id_63, 8194319462526369981UL, 1, (size_t)(0UL)); (v_get)(Ny->dim); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 532 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 536 21  ({  calling((void*)v_get, 11, ____alias_loc_id_62, 8194319462526370023UL, 1, (size_t)(0UL)); (v_get)(Nx->dim); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 536 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 540 21  ({  calling((void*)v_get, 12, ____alias_loc_id_61, 8194319462526370065UL, 1, (size_t)(0UL)); (v_get)(Ny->dim); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 540 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 544 26  ({  calling((void*)linear_interp2, 13, ____alias_loc_id_60, 8194319462526370078UL, 3, (size_t)(8194319462526371842UL), (size_t)(8194319462526369939UL), (size_t)(8194319462526369981UL)); (linear_interp2)(Ix, X1, Y1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 544 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 545 26  ({  calling((void*)linear_interp2, 14, ____alias_loc_id_59, 8194319462526370083UL, 3, (size_t)(8194319462526371843UL), (size_t)(8194319462526369939UL), (size_t)(8194319462526369981UL)); (linear_interp2)(Iy, X1, Y1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 545 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 546 26  ({  calling((void*)linear_interp2, 15, ____alias_loc_id_58, 8194319462526370088UL, 3, (size_t)(8194319462526371842UL), (size_t)(8194319462526370023UL), (size_t)(8194319462526370065UL)); (linear_interp2)(Ix, X2, Y2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 546 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 547 26  ({  calling((void*)linear_interp2, 16, ____alias_loc_id_57, 8194319462526370093UL, 3, (size_t)(8194319462526371843UL), (size_t)(8194319462526370023UL), (size_t)(8194319462526370065UL)); (linear_interp2)(Iy, X2, Y2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 547 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 549 22  ({  calling((void*)v_get, 17, ____alias_loc_id_56, 8194319462526370706UL, 1, (size_t)(0UL)); (v_get)(Ix1_mat->n); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 549 38 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 550 22  ({  calling((void*)v_get, 18, ____alias_loc_id_55, 8194319462526370716UL, 1, (size_t)(0UL)); (v_get)(Iy1_mat->n); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 550 38 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 551 22  ({  calling((void*)v_get, 19, ____alias_loc_id_54, 8194319462526370726UL, 1, (size_t)(0UL)); (v_get)(Ix2_mat->n); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 551 38 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 552 22  ({  calling((void*)v_get, 20, ____alias_loc_id_53, 8194319462526370736UL, 1, (size_t)(0UL)); (v_get)(Iy2_mat->n); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 552 38 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 554 22  ({  calling((void*)get_row, 21, ____alias_loc_id_52, 8194319462526370706UL, 3, (size_t)(8194319462526370078UL), (size_t)(0UL), (size_t)(8194319462526370706UL)); (get_row)(Ix1_mat, 0, Ix1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 554 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 555 22  ({  calling((void*)get_row, 22, ____alias_loc_id_51, 8194319462526370716UL, 3, (size_t)(8194319462526370083UL), (size_t)(0UL), (size_t)(8194319462526370716UL)); (get_row)(Iy1_mat, 0, Iy1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 555 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 556 22  ({  calling((void*)get_row, 23, ____alias_loc_id_50, 8194319462526370726UL, 3, (size_t)(8194319462526370088UL), (size_t)(0UL), (size_t)(8194319462526370726UL)); (get_row)(Ix2_mat, 0, Ix2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 556 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 557 22  ({  calling((void*)get_row, 24, ____alias_loc_id_49, 8194319462526370736UL, 3, (size_t)(8194319462526370093UL), (size_t)(0UL), (size_t)(8194319462526370736UL)); (get_row)(Iy2_mat, 0, Iy2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 557 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 584 21  ({  calling((void*)v_get, 29, ____alias_loc_id_48, 8194319462526370285UL, 1, (size_t)(0UL)); (v_get)(Xs->dim); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 584 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 588 21  ({  calling((void*)v_get, 30, ____alias_loc_id_47, 8194319462526370325UL, 1, (size_t)(0UL)); (v_get)(Xs->dim); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 588 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 592 21  ({  calling((void*)v_get, 31, ____alias_loc_id_46, 8194319462526370365UL, 1, (size_t)(0UL)); (v_get)(Ys->dim); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 592 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 596 22  ({  calling((void*)v_get, 32, ____alias_loc_id_45, 8194319462526370698UL, 1, (size_t)(0UL)); (v_get)(Cx->m); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 596 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 597 22  ({  calling((void*)v_get, 33, ____alias_loc_id_44, 8194319462526370760UL, 1, (size_t)(0UL)); (v_get)(Cy->m); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 597 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 16  ({  calling((void*)v_free, 35, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(dCy); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 26 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 43  ({  calling((void*)v_free, 36, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(dCx); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 53 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 70  ({  calling((void*)v_free, 37, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(YY); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 79 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 96  ({  calling((void*)v_free, 38, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(XX); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 105 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 122  ({  calling((void*)v_free, 39, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(XY); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 131 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 16  ({  calling((void*)v_free, 44, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Iy2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 26 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 43  ({  calling((void*)v_free, 45, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Ix2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 53 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 70  ({  calling((void*)v_free, 46, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Iy1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 80 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 97  ({  calling((void*)v_free, 47, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Ix1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 107 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 16  ({  calling((void*)m_free, 48, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Iy2_mat); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 47  ({  calling((void*)m_free, 49, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Ix2_mat); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 78  ({  calling((void*)m_free, 50, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Iy1_mat); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 92 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 109  ({  calling((void*)m_free, 51, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Ix1_mat); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 123 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 16  ({  calling((void*)v_free, 52, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 42  ({  calling((void*)v_free, 53, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 68  ({  calling((void*)v_free, 54, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 77 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 94  ({  calling((void*)v_free, 55, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 103 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 120  ({  calling((void*)v_free, 56, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Ny); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 129 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 146  ({  calling((void*)v_free, 57, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Nx); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 155 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 172  ({  calling((void*)v_free, 58, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Ys); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 181 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 198  ({  calling((void*)v_free, 59, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Xs); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 207 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 224  ({  calling((void*)v_free, 60, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 232 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 249  ({  calling((void*)v_free, 61, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 257 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 10 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 16 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 18 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 25 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 27 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 34 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 36 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 43 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 45 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 52 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 54 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 61 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 63 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 70 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 72 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 79 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 81 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 88 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 90 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 97 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 99 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 106 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 108 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 115 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 117 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 125 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 127 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 135 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 137 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 145 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 147 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 155 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 157 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 165 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 167 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 175 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 16 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 28 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 30 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 42 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 44 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 56 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 9 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 16 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 21 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 23 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 34 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 36 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 47 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 49 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 60 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 62 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 73 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 604 5 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 604 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 4 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 15 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 24 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 26 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 35 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 37 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 46 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 48 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 57 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 59 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 68 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 70 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 79 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 81 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 90 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 92 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 100 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 102 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 112 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 114 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 124 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 126 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 136 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 138 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 148 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 150 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 160 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 162 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 172 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 174 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 184 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 186 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 196 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 198 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 208 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 606 4 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 606 9 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 510 1330  ; int k;
+double Ty4;
+double Ty3;
+double Ty2;
+double Ty1;
+double Tx4;
+double Tx3;
+double Tx2;
+double Tx1;
+double D_3;
+double D;
+double B4;
+double B3;
+double B2;
+double B1;
+double A4;
+double A3;
+double A2;
+double A1;
+double s;
+int *dindex;
+int *cindex;
+int *bindex;
+int *aindex;
+int N;
+int j;
+int i;
+MAT *Iy2_mat;
+MAT *Iy1_mat;
+MAT *Ix2_mat;
+MAT *Ix1_mat;
+VEC *Iy2;
+VEC *Iy1;
+VEC *Ix2;
+VEC *Ix1;
+VEC *dCy;
+VEC *dCx;
+VEC *YY;
+VEC *XX;
+VEC *XY;
+VEC *Y2;
+VEC *X2;
+VEC *Y1;
+VEC *X1;
+VEC *Ny;
+VEC *Nx;
+VEC *Ys;
+VEC *Xs;
+VEC *Y;
+VEC *X;
+ if (____must_checkpoint_splineenergyform01_k_0 || ____must_checkpoint_splineenergyform01_Ty4_0 || ____must_checkpoint_splineenergyform01_Ty3_0 || ____must_checkpoint_splineenergyform01_Ty2_0 || ____must_checkpoint_splineenergyform01_Ty1_0 || ____must_checkpoint_splineenergyform01_Tx4_0 || ____must_checkpoint_splineenergyform01_Tx3_0 || ____must_checkpoint_splineenergyform01_Tx2_0 || ____must_checkpoint_splineenergyform01_Tx1_0 || ____must_checkpoint_splineenergyform01_D_3_0 || ____must_checkpoint_splineenergyform01_D_0 || ____must_checkpoint_splineenergyform01_B4_0 || ____must_checkpoint_splineenergyform01_B3_0 || ____must_checkpoint_splineenergyform01_B2_0 || ____must_checkpoint_splineenergyform01_B1_0 || ____must_checkpoint_splineenergyform01_A4_0 || ____must_checkpoint_splineenergyform01_A3_0 || ____must_checkpoint_splineenergyform01_A2_0 || ____must_checkpoint_splineenergyform01_A1_0 || ____must_checkpoint_splineenergyform01_s_0 || ____must_checkpoint_splineenergyform01_dindex_0 || ____must_checkpoint_splineenergyform01_cindex_0 || ____must_checkpoint_splineenergyform01_bindex_0 || ____must_checkpoint_splineenergyform01_aindex_0 || ____must_checkpoint_splineenergyform01_N_0 || ____must_checkpoint_splineenergyform01_j_0 || ____must_checkpoint_splineenergyform01_i_0 || ____must_checkpoint_splineenergyform01_Iy2_mat_0 || ____must_checkpoint_splineenergyform01_Iy1_mat_0 || ____must_checkpoint_splineenergyform01_Ix2_mat_0 || ____must_checkpoint_splineenergyform01_Ix1_mat_0 || ____must_checkpoint_splineenergyform01_Iy2_0 || ____must_checkpoint_splineenergyform01_Iy1_0 || ____must_checkpoint_splineenergyform01_Ix2_0 || ____must_checkpoint_splineenergyform01_Ix1_0 || ____must_checkpoint_splineenergyform01_dCy_0 || ____must_checkpoint_splineenergyform01_dCx_0 || ____must_checkpoint_splineenergyform01_YY_0 || ____must_checkpoint_splineenergyform01_XX_0 || ____must_checkpoint_splineenergyform01_XY_0 || ____must_checkpoint_splineenergyform01_Y2_0 || ____must_checkpoint_splineenergyform01_X2_0 || ____must_checkpoint_splineenergyform01_Y1_0 || ____must_checkpoint_splineenergyform01_X1_0 || ____must_checkpoint_splineenergyform01_Ny_0 || ____must_checkpoint_splineenergyform01_Nx_0 || ____must_checkpoint_splineenergyform01_Ys_0 || ____must_checkpoint_splineenergyform01_Xs_0 || ____must_checkpoint_splineenergyform01_Y_0 || ____must_checkpoint_splineenergyform01_X_0) { register_stack_vars(50, "splineenergyform01|k|0", &____must_checkpoint_splineenergyform01_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "splineenergyform01|Ty4|0", &____must_checkpoint_splineenergyform01_Ty4_0, "double", (void *)(&Ty4), (size_t)8, 0, 0, 0, "splineenergyform01|Ty3|0", &____must_checkpoint_splineenergyform01_Ty3_0, "double", (void *)(&Ty3), (size_t)8, 0, 0, 0, "splineenergyform01|Ty2|0", &____must_checkpoint_splineenergyform01_Ty2_0, "double", (void *)(&Ty2), (size_t)8, 0, 0, 0, "splineenergyform01|Ty1|0", &____must_checkpoint_splineenergyform01_Ty1_0, "double", (void *)(&Ty1), (size_t)8, 0, 0, 0, "splineenergyform01|Tx4|0", &____must_checkpoint_splineenergyform01_Tx4_0, "double", (void *)(&Tx4), (size_t)8, 0, 0, 0, "splineenergyform01|Tx3|0", &____must_checkpoint_splineenergyform01_Tx3_0, "double", (void *)(&Tx3), (size_t)8, 0, 0, 0, "splineenergyform01|Tx2|0", &____must_checkpoint_splineenergyform01_Tx2_0, "double", (void *)(&Tx2), (size_t)8, 0, 0, 0, "splineenergyform01|Tx1|0", &____must_checkpoint_splineenergyform01_Tx1_0, "double", (void *)(&Tx1), (size_t)8, 0, 0, 0, "splineenergyform01|D_3|0", &____must_checkpoint_splineenergyform01_D_3_0, "double", (void *)(&D_3), (size_t)8, 0, 0, 0, "splineenergyform01|D|0", &____must_checkpoint_splineenergyform01_D_0, "double", (void *)(&D), (size_t)8, 0, 0, 0, "splineenergyform01|B4|0", &____must_checkpoint_splineenergyform01_B4_0, "double", (void *)(&B4), (size_t)8, 0, 0, 0, "splineenergyform01|B3|0", &____must_checkpoint_splineenergyform01_B3_0, "double", (void *)(&B3), (size_t)8, 0, 0, 0, "splineenergyform01|B2|0", &____must_checkpoint_splineenergyform01_B2_0, "double", (void *)(&B2), (size_t)8, 0, 0, 0, "splineenergyform01|B1|0", &____must_checkpoint_splineenergyform01_B1_0, "double", (void *)(&B1), (size_t)8, 0, 0, 0, "splineenergyform01|A4|0", &____must_checkpoint_splineenergyform01_A4_0, "double", (void *)(&A4), (size_t)8, 0, 0, 0, "splineenergyform01|A3|0", &____must_checkpoint_splineenergyform01_A3_0, "double", (void *)(&A3), (size_t)8, 0, 0, 0, "splineenergyform01|A2|0", &____must_checkpoint_splineenergyform01_A2_0, "double", (void *)(&A2), (size_t)8, 0, 0, 0, "splineenergyform01|A1|0", &____must_checkpoint_splineenergyform01_A1_0, "double", (void *)(&A1), (size_t)8, 0, 0, 0, "splineenergyform01|s|0", &____must_checkpoint_splineenergyform01_s_0, "double", (void *)(&s), (size_t)8, 0, 0, 0, "splineenergyform01|dindex|0", &____must_checkpoint_splineenergyform01_dindex_0, "i32*", (void *)(&dindex), (size_t)8, 1, 0, 0, "splineenergyform01|cindex|0", &____must_checkpoint_splineenergyform01_cindex_0, "i32*", (void *)(&cindex), (size_t)8, 1, 0, 0, "splineenergyform01|bindex|0", &____must_checkpoint_splineenergyform01_bindex_0, "i32*", (void *)(&bindex), (size_t)8, 1, 0, 0, "splineenergyform01|aindex|0", &____must_checkpoint_splineenergyform01_aindex_0, "i32*", (void *)(&aindex), (size_t)8, 1, 0, 0, "splineenergyform01|N|0", &____must_checkpoint_splineenergyform01_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "splineenergyform01|j|0", &____must_checkpoint_splineenergyform01_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "splineenergyform01|i|0", &____must_checkpoint_splineenergyform01_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "splineenergyform01|Iy2_mat|0", &____must_checkpoint_splineenergyform01_Iy2_mat_0, "%struct.MAT*", (void *)(&Iy2_mat), (size_t)8, 1, 0, 0, "splineenergyform01|Iy1_mat|0", &____must_checkpoint_splineenergyform01_Iy1_mat_0, "%struct.MAT*", (void *)(&Iy1_mat), (size_t)8, 1, 0, 0, "splineenergyform01|Ix2_mat|0", &____must_checkpoint_splineenergyform01_Ix2_mat_0, "%struct.MAT*", (void *)(&Ix2_mat), (size_t)8, 1, 0, 0, "splineenergyform01|Ix1_mat|0", &____must_checkpoint_splineenergyform01_Ix1_mat_0, "%struct.MAT*", (void *)(&Ix1_mat), (size_t)8, 1, 0, 0, "splineenergyform01|Iy2|0", &____must_checkpoint_splineenergyform01_Iy2_0, "%struct.VEC*", (void *)(&Iy2), (size_t)8, 1, 0, 0, "splineenergyform01|Iy1|0", &____must_checkpoint_splineenergyform01_Iy1_0, "%struct.VEC*", (void *)(&Iy1), (size_t)8, 1, 0, 0, "splineenergyform01|Ix2|0", &____must_checkpoint_splineenergyform01_Ix2_0, "%struct.VEC*", (void *)(&Ix2), (size_t)8, 1, 0, 0, "splineenergyform01|Ix1|0", &____must_checkpoint_splineenergyform01_Ix1_0, "%struct.VEC*", (void *)(&Ix1), (size_t)8, 1, 0, 0, "splineenergyform01|dCy|0", &____must_checkpoint_splineenergyform01_dCy_0, "%struct.VEC*", (void *)(&dCy), (size_t)8, 1, 0, 0, "splineenergyform01|dCx|0", &____must_checkpoint_splineenergyform01_dCx_0, "%struct.VEC*", (void *)(&dCx), (size_t)8, 1, 0, 0, "splineenergyform01|YY|0", &____must_checkpoint_splineenergyform01_YY_0, "%struct.VEC*", (void *)(&YY), (size_t)8, 1, 0, 0, "splineenergyform01|XX|0", &____must_checkpoint_splineenergyform01_XX_0, "%struct.VEC*", (void *)(&XX), (size_t)8, 1, 0, 0, "splineenergyform01|XY|0", &____must_checkpoint_splineenergyform01_XY_0, "%struct.VEC*", (void *)(&XY), (size_t)8, 1, 0, 0, "splineenergyform01|Y2|0", &____must_checkpoint_splineenergyform01_Y2_0, "%struct.VEC*", (void *)(&Y2), (size_t)8, 1, 0, 0, "splineenergyform01|X2|0", &____must_checkpoint_splineenergyform01_X2_0, "%struct.VEC*", (void *)(&X2), (size_t)8, 1, 0, 0, "splineenergyform01|Y1|0", &____must_checkpoint_splineenergyform01_Y1_0, "%struct.VEC*", (void *)(&Y1), (size_t)8, 1, 0, 0, "splineenergyform01|X1|0", &____must_checkpoint_splineenergyform01_X1_0, "%struct.VEC*", (void *)(&X1), (size_t)8, 1, 0, 0, "splineenergyform01|Ny|0", &____must_checkpoint_splineenergyform01_Ny_0, "%struct.VEC*", (void *)(&Ny), (size_t)8, 1, 0, 0, "splineenergyform01|Nx|0", &____must_checkpoint_splineenergyform01_Nx_0, "%struct.VEC*", (void *)(&Nx), (size_t)8, 1, 0, 0, "splineenergyform01|Ys|0", &____must_checkpoint_splineenergyform01_Ys_0, "%struct.VEC*", (void *)(&Ys), (size_t)8, 1, 0, 0, "splineenergyform01|Xs|0", &____must_checkpoint_splineenergyform01_Xs_0, "%struct.VEC*", (void *)(&Xs), (size_t)8, 1, 0, 0, "splineenergyform01|Y|0", &____must_checkpoint_splineenergyform01_Y_0, "%struct.VEC*", (void *)(&Y), (size_t)8, 1, 0, 0, "splineenergyform01|X|0", &____must_checkpoint_splineenergyform01_X_0, "%struct.VEC*", (void *)(&X), (size_t)8, 1, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 22 11 len=8 get_time_resumable
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 23 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 23 20 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 22 133  ; struct timeval tv;
+ if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 33 7 len=9 get_frame_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 35 37  ({  calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(8194319462526367162UL)); (AVI_video_width)(cell_file); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 35 62 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 36 39  ({  calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(8194319462526367162UL)); (AVI_video_height)(cell_file); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 36 65 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 40 15  ({  calling((void*)AVI_set_video_position, 4, ____alias_loc_id_1, 0UL, 2, (size_t)(8194319462526367162UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 40 58 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 43 61  ({  char * ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg5 = ((char *)image_buf);  }  calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(8194319462526367162UL), (size_t)(8194319462526367117UL), (size_t)(8194319462526367089UL)); (AVI_read_frame)(cell_file, ____chimes_arg5, &dummy); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 43 112 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 44 16  ({  char * ____chimes_arg7;  if (!____chimes_replaying) { ____chimes_arg7 = ("Error with AVI_read_frame");  }  calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(8194319462526371852UL)); (AVI_print_error)(____chimes_arg7); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 44 59 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 51 32  ({  int ____chimes_arg14;  if (!____chimes_replaying) { ____chimes_arg14 = (width - 1);  }  calling((void*)chop_flip_image, 9, 0, 8194319462526367152UL, 8, (size_t)(8194319462526367117UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (chop_flip_image)(image_buf, height, width, 110, 328, 0, ____chimes_arg14, scaled); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 51 104 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 54 33  ({  int ____chimes_arg20;  int ____chimes_arg22;  if (!____chimes_replaying) { ____chimes_arg20 = (height - 1); ____chimes_arg22 = (width - 1);  }  calling((void*)chop_flip_image, 10, 0, 8194319462526367152UL, 8, (size_t)(8194319462526367117UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (chop_flip_image)(image_buf, height, width, 0, ____chimes_arg20, 0, ____chimes_arg22, scaled); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 54 110 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 34 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 34 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 35 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 35 12 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 36 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 36 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 37 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 37 27 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 33 735  ; unsigned char *image_buf;
+int height;
+int width;
+int dummy;
+ if (____must_checkpoint_get_frame_image_buf_0 || ____must_checkpoint_get_frame_height_0 || ____must_checkpoint_get_frame_width_0 || ____must_checkpoint_get_frame_dummy_0) { register_stack_vars(4, "get_frame|image_buf|0", &____must_checkpoint_get_frame_image_buf_0, "i8*", (void *)(&image_buf), (size_t)8, 1, 0, 0, "get_frame|height|0", &____must_checkpoint_get_frame_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "get_frame|width|0", &____must_checkpoint_get_frame_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "get_frame|dummy|0", &____must_checkpoint_get_frame_dummy_0, "i32", (void *)(&dummy), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 64 7 len=15 chop_flip_image_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 65 40  ({  int ____chimes_arg24;  int ____chimes_arg25;  if (!____chimes_replaying) { ____chimes_arg24 = (bottom - top + 1); ____chimes_arg25 = (right - left + 1);  }  calling((void*)m_get, 1, ____alias_loc_id_4, 8194319462526367214UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg24, ____chimes_arg25); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 65 80 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 64 1336  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 86 7 len=15 ellipsematching_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 111 38  ({  calling((void*)m_get, 5, ____alias_loc_id_5, 8194319462526367694UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(height, width); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 111 57 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 23 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 25 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 46 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 48 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 90 65 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 98 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 98 16 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 98 18 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 98 32 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 107 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 107 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 110 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 110 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 110 16 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 110 25 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 119 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 119 19 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 86 509  ; double Grad[150];
+int width;
+int height;
+int MaxR;
+int tY[7][150];
+int tX[7][150];
+double theta[150];
+double cos_angle[150];
+double sin_angle[150];
+ if (____must_checkpoint_ellipsematching_width_0 || ____must_checkpoint_ellipsematching_height_0 || ____must_checkpoint_ellipsematching_MaxR_0 || ____must_checkpoint_ellipsematching_tY_0 || ____must_checkpoint_ellipsematching_tX_0 || ____must_checkpoint_ellipsematching_cos_angle_0 || ____must_checkpoint_ellipsematching_sin_angle_0) { register_stack_vars(7, "ellipsematching|width|0", &____must_checkpoint_ellipsematching_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "ellipsematching|height|0", &____must_checkpoint_ellipsematching_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "ellipsematching|MaxR|0", &____must_checkpoint_ellipsematching_MaxR_0, "i32", (void *)(&MaxR), (size_t)4, 0, 0, 0, "ellipsematching|tY|0", &____must_checkpoint_ellipsematching_tY_0, "[7 x [150 x i32]]", (void *)(tY), (size_t)4200, 0, 0, 0, "ellipsematching|tX|0", &____must_checkpoint_ellipsematching_tX_0, "[7 x [150 x i32]]", (void *)(tX), (size_t)4200, 0, 0, 0, "ellipsematching|cos_angle|0", &____must_checkpoint_ellipsematching_cos_angle_0, "[150 x double]", (void *)(cos_angle), (size_t)1200, 0, 0, 0, "ellipsematching|sin_angle|0", &____must_checkpoint_ellipsematching_sin_angle_0, "[150 x double]", (void *)(sin_angle), (size_t)1200, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 165 7 len=19 structuring_element_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 166 40  ({  int ____chimes_arg28;  int ____chimes_arg29;  if (!____chimes_replaying) { ____chimes_arg28 = (radius * 2 + 1); ____chimes_arg29 = (radius * 2 + 1);  }  calling((void*)m_get, 1, ____alias_loc_id_6, 8194319462526367717UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg28, ____chimes_arg29); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 166 76 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 165 327  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 184 7 len=8 dilate_f_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 185 42  ({  int ____chimes_arg30;  int ____chimes_arg31;  if (!____chimes_replaying) { ____chimes_arg30 = (img_in->m); ____chimes_arg31 = (img_in->n);  }  calling((void*)m_get, 1, ____alias_loc_id_7, 8194319462526367824UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg30, ____chimes_arg31); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 185 68 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 184 449  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 224 7 len=7 TMatrix_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 252 19  ({  int ____chimes_arg32;  if (!____chimes_replaying) { ____chimes_arg32 = (N * M);  }  calling((void*)m_get, 5, ____alias_loc_id_17, 8194319462526371853UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg32, N); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 252 31 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 253 20  ({  calling((void*)m_get, 6, ____alias_loc_id_15, 8194319462526371853UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(M, N); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 253 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 257 16  ({  calling((void*)m_zero, 7, ____alias_loc_id_16, 8194319462526368159UL, 1, (size_t)(8194319462526371853UL)); (m_zero)(LB); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 257 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 281 24  ({  calling((void*)mtrm_mlt, 8, ____alias_loc_id_14, 8194319462526371853UL, 3, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (mtrm_mlt)(B, B, B_TEMP); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 281 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 282 28  ({  calling((void*)m_inverse, 9, ____alias_loc_id_13, 8194319462526371853UL, 2, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (m_inverse)(B_TEMP, B_TEMP_INV); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 282 56 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 283 24  ({  calling((void*)mmtr_mlt, 10, ____alias_loc_id_12, 8194319462526371853UL, 3, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (mmtr_mlt)(B_TEMP_INV, B, B_RET); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 283 53 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 285 16  ({  calling((void*)m_free, 11, ____alias_loc_id_11, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 285 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 286 16  ({  calling((void*)m_free, 12, ____alias_loc_id_10, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(LB); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 286 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 287 16  ({  calling((void*)m_free, 13, ____alias_loc_id_9, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B_TEMP); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 287 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 288 16  ({  calling((void*)m_free, 14, ____alias_loc_id_8, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B_TEMP_INV); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 288 33 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 12 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 19 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 22 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 33 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 36 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 51 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 54 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 226 64 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 15 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 26 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 28 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 39 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 41 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 227 52 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 228 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 228 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 228 9 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 228 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 261 5 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 261 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 4 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 12 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 14 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 22 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 24 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 32 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 34 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 262 42 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 274 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 274 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 274 10 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 274 15 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 225 319  ; int n;
+int m;
+double d;
+double c;
+double b;
+double a;
+double s;
+int j;
+int i;
+int *dindex;
+int *cindex;
+int *bindex;
+int *aindex;
+MAT *B_RET;
+MAT *B_TEMP_INV;
+MAT *B_TEMP;
+MAT *LB;
+MAT *B;
+ if (____must_checkpoint_TMatrix_n_0 || ____must_checkpoint_TMatrix_m_0 || ____must_checkpoint_TMatrix_d_0 || ____must_checkpoint_TMatrix_c_0 || ____must_checkpoint_TMatrix_b_0 || ____must_checkpoint_TMatrix_a_0 || ____must_checkpoint_TMatrix_s_0 || ____must_checkpoint_TMatrix_j_0 || ____must_checkpoint_TMatrix_i_0 || ____must_checkpoint_TMatrix_dindex_0 || ____must_checkpoint_TMatrix_cindex_0 || ____must_checkpoint_TMatrix_bindex_0 || ____must_checkpoint_TMatrix_aindex_0 || ____must_checkpoint_TMatrix_B_RET_0 || ____must_checkpoint_TMatrix_B_TEMP_INV_0 || ____must_checkpoint_TMatrix_B_TEMP_0 || ____must_checkpoint_TMatrix_LB_0 || ____must_checkpoint_TMatrix_B_0) { register_stack_vars(18, "TMatrix|n|0", &____must_checkpoint_TMatrix_n_0, "i32", (void *)(&n), (size_t)4, 0, 0, 0, "TMatrix|m|0", &____must_checkpoint_TMatrix_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "TMatrix|d|0", &____must_checkpoint_TMatrix_d_0, "double", (void *)(&d), (size_t)8, 0, 0, 0, "TMatrix|c|0", &____must_checkpoint_TMatrix_c_0, "double", (void *)(&c), (size_t)8, 0, 0, 0, "TMatrix|b|0", &____must_checkpoint_TMatrix_b_0, "double", (void *)(&b), (size_t)8, 0, 0, 0, "TMatrix|a|0", &____must_checkpoint_TMatrix_a_0, "double", (void *)(&a), (size_t)8, 0, 0, 0, "TMatrix|s|0", &____must_checkpoint_TMatrix_s_0, "double", (void *)(&s), (size_t)8, 0, 0, 0, "TMatrix|j|0", &____must_checkpoint_TMatrix_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "TMatrix|i|0", &____must_checkpoint_TMatrix_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "TMatrix|dindex|0", &____must_checkpoint_TMatrix_dindex_0, "i32*", (void *)(&dindex), (size_t)8, 1, 0, 0, "TMatrix|cindex|0", &____must_checkpoint_TMatrix_cindex_0, "i32*", (void *)(&cindex), (size_t)8, 1, 0, 0, "TMatrix|bindex|0", &____must_checkpoint_TMatrix_bindex_0, "i32*", (void *)(&bindex), (size_t)8, 1, 0, 0, "TMatrix|aindex|0", &____must_checkpoint_TMatrix_aindex_0, "i32*", (void *)(&aindex), (size_t)8, 1, 0, 0, "TMatrix|B_RET|0", &____must_checkpoint_TMatrix_B_RET_0, "%struct.MAT*", (void *)(&B_RET), (size_t)8, 1, 0, 0, "TMatrix|B_TEMP_INV|0", &____must_checkpoint_TMatrix_B_TEMP_INV_0, "%struct.MAT*", (void *)(&B_TEMP_INV), (size_t)8, 1, 0, 0, "TMatrix|B_TEMP|0", &____must_checkpoint_TMatrix_B_TEMP_0, "%struct.MAT*", (void *)(&B_TEMP), (size_t)8, 1, 0, 0, "TMatrix|LB|0", &____must_checkpoint_TMatrix_LB_0, "%struct.MAT*", (void *)(&LB), (size_t)8, 1, 0, 0, "TMatrix|B|0", &____must_checkpoint_TMatrix_B_0, "%struct.MAT*", (void *)(&B), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 298 6 len=10 uniformseg_resumable
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 15 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 17 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 30 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 32 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 47 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 49 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 300 64 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 301 16 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 301 29 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 299 250  ; int index[36];
+double dsum[36];
+double dist[36];
+double dy[36];
+double dx[36];
+ if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 339 8 len=5 m_min_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 340 136  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 356 8 len=5 m_max_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 357 136  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 372 7 len=11 getsampling_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 377 40  ({  int ____chimes_arg49;  if (!____chimes_replaying) { ____chimes_arg49 = (N * M);  }  calling((void*)v_get, 1, ____alias_loc_id_18, 8194319462526368854UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg49); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 377 51 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 374 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 374 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 374 11 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 374 16 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 373 277  ; int M;
+int N;
+ if (____must_checkpoint_getsampling_M_0 || ____must_checkpoint_getsampling_N_0) { register_stack_vars(2, "getsampling|M|0", &____must_checkpoint_getsampling_M_0, "i32", (void *)(&M), (size_t)4, 0, 0, 0, "getsampling|N|0", &____must_checkpoint_getsampling_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 424 7 len=8 getfdriv_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 429 40  ({  int ____chimes_arg50;  if (!____chimes_replaying) { ____chimes_arg50 = (N * M);  }  calling((void*)v_get, 1, ____alias_loc_id_19, 8194319462526369208UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg50); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 429 51 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 426 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 426 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 426 11 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 426 16 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 425 262  ; int M;
+int N;
+ if (____must_checkpoint_getfdriv_M_0 || ____must_checkpoint_getfdriv_N_0) { register_stack_vars(2, "getfdriv|M|0", &____must_checkpoint_getfdriv_M_0, "i32", (void *)(&M), (size_t)4, 0, 0, 0, "getfdriv|N|0", &____must_checkpoint_getfdriv_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 477 7 len=14 linear_interp2_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 481 40  ({  int ____chimes_arg52;  if (!____chimes_replaying) { ____chimes_arg52 = (X->dim);  }  calling((void*)m_get, 1, ____alias_loc_id_20, 8194319462526369511UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(1, ____chimes_arg52); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 481 55 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 478 569  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 509 6 len=18 splineenergyform01_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 515 19  ({  calling((void*)getsampling, 1, ____alias_loc_id_70, 8194319462526369762UL, 2, (size_t)(8194319462526371840UL), (size_t)(0UL)); (getsampling)(Cx, ns); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 515 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 516 19  ({  calling((void*)getsampling, 2, ____alias_loc_id_69, 8194319462526369766UL, 2, (size_t)(8194319462526371841UL), (size_t)(0UL)); (getsampling)(Cy, ns); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 516 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 517 20  ({  calling((void*)getfdriv, 3, ____alias_loc_id_68, 8194319462526369770UL, 2, (size_t)(8194319462526371840UL), (size_t)(0UL)); (getfdriv)(Cx, ns); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 517 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 518 20  ({  calling((void*)getfdriv, 4, ____alias_loc_id_67, 8194319462526369774UL, 2, (size_t)(8194319462526371841UL), (size_t)(0UL)); (getfdriv)(Cy, ns); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 518 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 520 20  ({  int ____chimes_arg61;  if (!____chimes_replaying) { ____chimes_arg61 = (Ys->dim);  }  calling((void*)v_get, 5, ____alias_loc_id_66, 8194319462526369779UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg61); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 520 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 524 20  ({  int ____chimes_arg62;  if (!____chimes_replaying) { ____chimes_arg62 = (Xs->dim);  }  calling((void*)v_get, 7, ____alias_loc_id_65, 8194319462526370056UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg62); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 524 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 528 20  ({  int ____chimes_arg63;  if (!____chimes_replaying) { ____chimes_arg63 = (Nx->dim);  }  calling((void*)v_get, 9, ____alias_loc_id_64, 8194319462526369939UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg63); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 528 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 532 21  ({  int ____chimes_arg64;  if (!____chimes_replaying) { ____chimes_arg64 = (Ny->dim);  }  calling((void*)v_get, 10, ____alias_loc_id_63, 8194319462526369981UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg64); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 532 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 536 21  ({  int ____chimes_arg65;  if (!____chimes_replaying) { ____chimes_arg65 = (Nx->dim);  }  calling((void*)v_get, 11, ____alias_loc_id_62, 8194319462526370023UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg65); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 536 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 540 21  ({  int ____chimes_arg66;  if (!____chimes_replaying) { ____chimes_arg66 = (Ny->dim);  }  calling((void*)v_get, 12, ____alias_loc_id_61, 8194319462526370065UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg66); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 540 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 544 26  ({  calling((void*)linear_interp2, 13, ____alias_loc_id_60, 8194319462526370078UL, 3, (size_t)(8194319462526371842UL), (size_t)(8194319462526369939UL), (size_t)(8194319462526369981UL)); (linear_interp2)(Ix, X1, Y1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 544 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 545 26  ({  calling((void*)linear_interp2, 14, ____alias_loc_id_59, 8194319462526370083UL, 3, (size_t)(8194319462526371843UL), (size_t)(8194319462526369939UL), (size_t)(8194319462526369981UL)); (linear_interp2)(Iy, X1, Y1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 545 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 546 26  ({  calling((void*)linear_interp2, 15, ____alias_loc_id_58, 8194319462526370088UL, 3, (size_t)(8194319462526371842UL), (size_t)(8194319462526370023UL), (size_t)(8194319462526370065UL)); (linear_interp2)(Ix, X2, Y2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 546 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 547 26  ({  calling((void*)linear_interp2, 16, ____alias_loc_id_57, 8194319462526370093UL, 3, (size_t)(8194319462526371843UL), (size_t)(8194319462526370023UL), (size_t)(8194319462526370065UL)); (linear_interp2)(Iy, X2, Y2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 547 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 549 22  ({  int ____chimes_arg79;  if (!____chimes_replaying) { ____chimes_arg79 = (Ix1_mat->n);  }  calling((void*)v_get, 17, ____alias_loc_id_56, 8194319462526370706UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg79); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 549 38 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 550 22  ({  int ____chimes_arg80;  if (!____chimes_replaying) { ____chimes_arg80 = (Iy1_mat->n);  }  calling((void*)v_get, 18, ____alias_loc_id_55, 8194319462526370716UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg80); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 550 38 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 551 22  ({  int ____chimes_arg81;  if (!____chimes_replaying) { ____chimes_arg81 = (Ix2_mat->n);  }  calling((void*)v_get, 19, ____alias_loc_id_54, 8194319462526370726UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg81); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 551 38 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 552 22  ({  int ____chimes_arg82;  if (!____chimes_replaying) { ____chimes_arg82 = (Iy2_mat->n);  }  calling((void*)v_get, 20, ____alias_loc_id_53, 8194319462526370736UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg82); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 552 38 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 554 22  ({  unsigned int ____chimes_arg84;  if (!____chimes_replaying) { ____chimes_arg84 = (0);  }  calling((void*)get_row, 21, ____alias_loc_id_52, 8194319462526370706UL, 3, (size_t)(8194319462526370078UL), (size_t)(0UL), (size_t)(8194319462526370706UL)); (get_row)(Ix1_mat, ____chimes_arg84, Ix1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 554 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 555 22  ({  unsigned int ____chimes_arg87;  if (!____chimes_replaying) { ____chimes_arg87 = (0);  }  calling((void*)get_row, 22, ____alias_loc_id_51, 8194319462526370716UL, 3, (size_t)(8194319462526370083UL), (size_t)(0UL), (size_t)(8194319462526370716UL)); (get_row)(Iy1_mat, ____chimes_arg87, Iy1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 555 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 556 22  ({  unsigned int ____chimes_arg90;  if (!____chimes_replaying) { ____chimes_arg90 = (0);  }  calling((void*)get_row, 23, ____alias_loc_id_50, 8194319462526370726UL, 3, (size_t)(8194319462526370088UL), (size_t)(0UL), (size_t)(8194319462526370726UL)); (get_row)(Ix2_mat, ____chimes_arg90, Ix2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 556 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 557 22  ({  unsigned int ____chimes_arg93;  if (!____chimes_replaying) { ____chimes_arg93 = (0);  }  calling((void*)get_row, 24, ____alias_loc_id_49, 8194319462526370736UL, 3, (size_t)(8194319462526370093UL), (size_t)(0UL), (size_t)(8194319462526370736UL)); (get_row)(Iy2_mat, ____chimes_arg93, Iy2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 557 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 584 21  ({  int ____chimes_arg95;  if (!____chimes_replaying) { ____chimes_arg95 = (Xs->dim);  }  calling((void*)v_get, 29, ____alias_loc_id_48, 8194319462526370285UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg95); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 584 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 588 21  ({  int ____chimes_arg96;  if (!____chimes_replaying) { ____chimes_arg96 = (Xs->dim);  }  calling((void*)v_get, 30, ____alias_loc_id_47, 8194319462526370325UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg96); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 588 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 592 21  ({  int ____chimes_arg97;  if (!____chimes_replaying) { ____chimes_arg97 = (Ys->dim);  }  calling((void*)v_get, 31, ____alias_loc_id_46, 8194319462526370365UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg97); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 592 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 596 22  ({  int ____chimes_arg98;  if (!____chimes_replaying) { ____chimes_arg98 = (Cx->m);  }  calling((void*)v_get, 32, ____alias_loc_id_45, 8194319462526370698UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg98); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 596 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 597 22  ({  int ____chimes_arg99;  if (!____chimes_replaying) { ____chimes_arg99 = (Cy->m);  }  calling((void*)v_get, 33, ____alias_loc_id_44, 8194319462526370760UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg99); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 597 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 16  ({  calling((void*)v_free, 35, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(dCy); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 26 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 43  ({  calling((void*)v_free, 36, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(dCx); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 53 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 70  ({  calling((void*)v_free, 37, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(YY); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 79 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 96  ({  calling((void*)v_free, 38, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(XX); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 105 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 122  ({  calling((void*)v_free, 39, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(XY); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 701 131 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 16  ({  calling((void*)v_free, 44, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Iy2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 26 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 43  ({  calling((void*)v_free, 45, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Ix2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 53 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 70  ({  calling((void*)v_free, 46, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Iy1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 80 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 97  ({  calling((void*)v_free, 47, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Ix1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 705 107 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 16  ({  calling((void*)m_free, 48, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Iy2_mat); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 47  ({  calling((void*)m_free, 49, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Ix2_mat); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 78  ({  calling((void*)m_free, 50, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Iy1_mat); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 92 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 109  ({  calling((void*)m_free, 51, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Ix1_mat); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 707 123 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 16  ({  calling((void*)v_free, 52, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 42  ({  calling((void*)v_free, 53, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X2); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 68  ({  calling((void*)v_free, 54, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 77 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 94  ({  calling((void*)v_free, 55, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 103 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 120  ({  calling((void*)v_free, 56, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Ny); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 129 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 146  ({  calling((void*)v_free, 57, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Nx); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 155 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 172  ({  calling((void*)v_free, 58, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Ys); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 181 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 198  ({  calling((void*)v_free, 59, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Xs); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 207 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 224  ({  calling((void*)v_free, 60, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 232 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 249  ({  calling((void*)v_free, 61, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 709 257 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 10 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 16 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 18 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 25 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 27 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 34 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 36 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 43 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 45 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 52 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 54 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 61 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 63 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 70 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 72 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 79 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 81 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 88 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 90 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 97 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 99 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 106 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 108 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 115 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 117 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 125 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 127 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 135 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 137 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 145 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 147 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 155 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 157 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 165 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 167 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 511 175 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 16 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 28 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 30 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 42 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 44 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 512 56 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 9 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 16 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 21 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 23 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 34 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 36 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 47 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 49 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 60 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 62 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 513 73 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 604 5 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 604 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 4 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 15 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 24 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 26 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 35 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 37 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 46 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 48 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 57 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 59 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 68 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 70 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 79 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 81 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 90 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 92 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 100 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 102 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 112 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 114 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 124 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 126 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 136 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 138 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 148 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 150 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 160 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 162 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 172 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 174 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 184 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 186 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 196 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 198 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 605 208 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 606 4 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 606 9 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c 510 1330  ; int k;
+double Ty4;
+double Ty3;
+double Ty2;
+double Ty1;
+double Tx4;
+double Tx3;
+double Tx2;
+double Tx1;
+double D_3;
+double D;
+double B4;
+double B3;
+double B2;
+double B1;
+double A4;
+double A3;
+double A2;
+double A1;
+double s;
+int *dindex;
+int *cindex;
+int *bindex;
+int *aindex;
+int N;
+int j;
+int i;
+MAT *Iy2_mat;
+MAT *Iy1_mat;
+MAT *Ix2_mat;
+MAT *Ix1_mat;
+VEC *Iy2;
+VEC *Iy1;
+VEC *Ix2;
+VEC *Ix1;
+VEC *dCy;
+VEC *dCx;
+VEC *YY;
+VEC *XX;
+VEC *XY;
+VEC *Y2;
+VEC *X2;
+VEC *Y1;
+VEC *X1;
+VEC *Ny;
+VEC *Nx;
+VEC *Ys;
+VEC *Xs;
+VEC *Y;
+VEC *X;
+ if (____must_checkpoint_splineenergyform01_k_0 || ____must_checkpoint_splineenergyform01_Ty4_0 || ____must_checkpoint_splineenergyform01_Ty3_0 || ____must_checkpoint_splineenergyform01_Ty2_0 || ____must_checkpoint_splineenergyform01_Ty1_0 || ____must_checkpoint_splineenergyform01_Tx4_0 || ____must_checkpoint_splineenergyform01_Tx3_0 || ____must_checkpoint_splineenergyform01_Tx2_0 || ____must_checkpoint_splineenergyform01_Tx1_0 || ____must_checkpoint_splineenergyform01_D_3_0 || ____must_checkpoint_splineenergyform01_D_0 || ____must_checkpoint_splineenergyform01_B4_0 || ____must_checkpoint_splineenergyform01_B3_0 || ____must_checkpoint_splineenergyform01_B2_0 || ____must_checkpoint_splineenergyform01_B1_0 || ____must_checkpoint_splineenergyform01_A4_0 || ____must_checkpoint_splineenergyform01_A3_0 || ____must_checkpoint_splineenergyform01_A2_0 || ____must_checkpoint_splineenergyform01_A1_0 || ____must_checkpoint_splineenergyform01_s_0 || ____must_checkpoint_splineenergyform01_dindex_0 || ____must_checkpoint_splineenergyform01_cindex_0 || ____must_checkpoint_splineenergyform01_bindex_0 || ____must_checkpoint_splineenergyform01_aindex_0 || ____must_checkpoint_splineenergyform01_N_0 || ____must_checkpoint_splineenergyform01_j_0 || ____must_checkpoint_splineenergyform01_i_0 || ____must_checkpoint_splineenergyform01_Iy2_mat_0 || ____must_checkpoint_splineenergyform01_Iy1_mat_0 || ____must_checkpoint_splineenergyform01_Ix2_mat_0 || ____must_checkpoint_splineenergyform01_Ix1_mat_0 || ____must_checkpoint_splineenergyform01_Iy2_0 || ____must_checkpoint_splineenergyform01_Iy1_0 || ____must_checkpoint_splineenergyform01_Ix2_0 || ____must_checkpoint_splineenergyform01_Ix1_0 || ____must_checkpoint_splineenergyform01_dCy_0 || ____must_checkpoint_splineenergyform01_dCx_0 || ____must_checkpoint_splineenergyform01_YY_0 || ____must_checkpoint_splineenergyform01_XX_0 || ____must_checkpoint_splineenergyform01_XY_0 || ____must_checkpoint_splineenergyform01_Y2_0 || ____must_checkpoint_splineenergyform01_X2_0 || ____must_checkpoint_splineenergyform01_Y1_0 || ____must_checkpoint_splineenergyform01_X1_0 || ____must_checkpoint_splineenergyform01_Ny_0 || ____must_checkpoint_splineenergyform01_Nx_0 || ____must_checkpoint_splineenergyform01_Ys_0 || ____must_checkpoint_splineenergyform01_Xs_0 || ____must_checkpoint_splineenergyform01_Y_0 || ____must_checkpoint_splineenergyform01_X_0) { register_stack_vars(50, "splineenergyform01|k|0", &____must_checkpoint_splineenergyform01_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "splineenergyform01|Ty4|0", &____must_checkpoint_splineenergyform01_Ty4_0, "double", (void *)(&Ty4), (size_t)8, 0, 0, 0, "splineenergyform01|Ty3|0", &____must_checkpoint_splineenergyform01_Ty3_0, "double", (void *)(&Ty3), (size_t)8, 0, 0, 0, "splineenergyform01|Ty2|0", &____must_checkpoint_splineenergyform01_Ty2_0, "double", (void *)(&Ty2), (size_t)8, 0, 0, 0, "splineenergyform01|Ty1|0", &____must_checkpoint_splineenergyform01_Ty1_0, "double", (void *)(&Ty1), (size_t)8, 0, 0, 0, "splineenergyform01|Tx4|0", &____must_checkpoint_splineenergyform01_Tx4_0, "double", (void *)(&Tx4), (size_t)8, 0, 0, 0, "splineenergyform01|Tx3|0", &____must_checkpoint_splineenergyform01_Tx3_0, "double", (void *)(&Tx3), (size_t)8, 0, 0, 0, "splineenergyform01|Tx2|0", &____must_checkpoint_splineenergyform01_Tx2_0, "double", (void *)(&Tx2), (size_t)8, 0, 0, 0, "splineenergyform01|Tx1|0", &____must_checkpoint_splineenergyform01_Tx1_0, "double", (void *)(&Tx1), (size_t)8, 0, 0, 0, "splineenergyform01|D_3|0", &____must_checkpoint_splineenergyform01_D_3_0, "double", (void *)(&D_3), (size_t)8, 0, 0, 0, "splineenergyform01|D|0", &____must_checkpoint_splineenergyform01_D_0, "double", (void *)(&D), (size_t)8, 0, 0, 0, "splineenergyform01|B4|0", &____must_checkpoint_splineenergyform01_B4_0, "double", (void *)(&B4), (size_t)8, 0, 0, 0, "splineenergyform01|B3|0", &____must_checkpoint_splineenergyform01_B3_0, "double", (void *)(&B3), (size_t)8, 0, 0, 0, "splineenergyform01|B2|0", &____must_checkpoint_splineenergyform01_B2_0, "double", (void *)(&B2), (size_t)8, 0, 0, 0, "splineenergyform01|B1|0", &____must_checkpoint_splineenergyform01_B1_0, "double", (void *)(&B1), (size_t)8, 0, 0, 0, "splineenergyform01|A4|0", &____must_checkpoint_splineenergyform01_A4_0, "double", (void *)(&A4), (size_t)8, 0, 0, 0, "splineenergyform01|A3|0", &____must_checkpoint_splineenergyform01_A3_0, "double", (void *)(&A3), (size_t)8, 0, 0, 0, "splineenergyform01|A2|0", &____must_checkpoint_splineenergyform01_A2_0, "double", (void *)(&A2), (size_t)8, 0, 0, 0, "splineenergyform01|A1|0", &____must_checkpoint_splineenergyform01_A1_0, "double", (void *)(&A1), (size_t)8, 0, 0, 0, "splineenergyform01|s|0", &____must_checkpoint_splineenergyform01_s_0, "double", (void *)(&s), (size_t)8, 0, 0, 0, "splineenergyform01|dindex|0", &____must_checkpoint_splineenergyform01_dindex_0, "i32*", (void *)(&dindex), (size_t)8, 1, 0, 0, "splineenergyform01|cindex|0", &____must_checkpoint_splineenergyform01_cindex_0, "i32*", (void *)(&cindex), (size_t)8, 1, 0, 0, "splineenergyform01|bindex|0", &____must_checkpoint_splineenergyform01_bindex_0, "i32*", (void *)(&bindex), (size_t)8, 1, 0, 0, "splineenergyform01|aindex|0", &____must_checkpoint_splineenergyform01_aindex_0, "i32*", (void *)(&aindex), (size_t)8, 1, 0, 0, "splineenergyform01|N|0", &____must_checkpoint_splineenergyform01_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "splineenergyform01|j|0", &____must_checkpoint_splineenergyform01_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "splineenergyform01|i|0", &____must_checkpoint_splineenergyform01_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "splineenergyform01|Iy2_mat|0", &____must_checkpoint_splineenergyform01_Iy2_mat_0, "%struct.MAT*", (void *)(&Iy2_mat), (size_t)8, 1, 0, 0, "splineenergyform01|Iy1_mat|0", &____must_checkpoint_splineenergyform01_Iy1_mat_0, "%struct.MAT*", (void *)(&Iy1_mat), (size_t)8, 1, 0, 0, "splineenergyform01|Ix2_mat|0", &____must_checkpoint_splineenergyform01_Ix2_mat_0, "%struct.MAT*", (void *)(&Ix2_mat), (size_t)8, 1, 0, 0, "splineenergyform01|Ix1_mat|0", &____must_checkpoint_splineenergyform01_Ix1_mat_0, "%struct.MAT*", (void *)(&Ix1_mat), (size_t)8, 1, 0, 0, "splineenergyform01|Iy2|0", &____must_checkpoint_splineenergyform01_Iy2_0, "%struct.VEC*", (void *)(&Iy2), (size_t)8, 1, 0, 0, "splineenergyform01|Iy1|0", &____must_checkpoint_splineenergyform01_Iy1_0, "%struct.VEC*", (void *)(&Iy1), (size_t)8, 1, 0, 0, "splineenergyform01|Ix2|0", &____must_checkpoint_splineenergyform01_Ix2_0, "%struct.VEC*", (void *)(&Ix2), (size_t)8, 1, 0, 0, "splineenergyform01|Ix1|0", &____must_checkpoint_splineenergyform01_Ix1_0, "%struct.VEC*", (void *)(&Ix1), (size_t)8, 1, 0, 0, "splineenergyform01|dCy|0", &____must_checkpoint_splineenergyform01_dCy_0, "%struct.VEC*", (void *)(&dCy), (size_t)8, 1, 0, 0, "splineenergyform01|dCx|0", &____must_checkpoint_splineenergyform01_dCx_0, "%struct.VEC*", (void *)(&dCx), (size_t)8, 1, 0, 0, "splineenergyform01|YY|0", &____must_checkpoint_splineenergyform01_YY_0, "%struct.VEC*", (void *)(&YY), (size_t)8, 1, 0, 0, "splineenergyform01|XX|0", &____must_checkpoint_splineenergyform01_XX_0, "%struct.VEC*", (void *)(&XX), (size_t)8, 1, 0, 0, "splineenergyform01|XY|0", &____must_checkpoint_splineenergyform01_XY_0, "%struct.VEC*", (void *)(&XY), (size_t)8, 1, 0, 0, "splineenergyform01|Y2|0", &____must_checkpoint_splineenergyform01_Y2_0, "%struct.VEC*", (void *)(&Y2), (size_t)8, 1, 0, 0, "splineenergyform01|X2|0", &____must_checkpoint_splineenergyform01_X2_0, "%struct.VEC*", (void *)(&X2), (size_t)8, 1, 0, 0, "splineenergyform01|Y1|0", &____must_checkpoint_splineenergyform01_Y1_0, "%struct.VEC*", (void *)(&Y1), (size_t)8, 1, 0, 0, "splineenergyform01|X1|0", &____must_checkpoint_splineenergyform01_X1_0, "%struct.VEC*", (void *)(&X1), (size_t)8, 1, 0, 0, "splineenergyform01|Ny|0", &____must_checkpoint_splineenergyform01_Ny_0, "%struct.VEC*", (void *)(&Ny), (size_t)8, 1, 0, 0, "splineenergyform01|Nx|0", &____must_checkpoint_splineenergyform01_Nx_0, "%struct.VEC*", (void *)(&Nx), (size_t)8, 1, 0, 0, "splineenergyform01|Ys|0", &____must_checkpoint_splineenergyform01_Ys_0, "%struct.VEC*", (void *)(&Ys), (size_t)8, 1, 0, 0, "splineenergyform01|Xs|0", &____must_checkpoint_splineenergyform01_Xs_0, "%struct.VEC*", (void *)(&Xs), (size_t)8, 1, 0, 0, "splineenergyform01|Y|0", &____must_checkpoint_splineenergyform01_Y_0, "%struct.VEC*", (void *)(&Y), (size_t)8, 1, 0, 0, "splineenergyform01|X|0", &____must_checkpoint_splineenergyform01_X_0, "%struct.VEC*", (void *)(&X), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } case(35): { goto call_lbl_35; } case(36): { goto call_lbl_36; } case(37): { goto call_lbl_37; } case(38): { goto call_lbl_38; } case(39): { goto call_lbl_39; } case(44): { goto call_lbl_44; } case(45): { goto call_lbl_45; } case(46): { goto call_lbl_46; } case(47): { goto call_lbl_47; } case(48): { goto call_lbl_48; } case(49): { goto call_lbl_49; } case(50): { goto call_lbl_50; } case(51): { goto call_lbl_51; } case(52): { goto call_lbl_52; } case(53): { goto call_lbl_53; } case(54): { goto call_lbl_54; } case(55): { goto call_lbl_55; } case(56): { goto call_lbl_56; } case(57): { goto call_lbl_57; } case(58): { goto call_lbl_58; } case(59): { goto call_lbl_59; } case(60): { goto call_lbl_60; } case(61): { goto call_lbl_61; } default: { chimes_error(); } }  }  

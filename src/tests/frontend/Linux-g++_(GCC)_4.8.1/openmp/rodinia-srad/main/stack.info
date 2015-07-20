@@ -1,0 +1,89 @@
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|image|0 " float* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|NeROI|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|Nr|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|iN|0 " i32* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|iS|0 " i32* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|jE|0 " i32* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|jW|0 " i32* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|dN|0 " float* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|dS|0 " float* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|dW|0 " float* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|dE|0 " float* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|G2|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|L|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|num|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|den|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|qsqr|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|Jc|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|c|0 " float* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|lambda|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|c2|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|Nc|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|r1|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|r2|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|c1|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|i|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|j|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|k|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|sum|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|sum2|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|tmp|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|meanROI|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|varROI|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|q0sqr|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|cN|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|cS|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|cW|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|cE|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c kernel|D|0 " float " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|argc|0 " i32 " 32 0 0 1 get_time
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|argv|0 " i8** " 64 1 0 1 get_time
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time0|0 " i64 " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time1|0 " i64 " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time2|0 " i64 " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time3|0 " i64 " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time4|0 " i64 " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time5|0 " i64 " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time6|0 " i64 " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time7|0 " i64 " 64 0 0 1 get_time write_graphics
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time8|0 " i64 " 64 0 0 1 get_time write_graphics
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time9|0 " i64 " 64 0 0 1 get_time
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time10|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|image_ori|0 " float* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|image_ori_rows|0 " i32 " 32 0 0 1 get_time read_graphics
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|image_ori_cols|0 " i32 " 32 0 0 1 get_time read_graphics
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|image_ori_elem|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|image|0 " float* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|Nr|0 " i64 " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|Nc|0 " i64 " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|Ne|0 " i64 " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|niter|0 " i32 " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|lambda|0 " float " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|r1|0 " i32 " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|r2|0 " i32 " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|c1|0 " i32 " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|c2|0 " i32 " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|NeROI|0 " i64 " 64 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|iN|0 " i32* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|iS|0 " i32* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|jE|0 " i32* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|jW|0 " i32* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|Jc|0 " float " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|dN|0 " float* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|dS|0 " float* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|dW|0 " float* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|dE|0 " float* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|G2|0 " float " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|L|0 " float " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|num|0 " float " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|den|0 " float " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|qsqr|0 " float " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|c|0 " float* " 64 1 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|iter|0 " i32 " 32 0 0 1 checkpoint
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|i|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|j|0 " i64 " 64 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|threads|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|RODINIA_HOME|0 " i8* " 64 1 0 0
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|image_path|0 " [256 x i8] " 2048 0 0 1 main
+/gpfs-biou/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|____chimes_ret_var_1|0 " i32 " 32 0 0 0

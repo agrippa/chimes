@@ -1,0 +1,266 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 6 7 len=3 cam_npm
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 372 61 rm_stack(false, 0UL, "cam", &____must_manage_cam, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 12 13 const int ____chimes_did_disable0 = new_stack((void *)(&cam), "cam", &____must_manage_cam, 7, 0, (size_t)(0UL), (size_t)(17020714764447488982UL), (size_t)(0UL), (size_t)(17020714764447488984UL), (size_t)(0UL), (size_t)(17020714764447488986UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 374 1 rm_stack(false, 0UL, "cam", &____must_manage_cam, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 12 14 const int ____chimes_did_disable0 = new_stack((void *)(&cam), "cam", &____must_manage_cam, 7, 0, (size_t)(0UL), (size_t)(17020714764447488982UL), (size_t)(0UL), (size_t)(17020714764447488984UL), (size_t)(0UL), (size_t)(17020714764447488986UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 12 272 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 19 2 float JCa; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 19 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 22 2 int offset_1; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 22 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 23 2 int offset_2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 23 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 24 2 int offset_3; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 24 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 25 2 int offset_4; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 25 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 26 2 int offset_5; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 26 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 27 2 int offset_6; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 27 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 28 2 int offset_7; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 28 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 29 2 int offset_8; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 29 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 30 2 int offset_9; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 30 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 31 2 int offset_10; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 31 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 32 2 int offset_11; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 32 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 33 2 int offset_12; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 33 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 34 2 int offset_13; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 34 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 35 2 int offset_14; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 35 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 36 2 int offset_15; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 36 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 39 2 int parameter_offset_1; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 39 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 40 2 int parameter_offset_2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 40 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 41 2 int parameter_offset_3; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 41 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 42 2 int parameter_offset_4; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 42 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 43 2 int parameter_offset_5; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 43 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 46 2 float CaM; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 46 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 47 2 float Ca2CaM; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 47 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 48 2 float Ca4CaM; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 48 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 49 2 float CaMB; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 49 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 50 2 float Ca2CaMB; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 50 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 51 2 float Ca4CaMB; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 51 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 52 2 float Pb2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 52 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 53 2 float Pb; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 53 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 54 2 float Pt; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 54 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 55 2 float Pt2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 55 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 56 2 float Pa; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 56 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 57 2 float Ca4CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 57 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 58 2 float CaMCa4CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 58 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 59 2 float Ca2CaMCa4CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 59 20 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 60 2 float Ca4CaMCa4CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 60 20 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 63 2 float CaMtot; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 63 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 64 2 float Btot; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 64 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 65 2 float CaMKIItot; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 65 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 66 2 float CaNtot; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 66 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 67 2 float PP1tot; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 67 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 70 2 float K; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 70 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 71 2 float Mg; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 71 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 74 2 float Kd02; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 74 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 75 2 float Kd24; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 75 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 76 2 float k20; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 76 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 77 2 float k02; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 77 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 78 2 float k42; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 78 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 79 2 float k24; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 79 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 82 2 float k0Boff; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 82 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 83 2 float k0Bon; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 83 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 84 2 float k2Boff; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 84 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 85 2 float k2Bon; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 85 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 86 2 float k4Boff; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 86 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 87 2 float k4Bon; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 87 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 90 2 float k20B; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 90 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 91 2 float k02B; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 91 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 92 2 float k42B; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 92 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 93 2 float k24B; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 93 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 96 2 float kbi; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 96 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 97 2 float kib; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 97 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 98 2 float kpp1; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 98 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 99 2 float Kmpp1; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 99 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 100 2 float kib2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 100 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 101 2 float kb2i; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 101 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 102 2 float kb24; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 102 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 103 2 float kb42; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 103 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 104 2 float kta; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 104 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 105 2 float kat; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 105 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 106 2 float kt42; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 106 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 107 2 float kt24; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 107 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 108 2 float kat2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 108 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 109 2 float kt2a; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 109 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 112 2 float kcanCaoff; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 112 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 113 2 float kcanCaon; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 113 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 114 2 float kcanCaM4on; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 114 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 115 2 float kcanCaM4off; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 115 19 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 116 2 float kcanCaM2on; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 116 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 117 2 float kcanCaM2off; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 117 19 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 118 2 float kcanCaM0on; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 118 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 119 2 float kcanCaM0off; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 119 19 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 120 2 float k02can; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 120 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 121 2 float k20can; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 121 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 122 2 float k24can; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 122 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 123 2 float k42can; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 123 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 126 2 float rcn02; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 126 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 127 2 float rcn24; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 127 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 130 2 float B; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 130 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 131 2 float rcn02B; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 131 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 132 2 float rcn24B; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 132 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 133 2 float rcn0B; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 133 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 134 2 float rcn2B; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 134 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 135 2 float rcn4B; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 135 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 138 2 float Ca2CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 138 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 139 2 float rcnCa4CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 139 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 140 2 float rcn02CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 140 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 141 2 float rcn24CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 141 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 142 2 float rcn0CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 142 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 143 2 float rcn2CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 143 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 144 2 float rcn4CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 144 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 147 2 float Pix; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 147 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 148 2 float rcnCKib2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 148 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 149 2 float rcnCKb2b; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 149 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 150 2 float rcnCKib; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 150 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 151 2 float T; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 151 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 152 2 float kbt; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 152 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 153 2 float rcnCKbt; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 153 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 154 2 float rcnCKtt2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 154 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 155 2 float rcnCKta; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 155 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 156 2 float rcnCKt2a; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 156 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 157 2 float rcnCKt2b2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 157 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 158 2 float rcnCKai; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 158 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 161 2 float dCaM; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 161 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 162 2 float dCa2CaM; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 162 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 163 2 float dCa4CaM; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 163 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 164 2 float dCaMB; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 164 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 165 2 float dCa2CaMB; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 165 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 166 2 float dCa4CaMB; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 166 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 169 2 float dPb2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 169 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 170 2 float dPb; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 170 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 171 2 float dPt; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 171 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 172 2 float dPt2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 172 12 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 173 2 float dPa; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 173 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 176 2 float dCa4CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 176 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 177 2 float dCaMCa4CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 177 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 178 2 float dCa2CaMCa4CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 178 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 179 2 float dCa4CaMCa4CaN; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 179 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 372 3 float ____chimes_ret_var_0; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 372 29 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 6 7 len=3 cam_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 12 271  ; 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 6 7 len=3 cam_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 12 271  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

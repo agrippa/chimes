@@ -1,0 +1,118 @@
+get_time main 10 34 0
+fprintf main 16 3 0 83 1316 109
+exit main 17 3 0 0
+atoi main 21 16 0 109
+atoi main 22 21 0 109
+printf main 24 2 0 1317 0
+AVI_open_input_file main 29 21 161 109 0
+AVI_print_error main 31 3 0 1318
+get_frame main 41 23 162 161 0 0 0
+printf main 42 2 0 1319
+gradient_x main 45 16 840 162
+gradient_y main 46 16 1152 162
+m_free main 48 2 0 162
+get_time main 51 31 0
+ellipsematching main 52 15 390 840 1152
+m_get main 55 19 228 0 0
+get_time main 63 29 0
+get_time main 66 32 0
+structuring_element main 67 15 252 0
+dilate_f main 68 21 257 228 252
+get_time main 69 30 0
+malloc main 73 17 386 0
+malloc main 74 17 380 0
+malloc main 85 27 399 0
+calloc main 89 17 632 0 0
+calloc main 90 24 527 0 0
+calloc main 91 24 552 0 0
+malloc main 104 17 500 0
+m_get main 110 10 543 0 0
+m_get main 111 10 568 0 0
+cos main 114 53 0 0
+sin main 115 53 0 0
+TMatrix main 119 6 585 0 0
+malloc main 122 17 590 0
+malloc main 123 27 596 0
+malloc main 124 27 602 0
+memset main 125 2 0 590 0 0
+memset main 126 2 0 596 0 0
+memset main 127 2 0 602 0 0
+m_get main 135 8 1108 0 0
+m_get main 136 8 1106 0 0
+v_get main 138 12 1104 0
+v_get main 139 12 1102 0
+get_row main 142 12 1104 543 0 1104
+get_row main 143 12 1102 568 0 1102
+uniformseg main 144 4 0 1104 1102 1108 1106
+m_min main 147 9 0 1108
+m_min main 147 27 0 1106
+m_max main 147 45 0 1108
+m_max main 147 82 0 1106
+m_get main 150 10 800 0 0
+m_get main 151 10 745 0 0
+mmtr_mlt main 152 10 800 585 1108 800
+mmtr_mlt main 153 10 745 585 1106 745
+m_get main 155 15 824 0 0
+splineenergyform01 main 167 6 0 800 745 840 1152 0 0 0 0
+getsampling main 170 9 802 800 0
+getsampling main 173 9 838 824 0
+linear_interp2 main 175 11 1004 840 802 838
+linear_interp2 main 176 11 1021 840 802 838
+getfdriv main 177 10 880 800 0
+getfdriv main 178 10 873 745 0
+v_get main 180 10 913 0
+sqrt main 181 73 0 0
+v_get main 184 10 979 0
+sqrt main 185 80 0 0
+v_get main 188 9 1039 0
+mean main 192 12 0 1039
+std_dev main 192 22 0 1039
+mean main 195 28 0 802
+mean main 196 28 0 838
+v_free main 201 5 0 1039
+v_free main 202 5 0 979
+v_free main 203 5 0 913
+v_free main 204 5 0 873
+v_free main 205 5 0 880
+m_free main 206 5 0 1021
+m_free main 207 5 0 1004
+v_free main 208 5 0 838
+v_free main 209 5 0 802
+m_free main 210 5 0 824
+m_free main 211 5 0 745
+m_free main 212 5 0 800
+v_free main 216 4 0 1102
+v_free main 217 4 0 1104
+m_free main 218 4 0 1106
+m_free main 219 4 0 1108
+free main 224 2 0 590
+free main 225 2 0 380
+free main 226 2 0 386
+free main 227 2 0 399
+free main 228 2 0 500
+free main 229 2 0 632
+free main 230 2 0 527
+free main 231 2 0 552
+m_free main 232 2 0 585
+m_free main 233 2 0 568
+m_free main 234 2 0 543
+m_free main 235 2 0 257
+m_free main 236 2 0 228
+m_free main 237 2 0 390
+m_free main 238 2 0 1152
+m_free main 239 2 0 840
+printf main 242 2 0 1320 0
+printf main 245 2 0 1321
+printf main 246 2 0 1321
+printf main 247 2 0 1323 0
+printf main 248 2 0 1323 0
+get_time main 249 39 0
+printf main 249 51 0 1323 0
+printf main 253 23 0 1326 0
+printf main 253 91 0 1327
+get_time main 255 34 0
+ellipsetrack main 257 2 0 161 596 602 0 0 0 0
+get_time main 258 39 0
+printf main 258 51 0 1327 0
+get_time main 261 42 0
+printf main 261 54 0 1329 0

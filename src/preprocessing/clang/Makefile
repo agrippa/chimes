@@ -5,7 +5,7 @@
 # GXX=/usr/local/bin/g++ make
 #
 
-GXX?=/usr/bin/g++
+include ${CHIMES_HOME}/src/common.conf
 EXE=transform
 
 LLVM_CONFIG=$(shell find ${LLVM_INSTALL}/**/bin -name llvm-config)
@@ -42,4 +42,4 @@ ${EXE}: ${OBJS}
 
 
 clean:
-	rm *.o ${EXE}
+	rm -f *.o ${EXE}

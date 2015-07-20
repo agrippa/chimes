@@ -1,0 +1,22 @@
+string_1 " i8* " 64 1 0 1734 
+string_2 " i8* " 64 1 0 1734 
+strlen_1 " i32 " 32 0 0 0 
+strlen_2 " i32 " 32 0 0 0 
+tile_width " i32 " 32 0 0 0 
+tile_height " i32 " 32 0 0 0 
+n_tiles_x " i32 " 32 0 0 0 
+n_tiles_y " i32 " 32 0 0 0 
+tile_edges_x " i32** " 64 1 0 1742 
+tile_edges_y " i32** " 64 1 0 1742 
+tile_diag " i32* " 64 1 0 1744 
+put_counts " i32* " 64 1 0 1744 
+worker_tiles " i32*** " 64 1 0 1746 
+max_buffer " i32* " 64 1 0 1744 
+temp_buffer " i32* " 64 1 0 1744 
+max_size " i32 " 32 0 0 0 
+done " i32 " 32 0 0 0 
+nthreads " i32 " 32 0 0 0 
+begin " %struct.timeval = type { i64, i64 } " 128 0 1 0 timeval 
+end " %struct.timeval = type { i64, i64 } " 128 0 1 0 timeval 
+dsizes " [3 x i32] " 96 0 0 0 
+alignment_score_matrix " [5 x [5 x i8]] " 200 0 0 0 

@@ -59,17 +59,20 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
                 if (clang::VarDecl *v = clang::dyn_cast<clang::VarDecl>(dd)) {
 
                     // If this local variable declaration has an initializer
-                    if (v->getName().str().find("____chimes_did_disable") != 0 && 
+                    if (v->getName().str().find("____chimes_did_disable") != 0 &&
+                            v->getName().str().find("____chimes_tmp_ptr") != 0 &&
                             v->hasInit() &&
                             !clang::isa<clang::InitListExpr>(v->getInit())) {
                         clang::SourceLocation decl_start = v->getLocStart();
                         clang::SourceLocation decl_end = v->getLocEnd();
                         const clang::Expr *init = v->getInit();
 
-                        std::string init_str;
-                        llvm::raw_string_ostream init_stream(init_str);
-                        init->printPretty(init_stream, NULL, Context->getPrintingPolicy());
-                        init_stream.flush();
+                        std::string init_str = getRewrittenText(
+                                clang::SourceRange(init->getLocStart(), init->getLocEnd()));
+                        // std::string init_str;
+                        // llvm::raw_string_ostream init_stream(init_str);
+                        // init->printPretty(init_stream, NULL, Context->getPrintingPolicy());
+                        // init_stream.flush();
 
                         /*
                          * TODO it seems that anonymous struct declarations in

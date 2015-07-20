@@ -1,0 +1,33 @@
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c seconds|tp|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c seconds|tzp|0 " %struct.timezone = type { i32, i32 } " 64 0 1 timezone 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c seconds|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c seconds|____chimes_ret_var_0|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|argc|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|argv|0 " i8** " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|flist|0 " %struct._IO_FILE* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|fp|0 " %struct._IO_FILE* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|k|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|rec_count|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|done|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|rec_iter|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|dbname|0 " [64 x i8] " 512 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|neighbors|0 " %struct.neighbor* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|target_lat|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|target_long|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|tmp_lat|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|tmp_long|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|start_time|0 " double " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|sandbox|0 " i8* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|nrecords|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|nread|0 " i64 " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|z|0 " float* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|nwindows|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|w|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|window_start|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|window_end|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|max_dist|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|max_idx|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|end_time|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c main|____chimes_ret_var_1|0 " i32 " 32 0 0 0

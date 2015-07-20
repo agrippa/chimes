@@ -27,74 +27,78 @@ using namespace clang::driver;
 using namespace clang::tooling;
 
 static llvm::cl::OptionCategory ToolingSampleCategory("chimes options");
-static llvm::cl::opt<std::string> line_info_file("l",
-        llvm::cl::desc("Line info filename"), llvm::cl::value_desc("line_file"));
-static llvm::cl::opt<std::string> struct_file("s",
-        llvm::cl::desc("Struct info filename"),
-        llvm::cl::value_desc("struct_file"));
 static llvm::cl::opt<std::string> stack_allocs_file("a",
         llvm::cl::desc("Stack allocations info filename"),
         llvm::cl::value_desc("stack_allocs_file"));
-static llvm::cl::opt<std::string> original_file("i",
-        llvm::cl::desc("Original input file"),
-        llvm::cl::value_desc("original_file"));
-static llvm::cl::opt<std::string> heap_file("m",
-        llvm::cl::desc("Heap info file"),
-        llvm::cl::value_desc("heap_file"));
-static llvm::cl::opt<std::string> diag_file("d",
-        llvm::cl::desc("Diagnostics file"),
-        llvm::cl::value_desc("diag_file"));
-static llvm::cl::opt<std::string> working_directory("w",
-        llvm::cl::desc("Working directory"),
-        llvm::cl::value_desc("work_dir"));
-static llvm::cl::opt<std::string> contains_line_markings("c",
-        llvm::cl::desc("Input file contains line markings?"),
-        llvm::cl::value_desc("line_markings"));
-static llvm::cl::opt<std::string> func_file("f",
-        llvm::cl::desc("Function info file"),
-        llvm::cl::value_desc("func_info"));
-static llvm::cl::opt<std::string> call_file("k",
-        llvm::cl::desc("Callsite info file"),
-        llvm::cl::value_desc("call_info"));
-static llvm::cl::opt<std::string> exit_file("x",
-        llvm::cl::desc("Function exit info file"),
-        llvm::cl::value_desc("exit_info"));
-static llvm::cl::opt<std::string> reachable_file("r",
-        llvm::cl::desc("Reachable info file"),
-        llvm::cl::value_desc("reachable_info"));
-static llvm::cl::opt<std::string> module_id_file("o",
-        llvm::cl::desc("Module ID file"),
-        llvm::cl::value_desc("module_info"));
-static llvm::cl::opt<std::string> omp_file("t",
-        llvm::cl::desc("OpenMP file"),
-        llvm::cl::value_desc("omp_info"));
-static llvm::cl::opt<std::string> firstprivate_file("v",
-        llvm::cl::desc("firstprivate file"),
-        llvm::cl::value_desc("firstprivate_info"));
 static llvm::cl::opt<std::string> call_tree_file("b",
         llvm::cl::desc("call tree file"),
         llvm::cl::value_desc("call_tree_info"));
-static llvm::cl::opt<std::string> quick_version_file("q",
-        llvm::cl::desc("quick version file"),
-        llvm::cl::value_desc("quick_version"));
-static llvm::cl::opt<std::string> npm_dump_file("n",
-        llvm::cl::desc("NPM dump file"),
-        llvm::cl::value_desc("npm_dump_file"));
+static llvm::cl::opt<std::string> no_checkpoint("c",
+        llvm::cl::desc("No checkpoint"),
+        llvm::cl::value_desc("no_checkpoint"));
+static llvm::cl::opt<std::string> diag_file("d",
+        llvm::cl::desc("Diagnostics file"),
+        llvm::cl::value_desc("diag_file"));
 static llvm::cl::opt<std::string> loc_file("e",
         llvm::cl::desc("Alias locs dump file"),
         llvm::cl::value_desc("alias_locs_dump_file"));
+static llvm::cl::opt<std::string> func_file("f",
+        llvm::cl::desc("Function info file"),
+        llvm::cl::value_desc("func_info"));
 static llvm::cl::opt<std::string> list_of_externs_file("g",
         llvm::cl::desc("List of externs file"),
         llvm::cl::value_desc("list_of_externs_file"));
+static llvm::cl::opt<std::string> original_file("i",
+        llvm::cl::desc("Original input file"),
+        llvm::cl::value_desc("original_file"));
 static llvm::cl::opt<std::string> function_pointers_loaded_file("j",
         llvm::cl::desc("Function pointers loaded file"),
         llvm::cl::value_desc("function_pointers_loaded_file"));
+static llvm::cl::opt<std::string> call_file("k",
+        llvm::cl::desc("Callsite info file"),
+        llvm::cl::value_desc("call_info"));
+static llvm::cl::opt<std::string> line_info_file("l",
+        llvm::cl::desc("Line info filename"),
+        llvm::cl::value_desc("line_file"));
+static llvm::cl::opt<std::string> heap_file("m",
+        llvm::cl::desc("Heap info file"),
+        llvm::cl::value_desc("heap_file"));
+static llvm::cl::opt<std::string> npm_dump_file("n",
+        llvm::cl::desc("NPM dump file"),
+        llvm::cl::value_desc("npm_dump_file"));
+static llvm::cl::opt<std::string> module_id_file("o",
+        llvm::cl::desc("Module ID file"),
+        llvm::cl::value_desc("module_info"));
+static llvm::cl::opt<std::string> quick_version_file("q",
+        llvm::cl::desc("quick version file"),
+        llvm::cl::value_desc("quick_version"));
+static llvm::cl::opt<std::string> reachable_file("r",
+        llvm::cl::desc("Reachable info file"),
+        llvm::cl::value_desc("reachable_info"));
+static llvm::cl::opt<std::string> struct_file("s",
+        llvm::cl::desc("Struct info filename"),
+        llvm::cl::value_desc("struct_file"));
+static llvm::cl::opt<std::string> omp_file("t",
+        llvm::cl::desc("OpenMP file"),
+        llvm::cl::value_desc("omp_info"));
 static llvm::cl::opt<std::string> merge_file("u",
         llvm::cl::desc("Merge file"),
         llvm::cl::value_desc("merge_file"));
+static llvm::cl::opt<std::string> firstprivate_file("v",
+        llvm::cl::desc("firstprivate file"),
+        llvm::cl::value_desc("firstprivate_info"));
+static llvm::cl::opt<std::string> working_directory("w",
+        llvm::cl::desc("Working directory"),
+        llvm::cl::value_desc("work_dir"));
+static llvm::cl::opt<std::string> exit_file("x",
+        llvm::cl::desc("Function exit info file"),
+        llvm::cl::value_desc("exit_info"));
 static llvm::cl::opt<std::string> allocator_file("y",
         llvm::cl::desc("Allocator file"),
         llvm::cl::value_desc("allocator_file"));
+static llvm::cl::opt<std::string> noncheckpointing_file("z",
+        llvm::cl::desc("Non-checkpointing file"),
+        llvm::cl::value_desc("noncheckpointing_file"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -113,6 +117,7 @@ std::set<std::string> function_pointers_loaded;
 std::string merge_filename;
 std::vector<Merge> static_merges;
 std::vector<Merge> dynamic_merges;
+bool blockCheckpoints = false;
 
 static void writeMerges(std::vector<Merge> *l, std::string suffix) {
     std::ofstream out(merge_filename + suffix);
@@ -192,6 +197,231 @@ public:
   TransformASTConsumer(Rewriter &set_R, ASTContext &set_Context) :
           R(set_R), Context(set_Context) { }
 
+  void handleFunctionDecl(FunctionDecl *fdecl, clang::PresumedLoc presumed,
+          ParentTransform *visitor) {
+
+      if (fdecl->isThisDeclarationADefinition() &&
+              insertions->isMainFile(presumed.getFilename())) {
+          assert(fdecl != NULL);
+          curr_func = fdecl->getNameAsString();
+          curr_func_decl = fdecl;
+          definitions_in_main_file.insert(curr_func);
+
+          if (insertions->isNvCompilerFunction(curr_func)) return;
+
+          std::string filename(presumed.getFilename());
+
+          if (visitor->usesStackInfo()) {
+              insert_at_front = new std::vector<StackAlloc *>();
+
+              for (FunctionDecl::param_iterator i = fdecl->param_begin(),
+                      e = fdecl->param_end(); i != e; i++) {
+                  ParmVarDecl *param = *i;
+                  std::string mangled = constructMangledName(
+                          param->getName().str());
+                  StackAlloc *alloc = insertions->findStackAlloc(mangled);
+                  if (alloc != NULL) {
+                      insert_at_front->push_back(alloc);
+                  }
+              }
+
+              if (insert_at_front->empty()) insert_at_front = NULL;
+          } else {
+              insert_at_front = NULL;
+          }
+
+          std::stringstream id_str;
+          std::string demangled_filename =
+              remove_filename_insertions(filename);
+          id_str << demangled_filename << ":" << curr_func << ":" <<
+              presumed.getLine() << ":" << presumed.getColumn();
+
+          unsigned resetMangledLength;
+          if (visitor->requiresMangledVarsReset())
+              resetMangledLength = created_vars.size();
+          if (visitor->createsOMPTree())
+              visitor->resetOMPTree();
+          if (visitor->createsRegisterLabels())
+              visitor->resetRegisterLabels();
+          if (visitor->createsFunctionLabels()) {
+              int nlabels;
+              if (num_call_labels.find(id_str.str()) == num_call_labels.end()) {
+                  nlabels = 0;
+              } else {
+                  nlabels = num_call_labels[id_str.str()];
+              }
+              visitor->resetFunctionLabels(nlabels);
+          }
+          if (visitor->setsLastGoto())
+              visitor->resetLastGoto();
+          visitor->resetRootFlag();
+
+          insertions->resetHeapAllocIters();
+
+          // llvm::errs() << curr_func << ":\n";
+          // (*b)->dump();
+          // llvm::errs() << "\n\n";
+          visitor->Visit(fdecl->getBody());
+          visitor->VisitTopLevel(fdecl);
+
+          if (!visitor->requiresMangledVarsReset() &&
+                  visitor->createsFunctionLabels()) {
+              num_call_labels[id_str.str()] =
+                  visitor->get_current_function_label();
+          }
+
+          if (visitor->requiresMangledVarsReset()) {
+              while (created_vars.size() > resetMangledLength) {
+                  created_vars.pop_back();
+              }
+          }
+
+          if (dump_bodies &&
+                  insertions->findMatchingFunctionNullReturn(curr_func) !=
+                  NULL) {
+              /*
+               * Function declaration transformed during this pass with
+               * the specified suffix (e.g. "_quick", "_npm"). If this
+               * function does not end with that suffix, it was not
+               * transformed during this pass.
+               */
+              std::string function_decl = R.getRewrittenText(
+                      clang::SourceRange(fdecl->getLocStart(),
+                          fdecl->getBody()->getLocStart()));
+
+              // Remove leading whitespace
+              int index = 0;
+              while (isspace(function_decl[index])) index++;
+              function_decl = function_decl.substr(index);
+
+              // Find open paren for parameters
+              index = 0;
+              while (function_decl[index] != '(') index++;
+              int open_paren_index = index;
+              index++;
+
+              /*
+               * Find closing paren for parameters and trim the function
+               * decl to end there.
+               */
+              int nesting = 1;
+              while (nesting > 0) {
+                  if (function_decl[index] == '(') nesting++;
+                  else if (function_decl[index] == ')') nesting--;
+                  index++;
+              }
+              function_decl = function_decl.substr(0, index);
+
+              // Save the suffixed version of this function declaration
+              std::string old_function_decl = function_decl;
+
+              // Check that it is a suffixed declaration
+              index = open_paren_index;
+              /*
+               * Account for whitespace between function name and open
+               * paren.
+               */
+              while (isspace(old_function_decl[index - 1])) index--;
+              std::string suffix = "";
+              if (old_function_decl.size() > expected_suffix.size()) {
+                  suffix = old_function_decl.substr(index -
+                          expected_suffix.size(), expected_suffix.size());
+              }
+              if (suffix != expected_suffix) {
+                  return;
+              }
+              /*
+               * Convert back to the original declaration with the
+               * suffix removed. We could probably do this cleaner by
+               * getting it before the transformation pass.
+               */
+              old_function_decl = old_function_decl.substr(0,
+                      index - expected_suffix.size()) +
+                  old_function_decl.substr(index);
+
+              /*
+               * may be possible if a function is never called within
+               * its compilation unit, but is accessible outside? In which
+               * case we wouldn't need to add any declarations. also fails
+               * in the case of main.
+               */
+              int func_start_line = -1;
+              assert(function_starting_lines.find(curr_func) !=
+                      function_starting_lines.end());
+              if (earliest_call_line.find(curr_func) !=
+                      earliest_call_line.end()) {
+                  const int called_line = earliest_call_line[curr_func];
+                  for (std::map<std::string, int>::iterator s_i =
+                          function_starting_lines.begin(), s_e =
+                          function_starting_lines.end(); s_i != s_e; s_i++) {
+                      int curr = s_i->second;
+                      if (curr <= called_line && (func_start_line == -1 ||
+                                  curr > func_start_line)) {
+                          func_start_line = curr;
+                      }
+                  }
+
+                  if (function_starting_lines[curr_func] < func_start_line) {
+                      func_start_line = function_starting_lines[curr_func];
+                  }
+              } else {
+                  func_start_line = function_starting_lines[curr_func];
+              }
+              assert(func_start_line != -1);
+              /*
+               * If this function is either static (i.e. not externally visible)
+               * or inline then we can't load its symbols using dlopen/dlsym.
+               */
+              *dump_decls << curr_func << " " << filename << " " <<
+                  func_start_line << " " <<
+                  (!fdecl->isExternallyVisible() || fdecl->isInlineSpecified()) << " ";
+
+              if (visitor->transformsOriginal() ||
+                      fdecl->getName().str() != "main") {
+                  *dump_decls << function_decl << "; ";
+              }
+
+              if (visitor->transformsOriginal()) {
+                  *dump_decls << old_function_decl << "; ";
+              }
+              *dump_decls << "\n-----\n";
+
+              if (visitor->transformsOriginal() ||
+                      fdecl->getName().str() != "main") {
+                  clang::PresumedLoc fdeclStart = visitor->getSM()->getPresumedLoc(fdecl->getLocStart());
+                  *dump_bodies << "# " << fdeclStart.getLine() << " \"" <<
+                      fdeclStart.getFilename() << "\"\n";
+                  *dump_bodies <<
+                      R.getRewrittenText(fdecl->getSourceRange()) <<
+                      "\n\n";
+              }
+
+              if (visitor->transformsOriginal()) {
+                  *dump_bodies << old_function_decl << " { ";
+                  if (fdecl->getName().str() == "main") {
+                      assert(fdecl->getNumParams() == 2);
+                      *dump_bodies << "init_chimes(" <<
+                          fdecl->getParamDecl(0)->getName().str() << ", " <<
+                          fdecl->getParamDecl(1)->getName().str() << "); ";
+                  }
+                  if (!fdecl->getReturnType().getTypePtr()->isVoidType()) {
+                      *dump_bodies << "return ";
+                  }
+                  std::stringstream arg_ss;
+                  for (unsigned p = 0; p < fdecl->getNumParams(); p++) {
+                      const ParmVarDecl *parm = fdecl->getParamDecl(p);
+                      if (p != 0) arg_ss << ", ";
+                      arg_ss << parm->getName().str();
+                  }
+                  *dump_bodies << "(____chimes_replaying ? " <<
+                      fdecl->getName().str() << "_resumable(" <<
+                      arg_ss.str() << ") : " << fdecl->getName().str() <<
+                      expected_suffix << "(" << arg_ss.str() << ")); }\n\n";
+              }
+          }
+      }
+  }
+
   // Override the method that gets called for each parsed top-level
   // declaration.
   bool HandleTopLevelDecl(DeclGroupRef DR) override {
@@ -205,220 +435,30 @@ public:
         clang::SourceLocation loc = toplevel->getLocation();
         clang::PresumedLoc presumed = visitor->getSM()->getPresumedLoc(loc);
 
-        if (isa<FunctionDecl>(toplevel)) {
-            FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel);
+#ifdef VERBOSE
+        llvm::errs() << "Found some decl of type " <<
+            std::string(toplevel->getDeclKindName()) << " at " <<
+            presumed.getFilename() << ":" << presumed.getLine() << ":" <<
+            presumed.getColumn() << "\n";
+#endif
 
-            if (fdecl->isThisDeclarationADefinition() &&
-                    insertions->isMainFile(presumed.getFilename())) {
-                assert(fdecl != NULL);
-                curr_func = fdecl->getNameAsString();
-                curr_func_decl = fdecl;
-                definitions_in_main_file.insert(curr_func);
-
-                if (insertions->isNvCompilerFunction(curr_func)) continue;
-
-                clang::PresumedLoc pre_loc =
-                    visitor->getSM()->getPresumedLoc(loc);
-                std::string filename(pre_loc.getFilename());
-
-                if (visitor->usesStackInfo()) {
-                    insert_at_front = new std::vector<StackAlloc *>();
-
-                    for (FunctionDecl::param_iterator i = fdecl->param_begin(),
-                            e = fdecl->param_end(); i != e; i++) {
-                        ParmVarDecl *param = *i;
-                        std::string mangled = constructMangledName(
-                                param->getName().str());
-                        StackAlloc *alloc = insertions->findStackAlloc(mangled);
-                        if (alloc != NULL) {
-                            insert_at_front->push_back(alloc);
-                        }
-                    }
-
-                    if (insert_at_front->empty()) insert_at_front = NULL;
-                } else {
-                    insert_at_front = NULL;
-                }
-
-                std::stringstream id_str;
-                std::string demangled_filename =
-                    remove_filename_insertions(filename);
-                id_str << demangled_filename << ":" << curr_func << ":" <<
-                    pre_loc.getLine() << ":" << pre_loc.getColumn();
-
-                unsigned resetMangledLength;
-                if (visitor->requiresMangledVarsReset())
-                    resetMangledLength = created_vars.size();
-                if (visitor->createsOMPTree())
-                    visitor->resetOMPTree();
-                if (visitor->createsRegisterLabels())
-                    visitor->resetRegisterLabels();
-                if (visitor->createsFunctionLabels()) {
-                    int nlabels;
-                    if (num_call_labels.find(id_str.str()) == num_call_labels.end()) {
-                        nlabels = 0;
-                    } else {
-                        nlabels = num_call_labels[id_str.str()];
-                    }
-                    visitor->resetFunctionLabels(nlabels);
-                }
-                if (visitor->setsLastGoto())
-                    visitor->resetLastGoto();
-                visitor->resetRootFlag();
-
-                insertions->resetHeapAllocIters();
-
-                // llvm::errs() << curr_func << ":\n";
-                // (*b)->dump();
-                // llvm::errs() << "\n\n";
-                visitor->Visit(fdecl->getBody());
-                visitor->VisitTopLevel(fdecl);
-
-                if (!visitor->requiresMangledVarsReset() &&
-                        visitor->createsFunctionLabels()) {
-                    num_call_labels[id_str.str()] =
-                        visitor->get_current_function_label();
-                }
-
-                if (visitor->requiresMangledVarsReset()) {
-                    while (created_vars.size() > resetMangledLength) {
-                        created_vars.pop_back();
-                    }
-                }
-
-                if (dump_bodies &&
-                        insertions->findMatchingFunctionNullReturn(curr_func) !=
-                            NULL) {
-                    /*
-                     * Function declaration transformed during this pass with
-                     * the specified suffix (e.g. "_quick", "_npm"). If this
-                     * function does not end with that suffix, it was not
-                     * transformed during this pass.
-                     */
-                    std::string function_decl = R.getRewrittenText(
-                            clang::SourceRange(fdecl->getLocStart(),
-                                fdecl->getBody()->getLocStart()));
-
-                    // Remove leading whitespace
-                    int index = 0;
-                    while (isspace(function_decl[index])) index++;
-                    function_decl = function_decl.substr(index);
-
-                    // Find open paren for parameters
-                    index = 0;
-                    while (function_decl[index] != '(') index++;
-                    int open_paren_index = index;
-                    index++;
-
-                    /*
-                     * Find closing paren for parameters and trim the function
-                     * decl to end there.
-                     */
-                    int nesting = 1;
-                    while (nesting > 0) {
-                        if (function_decl[index] == '(') nesting++;
-                        else if (function_decl[index] == ')') nesting--;
-                        index++;
-                    }
-                    function_decl = function_decl.substr(0, index);
-
-                    // Save the suffixed version of this function declaration
-                    std::string old_function_decl = function_decl;
-
-                    // Check that it is a suffixed declaration
-                    index = open_paren_index;
-                    /*
-                     * Account for whitespace between function name and open
-                     * paren.
-                     */
-                    while (isspace(old_function_decl[index - 1])) index--;
-                    std::string suffix = "";
-                    if (old_function_decl.size() > expected_suffix.size()) {
-                        suffix = old_function_decl.substr(index -
-                                expected_suffix.size(), expected_suffix.size());
-                    }
-                    if (suffix != expected_suffix) {
-                        continue;
-                    }
-                    /*
-                     * Convert back to the original declaration with the
-                     * suffix removed. We could probably do this cleaner by
-                     * getting it before the transformation pass.
-                     */
-                    old_function_decl = old_function_decl.substr(0,
-                            index - expected_suffix.size()) +
-                        old_function_decl.substr(index);
-
-                    /*
-                     * may be possible if a function is never called within
-                     * its compilation unit, but is accessible outside? In which
-                     * case we wouldn't need to add any declarations. also fails
-                     * in the case of main.
-                     */
-                    int func_start_line = -1;
-                    assert(function_starting_lines.find(curr_func) !=
-                            function_starting_lines.end());
-                    if (earliest_call_line.find(curr_func) !=
-                            earliest_call_line.end()) {
-                        const int called_line = earliest_call_line[curr_func];
-                        for (std::map<std::string, int>::iterator s_i =
-                                function_starting_lines.begin(), s_e =
-                                function_starting_lines.end(); s_i != s_e; s_i++) {
-                            int curr = s_i->second;
-                            if (curr <= called_line && (func_start_line == -1 ||
-                                        curr > func_start_line)) {
-                                func_start_line = curr;
-                            }
-                        }
-
-                        if (function_starting_lines[curr_func] < func_start_line) {
-                            func_start_line = function_starting_lines[curr_func];
-                        }
-                    } else {
-                        func_start_line = function_starting_lines[curr_func];
-                    }
-                    assert(func_start_line != -1);
-                    *dump_decls << curr_func << " " << filename << " " <<
-                        func_start_line << " ";
-
-                    if (visitor->transformsOriginal() ||
-                            fdecl->getName().str() != "main") {
-                        *dump_decls << function_decl << "; ";
-                    }
-
-                    if (visitor->transformsOriginal()) {
-                        *dump_decls << old_function_decl << "; ";
-                    }
-                    *dump_decls << "\n-----\n";
-
-                    if (visitor->transformsOriginal() ||
-                            fdecl->getName().str() != "main") {
-                        *dump_bodies <<
-                            R.getRewrittenText(fdecl->getSourceRange()) <<
-                            "\n\n";
-                    }
-
-                    if (visitor->transformsOriginal()) {
-                        *dump_bodies << old_function_decl << " { ";
-                        if (fdecl->getName().str() == "main") {
-                            *dump_bodies << "init_chimes(); ";
-                        }
-                        if (!fdecl->getReturnType().getTypePtr()->isVoidType()) {
-                            *dump_bodies << "return ";
-                        }
-                        std::stringstream arg_ss;
-                        for (unsigned p = 0; p < fdecl->getNumParams(); p++) {
-                            const ParmVarDecl *parm = fdecl->getParamDecl(p);
-                            if (p != 0) arg_ss << ", ";
-                            arg_ss << parm->getName().str();
-                        }
-                        *dump_bodies << "(____chimes_replaying ? " <<
-                            fdecl->getName().str() << "_resumable(" <<
-                            arg_ss.str() << ") : " << fdecl->getName().str() <<
-                            expected_suffix << "(" << arg_ss.str() << ")); }\n\n";
-                    }
+        if (LinkageSpecDecl *ldecl = clang::dyn_cast<LinkageSpecDecl>(toplevel)) {
+            for (DeclContext::decl_iterator di = ldecl->decls_begin(),
+                    de = ldecl->decls_end(); di != de; di++) {
+                Decl *curr_linkage_decl = *di;
+                if (FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(
+                            curr_linkage_decl)) {
+                    handleFunctionDecl(fdecl, presumed, visitor);
                 }
             }
+        } else if (FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel)) {
+#ifdef VERBOSE
+            llvm::errs() << "Looking at decl \"" << fdecl->getNameAsString() <<
+                "\" in " << presumed.getFilename() << ":" <<
+                presumed.getLine() << ":" << presumed.getColumn() << "\n";
+#endif
+
+            handleFunctionDecl(fdecl, presumed, visitor);
         }
     }
 
@@ -490,7 +530,7 @@ int main(int argc, const char **argv) {
   check_opt(original_file, "Original file");
   check_opt(diag_file, "Diagnostics file");
   check_opt(working_directory, "Working directory");
-  check_opt(contains_line_markings, "Line markings flag");
+  check_opt(no_checkpoint, "No checkpoint");
   check_opt(func_file, "Function file");
   check_opt(call_file, "Callsite file");
   check_opt(exit_file, "Exit file");
@@ -506,6 +546,7 @@ int main(int argc, const char **argv) {
   check_opt(function_pointers_loaded_file, "Function pointers loaded file");
   check_opt(merge_file, "Merge file");
   check_opt(allocator_file, "Allocator file");
+  check_opt(noncheckpointing_file, "Non-checkpointing file");
 
   merge_filename = std::string(merge_file.c_str());
 
@@ -530,9 +571,10 @@ int main(int argc, const char **argv) {
   }
   infile.close();
 
-  bool updateFile = true;
-  if (contains_line_markings.compare("true") == 0) {
-      updateFile = false;
+  assert(no_checkpoint.compare("true") == 0 ||
+          no_checkpoint.compare("false") == 0);
+  if (no_checkpoint.compare("true") == 0) {
+      blockCheckpoints = true;
   }
 
   assert(op.getSourcePathList().size() == 1);
@@ -547,7 +589,7 @@ int main(int argc, const char **argv) {
               working_directory.c_str(), func_file.c_str(), call_file.c_str(),
               exit_file.c_str(), reachable_file.c_str(), omp_file.c_str(),
               firstprivate_file.c_str(), call_tree_file.c_str(),
-              allocator_file.c_str());
+              allocator_file.c_str(), noncheckpointing_file.c_str());
 
   // Dump module ID
   std::ofstream module_id_stream;
@@ -560,9 +602,6 @@ int main(int argc, const char **argv) {
 
   passes.push_back(new Pass(new StartExitPass(), ".start", "", ""));
   passes.push_back(new Pass(new CallLabelInsertPass(), ".lbl", "", ""));
-
-  // passes.push_back(new Pass(new CallingAndOMPPass(true), ".garbage",
-  //             quick_version_file.c_str(), "_quick"));
   passes.push_back(new Pass(new CallingAndOMPPass(false), ".register", "", ""));
 
   std::unique_ptr<FrontendActionFactory> factory_ptr = newFrontendActionFactory<
@@ -582,9 +621,6 @@ int main(int argc, const char **argv) {
       } else {
           std::vector<std::string> inputs; inputs.push_back(current_output_file);
           Tool = new ClangTool(op.getCompilations(), inputs);
-          if (updateFile) {
-              insertions->updateMainFile(current_output_file);
-          }
           input_file = current_output_file;
       }
 

@@ -1,0 +1,88 @@
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|npRow|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|npCol|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|myRow|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|myCol|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|threadNum|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|numThreads|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|minPer|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|per|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|row|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|col|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c gridInfo|____chimes_ret_var_1|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c qSort|b|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c qSort|a|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c qSort|left|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c qSort|right|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c qSort|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort|b|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort|left|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort|right|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort|t|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c qSort_both|y|0 " i64* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c qSort_both|a|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c qSort_both|x|0 " i64* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c qSort_both|n|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c qSort_both|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort_both|y|0 " i64* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort_both|a|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort_both|left|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort_both|right|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort_both|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort_both|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort_both|t|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c bubbleSort_both|lT|0 " i64 " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|seqData|0 " %struct.seqdat* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|simMatrix|0 " %struct.simmat* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|minScore|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|maxReports|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|minSeparation|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|r|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|n|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|m|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|sortReports|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|report|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|index|0 " i32* " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|best|0 " i32* " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|goodEndsI|0 " i32* " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|goodEndsJ|0 " i32* " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|gapFirst|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|gapExtend|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|worst|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|iBeg|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|iEnd|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|jBeg|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|jEnd|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|myRow|0 " i32 " 32 0 0 1 pairwiseAlign
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|myCol|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|npRow|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|npCol|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|myTaskID|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|threadNum|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|maxThreads|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|matchLimit|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|mainSeq|0 " i8* " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|matchSeq|0 " i8* " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|weights|0 " i8** " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|goodScores|0 " i64* " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|scores|0 " i64* " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|V|0 " i64* " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|F|0 " i64* " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|G|0 " i64 " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|Vp|0 " i64 " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|E|0 " i64 " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|W|0 " i64 " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|llMinScore|0 " i64 " 64 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|A|0 " %struct.astr* " 64 1 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|beginTime|0 " double " 64 0 0 1 getSeconds
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|endTime|0 " double " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c pairwiseAlign|____chimes_ret_var_2|0 " %struct.astr* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c freeA|A|0 " %struct.astr* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c freeA|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c freeA|____chimes_ret_var_3|0 " %struct.astr* " 64 1 0 0

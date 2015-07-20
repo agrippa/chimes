@@ -6,7 +6,7 @@ import os
 import sys
 from common import run_frontend_test, parse_argv, \
                    CHIMES_HOME, construct_simple_frontend_test, find_file, \
-                   get_platform_directory, FrontendTest, set_custom_compiler
+                   get_platform_directory, FrontendTest, is_rodinia_supported, is_spec_supported
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 OMP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/openmp'
@@ -19,59 +19,32 @@ OMP_H = find_file('omp.h', '/usr/')
 SIMPLE_TESTS = ['basic_parallel.cpp', 'nested_parallel.cpp', 'for_parallel.cpp',
                 'critical.cpp', 'barrier.cpp']
 COMD_OMP = FrontendTest('CoMD-OMP',
-                    ['CoMD/src-openmp/CoMD.c', 'CoMD/src-openmp/decomposition.c',
-                     'CoMD/src-openmp/haloExchange.c', 'CoMD/src-openmp/linkCells.c',
-                     'CoMD/src-openmp/mycommand.c',
-                     'CoMD/src-openmp/performanceTimers.c',
-                     'CoMD/src-openmp/timestep.c', 'CoMD/src-openmp/cmdLineParser.c',
-                     'CoMD/src-openmp/eam.c', 'CoMD/src-openmp/initAtoms.c',
-                     'CoMD/src-openmp/ljForce.c', 'CoMD/src-openmp/parallel.c',
-                     'CoMD/src-openmp/random.c', 'CoMD/src-openmp/yamlOutput.c'],
-                    ['CoMD-openmp/CoMD.c.pre.transformed.cpp',
-                     'CoMD-openmp/decomposition.c.pre.transformed.cpp',
-                     'CoMD-openmp/haloExchange.c.pre.transformed.cpp',
-                     'CoMD-openmp/linkCells.c.pre.transformed.cpp',
-                     'CoMD-openmp/mycommand.c.pre.transformed.cpp',
-                     'CoMD-openmp/performanceTimers.c.pre.transformed.cpp',
-                     'CoMD-openmp/timestep.c.pre.transformed.cpp',
-                     'CoMD-openmp/cmdLineParser.c.pre.transformed.cpp',
-                     'CoMD-openmp/eam.c.pre.transformed.cpp',
-                     'CoMD-openmp/initAtoms.c.pre.transformed.cpp',
-                     'CoMD-openmp/ljForce.c.pre.transformed.cpp',
-                     'CoMD-openmp/parallel.c.pre.transformed.cpp',
-                     'CoMD-openmp/random.c.pre.transformed.cpp',
-                     'CoMD-openmp/yamlOutput.c.pre.transformed.cpp'],
-                    ['CoMD-openmp/CoMD', 'CoMD-openmp/decomposition', 'CoMD-openmp/haloExchange',
-                     'CoMD-openmp/linkCells', 'CoMD-openmp/mycommand',
-                     'CoMD-openmp/performanceTimers', 'CoMD-openmp/timestep',
-                     'CoMD-openmp/cmdLineParser', 'CoMD-openmp/eam', 'CoMD-openmp/initAtoms',
-                     'CoMD-openmp/ljForce', 'CoMD-openmp/parallel', 'CoMD-openmp/random',
-                     'CoMD-openmp/yamlOutput'], False, includes=[os.path.dirname(OMP_H)])
+                    ['src-openmp/CoMD.c', 'src-openmp/decomposition.c',
+                     'src-openmp/haloExchange.c', 'src-openmp/linkCells.c',
+                     'src-openmp/mycommand.c',
+                     'src-openmp/performanceTimers.c',
+                     'src-openmp/timestep.c', 'src-openmp/cmdLineParser.c',
+                     'src-openmp/eam.c', 'src-openmp/initAtoms.c',
+                     'src-openmp/ljForce.c', 'src-openmp/parallel.c',
+                     'src-openmp/random.c', 'src-openmp/yamlOutput.c'],
+                    'CoMD-openmp', False, src_folder='CoMD',
+                    includes=[os.path.dirname(OMP_H)])
 LULESH_OMP = FrontendTest('Lulesh-OMP', ['lulesh/LULESH_OMP.cc'],
-                      ['LULESH_OMP.cc.pre.transformed.cpp'], ['lulesh'], False)
+                      'lulesh', False, extra_cli_args='-y -O0')
 ISO3D = FrontendTest('Iso3D-OMP',
                      ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'],
-                     ['iso3d.cpp.pre.transformed.cpp',
-                      'common.cpp.pre.transformed.cpp',
-                      'common3d.cpp.pre.transformed.cpp'],
-                     ['iso3d', 'common', 'common3d'],
-                     False,
+                     'iso3d', False,
                      includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                      dependencies=[os.path.join(OMP_EXAMPLES_DIR, 'lib',
                                                 'libcommon2d.so')])
 SMITH_WATERMAN_OMP = FrontendTest('SmithWaterman-OMP',
                                   ['smithWaterman/smith_waterman_omp.cpp'],
-                                  ['smith_waterman_omp.cpp.pre.transformed.cpp'],
-                                  ['smith_waterman'],
-                                  False)
-UTS_OMP = FrontendTest('UTS-OMP', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_shm.c'],
-                   ['brg_sha1.c.pre.transformed.cpp',
-                    'uts.c.pre.transformed.cpp',
-                    'uts_shm.c.pre.transformed.cpp'],
-                   ['brg_sha1', 'uts', 'uts_shm'], False, extra_cli_args='-D BRG_RNG')
+                                  'smith_waterman', False)
+UTS_OMP = FrontendTest('UTS-OMP', ['rng/brg_sha1.c', 'uts.c', 'uts_shm.c'],
+                       'uts', False, src_folder='uts',
+                       extra_cli_args='-D BRG_RNG')
 RAY_TRACER_OMP = FrontendTest('RayTracer-OMP', ['ray_tracer.c'],
-                              ['ray_tracer.c.pre.transformed.cpp'],
-                              ['ray_tracer'], False)
+                              'ray_tracer', False)
 
 TESTS = []
 for simple in SIMPLE_TESTS:
@@ -86,10 +59,20 @@ TESTS.append(SMITH_WATERMAN_OMP)
 TESTS.append(UTS_OMP)
 TESTS.append(RAY_TRACER_OMP)
 
+if is_rodinia_supported():
+    from rodinia_tests import ALL_RODINIA_FRONTEND_TESTS
+    for t in ALL_RODINIA_FRONTEND_TESTS:
+        t.extra_cli_args += ' -D OPEN'
+    TESTS.extend(ALL_RODINIA_FRONTEND_TESTS)
+
+if is_spec_supported():
+    from spec_tests import ALL_SPEC_FRONTEND_TESTS
+    for t in ALL_SPEC_FRONTEND_TESTS:
+        t.extra_cli_args += ' -D SPEC_OMP -D SPEC_OPENMP '
+    TESTS.extend(ALL_SPEC_FRONTEND_TESTS)
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
-    set_custom_compiler(CONFIG)
     CONFIG.add_custom_compiler_flag('-fopenmp')
 
     for t in TESTS:

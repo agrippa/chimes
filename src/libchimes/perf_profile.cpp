@@ -20,8 +20,8 @@ unsigned long long perf_profile::current_time_ns() {
 #ifdef __MACH__
     struct timeval t;
     VERIFY(gettimeofday(&t, NULL) == 0); 
-    unsigned long long s = 1000000ULL * (unsigned long long)t.tv_sec;
-    return (unsigned long long)t.tv_usec + s;
+    unsigned long long s = 1000000000ULL * (unsigned long long)t.tv_sec;
+    return ((unsigned long long)t.tv_usec) * 1000ULL + s;
 #if 0
     clock_serv_t cclock;
     mach_timespec_t mts;
@@ -34,8 +34,8 @@ unsigned long long perf_profile::current_time_ns() {
 #else
     struct timespec t ={0,0};
     clock_gettime(CLOCK_MONOTONIC, &t);
-    unsigned long long s = 1000000ULL * (unsigned long long)t.tv_sec;
-    return (((unsigned long long)t.tv_nsec)/1000ULL) + s;
+    unsigned long long s = 1000000000ULL * (unsigned long long)t.tv_sec;
+    return (((unsigned long long)t.tv_nsec)) + s;
 #endif
 }
 

@@ -83,12 +83,14 @@ if __name__ == '__main__':
   previous_line = None
   line = fp.readline()
 
+  line_no = -1
   while len(line) > 0:
       stripped_line = line.strip()
 
       tokens = stripped_line.split()
+      if len(tokens) >= 2 and tokens[0] == '#':
+          line_no = getLineNumberFromPreprocessorLine(stripped_line)
       if len(tokens) >= 2 and tokens[0] == '#pragma' and tokens[1] == 'omp':
-          line_no = getLineNumberFromPreprocessorLine(previous_line)
 
           unfiltered_acc = line
           acc = stripped_line
@@ -109,8 +111,6 @@ if __name__ == '__main__':
               unfiltered_acc = unfiltered_acc.strip()
 
               for clause in list_of_clauses:
-                  assert(count_lines == (clause.ending_line - line_no))
-
                   unfiltered_acc += ' firstprivate(' + clause.varname + ')'
               unfiltered_acc += '\n'
 

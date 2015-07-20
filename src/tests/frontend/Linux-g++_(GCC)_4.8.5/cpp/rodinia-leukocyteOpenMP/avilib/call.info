@@ -1,0 +1,358 @@
+malloc AVI_open_output_file 223 20 18 0
+memset AVI_open_output_file 229 4 0 18 0 0
+open AVI_open_output_file 238 16 0 115 0 0
+free AVI_open_output_file 242 7 0 18
+avi_write AVI_open_output_file 250 8 0 0 6 0
+close AVI_open_output_file 253 7 0 0
+free AVI_open_output_file 255 7 0 18
+write avi_write 81 11 0 0 182 0
+strncmp AVI_set_video 279 7 0 247 7222 0
+memset AVI_set_video 280 6 0 243 0 0
+memcpy AVI_set_video 282 6 0 243 247 0
+avi_update_header AVI_set_video 287 4 0 243
+memcpy avi_update_header 356 23 0 268 7225 0
+long2str avi_update_header 357 23 0 268 0
+memcpy avi_update_header 358 23 0 268 7225 0
+memcpy avi_update_header 362 23 0 268 7225 0
+long2str avi_update_header 363 23 0 268 0
+memcpy avi_update_header 365 23 0 268 7225 0
+memcpy avi_update_header 378 23 0 268 7225 0
+long2str avi_update_header 379 23 0 268 0
+long2str avi_update_header 380 23 0 268 0
+long2str avi_update_header 383 23 0 268 0
+long2str avi_update_header 384 23 0 268 0
+long2str avi_update_header 389 23 0 268 0
+long2str avi_update_header 390 23 0 268 0
+long2str avi_update_header 391 23 0 268 0
+long2str avi_update_header 393 23 0 268 0
+long2str avi_update_header 395 23 0 268 0
+long2str avi_update_header 396 23 0 268 0
+long2str avi_update_header 397 23 0 268 0
+long2str avi_update_header 399 23 0 268 0
+long2str avi_update_header 400 23 0 268 0
+long2str avi_update_header 401 23 0 268 0
+long2str avi_update_header 402 23 0 268 0
+memcpy avi_update_header 407 23 0 268 7225 0
+long2str avi_update_header 408 23 0 268 0
+memcpy avi_update_header 410 23 0 268 7225 0
+memcpy avi_update_header 414 23 0 268 7225 0
+long2str avi_update_header 415 23 0 268 0
+memcpy avi_update_header 416 23 0 268 7225 0
+memcpy avi_update_header 417 23 0 268 1581 0
+long2str avi_update_header 418 23 0 268 0
+long2str avi_update_header 419 23 0 268 0
+long2str avi_update_header 420 23 0 268 0
+long2str avi_update_header 421 23 0 268 0
+long2str avi_update_header 422 23 0 268 0
+long2str avi_update_header 423 23 0 268 0
+long2str avi_update_header 424 23 0 268 0
+long2str avi_update_header 425 23 0 268 0
+long2str avi_update_header 426 23 0 268 0
+long2str avi_update_header 427 23 0 268 0
+long2str avi_update_header 428 23 0 268 0
+long2str avi_update_header 429 23 0 268 0
+memcpy avi_update_header 435 23 0 268 7225 0
+long2str avi_update_header 436 23 0 268 0
+long2str avi_update_header 437 23 0 268 0
+long2str avi_update_header 438 23 0 268 0
+long2str avi_update_header 439 23 0 268 0
+memcpy avi_update_header 441 23 0 268 1581 0
+long2str avi_update_header 443 23 0 268 0
+long2str avi_update_header 444 23 0 268 0
+long2str avi_update_header 445 23 0 268 0
+long2str avi_update_header 446 23 0 268 0
+long2str avi_update_header 447 23 0 268 0
+long2str avi_update_header 451 4 0 268 0
+avi_sampsize avi_update_header 458 19 0 1581 0
+memcpy avi_update_header 460 27 0 268 7225 0
+long2str avi_update_header 461 27 0 268 0
+memcpy avi_update_header 463 27 0 268 7225 0
+memcpy avi_update_header 467 27 0 268 7225 0
+long2str avi_update_header 468 27 0 268 0
+memcpy avi_update_header 469 27 0 268 7225 0
+long2str avi_update_header 473 27 0 268 0
+long2str avi_update_header 476 27 0 268 0
+long2str avi_update_header 477 27 0 268 0
+long2str avi_update_header 478 27 0 268 0
+long2str avi_update_header 481 27 0 268 0
+long2str avi_update_header 482 27 0 268 0
+long2str avi_update_header 483 27 0 268 0
+long2str avi_update_header 484 27 0 268 0
+long2str avi_update_header 485 27 0 268 0
+long2str avi_update_header 486 27 0 268 0
+long2str avi_update_header 489 27 0 268 0
+long2str avi_update_header 491 27 0 268 0
+long2str avi_update_header 492 27 0 268 0
+memcpy avi_update_header 498 27 0 268 7225 0
+long2str avi_update_header 499 27 0 268 0
+long2str avi_update_header 502 27 0 268 0
+long2str avi_update_header 504 27 0 268 0
+long2str avi_update_header 514 8 0 268 0
+long2str avi_update_header 519 4 0 268 0
+fprintf avi_update_header 532 8 0 1622 7235
+exit avi_update_header 533 8 0 0
+memcpy avi_update_header 536 23 0 268 7225 0
+long2str avi_update_header 537 23 0 268 0
+memset avi_update_header 538 4 0 268 0 0
+strlen avi_update_header 542 15 0 7237
+sprintf avi_update_header 543 6 0 7237 7238 7239 7225
+strlen avi_update_header 544 37 0 7237
+memcpy avi_update_header 544 37 0 268 7237 0
+memcpy avi_update_header 551 23 0 268 7225 0
+long2str avi_update_header 552 23 0 268 0
+memcpy avi_update_header 553 23 0 268 7225 0
+lseek avi_update_header 558 9 0 0 0 0
+avi_write avi_update_header 559 9 0 0 268 0
+lseek avi_update_header 560 2 0 0 0 0
+fprintf AVI_set_audio 301 6 0 1622 7224 0
+exit AVI_set_audio 302 6 0 0
+avi_update_header AVI_set_audio 311 4 0 1683
+avi_write_data AVI_write_frame 932 7 0 1839 1840 0 0 0
+sprintf avi_write_data 903 4 0 1850 7262 0
+avi_add_index_entry avi_write_data 905 20 0 1959 1850 0 0 0
+avi_add_index_entry avi_write_data 905 85 0 1959 7225 0 0 0
+avi_add_chunk avi_write_data 914 20 0 1959 1850 1960 0
+avi_add_chunk avi_write_data 914 106 0 1959 7225 1960 0
+avi_add_index_entry AVI_dup_frame 945 8 0 2023 7225 0 0 0
+realloc avi_add_index_entry 177 12 2077 2077 0
+memcpy avi_add_index_entry 191 4 0 2077 2153 0
+long2str avi_add_index_entry 192 4 0 2077 0
+long2str avi_add_index_entry 193 4 0 2077 0
+long2str avi_add_index_entry 194 4 0 2077 0
+avi_write_data AVI_write_audio 955 8 0 2211 2212 0 0 0
+str2ulong AVI_append_audio 972 12 0 2255
+str2ulong AVI_append_audio 973 9 0 2255
+long2str AVI_append_audio 976 3 0 2255 0
+lseek AVI_append_audio 983 3 0 0 0 0
+long2str AVI_append_audio 984 3 0 2221 0
+avi_write AVI_append_audio 985 3 0 0 2221 0
+lseek AVI_append_audio 987 3 0 0 0 0
+avi_write AVI_append_audio 992 3 0 0 2363 0
+avi_close_output_file AVI_close 1042 31 0 2565
+close AVI_close 1049 4 0 0
+free AVI_close 1050 19 0 2537
+free AVI_close 1051 27 0 2537
+free AVI_close 1054 4 0 2565
+avi_add_chunk avi_close_output_file 599 10 0 3994 7225 2613 0
+memcpy avi_close_output_file 624 23 0 2580 7225 0
+long2str avi_close_output_file 625 23 0 2580 0
+memcpy avi_close_output_file 626 23 0 2580 7225 0
+memcpy avi_close_output_file 630 23 0 2580 7225 0
+long2str avi_close_output_file 631 23 0 2580 0
+memcpy avi_close_output_file 633 23 0 2580 7225 0
+memcpy avi_close_output_file 646 23 0 2580 7225 0
+long2str avi_close_output_file 647 23 0 2580 0
+long2str avi_close_output_file 648 23 0 2580 0
+long2str avi_close_output_file 651 23 0 2580 0
+long2str avi_close_output_file 652 23 0 2580 0
+long2str avi_close_output_file 657 23 0 2580 0
+long2str avi_close_output_file 658 23 0 2580 0
+long2str avi_close_output_file 659 23 0 2580 0
+long2str avi_close_output_file 661 23 0 2580 0
+long2str avi_close_output_file 667 23 0 2580 0
+long2str avi_close_output_file 668 23 0 2580 0
+long2str avi_close_output_file 669 23 0 2580 0
+long2str avi_close_output_file 671 23 0 2580 0
+long2str avi_close_output_file 672 23 0 2580 0
+long2str avi_close_output_file 673 23 0 2580 0
+long2str avi_close_output_file 674 23 0 2580 0
+memcpy avi_close_output_file 679 23 0 2580 7225 0
+long2str avi_close_output_file 680 23 0 2580 0
+memcpy avi_close_output_file 682 23 0 2580 7225 0
+memcpy avi_close_output_file 686 23 0 2580 7225 0
+long2str avi_close_output_file 687 23 0 2580 0
+memcpy avi_close_output_file 688 23 0 2580 7225 0
+memcpy avi_close_output_file 689 23 0 2580 3994 0
+long2str avi_close_output_file 690 23 0 2580 0
+long2str avi_close_output_file 691 23 0 2580 0
+long2str avi_close_output_file 692 23 0 2580 0
+long2str avi_close_output_file 693 23 0 2580 0
+long2str avi_close_output_file 694 23 0 2580 0
+long2str avi_close_output_file 695 23 0 2580 0
+long2str avi_close_output_file 696 23 0 2580 0
+long2str avi_close_output_file 697 23 0 2580 0
+long2str avi_close_output_file 698 23 0 2580 0
+long2str avi_close_output_file 699 23 0 2580 0
+long2str avi_close_output_file 700 23 0 2580 0
+long2str avi_close_output_file 701 23 0 2580 0
+memcpy avi_close_output_file 707 23 0 2580 7225 0
+long2str avi_close_output_file 708 23 0 2580 0
+long2str avi_close_output_file 709 23 0 2580 0
+long2str avi_close_output_file 710 23 0 2580 0
+long2str avi_close_output_file 711 23 0 2580 0
+memcpy avi_close_output_file 713 23 0 2580 3994 0
+long2str avi_close_output_file 715 23 0 2580 0
+long2str avi_close_output_file 716 23 0 2580 0
+long2str avi_close_output_file 717 23 0 2580 0
+long2str avi_close_output_file 718 23 0 2580 0
+long2str avi_close_output_file 719 23 0 2580 0
+long2str avi_close_output_file 723 4 0 2580 0
+avi_sampsize avi_close_output_file 732 14 0 3994 0
+memcpy avi_close_output_file 734 22 0 2580 7225 0
+long2str avi_close_output_file 735 22 0 2580 0
+memcpy avi_close_output_file 737 22 0 2580 7225 0
+memcpy avi_close_output_file 741 22 0 2580 7225 0
+long2str avi_close_output_file 742 22 0 2580 0
+memcpy avi_close_output_file 743 22 0 2580 7225 0
+long2str avi_close_output_file 747 22 0 2580 0
+long2str avi_close_output_file 750 22 0 2580 0
+long2str avi_close_output_file 751 22 0 2580 0
+long2str avi_close_output_file 752 22 0 2580 0
+long2str avi_close_output_file 755 22 0 2580 0
+long2str avi_close_output_file 756 22 0 2580 0
+long2str avi_close_output_file 757 22 0 2580 0
+long2str avi_close_output_file 758 22 0 2580 0
+long2str avi_close_output_file 759 22 0 2580 0
+long2str avi_close_output_file 760 22 0 2580 0
+long2str avi_close_output_file 763 22 0 2580 0
+long2str avi_close_output_file 765 22 0 2580 0
+long2str avi_close_output_file 766 22 0 2580 0
+memcpy avi_close_output_file 772 22 0 2580 7225 0
+long2str avi_close_output_file 773 22 0 2580 0
+long2str avi_close_output_file 776 22 0 2580 0
+long2str avi_close_output_file 778 22 0 2580 0
+long2str avi_close_output_file 788 8 0 2580 0
+long2str avi_close_output_file 793 4 0 2580 0
+memcpy avi_close_output_file 799 23 0 2580 7225 0
+long2str avi_close_output_file 803 23 0 2580 0
+memcpy avi_close_output_file 804 23 0 2580 7225 0
+memcpy avi_close_output_file 814 23 0 2580 7225 0
+long2str avi_close_output_file 815 23 0 2580 0
+sprintf avi_close_output_file 817 4 0 7237 7238 7239 7225
+memset avi_close_output_file 818 4 0 2580 0 0
+strlen avi_close_output_file 819 35 0 7237
+memcpy avi_close_output_file 819 35 0 2580 7237 0
+fprintf avi_close_output_file 844 7 0 1622 7235
+exit avi_close_output_file 845 7 0 0
+memcpy avi_close_output_file 848 23 0 2580 7225 0
+long2str avi_close_output_file 849 23 0 2580 0
+memset avi_close_output_file 850 4 0 2580 0 0
+memcpy avi_close_output_file 856 23 0 2580 7225 0
+long2str avi_close_output_file 857 23 0 2580 0
+memcpy avi_close_output_file 858 23 0 2580 7225 0
+lseek avi_close_output_file 863 9 0 0 0 0
+avi_write avi_close_output_file 864 9 0 0 2580 0
+malloc AVI_open_input_file 1073 19 18 0
+memset AVI_open_input_file 1079 3 0 18 0 0
+open AVI_open_input_file 1085 15 0 4060 0
+free AVI_open_input_file 1089 7 0 18
+avi_parse_input_file AVI_open_input_file 1093 3 0 18 0
+avi_read avi_parse_input_file 1144 8 0 0 4083 0
+AVI_close avi_parse_input_file 1144 46 0 5322
+strncasecmp avi_parse_input_file 1146 8 0 4083 7225 0
+strncasecmp avi_parse_input_file 1147 8 0 4083 7225 0
+AVI_close avi_parse_input_file 1147 45 0 5322
+avi_read avi_parse_input_file 1157 11 0 0 4083 0
+str2ulong avi_parse_input_file 1159 11 0 4083
+strncasecmp avi_parse_input_file 1162 11 0 4083 7225 0
+avi_read avi_parse_input_file 1164 14 0 0 4083 0
+AVI_close avi_parse_input_file 1164 50 0 5322
+strncasecmp avi_parse_input_file 1166 14 0 4083 7225 0
+malloc avi_parse_input_file 1169 43 4375 0
+AVI_close avi_parse_input_file 1170 32 0 5322
+lseek avi_parse_input_file 1174 22 0 0 0 0
+avi_read avi_parse_input_file 1176 17 0 0 4375 0
+AVI_close avi_parse_input_file 1176 66 0 5322
+strncasecmp avi_parse_input_file 1177 24 0 4083 7225 0
+lseek avi_parse_input_file 1180 31 0 0 0 0
+lseek avi_parse_input_file 1181 13 0 0 0 0
+lseek avi_parse_input_file 1182 22 0 0 0 0
+strncasecmp avi_parse_input_file 1185 21 0 4083 7225 0
+malloc avi_parse_input_file 1192 47 4854 0
+AVI_close avi_parse_input_file 1193 28 0 5322
+avi_read avi_parse_input_file 1194 13 0 0 4854 0
+AVI_close avi_parse_input_file 1194 64 0 5322
+lseek avi_parse_input_file 1195 19 0 0 0 0
+AVI_close avi_parse_input_file 1200 22 0 5322
+AVI_close avi_parse_input_file 1201 27 0 5322
+strncasecmp avi_parse_input_file 1209 10 0 4375 7225 0
+str2ulong avi_parse_input_file 1211 11 0 4375
+strncasecmp avi_parse_input_file 1216 11 0 4375 7225 0
+strncasecmp avi_parse_input_file 1219 14 0 4375 7225 0
+memcpy avi_parse_input_file 1221 13 0 5322 4375 0
+str2ulong avi_parse_input_file 1227 21 0 4375
+str2ulong avi_parse_input_file 1228 20 0 4375
+str2ulong avi_parse_input_file 1230 33 0 4375
+strncasecmp avi_parse_input_file 1235 24 0 4375 7225 0
+fprintf avi_parse_input_file 1244 7 0 1622 7224 0
+str2ulong avi_parse_input_file 1248 41 0 4375
+avi_sampsize avi_parse_input_file 1248 67 0 5322 0
+strncasecmp avi_parse_input_file 1260 20 0 4375 7225 0
+str2ulong avi_parse_input_file 1266 26 0 4375
+str2ulong avi_parse_input_file 1267 27 0 4375
+memcpy avi_parse_input_file 1272 6 0 5322 4375 0
+str2ushort avi_parse_input_file 1278 43 0 4375
+str2ushort avi_parse_input_file 1283 45 0 4375
+str2ulong avi_parse_input_file 1284 44 0 4375
+str2ulong avi_parse_input_file 1286 40 0 4375
+str2ushort avi_parse_input_file 1288 44 0 4375
+free avi_parse_input_file 1302 4 0 4375
+AVI_close avi_parse_input_file 1304 45 0 5322
+lseek avi_parse_input_file 1321 4 0 0 0 0
+strncasecmp avi_parse_input_file 1339 42 0 4854 5322 0
+AVI_close avi_parse_input_file 1341 27 0 5322
+str2ulong avi_parse_input_file 1343 13 0 4854
+str2ulong avi_parse_input_file 1344 13 0 4854
+lseek avi_parse_input_file 1346 7 0 0 0 0
+avi_read avi_parse_input_file 1347 10 0 0 4083 0
+AVI_close avi_parse_input_file 1347 43 0 5322
+strncasecmp avi_parse_input_file 1348 11 0 4083 4854 0
+str2ulong avi_parse_input_file 1349 7 0 4083
+lseek avi_parse_input_file 1355 10 0 0 0 0
+avi_read avi_parse_input_file 1356 13 0 0 4083 0
+AVI_close avi_parse_input_file 1356 46 0 5322
+strncasecmp avi_parse_input_file 1357 14 0 4083 4854 0
+str2ulong avi_parse_input_file 1357 68 0 4083
+lseek avi_parse_input_file 1369 7 0 0 0 0
+avi_read avi_parse_input_file 1375 14 0 0 4083 0
+str2ulong avi_parse_input_file 1376 14 0 4083
+strncasecmp avi_parse_input_file 1380 13 0 4083 7225 0
+lseek avi_parse_input_file 1382 13 0 0 0 0
+lseek avi_parse_input_file 1393 54 0 0 0 0
+avi_add_index_entry avi_parse_input_file 1393 5 0 5322 4083 0 0 0
+lseek avi_parse_input_file 1396 10 0 0 0 0
+strncasecmp avi_parse_input_file 1408 10 0 4854 5322 0
+strncasecmp avi_parse_input_file 1410 40 0 4854 5322 0
+AVI_close avi_parse_input_file 1418 31 0 5322
+malloc avi_parse_input_file 1419 45 4854 0
+AVI_close avi_parse_input_file 1420 30 0 5322
+malloc avi_parse_input_file 1424 55 4854 0
+AVI_close avi_parse_input_file 1425 40 0 5322
+strncasecmp avi_parse_input_file 1437 9 0 4854 5322 0
+str2ulong avi_parse_input_file 1438 36 0 4854
+str2ulong avi_parse_input_file 1439 36 0 4854
+str2ulong avi_parse_input_file 1440 36 0 4854
+strncasecmp avi_parse_input_file 1447 11 0 4854 5322 0
+str2ulong avi_parse_input_file 1448 43 0 4854
+str2ulong avi_parse_input_file 1449 43 0 4854
+lseek avi_parse_input_file 1462 4 0 0 0 0
+malloc AVI_open_fd 1106 19 18 0
+memset AVI_open_fd 1112 3 0 18 0 0
+avi_parse_input_file AVI_open_fd 1119 3 0 18 0
+read avi_read 65 11 0 0 5675 0
+lseek AVI_seek_start 1586 4 0 0 0 0
+lseek AVI_read_frame 1622 4 0 0 0 0
+avi_read AVI_read_frame 1624 8 0 0 6431 0
+lseek AVI_read_audio 1688 7 0 0 0 0
+avi_read AVI_read_audio 1689 11 0 0 6805 0
+avi_read AVI_read_data 1729 11 0 0 6815 0
+strncasecmp AVI_read_data 1733 10 0 6815 7225 0
+lseek AVI_read_data 1735 10 0 0 0 0
+str2ulong AVI_read_data 1739 15 0 6815
+strncasecmp AVI_read_data 1741 11 0 6815 7010 0
+lseek AVI_read_data 1747 13 0 0 0 0
+avi_read AVI_read_data 1750 14 0 0 7011 0
+strncasecmp AVI_read_data 1752 21 0 6815 7010 0
+lseek AVI_read_data 1758 13 0 0 0 0
+avi_read AVI_read_data 1761 14 0 0 7013 0
+lseek AVI_read_data 1764 21 0 0 0 0
+fprintf AVI_print_error 1800 4 0 1622 7261 7039 7119
+perror AVI_print_error 1810 7 0 7262
+__errno_location AVI_strerror 1826 68 7106
+strerror AVI_strerror 1826 57 7108 0
+sprintf AVI_strerror 1826 7 0 7119 7261 7119 7108
+memcpy avi_add_chunk 147 4 0 7140 7213 0
+long2str avi_add_chunk 148 4 0 7140 0
+avi_write avi_add_chunk 155 8 0 0 7140 0
+avi_write avi_add_chunk 156 8 0 0 7214 0
+lseek avi_add_chunk 158 7 0 0 0 0

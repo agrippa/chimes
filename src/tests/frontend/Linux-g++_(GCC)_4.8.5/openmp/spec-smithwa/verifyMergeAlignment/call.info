@@ -1,0 +1,37 @@
+printf verifyMergeAlignment 63 7 0 520
+printf verifyMergeAlignment 71 4 0 521 0
+printf verifyMergeAlignment 73 2 0 522
+printf verifyMergeAlignment 74 2 0 523
+strlen verifyMergeAlignment 96 23 0 79
+printf verifyMergeAlignment 125 2 0 524 0 0 0
+printf verifyMergeAlignment 127 2 0 525
+printf verifyMergeAlignment 129 2 0 526 0
+strlen verifyMergeAlignment 130 18 0 79
+printf verifyMergeAlignment 131 4 0 527 0
+printf verifyMergeAlignment 133 2 0 527
+strlen verifyMergeAlignment 134 18 0 79
+printf verifyMergeAlignment 135 4 0 527 336
+printf verifyMergeAlignment 137 2 0 530 0
+printf verifyMergeAlignment 139 2 0 526 0
+strlen verifyMergeAlignment 140 18 0 79
+printf verifyMergeAlignment 141 4 0 527 0
+printf verifyMergeAlignment 143 2 0 527
+strlen verifyMergeAlignment 144 18 0 79
+printf verifyMergeAlignment 145 4 0 527 336
+printf verifyMergeAlignment 147 2 0 530 0
+printf verifyMergeAlignment 149 2 0 531 0 0
+printf verifyMergeAlignment 152 2 0 526 0
+strlen verifyMergeAlignment 153 18 0 79
+printf verifyMergeAlignment 154 4 0 527 0
+printf verifyMergeAlignment 156 2 0 527
+strlen verifyMergeAlignment 157 18 0 79
+printf verifyMergeAlignment 158 4 0 527 336
+printf verifyMergeAlignment 160 2 0 530 0
+printf verifyMergeAlignment 162 2 0 526 0
+strlen verifyMergeAlignment 163 18 0 79
+printf verifyMergeAlignment 164 4 0 527 0
+printf verifyMergeAlignment 166 2 0 527
+strlen verifyMergeAlignment 167 18 0 79
+printf verifyMergeAlignment 168 4 0 527 336
+printf verifyMergeAlignment 170 2 0 530 0
+fflush verifyMergeAlignment 174 3 0 509

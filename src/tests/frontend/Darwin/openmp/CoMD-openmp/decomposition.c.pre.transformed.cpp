@@ -8,8 +8,10 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "decomposition.c.pre.transformed.cpp"
-int ____chimes_does_checkpoint_initDecomposition_npm = 1;
-int ____chimes_does_checkpoint_processorNum_npm = 1;
+static int ____chimes_does_checkpoint_initDecomposition_npm = 1;
+static int ____chimes_does_checkpoint_processorNum_npm = 1;
+static int ____chimes_does_checkpoint_getMyRank_npm = 1;
+static int ____chimes_does_checkpoint_getNRanks_npm = 1;
 
 static int ____must_checkpoint_initDecomposition_xproc_0 = 2;
 static int ____must_checkpoint_initDecomposition_yproc_0 = 2;
@@ -39,8 +41,93 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 64 "/usr/include/stdio.h" 3 4
+
+
+extern void init_chimes();
+extern void checkpoint_transformed(int lbl, unsigned loc_id);
+
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
+extern int get_next_call();
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
+extern void *get_thread_ctx();
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
+        unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id, int is_parallel_for);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
+# 2 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
+# 3 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
+# 4 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
+# 5 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
+# 6 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
+
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 61 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 62 "/usr/include/stdlib.h" 2 3 4
+
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 32 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -48,17 +135,7 @@ typedef long unsigned int size_t;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 65 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 66 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 33 "/usr/include/sys/_types.h" 3 4
+# 33 "/usr/include/sys/_types.h" 2 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -228,329 +305,8 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 68 "/usr/include/stdio.h" 2 3 4
+# 64 "/usr/include/stdlib.h" 2 3 4
 
-
-
-# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
-# 31 "/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 72 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 73 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 74 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/sys/stdio.h" 1 3 4
-# 37 "/usr/include/sys/stdio.h" 3 4
-extern "C" {
-
-int renameat(int, const char *, int, const char *) ;
-
-}
-# 76 "/usr/include/stdio.h" 2 3 4
-
-typedef __darwin_off_t fpos_t;
-# 88 "/usr/include/stdio.h" 3 4
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 122 "/usr/include/stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char *_p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (*_close)(void *);
- int (*_read) (void *, char *, int);
- fpos_t (*_seek) (void *, fpos_t, int);
- int (*_write)(void *, const char *, int);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-
-extern "C" {
-extern FILE *__stdinp;
-extern FILE *__stdoutp;
-extern FILE *__stderrp;
-}
-# 230 "/usr/include/stdio.h" 3 4
-extern "C" {
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * , fpos_t *);
-char *fgets(char * , int, FILE *);
-
-
-
-FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
-
-int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs" );
-size_t fread(void * , size_t, size_t, FILE * );
-FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen" );
-int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
-int getc(FILE *);
-int getchar(void);
-char *gets(char *);
-void perror(const char *);
-int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *, const char *);
-void rewind(FILE *);
-int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * , char * );
-int setvbuf(FILE * , char * , int, size_t);
-int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tmpnam(char *);
-int ungetc(int, FILE *);
-int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
-int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-}
-# 292 "/usr/include/stdio.h" 3 4
-extern "C" {
-
-
-
-char *ctermid(char *);
-
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen" );
-
-int fileno(FILE *);
-}
-# 314 "/usr/include/stdio.h" 3 4
-extern "C" {
-int pclose(FILE *);
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen" );
-
-}
-# 336 "/usr/include/stdio.h" 3 4
-extern "C" {
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-}
-
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
-}
-# 373 "/usr/include/stdio.h" 3 4
-extern "C" {
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tempnam(const char *, const char *) __asm("_" "tempnam" );
-}
-# 411 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 412 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-}
-
-
-
-extern "C" {
-int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-}
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
-ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
-ssize_t getline(char ** , size_t * , FILE * ) ;
-}
-
-
-
-
-
-
-
-extern "C" {
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-char *ctermid_r(char *);
-char *fgetln(FILE *, size_t *);
-const char *fmtcheck(const char *, const char *);
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int);
-int setlinebuf(FILE *);
-int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-FILE *zopen(const char *, const char *, int);
-
-
-
-
-
-FILE *funopen(const void *,
-                 int (*)(void *, char *, int),
-                 int (*)(void *, const char *, int),
-                 fpos_t (*)(void *, fpos_t, int),
-                 int (*)(void *));
-}
-# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling_npm(const char *name, size_t return_alias, int n_params,
-        ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
-extern int get_next_call();
-extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_stack_vars(int nvars, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern void register_functions(int nfunctions, const char *module_name, ...);
-extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-extern bool disable_current_thread();
-extern void reenable_current_thread(bool was_disabled);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
-        unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 63 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-# 2 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-# 3 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-# 4 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-# 5 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-# 6 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-
-# 1 "/usr/include/stdlib.h" 1 3 4
-# 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
 # 79 "/usr/include/sys/wait.h" 3 4
 typedef enum {
@@ -1016,7 +772,8 @@ typedef struct __darwin_ucontext ucontext_t;
 # 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
 typedef __darwin_sigset_t sigset_t;
 # 154 "/usr/include/sys/signal.h" 2 3 4
-
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 155 "/usr/include/sys/signal.h" 2 3 4
 # 1 "/usr/include/sys/_types/_uid_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uid_t.h" 3 4
 typedef __darwin_uid_t uid_t;
@@ -1477,6 +1234,10 @@ typedef struct {
  long long quot;
  long long rem;
 } lldiv_t;
+
+
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 100 "/usr/include/stdlib.h" 2 3 4
 # 117 "/usr/include/stdlib.h" 3 4
 extern int __mb_cur_max;
 # 127 "/usr/include/stdlib.h" 3 4
@@ -1836,7 +1597,7 @@ int builtWithMpi(void);
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 17 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 18 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-Domain* initDecomposition_npm(int xproc, int yproc, int zproc, real3 globalExtent);
+Domain* initDecomposition_npm(int xproc, int yproc, int zproc, real3 globalExtent);static int (*____chimes_extern_func_getMyRank)(void) = getMyRank;static int (*____chimes_extern_func_getNRanks)(void) = getNRanks;
 Domain* initDecomposition_quick(int xproc, int yproc, int zproc, real3 globalExtent); Domain* initDecomposition(int xproc, int yproc, int zproc, real3 globalExtent);
 Domain* initDecomposition_resumable(int xproc, int yproc, int zproc, real3 globalExtent)
 # 19 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
@@ -1844,7 +1605,7 @@ Domain* initDecomposition_resumable(int xproc, int yproc, int zproc, real3 globa
 int ____chimes_unroll_var_0;
  if (____must_checkpoint_initDecomposition_dd_0 || ____must_checkpoint_initDecomposition_____chimes_unroll_var_0_0) { register_stack_vars(2, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0, "initDecomposition|____chimes_unroll_var_0|0", &____must_checkpoint_initDecomposition_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 20 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-        call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)getNRanks, 1, 0UL, 0, 0); (getNRanks)(); }) ) ; (__builtin_expect(!(xproc * yproc * zproc == ____chimes_unroll_var_0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c", 20, "xproc * yproc * zproc == getNRanks()") : (void)0);
+        call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)getNRanks, 1, ____alias_loc_id_0, 0UL, 0); (getNRanks)(); }) ) ; (__builtin_expect(!(xproc * yproc * zproc == ____chimes_unroll_var_0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c", 20, "xproc * yproc * zproc == getNRanks()") : (void)0);
 # 21 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 22 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
       dd = ((Domain *)malloc_wrapper(sizeof(Domain), 12059379678030502383UL, 0, 1, (int)sizeof(struct DomainSt), 0)) ;
@@ -1856,7 +1617,7 @@ int ____chimes_unroll_var_0;
    dd->procGrid[2] = zproc;
 # 26 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 27 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-    int myRank; call_lbl_5: myRank = ( ({ calling((void*)getMyRank, 5, 0UL, 0, 0); (getMyRank)(); }) ) ;
+    int myRank; call_lbl_5: myRank = ( ({ calling((void*)getMyRank, 5, ____alias_loc_id_1, 0UL, 0); (getMyRank)(); }) ) ;
 # 28 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
    dd->procCoord[0] = myRank % dd->procGrid[0];
 # 29 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
@@ -1931,7 +1692,7 @@ Domain* initDecomposition_quick(int xproc, int yproc, int zproc, real3 globalExt
 int ____chimes_unroll_var_0;
  if (____must_checkpoint_initDecomposition_dd_0 || ____must_checkpoint_initDecomposition_____chimes_unroll_var_0_0) { register_stack_vars(2, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0, "initDecomposition|____chimes_unroll_var_0|0", &____must_checkpoint_initDecomposition_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0); } ; ;
 # 20 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-        call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)getNRanks, 1, 0UL, 0, 0); (getNRanks)(); }) ) ; (__builtin_expect(!(xproc * yproc * zproc == ____chimes_unroll_var_0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c", 20, "xproc * yproc * zproc == getNRanks()") : (void)0);
+        call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)getNRanks, 1, ____alias_loc_id_0, 0UL, 0); (getNRanks)(); }) ) ; (__builtin_expect(!(xproc * yproc * zproc == ____chimes_unroll_var_0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c", 20, "xproc * yproc * zproc == getNRanks()") : (void)0);
 # 21 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 22 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
       dd = ((Domain *)malloc_wrapper(sizeof(Domain), 12059379678030502383UL, 0, 1, (int)sizeof(struct DomainSt), 0)) ;
@@ -1943,7 +1704,7 @@ int ____chimes_unroll_var_0;
    dd->procGrid[2] = zproc;
 # 26 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 27 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-    int myRank; call_lbl_5: myRank = ( ({ calling((void*)getMyRank, 5, 0UL, 0, 0); (getMyRank)(); }) ) ;
+    int myRank; call_lbl_5: myRank = ( ({ calling((void*)getMyRank, 5, ____alias_loc_id_1, 0UL, 0); (getMyRank)(); }) ) ;
 # 28 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
    dd->procCoord[0] = myRank % dd->procGrid[0];
 # 29 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
@@ -2015,7 +1776,7 @@ Domain* initDecomposition_npm(int xproc, int yproc, int zproc, real3 globalExten
 # 19 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 {
 # 20 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-    int ____chimes_unroll_var_0 = getNRanks(); (__builtin_expect(!(xproc * yproc * zproc == ____chimes_unroll_var_0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c", 20, "xproc * yproc * zproc == getNRanks()") : (void)0);
+    int ____chimes_unroll_var_0 = (*____chimes_extern_func_getNRanks)(); (__builtin_expect(!(xproc * yproc * zproc == ____chimes_unroll_var_0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c", 20, "xproc * yproc * zproc == getNRanks()") : (void)0);
 # 21 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 22 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
    Domain* dd = (Domain*)malloc_wrapper(sizeof(Domain), 12059379678030502383UL, 0, 1, (int)sizeof(struct DomainSt), 0);
@@ -2027,7 +1788,7 @@ Domain* initDecomposition_npm(int xproc, int yproc, int zproc, real3 globalExten
    dd->procGrid[2] = zproc;
 # 26 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 27 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-   int myRank = getMyRank();
+   int myRank = (*____chimes_extern_func_getMyRank)();
 # 28 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
    dd->procCoord[0] = myRank % dd->procGrid[0];
 # 29 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
@@ -2094,9 +1855,34 @@ int processorNum_npm(Domain* domain, int dix, int diy, int diz)
 
 
 static int module_init() {
-    init_module(12059379678030502345UL, 5, 2, 6, 4, 2, 0, 2, 1, &____alias_loc_id_0, (unsigned)4, (12059379678030502345UL + 1UL), (12059379678030502345UL + 2UL), (12059379678030502345UL + 3UL), (12059379678030502345UL + 4UL), &____alias_loc_id_1, (unsigned)3, (12059379678030502345UL + 5UL), (12059379678030502345UL + 6UL), (12059379678030502345UL + 38UL), &____alias_loc_id_2, (unsigned)5, (12059379678030502345UL + 5UL), (12059379678030502345UL + 7UL), (12059379678030502345UL + 8UL), (12059379678030502345UL + 9UL), (12059379678030502345UL + 38UL), &____alias_loc_id_3, (unsigned)9, (12059379678030502345UL + 244UL), (12059379678030502345UL + 245UL), (12059379678030502345UL + 246UL), (12059379678030502345UL + 247UL), (12059379678030502345UL + 248UL), (12059379678030502345UL + 249UL), (12059379678030502345UL + 250UL), (12059379678030502345UL + 251UL), (12059379678030502345UL + 252UL), "initDecomposition", (void *)(initDecomposition_npm), 2, &____alias_loc_id_0, &____alias_loc_id_1, 4, 0UL, 0UL, 0UL, (12059379678030502345UL + 234UL), (12059379678030502345UL + 38UL), 4, "getNRanks", 0, 0UL, "__assert_rtn", 4, (12059379678030502345UL + 334UL), (12059379678030502345UL + 335UL), 0UL, (12059379678030502345UL + 336UL), 0UL, "malloc", 1, 0UL, (12059379678030502345UL + 38UL), "getMyRank", 0, 0UL, "processorNum", (void *)(processorNum_npm), 0, 4, (12059379678030502345UL + 330UL), 0UL, 0UL, 0UL, 0UL, 0, "initDecomposition", &(____chimes_does_checkpoint_initDecomposition_npm), "processorNum", &(____chimes_does_checkpoint_processorNum_npm), (12059379678030502345UL + 244UL), (12059379678030502345UL + 330UL), (12059379678030502345UL + 248UL), (12059379678030502345UL + 330UL), (12059379678030502345UL + 249UL), (12059379678030502345UL + 330UL), (12059379678030502345UL + 4UL), (12059379678030502345UL + 234UL), (12059379678030502345UL + 6UL), (12059379678030502345UL + 38UL), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "processorNum", 0, "initDecomposition", 2, "getNRanks", "getMyRank", "initDecomposition|xproc|0", 2, "getNRanks", "getMyRank", "initDecomposition|yproc|0", 2, "getNRanks", "getMyRank", "initDecomposition|zproc|0", 2, "getNRanks", "getMyRank", "initDecomposition|globalExtent|0", 2, "getNRanks", "getMyRank", "initDecomposition|____chimes_unroll_var_0|0", 1, "getMyRank", "initDecomposition|dd|0", 1, "getMyRank");
-    register_functions(2, "decomposition.c.pre.extern_ptrs.cpp", "processorNum", &processorNum, "initDecomposition", &initDecomposition);
+    init_module(12059379678030502345UL, 5, 2, 6, 4, 2, 2, 4, 0, 0, 1,
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (12059379678030502345UL + 1UL), (12059379678030502345UL + 2UL), (12059379678030502345UL + 3UL), (12059379678030502345UL + 4UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (12059379678030502345UL + 5UL), (12059379678030502345UL + 6UL), (12059379678030502345UL + 38UL),
+                           &____alias_loc_id_2, (unsigned)5, (unsigned)0, (12059379678030502345UL + 5UL), (12059379678030502345UL + 7UL), (12059379678030502345UL + 8UL), (12059379678030502345UL + 9UL), (12059379678030502345UL + 38UL),
+                           &____alias_loc_id_3, (unsigned)9, (unsigned)0, (12059379678030502345UL + 244UL), (12059379678030502345UL + 245UL), (12059379678030502345UL + 246UL), (12059379678030502345UL + 247UL), (12059379678030502345UL + 248UL), (12059379678030502345UL + 249UL), (12059379678030502345UL + 250UL), (12059379678030502345UL + 251UL), (12059379678030502345UL + 252UL),
+                            "initDecomposition", (void *)(&initDecomposition_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 4, 0UL, 0UL, 0UL, (12059379678030502345UL + 234UL), (12059379678030502345UL + 38UL), 4, "getNRanks", 0, 0UL, "__assert_rtn", 4, (12059379678030502345UL + 334UL), (12059379678030502345UL + 335UL), 0UL, (12059379678030502345UL + 336UL), 0UL, "malloc", 1, 0UL, (12059379678030502345UL + 38UL), "getMyRank", 0, 0UL,
+                            "processorNum", (void *)(&processorNum_npm), (void *)__null, 0, 4, (12059379678030502345UL + 330UL), 0UL, 0UL, 0UL, 0UL, 0,
+                               "getMyRank", (void **)&(____chimes_extern_func_getMyRank),
+                               "getNRanks", (void **)&(____chimes_extern_func_getNRanks),
+                           "initDecomposition", &(____chimes_does_checkpoint_initDecomposition_npm),
+                           "processorNum", &(____chimes_does_checkpoint_processorNum_npm),
+                           "getMyRank", &(____chimes_does_checkpoint_getMyRank_npm),
+                           "getNRanks", &(____chimes_does_checkpoint_getNRanks_npm),
+                             (12059379678030502345UL + 244UL), (12059379678030502345UL + 330UL),
+                             (12059379678030502345UL + 248UL), (12059379678030502345UL + 330UL),
+                             (12059379678030502345UL + 249UL), (12059379678030502345UL + 330UL),
+                             (12059379678030502345UL + 4UL), (12059379678030502345UL + 234UL),
+                             (12059379678030502345UL + 6UL), (12059379678030502345UL + 38UL),
+                     "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent),
+                             "processorNum", "_Z12processorNumP8DomainStiii", 0,
+                             "initDecomposition", "_Z17initDecompositioniiiPd", 2, "getNRanks", "getMyRank",
+                        "initDecomposition|xproc|0", 2, "getNRanks", "getMyRank",
+                        "initDecomposition|yproc|0", 2, "getNRanks", "getMyRank",
+                        "initDecomposition|zproc|0", 2, "getNRanks", "getMyRank",
+                        "initDecomposition|globalExtent|0", 2, "getNRanks", "getMyRank",
+                        "initDecomposition|____chimes_unroll_var_0|0", 1, "getMyRank",
+                        "initDecomposition|dd|0", 1, "getMyRank");
     return 0;
 }
 
-static int __libchimes_module_init = module_init();
+static const int __libchimes_module_init = module_init();

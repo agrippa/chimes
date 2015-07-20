@@ -1,0 +1,40 @@
+gettimeofday seconds 19 13 0 1 2
+gettimeofday gettime 75 3 0 26 836
+runTest main 85 5 0 0 59
+atoi runTest 200 14 0 100
+atoi runTest 201 14 0 100
+atoi runTest 202 13 0 100
+atoi runTest 203 21 0 100
+usage runTest 206 3 0 0 188
+fprintf runTest 212 5 0 195 823 0
+malloc runTest 213 22 141 0
+malloc runTest 214 29 145 0
+malloc runTest 215 27 149 0
+seconds runTest 217 25 0
+runTest_helper1 runTest 219 5 0 145 0 0 141 0 0
+checkpoint runTest 223 5 0
+runTest_helper2 runTest 226 5 0 0 0 0 145 141
+checkpoint runTest 230 5 0
+seconds runTest 232 23 0
+free runTest 234 2 0 141
+free runTest 235 2 0 145
+free runTest 236 2 0 149
+printf runTest 238 5 0 824 0
+fprintf usage 92 2 0 195 819 198
+fprintf usage 93 2 0 195 820
+fprintf usage 94 2 0 195 821
+fprintf usage 95 2 0 195 822
+exit usage 96 2 0 0
+fprintf runTest_helper1 104 3 0 195 826
+exit runTest_helper1 105 9 0 0
+srand runTest_helper1 108 5 0 0
+fprintf runTest_helper1 116 2 0 195 827
+rand runTest_helper1 119 37 0
+rand runTest_helper1 122 28 0
+fprintf runTest_helper1 125 5 0 195 820
+__assert_fail runTest_helper1 129 74 0 825 830 0 819
+__assert_fail runTest_helper1 130 65 0 832 830 0 819
+fprintf runTest_helper1 135 5 0 195 833
+fprintf runTest_helper1 145 2 0 195 834 0
+fprintf runTest_helper1 146 2 0 195 835
+printf runTest_helper2 167 2 0 825

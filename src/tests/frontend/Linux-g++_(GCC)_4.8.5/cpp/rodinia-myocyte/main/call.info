@@ -1,0 +1,54 @@
+gettimeofday seconds 108 13 0 1 2
+get_time main 142 10 0
+seconds main 174 25 0
+printf main 187 3 0 623 0
+atoi main 201 10 0 102
+printf main 203 4 0 624 0
+atoi main 211 14 0 102
+printf main 213 4 0 625 0
+atoi main 221 13 0 102
+printf main 223 4 0 626 0
+get_time main 232 10 0
+malloc main 252 18 183 0
+__assert_fail main 253 36 0 627 628 0 629
+malloc main 255 19 179 0
+__assert_fail main 256 43 0 630 628 0 629
+malloc main 257 31 377 0
+__assert_fail main 258 42 0 631 628 0 629
+malloc main 266 17 419 0
+__assert_fail main 267 36 0 627 628 0 629
+malloc main 268 27 421 0
+__assert_fail main 269 38 0 631 628 0 629
+malloc main 275 22 335 0
+__assert_fail main 276 41 0 633 628 0 629
+malloc main 277 20 421 0
+__assert_fail main 278 38 0 631 628 0 629
+get_time main 284 10 0
+getenv main 290 26 358 634
+__assert_fail main 291 47 0 634 628 0 629
+sprintf main 294 5 0 56 635 358
+sprintf main 295 5 0 57 636 358
+myocyte_read main 299 3 0 56 377 0 0 0
+myocyte_read main 308 3 0 57 421 0 0 0
+get_time main 315 10 0
+solver main 324 13 0 179 421 0 421
+checkpoint main 330 13 0
+get_time main 360 10 0
+free main 368 9 0 377
+free main 372 3 0 179
+free main 374 2 0 183
+free main 377 5 0 421
+free main 381 2 0 419
+free main 384 5 0 421
+free main 388 2 0 335
+get_time main 390 9 0
+seconds main 396 23 0
+printf main 397 5 0 637 0
+printf main 399 2 0 638
+printf main 400 2 0 639 0 0
+printf main 401 2 0 640 0 0
+printf main 402 2 0 641 0 0
+printf main 403 2 0 640 0 0
+printf main 404 2 0 643 0 0
+printf main 405 2 0 634
+printf main 406 2 0 645 0

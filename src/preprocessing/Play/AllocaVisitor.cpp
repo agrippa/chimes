@@ -87,6 +87,14 @@ void AllocaVisitor::visit(Value *val, Value *prev) {
     }
 }
 
+/*
+ * The result of a compare is not relative to the alloca we're looking for, so
+ * don't continue the search in this direction.
+ */
+bool AllocaVisitor::visitCmp(CmpInst *cmp, Value *prev) {
+    return (false);
+}
+
 bool AllocaVisitor::visitLandingPad(LandingPadInst *land, Value *prev) {
     assert(false);
 }
@@ -163,10 +171,12 @@ bool AllocaVisitor::visitCall(CallInst *call, Value *prev) {
      * have no way to figure out if it is loaded, stored, etc so we deem it
      * unsolvable.
      */
-    for (unsigned i = 0; i < call->getNumArgOperands(); i++) {
-        Value *arg = call->getArgOperand(i);
-        if (arg == prev) {
-            unsolvable[curr] = true;
+    if (!mainPlugin->isKnownFunction(call->getCalledFunction())) {
+        for (unsigned i = 0; i < call->getNumArgOperands(); i++) {
+            Value *arg = call->getArgOperand(i);
+            if (arg == prev) {
+                unsolvable[curr] = true;
+            }
         }
     }
     return (false);

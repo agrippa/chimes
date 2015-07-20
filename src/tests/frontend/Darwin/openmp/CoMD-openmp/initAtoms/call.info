@@ -18,7 +18,7 @@ free destroyAtoms 72 4 0 239
 memcpy createFccLattice 84 4 0 249 1324 0
 floor createFccLattice 94 19 0 0
 ceil createFccLattice 95 17 0 0
-putAtomInBox createFccLattice 100 0 0 504 504 0 0 0 0 0 0 0 0
+putAtomInBox createFccLattice 112 16 0 504 504 0 0 0 0 0 0 0 0
 profileStart createFccLattice 116 9 0 0
 addIntParallel createFccLattice 117 4 0 504 504 0
 profileStop createFccLattice 118 9 0 0

@@ -4,6 +4,7 @@ set -e
 
 script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
+source ${CHIMES_HOME}/src/common.conf
 
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info"
 ENABLE_OMP=1
@@ -19,8 +20,9 @@ WORK_DIR=
 VERBOSE=0
 GXX_FLAGS="-O3"
 DEFINES=
+ADDED_INCLUDES=
 
-while getopts ":kci:I:L:l:o:w:vpy:D:s" opt; do
+while getopts ":kci:I:L:l:o:w:vpy:D:snf:" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -60,6 +62,12 @@ while getopts ":kci:I:L:l:o:w:vpy:D:s" opt; do
             ;;
         s)
             ENABLE_OMP=0
+            ;;
+        n)
+            GXX=${GCC}
+            ;;
+        f)
+            ADDED_INCLUDES="$ADDED_INCLUDES -include ${OPTARG}"
             ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
@@ -102,10 +110,14 @@ done
 
 echo ${ABS_INPUTS[@]}
 
-GXX=${GXX:-/usr/bin/g++}
 LAST_FILES=()
 OBJ_FILES=()
-OUTPUT=$(pwd)/${OUTPUT_FILE}
+if [[ $OUTPUT_FILE = /* ]]; then
+    OUTPUT=$OUTPUT_FILE
+else
+    OUTPUT=$(pwd)/${OUTPUT_FILE}
+fi
+
 
 echo Using GXX ${GXX}
 
@@ -125,7 +137,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILES+=($OBJ_FILE)
 
     if [[ ${EXT} == "cpp" || ${EXT} == "cc" || ${EXT} == "c" ]]; then
-        ${GXX} -c ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${DEFINES}
+        ${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -c ${INPUT} -o ${OBJ_FILE} \
+            ${GXX_FLAGS} ${INCLUDES} ${DEFINES} ${ADDED_INCLUDES}
     elif [[ ${EXT} == "cu" ]]; then
         nvcc -arch=sm_20 -c ${GXX_FLAGS} ${INPUT} -o ${OBJ_FILE} \
                    ${INCLUDES} ${DEFINES}
@@ -154,9 +167,9 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    ${GXX} -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
+    ${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -ldl -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
         ${GXX_FLAGS} ${INCLUDES} -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 \
-        -lcudart ${DEFINES}
+        ${DEFINES}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

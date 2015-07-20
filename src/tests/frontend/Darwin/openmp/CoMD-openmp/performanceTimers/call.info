@@ -33,7 +33,7 @@ maxRankDoubleParallel timerStats 290 4 0 325 326 0
 addDoubleParallel timerStats 303 4 0 321 322 0
 getNRanks timerStats 306 38 0
 sqrt timerStats 306 73 0 0
-printRank printPerformanceResultsYaml 182 9 0
+printRank printPerformanceResultsYaml 182 10 0
 getTick printPerformanceResultsYaml 185 18 0
 fprintf printPerformanceResultsYaml 188 4 0 750 777
 getNRanks printPerformanceResultsYaml 189 35 0

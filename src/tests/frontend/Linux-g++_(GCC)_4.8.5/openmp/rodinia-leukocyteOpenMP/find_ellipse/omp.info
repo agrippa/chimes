@@ -1,0 +1,2 @@
+115 115 #pragma omp parallel for num_threads(omp_num_threads)
+192 192 #pragma omp parallel for num_threads(omp_num_threads)

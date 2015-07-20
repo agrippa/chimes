@@ -1,17 +1,24 @@
 # 1 "timestep.c.pre.transformed.cpp"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 326 "<built-in>" 3
-# 1 "<command line>" 1
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 1 3 4
-# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 1 3 4
+# 147 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
+# 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "timestep.c.pre.transformed.cpp" 2
+# 1 "<command-line>" 2
+# 1 "timestep.c.pre.transformed.cpp"
+static int ____chimes_does_checkpoint_advanceVelocity_npm = 1;
+static int ____chimes_does_checkpoint_advancePosition_npm = 1;
+static int ____chimes_does_checkpoint_kineticEnergy_npm = 1;
+static int ____chimes_does_checkpoint_redistributeAtoms_npm = 1;
+static int ____chimes_does_checkpoint_addRealParallel_npm = 1;
+static int ____chimes_does_checkpoint_haloExchange_npm = 1;
+static int ____chimes_does_checkpoint_profileStart_npm = 1;
+static int ____chimes_does_checkpoint_profileStop_npm = 1;
+static int ____chimes_does_checkpoint_sortAtomsInCell_npm = 1;
+static int ____chimes_does_checkpoint_updateLinkCells_npm = 1;
+
 static int ____must_checkpoint_redistributeAtoms_sim_0 = 2;
 static int ____must_checkpoint_redistributeAtoms_ii_0 = 2;
 static int ____must_checkpoint_kineticEnergy_s_0 = 2;
@@ -32,22 +39,100 @@ static unsigned ____alias_loc_id_6;
 static unsigned ____alias_loc_id_7;
 static unsigned ____alias_loc_id_8;
 static unsigned ____alias_loc_id_9;
+static unsigned ____alias_loc_id_10;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 326 "<built-in>" 3
-# 1 "<command line>" 1
-
+# 1 "/tmp/chimes-frontend//"
+# 1 "<built-in>"
+# 1 "<command-line>"
 # 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
 
 
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 1 3 4
-# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 1 3 4
+# 147 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
+# 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+
+extern void init_chimes();
+extern void checkpoint_transformed(int lbl, unsigned loc_id);
+
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
+extern int get_next_call();
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
+extern void *get_thread_ctx();
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
+        unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id, int is_parallel_for);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 74 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
+# 2 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
+# 3 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
+
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.h" 1
+
+
+
+
+
+
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 1
+
+
+
+
+
+
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -166,8 +251,6 @@ typedef __uint32_t __darwin_useconds_t;
 typedef unsigned char __darwin_uuid_t[16];
 typedef char __darwin_uuid_string_t[37];
 
-
-
 # 1 "/usr/include/sys/_pthread/_pthread_types.h" 1 3 4
 # 57 "/usr/include/sys/_pthread/_pthread_types.h" 3 4
 struct __darwin_pthread_handler_rec {
@@ -256,7 +339,7 @@ typedef __darwin_va_list va_list;
 # 37 "/usr/include/sys/stdio.h" 3 4
 extern "C" {
 
-int renameat(int, const char *, int, const char *) __attribute__((availability(macosx,introduced=10.10)));
+int renameat(int, const char *, int, const char *) ;
 
 }
 # 76 "/usr/include/stdio.h" 2 3 4
@@ -453,10 +536,10 @@ typedef __darwin_ssize_t ssize_t;
 # 437 "/usr/include/stdio.h" 2 3 4
 
 extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getdelim(char ** , size_t * , int, FILE * ) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getline(char ** , size_t * , FILE * ) __attribute__((availability(macosx,introduced=10.7)));
+int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
+int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
+ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
+ssize_t getline(char ** , size_t * , FILE * ) ;
 }
 
 
@@ -489,80 +572,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
-extern int get_next_call();
-extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_stack_vars(int nvars, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern void register_functions(int nfunctions, const char *module_name, ...);
-extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-extern bool disable_current_thread();
-extern void reenable_current_thread(bool was_disabled);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
-        unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 3 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.h" 1
-
-
-
-
-
-
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 1
-
-
-
-
-
-
-
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mytype.h" 1
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mytype.h"
 typedef double real_t;
@@ -600,9 +610,9 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
- int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
 # 61 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
- void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
 
 
    void (*destroy)(void* parms);
@@ -692,14 +702,7 @@ struct DomainSt* initDecomposition(int xproc, int yproc, int zproc,
 int processorNum(Domain* domain, int dix, int diy, int dik);
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.h" 1
-
-
-
-
-
-
-
-
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.h"
 struct SimFlatSt;
 struct LinkCellSt;
 
@@ -860,14 +863,7 @@ void bcastParallel(void* buf, int len, int root);
 int builtWithMpi(void);
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.h" 1
-
-
-
-
-
-
-
-
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.h"
 enum TimerHandle{
    totalTimer,
    loopTimer,
@@ -898,14 +894,7 @@ void printPerformanceResultsYaml(FILE* file);
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 
 # 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-
-
-
-
-
-
-
-
+# 9 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -915,8 +904,6 @@ typedef enum {
  P_PID,
  P_PGID
 } idtype_t;
-
-
 
 
 
@@ -1375,8 +1362,7 @@ typedef struct __darwin_ucontext ucontext_t;
 # 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
 typedef __darwin_sigset_t sigset_t;
 # 154 "/usr/include/sys/signal.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 155 "/usr/include/sys/signal.h" 2 3 4
+
 # 1 "/usr/include/sys/_types/_uid_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uid_t.h" 3 4
 typedef __darwin_uid_t uid_t;
@@ -1456,43 +1442,43 @@ void (*signal(int, void (*)(int)))(int);
 # 110 "/usr/include/sys/wait.h" 2 3 4
 # 1 "/usr/include/sys/resource.h" 1 3 4
 # 72 "/usr/include/sys/resource.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 1 3 4
-# 63 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 3 4
-# 1 "/usr/include/stdint.h" 1 3 4
-# 18 "/usr/include/stdint.h" 3 4
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 1 3 4
+# 9 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 3 4
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 1 3 4
+# 27 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 3 4
 # 1 "/usr/include/sys/_types/_int8_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int8_t.h" 3 4
 typedef signed char int8_t;
-# 19 "/usr/include/stdint.h" 2 3 4
+# 28 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_int16_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int16_t.h" 3 4
 typedef short int16_t;
-# 20 "/usr/include/stdint.h" 2 3 4
+# 29 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_int32_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int32_t.h" 3 4
 typedef int int32_t;
-# 21 "/usr/include/stdint.h" 2 3 4
+# 30 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_int64_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int64_t.h" 3 4
 typedef long long int64_t;
-# 22 "/usr/include/stdint.h" 2 3 4
+# 31 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 
 # 1 "/usr/include/_types/_uint8_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint8_t.h" 3 4
 typedef unsigned char uint8_t;
-# 24 "/usr/include/stdint.h" 2 3 4
+# 33 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uint16_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint16_t.h" 3 4
 typedef unsigned short uint16_t;
-# 25 "/usr/include/stdint.h" 2 3 4
+# 34 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uint32_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint32_t.h" 3 4
 typedef unsigned int uint32_t;
-# 26 "/usr/include/stdint.h" 2 3 4
+# 35 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uint64_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint64_t.h" 3 4
 typedef unsigned long long uint64_t;
-# 27 "/usr/include/stdint.h" 2 3 4
+# 36 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 
 
 typedef int8_t int_least8_t;
@@ -1519,28 +1505,26 @@ typedef uint64_t uint_fast64_t;
 
 
 
-
-
 # 1 "/usr/include/sys/_types/_intptr_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_intptr_t.h" 3 4
 typedef __darwin_intptr_t intptr_t;
-# 54 "/usr/include/stdint.h" 2 3 4
+# 63 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_uintptr_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uintptr_t.h" 3 4
 typedef unsigned long uintptr_t;
-# 55 "/usr/include/stdint.h" 2 3 4
+# 64 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 
 
 
 # 1 "/usr/include/_types/_intmax_t.h" 1 3 4
 # 32 "/usr/include/_types/_intmax_t.h" 3 4
 typedef long int intmax_t;
-# 59 "/usr/include/stdint.h" 2 3 4
+# 68 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uintmax_t.h" 1 3 4
 # 32 "/usr/include/_types/_uintmax_t.h" 3 4
 typedef long unsigned int uintmax_t;
-# 60 "/usr/include/stdint.h" 2 3 4
-# 64 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 2 3 4
+# 69 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
+# 10 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 2 3 4
 # 73 "/usr/include/sys/resource.h" 2 3 4
 
 
@@ -1557,14 +1541,7 @@ struct timeval
  __darwin_suseconds_t tv_usec;
 };
 # 81 "/usr/include/sys/resource.h" 2 3 4
-
-
-
-
-
-
-
-
+# 89 "/usr/include/sys/resource.h" 3 4
 typedef __uint64_t rlim_t;
 # 152 "/usr/include/sys/resource.h" 3 4
 struct rusage {
@@ -1694,13 +1671,13 @@ struct proc_rlimit_control_wakeupmon {
 extern "C" {
 int getpriority(int, id_t);
 
-int getiopolicy_np(int, int) __attribute__((availability(macosx,introduced=10.5)));
+int getiopolicy_np(int, int) ;
 
 int getrlimit(int, struct rlimit *) __asm("_" "getrlimit" );
 int getrusage(int, struct rusage *);
 int setpriority(int, id_t, int);
 
-int setiopolicy_np(int, int, int) __attribute__((availability(macosx,introduced=10.5)));
+int setiopolicy_np(int, int, int) ;
 
 int setrlimit(int, const struct rlimit *) __asm("_" "setrlimit" );
 }
@@ -1732,21 +1709,21 @@ _OSSwapInt32(
 )
 {
 
-    return __builtin_bswap32(_data);
 
 
-
+    __asm__ ("bswap   %0" : "+r" (_data));
+    return _data;
 
 }
-
-
+# 91 "/usr/include/libkern/i386/_OSByteOrder.h" 3 4
 static inline
 __uint64_t
 _OSSwapInt64(
     __uint64_t _data
 )
 {
-    return __builtin_bswap64(_data);
+    __asm__ ("bswap   %0" : "+r" (_data));
+    return _data;
 }
 # 67 "/usr/include/libkern/_OSByteOrder.h" 2 3 4
 # 131 "/usr/include/sys/_endian.h" 2 3 4
@@ -1812,23 +1789,12 @@ pid_t wait4(pid_t, int *, int, struct rusage *);
 # 66 "/usr/include/stdlib.h" 2 3 4
 
 # 1 "/usr/include/alloca.h" 1 3 4
-# 29 "/usr/include/alloca.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 30 "/usr/include/alloca.h" 2 3 4
-
+# 31 "/usr/include/alloca.h" 3 4
 extern "C" {
 void *alloca(size_t);
 }
 # 68 "/usr/include/stdlib.h" 2 3 4
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 74 "/usr/include/stdlib.h" 2 3 4
-
-
+# 76 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/_types/_ct_rune_t.h" 1 3 4
 # 31 "/usr/include/sys/_types/_ct_rune_t.h" 3 4
 typedef __darwin_ct_rune_t ct_rune_t;
@@ -1857,12 +1823,6 @@ typedef struct {
  long long quot;
  long long rem;
 } lldiv_t;
-
-
-
-
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 100 "/usr/include/stdlib.h" 2 3 4
 # 117 "/usr/include/stdlib.h" 3 4
 extern int __mb_cur_max;
 # 127 "/usr/include/stdlib.h" 3 4
@@ -1895,7 +1855,7 @@ void *malloc(size_t);
 int mblen(const char *, size_t);
 size_t mbstowcs(wchar_t * , const char * , size_t);
 int mbtowc(wchar_t * , const char * , size_t);
-int posix_memalign(void **, size_t, size_t) __attribute__((availability(macosx,introduced=10.6)));
+int posix_memalign(void **, size_t, size_t) ;
 void qsort(void *, size_t, size_t,
      int (*)(const void *, const void *));
 int rand(void);
@@ -1916,7 +1876,7 @@ unsigned long
 unsigned long long
   strtoull(const char *, char **, int);
 
-int system(const char *) __asm("_" "system" ) __attribute__((availability(macosx,introduced=10.0)));
+int system(const char *) __asm("_" "system" ) ;
 size_t wcstombs(char * , const wchar_t * , size_t);
 int wctomb(char *, wchar_t);
 
@@ -1977,8 +1937,6 @@ int unsetenv(const char *) __asm("_" "unsetenv" );
 
 
 
-
-
 # 1 "/usr/include/machine/types.h" 1 3 4
 # 35 "/usr/include/machine/types.h" 3 4
 # 1 "/usr/include/i386/types.h" 1 3 4
@@ -2020,14 +1978,14 @@ typedef __darwin_mode_t mode_t;
 
 u_int32_t arc4random(void);
 void arc4random_addrandom(unsigned char * , int );
-void arc4random_buf(void * , size_t ) __attribute__((availability(macosx,introduced=10.7)));
+void arc4random_buf(void * , size_t ) ;
 void arc4random_stir(void);
 u_int32_t
-  arc4random_uniform(u_int32_t ) __attribute__((availability(macosx,introduced=10.7)));
+  arc4random_uniform(u_int32_t ) ;
 
-int atexit_b(void (^)(void)) __attribute__((availability(macosx,introduced=10.6)));
-void *bsearch_b(const void *, const void *, size_t,
-     size_t, int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
+
 
 
 
@@ -2042,7 +2000,7 @@ int cgetset(const char *);
 int cgetstr(char *, const char *, char **);
 int cgetustr(char *, const char *, char **);
 
-int daemon(int, int) __asm("_" "daemon" "$1050") __attribute__((availability(macosx,introduced=10.0,deprecated=10.5)));
+int daemon(int, int) __asm("_" "daemon" "$1050") __attribute__((deprecated));
 char *devname(dev_t, mode_t);
 char *devname_r(dev_t, mode_t, char *buf, int len);
 char *getbsize(int *, long *);
@@ -2053,26 +2011,26 @@ const char
 int heapsort(void *, size_t, size_t,
      int (*)(const void *, const void *));
 
-int heapsort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 int mergesort(void *, size_t, size_t,
      int (*)(const void *, const void *));
 
-int mergesort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 void psort(void *, size_t, size_t,
-     int (*)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+     int (*)(const void *, const void *)) ;
 
-void psort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 void psort_r(void *, size_t, size_t, void *,
-     int (*)(void *, const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+     int (*)(void *, const void *, const void *)) ;
 
-void qsort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 void qsort_r(void *, size_t, size_t, void *,
      int (*)(void *, const void *, const void *));
@@ -2115,83 +2073,83 @@ static void advanceVelocity(SimFlat* s, int nBoxes, real_t dt);
 static void advancePosition(SimFlat* s, int nBoxes, real_t dt);
 # 35 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 35 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-double timestep_npm(SimFlat* s, int nSteps, real_t dt);void computeForce_npm(SimFlat* s);void advanceVelocity_npm(SimFlat* s, int nBoxes, real_t dt);void advancePosition_npm(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_npm(SimFlat* s);void redistributeAtoms_npm(SimFlat* sim);
+void advanceVelocity_npm(SimFlat* s, int nBoxes, real_t dt);void advancePosition_npm(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_npm(SimFlat* s);void redistributeAtoms_npm(SimFlat* sim);static void (*____chimes_extern_func_profileStart)(enum TimerHandle) = profileStart;static void (*____chimes_extern_func_profileStop)(enum TimerHandle) = profileStop;
 double timestep_quick(SimFlat* s, int nSteps, real_t dt); double timestep(SimFlat* s, int nSteps, real_t dt);void computeForce_quick(SimFlat* s); void computeForce(SimFlat* s);void advanceVelocity_quick(SimFlat* s, int nBoxes, real_t dt); void advanceVelocity(SimFlat* s, int nBoxes, real_t dt);void advancePosition_quick(SimFlat* s, int nBoxes, real_t dt); void advancePosition(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_quick(SimFlat* s); void kineticEnergy(SimFlat* s);void redistributeAtoms_quick(SimFlat* sim); void redistributeAtoms(SimFlat* sim);
 double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 36 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&timestep), "timestep", (int *)0, 3, 3, (size_t)(8093288458141874007UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", (int *)0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", (int *)0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", (int *)0, "double", (void *)(&dt), (size_t)8, 0, 0, 0) ; int ii;
  register_stack_vars(1, "timestep|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } default: { chimes_error(); } } } ; ;
 # 37 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { for ( ii = (0) ; ii<nSteps; ++ii)
+   { for ( ii = (0) ; ii<nSteps; ++ii)
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+   {
 # 39 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_0, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
 # 40 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- ({ calling_npm(1, 0, 8093288458141874007UL, 8093288458141874210UL); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
+      ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 41 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_2: ({ calling((void*)profileStop, 2, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_2: ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
 # 42 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 43 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 44 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, 0, 0); (checkpoint)(); }) ;
+       call_lbl_3: checkpoint_transformed(3, 0);
 # 45 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 46 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 47 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_4: ({ calling((void*)profileStart, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
+      do { call_lbl_4: ({ calling((void*)profileStart, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
 # 48 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- ({ calling_npm(1, 0, 8093288458141874007UL, 8093288458141874368UL); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
+      ({ calling_npm("advancePosition", 0); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
 # 49 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_5: ({ calling((void*)profileStop, 5, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
+      do { call_lbl_5: ({ calling((void*)profileStop, 5, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
 # 50 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 51 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_6: ({ calling((void*)checkpoint, 6, 0UL, 0, 0); (checkpoint)(); }) ;
+       call_lbl_6: checkpoint_transformed(6, 0);
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_7: ({ calling((void*)profileStart, 7, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_7: ({ calling((void*)profileStart, 7, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
 # 56 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_8: ({ calling((void*)redistributeAtoms, 8, 0UL, 0, 1, (size_t)(8093288458141874007UL)); (redistributeAtoms)(s); }) ;
+       call_lbl_8: ({ calling((void*)redistributeAtoms, 8, 0, 0UL, 1, (size_t)(8093288458141874007UL)); (redistributeAtoms)(s); }) ;
 # 57 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_9: ({ calling((void*)profileStop, 9, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_9: ({ calling((void*)profileStop, 9, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
 # 58 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 59 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 60 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_10: ({ calling((void*)checkpoint, 10, 0UL, 0, 0); (checkpoint)(); }) ;
+       call_lbl_10: checkpoint_transformed(10, 0);
 # 61 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 62 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 63 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_11: ({ calling((void*)profileStart, 11, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_11: ({ calling((void*)profileStart, 11, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
 # 64 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_12: ({ calling((void*)computeForce, 12, 0UL, 0, 1, (size_t)(8093288458141874007UL)); (computeForce)(s); }) ;
+       call_lbl_12: ({ calling((void*)computeForce, 12, 0, 0UL, 1, (size_t)(8093288458141874007UL)); (computeForce)(s); }) ;
 # 65 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_13: ({ calling((void*)profileStop, 13, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_13: ({ calling((void*)profileStop, 13, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
 # 66 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 67 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 68 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_14: ({ calling((void*)checkpoint, 14, 0UL, 0, 0); (checkpoint)(); }) ;
+       call_lbl_14: checkpoint_transformed(14, 0);
 # 69 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 70 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 71 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_15: ({ calling((void*)profileStart, 15, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_15: ({ calling((void*)profileStart, 15, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- ({ calling_npm(1, 0, 8093288458141874007UL, 8093288458141874210UL); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
+      ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 73 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_16: ({ calling((void*)profileStop, 16, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_16: ({ calling((void*)profileStop, 16, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 76 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_17: ({ calling((void*)checkpoint, 17, 0UL, 0, 0); (checkpoint)(); }) ;
+       call_lbl_17: checkpoint_transformed(17, 0);
 # 77 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 78 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+   } }
 # 79 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 80 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_18: ({ calling((void*)kineticEnergy, 18, 0UL, ____alias_loc_id_1, 1, (size_t)(8093288458141874007UL)); (kineticEnergy)(s); }) ;
+    call_lbl_18: ({ calling((void*)kineticEnergy, 18, ____alias_loc_id_1, 0UL, 1, (size_t)(8093288458141874007UL)); (kineticEnergy)(s); }) ;
 # 81 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 82 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- rm_stack(false, 0UL, "timestep", (int *)0x0, 0, ____chimes_did_disable0); return s->ePotential;
+   rm_stack(false, 0UL, "timestep", (int *)0x0, 0, ____chimes_did_disable0); return s->ePotential;
 # 83 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 }
 # 84 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2200,7 +2158,7 @@ void computeForce_resumable(SimFlat* s)
 # 86 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&computeForce), "computeForce", (int *)0, 1, 0, (size_t)(8093288458141874431UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_1: ({ calling((void*)s->pot->force, 1, 0UL, ____alias_loc_id_4, 1, (size_t)(8093288458141874431UL)); (s->pot->force)(s); }) ;
+    call_lbl_1: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, 0, 0UL, 1, 8093288458141874431UL)))(s);
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1); }
 # 89 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2210,202 +2168,204 @@ void advanceVelocity_resumable(SimFlat* s, int nBoxes, real_t dt)
 # 92 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&advanceVelocity), "advanceVelocity", &____must_manage_advanceVelocity, 3, 0, (size_t)(8093288458141874210UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 93 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iBox; for ( iBox = (0) ; iBox<nBoxes; iBox++)
+   { int iBox; for ( iBox = (0) ; iBox<nBoxes; iBox++)
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+   {
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+      {
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][0] += dt*s->atoms->f[iOff][0];
+         s->atoms->p[iOff][0] += dt*s->atoms->f[iOff][0];
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][1] += dt*s->atoms->f[iOff][1];
+         s->atoms->p[iOff][1] += dt*s->atoms->f[iOff][1];
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][2] += dt*s->atoms->f[iOff][2];
+         s->atoms->p[iOff][2] += dt*s->atoms->f[iOff][2];
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+      } }
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+   } }
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-rm_stack(false, 0UL, "advanceVelocity", &____must_manage_advanceVelocity, ____alias_loc_id_6, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "advanceVelocity", &____must_manage_advanceVelocity, ____alias_loc_id_7, ____chimes_did_disable2); }
 # 103 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 104 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 void advancePosition_resumable(SimFlat* s, int nBoxes, real_t dt)
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&advancePosition), "advancePosition", &____must_manage_advancePosition, 3, 0, (size_t)(8093288458141874368UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iBox; for ( iBox = (0) ; iBox<nBoxes; iBox++)
+   { int iBox; for ( iBox = (0) ; iBox<nBoxes; iBox++)
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+   {
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+      {
 # 110 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
+          int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
 # 111 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- real_t invMass; invMass = (1. / s->species[iSpecies].mass) ;
+          real_t invMass; invMass = (1. / s->species[iSpecies].mass) ;
 # 112 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->r[iOff][0] += dt*s->atoms->p[iOff][0]*invMass;
+         s->atoms->r[iOff][0] += dt*s->atoms->p[iOff][0]*invMass;
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->r[iOff][1] += dt*s->atoms->p[iOff][1]*invMass;
+         s->atoms->r[iOff][1] += dt*s->atoms->p[iOff][1]*invMass;
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->r[iOff][2] += dt*s->atoms->p[iOff][2]*invMass;
+         s->atoms->r[iOff][2] += dt*s->atoms->p[iOff][2]*invMass;
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+      } }
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+   } }
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-rm_stack(false, 0UL, "advancePosition", &____must_manage_advancePosition, ____alias_loc_id_7, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "advancePosition", &____must_manage_advancePosition, ____alias_loc_id_8, ____chimes_did_disable3); }
 # 118 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 119 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 120 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 121 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
+static void (*____chimes_extern_func_addRealParallel)(double *, double *, int) = addRealParallel;
 void kineticEnergy_resumable(SimFlat* s)
 # 122 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&kineticEnergy), "kineticEnergy", &____must_manage_kineticEnergy, 1, 1, (size_t)(8093288458141874598UL), "kineticEnergy|s|0", &____must_checkpoint_kineticEnergy_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; real_t eSum[2];
 real_t eLocal[2];
  if (____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(1, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 123 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- ;
+    ;
 # 124 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- eLocal[0] = s->ePotential;
+   eLocal[0] = s->ePotential;
 # 125 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- eLocal[1] = 0;
+   eLocal[1] = 0;
 # 126 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iBox; for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; iBox++)
+   { int iBox; for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; iBox++)
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+   {
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+      {
 # 130 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
+          int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
 # 131 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- real_t invMass; invMass = (0.5 / s->species[iSpecies].mass) ;
+          real_t invMass; invMass = (0.5 / s->species[iSpecies].mass) ;
 # 132 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- eLocal[1] += ( s->atoms->p[iOff][0] * s->atoms->p[iOff][0] +
+         eLocal[1] += ( s->atoms->p[iOff][0] * s->atoms->p[iOff][0] +
 # 133 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][1] * s->atoms->p[iOff][1] +
+         s->atoms->p[iOff][1] * s->atoms->p[iOff][1] +
 # 134 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][2] * s->atoms->p[iOff][2] )*invMass;
+         s->atoms->p[iOff][2] * s->atoms->p[iOff][2] )*invMass;
 # 135 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+      } }
 # 136 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+   } }
 # 137 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 138 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- ;
+    ;
 # 139 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_5, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 140 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_2: ({ calling((void*)addRealParallel, 2, 0UL, 0, 3, (size_t)(8093288458141874433UL), (size_t)(8093288458141874439UL), (size_t)(0UL)); (addRealParallel)(eLocal, eSum, 2); }) ;
+    call_lbl_2: ({ calling((void*)addRealParallel, 2, 0, 0UL, 3, (size_t)(8093288458141874433UL), (size_t)(8093288458141874439UL), (size_t)(0UL)); (addRealParallel)(eLocal, eSum, 2); }) ;
 # 141 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_3: ({ calling((void*)profileStop, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 142 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 143 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->ePotential = eSum[0];
+   s->ePotential = eSum[0];
 # 144 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->eKinetic = eSum[1];
+   s->eKinetic = eSum[1];
 # 145 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-rm_stack(false, 0UL, "kineticEnergy", &____must_manage_kineticEnergy, ____alias_loc_id_9, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "kineticEnergy", &____must_manage_kineticEnergy, ____alias_loc_id_10, ____chimes_did_disable4); }
 # 160 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 160 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
+static void (*____chimes_extern_func_haloExchange)(struct HaloExchangeSt *, void *) = haloExchange;static void (*____chimes_extern_func_sortAtomsInCell)(struct AtomsSt *, struct LinkCellSt *, int) = sortAtomsInCell;static void (*____chimes_extern_func_updateLinkCells)(struct LinkCellSt *, struct AtomsSt *) = updateLinkCells;
 void redistributeAtoms_resumable(SimFlat* sim)
 # 161 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&redistributeAtoms), "redistributeAtoms", &____must_manage_redistributeAtoms, 1, 1, (size_t)(8093288458141874385UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0) ; int ii;
  if (____must_checkpoint_redistributeAtoms_ii_0) { register_stack_vars(1, "redistributeAtoms|ii|0", &____must_checkpoint_redistributeAtoms_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 162 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_1: ({ LinkCell * ____chimes_arg19; Atoms * ____chimes_arg20; if (!____chimes_replaying) { ____chimes_arg19 = (sim->boxes); ____chimes_arg20 = (sim->atoms); } calling((void*)updateLinkCells, 1, 0UL, ____alias_loc_id_2, 2, (size_t)(8093288458141874387UL), (size_t)(8093288458141874387UL)); (updateLinkCells)(____chimes_arg19, ____chimes_arg20); }) ;
+    call_lbl_1: ({ LinkCell * ____chimes_arg18; Atoms * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (sim->boxes); ____chimes_arg19 = (sim->atoms); } calling((void*)updateLinkCells, 1, ____alias_loc_id_2, 0UL, 2, (size_t)(8093288458141874387UL), (size_t)(8093288458141874387UL)); (updateLinkCells)(____chimes_arg18, ____chimes_arg19); }) ;
 # 163 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 164 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_2: ({ calling((void*)profileStart, 2, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
+   do { call_lbl_2: ({ calling((void*)profileStart, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
 # 165 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_3: ({ HaloExchange * ____chimes_arg22; if (!____chimes_replaying) { ____chimes_arg22 = (sim->atomExchange); } calling((void*)haloExchange, 3, 0UL, 0, 2, (size_t)(8093288458141874387UL), (size_t)(8093288458141874385UL)); (haloExchange)(____chimes_arg22, sim); }) ;
+    call_lbl_3: ({ HaloExchange * ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg21 = (sim->atomExchange); } calling((void*)haloExchange, 3, 0, 0UL, 2, (size_t)(8093288458141874387UL), (size_t)(8093288458141874385UL)); (haloExchange)(____chimes_arg21, sim); }) ;
 # 166 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_4: ({ calling((void*)profileStop, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
+   do { call_lbl_4: ({ calling((void*)profileStop, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
 # 167 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 168 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ Atoms * ____chimes_arg25; LinkCell * ____chimes_arg26; if (!____chimes_replaying) { ____chimes_arg25 = (sim->atoms); ____chimes_arg26 = (sim->boxes); } calling((void*)sortAtomsInCell, 5, 0UL, 0, 3, (size_t)(8093288458141874387UL), (size_t)(8093288458141874387UL), (size_t)(0UL)); (sortAtomsInCell)(____chimes_arg25, ____chimes_arg26, ii); }) ; } };
+   { for ( ii = (0) ;ii<sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ Atoms * ____chimes_arg24; LinkCell * ____chimes_arg25; if (!____chimes_replaying) { ____chimes_arg24 = (sim->atoms); ____chimes_arg25 = (sim->boxes); } calling((void*)sortAtomsInCell, 5, ____alias_loc_id_3, 0UL, 3, (size_t)(8093288458141874387UL), (size_t)(8093288458141874387UL), (size_t)(0UL)); (sortAtomsInCell)(____chimes_arg24, ____chimes_arg25, ii); }) ; } };
 # 170 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_8, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_9, ____chimes_did_disable5); }
 double timestep_quick(SimFlat* s, int nSteps, real_t dt)
 # 36 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&timestep), "timestep", (int *)0, 3, 3, (size_t)(8093288458141874007UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", (int *)0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", (int *)0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", (int *)0, "double", (void *)(&dt), (size_t)8, 0, 0, 0) ; int ii;
  register_stack_vars(1, "timestep|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); ; ;
 # 37 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { for ( ii = (0) ; ii<nSteps; ++ii)
+   { for ( ii = (0) ; ii<nSteps; ++ii)
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+   {
 # 39 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_0, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
 # 40 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- ({ calling_npm(1, 0, 8093288458141874007UL, 8093288458141874210UL); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
+      ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 41 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_2: ({ calling((void*)profileStop, 2, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_2: ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
 # 42 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 43 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 44 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, 0, 0); (checkpoint)(); }) ;
+       call_lbl_3: checkpoint_transformed(3, 0);
 # 45 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 46 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 47 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_4: ({ calling((void*)profileStart, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
+      do { call_lbl_4: ({ calling((void*)profileStart, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
 # 48 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- ({ calling_npm(1, 0, 8093288458141874007UL, 8093288458141874368UL); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
+      ({ calling_npm("advancePosition", 0); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
 # 49 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_5: ({ calling((void*)profileStop, 5, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
+      do { call_lbl_5: ({ calling((void*)profileStop, 5, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
 # 50 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 51 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_6: ({ calling((void*)checkpoint, 6, 0UL, 0, 0); (checkpoint)(); }) ;
+       call_lbl_6: checkpoint_transformed(6, 0);
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_7: ({ calling((void*)profileStart, 7, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_7: ({ calling((void*)profileStart, 7, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
 # 56 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_8: ({ calling((void*)redistributeAtoms, 8, 0UL, 0, 1, (size_t)(8093288458141874007UL)); redistributeAtoms_quick(s); }) ;
+       call_lbl_8: ({ calling((void*)redistributeAtoms, 8, 0, 0UL, 1, (size_t)(8093288458141874007UL)); redistributeAtoms_quick(s); }) ;
 # 57 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_9: ({ calling((void*)profileStop, 9, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_9: ({ calling((void*)profileStop, 9, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
 # 58 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 59 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 60 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_10: ({ calling((void*)checkpoint, 10, 0UL, 0, 0); (checkpoint)(); }) ;
+       call_lbl_10: checkpoint_transformed(10, 0);
 # 61 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 62 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 63 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_11: ({ calling((void*)profileStart, 11, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_11: ({ calling((void*)profileStart, 11, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
 # 64 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_12: ({ calling((void*)computeForce, 12, 0UL, 0, 1, (size_t)(8093288458141874007UL)); computeForce_quick(s); }) ;
+       call_lbl_12: ({ calling((void*)computeForce, 12, 0, 0UL, 1, (size_t)(8093288458141874007UL)); computeForce_quick(s); }) ;
 # 65 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_13: ({ calling((void*)profileStop, 13, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_13: ({ calling((void*)profileStop, 13, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
 # 66 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 67 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 68 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_14: ({ calling((void*)checkpoint, 14, 0UL, 0, 0); (checkpoint)(); }) ;
+       call_lbl_14: checkpoint_transformed(14, 0);
 # 69 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 70 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 71 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_15: ({ calling((void*)profileStart, 15, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_15: ({ calling((void*)profileStart, 15, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- ({ calling_npm(1, 0, 8093288458141874007UL, 8093288458141874210UL); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
+      ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 73 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_16: ({ calling((void*)profileStop, 16, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_16: ({ calling((void*)profileStop, 16, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 76 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_17: ({ calling((void*)checkpoint, 17, 0UL, 0, 0); (checkpoint)(); }) ;
+       call_lbl_17: checkpoint_transformed(17, 0);
 # 77 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 78 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+   } }
 # 79 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 80 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_18: ({ calling((void*)kineticEnergy, 18, 0UL, ____alias_loc_id_1, 1, (size_t)(8093288458141874007UL)); kineticEnergy_quick(s); }) ;
+    call_lbl_18: ({ calling((void*)kineticEnergy, 18, ____alias_loc_id_1, 0UL, 1, (size_t)(8093288458141874007UL)); kineticEnergy_quick(s); }) ;
 # 81 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 82 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- rm_stack(false, 0UL, "timestep", (int *)0x0, 0, ____chimes_did_disable0); return s->ePotential;
+   rm_stack(false, 0UL, "timestep", (int *)0x0, 0, ____chimes_did_disable0); return s->ePotential;
 # 83 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 }
 
@@ -2415,7 +2375,7 @@ void computeForce_quick(SimFlat* s)
 # 86 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&computeForce), "computeForce", (int *)0, 1, 0, (size_t)(8093288458141874431UL)) ; ; ;
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_1: ({ calling((void*)s->pot->force, 1, 0UL, ____alias_loc_id_4, 1, (size_t)(8093288458141874431UL)); (s->pot->force)(s); }) ;
+    call_lbl_1: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, 0, 0UL, 1, 8093288458141874431UL)))(s);
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1); }
 
@@ -2425,25 +2385,25 @@ void advanceVelocity_quick(SimFlat* s, int nBoxes, real_t dt)
 # 92 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&advanceVelocity), "advanceVelocity", &____must_manage_advanceVelocity, 3, 0, (size_t)(8093288458141874210UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 93 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iBox; for ( iBox = (0) ; iBox<nBoxes; iBox++)
+   { int iBox; for ( iBox = (0) ; iBox<nBoxes; iBox++)
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+   {
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+      {
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][0] += dt*s->atoms->f[iOff][0];
+         s->atoms->p[iOff][0] += dt*s->atoms->f[iOff][0];
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][1] += dt*s->atoms->f[iOff][1];
+         s->atoms->p[iOff][1] += dt*s->atoms->f[iOff][1];
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][2] += dt*s->atoms->f[iOff][2];
+         s->atoms->p[iOff][2] += dt*s->atoms->f[iOff][2];
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+      } }
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+   } }
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-rm_stack(false, 0UL, "advanceVelocity", &____must_manage_advanceVelocity, ____alias_loc_id_6, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "advanceVelocity", &____must_manage_advanceVelocity, ____alias_loc_id_7, ____chimes_did_disable2); }
 
 void advanceVelocity(SimFlat* s, int nBoxes, real_t dt) { (____chimes_replaying ? advanceVelocity_resumable(s, nBoxes, dt) : advanceVelocity_quick(s, nBoxes, dt)); }
 
@@ -2451,29 +2411,29 @@ void advancePosition_quick(SimFlat* s, int nBoxes, real_t dt)
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&advancePosition), "advancePosition", &____must_manage_advancePosition, 3, 0, (size_t)(8093288458141874368UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iBox; for ( iBox = (0) ; iBox<nBoxes; iBox++)
+   { int iBox; for ( iBox = (0) ; iBox<nBoxes; iBox++)
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+   {
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+      {
 # 110 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
+          int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
 # 111 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- real_t invMass; invMass = (1. / s->species[iSpecies].mass) ;
+          real_t invMass; invMass = (1. / s->species[iSpecies].mass) ;
 # 112 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->r[iOff][0] += dt*s->atoms->p[iOff][0]*invMass;
+         s->atoms->r[iOff][0] += dt*s->atoms->p[iOff][0]*invMass;
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->r[iOff][1] += dt*s->atoms->p[iOff][1]*invMass;
+         s->atoms->r[iOff][1] += dt*s->atoms->p[iOff][1]*invMass;
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->r[iOff][2] += dt*s->atoms->p[iOff][2]*invMass;
+         s->atoms->r[iOff][2] += dt*s->atoms->p[iOff][2]*invMass;
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+      } }
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+   } }
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-rm_stack(false, 0UL, "advancePosition", &____must_manage_advancePosition, ____alias_loc_id_7, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "advancePosition", &____must_manage_advancePosition, ____alias_loc_id_8, ____chimes_did_disable3); }
 
 void advancePosition(SimFlat* s, int nBoxes, real_t dt) { (____chimes_replaying ? advancePosition_resumable(s, nBoxes, dt) : advancePosition_quick(s, nBoxes, dt)); }
 
@@ -2483,49 +2443,49 @@ void kineticEnergy_quick(SimFlat* s)
 real_t eLocal[2];
  if (____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(1, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); } ; ;
 # 123 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- ;
+    ;
 # 124 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- eLocal[0] = s->ePotential;
+   eLocal[0] = s->ePotential;
 # 125 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- eLocal[1] = 0;
+   eLocal[1] = 0;
 # 126 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iBox; for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; iBox++)
+   { int iBox; for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; iBox++)
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+   {
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+      {
 # 130 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
+          int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
 # 131 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- real_t invMass; invMass = (0.5 / s->species[iSpecies].mass) ;
+          real_t invMass; invMass = (0.5 / s->species[iSpecies].mass) ;
 # 132 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- eLocal[1] += ( s->atoms->p[iOff][0] * s->atoms->p[iOff][0] +
+         eLocal[1] += ( s->atoms->p[iOff][0] * s->atoms->p[iOff][0] +
 # 133 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][1] * s->atoms->p[iOff][1] +
+         s->atoms->p[iOff][1] * s->atoms->p[iOff][1] +
 # 134 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][2] * s->atoms->p[iOff][2] )*invMass;
+         s->atoms->p[iOff][2] * s->atoms->p[iOff][2] )*invMass;
 # 135 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+      } }
 # 136 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- } }
+   } }
 # 137 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 138 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- ;
+    ;
 # 139 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_5, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 140 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_2: ({ calling((void*)addRealParallel, 2, 0UL, 0, 3, (size_t)(8093288458141874433UL), (size_t)(8093288458141874439UL), (size_t)(0UL)); (addRealParallel)(eLocal, eSum, 2); }) ;
+    call_lbl_2: ({ calling((void*)addRealParallel, 2, 0, 0UL, 3, (size_t)(8093288458141874433UL), (size_t)(8093288458141874439UL), (size_t)(0UL)); (addRealParallel)(eLocal, eSum, 2); }) ;
 # 141 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_3: ({ calling((void*)profileStop, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 142 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 143 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->ePotential = eSum[0];
+   s->ePotential = eSum[0];
 # 144 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->eKinetic = eSum[1];
+   s->eKinetic = eSum[1];
 # 145 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-rm_stack(false, 0UL, "kineticEnergy", &____must_manage_kineticEnergy, ____alias_loc_id_9, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "kineticEnergy", &____must_manage_kineticEnergy, ____alias_loc_id_10, ____chimes_did_disable4); }
 
 void kineticEnergy(SimFlat* s) { (____chimes_replaying ? kineticEnergy_resumable(s) : kineticEnergy_quick(s)); }
 
@@ -2534,130 +2494,45 @@ void redistributeAtoms_quick(SimFlat* sim)
 {const int ____chimes_did_disable5 = new_stack((void *)(&redistributeAtoms), "redistributeAtoms", &____must_manage_redistributeAtoms, 1, 1, (size_t)(8093288458141874385UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0) ; int ii;
  if (____must_checkpoint_redistributeAtoms_ii_0) { register_stack_vars(1, "redistributeAtoms|ii|0", &____must_checkpoint_redistributeAtoms_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } ; ;
 # 162 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_1: ({ calling((void*)updateLinkCells, 1, 0UL, ____alias_loc_id_2, 2, (size_t)(8093288458141874387UL), (size_t)(8093288458141874387UL)); (updateLinkCells)(sim->boxes, sim->atoms); }) ;
+    call_lbl_1: ({ calling((void*)updateLinkCells, 1, ____alias_loc_id_2, 0UL, 2, (size_t)(8093288458141874387UL), (size_t)(8093288458141874387UL)); (updateLinkCells)(sim->boxes, sim->atoms); }) ;
 # 163 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 164 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_2: ({ calling((void*)profileStart, 2, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
+   do { call_lbl_2: ({ calling((void*)profileStart, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
 # 165 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- call_lbl_3: ({ calling((void*)haloExchange, 3, 0UL, 0, 2, (size_t)(8093288458141874387UL), (size_t)(8093288458141874385UL)); (haloExchange)(sim->atomExchange, sim); }) ;
+    call_lbl_3: ({ calling((void*)haloExchange, 3, 0, 0UL, 2, (size_t)(8093288458141874387UL), (size_t)(8093288458141874385UL)); (haloExchange)(sim->atomExchange, sim); }) ;
 # 166 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { call_lbl_4: ({ calling((void*)profileStop, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
+   do { call_lbl_4: ({ calling((void*)profileStop, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
 # 167 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 168 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ calling((void*)sortAtomsInCell, 5, 0UL, 0, 3, (size_t)(8093288458141874387UL), (size_t)(8093288458141874387UL), (size_t)(0UL)); (sortAtomsInCell)(sim->atoms, sim->boxes, ii); }) ; } };
+   { for ( ii = (0) ;ii<sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ calling((void*)sortAtomsInCell, 5, ____alias_loc_id_3, 0UL, 3, (size_t)(8093288458141874387UL), (size_t)(8093288458141874387UL), (size_t)(0UL)); (sortAtomsInCell)(sim->atoms, sim->boxes, ii); }) ; } };
 # 170 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_8, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_9, ____chimes_did_disable5); }
 
 void redistributeAtoms(SimFlat* sim) { (____chimes_replaying ? redistributeAtoms_resumable(sim) : redistributeAtoms_quick(sim)); }
 
 
 
-double timestep_npm(SimFlat* s, int nSteps, real_t dt)
-# 36 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-{
-# 37 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- for (int ii=0; ii<nSteps; ++ii)
-# 38 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
-# 39 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStart(velocityTimer); } while(0);
-# 40 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5 * dt);
-# 41 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStop(velocityTimer); } while(0);
-# 42 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 43 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 44 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- checkpoint();
-# 45 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 46 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 47 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStart(positionTimer); } while(0);
-# 48 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- advancePosition_npm(s, s->boxes->nLocalBoxes, dt);
-# 49 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStop(positionTimer); } while(0);
-# 50 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 51 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 52 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- checkpoint();
-# 53 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 54 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 55 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStart(redistributeTimer); } while(0);
-# 56 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- redistributeAtoms_npm(s);
-# 57 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStop(redistributeTimer); } while(0);
-# 58 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 59 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 60 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- checkpoint();
-# 61 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 62 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 63 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStart(computeForceTimer); } while(0);
-# 64 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- computeForce_npm(s);
-# 65 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStop(computeForceTimer); } while(0);
-# 66 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 67 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 68 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- checkpoint();
-# 69 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 70 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 71 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStart(velocityTimer); } while(0);
-# 72 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5 * dt);
-# 73 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStop(velocityTimer); } while(0);
-# 74 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 75 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 76 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- checkpoint();
-# 77 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 78 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- }
-# 79 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 80 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- kineticEnergy_npm(s);
-# 81 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-# 82 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- return s->ePotential;
-# 83 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-}
-
-void computeForce_npm(SimFlat* s)
-# 86 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-{
-# 87 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->pot->force(s);
-# 88 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-}
-
 void advanceVelocity_npm(SimFlat* s, int nBoxes, real_t dt)
 # 92 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {
 # 93 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- for (int iBox=0; iBox<nBoxes; iBox++)
+   for (int iBox=0; iBox<nBoxes; iBox++)
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+   {
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- for (int iOff=64*iBox,ii=0; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+      for (int iOff=64*iBox,ii=0; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+      {
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][0] += dt*s->atoms->f[iOff][0];
+         s->atoms->p[iOff][0] += dt*s->atoms->f[iOff][0];
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][1] += dt*s->atoms->f[iOff][1];
+         s->atoms->p[iOff][1] += dt*s->atoms->f[iOff][1];
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][2] += dt*s->atoms->f[iOff][2];
+         s->atoms->p[iOff][2] += dt*s->atoms->f[iOff][2];
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- }
+      }
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- }
+   }
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 }
 
@@ -2665,27 +2540,27 @@ void advancePosition_npm(SimFlat* s, int nBoxes, real_t dt)
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- for (int iBox=0; iBox<nBoxes; iBox++)
+   for (int iBox=0; iBox<nBoxes; iBox++)
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+   {
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- for (int iOff=64*iBox,ii=0; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+      for (int iOff=64*iBox,ii=0; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+      {
 # 110 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- int iSpecies = s->atoms->iSpecies[iOff];
+         int iSpecies = s->atoms->iSpecies[iOff];
 # 111 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- real_t invMass = 1.0/s->species[iSpecies].mass;
+         real_t invMass = 1.0/s->species[iSpecies].mass;
 # 112 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->r[iOff][0] += dt*s->atoms->p[iOff][0]*invMass;
+         s->atoms->r[iOff][0] += dt*s->atoms->p[iOff][0]*invMass;
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->r[iOff][1] += dt*s->atoms->p[iOff][1]*invMass;
+         s->atoms->r[iOff][1] += dt*s->atoms->p[iOff][1]*invMass;
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->r[iOff][2] += dt*s->atoms->p[iOff][2]*invMass;
+         s->atoms->r[iOff][2] += dt*s->atoms->p[iOff][2]*invMass;
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- }
+      }
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- }
+   }
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 }
 
@@ -2693,47 +2568,47 @@ void kineticEnergy_npm(SimFlat* s)
 # 122 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {
 # 123 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- real_t eLocal[2];
+   real_t eLocal[2];
 # 124 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- eLocal[0] = s->ePotential;
+   eLocal[0] = s->ePotential;
 # 125 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- eLocal[1] = 0;
+   eLocal[1] = 0;
 # 126 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+   {
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- for (int iOff=64*iBox,ii=0; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+      for (int iOff=64*iBox,ii=0; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- {
+      {
 # 130 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- int iSpecies = s->atoms->iSpecies[iOff];
+         int iSpecies = s->atoms->iSpecies[iOff];
 # 131 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- real_t invMass = 0.5/s->species[iSpecies].mass;
+         real_t invMass = 0.5/s->species[iSpecies].mass;
 # 132 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- eLocal[1] += ( s->atoms->p[iOff][0] * s->atoms->p[iOff][0] +
+         eLocal[1] += ( s->atoms->p[iOff][0] * s->atoms->p[iOff][0] +
 # 133 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][1] * s->atoms->p[iOff][1] +
+         s->atoms->p[iOff][1] * s->atoms->p[iOff][1] +
 # 134 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->atoms->p[iOff][2] * s->atoms->p[iOff][2] )*invMass;
+         s->atoms->p[iOff][2] * s->atoms->p[iOff][2] )*invMass;
 # 135 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- }
+      }
 # 136 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- }
+   }
 # 137 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 138 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- real_t eSum[2];
+   real_t eSum[2];
 # 139 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStart(commReduceTimer); } while(0);
+   do { (*____chimes_extern_func_profileStart)(commReduceTimer); } while(0);
 # 140 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- addRealParallel(eLocal, eSum, 2);
+   (*____chimes_extern_func_addRealParallel)(eLocal, eSum, 2);
 # 141 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStop(commReduceTimer); } while(0);
+   do { (*____chimes_extern_func_profileStop)(commReduceTimer); } while(0);
 # 142 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 143 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->ePotential = eSum[0];
+   s->ePotential = eSum[0];
 # 144 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- s->eKinetic = eSum[1];
+   s->eKinetic = eSum[1];
 # 145 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 }
 
@@ -2741,17 +2616,17 @@ void redistributeAtoms_npm(SimFlat* sim)
 # 161 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {
 # 162 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- updateLinkCells(sim->boxes, sim->atoms);
+   (*____chimes_extern_func_updateLinkCells)(sim->boxes, sim->atoms);
 # 163 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 164 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStart(atomHaloTimer); } while(0);
+   do { (*____chimes_extern_func_profileStart)(atomHaloTimer); } while(0);
 # 165 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- haloExchange(sim->atomExchange, sim);
+   (*____chimes_extern_func_haloExchange)(sim->atomExchange, sim);
 # 166 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- do { profileStop(atomHaloTimer); } while(0);
+   do { (*____chimes_extern_func_profileStop)(atomHaloTimer); } while(0);
 # 167 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 168 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- for (int ii = 0;ii < sim->boxes->nTotalBoxes; ++ii) { sortAtomsInCell(sim->atoms, sim->boxes, ii); };
+   for (int ii=0;ii<sim->boxes->nTotalBoxes; ++ii) { (*____chimes_extern_func_sortAtomsInCell)(sim->atoms, sim->boxes, ii); };
 # 170 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 }
 
@@ -2760,9 +2635,79 @@ void redistributeAtoms_npm(SimFlat* sim)
 
 
 static int module_init() {
-    init_module(8093288458141873986UL, 16, 6, 4, 6, 11, 8093288458141873986UL + 21UL, 8093288458141873986UL + 24UL, 8093288458141873986UL + 612UL, 8093288458141873986UL + 499UL, 8093288458141873986UL + 439UL, 8093288458141873986UL + 441UL, 8093288458141873986UL + 499UL, 8093288458141873986UL + 501UL, 8093288458141873986UL + 446UL, 8093288458141873986UL + 612UL, 8093288458141873986UL + 445UL, 8093288458141873986UL + 439UL, 8093288458141873986UL + 1UL, 8093288458141873986UL + 21UL, 8093288458141873986UL + 382UL, 8093288458141873986UL + 273UL, 8093288458141873986UL + 273UL, 8093288458141873986UL + 275UL, 8093288458141873986UL + 385UL, 8093288458141873986UL + 399UL, 8093288458141873986UL + 228UL, 8093288458141873986UL + 382UL, 8093288458141873986UL + 434UL, 8093288458141873986UL + 445UL, 8093288458141873986UL + 100UL, 8093288458141873986UL + 224UL, 8093288458141873986UL + 224UL, 8093288458141873986UL + 143UL, 8093288458141873986UL + 399UL, 8093288458141873986UL + 401UL, 8093288458141873986UL + 143UL, 8093288458141873986UL + 145UL, "AtomsSt", 8, "int", (int)__builtin_offsetof(struct AtomsSt, nLocal), "int", (int)__builtin_offsetof(struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof(struct AtomsSt, gid), "int*", (int)__builtin_offsetof(struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, f), "double*", (int)__builtin_offsetof(struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof(struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof(struct BasePotentialSt, mass), "double", (int)__builtin_offsetof(struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, name), "int", (int)__builtin_offsetof(struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof(struct BasePotentialSt, force), "*", (int)__builtin_offsetof(struct BasePotentialSt, print), "*", (int)__builtin_offsetof(struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localExtent), "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof(struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof(struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof(struct HaloExchangeSt, parms), "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof(struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof(struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof(struct LinkCellSt, nAtoms), "SimFlatSt", 11, "int", (int)__builtin_offsetof(struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof(struct SimFlatSt, printRate), "double", (int)__builtin_offsetof(struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof(struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof(struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof(struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof(struct SimFlatSt, species), "double", (int)__builtin_offsetof(struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof(struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof(struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof(struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof(struct SpeciesDataSt, name), "int", (int)__builtin_offsetof(struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof(struct SpeciesDataSt, mass), "TimerHandle", 0, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "timestep", 21, "profileStart", "advanceVelocity", "profileStop", "checkpoint", "profileStart", "advancePosition", "profileStop", "checkpoint", "profileStart", "redistributeAtoms", "profileStop", "checkpoint", "profileStart", "computeForce", "profileStop", "checkpoint", "profileStart", "advanceVelocity", "profileStop", "checkpoint", "kineticEnergy", "advancePosition", 0, "kineticEnergy", 3, "profileStart", "addRealParallel", "profileStop", "computeForce", 0, "redistributeAtoms", 5, "updateLinkCells", "profileStart", "haloExchange", "profileStop", "sortAtomsInCell", "advanceVelocity", 0, "redistributeAtoms|sim|0", 5, "updateLinkCells", "sortAtomsInCell", "profileStop", "profileStart", "haloExchange", "redistributeAtoms|ii|0", 1, "sortAtomsInCell", "kineticEnergy|s|0", 3, "profileStop", "profileStart", "addRealParallel", "kineticEnergy|eLocal|0", 1, "kineticEnergy", &____alias_loc_id_0, (unsigned)4, 8093288458141873986UL + 1UL, 8093288458141873986UL + 2UL, 8093288458141873986UL + 3UL, 8093288458141873986UL + 4UL, &____alias_loc_id_1, (unsigned)4, 8093288458141873986UL + 1UL, 8093288458141873986UL + 2UL, 8093288458141873986UL + 3UL, 8093288458141873986UL + 4UL, &____alias_loc_id_2, (unsigned)1, 8093288458141873986UL + 385UL, &____alias_loc_id_3, (unsigned)1, 8093288458141873986UL + 386UL, &____alias_loc_id_4, (unsigned)1, 8093288458141873986UL + 434UL, &____alias_loc_id_5, (unsigned)7, 8093288458141873986UL + 446UL, 8093288458141873986UL + 447UL, 8093288458141873986UL + 448UL, 8093288458141873986UL + 449UL, 8093288458141873986UL + 450UL, 8093288458141873986UL + 451UL, 8093288458141873986UL + 452UL, &____alias_loc_id_6, (unsigned)7, 8093288458141873986UL + 100UL, 8093288458141873986UL + 101UL, 8093288458141873986UL + 102UL, 8093288458141873986UL + 103UL, 8093288458141873986UL + 104UL, 8093288458141873986UL + 105UL, 8093288458141873986UL + 145UL, &____alias_loc_id_7, (unsigned)9, 8093288458141873986UL + 228UL, 8093288458141873986UL + 229UL, 8093288458141873986UL + 230UL, 8093288458141873986UL + 231UL, 8093288458141873986UL + 232UL, 8093288458141873986UL + 233UL, 8093288458141873986UL + 234UL, 8093288458141873986UL + 235UL, 8093288458141873986UL + 275UL, &____alias_loc_id_8, (unsigned)1, 8093288458141873986UL + 386UL, &____alias_loc_id_9, (unsigned)1, 8093288458141873986UL + 612UL);
-    register_functions(6, "timestep.c.pre.hard.cpp", "timestep", &timestep, "advanceVelocity", &advanceVelocity, "advancePosition", &advancePosition, "redistributeAtoms", &redistributeAtoms, "computeForce", &computeForce, "kineticEnergy", &kineticEnergy);
+    init_module(8093288458141873986UL, 16, 6, 4, 11, 4, 6, 10, 3, 0, 11,
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)1, (8093288458141873986UL + 1UL), (8093288458141873986UL + 2UL), (8093288458141873986UL + 3UL), (8093288458141873986UL + 4UL), "kineticEnergy", (unsigned)1, (8093288458141873986UL + 21UL),
+                           &____alias_loc_id_1, (unsigned)4, (unsigned)1, (8093288458141873986UL + 1UL), (8093288458141873986UL + 2UL), (8093288458141873986UL + 3UL), (8093288458141873986UL + 4UL), "kineticEnergy", (unsigned)1, (8093288458141873986UL + 21UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)1, (8093288458141873986UL + 385UL), "updateLinkCells", (unsigned)1, (8093288458141873986UL + 401UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)1, (8093288458141873986UL + 386UL), "sortAtomsInCell", (unsigned)1, (8093288458141873986UL + 401UL),
+                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (8093288458141873986UL + 434UL), (8093288458141873986UL + 445UL),
+                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (8093288458141873986UL + 446UL), (8093288458141873986UL + 447UL), (8093288458141873986UL + 448UL), (8093288458141873986UL + 449UL), (8093288458141873986UL + 450UL), (8093288458141873986UL + 451UL), (8093288458141873986UL + 452UL),
+                           &____alias_loc_id_6, (unsigned)0, (unsigned)5, "advancePosition", (unsigned)1, (8093288458141873986UL + 21UL), "computeForce", (unsigned)1, (8093288458141873986UL + 21UL), "advanceVelocity", (unsigned)1, (8093288458141873986UL + 21UL), "redistributeAtoms", (unsigned)1, (8093288458141873986UL + 21UL), "kineticEnergy", (unsigned)1, (8093288458141873986UL + 21UL),
+                           &____alias_loc_id_7, (unsigned)7, (unsigned)0, (8093288458141873986UL + 100UL), (8093288458141873986UL + 101UL), (8093288458141873986UL + 102UL), (8093288458141873986UL + 103UL), (8093288458141873986UL + 104UL), (8093288458141873986UL + 105UL), (8093288458141873986UL + 145UL),
+                           &____alias_loc_id_8, (unsigned)9, (unsigned)0, (8093288458141873986UL + 228UL), (8093288458141873986UL + 229UL), (8093288458141873986UL + 230UL), (8093288458141873986UL + 231UL), (8093288458141873986UL + 232UL), (8093288458141873986UL + 233UL), (8093288458141873986UL + 234UL), (8093288458141873986UL + 235UL), (8093288458141873986UL + 275UL),
+                           &____alias_loc_id_9, (unsigned)1, (unsigned)2, (8093288458141873986UL + 386UL), "sortAtomsInCell", (unsigned)1, (8093288458141873986UL + 401UL), "haloExchange", (unsigned)2, (8093288458141873986UL + 399UL), (8093288458141873986UL + 401UL),
+                            &____alias_loc_id_10, (unsigned)1, (unsigned)1, (8093288458141873986UL + 612UL), "addRealParallel", (unsigned)2, (8093288458141873986UL + 447UL), (8093288458141873986UL + 453UL),
+                            "advanceVelocity", (void *)(&advanceVelocity_npm), (void *)__null, 0, 3, (8093288458141873986UL + 224UL), 0UL, 0UL, 0UL, 0,
+                            "advancePosition", (void *)(&advancePosition_npm), (void *)__null, 0, 3, (8093288458141873986UL + 382UL), 0UL, 0UL, 0UL, 0,
+                            "kineticEnergy", (void *)(&kineticEnergy_npm), (void *)__null, 1, &____alias_loc_id_5, 1, (8093288458141873986UL + 612UL), 0UL, 3, "profileStart", 1, 0UL, 0UL, "addRealParallel", 3, (8093288458141873986UL + 447UL), (8093288458141873986UL + 453UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL,
+                            "redistributeAtoms", (void *)(&redistributeAtoms_npm), (void *)__null, 2, &____alias_loc_id_2, &____alias_loc_id_3, 1, (8093288458141873986UL + 399UL), 0UL, 5, "updateLinkCells", 2, (8093288458141873986UL + 401UL), (8093288458141873986UL + 401UL), 0UL, "profileStart", 1, 0UL, 0UL, "haloExchange", 2, (8093288458141873986UL + 401UL), (8093288458141873986UL + 399UL), 0UL, "profileStop", 1, 0UL, 0UL, "sortAtomsInCell", 3, (8093288458141873986UL + 401UL), (8093288458141873986UL + 401UL), 0UL, 0UL,
+                               "addRealParallel", (void **)&(____chimes_extern_func_addRealParallel),
+                               "haloExchange", (void **)&(____chimes_extern_func_haloExchange),
+                               "profileStart", (void **)&(____chimes_extern_func_profileStart),
+                               "profileStop", (void **)&(____chimes_extern_func_profileStop),
+                               "sortAtomsInCell", (void **)&(____chimes_extern_func_sortAtomsInCell),
+                               "updateLinkCells", (void **)&(____chimes_extern_func_updateLinkCells),
+                           "advanceVelocity", &(____chimes_does_checkpoint_advanceVelocity_npm),
+                           "advancePosition", &(____chimes_does_checkpoint_advancePosition_npm),
+                           "kineticEnergy", &(____chimes_does_checkpoint_kineticEnergy_npm),
+                           "redistributeAtoms", &(____chimes_does_checkpoint_redistributeAtoms_npm),
+                           "addRealParallel", &(____chimes_does_checkpoint_addRealParallel_npm),
+                           "haloExchange", &(____chimes_does_checkpoint_haloExchange_npm),
+                           "profileStart", &(____chimes_does_checkpoint_profileStart_npm),
+                           "profileStop", &(____chimes_does_checkpoint_profileStop_npm),
+                           "sortAtomsInCell", &(____chimes_does_checkpoint_sortAtomsInCell_npm),
+                           "updateLinkCells", &(____chimes_does_checkpoint_updateLinkCells_npm),
+                             (8093288458141873986UL + 21UL), (8093288458141873986UL + 24UL),
+                             (8093288458141873986UL + 612UL), (8093288458141873986UL + 499UL),
+                             (8093288458141873986UL + 439UL), (8093288458141873986UL + 441UL),
+                             (8093288458141873986UL + 499UL), (8093288458141873986UL + 501UL),
+                             (8093288458141873986UL + 446UL), (8093288458141873986UL + 612UL),
+                             (8093288458141873986UL + 445UL), (8093288458141873986UL + 439UL),
+                             (8093288458141873986UL + 1UL), (8093288458141873986UL + 21UL),
+                             (8093288458141873986UL + 382UL), (8093288458141873986UL + 273UL),
+                             (8093288458141873986UL + 273UL), (8093288458141873986UL + 275UL),
+                             (8093288458141873986UL + 385UL), (8093288458141873986UL + 399UL),
+                             (8093288458141873986UL + 228UL), (8093288458141873986UL + 382UL),
+                             (8093288458141873986UL + 434UL), (8093288458141873986UL + 445UL),
+                             (8093288458141873986UL + 100UL), (8093288458141873986UL + 224UL),
+                             (8093288458141873986UL + 224UL), (8093288458141873986UL + 143UL),
+                             (8093288458141873986UL + 399UL), (8093288458141873986UL + 401UL),
+                             (8093288458141873986UL + 143UL), (8093288458141873986UL + 145UL),
+                     "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U),
+                     "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy),
+                     "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent),
+                     "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof (struct HaloExchangeSt, parms),
+                     "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms),
+                     "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange),
+                     "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass),
+                     "TimerHandle", 0,
+                     "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset),
+                     "__sFILEX", 0,
+                     "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size),
+                             "timestep", "_Z8timestepP9SimFlatStid", 21, "profileStart", "advanceVelocity", "profileStop", "checkpoint", "profileStart", "advancePosition", "profileStop", "checkpoint", "profileStart", "redistributeAtoms", "profileStop", "checkpoint", "profileStart", "computeForce", "profileStop", "checkpoint", "profileStart", "advanceVelocity", "profileStop", "checkpoint", "kineticEnergy",
+                             "advancePosition", "_ZL15advancePositionP9SimFlatStid", 0,
+                             "kineticEnergy", "_Z13kineticEnergyP9SimFlatSt", 3, "profileStart", "addRealParallel", "profileStop",
+                             "computeForce", "_Z12computeForceP9SimFlatSt", 0,
+                             "redistributeAtoms", "_Z17redistributeAtomsP9SimFlatSt", 5, "updateLinkCells", "profileStart", "haloExchange", "profileStop", "sortAtomsInCell",
+                             "advanceVelocity", "_ZL15advanceVelocityP9SimFlatStid", 0,
+                        "redistributeAtoms|sim|0", 5, "updateLinkCells", "sortAtomsInCell", "profileStop", "profileStart", "haloExchange",
+                        "redistributeAtoms|ii|0", 1, "sortAtomsInCell",
+                        "kineticEnergy|s|0", 3, "profileStop", "profileStart", "addRealParallel",
+                        "kineticEnergy|eLocal|0", 1, "kineticEnergy",
+        "advanceVelocity", 0UL, (int)3, 8093288458141874007UL, 0UL, 0UL,
+        "advancePosition", 0UL, (int)3, 8093288458141874007UL, 0UL, 0UL,
+        "advanceVelocity", 0UL, (int)3, 8093288458141874007UL, 0UL, 0UL);
     return 0;
 }
 
-static int __libchimes_module_init = module_init();
+static const int __libchimes_module_init = module_init();

@@ -3,6 +3,7 @@
 #include <sstream>
 
 extern DesiredInsertions *insertions;
+extern std::set<std::string> *ignorable;
 
 std::string ParentTransform::get_cond_registration_varname(
         std::string mangled_varname) {
@@ -40,13 +41,20 @@ std::string ParentTransform::constructRegisterStackVarArgs(StackAlloc *alloc) {
     ss << (alloc->get_is_struct() ? "1" : "0") << ", ";
     ss << alloc->get_num_ptr_fields();
 
-    for (std::vector<std::string>::iterator ptrs =
-            alloc->ptrs_begin(), ptrs_end = alloc->ptrs_end();
-            ptrs != ptrs_end; ptrs++) {
-        std::string ptr_field = *ptrs;
-        ss << ", (int)__builtin_offsetof(struct " <<
-            alloc->get_struct_type_name() << ", " << ptr_field <<
-            ")";
+    if (alloc->ptrs_begin() != alloc->ptrs_end()) {
+        bool is_unnamed = insertions->get_struct_fields_for(
+                alloc->get_struct_type_name())->get_is_unnamed();
+        std::string full_struct_type_name = (is_unnamed ?
+                alloc->get_struct_type_name() :
+                "struct " + alloc->get_struct_type_name());
+
+        for (std::vector<std::string>::iterator ptrs =
+                alloc->ptrs_begin(), ptrs_end = alloc->ptrs_end();
+                ptrs != ptrs_end; ptrs++) {
+            std::string ptr_field = *ptrs;
+            ss << ", (int)__builtin_offsetof(" << full_struct_type_name << ", " <<
+                ptr_field << ")";
+        }
     }
     return ss.str();
 }
@@ -68,8 +76,6 @@ std::string ParentTransform::constructRegisterStackVar(StackAlloc *alloc) {
 
 void ParentTransform::visitChildren(const clang::Stmt *s) {
     setRootFlag(false);
-    bool old = inside_function_arguments;
-    inside_function_arguments = (isa<CallExpr>(s) || old);
 
     for (clang::Stmt::const_child_iterator i = s->child_begin(),
             e = s->child_end(); i != e; i++) {
@@ -80,8 +86,6 @@ void ParentTransform::visitChildren(const clang::Stmt *s) {
             VisitStmt(child);
         }
     }
-
-    inside_function_arguments = old;
 }
 
 std::string ParentTransform::stmtToString(const clang::Stmt* s) {
@@ -335,4 +339,254 @@ std::string ParentTransform::get_callee_name(const CallExpr *call) {
     } else {
         return (call->getDirectCallee()->getNameAsString());
     }
+}
+
+bool ParentTransform::should_be_labelled(const CallExpr *call) {
+    std::string callee_name = get_callee_name(call);
+
+    if (callee_name == "register_custom_init_handler") {
+        return false;
+    }
+    if (clang::isa<const clang::CXXConstructExpr>(call)) {
+        return false;
+    }
+    if (ignorable->find(callee_name) != ignorable->end()) {
+        return false;
+    }
+
+    return true;
+    // return (callee_name == "anon" || insertions->may_cause_checkpoint(callee_name));
+}
+
+std::string ParentTransform::getArgString(const clang::CallExpr *call, int arg) {
+    assert(arg < call->getNumArgs());
+    return getRewrittenText(clang::SourceRange(call->getArg(arg)->getLocStart(),
+                call->getArg(arg)->getLocEnd()));
+}
+
+std::string ParentTransform::get_func_symbol(const CallExpr *call) {
+    std::string callee_name = get_callee_name(call);
+    std::string func_symbol;
+    if (callee_name == "anon") {
+        func_symbol = stmtToString(call->getCallee());
+    } else {
+        func_symbol = callee_name;
+    }
+    return (func_symbol);
+}
+
+std::string ParentTransform::get_unique_argument_varname() {
+    std::stringstream ss;
+    ss << "____chimes_arg" << arg_counter;
+    arg_counter++;
+    return ss.str();
+}
+
+bool ParentTransform::has_side_effects(const Expr *arg) {
+    switch (arg->getStmtClass()) {
+        case (clang::Stmt::ImplicitCastExprClass): {
+            const Expr *sub = dyn_cast<ImplicitCastExpr>(arg)->getSubExpr();
+
+            if (isa<clang::DeclRefExpr>(sub) ||
+                    isa<clang::StringLiteral>(sub)) {
+                return false;
+            }
+            if (isa<clang::ImplicitCastExpr>(sub)) {
+                const Expr *sub_sub =
+                    dyn_cast<ImplicitCastExpr>(sub)->getSubExpr();
+                if (isa<clang::DeclRefExpr>(sub_sub)) {
+                    return false;
+                } else {
+#ifdef VERBOSE
+                    std::string st = dyn_cast<clang::ImplicitCastExpr>(
+                            sub)->getSubExpr()->getStmtClassName();
+                    llvm::errs() << "    Doubly nested ImplicitCast " << st <<
+                        "\n";
+#endif
+                }
+            }
+#ifdef VERBOSE
+            llvm::errs() << "  ImplicitCast NESTED " <<
+                sub->getStmtClassName() << "\n";
+#endif
+            break;
+        }
+        case (clang::Stmt::DeclRefExprClass): {
+            return false;
+        }
+        case (clang::Stmt::IntegerLiteralClass): {
+            return false;
+        }
+        case (clang::Stmt::UnaryOperatorClass): {
+            const UnaryOperator *unary = dyn_cast<UnaryOperator>(arg);
+            const Expr *sub = unary->getSubExpr();
+            switch (unary->getOpcode()) {
+                case (UO_AddrOf): {
+                    switch (sub->getStmtClass()) {
+                        case (clang::Stmt::DeclRefExprClass):
+                            // Address of a variable
+                            return false;
+                        case (clang::Stmt::ParenExprClass):
+#ifdef VERBOSE
+                            llvm::errs() << "Paren child is " <<
+                                dyn_cast<ParenExpr>(
+                                        sub)->getSubExpr()->getStmtClassName()
+                                << "\n";
+#endif
+                            break;
+                    }
+                }
+            }
+#ifdef VERBOSE
+            llvm::errs() << "  UnaryOp NESTED " << sub->getStmtClassName() <<
+                " " << "opcode=" << unary->getOpcode() << "\n";
+#endif
+            break;
+        }
+    }
+#ifdef VERBOSE
+    llvm::errs() << "ARG is a " << arg->getStmtClassName() << "\n";
+#endif
+    return true;
+}
+
+bool ParentTransform::needsToBeHoisted(std::string funcname, const Expr *arg,
+        bool gen_quick) {
+    bool may_cause_checkpoint = true;
+    if (funcname != "anon") {
+        may_cause_checkpoint = insertions->may_cause_checkpoint(funcname);
+    }
+
+    return (!gen_quick && may_cause_checkpoint && has_side_effects(arg));
+}
+
+int ParentTransform::extractArgsWithSideEffects(const CallExpr *call,
+        std::string funcname, int nargs, std::stringstream *ss,
+        std::vector<std::string> *arg_varnames, bool gen_quick) {
+    int count_args_with_side_effects = 0;
+
+    for (int i = 0; i < nargs; i++) {
+        std::string varname = get_unique_argument_varname();
+        const Expr *arg = call->getArg(i);
+        assert(!isa<CXXDefaultArgExpr>(arg));
+
+        if (needsToBeHoisted(funcname, arg, gen_quick)) {
+            std::string type_str = arg->getType().getAsString();
+            if (type_str.find("(*)") != std::string::npos) {
+                /*
+                 * If one of the arguments is a multi-dimensional stack
+                 * array, we need to special case the declaration of its
+                 * copy.
+                 */
+                assert(type_str.find("(*)") == type_str.rfind("(*)"));
+                size_t index = type_str.find("(*)");
+                type_str.insert(index + 2, varname);
+                *ss << " " << type_str << ";";
+            } else {
+                *ss << " " << arg->getType().getAsString() << " " <<
+                    varname << "; ";
+            }
+            arg_varnames->push_back(varname);
+            count_args_with_side_effects++;
+        } else {
+            std::string arg_str = stmtToString(arg);
+#ifdef VERBOSE
+            llvm::errs() << "Deciding " << arg_str <<
+                " does not have side effects, class=" <<
+                arg->getStmtClassName() << "\n";
+#endif
+            arg_varnames->push_back(arg_str);
+        }
+    }
+
+    return (count_args_with_side_effects);
+}
+
+std::string ParentTransform::generateNormalCall(const CallExpr *call,
+        int lbl, AliasesPassedToCallSite callsite, bool gen_quick,
+        std::string loc_arg) {
+    std::string callee_name = get_callee_name(call);
+    std::string func_symbol = get_func_symbol(call);
+
+    /*
+     * Default parameters cannot be checkpointed, nor are they
+     * printable.
+     */
+    int nargs = call->getNumArgs();
+    while (nargs > 0 &&
+            isa<CXXDefaultArgExpr>(call->getArg(
+                    nargs - 1))) {
+        nargs--;
+    }
+
+    std::stringstream ss;
+    std::vector<std::string> arg_varnames;
+    int count_args_with_side_effects =
+        extractArgsWithSideEffects(call, callee_name, nargs, &ss,
+                &arg_varnames, gen_quick);
+
+    std::stringstream replace_func_call;
+    replace_func_call << "(" << func_symbol << ")(";
+
+    if (count_args_with_side_effects > 0) {
+        ss << " if (!____chimes_replaying) { ";
+    }
+    for (int i = 0; i < nargs; i++) {
+        const Expr *arg = call->getArg(i);
+        if (needsToBeHoisted(callee_name, arg, gen_quick)) {
+            ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
+                "); ";
+        }
+
+        if (i > 0) replace_func_call << ", ";
+        replace_func_call << arg_varnames[i];
+    }
+    if (count_args_with_side_effects > 0) {
+        ss << " } ";
+    }
+    replace_func_call << ")";
+
+    // std::string loc_arg = get_loc_arg(call, callee_name);
+
+    ss << " calling((void*)" << func_symbol << ", " << lbl << ", " <<
+        /* loc_arg << ", " << */ get_return_alias(callee_name, callsite) <<
+        "UL, " << callsite.nparams();
+    for (unsigned a = 0; a < callsite.nparams(); a++) {
+        ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
+    }
+    ss << "); ";
+
+    return (" ({ " + ss.str() + replace_func_call.str() + "; }) ");
+}
+
+size_t ParentTransform::get_return_alias(std::string fname,
+        AliasesPassedToCallSite callsite) {
+    return (insertions->isAllocator(fname) ? 0 : callsite.get_return_alias());
+}
+
+std::string ParentTransform::generateFunctionPointerCall(const CallExpr *call,
+        AliasesPassedToCallSite callsite, int lbl, std::string loc_arg) {
+    std::stringstream ss;
+    std::string fptr_type = call->getCallee()->getType().getAsString();
+
+    // std::string loc_arg = get_loc_arg(call);
+
+    ss << "((" << fptr_type << ")(translate_fptr((void *)" <<
+        stmtToString(call->getCallee()) << ", " << lbl << ", " <<
+        loc_arg << ", " << callsite.get_return_alias() << "UL, " <<
+        callsite.nparams();
+
+    for (int i = 0; i < callsite.nparams(); i++) {
+        ss << ", " << callsite.alias_no_for(i) << "UL";
+    }
+    ss << ")))(";
+
+    for (int a = 0; a < call->getNumArgs(); a++) {
+        const Expr *arg = call->getArg(a);
+        if (a != 0) ss << ", ";
+        ss << getRewrittenText(clang::SourceRange(
+                    arg->getLocStart(), arg->getLocEnd()));
+    }
+    ss << ")";
+    return ss.str();
 }

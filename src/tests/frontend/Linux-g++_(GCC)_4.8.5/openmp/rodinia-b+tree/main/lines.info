@@ -1,0 +1,25 @@
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 181 5 : { 56, 57, 58 } {  } call:list_item_delete {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 547 5 : { 94, 95 } { , 106 } call:NULL {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 191 3 : { 115 } {  } call:list_delete {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 275 150 : { 354, 355, 356 } { , 369, 373 } call:NULL {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 401 150 : { 815, 816, 817, 818, 819, 820, 821, 822 } { , 853, 857 } call:NULL {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 441 3 : { 950, 951, 1008, 1035, 1403 } {  } call:list_item_delete {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 447 3 : { 1037 } {  } call:list_remove_item {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 453 3 : { 1047 } {  } call:list_remove_item {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 462 87 : { 1057, 1058, 1059, 1060 } { , 1069, 1101 } call:NULL {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 487 87 : { 1126, 1127, 1128, 1129 } { , 1138, 1178 } call:NULL {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 530 102 : { 1265, 1266, 1267, 1268 } { , 1284 } call:NULL {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 1874 11 : {  } {  } call:isInteger { isInteger { 5911 } }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2435 9 : { 5540, 5552, 5553, 5554, 5555, 5558, 5559, 5560, 5561, 5579, 5583, 5584, 5585, 5586, 5610, 5881, 6259, 6823, 6829 } {  } call:checkpoint {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2143 12 : { 5552, 5553, 5558, 5559, 5560, 5561, 5881, 6823 } {  } call:getchar {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2098 12 : { 5552, 5553, 5558, 5559, 5560, 5561, 5881, 6823 } {  } call:getchar {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2110 12 : { 5552, 5553, 5558, 5559, 5560, 5561, 5881, 6823 } {  } call:getchar {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2121 12 : { 5552, 5553, 5558, 5559, 5560, 5561, 5881, 6823 } {  } call:getchar {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2132 12 : { 5552, 5553, 5558, 5559, 5560, 5561, 5881, 6823 } {  } call:getchar {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2208 5 : { 5552, 5553, 5558, 5559, 5560, 5561, 5564, 5565, 5566, 5567, 5568, 5569, 5570, 5571, 5572, 5573, 5574, 5575, 5576, 5577, 5578, 5579, 5580, 5581, 5582, 5881, 6184, 6218, 6823 } {  } call:kernel_cpu { kernel_cpu { 6184, 6218, 6228, 6229, 6234, 6235 } }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2266 5 : {  } {  } call:scanf { scanf { 5584, 6840 } }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2364 5 : { 5552, 5553, 5558, 5559, 5560, 5561, 5589, 5590, 5591, 5592, 5593, 5594, 5595, 5596, 5597, 5598, 5599, 5600, 5601, 5602, 5603, 5604, 5605, 5606, 5607, 5608, 5609, 5610, 5611, 5612, 5613, 5614, 5615, 5616, 5881, 6546, 6558, 6649, 6654, 6823 } {  } call:kernel_cpu_2 { kernel_cpu_2 { 6546, 6558, 6649, 6654, 6663, 6668, 6669, 6670, 6671 } }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2048 5 : { 5552, 5553, 5558, 5559, 5560, 5561, 5881, 6823 } {  } call:scanf { scanf { 5555, 6840 } }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2069 5 : { 5552, 5553, 5558, 5559, 5560, 5561, 5881, 6823 } {  } call:scanf { scanf { 5555, 6840 } }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2085 5 : { 5552, 5553, 5558, 5559, 5560, 5561, 5881, 6823 } {  } call:scanf { scanf { 5555, 6840 } }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c 2265 5 : { 5552, 5553, 5558, 5559, 5560, 5561, 5881, 6823 } {  } call:scanf { scanf { 5583, 6840 } }

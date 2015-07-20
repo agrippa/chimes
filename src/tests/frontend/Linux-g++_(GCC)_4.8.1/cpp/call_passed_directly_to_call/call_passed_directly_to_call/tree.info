@@ -1,0 +1,3 @@
+foo _Z3fooPii 0 DOES_NOT
+bar _Z3barv 0 DOES_NOT
+main main 0 DOES bar 15 36 foo 15 43 checkpoint 17 5

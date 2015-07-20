@@ -17,11 +17,12 @@ class StackVar(object):
 
 
 class Callees(object):
-    def __init__(self, name, calls_unknown, creates_checkpoint, callees):
+    def __init__(self, name, mangled_name, calls_unknown, creates_checkpoint, callees):
         assert calls_unknown == '0' or calls_unknown == '1'
         assert creates_checkpoint == 'DOES' or \
                creates_checkpoint == 'DOES_NOT' or creates_checkpoint == 'MAY'
         self.name = name
+        self.mangled_name = mangled_name
         self.calls_unknown = True if calls_unknown == '1' else False
         self.creates_checkpoint = creates_checkpoint
         self.callees = callees
@@ -29,12 +30,13 @@ class Callees(object):
 
 class AliasesChanged(object):
     def __init__(self, filename, line_no, col, reason, aliases_changed,
-                 possible_aliases_changed):
+                 aliases_and_children_changed, possible_aliases_changed):
         self.filename = filename
         self.line_no = line_no
         self.col = col
         self.reason = reason
         self.aliases_changed = aliases_changed
+        self.aliases_and_children_changed = aliases_and_children_changed
         self.possible_aliases_changed = possible_aliases_changed
 
     def __str__(self):
@@ -44,6 +46,10 @@ class AliasesChanged(object):
         s += '  reason=' + self.reason + '\n'
         s += '  aliases_changed=['
         for g in self.aliases_changed:
+            s += ' ' + g
+        s += ' ]\n'
+        s += '  aliases_and_children_changed=['
+        for g in self.aliases_and_children_changed:
             s += ' ' + g
         s += ' ]\n'
         s += '  possible_aliases_changed=[\n'
@@ -59,10 +65,11 @@ class AliasesChanged(object):
 
 class ExitInfo(object):
     def __init__(self, funcname, return_alias, groups_changed,
-                 possible_groups_changed):
+                 groups_and_children_changed, possible_groups_changed):
         self.funcname = funcname
         self.return_alias = return_alias
         self.groups_changed = groups_changed
+        self.groups_and_children_changed = groups_and_children_changed
         self.possible_groups_changed = possible_groups_changed
 
     def __str__(self):
@@ -70,6 +77,8 @@ class ExitInfo(object):
         s += '  funcname=' + self.funcname + '\n'
         s += '  return_alias=' + self.return_alias + '\n'
         s += '  groups_changed=' + str(self.groups_changed) + '\n'
+        s += '  groups_and_children_changed=' + \
+             str(self.groups_and_children_changed) + '\n'
         s += '  possible_groups_changed={\n'
         for f in self.possible_groups_changed.keys():
             s += '    ' + f + ' -> {\n'
@@ -115,15 +124,20 @@ def get_call_tree(call_tree_filename):
 
     for line in fp:
         tokens = line.split()
+        fname = tokens[0]
+        mangled_fname = tokens[1]
+        calls_unknown = tokens[2]
+        creates_checkpoint = tokens[3]
 
-        callee_info = tokens[3:]
+        callee_info = tokens[4:]
         callees = []
         index = 0
         while index < len(callee_info):
             callees.append(callee_info[index])
             index += 3
 
-        call_tree[tokens[0]] = Callees(tokens[0], tokens[1], tokens[2], callees)
+        call_tree[fname] = Callees(fname, mangled_fname, calls_unknown,
+                                   creates_checkpoint, callees)
 
     fp.close()
 
@@ -182,6 +196,20 @@ def get_aliases_changed(lines_filename):
         index = end
 
         index += 1
+        assert tokens[index] == '{'
+        index += 1
+        end = index
+        while tokens[end] != '}':
+            end += 1
+
+        if end == index:
+            aliases_and_children = []
+        else:
+            aliases_and_children = tokens[index:end]
+            aliases_and_children = filter_commas(aliases)
+        index = end
+
+        index += 1
         reason = tokens[index]
 
         index += 1 # skip past open brace
@@ -190,7 +218,7 @@ def get_aliases_changed(lines_filename):
 
         if tokens[index] == '}':
             changed.append(AliasesChanged(filename, line_no, col, reason,
-                                          aliases, {}))
+                                          aliases, aliases_and_children, {}))
         else:
             all_possible_aliases = {}
             while True:
@@ -210,7 +238,7 @@ def get_aliases_changed(lines_filename):
                 if tokens[index] == '}':
                     break
             changed.append(AliasesChanged(filename, line_no, col, reason,
-                                          aliases, all_possible_aliases))
+                                          aliases, aliases_and_children, all_possible_aliases))
 
     fp.close()
 
@@ -229,6 +257,7 @@ def get_exit_info(exit_filename):
         funcname = tokens[0]
         return_alias_str = tokens[1]
 
+        # Read in the groups that have been changed at this point
         n_changed = int(tokens[2])
         changed = []
         index = 3
@@ -237,6 +266,17 @@ def get_exit_info(exit_filename):
             n_changed -= 1
             index += 1
 
+        # Read in the groups that have been passed to function pointers and
+        # therefore must be marked changed (along with all children).
+        n_changed_and_children = int(tokens[index])
+        changed_and_children = []
+        while n_changed_and_children > 0:
+            changed_and_children.append(tokens[index])
+            n_changed_and_children -= 1
+            index += 1
+
+        # Read in the possibly changed groups, conditioned on external functions
+        # being defined at runtime.
         n_possibly_changed = int(tokens[index])
         index += 1
         possibly_changed = {}
@@ -257,7 +297,7 @@ def get_exit_info(exit_filename):
             n_possibly_changed -= 1
 
         exits.append(ExitInfo(funcname, return_alias_str, changed,
-                              possibly_changed))
+                              changed_and_children, possibly_changed))
     fp.close()
 
 #     for e in exits:
@@ -268,11 +308,17 @@ def get_exit_info(exit_filename):
 
 
 def get_npms(filename):
-    result = []
+    # mapping from function name to if it is static
+    result = {}
     fp = open(filename, 'r')
     line = fp.readline()
     while len(line) > 0:
-        result.append(line.split()[0])
+        tokens = line.split()
+
+        assert tokens[0] not in result.keys()
+        assert tokens[3] == '0' or tokens[3] == '1'
+        result[tokens[0]] = (tokens[3] == '1')
+
         while '-----' not in line:
             line = fp.readline()
         line = fp.readline()

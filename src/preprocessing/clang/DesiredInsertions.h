@@ -107,12 +107,18 @@ class FunctionExit {
         std::set<size_t> get_groups_changed_at_termination() {
             return groups_changed_at_termination;
         }
+        std::set<size_t> get_groups_and_children_changed_at_termination() {
+            return groups_and_children_changed_at_termination;
+        }
         std::map<std::string, std::set<size_t> > get_groups_possibly_changed_at_termination() {
             return (possibly_changed_at_termination);
         }
 
         void add_changed_group_at_term(size_t group) {
             groups_changed_at_termination.insert(group);
+        }
+        void add_changed_group_and_children_at_term(size_t group) {
+            groups_and_children_changed_at_termination.insert(group);
         }
         void add_possibly_changed_groups(std::string fname, std::set<size_t> groups) {
             if (possibly_changed_at_termination.find(fname) == possibly_changed_at_termination.end()) {
@@ -135,6 +141,14 @@ class FunctionExit {
             for (std::set<size_t>::iterator i =
                     groups_changed_at_termination.begin(), e =
                     groups_changed_at_termination.end(); i != e; i++) {
+                ss << "    " << *i << "\n";
+            }
+            ss << "  ]\n";
+            ss << "  groups_and_children_changed=[\n";
+            for (std::set<size_t>::iterator i =
+                    groups_and_children_changed_at_termination.begin(),
+                    e = groups_and_children_changed_at_termination.end();
+                    i != e; i++) {
                 ss << "    " << *i << "\n";
             }
             ss << "  ]\n";
@@ -161,6 +175,7 @@ class FunctionExit {
         unsigned id;
         size_t return_alias;
         std::set<size_t> groups_changed_at_termination;
+        std::set<size_t> groups_and_children_changed_at_termination;
         std::map<std::string, std::set<size_t> > possibly_changed_at_termination;
 };
 
@@ -190,6 +205,7 @@ class AliasesPassedToCallSite {
         std::string get_funcname() { return funcname; }
         std::string get_caller_name() { return caller_name; }
         int get_line() { return line; }
+        int get_col() { return col; }
         void update_line(int set_line) { line = set_line; }
         void add_alias_no(size_t alias_no) { alias_nos.push_back(alias_no); }
         int nparams() { return alias_nos.size(); }
@@ -374,10 +390,13 @@ class CheckpointCause {
 
 class FunctionCallees {
     public:
-        FunctionCallees(std::string set_name, bool set_calls_unknown_functions,
+        FunctionCallees(std::string set_name, std::string set_mangled_name,
+                bool set_calls_unknown_functions,
                 CREATES_CHECKPOINT set_may_checkpoint) : name(set_name),
+                mangled_name(set_mangled_name),
                 calls_unknown_functions(set_calls_unknown_functions),
-                may_checkpoint(set_may_checkpoint) { }
+                may_checkpoint(set_may_checkpoint), noncheckpointing(false) { }
+
         void add_checkpoint_cause(std::string cause, int line, int col) {
             checkpoint_causes.push_back(CheckpointCause(cause, line, col));
         }
@@ -397,9 +416,18 @@ class FunctionCallees {
         void sort_checkpoint_causes() {
             std::sort(checkpoint_causes.begin(), checkpoint_causes.end());
         }
+
+        void set_noncheckpointing() {
+            noncheckpointing = true;
+        }
+        bool get_noncheckpointing() {
+            return noncheckpointing;
+        }
     private:
         std::string name;
+        std::string mangled_name;
         bool calls_unknown_functions;
+        bool noncheckpointing;
         CREATES_CHECKPOINT may_checkpoint;
         std::vector<CheckpointCause> checkpoint_causes;
 };
@@ -418,12 +446,14 @@ class StructField {
 
 class StructFields {
 public:
-    StructFields(std::string set_name, bool set_is_unnamed) : name(set_name),
-        is_unnamed(set_is_unnamed) {}
+    StructFields(std::string set_name, bool set_is_unnamed,
+            uint64_t set_size_in_bits) : name(set_name),
+        is_unnamed(set_is_unnamed), size_in_bits(set_size_in_bits) {}
     void add_field(StructField field) { fields.push_back(field); }
 
     std::string get_name() { return name; }
     bool get_is_unnamed() { return is_unnamed; }
+    uint64_t get_size_in_bits() { return size_in_bits; }
     int num_fields() { return fields.size(); }
     std::vector<StructField>::iterator begin() { return fields.begin(); }
     std::vector<StructField>::iterator end() { return fields.end(); }
@@ -431,6 +461,7 @@ public:
 private:
     std::string name;
     bool is_unnamed;
+    uint64_t size_in_bits;
     std::vector<StructField> fields;
 };
 
@@ -443,13 +474,12 @@ class StateChangeInsertion {
 public:
     StateChangeInsertion(unsigned set_id, std::string set_filename,
             int set_line_no, int set_col, std::vector<size_t> *set_groups,
+            std::vector<size_t> *set_groups_and_children,
             std::map<std::string, std::set<size_t> > *set_possibly_changed_groups,
-            std::string set_direct, std::string set_call,
-            std::string set_reason) :
+            std::string set_call, std::string set_reason) :
             id(set_id), filename(set_filename), line_no(set_line_no),
-            col(set_col), groups(set_groups),
+            col(set_col), groups(set_groups), groups_and_children(set_groups_and_children),
             possibly_changed_groups(set_possibly_changed_groups) {
-        direct = (set_direct == "direct");
         call = (set_call == "call");
         reason = set_reason;
     }
@@ -460,9 +490,12 @@ public:
     void set_col(int c) { col = c; }
     void update_line(int set_line) { line_no = set_line; }
     std::string get_filename() { return filename; }
-    std::vector<size_t> *get_groups() { return groups; }
+    // std::vector<size_t> *get_groups() { return groups; }
+    // std::vector<size_t> *get_groups_and_children() { return groups_and_children; }
+    // std::map<std::string, std::set<size_t> > *get_possibly_changed_groups() {
+    //     return possibly_changed_groups;
+    // }
 
-    bool is_direct() { return direct; }
     bool is_call() { return call; }
     bool is_terminator() { return !call; }
     std::string get_reason() { return reason; }
@@ -471,11 +504,17 @@ public:
         std::stringstream ss;
         ss << "state change location (id=" << id << ") {\n";
         ss << "  loc=" << filename << ":" << line_no << ":" << col << "\n";
-        ss << "  direct? " << (direct ? "true" : "false") << ", call? " <<
-            (call ? "true" : "false") << ", reason=" << reason << "\n";
+        ss << "  call? " << (call ? "true" : "false") << ", reason=" <<
+            reason << "\n";
         ss << "  groups=[";
         for (std::vector<size_t>::iterator i = groups->begin(),
                 e = groups->end(); i != e; i++) {
+            ss << " " << *i;
+        }
+        ss << " ]\n";
+        ss << "  groups_and_children=[";
+        for (std::vector<size_t>::iterator i = groups_and_children->begin(),
+                e = groups_and_children->end(); i != e; i++) {
             ss << " " << *i;
         }
         ss << " ]\n";
@@ -512,26 +551,27 @@ private:
     int line_no;
     int col;
     std::vector<size_t> *groups;
+    std::vector<size_t> *groups_and_children;
     std::map<std::string, std::set<size_t> > *possibly_changed_groups;
 
-    bool direct;
     bool call;
     std::string reason;
 };
 
 class DesiredInsertions {
-public:
-    DesiredInsertions(
-            const char *module_name,
-            const char *lines_info_filename,
-            const char *struct_info_filename,
-            const char *stack_allocs_filename,
-            const char *heap_filename, const char *original_filename,
-            const char *diagnostic_filename, const char *working_dirname,
-            const char *func_filename, const char *call_filename,
-            const char *exit_filename, const char *reachable_filename,
-            const char *omp_filename, const char *firstprivate_filename,
-            const char *call_tree_filename, const char *allocator_filename) :
+    public:
+        DesiredInsertions(
+                const char *module_name,
+                const char *lines_info_filename,
+                const char *struct_info_filename,
+                const char *stack_allocs_filename,
+                const char *heap_filename, const char *original_filename,
+                const char *diagnostic_filename, const char *working_dirname,
+                const char *func_filename, const char *call_filename,
+                const char *exit_filename, const char *reachable_filename,
+                const char *omp_filename, const char *firstprivate_filename,
+                const char *call_tree_filename, const char *allocator_filename,
+                const char *noncheckpointing_filename) :
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
@@ -540,120 +580,138 @@ public:
             func_file(func_filename), call_file(call_filename),
             exit_file(exit_filename), reachable_file(reachable_filename),
             omp_file(omp_filename), firstprivate_file(firstprivate_filename),
-            call_tree_file(call_tree_filename), allocator_file(allocator_filename),
+            call_tree_file(call_tree_filename),
+            allocator_file(allocator_filename),
+            noncheckpointing_file(noncheckpointing_filename),
             state_change_insertions(NULL), func_exits(NULL) {
-        module_id = hash(module_name);
-        // parseStateChangeInsertions must be called before parseFunctionExits
-        state_change_insertions = parseStateChangeInsertions();
-        struct_fields = parseStructs();
-        stack_allocs = parseStackAllocs();
-        heap_allocs = parseHeapAllocs();
-        functions = parseFunctions();
-        callsites = parseCallSites();
-        func_exits = parseFunctionExits();
-        reachable = parseReachable();
-        omp_pragmas = parseOMPPragmas();
-        call_tree = parseCallTree();
-        allocators = parseAllocators();
+                module_id = hash(module_name);
+                // parseStateChangeInsertions must be called before parseFunctionExits
+                state_change_insertions = parseStateChangeInsertions();
+                struct_fields = parseStructs();
+                stack_allocs = parseStackAllocs();
+                heap_allocs = parseHeapAllocs();
+                functions = parseFunctions();
+                callsites = parseCallSites();
+                func_exits = parseFunctionExits();
+                reachable = parseReachable();
+                omp_pragmas = parseOMPPragmas();
+                call_tree = parseCallTree();
+                allocators = parseAllocators();
+                // Must be run after parseCallTree
+                parseNoncheckpointing();
 
-        diagnostics.open(diagnostic_file);
-        firstprivate.open(firstprivate_file);
-    }
+                diagnostics.open(diagnostic_file);
+                firstprivate.open(firstprivate_file);
+                omp_inserts.open(omp_file + ".inserts");
+            }
 
-    ~DesiredInsertions() {
-        diagnostics.close();
-        firstprivate.close();
-    }
+        ~DesiredInsertions() {
+            diagnostics.close();
+            firstprivate.close();
+            omp_inserts.close();
+        }
 
-    bool contains(int line, int col, const char *filename);
-    // std::vector<size_t> *get_groups(int line, int col, const char *filename);
+        bool contains(int line, int col, const char *filename);
 
-    void update_alias_change_locations(int line, int col,
-            const char *filename, int delta);
-    std::vector<StateChangeInsertion *>::iterator getStateChangesBegin();
-    std::vector<StateChangeInsertion *>::iterator getStateChangesEnd();
-    StateChangeInsertion *get_matching(int line, int col, const char *filename);
-    std::vector<StateChangeInsertion *>::iterator get_matching_after(
-            int line, const char *filename, std::string func_name,
-            std::vector<StateChangeInsertion *>::iterator start);
-    std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
-    StructFields *get_struct_fields_for(std::string name);
-    std::vector<ReachableInfo> *get_reachable() { return reachable; }
-    std::vector<OpenMPPragma> *get_omp_pragmas_for(clang::FunctionDecl *decl,
-            clang::SourceManager &SM);
-    OpenMPPragma *get_omp_pragma_for(int line_no);
+        void update_alias_change_locations(int line, int col,
+                const char *filename, int delta);
+        std::vector<StateChangeInsertion *>::iterator getStateChangesBegin();
+        std::vector<StateChangeInsertion *>::iterator getStateChangesEnd();
+        StateChangeInsertion *get_matching(int line, int col, const char *filename);
+        std::vector<StateChangeInsertion *>::iterator get_matching_after(
+                int line, const char *filename, std::string func_name,
+                std::vector<StateChangeInsertion *>::iterator start);
+        std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
+        StructFields *get_struct_fields_for(std::string name);
+        std::vector<ReachableInfo> *get_reachable() { return reachable; }
+        std::vector<OpenMPPragma> *get_omp_pragmas_for(clang::FunctionDecl *decl,
+                clang::SourceManager &SM);
+        OpenMPPragma *get_omp_pragma_for(int line_no);
 
-    size_t hash(const char *s, size_t seed = 0);
-    size_t unique_alias(size_t alias);
+        size_t hash(const char *s, size_t seed = 0);
+        size_t unique_alias(size_t alias);
 
-    StackAlloc *findStackAlloc(std::string mangled_name);
-    bool findNextMatchingMemoryAllocation(int line, std::string func,
-            HeapAlloc *ret);
+        StackAlloc *findStackAlloc(std::string mangled_name);
+        bool findNextMatchingMemoryAllocation(int line, std::string func,
+                HeapAlloc *ret);
 
-    void updateMainFile(std::string file) {
-        original_file = file;
-    }
+        void updateMainFile(std::string file) {
+            original_file = file;
+        }
 
-    bool isMainFile(const char *filename) {
-        std::string file(filename);
-        return (original_file == file);
-    }
+        std::string getMainFile() {
+            return original_file;
+        }
 
-    bool isNvCompilerFunction(std::string func) {
-        return func == std::string("__nv_save_fatbinhandle_for_managed_rt") ||
-            func == std::string("__nv_init_managed_rt");
-    }
+        bool isMainFile(const char *filename) {
+            std::string file(filename);
+            return (original_file == file);
+        }
 
-    void AppendToDiagnostics(std::string action, clang::SourceLocation loc,
-            std::string val, clang::SourceManager &SM);
-    void AppendFirstPrivate(int starting_line, int ending_line,
-            std::string varname);
+        bool isNvCompilerFunction(std::string func) {
+            return func == std::string("__nv_save_fatbinhandle_for_managed_rt") ||
+                func == std::string("__nv_init_managed_rt");
+        }
 
-    FunctionExit *getFunctionExitInfo(std::string funcname);
-    std::vector<AliasesPassedToCallSite>::iterator getCallsiteStart();
+        void AppendToDiagnostics(std::string action, clang::SourceLocation loc,
+                std::string val, clang::SourceManager &SM);
+        void AppendFirstPrivate(int starting_line, int ending_line,
+                std::string varname);
+        void AppendToOMPInserts(int pragma_line, bool is_parallel_for,
+                std::string filename, int start_line, int start_col, int end_line,
+                int end_col, std::string before, std::string after,
+                std::string at_start, std::string at_end);
 
-    std::vector<AliasesPassedToCallSite>::iterator findFirstMatchingCallsiteAfter(
-            int line, std::string callee_name,
-            std::vector<AliasesPassedToCallSite>::iterator start);
-    FunctionArgumentAliasGroups findMatchingFunction(std::string func);
-    FunctionArgumentAliasGroups* findMatchingFunctionNullReturn(
-            std::string func);
+        FunctionExit *getFunctionExitInfo(std::string funcname);
+        std::vector<AliasesPassedToCallSite>::iterator getCallsiteStart();
+        std::vector<AliasesPassedToCallSite>::iterator getCallsiteEnd();
 
-    void add_line_collapse(int start, int end);
-    int lookup_new_line(int line);
-    void update_line_numbers();
-    size_t get_module_id();
+        AliasesPassedToCallSite findExactMatchingCallsite(int line,
+                int col);
+        std::vector<AliasesPassedToCallSite>::iterator findFirstMatchingCallsiteAfter(
+                int line, std::string callee_name,
+                std::vector<AliasesPassedToCallSite>::iterator start);
+        FunctionArgumentAliasGroups findMatchingFunction(std::string func);
+        FunctionArgumentAliasGroups* findMatchingFunctionNullReturn(
+                std::string func);
 
-    bool always_checkpoints(StackAlloc *alloc);
-    FunctionCallees *get_callees(std::string name);
-    bool calls_unknown_functions(std::string fname);
-    bool has_callees(std::string name);
-    bool may_cause_checkpoint(std::string fname);
-    bool does_not_cause_checkpoint(std::string fname);
-    bool always_checkpoints(std::string fname);
-    bool eligible_npm_function(std::string fname);
-    bool no_children_call_function_ptrs(std::string fname,
-        std::set<std::string> *visited);
-    bool have_main_in_call_tree();
-    int get_distance_from_main(std::string fname);
-    int get_distance_from_main_helper(std::string curr,
-            std::string target, int depth);
+        void add_line_collapse(int start, int end);
+        int lookup_new_line(int line);
+        void update_line_numbers();
+        size_t get_module_id();
 
-    std::string get_alias_loc_var(unsigned id);
+        bool always_checkpoints(StackAlloc *alloc);
+        FunctionCallees *get_callees(std::string name);
+        bool calls_unknown_functions(std::string fname);
+        bool has_callees(std::string name);
+        bool may_cause_checkpoint(std::string fname);
+        bool does_not_cause_checkpoint(std::string fname);
+        bool always_checkpoints(std::string fname);
+        bool eligible_npm_function(std::string fname);
+        bool no_children_call_function_ptrs(std::string fname,
+                std::set<std::string> *visited);
+        bool have_main_in_call_tree();
+        int get_distance_from_main(std::string fname);
+        int get_distance_from_main_helper(std::string curr,
+                std::string target, int depth, std::vector<std::string> *visited);
 
-    void resetHeapAllocIters();
+        std::string get_alias_loc_var(unsigned id);
 
-    bool isAllocator(std::string fname) {
-        return (allocators->find(fname) != allocators->end());
-    }
+        void resetHeapAllocIters();
 
-private:
+        bool isAllocator(std::string fname) {
+            return (allocators->find(fname) != allocators->end());
+        }
+
+    private:
         std::string lines_info_file, struct_info_file,
             stack_allocs_file, heap_file, original_file, diagnostic_file,
             working_dir, func_file, call_file, exit_file, reachable_file,
-            omp_file, firstprivate_file, call_tree_file, allocator_file;
+            omp_file, firstprivate_file, call_tree_file, allocator_file,
+            noncheckpointing_file;
         std::ofstream diagnostics;
         std::ofstream firstprivate;
+        std::ofstream omp_inserts;
 
         std::vector<CollapsedLines> transforms;
 
@@ -681,6 +739,7 @@ private:
         std::vector<OpenMPPragma> *parseOMPPragmas();
         std::map<std::string, FunctionCallees *> *parseCallTree();
         std::set<std::string> *parseAllocators();
+        void parseNoncheckpointing();
 
         size_t module_id;
 

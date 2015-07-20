@@ -1,0 +1,33 @@
+fprintf checkmat 51 66 0 1446 1545 0 0 0 0 0 0 0
+malloc genmat 87 48 290 0
+fprintf genmat 90 69 0 1446 1547
+exit genmat 91 16 0 0
+abs genmat 105 31 0 0
+abs genmat 108 76 0 0
+fprintf print_structure 126 57 0 1446 1548 445 446
+fprintf print_structure 129 99 0 1446 1549
+fprintf print_structure 130 67 0 1446 1549
+fprintf print_structure 132 59 0 1446 1549
+fprintf print_structure 134 57 0 1446 1549
+malloc allocate_clean_block 144 17 461 0
+fprintf allocate_clean_block 153 60 0 1446 1547
+exit allocate_clean_block 154 7 0 0
+malloc sparselu_init 224 25 929 0
+genmat sparselu_init 225 4 0 929
+fprintf sparselu_par_call 233 57 0 1446 1552 0 0 0 0
+lu0 sparselu_par_call 241 7 0 973
+fwd sparselu_par_call 248 15 0 973 973
+bdiv sparselu_par_call 258 15 0 973 973
+allocate_clean_block sparselu_par_call 275 50 973
+bmod sparselu_par_call 276 35 0 973 973 973
+bmod sparselu_par_call 280 35 0 973 973 973
+checkpoint sparselu_par_call 293 7 0
+fprintf sparselu_par_call 299 57 0 1446 1553
+lu0 sparselu_seq_call 309 7 0 1224
+fwd sparselu_seq_call 313 13 0 1224 1224
+bdiv sparselu_seq_call 318 13 0 1224 1224
+allocate_clean_block sparselu_seq_call 325 92 1224
+bmod sparselu_seq_call 326 22 0 1224 1224 1224
+fprintf sparselu_check 369 57 0 1446 1554 0
+checkmat1 sparselu_check 374 18 0 1470
+fprintf checkmat1 387 63 0 1446 1555 0 0 0

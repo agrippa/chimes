@@ -24,26 +24,6 @@
 
 using namespace llvm;
 
-class Mark {
-    public:
-        Mark(Value *set_val, Value *set_prev, size_t set_alias,
-                bool set_downward) : val(set_val), prev(set_prev),
-                alias(set_alias), downward(set_downward) {}
-
-        Value *get_val() { return val; }
-        Value *get_prev() { return prev; }
-        size_t get_alias() { return alias; }
-        bool get_downward() { return downward; }
-
-        void update_alias(size_t set) { alias = set; }
-
-    private:
-        Value *val;
-        Value *prev;
-        size_t alias;
-        bool downward;
-};
-
 class ValueVisitor {
     public:
         ValueVisitor(std::vector<Value *> *initial_insns,
@@ -61,12 +41,13 @@ class ValueVisitor {
             }
 
             toprocess = initial_insns;
+            contains = new std::map<size_t, size_t>();
         }
 
         void add(Value *val, Value *prev, size_t alias, bool downward);
         void driver();
 
-        std::map<size_t, size_t> get_contains() {
+        std::map<size_t, size_t> *get_contains() {
             return contains;
         }
         std::map<Value *, size_t> get_value_to_alias_group() {
@@ -87,7 +68,6 @@ class ValueVisitor {
         size_t visitCall(CallInst *call, Value *prev);
         size_t visitArgument(Argument *arg, Value *prev);
         size_t visitGlobal(GlobalValue *global, Value *prev);
-        size_t visitCmp(CmpInst *cmp, Value *prev);
         size_t visitBinary(BinaryOperator *bin, Value *prev);
         size_t visitConstant(Constant *cons, Value *prev);
         size_t visitPhi(PHINode *phi, Value *prev);
@@ -98,13 +78,15 @@ class ValueVisitor {
         void storesReferencesToGroup(size_t container, size_t child);
         size_t searchForValueInKnownAliases(Value *val);
         bool setAlias(Value *val, Value *prev, size_t alias);
+        void collectMerges(size_t from, size_t to,
+                std::set<std::pair<size_t, size_t> > *to_merge);
         /*
          * Stores a mapping from alias groups to the alias groups that can be
          * directly reached by dereferencing them. For example if you have an
          * int **A that is in alias group 1 and an int *B = *A that is in alias
          * group 2, then contains would map from group 1 to group 2.
          */
-        std::map<size_t, size_t> contains;
+        std::map<size_t, size_t> *contains;
 
         std::map<Value *, size_t> value_to_alias_group;
         std::vector<Value *> *toprocess;

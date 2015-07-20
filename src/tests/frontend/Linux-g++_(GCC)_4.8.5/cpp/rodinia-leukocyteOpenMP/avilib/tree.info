@@ -1,0 +1,57 @@
+AVI_open_output_file _Z20AVI_open_output_filePc 0 DOES_NOT avi_write 250 8
+avi_write _ZL9avi_writeiPcm 0 DOES_NOT
+AVI_set_video _Z13AVI_set_videoP5avi_tiidPc 0 DOES_NOT avi_update_header 287 4
+avi_update_header _Z17avi_update_headerP5avi_t 0 DOES_NOT long2str 357 23 long2str 363 23 long2str 379 23 long2str 380 23 long2str 383 23 long2str 384 23 long2str 389 23 long2str 390 23 long2str 391 23 long2str 393 23 long2str 395 23 long2str 396 23 long2str 397 23 long2str 399 23 long2str 400 23 long2str 401 23 long2str 402 23 long2str 408 23 long2str 415 23 long2str 418 23 long2str 419 23 long2str 420 23 long2str 421 23 long2str 422 23 long2str 423 23 long2str 424 23 long2str 425 23 long2str 426 23 long2str 427 23 long2str 428 23 long2str 429 23 long2str 436 23 long2str 437 23 long2str 438 23 long2str 439 23 long2str 443 23 long2str 444 23 long2str 445 23 long2str 446 23 long2str 447 23 long2str 451 4 avi_sampsize 458 19 long2str 461 27 long2str 468 27 long2str 473 27 long2str 476 27 long2str 477 27 long2str 478 27 long2str 481 27 long2str 482 27 long2str 483 27 long2str 484 27 long2str 485 27 long2str 486 27 long2str 489 27 long2str 491 27 long2str 492 27 long2str 499 27 long2str 502 27 long2str 504 27 long2str 514 8 long2str 519 4 long2str 537 23 long2str 552 23 avi_write 559 9
+AVI_set_audio _Z13AVI_set_audioP5avi_tiliil 0 DOES_NOT avi_update_header 311 4
+long2str _ZL8long2strPhi 0 DOES_NOT
+avi_sampsize _ZL12avi_sampsizeP5avi_ti 0 DOES_NOT
+AVI_write_frame _Z15AVI_write_frameP5avi_tPcli 0 DOES_NOT avi_write_data 932 7
+avi_write_data _ZL14avi_write_dataP5avi_tPcmii 0 DOES_NOT avi_add_index_entry 905 20 avi_add_index_entry 905 85 avi_add_chunk 914 20 avi_add_chunk 914 106
+AVI_dup_frame _Z13AVI_dup_frameP5avi_t 0 DOES_NOT avi_add_index_entry 945 8
+avi_add_index_entry _ZL19avi_add_index_entryP5avi_tPhlmm 0 DOES_NOT long2str 192 4 long2str 193 4 long2str 194 4
+AVI_write_audio _Z15AVI_write_audioP5avi_tPcl 0 DOES_NOT avi_write_data 955 8
+AVI_append_audio _Z16AVI_append_audioP5avi_tPcl 0 DOES_NOT str2ulong 972 12 str2ulong 973 9 long2str 976 3 long2str 984 3 avi_write 985 3 avi_write 992 3
+str2ulong _ZL9str2ulongPh 0 DOES_NOT
+AVI_bytes_remain _Z16AVI_bytes_remainP5avi_t 0 DOES_NOT
+AVI_bytes_written _Z17AVI_bytes_writtenP5avi_t 0 DOES_NOT
+AVI_set_audio_track _Z19AVI_set_audio_trackP5avi_ti 0 DOES_NOT
+AVI_get_audio_track _Z19AVI_get_audio_trackP5avi_t 0 DOES_NOT
+AVI_close _Z9AVI_closeP5avi_t 0 DOES_NOT avi_close_output_file 1042 31
+avi_close_output_file _ZL21avi_close_output_fileP5avi_t 0 DOES_NOT avi_add_chunk 599 10 long2str 625 23 long2str 631 23 long2str 647 23 long2str 648 23 long2str 651 23 long2str 652 23 long2str 657 23 long2str 658 23 long2str 659 23 long2str 661 23 long2str 667 23 long2str 668 23 long2str 669 23 long2str 671 23 long2str 672 23 long2str 673 23 long2str 674 23 long2str 680 23 long2str 687 23 long2str 690 23 long2str 691 23 long2str 692 23 long2str 693 23 long2str 694 23 long2str 695 23 long2str 696 23 long2str 697 23 long2str 698 23 long2str 699 23 long2str 700 23 long2str 701 23 long2str 708 23 long2str 709 23 long2str 710 23 long2str 711 23 long2str 715 23 long2str 716 23 long2str 717 23 long2str 718 23 long2str 719 23 long2str 723 4 avi_sampsize 732 14 long2str 735 22 long2str 742 22 long2str 747 22 long2str 750 22 long2str 751 22 long2str 752 22 long2str 755 22 long2str 756 22 long2str 757 22 long2str 758 22 long2str 759 22 long2str 760 22 long2str 763 22 long2str 765 22 long2str 766 22 long2str 773 22 long2str 776 22 long2str 778 22 long2str 788 8 long2str 793 4 long2str 803 23 long2str 815 23 long2str 849 23 long2str 857 23 avi_write 864 9
+AVI_open_input_file _Z19AVI_open_input_filePci 0 DOES_NOT avi_parse_input_file 1093 3
+avi_parse_input_file _Z20avi_parse_input_fileP5avi_ti 0 DOES_NOT avi_read 1144 8 AVI_close 1144 46 AVI_close 1147 45 avi_read 1157 11 str2ulong 1159 11 avi_read 1164 14 AVI_close 1164 50 AVI_close 1170 32 avi_read 1176 17 AVI_close 1176 66 AVI_close 1193 28 avi_read 1194 13 AVI_close 1194 64 AVI_close 1200 22 AVI_close 1201 27 str2ulong 1211 11 str2ulong 1227 21 str2ulong 1228 20 str2ulong 1230 33 str2ulong 1248 41 avi_sampsize 1248 67 str2ulong 1266 26 str2ulong 1267 27 str2ushort 1278 43 str2ushort 1283 45 str2ulong 1284 44 str2ulong 1286 40 str2ushort 1288 44 AVI_close 1304 45 AVI_close 1341 27 str2ulong 1343 13 str2ulong 1344 13 avi_read 1347 10 AVI_close 1347 43 str2ulong 1349 7 avi_read 1356 13 AVI_close 1356 46 str2ulong 1357 68 avi_read 1375 14 str2ulong 1376 14 avi_add_index_entry 1393 5 AVI_close 1418 31 AVI_close 1420 30 AVI_close 1425 40 str2ulong 1438 36 str2ulong 1439 36 str2ulong 1440 36 str2ulong 1448 43 str2ulong 1449 43
+AVI_open_fd _Z11AVI_open_fdii 0 DOES_NOT avi_parse_input_file 1119 3
+avi_read _ZL8avi_readiPcm 0 DOES_NOT
+str2ushort _ZL10str2ushortPh 0 DOES_NOT
+AVI_video_frames _Z16AVI_video_framesP5avi_t 0 DOES_NOT
+AVI_video_width _Z15AVI_video_widthP5avi_t 0 DOES_NOT
+AVI_video_height _Z16AVI_video_heightP5avi_t 0 DOES_NOT
+AVI_frame_rate _Z14AVI_frame_rateP5avi_t 0 DOES_NOT
+AVI_video_compressor _Z20AVI_video_compressorP5avi_t 0 DOES_NOT
+AVI_max_video_chunk _Z19AVI_max_video_chunkP5avi_t 0 DOES_NOT
+AVI_audio_tracks _Z16AVI_audio_tracksP5avi_t 0 DOES_NOT
+AVI_audio_channels _Z18AVI_audio_channelsP5avi_t 0 DOES_NOT
+AVI_audio_mp3rate _Z17AVI_audio_mp3rateP5avi_t 0 DOES_NOT
+AVI_audio_bits _Z14AVI_audio_bitsP5avi_t 0 DOES_NOT
+AVI_audio_format _Z16AVI_audio_formatP5avi_t 0 DOES_NOT
+AVI_audio_rate _Z14AVI_audio_rateP5avi_t 0 DOES_NOT
+AVI_audio_bytes _Z15AVI_audio_bytesP5avi_t 0 DOES_NOT
+AVI_audio_chunks _Z16AVI_audio_chunksP5avi_t 0 DOES_NOT
+AVI_audio_codech_offset _Z23AVI_audio_codech_offsetP5avi_t 0 DOES_NOT
+AVI_audio_codecf_offset _Z23AVI_audio_codecf_offsetP5avi_t 0 DOES_NOT
+AVI_video_codech_offset _Z23AVI_video_codech_offsetP5avi_t 0 DOES_NOT
+AVI_video_codecf_offset _Z23AVI_video_codecf_offsetP5avi_t 0 DOES_NOT
+AVI_frame_size _Z14AVI_frame_sizeP5avi_tl 0 DOES_NOT
+AVI_audio_size _Z14AVI_audio_sizeP5avi_tl 0 DOES_NOT
+AVI_get_video_position _Z22AVI_get_video_positionP5avi_tl 0 DOES_NOT
+AVI_seek_start _Z14AVI_seek_startP5avi_t 0 DOES_NOT
+AVI_set_video_position _Z22AVI_set_video_positionP5avi_tl 0 DOES_NOT
+AVI_set_audio_bitrate _Z21AVI_set_audio_bitrateP5avi_tl 0 DOES_NOT
+AVI_read_frame _Z14AVI_read_frameP5avi_tPcPi 0 DOES_NOT avi_read 1624 8
+AVI_set_audio_position _Z22AVI_set_audio_positionP5avi_tl 0 DOES_NOT
+AVI_read_audio _Z14AVI_read_audioP5avi_tPcl 0 DOES_NOT avi_read 1689 11
+AVI_read_data _Z13AVI_read_dataP5avi_tPclS1_lPl 0 DOES_NOT avi_read 1729 11 str2ulong 1739 15 avi_read 1750 14 avi_read 1761 14
+AVI_print_error _Z15AVI_print_errorPc 0 DOES_NOT
+AVI_strerror _Z12AVI_strerrorv 0 DOES_NOT
+AVI_max_size _Z12AVI_max_sizev 0 DOES_NOT
+avi_add_chunk _ZL13avi_add_chunkP5avi_tPhS1_i 0 DOES_NOT long2str 148 4 avi_write 155 8 avi_write 156 8

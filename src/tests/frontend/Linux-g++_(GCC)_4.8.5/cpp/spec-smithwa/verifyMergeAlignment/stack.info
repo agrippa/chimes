@@ -1,0 +1,13 @@
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|simMatrix|0 " %struct.simmat* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|C|0 " %struct.cstr* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|maxDisplay|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|c|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|r|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|numReports|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|displayReports|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|mainMatch|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|matchMatch|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|myTaskID|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|main|0 " i8* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|match|0 " i8* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c verifyMergeAlignment|score|0 " i64 " 64 0 0 0

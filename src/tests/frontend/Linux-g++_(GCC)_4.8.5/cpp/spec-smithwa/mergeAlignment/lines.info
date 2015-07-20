@@ -1,0 +1,4 @@
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c 1183 15 : { 6, 20, 22, 23, 24, 25, 28, 31, 36, 1155, 1185, 1513, 2307, 2309 } {  } call:getSeconds {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c 343 17 : { 4, 5, 8, 11, 12, 13, 14, 15, 16, 17, 20, 30, 1155, 2307 } {  } call:getSeconds {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c 849 2 : { 20, 21, 26, 27, 2307 } {  } call:qSort_both { qSort_both { 1176, 1185, 2307 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c 172 5 : { 1, 2, 3, 4, 10, 11, 12, 13, 14, 15, 16, 19, 38, 1153 } {  } call:gridInfo { gridInfo { 32, 33, 34, 35 } }

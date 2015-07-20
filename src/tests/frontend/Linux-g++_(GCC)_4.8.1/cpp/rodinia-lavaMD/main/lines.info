@@ -1,0 +1,11 @@
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 115 8 : {  } {  } call:isInteger { isInteger { 112 } }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 98 10 : { 29 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 140 8 : { 31, 45 } {  } call:isInteger { isInteger { 112 } }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 346 10 : { 60 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 75 10 : { 26, 27, 28, 30 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 319 5 : { 36 } {  } call:checkpoint {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 309 2 : { 35 } {  } call:kernel_cpu { kernel_cpu { 324, 663, 725, 748 } }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 296 5 : { 34, 38, 39, 40, 41, 42, 43, 46, 47, 48, 49, 50, 324, 663, 725, 748, 857 } {  } call:checkpoint {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 195 10 : { 33, 45 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 178 10 : { 32, 44 } {  } call:get_time {  }
+/gpfs-biou/jmg3/rodinia_3.0/openmp/lavaMD/main.c 170 10 : { 31, 45 } {  } call:get_time {  }

@@ -85,6 +85,9 @@ static void fwd(TYPE *next, TYPE *curr, TYPE *vsq,
 
 int main( int argc, char *argv[] ) {
     config conf;
+
+    double start = seconds();
+
     setup_config(&conf, argc, argv);
     init_progress(conf.progress_width, conf.nsteps, conf.progress_disabled);
 
@@ -117,7 +120,6 @@ int main( int argc, char *argv[] ) {
 
     init_data(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt);
 
-    double start = seconds();
     for (int step = 0; step < conf.nsteps; step++) {
         for (int src = 0; src < conf.nsrcs; src++) {
             if (conf.srcs[src].t > step) continue;

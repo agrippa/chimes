@@ -1,0 +1,227 @@
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 6 len=15 stopwatch_start_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 6 len=14 stopwatch_stop_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 1 len=19 get_interval_by_sec_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 1 len=20 get_interval_by_usec_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 1 len=23 create_matrix_from_file_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 53 16  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073225223UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 53 46 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 1 len=25 create_matrix_from_random_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 81 15  ({ void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225297UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 81 45 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 85 15  ({ void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225481UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 85 45 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 87 7  ({ free_helper((((unsigned char *)l) - sizeof(void *)), 13323080938073225297UL);free((((unsigned char *)l) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 87 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 120 3  ({ free_helper((((unsigned char *)l) - sizeof(void *)), 13323080938073225297UL);free((((unsigned char *)l) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 120 9 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 121 3  ({ free_helper((((unsigned char *)u) - sizeof(void *)), 13323080938073225481UL);free((((unsigned char *)u) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 121 9 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 1 len=15 matrix_multiply_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 1 len=10 lud_verify_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 142 24  ({ void *____chimes_tmp_ptr = malloc((matrix_dim * matrix_dim * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 13323080938073225639UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 142 66 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 186 3  ({ free_helper((((unsigned char *)tmp) - sizeof(void *)), 13323080938073225639UL);free((((unsigned char *)tmp) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 186 11 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 1 len=16 matrix_duplicate_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 192 25  ({ void *____chimes_tmp_ptr = malloc((s) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, s, 13323080938073225830UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 192 34 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 1 len=12 print_matrix_npm
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 1 len=13 create_matrix_npm
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 227 16  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073226015UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 227 46 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 53 16  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073225223UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 53 46 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 81 15  ({ void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225297UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 81 45 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 85 15  ({ void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, size*size*sizeof(float), 13323080938073225481UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 85 45 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 87 7  ({ free_helper((((unsigned char *)l) - sizeof(void *)), 13323080938073225297UL);free((((unsigned char *)l) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 87 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 120 3  ({ free_helper((((unsigned char *)l) - sizeof(void *)), 13323080938073225297UL);free((((unsigned char *)l) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 120 9 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 121 3  ({ free_helper((((unsigned char *)u) - sizeof(void *)), 13323080938073225481UL);free((((unsigned char *)u) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 121 9 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 142 24  ({ void *____chimes_tmp_ptr = malloc((matrix_dim * matrix_dim * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 13323080938073225639UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 142 66 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 186 3  ({ free_helper((((unsigned char *)tmp) - sizeof(void *)), 13323080938073225639UL);free((((unsigned char *)tmp) - sizeof(void *)));  }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 186 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 192 25  ({ void *____chimes_tmp_ptr = malloc((s) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, s, 13323080938073225830UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 192 34 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 227 16  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float)*size*size, 13323080938073226015UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 227 46 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 10 24 rm_stack(false, 0UL, "stopwatch_start", &____must_manage_stopwatch_start, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 36 const int ____chimes_did_disable0 = new_stack((void *)(&stopwatch_start), "stopwatch_start", &____must_manage_stopwatch_start, 1, 0, (size_t)(13323080938073225044UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 17 1 rm_stack(false, 0UL, "stopwatch_start", &____must_manage_stopwatch_start, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 20 24 rm_stack(false, 0UL, "stopwatch_stop", &____must_manage_stopwatch_stop, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 35 const int ____chimes_did_disable1 = new_stack((void *)(&stopwatch_stop), "stopwatch_stop", &____must_manage_stopwatch_stop, 1, 0, (size_t)(13323080938073225066UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 24 1 rm_stack(false, 0UL, "stopwatch_stop", &____must_manage_stopwatch_stop, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 28 82 rm_stack(false, 0UL, "get_interval_by_sec", &____must_manage_get_interval_by_sec, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 30 157 rm_stack(false, 0UL, "get_interval_by_sec", &____must_manage_get_interval_by_sec, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 35 const int ____chimes_did_disable2 = new_stack((void *)(&get_interval_by_sec), "get_interval_by_sec", &____must_manage_get_interval_by_sec, 1, 0, (size_t)(13323080938073225110UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 31 1 rm_stack(false, 0UL, "get_interval_by_sec", &____must_manage_get_interval_by_sec, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 35 79 rm_stack(false, 0UL, "get_interval_by_usec", &____must_manage_get_interval_by_usec, ____alias_loc_id_3, ____chimes_did_disable3, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 37 138 rm_stack(false, 0UL, "get_interval_by_usec", &____must_manage_get_interval_by_usec, ____alias_loc_id_3, ____chimes_did_disable3, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 36 const int ____chimes_did_disable3 = new_stack((void *)(&get_interval_by_usec), "get_interval_by_usec", &____must_manage_get_interval_by_usec, 1, 0, (size_t)(13323080938073225153UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 38 1 rm_stack(false, 0UL, "get_interval_by_usec", &____must_manage_get_interval_by_usec, ____alias_loc_id_3, ____chimes_did_disable3, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 48 91 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 56 91 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 70 87 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 71 const int ____chimes_did_disable4 = new_stack((void *)(&create_matrix_from_file), "create_matrix_from_file", &____must_manage_create_matrix_from_file, 3, 0, (size_t)(13323080938073225258UL), (size_t)(13323080938073225259UL), (size_t)(13323080938073225260UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 71 1 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 82 105 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 88 91 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 125 87 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 48 const int ____chimes_did_disable5 = new_stack((void *)(&create_matrix_from_random), "create_matrix_from_random", &____must_manage_create_matrix_from_random, 2, 0, (size_t)(13323080938073225525UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 126 1 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 71 const int ____chimes_did_disable6 = new_stack((void *)(&matrix_multiply), "matrix_multiply", &____must_manage_matrix_multiply, 4, 0, (size_t)(13323080938073225610UL), (size_t)(13323080938073225611UL), (size_t)(13323080938073225612UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 137 1 rm_stack(false, 0UL, "matrix_multiply", &____must_manage_matrix_multiply, ____alias_loc_id_6, ____chimes_did_disable6, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 48 const int ____chimes_did_disable7 = new_stack((void *)(&lud_verify), "lud_verify", &____must_manage_lud_verify, 3, 0, (size_t)(13323080938073225803UL), (size_t)(13323080938073225804UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 187 1 rm_stack(false, 0UL, "lud_verify", &____must_manage_lud_verify, ____alias_loc_id_7, ____chimes_did_disable7, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 59 const int ____chimes_did_disable8 = new_stack((void *)(&matrix_duplicate), "matrix_duplicate", &____must_manage_matrix_duplicate, 3, 0, (size_t)(13323080938073225844UL), (size_t)(13323080938073225845UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 195 1 rm_stack(false, 0UL, "matrix_duplicate", &____must_manage_matrix_duplicate, ____alias_loc_id_8, ____chimes_did_disable8, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 40 const int ____chimes_did_disable9 = new_stack((void *)(&print_matrix), "print_matrix", &____must_manage_print_matrix, 2, 0, (size_t)(13323080938073225897UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 205 1 rm_stack(false, 0UL, "print_matrix", &____must_manage_print_matrix, ____alias_loc_id_9, ____chimes_did_disable9, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 229 93 rm_stack(false, 0UL, "create_matrix", &____must_manage_create_matrix, ____alias_loc_id_10, ____chimes_did_disable10, false); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 240 89 rm_stack(false, 0UL, "create_matrix", &____must_manage_create_matrix, ____alias_loc_id_10, ____chimes_did_disable10, false); 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 36 const int ____chimes_did_disable10 = new_stack((void *)(&create_matrix), "create_matrix", &____must_manage_create_matrix, 2, 0, (size_t)(13323080938073226041UL), (size_t)(0UL)); 
+InsertText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 241 1 rm_stack(false, 0UL, "create_matrix", &____must_manage_create_matrix, ____alias_loc_id_10, ____chimes_did_disable10, false); 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 37 const int ____chimes_did_disable0 = new_stack((void *)(&stopwatch_start), "stopwatch_start", &____must_manage_stopwatch_start, 1, 0, (size_t)(13323080938073225044UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 203 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 36 const int ____chimes_did_disable1 = new_stack((void *)(&stopwatch_stop), "stopwatch_stop", &____must_manage_stopwatch_stop, 1, 0, (size_t)(13323080938073225066UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 199 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 36 const int ____chimes_did_disable2 = new_stack((void *)(&get_interval_by_sec), "get_interval_by_sec", &____must_manage_get_interval_by_sec, 1, 0, (size_t)(13323080938073225110UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 214 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 28 25 double ____chimes_ret_var_0; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 28 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 30 6 double ____chimes_ret_var_1; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 30 33 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 37 const int ____chimes_did_disable3 = new_stack((void *)(&get_interval_by_usec), "get_interval_by_usec", &____must_manage_get_interval_by_usec, 1, 0, (size_t)(13323080938073225153UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 218 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 35 25 int ____chimes_ret_var_2; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 35 49 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 37 6 int ____chimes_ret_var_3; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 37 30 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 72 const int ____chimes_did_disable4 = new_stack((void *)(&create_matrix_from_file), "create_matrix_from_file", &____must_manage_create_matrix_from_file, 3, 0, (size_t)(13323080938073225258UL), (size_t)(13323080938073225259UL), (size_t)(13323080938073225260UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 330 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 42 3 int i; int j; int size; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 42 17 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 43 3 float *m; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 43 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 44 3  FILE *fp;  fp = (__null) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 44 20 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 48 8 enum _FUNC_RETURN_CODE ____chimes_ret_var_4; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 48 51 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 53 20 void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 53 101 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 56 8 enum _FUNC_RETURN_CODE ____chimes_ret_var_5; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 56 51 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 70 4 enum _FUNC_RETURN_CODE ____chimes_ret_var_6; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 70 47 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 49 const int ____chimes_did_disable5 = new_stack((void *)(&create_matrix_from_random), "create_matrix_from_random", &____must_manage_create_matrix_from_random, 2, 0, (size_t)(13323080938073225525UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 260 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 76 3 float *l; float *u; float *m; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 76 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 77 3 int i; int j; int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 77 12 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 81 19 void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 81 100 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 82 22 enum _FUNC_RETURN_CODE ____chimes_ret_var_7; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 82 65 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 85 19 void *____chimes_tmp_ptr = malloc((size * size * sizeof(float)) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 85 100 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 88 8 enum _FUNC_RETURN_CODE ____chimes_ret_var_8; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 88 51 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 125 4 enum _FUNC_RETURN_CODE ____chimes_ret_var_9; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 125 47 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 72 const int ____chimes_did_disable6 = new_stack((void *)(&matrix_multiply), "matrix_multiply", &____must_manage_matrix_multiply, 4, 0, (size_t)(13323080938073225610UL), (size_t)(13323080938073225611UL), (size_t)(13323080938073225612UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 321 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 130 3 int i; int j; int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 130 14 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 49 const int ____chimes_did_disable7 = new_stack((void *)(&lud_verify), "lud_verify", &____must_manage_lud_verify, 3, 0, (size_t)(13323080938073225803UL), (size_t)(13323080938073225804UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 249 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 141 3 int i; int j; int k; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 141 12 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 142 3  float *tmp;  tmp = ((float*) ({ void *____chimes_tmp_ptr = malloc((matrix_dim * matrix_dim * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, matrix_dim*matrix_dim*sizeof(float), 13323080938073225639UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 142 338 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 146 9  float sum;  sum = (0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 146 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 147 9 float l; float u; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 147 18 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 60 const int ____chimes_did_disable8 = new_stack((void *)(&matrix_duplicate), "matrix_duplicate", &____must_manage_matrix_duplicate, 3, 0, (size_t)(13323080938073225844UL), (size_t)(13323080938073225845UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 278 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 191 5  int s;  s = (matrix_dim*matrix_dim*sizeof(float)) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 191 48 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 192 4  float *p;  p = ((float *)  ({ void *____chimes_tmp_ptr = malloc((s) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, s, 13323080938073225830UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 192 267 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 41 const int ____chimes_did_disable9 = new_stack((void *)(&print_matrix), "print_matrix", &____must_manage_print_matrix, 2, 0, (size_t)(13323080938073225897UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 213 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 199 5 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 199 13 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 37 const int ____chimes_did_disable10 = new_stack((void *)(&create_matrix), "create_matrix", &____must_manage_create_matrix, 2, 0, (size_t)(13323080938073226041UL), (size_t)(0UL)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 213 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 212 3 float *m; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 212 11 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 213 3 int i; int j; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 213 10 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 214 3  float lamda;  lamda = (-0.001) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 214 23 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 215 3 float coe[2 * size - 1]; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 215 22 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 216 3  float coe_i;  coe_i = (0.0) ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 216 19 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 227 20 void *____chimes_tmp_ptr = malloc((sizeof(float) * size * size) + sizeof(void *)); ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 227 101 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 229 8 enum _FUNC_RETURN_CODE ____chimes_ret_var_10; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 229 52 
+ReplaceTextStart /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 240 4 enum _FUNC_RETURN_CODE ____chimes_ret_var_11; ;
+ReplaceTextEnd /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 240 48 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 6 len=15 stopwatch_start_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 202  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 6 len=14 stopwatch_stop_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 198  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 1 len=19 get_interval_by_sec_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 213  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 1 len=20 get_interval_by_usec_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 217  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 1 len=23 create_matrix_from_file_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 329  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 1 len=25 create_matrix_from_random_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 259  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 1 len=15 matrix_multiply_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 320  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 1 len=10 lud_verify_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 248  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 1 len=16 matrix_duplicate_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 277  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 1 len=12 print_matrix_quick
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 212  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 1 len=13 create_matrix_quick
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 215 3  lbl_0: 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 215 26 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 215 26 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 212  ; 
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 6 len=15 stopwatch_start_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 202  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 6 len=14 stopwatch_stop_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 198  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 1 len=19 get_interval_by_sec_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 213  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 1 len=20 get_interval_by_usec_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 217  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 1 len=23 create_matrix_from_file_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 329  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 1 len=25 create_matrix_from_random_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 259  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 1 len=15 matrix_multiply_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 320  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 1 len=10 lud_verify_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 248  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 1 len=16 matrix_duplicate_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 277  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 1 len=12 print_matrix_resumable
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 212  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 1 len=13 create_matrix_resumable
+InsertTextBefore /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 215 3  lbl_0: 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 215 26 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 215 26  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextAfterToken /gpfs-biou/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 212  ;   if (____chimes_replaying) { goto lbl_0; } 

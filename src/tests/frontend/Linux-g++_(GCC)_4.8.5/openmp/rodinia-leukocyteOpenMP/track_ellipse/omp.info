@@ -1,0 +1,1 @@
+84 84 #pragma omp parallel for num_threads(omp_num_threads) private(i, j)

@@ -8,6 +8,8 @@
 
 using namespace std;
 
+extern std::string curr_func;
+
 // #define VERBOSE
 
 static int find_group_end(std::string *s) {
@@ -100,13 +102,19 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
 
             while (index < clauses.size()) {
                 if (clauses[index] == ' ' && paren_depth == 0) {
-                    split_clauses.push_back(clauses.substr(start,
-                                index - start));
-                    index++;
-                    while (index < clauses.size() && index == ' ') {
+                    int seek = index;
+                    while (seek < clauses.size() && clauses[seek] == ' ') seek++;
+                    if (seek < clauses.size() && clauses[seek] == '(') {
+                        index = seek;
+                    } else {
+                        split_clauses.push_back(clauses.substr(start,
+                                    index - start));
                         index++;
+                        while (index < clauses.size() && clauses[index] == ' ') {
+                            index++;
+                        }
+                        start = index;
                     }
-                    start = index;
                 } else {
                     if (clauses[index] == '(') paren_depth++;
                     else if (clauses[index] == ')') paren_depth--;
@@ -135,6 +143,9 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
                     args = args.substr(0, close);
 
                     std::string clause_name = clause.substr(0, open);
+                    while (clause_name.at(clause_name.size() - 1) == ' ') {
+                        clause_name = clause_name.substr(0, clause_name.size() - 1);
+                    }
 
                     std::vector<std::string> clause_args;
                     int args_index = 0;
@@ -226,6 +237,19 @@ std::map<std::string, FunctionExit *> *DesiredInsertions::parseFunctionExits() {
         }
 
         end = line.find(' ');
+        int n_groups_and_children = atoi(line.substr(0, end).c_str());
+        line = line.substr(end + 1);
+
+        for (int i = 0; i < n_groups_and_children; i++) {
+            end = line.find(' ');
+            assert(end != std::string::npos);
+            size_t alias = unique_alias(strtoul(line.substr(0, end).c_str(),
+                        NULL, 10));
+            info->add_changed_group_and_children_at_term(alias);
+            line = line.substr(end + 1);
+        }
+
+        end = line.find(' ');
         int n_possible_groups = atoi(line.substr(0, end).c_str());
 
         if (end == std::string::npos) {
@@ -265,7 +289,8 @@ std::map<std::string, FunctionExit *> *DesiredInsertions::parseFunctionExits() {
         }
 
         if (info->get_groups_changed_at_termination().size() > 0 ||
-                info->get_groups_possibly_changed_at_termination().size() > 0) {
+                info->get_groups_possibly_changed_at_termination().size() > 0 ||
+                info->get_groups_and_children_changed_at_termination().size() > 0) {
             info->update_id(count_locs++);
         }
         (*result)[funcname] = info;
@@ -630,6 +655,19 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
     return allocs;
 }
 
+void DesiredInsertions::parseNoncheckpointing() {
+    std::ifstream fp;
+    fp.open(noncheckpointing_file, std::ios::in);
+
+    std::string line;
+    while (getline(fp, line)) {
+        assert(call_tree->find(line) != call_tree->end());
+        call_tree->at(line)->set_noncheckpointing();
+    }
+
+    fp.close();
+}
+
 std::map<std::string, FunctionCallees *> *DesiredInsertions::parseCallTree() {
     std::ifstream fp;
     fp.open(call_tree_file, std::ios::in);
@@ -640,6 +678,10 @@ std::map<std::string, FunctionCallees *> *DesiredInsertions::parseCallTree() {
     while (getline(fp, line)) {
         size_t end = line.find(' ');
         std::string name = line.substr(0, end);
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
+        std::string mangled_name = line.substr(0, end);
         line = line.substr(end + 1);
 
         end = line.find(' ');
@@ -663,7 +705,7 @@ std::map<std::string, FunctionCallees *> *DesiredInsertions::parseCallTree() {
         }
         line = line.substr(end + 1);
 
-        FunctionCallees *callees = new FunctionCallees(name,
+        FunctionCallees *callees = new FunctionCallees(name, mangled_name,
                 contains_unknown_functions, may_checkpoint);
 
         while (true) {
@@ -709,6 +751,7 @@ StructFields *DesiredInsertions::get_struct_fields_for(std::string name) {
         StructFields *curr = *i;
         if (curr->get_name() == name) return curr;
     }
+    llvm::errs() << "Getting struct fields for \"" << name << "\"\n";
     return NULL;
 }
 
@@ -724,6 +767,10 @@ std::vector<StructFields *> *DesiredInsertions::parseStructs() {
         line = line.substr(end + 1);
 
         end = line.find(' ');
+        uint64_t size_in_bits = strtoul(line.substr(0, end).c_str(), NULL, 10);
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
         std::string unnamed_str = line.substr(0, end);
         bool unnamed = false;
         if (unnamed_str == "1") {
@@ -732,7 +779,7 @@ std::vector<StructFields *> *DesiredInsertions::parseStructs() {
             assert(unnamed_str == "0");
         }
 
-        StructFields *curr = new StructFields(name, unnamed);
+        StructFields *curr = new StructFields(name, unnamed, size_in_bits);
 
         if (end != std::string::npos) {
             line = line.substr(end + 1);
@@ -800,21 +847,38 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
             groups->push_back(group);
 
             if (line[group_end + 1] == '}') {
-                line = line.substr(group_end + 3);
+                line = line.substr(group_end + 5);
                 break;
             }
 
             line = line.substr(group_end + 2);
         }
 
+        std::vector<size_t> *groups_and_children = new std::vector<size_t>();
+        if (line[0] == ' ') {
+            // No groups_and_children changed
+            line = line.substr(3);
+        } else {
+            while (1) {
+                int group_end = find_group_end(&line);
+                std::string group_str = line.substr(0, group_end);
+                size_t group = unique_alias(strtoul(group_str.c_str(), NULL, 10));
+                groups_and_children->push_back(group);
+
+                if (line[group_end + 1] == '}') {
+                    line = line.substr(group_end + 3);
+                    break;
+                }
+
+                line = line.substr(group_end + 2);
+            }
+        }
+
         size_t first_colon = line.find(':');
-        std::string direct = line.substr(0, first_colon);
+        std::string call = line.substr(0, first_colon);
         line = line.substr(first_colon + 1);
-        size_t second_colon = line.find(':');
-        std::string call = line.substr(0, second_colon);
-        line = line.substr(second_colon + 1);
-        size_t reason_end = line.find(' ');
-        std::string reason = line.substr(0, reason_end);
+        size_t end_reason = line.find(' ');
+        std::string reason = line.substr(0, end_reason);
 
         std::map<std::string, std::set<size_t> > *groups_possibly_changed =
             new std::map<std::string, std::set<size_t> >();
@@ -861,8 +925,8 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
         }
 
         StateChangeInsertion *change = new StateChangeInsertion(count_locs,
-                filename, line_no, col, groups, groups_possibly_changed, direct,
-                call, reason);
+                filename, line_no, col, groups, groups_and_children,
+                groups_possibly_changed, call, reason);
 #ifdef VERBOSE
         llvm::errs() << "CHANGE\n";
         llvm::errs() << change->str() << "\n";
@@ -1034,6 +1098,19 @@ void DesiredInsertions::AppendToDiagnostics(std::string action,
         val << "\n";
 }
 
+void DesiredInsertions::AppendToOMPInserts(int pragma_line, bool is_parallel_for,
+        std::string filename, int start_line, int start_col, int end_line,
+        int end_col, std::string before, std::string after,
+        std::string at_start, std::string at_end) {
+    omp_inserts << pragma_line << " " << is_parallel_for << " " << curr_func <<
+        " " << filename << " " << start_line << " " << start_col << " " <<
+        end_line << " " << end_col << "\n";
+    omp_inserts << before << "\n";
+    omp_inserts << after << "\n";
+    omp_inserts << at_start << "\n";
+    omp_inserts << at_end << "\n";
+}
+
 std::vector<OpenMPPragma> *DesiredInsertions::get_omp_pragmas_for(
         clang::FunctionDecl *decl, clang::SourceManager &SM) {
     std::vector<OpenMPPragma> *result = new std::vector<OpenMPPragma>();
@@ -1073,6 +1150,10 @@ std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::getCallsiteSta
     return callsites->begin();
 }
 
+std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::getCallsiteEnd() {
+    return callsites->end();
+}
+
 std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::findFirstMatchingCallsiteAfter(
         int line, std::string callee_name,
         std::vector<AliasesPassedToCallSite>::iterator start) {
@@ -1087,12 +1168,31 @@ std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::findFirstMatch
     }
 
     if (i == e) {
-        llvm::errs() << "Unable to find match for call site on line " << line <<
-            " with name " << callee_name << "\n";
-        assert(false);
+        llvm::errs() << "WARNING: Unable to find match for call site " <<
+            "targeting " << callee_name << " on line " << line << "\n";
     }
 
     return i;
+}
+
+/*
+ * NOTE: This function is dangerous to use pretty much anywhere following a pass
+ * that does any transformations. Any code change that might change the column
+ * number of a statement (which is pretty much anything) would cause this
+ * function to fail or return invalid results.
+ */
+AliasesPassedToCallSite DesiredInsertions::findExactMatchingCallsite(int line,
+        int col) {
+    for (std::vector<AliasesPassedToCallSite>::iterator i = callsites->begin(),
+            e = callsites->end(); i != e; i++) {
+        AliasesPassedToCallSite curr = *i;
+        if (curr.get_line() == line && curr.get_col() == col) {
+            return curr;
+        }
+    }
+
+    llvm::errs() << line << ":" << col << "\n";
+    assert(false);
 }
 
 FunctionArgumentAliasGroups* DesiredInsertions::findMatchingFunctionNullReturn(
@@ -1323,12 +1423,22 @@ bool DesiredInsertions::have_main_in_call_tree() {
 }
 
 int DesiredInsertions::get_distance_from_main_helper(std::string curr,
-        std::string target, int depth) {
+        std::string target, int depth, std::vector<string> *visited) {
     if (curr == target) return depth;
+
+    /*
+     * Return if we've already visited this function on this stack, recursion
+     * always leads to a longer stack trace.
+     */
+    if (std::find(visited->begin(), visited->end(), curr) != visited->end()) {
+        return -1;
+    }
 
     if (has_callees(curr)) {
         FunctionCallees *callees = call_tree->at(curr);
         assert(callees);
+
+        visited->push_back(curr);
 
         int min_depth = -1;
         for (std::vector<CheckpointCause>::iterator i = callees->begin(),
@@ -1336,12 +1446,15 @@ int DesiredInsertions::get_distance_from_main_helper(std::string curr,
             CheckpointCause cause = *i;
             std::string fname = cause.get_name();
             int child_depth = get_distance_from_main_helper(fname, target,
-                    depth + 1);
+                    depth + 1, visited);
             if (child_depth != -1 && (min_depth == -1 ||
                         child_depth < min_depth)) {
                 min_depth = child_depth;
             }
         }
+
+        visited->pop_back();
+
         return (min_depth);
     }
     return -1;
@@ -1349,7 +1462,8 @@ int DesiredInsertions::get_distance_from_main_helper(std::string curr,
 
 int DesiredInsertions::get_distance_from_main(std::string fname) {
     assert(have_main_in_call_tree());
-    return get_distance_from_main_helper("main", fname, 0);
+    std::vector<std::string> visited;
+    return get_distance_from_main_helper("main", fname, 0, &visited);
 }
 
 bool DesiredInsertions::has_callees(std::string name) {
@@ -1364,7 +1478,12 @@ bool DesiredInsertions::no_children_call_function_ptrs(std::string fname,
     visited->insert(fname);
 
     if (call_tree->find(fname) != call_tree->end()) {
-        if (call_tree->at(fname)->get_calls_unknown_functions()) {
+        /*
+         * Check if this function calls any function pointers which are not
+         * marked non-checkpointing.
+         */
+        if (call_tree->at(fname)->get_calls_unknown_functions() &&
+                !call_tree->at(fname)->get_noncheckpointing()) {
             return false;
         }
 
@@ -1383,9 +1502,14 @@ bool DesiredInsertions::no_children_call_function_ptrs(std::string fname,
 
 bool DesiredInsertions::eligible_npm_function(std::string fname) {
     std::set<std::string> visited;
-    return (call_tree->find(fname) != call_tree->end() &&
+    bool eligible = (call_tree->find(fname) != call_tree->end() &&
             no_children_call_function_ptrs(fname, &visited) &&
             call_tree->at(fname)->get_may_checkpoint() != DOES);
+#ifdef VERBOSE
+    llvm::errs() << "Is " << fname << " an eligible NPM function? " <<
+        eligible << "\n";
+#endif
+    return eligible;
 }
 
 bool DesiredInsertions::calls_unknown_functions(std::string fname) {

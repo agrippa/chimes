@@ -1,3 +1,0 @@
-_source 0 x "int" y "int" freq "float" t "int"
-timeval 0 tv_sec "long int" tv_usec "long int"
-timezone 0 tz_minuteswest "int" tz_dsttime "int"

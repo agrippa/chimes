@@ -1,2 +1,4 @@
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 212 4 : { 1, 2, 3, 141 } direct:call:addArg
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 254 9 : { 166, 167 } direct:call:printRank
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 212 4 : { 1, 2, 3, 141 } direct:call:addArg { addArg { 3, 235, 239 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 243 7 : { 141 } prop:call:printArgs { addArg { 141, 235, 237, 241, 242, 243, 245, 246, 247, 248, 249, 261, 262, 263, 265, 266, 267, 269 }, processArgs { 143 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 247 4 : { 141 } prop:call:freeArgs { addArg { 141, 235, 237, 241, 242, 243, 245, 246, 247, 248, 249, 261, 262, 263, 265, 266, 267, 269 }, processArgs { 143 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 254 10 : { 166, 167 } direct:call:printRank {  }

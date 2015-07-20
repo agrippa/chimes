@@ -1,0 +1,31 @@
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|par|0 " %struct.par_str = type { double } " 64 0 1 par_str 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|box|0 " %struct.box_str* " 64 1 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|rv|0 " %struct.FOUR_VECTOR* " 64 1 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|qv|0 " double* " 64 1 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|fv|0 " %struct.FOUR_VECTOR* " 64 1 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|time0|0 " i64 " 64 0 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|time1|0 " i64 " 64 0 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|time2|0 " i64 " 64 0 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|time3|0 " i64 " 64 0 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|time4|0 " i64 " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|alpha|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|a2|0 " double " 64 0 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|l|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|first_i|0 " i64 " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|rA|0 " %struct.FOUR_VECTOR* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|fA|0 " %struct.FOUR_VECTOR* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|pointer|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|first_j|0 " i64 " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|rB|0 " %struct.FOUR_VECTOR* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|qB|0 " double* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|r2|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|u2|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|fs|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|vij|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|fxij|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|fyij|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|fzij|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c kernel_cpu|d|0 " %struct.THREE_VECTOR = type { double, double, double } " 192 0 1 THREE_VECTOR 0 0

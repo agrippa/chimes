@@ -1,40 +1,76 @@
-1. Add support for const stack variables
-2. Add support for function pointers. Currently, if a function pointer is stored
-   on the stack/heap and included in a checkpoint it won't be restored to the
-   correct address based on the actual function it was pointing at... This is
-   not an easy problem.
-3. Support resuming from inside functions that are passed directly as parameters
-   to another function (e.g. resume from bar when you call foo(bar())). The
-   simplest way to fix this is probably by inserting temporary variables before
-   the function call. Replacing their use in the AST? this would require an
-   extension to the current line number modification framework to allow the
-   extension of single line statements to multi-line statements. This also seems
-   to apply to function calls made within for loops, while loops, etc.
-4. We currently get the function pointer of the current function as a way of
-   verifying that the callee is using alias data intended for it (and that it
-   isn't passing through some arbitrary 3rd party library first). However, this
-   stops working if a local variable hides the function pointer inside the
-   callee, e.g.:
+1.  Add support for const stack variables
+2.  Add support for function pointers. Currently, if a function pointer is stored
+    on the stack/heap and included in a checkpoint it won't be restored to the
+    correct address based on the actual function it was pointing at... This is
+    not an easy problem.
+3.  Support resuming from inside functions that are passed directly as parameters
+    to another function (e.g. resume from bar when you call foo(bar())). The
+    simplest way to fix this is probably by inserting temporary variables before
+    the function call. Replacing their use in the AST? this would require an
+    extension to the current line number modification framework to allow the
+    extension of single line statements to multi-line statements. This also seems
+    to apply to function calls made within for loops, while loops, etc.
+4.  We currently get the function pointer of the current function as a way of
+    verifying that the callee is using alias data intended for it (and that it
+    isn't passing through some arbitrary 3rd party library first). However, this
+    stops working if a local variable hides the function pointer inside the
+    callee, e.g.:
 
-       void foo(int foo) { ... }
+        void foo(int foo) { ... }
 
-   To fix this, we can do a renaming of the local variable during the code
-   generation phase.
-5. We currently require that there be some kind of statement before an OMP
-   pragma for us to find and insert after.
-6. Add support for dynamically sized stack arrays, eg. int arr[num_threads].
-7. Don't support function-local static variables (splitting variable declaration
-   from assignment breaks them).
-8. Don't support directly returning function call results.
-9. There is some weirdness around getting into NPM mode in the first place. We
-   don’t really want to instrument every single function call with this logic.
-   Right now what it does is check if each function being called that is within
-   the same compilation unit has been converted to NPM, and if it is the call is
-   translated at runtime to call the NPM version. However, this only works if
-   the main body of the computation is beneath a function call that is
-   convertible to NPM and is inside the same compilation unit as its caller.
-   some basic improvements would be to just do this analysis for every call in
-   main, or something like that. but if you have a lot of jumping across
-   compilation units, the function calls will never have been converted to NPM
-   at compile time so we’ll never get into NPM mode (even though the NPM
-   function pointers are available).
+    To fix this, we can do a renaming of the local variable during the code
+    generation phase.
+5.  We currently require that there be some kind of statement before an OMP
+    pragma for us to find and insert after.
+6.  Add support for dynamically sized stack arrays, eg. int arr[num_threads].
+7.  Don't support function-local static variables (splitting variable declaration
+    from assignment breaks them).
+8.  Don't support directly returning function call results.
+9.  There is some weirdness around getting into NPM mode in the first place. We
+    don’t really want to instrument every single function call with this logic.
+    Right now what it does is check if each function being called that is within
+    the same compilation unit has been converted to NPM, and if it is the call is
+    translated at runtime to call the NPM version. However, this only works if
+    the main body of the computation is beneath a function call that is
+    convertible to NPM and is inside the same compilation unit as its caller.
+    some basic improvements would be to just do this analysis for every call in
+    main, or something like that. but if you have a lot of jumping across
+    compilation units, the function calls will never have been converted to NPM
+    at compile time so we’ll never get into NPM mode (even though the NPM
+    function pointers are available).
+10. Current assumptions about OpenMP pragmas:
+    a. 'for' pragmas are on the line immediately before the for loop they apply
+       to.
+    b. Seems like if there are multiple pragmas on adjacent lines, we need
+       braces around all the outer ones to be able to properly handle this.
+       Primarily caused by the need to maintain ordering of the inserted code at
+       the end of these regions, and the fact that they all share the same
+       ending location. This could probably be fixed with brace insertions
+       during that pass.
+11. One issue I've run into is that to checkpoint the state of a variable on the
+    stack, we need to take its address. However, compilers may often optimize
+    out local variables so that they are entirely in registers and never on the
+    stack. Taking the address of something forces the compiler to place it on
+    the stack and to keep that stack value updated, which can have significant
+    performance implications for some apps (and none for others).
+12. As it stands today, the overhead tracking system relies on two inputs: the
+    total wall clock time since the start of the program, and the sum of all
+    time spent in high-overhead libchimes functions (which includes most of
+    them). This system's main fault is that in multi-threaded programs with
+    libchimes calls from multiple threads, we may over-estimate the overhead of
+    the program. One way to resolve this is to do a better job of distinguishing
+    libchimes calls that operate in multi-threaded context and those that
+    operate primarily in single-threaded context, and divide the overhead of
+    commonly-multithreaded calls by the number of active threads. However, in
+    practice this may not make a difference as many of these API calls grab
+    locks leading to a serialization of overheads so that the sum of all
+    libchimes function time approximates wallclock time instead of CPU time.
+13. I believe there is a race between free_helper removing a heap allocation
+    from the heap and malloc_helper inserting a new one. If a free releases some
+    memory that a malloc in another thread immediately allocates, it is possibly
+    for malloc_helper to grab the lock on the heap before the free can remove
+    that entry (causing a VERIFY that the void* allocated is not already in the
+    heap to fail). We can fix this by removing the VERIFY in the malloc_helper
+    and just setting the value for any existing mapping, and only removing the
+    mapping in free_helper if some unique ID remains the same (maybe mark
+    heap_allocations with the allocating thread?).

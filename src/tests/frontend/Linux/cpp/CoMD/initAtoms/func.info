@@ -1,8 +1,0 @@
-initAtoms 130
-zeroReal3 147
-destroyAtoms 239
-createFccLattice 0 0 0 0 502
-setVcm 719 720
-computeVcm 883 865
-setTemperature 1163 0
-randomDisplacements 1292 0

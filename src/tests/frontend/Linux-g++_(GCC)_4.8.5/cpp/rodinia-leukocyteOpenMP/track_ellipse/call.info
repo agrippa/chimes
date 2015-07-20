@@ -1,0 +1,130 @@
+malloc ellipsetrack 26 25 61 0
+alloc_2d_double ellipsetrack 33 16 407 0 0
+alloc_2d_double ellipsetrack 34 16 418 0 0
+alloc_3d_double ellipsetrack 35 16 366 0 0 0
+alloc_3d_double ellipsetrack 36 16 875 0 0 0
+alloc_3d_double ellipsetrack 37 16 910 0 0 0
+cos ellipsetrack 51 42 0 0
+sin ellipsetrack 52 42 0 0
+printf ellipsetrack 65 3 0 3498 0 0
+fflush ellipsetrack 66 3 0 292
+get_frame ellipsetrack 69 12 625 969 0 0 0
+malloc ellipsetrack 91 28 428 0
+m_get ellipsetrack 113 16 605 0 0
+gradient_x ellipsetrack 121 14 695 605
+gradient_y ellipsetrack 122 14 708 605
+m_get ellipsetrack 123 14 728 0 0
+sqrt ellipsetrack 128 29 0 0
+get_time ellipsetrack 133 32 0
+MGVF ellipsetrack 134 17 750 728 0 0
+get_time ellipsetrack 135 17 0
+get_time ellipsetrack 143 33 0
+ellipseevolve ellipsetrack 144 4 0 750 24 25 428 61 0 0 0
+get_time ellipsetrack 145 18 0
+cos ellipsetrack 156 68 0 0
+sin ellipsetrack 157 68 0 0
+m_free ellipsetrack 164 4 0 750
+free ellipsetrack 165 4 0 428
+free ellipsetrack 188 2 0 61
+free_2d_double ellipsetrack 189 2 0 407
+free_2d_double ellipsetrack 190 2 0 418
+free_3d_double ellipsetrack 191 2 0 366
+free_3d_double ellipsetrack 192 2 0 875
+free_3d_double ellipsetrack 193 2 0 910
+printf ellipsetrack 196 2 0 3500
+printf ellipsetrack 197 2 0 3501
+printf ellipsetrack 198 2 0 3502 0
+printf ellipsetrack 199 2 0 3502 0
+calloc alloc_2d_double 600 28 1024 0 0
+malloc alloc_2d_double 601 34 1032 0
+calloc alloc_3d_double 618 28 1116 0 0
+malloc alloc_3d_double 619 42 1124 0
+malloc alloc_3d_double 620 48 1146 0
+pow MGVF 234 15 0 0 0
+m_get MGVF 260 15 1667 0 0
+malloc MGVF 269 22 1679 0
+malloc MGVF 270 22 1707 0
+malloc MGVF 271 22 1531 0
+malloc MGVF 272 22 1538 0
+m_get MGVF 287 11 1696 0 0
+m_get MGVF 287 29 1724 0 0
+m_get MGVF 287 47 1752 0 0
+m_get MGVF 287 65 1780 0 0
+m_get MGVF 288 12 1812 0 0
+m_get MGVF 288 31 1844 0 0
+m_get MGVF 288 50 1876 0 0
+m_get MGVF 288 69 1908 0 0
+m_get MGVF 289 13 2008 0 0
+m_get MGVF 289 33 2033 0 0
+m_get MGVF 289 53 2058 0 0
+m_get MGVF 289 73 2083 0 0
+m_get MGVF 290 14 2108 0 0
+m_get MGVF 290 35 2133 0 0
+m_get MGVF 290 56 2158 0 0
+m_get MGVF 290 77 2183 0 0
+heaviside MGVF 318 3 0 2008 1696 0 0
+heaviside MGVF 319 3 0 2033 1724 0 0
+heaviside MGVF 320 3 0 2058 1752 0 0
+heaviside MGVF 321 3 0 2083 1780 0 0
+heaviside MGVF 322 3 0 2108 1812 0 0
+heaviside MGVF 323 3 0 2133 1844 0 0
+heaviside MGVF 324 3 0 2158 1876 0 0
+heaviside MGVF 325 3 0 2183 1908 0 0
+fabs MGVF 353 19 0 0
+free MGVF 365 2 0 1679
+free MGVF 365 14 0 1707
+free MGVF 365 26 0 1531
+free MGVF 365 38 0 1538
+m_free MGVF 366 2 0 1696
+m_free MGVF 366 13 0 1724
+m_free MGVF 366 24 0 1752
+m_free MGVF 366 35 0 1780
+m_free MGVF 367 2 0 1812
+m_free MGVF 367 14 0 1844
+m_free MGVF 367 26 0 1876
+m_free MGVF 367 38 0 1908
+m_free MGVF 368 2 0 2008
+m_free MGVF 368 15 0 2033
+m_free MGVF 368 28 0 2058
+m_free MGVF 368 41 0 2083
+m_free MGVF 369 2 0 2108
+m_free MGVF 369 16 0 2133
+m_free MGVF 369 30 0 2158
+m_free MGVF 369 44 0 2183
+malloc ellipseevolve 444 25 2448 0
+gradient_x ellipseevolve 448 12 2507 3194
+gradient_y ellipseevolve 449 12 2520 3194
+sqrt ellipseevolve 457 18 0 0
+malloc ellipseevolve 463 29 3115 0
+v_get ellipseevolve 464 11 2805 0
+v_get ellipseevolve 465 11 2823 0
+cos ellipseevolve 481 33 0 0
+sin ellipseevolve 482 33 0 0
+sqrt ellipseevolve 504 9 0 0
+sqrt ellipseevolve 508 8 0 0
+linear_interp2 ellipseevolve 511 13 2956 3194 2805 2823
+linear_interp2 ellipseevolve 512 14 2967 2507 2805 2823
+linear_interp2 ellipseevolve 513 14 2978 2520 2805 2823
+sum_m ellipseevolve 516 19 0 2956
+sum_m ellipseevolve 517 20 0 2967
+sum_m ellipseevolve 518 20 0 2978
+m_get ellipseevolve 522 14 3026 0 0
+fabs ellipseevolve 540 14 0 0
+fabs ellipseevolve 544 15 0 0
+fabs ellipseevolve 544 35 0 0
+m_free ellipseevolve 547 3 0 2956
+m_free ellipseevolve 548 3 0 2967
+m_free ellipseevolve 549 3 0 2978
+m_free ellipseevolve 550 3 0 3026
+free ellipseevolve 562 2 0 2448
+free ellipseevolve 562 11 0 3115
+v_free ellipseevolve 563 2 0 2805
+v_free ellipseevolve 563 14 0 2823
+m_free ellipseevolve 564 2 0 2507
+m_free ellipseevolve 564 14 0 2520
+free free_2d_double 634 24 0 3212
+free free_2d_double 635 3 0 3226
+free free_3d_double 644 28 0 3242
+free free_3d_double 645 4 0 3255
+free free_3d_double 647 3 0 3264
+atan heaviside 388 33 0 0

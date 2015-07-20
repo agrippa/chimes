@@ -76,6 +76,7 @@
 #include <sys/time.h>
 #include <string.h>
 #include <omp.h>
+#include <assert.h>
 
 #ifdef __CHIMES_SUPPORT
 #include "checkpoint.h"
@@ -853,6 +854,7 @@ void IntegrateStressForElems( Index_t numElem,
 	Real_t *fx_elem = (Real_t*)malloc(sizeof(Real_t) * numElem8) ;
 	Real_t *fy_elem = (Real_t*)malloc(sizeof(Real_t) * numElem8) ;
 	Real_t *fz_elem = (Real_t*)malloc(sizeof(Real_t) * numElem8) ;
+    assert(fx_elem); assert(fy_elem); assert(fz_elem);
 	
 	// loop over all elements
 #pragma omp parallel for firstprivate(numElem)
@@ -1242,6 +1244,7 @@ void CalcFBHourglassForceForElems(Real_t *determ,
 	Real_t *fx_elem = (Real_t*)malloc(sizeof(Real_t) * numElem8) ;
 	Real_t *fy_elem = (Real_t*)malloc(sizeof(Real_t) * numElem8) ;
 	Real_t *fz_elem = (Real_t*)malloc(sizeof(Real_t) * numElem8) ;
+    assert(fx_elem); assert(fy_elem); assert(fz_elem);
 	
 	Real_t  gamma[4][8];
 	
@@ -1505,6 +1508,8 @@ void CalcHourglassControlForElems(Real_t determ[], Real_t hgcoef)
 	Real_t *x8n  = (Real_t*)malloc(sizeof(Real_t) * numElem8) ;
 	Real_t *y8n  = (Real_t*)malloc(sizeof(Real_t) * numElem8) ;
 	Real_t *z8n  = (Real_t*)malloc(sizeof(Real_t) * numElem8) ;
+    assert(dvdx); assert(dvdy); assert(dvdz);
+    assert(x8n); assert(y8n); assert(z8n);
 	
 	/* start loop over elements */
 #pragma omp parallel for firstprivate(numElem)
@@ -1561,6 +1566,7 @@ void CalcVolumeForceForElems()
 		Real_t *sigyy  = (Real_t*)malloc(sizeof(Real_t) * numElem) ;
 		Real_t *sigzz  = (Real_t*)malloc(sizeof(Real_t) * numElem) ;
 		Real_t *determ = (Real_t*)malloc(sizeof(Real_t) * numElem) ;
+        assert(sigxx); assert(sigyy); assert(sigzz); assert(determ);
 		
 		/* Sum contributions to total stress tensor */
 		InitStressTermsForElems(numElem, sigxx, sigyy, sigzz);
@@ -2422,6 +2428,7 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
                         Index_t length)
 {
 	Real_t *pHalfStep = (Real_t*)malloc(sizeof(Real_t) * length) ;
+    assert(pHalfStep);
 	
 #pragma omp parallel for firstprivate(length, emin)
 	for (Index_t i = 0 ; i < length ; ++i) {
@@ -2585,6 +2592,10 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 	Real_t *q_new = (Real_t*)malloc(sizeof(Real_t) * length) ;
 	Real_t *bvc =   (Real_t*)malloc(sizeof(Real_t) * length) ;
 	Real_t *pbvc =  (Real_t*)malloc(sizeof(Real_t) * length) ;
+    assert(e_old); assert(delvc); assert(p_old); assert(q_old);
+    assert(compression); assert(compHalfStep); assert(qq);
+    assert(ql); assert(work); assert(p_new); assert(e_new);
+    assert(q_new); assert(bvc); assert(pbvc);
 	
 	/* compress data, minimal set */
 #pragma omp parallel
@@ -2718,6 +2729,7 @@ void ApplyMaterialPropertiesForElems()
 		Real_t eosvmin = domain.eosvmin ;
 		Real_t eosvmax = domain.eosvmax ;
 		Real_t *vnewc = (Real_t*)malloc(sizeof(Real_t) * length) ;
+        assert(vnewc);
 		
 #pragma omp parallel
 		{
@@ -2808,6 +2820,18 @@ void LagrangeElements()
 	UpdateVolumesForElems() ;
 }
 
+static int get_num_threads() {
+    int nthreads;
+#pragma omp parallel
+    {
+#pragma omp single
+        {
+            nthreads = omp_get_num_threads();
+        }
+    }
+    return nthreads;
+}
+
 static inline
 void CalcCourantConstraintForElems()
 {
@@ -2819,7 +2843,7 @@ void CalcCourantConstraintForElems()
 	Real_t  qqc2 = Real_t(64.0) * qqc * qqc ;
 
 #ifdef _OPENMP
-        Index_t threads = omp_get_num_threads();
+        Index_t threads = get_num_threads();
 #else
         Index_t threads = 1;
 #endif
@@ -2903,7 +2927,7 @@ void CalcHydroConstraintForElems()
 	Index_t length = domain.numElem ;
 
 #ifdef _OPENMP
-	Index_t threads = omp_get_num_threads();
+	Index_t threads = get_num_threads();
 #else
 	Index_t threads = 1;
 #endif
@@ -2985,6 +3009,9 @@ void LagrangeLeapFrog()
 
 int main(int argc, char *argv[])
 {
+	timeval start, end;
+	gettimeofday(&start, NULL);
+
  	Index_t edgeElems = atoi(argv[1]);
 	Index_t edgeNodes = edgeElems+1 ;
 	// Real_t ds = Real_t(1.125)/Real_t(edgeElems) ; /* may accumulate roundoff */
@@ -3197,9 +3224,6 @@ int main(int argc, char *argv[])
 	}
 	
 	/* timestep to solution */
-
-	timeval start, end;
-	gettimeofday(&start, NULL);
 
 	
 	while(domain.time < domain.stoptime ) {

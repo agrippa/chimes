@@ -1,12 +1,12 @@
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 8 : { 1, 2, 3, 4, 26 } prop:call:getMyRank
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 28 : { 96, 97, 98, 99, 100, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 120, 121, 123, 124, 125, 166 } prop:call:initForceHaloExchange
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 23 : { 96, 97, 98, 99, 100, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 120, 121, 123, 124, 125, 166 } prop:call:getNeighborBoxes
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 9 : { 96, 97, 98, 99, 100, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 120, 121, 123, 124, 125, 166 } prop:call:profileStart
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 23 : { 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 144, 166 } prop:call:getNeighborBoxes
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 4 : { 1032, 1033 } prop:call:destroyHaloExchange
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 8 : { 1597 } prop:call:getMyRank
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 4 : { 1598 } prop:call:bcastParallel
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 4 : { 1693 } direct:call:bcastInterpolationObject
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 8 : { 1873 } direct:call:getMyRank
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 4 : { 1874 } prop:call:bcastParallel
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 4 : { 1875, 1918, 1920 } prop:call:bcastParallel
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 8 : { 1, 2, 3, 4, 26 } prop:call:getMyRank {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 28 : { 96, 97, 98, 99, 100, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 120, 121, 123, 124, 125, 166 } prop:call:initForceHaloExchange { getNeighborBoxes { 101, 166 }, initForceHaloExchange { 166 }, interpolate { 116, 117, 118, 119, 126, 127, 166 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 23 : { 96, 97, 98, 99, 100, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 120, 121, 123, 124, 125, 166 } prop:call:getNeighborBoxes { getNeighborBoxes { 101, 166 }, initForceHaloExchange { 166 }, interpolate { 116, 117, 118, 119, 126, 127, 166 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 9 : { 96, 97, 98, 99, 100, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 120, 121, 123, 124, 125, 166 } prop:call:profileStart { getNeighborBoxes { 101, 166 }, initForceHaloExchange { 166 }, interpolate { 116, 117, 118, 119, 126, 127, 166 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 23 : { 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 144, 166 } prop:call:getNeighborBoxes { getNeighborBoxes { 101, 166 }, interpolate { 142, 143, 166 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 4 : { 1032, 1033 } prop:call:destroyHaloExchange { destroyHaloExchange { 1043 }, destroyInterpolationObject { 1043 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 8 : { 1597 } prop:call:getMyRank {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 4 : { 1598 } prop:call:bcastParallel { bcastParallel { 1598 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 4 : { 1693 } direct:call:bcastInterpolationObject { bcastInterpolationObject { 1693 }, bcastParallel { 1598 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 8 : { 2085 } direct:call:getMyRank {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 4 : { 2086 } prop:call:bcastParallel { bcastParallel { 2086 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 4 : { 2087, 2130, 2132 } prop:call:bcastParallel { bcastParallel { 2157 } }

@@ -12,10 +12,8 @@
 
 void heap_allocation::add_pointer_offset(int offset) {
     assert(!elem_is_ptr && elem_is_struct);
-    assert(std::find(elem_ptr_offsets.begin(), elem_ptr_offsets.end(),
-                offset) == elem_ptr_offsets.end());
-
-    elem_ptr_offsets.push_back(offset);
+    assert(n_elem_ptr_offsets < MAX_PTR_ELEMS);
+    elem_ptr_offsets[n_elem_ptr_offsets++] = offset;
 }
 
 void heap_allocation::copy(heap_allocation *dst) {
@@ -41,10 +39,9 @@ void heap_allocation::copy(heap_allocation *dst) {
 
     if (elem_is_struct) {
         dst->elem_size = elem_size;
-        for (std::vector<int>::iterator i =
-                elem_ptr_offsets.begin(), e =
-                elem_ptr_offsets.end(); i != e; i++) {
-            dst->elem_ptr_offsets.push_back(*i);
+        for (int i = 0; i < n_elem_ptr_offsets; i++) {
+            (dst->elem_ptr_offsets)[i] = elem_ptr_offsets[i];
         }
+        dst->n_elem_ptr_offsets = n_elem_ptr_offsets;
     }
 }
