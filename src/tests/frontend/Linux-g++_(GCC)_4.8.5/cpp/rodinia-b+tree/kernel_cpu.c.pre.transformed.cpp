@@ -79,8 +79,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -99,7 +100,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3294,7 +3295,7 @@ static int module_init() {
                              (7567338248737025078UL + 8UL), (7567338248737025078UL + 291UL),
                      "knode", 32672UL, 5, "int", (int)__builtin_offsetof (struct knode, location), "[ 509 x int ]", (int)__builtin_offsetof (struct knode, indices), "[ 509 x int ]", (int)__builtin_offsetof (struct knode, keys), "bool", (int)__builtin_offsetof (struct knode, is_leaf), "int", (int)__builtin_offsetof (struct knode, num_keys),
                      "record", 32UL, 1, "int", (int)__builtin_offsetof (struct record, value),
-                             "kernel_cpu", "_Z10kernel_cpuiP6recordP5knodeliliPlS3_PiS0_", 3, "get_time", "get_time", "get_time",
+                             "kernel_cpu", "_Z10kernel_cpuiP6recordP5knodeliliPlS3_PiS0_", 0, 3, "get_time", "get_time", "get_time",
                         "kernel_cpu|records|0", 1, "get_time",
                         "kernel_cpu|knodes|0", 1, "get_time",
                         "kernel_cpu|knodes_elem|0", 1, "get_time",

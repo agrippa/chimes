@@ -94,8 +94,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -114,7 +115,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5180,11 +5181,11 @@ static int module_init() {
                              (16260503078375396929UL + 53UL), (16260503078375396929UL + 252UL),
                              (16260503078375396929UL + 376UL), (16260503078375396929UL + 1UL),
                      "bots_verbose_mode_t", 32UL, 0,
-                             "main", "main", 14, "bots_get_params", "pairalign_init", "bots_set_info", "align_seq_init", "bots_usecs", "align_seq", "bots_usecs", "align_init", "bots_usecs", "align", "bots_usecs", "align_end", "align_verify", "bots_print_results",
-                             "bots_get_params_common", "_Z22bots_get_params_commoniPPc", 8, "bots_get_date", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage",
-                             "bots_set_info", "_Z13bots_set_infov", 0,
-                             "bots_print_usage", "_Z16bots_print_usagev", 0,
-                             "bots_get_params", "_Z15bots_get_paramsiPPc", 1, "bots_get_params_common",
+                             "main", "main", 0, 14, "bots_get_params", "pairalign_init", "bots_set_info", "align_seq_init", "bots_usecs", "align_seq", "bots_usecs", "align_init", "bots_usecs", "align", "bots_usecs", "align_end", "align_verify", "bots_print_results",
+                             "bots_get_params_common", "_Z22bots_get_params_commoniPPc", 0, 8, "bots_get_date", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage",
+                             "bots_set_info", "_Z13bots_set_infov", 0, 0,
+                             "bots_print_usage", "_Z16bots_print_usagev", 0, 0,
+                             "bots_get_params", "_Z15bots_get_paramsiPPc", 0, 1, "bots_get_params_common",
                         "bots_get_params_common|argc|0", 1, "bots_get_date",
                         "bots_get_params_common|argv|0", 1, "bots_get_date",
                         "main|bots_t_start|0", 3, "bots_usecs", "align_seq", "align",

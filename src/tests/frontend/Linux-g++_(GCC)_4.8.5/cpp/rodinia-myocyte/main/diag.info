@@ -1,59 +1,59 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 105 8 len=7 seconds_npm
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 18  ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float **)); malloc_helper(____chimes_tmp_ptr, workload* sizeof(float **), 3544992459305491839UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 18  ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float **)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload* sizeof(float **), 3544992459305491839UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 51 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 255 19  ({ void *____chimes_tmp_ptr = malloc((1 + xmax) * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, (1+xmax)*sizeof(float*), 3544992459305491835UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 255 19  ({ void *____chimes_tmp_ptr = malloc(((1 + xmax) * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (1+xmax)*sizeof(float*), 3544992459305491835UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 255 49 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 257 31  ({ void *____chimes_tmp_ptr = malloc((1 + xmax) * 91 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, (1 + xmax) * 91 * sizeof(float), 3544992459305492033UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 257 31  ({ void *____chimes_tmp_ptr = malloc(((1 + xmax) * 91 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (1 + xmax) * 91 * sizeof(float), 3544992459305492033UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 257 69 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 266 17  ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 3544992459305492075UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 266 17  ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 3544992459305492075UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 266 50 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 268 27  ({ void *____chimes_tmp_ptr = malloc(workload * (1 + xmax) * sizeof(float)); malloc_helper(____chimes_tmp_ptr, workload * (1 + xmax) * sizeof(float), 3544992459305492077UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 268 27  ({ void *____chimes_tmp_ptr = malloc((workload * (1 + xmax) * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload * (1 + xmax) * sizeof(float), 3544992459305492077UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 268 71 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 22  ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 3544992459305491991UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 22  ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 3544992459305491991UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 55 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 20  ({ void *____chimes_tmp_ptr = malloc(workload * 16 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, workload * 16 * sizeof(float), 3544992459305492077UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 20  ({ void *____chimes_tmp_ptr = malloc((workload * 16 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload * 16 * sizeof(float), 3544992459305492077UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 56 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 9  ({ free(y[i][0]); free_helper(y[i][0], 3544992459305492033UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 9  ({ free_helper((((unsigned char *)y[i][0]) - sizeof(void *)), 3544992459305492033UL);free((((unsigned char *)y[i][0]) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 21 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 3  ({ free(y[i]); free_helper(y[i], 3544992459305491835UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 3  ({ free_helper((((unsigned char *)y[i]) - sizeof(void *)), 3544992459305491835UL);free((((unsigned char *)y[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 12 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 2  ({ free(y); free_helper(y, 3544992459305491839UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 2  ({ free_helper((((unsigned char *)y) - sizeof(void *)), 3544992459305491839UL);free((((unsigned char *)y) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 8 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 5  ({ free(x[0]); free_helper(x[0], 3544992459305492077UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 5  ({ free_helper((((unsigned char *)x[0]) - sizeof(void *)), 3544992459305492077UL);free((((unsigned char *)x[0]) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 14 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 2  ({ free(x); free_helper(x, 3544992459305492075UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 2  ({ free_helper((((unsigned char *)x) - sizeof(void *)), 3544992459305492075UL);free((((unsigned char *)x) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 8 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 5  ({ free(params[0]); free_helper(params[0], 3544992459305492077UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 5  ({ free_helper((((unsigned char *)params[0]) - sizeof(void *)), 3544992459305492077UL);free((((unsigned char *)params[0]) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 19 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 2  ({ free(params); free_helper(params, 3544992459305491991UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 2  ({ free_helper((((unsigned char *)params) - sizeof(void *)), 3544992459305491991UL);free((((unsigned char *)params) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 13 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 18  ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float **)); malloc_helper(____chimes_tmp_ptr, workload* sizeof(float **), 3544992459305491839UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 18  ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float **)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload* sizeof(float **), 3544992459305491839UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 51 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 255 19  ({ void *____chimes_tmp_ptr = malloc((1 + xmax) * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, (1+xmax)*sizeof(float*), 3544992459305491835UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 255 19  ({ void *____chimes_tmp_ptr = malloc(((1 + xmax) * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (1+xmax)*sizeof(float*), 3544992459305491835UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 255 49 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 257 31  ({ void *____chimes_tmp_ptr = malloc((1 + xmax) * 91 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, (1 + xmax) * 91 * sizeof(float), 3544992459305492033UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 257 31  ({ void *____chimes_tmp_ptr = malloc(((1 + xmax) * 91 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (1 + xmax) * 91 * sizeof(float), 3544992459305492033UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 257 69 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 266 17  ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 3544992459305492075UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 266 17  ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 3544992459305492075UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 266 50 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 268 27  ({ void *____chimes_tmp_ptr = malloc(workload * (1 + xmax) * sizeof(float)); malloc_helper(____chimes_tmp_ptr, workload * (1 + xmax) * sizeof(float), 3544992459305492077UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 268 27  ({ void *____chimes_tmp_ptr = malloc((workload * (1 + xmax) * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload * (1 + xmax) * sizeof(float), 3544992459305492077UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 268 71 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 22  ({ void *____chimes_tmp_ptr = malloc(workload * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 3544992459305491991UL, 1, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 22  ({ void *____chimes_tmp_ptr = malloc((workload * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload * sizeof(float *), 3544992459305491991UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 55 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 20  ({ void *____chimes_tmp_ptr = malloc(workload * 16 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, workload * 16 * sizeof(float), 3544992459305492077UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 20  ({ void *____chimes_tmp_ptr = malloc((workload * 16 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload * 16 * sizeof(float), 3544992459305492077UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 56 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 9  ({ free(y[i][0]); free_helper(y[i][0], 3544992459305492033UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 9  ({ free_helper((((unsigned char *)y[i][0]) - sizeof(void *)), 3544992459305492033UL);free((((unsigned char *)y[i][0]) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 368 21 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 3  ({ free(y[i]); free_helper(y[i], 3544992459305491835UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 3  ({ free_helper((((unsigned char *)y[i]) - sizeof(void *)), 3544992459305491835UL);free((((unsigned char *)y[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 372 12 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 2  ({ free(y); free_helper(y, 3544992459305491839UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 2  ({ free_helper((((unsigned char *)y) - sizeof(void *)), 3544992459305491839UL);free((((unsigned char *)y) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 374 8 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 5  ({ free(x[0]); free_helper(x[0], 3544992459305492077UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 5  ({ free_helper((((unsigned char *)x[0]) - sizeof(void *)), 3544992459305492077UL);free((((unsigned char *)x[0]) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 377 14 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 2  ({ free(x); free_helper(x, 3544992459305492075UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 2  ({ free_helper((((unsigned char *)x) - sizeof(void *)), 3544992459305492075UL);free((((unsigned char *)x) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 381 8 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 5  ({ free(params[0]); free_helper(params[0], 3544992459305492077UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 5  ({ free_helper((((unsigned char *)params[0]) - sizeof(void *)), 3544992459305492077UL);free((((unsigned char *)params[0]) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 384 19 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 2  ({ free(params); free_helper(params, 3544992459305491991UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 2  ({ free_helper((((unsigned char *)params) - sizeof(void *)), 3544992459305491991UL);free((((unsigned char *)params) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 388 13 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 109 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_10, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 105 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
@@ -123,20 +123,20 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 214 5 int ____c
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 214 29 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 224 5 int ____chimes_ret_var_4; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 224 29 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 22 void *____chimes_tmp_ptr = malloc(workload * sizeof(float **)); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 84 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 255 23 void *____chimes_tmp_ptr = malloc((1 + xmax) * sizeof(float *)); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 255 86 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 257 9  float *tmp;  tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc((1 + xmax) * 91 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, (1 + xmax) * 91 * sizeof(float), 3544992459305492033UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 257 223 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 266 21 void *____chimes_tmp_ptr = malloc(workload * sizeof(float *)); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 266 82 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 268 5  float *tmp;  tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc(workload * (1 + xmax) * sizeof(float)); malloc_helper(____chimes_tmp_ptr, workload * (1 + xmax) * sizeof(float), 3544992459305492077UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 268 231 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 26 void *____chimes_tmp_ptr = malloc(workload * sizeof(float *)); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 87 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 24 void *____chimes_tmp_ptr = malloc(workload * 16 * sizeof(float)); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 88 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 22 void *____chimes_tmp_ptr = malloc((workload * sizeof(float **)) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 103 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 255 23 void *____chimes_tmp_ptr = malloc(((1 + xmax) * sizeof(float *)) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 255 105 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 257 9  float *tmp;  tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc(((1 + xmax) * 91 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (1 + xmax) * 91 * sizeof(float), 3544992459305492033UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 257 332 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 266 21 void *____chimes_tmp_ptr = malloc((workload * sizeof(float *)) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 266 101 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 268 5  float *tmp;  tmp = ((float *) ({ void *____chimes_tmp_ptr = malloc((workload * (1 + xmax) * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, workload * (1 + xmax) * sizeof(float), 3544992459305492077UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 268 340 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 26 void *____chimes_tmp_ptr = malloc((workload * sizeof(float *)) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 275 106 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 24 void *____chimes_tmp_ptr = malloc((workload * 16 * sizeof(float)) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 107 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 290 5  char *RODINIA_HOME;  RODINIA_HOME = (getenv("RODINIA_HOME")) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 290 48 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 292 5 char y_path[1024]; ;

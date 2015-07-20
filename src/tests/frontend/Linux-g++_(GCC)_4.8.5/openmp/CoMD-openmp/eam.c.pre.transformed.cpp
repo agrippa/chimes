@@ -143,8 +143,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -163,7 +164,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4072,12 +4073,12 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
-   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
 # 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
 
 
    void* parms;
@@ -4168,9 +4169,9 @@ typedef struct BasePotentialSt
    char latticeType[8];
    char name[3];
    int atomicNo;
-   int (*force)(struct SimFlatSt* s);
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot);
+   int (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint));
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint));
 } BasePotential;
 
 
@@ -4358,7 +4359,7 @@ BasePotential* initEamPot_resumable(const char* dir, const char* file, const cha
 # 172 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
  if (____must_checkpoint_initEamPot_pot_0) { register_stack_vars(1, "initEamPot|pot|0", &____must_checkpoint_initEamPot_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 173 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot = ((EamPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(EamPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 5757654513590297185UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); ____chimes_tmp_ptr; })) ;
+      pot = ((EamPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(EamPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 5757654513590297185UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    ((pot) ? static_cast<void> (0) : __assert_fail ("pot", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 174, __PRETTY_FUNCTION__));
 # 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4436,13 +4437,13 @@ EamPotential *pot;
 # 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int maxTotalAtoms; maxTotalAtoms = (64*s->boxes->nTotalBoxes) ;
 # 224 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        call_lbl_0: pot->forceExchange = ({ Domain * ____chimes_arg1; LinkCell * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg1 = (s->domain); ____chimes_arg2 = (s->boxes); } calling((void*)initForceHaloExchange, 0, ____alias_loc_id_3, 5757654513590297818UL, 2, (size_t)(5757654513590297818UL), (size_t)(5757654513590297818UL)); (initForceHaloExchange)(____chimes_arg1, ____chimes_arg2); }) ;
 # 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ForceExchangeData)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 5757654513590297818UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); ____chimes_tmp_ptr; }) ;
+      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeData)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 5757654513590297818UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->forceExchangeData->dfEmbed = pot->dfEmbed;
 # 229 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4767,7 +4768,7 @@ void eamDestroy_resumable(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     call_lbl_3: ({ HaloExchange ** ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = (&(pot->forceExchange)); } calling((void*)destroyHaloExchange, 3, ____alias_loc_id_4, 0UL, 1, (size_t)(5757654513590298067UL)); (destroyHaloExchange)(____chimes_arg7); }) ;
 # 397 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(pot); free_helper(pot, 5757654513590298067UL); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 5757654513590298067UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4856,12 +4857,12 @@ InterpolationObject* initInterpolationObject_resumable(
 # 454 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&initInterpolationObject), "initInterpolationObject", &____must_manage_initInterpolationObject, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(5757654513590299090UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 455 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    InterpolationObject *table; table = ((InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590298995UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; })) ;
+    InterpolationObject *table; table = ((InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590298995UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 457 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    ((table) ? static_cast<void> (0) : __assert_fail ("table", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 457, __PRETTY_FUNCTION__));
 # 458 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 459 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc(1, (n + 3) * sizeof(real_t)); ; calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 5757654513590298993UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + (n + 3) * sizeof(real_t) - 1) / (n + 3) * sizeof(real_t)), (n + 3) * sizeof(real_t)); ; calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 5757654513590298993UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 460 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    ((table->values) ? static_cast<void> (0) : __assert_fail ("table->values", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 460, __PRETTY_FUNCTION__));
 # 461 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4902,11 +4903,11 @@ void destroyInterpolationObject_resumable(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-       ({ free((*a)->values); free_helper((*a)->values, 5757654513590298907UL); }) ;
+       ({ free_helper((((unsigned char *)(*a)->values) - sizeof(void *)), 5757654513590298907UL);free((((unsigned char *)(*a)->values) - sizeof(void *))); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(*a); free_helper(*a, 5757654513590298900UL); }) ;
+    ({ free_helper((((unsigned char *)*a) - sizeof(void *)), 5757654513590298900UL);free((((unsigned char *)*a) - sizeof(void *))); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4996,7 +4997,7 @@ void bcastInterpolationObject_resumable(InterpolationObject** table)
 # 563 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       ((*table == __null) ? static_cast<void> (0) : __assert_fail ("*table == __null", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 563, __PRETTY_FUNCTION__));
 # 564 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); ; malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590299148UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; }) ;
+      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590299148UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 565 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*table)->n = buf.n;
 # 566 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5004,7 +5005,7 @@ void bcastInterpolationObject_resumable(InterpolationObject** table)
 # 567 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*table)->invDx = buf.invDx;
 # 568 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(real_t) * (buf.n + 3)); ; malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 5757654513590299175UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(real_t) * (buf.n + 3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 5757654513590299175UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 569 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*table)->values++;
 # 570 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5121,7 +5122,7 @@ char tmp[4096];
 # 677 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     int bufSize; bufSize = (((nRho) > (nR) ? (nRho) : (nR))) ;
 # 678 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298216UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298216UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 679 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     real_t x0; x0 = (0.0) ;
 # 680 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5156,7 +5157,7 @@ char tmp[4096];
     call_lbl_4: pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 701 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298216UL); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 5757654513590298216UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5233,7 +5234,7 @@ char tmp[4096];
 # 788 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     int bufSize; bufSize = (((nRho) > (nR) ? (nRho) : (nR))) ;
 # 789 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298463UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298463UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 790 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 791 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 792 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5268,7 +5269,7 @@ char tmp[4096];
     call_lbl_3: pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298463UL); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 5757654513590298463UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5323,7 +5324,7 @@ BasePotential* initEamPot_quick(const char* dir, const char* file, const char* t
 # 172 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
  if (____must_checkpoint_initEamPot_pot_0) { register_stack_vars(1, "initEamPot|pot|0", &____must_checkpoint_initEamPot_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); } ; ;
 # 173 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot = ((EamPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(EamPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 5757654513590297185UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); ____chimes_tmp_ptr; })) ;
+      pot = ((EamPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(EamPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 5757654513590297185UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    ((pot) ? static_cast<void> (0) : __assert_fail ("pot", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 174, __PRETTY_FUNCTION__));
 # 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5400,13 +5401,13 @@ EamPotential *pot;
 # 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int maxTotalAtoms; maxTotalAtoms = (64*s->boxes->nTotalBoxes) ;
 # 224 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        call_lbl_0: pot->forceExchange = ({ calling((void*)initForceHaloExchange, 0, ____alias_loc_id_3, 5757654513590297818UL, 2, (size_t)(5757654513590297818UL), (size_t)(5757654513590297818UL)); (initForceHaloExchange)(s->domain, s->boxes); }) ;
 # 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ForceExchangeData)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 5757654513590297818UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); ____chimes_tmp_ptr; }) ;
+      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeData)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 5757654513590297818UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->forceExchangeData->dfEmbed = pot->dfEmbed;
 # 229 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5729,7 +5730,7 @@ void eamDestroy_quick(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     call_lbl_3: ({ calling((void*)destroyHaloExchange, 3, ____alias_loc_id_4, 0UL, 1, (size_t)(5757654513590298067UL)); (destroyHaloExchange)(&(pot->forceExchange)); }) ;
 # 397 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(pot); free_helper(pot, 5757654513590298067UL); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 5757654513590298067UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5800,12 +5801,12 @@ InterpolationObject* initInterpolationObject_quick(
 # 454 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&initInterpolationObject), "initInterpolationObject", &____must_manage_initInterpolationObject, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(5757654513590299090UL)) ; ; ;
 # 455 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    InterpolationObject *table; table = ((InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590298995UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; })) ;
+    InterpolationObject *table; table = ((InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590298995UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 457 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    ((table) ? static_cast<void> (0) : __assert_fail ("table", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 457, __PRETTY_FUNCTION__));
 # 458 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 459 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc(1, (n + 3) * sizeof(real_t)); ; calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 5757654513590298993UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + (n + 3) * sizeof(real_t) - 1) / (n + 3) * sizeof(real_t)), (n + 3) * sizeof(real_t)); ; calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 5757654513590298993UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 460 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    ((table->values) ? static_cast<void> (0) : __assert_fail ("table->values", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 460, __PRETTY_FUNCTION__));
 # 461 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5849,11 +5850,11 @@ void destroyInterpolationObject_quick(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-       ({ free((*a)->values); free_helper((*a)->values, 5757654513590298907UL); }) ;
+       ({ free_helper((((unsigned char *)(*a)->values) - sizeof(void *)), 5757654513590298907UL);free((((unsigned char *)(*a)->values) - sizeof(void *))); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(*a); free_helper(*a, 5757654513590298900UL); }) ;
+    ({ free_helper((((unsigned char *)*a) - sizeof(void *)), 5757654513590298900UL);free((((unsigned char *)*a) - sizeof(void *))); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5936,7 +5937,7 @@ void bcastInterpolationObject_quick(InterpolationObject** table)
 # 563 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       ((*table == __null) ? static_cast<void> (0) : __assert_fail ("*table == __null", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 563, __PRETTY_FUNCTION__));
 # 564 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); ; malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590299148UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; }) ;
+      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590299148UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 565 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*table)->n = buf.n;
 # 566 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5944,7 +5945,7 @@ void bcastInterpolationObject_quick(InterpolationObject** table)
 # 567 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*table)->invDx = buf.invDx;
 # 568 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(real_t) * (buf.n + 3)); ; malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 5757654513590299175UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(real_t) * (buf.n + 3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 5757654513590299175UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 569 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*table)->values++;
 # 570 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6032,7 +6033,7 @@ char tmp[4096];
 # 677 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     int bufSize; bufSize = (((nRho) > (nR) ? (nRho) : (nR))) ;
 # 678 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298216UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298216UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 679 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     real_t x0; x0 = (0.0) ;
 # 680 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6067,7 +6068,7 @@ char tmp[4096];
     call_lbl_4: pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 701 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298216UL); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 5757654513590298216UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6145,7 +6146,7 @@ char tmp[4096];
 # 788 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     int bufSize; bufSize = (((nRho) > (nR) ? (nRho) : (nR))) ;
 # 789 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298463UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    real_t *buf; buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298463UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 790 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 791 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 792 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6180,7 +6181,7 @@ char tmp[4096];
     call_lbl_3: pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298463UL); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 5757654513590298463UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6238,7 +6239,7 @@ BasePotential* initEamPot_npm(const char* dir, const char* file, const char* typ
 # 172 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 {
 # 173 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   EamPotential* pot = (EamPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(EamPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 5757654513590297185UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); ____chimes_tmp_ptr; }) ;
+   EamPotential* pot = (EamPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(EamPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 5757654513590297185UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    ((pot) ? static_cast<void> (0) : __assert_fail ("pot", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 174, __PRETTY_FUNCTION__));
 # 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6297,13 +6298,13 @@ int eamForce_npm(SimFlat* s)
 # 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       int maxTotalAtoms = 64*s->boxes->nTotalBoxes;
 # 224 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->dfEmbed = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc(maxTotalAtoms * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      pot->rhobar = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 5757654513590297818UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->forceExchange = (*____chimes_extern_func_initForceHaloExchange)(s->domain, s->boxes);
 # 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ForceExchangeData)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 5757654513590297818UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); ____chimes_tmp_ptr; }) ;
+      pot->forceExchangeData = (ForceExchangeData*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeData)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 5757654513590297818UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->forceExchangeData->dfEmbed = pot->dfEmbed;
 # 229 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6612,7 +6613,7 @@ void eamDestroy_npm(BasePotential** pPot)
 # 396 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    (*____chimes_extern_func_destroyHaloExchange)(&(pot->forceExchange));
 # 397 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(pot); free_helper(pot, 5757654513590298067UL); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 5757654513590298067UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 398 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *pPot = __null;
 # 399 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6679,12 +6680,12 @@ InterpolationObject* initInterpolationObject_npm(
 # 455 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    InterpolationObject* table =
 # 456 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      (InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590298995UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; }) ;
+      (InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590298995UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 457 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    ((table) ? static_cast<void> (0) : __assert_fail ("table", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 457, __PRETTY_FUNCTION__));
 # 458 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 459 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc(1, (n + 3) * sizeof(real_t)); calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 5757654513590298993UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   table->values = (real_t*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + (n + 3) * sizeof(real_t) - 1) / (n + 3) * sizeof(real_t)), (n + 3) * sizeof(real_t)); calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 5757654513590298993UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 460 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    ((table->values) ? static_cast<void> (0) : __assert_fail ("table->values", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 460, __PRETTY_FUNCTION__));
 # 461 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6724,11 +6725,11 @@ void destroyInterpolationObject_npm(InterpolationObject** a)
 # 482 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*a)->values--;
 # 483 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-       ({ free((*a)->values); free_helper((*a)->values, 5757654513590298907UL); }) ;
+       ({ free_helper((((unsigned char *)(*a)->values) - sizeof(void *)), 5757654513590298907UL);free((((unsigned char *)(*a)->values) - sizeof(void *))); }) ;
 # 484 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 485 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(*a); free_helper(*a, 5757654513590298900UL); }) ;
+    ({ free_helper((((unsigned char *)*a) - sizeof(void *)), 5757654513590298900UL);free((((unsigned char *)*a) - sizeof(void *))); }) ;
 # 486 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *a = __null;
 # 487 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6805,7 +6806,7 @@ void bcastInterpolationObject_npm(InterpolationObject** table)
 # 563 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       ((*table == __null) ? static_cast<void> (0) : __assert_fail ("*table == __null", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c", 563, __PRETTY_FUNCTION__));
 # 564 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc(sizeof(InterpolationObject)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590299148UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); ____chimes_tmp_ptr; }) ;
+      *table = (InterpolationObject*) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 5757654513590299148UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 565 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*table)->n = buf.n;
 # 566 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6813,7 +6814,7 @@ void bcastInterpolationObject_npm(InterpolationObject** table)
 # 567 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*table)->invDx = buf.invDx;
 # 568 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc(sizeof(real_t) * (buf.n + 3)); malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 5757654513590299175UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      (*table)->values = (real_t*) ({ void *____chimes_tmp_ptr = malloc((sizeof(real_t) * (buf.n + 3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 5757654513590299175UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 569 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       (*table)->values++;
 # 570 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6895,7 +6896,7 @@ void eamReadSetfl_npm(EamPotential* pot, const char* dir, const char* potName)
 # 677 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    int bufSize = ((nRho) > (nR) ? (nRho) : (nR));
 # 678 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   real_t* buf = (real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298216UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   real_t* buf = (real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298216UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 679 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    real_t x0 = 0.0;
 # 680 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6930,7 +6931,7 @@ void eamReadSetfl_npm(EamPotential* pot, const char* dir, const char* potName)
    pot->phi = initInterpolationObject_npm(nR, x0, dR, buf);
 # 701 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 702 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298216UL); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 5757654513590298216UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 703 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 704 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 705 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -7000,7 +7001,7 @@ void eamReadFuncfl_npm(EamPotential* pot, const char* dir, const char* potName)
 # 788 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    int bufSize = ((nRho) > (nR) ? (nRho) : (nR));
 # 789 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   real_t* buf = (real_t*) ({ void *____chimes_tmp_ptr = malloc(bufSize * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298463UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   real_t* buf = (real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 5757654513590298463UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 790 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 791 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 792 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -7035,7 +7036,7 @@ void eamReadFuncfl_npm(EamPotential* pot, const char* dir, const char* potName)
    pot->rho = initInterpolationObject_npm(nR, x0, dR, buf);
 # 812 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 813 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    ({ free(buf); free_helper(buf, 5757654513590298463UL); }) ;
+    ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 5757654513590298463UL);free((((unsigned char *)buf) - sizeof(void *))); }) ;
 # 814 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 815 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 816 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -7218,21 +7219,21 @@ static int module_init() {
                      "_IO_marker", 0UL, 0,
                      "_buf_2_t", 192UL, 3, "int", (int)__builtin_offsetof (struct _buf_2_t, n), "double", (int)__builtin_offsetof (struct _buf_2_t, x0), "double", (int)__builtin_offsetof (struct _buf_2_t, invDx),
                      "_buf_t", 320UL, 6, "double", (int)__builtin_offsetof (struct _buf_t, cutoff), "double", (int)__builtin_offsetof (struct _buf_t, mass), "double", (int)__builtin_offsetof (struct _buf_t, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct _buf_t, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct _buf_t, name), "int", (int)__builtin_offsetof (struct _buf_t, atomicNo),
-                             "eamPrint", "_Z8eamPrintP8_IO_FILEP15BasePotentialSt", 0,
-                             "eamReadFuncfl", "_ZL13eamReadFuncflP14EamPotentialStPKcS2_", 4, "fileNotFound", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
-                             "fileNotFound", "_ZL12fileNotFoundPKcS0_", 0,
-                             "initInterpolationObject", "_ZL23initInterpolationObjectiddPd", 0,
-                             "initEamPot", "_Z10initEamPotPKcS0_S0_", 5, "getMyRank", "eamReadSetfl", "eamReadFuncfl", "typeNotSupported", "eamBcastPotential",
-                             "interpolate", "_ZL11interpolateP21InterpolationObjectStdPdS1_", 0,
-                             "eamReadSetfl", "_ZL12eamReadSetflP14EamPotentialStPKcS2_", 5, "fileNotFound", "notAlloyReady", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
-                             "eamForce", "_Z8eamForceP9SimFlatSt", 9, "initForceHaloExchange", "zeroReal3", "interpolate", "interpolate", "interpolate", "profileStart", "haloExchange", "profileStop", "interpolate",
-                             "bcastInterpolationObject", "_ZL24bcastInterpolationObjectPP21InterpolationObjectSt", 4, "getMyRank", "bcastParallel", "getMyRank", "bcastParallel",
-                             "zeroReal3", "_ZL9zeroReal3Pd", 0,
-                             "eamBcastPotential", "_ZL17eamBcastPotentialP14EamPotentialSt", 5, "getMyRank", "bcastParallel", "bcastInterpolationObject", "bcastInterpolationObject", "bcastInterpolationObject",
-                             "typeNotSupported", "_ZL16typeNotSupportedPKcS0_", 0,
-                             "notAlloyReady", "_ZL13notAlloyReadyPKc", 0,
-                             "eamDestroy", "_Z10eamDestroyPP15BasePotentialSt", 4, "destroyInterpolationObject", "destroyInterpolationObject", "destroyInterpolationObject", "destroyHaloExchange",
-                             "destroyInterpolationObject", "_ZL26destroyInterpolationObjectPP21InterpolationObjectSt", 0,
+                             "eamPrint", "_Z8eamPrintP8_IO_FILEP15BasePotentialSt", 0, 0,
+                             "eamReadFuncfl", "_ZL13eamReadFuncflP14EamPotentialStPKcS2_", 0, 4, "fileNotFound", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
+                             "fileNotFound", "_ZL12fileNotFoundPKcS0_", 0, 0,
+                             "initInterpolationObject", "_ZL23initInterpolationObjectiddPd", 0, 0,
+                             "initEamPot", "_Z10initEamPotPKcS0_S0_", 0, 5, "getMyRank", "eamReadSetfl", "eamReadFuncfl", "typeNotSupported", "eamBcastPotential",
+                             "interpolate", "_ZL11interpolateP21InterpolationObjectStdPdS1_", 0, 0,
+                             "eamReadSetfl", "_ZL12eamReadSetflP14EamPotentialStPKcS2_", 0, 5, "fileNotFound", "notAlloyReady", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
+                             "eamForce", "_Z8eamForceP9SimFlatSt", 0, 9, "initForceHaloExchange", "zeroReal3", "interpolate", "interpolate", "interpolate", "profileStart", "haloExchange", "profileStop", "interpolate",
+                             "bcastInterpolationObject", "_ZL24bcastInterpolationObjectPP21InterpolationObjectSt", 0, 4, "getMyRank", "bcastParallel", "getMyRank", "bcastParallel",
+                             "zeroReal3", "_ZL9zeroReal3Pd", 0, 0,
+                             "eamBcastPotential", "_ZL17eamBcastPotentialP14EamPotentialSt", 0, 5, "getMyRank", "bcastParallel", "bcastInterpolationObject", "bcastInterpolationObject", "bcastInterpolationObject",
+                             "typeNotSupported", "_ZL16typeNotSupportedPKcS0_", 0, 0,
+                             "notAlloyReady", "_ZL13notAlloyReadyPKc", 0, 0,
+                             "eamDestroy", "_Z10eamDestroyPP15BasePotentialSt", 0, 4, "destroyInterpolationObject", "destroyInterpolationObject", "destroyInterpolationObject", "destroyHaloExchange",
+                             "destroyInterpolationObject", "_ZL26destroyInterpolationObjectPP21InterpolationObjectSt", 0, 0,
                         "initEamPot|dir|0", 1, "getMyRank",
                         "initEamPot|file|0", 1, "getMyRank",
                         "initEamPot|type|0", 1, "getMyRank",

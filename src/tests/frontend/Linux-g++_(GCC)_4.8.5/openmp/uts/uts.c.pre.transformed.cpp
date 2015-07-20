@@ -133,8 +133,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -153,7 +154,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5822,19 +5823,19 @@ static int module_init() {
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "uts_geoshape_e", 32UL, 0,
                      "uts_trees_e", 32UL, 0,
-                             "uts_numChildren_bin", "_Z19uts_numChildren_binP6node_t", 2, "rng_rand", "rng_toProb",
-                             "uts_childType", "_Z13uts_childTypeP6node_t", 1, "uts_error",
-                             "uts_error", "_Z9uts_errorPc", 1, "impl_abort",
-                             "uts_showStats", "_Z13uts_showStatsiidiii", 0,
-                             "rng_toProb", "_Z10rng_toProbi", 0,
-                             "uts_initRoot", "_Z12uts_initRootP6node_ti", 1, "rng_init",
-                             "uts_numChildren", "_Z15uts_numChildrenP6node_t", 5, "uts_numChildren_bin", "uts_numChildren_geo", "uts_numChildren_geo", "uts_numChildren_bin", "uts_error",
-                             "uts_parseParams", "_Z15uts_parseParamsiPPc", 4, "uts_helpMessage", "impl_abort", "impl_parseParam", "impl_abort",
-                             "uts_wctime", "_Z10uts_wctimev", 0,
-                             "uts_printParams", "_Z15uts_printParamsv", 2, "uts_paramsToStr", "impl_paramsToStr",
-                             "uts_helpMessage", "_Z15uts_helpMessagev", 2, "impl_getName", "impl_helpMessage",
-                             "uts_paramsToStr", "_Z15uts_paramsToStrPci", 2, "impl_getName", "rng_showtype",
-                             "uts_numChildren_geo", "_Z19uts_numChildren_geoP6node_t", 2, "rng_rand", "rng_toProb",
+                             "uts_numChildren_bin", "_Z19uts_numChildren_binP6node_t", 0, 2, "rng_rand", "rng_toProb",
+                             "uts_childType", "_Z13uts_childTypeP6node_t", 0, 1, "uts_error",
+                             "uts_error", "_Z9uts_errorPc", 0, 1, "impl_abort",
+                             "uts_showStats", "_Z13uts_showStatsiidiii", 0, 0,
+                             "rng_toProb", "_Z10rng_toProbi", 0, 0,
+                             "uts_initRoot", "_Z12uts_initRootP6node_ti", 0, 1, "rng_init",
+                             "uts_numChildren", "_Z15uts_numChildrenP6node_t", 0, 5, "uts_numChildren_bin", "uts_numChildren_geo", "uts_numChildren_geo", "uts_numChildren_bin", "uts_error",
+                             "uts_parseParams", "_Z15uts_parseParamsiPPc", 0, 4, "uts_helpMessage", "impl_abort", "impl_parseParam", "impl_abort",
+                             "uts_wctime", "_Z10uts_wctimev", 0, 0,
+                             "uts_printParams", "_Z15uts_printParamsv", 0, 2, "uts_paramsToStr", "impl_paramsToStr",
+                             "uts_helpMessage", "_Z15uts_helpMessagev", 0, 2, "impl_getName", "impl_helpMessage",
+                             "uts_paramsToStr", "_Z15uts_paramsToStrPci", 0, 2, "impl_getName", "rng_showtype",
+                             "uts_numChildren_geo", "_Z19uts_numChildren_geoP6node_t", 0, 2, "rng_rand", "rng_toProb",
                         "uts_initRoot|root|0", 1, "rng_init",
                         "uts_initRoot|type|0", 1, "rng_init",
                         "uts_numChildren_geo|p|0", 1, "rng_rand",

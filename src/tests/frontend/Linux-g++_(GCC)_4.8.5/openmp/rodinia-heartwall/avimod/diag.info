@@ -1,25 +1,25 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 16 8 len=15 chop_flip_image_npm
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 28  ({ void *____chimes_tmp_ptr = malloc(height_new * width_new * sizeof(float)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 28  ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 73 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 38  ({ void *____chimes_tmp_ptr = malloc(height_new * width_new * sizeof(float)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 38  ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 83 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 2  ({ free(result); free_helper(result, 17693923976101510177UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 2  ({ free_helper((((unsigned char *)result) - sizeof(void *)), 17693923976101510177UL);free((((unsigned char *)result) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 13 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 102 8 len=9 get_frame_npm
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 28  ({ void *____chimes_tmp_ptr = malloc(width * height * sizeof(char)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17693923976101510254UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 28  ({ void *____chimes_tmp_ptr = malloc((width * height * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17693923976101510254UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 64 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 2  ({ free(image_buf); free_helper(image_buf, 17693923976101510254UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 2  ({ free_helper((((unsigned char *)image_buf) - sizeof(void *)), 17693923976101510254UL);free((((unsigned char *)image_buf) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 16 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 119 2 alias_group_changed(____alias_loc_id_0); 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 28  ({ void *____chimes_tmp_ptr = malloc(height_new * width_new * sizeof(float)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 28  ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 73 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 38  ({ void *____chimes_tmp_ptr = malloc(height_new * width_new * sizeof(float)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 38  ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 83 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 2  ({ free(result); free_helper(result, 17693923976101510177UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 2  ({ free_helper((((unsigned char *)result) - sizeof(void *)), 17693923976101510177UL);free((((unsigned char *)result) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 92 13 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 28  ({ void *____chimes_tmp_ptr = malloc(width * height * sizeof(char)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17693923976101510254UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 28  ({ void *____chimes_tmp_ptr = malloc((width * height * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17693923976101510254UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 64 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 2  ({ free(image_buf); free_helper(image_buf, 17693923976101510254UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 2  ({ free_helper((((unsigned char *)image_buf) - sizeof(void *)), 17693923976101510254UL);free((((unsigned char *)image_buf) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 16 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 95 76 rm_stack(true, 17693923976101510177UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 21 24 const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(17693923976101510202UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
@@ -43,14 +43,14 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 43 2  i
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 43 34 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 46 2 int i; int j; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 46 10 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 2  float *result;  result = ((float *)  ({ void *____chimes_tmp_ptr = malloc(height_new * width_new * sizeof(float)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 235 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 2  float *result;  result = ((float *)  ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 344 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 52 2 float temp; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 52 12 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 54 3  float scale;  scale = (1.0 / 255.0) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 54 28 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 2  float *result_converted;  result_converted = ((float *)  ({ void *____chimes_tmp_ptr = malloc(height_new * width_new * sizeof(float)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 245 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 2  float *result_converted;  result_converted = ((float *)  ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 354 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 95 3 float *____chimes_ret_var_0; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 95 31 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 106 23 const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 5, 5, (size_t)(17693923976101510283UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0, "get_frame|converted|0", &____must_checkpoint_get_frame_converted_0, "i32", (void *)(&converted), (size_t)4, 0, 0, 0); ;
@@ -63,8 +63,8 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 2  
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 42 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 112 2 int status; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 112 12 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 2  char *image_buf;  image_buf = ((char*)  ({ void *____chimes_tmp_ptr = malloc(width * height * sizeof(char)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17693923976101510254UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 217 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 2  char *image_buf;  image_buf = ((char*)  ({ void *____chimes_tmp_ptr = malloc((width * height * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17693923976101510254UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 326 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 126 2 float *image_chopped; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 126 22 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 138 3 float *____chimes_ret_var_1; ;

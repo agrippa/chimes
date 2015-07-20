@@ -14,6 +14,7 @@ cd src/preprocessing/clang && make clean && make -j &
 cd src/preprocessing/find_allocators && make clean && make -j &
 cd src/preprocessing/function_unroll && make clean && make -j &
 cd src/preprocessing/openmp_appender && make clean && make -j &
+cd src/preprocessing/find_nonchkpting_fptrs && make clean && make -j &
 ./src/preprocessing/Play/build.sh &
 cd src/preprocessing/return_unroll && make clean && make -j &
 wait

@@ -1,44 +1,44 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 52 13 len=3 fwd_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 94 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * 20); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 20, 9340484127959108576UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 94 31  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 20) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 20, 9340484127959108576UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 94 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 95 28  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 95 28  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 95 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 96 28  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 96 28  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 96 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 97 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108575UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 97 27  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108575UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 97 40 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 141 5  ({ free(c_coeff); free_helper(c_coeff, 9340484127959108576UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 141 5  ({ free_helper((((unsigned char *)c_coeff) - sizeof(void *)), 9340484127959108576UL);free((((unsigned char *)c_coeff) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 141 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 142 5  ({ free(curr); free_helper(curr, 9340484127959108573UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 142 5  ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 9340484127959108573UL);free((((unsigned char *)curr) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 142 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 143 5  ({ free(next); free_helper(next, 9340484127959108573UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 143 5  ({ free_helper((((unsigned char *)next) - sizeof(void *)), 9340484127959108573UL);free((((unsigned char *)next) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 143 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 144 5  ({ free(vsq); free_helper(vsq, 9340484127959108575UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 144 5  ({ free_helper((((unsigned char *)vsq) - sizeof(void *)), 9340484127959108575UL);free((((unsigned char *)vsq) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 144 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 146 9  ({ free(srcs[i]); free_helper(srcs[i], 9340484127959108679UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 146 9  ({ free_helper((((unsigned char *)srcs[i]) - sizeof(void *)), 9340484127959108679UL);free((((unsigned char *)srcs[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 146 21 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 148 5  ({ free(srcs); free_helper(srcs, 9340484127959108677UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 148 5  ({ free_helper((((unsigned char *)srcs) - sizeof(void *)), 9340484127959108677UL);free((((unsigned char *)srcs) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 148 14 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 129 5 alias_group_changed(____alias_loc_id_3); 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 94 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * 20); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 20, 9340484127959108576UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 94 31  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 20) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 20, 9340484127959108576UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 94 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 95 28  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 95 28  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 95 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 96 28  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 96 28  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 96 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 97 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108575UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 97 27  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108575UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 97 40 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 141 5  ({ free(c_coeff); free_helper(c_coeff, 9340484127959108576UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 141 5  ({ free_helper((((unsigned char *)c_coeff) - sizeof(void *)), 9340484127959108576UL);free((((unsigned char *)c_coeff) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 141 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 142 5  ({ free(curr); free_helper(curr, 9340484127959108573UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 142 5  ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 9340484127959108573UL);free((((unsigned char *)curr) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 142 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 143 5  ({ free(next); free_helper(next, 9340484127959108573UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 143 5  ({ free_helper((((unsigned char *)next) - sizeof(void *)), 9340484127959108573UL);free((((unsigned char *)next) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 143 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 144 5  ({ free(vsq); free_helper(vsq, 9340484127959108575UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 144 5  ({ free_helper((((unsigned char *)vsq) - sizeof(void *)), 9340484127959108575UL);free((((unsigned char *)vsq) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 144 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 146 9  ({ free(srcs[i]); free_helper(srcs[i], 9340484127959108679UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 146 9  ({ free_helper((((unsigned char *)srcs[i]) - sizeof(void *)), 9340484127959108679UL);free((((unsigned char *)srcs[i]) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 146 21 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 148 5  ({ free(srcs); free_helper(srcs, 9340484127959108677UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 148 5  ({ free_helper((((unsigned char *)srcs) - sizeof(void *)), 9340484127959108677UL);free((((unsigned char *)srcs) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 148 14 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 53 73 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 9, 0, (size_t)(9340484127959108936UL), (size_t)(9340484127959108937UL), (size_t)(9340484127959108938UL), (size_t)(9340484127959108939UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 73 1 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_9, ____chimes_did_disable0, false); 
@@ -88,14 +88,14 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 85 5  size_t 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 85 42 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 86 5  size_t nbytes;  nbytes = (dimx * dimy * sizeof(float)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 86 48 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 94 5  float *c_coeff;  c_coeff = ((float *) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * 20); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 20, 9340484127959108576UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 94 197 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 95 5  float *curr;  curr = ((float *) ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 95 170 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 96 5  float *next;  next = ((float *) ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 96 170 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 97 5  float *vsq;  vsq = ((float *) ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108575UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 97 169 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 94 5  float *c_coeff;  c_coeff = ((float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 20) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 20, 9340484127959108576UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 94 306 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 95 5  float *curr;  curr = ((float *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 95 279 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 96 5  float *next;  next = ((float *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108573UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 96 279 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 97 5  float *vsq;  vsq = ((float *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 9340484127959108575UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 97 278 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 100 10 int ____chimes_ret_var_0; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 100 34 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 104 5  float **srcs;  srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt)) ;

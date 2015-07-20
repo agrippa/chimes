@@ -3,29 +3,29 @@ ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 73 8 len=7
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 90 6 len=5 usage_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 99 13 len=15 runTest_helper1_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 164 13 len=15 runTest_helper2_npm
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 22  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393446UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 22  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393446UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 37 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 29  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393450UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 29  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393450UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 44 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393454UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 27  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393454UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 42 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 2  ({ free(referrence); free_helper(referrence, 11559531244921393446UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 2  ({ free_helper((((unsigned char *)referrence) - sizeof(void *)), 11559531244921393446UL);free((((unsigned char *)referrence) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 17 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 2  ({ free(input_itemsets); free_helper(input_itemsets, 11559531244921393450UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 2  ({ free_helper((((unsigned char *)input_itemsets) - sizeof(void *)), 11559531244921393450UL);free((((unsigned char *)input_itemsets) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 21 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 2  ({ free(output_itemsets); free_helper(output_itemsets, 11559531244921393454UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 2  ({ free_helper((((unsigned char *)output_itemsets) - sizeof(void *)), 11559531244921393454UL);free((((unsigned char *)output_itemsets) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 22 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 22  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393446UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 22  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393446UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 37 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 29  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393450UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 29  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393450UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 44 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 27  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393454UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 27  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 11559531244921393454UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 42 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 2  ({ free(referrence); free_helper(referrence, 11559531244921393446UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 2  ({ free_helper((((unsigned char *)referrence) - sizeof(void *)), 11559531244921393446UL);free((((unsigned char *)referrence) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 234 17 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 2  ({ free(input_itemsets); free_helper(input_itemsets, 11559531244921393450UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 2  ({ free_helper((((unsigned char *)input_itemsets) - sizeof(void *)), 11559531244921393450UL);free((((unsigned char *)input_itemsets) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 235 21 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 2  ({ free(output_itemsets); free_helper(output_itemsets, 11559531244921393454UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 2  ({ free_helper((((unsigned char *)output_itemsets) - sizeof(void *)), 11559531244921393454UL);free((((unsigned char *)output_itemsets) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 236 22 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 20 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 16 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
@@ -130,12 +130,12 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 193 2
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 193 21 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 211 5  size_t nbytes;  nbytes = ((size_t)max_rows * (size_t)max_cols * sizeof(int)) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 211 70 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 26 void *____chimes_tmp_ptr = malloc(nbytes); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 67 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 33 void *____chimes_tmp_ptr = malloc(nbytes); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 74 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 31 void *____chimes_tmp_ptr = malloc(nbytes); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 72 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 26 void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 213 86 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 33 void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 214 93 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 31 void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 215 91 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 5  double start_time;  start_time = (seconds()) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 217 34 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw_refactored/needle.cpp 232 5  double end_time;  end_time = (seconds()) ;

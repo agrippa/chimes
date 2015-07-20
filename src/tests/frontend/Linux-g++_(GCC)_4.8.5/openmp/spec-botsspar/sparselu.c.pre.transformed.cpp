@@ -100,8 +100,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -120,7 +121,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4000,7 +4001,7 @@ void genmat_resumable (float *M[])
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); ____chimes_tmp_ptr; }) ;
+            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4105,7 +4106,7 @@ float * allocate_clean_block_resumable()
   float *p; float *q; ;
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  p = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4244,7 +4245,7 @@ void sparselu_init_resumable (float ***pBENCH, char *pass)
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349133UL), (size_t)(15559110349592349134UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size * bots_arg_size * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); ____chimes_tmp_ptr; }) ;
+   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     call_lbl_0: ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4608,7 +4609,7 @@ void genmat_quick (float *M[])
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); ____chimes_tmp_ptr; }) ;
+            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4707,7 +4708,7 @@ float * allocate_clean_block_quick()
   float *p; float *q; ;
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  p = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4830,7 +4831,7 @@ void sparselu_init_quick (float ***pBENCH, char *pass)
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349133UL), (size_t)(15559110349592349134UL)) ; ; ;
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size * bots_arg_size * sizeof(float *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); ____chimes_tmp_ptr; }) ;
+   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     call_lbl_0: ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5190,7 +5191,7 @@ void genmat_npm (float *M[])
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); ____chimes_tmp_ptr; }) ;
+            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5285,7 +5286,7 @@ float * allocate_clean_block_npm()
   float *p, *q;
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size_1 * bots_arg_size_1 * sizeof(float)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  p = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5398,7 +5399,7 @@ void sparselu_init_npm (float ***pBENCH, char *pass)
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc(bots_arg_size * bots_arg_size * sizeof(float *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); ____chimes_tmp_ptr; }) ;
+   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    genmat_npm(*pBENCH);
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5595,20 +5596,20 @@ static int module_init() {
                              (15559110349592348196UL + 943UL), (15559110349592348196UL + 973UL),
                              (15559110349592348196UL + 510UL), (15559110349592348196UL + 623UL),
                      "bots_verbose_mode_t", 32UL, 0,
-                             "print_structure", "_Z15print_structurePcPPf", 0,
-                             "allocate_clean_block", "_Z20allocate_clean_blockv", 0,
-                             "checkmat1", "_Z9checkmat1Pf", 0,
-                             "sparselu_par_call", "_Z17sparselu_par_callPPf", 7, "lu0", "fwd", "bdiv", "allocate_clean_block", "bmod", "bmod", "checkpoint",
-                             "fwd", "_Z3fwdPfS_", 0,
-                             "bmod", "_Z4bmodPfS_S_", 0,
-                             "lu0", "_Z3lu0Pf", 0,
-                             "sparselu_fini", "_Z13sparselu_finiPPfPc", 0,
-                             "checkmat", "_Z8checkmatPfS_", 0,
-                             "sparselu_init", "_Z13sparselu_initPPPfPc", 1, "genmat",
-                             "sparselu_check", "_Z14sparselu_checkPPfS0_", 1, "checkmat1",
-                             "sparselu_seq_call", "_Z17sparselu_seq_callPPf", 5, "lu0", "fwd", "bdiv", "allocate_clean_block", "bmod",
-                             "genmat", "_Z6genmatPPf", 0,
-                             "bdiv", "_Z4bdivPfS_", 0,
+                             "print_structure", "_Z15print_structurePcPPf", 0, 0,
+                             "allocate_clean_block", "_Z20allocate_clean_blockv", 0, 0,
+                             "checkmat1", "_Z9checkmat1Pf", 0, 0,
+                             "sparselu_par_call", "_Z17sparselu_par_callPPf", 0, 7, "lu0", "fwd", "bdiv", "allocate_clean_block", "bmod", "bmod", "checkpoint",
+                             "fwd", "_Z3fwdPfS_", 0, 0,
+                             "bmod", "_Z4bmodPfS_S_", 0, 0,
+                             "lu0", "_Z3lu0Pf", 0, 0,
+                             "sparselu_fini", "_Z13sparselu_finiPPfPc", 0, 0,
+                             "checkmat", "_Z8checkmatPfS_", 0, 0,
+                             "sparselu_init", "_Z13sparselu_initPPPfPc", 0, 1, "genmat",
+                             "sparselu_check", "_Z14sparselu_checkPPfS0_", 0, 1, "checkmat1",
+                             "sparselu_seq_call", "_Z17sparselu_seq_callPPf", 0, 5, "lu0", "fwd", "bdiv", "allocate_clean_block", "bmod",
+                             "genmat", "_Z6genmatPPf", 0, 0,
+                             "bdiv", "_Z4bdivPfS_", 0, 0,
         "genmat", 0UL, (int)1, 15559110349592349125UL,
         "lu0", 0UL, (int)1, 15559110349592349169UL,
         "fwd", 0UL, (int)2, 15559110349592349169UL, 15559110349592349169UL,

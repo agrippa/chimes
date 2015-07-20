@@ -9,7 +9,8 @@ typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "haloExchange.c.pre.transformed.cpp"
 static int ____chimes_does_checkpoint_destroyForceExchange_npm = 1;
-static int ____chimes_does_checkpoint_initHaloExchange_npm = 1;
+static int ____chimes_does_checkpoint_destroyAtomsExchange_npm = 1;
+static int ____chimes_does_checkpoint_exchangeData_npm = 1;
 static int ____chimes_does_checkpoint_mkForceSendCellList_npm = 1;
 static int ____chimes_does_checkpoint_sortAtomsById_npm = 1;
 static int ____chimes_does_checkpoint_loadForceBuffer_npm = 1;
@@ -20,8 +21,9 @@ static int ____chimes_does_checkpoint_destroyHaloExchange_npm = 1;
 static int ____chimes_does_checkpoint_unloadAtomsBuffer_npm = 1;
 static int ____chimes_does_checkpoint_loadAtomsBuffer_npm = 1;
 static int ____chimes_does_checkpoint_mkAtomCellList_npm = 1;
-static int ____chimes_does_checkpoint_destroyAtomsExchange_npm = 1;
+static int ____chimes_does_checkpoint_initHaloExchange_npm = 1;
 static int ____chimes_does_checkpoint_sortAtomsInCell_npm = 1;
+static int ____chimes_does_checkpoint_haloExchange_npm = 1;
 static int ____chimes_does_checkpoint_initAtomHaloExchange_npm = 1;
 static int ____chimes_does_checkpoint_getBoxFromTuple_npm = 1;
 static int ____chimes_does_checkpoint_processorNum_npm = 1;
@@ -204,8 +206,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -224,7 +227,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1593,12 +1596,12 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
 
 
    void* parms;
@@ -2572,9 +2575,9 @@ typedef struct BasePotentialSt
    char latticeType[8];
    char name[3];
    int atomicNo;
-   int (*force)(struct SimFlatSt* s);
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot);
+   int (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint));
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint));
 } BasePotential;
 
 
@@ -2859,7 +2862,7 @@ HaloExchange *hh;
    hh->destroy = destroyAtomsExchange;
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      parms = ((AtomExchangeParms*) ({ void *____chimes_tmp_ptr = malloc(sizeof(AtomExchangeParms)); malloc_helper(____chimes_tmp_ptr, sizeof(AtomExchangeParms), 5897154831253371835UL, 0, 1, (int)sizeof(struct AtomExchangeParmsSt), 0); ____chimes_tmp_ptr; })) ;
+      parms = ((AtomExchangeParms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(AtomExchangeParms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(AtomExchangeParms), 5897154831253371835UL, 0, 1, (int)sizeof(struct AtomExchangeParmsSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 168 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    parms->nCells[0] = 2*(boxes->gridSize[1]+2)*(boxes->gridSize[2]+2);
@@ -2882,7 +2885,7 @@ HaloExchange *hh;
 # 179 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      parms->pbcFactor[ii] = (real_t*) ({ void *____chimes_tmp_ptr = malloc(3 * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, 3*sizeof(real_t), 5897154831253369460UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      parms->pbcFactor[ii] = (real_t*) ({ void *____chimes_tmp_ptr = malloc((3 * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 3*sizeof(real_t), 5897154831253369460UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
       { int jj; for ( jj = (0) ;jj<3; ++jj) { parms->pbcFactor[ii][jj] = 0.0; } };
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -2947,7 +2950,7 @@ HaloExchange *hh;
    hh->bufCapacity = (maxSize)*64*sizeof(ForceMsg);
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      parms = ((ForceExchangeParms*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ForceExchangeParms)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeParms), 5897154831253371838UL, 0, 1, (int)sizeof(struct ForceExchangeParmsSt), 0); ____chimes_tmp_ptr; })) ;
+      parms = ((ForceExchangeParms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeParms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeParms), 5897154831253371838UL, 0, 1, (int)sizeof(struct ForceExchangeParmsSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    parms->nCells[0] = (boxes->gridSize[1] )*(boxes->gridSize[2] );
@@ -2987,15 +2990,16 @@ void destroyHaloExchange_resumable(HaloExchange** haloExchange)
 # 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&destroyHaloExchange), "destroyHaloExchange", &____must_manage_destroyHaloExchange, 1, 0, (size_t)(5897154831253371259UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free((*haloExchange)->parms); free_helper((*haloExchange)->parms, 5897154831253371250UL); }) ;
+    ({ free_helper((((unsigned char *)(*haloExchange)->parms) - sizeof(void *)), 5897154831253371250UL);free((((unsigned char *)(*haloExchange)->parms) - sizeof(void *))); }) ;
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(*haloExchange); free_helper(*haloExchange, 5897154831253371248UL); }) ;
+    ({ free_helper((((unsigned char *)*haloExchange) - sizeof(void *)), 5897154831253371248UL);free((((unsigned char *)*haloExchange) - sizeof(void *))); }) ;
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    *haloExchange = __null;
 # 251 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 rm_stack(false, 0UL, "destroyHaloExchange", &____must_manage_destroyHaloExchange, ____alias_loc_id_36, ____chimes_did_disable2, false); }
 # 252 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 253 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+void haloExchange_npm(HaloExchange* haloExchangeData, void* data);void exchangeData_npm(HaloExchange* haloExchange, void* data, int iAxis);
 void haloExchange_quick(HaloExchange* haloExchangeData, void* data); void haloExchange(HaloExchange* haloExchangeData, void* data);void exchangeData_quick(HaloExchange* haloExchange, void* data, int iAxis); void exchangeData(HaloExchange* haloExchange, void* data, int iAxis);
 void haloExchange_resumable(HaloExchange* haloExchangeData, void* data)
 # 254 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3016,7 +3020,7 @@ HaloExchange* initHaloExchange_resumable(Domain* domain)
 # 261 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (____must_checkpoint_initHaloExchange_hh_0) { register_stack_vars(1, "initHaloExchange|hh|0", &____must_checkpoint_initHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 262 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      hh = ((HaloExchange*) ({ void *____chimes_tmp_ptr = malloc(sizeof(HaloExchange)); malloc_helper(____chimes_tmp_ptr, sizeof(HaloExchange), 5897154831253369626UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms)); ____chimes_tmp_ptr; })) ;
+      hh = ((HaloExchange*) ({ void *____chimes_tmp_ptr = malloc((sizeof(HaloExchange)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(HaloExchange), 5897154831253369626UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 263 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 264 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 265 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3074,13 +3078,13 @@ int faceM;
       faceP = (faceM+1) ;
 # 288 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 289 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      sendBufM = ((char*) ({ void *____chimes_tmp_ptr = malloc(haloExchange->bufCapacity); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371388UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      sendBufM = ((char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371388UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 290 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      sendBufP = ((char*) ({ void *____chimes_tmp_ptr = malloc(haloExchange->bufCapacity); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371398UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      sendBufP = ((char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371398UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 291 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      recvBufM = ((char*) ({ void *____chimes_tmp_ptr = malloc(haloExchange->bufCapacity); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371401UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      recvBufM = ((char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371401UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 292 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      recvBufP = ((char*) ({ void *____chimes_tmp_ptr = malloc(haloExchange->bufCapacity); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371391UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      recvBufP = ((char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371391UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 293 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 294 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
        call_lbl_0: nSendM = (((int (*)(void *, void *, int, char *))(translate_fptr((void *)haloExchange->loadBuffer, 0, 0, 0UL, 4, 5897154831253371413UL, 5897154831253371417UL, 0UL, 5897154831253371388UL)))(haloExchange->parms, data, faceM, sendBufM)) ;
@@ -3109,13 +3113,13 @@ int faceM;
 # 308 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
     call_lbl_7: ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 7, 0, 0UL, 5, 5897154831253371413UL, 5897154831253371417UL, 0UL, 0UL, 5897154831253371391UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP);
 # 309 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(recvBufP); free_helper(recvBufP, 5897154831253371391UL); }) ;
+    ({ free_helper((((unsigned char *)recvBufP) - sizeof(void *)), 5897154831253371391UL);free((((unsigned char *)recvBufP) - sizeof(void *))); }) ;
 # 310 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(recvBufM); free_helper(recvBufM, 5897154831253371401UL); }) ;
+    ({ free_helper((((unsigned char *)recvBufM) - sizeof(void *)), 5897154831253371401UL);free((((unsigned char *)recvBufM) - sizeof(void *))); }) ;
 # 311 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(sendBufP); free_helper(sendBufP, 5897154831253371398UL); }) ;
+    ({ free_helper((((unsigned char *)sendBufP) - sizeof(void *)), 5897154831253371398UL);free((((unsigned char *)sendBufP) - sizeof(void *))); }) ;
 # 312 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(sendBufM); free_helper(sendBufM, 5897154831253371388UL); }) ;
+    ({ free_helper((((unsigned char *)sendBufM) - sizeof(void *)), 5897154831253371388UL);free((((unsigned char *)sendBufM) - sizeof(void *))); }) ;
 # 313 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 rm_stack(false, 0UL, "exchangeData", (int *)0x0, 0, ____chimes_did_disable5, false); }
 # 334 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3145,7 +3149,7 @@ int *list;
 # 335 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (____must_checkpoint_mkAtomCellList_iz_0 || ____must_checkpoint_mkAtomCellList_iy_0 || ____must_checkpoint_mkAtomCellList_ix_0 || ____must_checkpoint_mkAtomCellList_count_0 || ____must_checkpoint_mkAtomCellList_zEnd_0 || ____must_checkpoint_mkAtomCellList_zBegin_0 || ____must_checkpoint_mkAtomCellList_yEnd_0 || ____must_checkpoint_mkAtomCellList_yBegin_0 || ____must_checkpoint_mkAtomCellList_xEnd_0 || ____must_checkpoint_mkAtomCellList_list_0) { register_stack_vars(10, "mkAtomCellList|iz|0", &____must_checkpoint_mkAtomCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "mkAtomCellList|iy|0", &____must_checkpoint_mkAtomCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "mkAtomCellList|ix|0", &____must_checkpoint_mkAtomCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "mkAtomCellList|count|0", &____must_checkpoint_mkAtomCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "mkAtomCellList|zEnd|0", &____must_checkpoint_mkAtomCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0, "mkAtomCellList|zBegin|0", &____must_checkpoint_mkAtomCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0, "mkAtomCellList|yEnd|0", &____must_checkpoint_mkAtomCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0, "mkAtomCellList|yBegin|0", &____must_checkpoint_mkAtomCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0, "mkAtomCellList|xEnd|0", &____must_checkpoint_mkAtomCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0, "mkAtomCellList|list|0", &____must_checkpoint_mkAtomCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 336 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      list = ((int*) ({ void *____chimes_tmp_ptr = malloc(nCells * sizeof(int)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253370320UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      list = ((int*) ({ void *____chimes_tmp_ptr = malloc((nCells * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253370320UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 337 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
     int xBegin; xBegin = (-1) ;
 # 338 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3332,9 +3336,9 @@ void destroyAtomsExchange_resumable(void* vparms)
 # 442 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 443 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->pbcFactor[ii]); free_helper(parms->pbcFactor[ii], 5897154831253370142UL); }) ;
+       ({ free_helper((((unsigned char *)parms->pbcFactor[ii]) - sizeof(void *)), 5897154831253370142UL);free((((unsigned char *)parms->pbcFactor[ii]) - sizeof(void *))); }) ;
 # 444 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->cellList[ii]); free_helper(parms->cellList[ii], 5897154831253370142UL); }) ;
+       ({ free_helper((((unsigned char *)parms->cellList[ii]) - sizeof(void *)), 5897154831253370142UL);free((((unsigned char *)parms->cellList[ii]) - sizeof(void *))); }) ;
 # 445 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    } }
 # 446 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3365,7 +3369,7 @@ int *list;
 # 456 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (____must_checkpoint_mkForceSendCellList_iz_0 || ____must_checkpoint_mkForceSendCellList_iy_0 || ____must_checkpoint_mkForceSendCellList_ix_0 || ____must_checkpoint_mkForceSendCellList_count_0 || ____must_checkpoint_mkForceSendCellList_zEnd_0 || ____must_checkpoint_mkForceSendCellList_zBegin_0 || ____must_checkpoint_mkForceSendCellList_yEnd_0 || ____must_checkpoint_mkForceSendCellList_yBegin_0 || ____must_checkpoint_mkForceSendCellList_xEnd_0 || ____must_checkpoint_mkForceSendCellList_list_0) { register_stack_vars(10, "mkForceSendCellList|iz|0", &____must_checkpoint_mkForceSendCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "mkForceSendCellList|iy|0", &____must_checkpoint_mkForceSendCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "mkForceSendCellList|ix|0", &____must_checkpoint_mkForceSendCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "mkForceSendCellList|count|0", &____must_checkpoint_mkForceSendCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "mkForceSendCellList|zEnd|0", &____must_checkpoint_mkForceSendCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0, "mkForceSendCellList|zBegin|0", &____must_checkpoint_mkForceSendCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0, "mkForceSendCellList|yEnd|0", &____must_checkpoint_mkForceSendCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0, "mkForceSendCellList|yBegin|0", &____must_checkpoint_mkForceSendCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0, "mkForceSendCellList|xEnd|0", &____must_checkpoint_mkForceSendCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0, "mkForceSendCellList|list|0", &____must_checkpoint_mkForceSendCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 457 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      list = ((int*) ({ void *____chimes_tmp_ptr = malloc(nCells * sizeof(int)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371040UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      list = ((int*) ({ void *____chimes_tmp_ptr = malloc((nCells * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371040UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 458 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    int xBegin; ;
 # 459 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3471,7 +3475,7 @@ int *list;
 # 508 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (____must_checkpoint_mkForceRecvCellList_iz_0 || ____must_checkpoint_mkForceRecvCellList_iy_0 || ____must_checkpoint_mkForceRecvCellList_ix_0 || ____must_checkpoint_mkForceRecvCellList_count_0 || ____must_checkpoint_mkForceRecvCellList_zEnd_0 || ____must_checkpoint_mkForceRecvCellList_zBegin_0 || ____must_checkpoint_mkForceRecvCellList_yEnd_0 || ____must_checkpoint_mkForceRecvCellList_yBegin_0 || ____must_checkpoint_mkForceRecvCellList_xEnd_0 || ____must_checkpoint_mkForceRecvCellList_list_0) { register_stack_vars(10, "mkForceRecvCellList|iz|0", &____must_checkpoint_mkForceRecvCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "mkForceRecvCellList|iy|0", &____must_checkpoint_mkForceRecvCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "mkForceRecvCellList|ix|0", &____must_checkpoint_mkForceRecvCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "mkForceRecvCellList|count|0", &____must_checkpoint_mkForceRecvCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "mkForceRecvCellList|zEnd|0", &____must_checkpoint_mkForceRecvCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0, "mkForceRecvCellList|zBegin|0", &____must_checkpoint_mkForceRecvCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0, "mkForceRecvCellList|yEnd|0", &____must_checkpoint_mkForceRecvCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0, "mkForceRecvCellList|yBegin|0", &____must_checkpoint_mkForceRecvCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0, "mkForceRecvCellList|xEnd|0", &____must_checkpoint_mkForceRecvCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0, "mkForceRecvCellList|list|0", &____must_checkpoint_mkForceRecvCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 509 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      list = ((int*) ({ void *____chimes_tmp_ptr = malloc(nCells * sizeof(int)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371237UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      list = ((int*) ({ void *____chimes_tmp_ptr = malloc((nCells * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371237UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 510 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    int xBegin; ;
 # 511 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3668,9 +3672,9 @@ void destroyForceExchange_resumable(void* vparms)
 # 614 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 615 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->sendCells[ii]); free_helper(parms->sendCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper((((unsigned char *)parms->sendCells[ii]) - sizeof(void *)), 5897154831253370832UL);free((((unsigned char *)parms->sendCells[ii]) - sizeof(void *))); }) ;
 # 616 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->recvCells[ii]); free_helper(parms->recvCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper((((unsigned char *)parms->recvCells[ii]) - sizeof(void *)), 5897154831253370832UL);free((((unsigned char *)parms->recvCells[ii]) - sizeof(void *))); }) ;
 # 617 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    } }
 # 618 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3798,7 +3802,7 @@ HaloExchange *hh;
    hh->destroy = destroyAtomsExchange;
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      parms = ((AtomExchangeParms*) ({ void *____chimes_tmp_ptr = malloc(sizeof(AtomExchangeParms)); malloc_helper(____chimes_tmp_ptr, sizeof(AtomExchangeParms), 5897154831253371835UL, 0, 1, (int)sizeof(struct AtomExchangeParmsSt), 0); ____chimes_tmp_ptr; })) ;
+      parms = ((AtomExchangeParms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(AtomExchangeParms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(AtomExchangeParms), 5897154831253371835UL, 0, 1, (int)sizeof(struct AtomExchangeParmsSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 168 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    parms->nCells[0] = 2*(boxes->gridSize[1]+2)*(boxes->gridSize[2]+2);
@@ -3821,7 +3825,7 @@ HaloExchange *hh;
 # 179 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      parms->pbcFactor[ii] = (real_t*) ({ void *____chimes_tmp_ptr = malloc(3 * sizeof(real_t)); ; malloc_helper(____chimes_tmp_ptr, 3*sizeof(real_t), 5897154831253369460UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      parms->pbcFactor[ii] = (real_t*) ({ void *____chimes_tmp_ptr = malloc((3 * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 3*sizeof(real_t), 5897154831253369460UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
       { int jj; for ( jj = (0) ;jj<3; ++jj) { parms->pbcFactor[ii][jj] = 0.0; } };
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3885,7 +3889,7 @@ HaloExchange *hh;
    hh->bufCapacity = (maxSize)*64*sizeof(ForceMsg);
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      parms = ((ForceExchangeParms*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ForceExchangeParms)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeParms), 5897154831253371838UL, 0, 1, (int)sizeof(struct ForceExchangeParmsSt), 0); ____chimes_tmp_ptr; })) ;
+      parms = ((ForceExchangeParms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeParms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeParms), 5897154831253371838UL, 0, 1, (int)sizeof(struct ForceExchangeParmsSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    parms->nCells[0] = (boxes->gridSize[1] )*(boxes->gridSize[2] );
@@ -3924,9 +3928,9 @@ void destroyHaloExchange_quick(HaloExchange** haloExchange)
 # 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&destroyHaloExchange), "destroyHaloExchange", &____must_manage_destroyHaloExchange, 1, 0, (size_t)(5897154831253371259UL)) ; ; ;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free((*haloExchange)->parms); free_helper((*haloExchange)->parms, 5897154831253371250UL); }) ;
+    ({ free_helper((((unsigned char *)(*haloExchange)->parms) - sizeof(void *)), 5897154831253371250UL);free((((unsigned char *)(*haloExchange)->parms) - sizeof(void *))); }) ;
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(*haloExchange); free_helper(*haloExchange, 5897154831253371248UL); }) ;
+    ({ free_helper((((unsigned char *)*haloExchange) - sizeof(void *)), 5897154831253371248UL);free((((unsigned char *)*haloExchange) - sizeof(void *))); }) ;
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    *haloExchange = __null;
 # 251 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3952,7 +3956,7 @@ HaloExchange* initHaloExchange_quick(Domain* domain)
 # 261 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (____must_checkpoint_initHaloExchange_hh_0) { register_stack_vars(1, "initHaloExchange|hh|0", &____must_checkpoint_initHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); } ; ;
 # 262 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      hh = ((HaloExchange*) ({ void *____chimes_tmp_ptr = malloc(sizeof(HaloExchange)); malloc_helper(____chimes_tmp_ptr, sizeof(HaloExchange), 5897154831253369626UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms)); ____chimes_tmp_ptr; })) ;
+      hh = ((HaloExchange*) ({ void *____chimes_tmp_ptr = malloc((sizeof(HaloExchange)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(HaloExchange), 5897154831253369626UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 263 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 264 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 265 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4010,13 +4014,13 @@ int faceM;
       faceP = (faceM+1) ;
 # 288 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 289 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      sendBufM = ((char*) ({ void *____chimes_tmp_ptr = malloc(haloExchange->bufCapacity); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371388UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      sendBufM = ((char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371388UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 290 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      sendBufP = ((char*) ({ void *____chimes_tmp_ptr = malloc(haloExchange->bufCapacity); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371398UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      sendBufP = ((char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371398UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 291 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      recvBufM = ((char*) ({ void *____chimes_tmp_ptr = malloc(haloExchange->bufCapacity); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371401UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      recvBufM = ((char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371401UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 292 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      recvBufP = ((char*) ({ void *____chimes_tmp_ptr = malloc(haloExchange->bufCapacity); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371391UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      recvBufP = ((char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371391UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 293 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 294 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
        call_lbl_0: nSendM = (((int (*)(void *, void *, int, char *))(translate_fptr((void *)haloExchange->loadBuffer, 0, 0, 0UL, 4, 5897154831253371413UL, 5897154831253371417UL, 0UL, 5897154831253371388UL)))(haloExchange->parms, data, faceM, sendBufM)) ;
@@ -4045,13 +4049,13 @@ int faceM;
 # 308 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
     call_lbl_7: ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 7, 0, 0UL, 5, 5897154831253371413UL, 5897154831253371417UL, 0UL, 0UL, 5897154831253371391UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP);
 # 309 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(recvBufP); free_helper(recvBufP, 5897154831253371391UL); }) ;
+    ({ free_helper((((unsigned char *)recvBufP) - sizeof(void *)), 5897154831253371391UL);free((((unsigned char *)recvBufP) - sizeof(void *))); }) ;
 # 310 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(recvBufM); free_helper(recvBufM, 5897154831253371401UL); }) ;
+    ({ free_helper((((unsigned char *)recvBufM) - sizeof(void *)), 5897154831253371401UL);free((((unsigned char *)recvBufM) - sizeof(void *))); }) ;
 # 311 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(sendBufP); free_helper(sendBufP, 5897154831253371398UL); }) ;
+    ({ free_helper((((unsigned char *)sendBufP) - sizeof(void *)), 5897154831253371398UL);free((((unsigned char *)sendBufP) - sizeof(void *))); }) ;
 # 312 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(sendBufM); free_helper(sendBufM, 5897154831253371388UL); }) ;
+    ({ free_helper((((unsigned char *)sendBufM) - sizeof(void *)), 5897154831253371388UL);free((((unsigned char *)sendBufM) - sizeof(void *))); }) ;
 # 313 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 rm_stack(false, 0UL, "exchangeData", (int *)0x0, 0, ____chimes_did_disable5, false); }
 
@@ -4081,7 +4085,7 @@ int *list;
 # 335 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (____must_checkpoint_mkAtomCellList_iz_0 || ____must_checkpoint_mkAtomCellList_iy_0 || ____must_checkpoint_mkAtomCellList_ix_0 || ____must_checkpoint_mkAtomCellList_count_0 || ____must_checkpoint_mkAtomCellList_zEnd_0 || ____must_checkpoint_mkAtomCellList_zBegin_0 || ____must_checkpoint_mkAtomCellList_yEnd_0 || ____must_checkpoint_mkAtomCellList_yBegin_0 || ____must_checkpoint_mkAtomCellList_xEnd_0 || ____must_checkpoint_mkAtomCellList_list_0) { register_stack_vars(10, "mkAtomCellList|iz|0", &____must_checkpoint_mkAtomCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "mkAtomCellList|iy|0", &____must_checkpoint_mkAtomCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "mkAtomCellList|ix|0", &____must_checkpoint_mkAtomCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "mkAtomCellList|count|0", &____must_checkpoint_mkAtomCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "mkAtomCellList|zEnd|0", &____must_checkpoint_mkAtomCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0, "mkAtomCellList|zBegin|0", &____must_checkpoint_mkAtomCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0, "mkAtomCellList|yEnd|0", &____must_checkpoint_mkAtomCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0, "mkAtomCellList|yBegin|0", &____must_checkpoint_mkAtomCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0, "mkAtomCellList|xEnd|0", &____must_checkpoint_mkAtomCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0, "mkAtomCellList|list|0", &____must_checkpoint_mkAtomCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); } ; ;
 # 336 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      list = ((int*) ({ void *____chimes_tmp_ptr = malloc(nCells * sizeof(int)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253370320UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      list = ((int*) ({ void *____chimes_tmp_ptr = malloc((nCells * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253370320UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 337 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
     int xBegin; xBegin = (-1) ;
 # 338 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4265,9 +4269,9 @@ void destroyAtomsExchange_quick(void* vparms)
 # 442 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 443 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->pbcFactor[ii]); free_helper(parms->pbcFactor[ii], 5897154831253370142UL); }) ;
+       ({ free_helper((((unsigned char *)parms->pbcFactor[ii]) - sizeof(void *)), 5897154831253370142UL);free((((unsigned char *)parms->pbcFactor[ii]) - sizeof(void *))); }) ;
 # 444 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->cellList[ii]); free_helper(parms->cellList[ii], 5897154831253370142UL); }) ;
+       ({ free_helper((((unsigned char *)parms->cellList[ii]) - sizeof(void *)), 5897154831253370142UL);free((((unsigned char *)parms->cellList[ii]) - sizeof(void *))); }) ;
 # 445 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    } }
 # 446 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4299,7 +4303,7 @@ int *list;
 # 456 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (____must_checkpoint_mkForceSendCellList_iz_0 || ____must_checkpoint_mkForceSendCellList_iy_0 || ____must_checkpoint_mkForceSendCellList_ix_0 || ____must_checkpoint_mkForceSendCellList_count_0 || ____must_checkpoint_mkForceSendCellList_zEnd_0 || ____must_checkpoint_mkForceSendCellList_zBegin_0 || ____must_checkpoint_mkForceSendCellList_yEnd_0 || ____must_checkpoint_mkForceSendCellList_yBegin_0 || ____must_checkpoint_mkForceSendCellList_xEnd_0 || ____must_checkpoint_mkForceSendCellList_list_0) { register_stack_vars(10, "mkForceSendCellList|iz|0", &____must_checkpoint_mkForceSendCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "mkForceSendCellList|iy|0", &____must_checkpoint_mkForceSendCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "mkForceSendCellList|ix|0", &____must_checkpoint_mkForceSendCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "mkForceSendCellList|count|0", &____must_checkpoint_mkForceSendCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "mkForceSendCellList|zEnd|0", &____must_checkpoint_mkForceSendCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0, "mkForceSendCellList|zBegin|0", &____must_checkpoint_mkForceSendCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0, "mkForceSendCellList|yEnd|0", &____must_checkpoint_mkForceSendCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0, "mkForceSendCellList|yBegin|0", &____must_checkpoint_mkForceSendCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0, "mkForceSendCellList|xEnd|0", &____must_checkpoint_mkForceSendCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0, "mkForceSendCellList|list|0", &____must_checkpoint_mkForceSendCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); } ; ;
 # 457 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      list = ((int*) ({ void *____chimes_tmp_ptr = malloc(nCells * sizeof(int)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371040UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      list = ((int*) ({ void *____chimes_tmp_ptr = malloc((nCells * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371040UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 458 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    int xBegin; ;
 # 459 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4406,7 +4410,7 @@ int *list;
 # 508 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (____must_checkpoint_mkForceRecvCellList_iz_0 || ____must_checkpoint_mkForceRecvCellList_iy_0 || ____must_checkpoint_mkForceRecvCellList_ix_0 || ____must_checkpoint_mkForceRecvCellList_count_0 || ____must_checkpoint_mkForceRecvCellList_zEnd_0 || ____must_checkpoint_mkForceRecvCellList_zBegin_0 || ____must_checkpoint_mkForceRecvCellList_yEnd_0 || ____must_checkpoint_mkForceRecvCellList_yBegin_0 || ____must_checkpoint_mkForceRecvCellList_xEnd_0 || ____must_checkpoint_mkForceRecvCellList_list_0) { register_stack_vars(10, "mkForceRecvCellList|iz|0", &____must_checkpoint_mkForceRecvCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "mkForceRecvCellList|iy|0", &____must_checkpoint_mkForceRecvCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "mkForceRecvCellList|ix|0", &____must_checkpoint_mkForceRecvCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "mkForceRecvCellList|count|0", &____must_checkpoint_mkForceRecvCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "mkForceRecvCellList|zEnd|0", &____must_checkpoint_mkForceRecvCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0, "mkForceRecvCellList|zBegin|0", &____must_checkpoint_mkForceRecvCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0, "mkForceRecvCellList|yEnd|0", &____must_checkpoint_mkForceRecvCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0, "mkForceRecvCellList|yBegin|0", &____must_checkpoint_mkForceRecvCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0, "mkForceRecvCellList|xEnd|0", &____must_checkpoint_mkForceRecvCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0, "mkForceRecvCellList|list|0", &____must_checkpoint_mkForceRecvCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); } ; ;
 # 509 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      list = ((int*) ({ void *____chimes_tmp_ptr = malloc(nCells * sizeof(int)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371237UL, 0, 0); ____chimes_tmp_ptr; })) ;
+      list = ((int*) ({ void *____chimes_tmp_ptr = malloc((nCells * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371237UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 510 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    int xBegin; ;
 # 511 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4588,9 +4592,9 @@ void destroyForceExchange_quick(void* vparms)
 # 614 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 615 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->sendCells[ii]); free_helper(parms->sendCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper((((unsigned char *)parms->sendCells[ii]) - sizeof(void *)), 5897154831253370832UL);free((((unsigned char *)parms->sendCells[ii]) - sizeof(void *))); }) ;
 # 616 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->recvCells[ii]); free_helper(parms->recvCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper((((unsigned char *)parms->recvCells[ii]) - sizeof(void *)), 5897154831253370832UL);free((((unsigned char *)parms->recvCells[ii]) - sizeof(void *))); }) ;
 # 617 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    } }
 # 618 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4709,7 +4713,7 @@ HaloExchange* initAtomHaloExchange_npm(Domain* domain, LinkCell* boxes)
    hh->destroy = destroyAtomsExchange;
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-   AtomExchangeParms* parms = (AtomExchangeParms*) ({ void *____chimes_tmp_ptr = malloc(sizeof(AtomExchangeParms)); malloc_helper(____chimes_tmp_ptr, sizeof(AtomExchangeParms), 5897154831253371835UL, 0, 1, (int)sizeof(struct AtomExchangeParmsSt), 0); ____chimes_tmp_ptr; }) ;
+   AtomExchangeParms* parms = (AtomExchangeParms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(AtomExchangeParms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(AtomExchangeParms), 5897154831253371835UL, 0, 1, (int)sizeof(struct AtomExchangeParmsSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 168 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    parms->nCells[0] = 2*(boxes->gridSize[1]+2)*(boxes->gridSize[2]+2);
@@ -4732,7 +4736,7 @@ HaloExchange* initAtomHaloExchange_npm(Domain* domain, LinkCell* boxes)
 # 179 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-      parms->pbcFactor[ii] = (real_t*) ({ void *____chimes_tmp_ptr = malloc(3 * sizeof(real_t)); malloc_helper(____chimes_tmp_ptr, 3*sizeof(real_t), 5897154831253369460UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      parms->pbcFactor[ii] = (real_t*) ({ void *____chimes_tmp_ptr = malloc((3 * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 3*sizeof(real_t), 5897154831253369460UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
       for (int jj=0;jj<3; ++jj) { parms->pbcFactor[ii][jj] = 0.0; };
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4788,7 +4792,7 @@ HaloExchange* initForceHaloExchange_npm(Domain* domain, LinkCell* boxes)
    hh->bufCapacity = (maxSize)*64*sizeof(ForceMsg);
 # 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-   ForceExchangeParms* parms = (ForceExchangeParms*) ({ void *____chimes_tmp_ptr = malloc(sizeof(ForceExchangeParms)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeParms), 5897154831253371838UL, 0, 1, (int)sizeof(struct ForceExchangeParmsSt), 0); ____chimes_tmp_ptr; }) ;
+   ForceExchangeParms* parms = (ForceExchangeParms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeParms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeParms), 5897154831253371838UL, 0, 1, (int)sizeof(struct ForceExchangeParmsSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    parms->nCells[0] = (boxes->gridSize[1] )*(boxes->gridSize[2] );
@@ -4825,19 +4829,27 @@ void destroyHaloExchange_npm(HaloExchange** haloExchange)
 # 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {
 # 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free((*haloExchange)->parms); free_helper((*haloExchange)->parms, 5897154831253371250UL); }) ;
+    ({ free_helper((((unsigned char *)(*haloExchange)->parms) - sizeof(void *)), 5897154831253371250UL);free((((unsigned char *)(*haloExchange)->parms) - sizeof(void *))); }) ;
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-    ({ free(*haloExchange); free_helper(*haloExchange, 5897154831253371248UL); }) ;
+    ({ free_helper((((unsigned char *)*haloExchange) - sizeof(void *)), 5897154831253371248UL);free((((unsigned char *)*haloExchange) - sizeof(void *))); }) ;
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    *haloExchange = __null;
 # 251 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+}
+# 253 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+void haloExchange_npm(HaloExchange* haloExchangeData, void* data)
+# 254 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+{
+# 255 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   for (int iAxis=0;iAxis<3; ++iAxis) { exchangeData_npm(haloExchangeData, data, iAxis); };
+# 257 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 }
 # 260 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 HaloExchange* initHaloExchange_npm(Domain* domain)
 # 261 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {
 # 262 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-   HaloExchange* hh = (HaloExchange*) ({ void *____chimes_tmp_ptr = malloc(sizeof(HaloExchange)); malloc_helper(____chimes_tmp_ptr, sizeof(HaloExchange), 5897154831253369626UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms)); ____chimes_tmp_ptr; }) ;
+   HaloExchange* hh = (HaloExchange*) ({ void *____chimes_tmp_ptr = malloc((sizeof(HaloExchange)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(HaloExchange), 5897154831253369626UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 263 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 264 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 265 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4859,12 +4871,66 @@ HaloExchange* initHaloExchange_npm(Domain* domain)
     HaloExchange * ____chimes_ret_var_2; ____chimes_ret_var_2 = (hh); return ____chimes_ret_var_2; ;
 # 274 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 }
+# 284 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+void exchangeData_npm(HaloExchange* haloExchange, void* data, int iAxis)
+# 285 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+{
+# 286 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   int faceM = 2*iAxis;
+# 287 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   int faceP = faceM+1;
+# 288 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 289 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   char* sendBufM = (char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371388UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 290 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   char* sendBufP = (char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371398UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 291 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   char* recvBufM = (char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371401UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 292 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   char* recvBufP = (char*) ({ void *____chimes_tmp_ptr = malloc((haloExchange->bufCapacity) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, haloExchange->bufCapacity, 5897154831253371391UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 293 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 294 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   int nSendM = ((int (*)(void *, void *, int, char *))(translate_fptr((void *)haloExchange->loadBuffer, -1, 0, 0UL, 4, 5897154831253371413UL, 5897154831253371417UL, 0UL, 5897154831253371388UL)))(haloExchange->parms, data, faceM, sendBufM);
+# 295 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   int nSendP = ((int (*)(void *, void *, int, char *))(translate_fptr((void *)haloExchange->loadBuffer, -1, 0, 0UL, 4, 5897154831253371413UL, 5897154831253371417UL, 0UL, 5897154831253371398UL)))(haloExchange->parms, data, faceP, sendBufP);
+# 296 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 297 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   int nbrRankM = haloExchange->nbrRank[faceM];
+# 298 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   int nbrRankP = haloExchange->nbrRank[faceP];
+# 299 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 300 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   int nRecvM, nRecvP;
+# 301 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 302 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   do { (*____chimes_extern_func_profileStart)(commHaloTimer); } while(0);
+# 303 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   nRecvP = (*____chimes_extern_func_sendReceiveParallel)(sendBufM, nSendM, nbrRankM, recvBufP, haloExchange->bufCapacity, nbrRankP);
+# 304 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   nRecvM = (*____chimes_extern_func_sendReceiveParallel)(sendBufP, nSendP, nbrRankP, recvBufM, haloExchange->bufCapacity, nbrRankM);
+# 305 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   do { (*____chimes_extern_func_profileStop)(commHaloTimer); } while(0);
+# 306 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 307 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, -1, 0, 0UL, 5, 5897154831253371413UL, 5897154831253371417UL, 0UL, 0UL, 5897154831253371401UL)))(haloExchange->parms, data, faceM, nRecvM, recvBufM);
+# 308 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+   ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, -1, 0, 0UL, 5, 5897154831253371413UL, 5897154831253371417UL, 0UL, 0UL, 5897154831253371391UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP);
+# 309 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+    ({ free_helper((((unsigned char *)recvBufP) - sizeof(void *)), 5897154831253371391UL);free((((unsigned char *)recvBufP) - sizeof(void *))); }) ;
+# 310 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+    ({ free_helper((((unsigned char *)recvBufM) - sizeof(void *)), 5897154831253371401UL);free((((unsigned char *)recvBufM) - sizeof(void *))); }) ;
+# 311 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+    ({ free_helper((((unsigned char *)sendBufP) - sizeof(void *)), 5897154831253371398UL);free((((unsigned char *)sendBufP) - sizeof(void *))); }) ;
+# 312 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+    ({ free_helper((((unsigned char *)sendBufM) - sizeof(void *)), 5897154831253371388UL);free((((unsigned char *)sendBufM) - sizeof(void *))); }) ;
+# 313 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+}
 # 334 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 int* mkAtomCellList_npm(LinkCell* boxes, int iFace, const int nCells)
 # 335 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {
 # 336 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-   int* list = (int*) ({ void *____chimes_tmp_ptr = malloc(nCells * sizeof(int)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253370320UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   int* list = (int*) ({ void *____chimes_tmp_ptr = malloc((nCells * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253370320UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 337 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    int xBegin = -1;
 # 338 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -5032,9 +5098,9 @@ void destroyAtomsExchange_npm(void* vparms)
 # 442 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 443 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->pbcFactor[ii]); free_helper(parms->pbcFactor[ii], 5897154831253370142UL); }) ;
+       ({ free_helper((((unsigned char *)parms->pbcFactor[ii]) - sizeof(void *)), 5897154831253370142UL);free((((unsigned char *)parms->pbcFactor[ii]) - sizeof(void *))); }) ;
 # 444 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->cellList[ii]); free_helper(parms->cellList[ii], 5897154831253370142UL); }) ;
+       ({ free_helper((((unsigned char *)parms->cellList[ii]) - sizeof(void *)), 5897154831253370142UL);free((((unsigned char *)parms->cellList[ii]) - sizeof(void *))); }) ;
 # 445 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    }
 # 446 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -5044,7 +5110,7 @@ int* mkForceSendCellList_npm(LinkCell* boxes, int face, int nCells)
 # 456 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {
 # 457 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-   int* list = (int*) ({ void *____chimes_tmp_ptr = malloc(nCells * sizeof(int)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371040UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   int* list = (int*) ({ void *____chimes_tmp_ptr = malloc((nCells * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371040UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 458 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    int xBegin, xEnd, yBegin, yEnd, zBegin, zEnd;
 # 459 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -5129,7 +5195,7 @@ int* mkForceRecvCellList_npm(LinkCell* boxes, int face, int nCells)
 # 508 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {
 # 509 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-   int* list = (int*) ({ void *____chimes_tmp_ptr = malloc(nCells * sizeof(int)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371237UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   int* list = (int*) ({ void *____chimes_tmp_ptr = malloc((nCells * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nCells*sizeof(int), 5897154831253371237UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 510 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    int xBegin, xEnd, yBegin, yEnd, zBegin, zEnd;
 # 511 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -5305,9 +5371,9 @@ void destroyForceExchange_npm(void* vparms)
 # 614 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    {
 # 615 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->sendCells[ii]); free_helper(parms->sendCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper((((unsigned char *)parms->sendCells[ii]) - sizeof(void *)), 5897154831253370832UL);free((((unsigned char *)parms->sendCells[ii]) - sizeof(void *))); }) ;
 # 616 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-       ({ free(parms->recvCells[ii]); free_helper(parms->recvCells[ii], 5897154831253370832UL); }) ;
+       ({ free_helper((((unsigned char *)parms->recvCells[ii]) - sizeof(void *)), 5897154831253370832UL);free((((unsigned char *)parms->recvCells[ii]) - sizeof(void *))); }) ;
 # 617 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
    }
 # 618 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -5398,7 +5464,7 @@ int sortAtomsById_npm(const void* a, const void* b)
 
 
 static int module_init() {
-    init_module(5897154831253369269UL, 91, 17, 68, 40, 15, 6, 21, 0, 0, 14,
+    init_module(5897154831253369269UL, 91, 17, 68, 40, 17, 6, 23, 0, 0, 14,
                            &____alias_loc_id_0, (unsigned)9, (unsigned)0, (unsigned)0, (5897154831253369269UL + 3UL), (5897154831253369269UL + 4UL), (5897154831253369269UL + 5UL), (5897154831253369269UL + 6UL), (5897154831253369269UL + 7UL), (5897154831253369269UL + 8UL), (5897154831253369269UL + 9UL), (5897154831253369269UL + 89UL), (5897154831253369269UL + 2566UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (5897154831253369269UL + 1UL), (5897154831253369269UL + 2UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (5897154831253369269UL + 357UL), "processorNum", (unsigned)1, (5897154831253369269UL + 404UL),
@@ -5440,7 +5506,8 @@ static int module_init() {
                             &____alias_loc_id_38, (unsigned)13, (unsigned)0, (unsigned)0, (5897154831253369269UL + 2190UL), (5897154831253369269UL + 2191UL), (5897154831253369269UL + 2192UL), (5897154831253369269UL + 2193UL), (5897154831253369269UL + 2194UL), (5897154831253369269UL + 2195UL), (5897154831253369269UL + 2196UL), (5897154831253369269UL + 2197UL), (5897154831253369269UL + 2198UL), (5897154831253369269UL + 2199UL), (5897154831253369269UL + 2200UL), (5897154831253369269UL + 2220UL), (5897154831253369269UL + 2245UL),
                             &____alias_loc_id_39, (unsigned)7, (unsigned)0, (unsigned)0, (5897154831253369269UL + 2485UL), (5897154831253369269UL + 2486UL), (5897154831253369269UL + 2487UL), (5897154831253369269UL + 2488UL), (5897154831253369269UL + 2489UL), (5897154831253369269UL + 2490UL), (5897154831253369269UL + 2491UL),
                             "destroyForceExchange", 0, "_Z20destroyForceExchangePv", "_Z24destroyForceExchange_npmPv", 0, 1, (5897154831253369269UL + 1580UL), 0UL, 2, "free", 1, (5897154831253369269UL + 1563UL), 0UL, "free", 1, (5897154831253369269UL + 1563UL), 0UL,
-                            "initHaloExchange", 1, (void *)(&initHaloExchange_npm), (void *)__null, 6, &____alias_loc_id_2, &____alias_loc_id_3, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, 1, (5897154831253369269UL + 404UL), (5897154831253369269UL + 357UL), 7, "malloc", 1, 0UL, (5897154831253369269UL + 357UL), "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL,
+                            "destroyAtomsExchange", 0, "_Z20destroyAtomsExchangePv", "_Z24destroyAtomsExchange_npmPv", 0, 1, (5897154831253369269UL + 890UL), 0UL, 2, "free", 1, (5897154831253369269UL + 873UL), 0UL, "free", 1, (5897154831253369269UL + 873UL), 0UL,
+                            "exchangeData", 1, (void *)(&exchangeData_npm), (void *)__null, 8, &____alias_loc_id_16, &____alias_loc_id_17, &____alias_loc_id_18, &____alias_loc_id_19, &____alias_loc_id_20, &____alias_loc_id_21, &____alias_loc_id_22, &____alias_loc_id_23, 3, (5897154831253369269UL + 2123UL), (5897154831253369269UL + 2148UL), 0UL, 0UL, 16, "malloc", 1, 0UL, (5897154831253369269UL + 2119UL), "malloc", 1, 0UL, (5897154831253369269UL + 2129UL), "malloc", 1, 0UL, (5897154831253369269UL + 2132UL), "malloc", 1, 0UL, (5897154831253369269UL + 2122UL), "anon", 4, (5897154831253369269UL + 2144UL), (5897154831253369269UL + 2148UL), 0UL, (5897154831253369269UL + 2119UL), 0UL, "anon", 4, (5897154831253369269UL + 2144UL), (5897154831253369269UL + 2148UL), 0UL, (5897154831253369269UL + 2129UL), 0UL, "profileStart", 1, 0UL, 0UL, "sendReceiveParallel", 6, (5897154831253369269UL + 2119UL), 0UL, 0UL, (5897154831253369269UL + 2122UL), 0UL, 0UL, 0UL, "sendReceiveParallel", 6, (5897154831253369269UL + 2129UL), 0UL, 0UL, (5897154831253369269UL + 2132UL), 0UL, 0UL, 0UL, "profileStop", 1, 0UL, 0UL, "anon", 5, (5897154831253369269UL + 2144UL), (5897154831253369269UL + 2148UL), 0UL, 0UL, (5897154831253369269UL + 2132UL), 0UL, "anon", 5, (5897154831253369269UL + 2144UL), (5897154831253369269UL + 2148UL), 0UL, 0UL, (5897154831253369269UL + 2122UL), 0UL, "free", 1, (5897154831253369269UL + 2122UL), 0UL, "free", 1, (5897154831253369269UL + 2132UL), 0UL, "free", 1, (5897154831253369269UL + 2129UL), 0UL, "free", 1, (5897154831253369269UL + 2119UL), 0UL,
                             "mkForceSendCellList", 1, (void *)(&mkForceSendCellList_npm), (void *)__null, 1, &____alias_loc_id_13, 3, (5897154831253369269UL + 1775UL), 0UL, 0UL, (5897154831253369269UL + 1771UL), 4, "malloc", 1, 0UL, (5897154831253369269UL + 1771UL), "__assert_fail", 4, (5897154831253369269UL + 2559UL), (5897154831253369269UL + 2552UL), 0UL, (5897154831253369269UL + 2560UL), 0UL, "getBoxFromTuple", 4, (5897154831253369269UL + 1775UL), 0UL, 0UL, 0UL, 0UL, "__assert_fail", 4, (5897154831253369269UL + 2561UL), (5897154831253369269UL + 2552UL), 0UL, (5897154831253369269UL + 2560UL), 0UL,
                             "sortAtomsById", 0, "_Z13sortAtomsByIdPKvS0_", "_Z17sortAtomsById_npmPKvS0_", 0, 2, (5897154831253369269UL + 2532UL), (5897154831253369269UL + 2533UL), 0UL, 1, "__assert_fail", 4, (5897154831253369269UL + 2557UL), (5897154831253369269UL + 2552UL), 0UL, (5897154831253369269UL + 2558UL), 0UL,
                             "loadForceBuffer", 0, "_Z15loadForceBufferPvS_iPc", "_Z19loadForceBuffer_npmPvS_iPc", 0, 4, (5897154831253369269UL + 1396UL), (5897154831253369269UL + 1397UL), 0UL, (5897154831253369269UL + 1399UL), 0UL, 0,
@@ -5451,8 +5518,9 @@ static int module_init() {
                             "unloadAtomsBuffer", 0, "_Z17unloadAtomsBufferPvS_iiPc", "_Z21unloadAtomsBuffer_npmPvS_iiPc", 1, &____alias_loc_id_8, 5, (5897154831253369269UL + 848UL), (5897154831253369269UL + 849UL), 0UL, 0UL, (5897154831253369269UL + 852UL), 0UL, 2, "__assert_fail", 4, (5897154831253369269UL + 2551UL), (5897154831253369269UL + 2552UL), 0UL, (5897154831253369269UL + 2553UL), 0UL, "putAtomInBox", 10, (5897154831253369269UL + 829UL), (5897154831253369269UL + 829UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
                             "loadAtomsBuffer", 0, "_Z15loadAtomsBufferPvS_iPc", "_Z19loadAtomsBuffer_npmPvS_iPc", 0, 4, (5897154831253369269UL + 697UL), (5897154831253369269UL + 698UL), 0UL, (5897154831253369269UL + 700UL), 0UL, 0,
                             "mkAtomCellList", 1, (void *)(&mkAtomCellList_npm), (void *)__null, 1, &____alias_loc_id_9, 3, (5897154831253369269UL + 1055UL), 0UL, 0UL, (5897154831253369269UL + 1051UL), 3, "malloc", 1, 0UL, (5897154831253369269UL + 1051UL), "getBoxFromTuple", 4, (5897154831253369269UL + 1055UL), 0UL, 0UL, 0UL, 0UL, "__assert_fail", 4, (5897154831253369269UL + 2561UL), (5897154831253369269UL + 2552UL), 0UL, (5897154831253369269UL + 2563UL), 0UL,
-                            "destroyAtomsExchange", 0, "_Z20destroyAtomsExchangePv", "_Z24destroyAtomsExchange_npmPv", 0, 1, (5897154831253369269UL + 890UL), 0UL, 2, "free", 1, (5897154831253369269UL + 873UL), 0UL, "free", 1, (5897154831253369269UL + 873UL), 0UL,
+                            "initHaloExchange", 1, (void *)(&initHaloExchange_npm), (void *)__null, 6, &____alias_loc_id_2, &____alias_loc_id_3, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, 1, (5897154831253369269UL + 404UL), (5897154831253369269UL + 357UL), 7, "malloc", 1, 0UL, (5897154831253369269UL + 357UL), "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 404UL), 0UL, 0UL, 0UL, 0UL,
                             "sortAtomsInCell", 0, "_Z15sortAtomsInCellP7AtomsStP10LinkCellSti", "_Z19sortAtomsInCell_npmP7AtomsStP10LinkCellSti", 0, 3, (5897154831253369269UL + 2478UL), (5897154831253369269UL + 2479UL), 0UL, 0UL, 1, "qsort", 4, (5897154831253369269UL + 2220UL), 0UL, 0UL, (5897154831253369269UL + 2564UL), 0UL,
+                            "haloExchange", 0, "_Z12haloExchangeP14HaloExchangeStPv", "_Z16haloExchange_npmP14HaloExchangeStPv", 1, &____alias_loc_id_15, 2, (5897154831253369269UL + 2015UL), (5897154831253369269UL + 2016UL), 0UL, 1, "exchangeData", 3, (5897154831253369269UL + 2015UL), (5897154831253369269UL + 2016UL), 0UL, 0UL,
                             "initAtomHaloExchange", 0, "_Z20initAtomHaloExchangeP8DomainStP10LinkCellSt", "_Z24initAtomHaloExchange_npmP8DomainStP10LinkCellSt", 2, &____alias_loc_id_0, &____alias_loc_id_1, 2, (5897154831253369269UL + 347UL), (5897154831253369269UL + 105UL), (5897154831253369269UL + 89UL), 4, "initHaloExchange", 1, (5897154831253369269UL + 347UL), (5897154831253369269UL + 89UL), "malloc", 1, 0UL, (5897154831253369269UL + 2566UL), "mkAtomCellList", 3, (5897154831253369269UL + 105UL), 0UL, 0UL, (5897154831253369269UL + 191UL), "malloc", 1, 0UL, (5897154831253369269UL + 191UL),
                                "getBoxFromTuple", (void **)&(____chimes_extern_func_getBoxFromTuple),
                                "processorNum", (void **)&(____chimes_extern_func_processorNum),
@@ -5461,7 +5529,8 @@ static int module_init() {
                                "putAtomInBox", (void **)&(____chimes_extern_func_putAtomInBox),
                                "sendReceiveParallel", (void **)&(____chimes_extern_func_sendReceiveParallel),
                            "destroyForceExchange", &(____chimes_does_checkpoint_destroyForceExchange_npm),
-                           "initHaloExchange", &(____chimes_does_checkpoint_initHaloExchange_npm),
+                           "destroyAtomsExchange", &(____chimes_does_checkpoint_destroyAtomsExchange_npm),
+                           "exchangeData", &(____chimes_does_checkpoint_exchangeData_npm),
                            "mkForceSendCellList", &(____chimes_does_checkpoint_mkForceSendCellList_npm),
                            "sortAtomsById", &(____chimes_does_checkpoint_sortAtomsById_npm),
                            "loadForceBuffer", &(____chimes_does_checkpoint_loadForceBuffer_npm),
@@ -5472,8 +5541,9 @@ static int module_init() {
                            "unloadAtomsBuffer", &(____chimes_does_checkpoint_unloadAtomsBuffer_npm),
                            "loadAtomsBuffer", &(____chimes_does_checkpoint_loadAtomsBuffer_npm),
                            "mkAtomCellList", &(____chimes_does_checkpoint_mkAtomCellList_npm),
-                           "destroyAtomsExchange", &(____chimes_does_checkpoint_destroyAtomsExchange_npm),
+                           "initHaloExchange", &(____chimes_does_checkpoint_initHaloExchange_npm),
                            "sortAtomsInCell", &(____chimes_does_checkpoint_sortAtomsInCell_npm),
+                           "haloExchange", &(____chimes_does_checkpoint_haloExchange_npm),
                            "initAtomHaloExchange", &(____chimes_does_checkpoint_initAtomHaloExchange_npm),
                            "getBoxFromTuple", &(____chimes_does_checkpoint_getBoxFromTuple_npm),
                            "processorNum", &(____chimes_does_checkpoint_processorNum_npm),
@@ -5586,23 +5656,23 @@ static int module_init() {
                      "SimFlatSt", 640UL, 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange),
                      "SpeciesDataSt", 0UL, 0,
                      "TimerHandle", 32UL, 0,
-                             "destroyHaloExchange", "_Z19destroyHaloExchangePP14HaloExchangeSt", 0,
-                             "initForceHaloExchange", "_Z21initForceHaloExchangeP8DomainStP10LinkCellSt", 3, "initHaloExchange", "mkForceSendCellList", "mkForceRecvCellList",
-                             "mkForceSendCellList", "_ZL19mkForceSendCellListP10LinkCellStii", 1, "getBoxFromTuple",
-                             "sortAtomsById", "_Z13sortAtomsByIdPKvS0_", 0,
-                             "loadForceBuffer", "_Z15loadForceBufferPvS_iPc", 0,
-                             "unloadForceBuffer", "_Z17unloadForceBufferPvS_iiPc", 0,
-                             "initHaloExchange", "_ZL16initHaloExchangeP8DomainSt", 6, "processorNum", "processorNum", "processorNum", "processorNum", "processorNum", "processorNum",
-                             "mkForceRecvCellList", "_ZL19mkForceRecvCellListP10LinkCellStii", 1, "getBoxFromTuple",
-                             "destroyForceExchange", "_Z20destroyForceExchangePv", 0,
-                             "unloadAtomsBuffer", "_Z17unloadAtomsBufferPvS_iiPc", 1, "putAtomInBox",
-                             "loadAtomsBuffer", "_Z15loadAtomsBufferPvS_iPc", 0,
-                             "mkAtomCellList", "_ZL14mkAtomCellListP10LinkCellStii", 1, "getBoxFromTuple",
-                             "destroyAtomsExchange", "_Z20destroyAtomsExchangePv", 0,
-                             "sortAtomsInCell", "_Z15sortAtomsInCellP7AtomsStP10LinkCellSti", 0,
-                             "haloExchange", "_Z12haloExchangeP14HaloExchangeStPv", 1, "exchangeData",
-                             "initAtomHaloExchange", "_Z20initAtomHaloExchangeP8DomainStP10LinkCellSt", 2, "initHaloExchange", "mkAtomCellList",
-                             "exchangeData", "_ZL12exchangeDataP14HaloExchangeStPvi", 4, "profileStart", "sendReceiveParallel", "sendReceiveParallel", "profileStop",
+                             "destroyHaloExchange", "_Z19destroyHaloExchangePP14HaloExchangeSt", 0, 0,
+                             "initForceHaloExchange", "_Z21initForceHaloExchangeP8DomainStP10LinkCellSt", 0, 3, "initHaloExchange", "mkForceSendCellList", "mkForceRecvCellList",
+                             "mkForceSendCellList", "_ZL19mkForceSendCellListP10LinkCellStii", 0, 1, "getBoxFromTuple",
+                             "sortAtomsById", "_Z13sortAtomsByIdPKvS0_", 0, 0,
+                             "loadForceBuffer", "_Z15loadForceBufferPvS_iPc", 0, 0,
+                             "unloadForceBuffer", "_Z17unloadForceBufferPvS_iiPc", 0, 0,
+                             "initHaloExchange", "_ZL16initHaloExchangeP8DomainSt", 0, 6, "processorNum", "processorNum", "processorNum", "processorNum", "processorNum", "processorNum",
+                             "mkForceRecvCellList", "_ZL19mkForceRecvCellListP10LinkCellStii", 0, 1, "getBoxFromTuple",
+                             "destroyForceExchange", "_Z20destroyForceExchangePv", 0, 0,
+                             "unloadAtomsBuffer", "_Z17unloadAtomsBufferPvS_iiPc", 0, 1, "putAtomInBox",
+                             "loadAtomsBuffer", "_Z15loadAtomsBufferPvS_iPc", 0, 0,
+                             "mkAtomCellList", "_ZL14mkAtomCellListP10LinkCellStii", 0, 1, "getBoxFromTuple",
+                             "destroyAtomsExchange", "_Z20destroyAtomsExchangePv", 0, 0,
+                             "sortAtomsInCell", "_Z15sortAtomsInCellP7AtomsStP10LinkCellSti", 0, 0,
+                             "haloExchange", "_Z12haloExchangeP14HaloExchangeStPv", 0, 1, "exchangeData",
+                             "initAtomHaloExchange", "_Z20initAtomHaloExchangeP8DomainStP10LinkCellSt", 0, 2, "initHaloExchange", "mkAtomCellList",
+                             "exchangeData", "_ZL12exchangeDataP14HaloExchangeStPvi", 0, 4, "profileStart", "sendReceiveParallel", "sendReceiveParallel", "profileStop",
                         "initAtomHaloExchange|domain|0", 2, "mkAtomCellList", "initHaloExchange",
                         "initAtomHaloExchange|boxes|0", 2, "mkAtomCellList", "initHaloExchange",
                         "initAtomHaloExchange|hh|0", 1, "mkAtomCellList",

@@ -1,53 +1,53 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 14 8 len=7 seconds_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 35 6 len=5 Usage_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 51 6 len=6 kernel_npm
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Node) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(Node)*no_of_nodes, 15212017145270468206UL, 0, 1, (int)sizeof(struct Node), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Node) * no_of_nodes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Node)*no_of_nodes, 15212017145270468206UL, 0, 1, (int)sizeof(struct Node), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 60 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468205UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(bool) * no_of_nodes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468205UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 59 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 37  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468210UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 37  ({ void *____chimes_tmp_ptr = malloc((sizeof(bool) * no_of_nodes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468210UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 68 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468208UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 31  ({ void *____chimes_tmp_ptr = malloc((sizeof(bool) * no_of_nodes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468208UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 62 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * edge_list_size); malloc_helper(____chimes_tmp_ptr, sizeof(int)*edge_list_size, 15212017145270468207UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * edge_list_size) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*edge_list_size, 15212017145270468207UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 61 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 15212017145270468209UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 21  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * no_of_nodes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 15212017145270468209UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 52 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 201 2  ({ free(h_graph_nodes); free_helper(h_graph_nodes, 15212017145270468206UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 201 2  ({ free_helper((((unsigned char *)h_graph_nodes) - sizeof(void *)), 15212017145270468206UL);free((((unsigned char *)h_graph_nodes) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 201 21 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 202 2  ({ free(h_graph_edges); free_helper(h_graph_edges, 15212017145270468207UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 202 2  ({ free_helper((((unsigned char *)h_graph_edges) - sizeof(void *)), 15212017145270468207UL);free((((unsigned char *)h_graph_edges) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 202 21 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 203 2  ({ free(h_graph_mask); free_helper(h_graph_mask, 15212017145270468205UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 203 2  ({ free_helper((((unsigned char *)h_graph_mask) - sizeof(void *)), 15212017145270468205UL);free((((unsigned char *)h_graph_mask) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 203 20 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 204 2  ({ free(h_updating_graph_mask); free_helper(h_updating_graph_mask, 15212017145270468210UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 204 2  ({ free_helper((((unsigned char *)h_updating_graph_mask) - sizeof(void *)), 15212017145270468210UL);free((((unsigned char *)h_updating_graph_mask) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 204 29 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 205 2  ({ free(h_graph_visited); free_helper(h_graph_visited, 15212017145270468208UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 205 2  ({ free_helper((((unsigned char *)h_graph_visited) - sizeof(void *)), 15212017145270468208UL);free((((unsigned char *)h_graph_visited) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 205 23 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 206 2  ({ free(h_cost); free_helper(h_cost, 15212017145270468209UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 206 2  ({ free_helper((((unsigned char *)h_cost) - sizeof(void *)), 15212017145270468209UL);free((((unsigned char *)h_cost) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 206 14 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(Node) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(Node)*no_of_nodes, 15212017145270468206UL, 0, 1, (int)sizeof(struct Node), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(Node) * no_of_nodes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Node)*no_of_nodes, 15212017145270468206UL, 0, 1, (int)sizeof(struct Node), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 60 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468205UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(bool) * no_of_nodes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468205UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 59 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 37  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468210UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 37  ({ void *____chimes_tmp_ptr = malloc((sizeof(bool) * no_of_nodes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468210UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 68 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468208UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 31  ({ void *____chimes_tmp_ptr = malloc((sizeof(bool) * no_of_nodes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(bool)*no_of_nodes, 15212017145270468208UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 62 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 28  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * edge_list_size); malloc_helper(____chimes_tmp_ptr, sizeof(int)*edge_list_size, 15212017145270468207UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 28  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * edge_list_size) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*edge_list_size, 15212017145270468207UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 61 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 15212017145270468209UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 21  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * no_of_nodes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*no_of_nodes, 15212017145270468209UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 52 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 201 2  ({ free(h_graph_nodes); free_helper(h_graph_nodes, 15212017145270468206UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 201 2  ({ free_helper((((unsigned char *)h_graph_nodes) - sizeof(void *)), 15212017145270468206UL);free((((unsigned char *)h_graph_nodes) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 201 21 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 202 2  ({ free(h_graph_edges); free_helper(h_graph_edges, 15212017145270468207UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 202 2  ({ free_helper((((unsigned char *)h_graph_edges) - sizeof(void *)), 15212017145270468207UL);free((((unsigned char *)h_graph_edges) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 202 21 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 203 2  ({ free(h_graph_mask); free_helper(h_graph_mask, 15212017145270468205UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 203 2  ({ free_helper((((unsigned char *)h_graph_mask) - sizeof(void *)), 15212017145270468205UL);free((((unsigned char *)h_graph_mask) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 203 20 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 204 2  ({ free(h_updating_graph_mask); free_helper(h_updating_graph_mask, 15212017145270468210UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 204 2  ({ free_helper((((unsigned char *)h_updating_graph_mask) - sizeof(void *)), 15212017145270468210UL);free((((unsigned char *)h_updating_graph_mask) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 204 29 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 205 2  ({ free(h_graph_visited); free_helper(h_graph_visited, 15212017145270468208UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 205 2  ({ free_helper((((unsigned char *)h_graph_visited) - sizeof(void *)), 15212017145270468208UL);free((((unsigned char *)h_graph_visited) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 205 23 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 206 2  ({ free(h_cost); free_helper(h_cost, 15212017145270468209UL); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 206 2  ({ free_helper((((unsigned char *)h_cost) - sizeof(void *)), 15212017145270468209UL);free((((unsigned char *)h_cost) - sizeof(void *)));  }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 206 14 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 18 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 14 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
@@ -113,14 +113,14 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 5 i
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 110 32 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 121 5  int source;  source = (0) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 121 19 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 33 void *____chimes_tmp_ptr = malloc(sizeof(Node) * no_of_nodes); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 94 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 32 void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 93 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 41 void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 102 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 35 void *____chimes_tmp_ptr = malloc(sizeof(bool) * no_of_nodes); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 96 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 33 void *____chimes_tmp_ptr = malloc((sizeof(Node) * no_of_nodes) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 126 113 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 32 void *____chimes_tmp_ptr = malloc((sizeof(bool) * no_of_nodes) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 127 112 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 41 void *____chimes_tmp_ptr = malloc((sizeof(bool) * no_of_nodes) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 128 121 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 35 void *____chimes_tmp_ptr = malloc((sizeof(bool) * no_of_nodes) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 129 115 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 131 5 int start; int edgeno; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 131 22 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 133 5 {  unsigned int i; 
@@ -129,14 +129,14 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 133 10 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 133 28 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 153 5 int id; int cost; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 153 16 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 32 void *____chimes_tmp_ptr = malloc(sizeof(int) * edge_list_size); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 95 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 32 void *____chimes_tmp_ptr = malloc((sizeof(int) * edge_list_size) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 154 114 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 155 5 {  int i; 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 160 5  }
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 155 9  i = (0) ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 155 16 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 25 void *____chimes_tmp_ptr = malloc(sizeof(int) * no_of_nodes); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 85 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 25 void *____chimes_tmp_ptr = malloc((sizeof(int) * no_of_nodes) + sizeof(void *)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 167 104 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 168 5 {  int i; 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 170 5  }
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 168 9  i = (0) ;

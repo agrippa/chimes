@@ -1,7 +1,7 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 8 6 len=7 handler_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 16 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(foo)); malloc_helper(____chimes_tmp_ptr, sizeof(foo), 1944833083709766364UL, 0, 1, (int)sizeof(struct _foo), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 16 21  ({ void *____chimes_tmp_ptr = malloc((sizeof(foo)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(foo), 1944833083709766364UL, 0, 1, (int)sizeof(struct _foo), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 16 39 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 16 21  ({ void *____chimes_tmp_ptr = malloc(sizeof(foo)); malloc_helper(____chimes_tmp_ptr, sizeof(foo), 1944833083709766364UL, 0, 1, (int)sizeof(struct _foo), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 16 21  ({ void *____chimes_tmp_ptr = malloc((sizeof(foo)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(foo), 1944833083709766364UL, 0, 1, (int)sizeof(struct _foo), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 16 39 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 8 25 const int ____chimes_did_disable0 = new_stack((void *)(&handler), "handler", &____must_manage_handler, 1, 0, (size_t)(1944833083709766349UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 11 1 rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, ____chimes_did_disable0, false); 
@@ -14,8 +14,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 9 28 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 13 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1944833083709766386UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 13 170 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 16 5  foo *f;  f = ((foo *) ({ void *____chimes_tmp_ptr = malloc(sizeof(foo)); malloc_helper(____chimes_tmp_ptr, sizeof(foo), 1944833083709766364UL, 0, 1, (int)sizeof(struct _foo), 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 16 202 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 16 5  foo *f;  f = ((foo *) ({ void *____chimes_tmp_ptr = malloc((sizeof(foo)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(foo), 1944833083709766364UL, 0, 1, (int)sizeof(struct _foo), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 16 311 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 23 6 int ____chimes_ret_var_0; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 23 30 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp 19 5  call_lbl_0: 

@@ -72,8 +72,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -92,7 +93,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4097,11 +4098,11 @@ int max_cols;
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
      size_t nbytes; nbytes = ((size_t)max_rows * (size_t)max_cols * sizeof(int)) ;
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- referrence = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994255UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ referrence = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994255UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    input_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994300UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    input_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994300UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- output_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994485UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ output_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994485UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
         call_lbl_1: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
@@ -4221,11 +4222,11 @@ int max_cols;
      double end_time; call_lbl_4: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(referrence); free_helper(referrence, 322747555189994255UL); }) ;
+  ({ free_helper((((unsigned char *)referrence) - sizeof(void *)), 322747555189994255UL);free((((unsigned char *)referrence) - sizeof(void *))); }) ;
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(input_itemsets); free_helper(input_itemsets, 322747555189994300UL); }) ;
+  ({ free_helper((((unsigned char *)input_itemsets) - sizeof(void *)), 322747555189994300UL);free((((unsigned char *)input_itemsets) - sizeof(void *))); }) ;
 # 275 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(output_itemsets); free_helper(output_itemsets, 322747555189994485UL); }) ;
+  ({ free_helper((((unsigned char *)output_itemsets) - sizeof(void *)), 322747555189994485UL);free((((unsigned char *)output_itemsets) - sizeof(void *))); }) ;
 # 276 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 277 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
     printf("execution took %f s\n", end_time - start_time);
@@ -4353,11 +4354,11 @@ int max_cols;
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
      size_t nbytes; nbytes = ((size_t)max_rows * (size_t)max_cols * sizeof(int)) ;
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- referrence = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994255UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ referrence = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994255UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    input_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994300UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    input_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994300UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- output_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994485UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ output_itemsets = (int *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 322747555189994485UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
         call_lbl_1: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
@@ -4477,11 +4478,11 @@ int max_cols;
      double end_time; call_lbl_4: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(referrence); free_helper(referrence, 322747555189994255UL); }) ;
+  ({ free_helper((((unsigned char *)referrence) - sizeof(void *)), 322747555189994255UL);free((((unsigned char *)referrence) - sizeof(void *))); }) ;
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(input_itemsets); free_helper(input_itemsets, 322747555189994300UL); }) ;
+  ({ free_helper((((unsigned char *)input_itemsets) - sizeof(void *)), 322747555189994300UL);free((((unsigned char *)input_itemsets) - sizeof(void *))); }) ;
 # 275 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ free(output_itemsets); free_helper(output_itemsets, 322747555189994485UL); }) ;
+  ({ free_helper((((unsigned char *)output_itemsets) - sizeof(void *)), 322747555189994485UL);free((((unsigned char *)output_itemsets) - sizeof(void *))); }) ;
 # 276 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 277 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
     printf("execution took %f s\n", end_time - start_time);
@@ -4561,11 +4562,11 @@ static int module_init() {
                              (322747555189993815UL + 681UL), (322747555189993815UL + 701UL),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "timezone", 64UL, 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
-                             "seconds", "_Z7secondsv", 0,
-                             "gettime", "_Z7gettimev", 0,
-                             "main", "main", 1, "runTest",
-                             "runTest", "_Z7runTestiPPc", 5, "usage", "seconds", "checkpoint", "checkpoint", "seconds",
-                             "usage", "_Z5usageiPPc", 0,
+                             "seconds", "_Z7secondsv", 0, 0,
+                             "gettime", "_Z7gettimev", 0, 0,
+                             "main", "main", 0, 1, "runTest",
+                             "runTest", "_Z7runTestiPPc", 0, 5, "usage", "seconds", "checkpoint", "checkpoint", "seconds",
+                             "usage", "_Z5usageiPPc", 0, 0,
         "usage", 0UL, (int)2, 0UL, 322747555189994494UL,
         "seconds", 0UL, (int)0,
         "seconds", 0UL, (int)0);

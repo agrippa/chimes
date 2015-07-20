@@ -65,8 +65,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -85,7 +86,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2947,7 +2948,7 @@ SIMMATRIX_T *genSimMatrix_resumable(int exact, int similar, int dissimilar,
   int i; int j; int k; int ccode; int ccode2; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SIMMATRIX_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SIMMATRIX_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     printf("genSimMatrix: cannot allocate simMatrix\n");
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3136,7 +3137,7 @@ SIMMATRIX_T *freeSimMatrix_resumable(SIMMATRIX_T *M) {const int ____chimes_did_d
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     ({ free(M); free_helper(M, 17725255480324453911UL); }) ;
+     ({ free_helper((((unsigned char *)M) - sizeof(void *)), 17725255480324453911UL);free((((unsigned char *)M) - sizeof(void *))); }) ;
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3158,7 +3159,7 @@ SIMMATRIX_T *genSimMatrix_quick(int exact, int similar, int dissimilar,
   int i; int j; int k; int ccode; int ccode2; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SIMMATRIX_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SIMMATRIX_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     printf("genSimMatrix: cannot allocate simMatrix\n");
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3348,7 +3349,7 @@ SIMMATRIX_T *freeSimMatrix_quick(SIMMATRIX_T *M) {const int ____chimes_did_disab
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     ({ free(M); free_helper(M, 17725255480324453911UL); }) ;
+     ({ free_helper((((unsigned char *)M) - sizeof(void *)), 17725255480324453911UL);free((((unsigned char *)M) - sizeof(void *))); }) ;
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3372,7 +3373,7 @@ SIMMATRIX_T *genSimMatrix_npm(int exact, int similar, int dissimilar,
   int i, j, k, ccode, ccode2;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SIMMATRIX_T)); malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (simMatrix = (SIMMATRIX_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SIMMATRIX_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     printf("genSimMatrix: cannot allocate simMatrix\n");
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3556,7 +3557,7 @@ SIMMATRIX_T *freeSimMatrix_npm(SIMMATRIX_T *M) {
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   if (M) {
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     ({ free(M); free_helper(M, 17725255480324453911UL); }) ;
+     ({ free_helper((((unsigned char *)M) - sizeof(void *)), 17725255480324453911UL);free((((unsigned char *)M) - sizeof(void *))); }) ;
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
@@ -3585,8 +3586,8 @@ static int module_init() {
                              (17725255480324453512UL + 8UL), (17725255480324453512UL + 492UL),
                              (17725255480324453512UL + 492UL), (17725255480324453512UL + 402UL),
                      "simmat", 40960UL, 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
-                             "freeSimMatrix", "_Z13freeSimMatrixP6simmat", 0,
-                             "genSimMatrix", "_Z12genSimMatrixiiiiiii", 0);
+                             "freeSimMatrix", "_Z13freeSimMatrixP6simmat", 0, 0,
+                             "genSimMatrix", "_Z12genSimMatrixiiiiiii", 0, 0);
     register_global_var("global|similarities", "[22 x [9 x i8*]]", (void *)(&similarities), 1584, 0, 0, 0UL, 0);
     register_constant(17725255480324453512UL + 0UL, (void *)((((similarities)[21]))[0]), 1);
     register_constant(17725255480324453512UL + 1UL, (void *)((((similarities)[1]))[1]), 2);

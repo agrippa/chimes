@@ -97,8 +97,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -117,7 +118,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -5453,7 +5454,7 @@ void parse_config_resumable(int argc, char **argv, config *conf) {const int ____
                 *sixth_comma = '\0';
 # 189 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 190 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                conf->spheres = (sphere *) ({ void *____chimes_tmp_ptr = realloc(conf->spheres, (conf->nspheres + 1) * sizeof(sphere)); ; realloc_helper(____chimes_tmp_ptr, conf->spheres, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); ____chimes_tmp_ptr; }) ;
+                conf->spheres = (sphere *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (conf->spheres) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ____chimes_tmp_header, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                  call_lbl_4: ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
 # 196 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5494,7 +5495,7 @@ config conf;
 # 211 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      call_lbl_0: ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
 # 212 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc(sizeof(rgb) * conf.nx * conf.ny); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); ____chimes_tmp_ptr; })) ;
+       screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc((sizeof(rgb) * conf.nx * conf.ny) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 213 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 214 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
        f_max = (200.0) ;
@@ -5636,7 +5637,7 @@ config conf;
     } }
 # 294 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 295 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     ({ free(screen); free_helper(screen, 11205885433679075224UL); }) ;
+     ({ free_helper((((unsigned char *)screen) - sizeof(void *)), 11205885433679075224UL);free((((unsigned char *)screen) - sizeof(void *))); }) ;
 # 296 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12, false); return ____chimes_ret_var_4; ;
 # 297 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5952,7 +5953,7 @@ void parse_config_quick(int argc, char **argv, config *conf) {const int ____chim
                 *sixth_comma = '\0';
 # 189 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 190 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                conf->spheres = (sphere *) ({ void *____chimes_tmp_ptr = realloc(conf->spheres, (conf->nspheres + 1) * sizeof(sphere)); ; realloc_helper(____chimes_tmp_ptr, conf->spheres, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); ____chimes_tmp_ptr; }) ;
+                conf->spheres = (sphere *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (conf->spheres) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ____chimes_tmp_header, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                  call_lbl_4: ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
 # 196 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5993,7 +5994,7 @@ config conf;
 # 211 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      call_lbl_0: ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
 # 212 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc(sizeof(rgb) * conf.nx * conf.ny); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); ____chimes_tmp_ptr; })) ;
+       screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc((sizeof(rgb) * conf.nx * conf.ny) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 213 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 214 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
        f_max = (200.0) ;
@@ -6135,7 +6136,7 @@ config conf;
     } }
 # 294 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 295 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-     ({ free(screen); free_helper(screen, 11205885433679075224UL); }) ;
+     ({ free_helper((((unsigned char *)screen) - sizeof(void *)), 11205885433679075224UL);free((((unsigned char *)screen) - sizeof(void *))); }) ;
 # 296 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12, false); return ____chimes_ret_var_4; ;
 # 297 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -6425,7 +6426,7 @@ void parse_config_npm(int argc, char **argv, config *conf) {
                 *sixth_comma = '\0';
 # 189 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 190 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                conf->spheres = (sphere *) ({ void *____chimes_tmp_ptr = realloc(conf->spheres, (conf->nspheres + 1) * sizeof(sphere)); realloc_helper(____chimes_tmp_ptr, conf->spheres, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); ____chimes_tmp_ptr; }) ;
+                conf->spheres = (sphere *) ({ void *____chimes_tmp_header = conf->spheres; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, (conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ____chimes_tmp_header, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1));
 # 196 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -6529,19 +6530,19 @@ static int module_init() {
                      "_config", 960UL, 17, "double", (int)__builtin_offsetof (struct _config, px), "double", (int)__builtin_offsetof (struct _config, py), "double", (int)__builtin_offsetof (struct _config, pz), "double", (int)__builtin_offsetof (struct _config, lx), "double", (int)__builtin_offsetof (struct _config, ly), "double", (int)__builtin_offsetof (struct _config, lz), "double", (int)__builtin_offsetof (struct _config, dx), "double", (int)__builtin_offsetof (struct _config, dy), "double", (int)__builtin_offsetof (struct _config, dz), "double", (int)__builtin_offsetof (struct _config, svx), "double", (int)__builtin_offsetof (struct _config, svy), "double", (int)__builtin_offsetof (struct _config, svz), "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "%struct._sphere*", (int)__builtin_offsetof (struct _config, spheres), "int", (int)__builtin_offsetof (struct _config, nspheres), "int", (int)__builtin_offsetof (struct _config, nt),
                      "_rgb", 192UL, 3, "double", (int)__builtin_offsetof (struct _rgb, r), "double", (int)__builtin_offsetof (struct _rgb, g), "double", (int)__builtin_offsetof (struct _rgb, b),
                      "_sphere", 448UL, 7, "double", (int)__builtin_offsetof (struct _sphere, cx), "double", (int)__builtin_offsetof (struct _sphere, cy), "double", (int)__builtin_offsetof (struct _sphere, cz), "double", (int)__builtin_offsetof (struct _sphere, radius), "double", (int)__builtin_offsetof (struct _sphere, clR), "double", (int)__builtin_offsetof (struct _sphere, clG), "double", (int)__builtin_offsetof (struct _sphere, clB),
-                             "get_cos_angle_v1v2", "_Z18get_cos_angle_v1v2dddddd", 2, "modv", "modv",
-                             "main", "main", 10, "parse_config", "get_coord", "get_coord", "modv", "get_sphere_intersec", "get_sphere_intersec", "get_sphere_intersec", "get_cos_angle_v1v2", "move", "checkpoint",
-                             "modv", "_Z4modvddd", 0,
-                             "move", "_Z4moveP7_sphereddd", 0,
-                             "get_sphere_intersec", "_Z19get_sphere_intersecdddddddddd", 0,
-                             "move_to", "_Z7move_toP7_sphereddd", 0,
-                             "get_coord", "_Z9get_coordddddd", 0,
-                             "parse_three_doubles", "_Z19parse_three_doublesPcPdS0_S0_", 0,
-                             "init", "_Z4initP7_sphereddddddd", 0,
-                             "parse_config", "_Z12parse_configiPPcP7_config", 6, "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "init", "usage",
-                             "usage", "_Z5usagePPc", 0,
-                             "rot_y", "_Z5rot_yP7_sphered", 0,
-                             "rot_x", "_Z5rot_xP7_sphered", 0,
+                             "get_cos_angle_v1v2", "_Z18get_cos_angle_v1v2dddddd", 0, 2, "modv", "modv",
+                             "main", "main", 0, 10, "parse_config", "get_coord", "get_coord", "modv", "get_sphere_intersec", "get_sphere_intersec", "get_sphere_intersec", "get_cos_angle_v1v2", "move", "checkpoint",
+                             "modv", "_Z4modvddd", 0, 0,
+                             "move", "_Z4moveP7_sphereddd", 0, 0,
+                             "get_sphere_intersec", "_Z19get_sphere_intersecdddddddddd", 0, 0,
+                             "move_to", "_Z7move_toP7_sphereddd", 0, 0,
+                             "get_coord", "_Z9get_coordddddd", 0, 0,
+                             "parse_three_doubles", "_Z19parse_three_doublesPcPdS0_S0_", 0, 0,
+                             "init", "_Z4initP7_sphereddddddd", 0, 0,
+                             "parse_config", "_Z12parse_configiPPcP7_config", 0, 6, "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "init", "usage",
+                             "usage", "_Z5usagePPc", 0, 0,
+                             "rot_y", "_Z5rot_yP7_sphered", 0, 0,
+                             "rot_x", "_Z5rot_xP7_sphered", 0, 0,
                         "main|conf|0", 1, "main",
         "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
         "modv", 0UL, (int)3, 0UL, 0UL, 0UL,

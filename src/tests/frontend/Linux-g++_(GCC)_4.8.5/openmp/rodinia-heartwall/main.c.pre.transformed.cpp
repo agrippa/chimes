@@ -88,8 +88,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -108,7 +109,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -6988,7 +6989,7 @@ int frames_processed;
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_endo_mem = sizeof(int) * pub.endoPoints;
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoRow = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_endo_mem); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_endoRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 0] = 369;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7030,7 +7031,7 @@ int frames_processed;
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[19] = 339;
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoCol = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_endo_mem); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_endoCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 0] = 408;
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7072,9 +7073,9 @@ int frames_processed;
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[19] = 411;
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEndoRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_endo_mem * pub.frames); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_tEndoRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 232 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEndoColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_endo_mem * pub.frames); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_tEndoColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7085,7 +7086,7 @@ int frames_processed;
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_epi_mem = sizeof(int) * pub.epiPoints;
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiRow = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_epi_mem); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_epiRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 0] = 390;
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7149,7 +7150,7 @@ int frames_processed;
 # 271 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[30] = 360;
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiCol = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_epi_mem); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_epiCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 0] = 457;
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7213,9 +7214,9 @@ int frames_processed;
 # 303 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[30] = 455;
 # 304 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEpiRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_epi_mem * pub.frames); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_tEpiRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 305 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEpiColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_epi_mem * pub.frames); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_tEpiColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 306 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 307 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 308 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7244,13 +7245,13 @@ int frames_processed;
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].in_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * 2 * pub.tSize + 1); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].in_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 328 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].in_sqr_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * 2 * pub.tSize + 1); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].in_sqr_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].par_max_val = (float *) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * (2 * pub.tSize + 2 * pub.sSize + 1)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].par_max_val = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 330 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].par_max_coo = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * (2 * pub.tSize + 2 * pub.sSize + 1)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].par_max_coo = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 331 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 332 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7270,9 +7271,9 @@ int frames_processed;
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2 = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in2_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in2 = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 344 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in2_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 345 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 346 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7292,9 +7293,9 @@ int frames_processed;
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in_mod = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in_mod_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in_mod = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in_mod_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7303,9 +7304,9 @@ int frames_processed;
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 364 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 365 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoT = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in_mod_mem * pub.endoPoints); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.endoPoints, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_endoT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.endoPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.endoPoints, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiT = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in_mod_mem * pub.epiPoints); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.epiPoints, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_epiT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.epiPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.epiPoints, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 367 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 369 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7369,7 +7370,7 @@ int frames_processed;
 # 403 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 404 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_conv = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.conv_mem); ; malloc_helper(____chimes_tmp_ptr, pub.conv_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.conv_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 405 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7389,7 +7390,7 @@ int frames_processed;
 # 425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 426 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_pad = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in2_pad_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in2_pad_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in2_pad = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_pad_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_pad_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 436 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7421,7 +7422,7 @@ int frames_processed;
 # 449 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 450 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sub = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in2_sub_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in2_sub = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 451 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 452 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7457,7 +7458,7 @@ int frames_processed;
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sub2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in2_sub2_sqr_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub2_sqr_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in2_sub2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub2_sqr_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub2_sqr_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 500 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7473,7 +7474,7 @@ int frames_processed;
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_tMask = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.tMask_mem); ; malloc_helper(____chimes_tmp_ptr, pub.tMask_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_tMask = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.tMask_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.tMask_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 508 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7522,7 +7523,7 @@ int frames_processed;
 # 535 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 536 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_mask_conv = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.mask_conv_mem); ; malloc_helper(____chimes_tmp_ptr, pub.mask_conv_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_mask_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.mask_conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.mask_conv_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 537 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 538 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7570,7 +7571,7 @@ int frames_processed;
          call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ public_struct ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg15 = (pub); } calling((void*)kernel, 10, ____alias_loc_id_3, 0UL, 2, (size_t)(762051829673678596UL), (size_t)(762051829673678588UL)); (kernel)(____chimes_arg15, priv); }) ) : (({ calling_npm("kernel", ____alias_loc_id_3); (*____chimes_extern_func_kernel)(pub, priv); })));
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(pub.d_frame); free_helper(pub.d_frame, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)pub.d_frame) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_frame) - sizeof(void *))); }) ;
 # 588 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 590 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7604,26 +7605,26 @@ int frames_processed;
     printf("execution took %f s\n", end_time - start_time);
 # 638 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 638 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoRow); free_helper(pub.d_endoRow, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_endoRow) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoRow) - sizeof(void *))); }) ;
 # 639 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoCol); free_helper(pub.d_endoCol, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_endoCol) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoCol) - sizeof(void *))); }) ;
 # 640 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEndoRowLoc); free_helper(pub.d_tEndoRowLoc, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *))); }) ;
 # 641 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEndoColLoc); free_helper(pub.d_tEndoColLoc, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *))); }) ;
 # 642 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoT); free_helper(pub.d_endoT, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_endoT) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoT) - sizeof(void *))); }) ;
 # 643 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 644 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiRow); free_helper(pub.d_epiRow, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_epiRow) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiRow) - sizeof(void *))); }) ;
 # 645 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiCol); free_helper(pub.d_epiCol, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_epiCol) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiCol) - sizeof(void *))); }) ;
 # 646 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEpiRowLoc); free_helper(pub.d_tEpiRowLoc, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *))); }) ;
 # 647 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEpiColLoc); free_helper(pub.d_tEpiColLoc, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *))); }) ;
 # 648 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiT); free_helper(pub.d_epiT, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_epiT) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiT) - sizeof(void *))); }) ;
 # 649 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 650 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 651 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7632,40 +7633,40 @@ int frames_processed;
 # 654 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 655 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].in_partial_sum); free_helper(priv[i].in_partial_sum, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *))); }) ;
 # 656 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].in_sqr_partial_sum); free_helper(priv[i].in_sqr_partial_sum, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *))); }) ;
 # 657 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].par_max_val); free_helper(priv[i].par_max_val, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].par_max_val) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].par_max_val) - sizeof(void *))); }) ;
 # 658 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].par_max_coo); free_helper(priv[i].par_max_coo, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].par_max_coo) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].par_max_coo) - sizeof(void *))); }) ;
 # 659 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 660 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2); free_helper(priv[i].d_in2, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in2) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2) - sizeof(void *))); }) ;
 # 661 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sqr); free_helper(priv[i].d_in2_sqr, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *))); }) ;
 # 662 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 663 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_mod); free_helper(priv[i].d_in_mod, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in_mod) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in_mod) - sizeof(void *))); }) ;
 # 664 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_sqr); free_helper(priv[i].d_in_sqr, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *))); }) ;
 # 665 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 666 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_conv); free_helper(priv[i].d_conv, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_conv) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_conv) - sizeof(void *))); }) ;
 # 667 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 668 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_pad); free_helper(priv[i].d_in2_pad, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *))); }) ;
 # 669 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 670 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub); free_helper(priv[i].d_in2_sub, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *))); }) ;
 # 671 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 672 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub2_sqr); free_helper(priv[i].d_in2_sub2_sqr, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *))); }) ;
 # 673 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 674 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_tMask); free_helper(priv[i].d_tMask, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_tMask) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_tMask) - sizeof(void *))); }) ;
 # 675 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_mask_conv); free_helper(priv[i].d_mask_conv, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *))); }) ;
 # 676 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 677 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7932,7 +7933,7 @@ int frames_processed;
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_endo_mem = sizeof(int) * pub.endoPoints;
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoRow = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_endo_mem); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_endoRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 0] = 369;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -7974,7 +7975,7 @@ int frames_processed;
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[19] = 339;
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoCol = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_endo_mem); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_endoCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 0] = 408;
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8016,9 +8017,9 @@ int frames_processed;
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[19] = 411;
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEndoRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_endo_mem * pub.frames); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_tEndoRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 232 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEndoColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_endo_mem * pub.frames); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_tEndoColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8029,7 +8030,7 @@ int frames_processed;
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_epi_mem = sizeof(int) * pub.epiPoints;
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiRow = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_epi_mem); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_epiRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 0] = 390;
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8093,7 +8094,7 @@ int frames_processed;
 # 271 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[30] = 360;
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiCol = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_epi_mem); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_epiCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 0] = 457;
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8157,9 +8158,9 @@ int frames_processed;
 # 303 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[30] = 455;
 # 304 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEpiRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_epi_mem * pub.frames); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_tEpiRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 305 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEpiColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc(pub.d_epi_mem * pub.frames); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_tEpiColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 306 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 307 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 308 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8188,13 +8189,13 @@ int frames_processed;
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].in_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * 2 * pub.tSize + 1); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].in_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 328 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].in_sqr_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * 2 * pub.tSize + 1); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].in_sqr_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].par_max_val = (float *) ({ void *____chimes_tmp_ptr = malloc(sizeof(float) * (2 * pub.tSize + 2 * pub.sSize + 1)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].par_max_val = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 330 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].par_max_coo = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * (2 * pub.tSize + 2 * pub.sSize + 1)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].par_max_coo = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 331 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 332 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8214,9 +8215,9 @@ int frames_processed;
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2 = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in2_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in2 = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 344 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in2_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 345 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 346 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8236,9 +8237,9 @@ int frames_processed;
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in_mod = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in_mod_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in_mod = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in_mod_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8247,9 +8248,9 @@ int frames_processed;
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 364 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 365 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoT = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in_mod_mem * pub.endoPoints); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.endoPoints, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_endoT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.endoPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.endoPoints, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiT = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in_mod_mem * pub.epiPoints); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.epiPoints, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ pub.d_epiT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.epiPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.epiPoints, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 367 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 369 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8313,7 +8314,7 @@ int frames_processed;
 # 403 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 404 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_conv = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.conv_mem); ; malloc_helper(____chimes_tmp_ptr, pub.conv_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.conv_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 405 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8333,7 +8334,7 @@ int frames_processed;
 # 425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 426 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_pad = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in2_pad_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in2_pad_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in2_pad = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_pad_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_pad_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 436 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8365,7 +8366,7 @@ int frames_processed;
 # 449 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 450 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sub = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in2_sub_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in2_sub = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 451 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 452 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8401,7 +8402,7 @@ int frames_processed;
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sub2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.in2_sub2_sqr_mem); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub2_sqr_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_in2_sub2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub2_sqr_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub2_sqr_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 500 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8417,7 +8418,7 @@ int frames_processed;
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_tMask = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.tMask_mem); ; malloc_helper(____chimes_tmp_ptr, pub.tMask_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_tMask = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.tMask_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.tMask_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 508 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8466,7 +8467,7 @@ int frames_processed;
 # 535 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 536 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_mask_conv = (float *) ({ void *____chimes_tmp_ptr = malloc(pub.mask_conv_mem); ; malloc_helper(____chimes_tmp_ptr, pub.mask_conv_mem, 762051829673679219UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  priv[i].d_mask_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.mask_conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.mask_conv_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 537 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 538 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8514,7 +8515,7 @@ int frames_processed;
          call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ calling((void*)kernel, 10, ____alias_loc_id_3, 0UL, 2, (size_t)(762051829673678596UL), (size_t)(762051829673678588UL)); (kernel)(pub, priv); }) ) : (({ calling_npm("kernel", ____alias_loc_id_3); (*____chimes_extern_func_kernel)(pub, priv); })));
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(pub.d_frame); free_helper(pub.d_frame, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)pub.d_frame) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_frame) - sizeof(void *))); }) ;
 # 588 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 590 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8548,26 +8549,26 @@ int frames_processed;
     printf("execution took %f s\n", end_time - start_time);
 # 638 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 638 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoRow); free_helper(pub.d_endoRow, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_endoRow) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoRow) - sizeof(void *))); }) ;
 # 639 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoCol); free_helper(pub.d_endoCol, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_endoCol) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoCol) - sizeof(void *))); }) ;
 # 640 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEndoRowLoc); free_helper(pub.d_tEndoRowLoc, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *))); }) ;
 # 641 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEndoColLoc); free_helper(pub.d_tEndoColLoc, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *))); }) ;
 # 642 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_endoT); free_helper(pub.d_endoT, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_endoT) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoT) - sizeof(void *))); }) ;
 # 643 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 644 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiRow); free_helper(pub.d_epiRow, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_epiRow) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiRow) - sizeof(void *))); }) ;
 # 645 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiCol); free_helper(pub.d_epiCol, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_epiCol) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiCol) - sizeof(void *))); }) ;
 # 646 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEpiRowLoc); free_helper(pub.d_tEpiRowLoc, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *))); }) ;
 # 647 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_tEpiColLoc); free_helper(pub.d_tEpiColLoc, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *))); }) ;
 # 648 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free(pub.d_epiT); free_helper(pub.d_epiT, 762051829673679219UL); }) ;
+  ({ free_helper((((unsigned char *)pub.d_epiT) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiT) - sizeof(void *))); }) ;
 # 649 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 650 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 651 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8576,40 +8577,40 @@ int frames_processed;
 # 654 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
 # 655 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].in_partial_sum); free_helper(priv[i].in_partial_sum, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *))); }) ;
 # 656 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].in_sqr_partial_sum); free_helper(priv[i].in_sqr_partial_sum, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *))); }) ;
 # 657 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].par_max_val); free_helper(priv[i].par_max_val, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].par_max_val) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].par_max_val) - sizeof(void *))); }) ;
 # 658 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].par_max_coo); free_helper(priv[i].par_max_coo, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].par_max_coo) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].par_max_coo) - sizeof(void *))); }) ;
 # 659 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 660 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2); free_helper(priv[i].d_in2, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in2) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2) - sizeof(void *))); }) ;
 # 661 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sqr); free_helper(priv[i].d_in2_sqr, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *))); }) ;
 # 662 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 663 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_mod); free_helper(priv[i].d_in_mod, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in_mod) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in_mod) - sizeof(void *))); }) ;
 # 664 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in_sqr); free_helper(priv[i].d_in_sqr, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *))); }) ;
 # 665 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 666 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_conv); free_helper(priv[i].d_conv, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_conv) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_conv) - sizeof(void *))); }) ;
 # 667 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 668 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_pad); free_helper(priv[i].d_in2_pad, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *))); }) ;
 # 669 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 670 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub); free_helper(priv[i].d_in2_sub, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *))); }) ;
 # 671 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 672 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_in2_sub2_sqr); free_helper(priv[i].d_in2_sub2_sqr, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *))); }) ;
 # 673 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
 # 674 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_tMask); free_helper(priv[i].d_tMask, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_tMask) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_tMask) - sizeof(void *))); }) ;
 # 675 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free(priv[i].d_mask_conv); free_helper(priv[i].d_mask_conv, 762051829673679219UL); }) ;
+   ({ free_helper((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *))); }) ;
 # 676 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
  }
 # 677 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
@@ -8801,9 +8802,9 @@ static int module_init() {
                      "timezone", 64UL, 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
                      "track_s", 896UL, 14, "long int", (int)__builtin_offsetof (struct track_s, a_fmt), "long int", (int)__builtin_offsetof (struct track_s, a_chans), "long int", (int)__builtin_offsetof (struct track_s, a_rate), "long int", (int)__builtin_offsetof (struct track_s, a_bits), "long int", (int)__builtin_offsetof (struct track_s, mp3rate), "long int", (int)__builtin_offsetof (struct track_s, audio_strn), "long int", (int)__builtin_offsetof (struct track_s, audio_bytes), "long int", (int)__builtin_offsetof (struct track_s, audio_chunks), "[ 4 x char ]", (int)__builtin_offsetof (struct track_s, audio_tag), "long int", (int)__builtin_offsetof (struct track_s, audio_posc), "long int", (int)__builtin_offsetof (struct track_s, audio_posb), "long int", (int)__builtin_offsetof (struct track_s, a_codech_off), "long int", (int)__builtin_offsetof (struct track_s, a_codecf_off), "%struct.audio_index_entry*", (int)__builtin_offsetof (struct track_s, audio_index),
                      "video_index_entry", 0UL, 0,
-                             "seconds", "_Z7secondsv", 0,
-                             "write_data", "_Z10write_dataPciiiPiS0_iS0_S0_", 0,
-                             "main", "main", 13, "seconds", "AVI_open_input_file", "AVI_print_error", "AVI_video_frames", "AVI_video_height", "AVI_video_width", "AVI_close", "AVI_open_input_file", "get_frame", "AVI_close", "kernel", "checkpoint", "seconds",
+                             "seconds", "_Z7secondsv", 0, 0,
+                             "write_data", "_Z10write_dataPciiiPiS0_iS0_S0_", 0, 0,
+                             "main", "main", 0, 13, "seconds", "AVI_open_input_file", "AVI_print_error", "AVI_video_frames", "AVI_video_height", "AVI_video_width", "AVI_close", "AVI_open_input_file", "get_frame", "AVI_close", "kernel", "checkpoint", "seconds",
                         "main|argv|0", 5, "AVI_video_width", "AVI_video_height", "AVI_video_frames", "AVI_open_input_file", "AVI_close",
                         "main|pub|0", 1, "main",
                         "main|priv|0", 1, "main",

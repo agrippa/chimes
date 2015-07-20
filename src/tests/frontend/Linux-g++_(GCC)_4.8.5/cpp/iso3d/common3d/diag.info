@@ -3,13 +3,13 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 26 6 len=9 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 50 6 len=5 usage_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 57 6 len=14 default_config_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 74 6 len=12 setup_config_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 101 40  ({ void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); realloc_helper(____chimes_tmp_ptr, conf->srcs, sizeof(source) *
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 101 40  ({ void *____chimes_tmp_header = conf->srcs; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, (conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), ____chimes_tmp_header, sizeof(source) *
 # 102
-                        (conf->nsrcs + 1), 16130283361139262325UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) 
+                        (conf->nsrcs + 1), 16130283361139262325UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 102 42 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 101 40  ({ void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); realloc_helper(____chimes_tmp_ptr, conf->srcs, sizeof(source) *
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 101 40  ({ void *____chimes_tmp_header = conf->srcs; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, (conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), ____chimes_tmp_header, sizeof(source) *
 # 102
-                        (conf->nsrcs + 1), 16130283361139262325UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) 
+                        (conf->nsrcs + 1), 16130283361139262325UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 102 42 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 8 71 const int ____chimes_did_disable0 = new_stack((void *)(&save_layer_text), "save_layer_text", &____must_manage_save_layer_text, 8, 0, (size_t)(16130283361139262052UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(16130283361139262058UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 24 1 rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2, ____chimes_did_disable0, false); 
@@ -55,8 +55,10 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 74 57 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 74 604 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 75 5 int c; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 75 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 101 44 void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 101 126 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 101 44  void *____chimes_tmp_header;  ____chimes_tmp_header = (conf->srcs) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 101 84 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 101 214 void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 101 400 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 78 5  call_lbl_0: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 103 17  call_lbl_1: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lib/common3d.cpp 120 13  call_lbl_2: 

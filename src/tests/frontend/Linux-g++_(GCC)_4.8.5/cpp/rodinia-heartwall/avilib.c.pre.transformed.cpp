@@ -237,8 +237,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -257,7 +258,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -5318,7 +5319,7 @@ static int avi_add_index_entry_resumable(avi_t *AVI, unsigned char *tag, long fl
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-     ptr = ({ void *____chimes_tmp_ptr = realloc((void *)AVI->idx, (AVI->max_idx + 4096) * 16); ; realloc_helper(____chimes_tmp_ptr, (void *)AVI->idx, (AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0); ____chimes_tmp_ptr; }) ;
+     ptr = ({ void *____chimes_tmp_header; ____chimes_tmp_header = ((void *)AVI->idx) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc(((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ((AVI->max_idx + 4096) * 16) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, ((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ____chimes_tmp_header, (AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      if(ptr == 0) {
@@ -5383,7 +5384,7 @@ avi_t* AVI_open_output_file_resumable(char * filename)
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI==0)
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5406,7 +5407,7 @@ avi_t* AVI_open_output_file_resumable(char * filename)
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991247325UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -5428,7 +5429,7 @@ avi_t* AVI_open_output_file_resumable(char * filename)
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 4;
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991247325UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6602,13 +6603,13 @@ int AVI_close_resumable(avi_t *AVI)
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    close(AVI->fdes);
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->idx) ({ free(AVI->idx); free_helper(AVI->idx, 17693923975991249707UL); }) ;
+   if(AVI->idx) ({ free_helper((((unsigned char *)AVI->idx) - sizeof(void *)), 17693923975991249707UL);free((((unsigned char *)AVI->idx) - sizeof(void *))); }) ;
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_index) ({ free(AVI->video_index); free_helper(AVI->video_index, 17693923975991249707UL); }) ;
+   if(AVI->video_index) ({ free_helper((((unsigned char *)AVI->video_index) - sizeof(void *)), 17693923975991249707UL);free((((unsigned char *)AVI->video_index) - sizeof(void *))); }) ;
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1057 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1058 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free(AVI); free_helper(AVI, 17693923975991249732UL); }) ;
+    ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991249732UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1059 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1060 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, ____alias_loc_id_18, ____chimes_did_disable22, false); return ret;
@@ -6627,7 +6628,7 @@ avi_t *AVI_open_input_file_resumable(char *filename, int getIndex)
 # 1075 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1076 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1078 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1079 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6655,7 +6656,7 @@ avi_t *AVI_open_input_file_resumable(char *filename, int getIndex)
 # 1092 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 1093 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991247325UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1094 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23, false); return 0;
 # 1095 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6684,7 +6685,7 @@ avi_t *AVI_open_fd_resumable(int fd, int getIndex)
 # 1108 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6796,7 +6797,7 @@ long nai[8];
 # 1172 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             hdrl_len = n;
 # 1173 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251472UL, 0, 0); ____chimes_tmp_ptr; }) ;
+            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251472UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1174 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             if(hdrl_data==0) { call_lbl_7: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1175 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -6835,7 +6836,7 @@ long nai[8];
 # 1195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1196 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251942UL, 0, 0); ____chimes_tmp_ptr; }) ;
+         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251942UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1197 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          if(AVI->idx==0) { call_lbl_10: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7023,7 +7024,7 @@ long nai[8];
    }
 # 1305 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1306 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free(hdrl_data); free_helper(hdrl_data, 17693923975991251472UL); }) ;
+    ({ free_helper((((unsigned char *)hdrl_data) - sizeof(void *)), 17693923975991251472UL);free((((unsigned char *)hdrl_data) - sizeof(void *))); }) ;
 # 1307 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1308 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(!vids_strh_seen || !vids_strf_seen) { call_lbl_28: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
@@ -7214,7 +7215,7 @@ long nai[8];
 # 1422 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_frames==0) { call_lbl_41: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1423 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nvi * sizeof(video_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0); ____chimes_tmp_ptr; }) ;
+   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nvi * sizeof(video_index_entry)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1424 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_index==0) { call_lbl_42: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -7223,7 +7224,7 @@ long nai[8];
 # 1427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1428 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nai[j] * sizeof(audio_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0); ____chimes_tmp_ptr; }) ;
+    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nai[j] * sizeof(audio_index_entry)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1429 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     if(AVI->track[j].audio_index==0) { call_lbl_43: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1430 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8172,7 +8173,7 @@ static int avi_add_index_entry_quick(avi_t *AVI, unsigned char *tag, long flags,
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-     ptr = ({ void *____chimes_tmp_ptr = realloc((void *)AVI->idx, (AVI->max_idx + 4096) * 16); ; realloc_helper(____chimes_tmp_ptr, (void *)AVI->idx, (AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0); ____chimes_tmp_ptr; }) ;
+     ptr = ({ void *____chimes_tmp_header; ____chimes_tmp_header = ((void *)AVI->idx) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc(((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ((AVI->max_idx + 4096) * 16) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, ((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ____chimes_tmp_header, (AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      if(ptr == 0) {
@@ -8236,7 +8237,7 @@ avi_t* AVI_open_output_file_quick(char * filename)
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI==0)
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8259,7 +8260,7 @@ avi_t* AVI_open_output_file_quick(char * filename)
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991247325UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -8281,7 +8282,7 @@ avi_t* AVI_open_output_file_quick(char * filename)
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 4;
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991247325UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8, false); return 0;
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9436,13 +9437,13 @@ int AVI_close_quick(avi_t *AVI)
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    close(AVI->fdes);
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->idx) ({ free(AVI->idx); free_helper(AVI->idx, 17693923975991249707UL); }) ;
+   if(AVI->idx) ({ free_helper((((unsigned char *)AVI->idx) - sizeof(void *)), 17693923975991249707UL);free((((unsigned char *)AVI->idx) - sizeof(void *))); }) ;
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_index) ({ free(AVI->video_index); free_helper(AVI->video_index, 17693923975991249707UL); }) ;
+   if(AVI->video_index) ({ free_helper((((unsigned char *)AVI->video_index) - sizeof(void *)), 17693923975991249707UL);free((((unsigned char *)AVI->video_index) - sizeof(void *))); }) ;
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1057 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1058 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free(AVI); free_helper(AVI, 17693923975991249732UL); }) ;
+    ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991249732UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1059 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1060 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, ____alias_loc_id_18, ____chimes_did_disable22, false); return ret;
@@ -9460,7 +9461,7 @@ avi_t *AVI_open_input_file_quick(char *filename, int getIndex)
 # 1075 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1076 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1078 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1079 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9488,7 +9489,7 @@ avi_t *AVI_open_input_file_quick(char *filename, int getIndex)
 # 1092 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 1093 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991247325UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1094 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       rm_stack(true, 17693923975991247325UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23, false); return 0;
 # 1095 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9516,7 +9517,7 @@ avi_t *AVI_open_fd_quick(int fd, int getIndex)
 # 1108 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9629,7 +9630,7 @@ long nai[8];
 # 1172 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             hdrl_len = n;
 # 1173 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251472UL, 0, 0); ____chimes_tmp_ptr; }) ;
+            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251472UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1174 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             if(hdrl_data==0) { call_lbl_7: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1175 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9668,7 +9669,7 @@ long nai[8];
 # 1195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1196 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc(n); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251942UL, 0, 0); ____chimes_tmp_ptr; }) ;
+         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n, 17693923975991251942UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1197 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          if(AVI->idx==0) { call_lbl_10: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -9856,7 +9857,7 @@ long nai[8];
    }
 # 1305 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1306 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free(hdrl_data); free_helper(hdrl_data, 17693923975991251472UL); }) ;
+    ({ free_helper((((unsigned char *)hdrl_data) - sizeof(void *)), 17693923975991251472UL);free((((unsigned char *)hdrl_data) - sizeof(void *))); }) ;
 # 1307 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1308 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(!vids_strh_seen || !vids_strf_seen) { call_lbl_28: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; }
@@ -10047,7 +10048,7 @@ long nai[8];
 # 1422 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_frames==0) { call_lbl_41: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1423 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nvi * sizeof(video_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0); ____chimes_tmp_ptr; }) ;
+   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nvi * sizeof(video_index_entry)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1424 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_index==0) { call_lbl_42: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10056,7 +10057,7 @@ long nai[8];
 # 1427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1428 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nai[j] * sizeof(audio_index_entry)); ; malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0); ____chimes_tmp_ptr; }) ;
+    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nai[j] * sizeof(audio_index_entry)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1429 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     if(AVI->track[j].audio_index==0) { call_lbl_43: ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25, false); return 0; };
 # 1430 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10915,7 +10916,7 @@ static int avi_add_index_entry_npm(avi_t *AVI, unsigned char *tag, long flags, u
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-     ptr = ({ void *____chimes_tmp_ptr = realloc((void *)AVI->idx, (AVI->max_idx + 4096) * 16); realloc_helper(____chimes_tmp_ptr, (void *)AVI->idx, (AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0); ____chimes_tmp_ptr; }) ;
+     ptr = ({ void *____chimes_tmp_header = (void *)AVI->idx; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc(((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ((AVI->max_idx + 4096) * 16) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, ((void *)AVI->idx ? (((unsigned char *)(void *)AVI->idx) - sizeof(void *)) : (unsigned char *)((void *)AVI->idx)), ____chimes_tmp_header, (AVI->max_idx+4096)*16, 17693923975991249303UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
      if(ptr == 0) {
@@ -10975,7 +10976,7 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+   AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI==0)
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -10998,7 +10999,7 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991247325UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       return 0;
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -11020,7 +11021,7 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 4;
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991247325UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       return 0;
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12139,13 +12140,13 @@ int AVI_close_npm(avi_t *AVI)
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    close(AVI->fdes);
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->idx) ({ free(AVI->idx); free_helper(AVI->idx, 17693923975991249707UL); }) ;
+   if(AVI->idx) ({ free_helper((((unsigned char *)AVI->idx) - sizeof(void *)), 17693923975991249707UL);free((((unsigned char *)AVI->idx) - sizeof(void *))); }) ;
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   if(AVI->video_index) ({ free(AVI->video_index); free_helper(AVI->video_index, 17693923975991249707UL); }) ;
+   if(AVI->video_index) ({ free_helper((((unsigned char *)AVI->video_index) - sizeof(void *)), 17693923975991249707UL);free((((unsigned char *)AVI->video_index) - sizeof(void *))); }) ;
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1057 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1058 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free(AVI); free_helper(AVI, 17693923975991249732UL); }) ;
+    ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991249732UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1059 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1060 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    return ret;
@@ -12161,7 +12162,7 @@ avi_t *AVI_open_input_file_npm(char *filename, int getIndex)
 # 1075 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1076 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1078 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1079 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12189,7 +12190,7 @@ avi_t *AVI_open_input_file_npm(char *filename, int getIndex)
 # 1092 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       AVI_errno = 2;
 # 1093 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-       ({ free(AVI); free_helper(AVI, 17693923975991247325UL); }) ;
+       ({ free_helper((((unsigned char *)AVI) - sizeof(void *)), 17693923975991247325UL);free((((unsigned char *)AVI) - sizeof(void *))); }) ;
 # 1094 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
       return 0;
 # 1095 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12215,7 +12216,7 @@ avi_t *AVI_open_fd_npm(int fd, int getIndex)
 # 1108 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(avi_t)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); ____chimes_tmp_ptr; }) ;
+  AVI = (avi_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(avi_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(avi_t), 17693923975991247325UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
   if(AVI==__null)
 # 1112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12320,7 +12321,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1172 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             hdrl_len = n;
 # 1173 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc(n); malloc_helper(____chimes_tmp_ptr, n, 17693923975991251472UL, 0, 0); ____chimes_tmp_ptr; }) ;
+            hdrl_data = (unsigned char *) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n, 17693923975991251472UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1174 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
             if(hdrl_data==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
 # 1175 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12359,7 +12360,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1196 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc(n); malloc_helper(____chimes_tmp_ptr, n, 17693923975991251942UL, 0, 0); ____chimes_tmp_ptr; }) ;
+         AVI->idx = (unsigned char((*)[16]) ) ({ void *____chimes_tmp_ptr = malloc((n) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n, 17693923975991251942UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1197 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
          if(AVI->idx==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; }
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12547,7 +12548,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
    }
 # 1305 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1306 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    ({ free(hdrl_data); free_helper(hdrl_data, 17693923975991251472UL); }) ;
+    ({ free_helper((((unsigned char *)hdrl_data) - sizeof(void *)), 17693923975991251472UL);free((((unsigned char *)hdrl_data) - sizeof(void *))); }) ;
 # 1307 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
 # 1308 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(!vids_strh_seen || !vids_strf_seen) { AVI_close_npm(AVI); AVI_errno = 12; return 0; }
@@ -12738,7 +12739,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1422 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_frames==0) { AVI_close_npm(AVI); AVI_errno = 12; return 0; };
 # 1423 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nvi * sizeof(video_index_entry)); malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0); ____chimes_tmp_ptr; }) ;
+   AVI->video_index = (video_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nvi * sizeof(video_index_entry)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nvi*sizeof(video_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(video_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1424 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
    if(AVI->video_index==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
 # 1425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -12747,7 +12748,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1428 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc(nai[j] * sizeof(audio_index_entry)); malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0); ____chimes_tmp_ptr; }) ;
+    AVI->track[j].audio_index = (audio_index_entry *) ({ void *____chimes_tmp_ptr = malloc((nai[j] * sizeof(audio_index_entry)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nai[j]*sizeof(audio_index_entry), 17693923975991251942UL, 0, 1, (int)sizeof(audio_index_entry), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1429 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
     if(AVI->track[j].audio_index==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
 # 1430 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c"
@@ -13653,63 +13654,63 @@ static int module_init() {
                      "avi_t", 8704UL, 26, "long int", (int)__builtin_offsetof (avi_t, fdes), "long int", (int)__builtin_offsetof (avi_t, mode), "long int", (int)__builtin_offsetof (avi_t, width), "long int", (int)__builtin_offsetof (avi_t, height), "double", (int)__builtin_offsetof (avi_t, fps), "[ 8 x char ]", (int)__builtin_offsetof (avi_t, compressor), "[ 8 x char ]", (int)__builtin_offsetof (avi_t, compressor2), "long int", (int)__builtin_offsetof (avi_t, video_strn), "long int", (int)__builtin_offsetof (avi_t, video_frames), "[ 4 x char ]", (int)__builtin_offsetof (avi_t, video_tag), "long int", (int)__builtin_offsetof (avi_t, video_pos), "long unsigned int", (int)__builtin_offsetof (avi_t, max_len), "[ 8 x %struct.track_s ]", (int)__builtin_offsetof (avi_t, track), "long unsigned int", (int)__builtin_offsetof (avi_t, pos), "long int", (int)__builtin_offsetof (avi_t, n_idx), "long int", (int)__builtin_offsetof (avi_t, max_idx), "long int", (int)__builtin_offsetof (avi_t, v_codech_off), "long int", (int)__builtin_offsetof (avi_t, v_codecf_off), "[ 16 x unsigned char ]*", (int)__builtin_offsetof (avi_t, idx), "%struct.video_index_entry*", (int)__builtin_offsetof (avi_t, video_index), "long unsigned int", (int)__builtin_offsetof (avi_t, last_pos), "long unsigned int", (int)__builtin_offsetof (avi_t, last_len), "int", (int)__builtin_offsetof (avi_t, must_use_index), "long unsigned int", (int)__builtin_offsetof (avi_t, movi_start), "int", (int)__builtin_offsetof (avi_t, anum), "int", (int)__builtin_offsetof (avi_t, aptr),
                      "track_s", 896UL, 14, "long int", (int)__builtin_offsetof (struct track_s, a_fmt), "long int", (int)__builtin_offsetof (struct track_s, a_chans), "long int", (int)__builtin_offsetof (struct track_s, a_rate), "long int", (int)__builtin_offsetof (struct track_s, a_bits), "long int", (int)__builtin_offsetof (struct track_s, mp3rate), "long int", (int)__builtin_offsetof (struct track_s, audio_strn), "long int", (int)__builtin_offsetof (struct track_s, audio_bytes), "long int", (int)__builtin_offsetof (struct track_s, audio_chunks), "[ 4 x char ]", (int)__builtin_offsetof (struct track_s, audio_tag), "long int", (int)__builtin_offsetof (struct track_s, audio_posc), "long int", (int)__builtin_offsetof (struct track_s, audio_posb), "long int", (int)__builtin_offsetof (struct track_s, a_codech_off), "long int", (int)__builtin_offsetof (struct track_s, a_codecf_off), "%struct.audio_index_entry*", (int)__builtin_offsetof (struct track_s, audio_index),
                      "video_index_entry", 192UL, 3, "long unsigned int", (int)__builtin_offsetof (video_index_entry, key), "long unsigned int", (int)__builtin_offsetof (video_index_entry, pos), "long unsigned int", (int)__builtin_offsetof (video_index_entry, len),
-                             "AVI_write_frame", "AVI_write_frame", 1, "avi_write_data",
-                             "AVI_video_frames", "AVI_video_frames", 0,
-                             "AVI_open_fd", "AVI_open_fd", 1, "avi_parse_input_file",
-                             "AVI_video_width", "AVI_video_width", 0,
-                             "avi_write", "_Z9avi_writeiPcm", 0,
-                             "avi_add_index_entry", "_Z19avi_add_index_entryP5avi_tPhlmm", 3, "long2str", "long2str", "long2str",
-                             "AVI_audio_rate", "AVI_audio_rate", 0,
-                             "AVI_bytes_remain", "AVI_bytes_remain", 0,
-                             "AVI_max_video_chunk", "AVI_max_video_chunk", 0,
-                             "AVI_dup_frame", "AVI_dup_frame", 1, "avi_add_index_entry",
-                             "AVI_close", "AVI_close", 1, "avi_close_output_file",
-                             "AVI_audio_codecf_offset", "AVI_audio_codecf_offset", 0,
-                             "str2ulong", "_Z9str2ulongPh", 0,
-                             "AVI_set_audio", "AVI_set_audio", 1, "avi_update_header",
-                             "AVI_set_audio_track", "AVI_set_audio_track", 0,
-                             "AVI_open_output_file", "AVI_open_output_file", 1, "avi_write",
-                             "AVI_audio_size", "AVI_audio_size", 0,
-                             "avi_add_chunk", "_Z13avi_add_chunkP5avi_tPhS1_i", 3, "long2str", "avi_write", "avi_write",
-                             "AVI_audio_chunks", "AVI_audio_chunks", 0,
-                             "AVI_set_audio_bitrate", "AVI_set_audio_bitrate", 0,
-                             "AVI_read_frame", "AVI_read_frame", 1, "avi_read",
-                             "AVI_append_audio", "AVI_append_audio", 6, "str2ulong", "str2ulong", "long2str", "long2str", "avi_write", "avi_write",
-                             "AVI_video_codecf_offset", "AVI_video_codecf_offset", 0,
-                             "AVI_frame_size", "AVI_frame_size", 0,
-                             "AVI_bytes_written", "AVI_bytes_written", 0,
-                             "AVI_video_compressor", "AVI_video_compressor", 0,
-                             "AVI_get_audio_track", "AVI_get_audio_track", 0,
-                             "AVI_read_audio", "AVI_read_audio", 1, "avi_read",
-                             "AVI_audio_format", "AVI_audio_format", 0,
-                             "avi_update_header", "avi_update_header", 65, "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_sampsize", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_write",
-                             "AVI_set_audio_position", "AVI_set_audio_position", 0,
-                             "avi_read", "_Z8avi_readiPcm", 0,
-                             "AVI_audio_bits", "AVI_audio_bits", 0,
-                             "avi_write_data", "_Z14avi_write_dataP5avi_tPcmii", 4, "avi_add_index_entry", "avi_add_index_entry", "avi_add_chunk", "avi_add_chunk",
-                             "AVI_seek_start", "AVI_seek_start", 0,
-                             "avi_close_output_file", "_Z21avi_close_output_fileP5avi_t", 68, "avi_add_chunk", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_sampsize", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_write",
-                             "AVI_max_size", "AVI_max_size", 0,
-                             "AVI_video_codech_offset", "AVI_video_codech_offset", 0,
-                             "avi_sampsize", "_Z12avi_sampsizeP5avi_ti", 0,
-                             "AVI_read_data", "AVI_read_data", 4, "avi_read", "str2ulong", "avi_read", "avi_read",
-                             "avi_parse_input_file", "avi_parse_input_file", 49, "avi_read", "AVI_close", "AVI_close", "avi_read", "str2ulong", "avi_read", "AVI_close", "AVI_close", "avi_read", "AVI_close", "AVI_close", "avi_read", "AVI_close", "AVI_close", "AVI_close", "str2ulong", "str2ulong", "str2ulong", "str2ulong", "str2ulong", "avi_sampsize", "str2ulong", "str2ulong", "str2ushort", "str2ushort", "str2ulong", "str2ulong", "str2ushort", "AVI_close", "AVI_close", "str2ulong", "str2ulong", "avi_read", "AVI_close", "str2ulong", "avi_read", "AVI_close", "str2ulong", "avi_read", "str2ulong", "avi_add_index_entry", "AVI_close", "AVI_close", "AVI_close", "str2ulong", "str2ulong", "str2ulong", "str2ulong", "str2ulong",
-                             "AVI_print_error", "AVI_print_error", 0,
-                             "AVI_write_audio", "AVI_write_audio", 1, "avi_write_data",
-                             "AVI_get_video_position", "AVI_get_video_position", 0,
-                             "long2str", "_Z8long2strPhi", 0,
-                             "AVI_set_video", "AVI_set_video", 1, "avi_update_header",
-                             "AVI_audio_mp3rate", "AVI_audio_mp3rate", 0,
-                             "AVI_video_height", "AVI_video_height", 0,
-                             "str2ushort", "_Z10str2ushortPh", 0,
-                             "AVI_audio_bytes", "AVI_audio_bytes", 0,
-                             "AVI_strerror", "AVI_strerror", 0,
-                             "AVI_set_video_position", "AVI_set_video_position", 0,
-                             "AVI_audio_channels", "AVI_audio_channels", 0,
-                             "AVI_frame_rate", "AVI_frame_rate", 0,
-                             "AVI_audio_tracks", "AVI_audio_tracks", 0,
-                             "AVI_audio_codech_offset", "AVI_audio_codech_offset", 0,
-                             "AVI_open_input_file", "AVI_open_input_file", 1, "avi_parse_input_file",
+                             "AVI_write_frame", "AVI_write_frame", 0, 1, "avi_write_data",
+                             "AVI_video_frames", "AVI_video_frames", 0, 0,
+                             "AVI_open_fd", "AVI_open_fd", 0, 1, "avi_parse_input_file",
+                             "AVI_video_width", "AVI_video_width", 0, 0,
+                             "avi_write", "_Z9avi_writeiPcm", 0, 0,
+                             "avi_add_index_entry", "_Z19avi_add_index_entryP5avi_tPhlmm", 0, 3, "long2str", "long2str", "long2str",
+                             "AVI_audio_rate", "AVI_audio_rate", 0, 0,
+                             "AVI_bytes_remain", "AVI_bytes_remain", 0, 0,
+                             "AVI_max_video_chunk", "AVI_max_video_chunk", 0, 0,
+                             "AVI_dup_frame", "AVI_dup_frame", 0, 1, "avi_add_index_entry",
+                             "AVI_close", "AVI_close", 0, 1, "avi_close_output_file",
+                             "AVI_audio_codecf_offset", "AVI_audio_codecf_offset", 0, 0,
+                             "str2ulong", "_Z9str2ulongPh", 0, 0,
+                             "AVI_set_audio", "AVI_set_audio", 0, 1, "avi_update_header",
+                             "AVI_set_audio_track", "AVI_set_audio_track", 0, 0,
+                             "AVI_open_output_file", "AVI_open_output_file", 0, 1, "avi_write",
+                             "AVI_audio_size", "AVI_audio_size", 0, 0,
+                             "avi_add_chunk", "_Z13avi_add_chunkP5avi_tPhS1_i", 0, 3, "long2str", "avi_write", "avi_write",
+                             "AVI_audio_chunks", "AVI_audio_chunks", 0, 0,
+                             "AVI_set_audio_bitrate", "AVI_set_audio_bitrate", 0, 0,
+                             "AVI_read_frame", "AVI_read_frame", 0, 1, "avi_read",
+                             "AVI_append_audio", "AVI_append_audio", 0, 6, "str2ulong", "str2ulong", "long2str", "long2str", "avi_write", "avi_write",
+                             "AVI_video_codecf_offset", "AVI_video_codecf_offset", 0, 0,
+                             "AVI_frame_size", "AVI_frame_size", 0, 0,
+                             "AVI_bytes_written", "AVI_bytes_written", 0, 0,
+                             "AVI_video_compressor", "AVI_video_compressor", 0, 0,
+                             "AVI_get_audio_track", "AVI_get_audio_track", 0, 0,
+                             "AVI_read_audio", "AVI_read_audio", 0, 1, "avi_read",
+                             "AVI_audio_format", "AVI_audio_format", 0, 0,
+                             "avi_update_header", "avi_update_header", 0, 65, "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_sampsize", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_write",
+                             "AVI_set_audio_position", "AVI_set_audio_position", 0, 0,
+                             "avi_read", "_Z8avi_readiPcm", 0, 0,
+                             "AVI_audio_bits", "AVI_audio_bits", 0, 0,
+                             "avi_write_data", "_Z14avi_write_dataP5avi_tPcmii", 0, 4, "avi_add_index_entry", "avi_add_index_entry", "avi_add_chunk", "avi_add_chunk",
+                             "AVI_seek_start", "AVI_seek_start", 0, 0,
+                             "avi_close_output_file", "_Z21avi_close_output_fileP5avi_t", 0, 68, "avi_add_chunk", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_sampsize", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_write",
+                             "AVI_max_size", "AVI_max_size", 0, 0,
+                             "AVI_video_codech_offset", "AVI_video_codech_offset", 0, 0,
+                             "avi_sampsize", "_Z12avi_sampsizeP5avi_ti", 0, 0,
+                             "AVI_read_data", "AVI_read_data", 0, 4, "avi_read", "str2ulong", "avi_read", "avi_read",
+                             "avi_parse_input_file", "avi_parse_input_file", 0, 49, "avi_read", "AVI_close", "AVI_close", "avi_read", "str2ulong", "avi_read", "AVI_close", "AVI_close", "avi_read", "AVI_close", "AVI_close", "avi_read", "AVI_close", "AVI_close", "AVI_close", "str2ulong", "str2ulong", "str2ulong", "str2ulong", "str2ulong", "avi_sampsize", "str2ulong", "str2ulong", "str2ushort", "str2ushort", "str2ulong", "str2ulong", "str2ushort", "AVI_close", "AVI_close", "str2ulong", "str2ulong", "avi_read", "AVI_close", "str2ulong", "avi_read", "AVI_close", "str2ulong", "avi_read", "str2ulong", "avi_add_index_entry", "AVI_close", "AVI_close", "AVI_close", "str2ulong", "str2ulong", "str2ulong", "str2ulong", "str2ulong",
+                             "AVI_print_error", "AVI_print_error", 0, 0,
+                             "AVI_write_audio", "AVI_write_audio", 0, 1, "avi_write_data",
+                             "AVI_get_video_position", "AVI_get_video_position", 0, 0,
+                             "long2str", "_Z8long2strPhi", 0, 0,
+                             "AVI_set_video", "AVI_set_video", 0, 1, "avi_update_header",
+                             "AVI_audio_mp3rate", "AVI_audio_mp3rate", 0, 0,
+                             "AVI_video_height", "AVI_video_height", 0, 0,
+                             "str2ushort", "_Z10str2ushortPh", 0, 0,
+                             "AVI_audio_bytes", "AVI_audio_bytes", 0, 0,
+                             "AVI_strerror", "AVI_strerror", 0, 0,
+                             "AVI_set_video_position", "AVI_set_video_position", 0, 0,
+                             "AVI_audio_channels", "AVI_audio_channels", 0, 0,
+                             "AVI_frame_rate", "AVI_frame_rate", 0, 0,
+                             "AVI_audio_tracks", "AVI_audio_tracks", 0, 0,
+                             "AVI_audio_codech_offset", "AVI_audio_codech_offset", 0, 0,
+                             "AVI_open_input_file", "AVI_open_input_file", 0, 1, "avi_parse_input_file",
                         "AVI_open_output_file|AVI_header|0", 1, "AVI_open_output_file",
                         "avi_update_header|AVI_header|0", 1, "avi_update_header",
                         "avi_write_data|astr|0", 1, "avi_write_data",

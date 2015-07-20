@@ -92,8 +92,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -112,7 +113,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4004,7 +4005,7 @@ int i;
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (codSeq =
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(len * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 17825452166587959094UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 17825452166587959094UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       printf("insertValidation: cannot allocate codSeq\n");
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4040,7 +4041,7 @@ int i;
 # 99 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (newSeq =
 # 100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len + *seqLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 17825452166587959276UL, 0, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((len + *seqLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 17825452166587959276UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   == __null ) {
 # 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4082,9 +4083,9 @@ int i;
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(oldSeq); free_helper(oldSeq, 17825452166587959276UL); }) ;
+     ({ free_helper((((unsigned char *)oldSeq) - sizeof(void *)), 17825452166587959276UL);free((((unsigned char *)oldSeq) - sizeof(void *))); }) ;
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(codSeq); free_helper(codSeq, 17825452166587959094UL); }) ;
+     ({ free_helper((((unsigned char *)codSeq) - sizeof(void *)), 17825452166587959094UL);free((((unsigned char *)codSeq) - sizeof(void *))); }) ;
 # 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     oldSeq = newSeq;
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4188,7 +4189,7 @@ SEQDATA_T *seqData;
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SEQDATA_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 17825452166587959349UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SEQDATA_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 17825452166587959349UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     printf("genScalData: cannot allocate seqData\n");
 # 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4209,7 +4210,7 @@ SEQDATA_T *seqData;
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->main =
 # 240 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->mainLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->mainLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 241 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4227,7 +4228,7 @@ SEQDATA_T *seqData;
 # 250 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->match =
 # 251 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->matchLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->matchLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 252 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4395,7 +4396,7 @@ SEQDATA_T *freeSeqData_resumable(SEQDATA_T *S) {const int ____chimes_did_disable
 # 358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->main) {
 # 359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->main); free_helper(S->main, 17825452166587959303UL); }) ;
+       ({ free_helper((((unsigned char *)S->main) - sizeof(void *)), 17825452166587959303UL);free((((unsigned char *)S->main) - sizeof(void *))); }) ;
 # 360 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->main = __null;
 # 361 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4403,13 +4404,13 @@ SEQDATA_T *freeSeqData_resumable(SEQDATA_T *S) {const int ____chimes_did_disable
 # 362 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->match) {
 # 363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->match); free_helper(S->match, 17825452166587959303UL); }) ;
+       ({ free_helper((((unsigned char *)S->match) - sizeof(void *)), 17825452166587959303UL);free((((unsigned char *)S->match) - sizeof(void *))); }) ;
 # 364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->match = __null;
 # 365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     }
 # 366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(S); free_helper(S, 17825452166587959322UL); }) ;
+     ({ free_helper((((unsigned char *)S) - sizeof(void *)), 17825452166587959322UL);free((((unsigned char *)S) - sizeof(void *))); }) ;
 # 367 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   }
 # 368 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4467,7 +4468,7 @@ int i;
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (codSeq =
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(len * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 17825452166587959094UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 17825452166587959094UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       printf("insertValidation: cannot allocate codSeq\n");
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4503,7 +4504,7 @@ int i;
 # 99 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (newSeq =
 # 100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len + *seqLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 17825452166587959276UL, 0, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((len + *seqLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 17825452166587959276UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   == __null ) {
 # 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4545,9 +4546,9 @@ int i;
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(oldSeq); free_helper(oldSeq, 17825452166587959276UL); }) ;
+     ({ free_helper((((unsigned char *)oldSeq) - sizeof(void *)), 17825452166587959276UL);free((((unsigned char *)oldSeq) - sizeof(void *))); }) ;
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(codSeq); free_helper(codSeq, 17825452166587959094UL); }) ;
+     ({ free_helper((((unsigned char *)codSeq) - sizeof(void *)), 17825452166587959094UL);free((((unsigned char *)codSeq) - sizeof(void *))); }) ;
 # 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     oldSeq = newSeq;
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4619,7 +4620,7 @@ SEQDATA_T *seqData;
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SEQDATA_T)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 17825452166587959349UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SEQDATA_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 17825452166587959349UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     printf("genScalData: cannot allocate seqData\n");
 # 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4640,7 +4641,7 @@ SEQDATA_T *seqData;
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->main =
 # 240 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->mainLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->mainLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 241 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4658,7 +4659,7 @@ SEQDATA_T *seqData;
 # 250 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->match =
 # 251 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->matchLen + 1) * sizeof(unsigned char)); ; malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->matchLen + 1) * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 252 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4829,7 +4830,7 @@ SEQDATA_T *freeSeqData_quick(SEQDATA_T *S) {const int ____chimes_did_disable2 = 
 # 358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->main) {
 # 359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->main); free_helper(S->main, 17825452166587959303UL); }) ;
+       ({ free_helper((((unsigned char *)S->main) - sizeof(void *)), 17825452166587959303UL);free((((unsigned char *)S->main) - sizeof(void *))); }) ;
 # 360 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->main = __null;
 # 361 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4837,13 +4838,13 @@ SEQDATA_T *freeSeqData_quick(SEQDATA_T *S) {const int ____chimes_did_disable2 = 
 # 362 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->match) {
 # 363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->match); free_helper(S->match, 17825452166587959303UL); }) ;
+       ({ free_helper((((unsigned char *)S->match) - sizeof(void *)), 17825452166587959303UL);free((((unsigned char *)S->match) - sizeof(void *))); }) ;
 # 364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->match = __null;
 # 365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     }
 # 366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(S); free_helper(S, 17825452166587959322UL); }) ;
+     ({ free_helper((((unsigned char *)S) - sizeof(void *)), 17825452166587959322UL);free((((unsigned char *)S) - sizeof(void *))); }) ;
 # 367 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   }
 # 368 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4899,7 +4900,7 @@ unsigned char *insertValidation_npm(unsigned char *oldSeq, int *seqLen,
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (codSeq =
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(len * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 17825452166587959094UL, 0, 0); ____chimes_tmp_ptr; }) ) == __null ) {
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, len*sizeof(unsigned char), 17825452166587959094UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       printf("insertValidation: cannot allocate codSeq\n");
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4935,7 +4936,7 @@ unsigned char *insertValidation_npm(unsigned char *oldSeq, int *seqLen,
 # 99 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if ( (newSeq =
 # 100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((len + *seqLen + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 17825452166587959276UL, 0, 0); ____chimes_tmp_ptr; }) )
+   (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((len + *seqLen + 1) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (len+*seqLen+1)*sizeof(unsigned char), 17825452166587959276UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   == __null ) {
 # 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -4977,9 +4978,9 @@ unsigned char *insertValidation_npm(unsigned char *oldSeq, int *seqLen,
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(oldSeq); free_helper(oldSeq, 17825452166587959276UL); }) ;
+     ({ free_helper((((unsigned char *)oldSeq) - sizeof(void *)), 17825452166587959276UL);free((((unsigned char *)oldSeq) - sizeof(void *))); }) ;
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(codSeq); free_helper(codSeq, 17825452166587959094UL); }) ;
+     ({ free_helper((((unsigned char *)codSeq) - sizeof(void *)), 17825452166587959094UL);free((((unsigned char *)codSeq) - sizeof(void *))); }) ;
 # 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     oldSeq = newSeq;
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5033,7 +5034,7 @@ SEQDATA_T *genScalData_npm(unsigned int randomSeed,
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc(sizeof(SEQDATA_T)); malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 17825452166587959349UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); ____chimes_tmp_ptr; }) ) == __null ) {
+  if ( (seqData = (SEQDATA_T *) ({ void *____chimes_tmp_ptr = malloc((sizeof(SEQDATA_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SEQDATA_T), 17825452166587959349UL, 0, 1, (int)sizeof(struct seqdat), 2, (int)__builtin_offsetof(struct seqdat, main), (int)__builtin_offsetof(struct seqdat, match)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     printf("genScalData: cannot allocate seqData\n");
 # 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5054,7 +5055,7 @@ SEQDATA_T *genScalData_npm(unsigned int randomSeed,
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->main =
 # 240 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->mainLen + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->mainLen + 1) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (seqData->mainLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 241 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5072,7 +5073,7 @@ SEQDATA_T *genScalData_npm(unsigned int randomSeed,
 # 250 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   if ( (seqData->match =
 # 251 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
- (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((seqData->matchLen + 1) * sizeof(unsigned char)); malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); ____chimes_tmp_ptr; }) )
+ (unsigned char*) ({ void *____chimes_tmp_ptr = malloc(((seqData->matchLen + 1) * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (seqData->matchLen+1)*sizeof(unsigned char), 17825452166587958771UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
 # 252 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
        == __null ) {
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5235,7 +5236,7 @@ SEQDATA_T *freeSeqData_npm(SEQDATA_T *S) {
 # 358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->main) {
 # 359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->main); free_helper(S->main, 17825452166587959303UL); }) ;
+       ({ free_helper((((unsigned char *)S->main) - sizeof(void *)), 17825452166587959303UL);free((((unsigned char *)S->main) - sizeof(void *))); }) ;
 # 360 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->main = __null;
 # 361 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5243,13 +5244,13 @@ SEQDATA_T *freeSeqData_npm(SEQDATA_T *S) {
 # 362 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     if (S->match) {
 # 363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-       ({ free(S->match); free_helper(S->match, 17825452166587959303UL); }) ;
+       ({ free_helper((((unsigned char *)S->match) - sizeof(void *)), 17825452166587959303UL);free((((unsigned char *)S->match) - sizeof(void *))); }) ;
 # 364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
       S->match = __null;
 # 365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
     }
 # 366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-     ({ free(S); free_helper(S, 17825452166587959322UL); }) ;
+     ({ free_helper((((unsigned char *)S) - sizeof(void *)), 17825452166587959322UL);free((((unsigned char *)S) - sizeof(void *))); }) ;
 # 367 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
   }
 # 368 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
@@ -5304,9 +5305,9 @@ static int module_init() {
                      "_IO_marker", 0UL, 0,
                      "seqdat", 256UL, 5, "unsigned char*", (int)__builtin_offsetof (struct seqdat, main), "unsigned char*", (int)__builtin_offsetof (struct seqdat, match), "int", (int)__builtin_offsetof (struct seqdat, mainLen), "int", (int)__builtin_offsetof (struct seqdat, matchLen), "int", (int)__builtin_offsetof (struct seqdat, maxValidation),
                      "simmat", 40960UL, 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
-                             "freeSeqData", "_Z11freeSeqDataP6seqdat", 0,
-                             "genScalData", "_Z11genScalDatajP6simmatiii", 6, "spec_init_genrand", "spec_genrand_int32", "spec_init_genrand", "spec_genrand_int32", "insertValidation", "insertValidation",
-                             "insertValidation", "_ZL16insertValidationPhPiPPcP6simmatS0_", 1, "spec_genrand_int32",
+                             "freeSeqData", "_Z11freeSeqDataP6seqdat", 0, 0,
+                             "genScalData", "_Z11genScalDatajP6simmatiii", 0, 6, "spec_init_genrand", "spec_genrand_int32", "spec_init_genrand", "spec_genrand_int32", "insertValidation", "insertValidation",
+                             "insertValidation", "_ZL16insertValidationPhPiPPcP6simmatS0_", 0, 1, "spec_genrand_int32",
                         "genScalData|randomSeed|0", 2, "spec_init_genrand", "spec_genrand_int32",
                         "genScalData|simMatrix|0", 3, "spec_init_genrand", "spec_genrand_int32", "insertValidation",
                         "genScalData|mainLen|0", 3, "spec_init_genrand", "spec_genrand_int32", "insertValidation",

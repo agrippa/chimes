@@ -64,8 +64,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -84,7 +85,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1482,9 +1483,9 @@ int *A;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp"
  register_stack_vars(2, "main|B|0", (int *)0x0, "i32*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp"
-       A = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1131839765304168652UL, 0, 0); ____chimes_tmp_ptr; })) ;
+       A = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1131839765304168652UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 19 "/home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp"
-       B = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1131839765304168672UL, 0, 0); ____chimes_tmp_ptr; })) ;
+       B = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1131839765304168672UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 20 "/home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp"
 # 21 "/home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp"
      call_lbl_0: ({ calling_npm("bar", 0); bar_npm(A, B); });
@@ -1528,9 +1529,9 @@ int *A;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp"
  register_stack_vars(2, "main|B|0", (int *)0x0, "i32*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); ; ;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp"
-       A = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1131839765304168652UL, 0, 0); ____chimes_tmp_ptr; })) ;
+       A = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1131839765304168652UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 19 "/home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp"
-       B = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1131839765304168672UL, 0, 0); ____chimes_tmp_ptr; })) ;
+       B = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1131839765304168672UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 20 "/home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp"
 # 21 "/home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp"
      call_lbl_0: ({ calling_npm("bar", 0); bar_npm(A, B); });
@@ -1584,8 +1585,8 @@ static int module_init() {
                              (1131839765304168615UL + 2UL), (1131839765304168615UL + 22UL),
                              (1131839765304168615UL + 28UL), (1131839765304168615UL + 37UL),
                              (1131839765304168615UL + 29UL), (1131839765304168615UL + 57UL),
-                             "main", "main", 2, "bar", "checkpoint",
-                             "bar", "_Z3barPiS_", 0,
+                             "main", "main", 0, 2, "bar", "checkpoint",
+                             "bar", "_Z3barPiS_", 0, 0,
         "bar", 0UL, (int)2, 1131839765304168652UL, 1131839765304168672UL);
     return 0;
 }

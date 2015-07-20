@@ -1,15 +1,15 @@
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 36 14 len=9 dupString_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 40 15  ({ void *____chimes_tmp_ptr = calloc((strlen(s) + 1), sizeof(char)); calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 4461972309412152485UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 40 15  ({ void *____chimes_tmp_ptr = calloc(((strlen(s) + 1)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 4461972309412152485UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 40 48 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 45 18 len=13 myOptionAlloc_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 50 29  ({ void *____chimes_tmp_ptr = calloc(1, sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 4461972309412151945UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 50 29  ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + sizeof(MyOption) - 1) / sizeof(MyOption)), sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 4461972309412151945UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 50 55 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 67 18 len=12 myOptionFree_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 72 21  ({ free(o->longArg); free_helper(o->longArg, 4461972309412152088UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 72 21  ({ free_helper((((unsigned char *)o->longArg) - sizeof(void *)), 4461972309412152088UL);free((((unsigned char *)o->longArg) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 72 36 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 73 18  ({ free(o->help); free_helper(o->help, 4461972309412152088UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 73 18  ({ free_helper((((unsigned char *)o->help) - sizeof(void *)), 4461972309412152088UL);free((((unsigned char *)o->help) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 73 30 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 74 4  ({ free(o); free_helper(o, 4461972309412152122UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 74 4  ({ free_helper((((unsigned char *)o) - sizeof(void *)), 4461972309412152122UL);free((((unsigned char *)o) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 74 10 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 78 18 len=10 lastOption_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 85 18 len=10 findOption_npm
@@ -17,31 +17,31 @@ ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLinePars
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 114 6 len=8 freeArgs_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 123 6 len=9 printArgs_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 144 6 len=11 processArgs_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 159 18  ({ void *____chimes_tmp_ptr = calloc(2 * (n + 2), sizeof(char)); calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 4461972309412152283UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 159 18  ({ void *____chimes_tmp_ptr = calloc((2 * (n + 2)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 4461972309412152283UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 159 45 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 160 27  ({ void *____chimes_tmp_ptr = calloc(n, sizeof(struct option)); calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 4461972309412152253UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 160 27  ({ void *____chimes_tmp_ptr = calloc((n) + ((sizeof(void *) + sizeof(struct option) - 1) / sizeof(struct option)), sizeof(struct option)); calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 4461972309412152253UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 160 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 224 4  ({ free(opts); free_helper(opts, 4461972309412152253UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 224 4  ({ free_helper((((unsigned char *)opts) - sizeof(void *)), 4461972309412152253UL);free((((unsigned char *)opts) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 224 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 225 4  ({ free(sArgs); free_helper(sArgs, 4461972309412152283UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 225 4  ({ free_helper((((unsigned char *)sArgs) - sizeof(void *)), 4461972309412152283UL);free((((unsigned char *)sArgs) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 225 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 40 15  ({ void *____chimes_tmp_ptr = calloc((strlen(s) + 1), sizeof(char)); calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 4461972309412152485UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 40 15  ({ void *____chimes_tmp_ptr = calloc(((strlen(s) + 1)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 4461972309412152485UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 40 48 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 50 29  ({ void *____chimes_tmp_ptr = calloc(1, sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 4461972309412151945UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 50 29  ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + sizeof(MyOption) - 1) / sizeof(MyOption)), sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 4461972309412151945UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 50 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 72 21  ({ free(o->longArg); free_helper(o->longArg, 4461972309412152088UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 72 21  ({ free_helper((((unsigned char *)o->longArg) - sizeof(void *)), 4461972309412152088UL);free((((unsigned char *)o->longArg) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 72 36 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 73 18  ({ free(o->help); free_helper(o->help, 4461972309412152088UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 73 18  ({ free_helper((((unsigned char *)o->help) - sizeof(void *)), 4461972309412152088UL);free((((unsigned char *)o->help) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 73 30 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 74 4  ({ free(o); free_helper(o, 4461972309412152122UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 74 4  ({ free_helper((((unsigned char *)o) - sizeof(void *)), 4461972309412152122UL);free((((unsigned char *)o) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 74 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 159 18  ({ void *____chimes_tmp_ptr = calloc(2 * (n + 2), sizeof(char)); calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 4461972309412152283UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 159 18  ({ void *____chimes_tmp_ptr = calloc((2 * (n + 2)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 4461972309412152283UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 159 45 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 160 27  ({ void *____chimes_tmp_ptr = calloc(n, sizeof(struct option)); calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 4461972309412152253UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 160 27  ({ void *____chimes_tmp_ptr = calloc((n) + ((sizeof(void *) + sizeof(struct option) - 1) / sizeof(struct option)), sizeof(struct option)); calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 4461972309412152253UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 160 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 224 4  ({ free(opts); free_helper(opts, 4461972309412152253UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 224 4  ({ free_helper((((unsigned char *)opts) - sizeof(void *)), 4461972309412152253UL);free((((unsigned char *)opts) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 224 13 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 225 4  ({ free(sArgs); free_helper(sArgs, 4461972309412152283UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 225 4  ({ free_helper((((unsigned char *)sArgs) - sizeof(void *)), 4461972309412152283UL);free((((unsigned char *)sArgs) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 225 14 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 42 62 rm_stack(true, 4461972309412152485UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 37 1 const int ____chimes_did_disable0 = new_stack((void *)(&dupString), "dupString", &____must_manage_dupString, 1, 0, (size_t)(4461972309412152495UL)); 
@@ -76,16 +76,16 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLin
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 37 149 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 38 4 char *d; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 38 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 40 19 void *____chimes_tmp_ptr = calloc((strlen(s) + 1), sizeof(char)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 40 83 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 40 19 void *____chimes_tmp_ptr = calloc(((strlen(s) + 1)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 40 140 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 42 5 char *____chimes_ret_var_0; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 42 32 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 48 2 const int ____chimes_did_disable1 = new_stack((void *)(&myOptionAlloc), "myOptionAlloc", &____must_manage_myOptionAlloc, 7, 0, (size_t)(4461972309412152005UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4461972309412151949UL), (size_t)(0UL), (size_t)(4461972309412152023UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 48 287 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 49 4  static int iBase;  iBase = (129) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 49 24 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 50 4  MyOption *o;  o = ((MyOption*) ({ void *____chimes_tmp_ptr = calloc(1, sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 4461972309412151945UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 50 434 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 50 4  MyOption *o;  o = ((MyOption*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + sizeof(MyOption) - 1) / sizeof(MyOption)), sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 4461972309412151945UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 50 589 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 64 5 MyOption *____chimes_ret_var_1; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 64 36 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 68 2 const int ____chimes_did_disable2 = new_stack((void *)(&myOptionFree), "myOptionFree", &____must_manage_myOptionFree, 1, 0, (size_t)(4461972309412152122UL)); ;
@@ -142,10 +142,10 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLin
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 150 15 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 151 4 int c; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 151 9 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 159 22 void *____chimes_tmp_ptr = calloc(2 * (n + 2), sizeof(char)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 159 82 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 160 31 void *____chimes_tmp_ptr = calloc(n, sizeof(struct option)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 160 90 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 159 22 void *____chimes_tmp_ptr = calloc((2 * (n + 2)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 159 139 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 160 31 void *____chimes_tmp_ptr = calloc((n) + ((sizeof(void *) + sizeof(struct option) - 1) / sizeof(struct option)), sizeof(struct option)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 160 165 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 176 7  int option_index;  option_index = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 176 27 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 191 10  int *i;  i = ((int*)o->ptr) ;

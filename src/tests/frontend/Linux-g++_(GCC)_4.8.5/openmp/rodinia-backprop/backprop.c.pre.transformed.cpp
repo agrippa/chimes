@@ -122,8 +122,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -142,7 +143,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5016,7 +5017,7 @@ float *alloc_1d_dbl_resumable(size_t n)
   float *new_mem; ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  new_mem = (float *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(float))); ; malloc_helper(____chimes_tmp_ptr, (n * sizeof (float)), 12828305900417644651UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  new_mem = (float *) ({ void *____chimes_tmp_ptr = malloc(((n * sizeof(float))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (n * sizeof (float)), 12828305900417644651UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   if (new_mem == __null) {
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5045,7 +5046,7 @@ float **alloc_2d_dbl_resumable(size_t m, size_t n)
   float **new_mem; ;
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  new_mem = (float **) ({ void *____chimes_tmp_ptr = malloc((m * sizeof(float *))); ; malloc_helper(____chimes_tmp_ptr, (m * sizeof (float *)), 12828305900417644690UL, 1, 0); ____chimes_tmp_ptr; }) ;
+  new_mem = (float **) ({ void *____chimes_tmp_ptr = malloc(((m * sizeof(float *))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (m * sizeof (float *)), 12828305900417644690UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   if (new_mem == __null) {
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5160,7 +5161,7 @@ BPNN *bpnn_internal_create_resumable(int n_in, int n_hidden, int n_out)
   BPNN *newnet; ;
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  newnet = (BPNN *) ({ void *____chimes_tmp_ptr = malloc(sizeof(BPNN)); ; malloc_helper(____chimes_tmp_ptr, sizeof (BPNN), 12828305900417646120UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)); ____chimes_tmp_ptr; }) ;
+  newnet = (BPNN *) ({ void *____chimes_tmp_ptr = malloc((sizeof(BPNN)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (BPNN), 12828305900417646120UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   if (newnet == __null) {
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5221,47 +5222,47 @@ void bpnn_free_resumable(BPNN *net)
   n2 = net->hidden_n;
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_units); free_helper((char *) net->input_units, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_units) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->input_units) - sizeof(void *))); }) ;
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_units); free_helper((char *) net->hidden_units, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_units) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_units) - sizeof(void *))); }) ;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_units); free_helper((char *) net->output_units, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->output_units) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->output_units) - sizeof(void *))); }) ;
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_delta); free_helper((char *) net->hidden_delta, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_delta) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_delta) - sizeof(void *))); }) ;
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_delta); free_helper((char *) net->output_delta, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->output_delta) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->output_delta) - sizeof(void *))); }) ;
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->target); free_helper((char *) net->target, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->target) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->target) - sizeof(void *))); }) ;
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights[0]); free_helper((char *) net->input_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->input_weights[0]) - sizeof(void *))); }) ;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights[0]); free_helper((char *) net->input_prev_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_prev_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->input_prev_weights[0]) - sizeof(void *))); }) ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights); free_helper((char *) net->input_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->input_weights) - sizeof(void *))); }) ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights); free_helper((char *) net->input_prev_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_prev_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->input_prev_weights) - sizeof(void *))); }) ;
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights[0]); free_helper((char *) net->hidden_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->hidden_weights[0]) - sizeof(void *))); }) ;
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights[0]); free_helper((char *) net->hidden_prev_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_prev_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->hidden_prev_weights[0]) - sizeof(void *))); }) ;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights); free_helper((char *) net->hidden_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_weights) - sizeof(void *))); }) ;
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights); free_helper((char *) net->hidden_prev_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_prev_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_prev_weights) - sizeof(void *))); }) ;
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net); free_helper((char *) net, 12828305900417645104UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net) - sizeof(void *)), 12828305900417645104UL);free((((unsigned char *)(char *)net) - sizeof(void *))); }) ;
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 rm_stack(false, 0UL, "bpnn_free", &____must_manage_bpnn_free, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5590,7 +5591,7 @@ void bpnn_save_resumable(BPNN *net, char *filename)
 # 402 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   w = net->input_weights;
 # 403 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417645820UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417645820UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 404 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   for (i = 0; i <= n1; i++) {
 # 405 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5609,14 +5610,14 @@ void bpnn_save_resumable(BPNN *net, char *filename)
 # 412 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , (unsigned)(sizeof(float)), (unsigned) ((n1+1) * (n2+1) * sizeof(float)) , pFile);
 # 413 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417645820UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417645820UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 414 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 415 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
 # 416 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   w = net->hidden_weights;
 # 417 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417645820UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417645820UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   for (i = 0; i <= n2; i++) {
 # 419 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5635,7 +5636,7 @@ void bpnn_save_resumable(BPNN *net, char *filename)
 # 426 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , sizeof(float), (unsigned) ((n2+1) * (n3+1) * sizeof(float)) , pFile);
 # 427 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417645820UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417645820UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 428 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 429 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fclose(pFile);
@@ -5685,7 +5686,7 @@ BPNN *bpnn_read_resumable(char *filename)
 # 454 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
 # 455 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417646130UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417646130UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 456 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   read(fd, mem, (n1+1) * (n2+1) * sizeof(float));
 # 457 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5701,7 +5702,7 @@ BPNN *bpnn_read_resumable(char *filename)
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 463 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417646130UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417646130UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 464 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 465 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   printf("Done\nReading hidden weights...");
@@ -5709,7 +5710,7 @@ BPNN *bpnn_read_resumable(char *filename)
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417646130UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417646130UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 469 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   read(fd, mem, (n2+1) * (n3+1) * sizeof(float));
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5725,7 +5726,7 @@ BPNN *bpnn_read_resumable(char *filename)
 # 475 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 476 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417646130UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417646130UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 477 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   close(fd);
 # 478 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5784,7 +5785,7 @@ float *alloc_1d_dbl_quick(size_t n)
   float *new_mem; ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  new_mem = (float *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(float))); ; malloc_helper(____chimes_tmp_ptr, (n * sizeof (float)), 12828305900417644651UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  new_mem = (float *) ({ void *____chimes_tmp_ptr = malloc(((n * sizeof(float))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (n * sizeof (float)), 12828305900417644651UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   if (new_mem == __null) {
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5809,7 +5810,7 @@ float **alloc_2d_dbl_quick(size_t m, size_t n)
   float **new_mem; ;
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  new_mem = (float **) ({ void *____chimes_tmp_ptr = malloc((m * sizeof(float *))); ; malloc_helper(____chimes_tmp_ptr, (m * sizeof (float *)), 12828305900417644690UL, 1, 0); ____chimes_tmp_ptr; }) ;
+  new_mem = (float **) ({ void *____chimes_tmp_ptr = malloc(((m * sizeof(float *))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (m * sizeof (float *)), 12828305900417644690UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   if (new_mem == __null) {
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5915,7 +5916,7 @@ BPNN *bpnn_internal_create_quick(int n_in, int n_hidden, int n_out)
   BPNN *newnet; ;
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  newnet = (BPNN *) ({ void *____chimes_tmp_ptr = malloc(sizeof(BPNN)); ; malloc_helper(____chimes_tmp_ptr, sizeof (BPNN), 12828305900417646120UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)); ____chimes_tmp_ptr; }) ;
+  newnet = (BPNN *) ({ void *____chimes_tmp_ptr = malloc((sizeof(BPNN)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof (BPNN), 12828305900417646120UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   if (newnet == __null) {
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5974,47 +5975,47 @@ void bpnn_free_quick(BPNN *net)
   n2 = net->hidden_n;
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_units); free_helper((char *) net->input_units, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_units) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->input_units) - sizeof(void *))); }) ;
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_units); free_helper((char *) net->hidden_units, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_units) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_units) - sizeof(void *))); }) ;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_units); free_helper((char *) net->output_units, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->output_units) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->output_units) - sizeof(void *))); }) ;
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_delta); free_helper((char *) net->hidden_delta, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_delta) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_delta) - sizeof(void *))); }) ;
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_delta); free_helper((char *) net->output_delta, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->output_delta) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->output_delta) - sizeof(void *))); }) ;
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->target); free_helper((char *) net->target, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->target) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->target) - sizeof(void *))); }) ;
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights[0]); free_helper((char *) net->input_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->input_weights[0]) - sizeof(void *))); }) ;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights[0]); free_helper((char *) net->input_prev_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_prev_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->input_prev_weights[0]) - sizeof(void *))); }) ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights); free_helper((char *) net->input_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->input_weights) - sizeof(void *))); }) ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights); free_helper((char *) net->input_prev_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_prev_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->input_prev_weights) - sizeof(void *))); }) ;
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights[0]); free_helper((char *) net->hidden_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->hidden_weights[0]) - sizeof(void *))); }) ;
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights[0]); free_helper((char *) net->hidden_prev_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_prev_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->hidden_prev_weights[0]) - sizeof(void *))); }) ;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights); free_helper((char *) net->hidden_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_weights) - sizeof(void *))); }) ;
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights); free_helper((char *) net->hidden_prev_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_prev_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_prev_weights) - sizeof(void *))); }) ;
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net); free_helper((char *) net, 12828305900417645104UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net) - sizeof(void *)), 12828305900417645104UL);free((((unsigned char *)(char *)net) - sizeof(void *))); }) ;
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 rm_stack(false, 0UL, "bpnn_free", &____must_manage_bpnn_free, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 
@@ -6338,7 +6339,7 @@ void bpnn_save_quick(BPNN *net, char *filename)
 # 402 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   w = net->input_weights;
 # 403 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417645820UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417645820UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 404 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   for (i = 0; i <= n1; i++) {
 # 405 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6357,14 +6358,14 @@ void bpnn_save_quick(BPNN *net, char *filename)
 # 412 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , (unsigned)(sizeof(float)), (unsigned) ((n1+1) * (n2+1) * sizeof(float)) , pFile);
 # 413 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417645820UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417645820UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 414 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 415 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
 # 416 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   w = net->hidden_weights;
 # 417 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417645820UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417645820UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   for (i = 0; i <= n2; i++) {
 # 419 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6383,7 +6384,7 @@ void bpnn_save_quick(BPNN *net, char *filename)
 # 426 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , sizeof(float), (unsigned) ((n2+1) * (n3+1) * sizeof(float)) , pFile);
 # 427 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417645820UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417645820UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 428 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 429 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fclose(pFile);
@@ -6431,7 +6432,7 @@ BPNN *bpnn_read_quick(char *filename)
 # 454 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
 # 455 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417646130UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417646130UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 456 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   read(fd, mem, (n1+1) * (n2+1) * sizeof(float));
 # 457 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6447,7 +6448,7 @@ BPNN *bpnn_read_quick(char *filename)
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 463 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417646130UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417646130UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 464 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 465 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   printf("Done\nReading hidden weights...");
@@ -6455,7 +6456,7 @@ BPNN *bpnn_read_quick(char *filename)
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417646130UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417646130UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 469 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   read(fd, mem, (n2+1) * (n3+1) * sizeof(float));
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6471,7 +6472,7 @@ BPNN *bpnn_read_quick(char *filename)
 # 475 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 476 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417646130UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417646130UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 477 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   close(fd);
 # 478 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6526,7 +6527,7 @@ float *alloc_1d_dbl_npm(size_t n)
   float *new_mem;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  new_mem = (float *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (n * sizeof (float)), 12828305900417644651UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  new_mem = (float *) ({ void *____chimes_tmp_ptr = malloc(((n * sizeof(float))) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (n * sizeof (float)), 12828305900417644651UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   if (new_mem == __null) {
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6549,7 +6550,7 @@ float **alloc_2d_dbl_npm(size_t m, size_t n)
   float **new_mem;
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  new_mem = (float **) ({ void *____chimes_tmp_ptr = malloc((m * sizeof(float *))); malloc_helper(____chimes_tmp_ptr, (m * sizeof (float *)), 12828305900417644690UL, 1, 0); ____chimes_tmp_ptr; }) ;
+  new_mem = (float **) ({ void *____chimes_tmp_ptr = malloc(((m * sizeof(float *))) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (m * sizeof (float *)), 12828305900417644690UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   if (new_mem == __null) {
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6645,7 +6646,7 @@ BPNN *bpnn_internal_create_npm(int n_in, int n_hidden, int n_out)
   BPNN *newnet;
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  newnet = (BPNN *) ({ void *____chimes_tmp_ptr = malloc(sizeof(BPNN)); malloc_helper(____chimes_tmp_ptr, sizeof (BPNN), 12828305900417646120UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)); ____chimes_tmp_ptr; }) ;
+  newnet = (BPNN *) ({ void *____chimes_tmp_ptr = malloc((sizeof(BPNN)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof (BPNN), 12828305900417646120UL, 0, 1, (int)sizeof(BPNN), 10, (int)__builtin_offsetof(BPNN, input_units), (int)__builtin_offsetof(BPNN, hidden_units), (int)__builtin_offsetof(BPNN, output_units), (int)__builtin_offsetof(BPNN, hidden_delta), (int)__builtin_offsetof(BPNN, output_delta), (int)__builtin_offsetof(BPNN, target), (int)__builtin_offsetof(BPNN, input_weights), (int)__builtin_offsetof(BPNN, hidden_weights), (int)__builtin_offsetof(BPNN, input_prev_weights), (int)__builtin_offsetof(BPNN, hidden_prev_weights)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   if (newnet == __null) {
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6702,47 +6703,47 @@ void bpnn_free_npm(BPNN *net)
   n2 = net->hidden_n;
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_units); free_helper((char *) net->input_units, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_units) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->input_units) - sizeof(void *))); }) ;
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_units); free_helper((char *) net->hidden_units, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_units) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_units) - sizeof(void *))); }) ;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_units); free_helper((char *) net->output_units, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->output_units) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->output_units) - sizeof(void *))); }) ;
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_delta); free_helper((char *) net->hidden_delta, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_delta) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_delta) - sizeof(void *))); }) ;
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->output_delta); free_helper((char *) net->output_delta, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->output_delta) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->output_delta) - sizeof(void *))); }) ;
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->target); free_helper((char *) net->target, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->target) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->target) - sizeof(void *))); }) ;
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights[0]); free_helper((char *) net->input_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->input_weights[0]) - sizeof(void *))); }) ;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights[0]); free_helper((char *) net->input_prev_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_prev_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->input_prev_weights[0]) - sizeof(void *))); }) ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_weights); free_helper((char *) net->input_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->input_weights) - sizeof(void *))); }) ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->input_prev_weights); free_helper((char *) net->input_prev_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->input_prev_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->input_prev_weights) - sizeof(void *))); }) ;
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights[0]); free_helper((char *) net->hidden_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->hidden_weights[0]) - sizeof(void *))); }) ;
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights[0]); free_helper((char *) net->hidden_prev_weights[0], 12828305900417645056UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_prev_weights[0]) - sizeof(void *)), 12828305900417645056UL);free((((unsigned char *)(char *)net->hidden_prev_weights[0]) - sizeof(void *))); }) ;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_weights); free_helper((char *) net->hidden_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_weights) - sizeof(void *))); }) ;
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net->hidden_prev_weights); free_helper((char *) net->hidden_prev_weights, 12828305900417645024UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net->hidden_prev_weights) - sizeof(void *)), 12828305900417645024UL);free((((unsigned char *)(char *)net->hidden_prev_weights) - sizeof(void *))); }) ;
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free((char *)net); free_helper((char *) net, 12828305900417645104UL); }) ;
+   ({ free_helper((((unsigned char *)(char *)net) - sizeof(void *)), 12828305900417645104UL);free((((unsigned char *)(char *)net) - sizeof(void *))); }) ;
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -7028,7 +7029,7 @@ void bpnn_save_npm(BPNN *net, char *filename)
 # 402 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   w = net->input_weights;
 # 403 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417645820UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417645820UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 404 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   for (i = 0; i <= n1; i++) {
 # 405 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -7047,14 +7048,14 @@ void bpnn_save_npm(BPNN *net, char *filename)
 # 412 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , (unsigned)(sizeof(float)), (unsigned) ((n1+1) * (n2+1) * sizeof(float)) , pFile);
 # 413 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417645820UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417645820UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 414 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 415 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
 # 416 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   w = net->hidden_weights;
 # 417 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417645820UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417645820UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   for (i = 0; i <= n2; i++) {
 # 419 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -7073,7 +7074,7 @@ void bpnn_save_npm(BPNN *net, char *filename)
 # 426 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fwrite( mem , sizeof(float), (unsigned) ((n2+1) * (n3+1) * sizeof(float)) , pFile);
 # 427 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417645820UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417645820UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 428 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 429 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   fclose(pFile);
@@ -7119,7 +7120,7 @@ BPNN *bpnn_read_npm(char *filename)
 # 454 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
 # 455 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417646130UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n1 + 1) * (n2 + 1) * sizeof(float))) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417646130UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 456 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   read(fd, mem, (n1+1) * (n2+1) * sizeof(float));
 # 457 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -7135,7 +7136,7 @@ BPNN *bpnn_read_npm(char *filename)
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 463 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417646130UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417646130UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 464 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 465 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   printf("Done\nReading hidden weights...");
@@ -7143,7 +7144,7 @@ BPNN *bpnn_read_npm(char *filename)
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   memcnt = 0;
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  mem = (char *) ({ void *____chimes_tmp_ptr = malloc((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417646130UL, 0, 0); ____chimes_tmp_ptr; }) ;
+  mem = (char *) ({ void *____chimes_tmp_ptr = malloc(((unsigned int)((n2 + 1) * (n3 + 1) * sizeof(float))) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417646130UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 469 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   read(fd, mem, (n2+1) * (n3+1) * sizeof(float));
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -7159,7 +7160,7 @@ BPNN *bpnn_read_npm(char *filename)
 # 475 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 476 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   ({ free(mem); free_helper(mem, 12828305900417646130UL); }) ;
+   ({ free_helper((((unsigned char *)mem) - sizeof(void *)), 12828305900417646130UL);free((((unsigned char *)mem) - sizeof(void *))); }) ;
 # 477 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   close(fd);
 # 478 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -7319,26 +7320,26 @@ static int module_init() {
                      "BPNN", 768UL, 13, "int", (int)__builtin_offsetof (BPNN, input_n), "int", (int)__builtin_offsetof (BPNN, hidden_n), "int", (int)__builtin_offsetof (BPNN, output_n), "float*", (int)__builtin_offsetof (BPNN, input_units), "float*", (int)__builtin_offsetof (BPNN, hidden_units), "float*", (int)__builtin_offsetof (BPNN, output_units), "float*", (int)__builtin_offsetof (BPNN, hidden_delta), "float*", (int)__builtin_offsetof (BPNN, output_delta), "float*", (int)__builtin_offsetof (BPNN, target), "float**", (int)__builtin_offsetof (BPNN, input_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_weights), "float**", (int)__builtin_offsetof (BPNN, input_prev_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_prev_weights),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
-                             "bpnn_internal_create", "_Z20bpnn_internal_createiii", 10, "alloc_1d_dbl", "alloc_1d_dbl", "alloc_1d_dbl", "alloc_1d_dbl", "alloc_1d_dbl", "alloc_1d_dbl", "alloc_2d_dbl", "alloc_2d_dbl", "alloc_2d_dbl", "alloc_2d_dbl",
-                             "dpn1", "_Z4dpn1v", 1, "drnd",
-                             "bpnn_zero_weights", "_Z17bpnn_zero_weightsPPfii", 0,
-                             "bpnn_hidden_error", "_Z17bpnn_hidden_errorPfiS_iPS_S_S_", 0,
-                             "bpnn_layerforward", "_Z17bpnn_layerforwardPfS_PS_ii", 1, "squash",
-                             "bpnn_initialize", "_Z15bpnn_initializei", 0,
-                             "bpnn_read", "_Z9bpnn_readPc", 3, "bpnn_internal_create", "bpnn_zero_weights", "bpnn_zero_weights",
-                             "bpnn_train", "_Z10bpnn_trainP4BPNNPfS1_", 6, "bpnn_layerforward", "bpnn_layerforward", "bpnn_output_error", "bpnn_hidden_error", "bpnn_adjust_weights", "bpnn_adjust_weights",
-                             "squash", "_Z6squashf", 0,
-                             "alloc_1d_dbl", "_Z12alloc_1d_dblm", 0,
-                             "bpnn_adjust_weights", "_Z19bpnn_adjust_weightsPfiS_iPS_S0_", 0,
-                             "bpnn_randomize_weights", "_Z22bpnn_randomize_weightsPPfii", 0,
-                             "bpnn_save", "_Z9bpnn_saveP4BPNNPc", 0,
-                             "bpnn_feedforward", "_Z16bpnn_feedforwardP4BPNN", 2, "bpnn_layerforward", "bpnn_layerforward",
-                             "bpnn_output_error", "_Z17bpnn_output_errorPfS_S_iS_", 0,
-                             "bpnn_randomize_row", "_Z18bpnn_randomize_rowPfi", 0,
-                             "bpnn_free", "_Z9bpnn_freeP4BPNN", 0,
-                             "alloc_2d_dbl", "_Z12alloc_2d_dblmm", 1, "alloc_1d_dbl",
-                             "drnd", "_Z4drndv", 0,
-                             "bpnn_create", "_Z11bpnn_createiii", 6, "bpnn_internal_create", "bpnn_randomize_weights", "bpnn_randomize_weights", "bpnn_zero_weights", "bpnn_zero_weights", "bpnn_randomize_row",
+                             "bpnn_internal_create", "_Z20bpnn_internal_createiii", 0, 10, "alloc_1d_dbl", "alloc_1d_dbl", "alloc_1d_dbl", "alloc_1d_dbl", "alloc_1d_dbl", "alloc_1d_dbl", "alloc_2d_dbl", "alloc_2d_dbl", "alloc_2d_dbl", "alloc_2d_dbl",
+                             "dpn1", "_Z4dpn1v", 0, 1, "drnd",
+                             "bpnn_zero_weights", "_Z17bpnn_zero_weightsPPfii", 0, 0,
+                             "bpnn_hidden_error", "_Z17bpnn_hidden_errorPfiS_iPS_S_S_", 0, 0,
+                             "bpnn_layerforward", "_Z17bpnn_layerforwardPfS_PS_ii", 0, 1, "squash",
+                             "bpnn_initialize", "_Z15bpnn_initializei", 0, 0,
+                             "bpnn_read", "_Z9bpnn_readPc", 0, 3, "bpnn_internal_create", "bpnn_zero_weights", "bpnn_zero_weights",
+                             "bpnn_train", "_Z10bpnn_trainP4BPNNPfS1_", 0, 6, "bpnn_layerforward", "bpnn_layerforward", "bpnn_output_error", "bpnn_hidden_error", "bpnn_adjust_weights", "bpnn_adjust_weights",
+                             "squash", "_Z6squashf", 0, 0,
+                             "alloc_1d_dbl", "_Z12alloc_1d_dblm", 0, 0,
+                             "bpnn_adjust_weights", "_Z19bpnn_adjust_weightsPfiS_iPS_S0_", 0, 0,
+                             "bpnn_randomize_weights", "_Z22bpnn_randomize_weightsPPfii", 0, 0,
+                             "bpnn_save", "_Z9bpnn_saveP4BPNNPc", 0, 0,
+                             "bpnn_feedforward", "_Z16bpnn_feedforwardP4BPNN", 0, 2, "bpnn_layerforward", "bpnn_layerforward",
+                             "bpnn_output_error", "_Z17bpnn_output_errorPfS_S_iS_", 0, 0,
+                             "bpnn_randomize_row", "_Z18bpnn_randomize_rowPfi", 0, 0,
+                             "bpnn_free", "_Z9bpnn_freeP4BPNN", 0, 0,
+                             "alloc_2d_dbl", "_Z12alloc_2d_dblmm", 0, 1, "alloc_1d_dbl",
+                             "drnd", "_Z4drndv", 0, 0,
+                             "bpnn_create", "_Z11bpnn_createiii", 0, 6, "bpnn_internal_create", "bpnn_randomize_weights", "bpnn_randomize_weights", "bpnn_zero_weights", "bpnn_zero_weights", "bpnn_randomize_row",
                         "bpnn_train|out_err|0", 1, "bpnn_train",
                         "bpnn_train|hid_err|0", 1, "bpnn_train",
                         "bpnn_save|dvalue|0", 1, "bpnn_save",

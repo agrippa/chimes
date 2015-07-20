@@ -86,8 +86,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -106,7 +107,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2917,12 +2918,12 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
 
 
    void* parms;
@@ -3013,9 +3014,9 @@ typedef struct BasePotentialSt
    char latticeType[8];
    char name[3];
    int atomicNo;
-   int (*force)(struct SimFlatSt* s);
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot);
+   int (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint));
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint));
 } BasePotential;
 
 
@@ -3115,7 +3116,7 @@ void ljDestroy_resumable(BasePotential** inppot)
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    ({ free(pot); free_helper(pot, 15692222973149250874UL); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 15692222973149250874UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    *inppot = __null;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3132,7 +3133,7 @@ BasePotential* initLjPot_resumable(void)
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LjPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); ____chimes_tmp_ptr; })) ;
+    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->force = ljForce;
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3376,7 +3377,7 @@ void ljDestroy_quick(BasePotential** inppot)
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    ({ free(pot); free_helper(pot, 15692222973149250874UL); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 15692222973149250874UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    *inppot = __null;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3391,7 +3392,7 @@ BasePotential* initLjPot_quick(void)
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; ; ;
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LjPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); ____chimes_tmp_ptr; })) ;
+    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->force = ljForce;
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3635,7 +3636,7 @@ void ljDestroy_npm(BasePotential** inppot)
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! pot) {return; };
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    ({ free(pot); free_helper(pot, 15692222973149250874UL); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 15692222973149250874UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    *inppot = __null;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3648,7 +3649,7 @@ BasePotential* initLjPot_npm(void)
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   LjPotential *pot = (LjPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LjPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); ____chimes_tmp_ptr; }) ;
+   LjPotential *pot = (LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->force = ljForce;
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3906,11 +3907,11 @@ static int module_init() {
                      "SpeciesDataSt", 0UL, 0,
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
-                             "initLjPot", "_Z9initLjPotv", 0,
-                             "ljPrint", "_Z7ljPrintP8_IO_FILEP15BasePotentialSt", 0,
-                             "zeroReal3", "_ZL9zeroReal3Pd", 0,
-                             "ljForce", "_Z7ljForceP9SimFlatSt", 2, "zeroReal3", "getNeighborBoxes",
-                             "ljDestroy", "_Z9ljDestroyPP15BasePotentialSt", 0,
+                             "initLjPot", "_Z9initLjPotv", 0, 0,
+                             "ljPrint", "_Z7ljPrintP8_IO_FILEP15BasePotentialSt", 0, 0,
+                             "zeroReal3", "_ZL9zeroReal3Pd", 0, 0,
+                             "ljForce", "_Z7ljForceP9SimFlatSt", 0, 2, "zeroReal3", "getNeighborBoxes",
+                             "ljDestroy", "_Z9ljDestroyPP15BasePotentialSt", 0, 0,
                         "ljForce|s|0", 1, "getNeighborBoxes",
                         "ljForce|epsilon|0", 1, "getNeighborBoxes",
                         "ljForce|rCut2|0", 1, "getNeighborBoxes",

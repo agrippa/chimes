@@ -64,8 +64,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -84,7 +85,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4023,7 +4024,7 @@ int k;
  target_long = atof(argv[4]);
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- neighbors = (struct neighbor *) ({ void *____chimes_tmp_ptr = malloc(k * sizeof(struct neighbor)); ; malloc_helper(____chimes_tmp_ptr, k*sizeof(struct neighbor), 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0); ____chimes_tmp_ptr; }) ;
+ neighbors = (struct neighbor *) ({ void *____chimes_tmp_ptr = malloc((k * sizeof(struct neighbor)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, k*sizeof(struct neighbor), 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  if(neighbors == __null) {
@@ -4061,7 +4062,7 @@ int k;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
         do {
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-            sandbox = (char *) ({ void *____chimes_tmp_ptr = realloc(sandbox, (nrecords + 1) * 49); ; realloc_helper(____chimes_tmp_ptr, sandbox, (nrecords + 1) * 49, 9808122005516792063UL, 0, 0); ____chimes_tmp_ptr; }) ;
+            sandbox = (char *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (sandbox) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((sandbox ? (((unsigned char *)sandbox) - sizeof(void *)) : (unsigned char *)(sandbox)), ((nrecords + 1) * 49) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (sandbox ? (((unsigned char *)sandbox) - sizeof(void *)) : (unsigned char *)(sandbox)), ____chimes_tmp_header, (nrecords + 1) * 49, 9808122005516792063UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
             nread = fread(sandbox + (nrecords * 49), 49, 1, fp);
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4090,7 +4091,7 @@ int k;
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   ;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- z = (float *) ({ void *____chimes_tmp_ptr = malloc(1000 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, 1000 * sizeof(float), 9808122005516792176UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ z = (float *) ({ void *____chimes_tmp_ptr = malloc((1000 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 1000 * sizeof(float), 9808122005516792176UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
        nwindows = ((nrecords + 1000 - 1) / 1000) ;
@@ -4264,7 +4265,7 @@ int k;
  target_long = atof(argv[4]);
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- neighbors = (struct neighbor *) ({ void *____chimes_tmp_ptr = malloc(k * sizeof(struct neighbor)); ; malloc_helper(____chimes_tmp_ptr, k*sizeof(struct neighbor), 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0); ____chimes_tmp_ptr; }) ;
+ neighbors = (struct neighbor *) ({ void *____chimes_tmp_ptr = malloc((k * sizeof(struct neighbor)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, k*sizeof(struct neighbor), 9808122005516792380UL, 0, 1, (int)sizeof(struct neighbor), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  if(neighbors == __null) {
@@ -4302,7 +4303,7 @@ int k;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
         do {
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-            sandbox = (char *) ({ void *____chimes_tmp_ptr = realloc(sandbox, (nrecords + 1) * 49); ; realloc_helper(____chimes_tmp_ptr, sandbox, (nrecords + 1) * 49, 9808122005516792063UL, 0, 0); ____chimes_tmp_ptr; }) ;
+            sandbox = (char *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (sandbox) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((sandbox ? (((unsigned char *)sandbox) - sizeof(void *)) : (unsigned char *)(sandbox)), ((nrecords + 1) * 49) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (sandbox ? (((unsigned char *)sandbox) - sizeof(void *)) : (unsigned char *)(sandbox)), ____chimes_tmp_header, (nrecords + 1) * 49, 9808122005516792063UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
             nread = fread(sandbox + (nrecords * 49), 49, 1, fp);
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4331,7 +4332,7 @@ int k;
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   ;
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- z = (float *) ({ void *____chimes_tmp_ptr = malloc(1000 * sizeof(float)); ; malloc_helper(____chimes_tmp_ptr, 1000 * sizeof(float), 9808122005516792176UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ z = (float *) ({ void *____chimes_tmp_ptr = malloc((1000 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 1000 * sizeof(float), 9808122005516792176UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
        nwindows = ((nrecords + 1000 - 1) / 1000) ;
@@ -4460,8 +4461,8 @@ static int module_init() {
                      "neighbor", 512UL, 2, "[ 49 x char ]", (int)__builtin_offsetof (struct neighbor, entry), "double", (int)__builtin_offsetof (struct neighbor, dist),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "timezone", 64UL, 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
-                             "seconds", "_Z7secondsv", 0,
-                             "main", "main", 3, "seconds", "checkpoint", "seconds",
+                             "seconds", "_Z7secondsv", 0, 0,
+                             "main", "main", 0, 3, "seconds", "checkpoint", "seconds",
         "seconds", 0UL, (int)0,
         "seconds", 0UL, (int)0);
     return 0;
