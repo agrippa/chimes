@@ -28,7 +28,7 @@ static unsigned long long count_free_wrapper = 0;
 static unsigned long long count_disable_current_thread = 0;
 static unsigned long long count_reenable_current_thread = 0;
 static unsigned long long count_entering_omp_parallel = 0;
-static unsigned long long count_register_thread_local_stack_vars = 0;
+// static unsigned long long count_register_thread_local_stack_vars = 0;
 static unsigned long long count_leaving_omp_parallel = 0;
 static unsigned long long count_thread_leaving = 0;
 static unsigned long long count_get_parent_vars_stack_depth = 0;
@@ -70,7 +70,7 @@ void onexit() {
     fprintf(stderr, "disable_current_thread %llu\n", count_disable_current_thread);
     fprintf(stderr, "reenable_current_thread %llu\n", count_reenable_current_thread);
     fprintf(stderr, "entering_omp_parallel %llu\n", count_entering_omp_parallel);
-    fprintf(stderr, "register_thread_local_stack_vars %llu\n", count_register_thread_local_stack_vars);
+    // fprintf(stderr, "register_thread_local_stack_vars %llu\n", count_register_thread_local_stack_vars);
     fprintf(stderr, "leaving_omp_parallel %llu\n", count_leaving_omp_parallel);
     fprintf(stderr, "count_thread_leaving %llu\n", count_thread_leaving);
     fprintf(stderr, "get_parent_vars_stack_depth %llu\n", count_get_parent_vars_stack_depth);
@@ -88,7 +88,7 @@ void onexit() {
 }
 #endif
 
-void init_chimes(int argc, char **argv) {
+void init_chimes() {
 #ifdef __CHIMES_PROFILE
     atexit(onexit);
 #endif
@@ -447,14 +447,14 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
     return 0;
 }
 
-void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
-        unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...) {
-#ifdef __CHIMES_PROFILE
-    __sync_fetch_and_add(&count_register_thread_local_stack_vars, 1);
-#endif
-}
+// void register_thread_local_stack_vars(unsigned relation,
+//         unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
+//         unsigned parent_stack_depth,
+//         size_t region_id, unsigned nlocals, ...) {
+// #ifdef __CHIMES_PROFILE
+//     __sync_fetch_and_add(&count_register_thread_local_stack_vars, 1);
+// #endif
+// }
 
 void thread_leaving() {
 #ifdef __CHIMES_PROFILE

@@ -215,13 +215,13 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
 void register_stack_vars(int nvars, ...);
 int alias_group_changed(unsigned loc_id);
 
-static void safe_write(int fd, void *ptr, size_t size, const char *msg,
-        const char *filename);
-static void safe_read(int fd, void *ptr, size_t size, const char *msg,
-        const char *filename);
-static void skip(int fd, ssize_t size, const char *msg, const char *filename);
-static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
-        const char *filename);
+// static void safe_write(int fd, void *ptr, size_t size, const char *msg,
+//         const char *filename);
+// static void safe_read(int fd, void *ptr, size_t size, const char *msg,
+//         const char *filename);
+// static void skip(int fd, ssize_t size, const char *msg, const char *filename);
+// static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
+//         const char *filename);
 static void *translate_old_ptr(void *ptr, heap_tree *old_to_new,
         void *container);
 static void fix_stack_or_global_pointer(void *container, string type,
@@ -241,13 +241,13 @@ static void merge_npm_aliases(string fname, size_t return_alias,
         vector<size_t> param_aliases);
 // static void *checkpoint_func(void *data);
 static void destroy_thread_ctx(void *thread_ctx_ptr);
-static void cleanup_thread_heap(void *thread_heap_ptr);
+// static void cleanup_thread_heap(void *thread_heap_ptr);
 
 static std::vector<stack_frame *> *get_my_stack();
 static unsigned get_my_tid();
 static thread_ctx *get_my_context();
 static thread_ctx *get_my_context_may_fail();
-static thread_local_allocations *get_my_thread_heap();
+// static thread_local_allocations *get_my_thread_heap();
 static bool wait_for_all_threads(clock_t *entry_time, checkpoint_ctx **out,
         bool *should_abort);
 
@@ -267,15 +267,15 @@ static map<unsigned, unsigned> trace_indices;
  * every thread's state.
  */
 pthread_key_t thread_ctx_key;
-pthread_key_t thread_heap_key;
+// pthread_key_t thread_heap_key;
 pthread_key_t tid_key;
 
 /*
  * Per-thread heap data.
  */
-static map<pthread_t, thread_local_allocations *> thread_heaps;
-static pthread_t main_thread;
-static pthread_rwlock_t thread_heaps_lock = PTHREAD_RWLOCK_INITIALIZER;
+// static map<pthread_t, thread_local_allocations *> thread_heaps;
+// static pthread_t main_thread;
+// static pthread_rwlock_t thread_heaps_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
  * Mapping from heap groups to the other heap groups they may be aliased with.
@@ -341,7 +341,7 @@ static unsigned long long program_start_time = 0;
  * internally to represent each thread. 0 is reserved for main thread before
  * first OMP region, so we start from 1.
  */
-static unsigned count_threads = 1;
+// static unsigned count_threads = 1;
 
 /*
  * Count the number of total threads to ensure that checkpoints are created by
@@ -511,7 +511,7 @@ static unsigned long long total_allocations = 0;
 static const size_t DONT_HASH_SIZE = 1024UL * 1024UL;
 // static const size_t DONT_HASH_SIZE = 16 * 1024UL * 1024UL;
 // The target size of a checkpoint, as a percentage of total heap bytes.
-static double target_checkpoint_size_perc = 0.2;
+// static double target_checkpoint_size_perc = 0.2;
 
 // The target amount of overhead to add to the host program.
 static bool disable_throttling = false;
@@ -525,8 +525,8 @@ static unsigned long long dead_thread_time = 0;
         perf_profile::current_time_ns() - __chimes_overhead_start_time);
 
 #define MAX_CHECKPOINT_FILENAME_LEN 256
-static char previous_checkpoint_filename[MAX_CHECKPOINT_FILENAME_LEN] =
-        { '\0' };
+// static char previous_checkpoint_filename[MAX_CHECKPOINT_FILENAME_LEN] =
+//         { '\0' };
 static char checkpoint_directory[MAX_CHECKPOINT_FILENAME_LEN];
 
 #ifdef __CHIMES_PROFILE
@@ -551,11 +551,11 @@ static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
 perf_profile pp(PROFILE_LABELS, N_LABELS);
 #endif
 
-static map<unsigned, vector<stack_frame *> *> *unpacked_program_stacks;
-static map<std::string, stack_var *> *unpacked_global_vars;
-static map<size_t, constant_var*> *unpacked_constants;
-static map<unsigned, pair<unsigned, unsigned> > *unpacked_thread_hierarchy;
-static map<unsigned, clock_t> *checkpoint_entry_deltas;
+// static map<unsigned, vector<stack_frame *> *> *unpacked_program_stacks;
+// static map<std::string, stack_var *> *unpacked_global_vars;
+// static map<size_t, constant_var*> *unpacked_constants;
+// static map<unsigned, pair<unsigned, unsigned> > *unpacked_thread_hierarchy;
+// static map<unsigned, clock_t> *checkpoint_entry_deltas;
 /*
  * A list of objects specifying what memory locations were updated with
  * corrected pointers during the sweep over heap allocations.
@@ -680,220 +680,220 @@ bool any_aliased(int ngroups, ...) {
     return alias_exists;
 }
 
-static void read_heap_from_file(int fd, char *checkpoint_file,
-        heap_tree *old_to_new,
-        std::vector<heap_allocation *> *new_heap,
-        std::map<void *, memory_filled *> *filled,
-        std::map<void *, heap_allocation *> *old_to_alloc) {
-    uint64_t n_heap_allocs;
-    safe_read(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
-            checkpoint_file);
+// static void read_heap_from_file(int fd, char *checkpoint_file,
+//         heap_tree *old_to_new,
+//         std::vector<heap_allocation *> *new_heap,
+//         std::map<void *, memory_filled *> *filled,
+//         std::map<void *, heap_allocation *> *old_to_alloc) {
+//     uint64_t n_heap_allocs;
+//     safe_read(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
+//             checkpoint_file);
+// 
+// #ifdef VERBOSE
+//     fprintf(stderr, "\nHeap serialized to file %s has %d allocations\n\n",
+//             checkpoint_file, n_heap_allocs);
+// #endif
+//     for (unsigned int i = 0; i < n_heap_allocs; i++) {
+//         void *old_address;
+//         size_t size;
+//         size_t group;
+//         int is_cuda_alloc, elem_is_ptr, elem_is_struct;
+// 
+//         safe_read(fd, &old_address, sizeof(old_address), "old_address",
+//                 checkpoint_file);
+//         safe_read(fd, &size, sizeof(size), "size", checkpoint_file);
+//         safe_read(fd, &group, sizeof(group), "group", checkpoint_file);
+//         safe_read(fd, &is_cuda_alloc, sizeof(is_cuda_alloc),
+//                 "is_cuda_alloc", checkpoint_file);
+//         safe_read(fd, &elem_is_ptr, sizeof(elem_is_ptr), "elem_is_ptr",
+//                 checkpoint_file);
+//         safe_read(fd, &elem_is_struct, sizeof(elem_is_struct), "elem_is_struct",
+//                 checkpoint_file);
+// 
+//         size_t elem_size = 0;
+//         vector<int> elem_ptr_offsets;
+//         if (elem_is_struct) {
+//             safe_read(fd, &elem_size, sizeof(elem_size), "elem_size",
+//                     checkpoint_file);
+// 
+//             int elem_ptr_offsets_len;
+//             safe_read(fd, &elem_ptr_offsets_len,
+//                     sizeof(elem_ptr_offsets_len),
+//                     "elem_ptr_offsets_len", checkpoint_file);
+//             for (int j = 0; j < elem_ptr_offsets_len; j++) {
+//                 int offset;
+//                 safe_read(fd, &offset, sizeof(offset), "offset",
+//                         checkpoint_file);
+//                 elem_ptr_offsets.push_back(offset);
+//             }
+//         }
+// 
+//         int n_ranges;
+//         size_t buffer_length = 0;
+//         safe_read(fd, &n_ranges, sizeof(n_ranges), "n_ranges", checkpoint_file);
+//         vector<pair<size_t, size_t> > ranges;
+//         for (int j = 0; j < n_ranges; j++) {
+//             size_t range_start, range_end;
+//             safe_read(fd, &range_start, sizeof(range_start), "range_start",
+//                     checkpoint_file);
+//             safe_read(fd, &range_end, sizeof(range_end), "range_end",
+//                     checkpoint_file);
+//             ranges.push_back(pair<size_t, size_t>(range_start, range_end));
+//             buffer_length += (range_end - range_start);
+//         }
+//         void *buffer = malloc(buffer_length);
+//         safe_read(fd, buffer, buffer_length, "buffer", checkpoint_file);
+// 
+// #ifdef VERBOSE
+//         fprintf(stderr, "read_heap_from_file: loading old_address=%p\n",
+//                 old_address);
+// #endif
+// 
+//         heap_allocation *alloc = NULL;
+//         memory_filled *already_filled = NULL;
+//         /*
+//          * This block should simply initialize a new heap_allocation object (if
+//          * necessary). Later we actually populate the data from buffer, based on
+//          * ranges.
+//          */
+//         if (old_to_new->exact_search(old_address) == NULL) {
+//             assert(filled->find(old_address) == filled->end());
+//             assert(old_to_alloc->find(old_address) == old_to_alloc->end());
+// 
+//             void *new_address;
+//             if (is_cuda_alloc) {
+//                 CHECK(cudaMalloc((void **)&new_address, size));
+//             } else {
+//                 new_address = malloc(size + sizeof(void *));
+//                 assert(new_address != NULL);
+//             }
+// #ifdef VERBOSE
+//             fprintf(stderr, "  first load of this heap allocation, "
+//                     "new_address=%p\n", new_address);
+// #endif
+// 
+//             alloc = new heap_allocation(
+//                     ((unsigned char *)new_address) + sizeof(void *), size,
+//                     group, is_cuda_alloc, elem_is_ptr, elem_is_struct);
+//             if (elem_is_struct) {
+//                 alloc->add_struct_elem_size(elem_size);
+//                 alloc->set_pointer_offsets(&elem_ptr_offsets);
+//             }
+// 
+//             if (!is_cuda_alloc) {
+//                 *((heap_allocation **)new_address) = alloc;
+//             }
+// 
+//             already_filled = new memory_filled(size);
+// 
+//             new_heap->push_back(alloc);
+// 
+//             get_my_thread_heap()->add_allocation(alloc, true);
+// 
+//             old_to_new->insert(old_address, alloc->get_address(), size);
+//             filled->insert(pair<void *, memory_filled *>(old_address,
+//                         already_filled));
+//             old_to_alloc->insert(pair<void *, heap_allocation *>(old_address,
+//                         alloc));
+//         } else {
+//             assert(filled->find(old_address) != filled->end());
+//             assert(old_to_alloc->find(old_address) != old_to_alloc->end());
+// 
+// #ifdef VERBOSE
+//             fprintf(stderr, "  not the first load of this heap allocation\n");
+// #endif
+// 
+//             alloc = old_to_alloc->at(old_address);
+//             already_filled = filled->at(old_address);
+//         }
+// 
+// #ifdef VERBOSE
+//         fprintf(stderr, "  ranges:\n");
+// #endif
+//         /*
+//          * Populate the live buffer in alloc based on the already filled ranges
+//          * in already_filled and the available ranges in ranges.
+//          */
+//         size_t sofar = 0;
+//         unsigned char *c_new_address = (unsigned char *)alloc->get_address();
+//         for (vector<pair<size_t, size_t> >::iterator range_iter =
+//                 ranges.begin(), range_e = ranges.end();
+//                 range_iter != range_e; range_iter++) {
+//             size_t range_start = range_iter->first;
+//             size_t range_end = range_iter->second;
+//             unsigned char *in_buffer = ((unsigned char *)buffer) + sofar;
+// #ifdef VERBOSE
+//             fprintf(stderr, "    %lu -> %lu\n", range_start, range_end);
+// #endif
+// 
+//             vector<pair<size_t, size_t> > *needed = already_filled->offer(
+//                     range_start, range_end);
+//             for (vector<pair<size_t, size_t> >::iterator needed_iter =
+//                     needed->begin(), needed_end = needed->end(); needed_iter !=
+//                     needed_end; needed_iter++) {
+//                 assert(needed_iter->first >= range_start);
+//                 size_t in_buf_offset = needed_iter->first - range_start;
+//                 assert(needed_iter->second <= range_end);
+//                 size_t in_buf_length = needed_iter->second - needed_iter->first;
+// 
+// #ifdef VERBOSE
+//                 fprintf(stderr, "      using %lu -> %lu\n", needed_iter->first,
+//                         needed_iter->second);
+// #endif
+// 
+//                 if (alloc->get_is_cuda_alloc()) {
+//                     CHECK(cudaMemcpy(c_new_address + needed_iter->first,
+//                                 in_buffer + in_buf_offset, in_buf_length,
+//                                 cudaMemcpyHostToDevice));
+//                 } else {
+//                     memcpy(c_new_address + needed_iter->first,
+//                             in_buffer + in_buf_offset, in_buf_length);
+//                 }
+//             }
+//             delete needed;
+// 
+//             sofar += (range_end - range_start);
+//         }
+// 
+//         free(buffer);
+//     }
+// }
 
-#ifdef VERBOSE
-    fprintf(stderr, "\nHeap serialized to file %s has %d allocations\n\n",
-            checkpoint_file, n_heap_allocs);
-#endif
-    for (unsigned int i = 0; i < n_heap_allocs; i++) {
-        void *old_address;
-        size_t size;
-        size_t group;
-        int is_cuda_alloc, elem_is_ptr, elem_is_struct;
-
-        safe_read(fd, &old_address, sizeof(old_address), "old_address",
-                checkpoint_file);
-        safe_read(fd, &size, sizeof(size), "size", checkpoint_file);
-        safe_read(fd, &group, sizeof(group), "group", checkpoint_file);
-        safe_read(fd, &is_cuda_alloc, sizeof(is_cuda_alloc),
-                "is_cuda_alloc", checkpoint_file);
-        safe_read(fd, &elem_is_ptr, sizeof(elem_is_ptr), "elem_is_ptr",
-                checkpoint_file);
-        safe_read(fd, &elem_is_struct, sizeof(elem_is_struct), "elem_is_struct",
-                checkpoint_file);
-
-        size_t elem_size = 0;
-        vector<int> elem_ptr_offsets;
-        if (elem_is_struct) {
-            safe_read(fd, &elem_size, sizeof(elem_size), "elem_size",
-                    checkpoint_file);
-
-            int elem_ptr_offsets_len;
-            safe_read(fd, &elem_ptr_offsets_len,
-                    sizeof(elem_ptr_offsets_len),
-                    "elem_ptr_offsets_len", checkpoint_file);
-            for (int j = 0; j < elem_ptr_offsets_len; j++) {
-                int offset;
-                safe_read(fd, &offset, sizeof(offset), "offset",
-                        checkpoint_file);
-                elem_ptr_offsets.push_back(offset);
-            }
-        }
-
-        int n_ranges;
-        size_t buffer_length = 0;
-        safe_read(fd, &n_ranges, sizeof(n_ranges), "n_ranges", checkpoint_file);
-        vector<pair<size_t, size_t> > ranges;
-        for (int j = 0; j < n_ranges; j++) {
-            size_t range_start, range_end;
-            safe_read(fd, &range_start, sizeof(range_start), "range_start",
-                    checkpoint_file);
-            safe_read(fd, &range_end, sizeof(range_end), "range_end",
-                    checkpoint_file);
-            ranges.push_back(pair<size_t, size_t>(range_start, range_end));
-            buffer_length += (range_end - range_start);
-        }
-        void *buffer = malloc(buffer_length);
-        safe_read(fd, buffer, buffer_length, "buffer", checkpoint_file);
-
-#ifdef VERBOSE
-        fprintf(stderr, "read_heap_from_file: loading old_address=%p\n",
-                old_address);
-#endif
-
-        heap_allocation *alloc = NULL;
-        memory_filled *already_filled = NULL;
-        /*
-         * This block should simply initialize a new heap_allocation object (if
-         * necessary). Later we actually populate the data from buffer, based on
-         * ranges.
-         */
-        if (old_to_new->exact_search(old_address) == NULL) {
-            assert(filled->find(old_address) == filled->end());
-            assert(old_to_alloc->find(old_address) == old_to_alloc->end());
-
-            void *new_address;
-            if (is_cuda_alloc) {
-                CHECK(cudaMalloc((void **)&new_address, size));
-            } else {
-                new_address = malloc(size + sizeof(void *));
-                assert(new_address != NULL);
-            }
-#ifdef VERBOSE
-            fprintf(stderr, "  first load of this heap allocation, "
-                    "new_address=%p\n", new_address);
-#endif
-
-            alloc = new heap_allocation(
-                    ((unsigned char *)new_address) + sizeof(void *), size,
-                    group, is_cuda_alloc, elem_is_ptr, elem_is_struct);
-            if (elem_is_struct) {
-                alloc->add_struct_elem_size(elem_size);
-                alloc->set_pointer_offsets(&elem_ptr_offsets);
-            }
-
-            if (!is_cuda_alloc) {
-                *((heap_allocation **)new_address) = alloc;
-            }
-
-            already_filled = new memory_filled(size);
-
-            new_heap->push_back(alloc);
-
-            get_my_thread_heap()->add_allocation(alloc, true);
-
-            old_to_new->insert(old_address, alloc->get_address(), size);
-            filled->insert(pair<void *, memory_filled *>(old_address,
-                        already_filled));
-            old_to_alloc->insert(pair<void *, heap_allocation *>(old_address,
-                        alloc));
-        } else {
-            assert(filled->find(old_address) != filled->end());
-            assert(old_to_alloc->find(old_address) != old_to_alloc->end());
-
-#ifdef VERBOSE
-            fprintf(stderr, "  not the first load of this heap allocation\n");
-#endif
-
-            alloc = old_to_alloc->at(old_address);
-            already_filled = filled->at(old_address);
-        }
-
-#ifdef VERBOSE
-        fprintf(stderr, "  ranges:\n");
-#endif
-        /*
-         * Populate the live buffer in alloc based on the already filled ranges
-         * in already_filled and the available ranges in ranges.
-         */
-        size_t sofar = 0;
-        unsigned char *c_new_address = (unsigned char *)alloc->get_address();
-        for (vector<pair<size_t, size_t> >::iterator range_iter =
-                ranges.begin(), range_e = ranges.end();
-                range_iter != range_e; range_iter++) {
-            size_t range_start = range_iter->first;
-            size_t range_end = range_iter->second;
-            unsigned char *in_buffer = ((unsigned char *)buffer) + sofar;
-#ifdef VERBOSE
-            fprintf(stderr, "    %lu -> %lu\n", range_start, range_end);
-#endif
-
-            vector<pair<size_t, size_t> > *needed = already_filled->offer(
-                    range_start, range_end);
-            for (vector<pair<size_t, size_t> >::iterator needed_iter =
-                    needed->begin(), needed_end = needed->end(); needed_iter !=
-                    needed_end; needed_iter++) {
-                assert(needed_iter->first >= range_start);
-                size_t in_buf_offset = needed_iter->first - range_start;
-                assert(needed_iter->second <= range_end);
-                size_t in_buf_length = needed_iter->second - needed_iter->first;
-
-#ifdef VERBOSE
-                fprintf(stderr, "      using %lu -> %lu\n", needed_iter->first,
-                        needed_iter->second);
-#endif
-
-                if (alloc->get_is_cuda_alloc()) {
-                    CHECK(cudaMemcpy(c_new_address + needed_iter->first,
-                                in_buffer + in_buf_offset, in_buf_length,
-                                cudaMemcpyHostToDevice));
-                } else {
-                    memcpy(c_new_address + needed_iter->first,
-                            in_buffer + in_buf_offset, in_buf_length);
-                }
-            }
-            delete needed;
-
-            sofar += (range_end - range_start);
-        }
-
-        free(buffer);
-    }
-}
-
-static void read_heap_from_previous_checkpoint(
-        char checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN],
-        // std::map<void *, ptr_and_size *> *old_to_new,
-        heap_tree *old_to_new,
-        std::vector<heap_allocation *> *new_heap,
-        std::map<void *, memory_filled *> *filled,
-        std::map<void *, heap_allocation *> *old_to_alloc) {
-    int fd = open(checkpoint_file, O_RDONLY);
-    assert(fd >= 0);
-
-    size_t filename_length;
-    char previous_checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN];
-    safe_read(fd, &filename_length, sizeof(filename_length),
-            "filename_length", checkpoint_file);
-
-    safe_read(fd, previous_checkpoint_file, filename_length,
-            "previous_checkpoint_file", checkpoint_file);
-
-    size_t heap_offset;
-    safe_read(fd, &heap_offset, sizeof(heap_offset), "heap_offset",
-            checkpoint_file);
-
-    safe_seek(fd, 0, SEEK_SET, "seek_to_start", checkpoint_file);
-    skip(fd, heap_offset, "skip", checkpoint_file);
-
-    read_heap_from_file(fd, checkpoint_file, old_to_new, new_heap, filled,
-            old_to_alloc);
-
-    close(fd);
-
-    if (filename_length > 1) {
-        read_heap_from_previous_checkpoint(previous_checkpoint_file, old_to_new,
-                new_heap, filled, old_to_alloc);
-    }
-}
+// static void read_heap_from_previous_checkpoint(
+//         char checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN],
+//         // std::map<void *, ptr_and_size *> *old_to_new,
+//         heap_tree *old_to_new,
+//         std::vector<heap_allocation *> *new_heap,
+//         std::map<void *, memory_filled *> *filled,
+//         std::map<void *, heap_allocation *> *old_to_alloc) {
+//     int fd = open(checkpoint_file, O_RDONLY);
+//     assert(fd >= 0);
+// 
+//     size_t filename_length;
+//     char previous_checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN];
+//     safe_read(fd, &filename_length, sizeof(filename_length),
+//             "filename_length", checkpoint_file);
+// 
+//     safe_read(fd, previous_checkpoint_file, filename_length,
+//             "previous_checkpoint_file", checkpoint_file);
+// 
+//     size_t heap_offset;
+//     safe_read(fd, &heap_offset, sizeof(heap_offset), "heap_offset",
+//             checkpoint_file);
+// 
+//     safe_seek(fd, 0, SEEK_SET, "seek_to_start", checkpoint_file);
+//     skip(fd, heap_offset, "skip", checkpoint_file);
+// 
+//     read_heap_from_file(fd, checkpoint_file, old_to_new, new_heap, filled,
+//             old_to_alloc);
+// 
+//     close(fd);
+// 
+//     if (filename_length > 1) {
+//         read_heap_from_previous_checkpoint(previous_checkpoint_file, old_to_new,
+//                 new_heap, filled, old_to_alloc);
+//     }
+// }
 
 void init_omp_lock(void *ptr) {
     omp_lock_t *omp_ptr = (omp_lock_t *)ptr;
@@ -986,32 +986,32 @@ static void set_my_thread_ctx(thread_ctx *ctx) {
     VERIFY(pthread_setspecific(thread_ctx_key, ctx) == 0);
 }
 
-static void set_my_thread_heap(thread_local_allocations *heap) {
-    VERIFY(pthread_setspecific(thread_heap_key, heap) == 0);
+// static void set_my_thread_heap(thread_local_allocations *heap) {
+//     VERIFY(pthread_setspecific(thread_heap_key, heap) == 0);
+// 
+//     VERIFY(pthread_rwlock_wrlock(&thread_heaps_lock) == 0);
+//     VERIFY(thread_heaps.insert(pair<pthread_t, thread_local_allocations *>(
+//                     pthread_self(), heap)).second);
+//     VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
+// }
 
-    VERIFY(pthread_rwlock_wrlock(&thread_heaps_lock) == 0);
-    VERIFY(thread_heaps.insert(pair<pthread_t, thread_local_allocations *>(
-                    pthread_self(), heap)).second);
-    VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
-}
-
-void init_chimes(int argc, char **argv) {
+void init_chimes() {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ns();
 
-    register_custom_init_handler("omp_lock_t", init_omp_lock);
+    // register_custom_init_handler("omp_lock_t", init_omp_lock);
 
-    for (int arg = 1; arg < argc; arg++) {
-        register_constant(max_constant_id + 1 + arg, argv[arg],
-                strlen(argv[arg]) + 1);
-    }
+    // for (int arg = 1; arg < argc; arg++) {
+    //     register_constant(max_constant_id + 1 + arg, argv[arg],
+    //             strlen(argv[arg]) + 1);
+    // }
 
     VERIFY(pthread_key_create(&thread_ctx_key, destroy_thread_ctx) == 0);
     VERIFY(pthread_key_create(&tid_key, free) == 0);
-    VERIFY(pthread_key_create(&thread_heap_key, cleanup_thread_heap) == 0);
+    // VERIFY(pthread_key_create(&thread_heap_key, cleanup_thread_heap) == 0);
 
     // pthread_create(&checkpoint_thread, NULL, checkpoint_func,
     //         &running_checkpoint_ctx);
@@ -1021,8 +1021,8 @@ void init_chimes(int argc, char **argv) {
     pthread_to_id[self] = 0; set_my_tid(0);
     thread_ctx *ctx = new thread_ctx(self, count_change_locations);
     thread_ctxs[0] = ctx; set_my_thread_ctx(ctx);
-    set_my_thread_heap(new thread_local_allocations());
-    main_thread = pthread_self();
+    // set_my_thread_heap(new thread_local_allocations());
+    // main_thread = pthread_self();
     program_start_time = perf_profile::current_time_ns();
 
     char *chimes_disable_throttling = getenv("CHIMES_DISABLE_THROTTLING");
@@ -1339,346 +1339,346 @@ void init_chimes(int argc, char **argv) {
         }
     }
 
-    char *checkpoint_file = getenv("CHIMES_CHECKPOINT_FILE");
-    if (checkpoint_file != NULL) {
-        /*
-         * Any checkpoints created during this resume should be a new branch in
-         * the tree of checkpoints.
-         */
-        strcpy(previous_checkpoint_filename, checkpoint_file);
-
-#ifdef VERBOSE
-        fprintf(stderr, "Using checkpoint file %s\n", checkpoint_file);
-#endif
-        ____chimes_replaying = 1;
-        already_translated = new set<void *>();
-
-        int fd = open(checkpoint_file, O_RDONLY);
-        if (fd < 0) {
-            fprintf(stderr, "Error opening checkpoint file %s\n",
-                    checkpoint_file);
-            exit(1);
-        }
-
-        size_t filename_length;
-        char previous_checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN];
-        safe_read(fd, &filename_length, sizeof(filename_length),
-                "filename_length", checkpoint_file);
-        safe_read(fd, previous_checkpoint_file, filename_length,
-                "previous_checkpoint_file", checkpoint_file);
-
-        size_t heap_offset;
-        safe_read(fd, &heap_offset, sizeof(heap_offset), "heap_offset",
-                checkpoint_file);
-
-        int n_omp_threads;
-        safe_read(fd, &n_omp_threads, sizeof(n_omp_threads), "n_omp_threads",
-                checkpoint_file);
-        omp_set_num_threads(n_omp_threads);
-
-        // Read heap entry times from checkpoint
-        checkpoint_entry_deltas =
-            new std::map<unsigned, clock_t>();
-        int n_checkpoint_times;
-        safe_read(fd, &n_checkpoint_times, sizeof(n_checkpoint_times),
-                "n_checkpoint_times", checkpoint_file);
-        serialized_checkpoint_time *serialized_times =
-            (serialized_checkpoint_time *)malloc(n_checkpoint_times *
-                    sizeof(serialized_checkpoint_time));
-        safe_read(fd, serialized_times, n_checkpoint_times *
-                sizeof(serialized_checkpoint_time), "serialized_times",
-                checkpoint_file);
-        for (int i = 0; i < n_checkpoint_times; i++) {
-            unsigned tid = serialized_times[i].tid;
-            clock_t delta = serialized_times[i].delta;
-
-            checkpoint_entry_deltas->insert(std::pair<unsigned, clock_t>(tid,
-                        delta));
-        }
-
-        // Read traces from checkpoint
-        size_t serialized_traces_len;
-        safe_read(fd, &serialized_traces_len, sizeof(serialized_traces_len),
-                "serialized_traces_len", checkpoint_file);
-        void *serialized_traces = malloc(serialized_traces_len);
-        safe_read(fd, serialized_traces, serialized_traces_len, "serialized_traces",
-                checkpoint_file);
-        traces = deserialize_traces(serialized_traces, serialized_traces_len,
-                &trace_indices);
-#ifdef VERBOSE
-        fprintf(stderr, "There are %d threads in the checkpoint being "
-                "restored\n", traces->size());
-        for (map<unsigned, vector<int> >::iterator i = traces->begin(),
-                e = traces->end(); i != e; i++) {
-            fprintf(stderr, "  %d:", i->first);
-            for (vector<int>::iterator ii = i->second.begin(), ee =
-                    i->second.end(); ii != ee; ii++) {
-                fprintf(stderr, " %d", *ii);
-            }
-            fprintf(stderr, "\n");
-        }
-#endif
-
-        // read in stack state
-        uint64_t stack_serialized_len;
-        safe_read(fd, &stack_serialized_len, sizeof(stack_serialized_len),
-                "stack_serialized_len", checkpoint_file);
-        unsigned char *stack_serialized = (unsigned char *)malloc(
-                stack_serialized_len);
-        safe_read(fd, stack_serialized, stack_serialized_len,
-                "stack_serialized", checkpoint_file);
-        unpacked_program_stacks = deserialize_program_stacks(stack_serialized,
-                stack_serialized_len);
-
-        // read in globals state
-        uint64_t globals_serialized_len;
-        safe_read(fd, &globals_serialized_len, sizeof(globals_serialized_len),
-                "globals_serialized_len", checkpoint_file);
-        unsigned char *globals_serialized = (unsigned char *)malloc(
-                globals_serialized_len);
-        safe_read(fd, globals_serialized, globals_serialized_len,
-                "globals_serialized", checkpoint_file);
-        unpacked_global_vars = deserialize_globals(globals_serialized,
-                globals_serialized_len);
-
-        // read in constants state
-        uint64_t constants_serialized_len;
-        safe_read(fd, &constants_serialized_len,
-                sizeof(constants_serialized_len),
-                "constants_serialized_len", checkpoint_file);
-        unsigned char *constants_serialized = (unsigned char *)malloc(
-                constants_serialized_len);
-        safe_read(fd, constants_serialized, constants_serialized_len,
-                "constants_serialized", checkpoint_file);
-        unpacked_constants = deserialize_constants(constants_serialized,
-                constants_serialized_len);
-
-        // read in function pointers from previous program execution
-        uint64_t func_addresses_serialized_len;
-        safe_read(fd, &func_addresses_serialized_len,
-                sizeof(func_addresses_serialized_len),
-                "func_addresses_serialized_len", checkpoint_file);
-        unsigned char *func_addresses_serialized = (unsigned char *)malloc(
-                func_addresses_serialized_len);
-        safe_read(fd, func_addresses_serialized, func_addresses_serialized_len,
-                "func_addresses_serialized", checkpoint_file);
-        map<string, void *> *unpacked_function_addresses =
-            deserialize_function_addresses(func_addresses_serialized,
-                    func_addresses_serialized_len);
-
-        // read in thread state
-        uint64_t thread_hierarchy_serialized_len;
-        safe_read(fd, &thread_hierarchy_serialized_len,
-                sizeof(thread_hierarchy_serialized_len),
-                "thread_hierarchy_serialized_len", checkpoint_file);
-        unsigned char *thread_hierarchy_serialized = (unsigned char *)malloc(
-                thread_hierarchy_serialized_len);
-        safe_read(fd, thread_hierarchy_serialized,
-                thread_hierarchy_serialized_len, "thread_hierarchy_serialized",
-                checkpoint_file);
-        unpacked_thread_hierarchy = deserialize_thread_hierarchy(
-                thread_hierarchy_serialized, thread_hierarchy_serialized_len);
-
-        // read in heap serialization
-        old_to_new = new heap_tree();
-        std::vector<heap_allocation *> *new_heap =
-            new std::vector<heap_allocation *>();
-        std::map<void *, memory_filled *> *filled = new std::map<void *,
-            memory_filled *>();
-        std::map<void *, heap_allocation *> *old_to_alloc = new std::map<void *,
-            heap_allocation *>();
-        read_heap_from_file(fd, checkpoint_file, old_to_new, new_heap, filled,
-                old_to_alloc);
-
-        if (filename_length > 1) {
-            read_heap_from_previous_checkpoint(previous_checkpoint_file,
-                    old_to_new, new_heap, filled, old_to_alloc);
-        }
-
-        assert(filled->size() == new_heap->size());
-        assert(old_to_new->size() == filled->size());
-        assert(old_to_alloc->size() == filled->size());
-
-        for (std::map<void *, memory_filled *>::iterator filled_i =
-                filled->begin(), filled_e = filled->end(); filled_i != filled_e;
-                filled_i++) {
-            memory_filled *curr = filled_i->second;
-#ifdef VERBOSE
-            if (!curr->empty()) {
-                fprintf(stderr, "non-empty range for old_address=%p, "
-                        "missing:\n", filled_i->first);
-                vector<pair<size_t, size_t> > *not_filled =
-                    curr->get_not_filled();
-                for (vector<pair<size_t, size_t> >::iterator missing_i =
-                        not_filled->begin(), missing_e = not_filled->end();
-                        missing_i != missing_e; missing_i++) {
-                    size_t start = missing_i->first;
-                    size_t end = missing_i->second;
-                    fprintf(stderr, "  %lu -> %lu\n", start, end);
-                }
-            }
-#endif
-            assert(curr->empty());
-        }
-
-        delete filled;
-        delete old_to_alloc;
-
-        /*
-         * Add all constant variables to the mapping from old to new addresses,
-         * so that any variables which point to them from the stack or heap can
-         * be updated.
-         */
-        for (map<size_t, constant_var*>::iterator i = constants.begin(),
-                e = constants.end(); i != e; i++) {
-            size_t id = i->first;
-            constant_var *live = i->second;
-
-            assert(unpacked_constants->find(id) != unpacked_constants->end());
-            constant_var *dead = unpacked_constants->at(id);
-
-#ifdef VERBOSE
-            fprintf(stderr, "Read constant %lu at address %p with length %lu\n",
-                    id, dead->get_address(), dead->get_length());
-#endif
-
-            assert(dead->get_length() == live->get_length());
-
-            old_to_new->insert(dead->get_address(), live->get_address(), live->get_length());
-        }
-
-        /*
-         * Do the same for function pointers, so that any pointers to them can
-         * be updated.
-         */
-        assert(unpacked_function_addresses->size() == function_addresses.size());
-        for (map<string, void *>::iterator i =
-                unpacked_function_addresses->begin(), e =
-                unpacked_function_addresses->end(); i != e; i++) {
-            void *live = function_addresses.at(i->first);
-            void *dead = i->second;
-
-            old_to_new->insert(dead, live, 1);
-        }
-        delete unpacked_function_addresses;
-
-        /*
-         * find pointers in the heap and restore them to point to the correct
-         * object. this process relies on the compilation pass having identified
-         * types for allocations. if no types could be identified, this is
-         * essentially a no-op.
-         */
-        for (std::vector<heap_allocation *>::iterator heap_iter = new_heap->begin(),
-                heap_end = new_heap->end(); heap_iter != heap_end; heap_iter++) {
-            heap_allocation *alloc = *heap_iter;
-            if (alloc->check_elem_is_ptr()) {
-                /*
-                 * Iterate through all elements of this array and convert
-                 * pointers from old values to new values.
-                 */
-                assert(alloc->get_size() % sizeof(void *) == 0);
-                int nelems = alloc->get_size() / sizeof(void *);
-                if (alloc->get_is_cuda_alloc()) {
-#ifdef CUDA_SUPPORT
-                    int ptr_offsets[1] = { 0 };
-                    translate_cuda_pointers(alloc->get_address(), nelems,
-                            sizeof(void *), ptr_offsets, 1, old_to_new);
-#else
-                    VERIFY(false);
-#endif
-                } else {
-                    void **arr = (void **)(alloc->get_address());
-
-#ifdef VERBOSE
-                    fprintf(stderr, "translating an array of pointers, arr=%p "
-                            "nelems=%d\n", arr, nelems);
-#endif
-                    for (int i = 0; i < nelems; i++) {
-                        void *new_ptr = translate_old_ptr(arr[i], old_to_new, arr + i);
-                        if (new_ptr != NULL) arr[i] = new_ptr;
-                    }
-
-                    already_updated_ptrs *updated = new already_updated_ptrs(
-                            (unsigned char *)arr, sizeof(void *), nelems);
-                    already_updated.push_back(updated);
-                }
-
-            } else if (alloc->check_elem_is_struct()) {
-                int elem_size = alloc->get_elem_size();
-                int *ptr_field_offsets = alloc->get_ptr_field_offsets();
-                unsigned n_ptr_fields = alloc->get_n_ptr_fields();
-                if (n_ptr_fields > 0) {
-                    assert(alloc->get_size() % elem_size == 0);
-
-                    int nelems = alloc->get_size() / elem_size;
-                    if (alloc->get_is_cuda_alloc()) {
-#ifdef CUDA_SUPPORT
-                        translate_cuda_pointers(alloc->get_address(),
-                                nelems, elem_size, ptr_field_offsets,
-                                n_ptr_fields, old_to_new);
-#else
-                        VERIFY(false);
-#endif
-                    } else {
-#ifdef VERBOSE
-                        fprintf(stderr, "translating struct elements in an "
-                                "array nelems=%d\n", nelems);
-#endif
-                        /*
-                         * Iterate through all of the structs in the array and
-                         * convert the pointers at the specified offsets.
-                         */
-                        unsigned char *raw_arr = (unsigned char *)(alloc->get_address());
-                        for (int i = 0; i < nelems; i++) {
-                            unsigned char *this_struct = raw_arr + (elem_size * i);
-                            for (unsigned f_iter = 0; f_iter < n_ptr_fields; f_iter++) {
-                                unsigned char *field_address = this_struct +
-                                    ptr_field_offsets[f_iter];
-                                void **ptr_address = (void **)field_address;
-                                void *new_address = translate_old_ptr(*ptr_address, old_to_new, ptr_address);
-                                if (new_address != NULL) *ptr_address = new_address;
-                            }
-                        }
-
-                        for (unsigned f_iter = 0; f_iter < n_ptr_fields; f_iter++) {
-                            int field_offset = ptr_field_offsets[f_iter];
-                            unsigned char *base = raw_arr + field_offset;
-
-                            already_updated_ptrs *updated =
-                                new already_updated_ptrs(base, elem_size,
-                                        nelems);
-                            already_updated.push_back(updated);
-                        }
-                    }
-                }
-            }
-        }
-
-        delete new_heap;
-
-        size_t serialized_contains_len;
-        safe_read(fd, &serialized_contains_len, sizeof(serialized_contains_len),
-                "serialized_contains_len", checkpoint_file);
-        void *serialized_contains = malloc(serialized_contains_len);
-        safe_read(fd, serialized_contains, serialized_contains_len,
-                "serialized_contains", checkpoint_file);
-        deserialize_containers(serialized_contains, serialized_contains_len,
-                &contains);
-        free(serialized_contains);
-
-        size_t serialized_alias_groups_len;
-        safe_read(fd, &serialized_alias_groups_len,
-                sizeof(serialized_alias_groups_len),
-                "serialized_alias_groups_len", checkpoint_file);
-        void *serialized_alias_groups = malloc(serialized_alias_groups_len);
-        safe_read(fd, serialized_alias_groups, serialized_alias_groups_len,
-                "serialized_alias_groups", checkpoint_file);
-        deserialize_alias_groups(serialized_alias_groups,
-                serialized_alias_groups_len, &aliased_groups);
-        free(serialized_alias_groups);
-
-        close(fd);
-    }
+//     char *checkpoint_file = getenv("CHIMES_CHECKPOINT_FILE");
+//     if (checkpoint_file != NULL) {
+//         /*
+//          * Any checkpoints created during this resume should be a new branch in
+//          * the tree of checkpoints.
+//          */
+//         strcpy(previous_checkpoint_filename, checkpoint_file);
+// 
+// #ifdef VERBOSE
+//         fprintf(stderr, "Using checkpoint file %s\n", checkpoint_file);
+// #endif
+//         ____chimes_replaying = 1;
+//         already_translated = new set<void *>();
+// 
+//         int fd = open(checkpoint_file, O_RDONLY);
+//         if (fd < 0) {
+//             fprintf(stderr, "Error opening checkpoint file %s\n",
+//                     checkpoint_file);
+//             exit(1);
+//         }
+// 
+//         size_t filename_length;
+//         char previous_checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN];
+//         safe_read(fd, &filename_length, sizeof(filename_length),
+//                 "filename_length", checkpoint_file);
+//         safe_read(fd, previous_checkpoint_file, filename_length,
+//                 "previous_checkpoint_file", checkpoint_file);
+// 
+//         size_t heap_offset;
+//         safe_read(fd, &heap_offset, sizeof(heap_offset), "heap_offset",
+//                 checkpoint_file);
+// 
+//         int n_omp_threads;
+//         safe_read(fd, &n_omp_threads, sizeof(n_omp_threads), "n_omp_threads",
+//                 checkpoint_file);
+//         omp_set_num_threads(n_omp_threads);
+// 
+//         // Read heap entry times from checkpoint
+//         checkpoint_entry_deltas =
+//             new std::map<unsigned, clock_t>();
+//         int n_checkpoint_times;
+//         safe_read(fd, &n_checkpoint_times, sizeof(n_checkpoint_times),
+//                 "n_checkpoint_times", checkpoint_file);
+//         serialized_checkpoint_time *serialized_times =
+//             (serialized_checkpoint_time *)malloc(n_checkpoint_times *
+//                     sizeof(serialized_checkpoint_time));
+//         safe_read(fd, serialized_times, n_checkpoint_times *
+//                 sizeof(serialized_checkpoint_time), "serialized_times",
+//                 checkpoint_file);
+//         for (int i = 0; i < n_checkpoint_times; i++) {
+//             unsigned tid = serialized_times[i].tid;
+//             clock_t delta = serialized_times[i].delta;
+// 
+//             checkpoint_entry_deltas->insert(std::pair<unsigned, clock_t>(tid,
+//                         delta));
+//         }
+// 
+//         // Read traces from checkpoint
+//         size_t serialized_traces_len;
+//         safe_read(fd, &serialized_traces_len, sizeof(serialized_traces_len),
+//                 "serialized_traces_len", checkpoint_file);
+//         void *serialized_traces = malloc(serialized_traces_len);
+//         safe_read(fd, serialized_traces, serialized_traces_len, "serialized_traces",
+//                 checkpoint_file);
+//         traces = deserialize_traces(serialized_traces, serialized_traces_len,
+//                 &trace_indices);
+// #ifdef VERBOSE
+//         fprintf(stderr, "There are %d threads in the checkpoint being "
+//                 "restored\n", traces->size());
+//         for (map<unsigned, vector<int> >::iterator i = traces->begin(),
+//                 e = traces->end(); i != e; i++) {
+//             fprintf(stderr, "  %d:", i->first);
+//             for (vector<int>::iterator ii = i->second.begin(), ee =
+//                     i->second.end(); ii != ee; ii++) {
+//                 fprintf(stderr, " %d", *ii);
+//             }
+//             fprintf(stderr, "\n");
+//         }
+// #endif
+// 
+//         // read in stack state
+//         uint64_t stack_serialized_len;
+//         safe_read(fd, &stack_serialized_len, sizeof(stack_serialized_len),
+//                 "stack_serialized_len", checkpoint_file);
+//         unsigned char *stack_serialized = (unsigned char *)malloc(
+//                 stack_serialized_len);
+//         safe_read(fd, stack_serialized, stack_serialized_len,
+//                 "stack_serialized", checkpoint_file);
+//         unpacked_program_stacks = deserialize_program_stacks(stack_serialized,
+//                 stack_serialized_len);
+// 
+//         // read in globals state
+//         uint64_t globals_serialized_len;
+//         safe_read(fd, &globals_serialized_len, sizeof(globals_serialized_len),
+//                 "globals_serialized_len", checkpoint_file);
+//         unsigned char *globals_serialized = (unsigned char *)malloc(
+//                 globals_serialized_len);
+//         safe_read(fd, globals_serialized, globals_serialized_len,
+//                 "globals_serialized", checkpoint_file);
+//         unpacked_global_vars = deserialize_globals(globals_serialized,
+//                 globals_serialized_len);
+// 
+//         // read in constants state
+//         uint64_t constants_serialized_len;
+//         safe_read(fd, &constants_serialized_len,
+//                 sizeof(constants_serialized_len),
+//                 "constants_serialized_len", checkpoint_file);
+//         unsigned char *constants_serialized = (unsigned char *)malloc(
+//                 constants_serialized_len);
+//         safe_read(fd, constants_serialized, constants_serialized_len,
+//                 "constants_serialized", checkpoint_file);
+//         unpacked_constants = deserialize_constants(constants_serialized,
+//                 constants_serialized_len);
+// 
+//         // read in function pointers from previous program execution
+//         uint64_t func_addresses_serialized_len;
+//         safe_read(fd, &func_addresses_serialized_len,
+//                 sizeof(func_addresses_serialized_len),
+//                 "func_addresses_serialized_len", checkpoint_file);
+//         unsigned char *func_addresses_serialized = (unsigned char *)malloc(
+//                 func_addresses_serialized_len);
+//         safe_read(fd, func_addresses_serialized, func_addresses_serialized_len,
+//                 "func_addresses_serialized", checkpoint_file);
+//         map<string, void *> *unpacked_function_addresses =
+//             deserialize_function_addresses(func_addresses_serialized,
+//                     func_addresses_serialized_len);
+// 
+//         // read in thread state
+//         uint64_t thread_hierarchy_serialized_len;
+//         safe_read(fd, &thread_hierarchy_serialized_len,
+//                 sizeof(thread_hierarchy_serialized_len),
+//                 "thread_hierarchy_serialized_len", checkpoint_file);
+//         unsigned char *thread_hierarchy_serialized = (unsigned char *)malloc(
+//                 thread_hierarchy_serialized_len);
+//         safe_read(fd, thread_hierarchy_serialized,
+//                 thread_hierarchy_serialized_len, "thread_hierarchy_serialized",
+//                 checkpoint_file);
+//         unpacked_thread_hierarchy = deserialize_thread_hierarchy(
+//                 thread_hierarchy_serialized, thread_hierarchy_serialized_len);
+// 
+//         // read in heap serialization
+//         old_to_new = new heap_tree();
+//         std::vector<heap_allocation *> *new_heap =
+//             new std::vector<heap_allocation *>();
+//         std::map<void *, memory_filled *> *filled = new std::map<void *,
+//             memory_filled *>();
+//         std::map<void *, heap_allocation *> *old_to_alloc = new std::map<void *,
+//             heap_allocation *>();
+//         read_heap_from_file(fd, checkpoint_file, old_to_new, new_heap, filled,
+//                 old_to_alloc);
+// 
+//         if (filename_length > 1) {
+//             read_heap_from_previous_checkpoint(previous_checkpoint_file,
+//                     old_to_new, new_heap, filled, old_to_alloc);
+//         }
+// 
+//         assert(filled->size() == new_heap->size());
+//         assert(old_to_new->size() == filled->size());
+//         assert(old_to_alloc->size() == filled->size());
+// 
+//         for (std::map<void *, memory_filled *>::iterator filled_i =
+//                 filled->begin(), filled_e = filled->end(); filled_i != filled_e;
+//                 filled_i++) {
+//             memory_filled *curr = filled_i->second;
+// #ifdef VERBOSE
+//             if (!curr->empty()) {
+//                 fprintf(stderr, "non-empty range for old_address=%p, "
+//                         "missing:\n", filled_i->first);
+//                 vector<pair<size_t, size_t> > *not_filled =
+//                     curr->get_not_filled();
+//                 for (vector<pair<size_t, size_t> >::iterator missing_i =
+//                         not_filled->begin(), missing_e = not_filled->end();
+//                         missing_i != missing_e; missing_i++) {
+//                     size_t start = missing_i->first;
+//                     size_t end = missing_i->second;
+//                     fprintf(stderr, "  %lu -> %lu\n", start, end);
+//                 }
+//             }
+// #endif
+//             assert(curr->empty());
+//         }
+// 
+//         delete filled;
+//         delete old_to_alloc;
+// 
+//         /*
+//          * Add all constant variables to the mapping from old to new addresses,
+//          * so that any variables which point to them from the stack or heap can
+//          * be updated.
+//          */
+//         for (map<size_t, constant_var*>::iterator i = constants.begin(),
+//                 e = constants.end(); i != e; i++) {
+//             size_t id = i->first;
+//             constant_var *live = i->second;
+// 
+//             assert(unpacked_constants->find(id) != unpacked_constants->end());
+//             constant_var *dead = unpacked_constants->at(id);
+// 
+// #ifdef VERBOSE
+//             fprintf(stderr, "Read constant %lu at address %p with length %lu\n",
+//                     id, dead->get_address(), dead->get_length());
+// #endif
+// 
+//             assert(dead->get_length() == live->get_length());
+// 
+//             old_to_new->insert(dead->get_address(), live->get_address(), live->get_length());
+//         }
+// 
+//         /*
+//          * Do the same for function pointers, so that any pointers to them can
+//          * be updated.
+//          */
+//         assert(unpacked_function_addresses->size() == function_addresses.size());
+//         for (map<string, void *>::iterator i =
+//                 unpacked_function_addresses->begin(), e =
+//                 unpacked_function_addresses->end(); i != e; i++) {
+//             void *live = function_addresses.at(i->first);
+//             void *dead = i->second;
+// 
+//             old_to_new->insert(dead, live, 1);
+//         }
+//         delete unpacked_function_addresses;
+// 
+//         /*
+//          * find pointers in the heap and restore them to point to the correct
+//          * object. this process relies on the compilation pass having identified
+//          * types for allocations. if no types could be identified, this is
+//          * essentially a no-op.
+//          */
+//         for (std::vector<heap_allocation *>::iterator heap_iter = new_heap->begin(),
+//                 heap_end = new_heap->end(); heap_iter != heap_end; heap_iter++) {
+//             heap_allocation *alloc = *heap_iter;
+//             if (alloc->check_elem_is_ptr()) {
+//                 /*
+//                  * Iterate through all elements of this array and convert
+//                  * pointers from old values to new values.
+//                  */
+//                 assert(alloc->get_size() % sizeof(void *) == 0);
+//                 int nelems = alloc->get_size() / sizeof(void *);
+//                 if (alloc->get_is_cuda_alloc()) {
+// #ifdef CUDA_SUPPORT
+//                     int ptr_offsets[1] = { 0 };
+//                     translate_cuda_pointers(alloc->get_address(), nelems,
+//                             sizeof(void *), ptr_offsets, 1, old_to_new);
+// #else
+//                     VERIFY(false);
+// #endif
+//                 } else {
+//                     void **arr = (void **)(alloc->get_address());
+// 
+// #ifdef VERBOSE
+//                     fprintf(stderr, "translating an array of pointers, arr=%p "
+//                             "nelems=%d\n", arr, nelems);
+// #endif
+//                     for (int i = 0; i < nelems; i++) {
+//                         void *new_ptr = translate_old_ptr(arr[i], old_to_new, arr + i);
+//                         if (new_ptr != NULL) arr[i] = new_ptr;
+//                     }
+// 
+//                     already_updated_ptrs *updated = new already_updated_ptrs(
+//                             (unsigned char *)arr, sizeof(void *), nelems);
+//                     already_updated.push_back(updated);
+//                 }
+// 
+//             } else if (alloc->check_elem_is_struct()) {
+//                 int elem_size = alloc->get_elem_size();
+//                 int *ptr_field_offsets = alloc->get_ptr_field_offsets();
+//                 unsigned n_ptr_fields = alloc->get_n_ptr_fields();
+//                 if (n_ptr_fields > 0) {
+//                     assert(alloc->get_size() % elem_size == 0);
+// 
+//                     int nelems = alloc->get_size() / elem_size;
+//                     if (alloc->get_is_cuda_alloc()) {
+// #ifdef CUDA_SUPPORT
+//                         translate_cuda_pointers(alloc->get_address(),
+//                                 nelems, elem_size, ptr_field_offsets,
+//                                 n_ptr_fields, old_to_new);
+// #else
+//                         VERIFY(false);
+// #endif
+//                     } else {
+// #ifdef VERBOSE
+//                         fprintf(stderr, "translating struct elements in an "
+//                                 "array nelems=%d\n", nelems);
+// #endif
+//                         /*
+//                          * Iterate through all of the structs in the array and
+//                          * convert the pointers at the specified offsets.
+//                          */
+//                         unsigned char *raw_arr = (unsigned char *)(alloc->get_address());
+//                         for (int i = 0; i < nelems; i++) {
+//                             unsigned char *this_struct = raw_arr + (elem_size * i);
+//                             for (unsigned f_iter = 0; f_iter < n_ptr_fields; f_iter++) {
+//                                 unsigned char *field_address = this_struct +
+//                                     ptr_field_offsets[f_iter];
+//                                 void **ptr_address = (void **)field_address;
+//                                 void *new_address = translate_old_ptr(*ptr_address, old_to_new, ptr_address);
+//                                 if (new_address != NULL) *ptr_address = new_address;
+//                             }
+//                         }
+// 
+//                         for (unsigned f_iter = 0; f_iter < n_ptr_fields; f_iter++) {
+//                             int field_offset = ptr_field_offsets[f_iter];
+//                             unsigned char *base = raw_arr + field_offset;
+// 
+//                             already_updated_ptrs *updated =
+//                                 new already_updated_ptrs(base, elem_size,
+//                                         nelems);
+//                             already_updated.push_back(updated);
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+// 
+//         delete new_heap;
+// 
+//         size_t serialized_contains_len;
+//         safe_read(fd, &serialized_contains_len, sizeof(serialized_contains_len),
+//                 "serialized_contains_len", checkpoint_file);
+//         void *serialized_contains = malloc(serialized_contains_len);
+//         safe_read(fd, serialized_contains, serialized_contains_len,
+//                 "serialized_contains", checkpoint_file);
+//         deserialize_containers(serialized_contains, serialized_contains_len,
+//                 &contains);
+//         free(serialized_contains);
+// 
+//         size_t serialized_alias_groups_len;
+//         safe_read(fd, &serialized_alias_groups_len,
+//                 sizeof(serialized_alias_groups_len),
+//                 "serialized_alias_groups_len", checkpoint_file);
+//         void *serialized_alias_groups = malloc(serialized_alias_groups_len);
+//         safe_read(fd, serialized_alias_groups, serialized_alias_groups_len,
+//                 "serialized_alias_groups", checkpoint_file);
+//         deserialize_alias_groups(serialized_alias_groups,
+//                 serialized_alias_groups_len, &aliased_groups);
+//         free(serialized_alias_groups);
+// 
+//         close(fd);
+//     }
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(INIT_CHIMES, __start_time);
@@ -1963,6 +1963,9 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 #endif
     }
 
+    void *app_handle = dlopen(NULL, RTLD_LAZY);
+    assert(app_handle != NULL);
+
     // Parse call tree from arguments.
     for (int i = 0; i < nfunctions; i++) {
         char *func_name = va_arg(vl, char *);
@@ -2047,27 +2050,27 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 #endif
 }
 
-static bool need_to_manage_stack(int *conditional, string funcname) {
-    if (conditional) {
-        if (*conditional == 2) {
-            const map<string, bool>::iterator does_checkpoint_iter =
-                does_checkpoint.find(funcname);
-            if (does_checkpoint_iter != does_checkpoint.end() && !does_checkpoint_iter->second) {
-                *conditional = 0;
-                return (false);
-            } else {
-                *conditional = 1;
-            }
-        } else if (*conditional == 0) {
-            return (false);
-        }
-    }
-    return (true);
-}
+// static bool need_to_manage_stack(int *conditional, string funcname) {
+//     if (conditional) {
+//         if (*conditional == 2) {
+//             const map<string, bool>::iterator does_checkpoint_iter =
+//                 does_checkpoint.find(funcname);
+//             if (does_checkpoint_iter != does_checkpoint.end() && !does_checkpoint_iter->second) {
+//                 *conditional = 0;
+//                 return (false);
+//             } else {
+//                 *conditional = 1;
+//             }
+//         } else if (*conditional == 0) {
+//             return (false);
+//         }
+//     }
+//     return (true);
+// }
 
 static void add_argument_aliases(unsigned n_local_arg_aliases, thread_ctx *ctx,
         va_list *vl, bool pre_stack_increment) {
-    const unsigned stack_minimum = (pre_stack_increment ? 0 : 1);
+    // const unsigned stack_minimum = (pre_stack_increment ? 0 : 1);
     for (unsigned i = 0; i < n_local_arg_aliases; i++) {
         size_t alias = va_arg(*vl, size_t);
         // if (ctx->get_stack()->size() > stack_minimum) {
@@ -2175,21 +2178,23 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
     va_list vl;
     va_start(vl, n_local_arg_aliases);
 
-    if (program_stack->size() != 1 && 
-            n_local_arg_aliases != ctx->get_n_parent_aliases()) {
-        if (!ctx->get_printed_func_args_mismatch()) {
-            fprintf(stderr, "WARNING: Mismatch in # passed aliases (%lu) and # "
-                    "expected aliases (%u), ignoring\n",
-                    ctx->get_n_parent_aliases(), n_local_arg_aliases);
-            ctx->set_printed_func_args_mismatch(true);
-        }    
+    if (strcmp(funcname, "main") != 0) {
+        if (n_local_arg_aliases != ctx->get_n_parent_aliases()) {
+            if (!ctx->get_printed_func_args_mismatch()) {
+                fprintf(stderr, "WARNING: Mismatch in # passed aliases (%lu) and # "
+                        "expected aliases (%u), ignoring\n",
+                        ctx->get_n_parent_aliases(), n_local_arg_aliases);
+                ctx->set_printed_func_args_mismatch(true);
+            }    
 
-        for (unsigned i = 0; i < n_local_arg_aliases; i++) {
-            va_arg(vl, size_t);
-        }    
-    } else {
-        add_argument_aliases(n_local_arg_aliases, ctx, &vl, false);
-    }    
+            for (unsigned i = 0; i < n_local_arg_aliases; i++) {
+                va_arg(vl, size_t);
+            }    
+        } else {
+            add_argument_aliases(n_local_arg_aliases, ctx, &vl, false);
+        }
+    }
+
 
     ctx->push_return_alias();
 
@@ -2292,9 +2297,9 @@ static void calling_npm_helper(const char *name, /* unsigned loc_id, */
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ns();
 
-    thread_ctx *ctx = get_my_context();
+    // thread_ctx *ctx = get_my_context();
     std::string fname(name);
-    npm_context *npm_ctx = fname_to_npm_info.at(fname);
+    // npm_context *npm_ctx = fname_to_npm_info.at(fname);
 
     // if (loc_id > 0) {
     //     alias_group_changed_helper(loc_id, ctx);
@@ -2872,7 +2877,7 @@ void malloc_impl(void *new_ptr, size_t nbytes, size_t group,
     if (!is_cuda_alloc) {
         *((heap_allocation **)new_ptr) = alloc;
     }
-    get_my_thread_heap()->add_allocation(alloc);
+    // get_my_thread_heap()->add_allocation(alloc);
 }
 
 /*
@@ -3104,136 +3109,136 @@ void free_helper(const void *ptr, size_t group) {
 //     VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 // }
 
-static void update_live_var(string name, stack_var *dead, stack_var *live) {
-#ifdef VERBOSE
-    fprintf(stderr, "Restoring variable %s with size %lu at %p, dead variable "
-            "was at %p\n", name.c_str(), live->get_size(), live->get_address(),
-            dead->get_address());
-#endif
+// static void update_live_var(string name, stack_var *dead, stack_var *live) {
+// #ifdef VERBOSE
+//     fprintf(stderr, "Restoring variable %s with size %lu at %p, dead variable "
+//             "was at %p\n", name.c_str(), live->get_size(), live->get_address(),
+//             dead->get_address());
+// #endif
+// 
+//     assert(live->get_name() == dead->get_name());
+//     assert(live->get_type() == dead->get_type());
+//     assert(live->get_size() == dead->get_size());
+//     assert(live->check_is_ptr() == dead->check_is_ptr());
+//     assert(live->get_ptr_offsets()->size() == dead->get_ptr_offsets()->size());
+//     assert(dead->get_tmp_buffer() != NULL);
+// 
+//     // Don't modify the state of argc or argv as they are initialized externally
+//     if (live->get_name() != "main|argc|0" && live->get_name() != "main|argv|0") {
+//         memcpy(live->get_address(), dead->get_tmp_buffer(), live->get_size());
+//     }
+//     dead->clear_tmp_buffer();
+// 
+//     /*
+//      * Some compilers may choose to re-use stack slots with the same address
+//      * for temporary variables whose lifetimes do not overlap. As a result,
+//      * multiple register_stack_var calls may pass the same address. If that
+//      * is the case, we can assume that the old variable is no longer
+//      * in-scope and cannot be referenced anymore. We therefore simply assert
+//      * that the mapping we would insert is the same that already exists, and
+//      * therefore the state of the variable will be updated appropriately.
+//      */
+//     heap_tree_node *found = old_to_new->exact_search(dead->get_address());
+//     if (found != NULL) {
+//         if (found->new_address != live->get_address()) {
+//             /*
+//              * Because we use two different versions of the same function to for
+//              * executing and resuming, the live ranges of variables may be
+//              * different between the two. In that case, in the original
+//              * execution two variables may have shared space on the stack but in
+//              * the new execution (with all the jump labels increasing live
+//              * ranges) their locations on the stack may be different. However,
+//              * if this is the case we can safely assume that only one is
+//              * actually live in the running program and the value stored in the
+//              * other is never referenced. Therefore, we can restore both live
+//              * variables at different locations on the stack without worrying
+//              * about one being referenced with incorrect contents. However, we
+//              * now have a one-to-many mapping of one dead address to more than
+//              * one live address. For now, we assume that the last registered
+//              * stack allocation in the original run provides the correct mapping
+//              * from old to new because it is lexicographically the latest.
+//              * Because this is called while we iterate over the unpacked stack
+//              * variables in registration order, we just always grab the latest
+//              * here.
+//              */
+//             /*
+//              * Old print statement
+//              * fprintf(stderr, "expected two stack allocations with the same old "
+//              *         "address to have the same new address, but instead got "
+//              *         "new addresses (existing %p, current %p) for old addresses (existing %p, "
+//              *         "current %p)\n", found->new_address, live->get_address(),
+//              *         found->old_address, dead->get_address());
+//              */
+//             found->new_address = live->get_address();
+//         }
+//         found->size = (live->get_size() > found->size ? live->get_size() :
+//                 found->size);
+//     } else {
+//         old_to_new->insert(dead->get_address(), live->get_address(), live->get_size());
+//     }
+// }
 
-    assert(live->get_name() == dead->get_name());
-    assert(live->get_type() == dead->get_type());
-    assert(live->get_size() == dead->get_size());
-    assert(live->check_is_ptr() == dead->check_is_ptr());
-    assert(live->get_ptr_offsets()->size() == dead->get_ptr_offsets()->size());
-    assert(dead->get_tmp_buffer() != NULL);
-
-    // Don't modify the state of argc or argv as they are initialized externally
-    if (live->get_name() != "main|argc|0" && live->get_name() != "main|argv|0") {
-        memcpy(live->get_address(), dead->get_tmp_buffer(), live->get_size());
-    }
-    dead->clear_tmp_buffer();
-
-    /*
-     * Some compilers may choose to re-use stack slots with the same address
-     * for temporary variables whose lifetimes do not overlap. As a result,
-     * multiple register_stack_var calls may pass the same address. If that
-     * is the case, we can assume that the old variable is no longer
-     * in-scope and cannot be referenced anymore. We therefore simply assert
-     * that the mapping we would insert is the same that already exists, and
-     * therefore the state of the variable will be updated appropriately.
-     */
-    heap_tree_node *found = old_to_new->exact_search(dead->get_address());
-    if (found != NULL) {
-        if (found->new_address != live->get_address()) {
-            /*
-             * Because we use two different versions of the same function to for
-             * executing and resuming, the live ranges of variables may be
-             * different between the two. In that case, in the original
-             * execution two variables may have shared space on the stack but in
-             * the new execution (with all the jump labels increasing live
-             * ranges) their locations on the stack may be different. However,
-             * if this is the case we can safely assume that only one is
-             * actually live in the running program and the value stored in the
-             * other is never referenced. Therefore, we can restore both live
-             * variables at different locations on the stack without worrying
-             * about one being referenced with incorrect contents. However, we
-             * now have a one-to-many mapping of one dead address to more than
-             * one live address. For now, we assume that the last registered
-             * stack allocation in the original run provides the correct mapping
-             * from old to new because it is lexicographically the latest.
-             * Because this is called while we iterate over the unpacked stack
-             * variables in registration order, we just always grab the latest
-             * here.
-             */
-            /*
-             * Old print statement
-             * fprintf(stderr, "expected two stack allocations with the same old "
-             *         "address to have the same new address, but instead got "
-             *         "new addresses (existing %p, current %p) for old addresses (existing %p, "
-             *         "current %p)\n", found->new_address, live->get_address(),
-             *         found->old_address, dead->get_address());
-             */
-            found->new_address = live->get_address();
-        }
-        found->size = (live->get_size() > found->size ? live->get_size() :
-                found->size);
-    } else {
-        old_to_new->insert(dead->get_address(), live->get_address(), live->get_size());
-    }
-}
-
-static void restore_program_stack(vector<stack_frame *> *unpacked,
-        vector<stack_frame *> *real) {
-
-    assert(unpacked->size() == real->size());
-
-    vector<stack_frame *>::iterator unpacked_stack_iter = unpacked->begin();
-    vector<stack_frame *>::iterator unpacked_stack_end = unpacked->end();
-    vector<stack_frame *>::iterator live_stack_iter = real->begin();
-    vector<stack_frame *>::iterator live_stack_end = real->end();
-
-    while (unpacked_stack_iter != unpacked_stack_end &&
-            live_stack_iter != live_stack_end) {
-        stack_frame *live = *live_stack_iter;
-        stack_frame *unpacked = *unpacked_stack_iter;
-
-#ifdef VERBOSE
-        fprintf(stderr, "  Frame: unpacked has %d vars, live has %d vars\n",
-                unpacked->size(), live->size());
-        fprintf(stderr, "    Unpacked: ");
-        for (stack_frame::iterator i = unpacked->begin(),
-                e = unpacked->end(); i != e; i++) {
-            fprintf(stderr, "%s ", i->first.c_str());
-        }
-        fprintf(stderr, "\n    Live:     ");
-        for (stack_frame::iterator i = live->begin(),
-                e = live->end(); i != e; i++) {
-            fprintf(stderr, "%s ", i->first.c_str());
-        }
-        fprintf(stderr, "\n");
-#endif
-
-        /*
-         * It is possible that live is larger than unpacked if the
-         * checkpoint run didn't reach some local variable declarations
-         * before this checkpoint was created.
-         */
-        assert(live->size() >= unpacked->size());
-
-        /*
-         * Match entries in the checkpoint to known locals in the running
-         * program
-         */
-        for (stack_frame::iterator i = unpacked->begin(),
-                e = unpacked->end(); i != e; i++) {
-            assert(live->find(i->first) != live->end());
-
-            string name = i->first;
-            stack_var *dead = i->second;
-            stack_frame::iterator found = live->find(name);
-            stack_var *live = found->second;
-
-            update_live_var(name, dead, live);
-        }
-
-        unpacked_stack_iter++;
-        live_stack_iter++;
-    }
-
-    assert(unpacked_stack_iter == unpacked_stack_end &&
-            live_stack_iter == live_stack_end);
-}
+// static void restore_program_stack(vector<stack_frame *> *unpacked,
+//         vector<stack_frame *> *real) {
+// 
+//     assert(unpacked->size() == real->size());
+// 
+//     vector<stack_frame *>::iterator unpacked_stack_iter = unpacked->begin();
+//     vector<stack_frame *>::iterator unpacked_stack_end = unpacked->end();
+//     vector<stack_frame *>::iterator live_stack_iter = real->begin();
+//     vector<stack_frame *>::iterator live_stack_end = real->end();
+// 
+//     while (unpacked_stack_iter != unpacked_stack_end &&
+//             live_stack_iter != live_stack_end) {
+//         stack_frame *live = *live_stack_iter;
+//         stack_frame *unpacked = *unpacked_stack_iter;
+// 
+// #ifdef VERBOSE
+//         fprintf(stderr, "  Frame: unpacked has %d vars, live has %d vars\n",
+//                 unpacked->size(), live->size());
+//         fprintf(stderr, "    Unpacked: ");
+//         for (stack_frame::iterator i = unpacked->begin(),
+//                 e = unpacked->end(); i != e; i++) {
+//             fprintf(stderr, "%s ", i->first.c_str());
+//         }
+//         fprintf(stderr, "\n    Live:     ");
+//         for (stack_frame::iterator i = live->begin(),
+//                 e = live->end(); i != e; i++) {
+//             fprintf(stderr, "%s ", i->first.c_str());
+//         }
+//         fprintf(stderr, "\n");
+// #endif
+// 
+//         /*
+//          * It is possible that live is larger than unpacked if the
+//          * checkpoint run didn't reach some local variable declarations
+//          * before this checkpoint was created.
+//          */
+//         assert(live->size() >= unpacked->size());
+// 
+//         /*
+//          * Match entries in the checkpoint to known locals in the running
+//          * program
+//          */
+//         for (stack_frame::iterator i = unpacked->begin(),
+//                 e = unpacked->end(); i != e; i++) {
+//             assert(live->find(i->first) != live->end());
+// 
+//             string name = i->first;
+//             stack_var *dead = i->second;
+//             stack_frame::iterator found = live->find(name);
+//             stack_var *live = found->second;
+// 
+//             update_live_var(name, dead, live);
+//         }
+// 
+//         unpacked_stack_iter++;
+//         live_stack_iter++;
+//     }
+// 
+//     assert(unpacked_stack_iter == unpacked_stack_end &&
+//             live_stack_iter == live_stack_end);
+// }
 
 static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out, bool *should_abort) {
 #ifdef __CHIMES_PROFILE
@@ -3291,28 +3296,28 @@ static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out, bool 
     return (checkpointing_thread);
 }
 
-static bool compare_entry_times(std::pair<unsigned, clock_t> i,
-        std::pair<unsigned, clock_t> j) {
-    return (i.second < j.second);
-}
+// static bool compare_entry_times(std::pair<unsigned, clock_t> i,
+//         std::pair<unsigned, clock_t> j) {
+//     return (i.second < j.second);
+// }
 
-static bool compare_heap_allocations(pair<size_t, heap_allocation *> i,
-        pair<size_t, heap_allocation *> j) {
-    return (i.first < j.first);
-}
+// static bool compare_heap_allocations(pair<size_t, heap_allocation *> i,
+//         pair<size_t, heap_allocation *> j) {
+//     return (i.first < j.first);
+// }
 
-static bool should_hash(size_t alloc_len, size_t desired_checkpoint_size,
-        size_t copied_so_far) {
-    if (alloc_len < DONT_HASH_SIZE) {
-        return false;
-    }
-    if (copied_so_far >= desired_checkpoint_size) {
-        return true;
-    }
-
-    size_t remaining = desired_checkpoint_size - copied_so_far;
-    return (alloc_len > (remaining / 2));
-}
+// static bool should_hash(size_t alloc_len, size_t desired_checkpoint_size,
+//         size_t copied_so_far) {
+//     if (alloc_len < DONT_HASH_SIZE) {
+//         return false;
+//     }
+//     if (copied_so_far >= desired_checkpoint_size) {
+//         return true;
+//     }
+// 
+//     size_t remaining = desired_checkpoint_size - copied_so_far;
+//     return (alloc_len > (remaining / 2));
+// }
 
 /*
  * We only want to checkpoint when the program is currently within the bounded
@@ -3368,32 +3373,32 @@ bool within_overhead_bounds() {
     return should_checkpoint;
 }
 
-static void collect_all_aliases(size_t group, set<size_t> *all_changed) {
-    if (aliased_groups.find(group) != aliased_groups.end()) {
-        for (vector<size_t>::iterator iter =
-                aliased_groups[group]->begin(), end =
-                aliased_groups[group]->end(); iter != end;
-                iter++) {
-            all_changed->insert(*iter);
-        }
-    } else {
-        all_changed->insert(group);
-    }
-}
+// static void collect_all_aliases(size_t group, set<size_t> *all_changed) {
+//     if (aliased_groups.find(group) != aliased_groups.end()) {
+//         for (vector<size_t>::iterator iter =
+//                 aliased_groups[group]->begin(), end =
+//                 aliased_groups[group]->end(); iter != end;
+//                 iter++) {
+//             all_changed->insert(*iter);
+//         }
+//     } else {
+//         all_changed->insert(group);
+//     }
+// }
 
-static void collect_all_aliases_and_children(size_t group, set<size_t> *all_changed) {
-    set<size_t> full_hierarchy;
-
-    size_t curr = group;
-    while (contains.find(curr) != contains.end() && full_hierarchy.find(curr) == full_hierarchy.end()) {
-        full_hierarchy.insert(curr);
-
-        collect_all_aliases(curr, all_changed);
-
-        curr = contains.at(curr);
-    }
-    collect_all_aliases(curr, all_changed);
-}
+// static void collect_all_aliases_and_children(size_t group, set<size_t> *all_changed) {
+//     set<size_t> full_hierarchy;
+// 
+//     size_t curr = group;
+//     while (contains.find(curr) != contains.end() && full_hierarchy.find(curr) == full_hierarchy.end()) {
+//         full_hierarchy.insert(curr);
+// 
+//         collect_all_aliases(curr, all_changed);
+// 
+//         curr = contains.at(curr);
+//     }
+//     collect_all_aliases(curr, all_changed);
+// }
 
 bool disable_current_thread() {
     thread_ctx *ctx = get_my_context();
@@ -4072,171 +4077,171 @@ static void fix_stack_or_global_pointer(void *container, string type,
     }
 }
 
-static aiocb *prep_async_safe_write(int fd, void *ptr, size_t size,
-        off_t file_offset, off_t *count_bytes, const char *msg,
-        vector<aiocb *> *async_tokens) {
-    const size_t chunk_size = 1024UL * 1024UL * 1024UL;
-    const size_t nchunks = (size + chunk_size - 1) / chunk_size;
-    aiocb *cb = NULL;
+// static aiocb *prep_async_safe_write(int fd, void *ptr, size_t size,
+//         off_t file_offset, off_t *count_bytes, const char *msg,
+//         vector<aiocb *> *async_tokens) {
+//     const size_t chunk_size = 1024UL * 1024UL * 1024UL;
+//     const size_t nchunks = (size + chunk_size - 1) / chunk_size;
+//     aiocb *cb = NULL;
+// 
+//     for (size_t i = 0; i < nchunks; i++) {
+//         cb = (aiocb*)malloc(sizeof(aiocb));
+//         assert(cb);
+//         memset(cb, 0x00, sizeof(aiocb));
+// 
+//         size_t base = i * chunk_size;
+//         size_t towrite = chunk_size;
+//         if (size - base < towrite) {
+//             towrite = size - base;
+//         }
+// 
+//         cb->aio_nbytes = towrite;
+//         cb->aio_offset = file_offset + base;
+//         cb->aio_fildes = fd;
+//         cb->aio_buf = ((unsigned char *)ptr) + base;
+//         cb->aio_sigevent.sigev_notify = SIGEV_NONE;
+// 
+//         if (async_tokens != NULL) {
+//             async_tokens->push_back(cb);
+//         }
+// 
+// #ifdef VERBOSE
+//         fprintf(stderr, "Prepping chunk %lu/%lu for %s: offset=%lld nbytes=%lu\n",
+//                 i + 1, nchunks, msg, cb->aio_offset, cb->aio_nbytes);
+// #endif
+//     }
+// 
+//     *count_bytes += size;
+// 
+//     if (async_tokens == NULL) {
+//         assert(nchunks == 1);
+//         return (cb);
+//     } else {
+//         return (NULL);
+//     }
+// }
 
-    for (size_t i = 0; i < nchunks; i++) {
-        cb = (aiocb*)malloc(sizeof(aiocb));
-        assert(cb);
-        memset(cb, 0x00, sizeof(aiocb));
+// static void safe_write(int fd, void *ptr, size_t size, const char *msg,
+//         const char *filename) {
+//     size_t sofar = 0;
+//     const size_t chunk = 1024UL * 1024UL * 1024UL;
+//     do {
+//         size_t towrite = chunk;
+//         if (sofar + towrite > size) {
+//             towrite = size - sofar;
+//         }
+//         ssize_t written = write(fd, (unsigned char *)ptr + sofar, towrite);
+//         if (written == -1) {
+//             fprintf(stderr, "Error writing to %s: %s\n", filename, msg);
+//             fprintf(stderr, "  writing %ld bytes from %p to fd=%d\n", size, ptr,
+//                     fd);
+//             fprintf(stderr, "  sofar=%ld\n", sofar);
+//             perror(NULL);
+//             exit(1);
+// 
+//         }
+//         sofar += written;
+//     } while (sofar < size);
+// }
+// 
+// static void safe_read(int fd, void *ptr, size_t size, const char *msg,
+//         const char *filename) {
+//     unsigned char *c_ptr = (unsigned char *)ptr;
+//     const size_t chunk = 1024UL * 1024UL * 1024UL;
+//     size_t sofar = 0;
+// 
+//     do {
+//         size_t toread = chunk;
+//         if (sofar + toread > size) {
+//             toread = size - sofar;
+//         }
+//         ssize_t r = read(fd, c_ptr + sofar, toread);
+//         if (r == -1) {
+//             fprintf(stderr, "Error reading from %s: %s\n", filename, msg);
+//             exit(1);
+//         }
+//         sofar += r;
+//     } while (sofar < size);
+// }
+// 
+// static void skip(int fd, ssize_t size, const char *msg, const char *filename) {
+//     if (lseek(fd, size, SEEK_CUR) == (off_t)-1) {
+//         fprintf(stderr, "Error skipping in %s: %s\n", filename, msg);
+//         exit(1);
+//     }
+// }
+// 
+// static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
+//         const char *filename) {
+//     off_t result = lseek(fd, offset, whence);
+//     if (result == (off_t)-1) {
+//         fprintf(stderr, "Error seeking in %s: %s\n", filename, msg);
+//         exit(1);
+//     }
+//     return (result);
+// }
 
-        size_t base = i * chunk_size;
-        size_t towrite = chunk_size;
-        if (size - base < towrite) {
-            towrite = size - base;
-        }
-
-        cb->aio_nbytes = towrite;
-        cb->aio_offset = file_offset + base;
-        cb->aio_fildes = fd;
-        cb->aio_buf = ((unsigned char *)ptr) + base;
-        cb->aio_sigevent.sigev_notify = SIGEV_NONE;
-
-        if (async_tokens != NULL) {
-            async_tokens->push_back(cb);
-        }
-
-#ifdef VERBOSE
-        fprintf(stderr, "Prepping chunk %lu/%lu for %s: offset=%lld nbytes=%lu\n",
-                i + 1, nchunks, msg, cb->aio_offset, cb->aio_nbytes);
-#endif
-    }
-
-    *count_bytes += size;
-
-    if (async_tokens == NULL) {
-        assert(nchunks == 1);
-        return (cb);
-    } else {
-        return (NULL);
-    }
-}
-
-static void safe_write(int fd, void *ptr, size_t size, const char *msg,
-        const char *filename) {
-    size_t sofar = 0;
-    const size_t chunk = 1024UL * 1024UL * 1024UL;
-    do {
-        size_t towrite = chunk;
-        if (sofar + towrite > size) {
-            towrite = size - sofar;
-        }
-        ssize_t written = write(fd, (unsigned char *)ptr + sofar, towrite);
-        if (written == -1) {
-            fprintf(stderr, "Error writing to %s: %s\n", filename, msg);
-            fprintf(stderr, "  writing %ld bytes from %p to fd=%d\n", size, ptr,
-                    fd);
-            fprintf(stderr, "  sofar=%ld\n", sofar);
-            perror(NULL);
-            exit(1);
-
-        }
-        sofar += written;
-    } while (sofar < size);
-}
-
-static void safe_read(int fd, void *ptr, size_t size, const char *msg,
-        const char *filename) {
-    unsigned char *c_ptr = (unsigned char *)ptr;
-    const size_t chunk = 1024UL * 1024UL * 1024UL;
-    size_t sofar = 0;
-
-    do {
-        size_t toread = chunk;
-        if (sofar + toread > size) {
-            toread = size - sofar;
-        }
-        ssize_t r = read(fd, c_ptr + sofar, toread);
-        if (r == -1) {
-            fprintf(stderr, "Error reading from %s: %s\n", filename, msg);
-            exit(1);
-        }
-        sofar += r;
-    } while (sofar < size);
-}
-
-static void skip(int fd, ssize_t size, const char *msg, const char *filename) {
-    if (lseek(fd, size, SEEK_CUR) == (off_t)-1) {
-        fprintf(stderr, "Error skipping in %s: %s\n", filename, msg);
-        exit(1);
-    }
-}
-
-static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
-        const char *filename) {
-    off_t result = lseek(fd, offset, whence);
-    if (result == (off_t)-1) {
-        fprintf(stderr, "Error seeking in %s: %s\n", filename, msg);
-        exit(1);
-    }
-    return (result);
-}
-
-static int wait_for_running_writes(struct aiocb **aio_list,
-        int n_writes_running, off_t *count_bytes, char dump_filename[],
-        vector<aiocb *> *async_tokens) {
-#ifdef VERBOSE
-    fprintf(stderr, "Waiting for %d running writes\n", n_writes_running);
-#endif
-
-    int a = 0;
-    int n_left_running = n_writes_running;
-    if (aio_suspend(aio_list, n_writes_running, NULL) != 0) {
-        fprintf(stderr ,"aio_suspend waiting for %d writes\n",
-                n_writes_running);
-        perror("aio_suspend");
-        exit(1);
-    }
-
-    while (a < n_left_running) {
-        aiocb *curr = aio_list[a];
-        const int ret = aio_error(curr);
-        if (ret == EINPROGRESS) {
-            // Write is still in-progress, so just iterate to the next
-            a++;
-        } else if (ret == 0) {
-            // Write completed, but may not have written all data
-            ssize_t written = aio_return(curr);
-            assert(written >= 0);
-
-            if ((size_t)written < curr->aio_nbytes) {
-                // Write only partially finished
-                size_t left = curr->aio_nbytes - (size_t)written;
-                aio_list[a] = prep_async_safe_write(
-                        curr->aio_fildes,
-                        ((unsigned char *)curr->aio_buf) + written,
-                        left, curr->aio_offset + written, count_bytes, "retry", NULL);
-                VERIFY(aio_write(aio_list[a]) == 0);
-                a++;
-            } else {
-                // Write is finished
-                n_left_running--;
-                if (n_left_running > 0 && a != n_left_running) {
-                    aio_list[a] = aio_list[n_left_running];
-                }
-            }
-            free(curr);
-        } else {
-            fprintf(stderr, "Unexpected error on aio_write to %s\n",
-                    dump_filename);
-            fprintf(stderr, "fildes=%d offset=%ld nbytes=%lu buf=%p a=%d\n",
-                    curr->aio_fildes, curr->aio_offset, curr->aio_nbytes,
-                    curr->aio_buf, a);
-            perror(NULL);
-            exit(1);
-        }
-    }
-
-#ifdef VERBOSE
-    fprintf(stderr, "Done, %d writes remaining\n", n_left_running);
-#endif
-
-    return (n_left_running);
-}
+// static int wait_for_running_writes(struct aiocb **aio_list,
+//         int n_writes_running, off_t *count_bytes, char dump_filename[],
+//         vector<aiocb *> *async_tokens) {
+// #ifdef VERBOSE
+//     fprintf(stderr, "Waiting for %d running writes\n", n_writes_running);
+// #endif
+// 
+//     int a = 0;
+//     int n_left_running = n_writes_running;
+//     if (aio_suspend(aio_list, n_writes_running, NULL) != 0) {
+//         fprintf(stderr ,"aio_suspend waiting for %d writes\n",
+//                 n_writes_running);
+//         perror("aio_suspend");
+//         exit(1);
+//     }
+// 
+//     while (a < n_left_running) {
+//         aiocb *curr = aio_list[a];
+//         const int ret = aio_error(curr);
+//         if (ret == EINPROGRESS) {
+//             // Write is still in-progress, so just iterate to the next
+//             a++;
+//         } else if (ret == 0) {
+//             // Write completed, but may not have written all data
+//             ssize_t written = aio_return(curr);
+//             assert(written >= 0);
+// 
+//             if ((size_t)written < curr->aio_nbytes) {
+//                 // Write only partially finished
+//                 size_t left = curr->aio_nbytes - (size_t)written;
+//                 aio_list[a] = prep_async_safe_write(
+//                         curr->aio_fildes,
+//                         ((unsigned char *)curr->aio_buf) + written,
+//                         left, curr->aio_offset + written, count_bytes, "retry", NULL);
+//                 VERIFY(aio_write(aio_list[a]) == 0);
+//                 a++;
+//             } else {
+//                 // Write is finished
+//                 n_left_running--;
+//                 if (n_left_running > 0 && a != n_left_running) {
+//                     aio_list[a] = aio_list[n_left_running];
+//                 }
+//             }
+//             free(curr);
+//         } else {
+//             fprintf(stderr, "Unexpected error on aio_write to %s\n",
+//                     dump_filename);
+//             fprintf(stderr, "fildes=%d offset=%ld nbytes=%lu buf=%p a=%d\n",
+//                     curr->aio_fildes, curr->aio_offset, curr->aio_nbytes,
+//                     curr->aio_buf, a);
+//             perror(NULL);
+//             exit(1);
+//         }
+//     }
+// 
+// #ifdef VERBOSE
+//     fprintf(stderr, "Done, %d writes remaining\n", n_left_running);
+// #endif
+// 
+//     return (n_left_running);
+// }
 
 static stack_var *find_var(void *addr,
         vector<stack_frame *> *parent_stack) {
@@ -4321,176 +4326,176 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
     return my_tid;
 }
 
-void register_thread_local_stack_vars(unsigned relation, unsigned parent, void *parent_ctx_ptr,
-        unsigned threads_in_region, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...) {
-#ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
-#endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
-    unsigned global_tid;
-    pthread_t self = pthread_self();
-
-    VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
-    if (regions_counted.find(region_id) == regions_counted.end()) {
-        /*
-         * If we haven't already accounted for this parallel region then update
-         * the number of running threads and the number of initializing regions
-         * once the first thread in the region gets here.
-         */
-        VERIFY(regions_counted.insert(std::pair<size_t, unsigned>(region_id,
-                        threads_in_region - 1)).second);
-
-        /*
-         * -1 below because one of the threads in this region will be the parent
-         * thread, and so we already know about it.
-         */
-        thread_count += (threads_in_region - 1);
-        active_thread_count += (threads_in_region - 1);
-
-        regions_initializing--;
-
-        VERIFY(pthread_cond_broadcast(&thread_count_cond) == 0);
-    }
-    VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
-
-    if (____chimes_replaying) {
-        /*
-         * Use the loaded thread hierarchy to figure out what ID this thread was
-         * assigned previously.
-         */
-#ifdef VERBOSE
-        fprintf(stderr, "While restoring, searching for thread with relation "
-                "%u to parent %u\n", relation, parent);
-#endif
-        bool found = false;
-        for (map<unsigned, pair<unsigned, unsigned> >::iterator i =
-                unpacked_thread_hierarchy->begin(), e =
-                unpacked_thread_hierarchy->end(); i != e; i++) {
-            unsigned id = i->first;
-            pair<unsigned, unsigned> info = i->second;
-            unsigned stored_parent = info.first;
-            unsigned stored_relation = info.second;
-
-#ifdef VERBOSE
-            fprintf(stderr, "  comparing to parent=%u relation=%u\n",
-                    stored_parent, stored_relation);
-#endif
-
-            if (relation == stored_relation && parent == stored_parent) {
-                global_tid = id;
-                found = true;
-                break;
-            }
-        }
-        assert(found);
-
-        /*
-         * Update count_threads so that on replay we don't have any thread ID
-         * collisions.
-         */
-        unsigned old = count_threads;
-        while (global_tid + 1 > old) {
-            old = __sync_val_compare_and_swap(&count_threads, old,
-                    global_tid + 1);
-        }
-
-        /*
-         * On resume, store a mapping from the pthread this OMP logical thread
-         * is running on to its CHIMES global TID.
-         */
-        VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
-        if (pthread_to_id.find(self) == pthread_to_id.end()) {
-            VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
-            thread_ctx *new_ctx = new thread_ctx(self, count_change_locations);
-            thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid, new_ctx));
-            set_my_thread_ctx(new_ctx);
-            VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
-
-            set_my_thread_heap(new thread_local_allocations());
-
-            pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
-            set_my_tid(global_tid);
-        } else {
-            assert(global_tid == pthread_to_id.at(self));
-            assert(global_tid == get_my_tid());
-        }
-        VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
-    } else {
-        VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
-        if (pthread_to_id.find(self) == pthread_to_id.end()) {
-            /*
-             * If this thread is being launched for the first time here, first
-             * get a globally unique ID for it.
-             */
-            global_tid = __sync_fetch_and_add(&count_threads, 1);
-
-            // Then create a thread ctx for it
-            VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
-            thread_ctx *new_ctx = new thread_ctx(self, count_change_locations);
-            thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid, new_ctx));
-            set_my_thread_ctx(new_ctx);
-            VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
-
-            set_my_thread_heap(new thread_local_allocations());
-
-            // Store the mapping from pthread_t to self
-            pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
-            set_my_tid(global_tid);
-        } else {
-            global_tid = pthread_to_id.at(self);
-            assert(global_tid == get_my_tid());
-        }
-        VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
-    }
-
-    thread_ctx *ctx = get_my_context();
-    ctx->push_parent(parent, relation, region_id);
-    std::vector<stack_frame *> *stack = ctx->get_stack();
-    stack->push_back(new stack_frame());
-    ctx->increment_stack_nesting();
-
-    thread_ctx *parent_ctx = (thread_ctx *)parent_ctx_ptr;
-    if (parent_ctx->get_disabled_nesting() != 0 && parent_ctx != ctx) {
-        ctx->set_disabled_nesting(1);
-    }
-
-    if (!ctx->is_disabled()) {
-        vector<stack_var *>& parent_vars = parent_ctx->get_parent_vars_at_depth(
-                parent_stack_depth);
-        assert(parent_vars.size() == nlocals);
-
-        va_list vl;
-        va_start(vl, nlocals);
-        for (unsigned l = 0; l < nlocals; l++) {
-            void *child_addr = va_arg(vl, void *);
-            stack_var *parent_var = parent_vars[l];
-
-            /*
-             * See the comment above in entering_omp_parallel on why parent_var
-             * might be NULL.
-             */
-            if (parent_var != NULL) {
-                stack_var *child_var = new stack_var(
-                        parent_var->get_name().c_str(),
-                        parent_var->get_type().c_str(), child_addr,
-                        parent_var->get_size(), parent_var->check_is_ptr());
-                for (vector<int>::iterator i =
-                        parent_var->get_ptr_offsets()->begin(),
-                        e = parent_var->get_ptr_offsets()->end(); i != e; i++) {
-                    child_var->add_pointer_offset(*i);
-                }
-                stack->back()->add_stack_var(child_var);
-            }
-        }
-        va_end(vl);
-    }
-    ADD_TO_OVERHEAD
-#ifdef __CHIMES_PROFILE
-    pp.add_time(REGISTER_THREAD_LOCAL_STACK_VARS, __start_time);
-#endif
-}
+// void register_thread_local_stack_vars(unsigned relation, unsigned parent, void *parent_ctx_ptr,
+//         unsigned threads_in_region, unsigned parent_stack_depth,
+//         size_t region_id, unsigned nlocals, ...) {
+// #ifdef __CHIMES_PROFILE
+//     const unsigned long long __start_time = perf_profile::current_time_ns();
+// #endif
+//     const unsigned long long __chimes_overhead_start_time =
+//         perf_profile::current_time_ns();
+//     unsigned global_tid;
+//     pthread_t self = pthread_self();
+// 
+//     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
+//     if (regions_counted.find(region_id) == regions_counted.end()) {
+//         /*
+//          * If we haven't already accounted for this parallel region then update
+//          * the number of running threads and the number of initializing regions
+//          * once the first thread in the region gets here.
+//          */
+//         VERIFY(regions_counted.insert(std::pair<size_t, unsigned>(region_id,
+//                         threads_in_region - 1)).second);
+// 
+//         /*
+//          * -1 below because one of the threads in this region will be the parent
+//          * thread, and so we already know about it.
+//          */
+//         thread_count += (threads_in_region - 1);
+//         active_thread_count += (threads_in_region - 1);
+// 
+//         regions_initializing--;
+// 
+//         VERIFY(pthread_cond_broadcast(&thread_count_cond) == 0);
+//     }
+//     VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
+// 
+//     if (____chimes_replaying) {
+//         /*
+//          * Use the loaded thread hierarchy to figure out what ID this thread was
+//          * assigned previously.
+//          */
+// #ifdef VERBOSE
+//         fprintf(stderr, "While restoring, searching for thread with relation "
+//                 "%u to parent %u\n", relation, parent);
+// #endif
+//         bool found = false;
+//         for (map<unsigned, pair<unsigned, unsigned> >::iterator i =
+//                 unpacked_thread_hierarchy->begin(), e =
+//                 unpacked_thread_hierarchy->end(); i != e; i++) {
+//             unsigned id = i->first;
+//             pair<unsigned, unsigned> info = i->second;
+//             unsigned stored_parent = info.first;
+//             unsigned stored_relation = info.second;
+// 
+// #ifdef VERBOSE
+//             fprintf(stderr, "  comparing to parent=%u relation=%u\n",
+//                     stored_parent, stored_relation);
+// #endif
+// 
+//             if (relation == stored_relation && parent == stored_parent) {
+//                 global_tid = id;
+//                 found = true;
+//                 break;
+//             }
+//         }
+//         assert(found);
+// 
+//         /*
+//          * Update count_threads so that on replay we don't have any thread ID
+//          * collisions.
+//          */
+//         unsigned old = count_threads;
+//         while (global_tid + 1 > old) {
+//             old = __sync_val_compare_and_swap(&count_threads, old,
+//                     global_tid + 1);
+//         }
+// 
+//         /*
+//          * On resume, store a mapping from the pthread this OMP logical thread
+//          * is running on to its CHIMES global TID.
+//          */
+//         VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
+//         if (pthread_to_id.find(self) == pthread_to_id.end()) {
+//             VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
+//             thread_ctx *new_ctx = new thread_ctx(self, count_change_locations);
+//             thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid, new_ctx));
+//             set_my_thread_ctx(new_ctx);
+//             VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+// 
+//             set_my_thread_heap(new thread_local_allocations());
+// 
+//             pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
+//             set_my_tid(global_tid);
+//         } else {
+//             assert(global_tid == pthread_to_id.at(self));
+//             assert(global_tid == get_my_tid());
+//         }
+//         VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
+//     } else {
+//         VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
+//         if (pthread_to_id.find(self) == pthread_to_id.end()) {
+//             /*
+//              * If this thread is being launched for the first time here, first
+//              * get a globally unique ID for it.
+//              */
+//             global_tid = __sync_fetch_and_add(&count_threads, 1);
+// 
+//             // Then create a thread ctx for it
+//             VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
+//             thread_ctx *new_ctx = new thread_ctx(self, count_change_locations);
+//             thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid, new_ctx));
+//             set_my_thread_ctx(new_ctx);
+//             VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+// 
+//             set_my_thread_heap(new thread_local_allocations());
+// 
+//             // Store the mapping from pthread_t to self
+//             pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
+//             set_my_tid(global_tid);
+//         } else {
+//             global_tid = pthread_to_id.at(self);
+//             assert(global_tid == get_my_tid());
+//         }
+//         VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
+//     }
+// 
+//     thread_ctx *ctx = get_my_context();
+//     ctx->push_parent(parent, relation, region_id);
+//     std::vector<stack_frame *> *stack = ctx->get_stack();
+//     stack->push_back(new stack_frame());
+//     ctx->increment_stack_nesting();
+// 
+//     thread_ctx *parent_ctx = (thread_ctx *)parent_ctx_ptr;
+//     if (parent_ctx->get_disabled_nesting() != 0 && parent_ctx != ctx) {
+//         ctx->set_disabled_nesting(1);
+//     }
+// 
+//     if (!ctx->is_disabled()) {
+//         vector<stack_var *>& parent_vars = parent_ctx->get_parent_vars_at_depth(
+//                 parent_stack_depth);
+//         assert(parent_vars.size() == nlocals);
+// 
+//         va_list vl;
+//         va_start(vl, nlocals);
+//         for (unsigned l = 0; l < nlocals; l++) {
+//             void *child_addr = va_arg(vl, void *);
+//             stack_var *parent_var = parent_vars[l];
+// 
+//             /*
+//              * See the comment above in entering_omp_parallel on why parent_var
+//              * might be NULL.
+//              */
+//             if (parent_var != NULL) {
+//                 stack_var *child_var = new stack_var(
+//                         parent_var->get_name().c_str(),
+//                         parent_var->get_type().c_str(), child_addr,
+//                         parent_var->get_size(), parent_var->check_is_ptr());
+//                 for (vector<int>::iterator i =
+//                         parent_var->get_ptr_offsets()->begin(),
+//                         e = parent_var->get_ptr_offsets()->end(); i != e; i++) {
+//                     child_var->add_pointer_offset(*i);
+//                 }
+//                 stack->back()->add_stack_var(child_var);
+//             }
+//         }
+//         va_end(vl);
+//     }
+//     ADD_TO_OVERHEAD
+// #ifdef __CHIMES_PROFILE
+//     pp.add_time(REGISTER_THREAD_LOCAL_STACK_VARS, __start_time);
+// #endif
+// }
 
 void *get_thread_ctx() {
     return (void *)get_my_context();
@@ -4517,34 +4522,34 @@ void thread_leaving() {
 #endif
 }
 
-static void cleanup_thread_heap(void *thread_heap_ptr) {
-    thread_local_allocations *thread_heap =
-        (thread_local_allocations *)thread_heap_ptr;
-
-    VERIFY(pthread_rwlock_rdlock(&thread_heaps_lock) == 0);
-    thread_local_allocations *main_thread_heap = thread_heaps.at(main_thread);
-    VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
-
-    main_thread_heap->wrlock();
-    for (map<void *, heap_allocation *>::iterator i = thread_heap->begin(),
-            e = thread_heap->end(); i != e; i++) {
-        main_thread_heap->add_allocation(i->second, true);
-    }
-    main_thread_heap->unlock();
-
-    VERIFY(pthread_rwlock_wrlock(&thread_heaps_lock) == 0);
-    map<pthread_t, thread_local_allocations *>::iterator iter = thread_heaps.begin();
-    while (iter != thread_heaps.end()) {
-        if (iter->second == thread_heap) {
-            break;
-        }
-    }
-    assert(iter != thread_heaps.end());
-    thread_heaps.erase(iter);
-    VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
-
-    delete thread_heap;
-}
+// static void cleanup_thread_heap(void *thread_heap_ptr) {
+//     thread_local_allocations *thread_heap =
+//         (thread_local_allocations *)thread_heap_ptr;
+// 
+//     VERIFY(pthread_rwlock_rdlock(&thread_heaps_lock) == 0);
+//     thread_local_allocations *main_thread_heap = thread_heaps.at(main_thread);
+//     VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
+// 
+//     main_thread_heap->wrlock();
+//     for (map<void *, heap_allocation *>::iterator i = thread_heap->begin(),
+//             e = thread_heap->end(); i != e; i++) {
+//         main_thread_heap->add_allocation(i->second, true);
+//     }
+//     main_thread_heap->unlock();
+// 
+//     VERIFY(pthread_rwlock_wrlock(&thread_heaps_lock) == 0);
+//     map<pthread_t, thread_local_allocations *>::iterator iter = thread_heaps.begin();
+//     while (iter != thread_heaps.end()) {
+//         if (iter->second == thread_heap) {
+//             break;
+//         }
+//     }
+//     assert(iter != thread_heaps.end());
+//     thread_heaps.erase(iter);
+//     VERIFY(pthread_rwlock_unlock(&thread_heaps_lock) == 0);
+// 
+//     delete thread_heap;
+// }
 
 static void destroy_thread_ctx(void *thread_ctx_ptr) {
     thread_ctx *ctx = (thread_ctx *)thread_ctx_ptr;
@@ -4689,15 +4694,15 @@ static unsigned get_my_tid() {
     return *tid_ptr;
 }
 
-static thread_local_allocations *get_my_thread_heap() {
-    thread_local_allocations *local =
-        (thread_local_allocations *)pthread_getspecific(thread_heap_key);
-    if (local == NULL) {
-        local = new thread_local_allocations();
-        set_my_thread_heap(local);
-    }
-    return local;
-}
+// static thread_local_allocations *get_my_thread_heap() {
+//     thread_local_allocations *local =
+//         (thread_local_allocations *)pthread_getspecific(thread_heap_key);
+//     if (local == NULL) {
+//         local = new thread_local_allocations();
+//         set_my_thread_heap(local);
+//     }
+//     return local;
+// }
 
 static thread_ctx *get_my_context_may_fail() {
     return (thread_ctx *)pthread_getspecific(thread_ctx_key);

@@ -53,6 +53,27 @@ class TermInfo {
         map<string, set<size_t> > *possibly_changed_at_termination;
 };
 
+class AccessesPerLine {
+    public:
+        AccessesPerLine(std::string set_filename) :
+            filename(set_filename) { }
+
+        std::string get_filename() { return filename; }
+        std::map<int, std::set<size_t> >::iterator begin() { return accessed.begin(); }
+        std::map<int, std::set<size_t> >::iterator end() { return accessed.end(); }
+        void add_access(int line_no, size_t group) {
+            if (accessed.find(line_no) == accessed.end()) {
+                accessed.insert(std::pair<int, std::set<size_t> >(line_no,
+                            std::set<size_t>()));
+            }
+            accessed.at(line_no).insert(group);
+        }
+
+    private:
+        std::string filename;
+        std::map<int, std::set<size_t> > accessed;
+};
+
 typedef struct _StackAllocInfo {
     std::string *varname;
     int type_size_in_bits;
@@ -417,6 +438,15 @@ struct Play : public ModulePass {
     std::vector<GroupsModifiedAtLine *> line_to_groups_modified;
     std::map<std::string, std::string> function_to_demangled;
     std::map<Function *, CALLS_CHECKPOINT> can_call_checkpoint;
+
+    void collectLineToAccessedGroupsInFunction(BasicBlock *curr,
+            std::set<BasicBlock *> *visited, std::string filename,
+            std::map<Value *, size_t> *value_to_alias_group, Module &M,
+            AccessesPerLine *accesses);
+    std::map<std::string, AccessesPerLine *> *collectLineToAccessedGroups(
+            Module &M, std::map<Value *, size_t> *value_to_alias_group);
+    void dumpLineToAccessedGroupsMapping(const char *filename,
+            std::map<std::string, AccessesPerLine *> *accesses);
 
 #ifdef PROFILE
     // long propagateGroupsDownTime = 0;

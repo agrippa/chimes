@@ -1022,39 +1022,39 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
              *      call stack OR this call is in the same method as a
              *      checkpoint().
              */
-            const int main_dist = (insertions->have_main_in_call_tree() ?
-                    insertions->get_distance_from_main(curr_func) : -1);
-            if (call->getDirectCallee() && !always_checkpoints &&
-                    !calls_unknown &&
-                    ((main_dist != -1 && main_dist < 2) || callee_always_checkpoints) &&
-                    loc.get_funcname() != "checkpoint") {
-#ifdef VERBOSE
-                llvm::errs() << "generating conditional NPM call for call "
-                    "to " << loc.get_funcname() <<
-                    ", is_converted_to_npm=" << is_converted_to_npm <<
-                    ", never_checkpoints=" << never_checkpoints << "\n";
-#endif
-                /*
-                 * Use a function pointer if this is an externally
-                 * defined function
-                 */
-                std::string npm_call = generateNPMCall(loc, callsite, call,
-                        npm_functions.find(loc.get_funcname()) ==
-                            npm_functions.end());
-                std::string regular_call = generateNormalCall(call,
-                        lbl.get_lbl(), callsite, gen_quick, get_loc_arg(call));
-                std::string cond_call = "(____chimes_does_checkpoint_" +
-                    loc.get_funcname() + "_npm ? (" + regular_call +
-                    ") : (" + npm_call + "))";
-                clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());
-                ReplaceText(replace_range, cond_call);
-                ompTree->add_function_call(call, lbl.get_lbl());
-
-                // External, dynamic
-                addDynamicMerge(callsite, loc.get_funcname());
-
-                continue;
-            }
+//             const int main_dist = (insertions->have_main_in_call_tree() ?
+//                     insertions->get_distance_from_main(curr_func) : -1);
+//             if (call->getDirectCallee() && !always_checkpoints &&
+//                     !calls_unknown &&
+//                     ((main_dist != -1 && main_dist < 2) || callee_always_checkpoints) &&
+//                     loc.get_funcname() != "checkpoint") {
+// #ifdef VERBOSE
+//                 llvm::errs() << "generating conditional NPM call for call "
+//                     "to " << loc.get_funcname() <<
+//                     ", is_converted_to_npm=" << is_converted_to_npm <<
+//                     ", never_checkpoints=" << never_checkpoints << "\n";
+// #endif
+//                 /*
+//                  * Use a function pointer if this is an externally
+//                  * defined function
+//                  */
+//                 std::string npm_call = generateNPMCall(loc, callsite, call,
+//                         npm_functions.find(loc.get_funcname()) ==
+//                             npm_functions.end());
+//                 std::string regular_call = generateNormalCall(call,
+//                         lbl.get_lbl(), callsite, gen_quick, get_loc_arg(call));
+//                 std::string cond_call = "(____chimes_does_checkpoint_" +
+//                     loc.get_funcname() + "_npm ? (" + regular_call +
+//                     ") : (" + npm_call + "))";
+//                 clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());
+//                 ReplaceText(replace_range, cond_call);
+//                 ompTree->add_function_call(call, lbl.get_lbl());
+// 
+//                 // External, dynamic
+//                 addDynamicMerge(callsite, loc.get_funcname());
+// 
+//                 continue;
+//             }
 
             /*
              * This block handles translating function pointers at runtime
@@ -1077,6 +1077,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                 llvm::errs() << "generating normal call for " << loc.get_funcname() << "\n";
 #endif
                 std::string new_call;
+                /*
                 if (loc.get_funcname() == "checkpoint") {
                     std::stringstream ss;
                     if (blockCheckpoints) {
@@ -1089,9 +1090,10 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     }
                     new_call = ss.str();
                 } else {
+                */
                     new_call = generateNormalCall(call, lbl.get_lbl(), callsite,
                             gen_quick, get_loc_arg(call));
-                }
+                // }
 
                 clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());
                 ReplaceText(replace_range, new_call);

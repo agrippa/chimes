@@ -4,7 +4,7 @@
 #include <stddef.h>
 // #include <stdio.h>
 
-extern void init_chimes(int argc, char **argv);
+extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -47,10 +47,10 @@ extern bool any_aliased(int ngroups, ...);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
-        unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
+// extern void register_thread_local_stack_vars(unsigned relation,
+//         unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
+//         unsigned parent_stack_depth,
+//         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id, int is_parallel_for);
 extern unsigned get_parent_vars_stack_depth();

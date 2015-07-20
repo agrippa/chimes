@@ -1346,7 +1346,7 @@ std::map<Function *, TermInfo> *Play::collectLineToGroupsMapping(
 
 void Play::collectLineToAccessedGroupsInFunction(BasicBlock *curr,
         std::set<BasicBlock *> *visited, std::string filename,
-        std::map<Value *, size_t> value_to_alias_group, Module &M,
+        std::map<Value *, size_t> *value_to_alias_group, Module &M,
         AccessesPerLine *accesses) {
     assert(curr != NULL);
     if (visited->find(curr) != visited->end()) return;
@@ -1359,10 +1359,10 @@ void Play::collectLineToAccessedGroupsInFunction(BasicBlock *curr,
         int line_no = curr_inst->getDebugLoc().getLine();
         if (StoreInst *store = dyn_cast<StoreInst>(curr_inst)) {
             // Mark the destination alias group as modified
-            size_t group = value_to_alias_group.at(store->getPointerOperand());
+            size_t group = value_to_alias_group->at(store->getPointerOperand());
             accesses->add_access(line_no, group);
         } else if (LoadInst *load = dyn_cast<LoadInst>(curr_inst)) {
-            size_t group = value_to_alias_group.at(load->getPointerOperand());
+            size_t group = value_to_alias_group->at(load->getPointerOperand());
             accesses->add_access(line_no, group);
         }
     }
@@ -1376,7 +1376,7 @@ void Play::collectLineToAccessedGroupsInFunction(BasicBlock *curr,
 }
 
 std::map<std::string, AccessesPerLine *> *Play::collectLineToAccessedGroups(
-        Module &M, std::map<Value *, size_t> value_to_alias_group) {
+        Module &M, std::map<Value *, size_t> *value_to_alias_group) {
     std::map<std::string, AccessesPerLine *> *result =
         new std::map<std::string, AccessesPerLine *>();
 

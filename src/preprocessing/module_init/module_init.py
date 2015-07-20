@@ -27,7 +27,7 @@ class ModuleInitConfig(object):
         self.fptrs_loaded_filename = None
         self.static_merge_filename = None
         self.dynamic_merge_filename = None
-        self.abi_filename = None
+        # self.abi_filename = None
         self.non_chkpting_filename = None
 
     def check(self):
@@ -88,9 +88,9 @@ class ModuleInitConfig(object):
         if self.dynamic_merge_filename is None:
             print('Dynamic merge filename')
             usage()
-        if self.abi_filename is None:
-            print('ABI filename')
-            usage()
+        # if self.abi_filename is None:
+        #     print('ABI filename')
+        #     usage()
         if self.non_chkpting_filename is None:
             print('Non-checkpointing filename')
             usage()
@@ -435,43 +435,43 @@ def write_merges(output_file, merges):
             output_file.write(', ' + alias + 'UL')
 
 
-def get_mangled_function_name(fname, func_symbols):
-    for sym in func_symbols:
-        if fname == sym:
-            return sym
-        elif sym.startswith('_Z') and not sym.startswith('_ZL'):
-            len_start = 2
-            len_end = 3
-            while sym[len_end] >= '0' and sym[len_end] <= '9':
-                len_end += 1
-            name_length = int(sym[len_start:len_end])
+# def get_mangled_function_name(fname, func_symbols):
+#     for sym in func_symbols:
+#         if fname == sym:
+#             return sym
+#         elif sym.startswith('_Z') and not sym.startswith('_ZL'):
+#             len_start = 2
+#             len_end = 3
+#             while sym[len_end] >= '0' and sym[len_end] <= '9':
+#                 len_end += 1
+#             name_length = int(sym[len_start:len_end])
+# 
+#             if name_length == len(fname) and sym[len_end:len_end + name_length] == fname:
+#                 return sym
+#     raise(Exception('Failed to find mangled version of "' + fname + '"'))
 
-            if name_length == len(fname) and sym[len_end:len_end + name_length] == fname:
-                return sym
-    raise(Exception('Failed to find mangled version of "' + fname + '"'))
 
-
-def get_func_symbols(abi_filename):
-    symbols = []
-    fp = open(abi_filename, 'r')
-
-    found_symbol_table = False
-    for line in fp:
-        if len(line) > 0:
-            if line.startswith('SYMBOL TABLE:'):
-                found_symbol_table = True
-            elif found_symbol_table:
-                tokens = line.split()
-                if len(tokens) == 6:
-                    descriptor = tokens[2]
-                    region = tokens[3]
-                    sym = tokens[5]
-
-                    if descriptor == 'F' and (region == '.text' or region == '.opd'):
-                        symbols.append(sym)
-
-    fp.close()
-    return symbols
+# def get_func_symbols(abi_filename):
+#     symbols = []
+#     fp = open(abi_filename, 'r')
+# 
+#     found_symbol_table = False
+#     for line in fp:
+#         if len(line) > 0:
+#             if line.startswith('SYMBOL TABLE:'):
+#                 found_symbol_table = True
+#             elif found_symbol_table:
+#                 tokens = line.split()
+#                 if len(tokens) == 6:
+#                     descriptor = tokens[2]
+#                     region = tokens[3]
+#                     sym = tokens[5]
+# 
+#                     if descriptor == 'F' and (region == '.text' or region == '.opd'):
+#                         symbols.append(sym)
+# 
+#     fp.close()
+#     return symbols
 
 
 def get_noncheckpointing(filename):
@@ -551,8 +551,8 @@ def configure(cfg, argv):
             cfg.static_merge_filename = argv[index + 1]
         elif t == '-md':
             cfg.dynamic_merge_filename = argv[index + 1]
-        elif t == '-a':
-            cfg.abi_filename = argv[index + 1]
+        # elif t == '-a':
+        #     cfg.abi_filename = argv[index + 1]
         elif t == '-nc':
             cfg.non_chkpting_filename = argv[index + 1]
         else:
@@ -584,7 +584,7 @@ if __name__ == '__main__':
     fptrs_loaded = get_fptrs_loaded(cfg.fptrs_loaded_filename)
     static_merges = get_merges(cfg.static_merge_filename)
     dynamic_merges = get_merges(cfg.dynamic_merge_filename)
-    func_symbols = get_func_symbols(cfg.abi_filename)
+    # func_symbols = get_func_symbols(cfg.abi_filename)
     non_checkpointing = get_noncheckpointing(cfg.non_chkpting_filename)
 
     # n_change_locs = len(changed)

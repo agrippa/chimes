@@ -341,7 +341,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     FIRSTPRIVATE_FILE=${NAME}.fp.${EXT}
     NPM_FILE=${NAME}.npm.${EXT}
     HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
-    ABI_FILE=${INFO_FILE_PREFIX}.abi
+# ABI_FILE=${INFO_FILE_PREFIX}.abi
     NPM_CONDS_FILE=${NAME}.npm_conds.${EXT}
     FINAL_FILE=${NAME}.transformed.${EXT}
     SCOP_FILE=${NAME}.scop.${EXT}
@@ -380,7 +380,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -f ${INFO_FILE_PREFIX}.func.info \
         -d ${INFO_FILE_PREFIX}.call.info -h ${INFO_FILE_PREFIX}.locs \
         -j ${INFO_FILE_PREFIX}.fptrs -ms ${INFO_FILE_PREFIX}.merge.static \
-        -md ${INFO_FILE_PREFIX}.merge.dynamic -a ${ABI_FILE} \
+        -md ${INFO_FILE_PREFIX}.merge.dynamic \
         -nc ${INFO_FILE_PREFIX}.non_chkpting.info
 
 # =======
