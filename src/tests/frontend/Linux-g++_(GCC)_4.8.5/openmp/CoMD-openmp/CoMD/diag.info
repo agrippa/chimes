@@ -1,29 +1,32 @@
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 144 4  ({ free(validate); free_helper(validate, 9674039231704591424UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 144 4  ({ free_helper((((unsigned char *)validate) - sizeof(void *)), 9674039231704591424UL);free((((unsigned char *)validate) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 144 17 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 164 10 len=14 initSimulation_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 166 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(SimFlat)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9674039231704591703UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 166 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(SimFlat)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9674039231704591703UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 166 51 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 220 6 len=17 destroySimulation_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 228 14  ({ free(pot); free_helper(pot, 9674039231704592296UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 228 14  ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 9674039231704592296UL);free((((unsigned char *)pot) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 228 22 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 232 4  ({ free(s->species); free_helper(s->species, 9674039231704592296UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 232 4  ({ free_helper((((unsigned char *)s->species) - sizeof(void *)), 9674039231704592296UL);free((((unsigned char *)s->species) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 232 19 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 233 4  ({ free(s->domain); free_helper(s->domain, 9674039231704592296UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 233 4  ({ free_helper((((unsigned char *)s->domain) - sizeof(void *)), 9674039231704592296UL);free((((unsigned char *)s->domain) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 233 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 234 4  ({ free(s); free_helper(s, 9674039231704592287UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 234 4  ({ free_helper((((unsigned char *)s) - sizeof(void *)), 9674039231704592287UL);free((((unsigned char *)s) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 234 10 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 240 6 len=14 initSubsystems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 249 6 len=18 finalizeSubsystems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 258 16 len=13 initPotential_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 271 14 len=11 initSpecies_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 41  ({ void *____chimes_tmp_ptr = malloc(sizeof(SpeciesData)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9674039231704592552UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 41  ({ void *____chimes_tmp_ptr = malloc((sizeof(SpeciesData)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9674039231704592552UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 67 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 282 11 len=12 initValidate_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 285 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(Validate)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9674039231704591948UL, 0, 1, (int)sizeof(struct ValidateSt), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 285 31  ({ void *____chimes_tmp_ptr = malloc((sizeof(Validate)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9674039231704591948UL, 0, 1, (int)sizeof(struct ValidateSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 285 54 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 300 6 len=14 validateResult_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 329 6 len=8 sumAtoms_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 347 6 len=11 printThings_npm
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 413 4 ((void (*)(FILE *, struct BasePotentialSt *))(translate_fptr((void *)s->pot->print, -1, 0, 0UL, 2, 9674039231704591938UL, 9674039231704591739UL)))(file, s->pot)
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 413 30 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 380 6 len=23 printSimulationDataYaml_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 419 6 len=12 sanityChecks_npm
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 98 4 alias_group_changed(____alias_loc_id_11); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 289 8 alias_group_changed(____alias_loc_id_34) || 
@@ -33,21 +36,21 @@ InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 386 4
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 428 11 alias_group_changed(____alias_loc_id_48) || 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 444 11 alias_group_changed(____alias_loc_id_49) || 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 455 11 alias_group_changed(____alias_loc_id_50) || 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 144 4  ({ free(validate); free_helper(validate, 9674039231704591424UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 144 4  ({ free_helper((((unsigned char *)validate) - sizeof(void *)), 9674039231704591424UL);free((((unsigned char *)validate) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 144 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 166 29  ({ void *____chimes_tmp_ptr = malloc(sizeof(SimFlat)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9674039231704591703UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 166 29  ({ void *____chimes_tmp_ptr = malloc((sizeof(SimFlat)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9674039231704591703UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 166 51 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 228 14  ({ free(pot); free_helper(pot, 9674039231704592296UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 228 14  ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 9674039231704592296UL);free((((unsigned char *)pot) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 228 22 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 232 4  ({ free(s->species); free_helper(s->species, 9674039231704592296UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 232 4  ({ free_helper((((unsigned char *)s->species) - sizeof(void *)), 9674039231704592296UL);free((((unsigned char *)s->species) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 232 19 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 233 4  ({ free(s->domain); free_helper(s->domain, 9674039231704592296UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 233 4  ({ free_helper((((unsigned char *)s->domain) - sizeof(void *)), 9674039231704592296UL);free((((unsigned char *)s->domain) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 233 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 234 4  ({ free(s); free_helper(s, 9674039231704592287UL); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 234 4  ({ free_helper((((unsigned char *)s) - sizeof(void *)), 9674039231704592287UL);free((((unsigned char *)s) - sizeof(void *)));  }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 234 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 41  ({ void *____chimes_tmp_ptr = malloc(sizeof(SpeciesData)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9674039231704592552UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 41  ({ void *____chimes_tmp_ptr = malloc((sizeof(SpeciesData)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9674039231704592552UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 285 31  ({ void *____chimes_tmp_ptr = malloc(sizeof(Validate)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9674039231704591948UL, 0, 1, (int)sizeof(struct ValidateSt), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 285 31  ({ void *____chimes_tmp_ptr = malloc((sizeof(Validate)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9674039231704591948UL, 0, 1, (int)sizeof(struct ValidateSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 285 54 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 150 59 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_51, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 88 1 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(9674039231704591514UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
@@ -106,8 +109,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 150 29 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 165 2 const int ____chimes_did_disable1 = new_stack((void *)(&initSimulation), "initSimulation", &____must_manage_initSimulation, 1, 0, (size_t)(9674039231704591723UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 165 164 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 166 4  SimFlat *sim;  sim = ((SimFlat*) ({ void *____chimes_tmp_ptr = malloc(sizeof(SimFlat)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9674039231704591703UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 166 531 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 166 4  SimFlat *sim;  sim = ((SimFlat*) ({ void *____chimes_tmp_ptr = malloc((sizeof(SimFlat)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SimFlat), 9674039231704591703UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 166 640 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 178 4  real_t latticeConstant;  latticeConstant = (cmd.lat) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 178 36 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 187 4 real3 globalExtent; ;
@@ -132,14 +135,14 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 268 41 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 272 2 const int ____chimes_did_disable6 = new_stack((void *)(&initSpecies), "initSpecies", &____must_manage_initSpecies, 1, 0, (size_t)(9674039231704592579UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 272 155 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 4  SpeciesData *species;  species = ((SpeciesData*) ({ void *____chimes_tmp_ptr = malloc(sizeof(SpeciesData)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9674039231704592552UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 247 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 4  SpeciesData *species;  species = ((SpeciesData*) ({ void *____chimes_tmp_ptr = malloc((sizeof(SpeciesData)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(SpeciesData), 9674039231704592552UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 356 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 279 5 SpeciesData *____chimes_ret_var_3; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 279 39 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 283 2 const int ____chimes_did_disable7 = new_stack((void *)(&initValidate), "initValidate", &____must_manage_initValidate, 1, 1, (size_t)(9674039231704591999UL), "initValidate|sim|0", &____must_checkpoint_initValidate_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 283 279 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 285 4  Validate *val;  val = ((Validate*) ({ void *____chimes_tmp_ptr = malloc(sizeof(Validate)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9674039231704591948UL, 0, 1, (int)sizeof(struct ValidateSt), 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 285 228 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 285 4  Validate *val;  val = ((Validate*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Validate)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Validate), 9674039231704591948UL, 0, 1, (int)sizeof(struct ValidateSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 285 337 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 297 5 Validate *____chimes_ret_var_4; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 297 36 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 301 2 const int ____chimes_did_disable8 = new_stack((void *)(&validateResult), "validateResult", &____must_manage_validateResult, 2, 2, (size_t)(9674039231704592272UL), (size_t)(9674039231704592273UL), "validateResult|val|0", &____must_checkpoint_validateResult_val_0, "%struct.ValidateSt*", (void *)(&val), (size_t)8, 1, 0, 0, "validateResult|sim|0", &____must_checkpoint_validateResult_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); ;

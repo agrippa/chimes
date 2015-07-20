@@ -104,8 +104,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -124,7 +125,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -3979,12 +3980,12 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
-   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
 # 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
 
 
    void* parms;
@@ -4051,9 +4052,9 @@ typedef struct BasePotentialSt
    char latticeType[8];
    char name[3];
    int atomicNo;
-   int (*force)(struct SimFlatSt* s);
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot);
+   int (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint));
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint));
 } BasePotential;
 
 
@@ -4122,7 +4123,7 @@ LinkCell* initLinkCells_resumable(const Domain* domain, real_t cutoff)
 # 85 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ((domain) ? static_cast<void> (0) : __assert_fail ("domain", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 85, __PRETTY_FUNCTION__));
 # 86 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    LinkCell *ll; ll = ((LinkCell*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LinkCell)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes)); ____chimes_tmp_ptr; })) ;
+    LinkCell *ll; ll = ((LinkCell*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 87 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 88 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    { int i; for ( i = (0) ; i < 3; i++)
@@ -4155,7 +4156,7 @@ LinkCell* initLinkCells_resumable(const Domain* domain, real_t cutoff)
    ll->nTotalBoxes = ll->nLocalBoxes + ll->nHaloBoxes;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ll->nAtoms = (int*) ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 15151216426301245439UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   ll->nAtoms = (int*) ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 15151216426301245439UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    { int iBox; for ( iBox = (0) ;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
 # 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -4164,13 +4165,13 @@ LinkCell* initLinkCells_resumable(const Domain* domain, real_t cutoff)
 # 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ll->nbrBoxes = (int**) ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int*), 15151216426301245439UL, 1, 0); ____chimes_tmp_ptr; }) ;
+   ll->nbrBoxes = (int**) ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int*), 15151216426301245439UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    { int iBox; for ( iBox = (0) ; iBox<ll->nTotalBoxes; ++iBox)
 # 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    {
 # 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-      ll->nbrBoxes[iBox] = (int*) ({ void *____chimes_tmp_ptr = malloc(27 * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, 27*sizeof(int), 15151216426301245485UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      ll->nbrBoxes[iBox] = (int*) ({ void *____chimes_tmp_ptr = malloc((27 * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 27*sizeof(int), 15151216426301245485UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    } }
 # 117 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -4200,9 +4201,9 @@ void destroyLinkCells_resumable(LinkCell** boxes)
    if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_4, ____chimes_did_disable1, false); return; };
 # 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free((*boxes)->nAtoms); free_helper((*boxes)->nAtoms, 15151216426301245612UL); }) ;
+    ({ free_helper((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)), 15151216426301245612UL);free((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *))); }) ;
 # 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free(*boxes); free_helper(*boxes, 15151216426301245605UL); }) ;
+    ({ free_helper((((unsigned char *)*boxes) - sizeof(void *)), 15151216426301245605UL);free((((unsigned char *)*boxes) - sizeof(void *))); }) ;
 # 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    *boxes = __null;
 # 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -4695,7 +4696,7 @@ LinkCell* initLinkCells_quick(const Domain* domain, real_t cutoff)
 # 85 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ((domain) ? static_cast<void> (0) : __assert_fail ("domain", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 85, __PRETTY_FUNCTION__));
 # 86 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    LinkCell *ll; ll = ((LinkCell*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LinkCell)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes)); ____chimes_tmp_ptr; })) ;
+    LinkCell *ll; ll = ((LinkCell*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 87 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 88 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    { int i; for ( i = (0) ; i < 3; i++)
@@ -4728,7 +4729,7 @@ LinkCell* initLinkCells_quick(const Domain* domain, real_t cutoff)
    ll->nTotalBoxes = ll->nLocalBoxes + ll->nHaloBoxes;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ll->nAtoms = (int*) ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 15151216426301245439UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   ll->nAtoms = (int*) ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 15151216426301245439UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    { int iBox; for ( iBox = (0) ;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
 # 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -4737,13 +4738,13 @@ LinkCell* initLinkCells_quick(const Domain* domain, real_t cutoff)
 # 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ll->nbrBoxes = (int**) ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int*), 15151216426301245439UL, 1, 0); ____chimes_tmp_ptr; }) ;
+   ll->nbrBoxes = (int**) ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int*), 15151216426301245439UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    { int iBox; for ( iBox = (0) ; iBox<ll->nTotalBoxes; ++iBox)
 # 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    {
 # 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-      ll->nbrBoxes[iBox] = (int*) ({ void *____chimes_tmp_ptr = malloc(27 * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, 27*sizeof(int), 15151216426301245485UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      ll->nbrBoxes[iBox] = (int*) ({ void *____chimes_tmp_ptr = malloc((27 * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 27*sizeof(int), 15151216426301245485UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    } }
 # 117 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -4772,9 +4773,9 @@ void destroyLinkCells_quick(LinkCell** boxes)
    if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_4, ____chimes_did_disable1, false); return; };
 # 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free((*boxes)->nAtoms); free_helper((*boxes)->nAtoms, 15151216426301245612UL); }) ;
+    ({ free_helper((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)), 15151216426301245612UL);free((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *))); }) ;
 # 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free(*boxes); free_helper(*boxes, 15151216426301245605UL); }) ;
+    ({ free_helper((((unsigned char *)*boxes) - sizeof(void *)), 15151216426301245605UL);free((((unsigned char *)*boxes) - sizeof(void *))); }) ;
 # 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    *boxes = __null;
 # 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -5254,7 +5255,7 @@ LinkCell* initLinkCells_npm(const Domain* domain, real_t cutoff)
 # 85 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ((domain) ? static_cast<void> (0) : __assert_fail ("domain", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 85, __PRETTY_FUNCTION__));
 # 86 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   LinkCell* ll = (LinkCell*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LinkCell)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes)); ____chimes_tmp_ptr; }) ;
+   LinkCell* ll = (LinkCell*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 15151216426301245238UL, 0, 1, (int)sizeof(struct LinkCellSt), 2, (int)__builtin_offsetof(struct LinkCellSt, nAtoms), (int)__builtin_offsetof(struct LinkCellSt, nbrBoxes)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 87 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 88 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    for (int i = 0; i < 3; i++)
@@ -5287,7 +5288,7 @@ LinkCell* initLinkCells_npm(const Domain* domain, real_t cutoff)
    ll->nTotalBoxes = ll->nLocalBoxes + ll->nHaloBoxes;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ll->nAtoms = (int*) ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 15151216426301245439UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   ll->nAtoms = (int*) ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 15151216426301245439UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    for (int iBox=0;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; };
 # 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -5296,13 +5297,13 @@ LinkCell* initLinkCells_npm(const Domain* domain, real_t cutoff)
 # 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   ll->nbrBoxes = (int**) ({ void *____chimes_tmp_ptr = malloc(ll->nTotalBoxes * sizeof(int *)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int*), 15151216426301245439UL, 1, 0); ____chimes_tmp_ptr; }) ;
+   ll->nbrBoxes = (int**) ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int*), 15151216426301245439UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    for (int iBox=0; iBox<ll->nTotalBoxes; ++iBox)
 # 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    {
 # 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-      ll->nbrBoxes[iBox] = (int*) ({ void *____chimes_tmp_ptr = malloc(27 * sizeof(int)); malloc_helper(____chimes_tmp_ptr, 27*sizeof(int), 15151216426301245485UL, 0, 0); ____chimes_tmp_ptr; }) ;
+      ll->nbrBoxes[iBox] = (int*) ({ void *____chimes_tmp_ptr = malloc((27 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 27*sizeof(int), 15151216426301245485UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    }
 # 117 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -5329,9 +5330,9 @@ void destroyLinkCells_npm(LinkCell** boxes)
    if (! *boxes) {return; };
 # 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free((*boxes)->nAtoms); free_helper((*boxes)->nAtoms, 15151216426301245612UL); }) ;
+    ({ free_helper((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)), 15151216426301245612UL);free((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *))); }) ;
 # 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-    ({ free(*boxes); free_helper(*boxes, 15151216426301245605UL); }) ;
+    ({ free_helper((((unsigned char *)*boxes) - sizeof(void *)), 15151216426301245605UL);free((((unsigned char *)*boxes) - sizeof(void *))); }) ;
 # 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    *boxes = __null;
 # 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -5863,18 +5864,18 @@ static int module_init() {
                      "DomainSt", 1344UL, 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent),
                      "LinkCellSt", 1088UL, 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes),
                      "TimerHandle", 32UL, 0,
-                             "getNeighborBoxes", "_Z16getNeighborBoxesP10LinkCellStiPi", 2, "getTuple", "getBoxFromTuple",
-                             "initLinkCells", "_Z13initLinkCellsPK8DomainStd", 1, "getNeighborBoxes",
-                             "getBoxFromCoord", "_ZL15getBoxFromCoordP10LinkCellStPd", 1, "getBoxFromTuple",
-                             "getTuple", "_ZL8getTupleP10LinkCellStiPiS1_S1_", 0,
-                             "copyAtom", "_ZL8copyAtomP10LinkCellStP7AtomsStiiii", 0,
-                             "updateLinkCells", "_Z15updateLinkCellsP10LinkCellStP7AtomsSt", 3, "emptyHaloCells", "getBoxFromCoord", "moveAtom",
-                             "emptyHaloCells", "_ZL14emptyHaloCellsP10LinkCellSt", 0,
-                             "maxOccupancy", "_Z12maxOccupancyP10LinkCellSt", 3, "profileStart", "maxIntParallel", "profileStop",
-                             "putAtomInBox", "_Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd", 1, "getBoxFromCoord",
-                             "destroyLinkCells", "_Z16destroyLinkCellsPP10LinkCellSt", 0,
-                             "getBoxFromTuple", "_Z15getBoxFromTupleP10LinkCellStiii", 0,
-                             "moveAtom", "_Z8moveAtomP10LinkCellStP7AtomsStiii", 2, "copyAtom", "copyAtom",
+                             "getNeighborBoxes", "_Z16getNeighborBoxesP10LinkCellStiPi", 0, 2, "getTuple", "getBoxFromTuple",
+                             "initLinkCells", "_Z13initLinkCellsPK8DomainStd", 0, 1, "getNeighborBoxes",
+                             "getBoxFromCoord", "_ZL15getBoxFromCoordP10LinkCellStPd", 0, 1, "getBoxFromTuple",
+                             "getTuple", "_ZL8getTupleP10LinkCellStiPiS1_S1_", 0, 0,
+                             "copyAtom", "_ZL8copyAtomP10LinkCellStP7AtomsStiiii", 0, 0,
+                             "updateLinkCells", "_Z15updateLinkCellsP10LinkCellStP7AtomsSt", 0, 3, "emptyHaloCells", "getBoxFromCoord", "moveAtom",
+                             "emptyHaloCells", "_ZL14emptyHaloCellsP10LinkCellSt", 0, 0,
+                             "maxOccupancy", "_Z12maxOccupancyP10LinkCellSt", 0, 3, "profileStart", "maxIntParallel", "profileStop",
+                             "putAtomInBox", "_Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd", 0, 1, "getBoxFromCoord",
+                             "destroyLinkCells", "_Z16destroyLinkCellsPP10LinkCellSt", 0, 0,
+                             "getBoxFromTuple", "_Z15getBoxFromTupleP10LinkCellStiii", 0, 0,
+                             "moveAtom", "_Z8moveAtomP10LinkCellStP7AtomsStiii", 0, 2, "copyAtom", "copyAtom",
                         "getNeighborBoxes|ix|0", 1, "getNeighborBoxes",
                         "putAtomInBox|xyz|0", 1, "putAtomInBox",
                         "maxOccupancy|localMax|0", 1, "maxOccupancy",

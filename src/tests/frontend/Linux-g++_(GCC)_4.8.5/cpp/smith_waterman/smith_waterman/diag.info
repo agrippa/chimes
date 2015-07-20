@@ -2,27 +2,27 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 32 6 len=12 print_matrix_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 52 8 len=28 clear_whitespaces_do_mapping_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 68 14 len=9 read_file_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 73 47  ({ void *____chimes_tmp_ptr = malloc((1 + file_size) * sizeof(signed char)); malloc_helper(____chimes_tmp_ptr, (1+file_size)*sizeof(signed char), 17130708580749872436UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 73 47  ({ void *____chimes_tmp_ptr = malloc(((1 + file_size) * sizeof(signed char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (1+file_size)*sizeof(signed char), 17130708580749872436UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 73 87 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 83 13 len=11 random_init_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 91 6 len=6 kernel_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 140 31  ({ void *____chimes_tmp_ptr = malloc(n_char_in_file_1); malloc_helper(____chimes_tmp_ptr, n_char_in_file_1, 17130708580749872528UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 140 31  ({ void *____chimes_tmp_ptr = malloc((n_char_in_file_1) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n_char_in_file_1, 17130708580749872528UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 140 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 141 31  ({ void *____chimes_tmp_ptr = malloc(n_char_in_file_2); malloc_helper(____chimes_tmp_ptr, n_char_in_file_2, 17130708580749872528UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 141 31  ({ void *____chimes_tmp_ptr = malloc((n_char_in_file_2) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n_char_in_file_2, 17130708580749872528UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 141 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 145 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * (n_char_in_file_1 + 1)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*(n_char_in_file_1+1), 17130708580749872767UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 145 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (n_char_in_file_1 + 1)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*(n_char_in_file_1+1), 17130708580749872767UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 145 66 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * (n_char_in_file_1 + 1)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*(n_char_in_file_1+1), 17130708580749872767UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (n_char_in_file_1 + 1)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*(n_char_in_file_1+1), 17130708580749872767UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 66 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 73 47  ({ void *____chimes_tmp_ptr = malloc((1 + file_size) * sizeof(signed char)); malloc_helper(____chimes_tmp_ptr, (1+file_size)*sizeof(signed char), 17130708580749872436UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 73 47  ({ void *____chimes_tmp_ptr = malloc(((1 + file_size) * sizeof(signed char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (1+file_size)*sizeof(signed char), 17130708580749872436UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 73 87 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 140 31  ({ void *____chimes_tmp_ptr = malloc(n_char_in_file_1); malloc_helper(____chimes_tmp_ptr, n_char_in_file_1, 17130708580749872528UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 140 31  ({ void *____chimes_tmp_ptr = malloc((n_char_in_file_1) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n_char_in_file_1, 17130708580749872528UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 140 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 141 31  ({ void *____chimes_tmp_ptr = malloc(n_char_in_file_2); malloc_helper(____chimes_tmp_ptr, n_char_in_file_2, 17130708580749872528UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 141 31  ({ void *____chimes_tmp_ptr = malloc((n_char_in_file_2) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n_char_in_file_2, 17130708580749872528UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 141 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 145 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * (n_char_in_file_1 + 1)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*(n_char_in_file_1+1), 17130708580749872767UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 145 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (n_char_in_file_1 + 1)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*(n_char_in_file_1+1), 17130708580749872767UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 145 66 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 27  ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * (n_char_in_file_1 + 1)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*(n_char_in_file_1+1), 17130708580749872767UL, 0, 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (n_char_in_file_1 + 1)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*(n_char_in_file_1+1), 17130708580749872767UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 66 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 29 81 rm_stack(false, 0UL, "char_mapping", &____must_manage_char_mapping, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 20 37 const int ____chimes_did_disable0 = new_stack((void *)(&char_mapping), "char_mapping", &____must_manage_char_mapping, 1, 0, (size_t)(0UL)); 
@@ -65,8 +65,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_wat
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 68 238 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 70 5  long file_size;  file_size = (ftell (file)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 70 34 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 73 5  signed char *file_buffer;  file_buffer = ((signed char *) ({ void *____chimes_tmp_ptr = malloc((1 + file_size) * sizeof(signed char)); malloc_helper(____chimes_tmp_ptr, (1+file_size)*sizeof(signed char), 17130708580749872436UL, 0, 0); ____chimes_tmp_ptr; })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 73 248 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 73 5  signed char *file_buffer;  file_buffer = ((signed char *) ({ void *____chimes_tmp_ptr = malloc(((1 + file_size) * sizeof(signed char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (1+file_size)*sizeof(signed char), 17130708580749872436UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 73 357 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 75 5  size_t n_read_from_file;  n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 75 87 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 80 6 signed char *____chimes_ret_var_2; ;
@@ -113,14 +113,14 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_wat
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 132 34 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 137 5  unsigned long long nchunks;  nchunks = (n_char_in_file_2 / chunking) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 137 61 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 140 35 void *____chimes_tmp_ptr = malloc(n_char_in_file_1); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 140 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 141 35 void *____chimes_tmp_ptr = malloc(n_char_in_file_2); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 141 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 145 31 void *____chimes_tmp_ptr = malloc(sizeof(int) * (n_char_in_file_1 + 1)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 145 102 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 31 void *____chimes_tmp_ptr = malloc(sizeof(int) * (n_char_in_file_1 + 1)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 102 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 140 35 void *____chimes_tmp_ptr = malloc((n_char_in_file_1) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 140 105 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 141 35 void *____chimes_tmp_ptr = malloc((n_char_in_file_2) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 141 105 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 145 31 void *____chimes_tmp_ptr = malloc((sizeof(int) * (n_char_in_file_1 + 1)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 145 121 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 31 void *____chimes_tmp_ptr = malloc((sizeof(int) * (n_char_in_file_1 + 1)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 121 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 148 2  int prev;  prev = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 148 14 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 149 2  int current;  current = (1) ;

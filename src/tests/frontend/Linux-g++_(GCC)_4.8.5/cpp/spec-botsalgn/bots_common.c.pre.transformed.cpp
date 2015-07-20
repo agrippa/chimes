@@ -84,8 +84,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -104,7 +105,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -6476,14 +6477,14 @@ static int module_init() {
                              (268134479069371185UL + 113UL), (268134479069371185UL + 119UL),
                              (268134479069371185UL + 91UL), (268134479069371185UL + 101UL),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                             "bots_get_load_average", "_Z21bots_get_load_averagePc", 0,
-                             "bots_usecs", "_Z10bots_usecsv", 0,
-                             "bots_get_max_cpus", "_Z17bots_get_max_cpusv", 0,
-                             "bots_get_architecture", "_Z21bots_get_architecturePc", 0,
-                             "bots_warning", "_Z12bots_warningiPc", 0,
-                             "bots_print_results", "_Z18bots_print_resultsv", 3, "bots_get_architecture", "bots_get_load_average", "bots_error",
-                             "bots_get_date", "_Z13bots_get_datePc", 0,
-                             "bots_error", "_Z10bots_erroriPc", 1, "bots_print_usage",
+                             "bots_get_load_average", "_Z21bots_get_load_averagePc", 0, 0,
+                             "bots_usecs", "_Z10bots_usecsv", 0, 0,
+                             "bots_get_max_cpus", "_Z17bots_get_max_cpusv", 0, 0,
+                             "bots_get_architecture", "_Z21bots_get_architecturePc", 0, 0,
+                             "bots_warning", "_Z12bots_warningiPc", 0, 0,
+                             "bots_print_results", "_Z18bots_print_resultsv", 0, 3, "bots_get_architecture", "bots_get_load_average", "bots_error",
+                             "bots_get_date", "_Z13bots_get_datePc", 0, 0,
+                             "bots_error", "_Z10bots_erroriPc", 0, 1, "bots_print_usage",
                         "bots_print_results|str_architecture|0", 1, "bots_print_results",
                         "bots_print_results|str_load_avg|0", 1, "bots_print_results",
         "bots_get_architecture", 0UL, (int)1, 268134479069371326UL,

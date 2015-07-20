@@ -82,8 +82,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -102,7 +103,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4201,12 +4202,12 @@ int matrix_dim;
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
      call_lbl_8: (____chimes_does_checkpoint_lud_verify_npm ? ( ({ calling((void*)lud_verify, 8, ____alias_loc_id_0, 0UL, 3, (size_t)(5766999286144554368UL), (size_t)(5766999286144554350UL), (size_t)(0UL)); (lud_verify)(mm, m, matrix_dim); }) ) : (({ calling_npm("lud_verify", ____alias_loc_id_0); (*____chimes_extern_func_lud_verify)(mm, m, matrix_dim); })));
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-     ({ free(mm); free_helper(mm, 5766999286144554368UL); }) ;
+     ({ free_helper((((unsigned char *)mm) - sizeof(void *)), 5766999286144554368UL);free((((unsigned char *)mm) - sizeof(void *))); }) ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
   }
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-   ({ free(m); free_helper(m, 5766999286144554350UL); }) ;
+   ({ free_helper((((unsigned char *)m) - sizeof(void *)), 5766999286144554350UL);free((((unsigned char *)m) - sizeof(void *))); }) ;
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
@@ -4357,12 +4358,12 @@ int matrix_dim;
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
      call_lbl_8: (____chimes_does_checkpoint_lud_verify_npm ? ( ({ calling((void*)lud_verify, 8, ____alias_loc_id_0, 0UL, 3, (size_t)(5766999286144554368UL), (size_t)(5766999286144554350UL), (size_t)(0UL)); (lud_verify)(mm, m, matrix_dim); }) ) : (({ calling_npm("lud_verify", ____alias_loc_id_0); (*____chimes_extern_func_lud_verify)(mm, m, matrix_dim); })));
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-     ({ free(mm); free_helper(mm, 5766999286144554368UL); }) ;
+     ({ free_helper((((unsigned char *)mm) - sizeof(void *)), 5766999286144554368UL);free((((unsigned char *)mm) - sizeof(void *))); }) ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
   }
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-   ({ free(m); free_helper(m, 5766999286144554350UL); }) ;
+   ({ free_helper((((unsigned char *)m) - sizeof(void *)), 5766999286144554350UL);free((((unsigned char *)m) - sizeof(void *))); }) ;
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
@@ -4418,7 +4419,7 @@ static int module_init() {
                      "__stopwatch_t", 256UL, 2, "%struct.timeval", (int)__builtin_offsetof (struct __stopwatch_t, begin), "%struct.timeval", (int)__builtin_offsetof (struct __stopwatch_t, end),
                      "option", 256UL, 4, "char*", (int)__builtin_offsetof (struct option, name), "int", (int)__builtin_offsetof (struct option, has_arg), "int*", (int)__builtin_offsetof (struct option, flag), "int", (int)__builtin_offsetof (struct option, val),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                             "main", "main", 9, "create_matrix_from_file", "print_matrix", "matrix_duplicate", "stopwatch_start", "lud_base", "stopwatch_stop", "get_interval_by_sec", "print_matrix", "lud_verify",
+                             "main", "main", 0, 9, "create_matrix_from_file", "print_matrix", "matrix_duplicate", "stopwatch_start", "lud_base", "stopwatch_stop", "get_interval_by_sec", "print_matrix", "lud_verify",
                         "main|matrix_dim|0", 1, "main",
                         "main|m|0", 8, "stopwatch_stop", "stopwatch_start", "print_matrix", "matrix_duplicate", "lud_verify", "lud_base", "get_interval_by_sec", "create_matrix_from_file",
                         "main|mm|0", 1, "main",

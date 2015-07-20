@@ -86,8 +86,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -106,7 +107,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1791,17 +1792,17 @@ static int module_init() {
                            "spec_genrand_real3", &(____chimes_does_checkpoint_spec_genrand_real3_npm),
                            "spec_genrand_real1", &(____chimes_does_checkpoint_spec_genrand_real1_npm),
                              (6302335948771282278UL + 202UL), (6302335948771282278UL + 343UL),
-                             "spec_srand", "spec_srand", 1, "spec_init_genrand",
-                             "spec_rand", "spec_rand", 1, "spec_genrand_int32",
-                             "spec_genrand_res53", "spec_genrand_res53", 2, "spec_genrand_int32", "spec_genrand_int32",
-                             "spec_init_by_array", "spec_init_by_array", 1, "spec_init_genrand",
-                             "spec_genrand_int32", "spec_genrand_int32", 1, "spec_init_genrand",
-                             "spec_genrand_int31", "spec_genrand_int31", 1, "spec_genrand_int32",
-                             "spec_init_genrand", "spec_init_genrand", 0,
-                             "spec_lrand48", "spec_lrand48", 1, "spec_genrand_int32",
-                             "spec_genrand_real2", "spec_genrand_real2", 1, "spec_genrand_int32",
-                             "spec_genrand_real3", "spec_genrand_real3", 1, "spec_genrand_int32",
-                             "spec_genrand_real1", "spec_genrand_real1", 1, "spec_genrand_int32",
+                             "spec_srand", "spec_srand", 0, 1, "spec_init_genrand",
+                             "spec_rand", "spec_rand", 0, 1, "spec_genrand_int32",
+                             "spec_genrand_res53", "spec_genrand_res53", 0, 2, "spec_genrand_int32", "spec_genrand_int32",
+                             "spec_init_by_array", "spec_init_by_array", 0, 1, "spec_init_genrand",
+                             "spec_genrand_int32", "spec_genrand_int32", 0, 1, "spec_init_genrand",
+                             "spec_genrand_int31", "spec_genrand_int31", 0, 1, "spec_genrand_int32",
+                             "spec_init_genrand", "spec_init_genrand", 0, 0,
+                             "spec_lrand48", "spec_lrand48", 0, 1, "spec_genrand_int32",
+                             "spec_genrand_real2", "spec_genrand_real2", 0, 1, "spec_genrand_int32",
+                             "spec_genrand_real3", "spec_genrand_real3", 0, 1, "spec_genrand_int32",
+                             "spec_genrand_real1", "spec_genrand_real1", 0, 1, "spec_genrand_int32",
         "spec_init_genrand", 0UL, (int)1, 0UL,
         "spec_genrand_int32", 0UL, (int)0,
         "spec_genrand_int32", 0UL, (int)0,

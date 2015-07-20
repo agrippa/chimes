@@ -36,15 +36,14 @@ if [[ $QSUB_EXISTS != 0 && $SBATCH_EXISTS != 0 ]]; then
     exit 1
 fi
 
-LIST_OF_JOBS=
+NJOBS=
 if [[ $QSUB_EXISTS == 0 ]]; then
-    LIST_OF_JOBS=$(qstat -u jmg3 | awk '{ print $4 }' | tail -n +6)
+    NJOBS=$(qstat -u jmg3 | tail -n +6 | awk '{ print $4 }' | grep -w $TEST.$TYPE | wc -l)
 elif [[ $SBATCH_EXISTS == 0 ]]; then
-    LIST_OF_JOBS=$(squeue -u jmg3 | awk '{ print $3 }' | tail -n +2)
+    NJOBS=$(squeue -n $TEST.$TYPE -u jmg3 --noheader | wc -l)
 fi
 
-RUN_EXISTS=$(echo $LIST_OF_JOBS | grep -w $TEST.$TYPE | wc -l)
-if [[ $RUN_EXISTS != 0 ]]; then
+if [[ $NJOBS != 0 ]]; then
     echo A job for $TEST.$TYPE already exists
     exit 1
 fi
@@ -57,8 +56,9 @@ if [[ $TEST_EXISTS != 1 ]]; then
 fi
 
 SCRIPT=$(mktemp /tmp/chimes-$TEST.XXXXXX.pbs)
-echo source $HOME/.bashrc > $SCRIPT
-echo source $HOME/.bash_profile > $SCRIPT
+echo '#!/bin/bash' > $SCRIPT
+echo source $HOME/.bashrc >> $SCRIPT
+echo source $HOME/.bash_profile >> $SCRIPT
 # echo 'echo $LD_LIBRARY_PATH' >> $SCRIPT
 # echo echo Listing contents of /usr/lib64 >> $SCRIPT
 # echo ls /usr/lib64/ >> $SCRIPT

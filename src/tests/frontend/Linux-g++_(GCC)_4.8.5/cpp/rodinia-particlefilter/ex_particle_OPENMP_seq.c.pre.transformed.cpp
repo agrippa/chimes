@@ -120,8 +120,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -140,7 +141,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4551,7 +4552,7 @@ void videoSequence_resumable(int * I, int IszX, int IszY, int Nfr, int * seed){c
 # 252 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int *newMatrix; newMatrix = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910310433UL, 0, 0); ____chimes_tmp_ptr; })) ;
+  int *newMatrix; newMatrix = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910310433UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_3: ({ calling_npm("imdilate_disk", 0); imdilate_disk_npm(I, IszX, IszY, Nfr, 5, newMatrix); });
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4571,7 +4572,7 @@ void videoSequence_resumable(int * I, int IszX, int IszY, int Nfr, int * seed){c
 # 263 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 264 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(newMatrix); free_helper(newMatrix, 7756533236910310433UL); }) ;
+  ({ free_helper((((unsigned char *)newMatrix) - sizeof(void *)), 7756533236910310433UL);free((((unsigned char *)newMatrix) - sizeof(void *))); }) ;
 # 265 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4939,7 +4940,7 @@ int max_size;
 # 487 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius*2 - 1) ;
 # 488 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc(diameter * diameter * sizeof(int)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 7756533236910311570UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc((diameter * diameter * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 7756533236910311570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 489 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_3: ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); });
 # 490 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4961,7 +4962,7 @@ int max_size;
 # 498 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 499 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc(countOnes * 2 * sizeof(double)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 7756533236910311790UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc((countOnes * 2 * sizeof(double)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 7756533236910311790UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_4: ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, objxy, radius); });
 # 501 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4971,7 +4972,7 @@ int max_size;
    float ____chimes_unroll_var_12; call_lbl_6: ____chimes_unroll_var_12 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })) ; printf("TIME TO GET NEIGHBORS TOOK: %f\n", ____chimes_unroll_var_12);
 # 504 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311658UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311658UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(weights, Nparticles) private(x)
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4986,21 +4987,21 @@ int max_size;
    float ____chimes_unroll_var_13; call_lbl_8: ____chimes_unroll_var_13 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })) ; printf("TIME TO GET WEIGHTSTOOK: %f\n", ____chimes_unroll_var_13);
 # 512 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 513 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311783UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311783UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 514 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311745UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311745UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 515 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311751UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311751UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311786UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311786UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311787UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311787UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311788UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311788UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    u = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311789UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    u = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311789UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 520 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * countOnes * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 7756533236910311792UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * countOnes * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 7756533236910311792UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(arrayX, arrayY, xe, ye) private(x)
 # 522 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5030,27 +5031,27 @@ int max_size;
 # 539 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 540 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(disk); free_helper(disk, 7756533236910311570UL); }) ;
+  ({ free_helper((((unsigned char *)disk) - sizeof(void *)), 7756533236910311570UL);free((((unsigned char *)disk) - sizeof(void *))); }) ;
 # 541 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(objxy); free_helper(objxy, 7756533236910311790UL); }) ;
+  ({ free_helper((((unsigned char *)objxy) - sizeof(void *)), 7756533236910311790UL);free((((unsigned char *)objxy) - sizeof(void *))); }) ;
 # 542 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(weights); free_helper(weights, 7756533236910311658UL); }) ;
+  ({ free_helper((((unsigned char *)weights) - sizeof(void *)), 7756533236910311658UL);free((((unsigned char *)weights) - sizeof(void *))); }) ;
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(likelihood); free_helper(likelihood, 7756533236910311783UL); }) ;
+  ({ free_helper((((unsigned char *)likelihood) - sizeof(void *)), 7756533236910311783UL);free((((unsigned char *)likelihood) - sizeof(void *))); }) ;
 # 544 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(xj); free_helper(xj, 7756533236910311786UL); }) ;
+  ({ free_helper((((unsigned char *)xj) - sizeof(void *)), 7756533236910311786UL);free((((unsigned char *)xj) - sizeof(void *))); }) ;
 # 545 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(yj); free_helper(yj, 7756533236910311787UL); }) ;
+  ({ free_helper((((unsigned char *)yj) - sizeof(void *)), 7756533236910311787UL);free((((unsigned char *)yj) - sizeof(void *))); }) ;
 # 546 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayX); free_helper(arrayX, 7756533236910311745UL); }) ;
+  ({ free_helper((((unsigned char *)arrayX) - sizeof(void *)), 7756533236910311745UL);free((((unsigned char *)arrayX) - sizeof(void *))); }) ;
 # 547 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayY); free_helper(arrayY, 7756533236910311751UL); }) ;
+  ({ free_helper((((unsigned char *)arrayY) - sizeof(void *)), 7756533236910311751UL);free((((unsigned char *)arrayY) - sizeof(void *))); }) ;
 # 548 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(CDF); free_helper(CDF, 7756533236910311788UL); }) ;
+  ({ free_helper((((unsigned char *)CDF) - sizeof(void *)), 7756533236910311788UL);free((((unsigned char *)CDF) - sizeof(void *))); }) ;
 # 549 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(u); free_helper(u, 7756533236910311789UL); }) ;
+  ({ free_helper((((unsigned char *)u) - sizeof(void *)), 7756533236910311789UL);free((((unsigned char *)u) - sizeof(void *))); }) ;
 # 550 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(ind); free_helper(ind, 7756533236910311792UL); }) ;
+  ({ free_helper((((unsigned char *)ind) - sizeof(void *)), 7756533236910311792UL);free((((unsigned char *)ind) - sizeof(void *))); }) ;
 # 551 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "particleFilter", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); }
 # 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5176,14 +5177,14 @@ int IszX;
  }
 # 612 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 613 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 7756533236910312030UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 7756533236910312030UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 614 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int i; ;
 # 615 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (i = 0; i < Nparticles; i++) { seed[i] = time(0)*i; };
 # 617 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 618 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    I = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910312048UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    I = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910312048UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 619 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 620 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5209,9 +5210,9 @@ int IszX;
    float ____chimes_unroll_var_18; call_lbl_7: ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
 # 634 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 635 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(seed); free_helper(seed, 7756533236910312030UL); }) ;
+  ({ free_helper((((unsigned char *)seed) - sizeof(void *)), 7756533236910312030UL);free((((unsigned char *)seed) - sizeof(void *))); }) ;
 # 636 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(I); free_helper(I, 7756533236910312048UL); }) ;
+  ({ free_helper((((unsigned char *)I) - sizeof(void *)), 7756533236910312048UL);free((((unsigned char *)I) - sizeof(void *))); }) ;
 # 637 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_25; ;
 # 638 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5490,7 +5491,7 @@ void videoSequence_quick(int * I, int IszX, int IszY, int Nfr, int * seed){const
 # 252 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int *newMatrix; newMatrix = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910310433UL, 0, 0); ____chimes_tmp_ptr; })) ;
+  int *newMatrix; newMatrix = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910310433UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_3: ({ calling_npm("imdilate_disk", 0); imdilate_disk_npm(I, IszX, IszY, Nfr, 5, newMatrix); });
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5510,7 +5511,7 @@ void videoSequence_quick(int * I, int IszX, int IszY, int Nfr, int * seed){const
 # 263 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 264 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(newMatrix); free_helper(newMatrix, 7756533236910310433UL); }) ;
+  ({ free_helper((((unsigned char *)newMatrix) - sizeof(void *)), 7756533236910310433UL);free((((unsigned char *)newMatrix) - sizeof(void *))); }) ;
 # 265 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5876,7 +5877,7 @@ int max_size;
 # 487 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius*2 - 1) ;
 # 488 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc(diameter * diameter * sizeof(int)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 7756533236910311570UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc((diameter * diameter * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 7756533236910311570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 489 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_3: ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); });
 # 490 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5898,7 +5899,7 @@ int max_size;
 # 498 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 499 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc(countOnes * 2 * sizeof(double)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 7756533236910311790UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc((countOnes * 2 * sizeof(double)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 7756533236910311790UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_4: ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, objxy, radius); });
 # 501 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5908,7 +5909,7 @@ int max_size;
    float ____chimes_unroll_var_12; call_lbl_6: ____chimes_unroll_var_12 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })) ; printf("TIME TO GET NEIGHBORS TOOK: %f\n", ____chimes_unroll_var_12);
 # 504 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311658UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311658UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(weights, Nparticles) private(x)
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5923,21 +5924,21 @@ int max_size;
    float ____chimes_unroll_var_13; call_lbl_8: ____chimes_unroll_var_13 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })) ; printf("TIME TO GET WEIGHTSTOOK: %f\n", ____chimes_unroll_var_13);
 # 512 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 513 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311783UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311783UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 514 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311745UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311745UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 515 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311751UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311751UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311786UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311786UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311787UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311787UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311788UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311788UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    u = ((double *) ({ void *____chimes_tmp_ptr = malloc(sizeof(double) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311789UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    u = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311789UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 520 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * countOnes * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 7756533236910311792UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * countOnes * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 7756533236910311792UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(arrayX, arrayY, xe, ye) private(x)
 # 522 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5967,27 +5968,27 @@ int max_size;
 # 539 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 540 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(disk); free_helper(disk, 7756533236910311570UL); }) ;
+  ({ free_helper((((unsigned char *)disk) - sizeof(void *)), 7756533236910311570UL);free((((unsigned char *)disk) - sizeof(void *))); }) ;
 # 541 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(objxy); free_helper(objxy, 7756533236910311790UL); }) ;
+  ({ free_helper((((unsigned char *)objxy) - sizeof(void *)), 7756533236910311790UL);free((((unsigned char *)objxy) - sizeof(void *))); }) ;
 # 542 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(weights); free_helper(weights, 7756533236910311658UL); }) ;
+  ({ free_helper((((unsigned char *)weights) - sizeof(void *)), 7756533236910311658UL);free((((unsigned char *)weights) - sizeof(void *))); }) ;
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(likelihood); free_helper(likelihood, 7756533236910311783UL); }) ;
+  ({ free_helper((((unsigned char *)likelihood) - sizeof(void *)), 7756533236910311783UL);free((((unsigned char *)likelihood) - sizeof(void *))); }) ;
 # 544 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(xj); free_helper(xj, 7756533236910311786UL); }) ;
+  ({ free_helper((((unsigned char *)xj) - sizeof(void *)), 7756533236910311786UL);free((((unsigned char *)xj) - sizeof(void *))); }) ;
 # 545 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(yj); free_helper(yj, 7756533236910311787UL); }) ;
+  ({ free_helper((((unsigned char *)yj) - sizeof(void *)), 7756533236910311787UL);free((((unsigned char *)yj) - sizeof(void *))); }) ;
 # 546 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayX); free_helper(arrayX, 7756533236910311745UL); }) ;
+  ({ free_helper((((unsigned char *)arrayX) - sizeof(void *)), 7756533236910311745UL);free((((unsigned char *)arrayX) - sizeof(void *))); }) ;
 # 547 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(arrayY); free_helper(arrayY, 7756533236910311751UL); }) ;
+  ({ free_helper((((unsigned char *)arrayY) - sizeof(void *)), 7756533236910311751UL);free((((unsigned char *)arrayY) - sizeof(void *))); }) ;
 # 548 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(CDF); free_helper(CDF, 7756533236910311788UL); }) ;
+  ({ free_helper((((unsigned char *)CDF) - sizeof(void *)), 7756533236910311788UL);free((((unsigned char *)CDF) - sizeof(void *))); }) ;
 # 549 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(u); free_helper(u, 7756533236910311789UL); }) ;
+  ({ free_helper((((unsigned char *)u) - sizeof(void *)), 7756533236910311789UL);free((((unsigned char *)u) - sizeof(void *))); }) ;
 # 550 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(ind); free_helper(ind, 7756533236910311792UL); }) ;
+  ({ free_helper((((unsigned char *)ind) - sizeof(void *)), 7756533236910311792UL);free((((unsigned char *)ind) - sizeof(void *))); }) ;
 # 551 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "particleFilter", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); }
 
@@ -6114,14 +6115,14 @@ int IszX;
  }
 # 612 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 613 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * Nparticles); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 7756533236910312030UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 7756533236910312030UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 614 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int i; ;
 # 615 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (i = 0; i < Nparticles; i++) { seed[i] = time(0)*i; };
 # 617 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 618 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    I = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * IszX * IszY * Nfr); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910312048UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    I = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910312048UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 619 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 620 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6147,9 +6148,9 @@ int IszX;
    float ____chimes_unroll_var_18; call_lbl_7: ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
 # 634 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 635 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(seed); free_helper(seed, 7756533236910312030UL); }) ;
+  ({ free_helper((((unsigned char *)seed) - sizeof(void *)), 7756533236910312030UL);free((((unsigned char *)seed) - sizeof(void *))); }) ;
 # 636 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free(I); free_helper(I, 7756533236910312048UL); }) ;
+  ({ free_helper((((unsigned char *)I) - sizeof(void *)), 7756533236910312048UL);free((((unsigned char *)I) - sizeof(void *))); }) ;
 # 637 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_25; ;
 # 638 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6763,24 +6764,24 @@ static int module_init() {
                              (7756533236910309485UL + 1002UL), (7756533236910309485UL + 1062UL),
                              (7756533236910309485UL + 1001UL), (7756533236910309485UL + 1061UL),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                             "findIndex", "_Z9findIndexPdid", 0,
-                             "calcLikelihoodSum", "_Z17calcLikelihoodSumPiS_i", 0,
-                             "randn", "_Z5randnPii", 2, "randu", "randu",
-                             "particleFilter", "_Z14particleFilterPiiiiS_i", 13, "get_time", "roundDouble", "roundDouble", "strelDisk", "getneighbors", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "particleFilter_kernel", "checkpoint",
-                             "particleFilter_kernel", "_Z21particleFilter_kernelPiiiiS_iPdS0_S0_S0_S0_S0_S0_S0_iS_iiS0_dd", 29, "get_time", "randn", "randn", "get_time", "elapsed_time", "roundDouble", "roundDouble", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "roundDouble", "roundDouble", "get_time", "elapsed_time", "randu", "get_time", "elapsed_time", "findIndex", "get_time", "elapsed_time", "get_time", "elapsed_time",
-                             "videoSequence", "_Z13videoSequencePiiiiS_", 8, "roundDouble", "roundDouble", "checkpoint", "imdilate_disk", "checkpoint", "setIf", "setIf", "addNoise",
-                             "roundDouble", "_Z11roundDoubled", 0,
-                             "findIndexBin", "_Z12findIndexBinPdiid", 2, "findIndexBin", "findIndexBin",
-                             "elapsed_time", "_Z12elapsed_timexx", 0,
-                             "setIf", "_Z5setIfiiPiS_S_S_", 0,
-                             "dilate_matrix", "_Z13dilate_matrixPiiiiiiii", 0,
-                             "imdilate_disk", "_Z13imdilate_diskPiiiiiS_", 1, "dilate_matrix",
-                             "get_time", "_Z8get_timev", 0,
-                             "getneighbors", "_Z12getneighborsPiPdi", 0,
-                             "main", "main", 8, "get_time", "videoSequence", "get_time", "elapsed_time", "particleFilter", "get_time", "elapsed_time", "elapsed_time",
-                             "strelDisk", "_Z9strelDiskPii", 0,
-                             "addNoise", "_Z8addNoisePiS_S_S_S_", 1, "randn",
-                             "randu", "_Z5randuPii", 0,
+                             "findIndex", "_Z9findIndexPdid", 0, 0,
+                             "calcLikelihoodSum", "_Z17calcLikelihoodSumPiS_i", 0, 0,
+                             "randn", "_Z5randnPii", 0, 2, "randu", "randu",
+                             "particleFilter", "_Z14particleFilterPiiiiS_i", 0, 13, "get_time", "roundDouble", "roundDouble", "strelDisk", "getneighbors", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "particleFilter_kernel", "checkpoint",
+                             "particleFilter_kernel", "_Z21particleFilter_kernelPiiiiS_iPdS0_S0_S0_S0_S0_S0_S0_iS_iiS0_dd", 0, 29, "get_time", "randn", "randn", "get_time", "elapsed_time", "roundDouble", "roundDouble", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "roundDouble", "roundDouble", "get_time", "elapsed_time", "randu", "get_time", "elapsed_time", "findIndex", "get_time", "elapsed_time", "get_time", "elapsed_time",
+                             "videoSequence", "_Z13videoSequencePiiiiS_", 0, 8, "roundDouble", "roundDouble", "checkpoint", "imdilate_disk", "checkpoint", "setIf", "setIf", "addNoise",
+                             "roundDouble", "_Z11roundDoubled", 0, 0,
+                             "findIndexBin", "_Z12findIndexBinPdiid", 0, 2, "findIndexBin", "findIndexBin",
+                             "elapsed_time", "_Z12elapsed_timexx", 0, 0,
+                             "setIf", "_Z5setIfiiPiS_S_S_", 0, 0,
+                             "dilate_matrix", "_Z13dilate_matrixPiiiiiiii", 0, 0,
+                             "imdilate_disk", "_Z13imdilate_diskPiiiiiS_", 0, 1, "dilate_matrix",
+                             "get_time", "_Z8get_timev", 0, 0,
+                             "getneighbors", "_Z12getneighborsPiPdi", 0, 0,
+                             "main", "main", 0, 8, "get_time", "videoSequence", "get_time", "elapsed_time", "particleFilter", "get_time", "elapsed_time", "elapsed_time",
+                             "strelDisk", "_Z9strelDiskPii", 0, 0,
+                             "addNoise", "_Z8addNoisePiS_S_S_S_", 0, 1, "randn",
+                             "randu", "_Z5randuPii", 0, 0,
                         "videoSequence|IszX|0", 1, "videoSequence",
                         "main|IszX|0", 1, "videoSequence",
                         "main|IszY|0", 1, "videoSequence",

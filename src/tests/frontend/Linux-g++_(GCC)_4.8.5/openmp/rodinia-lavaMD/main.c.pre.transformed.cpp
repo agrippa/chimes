@@ -81,8 +81,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -101,7 +102,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -3452,7 +3453,7 @@ double start_time;
   call_lbl_7: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 7, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.box_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 1242561836700798883UL, 0, 1, (int)sizeof(struct box_str), 0); ____chimes_tmp_ptr; }) ;
+ box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.box_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 1242561836700798883UL, 0, 1, (int)sizeof(struct box_str), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 207 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3551,7 +3552,7 @@ double start_time;
 # 270 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 271 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799222UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) ;
+ rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799222UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3567,7 +3568,7 @@ double start_time;
 # 279 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 280 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 281 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem2); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 1242561836700799284UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem2) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 1242561836700799284UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 282 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 283 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3577,7 +3578,7 @@ double start_time;
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799307UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) ;
+ fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799307UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3616,13 +3617,13 @@ double start_time;
     printf("execution took %f s\n", end_time - start_time);
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(rv_cpu); free_helper(rv_cpu, 1242561836700799222UL); }) ;
+  ({ free_helper((((unsigned char *)rv_cpu) - sizeof(void *)), 1242561836700799222UL);free((((unsigned char *)rv_cpu) - sizeof(void *))); }) ;
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(qv_cpu); free_helper(qv_cpu, 1242561836700799284UL); }) ;
+  ({ free_helper((((unsigned char *)qv_cpu) - sizeof(void *)), 1242561836700799284UL);free((((unsigned char *)qv_cpu) - sizeof(void *))); }) ;
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(fv_cpu); free_helper(fv_cpu, 1242561836700799307UL); }) ;
+  ({ free_helper((((unsigned char *)fv_cpu) - sizeof(void *)), 1242561836700799307UL);free((((unsigned char *)fv_cpu) - sizeof(void *))); }) ;
 # 344 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(box_cpu); free_helper(box_cpu, 1242561836700798883UL); }) ;
+  ({ free_helper((((unsigned char *)box_cpu) - sizeof(void *)), 1242561836700798883UL);free((((unsigned char *)box_cpu) - sizeof(void *))); }) ;
 # 345 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 346 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   call_lbl_14: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));
@@ -3875,7 +3876,7 @@ double start_time;
   call_lbl_7: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 7, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.box_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 1242561836700798883UL, 0, 1, (int)sizeof(struct box_str), 0); ____chimes_tmp_ptr; }) ;
+ box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.box_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 1242561836700798883UL, 0, 1, (int)sizeof(struct box_str), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 207 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3974,7 +3975,7 @@ double start_time;
 # 270 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 271 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799222UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) ;
+ rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799222UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -3990,7 +3991,7 @@ double start_time;
 # 279 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 280 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 281 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem2); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 1242561836700799284UL, 0, 0); ____chimes_tmp_ptr; }) ;
+ qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem2) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 1242561836700799284UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 282 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 283 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -4000,7 +4001,7 @@ double start_time;
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc(dim_cpu.space_mem); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799307UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); ____chimes_tmp_ptr; }) ;
+ fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799307UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
@@ -4039,13 +4040,13 @@ double start_time;
     printf("execution took %f s\n", end_time - start_time);
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(rv_cpu); free_helper(rv_cpu, 1242561836700799222UL); }) ;
+  ({ free_helper((((unsigned char *)rv_cpu) - sizeof(void *)), 1242561836700799222UL);free((((unsigned char *)rv_cpu) - sizeof(void *))); }) ;
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(qv_cpu); free_helper(qv_cpu, 1242561836700799284UL); }) ;
+  ({ free_helper((((unsigned char *)qv_cpu) - sizeof(void *)), 1242561836700799284UL);free((((unsigned char *)qv_cpu) - sizeof(void *))); }) ;
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(fv_cpu); free_helper(fv_cpu, 1242561836700799307UL); }) ;
+  ({ free_helper((((unsigned char *)fv_cpu) - sizeof(void *)), 1242561836700799307UL);free((((unsigned char *)fv_cpu) - sizeof(void *))); }) ;
 # 344 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free(box_cpu); free_helper(box_cpu, 1242561836700798883UL); }) ;
+  ({ free_helper((((unsigned char *)box_cpu) - sizeof(void *)), 1242561836700798883UL);free((((unsigned char *)box_cpu) - sizeof(void *))); }) ;
 # 345 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
 # 346 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
   call_lbl_14: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));
@@ -4114,8 +4115,8 @@ static int module_init() {
                      "par_str", 64UL, 1, "double", (int)__builtin_offsetof (struct par_str, alpha),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "timezone", 64UL, 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
-                             "seconds", "_Z7secondsv", 0,
-                             "main", "main", 15, "seconds", "get_time", "get_time", "isInteger", "isInteger", "get_time", "get_time", "get_time", "checkpoint", "get_time", "kernel_cpu", "get_time", "checkpoint", "seconds", "get_time",
+                             "seconds", "_Z7secondsv", 0, 0,
+                             "main", "main", 0, 15, "seconds", "get_time", "get_time", "isInteger", "isInteger", "get_time", "get_time", "get_time", "checkpoint", "get_time", "kernel_cpu", "get_time", "checkpoint", "seconds", "get_time",
                         "main|argc|0", 2, "isInteger", "get_time",
                         "main|argv|0", 2, "isInteger", "get_time",
                         "main|par_cpu|0", 1, "main",

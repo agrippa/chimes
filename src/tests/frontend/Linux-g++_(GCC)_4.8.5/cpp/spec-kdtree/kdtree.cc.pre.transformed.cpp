@@ -101,8 +101,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -121,7 +122,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4048,7 +4049,7 @@ kdnode *empty_kdnode_npm();
 kdnode *empty_kdnode_quick(); kdnode *empty_kdnode();
 kdnode *empty_kdnode_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&empty_kdnode), "empty_kdnode", &____must_manage_empty_kdnode, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 66 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4065,7 +4066,7 @@ kdnode *init_kdnode_npm(long long nn);
 kdnode *init_kdnode_quick(long long nn); kdnode *init_kdnode(long long nn);
 kdnode *init_kdnode_resumable(long long nn) {const int ____chimes_did_disable1 = new_stack((void *)(&init_kdnode), "init_kdnode", &____must_manage_init_kdnode, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4722,7 +4723,7 @@ int **xyzw;
    cutoff2 = cutoff * cutoff;
 # 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630308UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   xi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630308UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 749 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xi == __null) {
 # 750 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4733,7 +4734,7 @@ int **xyzw;
    }
 # 753 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 754 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630304UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   yi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630304UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 755 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (yi == __null) {
 # 756 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4744,7 +4745,7 @@ int **xyzw;
    }
 # 759 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 760 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   zi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630300UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   zi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630300UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 761 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (zi == __null) {
 # 762 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4755,7 +4756,7 @@ int **xyzw;
    }
 # 765 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 766 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ti = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630436UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   ti = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630436UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 767 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (ti == __null) {
 # 768 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4766,7 +4767,7 @@ int **xyzw;
    }
 # 771 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 772 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   wi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630435UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   wi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630435UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 773 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (wi == __null) {
 # 774 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4799,7 +4800,7 @@ int **xyzw;
 # 792 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 793 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 794 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xyzw = (int **) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(int *), 339782406926630370UL, 1, 0); ____chimes_tmp_ptr; }) ;
+   xyzw = (int **) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(int *), 339782406926630370UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 795 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xyzw == __null) {
 # 796 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4815,7 +4816,7 @@ int **xyzw;
 # 802 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 803 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 804 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    int *tmp; tmp = ((int *) ({ void *____chimes_tmp_ptr = malloc(n * (3) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, n * (3) * sizeof(int), 339782406926630372UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    int *tmp; tmp = ((int *) ({ void *____chimes_tmp_ptr = malloc((n * (3) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n * (3) * sizeof(int), 339782406926630372UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 806 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 807 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4970,7 +4971,7 @@ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_19, ____chimes_did_dis
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *empty_kdnode_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&empty_kdnode), "empty_kdnode", &____must_manage_empty_kdnode, 0, 0) ; ; ;
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 66 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -4986,7 +4987,7 @@ kdnode *empty_kdnode() { return (____chimes_replaying ? empty_kdnode_resumable()
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *init_kdnode_quick(long long nn) {const int ____chimes_did_disable1 = new_stack((void *)(&init_kdnode), "init_kdnode", &____must_manage_init_kdnode, 1, 0, (size_t)(0UL)) ; ; ;
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; })) ;
+     kdnode *empty; empty = ((kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5644,7 +5645,7 @@ int **xyzw;
    cutoff2 = cutoff * cutoff;
 # 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630308UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   xi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630308UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 749 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xi == __null) {
 # 750 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5655,7 +5656,7 @@ int **xyzw;
    }
 # 753 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 754 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630304UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   yi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630304UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 755 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (yi == __null) {
 # 756 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5666,7 +5667,7 @@ int **xyzw;
    }
 # 759 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 760 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   zi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630300UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   zi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630300UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 761 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (zi == __null) {
 # 762 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5677,7 +5678,7 @@ int **xyzw;
    }
 # 765 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 766 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ti = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630436UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   ti = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630436UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 767 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (ti == __null) {
 # 768 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5688,7 +5689,7 @@ int **xyzw;
    }
 # 771 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 772 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   wi = (long long *) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(long long)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630435UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   wi = (long long *) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(long long), 339782406926630435UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 773 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (wi == __null) {
 # 774 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5721,7 +5722,7 @@ int **xyzw;
 # 792 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 793 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 794 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xyzw = (int **) ({ void *____chimes_tmp_ptr = malloc(n * sizeof(int *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(int *), 339782406926630370UL, 1, 0); ____chimes_tmp_ptr; }) ;
+   xyzw = (int **) ({ void *____chimes_tmp_ptr = malloc((n * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, n * sizeof(int *), 339782406926630370UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 795 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    if (xyzw == __null) {
 # 796 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5737,7 +5738,7 @@ int **xyzw;
 # 802 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 803 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 804 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    int *tmp; tmp = ((int *) ({ void *____chimes_tmp_ptr = malloc(n * (3) * sizeof(int)); malloc_helper(____chimes_tmp_ptr, n * (3) * sizeof(int), 339782406926630372UL, 0, 0); ____chimes_tmp_ptr; })) ;
+    int *tmp; tmp = ((int *) ({ void *____chimes_tmp_ptr = malloc((n * (3) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, n * (3) * sizeof(int), 339782406926630372UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 806 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 807 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5894,7 +5895,7 @@ int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_re
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *empty_kdnode_npm() {
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    kdnode *empty = (kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; }) ;
+    kdnode *empty = (kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 66 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -5908,7 +5909,7 @@ kdnode *empty_kdnode_npm() {
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *init_kdnode_npm(long long nn) {
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    kdnode *empty = (kdnode *) ({ void *____chimes_tmp_ptr = malloc(sizeof(kdnode)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); ____chimes_tmp_ptr; }) ;
+    kdnode *empty = (kdnode *) ({ void *____chimes_tmp_ptr = malloc((sizeof(kdnode)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
@@ -6475,15 +6476,15 @@ static int module_init() {
                              (339782406926629100UL + 1382UL), (339782406926629100UL + 1087UL),
                      "kdnode", 320UL, 4, "long long int", (int)__builtin_offsetof (struct kdnode, n), "%struct.kdnode*", (int)__builtin_offsetof (struct kdnode, lo), "%struct.kdnode*", (int)__builtin_offsetof (struct kdnode, hi), "[ 3 x int ]", (int)__builtin_offsetof (struct kdnode, coord),
                      "timespec", 128UL, 2, "long int", (int)__builtin_offsetof (struct timespec, tv_sec), "long int", (int)__builtin_offsetof (struct timespec, tv_nsec),
-                             "downheap", "_Z8downheapPxxxPPii", 0,
-                             "heapsort", "_Z8heapsortPxxPPii", 2, "downheap", "downheap",
-                             "sweepkdtree", "_Z11sweepkdtreeP6kdnodeS0_xxii", 3, "searchkdtree", "sweepkdtree", "sweepkdtree",
-                             "empty_kdnode", "_Z12empty_kdnodev", 0,
-                             "searchkdtree", "_Z12searchkdtreeP6kdnodeS0_ixxii", 2, "searchkdtree", "searchkdtree",
-                             "buildkdtree", "_Z11buildkdtreeP6kdnodePxS1_S1_S1_S1_xxPPii", 7, "init_kdnode", "init_kdnode", "init_kdnode", "empty_kdnode", "buildkdtree", "empty_kdnode", "buildkdtree",
-                             "main", "main", 18, "atol", "atol", "atol", "atol", "atol", "spec_init_genrand", "heapsort", "heapsort", "heapsort", "checkpoint", "empty_kdnode", "buildkdtree", "checkpoint", "coordkdtree", "clock_gettime", "sweepkdtree", "checkpoint", "clock_gettime",
-                             "coordkdtree", "_Z11coordkdtreeP6kdnodePPi", 2, "coordkdtree", "coordkdtree",
-                             "init_kdnode", "_Z11init_kdnodex", 0,
+                             "downheap", "_Z8downheapPxxxPPii", 0, 0,
+                             "heapsort", "_Z8heapsortPxxPPii", 0, 2, "downheap", "downheap",
+                             "sweepkdtree", "_Z11sweepkdtreeP6kdnodeS0_xxii", 0, 3, "searchkdtree", "sweepkdtree", "sweepkdtree",
+                             "empty_kdnode", "_Z12empty_kdnodev", 0, 0,
+                             "searchkdtree", "_Z12searchkdtreeP6kdnodeS0_ixxii", 0, 2, "searchkdtree", "searchkdtree",
+                             "buildkdtree", "_Z11buildkdtreeP6kdnodePxS1_S1_S1_S1_xxPPii", 0, 7, "init_kdnode", "init_kdnode", "init_kdnode", "empty_kdnode", "buildkdtree", "empty_kdnode", "buildkdtree",
+                             "main", "main", 0, 18, "atol", "atol", "atol", "atol", "atol", "spec_init_genrand", "heapsort", "heapsort", "heapsort", "checkpoint", "empty_kdnode", "buildkdtree", "checkpoint", "coordkdtree", "clock_gettime", "sweepkdtree", "checkpoint", "clock_gettime",
+                             "coordkdtree", "_Z11coordkdtreeP6kdnodePPi", 0, 2, "coordkdtree", "coordkdtree",
+                             "init_kdnode", "_Z11init_kdnodex", 0, 0,
                         "main|argv|0", 1, "atol",
                         "main|startTime|0", 1, "main",
                         "main|endTime|0", 1, "main",

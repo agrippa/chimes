@@ -6,7 +6,7 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 376 6 len=10 imp
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 421 6 len=10 ss_mkEmpty_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 431 6 len=8 ss_error_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 437 6 len=7 ss_init_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 446 26  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 8860909695567162318UL, 0, 1, (int)sizeof(struct node_t), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 446 26  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 8860909695567162318UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 446 40 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 478 6 len=7 ss_push_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 492 8 len=6 ss_top_npm
@@ -28,11 +28,11 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1084 6 len=15 cb
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1096 6 len=12 releaseNodes_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1125 6 len=13 parTreeSearch_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1226 6 len=9 showStats_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1406 37  ({ void *____chimes_tmp_ptr = malloc(sizeof(StealStack)); malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 8860909695567163371UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1406 37  ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 8860909695567163371UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1406 63 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 446 26  ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 8860909695567162318UL, 0, 1, (int)sizeof(struct node_t), 0); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 446 26  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 8860909695567162318UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 446 40 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1406 37  ({ void *____chimes_tmp_ptr = malloc(sizeof(StealStack)); malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 8860909695567163371UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); ____chimes_tmp_ptr; }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1406 37  ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 8860909695567163371UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1406 63 
 InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 294 67 rm_stack(true, 8860909695567164043UL, "impl_getName", &____must_manage_impl_getName, ____alias_loc_id_24, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 292 23 const int ____chimes_did_disable0 = new_stack((void *)(&impl_getName), "impl_getName", &____must_manage_impl_getName, 0, 0); 
@@ -133,8 +133,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 437 41 cons
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 437 197 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 438 3  int nbytes;  nbytes = (nelts * sizeof(Node)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 438 36 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 446 30 void *____chimes_tmp_ptr = malloc(nbytes); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 446 71 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 446 30 void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 446 90 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 478 39 const int ____chimes_did_disable8 = new_stack((void *)(&ss_push), "ss_push", &____must_manage_ss_push, 2, 2, (size_t)(8860909695567162466UL), (size_t)(8860909695567162472UL), "ss_push|s|0", &____must_checkpoint_ss_push_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_push|c|0", &____must_checkpoint_ss_push_c_0, "%struct.node_t*", (void *)(&c), (size_t)8, 1, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 478 423 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 481 20  char *____chimes_unroll_var_0;  ____chimes_unroll_var_0 = (rng_showstate(c->state.state, debug_str)) ;
@@ -265,8 +265,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1378 5 doub
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1378 22 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1379 5 StealStack *ss; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1379 20 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1406 41 void *____chimes_tmp_ptr = malloc(sizeof(StealStack)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1406 94 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1406 41 void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1406 113 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1452 4 int ____chimes_ret_var_11; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1452 29 
 InsertText /home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 456 5  call_lbl_0: 

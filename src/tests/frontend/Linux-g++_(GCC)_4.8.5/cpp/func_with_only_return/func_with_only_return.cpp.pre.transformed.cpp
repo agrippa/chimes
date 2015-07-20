@@ -64,8 +64,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -84,7 +85,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1487,8 +1488,8 @@ static int module_init() {
                              (17129812071925488562UL + 1UL), (17129812071925488562UL + 28UL),
                              (17129812071925488562UL + 10UL), (17129812071925488562UL + 27UL),
                              (17129812071925488562UL + 11UL), (17129812071925488562UL + 19UL),
-                             "main", "main", 2, "haha_this_sux", "checkpoint",
-                             "haha_this_sux", "_Z13haha_this_suxv", 0,
+                             "main", "main", 0, 2, "haha_this_sux", "checkpoint",
+                             "haha_this_sux", "_Z13haha_this_suxv", 0, 0,
         "haha_this_sux", 17129812071925488581UL, (int)0);
     return 0;
 }

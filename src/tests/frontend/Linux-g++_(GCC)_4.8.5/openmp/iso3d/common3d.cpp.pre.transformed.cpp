@@ -80,8 +80,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -100,7 +101,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4297,9 +4298,9 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 100 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
             case 'p':
 # 101 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                conf->srcs = (source *) ({ void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); ; realloc_helper(____chimes_tmp_ptr, conf->srcs, sizeof(source) *
+                conf->srcs = (source *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (conf->srcs) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), ____chimes_tmp_header, sizeof(source) *
 # 102 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) ;
+                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 103 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                  call_lbl_1: ({ source * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(75241783173009669UL), (size_t)(75241783173009705UL)); (parse_source)(optarg, ____chimes_arg1); }) ;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
@@ -4538,9 +4539,9 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 100 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
             case 'p':
 # 101 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                conf->srcs = (source *) ({ void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); ; realloc_helper(____chimes_tmp_ptr, conf->srcs, sizeof(source) *
+                conf->srcs = (source *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (conf->srcs) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), ____chimes_tmp_header, sizeof(source) *
 # 102 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) ;
+                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 103 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                  call_lbl_1: ({ calling((void*)parse_source, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(75241783173009669UL), (size_t)(75241783173009705UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) ;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
@@ -4765,9 +4766,9 @@ void setup_config_npm(config *conf, int argc, char **argv) {
 # 100 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
             case 'p':
 # 101 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                conf->srcs = (source *) ({ void *____chimes_tmp_ptr = realloc(conf->srcs, sizeof(source) * (conf->nsrcs + 1)); realloc_helper(____chimes_tmp_ptr, conf->srcs, sizeof(source) *
+                conf->srcs = (source *) ({ void *____chimes_tmp_header = conf->srcs; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, (conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), ____chimes_tmp_header, sizeof(source) *
 # 102 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); ____chimes_tmp_ptr; }) ;
+                        (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 103 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                 (*____chimes_extern_func_parse_source)(optarg, conf->srcs + conf->nsrcs);
 # 104 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
@@ -4866,11 +4867,11 @@ static int module_init() {
                      "_IO_marker", 0UL, 0,
                      "_config", 448UL, 12, "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "int", (int)__builtin_offsetof (struct _config, nz), "int", (int)__builtin_offsetof (struct _config, nsteps), "int", (int)__builtin_offsetof (struct _config, save_text), "int", (int)__builtin_offsetof (struct _config, verbose), "int", (int)__builtin_offsetof (struct _config, radius), "int", (int)__builtin_offsetof (struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof (struct _config, srcs), "int", (int)__builtin_offsetof (struct _config, nsrcs), "int", (int)__builtin_offsetof (struct _config, progress_width), "int", (int)__builtin_offsetof (struct _config, progress_disabled),
                      "_source", 128UL, 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t),
-                             "usage", "_Z5usagePPc", 0,
-                             "setup_config", "_Z12setup_configP7_configiPPc", 4, "default_config", "parse_source", "usage", "getNumCUDADevices",
-                             "init_data", "_Z9init_dataPfS_S_S_iiiff", 0,
-                             "default_config", "_Z14default_configP7_config", 0,
-                             "save_layer_text", "_Z15save_layer_textPfiiiiiPKci", 0,
+                             "usage", "_Z5usagePPc", 0, 0,
+                             "setup_config", "_Z12setup_configP7_configiPPc", 0, 4, "default_config", "parse_source", "usage", "getNumCUDADevices",
+                             "init_data", "_Z9init_dataPfS_S_S_iiiff", 0, 0,
+                             "default_config", "_Z14default_configP7_config", 0, 0,
+                             "save_layer_text", "_Z15save_layer_textPfiiiiiPKci", 0, 0,
                         "setup_config|conf|0", 2, "parse_source", "getNumCUDADevices",
                         "setup_config|argc|0", 1, "parse_source",
                         "setup_config|argv|0", 1, "parse_source",

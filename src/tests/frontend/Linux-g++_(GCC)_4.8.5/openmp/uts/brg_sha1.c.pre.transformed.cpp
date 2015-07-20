@@ -96,8 +96,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -116,7 +117,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -3995,17 +3996,17 @@ static int module_init() {
                              (4025409710155506038UL + 105UL), (4025409710155506038UL + 243UL),
                      "sha1_ctx_s", 736UL, 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, wbuf),
                      "state_t", 160UL, 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
-                             "sha1", "sha1", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_nextrand", "rng_nextrand", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_showstate", "rng_showstate", 0,
-                             "rng_init", "rng_init", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_spawn", "rng_spawn", 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end",
-                             "sha1_hash", "sha1_hash", 1, "sha1_compile",
-                             "sha1_end", "sha1_end", 2, "sha1_compile", "sha1_compile",
-                             "rng_rand", "rng_rand", 0,
-                             "sha1_compile", "sha1_compile", 0,
-                             "sha1_begin", "sha1_begin", 0,
-                             "rng_showtype", "rng_showtype", 0,
+                             "sha1", "sha1", 0, 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_nextrand", "rng_nextrand", 0, 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_showstate", "rng_showstate", 0, 0,
+                             "rng_init", "rng_init", 0, 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_spawn", "rng_spawn", 0, 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end",
+                             "sha1_hash", "sha1_hash", 0, 1, "sha1_compile",
+                             "sha1_end", "sha1_end", 0, 2, "sha1_compile", "sha1_compile",
+                             "rng_rand", "rng_rand", 0, 0,
+                             "sha1_compile", "sha1_compile", 0, 0,
+                             "sha1_begin", "sha1_begin", 0, 0,
+                             "rng_showtype", "rng_showtype", 0, 0,
                         "rng_init|ctx|0", 1, "rng_init",
                         "rng_spawn|ctx|0", 1, "rng_spawn",
                         "rng_nextrand|ctx|0", 1, "rng_nextrand",

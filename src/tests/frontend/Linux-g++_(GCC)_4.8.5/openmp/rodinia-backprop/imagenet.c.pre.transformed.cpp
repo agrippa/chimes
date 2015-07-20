@@ -62,8 +62,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -82,7 +83,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2367,7 +2368,7 @@ static int module_init() {
                              (2167082750985355777UL + 2UL), (2167082750985355777UL + 26UL),
                              (2167082750985355777UL + 52UL), (2167082750985355777UL + 26UL),
                      "BPNN", 768UL, 13, "int", (int)__builtin_offsetof (BPNN, input_n), "int", (int)__builtin_offsetof (BPNN, hidden_n), "int", (int)__builtin_offsetof (BPNN, output_n), "float*", (int)__builtin_offsetof (BPNN, input_units), "float*", (int)__builtin_offsetof (BPNN, hidden_units), "float*", (int)__builtin_offsetof (BPNN, output_units), "float*", (int)__builtin_offsetof (BPNN, hidden_delta), "float*", (int)__builtin_offsetof (BPNN, output_delta), "float*", (int)__builtin_offsetof (BPNN, target), "float**", (int)__builtin_offsetof (BPNN, input_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_weights), "float**", (int)__builtin_offsetof (BPNN, input_prev_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_prev_weights),
-                             "load", "_Z4loadP4BPNN", 0);
+                             "load", "_Z4loadP4BPNN", 0, 0);
     return 0;
 }
 

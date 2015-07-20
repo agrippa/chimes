@@ -74,8 +74,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -94,7 +95,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2985,12 +2986,12 @@ typedef struct HaloExchangeSt
 
    int bufCapacity;
 # 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
-   int (*loadBuffer)(void* parms, void* data, int face, char* buf);
+   int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
 # 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
-   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf);
+   void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
-   void (*destroy)(void* parms);
+   void (*destroy)(void* parms) __attribute__((nocheckpoint));
 
 
    void* parms;
@@ -3081,9 +3082,9 @@ typedef struct BasePotentialSt
    char latticeType[8];
    char name[3];
    int atomicNo;
-   int (*force)(struct SimFlatSt* s);
-   void (*print)(FILE* file, struct BasePotentialSt* pot);
-   void (*destroy)(struct BasePotentialSt** pot);
+   int (*force)(struct SimFlatSt* s) __attribute__((nocheckpoint));
+   void (*print)(FILE* file, struct BasePotentialSt* pot) __attribute__((nocheckpoint));
+   void (*destroy)(struct BasePotentialSt** pot) __attribute__((nocheckpoint));
 } BasePotential;
 
 
@@ -3183,7 +3184,7 @@ void ljDestroy_resumable(BasePotential** inppot)
 # 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0, false); return; };
 # 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    ({ free(pot); free_helper(pot, 9533241863568626243UL); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 9533241863568626243UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    *inppot = __null;
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3200,7 +3201,7 @@ BasePotential* initLjPot_resumable(void)
 # 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LjPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 9533241863568626264UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); ____chimes_tmp_ptr; })) ;
+    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 9533241863568626264UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    pot->force = ljForce;
 # 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3432,7 +3433,7 @@ void ljDestroy_quick(BasePotential** inppot)
 # 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0, false); return; };
 # 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    ({ free(pot); free_helper(pot, 9533241863568626243UL); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 9533241863568626243UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    *inppot = __null;
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3447,7 +3448,7 @@ BasePotential* initLjPot_quick(void)
 # 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; ; ;
 # 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LjPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 9533241863568626264UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); ____chimes_tmp_ptr; })) ;
+    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 9533241863568626264UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    pot->force = ljForce;
 # 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3679,7 +3680,7 @@ void ljDestroy_npm(BasePotential** inppot)
 # 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    if (! pot) {return; };
 # 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    ({ free(pot); free_helper(pot, 9533241863568626243UL); }) ;
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 9533241863568626243UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    *inppot = __null;
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3692,7 +3693,7 @@ BasePotential* initLjPot_npm(void)
 # 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 {
 # 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   LjPotential *pot = (LjPotential*) ({ void *____chimes_tmp_ptr = malloc(sizeof(LjPotential)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 9533241863568626264UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); ____chimes_tmp_ptr; }) ;
+   LjPotential *pot = (LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 9533241863568626264UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    pot->force = ljForce;
 # 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3948,11 +3949,11 @@ static int module_init() {
                      "SpeciesDataSt", 0UL, 0,
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
-                             "initLjPot", "_Z9initLjPotv", 0,
-                             "ljPrint", "_Z7ljPrintP8_IO_FILEP15BasePotentialSt", 0,
-                             "zeroReal3", "_ZL9zeroReal3Pd", 0,
-                             "ljForce", "_Z7ljForceP9SimFlatSt", 1, "zeroReal3",
-                             "ljDestroy", "_Z9ljDestroyPP15BasePotentialSt", 0);
+                             "initLjPot", "_Z9initLjPotv", 0, 0,
+                             "ljPrint", "_Z7ljPrintP8_IO_FILEP15BasePotentialSt", 0, 0,
+                             "zeroReal3", "_ZL9zeroReal3Pd", 0, 0,
+                             "ljForce", "_Z7ljForceP9SimFlatSt", 0, 1, "zeroReal3",
+                             "ljDestroy", "_Z9ljDestroyPP15BasePotentialSt", 0, 0);
     return 0;
 }
 

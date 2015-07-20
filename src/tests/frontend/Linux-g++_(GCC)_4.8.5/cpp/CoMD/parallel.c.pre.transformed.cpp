@@ -105,8 +105,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -125,7 +126,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2664,22 +2665,22 @@ static int module_init() {
                              (2776516408427544823UL + 166UL), (2776516408427544823UL + 199UL),
                              (2776516408427544823UL + 165UL), (2776516408427544823UL + 198UL),
                      "RankReduceDataSt", 128UL, 2, "double", (int)__builtin_offsetof (struct RankReduceDataSt, val), "int", (int)__builtin_offsetof (struct RankReduceDataSt, rank),
-                             "initParallel", "_Z12initParallelPiPPPc", 0,
-                             "maxIntParallel", "_Z14maxIntParallelPiS_i", 0,
-                             "timestampBarrier", "_Z16timestampBarrierPKc", 2, "barrierParallel", "printRank",
-                             "destroyParallel", "_Z15destroyParallelv", 0,
-                             "bcastParallel", "_Z13bcastParallelPvii", 0,
-                             "addIntParallel", "_Z14addIntParallelPiS_i", 0,
-                             "minRankDoubleParallel", "_Z21minRankDoubleParallelP16RankReduceDataStS0_i", 0,
-                             "printRank", "_Z9printRankv", 0,
-                             "getMyRank", "_Z9getMyRankv", 0,
-                             "addDoubleParallel", "_Z17addDoubleParallelPdS_i", 0,
-                             "maxRankDoubleParallel", "_Z21maxRankDoubleParallelP16RankReduceDataStS0_i", 0,
-                             "builtWithMpi", "_Z12builtWithMpiv", 0,
-                             "addRealParallel", "_Z15addRealParallelPdS_i", 0,
-                             "getNRanks", "_Z9getNRanksv", 0,
-                             "barrierParallel", "_Z15barrierParallelv", 0,
-                             "sendReceiveParallel", "_Z19sendReceiveParallelPviiS_ii", 0,
+                             "initParallel", "_Z12initParallelPiPPPc", 0, 0,
+                             "maxIntParallel", "_Z14maxIntParallelPiS_i", 0, 0,
+                             "timestampBarrier", "_Z16timestampBarrierPKc", 0, 2, "barrierParallel", "printRank",
+                             "destroyParallel", "_Z15destroyParallelv", 0, 0,
+                             "bcastParallel", "_Z13bcastParallelPvii", 0, 0,
+                             "addIntParallel", "_Z14addIntParallelPiS_i", 0, 0,
+                             "minRankDoubleParallel", "_Z21minRankDoubleParallelP16RankReduceDataStS0_i", 0, 0,
+                             "printRank", "_Z9printRankv", 0, 0,
+                             "getMyRank", "_Z9getMyRankv", 0, 0,
+                             "addDoubleParallel", "_Z17addDoubleParallelPdS_i", 0, 0,
+                             "maxRankDoubleParallel", "_Z21maxRankDoubleParallelP16RankReduceDataStS0_i", 0, 0,
+                             "builtWithMpi", "_Z12builtWithMpiv", 0, 0,
+                             "addRealParallel", "_Z15addRealParallelPdS_i", 0, 0,
+                             "getNRanks", "_Z9getNRanksv", 0, 0,
+                             "barrierParallel", "_Z15barrierParallelv", 0, 0,
+                             "sendReceiveParallel", "_Z19sendReceiveParallelPviiS_ii", 0, 0,
         "barrierParallel", 0UL, (int)0,
         "printRank", 0UL, (int)0);
     register_global_var("global|nRanks", "i32", (void *)(&nRanks), 4, 0, 0, 0UL, 0);

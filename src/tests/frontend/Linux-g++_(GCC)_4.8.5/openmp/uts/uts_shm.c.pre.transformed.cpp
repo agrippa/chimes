@@ -223,8 +223,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -243,7 +244,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5477,7 +5478,7 @@ omp_lock_t * omp_global_lock_alloc_npm();
 omp_lock_t * omp_global_lock_alloc_quick(); omp_lock_t * omp_global_lock_alloc();
 omp_lock_t * omp_global_lock_alloc_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&omp_global_lock_alloc), "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 58 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-   omp_lock_t *lock; lock = ((omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(omp_lock_t) + 128); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); ____chimes_tmp_ptr; })) ;
+   omp_lock_t *lock; lock = ((omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 59 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   omp_init_lock(lock);
 # 60 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -5786,7 +5787,7 @@ void ss_init_resumable(StealStack *s, int nelts) {const int ____chimes_did_disab
 # 445 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 446 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 447 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); ____chimes_tmp_ptr; }) ;
+  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 448 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   s->stack = (Node *) s->stack_g;
 # 449 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -6878,7 +6879,7 @@ Node root;
     }
 # 1423 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1423 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-    stealStack[omp_get_thread_num()] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc(sizeof(StealStack)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12146000192742679325UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); ____chimes_tmp_ptr; }) ;
+    stealStack[omp_get_thread_num()] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12146000192742679325UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1424 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
     ss = (StealStack *) stealStack[omp_get_thread_num()];
 # 1425 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -6955,7 +6956,7 @@ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_50, ____chimes_did_dis
 # 57 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 omp_lock_t * omp_global_lock_alloc_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&omp_global_lock_alloc), "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, 0, 0) ; ; ;
 # 58 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-   omp_lock_t *lock; lock = ((omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(omp_lock_t) + 128); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); ____chimes_tmp_ptr; })) ;
+   omp_lock_t *lock; lock = ((omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 59 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   omp_init_lock(lock);
 # 60 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -7127,7 +7128,7 @@ void ss_init_quick(StealStack *s, int nelts) {const int ____chimes_did_disable8 
 # 445 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 446 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 447 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc(nbytes); ; malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); ____chimes_tmp_ptr; }) ;
+  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 448 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   s->stack = (Node *) s->stack_g;
 # 449 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -8158,7 +8159,7 @@ Node root;
     }
 # 1423 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1423 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-    stealStack[omp_get_thread_num()] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc(sizeof(StealStack)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12146000192742679325UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); ____chimes_tmp_ptr; }) ;
+    stealStack[omp_get_thread_num()] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12146000192742679325UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 1424 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
     ss = (StealStack *) stealStack[omp_get_thread_num()];
 # 1425 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -8237,7 +8238,7 @@ int main(int argc, char *argv[]) { init_chimes(argc, argv); return (____chimes_r
 # 57 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 omp_lock_t * omp_global_lock_alloc_npm() {
 # 58 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  omp_lock_t *lock = (omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc(sizeof(omp_lock_t) + 128); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); ____chimes_tmp_ptr; }) ;
+  omp_lock_t *lock = (omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 59 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   omp_init_lock(lock);
 # 60 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -8391,7 +8392,7 @@ void ss_init_npm(StealStack *s, int nelts) {
 # 445 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 446 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 447 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc(nbytes); malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); ____chimes_tmp_ptr; }) ;
+  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 448 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   s->stack = (Node *) s->stack_g;
 # 449 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -9422,36 +9423,36 @@ static int module_init() {
                      "omp_lock_t", 32UL, 1, "[ 4 x unsigned char ]", (int)__builtin_offsetof (omp_lock_t, _x),
                      "state_t", 160UL, 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
                      "stealStack_t", 1280UL, 23, "int", (int)__builtin_offsetof (struct stealStack_t, stackSize), "int", (int)__builtin_offsetof (struct stealStack_t, workAvail), "int", (int)__builtin_offsetof (struct stealStack_t, sharedStart), "int", (int)__builtin_offsetof (struct stealStack_t, local), "int", (int)__builtin_offsetof (struct stealStack_t, top), "int", (int)__builtin_offsetof (struct stealStack_t, maxStackDepth), "int", (int)__builtin_offsetof (struct stealStack_t, nNodes), "int", (int)__builtin_offsetof (struct stealStack_t, maxTreeDepth), "int", (int)__builtin_offsetof (struct stealStack_t, nLeaves), "int", (int)__builtin_offsetof (struct stealStack_t, nAcquire), "int", (int)__builtin_offsetof (struct stealStack_t, nRelease), "int", (int)__builtin_offsetof (struct stealStack_t, nSteal), "int", (int)__builtin_offsetof (struct stealStack_t, nFail), "int", (int)__builtin_offsetof (struct stealStack_t, wakeups), "int", (int)__builtin_offsetof (struct stealStack_t, falseWakeups), "int", (int)__builtin_offsetof (struct stealStack_t, nNodes_last), "[ 5 x double ]", (int)__builtin_offsetof (struct stealStack_t, time), "double", (int)__builtin_offsetof (struct stealStack_t, timeLast), "[ 5 x int ]", (int)__builtin_offsetof (struct stealStack_t, entries), "int", (int)__builtin_offsetof (struct stealStack_t, curState), "%struct.omp_lock_t*", (int)__builtin_offsetof (struct stealStack_t, stackLock), "%struct.node_t*", (int)__builtin_offsetof (struct stealStack_t, stack), "%struct.node_t*", (int)__builtin_offsetof (struct stealStack_t, stack_g),
-                             "ss_mkEmpty", "_Z10ss_mkEmptyP12stealStack_t", 0,
-                             "ss_init", "_Z7ss_initP12stealStack_ti", 3, "ss_error", "omp_global_lock_alloc", "ss_mkEmpty",
-                             "genChildren", "_Z11genChildrenP6node_tS0_P12stealStack_t", 7, "uts_numChildren", "uts_childType", "ss_topPosn", "rng_showstate", "rng_spawn", "ss_push", "releaseNodes",
-                             "ss_initState", "_Z12ss_initStateP12stealStack_t", 1, "uts_wctime",
-                             "showStats", "_Z9showStatsd", 1, "uts_showStats",
-                             "ss_push", "_Z7ss_pushP12stealStack_tP6node_t", 2, "ss_error", "rng_showstate",
-                             "cbarrier_cancel", "_Z15cbarrier_cancelv", 0,
-                             "parTreeSearch", "_Z13parTreeSearchP12stealStack_t", 15, "initNode", "ss_localDepth", "ss_setState", "ss_top", "genChildren", "ss_pop", "releaseNodes", "ss_localDepth", "ss_acquire", "ss_setState", "findwork", "ss_steal", "findwork", "ss_setState", "cbarrier_wait",
-                             "impl_parseParam", "_Z15impl_parseParamPcS_", 0,
-                             "ss_pop", "_Z6ss_popP12stealStack_t", 2, "ss_error", "rng_showstate",
-                             "ss_acquire", "_Z10ss_acquireP12stealStack_ti", 0,
-                             "ss_topPosn", "_Z10ss_topPosnP12stealStack_t", 1, "ss_error",
-                             "main", "main", 13, "uts_parseParams", "cb_init", "uts_printParams", "ss_init", "initRootNode", "ss_push", "checkpoint", "ss_initState", "uts_wctime", "parTreeSearch", "uts_wctime", "checkpoint", "showStats",
-                             "findwork", "_Z8findworki", 0,
-                             "impl_abort", "_Z10impl_aborti", 0,
-                             "initNode", "_Z8initNodeP6node_t", 0,
-                             "impl_getName", "_Z12impl_getNamev", 0,
-                             "ss_top", "_Z6ss_topP12stealStack_t", 2, "ss_error", "rng_showstate",
-                             "impl_paramsToStr", "_Z16impl_paramsToStrPci", 0,
-                             "ss_setState", "_Z11ss_setStateP12stealStack_ti", 2, "ss_error", "uts_wctime",
-                             "ss_localDepth", "_Z13ss_localDepthP12stealStack_t", 0,
-                             "releaseNodes", "_Z12releaseNodesP12stealStack_t", 6, "ss_localDepth", "ss_setState", "ss_release", "ss_setState", "cbarrier_cancel", "ss_setState",
-                             "ss_release", "_Z10ss_releaseP12stealStack_ti", 1, "ss_error",
-                             "omp_global_lock_alloc", "_Z21omp_global_lock_allocv", 0,
-                             "cbarrier_wait", "_Z13cbarrier_waitv", 0,
-                             "ss_steal", "_Z8ss_stealP12stealStack_tii", 4, "ss_error", "ss_error", "ss_error", "rng_showstate",
-                             "impl_helpMessage", "_Z16impl_helpMessagev", 0,
-                             "ss_error", "_Z8ss_errorPc", 0,
-                             "cb_init", "_Z7cb_initv", 1, "omp_global_lock_alloc",
-                             "initRootNode", "_Z12initRootNodeP6node_ti", 1, "uts_initRoot",
+                             "ss_mkEmpty", "_Z10ss_mkEmptyP12stealStack_t", 0, 0,
+                             "ss_init", "_Z7ss_initP12stealStack_ti", 0, 3, "ss_error", "omp_global_lock_alloc", "ss_mkEmpty",
+                             "genChildren", "_Z11genChildrenP6node_tS0_P12stealStack_t", 0, 7, "uts_numChildren", "uts_childType", "ss_topPosn", "rng_showstate", "rng_spawn", "ss_push", "releaseNodes",
+                             "ss_initState", "_Z12ss_initStateP12stealStack_t", 0, 1, "uts_wctime",
+                             "showStats", "_Z9showStatsd", 0, 1, "uts_showStats",
+                             "ss_push", "_Z7ss_pushP12stealStack_tP6node_t", 0, 2, "ss_error", "rng_showstate",
+                             "cbarrier_cancel", "_Z15cbarrier_cancelv", 0, 0,
+                             "parTreeSearch", "_Z13parTreeSearchP12stealStack_t", 0, 15, "initNode", "ss_localDepth", "ss_setState", "ss_top", "genChildren", "ss_pop", "releaseNodes", "ss_localDepth", "ss_acquire", "ss_setState", "findwork", "ss_steal", "findwork", "ss_setState", "cbarrier_wait",
+                             "impl_parseParam", "_Z15impl_parseParamPcS_", 0, 0,
+                             "ss_pop", "_Z6ss_popP12stealStack_t", 0, 2, "ss_error", "rng_showstate",
+                             "ss_acquire", "_Z10ss_acquireP12stealStack_ti", 0, 0,
+                             "ss_topPosn", "_Z10ss_topPosnP12stealStack_t", 0, 1, "ss_error",
+                             "main", "main", 0, 13, "uts_parseParams", "cb_init", "uts_printParams", "ss_init", "initRootNode", "ss_push", "checkpoint", "ss_initState", "uts_wctime", "parTreeSearch", "uts_wctime", "checkpoint", "showStats",
+                             "findwork", "_Z8findworki", 0, 0,
+                             "impl_abort", "_Z10impl_aborti", 0, 0,
+                             "initNode", "_Z8initNodeP6node_t", 0, 0,
+                             "impl_getName", "_Z12impl_getNamev", 0, 0,
+                             "ss_top", "_Z6ss_topP12stealStack_t", 0, 2, "ss_error", "rng_showstate",
+                             "impl_paramsToStr", "_Z16impl_paramsToStrPci", 0, 0,
+                             "ss_setState", "_Z11ss_setStateP12stealStack_ti", 0, 2, "ss_error", "uts_wctime",
+                             "ss_localDepth", "_Z13ss_localDepthP12stealStack_t", 0, 0,
+                             "releaseNodes", "_Z12releaseNodesP12stealStack_t", 0, 6, "ss_localDepth", "ss_setState", "ss_release", "ss_setState", "cbarrier_cancel", "ss_setState",
+                             "ss_release", "_Z10ss_releaseP12stealStack_ti", 0, 1, "ss_error",
+                             "omp_global_lock_alloc", "_Z21omp_global_lock_allocv", 0, 0,
+                             "cbarrier_wait", "_Z13cbarrier_waitv", 0, 0,
+                             "ss_steal", "_Z8ss_stealP12stealStack_tii", 0, 4, "ss_error", "ss_error", "ss_error", "rng_showstate",
+                             "impl_helpMessage", "_Z16impl_helpMessagev", 0, 0,
+                             "ss_error", "_Z8ss_errorPc", 0, 0,
+                             "cb_init", "_Z7cb_initv", 0, 1, "omp_global_lock_alloc",
+                             "initRootNode", "_Z12initRootNodeP6node_ti", 0, 1, "uts_initRoot",
                         "impl_getName|name|0", 1, "impl_getName",
                         "ss_push|s|0", 1, "rng_showstate",
                         "ss_push|c|0", 1, "rng_showstate",

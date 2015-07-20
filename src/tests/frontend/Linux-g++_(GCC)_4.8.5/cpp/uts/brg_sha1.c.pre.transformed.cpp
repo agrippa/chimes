@@ -96,8 +96,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -116,7 +117,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3930,17 +3931,17 @@ static int module_init() {
                              (1633707214412207042UL + 105UL), (1633707214412207042UL + 243UL),
                      "sha1_ctx_s", 736UL, 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, wbuf),
                      "state_t", 160UL, 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
-                             "sha1", "_Z4sha1PhPKhm", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_nextrand", "_Z12rng_nextrandPh", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_showstate", "_Z13rng_showstatePhPc", 0,
-                             "rng_init", "_Z8rng_initPhi", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_spawn", "_Z9rng_spawnPhS_i", 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end",
-                             "sha1_hash", "_Z9sha1_hashPKhmP10sha1_ctx_s", 1, "sha1_compile",
-                             "sha1_end", "_Z8sha1_endPhP10sha1_ctx_s", 2, "sha1_compile", "sha1_compile",
-                             "rng_rand", "_Z8rng_randPh", 0,
-                             "sha1_compile", "_Z12sha1_compileP10sha1_ctx_s", 0,
-                             "sha1_begin", "_Z10sha1_beginP10sha1_ctx_s", 0,
-                             "rng_showtype", "_Z12rng_showtypePci", 0,
+                             "sha1", "_Z4sha1PhPKhm", 0, 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_nextrand", "_Z12rng_nextrandPh", 0, 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_showstate", "_Z13rng_showstatePhPc", 0, 0,
+                             "rng_init", "_Z8rng_initPhi", 0, 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_spawn", "_Z9rng_spawnPhS_i", 0, 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end",
+                             "sha1_hash", "_Z9sha1_hashPKhmP10sha1_ctx_s", 0, 1, "sha1_compile",
+                             "sha1_end", "_Z8sha1_endPhP10sha1_ctx_s", 0, 2, "sha1_compile", "sha1_compile",
+                             "rng_rand", "_Z8rng_randPh", 0, 0,
+                             "sha1_compile", "_Z12sha1_compileP10sha1_ctx_s", 0, 0,
+                             "sha1_begin", "_Z10sha1_beginP10sha1_ctx_s", 0, 0,
+                             "rng_showtype", "_Z12rng_showtypePci", 0, 0,
                         "rng_init|ctx|0", 1, "rng_init",
                         "rng_spawn|ctx|0", 1, "rng_spawn",
                         "rng_nextrand|ctx|0", 1, "rng_nextrand",

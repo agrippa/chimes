@@ -116,8 +116,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -136,7 +137,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4086,7 +4087,7 @@ int get_matrix_resumable(int *matptr, int *xref, int scale)
 # 106 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(2235191825397910045UL), (size_t)(2235191825397910046UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc(32 * 32 * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc((32 * 32 * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int gg_score; gg_score = (0) ;
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5015,7 +5016,7 @@ void align_init_resumable ()
 # 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
@@ -5041,9 +5042,9 @@ void align_seq_init_resumable ()
 # 625 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 626 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 627 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 628 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 629 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };
@@ -5155,7 +5156,7 @@ int get_matrix_quick(int *matptr, int *xref, int scale)
 # 106 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(2235191825397910045UL), (size_t)(2235191825397910046UL), (size_t)(0UL)) ; ; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc(32 * 32 * sizeof(int)); ; malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc((32 * 32 * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int gg_score; gg_score = (0) ;
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -6060,7 +6061,7 @@ void align_init_quick ()
 # 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
@@ -6085,9 +6086,9 @@ void align_seq_init_quick ()
 # 625 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 626 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 627 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 628 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 629 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };
@@ -6192,7 +6193,7 @@ int get_matrix_npm(int *matptr, int *xref, int scale)
 # 106 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc(32 * 32 * sizeof(int)); malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc((32 * 32 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int gg_score = 0;
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -6794,7 +6795,7 @@ void align_init_npm ()
 # 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i,j;
 # 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
@@ -6807,9 +6808,9 @@ void align_seq_init_npm ()
 # 625 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i,j;
 # 626 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 627 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * nseqs * nseqs); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); ____chimes_tmp_ptr; }) ;
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 628 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 629 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };
@@ -6940,24 +6941,24 @@ static int module_init() {
                              (2235191825397909448UL + 825UL), (2235191825397909448UL + 1055UL),
                              (2235191825397909448UL + 826UL), (2235191825397909448UL + 1056UL),
                      "bots_verbose_mode_t", 32UL, 0,
-                             "align_verify", "_Z12align_verifyv", 0,
-                             "pairalign", "_Z9pairaligniiii", 6, "get_matrix", "forward_pass", "reverse_pass", "diff", "tracepath", "checkpoint",
-                             "pairalign_seq", "_Z13pairalign_seqiiii", 6, "get_matrix", "forward_pass", "reverse_pass", "diff", "tracepath", "checkpoint",
-                             "calc_score", "_Z10calc_scoreiiiiii", 0,
-                             "align_seq", "_Z9align_seqv", 1, "pairalign_seq",
-                             "align", "_Z5alignv", 1, "pairalign",
-                             "align_end", "_Z9align_endv", 0,
-                             "align_init", "_Z10align_initv", 0,
-                             "forward_pass", "_Z12forward_passPcS_iiPiS0_S0_ii", 0,
-                             "add", "_Z3addiPiS_S_", 0,
-                             "del", "_Z3deliPiS_S_", 0,
-                             "init_matrix", "_Z11init_matrixv", 0,
-                             "reverse_pass", "_Z12reverse_passPcS_iiPiS0_iii", 0,
-                             "diff", "_Z4diffiiiiiiPiS_S_iiii", 14, "del", "add", "calc_score", "del", "add", "add", "add", "calc_score", "calc_score", "diff", "diff", "diff", "del", "diff",
-                             "get_matrix", "_Z10get_matrixPiS_i", 0,
-                             "align_seq_init", "_Z14align_seq_initv", 0,
-                             "pairalign_init", "_Z14pairalign_initPc", 3, "bots_error", "init_matrix", "readseqs",
-                             "tracepath", "_Z9tracepathiiPiS_S_ii", 0,
+                             "align_verify", "_Z12align_verifyv", 0, 0,
+                             "pairalign", "_Z9pairaligniiii", 0, 6, "get_matrix", "forward_pass", "reverse_pass", "diff", "tracepath", "checkpoint",
+                             "pairalign_seq", "_Z13pairalign_seqiiii", 0, 6, "get_matrix", "forward_pass", "reverse_pass", "diff", "tracepath", "checkpoint",
+                             "calc_score", "_Z10calc_scoreiiiiii", 0, 0,
+                             "align_seq", "_Z9align_seqv", 0, 1, "pairalign_seq",
+                             "align", "_Z5alignv", 0, 1, "pairalign",
+                             "align_end", "_Z9align_endv", 0, 0,
+                             "align_init", "_Z10align_initv", 0, 0,
+                             "forward_pass", "_Z12forward_passPcS_iiPiS0_S0_ii", 0, 0,
+                             "add", "_Z3addiPiS_S_", 0, 0,
+                             "del", "_Z3deliPiS_S_", 0, 0,
+                             "init_matrix", "_Z11init_matrixv", 0, 0,
+                             "reverse_pass", "_Z12reverse_passPcS_iiPiS0_iii", 0, 0,
+                             "diff", "_Z4diffiiiiiiPiS_S_iiii", 0, 14, "del", "add", "calc_score", "del", "add", "add", "add", "calc_score", "calc_score", "diff", "diff", "diff", "del", "diff",
+                             "get_matrix", "_Z10get_matrixPiS_i", 0, 0,
+                             "align_seq_init", "_Z14align_seq_initv", 0, 0,
+                             "pairalign_init", "_Z14pairalign_initPc", 0, 3, "bots_error", "init_matrix", "readseqs",
+                             "tracepath", "_Z9tracepathiiPiS_S_ii", 0, 0,
                         "pairalign|se1|0", 1, "pairalign",
                         "pairalign|sb1|0", 1, "pairalign",
                         "pairalign|displ|0", 1, "pairalign",

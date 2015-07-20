@@ -64,8 +64,9 @@ extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_p
         int is_struct, ...);
 extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
+extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
 extern void free_helper(const void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
@@ -84,7 +85,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1430,7 +1431,7 @@ void *foo_npm();
 void *foo_quick(); void *foo();
 void *foo_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-     int *A; A = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1528448604885477001UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     int *A; A = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1528448604885477001UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
     A[0] = 1;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
@@ -1460,7 +1461,7 @@ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disa
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
 void *foo_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 0, 0) ; ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-     int *A; A = ((int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1528448604885477001UL, 0, 0); ____chimes_tmp_ptr; })) ;
+     int *A; A = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1528448604885477001UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
     A[0] = 1;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
@@ -1492,7 +1493,7 @@ int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_re
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
 void *foo_npm() {
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-    int *A = (int *) ({ void *____chimes_tmp_ptr = malloc(sizeof(int) * 10); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1528448604885477001UL, 0, 0); ____chimes_tmp_ptr; }) ;
+    int *A = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 1528448604885477001UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
     A[0] = 1;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
@@ -1525,8 +1526,8 @@ static int module_init() {
                              (1528448604885476947UL + 3UL), (1528448604885476947UL + 54UL),
                              (1528448604885476947UL + 2UL), (1528448604885476947UL + 54UL),
                              (1528448604885476947UL + 4UL), (1528448604885476947UL + 54UL),
-                             "main", "main", 2, "foo", "checkpoint",
-                             "foo", "_Z3foov", 0,
+                             "main", "main", 0, 2, "foo", "checkpoint",
+                             "foo", "_Z3foov", 0, 0,
         "foo", 1528448604885476992UL, (int)0);
     return 0;
 }
