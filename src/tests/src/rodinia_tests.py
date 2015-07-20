@@ -25,7 +25,7 @@ RODINIA_CLI_ARGS = {'backprop': '65536',
                     'b+tree': 'core 2 file ' + path.join(RODINIA_DATA,
                                                          'b+tree/mil.txt') + \
                               ' command ' + path.join(RODINIA_DATA,
-                                                      'b+tree/command.txt'),
+                                                      'b+tree/command-small.txt'),
                     'heartwall': path.join(RODINIA_DATA,
                                            'heartwall/test.avi') + ' 20 4',
                     'hotspot': '512 512 2 4 ' + path.join(RODINIA_DATA,
