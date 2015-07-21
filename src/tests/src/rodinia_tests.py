@@ -84,10 +84,6 @@ for rtest in RODINIA_TESTS:
 
     if rtest == 'leukocyte':
         compilation_args += ' -I ' + path.join(RODINIA_HOME, 'openmp',
-                                                 'leukocyte', 'meschach_lib')
-        # compilation_args += ' -x ' + path.join(RODINIA_HOME, 'openmp',
-        #                                          'leukocyte', 'meschach_lib',
-        #                                          'libmeschach.a')
     elif rtest == 'lud':
         compilation_args += ' -I ' + path.join(RODINIA_HOME, 'openmp', 'lud',
                                                   'common')
