@@ -29,8 +29,8 @@ If your machine defaults to something else (e.g. clang on MacOS) then you can
 explicitly force LLVM to be built with GNU by setting the CC, CXX, and CPP
 environment variables. For example, on my Mac:
 
-CC=/usr/local/bin/gcc CXX=/usr/local/bin/g++ CPP=/usr/local/bin/cpp \
-    ../llvm-src/configure --enable-optimized=no --enable-profiling=yes
+        CC=/usr/local/bin/gcc CXX=/usr/local/bin/g++ CPP=/usr/local/bin/cpp \
+            ../llvm-src/configure --enable-optimized=no --enable-profiling=yes
 
 
 Adding New Attributes to clang:
