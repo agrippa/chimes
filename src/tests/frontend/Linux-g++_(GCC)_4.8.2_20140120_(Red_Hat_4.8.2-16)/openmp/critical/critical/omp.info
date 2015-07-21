@@ -1,0 +1,2 @@
+14 14 #pragma omp parallel firstprivate(a) private(b, c)
+18 18 #pragma omp critical

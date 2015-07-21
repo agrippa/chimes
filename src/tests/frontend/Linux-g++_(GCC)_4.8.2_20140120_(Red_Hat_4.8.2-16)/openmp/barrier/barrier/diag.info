@@ -1,0 +1,43 @@
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 5 12 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", (int *)0x0, 0, 0); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 7 1 rm_stack(false, 0UL, "foo", (int *)0x0, 0, ____chimes_did_disable0, false); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 24 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 9 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(8458064826126135502UL)); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 25 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 5 13 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", (int *)0, 0, 0); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 5 99 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 9 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(8458064826126135502UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 9 170 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 10 5  int a;  a = (3) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 10 14 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 11 5  int b;  b = (4) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 11 14 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 12 5  int c;  c = (5) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 12 14 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 13 5  int d;  d = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 13 14 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 16 9  int inside;  inside = (6) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 16 23 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 24 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 24 30 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 6 5  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 21 9  call_lbl_0: 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 5 6 len=3 foo_quick
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 6 18 checkpoint_transformed(0, 0)
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 6 29 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 5 96  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 9 5 len=4 main_quick
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 21 22  ({  calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 21 26 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 15 5  { 
+InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 22 5  } 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 9 167  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 5 6 len=3 foo_resumable
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 6 18 checkpoint_transformed(0, 0)
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 6 29 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 5 96  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 9 5 len=4 main_resumable
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 21 22  ({  calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 21 26 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 15 5  { 
+InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 22 5  } 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./barrier.cpp 9 167  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
