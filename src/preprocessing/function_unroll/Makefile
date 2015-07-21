@@ -39,4 +39,4 @@ ${EXE}: ${OBJS}
 
 
 clean:
-	rm *.o ${EXE}
+	rm -f *.o ${EXE}
