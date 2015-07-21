@@ -1,0 +1,7 @@
+memcpy main 5 5 0 4 80 0
+checkpoint main 9 5 0
+__assert_fail main 11 44 0 81 82 0 83
+__assert_fail main 12 44 0 81 82 0 83
+__assert_fail main 13 44 0 81 82 0 83
+__assert_fail main 14 44 0 81 82 0 83
+__assert_fail main 15 44 0 81 82 0 83

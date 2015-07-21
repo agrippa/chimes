@@ -1,0 +1,8 @@
+144 4 42 free
+166 29 321 malloc 0 1 SimFlatSt domain boxes atoms species pot atomExchange
+285 31 566 malloc 0 1 ValidateSt
+228 14 914 free
+232 4 914 free
+233 4 914 free
+234 4 905 free
+273 41 1170 malloc 0 1 SpeciesDataSt

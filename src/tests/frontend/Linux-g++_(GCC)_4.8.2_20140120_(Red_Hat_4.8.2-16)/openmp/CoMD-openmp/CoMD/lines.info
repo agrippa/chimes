@@ -1,0 +1,51 @@
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 147 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1239 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 134 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1238 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 69 : { 12 } {  } call:printThings {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 130 4 : { 10 } {  } call:profileStop {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 115 4 : { 8, 9, 10 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 109 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1237 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 125 7 : {  } {  } call:timestep { timestep { 67 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 107 4 : { 7 } {  } call:timestampBarrier { timestampBarrier { 1234 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 122 72 : { 11 } {  } call:printThings {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 104 4 : { 5 } {  } call:printSimulationDataYaml {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 100 4 : {  } {  } call:printCmdYaml { printCmdYaml { 4, 788 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 98 18 : {  } {  } call:parseCommandLine { parseCommandLine { 4, 132 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 118 12 : { 10 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 96 4 : {  } {  } call:yamlAppInfo { yamlAppInfo { 788 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 93 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1234 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 90 4 : { 1, 2, 3 } {  } call:initParallel { initParallel { 2, 3 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 214 4 : {  } {  } call:kineticEnergy { kineticEnergy { 321 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 211 4 : {  } {  } call:computeForce { computeForce { 321 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 207 4 : {  } {  } call:redistributeAtoms { redistributeAtoms { 321 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 206 9 : { 321 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 203 24 : {  } {  } call:initAtomHaloExchange { initAtomHaloExchange { 1274 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 201 4 : {  } {  } call:randomDisplacements { randomDisplacements { 321 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 200 4 : {  } {  } call:setTemperature { setTemperature { 321 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 199 4 : { 321 } {  } call:createFccLattice { createFccLattice { 321 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 196 17 : { 321 } {  } call:initAtoms { initAtoms { 1274 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 195 17 : { 321 } {  } call:initLinkCells { initLinkCells { 1274 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 192 18 : { 150, 321 } {  } call:initDecomposition { initDecomposition { 150, 1274 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 183 4 : { 148, 321 } {  } call:sanityChecks {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 177 15 : { 147, 321 } {  } call:initPotential {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 413 4 : {  } { , 357, 556 } call:NULL {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 386 10 : { 349 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 411 4 : {  } {  } call:printSeparator { printSeparator { 556 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 17 : { 347, 348 } {  } call:maxOccupancy { maxOccupancy { 357 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 396 4 : {  } {  } call:printSeparator { printSeparator { 556 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 289 8 : { 559, 566 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 292 7 : {  } {  } call:printSeparator { printSeparator { 788 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 284 4 : { 558 } {  } call:sumAtoms {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 339 4 : {  } {  } call:addIntParallel { addIntParallel { 664 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 338 9 : { 618, 619, 664 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 354 10 : { 678, 679, 680, 681, 1251 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 302 8 : { 810, 811 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 231 4 : {  } {  } call:destroyHaloExchange { destroyHaloExchange { 905 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 230 4 : {  } {  } call:destroyAtoms { destroyAtoms { 914 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 229 4 : { 895, 896 } {  } call:destroyLinkCells { destroyLinkCells { 905 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 263 75 : { 966, 967, 968, 969, 970 } {  } call:initLjPot { initLjPot { 1002 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 263 22 : { 966, 967, 968, 969, 970 } {  } call:initEamPot { initEamPot { 1002, 1007, 1008, 1009 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 461 4 : { 1015, 1016, 1017, 1018, 1019, 1020, 1021 } {  } call:bcastParallel { bcastParallel { 1021 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 425 18 : { 1010, 1011, 1012, 1013, 1014 } {  } call:getNRanks {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 428 11 : { 1013 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 444 11 : { 1013, 1015, 1016, 1017, 1018, 1019, 1020 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 455 11 : { 1013, 1015, 1016, 1017, 1018, 1019, 1020 } {  } call:printRank {  }
