@@ -1,0 +1,1 @@
+13 13 #pragma omp parallel firstprivate(a) private(b, c)

@@ -1,0 +1,5 @@
+1375 1375 #pragma omp parallel
+1377 1377 #pragma omp single
+1393 1393 #pragma omp parallel
+1435 1435 #pragma omp barrier
+1453 1453 #pragma omp barrier

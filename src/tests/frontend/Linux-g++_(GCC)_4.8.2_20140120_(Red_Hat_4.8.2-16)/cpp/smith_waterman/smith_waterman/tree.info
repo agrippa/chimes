@@ -1,0 +1,7 @@
+char_mapping _Z12char_mappingc 0 DOES_NOT
+print_matrix _Z12print_matrixPPiii 0 DOES_NOT
+clear_whitespaces_do_mapping _Z28clear_whitespaces_do_mappingPal 0 DOES_NOT char_mapping 60 42
+read_file _Z9read_fileP8_IO_FILEPm 0 DOES_NOT clear_whitespaces_do_mapping 79 16
+kernel _Z6kernelyyPiS_yy 0 DOES_NOT
+main main 0 DOES random_init 142 5 random_init 143 5 kernel 160 9 checkpoint 171 9
+random_init _ZL11random_initPay 0 DOES_NOT

@@ -1,0 +1,121 @@
+initParallel main 90 4 0 2 3
+profileStart main 91 4 0 0
+initSubsystems main 92 4 0
+timestampBarrier main 93 4 0 1234
+yamlAppInfo main 96 4 0 788
+parseCommandLine main 98 18 0 4 0 132
+printCmdYaml main 100 4 0 788 4
+memcpy main 102 19 0 6 4 0
+initSimulation main 102 19 67 6
+printSimulationDataYaml main 104 4 0 788 67
+initValidate main 106 25 42 67
+timestampBarrier main 107 4 0 1234
+timestampBarrier main 109 4 0 1237
+profileStart main 115 4 0 0
+profileStart main 118 12 0 0
+sumAtoms main 119 7 0 67
+profileStop main 120 12 0 0
+getElapsedTime main 122 41 0 0
+printThings main 122 72 0 67 0 0
+profileStart main 124 12 0 0
+timestep main 125 7 0 67 0 0
+profileStop main 126 12 0 0
+profileStop main 130 4 0 0
+sumAtoms main 132 4 0 67
+getElapsedTime main 133 38 0 0
+printThings main 133 69 0 67 0 0
+timestampBarrier main 134 4 0 1238
+validateResult main 137 4 0 42 67
+profileStop main 138 4 0 0
+printPerformanceResults main 140 4 0 0 0
+destroySimulation main 143 4 0 5
+free main 144 4 0 42
+finalizeSubsystems main 145 4 0
+timestampBarrier main 147 4 0 1239
+destroyParallel main 148 4 0
+yamlBegin initSubsystems 246 4 0
+malloc initSimulation 166 29 321 0
+initPotential initSimulation 177 15 1274 0 341 341 341
+memcpy initSimulation 183 4 0 149 341 0
+sanityChecks initSimulation 183 4 0 149 0 0 1274
+initSpecies initSimulation 185 19 1274 1274
+initDecomposition initSimulation 192 18 1274 0 0 0 150
+initLinkCells initSimulation 195 17 1274 1274 0
+initAtoms initSimulation 196 17 1274 1274
+createFccLattice initSimulation 199 4 0 0 0 0 0 321
+setTemperature initSimulation 200 4 0 321 0
+randomDisplacements initSimulation 201 4 0 321 0
+initAtomHaloExchange initSimulation 203 24 1274 1274 1274
+profileStart initSimulation 206 9 0 0
+redistributeAtoms initSimulation 207 4 0 321
+profileStop initSimulation 208 9 0 0
+profileStart initSimulation 210 9 0 0
+computeForce initSimulation 211 4 0 321
+profileStop initSimulation 212 9 0 0
+kineticEnergy initSimulation 214 4 0 321
+maxOccupancy printSimulationDataYaml 383 17 0 357
+printRank printSimulationDataYaml 386 10 0
+fprintf printSimulationDataYaml 389 4 0 556 1238
+fprintf printSimulationDataYaml 390 4 0 556 1241 0
+fprintf printSimulationDataYaml 392 4 0 556 1242 0 0 0
+fprintf printSimulationDataYaml 394 4 0 556 1242 0 0 0
+printSeparator printSimulationDataYaml 396 4 0 556
+fprintf printSimulationDataYaml 397 4 0 556 1244
+fprintf printSimulationDataYaml 398 4 0 556 1245 0 0 0
+fprintf printSimulationDataYaml 400 4 0 556 1246 0 0 0 0
+fprintf printSimulationDataYaml 403 4 0 556 1242 0 0 0
+fprintf printSimulationDataYaml 405 4 0 556 1248 0 0 0
+fprintf printSimulationDataYaml 409 4 0 556 1249 0 0
+printSeparator printSimulationDataYaml 411 4 0 556
+fprintf printSimulationDataYaml 412 4 0 556 1250
+anon printSimulationDataYaml 413 4 0 556 357
+fflush printSimulationDataYaml 415 4 0 556
+sumAtoms initValidate 284 4 0 617
+malloc initValidate 285 31 566 0
+printRank initValidate 289 8 0
+fprintf initValidate 291 7 0 788 1255
+printSeparator initValidate 292 7 0 788
+fprintf initValidate 293 7 0 788 1263 0 0
+fprintf initValidate 295 7 0 788 1255
+profileStart sumAtoms 338 9 0 0
+addIntParallel sumAtoms 339 4 0 664 664 0
+profileStop sumAtoms 340 9 0 0
+printRank printThings 354 10 0
+fprintf printThings 360 7 0 788 1253
+fflush printThings 363 7 0 788
+fprintf printThings 374 4 0 788 1254 0 0 0 0 0 0 0 0
+printRank validateResult 302 8 0
+fprintf validateResult 308 7 0 788 1255
+fprintf validateResult 309 7 0 788 1255
+fprintf validateResult 310 7 0 788 1256
+fprintf validateResult 312 7 0 788 1257 0
+fprintf validateResult 313 7 0 788 1257 0
+fprintf validateResult 314 7 0 788 1256 0
+fprintf validateResult 317 10 0 788 1260 0
+fprintf validateResult 322 10 0 788 1261
+fprintf validateResult 323 10 0 788 1257 0
+fprintf validateResult 324 10 0 788 1261
+free destroySimulation 228 14 0 914
+destroyLinkCells destroySimulation 229 4 0 905
+destroyAtoms destroySimulation 230 4 0 914
+destroyHaloExchange destroySimulation 231 4 0 905
+free destroySimulation 232 4 0 914
+free destroySimulation 233 4 0 914
+free destroySimulation 234 4 0 905
+yamlEnd finalizeSubsystems 254 4 0
+initEamPot initPotential 263 22 1002 1007 1008 1009
+initLjPot initPotential 263 75 1002
+__assert_fail initPotential 267 37 0 1266 1269 0 1272
+getNRanks sanityChecks 425 18 0
+printRank sanityChecks 428 11 0
+fprintf sanityChecks 428 25 0 788 1248
+printRank sanityChecks 444 11 0
+fprintf sanityChecks 444 25 0 788 1265 0 0 0
+strcasecmp sanityChecks 452 8 0 1163 1266
+printRank sanityChecks 455 11 0
+fprintf sanityChecks 455 25 0 788 1254 1163
+bcastParallel sanityChecks 461 4 0 1021 0 0
+__assert_fail sanityChecks 464 55 0 1244 1269 0 1270
+exit sanityChecks 466 24 0 0
+malloc initSpecies 273 41 1170 0
+strcpy initSpecies 275 4 1179 1170 1197

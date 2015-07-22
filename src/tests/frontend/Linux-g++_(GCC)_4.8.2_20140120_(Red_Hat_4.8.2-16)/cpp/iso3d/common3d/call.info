@@ -1,0 +1,24 @@
+fopen save_layer_text 9 16 30 101 449
+fprintf save_layer_text 11 9 0 419 451 101
+exit save_layer_text 12 9 0 0
+fprintf save_layer_text 17 13 0 30 452 0 0 0
+fprintf save_layer_text 20 9 0 30 453
+fclose save_layer_text 23 5 0 30
+memset init_data 41 5 0 245 0 0
+fprintf usage 51 5 0 419 454 262
+exit usage 54 5 0 0
+default_config setup_config 78 5 0 438
+getopt setup_config 80 17 0 0 440 456
+atoi setup_config 83 28 0 332
+atoi setup_config 86 28 0 332
+atoi setup_config 89 28 0 332
+atoi setup_config 92 32 0 332
+atoi setup_config 98 35 0 332
+realloc setup_config 101 40 368 368 0
+parse_source setup_config 103 17 0 332 368
+atoi setup_config 107 32 0 332
+atoi setup_config 110 31 0 332
+atoi setup_config 113 40 0 332
+fprintf setup_config 119 17 0 419 451 0
+usage setup_config 121 17 0 440
+getNumCUDADevices setup_config 126 23 0
