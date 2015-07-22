@@ -3,7 +3,7 @@ spec_init_genrand 0
 spec_rand
 spec_genrand_int32
 spec_lrand48
-spec_init_by_array 343 0
+spec_init_by_array 355 0
 spec_genrand_int31
 spec_genrand_real1
 spec_genrand_real2

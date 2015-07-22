@@ -38,6 +38,12 @@ static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
+static unsigned ____alias_loc_id_7;
+static unsigned ____alias_loc_id_8;
+static unsigned ____alias_loc_id_9;
+static unsigned ____alias_loc_id_10;
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -1128,9 +1134,9 @@ double spec_rand_npm(void);unsigned long spec_genrand_int32_npm(void);
 double spec_rand_quick(void); double spec_rand(void);unsigned long spec_genrand_int32_quick(void); unsigned long spec_genrand_int32(void);
 extern "C" double spec_rand_resumable(void) {const int ____chimes_did_disable1 = new_stack((void *)(&spec_rand), "spec_rand", &____must_manage_spec_rand, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_rand", &____must_manage_spec_rand, 0, ____chimes_did_disable1, false); call_lbl_0: return ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967296.0);
+     double ____chimes_ret_var_0; ; call_lbl_0: ____chimes_ret_var_0 = (({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967296.0)); rm_stack(false, 0UL, "spec_rand", &____must_manage_spec_rand, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_rand", &____must_manage_spec_rand, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 77 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1138,9 +1144,9 @@ long spec_lrand48_npm(void);
 long spec_lrand48_quick(void); long spec_lrand48(void);
 extern "C" long spec_lrand48_resumable(void) {const int ____chimes_did_disable2 = new_stack((void *)(&spec_lrand48), "spec_lrand48", &____must_manage_spec_lrand48, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_lrand48", &____must_manage_spec_lrand48, 0, ____chimes_did_disable2, false); call_lbl_0: return (long)(({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>1);
+     long ____chimes_ret_var_1; ; call_lbl_0: ____chimes_ret_var_1 = ((long)(({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>1)); rm_stack(false, 0UL, "spec_lrand48", &____must_manage_spec_lrand48, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_lrand48", &____must_manage_spec_lrand48, ____alias_loc_id_4, ____chimes_did_disable2, false); }
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1176,7 +1182,7 @@ void spec_init_by_array_npm(unsigned long init_key[], int key_length);
 void spec_init_by_array_quick(unsigned long init_key[], int key_length); void spec_init_by_array(unsigned long init_key[], int key_length);
 extern "C" void spec_init_by_array_resumable(unsigned long init_key[], int key_length)
 # 103 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&spec_init_by_array), "spec_init_by_array", &____must_manage_spec_init_by_array, 2, 0, (size_t)(8502978821625705255UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&spec_init_by_array), "spec_init_by_array", &____must_manage_spec_init_by_array, 2, 0, (size_t)(8502978821625705267UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 104 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
     int i; int j; int k; ;
 # 105 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1198,7 +1204,7 @@ extern "C" void spec_init_by_array_resumable(unsigned long init_key[], int key_l
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
         if (i>=624) { mt[0] = mt[624 -1]; i=1; }
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-        if (j>=key_length) j=0;
+        if (j>=key_length) {j=0; };
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
     }
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1219,7 +1225,7 @@ extern "C" void spec_init_by_array_resumable(unsigned long init_key[], int key_l
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
     mt[0] = 0x80000000UL;
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-rm_stack(false, 0UL, "spec_init_by_array", &____must_manage_spec_init_by_array, ____alias_loc_id_3, ____chimes_did_disable4, false); }
+rm_stack(false, 0UL, "spec_init_by_array", &____must_manage_spec_init_by_array, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1238,9 +1244,7 @@ extern "C" unsigned long spec_genrand_int32_resumable(void)
         int kk; ;
 # 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-         call_lbl_0: if (mti == 624 +1)
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-            ({ calling_npm("spec_init_genrand", 0); spec_init_genrand_npm(5489UL); });
+        if (mti == 624 +1) { call_lbl_0: ({ calling_npm("spec_init_genrand", 0); spec_init_genrand_npm(5489UL); }); };
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
         for (kk=0;kk<624 -397;kk++) {
@@ -1282,9 +1286,9 @@ extern "C" unsigned long spec_genrand_int32_resumable(void)
     y ^= (y >> 18);
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_int32", &____must_manage_spec_genrand_int32, ____alias_loc_id_2, ____chimes_did_disable5, false); return y;
+     unsigned long ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (y); rm_stack(false, 0UL, "spec_genrand_int32", &____must_manage_spec_genrand_int32, ____alias_loc_id_3, ____chimes_did_disable5, false); return ____chimes_ret_var_2; ;
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_int32", &____must_manage_spec_genrand_int32, ____alias_loc_id_3, ____chimes_did_disable5, false); }
 # 164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1294,9 +1298,9 @@ extern "C" long spec_genrand_int31_resumable(void)
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&spec_genrand_int31), "spec_genrand_int31", &____must_manage_spec_genrand_int31, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_int31", &____must_manage_spec_genrand_int31, 0, ____chimes_did_disable6, false); call_lbl_0: return (long)(({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>1);
+     long ____chimes_ret_var_3; ; call_lbl_0: ____chimes_ret_var_3 = ((long)(({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>1)); rm_stack(false, 0UL, "spec_genrand_int31", &____must_manage_spec_genrand_int31, ____alias_loc_id_6, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_int31", &____must_manage_spec_genrand_int31, ____alias_loc_id_6, ____chimes_did_disable6, false); }
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1306,10 +1310,10 @@ extern "C" double spec_genrand_real1_resumable(void)
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&spec_genrand_real1), "spec_genrand_real1", &____must_manage_spec_genrand_real1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_real1", &____must_manage_spec_genrand_real1, 0, ____chimes_did_disable7, false); call_lbl_0: return ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967295.0);
+     double ____chimes_ret_var_4; ; call_lbl_0: ____chimes_ret_var_4 = (({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967295.0)); rm_stack(false, 0UL, "spec_genrand_real1", &____must_manage_spec_genrand_real1, ____alias_loc_id_7, ____chimes_did_disable7, false); return ____chimes_ret_var_4; ;
 # 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_real1", &____must_manage_spec_genrand_real1, ____alias_loc_id_7, ____chimes_did_disable7, false); }
 # 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1319,10 +1323,10 @@ extern "C" double spec_genrand_real2_resumable(void)
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&spec_genrand_real2), "spec_genrand_real2", &____must_manage_spec_genrand_real2, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_real2", &____must_manage_spec_genrand_real2, 0, ____chimes_did_disable8, false); call_lbl_0: return ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967296.0);
+     double ____chimes_ret_var_5; ; call_lbl_0: ____chimes_ret_var_5 = (({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967296.0)); rm_stack(false, 0UL, "spec_genrand_real2", &____must_manage_spec_genrand_real2, ____alias_loc_id_8, ____chimes_did_disable8, false); return ____chimes_ret_var_5; ;
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_real2", &____must_manage_spec_genrand_real2, ____alias_loc_id_8, ____chimes_did_disable8, false); }
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1332,10 +1336,10 @@ extern "C" double spec_genrand_real3_resumable(void)
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&spec_genrand_real3), "spec_genrand_real3", &____must_manage_spec_genrand_real3, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 188 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_real3", &____must_manage_spec_genrand_real3, 0, ____chimes_did_disable9, false); call_lbl_0: return (((double)({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })) + 0.5)*(1.0/4294967296.0);
+     double ____chimes_ret_var_6; ; call_lbl_0: ____chimes_ret_var_6 = ((((double)({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })) + 0.5)*(1.0/4294967296.0)); rm_stack(false, 0UL, "spec_genrand_real3", &____must_manage_spec_genrand_real3, ____alias_loc_id_9, ____chimes_did_disable9, false); return ____chimes_ret_var_6; ;
 # 189 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 190 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_real3", &____must_manage_spec_genrand_real3, ____alias_loc_id_9, ____chimes_did_disable9, false); }
 # 191 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 192 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1347,9 +1351,9 @@ extern "C" double spec_genrand_res53_resumable(void)
 # 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
      unsigned long a; unsigned long b; call_lbl_0: a = (({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>5) ; call_lbl_1: b = (({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>6) ;
 # 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_res53", &____must_manage_spec_genrand_res53, ____alias_loc_id_4, ____chimes_did_disable10, false); return(a*67108864.0+b)*(1.0/9007199254740992.0);
+     double ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((a*67108864.0+b)*(1.0/9007199254740992.0)); rm_stack(false, 0UL, "spec_genrand_res53", &____must_manage_spec_genrand_res53, ____alias_loc_id_10, ____chimes_did_disable10, false); return ____chimes_ret_var_7; ;
 # 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_res53", &____must_manage_spec_genrand_res53, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 void spec_srand_quick(int seed) {const int ____chimes_did_disable0 = new_stack((void *)(&spec_srand), "spec_srand", &____must_manage_spec_srand, 1, 0, (size_t)(0UL)) ; ; ;
 # 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1361,17 +1365,17 @@ void spec_srand(int seed) { (____chimes_replaying ? spec_srand_resumable(seed) :
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 double spec_rand_quick(void) {const int ____chimes_did_disable1 = new_stack((void *)(&spec_rand), "spec_rand", &____must_manage_spec_rand, 0, 0) ; ; ;
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_rand", &____must_manage_spec_rand, 0, ____chimes_did_disable1, false); call_lbl_0: return ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967296.0);
+     double ____chimes_ret_var_0; ; call_lbl_0: ____chimes_ret_var_0 = (({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967296.0)); rm_stack(false, 0UL, "spec_rand", &____must_manage_spec_rand, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_rand", &____must_manage_spec_rand, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
 double spec_rand(void) { return (____chimes_replaying ? spec_rand_resumable() : spec_rand_quick()); }
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 long spec_lrand48_quick(void) {const int ____chimes_did_disable2 = new_stack((void *)(&spec_lrand48), "spec_lrand48", &____must_manage_spec_lrand48, 0, 0) ; ; ;
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_lrand48", &____must_manage_spec_lrand48, 0, ____chimes_did_disable2, false); call_lbl_0: return (long)(({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>1);
+     long ____chimes_ret_var_1; ; call_lbl_0: ____chimes_ret_var_1 = ((long)(({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>1)); rm_stack(false, 0UL, "spec_lrand48", &____must_manage_spec_lrand48, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_lrand48", &____must_manage_spec_lrand48, ____alias_loc_id_4, ____chimes_did_disable2, false); }
 
 long spec_lrand48(void) { return (____chimes_replaying ? spec_lrand48_resumable() : spec_lrand48_quick()); }
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1402,7 +1406,7 @@ void spec_init_genrand(unsigned long s) { (____chimes_replaying ? spec_init_genr
 # 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 void spec_init_by_array_quick(unsigned long init_key[], int key_length)
 # 103 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&spec_init_by_array), "spec_init_by_array", &____must_manage_spec_init_by_array, 2, 0, (size_t)(8502978821625705255UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&spec_init_by_array), "spec_init_by_array", &____must_manage_spec_init_by_array, 2, 0, (size_t)(8502978821625705267UL), (size_t)(0UL)) ; ; ;
 # 104 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
     int i; int j; int k; ;
 # 105 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1424,7 +1428,7 @@ void spec_init_by_array_quick(unsigned long init_key[], int key_length)
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
         if (i>=624) { mt[0] = mt[624 -1]; i=1; }
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-        if (j>=key_length) j=0;
+        if (j>=key_length) {j=0; };
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
     }
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1445,7 +1449,7 @@ void spec_init_by_array_quick(unsigned long init_key[], int key_length)
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
     mt[0] = 0x80000000UL;
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-rm_stack(false, 0UL, "spec_init_by_array", &____must_manage_spec_init_by_array, ____alias_loc_id_3, ____chimes_did_disable4, false); }
+rm_stack(false, 0UL, "spec_init_by_array", &____must_manage_spec_init_by_array, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 
 void spec_init_by_array(unsigned long init_key[], int key_length) { (____chimes_replaying ? spec_init_by_array_resumable(init_key, key_length) : spec_init_by_array_quick(init_key, key_length)); }
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1464,9 +1468,7 @@ unsigned long spec_genrand_int32_quick(void)
         int kk; ;
 # 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-         call_lbl_0: if (mti == 624 +1)
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-            ({ calling_npm("spec_init_genrand", 0); spec_init_genrand_npm(5489UL); });
+        if (mti == 624 +1) { call_lbl_0: ({ calling_npm("spec_init_genrand", 0); spec_init_genrand_npm(5489UL); }); };
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
         for (kk=0;kk<624 -397;kk++) {
@@ -1508,9 +1510,9 @@ unsigned long spec_genrand_int32_quick(void)
     y ^= (y >> 18);
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_int32", &____must_manage_spec_genrand_int32, ____alias_loc_id_2, ____chimes_did_disable5, false); return y;
+     unsigned long ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (y); rm_stack(false, 0UL, "spec_genrand_int32", &____must_manage_spec_genrand_int32, ____alias_loc_id_3, ____chimes_did_disable5, false); return ____chimes_ret_var_2; ;
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_int32", &____must_manage_spec_genrand_int32, ____alias_loc_id_3, ____chimes_did_disable5, false); }
 
 unsigned long spec_genrand_int32(void) { return (____chimes_replaying ? spec_genrand_int32_resumable() : spec_genrand_int32_quick()); }
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1518,9 +1520,9 @@ long spec_genrand_int31_quick(void)
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&spec_genrand_int31), "spec_genrand_int31", &____must_manage_spec_genrand_int31, 0, 0) ; ; ;
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_int31", &____must_manage_spec_genrand_int31, 0, ____chimes_did_disable6, false); call_lbl_0: return (long)(({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>1);
+     long ____chimes_ret_var_3; ; call_lbl_0: ____chimes_ret_var_3 = ((long)(({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>1)); rm_stack(false, 0UL, "spec_genrand_int31", &____must_manage_spec_genrand_int31, ____alias_loc_id_6, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_int31", &____must_manage_spec_genrand_int31, ____alias_loc_id_6, ____chimes_did_disable6, false); }
 
 long spec_genrand_int31(void) { return (____chimes_replaying ? spec_genrand_int31_resumable() : spec_genrand_int31_quick()); }
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1528,10 +1530,10 @@ double spec_genrand_real1_quick(void)
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&spec_genrand_real1), "spec_genrand_real1", &____must_manage_spec_genrand_real1, 0, 0) ; ; ;
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_real1", &____must_manage_spec_genrand_real1, 0, ____chimes_did_disable7, false); call_lbl_0: return ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967295.0);
+     double ____chimes_ret_var_4; ; call_lbl_0: ____chimes_ret_var_4 = (({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967295.0)); rm_stack(false, 0UL, "spec_genrand_real1", &____must_manage_spec_genrand_real1, ____alias_loc_id_7, ____chimes_did_disable7, false); return ____chimes_ret_var_4; ;
 # 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_real1", &____must_manage_spec_genrand_real1, ____alias_loc_id_7, ____chimes_did_disable7, false); }
 
 double spec_genrand_real1(void) { return (____chimes_replaying ? spec_genrand_real1_resumable() : spec_genrand_real1_quick()); }
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1539,10 +1541,10 @@ double spec_genrand_real2_quick(void)
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&spec_genrand_real2), "spec_genrand_real2", &____must_manage_spec_genrand_real2, 0, 0) ; ; ;
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_real2", &____must_manage_spec_genrand_real2, 0, ____chimes_did_disable8, false); call_lbl_0: return ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967296.0);
+     double ____chimes_ret_var_5; ; call_lbl_0: ____chimes_ret_var_5 = (({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })*(1.0/4294967296.0)); rm_stack(false, 0UL, "spec_genrand_real2", &____must_manage_spec_genrand_real2, ____alias_loc_id_8, ____chimes_did_disable8, false); return ____chimes_ret_var_5; ;
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_real2", &____must_manage_spec_genrand_real2, ____alias_loc_id_8, ____chimes_did_disable8, false); }
 
 double spec_genrand_real2(void) { return (____chimes_replaying ? spec_genrand_real2_resumable() : spec_genrand_real2_quick()); }
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1550,10 +1552,10 @@ double spec_genrand_real3_quick(void)
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&spec_genrand_real3), "spec_genrand_real3", &____must_manage_spec_genrand_real3, 0, 0) ; ; ;
 # 188 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_real3", &____must_manage_spec_genrand_real3, 0, ____chimes_did_disable9, false); call_lbl_0: return (((double)({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })) + 0.5)*(1.0/4294967296.0);
+     double ____chimes_ret_var_6; ; call_lbl_0: ____chimes_ret_var_6 = ((((double)({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })) + 0.5)*(1.0/4294967296.0)); rm_stack(false, 0UL, "spec_genrand_real3", &____must_manage_spec_genrand_real3, ____alias_loc_id_9, ____chimes_did_disable9, false); return ____chimes_ret_var_6; ;
 # 189 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 190 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_real3", &____must_manage_spec_genrand_real3, ____alias_loc_id_9, ____chimes_did_disable9, false); }
 
 double spec_genrand_real3(void) { return (____chimes_replaying ? spec_genrand_real3_resumable() : spec_genrand_real3_quick()); }
 # 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1563,9 +1565,9 @@ double spec_genrand_res53_quick(void)
 # 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
      unsigned long a; unsigned long b; call_lbl_0: a = (({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>5) ; call_lbl_1: b = (({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })>>6) ;
 # 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    rm_stack(false, 0UL, "spec_genrand_res53", &____must_manage_spec_genrand_res53, ____alias_loc_id_4, ____chimes_did_disable10, false); return(a*67108864.0+b)*(1.0/9007199254740992.0);
+     double ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((a*67108864.0+b)*(1.0/9007199254740992.0)); rm_stack(false, 0UL, "spec_genrand_res53", &____must_manage_spec_genrand_res53, ____alias_loc_id_10, ____chimes_did_disable10, false); return ____chimes_ret_var_7; ;
 # 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-}
+rm_stack(false, 0UL, "spec_genrand_res53", &____must_manage_spec_genrand_res53, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 
 double spec_genrand_res53(void) { return (____chimes_replaying ? spec_genrand_res53_resumable() : spec_genrand_res53_quick()); }
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1577,13 +1579,13 @@ void spec_srand_npm(int seed) {
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 double spec_rand_npm(void) {
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    return spec_genrand_int32_npm()*(1.0/4294967296.0);
+     double ____chimes_ret_var_0; ____chimes_ret_var_0 = (spec_genrand_int32_npm()*(1.0/4294967296.0)); return ____chimes_ret_var_0; ;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 }
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 long spec_lrand48_npm(void) {
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    return (long)(spec_genrand_int32_npm()>>1);
+     long ____chimes_ret_var_1; ____chimes_ret_var_1 = ((long)(spec_genrand_int32_npm()>>1)); return ____chimes_ret_var_1; ;
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 }
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1634,7 +1636,7 @@ void spec_init_by_array_npm(unsigned long init_key[], int key_length)
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
         if (i>=624) { mt[0] = mt[624 -1]; i=1; }
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-        if (j>=key_length) j=0;
+        if (j>=key_length) {j=0; };
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
     }
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1672,9 +1674,7 @@ unsigned long spec_genrand_int32_npm(void)
         int kk;
 # 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-        if (mti == 624 +1)
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-            spec_init_genrand_npm(5489UL);
+        if (mti == 624 +1) {spec_init_genrand_npm(5489UL); };
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
         for (kk=0;kk<624 -397;kk++) {
@@ -1716,7 +1716,7 @@ unsigned long spec_genrand_int32_npm(void)
     y ^= (y >> 18);
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    return y;
+     unsigned long ____chimes_ret_var_2; ____chimes_ret_var_2 = (y); return ____chimes_ret_var_2; ;
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 }
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1724,7 +1724,7 @@ long spec_genrand_int31_npm(void)
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    return (long)(spec_genrand_int32_npm()>>1);
+     long ____chimes_ret_var_3; ____chimes_ret_var_3 = ((long)(spec_genrand_int32_npm()>>1)); return ____chimes_ret_var_3; ;
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 }
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
@@ -1732,7 +1732,7 @@ double spec_genrand_real1_npm(void)
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    return spec_genrand_int32_npm()*(1.0/4294967295.0);
+     double ____chimes_ret_var_4; ____chimes_ret_var_4 = (spec_genrand_int32_npm()*(1.0/4294967295.0)); return ____chimes_ret_var_4; ;
 # 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 }
@@ -1741,7 +1741,7 @@ double spec_genrand_real2_npm(void)
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    return spec_genrand_int32_npm()*(1.0/4294967296.0);
+     double ____chimes_ret_var_5; ____chimes_ret_var_5 = (spec_genrand_int32_npm()*(1.0/4294967296.0)); return ____chimes_ret_var_5; ;
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 }
@@ -1750,7 +1750,7 @@ double spec_genrand_real3_npm(void)
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 {
 # 188 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    return (((double)spec_genrand_int32_npm()) + 0.5)*(1.0/4294967296.0);
+     double ____chimes_ret_var_6; ____chimes_ret_var_6 = ((((double)spec_genrand_int32_npm()) + 0.5)*(1.0/4294967296.0)); return ____chimes_ret_var_6; ;
 # 189 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 # 190 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 }
@@ -1761,7 +1761,7 @@ double spec_genrand_res53_npm(void)
 # 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
     unsigned long a=spec_genrand_int32_npm()>>5, b=spec_genrand_int32_npm()>>6;
 # 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
-    return(a*67108864.0+b)*(1.0/9007199254740992.0);
+     double ____chimes_ret_var_7; ____chimes_ret_var_7 = ((a*67108864.0+b)*(1.0/9007199254740992.0)); return ____chimes_ret_var_7; ;
 # 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/specrand.c"
 }
 
@@ -1770,16 +1770,22 @@ double spec_genrand_res53_npm(void)
 
 
 static int module_init() {
-    init_module(8502978821625704912UL, 1, 11, 0, 5, 11, 0, 11, 11, 0, 0,
+    init_module(8502978821625704912UL, 1, 11, 0, 11, 11, 0, 11, 11, 0, 0,
                            &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (8502978821625704912UL + 1UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (8502978821625704912UL + 11UL), (8502978821625704912UL + 379UL), (8502978821625704912UL + 380UL),
-                           &____alias_loc_id_2, (unsigned)4, (unsigned)0, (unsigned)0, (8502978821625704912UL + 59UL), (8502978821625704912UL + 60UL), (8502978821625704912UL + 379UL), (8502978821625704912UL + 380UL),
-                           &____alias_loc_id_3, (unsigned)6, (unsigned)0, (unsigned)0, (8502978821625704912UL + 202UL), (8502978821625704912UL + 203UL), (8502978821625704912UL + 204UL), (8502978821625704912UL + 205UL), (8502978821625704912UL + 206UL), (8502978821625704912UL + 379UL),
-                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (unsigned)0, (8502978821625704912UL + 361UL), (8502978821625704912UL + 362UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (8502978821625704912UL + 11UL), (8502978821625704912UL + 411UL), (8502978821625704912UL + 412UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (8502978821625704912UL + 55UL),
+                           &____alias_loc_id_3, (unsigned)5, (unsigned)0, (unsigned)0, (8502978821625704912UL + 63UL), (8502978821625704912UL + 64UL), (8502978821625704912UL + 65UL), (8502978821625704912UL + 411UL), (8502978821625704912UL + 412UL),
+                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (8502978821625704912UL + 207UL),
+                           &____alias_loc_id_5, (unsigned)6, (unsigned)0, (unsigned)0, (8502978821625704912UL + 214UL), (8502978821625704912UL + 215UL), (8502978821625704912UL + 216UL), (8502978821625704912UL + 217UL), (8502978821625704912UL + 218UL), (8502978821625704912UL + 411UL),
+                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)0, (8502978821625704912UL + 357UL),
+                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)0, (8502978821625704912UL + 364UL),
+                           &____alias_loc_id_8, (unsigned)1, (unsigned)0, (unsigned)0, (8502978821625704912UL + 372UL),
+                           &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)0, (8502978821625704912UL + 380UL),
+                            &____alias_loc_id_10, (unsigned)3, (unsigned)0, (unsigned)0, (8502978821625704912UL + 389UL), (8502978821625704912UL + 390UL), (8502978821625704912UL + 391UL),
                             "spec_srand", 0, "spec_srand", "_Z14spec_srand_npmi", 0, 1, 0UL, 0UL, 1, "spec_init_genrand", 1, 0UL, 0UL,
                             "spec_rand", 0, "spec_rand", "_Z13spec_rand_npmv", 0, 0, 0UL, 1, "spec_genrand_int32", 0, 0UL,
                             "spec_genrand_res53", 0, "spec_genrand_res53", "_Z22spec_genrand_res53_npmv", 0, 0, 0UL, 2, "spec_genrand_int32", 0, 0UL, "spec_genrand_int32", 0, 0UL,
-                            "spec_init_by_array", 0, "spec_init_by_array", "_Z22spec_init_by_array_npmPmi", 0, 2, (8502978821625704912UL + 343UL), 0UL, 0UL, 1, "spec_init_genrand", 1, 0UL, 0UL,
+                            "spec_init_by_array", 0, "spec_init_by_array", "_Z22spec_init_by_array_npmPmi", 0, 2, (8502978821625704912UL + 355UL), 0UL, 0UL, 1, "spec_init_genrand", 1, 0UL, 0UL,
                             "spec_genrand_int32", 0, "spec_genrand_int32", "_Z22spec_genrand_int32_npmv", 0, 0, 0UL, 1, "spec_init_genrand", 1, 0UL, 0UL,
                             "spec_genrand_int31", 0, "spec_genrand_int31", "_Z22spec_genrand_int31_npmv", 0, 0, 0UL, 1, "spec_genrand_int32", 0, 0UL,
                             "spec_init_genrand", 0, "spec_init_genrand", "_Z21spec_init_genrand_npmm", 0, 1, 0UL, 0UL, 0,
@@ -1798,7 +1804,7 @@ static int module_init() {
                            "spec_genrand_real2", &(____chimes_does_checkpoint_spec_genrand_real2_npm),
                            "spec_genrand_real3", &(____chimes_does_checkpoint_spec_genrand_real3_npm),
                            "spec_genrand_real1", &(____chimes_does_checkpoint_spec_genrand_real1_npm),
-                             (8502978821625704912UL + 202UL), (8502978821625704912UL + 343UL),
+                             (8502978821625704912UL + 214UL), (8502978821625704912UL + 355UL),
                              "spec_srand", "spec_srand", 0, 1, "spec_init_genrand",
                              "spec_rand", "spec_rand", 0, 1, "spec_genrand_int32",
                              "spec_genrand_res53", "spec_genrand_res53", 0, 2, "spec_genrand_int32", "spec_genrand_int32",
