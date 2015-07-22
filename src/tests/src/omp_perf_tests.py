@@ -2,7 +2,7 @@ import os
 import sys
 
 from common import PerfTest, RuntimeTest, parse_argv, CHIMES_HOME, \
-         run_runtime_test, run_perf_test, \
+         run_runtime_test, run_perf_test, get_num_cores, \
          is_rodinia_supported, is_spec_supported, get_machine_name
 from shared_tests import MISC_OMP_RUNTIME_TESTS, PERF_CLI_ARGS
 from exec_time_parsers import EXEC_TIME_PARSERS
