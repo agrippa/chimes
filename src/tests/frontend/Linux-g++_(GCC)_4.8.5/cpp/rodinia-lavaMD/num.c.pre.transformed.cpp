@@ -98,7 +98,7 @@ extern "C" {
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 int isInteger_npm(char *str);
 int isInteger_quick(char *str); int isInteger(char *str);
-int isInteger_resumable(char *str){const int ____chimes_did_disable0 = new_stack((void *)(&isInteger), "isInteger", &____must_manage_isInteger, 1, 0, (size_t)(15022235177203167149UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int isInteger_resumable(char *str){const int ____chimes_did_disable0 = new_stack((void *)(&isInteger), "isInteger", &____must_manage_isInteger, 1, 0, (size_t)(15022235177203167161UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 23 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
@@ -107,7 +107,7 @@ int isInteger_resumable(char *str){const int ____chimes_did_disable0 = new_stack
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
  if (*str == '\0'){
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
-  rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 0;
+   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
  }
 # 29 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
@@ -120,7 +120,7 @@ int isInteger_resumable(char *str){const int ____chimes_did_disable0 = new_stack
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
   if (*str < 48 || *str > 57){
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
-   rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 0;
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
   }
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
@@ -131,9 +131,9 @@ int isInteger_resumable(char *str){const int ____chimes_did_disable0 = new_stack
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
- rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 1;
+  int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (1); rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_2; ;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
-}
+rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
@@ -143,7 +143,7 @@ int isInteger_resumable(char *str){const int ____chimes_did_disable0 = new_stack
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 }
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
-int isInteger_quick(char *str){const int ____chimes_did_disable0 = new_stack((void *)(&isInteger), "isInteger", &____must_manage_isInteger, 1, 0, (size_t)(15022235177203167149UL)) ; ; ;
+int isInteger_quick(char *str){const int ____chimes_did_disable0 = new_stack((void *)(&isInteger), "isInteger", &____must_manage_isInteger, 1, 0, (size_t)(15022235177203167161UL)) ; ; ;
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 23 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
@@ -152,7 +152,7 @@ int isInteger_quick(char *str){const int ____chimes_did_disable0 = new_stack((vo
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
  if (*str == '\0'){
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
-  rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 0;
+   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
  }
 # 29 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
@@ -165,7 +165,7 @@ int isInteger_quick(char *str){const int ____chimes_did_disable0 = new_stack((vo
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
   if (*str < 48 || *str > 57){
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
-   rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 0;
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
   }
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
@@ -176,9 +176,9 @@ int isInteger_quick(char *str){const int ____chimes_did_disable0 = new_stack((vo
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
- rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 1;
+  int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (1); rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_2; ;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
-}
+rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 int isInteger(char *str) { return (____chimes_replaying ? isInteger_resumable(str) : isInteger_quick(str)); }
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
@@ -191,7 +191,7 @@ int isInteger_npm(char *str){
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
  if (*str == '\0'){
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
-  return 0;
+   int ____chimes_ret_var_0; ____chimes_ret_var_0 = (0); return ____chimes_ret_var_0; ;
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
  }
 # 29 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
@@ -204,7 +204,7 @@ int isInteger_npm(char *str){
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
   if (*str < 48 || *str > 57){
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
-   return 0;
+    int ____chimes_ret_var_1; ____chimes_ret_var_1 = (0); return ____chimes_ret_var_1; ;
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
   }
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
@@ -215,7 +215,7 @@ int isInteger_npm(char *str){
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
- return 1;
+  int ____chimes_ret_var_2; ____chimes_ret_var_2 = (1); return ____chimes_ret_var_2; ;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/num/num.c"
 }
 
@@ -225,10 +225,10 @@ int isInteger_npm(char *str){
 
 static int module_init() {
     init_module(15022235177203167110UL, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (15022235177203167110UL + 1UL), (15022235177203167110UL + 2UL),
-                            "isInteger", 0, "isInteger", "isInteger_npm", 0, 1, (15022235177203167110UL + 39UL), 0UL, 0,
+                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (15022235177203167110UL + 1UL), (15022235177203167110UL + 2UL), (15022235177203167110UL + 3UL), (15022235177203167110UL + 4UL), (15022235177203167110UL + 5UL),
+                            "isInteger", 0, "isInteger", "isInteger_npm", 0, 1, (15022235177203167110UL + 51UL), 0UL, 0,
                            "isInteger", &(____chimes_does_checkpoint_isInteger_npm),
-                             (15022235177203167110UL + 2UL), (15022235177203167110UL + 39UL),
+                             (15022235177203167110UL + 2UL), (15022235177203167110UL + 51UL),
                              "isInteger", "isInteger", 0, 0);
     return 0;
 }

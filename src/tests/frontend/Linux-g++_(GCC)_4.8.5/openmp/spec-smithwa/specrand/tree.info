@@ -1,11 +1,11 @@
 spec_srand spec_srand 0 DOES_NOT spec_init_genrand 69 3
 spec_init_genrand spec_init_genrand 0 DOES_NOT
-spec_rand spec_rand 0 DOES_NOT spec_genrand_int32 74 12
-spec_genrand_int32 spec_genrand_int32 0 DOES_NOT spec_init_genrand 138 13
-spec_lrand48 spec_lrand48 0 DOES_NOT spec_genrand_int32 79 19
+spec_rand spec_rand 0 DOES_NOT spec_genrand_int32 74 59
+spec_genrand_int32 spec_genrand_int32 0 DOES_NOT spec_init_genrand 137 29
+spec_lrand48 spec_lrand48 0 DOES_NOT spec_genrand_int32 79 64
 spec_init_by_array spec_init_by_array 0 DOES_NOT spec_init_genrand 105 5
-spec_genrand_int31 spec_genrand_int31 0 DOES_NOT spec_genrand_int32 168 19
-spec_genrand_real1 spec_genrand_real1 0 DOES_NOT spec_genrand_int32 174 12
-spec_genrand_real2 spec_genrand_real2 0 DOES_NOT spec_genrand_int32 181 12
-spec_genrand_real3 spec_genrand_real3 0 DOES_NOT spec_genrand_int32 188 22
+spec_genrand_int31 spec_genrand_int31 0 DOES_NOT spec_genrand_int32 168 64
+spec_genrand_real1 spec_genrand_real1 0 DOES_NOT spec_genrand_int32 174 59
+spec_genrand_real2 spec_genrand_real2 0 DOES_NOT spec_genrand_int32 181 59
+spec_genrand_real3 spec_genrand_real3 0 DOES_NOT spec_genrand_int32 188 69
 spec_genrand_res53 spec_genrand_res53 0 DOES_NOT spec_genrand_int32 195 21 spec_genrand_int32 195 48
