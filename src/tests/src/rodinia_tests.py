@@ -3,7 +3,6 @@ import os
 from os import path
 import sys
 from common import FrontendTest, RuntimeTest, CHIMES_HOME, get_num_cores
-from shared_tests import PERF_CLI_ARGS
 
 # Rodinia benchmarks
 RODINIA_HOME = os.environ['RODINIA_HOME']
@@ -102,33 +101,3 @@ for rtest in RODINIA_TESTS:
                                    extra_compile_args=compilation_args,
                                    cli_args=RODINIA_CLI_ARGS[rtest])
     ALL_RODINIA_RUNTIME_TESTS.append(runtime_test_obj)
-
-CORES = str(get_num_cores())
-RODINIA_PERF_CLI_ARGS = \
-        {'RodiniaBackprop':       '134217728',
-         'RodiniaBfs':            CORES + ' ' + path.join(RODINIA_DATA, 'bfs/inputGen/graph64M.txt'),
-         'RodiniaBfs_refactored': CORES + ' ' + path.join(RODINIA_DATA, 'bfs/inputGen/graph64M.txt'),
-         'RodiniaB+tree':         'cores ' + CORES + ' file ' + path.join(RODINIA_DATA,
-                                                             'b+tree/mil.txt') + \
-                                  ' command ' + path.join(RODINIA_DATA,
-                                                          'b+tree/command.txt'),
-         'RodiniaHeartwall':      path.join(RODINIA_DATA,
-                                        'heartwall/test.avi') + ' 104 ' + CORES,
-         'RodiniaHotspot':        '4096 4096 100 ' + CORES + ' ' + path.join(RODINIA_DATA,
-                                                             'hotspot/temp_4096') + \
-                                  ' ' + path.join(RODINIA_DATA,
-                                                  'hotspot/power_4096'),
-         'RodiniaKmeans':         '-n ' + CORES + ' -i ' + path.join(RODINIA_DATA,
-                                                         'kmeans/kdd_cup'),
-         'RodiniaLavamd':         '-cores ' + CORES + ' -boxes1d 14',
-         'RodiniaLud':            '-i ' + path.join(RODINIA_DATA, 'lud/2048.dat'),
-         'RodiniaMyocyte':        '8000 100 ' + CORES,
-         'RodiniaNn':             path.join(RODINIA_DATA, 'nn',
-                                            'list320k_32.txt') + ' 5 30 90',
-         'RodiniaNw':             '40960 10 ' + CORES,
-         'RodiniaNw_refactored':  '40960 10 ' + CORES,
-         'RodiniaParticlefilter': '-x 512 -y 512 -z 200 -np 1000',
-         'RodiniaSrad':           '400 0.5 2008 1832 ' + CORES,
-        }
-
-PERF_CLI_ARGS.update(RODINIA_PERF_CLI_ARGS)

@@ -211,6 +211,7 @@ def get_machine_name():
     elements = socket.gethostname().split('.')
     return '.'.join(elements[len(elements) - 3:])
 
+
 def is_rodinia_supported():
     return 'RODINIA_HOME' in os.environ
 

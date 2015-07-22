@@ -168,7 +168,11 @@ if [[ $COMPILE == 1 && ${#INPUTS[@]} != 1 ]]; then
 fi
 
 LCHIMES=
-if [[ $CHIMES_PROFILE == 1 ]]; then
+if [[ $DUMMY == 1 && $CHIMES_PROFILE == 1 ]]; then
+    LCHIMES=-lchimes_profile_dummy
+elif [[ $DUMMY == 1 ]]; then
+    LCHIMES=-lchimes_dummy
+elif [[ $CHIMES_PROFILE == 1 ]]; then
     LCHIMES=-lchimes_profile
 elif [[ -f ${CHIMES_HOME}/src/libchimes/libchimes.so ]]; then
     LCHIMES=-lchimes
@@ -185,8 +189,6 @@ if [[ $PROFILE == 1 && $DUMMY == 1 ]]; then
 elif [[ $PROFILE == 1 ]]; then
     LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash ${LINKER_FLAGS}"
     GXX_FLAGS="${GXX_FLAGS} -pg"
-elif [[ $DUMMY == 1 ]]; then
-    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes_dummy ${LINKER_FLAGS}"
 else
     LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes ${LCHIMES} ${LINKER_FLAGS}"
 fi
