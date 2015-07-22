@@ -157,10 +157,10 @@ if __name__ == '__main__':
                 scop = scops[currentLineNo]
                 assert scop.filename == currentFile, 'currentFile=' + currentFile + ' scop.filename=' + scop.filename
 
-                accesses = findAccessesBetweenExclusive(currentFile, currentLineNo, scop.end_line, accesses)
+                curr_accesses = findAccessesBetweenExclusive(currentFile, currentLineNo, scop.end_line, accesses)
 
-                transformed.write('if (!any_aliased(' + str(len(accesses)))
-                for a in accesses:
+                transformed.write('if (!any_aliased(' + str(len(curr_accesses)))
+                for a in curr_accesses:
                     transformed.write(', ' + module_id + 'ULL + ' + a + 'ULL')
                 transformed.write(')) {\n')
                 transformed.write(line)

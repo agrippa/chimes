@@ -93,6 +93,7 @@ void BraceInserter::VisitStmt(const clang::Stmt *s) {
         case clang::Stmt::IfStmtClass: {
             const clang::IfStmt *f = clang::dyn_cast<clang::IfStmt>(s);
             assert(f);
+            llvm::errs() << "Looking at if statement on line " << SM->getPresumedLineNumber(f->getLocStart()) << "\n";
 
             assert(f->getThen() != NULL);
 

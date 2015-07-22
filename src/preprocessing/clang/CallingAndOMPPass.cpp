@@ -1060,6 +1060,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
              * This block handles translating function pointers at runtime
              * dynamically to their NPM equivalent.
              */
+            /*
             if (!call->getDirectCallee()) {
 #ifdef VERBOSE
                 llvm::errs() << "generating function pointer translation call\n";
@@ -1071,6 +1072,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                 ompTree->add_function_call(call, lbl.get_lbl());
                 continue;
             }
+            */
 
             if (ompTree->add_function_call(call, lbl.get_lbl())) {
 #ifdef VERBOSE

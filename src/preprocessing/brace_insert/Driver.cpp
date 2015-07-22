@@ -30,6 +30,14 @@ public:
   TransformASTConsumer(Rewriter &set_R, ASTContext &set_Context) :
           R(set_R), Context(set_Context) { }
 
+  void handleFunctionDecl(FunctionDecl *fdecl) {
+      if (fdecl->isThisDeclarationADefinition() &&
+              R.getSourceMgr().isInMainFile(fdecl->getLocation())) {
+
+          transform->Visit(fdecl->getBody());
+      }
+  }
+
   // Override the method that gets called for each parsed top-level
   // declaration.
   bool HandleTopLevelDecl(DeclGroupRef DR) override {
@@ -41,14 +49,16 @@ public:
     for (DeclGroupRef::iterator b = DR.begin(), e = DR.end(); b != e; ++b) {
         Decl *toplevel = *b;
 
-        if (isa<FunctionDecl>(toplevel)) {
-            FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel);
-            assert(fdecl != NULL);
-
-            if (fdecl->isThisDeclarationADefinition() &&
-                    R.getSourceMgr().isInMainFile(fdecl->getLocation())) {
-
-                transform->Visit((*b)->getBody());
+        if (FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel)) {
+            handleFunctionDecl(fdecl);
+        } else if (LinkageSpecDecl *ldecl = clang::dyn_cast<LinkageSpecDecl>(toplevel)) {
+            for (DeclContext::decl_iterator di = ldecl->decls_begin(),
+                    de = ldecl->decls_end(); di != de; di++) {
+                Decl *curr_linkage_decl = *di;
+                if (FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(
+                            curr_linkage_decl)) {
+                    handleFunctionDecl(fdecl);
+                }
             }
         }
     }
