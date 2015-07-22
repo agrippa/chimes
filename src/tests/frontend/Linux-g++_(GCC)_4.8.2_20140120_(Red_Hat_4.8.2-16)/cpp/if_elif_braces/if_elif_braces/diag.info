@@ -1,0 +1,19 @@
+InsertText /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 6 72 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 6 177 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 10 60 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 3 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1158473610111775688UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 11 1 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 3 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1158473610111775688UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 3 181 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 4 5  int a;  a = (atoi(argv[1])) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 4 26 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 6 18 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 6 42 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 6 228 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 6 252 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 10 6 int ____chimes_ret_var_2; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 10 30 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 3 5 len=4 main_quick
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 3 180  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 3 5 len=4 main_resumable
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./if_elif_braces.cpp 3 180  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

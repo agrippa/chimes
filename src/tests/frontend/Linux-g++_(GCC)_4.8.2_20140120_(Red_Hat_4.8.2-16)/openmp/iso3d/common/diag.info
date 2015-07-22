@@ -1,0 +1,169 @@
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 44 8 len=7 seconds_npm
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 51 6 len=14 ricker_wavelet_npm
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 62 6 len=12 parse_source_npm
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 95 6 len=14 config_sources_npm
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 97 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(source)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(source), 7032591211095680374UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 97 48 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 127 9 len=14 sample_sources_npm
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 128 37  ({ void *____chimes_tmp_ptr = malloc((nsrcs * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsrcs * sizeof(float *), 7032591211095680455UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 128 67 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 135 35  ({ void *____chimes_tmp_ptr = malloc((nsteps * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsteps * sizeof(float), 7032591211095680475UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 135 64 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 145 6 len=13 init_progress_npm
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 161 31  ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (length + 3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(char) * (length + 3), 7032591211095680570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 161 65 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 178 6 len=15 update_progress_npm
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 217 6 len=15 finish_progress_npm
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 225 5  ({ free_helper((((unsigned char *)progress_buffer) - sizeof(void *)), 7032591211095680570UL);free((((unsigned char *)progress_buffer) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 225 25 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 97 27  ({ void *____chimes_tmp_ptr = malloc((sizeof(source)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(source), 7032591211095680374UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 97 48 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 128 37  ({ void *____chimes_tmp_ptr = malloc((nsrcs * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsrcs * sizeof(float *), 7032591211095680455UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 128 67 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 135 35  ({ void *____chimes_tmp_ptr = malloc((nsteps * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsteps * sizeof(float), 7032591211095680475UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 135 64 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 161 31  ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (length + 3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(char) * (length + 3), 7032591211095680570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 161 65 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 225 5  ({ free_helper((((unsigned char *)progress_buffer) - sizeof(void *)), 7032591211095680570UL);free((((unsigned char *)progress_buffer) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 225 25 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 48 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 44 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 49 1 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 51 70 const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(7032591211095680205UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 60 1 rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 62 46 const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(7032591211095680299UL), (size_t)(7032591211095680300UL)); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 93 1 rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 95 76 const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(7032591211095680430UL), (size_t)(7032591211095680431UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 125 1 rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alias_loc_id_3, ____chimes_did_disable3, false); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 142 75 rm_stack(true, 7032591211095680455UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 127 71 const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(7032591211095680517UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 143 1 rm_stack(true, 7032591211095680455UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 159 20 rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 145 56 const int ____chimes_did_disable5 = new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 176 1 rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5, false); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 182 9 rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 178 36 const int ____chimes_did_disable6 = new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 215 1 rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6, false); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 219 9 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 217 24 const int ____chimes_did_disable7 = new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 226 1 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7, false); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 44 19 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 44 127 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 45 5  struct timeval tp; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 45 22 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 46 5  struct timezone tzp; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 46 24 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 47 5  int i;  i = (gettimeofday(&tp, &tzp)) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 47 36 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 48 6 double ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 48 33 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 51 71 const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(7032591211095680205UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 51 278 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 52 5  float shift;  shift = (-1.5594f / freq) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 52 34 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 54 5 {  int i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 59 5  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 54 10  i = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 54 19 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 55 9  float time;  time = (i*dt + shift) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 55 34 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 56 9  float pi_freq_t;  pi_freq_t = (3.141517f * freq * time) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 56 50 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 57 9  float sqr_pi_freq_t;  sqr_pi_freq_t = (pi_freq_t * pi_freq_t) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 57 52 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 62 47 const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(7032591211095680299UL), (size_t)(7032591211095680300UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 62 236 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 63 5  char *x_str;  x_str = (optarg) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 63 25 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 64 5  char *first_comma;  first_comma = (strchr(x_str, ',')) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 64 43 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 70 5  char *y_str;  y_str = (first_comma + 1) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 70 34 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 71 5  char *second_comma;  second_comma = (strchr(y_str, ',')) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 71 44 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 77 5  char *freq_str;  freq_str = (second_comma + 1) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 77 38 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 78 5  char *third_comma;  third_comma = (strchr(freq_str, ',')) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 78 46 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 84 5  char *time_str;  time_str = (third_comma + 1) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 84 37 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 95 77 const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(7032591211095680430UL), (size_t)(7032591211095680431UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 95 317 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 97 31 void *____chimes_tmp_ptr = malloc((sizeof(source)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 97 99 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 110 5 {  int i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 124 5  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 110 10  i = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 110 19 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 111 9  source *curr;  curr = ((*srcs) + i) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 111 35 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 127 72 const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(7032591211095680517UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 127 279 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 128 5  float **src_samples;  src_samples = ((float **) ({ void *____chimes_tmp_ptr = malloc((nsrcs * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsrcs * sizeof(float *), 7032591211095680455UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 128 322 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 134 5 {  int i; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 141 5  }
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 134 10  i = (0) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 134 19 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 135 39 void *____chimes_tmp_ptr = malloc((nsteps * sizeof(float)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 135 115 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 142 6 float **____chimes_ret_var_1; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 142 35 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 145 57 const int ____chimes_did_disable5 = new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 145 228 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 146 5 int i; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 146 10 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 161 35 void *____chimes_tmp_ptr = malloc((sizeof(char) * (length + 3)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 161 116 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 178 37 const int ____chimes_did_disable6 = new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 178 184 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 179 5 int i; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 179 10 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 191 5  double perc_progress;  perc_progress = ((double)progress / (double)progress_goal) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 191 68 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 192 5  int ticks;  ticks = ((int)(perc_progress * progress_length)) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 192 55 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 217 25 const int ____chimes_did_disable7 = new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 217 157 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 140 9  call_lbl_0: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 222 5  call_lbl_0: 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 44 8 len=7 seconds_quick
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 44 126  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 51 6 len=14 ricker_wavelet_quick
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 51 277  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 62 6 len=12 parse_source_quick
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 62 235  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 95 6 len=14 config_sources_quick
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 95 316  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 127 9 len=14 sample_sources_quick
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 140 22 ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 140 77 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 127 278  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 145 6 len=13 init_progress_quick
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 145 227  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 178 6 len=15 update_progress_quick
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 178 183  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 217 6 len=15 finish_progress_quick
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 222 18 ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 222 47 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 217 156  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 44 8 len=7 seconds_resumable
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 44 126  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 51 6 len=14 ricker_wavelet_resumable
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 51 277  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 62 6 len=12 parse_source_resumable
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 62 235  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 95 6 len=14 config_sources_resumable
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 95 316  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 127 9 len=14 sample_sources_resumable
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 140 22 ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 140 77 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 127 278  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 145 6 len=13 init_progress_resumable
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 145 227  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 178 6 len=15 update_progress_resumable
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 178 183  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 217 6 len=15 finish_progress_resumable
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 222 18 ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 222 47 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./lib/common.cpp 217 156  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

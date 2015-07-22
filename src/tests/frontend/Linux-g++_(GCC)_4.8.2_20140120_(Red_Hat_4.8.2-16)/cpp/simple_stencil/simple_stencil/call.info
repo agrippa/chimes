@@ -1,0 +1,10 @@
+malloc main 11 24 28 0
+malloc main 12 24 28 0
+rand main 14 29 0
+printf main 18 9 0 166 0 0
+checkpoint main 26 9 0
+fopen main 29 16 130 166 168
+fprintf main 31 9 0 130 169 0
+fclose main 33 5 0 130
+free main 35 5 0 28
+free main 36 5 0 28

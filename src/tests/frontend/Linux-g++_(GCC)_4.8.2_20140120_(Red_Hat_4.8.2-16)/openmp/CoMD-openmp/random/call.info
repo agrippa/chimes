@@ -1,0 +1,5 @@
+lcg61 gasdev 26 16 0 12
+lcg61 gasdev 27 16 0 12
+log gasdev 31 73 0 0
+sqrt gasdev 31 63 0 0
+lcg61 mkSeed 71 38 0 82

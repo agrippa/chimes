@@ -12,6 +12,8 @@ COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 NORMAL_COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_normal.sh'
 OMP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/openmp'
 
+print('Using ' + str(get_num_cores()) + ' core(s)')
+
 TESTS = []
 
 for test in MISC_OMP_RUNTIME_TESTS:

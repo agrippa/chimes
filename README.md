@@ -5,6 +5,7 @@ Setup:
 ======
 
 Prerequisites:
+
 1. LLVM_INSTALL set to the llvm-build directory created below
 2. LLVM_HOME set to the llvm-src directory created below
 3. CHIMES_HOME set to the root directory this repo is cloned to
@@ -12,6 +13,7 @@ Prerequisites:
 5. LD_LIBRARY_PATH/DYLD_LIBRARY_PATH has ${CHIMES_HOME}/src/libchimes and ${CHIMES_HOME}/src/libchimes/xxhash
 
 Installation Steps:
+
 1. Download LLVM 3.5.1 from http://llvm.org/releases/3.5.1/llvm-3.5.1.src.tar.xz and extract to llvm-src
 2. Download Clang 3.5.1 from http://llvm.org/releases/3.5.1/cfe-3.5.1.src.tar.xz and extract to llvm-src/tools/clang
 3. Download Compiler RT 3.5.1 from http://llvm.org/releases/3.5.1/compiler-rt-3.5.1.src.tar.xz and extract to llvm-src/projects/compiler-rt
@@ -27,8 +29,8 @@ If your machine defaults to something else (e.g. clang on MacOS) then you can
 explicitly force LLVM to be built with GNU by setting the CC, CXX, and CPP
 environment variables. For example, on my Mac:
 
-CC=/usr/local/bin/gcc CXX=/usr/local/bin/g++ CPP=/usr/local/bin/cpp \
-    ../llvm-src/configure --enable-optimized=no --enable-profiling=yes
+        CC=/usr/local/bin/gcc CXX=/usr/local/bin/g++ CPP=/usr/local/bin/cpp \
+            ../llvm-src/configure --enable-optimized=no --enable-profiling=yes
 
 
 Adding New Attributes to clang:

@@ -1,0 +1,3 @@
+string_1 " i8* " 64 1 0 642 
+string_2 " i8* " 64 1 0 642 
+alignment_score_matrix " [5 x [5 x i8]] " 200 0 0 0 

@@ -1,0 +1,13 @@
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 8 : { 1, 2, 3, 4, 23 } {  } call:getMyRank {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 23 : { 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 142, 161 } {  } call:getNeighborBoxes { getNeighborBoxes { 99, 161 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 322 4 : {  } {  } call:haloExchange { haloExchange { 161 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 9 : { 94, 95, 97, 98, 100, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 118, 119, 121, 122, 123, 161 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 28 : { 94, 95, 96, 161 } {  } call:initForceHaloExchange { initForceHaloExchange { 161 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 23 : { 94, 95, 97, 98, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 118, 161 } {  } call:getNeighborBoxes { getNeighborBoxes { 99, 161 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 4 : { 1031 } {  } call:destroyHaloExchange { destroyHaloExchange { 1041 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 4 : { 1687 } {  } call:bcastInterpolationObject {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 4 : { 1596 } {  } call:bcastParallel { bcastParallel { 1596 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 8 : { 1595 } {  } call:getMyRank {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 4 : { 2077, 2116, 2118 } {  } call:bcastParallel { bcastParallel { 2143 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 4 : { 2076 } {  } call:bcastParallel { bcastParallel { 2076 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 8 : { 2075 } {  } call:getMyRank {  }

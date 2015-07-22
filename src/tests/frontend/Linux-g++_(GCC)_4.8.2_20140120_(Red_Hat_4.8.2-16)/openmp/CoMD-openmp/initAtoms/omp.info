@@ -1,0 +1,5 @@
+135 135 #pragma omp parallel for
+163 163 #pragma omp parallel for
+186 186 #pragma omp parallel for
+206 206 #pragma omp parallel for
+230 230 #pragma omp parallel for reduction(+:v0) reduction(+:v1) reduction(+:v2) reduction(+:v3)
