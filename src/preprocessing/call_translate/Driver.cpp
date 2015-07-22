@@ -44,6 +44,41 @@ public:
   TransformASTConsumer(Rewriter &set_R, ASTContext &set_Context) :
           R(set_R), Context(set_Context) { }
 
+  void handleFunctionDecl(FunctionDecl *fdecl) {
+      if (fdecl->isThisDeclarationADefinition() &&
+              R.getSourceMgr().isInMainFile(fdecl->getLocation())) {
+          int line = R.getSourceMgr().getPresumedLoc(
+                  fdecl->getLocStart()).getLine();
+          function_starting_lines.insert(line);
+
+          std::string fname = fdecl->getName().str();
+
+          std::string quick("_quick");
+          std::string resumable("_resumable");
+          std::string npm("_npm");
+
+          if (fname.size() > quick.size() &&
+                  fname.find(quick) == fname.size() - quick.size()) {
+              curr_func_is_quick = YES;
+              curr_func_is_npm = NO;
+          } else if (fname.size() > npm.size() &&
+                  fname.find(npm) == fname.size() - npm.size()) {
+              curr_func_is_npm = YES;
+              curr_func_is_quick = NO;
+          } else if (fname.size() > resumable.size() &&
+                  fname.find(resumable) == fname.size() -
+                  resumable.size()) {
+              curr_func_is_quick = NO;
+              curr_func_is_npm = NO;
+          } else {
+              curr_func_is_quick = UNKNOWN;
+              curr_func_is_npm = UNKNOWN;
+          }
+
+          transform->Visit(fdecl->getBody());
+      }
+  }
+
   // Override the method that gets called for each parsed top-level
   // declaration.
   bool HandleTopLevelDecl(DeclGroupRef DR) override {
@@ -55,41 +90,16 @@ public:
     for (DeclGroupRef::iterator b = DR.begin(), e = DR.end(); b != e; ++b) {
         Decl *toplevel = *b;
 
-        if (isa<FunctionDecl>(toplevel)) {
-            FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel);
-            assert(fdecl != NULL);
-
-            if (fdecl->isThisDeclarationADefinition() &&
-                    R.getSourceMgr().isInMainFile(fdecl->getLocation())) {
-                int line = R.getSourceMgr().getPresumedLoc(
-                        fdecl->getLocStart()).getLine();
-                function_starting_lines.insert(line);
-
-                std::string fname = fdecl->getName().str();
-
-                std::string quick("_quick");
-                std::string resumable("_resumable");
-                std::string npm("_npm");
-
-                if (fname.size() > quick.size() &&
-                        fname.find(quick) == fname.size() - quick.size()) {
-                    curr_func_is_quick = YES;
-                    curr_func_is_npm = NO;
-                } else if (fname.size() > npm.size() &&
-                        fname.find(npm) == fname.size() - npm.size()) {
-                    curr_func_is_npm = YES;
-                    curr_func_is_quick = NO;
-                } else if (fname.size() > resumable.size() &&
-                        fname.find(resumable) == fname.size() -
-                            resumable.size()) {
-                    curr_func_is_quick = NO;
-                    curr_func_is_npm = NO;
-                } else {
-                    curr_func_is_quick = UNKNOWN;
-                    curr_func_is_npm = UNKNOWN;
+        if (FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel)) {
+            handleFunctionDecl(fdecl);
+        } else if (LinkageSpecDecl *ldecl = clang::dyn_cast<LinkageSpecDecl>(toplevel)) {
+            for (DeclContext::decl_iterator di = ldecl->decls_begin(),
+                    de = ldecl->decls_end(); di != de; di++) {
+                Decl *curr_linkage_decl = *di;
+                if (FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(
+                            curr_linkage_decl)) {
+                    handleFunctionDecl(fdecl);
                 }
-
-                transform->Visit((*b)->getBody());
             }
         }
     }
