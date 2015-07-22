@@ -32,6 +32,28 @@ public:
   TransformASTConsumer(Rewriter &set_R, ASTContext &set_Context) :
           R(set_R), Context(set_Context) { }
 
+  void handleFunctionDecl(FunctionDecl *fdecl) {
+      if (fdecl->isThisDeclarationADefinition() &&
+              R.getSourceMgr().isInMainFile(fdecl->getLocation())) {
+
+          transform->reset_noncheckpointing();
+
+#ifdef VERBOSE
+          llvm::errs() << "Visiting " << fdecl->getNameAsString() << "\n";
+#endif
+          transform->Visit(fdecl->getBody());
+#ifdef VERBOSE
+          llvm::errs() << "Done with " << fdecl->getNameAsString() <<
+              "\n";
+#endif
+
+          if (transform->get_noncheckpointing() &&
+                  transform->get_any_fptr_calls()) {
+              non_checkpointing.insert(fdecl->getNameAsString());
+          }
+      }
+  }
+
   // Override the method that gets called for each parsed top-level
   // declaration.
   bool HandleTopLevelDecl(DeclGroupRef DR) override {
@@ -44,23 +66,14 @@ public:
         Decl *toplevel = *b;
 
         if (FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel)) {
-            if (fdecl->isThisDeclarationADefinition() &&
-                    R.getSourceMgr().isInMainFile(fdecl->getLocation())) {
-
-                transform->reset_noncheckpointing();
-
-#ifdef VERBOSE
-                llvm::errs() << "Visiting " << fdecl->getNameAsString() << "\n";
-#endif
-                transform->Visit((*b)->getBody());
-#ifdef VERBOSE
-                llvm::errs() << "Done with " << fdecl->getNameAsString() <<
-                    "\n";
-#endif
-
-                if (transform->get_noncheckpointing() &&
-                        transform->get_any_fptr_calls()) {
-                    non_checkpointing.insert(fdecl->getNameAsString());
+            handleFunctionDecl(fdecl);
+        } else if (LinkageSpecDecl *ldecl = clang::dyn_cast<LinkageSpecDecl>(toplevel)) {
+            for (DeclContext::decl_iterator di = ldecl->decls_begin(),
+                    de = ldecl->decls_end(); di != de; di++) {
+                Decl *curr_linkage_decl = *di;
+                if (FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(
+                            curr_linkage_decl)) {
+                    handleFunctionDecl(fdecl);
                 }
             }
         }
