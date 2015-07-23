@@ -33,6 +33,7 @@ endif
 CHIMES_LIB=libchimes.so
 CHIMES_PROFILE_LIB=libchimes_profile.so
 CHIMES_DUMMY_LIB=libchimes_dummy.so
+CHIMES_PROFILE_DUMMY_LIB=libchimes_profile_dummy.so
 CHIMES_STATIC_LIB=libchimes.a
 CHIMES_DUMMY_STATIC_LIB=libchimes_dummy.a
 CHIMES_CPP_LIB=libchimes_cpp.so
@@ -40,6 +41,7 @@ CHIMES_DUMMY_CPP_LIB=libchimes_dummy_cpp.so
 
 all: ${CHIMES_CPP_LIB} ${CHIMES_LIB} ${CHIMES_STATIC_LIB} ${CHIMES_DUMMY_LIB} \
 		${CHIMES_DUMMY_STATIC_LIB} ${CHIMES_PROFILE_LIB} benchmark_timers
+cpp: ${CHIMES_CPP_LIB} ${CHIMES_PROFILE_LIB} ${CHIMES_DUMMY_LIB} ${CHIMES_PROFILE_DUMMY_LIB}
 
 benchmark_timers: benchmark_timers.cpp
 	${GXX} ${GXX_FLAGS} -o benchmark_timers benchmark_timers.cpp
@@ -59,6 +61,9 @@ ${CHIMES_STATIC_LIB}: ${OBJ} libchimes_cuda.o build-xxhash
 
 ${CHIMES_DUMMY_LIB}: libchimes_dummy.cpp
 	${GXX} ${GXX_FLAGS} -shared libchimes_dummy.cpp -o ${CHIMES_DUMMY_LIB}
+
+${CHIMES_PROFILE_DUMMY_LIB}: libchimes_dummy.cpp
+	${GXX} ${GXX_FLAGS} -shared -D__CHIMES_PROFILE libchimes_dummy.cpp -o ${CHIMES_PROFILE_DUMMY_LIB}
 
 ${CHIMES_DUMMY_STATIC_LIB}: libchimes_dummy.o libchimes_cuda.o build-xxhash
 	ar rcs ${CHIMES_DUMMY_STATIC_LIB} libchimes_dummy.o libchimes_cuda.o

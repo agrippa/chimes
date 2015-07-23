@@ -3,7 +3,6 @@ import os
 from os import path
 import sys
 from common import FrontendTest, RuntimeTest, CHIMES_HOME
-from shared_tests import PERF_CLI_ARGS
 
 # SPEC tests
 SPEC_HOME = os.environ['SPEC_HOME']
@@ -96,16 +95,3 @@ SPEC_KDTREE_RUNTIME = RuntimeTest(SPEC_KDTREE_FRONTEND.name,
                                   cli_args='100000 10 2')
 ALL_SPEC_FRONTEND_TESTS.append(SPEC_KDTREE_FRONTEND)
 ALL_SPEC_RUNTIME_TESTS.append(SPEC_KDTREE_RUNTIME)
-
-
-SPEC_PERF_CLI_ARGS = \
-        {
-         'SPECBotsAlgn':          '-f ' + path.join(SPEC_BOTSALGN_ROOT, '..',
-                                                    'run', 'run_base_test_davinci.0000',
-                                                    'botsalgn'),
-         'SPECBotsSpar':          '-n 200 -m 100',
-         'SPECSmithwa':           '34',
-         # 'SPECKDTree':            '3000000 10 2'
-         'SPECKDTree':            '200000 10 2'
-        }
-PERF_CLI_ARGS.update(SPEC_PERF_CLI_ARGS)
