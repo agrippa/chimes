@@ -131,7 +131,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     BASENAME=$(basename ${INPUT})
     EXT="${INPUT##*.}"
 
-    OBJ_FILE=${INPUT}.o
+    OBJ_FILE=${WORK_DIR}/${BASENAME}.o
 
     LAST_FILES+=($INPUT)
     OBJ_FILES+=($OBJ_FILE)
