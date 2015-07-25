@@ -210,7 +210,12 @@ def get_machine_name():
     them to use as the machine identifier.
     """
     elements = socket.gethostname().split('.')
-    return '.'.join(elements[len(elements) - 3:])
+    machine = elements[len(elements) - 3]
+    while machine[len(machine) - 1].isdigit():
+        machine = machine[:len(machine) - 1]
+    org = elements[len(elements) - 2]
+    type = elements[len(elements) - 1]
+    return machine + '.' + org + '.' + type
 
 
 def is_rodinia_supported():
