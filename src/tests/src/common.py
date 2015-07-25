@@ -4,6 +4,7 @@ Common functionality for functional tests.
 import os
 import sys
 import time
+import array
 import shutil
 import random
 import socket
@@ -496,6 +497,34 @@ def run_cmd(cmd, expect_err, env=None, interactive=False):
     return result
 
 
+def get_checkpoint_efficiency(checkpoint_file):
+    checkpoint_size = os.path.getsize(checkpoint_file)
+    checkpoint_util_cmd = os.path.join(CHIMES_HOME, 'src', 'libchimes',
+                                       'parse_checkpoint_util')
+    full_cmd = checkpoint_util_cmd + ' ' + checkpoint_file + ' -h'
+    stdout, __, _ = run_cmd(full_cmd, False)
+    lines = stdout.split('\n')[1:]
+
+    tokens = lines[0].split()
+    assert tokens[0] == 'heap:'
+    heap_size = int(tokens[1])
+
+    tokens = lines[1].split()
+    assert tokens[0] == 'stack:'
+    stack_size = int(tokens[1])
+
+    tokens = lines[2].split()
+    assert tokens[0] == 'globals:'
+    globals_size = int(tokens[1])
+
+    tokens = lines[3].split()
+    assert tokens[0] == 'constants:'
+    constants_size = int(tokens[1])
+
+    return (checkpoint_size,
+            heap_size + stack_size + globals_size + constants_size)
+
+
 def list_checkpoint_files():
     """
     Returns a list of all checkpoint files in the current directory
@@ -727,6 +756,14 @@ def median(lst):
         return float(sum(lst[(len(lst)/2)-1:(len(lst)/2)+1]))/2.0
 
 
+def mean(lst):
+    assert len(lst) > 0
+    sum = 0.0
+    for item in lst:
+        sum += float(item)
+    return sum / float(len(lst))
+
+
 def run_perf_test_and_get_time_and_ncheckpoints(exec_name, test, verbose,
                                                 repeats, env):
     exec_cmd = exec_name + ' '
@@ -738,6 +775,7 @@ def run_perf_test_and_get_time_and_ncheckpoints(exec_name, test, verbose,
 
     exec_times = []
     ncheckpoints = []
+    efficiency = []
     for r in range(repeats):
         stdout, stderr, code = run_cmd(exec_cmd, True, env=env)
         if verbose:
@@ -761,9 +799,13 @@ def run_perf_test_and_get_time_and_ncheckpoints(exec_name, test, verbose,
         ncheckpoints.append(ncheckpoint_files)
 
         for checkpoint in checkpoint_files:
+            checkpoint_size, actual_size = get_checkpoint_efficiency(checkpoint)
+            efficiency.append(float(checkpoint_size) / float(actual_size))
             os.remove(checkpoint)
 
-    return (median(exec_times), median(ncheckpoints))
+    return (median(exec_times), median(ncheckpoints),
+            median(efficiency) if len(efficiency) > 0 else 0.0,
+            mean(efficiency) if len(efficiency) > 0 else 0.0)
 
 
 def run_frontend_test(test, compile_script_path, examples_dir_path,
@@ -1073,11 +1115,12 @@ def run_perf_test(test, compile_script_path, normal_compile_script_path,
         sys.stderr.write('FATAL: Compilation failed to generate an executable\n')
         sys.exit(1)
 
-    chimes_exec_time, chimes_ncheckpoints = \
-        run_perf_test_and_get_time_and_ncheckpoints(CHIMES_PERF_BIN, test,
+    chimes_exec_time, chimes_ncheckpoints, median_checkpoint_efficiency, \
+            mean_checkpoint_efficiency = \
+            run_perf_test_and_get_time_and_ncheckpoints(CHIMES_PERF_BIN, test,
                                                     config.verbose,
                                                     config.repeats, env)
-    normal_exec_time, _ = \
+    normal_exec_time, _, _, _ = \
         run_perf_test_and_get_time_and_ncheckpoints(NORMAL_PERF_BIN, test,
                                                     config.verbose,
                                                     config.repeats, env)
@@ -1085,7 +1128,15 @@ def run_perf_test(test, compile_script_path, normal_compile_script_path,
     if not config.keep:
         cleanup_files() # delete binary
 
-    print(pad(test.name, 30) + ' - added ' +
+    sys.stdout.write(pad(test.name, 30) + ' - added ' +
           str(((float(chimes_exec_time) / float(normal_exec_time)) - 1.0) *
-              100.0) + '% overhead for ' + str(chimes_ncheckpoints) +
-          ' checkpoint files')
+              100.0) + '% overhead')
+
+    if not config.dummy and not config.block_checkpoints:
+        sys.stdout.write(' for ' + str(chimes_ncheckpoints) +
+                         ' checkpoint files, median efficiency=' +
+                         str(100.0 * median_checkpoint_efficiency) +
+                         '%, mean efficiency=' +
+                         str(100.0 * mean_checkpoint_efficiency) + '%')
+
+    sys.stdout.write('\n')
