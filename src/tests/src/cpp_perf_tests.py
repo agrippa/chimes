@@ -1,7 +1,6 @@
 import os
 from os import path
 import sys
-import importlib
 
 from common import PerfTest, RuntimeTest, parse_argv, CHIMES_HOME, \
          run_runtime_test, run_perf_test, \
@@ -10,7 +9,7 @@ from shared_tests import MISC_CPP_RUNTIME_TESTS
 from exec_time_parsers import EXEC_TIME_PARSERS
 
 perf_cli_args_classname = get_machine_name().replace('.', '_') + '_perf_args'
-perf_cli_args_mod = importlib.import_module(perf_cli_args_classname)
+perf_cli_args_mod = __import__(perf_cli_args_classname)
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
