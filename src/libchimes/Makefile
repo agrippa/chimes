@@ -68,6 +68,9 @@ ${CHIMES_PROFILE_DUMMY_LIB}: libchimes_dummy.cpp
 ${CHIMES_DUMMY_STATIC_LIB}: libchimes_dummy.o libchimes_cuda.o build-xxhash
 	ar rcs ${CHIMES_DUMMY_STATIC_LIB} libchimes_dummy.o libchimes_cuda.o
 
+parse_checkpoint_util: parse_checkpoint_util.o
+	${GXX} ${GXX_FLAGS} parse_checkpoint_util.o -o parse_checkpoint_util
+
 %.o: %.cpp
 	${GXX} ${GXX_FLAGS} -DCUDA_SUPPORT -I${CUDA_HOME}/include $< --compile -fPIC -o $@
 

@@ -50,6 +50,7 @@
 #include "type_info.h"
 #include "thread_ctx.h"
 #include "heap_tree.h"
+#include "serialized_checkpoint_time.h"
 
 #include "xxhash/xxhash.h"
 
@@ -107,11 +108,6 @@ using namespace std;
  *
  */
 
-typedef struct _serialized_checkpoint_time {
-    unsigned tid;
-    clock_t delta;
-} serialized_checkpoint_time;
-
 typedef struct _checkpoint_thread_ctx {
     unsigned char *stacks_serialized;
     unsigned char *globals_serialized;
@@ -123,6 +119,8 @@ typedef struct _checkpoint_thread_ctx {
     uint64_t constants_serialized_len;
     uint64_t function_addresses_serialized_len;
     uint64_t thread_hierarchy_serialized_len;
+
+    unsigned long long total_allocations;
 
     /*
      * Used on resume to reconfigure the OpenMP runtime with the appropriate
@@ -292,7 +290,6 @@ static pthread_rwlock_t aliased_groups_lock = PTHREAD_RWLOCK_INITIALIZER;
  */
 static map<std::string, stack_var *> global_vars;
 static set<size_t> global_aliases;
-static pthread_rwlock_t globals_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
  * A list of pointers and lengths of constant values identified as reachable by
@@ -300,7 +297,6 @@ static pthread_rwlock_t globals_lock = PTHREAD_RWLOCK_INITIALIZER;
  */
 static map<size_t, constant_var *> constants;
 static size_t max_constant_id = 0;
-static pthread_rwlock_t constants_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
  * A mapping from plain function name to its address in the TEXT region,
@@ -322,7 +318,6 @@ static pthread_rwlock_t contains_lock = PTHREAD_RWLOCK_INITIALIZER;
  * Track which modules have had their metadata initialized already, thread-safe.
  */
 static set<size_t> initialized_modules;
-static pthread_mutex_t module_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 /*
  * Thread-specific information tracked by each thread, e.g. program stack,
@@ -1318,6 +1313,9 @@ void init_chimes(int argc, char **argv) {
                 checkpoint_file);
         omp_set_num_threads(n_omp_threads);
 
+        safe_read(fd, &total_allocations, sizeof(total_allocations),
+                "total_allocations", checkpoint_file);
+
         // Read heap entry times from checkpoint
         checkpoint_entry_deltas =
             new std::map<unsigned, clock_t>();
@@ -1833,7 +1831,6 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    VERIFY(pthread_mutex_lock(&module_mutex) == 0);
 
     bool replay = (getenv("CHIMES_CHECKPOINT_FILE") != NULL);
     va_list vl;
@@ -2183,8 +2180,6 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     parse_merges(n_dynamic_merges, &vl, &npm_callee_to_dynamic_merge_info);
 
     va_end(vl);
-
-    VERIFY(pthread_mutex_unlock(&module_mutex) == 0);
 
 #ifdef __CHIMES_PROFILE
     pp.add_time(INIT_MODULE, __start_time);
@@ -2914,13 +2909,11 @@ void register_global_var(const char *mangled_name, const char *full_type,
 
     std::string mangled_name_str(mangled_name);
 
-    VERIFY(pthread_rwlock_wrlock(&globals_lock) == 0);
     VERIFY(global_vars.insert(pair<string, stack_var *>(mangled_name_str,
                     new_var)).second);
     if (group) {
         global_aliases.insert(group);
     }
-    VERIFY(pthread_rwlock_unlock(&globals_lock) == 0);
 
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_GLOBAL_VAR, __start_time);
@@ -2935,10 +2928,8 @@ void register_constant(size_t const_id, void *address, size_t length) {
 
     constant_var *var = new constant_var(const_id, address, length);
 
-    VERIFY(pthread_rwlock_wrlock(&constants_lock) == 0);
     VERIFY(constants.insert(pair<size_t, constant_var *>(const_id, var)).second);
     max_constant_id = (const_id > max_constant_id ? const_id : max_constant_id);
-    VERIFY(pthread_rwlock_unlock(&constants_lock) == 0);
 
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_CONSTANT, __start_time);
@@ -3967,6 +3958,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                 running_checkpoint_ctx.thread_hierarchy_serialized = serialize_thread_hierarchy(
                         &thread_ctxs,
                         &running_checkpoint_ctx.thread_hierarchy_serialized_len);
+                running_checkpoint_ctx.total_allocations = total_allocations;
                 running_checkpoint_ctx.heap_to_checkpoint = buffer;
                 running_checkpoint_ctx.n_heap_to_checkpoint = heap_to_checkpoint_sorted.size();
 
@@ -4443,6 +4435,8 @@ void *checkpoint_func(void *data) {
         void *serialized_alias_groups = ctx->serialized_alias_groups;
         size_t serialized_alias_groups_len = ctx->serialized_alias_groups_len;
 
+        unsigned long long local_total_allocations = ctx->total_allocations;
+
         vector<aiocb *> async_tokens;
         off_t count_bytes = 0;
 
@@ -4491,6 +4485,11 @@ void *checkpoint_func(void *data) {
         // Write the current number of OpenMP threads in this parallel region
         prep_async_safe_write(fd, &n_omp_threads, sizeof(n_omp_threads),
                 count_bytes, &count_bytes, "heap_offset", &async_tokens);
+
+        // Write the total heap size for diagnostic purposes
+        prep_async_safe_write(fd, &local_total_allocations,
+                sizeof(local_total_allocations), count_bytes, &count_bytes,
+                "local_total_allocations", &async_tokens);
 
         // Write the heap entry times to the dump file, sorted by entry order
         int n_checkpoint_times = ctx->checkpoint_entry_times->size();
