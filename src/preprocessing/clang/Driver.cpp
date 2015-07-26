@@ -600,6 +600,8 @@ int main(int argc, const char **argv) {
 
   std::stringstream ss;
 
+  passes.push_back(new Pass(new MallocPass(true), ".malloc_garbage",
+              npm_dump_file.c_str(), "_npm"));
   passes.push_back(new Pass(new StartExitPass(), ".start", "", ""));
   passes.push_back(new Pass(new CallLabelInsertPass(), ".lbl", "", ""));
   passes.push_back(new Pass(new CallingAndOMPPass(false), ".register", "", ""));
@@ -680,38 +682,38 @@ int main(int argc, const char **argv) {
   /*
    * Dump a list of functions called from NPM functions.
    */
-  // std::ofstream extern_out(std::string(list_of_externs_file.c_str()));
-  // for (std::map<std::string, ExternalNPMCall>::iterator i =
-  //         external_calls.begin(), e = external_calls.end(); i != e; i++) {
-  //     std::string original_name = i->first;
-  //     ExternalNPMCall call = i->second;
+  std::ofstream extern_out(std::string(list_of_externs_file.c_str()));
+  for (std::map<std::string, ExternalNPMCall>::iterator i =
+          external_calls.begin(), e = external_calls.end(); i != e; i++) {
+      std::string original_name = i->first;
+      ExternalNPMCall call = i->second;
 
-  //     int line_no = call.get_first_line_referenced();
-  //     int containing_decl_line = -1;
-  //     for (std::map<std::string, int>::iterator i =
-  //             function_starting_lines.begin(), e =
-  //             function_starting_lines.end(); i != e; i++) {
-  //         int start_line = i->second;
-  //         if (start_line < line_no && (containing_decl_line == -1 ||
-  //                     start_line > containing_decl_line)) {
-  //             containing_decl_line = start_line;
-  //         }
-  //     }
-  //     assert(containing_decl_line != -1);
+      int line_no = call.get_first_line_referenced();
+      int containing_decl_line = -1;
+      for (std::map<std::string, int>::iterator i =
+              function_starting_lines.begin(), e =
+              function_starting_lines.end(); i != e; i++) {
+          int start_line = i->second;
+          if (start_line < line_no && (containing_decl_line == -1 ||
+                      start_line > containing_decl_line)) {
+              containing_decl_line = start_line;
+          }
+      }
+      assert(containing_decl_line != -1);
 
-  //     /*
-  //      * NPM function pointers are initialized to the default implementation for
-  //      * cases where an externally defined function which we know won't
-  //      * checkpoint (e.g. an inline function in a header file) is used. The
-  //      * calling function will still execute in NPM mode because we can assert
-  //      * it does not create a checkpoint, but this pointer will never be updated
-  //      * with an NPM version of this function because it does not exist.
-  //      */
-  //     extern_out << call.get_function_name() << " " << call.get_var() << " " <<
-  //         containing_decl_line << " " << call.get_filename() << " " <<
-  //         call.get_var_decl() << " = " << call.get_function_name() << ";\n";
-  // }
-  // extern_out.close();
+      /*
+       * NPM function pointers are initialized to the default implementation for
+       * cases where an externally defined function which we know won't
+       * checkpoint (e.g. an inline function in a header file) is used. The
+       * calling function will still execute in NPM mode because we can assert
+       * it does not create a checkpoint, but this pointer will never be updated
+       * with an NPM version of this function because it does not exist.
+       */
+      extern_out << call.get_function_name() << " " << call.get_var() << " " <<
+          containing_decl_line << " " << call.get_filename() << " " <<
+          call.get_var_decl() << " = " << call.get_function_name() << ";\n";
+  }
+  extern_out.close();
 
   /*
    * Dump a list of functions which are referenced in the r-value of an

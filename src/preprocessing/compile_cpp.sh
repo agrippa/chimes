@@ -172,6 +172,8 @@ fi
 LCHIMES=
 if [[ $CHIMES_PROFILE == 1 ]]; then
     LCHIMES=-lchimes_profile
+elif [[ $DUMMY == 1 ]]; then
+    LCHIMES=-lchimes_dummy
 elif [[ -f ${CHIMES_HOME}/src/libchimes/libchimes.so ]]; then
     LCHIMES=-lchimes
 elif [[ -f ${CHIMES_HOME}/src/libchimes/libchimes_cpp.so ]]; then
@@ -354,10 +356,10 @@ for INPUT in ${ABS_INPUTS[@]}; do
 #     cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${INCLUDE_QUICK_FILE} \
 #         ${INFO_FILE_PREFIX}.firstprivate.info > ${FIRSTPRIVATE_FILE}
 
-#     echo Adding NPM function declarations, bodies, and pointers to ${INCLUDE_QUICK_FILE}
-#     cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${INCLUDE_QUICK_FILE} ${NPM_FILE} \
-#         -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls \
-#         -e ${INFO_FILE_PREFIX}.list_of_externs 
+    echo Adding NPM function declarations, bodies, and pointers to ${TRANSFORMED_FILE}
+    cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${TRANSFORMED_FILE} ${NPM_FILE} \
+        -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls \
+        -e ${INFO_FILE_PREFIX}.list_of_externs 
 
 #     echo Adding NPM conditionals to ${NPM_FILE}
 #     cd ${WORK_DIR} && python ${ADD_NPM_CONDS} ${NPM_FILE} \
@@ -371,8 +373,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
 #         -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
 #         ${CHIMES_DEF} ${DEFINES}
 
-    echo Setting up module initialization for ${TRANSFORMED_FILE}
-    cd ${WORK_DIR} && python ${MODULE_INIT} -i ${TRANSFORMED_FILE} -o ${FINAL_FILE} \
+    echo Setting up module initialization for ${NPM_FILE}
+    cd ${WORK_DIR} && python ${MODULE_INIT} -i ${NPM_FILE} -o ${FINAL_FILE} \
         -m ${INFO_FILE_PREFIX}.module.info -r ${INFO_FILE_PREFIX}.reachable.info \
         -g ${INFO_FILE_PREFIX}.globals.info -s ${INFO_FILE_PREFIX}.struct.info \
         -c ${INFO_FILE_PREFIX}.constants.info -v ${INFO_FILE_PREFIX}.stack.info \

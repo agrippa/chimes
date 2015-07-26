@@ -505,3 +505,7 @@ void checkpoint() {
 void wait_for_checkpoint() { }
 
 void *get_thread_ctx() { return NULL; }
+
+bool any_aliased(int ngroups, ...) {
+    return false;
+}

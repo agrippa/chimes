@@ -688,8 +688,8 @@ std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
     std::stringstream ss;
     std::string loc_arg = get_loc_arg(call);
 
-    ss << "({ calling_npm(\"" << loc.get_funcname() << "\"" /* << ", " << loc_arg <<
-        "); " */ ;
+    ss << "({ calling_npm(\"" << loc.get_funcname() << "\"" /* << ", " << loc_arg << */
+        "); " ;
 
     if (use_function_pointer) {
         ss << "(*" << get_external_func_name(loc.get_funcname()) << ")(";
