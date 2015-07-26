@@ -4,7 +4,7 @@ DUMMY=0
 BLOCK=0
 OMP=0
 
-while getopts "dbm" opt; do
+while getopts "dbmh" opt; do
     case $opt in 
         d)
             DUMMY=1
@@ -14,6 +14,14 @@ while getopts "dbm" opt; do
             ;;
         m)
             OMP=1
+            ;;
+        h)
+            echo 'usage: collect-results.sh [-d] [-b] [-m]'
+            echo '       Default: collect CPP, non-dummy, non-blocking results'
+            echo '       -d: collect dummy results'
+            echo '       -b: collect blocking results'
+            echo '       -m: collect OMP results'
+            exit 1
             ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
@@ -57,5 +65,6 @@ else
 fi
 
 for t in $(eval $LIST_CMD); do
-    cat $SHARED_SCRATCH/jmg3/outputs/$t.$FILE_SUFFIX.stdout | grep "checkpoint file";
+    FILENAME=$SHARED_SCRATCH/jmg3/outputs/$t.$FILE_SUFFIX.stdout
+    cat $FILENAME | grep "overhead";
 done
