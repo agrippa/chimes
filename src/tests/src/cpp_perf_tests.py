@@ -44,7 +44,7 @@ if __name__ == '__main__':
                       CONFIG)
 
     PERF_FILENAME = os.path.join('results', get_machine_name() + '.cpp.noblock.nodummy.perf')
-    if not CONFIG.quiet and os.path.isfile(PERF_FILENAME):
+    if not CONFIG.quiet and not CONFIG.do_list and os.path.isfile(PERF_FILENAME):
         print('')
         print('Previous single-threaded performance results:')
         print('=============================================')

@@ -59,7 +59,7 @@ class TestConfig(object):
     """
     def __init__(self, keep, verbose, targets, update_tests, just_compile,
                  force_update, dummy, quiet, repeats, block_checkpoints,
-                 chimes_profile):
+                 chimes_profile, do_list):
         assert repeats >= 1, str(repeats)
 
         self.keep = keep
@@ -76,6 +76,7 @@ class TestConfig(object):
         self.repeats = repeats
         self.block_checkpoints = block_checkpoints
         self.chimes_profile = chimes_profile
+        self.do_list = do_list
 
     def set_force_sequential(self):
         self.force_sequential = True
@@ -369,11 +370,14 @@ def parse_argv(argv):
     quiet = False
     repeats = 1
     chimes_profile = False
+    do_list = False
 
     i = 1
     while i < len(argv):
         if argv[i] == '-k':
             keep = True
+        elif argv[i] == '-l':
+            do_list = True
         elif argv[i] == '-v':
             verbose = True
         elif argv[i] == '-u':
@@ -407,7 +411,7 @@ def parse_argv(argv):
 
     return TestConfig(keep, verbose, targets, update_tests, just_compile,
                       force_update, dummy, quiet, repeats, block_checkpoints,
-                      chimes_profile)
+                      chimes_profile, do_list)
 
 
 def print_and_abort(stdout, stderr, abort=True):
@@ -1077,6 +1081,10 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
 def run_perf_test(test, compile_script_path, normal_compile_script_path,
                   inputs_dir, config):
+    if config.do_list:
+        print(test.name)
+        return
+
     if not test_enabled(test.name, config):
         print(test.name + ' SKIPPING')
         return
