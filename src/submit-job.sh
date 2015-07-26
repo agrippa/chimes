@@ -92,16 +92,19 @@ if [[ $TEST_EXISTS != 1 ]]; then
     exit 1
 fi
 
+CMD="python $CHIMES_HOME/src/tests/src/${TYPE}_perf_tests.py -q -r $REPEATS -t $TEST"
+if [[ $DUMMY == 1 ]]; then
+    CMD="$CMD -d"
+fi
+if [[ $BLOCK == 1 ]]; then
+    CMD="$CMD -b"
+fi
+
 SCRIPT=$(mktemp /tmp/chimes-$TEST.XXXXXX.pbs)
 echo '#!/bin/bash' > $SCRIPT
 echo source $HOME/.bashrc >> $SCRIPT
 echo source $HOME/.bash_profile >> $SCRIPT
-# echo 'echo $LD_LIBRARY_PATH' >> $SCRIPT
-# echo echo Listing contents of /usr/lib64 >> $SCRIPT
-# echo ls /usr/lib64/ >> $SCRIPT
-# echo echo Listing contents of $SHARED_SCRATCH/jmg3/libs >> $SCRIPT
-# echo ls $SHARED_SCRATCH/jmg3/libs/ >> $SCRIPT
-echo python $CHIMES_HOME/src/tests/src/${TYPE}_perf_tests.py -q -r $REPEATS -t $TEST >> $SCRIPT
+echo $CMD >> $SCRIPT
 
 
 if [[ $SBATCH_EXISTS == 0 ]]; then
