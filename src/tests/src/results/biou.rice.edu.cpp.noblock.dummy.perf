@@ -1,23 +1,23 @@
-Iso3D - added 8.42958397991% overhead for 10.0 checkpoint files, median efficiency=13.1772416451%, mean efficiency=21.0887854148%
-Lulesh - added 5.12008636116% overhead for 722.5 checkpoint files, median efficiency=100.245992076%, mean efficiency=100.245984415%
-CoMD - added -0.113524185587% overhead for 78.0 checkpoint files, median efficiency=100.003953394%, mean efficiency=98.5735148768%
-UTS - added -0.0624534601619% overhead for 2.0 checkpoint files, median efficiency=100.021833125%, mean efficiency=100.021833125%
-RodiniaBackprop - added 11.0654825968% overhead for 1.0 checkpoint files, median efficiency=100.000017791%, mean efficiency=100.000017791%
-RodiniaBfs - added 8.29228609042% overhead for 6.0 checkpoint files, median efficiency=17.9489497301%, mean efficiency=31.6241300797%
-RodiniaBfs_refactored - added 3.30601861404% overhead for 6.0 checkpoint files, median efficiency=17.9489572395%, mean efficiency=31.6241378086%
-RodiniaB+tree - added 2.63647292204% overhead for 1.0 checkpoint files, median efficiency=173.071239581%, mean efficiency=173.071239581%
-RodiniaHeartwall - added 1.63245013862% overhead for 104.0 checkpoint files, median efficiency=100.149192693%, mean efficiency=100.149190906%
-RodiniaHotspot - added 12.0909050792% overhead for 19.0 checkpoint files, median efficiency=66.6670237138%, mean efficiency=68.4214033828%
-RodiniaKmeans - added 3.92040775979% overhead for 20.0 checkpoint files, median efficiency=3.93787927081%, mean efficiency=8.69625891892%
-RodiniaLavamd - added 0.750811955064% overhead for 2.0 checkpoint files, median efficiency=74.5464522978%, mean efficiency=74.5464522978%
-RodiniaLud - added 0.203275370245% overhead for 175.0 checkpoint files, median efficiency=100.008183294%, mean efficiency=100.008183805%
-RodiniaMyocyte - added 1.41945308357% overhead for 100.0 checkpoint files, median efficiency=20.6238805895%, mean efficiency=21.2531148944%
-RodiniaNn - added 2.07010213928% overhead for 327.0 checkpoint files, median efficiency=0.0348350096891%, mean efficiency=6.14911953487%
-RodiniaNw - added 5.79775575613% overhead for 2.0 checkpoint files, median efficiency=66.6666743536%, mean efficiency=66.6666743536%
-RodiniaNw_refactored - added 6.26773928951% overhead for 2.0 checkpoint files, median efficiency=66.6666750473%, mean efficiency=66.6666750473%
-RodiniaParticlefilter - added 6.05010687811% overhead for 18.0 checkpoint files, median efficiency=0.166665242489%, mean efficiency=11.2593792853%
-RodiniaSrad - added 6.40455179261% overhead for 103.5 checkpoint files, median efficiency=83.5188241461%, mean efficiency=83.9965944828%
-SPECBotsAlgn - added 1.40385277904% overhead for 1.0 checkpoint files, median efficiency=107.838544013%, mean efficiency=107.838544013%
-SPECBotsSpar - added 4.57321694232% overhead for 163.0 checkpoint files, median efficiency=100.140236349%, mean efficiency=100.140251602%
-SPECSmithwa - added 7.57344260155% overhead for 3.0 checkpoint files, median efficiency=102.306975076%, mean efficiency=118.284719359%
-SPECKDTree - added 10.4887832417% overhead for 1.0 checkpoint files, median efficiency=100.017149733%, mean efficiency=100.017149733%
+Iso3D - added 2.55280176474% overhead
+Lulesh - added 2.45727595837% overhead
+CoMD - added 0.0937808489635% overhead
+UTS - added -0.0104472739144% overhead
+RodiniaBackprop - added 0.761021069349% overhead
+RodiniaBfs - added -1.61888242231% overhead
+RodiniaBfs_refactored - added 0.380068910466% overhead
+RodiniaB+tree - added 8.24300490848% overhead
+RodiniaHeartwall - added 0.342842137502% overhead
+RodiniaHotspot - added 6.00559526484% overhead
+RodiniaKmeans - added 3.31790385761% overhead
+RodiniaLavamd - added 0.500330496481% overhead
+RodiniaLud - added -1.29216834911% overhead
+RodiniaMyocyte - added 0.0433484011172% overhead
+RodiniaNn - added -0.0839762493857% overhead
+RodiniaNw - added 8.38195561304% overhead
+RodiniaNw_refactored - added -14.492366226% overhead
+RodiniaParticlefilter - added 0.311258517092% overhead
+RodiniaSrad - added -0.21840641839% overhead
+SPECBotsAlgn - added 1.88233478224% overhead
+SPECBotsSpar - added -0.367524678038% overhead
+SPECSmithwa - added 7.53731657704% overhead
+SPECKDTree - added 1.05238540692% overhead
