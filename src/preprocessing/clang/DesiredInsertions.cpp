@@ -41,6 +41,28 @@ size_t DesiredInsertions::unique_alias(size_t alias) {
     else return module_id + alias;
 }
 
+std::map<std::string, int> *DesiredInsertions::parseCallLatencies() {
+    std::map<std::string, int> *latencies = new std::map<std::string, int>();
+    
+    std::ifstream fp;
+    fp.open(latency_file, std::ios::in);
+    std::string line;
+
+    while (getline(fp, line)) {
+        size_t end = line.find(' ');
+        std::string fname = line.substr(0, end);
+        line = line.substr(end + 1);
+
+        int latency = atoi(line.c_str());
+
+        bool success = latencies->insert(std::pair<std::string, int>(fname, latency)).second;
+        assert(success);
+    }
+    fp.close();
+
+    return latencies;
+}
+
 std::set<std::string> *DesiredInsertions::parseAllocators() {
     std::set<std::string> *allocators = new std::set<std::string>();
 
@@ -1552,4 +1574,56 @@ std::string DesiredInsertions::get_alias_loc_var(unsigned id) {
     std::stringstream ss;
     ss << "____alias_loc_id_" << id;
     return ss.str();
+}
+
+bool DesiredInsertions::all_callees_local(std::string fname) {
+    std::set<std::string> visited;
+    return all_callees_local_helper(fname, &visited);
+}
+
+bool DesiredInsertions::all_callees_local_helper(std::string fname,
+        std::set<std::string> *visited) {
+#ifdef VERBOSE
+    llvm::errs() << "Looking at \"" << fname << "\", already visited? " <<
+        (visited->find(fname) != visited->end()) << "\n";
+#endif
+    if (visited->find(fname) != visited->end()) {
+        return true;
+    }
+    visited->insert(fname);
+
+    if (call_tree->find(fname) == call_tree->end()) {
+        return false;
+    }
+
+    FunctionCallees *callees = call_tree->at(fname);
+    if (callees->get_calls_unknown_functions()) {
+        // Function pointer, don't know if local or not
+        return false;
+    }
+
+    for (std::vector<CheckpointCause>::iterator i = callees->begin(),
+            e = callees->end(); i != e; i++) {
+        CheckpointCause child = *i;
+        std::string child_name = child.get_name();
+
+        if (!all_callees_local_helper(child_name, visited)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int DesiredInsertions::get_call_latency(std::string fname) {
+    if (call_latencies->find(fname) == call_latencies->end()) {
+        llvm::errs() << fname << "\n";
+        assert(false);
+    }
+    return call_latencies->at(fname);
+}
+
+bool DesiredInsertions::is_low_call_latency(std::string fname) {
+    int latency = get_call_latency(fname);
+    return (latency != -1 && latency < 10); // 10 is arbitrary at the moment
 }

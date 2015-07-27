@@ -394,6 +394,7 @@ static map<string, bool> does_checkpoint;
  */
 static map<string, vector<int *> > npm_conditional_pointers;
 
+static map<string, int> call_latencies;
 /*
  * A mapping from unique variable names to the functions called which mean they
  * must be checkpointed (i.e. functions which may or may not create a
@@ -1136,22 +1137,18 @@ void init_chimes() {
          * be an externally compiled function that we don't have checkpointing
          * information on.
          */
-        if (does_checkpoint.find(i->first) != does_checkpoint.end()) {
-            /*
-             * All variables are initialized to one, so we set to 0 if we
-             * discover a function that will not cause a checkpoint (and for
-             * which this information could not be discovered at compile time)
-             * and which we can therefore run in NPM mode.
-             */
 #ifdef VERBOSE
-            fprintf(stderr, "Setting conditional NPM variables for %s, does "
-                    "checkpoint? %d\n", i->first.c_str(),
-                    does_checkpoint.at(i->first));
+        fprintf(stderr, "Looking at call latencies for function \"%s\"\n",
+                i->first.c_str());
 #endif
-            if (!does_checkpoint.at(i->first)) {
+        if (call_latencies.find(i->first) == call_latencies.end()) {
+            fprintf(stderr, "WARNING: Missing call latency information for "
+                    "function \"%s\"\n", i->first.c_str());
+        } else {
+            if (call_latencies.at(i->first) < 10) {
                 for (vector<int *>::iterator ii = i->second.begin(),
                         ee = i->second.end(); ii != ee; ii++) {
-                    *(*ii) = 0;
+                    *(*ii) = 1;
                 }
             }
         }
@@ -1885,9 +1882,9 @@ static void parse_merges(int n_merges, va_list *vl,
 }
 
 void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
-        int nvars, /* int n_change_locs, */ /* int n_provided_npm_functions, */
-        /* int n_external_npm_functions, int n_npm_conditionals, */
-        int n_static_merges, int n_dynamic_merges, int nstructs, ...) {
+        int nvars, /* int n_change_locs, */ int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, int nlatencies, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -1895,7 +1892,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
     bool replay = (getenv("CHIMES_CHECKPOINT_FILE") != NULL);
     va_list vl;
-    va_start(vl, nstructs);
+    va_start(vl, nlatencies);
 
     bool initialized = (initialized_modules.find(module_id) !=
             initialized_modules.end());
@@ -2016,8 +2013,6 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         }
     }
 
-    VERIFY(dlclose(app_handle) == 0);
-
     // Parse checkpoint causes from the arguments
     for (int i = 0; i < nvars; i++) {
         char *var_name = va_arg(vl, char *);
@@ -2034,14 +2029,165 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
             char *cause = va_arg(vl, char *);
             string cause_str(cause);
 
-            var_checkpoint_causes[var_name_str].insert(cause_str);
+            var_checkpoint_causes.at(var_name_str).insert(cause_str);
         }
     }
 
+#ifdef VERBOSE
+    fprintf(stderr, "===============================\n");
+    fprintf(stderr, "======== Static Merges ========\n");
+    fprintf(stderr, "===============================\n");
+#endif
     parse_merges(n_static_merges, &vl, &npm_callee_to_static_merge_info);
+#ifdef VERBOSE
+    fprintf(stderr, "===============================\n");
+    fprintf(stderr, "======== Dynamic Merges =======\n");
+    fprintf(stderr, "===============================\n");
+#endif
     parse_merges(n_dynamic_merges, &vl, &npm_callee_to_dynamic_merge_info);
+#ifdef VERBOSE
+    fprintf(stderr, "===============================\n");
+    fprintf(stderr, "===============================\n");
+#endif
+
+    for (int i = 0; i < n_provided_npm_functions; i++) {
+        std::string fname(va_arg(vl, char *));
+        int is_static = va_arg(vl, int);
+
+        void *original_fptr, *fptr;
+        if (is_static) {
+            fptr = va_arg(vl, void *);
+            original_fptr = va_arg(vl, void *);
+        } else {
+            std::string mangled_fname(va_arg(vl, char *));
+            std::string mangled_npm_fname(va_arg(vl, char *));
+
+            dlerror(); // Clear existing errors
+            original_fptr = dlsym(app_handle, mangled_fname.c_str());
+            char *ld_err;
+            if ((ld_err = dlerror()) != NULL) {
+                fprintf(stderr, "Unable to load function address for \"%s\", \"%s\": %s\n",
+                        fname.c_str(), mangled_fname.c_str(), ld_err);
+                exit(1);
+            }
+
+            dlerror(); // Clear existing errors
+            fptr = dlsym(app_handle, mangled_npm_fname.c_str());
+            if ((ld_err = dlerror()) != NULL) {
+                fprintf(stderr, "Unable to load NPM function address for \"%s\", \"%s\": %s\n",
+                        fname.c_str(), mangled_npm_fname.c_str(), ld_err);
+                exit(1);
+            }
+        }
+
+        /*
+         * original_fptr will be NULL for any functions whose addresses are not
+         * taken within the same compilation unit. This serves as an
+         * optimization to help the compiler with inter-procedural analysis --
+         * code runs much more slowly when you load the function address for
+         * every function in a compilation unit, forcing the compiler to make
+         * more conservative decisions.
+         */
+        if (original_fptr) {
+            assert(fname_to_original_function.find(fname) ==
+                    fname_to_original_function.end());
+            fname_to_original_function[fname] = original_fptr;
+        }
+
+        // Alias locations that are stored in this function
+        const int n_alias_locs = va_arg(vl, int);
+        set<unsigned> alias_locs;
+        for (int j = 0; j < n_alias_locs; j++) {
+            unsigned *loc_id_ptr = va_arg(vl, unsigned *);
+            alias_locs.insert(*loc_id_ptr);
+        }
+
+        /*
+         * The aliases that this function assigns to its input parameters and
+         * its returned value.
+         */
+        vector<size_t> param_aliases;
+        size_t return_alias;
+        const int n_param_aliases = va_arg(vl, int);
+        for (int j = 0; j < n_param_aliases; j++) {
+            param_aliases.push_back(va_arg(vl, size_t));
+        }
+        return_alias = va_arg(vl, size_t);
+        function_io_aliases outer_aliases(param_aliases, return_alias);
+
+        /*
+         * The set of calls made from the current function, including the name
+         * of the function called, the number of arguments passed, the aliases
+         * assigned to each of those arguments, and the return alias assigned to
+         * any value that is returned.
+         */
+        const int n_calls_made = va_arg(vl, int);
+        vector<call_aliases> calls;
+        for (int j = 0; j < n_calls_made; j++) {
+            vector<size_t> arg_aliases;
+            size_t return_alias;
+
+            string callee_name(va_arg(vl, const char *));
+            const int n_args = va_arg(vl, int);
+            for (int k = 0; k < n_args; k++) {
+                arg_aliases.push_back(va_arg(vl, size_t));
+            }
+            return_alias = va_arg(vl, size_t);
+            calls.push_back(call_aliases(callee_name, arg_aliases,
+                        return_alias));
+        }
+
+        VERIFY(provided_npm_functions.insert(pair<string, void *>(fname,
+                        fptr)).second);
+        VERIFY(fname_to_alias_locs.insert(pair<string, set<unsigned> >(fname,
+                        alias_locs)).second);
+        VERIFY(fname_to_outer_aliases.insert(pair<string, function_io_aliases>(
+                        fname, outer_aliases)).second);
+        VERIFY(fname_to_calls_made.insert(pair<string, vector<call_aliases> >(
+                        fname, calls)).second);
+    }
+
+    for (int i = 0; i < n_external_npm_functions; i++) {
+        std::string npm_fname(va_arg(vl, const char *));
+        void **fptr = va_arg(vl, void **);
+
+        if (requested_npm_functions.find(npm_fname) ==
+                requested_npm_functions.end()) {
+            requested_npm_functions.insert(pair<string, vector<void **> >(
+                        npm_fname, vector<void **>()));
+        }
+
+        requested_npm_functions.at(npm_fname).push_back(fptr);
+    }
+
+    for (int i = 0; i < n_npm_conditionals; i++) {
+        std::string func_name(va_arg(vl, const char *));
+        int *conditional = va_arg(vl, int *);
+
+        if (npm_conditional_pointers.find(func_name) ==
+                npm_conditional_pointers.end()) {
+            VERIFY(npm_conditional_pointers.insert(pair<string, vector<int *> >(
+                            func_name, vector<int *>())).second);
+        }
+        npm_conditional_pointers.at(func_name).push_back(conditional);
+    }
+
+    for (int i = 0; i < nlatencies; i++) {
+        std::string func_name(va_arg(vl, const char *));
+        int latency = va_arg(vl, int);
+
+        if (call_latencies.find(func_name) != call_latencies.end()) {
+            fprintf(stderr, "Found existing latency entry for function \"%s\", "
+                    "existing value = %d, new value = %d\n", func_name.c_str(),
+                    call_latencies.at(func_name), latency);
+            assert(false);
+        }
+        call_latencies.insert(pair<string, int>(func_name, latency));
+    }
 
     va_end(vl);
+
+    VERIFY(dlclose(app_handle) == 0);
 
     VERIFY(pthread_mutex_unlock(&module_mutex) == 0);
 

@@ -6,7 +6,7 @@ script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
 source ${CHIMES_HOME}/src/common.conf
 
-INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info constants.info tree.info accessed.info"
+INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info constants.info tree.info accessed.info latency.info"
 ENABLE_OMP=1
 KEEP=0
 PROFILE=0
@@ -328,6 +328,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -u ${INFO_FILE_PREFIX}.merge \
             -y ${INFO_FILE_PREFIX}.allocators.info \
             -z ${INFO_FILE_PREFIX}.non_chkpting.info \
+            -la ${INFO_FILE_PREFIX}.latency.info \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}"
     [[ ! $VERBOSE ]] || echo $TRANSFORM_CMD
@@ -343,7 +344,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     FIRSTPRIVATE_FILE=${NAME}.fp.${EXT}
     NPM_FILE=${NAME}.npm.${EXT}
     HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
-# ABI_FILE=${INFO_FILE_PREFIX}.abi
+    ABI_FILE=${INFO_FILE_PREFIX}.abi
     NPM_CONDS_FILE=${NAME}.npm_conds.${EXT}
     FINAL_FILE=${NAME}.transformed.${EXT}
     SCOP_FILE=${NAME}.scop.${EXT}
@@ -361,29 +362,37 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls \
         -e ${INFO_FILE_PREFIX}.list_of_externs 
 
-#     echo Adding NPM conditionals to ${NPM_FILE}
-#     cd ${WORK_DIR} && python ${ADD_NPM_CONDS} ${NPM_FILE} \
-#         ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls \
-#         ${INFO_FILE_PREFIX}.list_of_externs
+    echo Adding NPM conditionals to ${NPM_FILE}
+    cd ${WORK_DIR} && python ${ADD_NPM_CONDS} ${NPM_FILE} \
+        ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls \
+        ${INFO_FILE_PREFIX}.list_of_externs
 
-#     echo Hardcoding quick/resumable/npm calls when possible in ${NPM_CONDS_FILE}
-#     cd ${WORK_DIR} && ${CALL_TRANSLATE} -o ${HARDCODED_CALLS_FILE} \
-#         -q ${INFO_FILE_PREFIX}.quick.decls -n ${INFO_FILE_PREFIX}.npm.decls \
-#         -e ${INFO_FILE_PREFIX}.externs ${NPM_CONDS_FILE} -- \
-#         -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
-#         ${CHIMES_DEF} ${DEFINES}
+    echo Hardcoding quick/resumable/npm calls when possible in ${NPM_CONDS_FILE}
+    cd ${WORK_DIR} && ${CALL_TRANSLATE} -o ${HARDCODED_CALLS_FILE} \
+        -q ${INFO_FILE_PREFIX}.quick.decls -n ${INFO_FILE_PREFIX}.npm.decls \
+        -e ${INFO_FILE_PREFIX}.externs ${NPM_CONDS_FILE} -- \
+        -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+        ${CHIMES_DEF} ${DEFINES}
 
-    echo Setting up module initialization for ${NPM_FILE}
-    cd ${WORK_DIR} && python ${MODULE_INIT} -i ${NPM_FILE} -o ${FINAL_FILE} \
+    echo Fetching ABI information from ${HARDCODED_CALLS_FILE}
+    cd ${WORK_DIR} && ${GXX} --compile ${HARDCODED_CALLS_FILE} ${CHIMES_DEF} \
+        ${DEFINES} -o abi.o
+    cd ${WORK_DIR} && objdump -t abi.o > ${ABI_FILE}
+    cd ${WORK_DIR} && rm -f abi.o
+
+    echo Setting up module initialization for ${HARDCODED_CALLS_FILE}
+    cd ${WORK_DIR} && python ${MODULE_INIT} -i ${HARDCODED_CALLS_FILE} -o ${FINAL_FILE} \
         -m ${INFO_FILE_PREFIX}.module.info -r ${INFO_FILE_PREFIX}.reachable.info \
         -g ${INFO_FILE_PREFIX}.globals.info -s ${INFO_FILE_PREFIX}.struct.info \
         -c ${INFO_FILE_PREFIX}.constants.info -v ${INFO_FILE_PREFIX}.stack.info \
-        -t ${INFO_FILE_PREFIX}.tree.info \
-        -f ${INFO_FILE_PREFIX}.func.info \
+        -t ${INFO_FILE_PREFIX}.tree.info -x ${INFO_FILE_PREFIX}.exit.info \
+        -f ${INFO_FILE_PREFIX}.func.info -n ${INFO_FILE_PREFIX}.npm.decls \
         -d ${INFO_FILE_PREFIX}.call.info -h ${INFO_FILE_PREFIX}.locs \
         -j ${INFO_FILE_PREFIX}.fptrs -ms ${INFO_FILE_PREFIX}.merge.static \
-        -md ${INFO_FILE_PREFIX}.merge.dynamic \
-        -nc ${INFO_FILE_PREFIX}.non_chkpting.info
+        -md ${INFO_FILE_PREFIX}.merge.dynamic -a ${ABI_FILE} \
+        -nc ${INFO_FILE_PREFIX}.non_chkpting.info \
+        -e ${INFO_FILE_PREFIX}.list_of_externs \
+        -cl ${INFO_FILE_PREFIX}.latency.info
 
 # =======
 # 

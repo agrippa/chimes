@@ -13,7 +13,6 @@
 using namespace std;
 using namespace clang;
 
-
 // #define VERBOSE
 
 /**
@@ -647,7 +646,7 @@ std::string CallingAndOMPPass::get_region_cleanup_code(bool is_parallel_for,
 }
 
 static std::string get_external_func_name(std::string fname) {
-    return ("____chimes_extern_func_" + fname);
+    return ("____chimes_extern_low_latency_func_" + fname);
 }
 
 std::string CallingAndOMPPass::get_loc_arg(const CallExpr *call) {
@@ -965,24 +964,28 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             call_tracker[loc.get_funcname()] = found;
             AliasesPassedToCallSite callsite = *found;
 
-            bool is_converted_to_npm = (npm_functions.find(
+            bool is_locally_converted_to_npm = (npm_functions.find(
                         loc.get_funcname()) != npm_functions.end());
-            bool never_checkpoints = insertions->does_not_cause_checkpoint(
-                        loc.get_funcname());
-            bool always_checkpoints = insertions->always_checkpoints(
-                    loc.get_funcname());
-            bool callee_always_checkpoints = insertions->always_checkpoints(
-                    curr_func);
+            bool local_call_tree = insertions->all_callees_local(loc.get_funcname());
+            // bool never_checkpoints = insertions->does_not_cause_checkpoint(
+            //             loc.get_funcname());
+            // bool always_checkpoints = insertions->always_checkpoints(
+            //         loc.get_funcname());
+            // bool callee_always_checkpoints = insertions->always_checkpoints(
+            //         curr_func);
             bool calls_unknown = insertions->calls_unknown_functions(
                     loc.get_funcname());
             /*
              * This block handles functions that are within this compilation
-             * unit and have been converted to NPM mode because all of their
-             * callees are in the same compilation unit, and none of them
-             * checkpoint. This is the simplest case, and allows us to
-             * simply emit a direct call to that function.
+             * unit (all functions are converted to NPM mode, so if something is
+             * in npm_functions it just means it is in the same compilation
+             * unit) that only call functions within this compilation unit, and
+             * have a low call latency. local_call_tree and
+             * is_locally_converted_to_npm will be false for function pointers,
+             * so function pointer calls are never handled by this logic either.
              */
-            if (is_converted_to_npm && never_checkpoints) {
+            if (is_locally_converted_to_npm && local_call_tree &&
+                    insertions->is_low_call_latency(loc.get_funcname())) {
 #ifdef VERBOSE
                 llvm::errs() << "generating NPM call for call to " << loc.get_funcname() << "\n";
 #endif
@@ -997,70 +1000,12 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             }
 
             /*
-             * This block handles function calls which we may be able to run
-             * in NPM mode, but we're not sure (generally because one of the
-             * nested callees is defined externally). This either generates
-             * a direct call to the NPM version of the immediate child (if
-             * it is in the same compilation unit) or a call to a function
-             * pointer which will be populated with the NPM version from
-             * another compilation unit if it is possible to make this call.
-             * In either case, this call is conditional on a boolean set at
-             * runtime which indicates if this call can ever create a
-             * checkpoint. If false, we do the NPM version.
-             *
-             * If this function is defined in the same compilation unit we
-             * can do the merge statically. If it is defined externally, we
-             * conditionally do the merge at runtime if we find a definition
-             * for it.
-             *
-             * The conditional checks that:
-             *   1) The call is not made through a function pointer.
-             *   2) The callee is not definitely create a checkpoint (it
-             *      either does not or may).
-             *   3) The callee does not call any function pointers.
-             *   4) This call is within a certain distance of main on the
-             *      call stack OR this call is in the same method as a
-             *      checkpoint().
-             */
-//             const int main_dist = (insertions->have_main_in_call_tree() ?
-//                     insertions->get_distance_from_main(curr_func) : -1);
-//             if (call->getDirectCallee() && !always_checkpoints &&
-//                     !calls_unknown &&
-//                     ((main_dist != -1 && main_dist < 2) || callee_always_checkpoints) &&
-//                     loc.get_funcname() != "checkpoint") {
-// #ifdef VERBOSE
-//                 llvm::errs() << "generating conditional NPM call for call "
-//                     "to " << loc.get_funcname() <<
-//                     ", is_converted_to_npm=" << is_converted_to_npm <<
-//                     ", never_checkpoints=" << never_checkpoints << "\n";
-// #endif
-//                 /*
-//                  * Use a function pointer if this is an externally
-//                  * defined function
-//                  */
-//                 std::string npm_call = generateNPMCall(loc, callsite, call,
-//                         npm_functions.find(loc.get_funcname()) ==
-//                             npm_functions.end());
-//                 std::string regular_call = generateNormalCall(call,
-//                         lbl.get_lbl(), callsite, gen_quick, get_loc_arg(call));
-//                 std::string cond_call = "(____chimes_does_checkpoint_" +
-//                     loc.get_funcname() + "_npm ? (" + regular_call +
-//                     ") : (" + npm_call + "))";
-//                 clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());
-//                 ReplaceText(replace_range, cond_call);
-//                 ompTree->add_function_call(call, lbl.get_lbl());
-// 
-//                 // External, dynamic
-//                 addDynamicMerge(callsite, loc.get_funcname());
-// 
-//                 continue;
-//             }
-
-            /*
              * This block handles translating function pointers at runtime
-             * dynamically to their NPM equivalent.
+             * dynamically to their NPM equivalent, if available. At runtime,
+             * actually taking the NPM option is dependent on having an NPM
+             * version of the callee and the target function having low latency
+             * function calls.
              */
-            /*
             if (!call->getDirectCallee()) {
 #ifdef VERBOSE
                 llvm::errs() << "generating function pointer translation call\n";
@@ -1072,36 +1017,44 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                 ompTree->add_function_call(call, lbl.get_lbl());
                 continue;
             }
-            */
 
-            if (ompTree->add_function_call(call, lbl.get_lbl())) {
-#ifdef VERBOSE
-                llvm::errs() << "generating normal call for " << loc.get_funcname() << "\n";
-#endif
-                std::string new_call;
-                /*
-                if (loc.get_funcname() == "checkpoint") {
-                    std::stringstream ss;
-                    if (blockCheckpoints) {
-                        ss << "if (0) { ";
-                    }
-                    ss << "checkpoint_transformed(" << lbl.get_lbl() <<
-                        ", " << get_loc_arg(call) << ")";
-                    if (blockCheckpoints) {
-                        ss << "; } ";
-                    }
-                    new_call = ss.str();
-                } else {
-                */
-                    new_call = generateNormalCall(call, lbl.get_lbl(), callsite,
-                            gen_quick, get_loc_arg(call));
-                // }
-
+            /*
+             * Non-function pointer calls to extern functions (or functions that
+             * eventually call extern functions), where the direct callee is
+             * something that we may want to run in NPM mode.
+             */
+            if (call->getDirectCallee()) {
+                std::string npm_call = generateNPMCall(loc, callsite, call,
+                        npm_functions.find(loc.get_funcname()) ==
+                        npm_functions.end());
+                std::string regular_call = generateNormalCall(call,
+                        lbl.get_lbl(), callsite, gen_quick, get_loc_arg(call));
+                std::string cond_call = "(____chimes_is_low_latency_" +
+                    loc.get_funcname() + "_npm ? (" + regular_call +
+                    ") : (" + npm_call + "))";
                 clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());
-                ReplaceText(replace_range, new_call);
-            }
-        }
+                ReplaceText(replace_range, cond_call);
+                ompTree->add_function_call(call, lbl.get_lbl());
 
+                // External, dynamic
+                addDynamicMerge(callsite, loc.get_funcname());
+
+                continue;
+            }
+
+            /*
+             * Otherwise, default to normal call.
+             */
+            ompTree->add_function_call(call, lbl.get_lbl());
+#ifdef VERBOSE
+            llvm::errs() << "generating normal call for " << loc.get_funcname() << "\n";
+#endif
+            std::string new_call = generateNormalCall(call, lbl.get_lbl(),
+                    callsite, gen_quick, get_loc_arg(call));
+
+            clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());
+            ReplaceText(replace_range, new_call);
+        }
     }
 
     /*

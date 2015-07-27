@@ -16,9 +16,9 @@ extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
         unsigned n_local_arg_aliases, /* unsigned nargs, */ ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
-        int nvars, /* int n_change_locs, */ /* int n_provided_npm_functions, */
-        /* int n_external_npm_functions, int n_npm_conditionals, */
-        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
+        int nvars, /* int n_change_locs, */ int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, int nlatencies, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, /* int *conditional, unsigned loc_id, */ int disabled, bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,

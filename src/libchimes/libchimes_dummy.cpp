@@ -192,9 +192,9 @@ void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
 }
 
 void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
-        int nvars, /* int n_change_locs, */ /* int n_provided_npm_functions, */
-        /* int n_external_npm_functions, int n_npm_conditionals, */
-        int n_static_merges, int n_dynamic_merges, int nstructs, ...) {
+        int nvars, /* int n_change_locs, */ int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, int nlatencies, ...) {
     va_list vl;
     va_start(vl, nstructs);
 

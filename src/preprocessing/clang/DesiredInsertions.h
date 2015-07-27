@@ -571,7 +571,7 @@ class DesiredInsertions {
                 const char *exit_filename, const char *reachable_filename,
                 const char *omp_filename, const char *firstprivate_filename,
                 const char *call_tree_filename, const char *allocator_filename,
-                const char *noncheckpointing_filename) :
+                const char *noncheckpointing_filename, const char *latency_filename) :
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
@@ -582,7 +582,7 @@ class DesiredInsertions {
             omp_file(omp_filename), firstprivate_file(firstprivate_filename),
             call_tree_file(call_tree_filename),
             allocator_file(allocator_filename),
-            noncheckpointing_file(noncheckpointing_filename),
+            noncheckpointing_file(noncheckpointing_filename), latency_file(latency_filename),
             state_change_insertions(NULL), func_exits(NULL) {
                 module_id = hash(module_name);
                 // parseStateChangeInsertions must be called before parseFunctionExits
@@ -599,6 +599,7 @@ class DesiredInsertions {
                 allocators = parseAllocators();
                 // Must be run after parseCallTree
                 parseNoncheckpointing();
+                call_latencies = parseCallLatencies();
 
                 diagnostics.open(diagnostic_file);
                 firstprivate.open(firstprivate_file);
@@ -703,12 +704,18 @@ class DesiredInsertions {
             return (allocators->find(fname) != allocators->end());
         }
 
+        bool all_callees_local(std::string fname);
+        bool all_callees_local_helper(std::string fname,
+                std::set<std::string> *visited);
+        int get_call_latency(std::string fname);
+        bool is_low_call_latency(std::string fname);
+
     private:
         std::string lines_info_file, struct_info_file,
             stack_allocs_file, heap_file, original_file, diagnostic_file,
             working_dir, func_file, call_file, exit_file, reachable_file,
             omp_file, firstprivate_file, call_tree_file, allocator_file,
-            noncheckpointing_file;
+            noncheckpointing_file, latency_file;
         std::ofstream diagnostics;
         std::ofstream firstprivate;
         std::ofstream omp_inserts;
@@ -727,6 +734,7 @@ class DesiredInsertions {
         std::vector<OpenMPPragma> *omp_pragmas;
         std::map<std::string, FunctionCallees *> *call_tree;
         std::set<std::string> *allocators;
+        std::map<std::string, int> *call_latencies;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
         std::vector<StructFields *> *parseStructs();
@@ -740,6 +748,7 @@ class DesiredInsertions {
         std::map<std::string, FunctionCallees *> *parseCallTree();
         std::set<std::string> *parseAllocators();
         void parseNoncheckpointing();
+        std::map<std::string, int> *parseCallLatencies();
 
         size_t module_id;
 

@@ -243,22 +243,22 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
                     }
                 }
 
-                if (supportedAllocationFunctions.find(funcname) !=
-                        supportedAllocationFunctions.end()) {
-                    if (found_allocs.find(start_line) == found_allocs.end()) {
-                        found_allocs[start_line] = new std::map<std::string,
-                        std::vector<FoundAlloc> *>();
-                    }
-                    std::map<std::string, std::vector<FoundAlloc> *> *per_line =
-                        found_allocs[start_line];
+                // if (supportedAllocationFunctions.find(funcname) !=
+                //         supportedAllocationFunctions.end()) {
+                //     if (found_allocs.find(start_line) == found_allocs.end()) {
+                //         found_allocs[start_line] = new std::map<std::string,
+                //         std::vector<FoundAlloc> *>();
+                //     }
+                //     std::map<std::string, std::vector<FoundAlloc> *> *per_line =
+                //         found_allocs[start_line];
 
-                    if (per_line->find(funcname) == per_line->end()) {
-                        (*per_line)[funcname] = new std::vector<FoundAlloc>();
-                    }
-                    std::vector<FoundAlloc> *per_func = (*per_line)[funcname];
+                //     if (per_line->find(funcname) == per_line->end()) {
+                //         (*per_line)[funcname] = new std::vector<FoundAlloc>();
+                //     }
+                //     std::vector<FoundAlloc> *per_func = (*per_line)[funcname];
 
-                    per_func->push_back(FoundAlloc(start_col, call));
-                }
+                //     per_func->push_back(FoundAlloc(start_col, call));
+                // }
             }
 
             if (npm_pass && callee == NULL) {

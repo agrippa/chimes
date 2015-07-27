@@ -18,17 +18,18 @@ class ModuleInitConfig(object):
         self.stack_var_filename = None
         self.call_tree_filename = None
         # self.lines_filename = None
-        # self.exits_filename = None
+        self.exits_filename = None
         self.func_filename = None
-        # self.externs_filename = None
-        # self.npm_filename = None
+        self.externs_filename = None
+        self.npm_filename = None
         self.calls_filename = None
         self.locs_filename = None
         self.fptrs_loaded_filename = None
         self.static_merge_filename = None
         self.dynamic_merge_filename = None
-        # self.abi_filename = None
+        self.abi_filename = None
         self.non_chkpting_filename = None
+        self.call_latency_filename = None
 
     def check(self):
         if self.input_filename is None:
@@ -61,18 +62,18 @@ class ModuleInitConfig(object):
         # if self.lines_filename is None:
         #     print('Missing lines filename')
         #     usage()
-        # if self.exits_filename is None:
-        #     print('Missing exits filename')
-        #     usage()
+        if self.exits_filename is None:
+            print('Missing exits filename')
+            usage()
         if self.func_filename is None:
             print('Missing function filename')
             usage()
-        # if self.externs_filename is None:
-        #     print('Missing externs filename')
-        #     usage()
-        # if self.npm_filename is None:
-        #     print('Missing NPM filename')
-        #     usage()
+        if self.externs_filename is None:
+            print('Missing externs filename')
+            usage()
+        if self.npm_filename is None:
+            print('Missing NPM filename')
+            usage()
         if self.calls_filename is None:
             print('Missing calls filename')
             usage()
@@ -88,11 +89,14 @@ class ModuleInitConfig(object):
         if self.dynamic_merge_filename is None:
             print('Dynamic merge filename')
             usage()
-        # if self.abi_filename is None:
-        #     print('ABI filename')
-        #     usage()
+        if self.abi_filename is None:
+            print('ABI filename')
+            usage()
         if self.non_chkpting_filename is None:
             print('Non-checkpointing filename')
+            usage()
+        if self.call_latency_filename is None:
+            print('Call latency filename')
             usage()
 
 
@@ -435,44 +439,55 @@ def write_merges(output_file, merges):
             output_file.write(', ' + alias + 'UL')
 
 
-# def get_mangled_function_name(fname, func_symbols):
-#     for sym in func_symbols:
-#         if fname == sym:
-#             return sym
-#         elif sym.startswith('_Z') and not sym.startswith('_ZL'):
-#             len_start = 2
-#             len_end = 3
-#             while sym[len_end] >= '0' and sym[len_end] <= '9':
-#                 len_end += 1
-#             name_length = int(sym[len_start:len_end])
-# 
-#             if name_length == len(fname) and sym[len_end:len_end + name_length] == fname:
-#                 return sym
-#     raise(Exception('Failed to find mangled version of "' + fname + '"'))
+def get_mangled_function_name(fname, func_symbols):
+    for sym in func_symbols:
+        if fname == sym:
+            return sym
+        elif sym.startswith('_Z') and not sym.startswith('_ZL'):
+            len_start = 2
+            len_end = 3
+            while sym[len_end] >= '0' and sym[len_end] <= '9':
+                len_end += 1
+            name_length = int(sym[len_start:len_end])
+
+            if name_length == len(fname) and sym[len_end:len_end + name_length] == fname:
+                return sym
+    raise(Exception('Failed to find mangled version of "' + fname + '"'))
 
 
-# def get_func_symbols(abi_filename):
-#     symbols = []
-#     fp = open(abi_filename, 'r')
-# 
-#     found_symbol_table = False
-#     for line in fp:
-#         if len(line) > 0:
-#             if line.startswith('SYMBOL TABLE:'):
-#                 found_symbol_table = True
-#             elif found_symbol_table:
-#                 tokens = line.split()
-#                 if len(tokens) == 6:
-#                     descriptor = tokens[2]
-#                     region = tokens[3]
-#                     sym = tokens[5]
-# 
-#                     if descriptor == 'F' and (region == '.text' or region == '.opd'):
-#                         symbols.append(sym)
-# 
-#     fp.close()
-#     return symbols
+def get_func_symbols(abi_filename):
+    symbols = []
+    fp = open(abi_filename, 'r')
 
+    found_symbol_table = False
+    for line in fp:
+        if len(line) > 0:
+            if line.startswith('SYMBOL TABLE:'):
+                found_symbol_table = True
+            elif found_symbol_table:
+                tokens = line.split()
+                if len(tokens) == 6:
+                    descriptor = tokens[2]
+                    region = tokens[3]
+                    sym = tokens[5]
+
+                    if descriptor == 'F' and (region == '.text' or region == '.opd'):
+                        symbols.append(sym)
+
+    fp.close()
+    return symbols
+
+
+def get_call_latencies(filename):
+    latencies = {}
+    fp = open(filename, 'r')
+    for line in fp:
+        tokens = line.split()
+        assert len(tokens) == 2
+        assert tokens[0] not in latencies
+        latencies[tokens[0]] = int(tokens[1])
+    fp.close()
+    return latencies
 
 def get_noncheckpointing(filename):
     non_checkpointing = []
@@ -497,15 +512,16 @@ def usage():
           '-l lines-file ' +
           '-x exits-file ' +
           '-f func-file ' +
-          # '-e externs-file ' +
+          '-e externs-file ' +
           # '-n npm-file ' +
           '-d calls-filename ' + 
           '-h locs-filename ' +
           '-j fptrs-loaded-filename ' +
           '-ms static-merge-filename ' +
-          '-md dynamic-merge-filename' + 
-          '-a ABI-filename' +
-          '-nc Non-checkpointing filename')
+          '-md dynamic-merge-filename ' + 
+          '-a ABI-filename ' +
+          '-nc Non-checkpointing-filename ' +
+          '-cl Call-latency-filename')
     sys.exit(1)
 
 
@@ -533,14 +549,14 @@ def configure(cfg, argv):
             cfg.call_tree_filename = argv[index + 1]
         # elif t == '-l':
         #     cfg.lines_filename = argv[index + 1]
-        # elif t == '-x':
-        #     cfg.exits_filename = argv[index + 1]
+        elif t == '-x':
+            cfg.exits_filename = argv[index + 1]
         elif t == '-f':
             cfg.func_filename = argv[index + 1]
-        # elif t == '-e':
-        #     cfg.externs_filename = argv[index + 1]
-        # elif t == '-n':
-        #     cfg.npm_filename = argv[index + 1]
+        elif t == '-e':
+            cfg.externs_filename = argv[index + 1]
+        elif t == '-n':
+            cfg.npm_filename = argv[index + 1]
         elif t == '-d':
             cfg.calls_filename = argv[index + 1]
         elif t == '-h':
@@ -551,10 +567,12 @@ def configure(cfg, argv):
             cfg.static_merge_filename = argv[index + 1]
         elif t == '-md':
             cfg.dynamic_merge_filename = argv[index + 1]
-        # elif t == '-a':
-        #     cfg.abi_filename = argv[index + 1]
+        elif t == '-a':
+            cfg.abi_filename = argv[index + 1]
         elif t == '-nc':
             cfg.non_chkpting_filename = argv[index + 1]
+        elif t == '-cl':
+            cfg.call_latency_filename = argv[index + 1]
         else:
             print('Unrecognized command line argument "' + t + '"')
             sys.exit(1)
@@ -575,17 +593,18 @@ if __name__ == '__main__':
     stack_vars = get_stack_vars(cfg.stack_var_filename)
     call_tree = get_call_tree(cfg.call_tree_filename)
     # changed = get_aliases_changed(cfg.lines_filename)
-    # exits = get_exit_info(cfg.exits_filename)
+    exits = get_exit_info(cfg.exits_filename)
     functions = get_functions(cfg.func_filename)
-    # externs = get_externs(cfg.externs_filename)
-    # defined_npms = get_npms(cfg.npm_filename)
+    externs = get_externs(cfg.externs_filename)
+    defined_npms = get_npms(cfg.npm_filename)
     callsites = get_callsites(cfg.calls_filename)
     change_loc_vars = get_change_locs(cfg.locs_filename)
     fptrs_loaded = get_fptrs_loaded(cfg.fptrs_loaded_filename)
     static_merges = get_merges(cfg.static_merge_filename)
     dynamic_merges = get_merges(cfg.dynamic_merge_filename)
-    # func_symbols = get_func_symbols(cfg.abi_filename)
+    func_symbols = get_func_symbols(cfg.abi_filename)
     non_checkpointing = get_noncheckpointing(cfg.non_chkpting_filename)
+    latencies = get_call_latencies(cfg.call_latency_filename)
 
     # n_change_locs = len(changed)
     # for e in exits:
@@ -613,13 +632,16 @@ if __name__ == '__main__':
     # output_file.write('#pragma GCC optimize(0)\n')
     output_file.write('\n\nstatic int module_init() {\n')
     output_file.write('    init_module(' + module_id_str + 'UL, ' +
-                      str(len(reachable)) + ', ' +
-                      str(len(call_tree)) + ', ' +
-                      str(count_conditionally_checkpointable_vars) + ', ' +
-                      # str(len(externs)) + ', ' +
-                      str(len(static_merges)) + ', ' +
-                      str(len(dynamic_merges)) + ', ' +
-                      str(len(structs)))
+                      str(len(reachable)) + ', ' + # n_contains_mappings
+                      str(len(call_tree)) + ', ' + # nfunctions
+                      str(count_conditionally_checkpointable_vars) + ', ' + # nvars
+                      str(len(defined_npms)) + ', ' + # n_provided_npm_functions
+                      str(len(externs)) + ', ' + # n_external_npm_functions
+                      str(len(externs) + len(defined_npms)) + ', ' + # n_npm_conditionals
+                      str(len(static_merges)) + ', ' + # n_static_merges
+                      str(len(dynamic_merges)) + ', ' + # n_dynamic_merges
+                      str(len(structs)) + ', ' + # nstructs
+                      str(len(latencies)))
 
     # We must traverse changed before exits to ensure consistency in the
     # location IDs generated here with the ones generated by the clang pass.
@@ -655,6 +677,80 @@ if __name__ == '__main__':
 
     write_merges(output_file, static_merges)
     write_merges(output_file, dynamic_merges)
+
+    for fname in defined_npms.keys():
+        assert fname in functions, fname
+        assert fname in call_tree, fname
+        is_static = defined_npms[fname]
+        func_info = functions[fname]
+        func_exit_info = find_in_exits(fname, exits)
+
+        if fname in fptrs_loaded:
+            normal_fptr = '(void *)(' + fname + ')'
+        else:
+            normal_fptr = '(void *)NULL'
+
+        # If this is a static function that has been converted to NPM, we cannot
+        # load its address using dlopen/dlsym and so we must pass function
+        # pointers explicitly. Otherwise, we can simply pass function names and
+        # then dynamically load the function address. Minimizing function
+        # pointers is important, as the compiler makes lots of conservative
+        # decisions as soon as you start passing function pointers around.
+        if is_static:
+            output_file.write(',\n         /* provided NPM */ "' + fname + '", 1, ' +
+                              '(void *)(&' + fname + '_npm), ' + normal_fptr)
+        else:
+            mangled_fname = get_mangled_function_name(fname, func_symbols)
+            mangled_npm_fname = get_mangled_function_name(fname + '_npm', func_symbols)
+            output_file.write(',\n         /* provided NPM */ "' + fname + '", 0, "' +
+                              mangled_fname + '", "' + mangled_npm_fname + '"')
+
+        # If no assignments are made in a function (e.g. if it's simply a return
+        # statement) it may not have any change locations.
+        if fname not in change_loc_vars:
+            output_file.write(', 0')
+        else:
+            locs = change_loc_vars[fname]
+            output_file.write(', ' + str(locs.size()))
+            for var in locs.varnames:
+                output_file.write(', &' + var)
+
+        output_file.write(', ' + str(len(func_info.arg_aliases_str)))
+        for alias in func_info.arg_aliases_str:
+            output_file.write(', ' + get_alias_str(module_id_str, alias))
+        output_file.write(', ' + get_alias_str(module_id_str,
+                                               func_exit_info.return_alias))
+
+        # If there is no entry in callsites for fname, it is because fname calls
+        # no functions.
+        if fname not in callsites:
+            output_file.write(', 0')
+        else:
+            calls = callsites[fname]
+            output_file.write(', ' + str(len(calls)))
+            for c in calls:
+                output_file.write(', "' + c.callee_name + '", ' +
+                                  str(len(c.param_aliases_str)))
+                for arg_alias in c.param_aliases_str:
+                    output_file.write(', ' + get_alias_str(module_id_str,
+                                                           arg_alias))
+                output_file.write(', ' + get_alias_str(module_id_str,
+                                                       c.parent_return_alias_str))
+
+    for ex in externs:
+        output_file.write(',\n        /* external NPM dep */ "' +
+                          ex.original_fname + '", (void **)&(' + ex.varname +
+                          ')')
+
+    for npm in defined_npms:
+        output_file.write(',\n        /* NPM cond var */ "' + npm + '", &(____chimes_is_low_latency_' +
+                          npm + '_npm)')
+    for ex in externs:
+        output_file.write(',\n        /* NPM cond var */ "' + ex.original_fname + '", &(____chimes_is_low_latency_' +
+                          ex.original_fname + '_npm)')
+
+    for fname in latencies.keys():
+        output_file.write(',\n        /* Call latency */ "' + fname + '", ' + str(latencies[fname]))
 
     output_file.write(');\n')
 

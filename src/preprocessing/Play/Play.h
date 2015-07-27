@@ -409,6 +409,11 @@ struct Play : public ModulePass {
     std::vector<Value *> *collectInitialInstructionsToVisit(Module &M);
     std::map<Value *, size_t> *collectInitialAliasMappings(Module &M, Hasher *H);
     void dumpFunctionCallTree(Module &M, const char *output_file);
+    void dumpFunctionCallLatency(Module &M, const char *output_file);
+    int minDistanceToNextFunctionCall(BasicBlock *curr,
+            map<BasicBlock *, int> *cache, vector<BasicBlock *> *stack);
+    int getMinDistanceFromCall(BasicBlock::iterator call_pointer,
+            BasicBlock *start);
     void findFunctionExits(Module &M, const char *output_file,
             std::map<Value *, size_t> *value_to_alias_group,
             std::map<Function *, TermInfo> *func_to_groups_changed);

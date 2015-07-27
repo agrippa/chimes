@@ -99,6 +99,9 @@ static llvm::cl::opt<std::string> allocator_file("y",
 static llvm::cl::opt<std::string> noncheckpointing_file("z",
         llvm::cl::desc("Non-checkpointing file"),
         llvm::cl::value_desc("noncheckpointing_file"));
+static llvm::cl::opt<std::string> latency_file("la",
+        llvm::cl::desc("Latency file"),
+        llvm::cl::value_desc("latency_file"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -547,6 +550,7 @@ int main(int argc, const char **argv) {
   check_opt(merge_file, "Merge file");
   check_opt(allocator_file, "Allocator file");
   check_opt(noncheckpointing_file, "Non-checkpointing file");
+  check_opt(latency_file, "Latency file");
 
   merge_filename = std::string(merge_file.c_str());
 
@@ -589,7 +593,8 @@ int main(int argc, const char **argv) {
               working_directory.c_str(), func_file.c_str(), call_file.c_str(),
               exit_file.c_str(), reachable_file.c_str(), omp_file.c_str(),
               firstprivate_file.c_str(), call_tree_file.c_str(),
-              allocator_file.c_str(), noncheckpointing_file.c_str());
+              allocator_file.c_str(), noncheckpointing_file.c_str(),
+              latency_file.c_str());
 
   // Dump module ID
   std::ofstream module_id_stream;

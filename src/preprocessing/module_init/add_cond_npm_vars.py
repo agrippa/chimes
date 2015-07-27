@@ -19,8 +19,7 @@ if __name__ == '__main__':
     output_file = open(output_filename, 'w')
 
     for npm in npms.keys():
-        output_file.write('static int ____chimes_does_checkpoint_' +
-                          npm.strip() + '_npm = 1;\n')
+        output_file.write('static int ____chimes_is_low_latency_' + npm.strip() + '_npm = 0;\n')
 
     already_handled = []
     fp = open(externs_filename, 'r')
@@ -29,8 +28,7 @@ if __name__ == '__main__':
         # function pointer declaration
         tokens = line.split()
         if tokens[0] not in npms.keys() and tokens[0] not in already_handled:
-            output_file.write('static int ____chimes_does_checkpoint_' +
-                              tokens[0] + '_npm = 1;\n')
+            output_file.write('static int ____chimes_is_low_latency_' + tokens[0] + '_npm = 0;\n')
             already_handled.append(tokens[0])
     fp.close()
 

@@ -36,7 +36,7 @@ std::string CallTranslator::to_string(const clang::Stmt *stmt) {
 }
 
 static std::string get_external_func_name(std::string fname) {
-    return ("____chimes_extern_func_" + fname);
+    return ("____chimes_extern_low_latency_func_" + fname);
 }
 
 void CallTranslator::VisitStmt(const clang::Stmt *s) {

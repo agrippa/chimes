@@ -179,7 +179,8 @@ if __name__ == '__main__':
                 acc += line
                 transformed.write(line)
 
-            currentLineNo += 1
+            if currentLineNo is not None:
+                currentLineNo += 1
 
 
     # acc = ''
