@@ -33,5 +33,5 @@ echo -e 'Test\tEmpty\tNo-Checkpoint\tCheckpoint' > data
 awk 'NR==FNR{a[FNR]=$4; next} NR<=46{b[FNR]=$4; next} {print $1,"\t",a[FNR],"\t",b[FNR],"\t",$4}' \
         $DUMMY_FILE $BLOCK_FILE $CHECKPOINT_FILE >> data
 MEDIAN=$(cat $CHECKPOINT_FILE | awk '{ print $4 }' | python ./get_median.py)
-gnuplot -e "output_file=\"$MACHINE.$MODEL.png\"" -e "full_title=\"$MACHINE $MODEL\"" -e "full_median=$MEDIAN" plot-overheads.gnu
+gnuplot -e "output_file=\"overheads.$MACHINE.$MODEL.png\"" -e "full_title=\"$MACHINE $MODEL\"" -e "full_median=$MEDIAN" plot-overheads.gnu
 echo $MEDIAN
