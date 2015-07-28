@@ -1,4 +1,3 @@
-Using 72 core(s)
 Iso3D - added 7.72616281945% overhead for 4.0 checkpoint files, median efficiency=27.8461429589%, mean efficiency=44.3928714476%
 Lulesh-OMP - added 5.08467516273% overhead for 110.0 checkpoint files, median efficiency=77.3352807136%, mean efficiency=77.5414049072%
 CoMD - added -0.0824202462911% overhead for 4.0 checkpoint files, median efficiency=99.7059777382%, mean efficiency=100.023777994%
