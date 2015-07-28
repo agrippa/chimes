@@ -402,10 +402,10 @@ def write_global(g, func_name, var_label, module_id_str):
     output_file.write(');\n')
 
 
-def write_constant(c, module_id_str):
-    output_file.write('    register_constant(' + module_id_str + 'UL + ' +
-                      c.constant_id + 'UL, (void *)' + c.reference + ', ' +
-                      c.constant_size + ');\n')
+# def write_constant(c, module_id_str):
+#     output_file.write('    register_constant(' + module_id_str + 'UL + ' +
+#                       c.constant_id + 'UL, (void *)' + c.reference + ', ' +
+#                       c.constant_size + ');\n')
 
 
 def get_alias_str(module_id_str, alias_str):
@@ -757,8 +757,8 @@ if __name__ == '__main__':
     # for g in glbls:
     #     write_global(g, 'register_global_var', 'global', module_id_str)
 
-    for c in constants:
-        write_constant(c, module_id_str)
+    # for c in constants:
+    #     write_constant(c, module_id_str)
 
     output_file.write('    return 0;\n')
     output_file.write('}\n')
