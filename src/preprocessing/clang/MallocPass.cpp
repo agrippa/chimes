@@ -83,8 +83,8 @@ void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         function_starting_lines.insert(std::pair<std::string, int>(fname,
                     presumed_start.getLine()));
 
-        if (toplevel->getNameInfo().getAsString() != "main" &&
-                insertions->eligible_npm_function(toplevel->getNameAsString())) {
+        if (toplevel->getNameInfo().getAsString() != "main" /* &&
+                insertions->eligible_npm_function(toplevel->getNameAsString()) */ ) {
             clang::SourceLocation name_start = toplevel->getNameInfo().getLoc();
             int current_name_len = toplevel->getNameInfo().getAsString().size();
 

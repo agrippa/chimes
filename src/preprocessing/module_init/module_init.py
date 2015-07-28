@@ -754,8 +754,8 @@ if __name__ == '__main__':
 
     output_file.write(');\n')
 
-    for g in glbls:
-        write_global(g, 'register_global_var', 'global', module_id_str)
+    # for g in glbls:
+    #     write_global(g, 'register_global_var', 'global', module_id_str)
 
     for c in constants:
         write_constant(c, module_id_str)

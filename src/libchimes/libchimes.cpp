@@ -205,10 +205,8 @@ class checkpoint_ctx {
 };
 
 // functions defined in this file
-int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
+void new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
         unsigned n_local_arg_aliases, /* unsigned n_args, */ ...);
-void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, /* int *conditional, unsigned loc_id */ bool is_allocator);
 void register_stack_var(const char *mangled_name, int *cond_registration,
         unsigned thread, const char *full_type, void *ptr, size_t size,
         int is_ptr, int is_struct, int n_ptr_fields, ...);
@@ -248,8 +246,8 @@ static unsigned get_my_tid();
 static thread_ctx *get_my_context();
 static thread_ctx *get_my_context_may_fail();
 // static thread_local_allocations *get_my_thread_heap();
-static bool wait_for_all_threads(clock_t *entry_time, checkpoint_ctx **out,
-        bool *should_abort);
+// static bool wait_for_all_threads(clock_t *entry_time, checkpoint_ctx **out,
+//         bool *should_abort);
 
 // global data structures that must persist across library calls
 
@@ -362,7 +360,7 @@ static std::map<size_t, unsigned> regions_counted;
 static pthread_mutex_t thread_count_mutex = PTHREAD_MUTEX_INITIALIZER;
 static pthread_cond_t thread_count_cond = PTHREAD_COND_INITIALIZER;
 
-static size_t sync_id_counter = 1;
+// static size_t sync_id_counter = 1;
 static std::map<size_t, checkpoint_ctx*> checkpoint_info;
 
 /*
@@ -522,9 +520,6 @@ static unsigned long long last_checkpoint = 0;
 static unsigned long long chimes_overhead = 0;
 static unsigned long long dead_thread_time = 0;
 
-#define ADD_TO_OVERHEAD __sync_fetch_and_add(&chimes_overhead, \
-        perf_profile::current_time_ns() - __chimes_overhead_start_time);
-
 #define MAX_CHECKPOINT_FILENAME_LEN 256
 // static char previous_checkpoint_filename[MAX_CHECKPOINT_FILENAME_LEN] =
 //         { '\0' };
@@ -574,8 +569,8 @@ static std::map<std::string, struct_info *> structs;
 // static pthread_cond_t checkpoint_cond = PTHREAD_COND_INITIALIZER;
 // static volatile int checkpoint_thread_running = 0;
 
-int ____chimes_replaying = 0;
-int ____chimes_rerunning = 0;
+// int ____chimes_replaying = 0;
+// int ____chimes_rerunning = 0;
 
 static inline bool valid_group(size_t group) {
     return group > 0;
@@ -1000,8 +995,8 @@ void init_chimes() {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
 
     // register_custom_init_handler("omp_lock_t", init_omp_lock);
 
@@ -1676,7 +1671,7 @@ void init_chimes() {
 // 
 //         close(fd);
 //     }
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(INIT_CHIMES, __start_time);
 #endif
@@ -2235,7 +2230,7 @@ static void add_argument_aliases(unsigned n_local_arg_aliases, thread_ctx *ctx,
 
 enum DISABLED_THREAD { DISABLED, NOT_DISABLED, ALREADY_DISABLED };
 
-int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
+void new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
         unsigned int n_local_arg_aliases, /* unsigned int nargs, */ ...) {
 #ifdef VERBOSE
     fprintf(stderr, "new_stack: %s\n", funcname);
@@ -2244,8 +2239,8 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
 
     thread_ctx *ctx = get_my_context_may_fail();
     /*
@@ -2254,7 +2249,7 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
      * everything.
      */
     if (!ctx) {
-        return (ALREADY_DISABLED);
+        return;
     }
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
 
@@ -2273,45 +2268,14 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
                     " through a third-party library.\n", funcname);
             ctx->set_printed_func_ptr_mismatch(true);
         }
-        if (disable_current_thread()) {
-            return DISABLED;
-        } else {
-            return ALREADY_DISABLED;
-        }
+        return;
     }
-
-    /*
-    if (!need_to_manage_stack(conditional, std::string(funcname)) ||
-            ctx->is_disabled()) {
-#ifdef VERBOSE
-        fprintf(stderr, "Entering %s, dont need to manage stack\n", funcname);
-#endif
-        assert(program_stack->size() == 0 ||
-                n_local_arg_aliases == ctx->get_n_parent_aliases());
-        va_list vl;
-        va_start(vl, nargs);
-        add_argument_aliases(n_local_arg_aliases, ctx, &vl, true);
-        va_end(vl);
-
-        ctx->push_return_alias();
-
-        return NOT_DISABLED;
-    }
-    */
 
 #ifdef VERBOSE
     fprintf(stderr, "Entering %s, need to manage stack, %d parent aliases, %d "
             "local aliases\n", funcname, ctx->get_n_parent_aliases(),
             n_local_arg_aliases);
 #endif
-
-    // if (program_stack->size() > 0) {
-    //     int calling_label = ctx->get_calling_label();
-    //     assert(calling_label >= 0);
-    //     ctx->get_stack_tracker().push(calling_label);
-    // }
-    // program_stack->push_back(new stack_frame());
-    // ctx->increment_stack_nesting();
 
     /*
      * If this is the first new_stack, we just entered main and there are no
@@ -2341,49 +2305,16 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
         }
     }
 
-
     ctx->push_return_alias();
-
-    /*
-    for (unsigned i = 0; i < nargs; i++) {
-        const char *mangled_name = va_arg(vl, const char *);
-        int *cond_registration = va_arg(vl, int *);
-        const char *full_type = va_arg(vl, const char *);
-        void *ptr = va_arg(vl, void *);
-        size_t size = va_arg(vl, size_t);
-        int is_ptr = va_arg(vl, int);
-        int is_struct = va_arg(vl, int);
-        int n_ptr_fields = va_arg(vl, int);
-
-#ifdef VERBOSE
-        fprintf(stderr, "mangled_name=%p\n", mangled_name);
-        fprintf(stderr, "cond_registration=%p\n", cond_registration);
-        fprintf(stderr, "size=%lu\n", size);
-        fprintf(stderr, "is_ptr=%d\n", is_ptr);
-        fprintf(stderr, "is_struct=%d\n", is_struct);
-        fprintf(stderr, "n_ptr_fields=%d\n", n_ptr_fields);
-        fprintf(stderr, "mangled_name=%c\n", mangled_name[0]);
-#endif
-
-        std::string mangled_name_str(mangled_name);
-        if (need_to_register(cond_registration, mangled_name_str)) {
-            register_stack_var_helper(mangled_name_str, cond_registration,
-                    full_type, ptr, size, is_ptr, is_struct, n_ptr_fields, &vl,
-                    program_stack);
-        }
-    }
-    */
 
     va_end(vl);
 
-    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(NEW_STACK, __start_time);
 #endif
 #ifdef VERBOSE
     print_aliases(true);
 #endif
-    return NOT_DISABLED;
 }
 
 static void merge_npm_aliases(string fname, size_t return_alias,
@@ -2440,8 +2371,8 @@ static void merge_npm_aliases(string fname, size_t return_alias,
 
 static void calling_npm_helper(const char *name, /* unsigned loc_id, */
         bool has_alias_info, size_t return_alias, int n_params, va_list *vl) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
 
     // thread_ctx *ctx = get_my_context();
     std::string fname(name);
@@ -2466,7 +2397,7 @@ static void calling_npm_helper(const char *name, /* unsigned loc_id, */
         }
         merge_npm_aliases(fname, return_alias, param_aliases);
     }
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 }
 
 void calling_npm(const char *name /* , unsigned loc_id */ ) {
@@ -2487,8 +2418,8 @@ static void calling_helper(void *func_ptr, int lbl, /* unsigned loc_id, */
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
     thread_ctx *ctx = get_my_context();
 
     /* Function pointer is only necessary if calling a function outside of our
@@ -2501,9 +2432,9 @@ static void calling_helper(void *func_ptr, int lbl, /* unsigned loc_id, */
      * only necessary if there is a checkpoint call somewhere underneath us on
      * the stack
      */
-    if (!ctx->is_disabled()) {
-        ctx->set_calling_label(lbl);
-    }
+    // if (!ctx->is_disabled()) {
+    //     ctx->set_calling_label(lbl);
+    // }
 
     /*
      * only necessary if the call being made is unknown and we cannot hoist the
@@ -2523,7 +2454,7 @@ static void calling_helper(void *func_ptr, int lbl, /* unsigned loc_id, */
 #endif
     ctx->init_parent_aliases(vl, naliases);
 
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CALLING, __start_time);
 #endif
@@ -2619,8 +2550,8 @@ static inline void alias_group_changed_helper(unsigned loc_id,
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, /* int *conditional, unsigned loc_id, */
-        int did_disable, bool is_allocator) {
+        const char *funcname, /* int *conditional, unsigned loc_id,
+        int did_disable, */ bool is_allocator) {
 #ifdef VERBOSE
     fprintf(stderr, "rm_stack: funcname=%s\n", funcname);
 #endif
@@ -2628,75 +2559,22 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 
     thread_ctx *ctx = get_my_context_may_fail();
     if (!ctx) {
         return;
     }
 
-    /*
-    if (!need_to_manage_stack(conditional, std::string(funcname)) ||
-            ctx->is_disabled()) {
-#ifdef VERBOSE
-        fprintf(stderr, "Leaving %s, dont need to manage stack\n", funcname);
-#endif
-        if (loc_id > 0) {
-            alias_group_changed_helper(loc_id, ctx);
-        }
-        if (did_disable == NOT_DISABLED) {
-            add_return_alias(has_return_alias, returned_alias, ctx, is_allocator);
-        }
-
-        reenable_current_thread(did_disable == DISABLED);
-
-        return;
-    }
-    */
-
 #ifdef VERBOSE
     fprintf(stderr, "Leaving %s, need to manage stack\n", funcname);
 #endif
 
-    // std::vector<stack_frame *> *program_stack = ctx->get_stack();
-    // stack_frame *curr = program_stack->back();
-    // program_stack->pop_back();
-    // delete curr;
-
     add_return_alias(has_return_alias, returned_alias, ctx, is_allocator);
 
-    // ctx->get_stack_tracker().pop();
-    // ctx->decrement_stack_nesting();
-
-    /*
-    if (loc_id > 0) {
-        alias_group_changed_helper(loc_id, ctx);
-    }
-    */
-
-    if (____chimes_rerunning && ctx->get_stack_nesting() < 0) {
-#ifdef VERBOSE
-        fprintf(stderr, "Exiting replay...\n");
-#endif
-        /*
-         * TODO is exiting when we go higher up in the stack then the checkpoint
-         * still necessary? What was the original reasoning?
-         *
-         * We reuse the logic for checkpoint synchronization here.
-         */
-        bool final_thread = wait_for_all_threads(NULL, NULL, NULL);
-        if (final_thread) {
-            fprintf(stderr, "CHIMES exiting, higher stack nesting than "
-                    "checkpoint was taken at...\n");
-            exit(55);
-        }
-    }
 #ifdef VERBOSE
     fprintf(stderr, "rm_stack: completed funcname=%s\n", funcname);
 #endif
 
-    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(RM_STACK, __start_time);
 #endif
@@ -2842,8 +2720,8 @@ void register_stack_vars(int nvars, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
 
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
@@ -2879,7 +2757,7 @@ void register_stack_vars(int nvars, ...) {
     }
     va_end(vl);
 
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_STACK_VARS, __start_time);
 #endif
@@ -2900,8 +2778,8 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
 
     const string mangled_name_str(mangled_name);
 #ifdef VERBOSE
@@ -2919,7 +2797,7 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
             ptr, size, is_ptr, is_struct, n_ptr_fields, &vl, program_stack);
     va_end(vl);
 
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_STACK_VAR, __start_time);
 #endif
@@ -2974,8 +2852,8 @@ int alias_group_changed(unsigned loc_id) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
 #ifdef VERBOSE
     fprintf(stderr, "alias_group_changed: location=%u\n", loc_id);
     fprintf(stderr, "  maps to alias groups: ");
@@ -2991,7 +2869,7 @@ int alias_group_changed(unsigned loc_id) {
 
     thread_ctx *ctx = get_my_context();
     alias_group_changed_helper(loc_id, ctx);
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(ALIAS_GROUP_CHANGED, __start_time);
 #endif
@@ -3044,8 +2922,8 @@ void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr, int
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
     assert(valid_group(group));
 
 #ifdef VERBOSE
@@ -3068,7 +2946,7 @@ void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr, int
                 info.ptr_field_offsets, info.n_ptr_fields, false);
     }
 
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(MALLOC_WRAPPER, __start_time);
 #endif
@@ -3079,8 +2957,8 @@ void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int i
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
     assert(valid_group(group));
 
     if (ptr != NULL) {
@@ -3098,7 +2976,7 @@ void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int i
                 info.elem_size, info.ptr_field_offsets, info.n_ptr_fields, true);
     }
 
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CALLOC_WRAPPER, __start_time);
 #endif
@@ -3115,8 +2993,8 @@ void realloc_helper(const void *new_ptr, const void *ptr, void *header,
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
     assert(valid_group(group));
 
     unsigned long long old_size = 0;
@@ -3191,7 +3069,7 @@ void realloc_helper(const void *new_ptr, const void *ptr, void *header,
         __sync_fetch_and_sub(&total_allocations, old_size - nbytes);
     }
 
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(REALLOC_WRAPPER, __start_time);
 #endif
@@ -3217,8 +3095,8 @@ void free_helper(const void *ptr, size_t group) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
 
     if (ptr != NULL) {
         /*
@@ -3238,7 +3116,7 @@ void free_helper(const void *ptr, size_t group) {
         __sync_fetch_and_sub(&total_allocations, alloc->get_size());
     }
 
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(FREE_WRAPPER, __start_time);
 #endif
@@ -3386,61 +3264,61 @@ void free_helper(const void *ptr, size_t group) {
 //             live_stack_iter == live_stack_end);
 // }
 
-static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out, bool *should_abort) {
-#ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
-#endif
-
-    VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
-
-    checkpoint_ctx *curr_ckpt = NULL;
-    if (checkpoint_initializing == 0) {
-        // first thread in the checkpoint
-        size_t checkpoint_id = sync_id_counter++;
-        checkpoint_initializing = checkpoint_id;
-
-        curr_ckpt = new checkpoint_ctx(checkpoint_id, thread_count);
-        VERIFY(checkpoint_info.insert(std::pair<size_t, checkpoint_ctx*>(
-                        checkpoint_id, curr_ckpt)).second);
-    }
-    curr_ckpt = (curr_ckpt ? curr_ckpt :
-            checkpoint_info.at((size_t)checkpoint_initializing));
-
-    // Returns the number of threads so far, including this one.
-    curr_ckpt->incr_threads_in_checkpoint();
-
-    if (entry_ptr) {
-        const unsigned tid = get_my_tid();
-        curr_ckpt->add_entry_time(tid, *entry_ptr);
-    }
-
-    while (checkpoint_initializing == curr_ckpt->get_id() && (regions_initializing ||
-            curr_ckpt->get_threads_in_checkpoint() != active_thread_count)) {
-        VERIFY(pthread_cond_wait(&thread_count_cond, &thread_count_mutex) == 0);
-    }
-
-
-    bool checkpointing_thread = false;
-    if (curr_ckpt->is_checkpoint_in_progress()) {
-        checkpoint_initializing = 0;
-        checkpointing_thread = true;
-        if (active_thread_count != thread_count) {
-            curr_ckpt->set_should_abort_this_checkpoint(true);
-        }
-    }
-
-    if (out) {
-        *out = curr_ckpt;
-    }
-    if (should_abort) {
-        *should_abort = curr_ckpt->should_abort_this_checkpoint();
-    }
-
-#ifdef __CHIMES_PROFILE
-    pp.add_time(WAIT_FOR_ALL_THREADS, __start_time);
-#endif
-    return (checkpointing_thread);
-}
+// static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out, bool *should_abort) {
+// #ifdef __CHIMES_PROFILE
+//     const unsigned long long __start_time = perf_profile::current_time_ns();
+// #endif
+// 
+//     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
+// 
+//     checkpoint_ctx *curr_ckpt = NULL;
+//     if (checkpoint_initializing == 0) {
+//         // first thread in the checkpoint
+//         size_t checkpoint_id = sync_id_counter++;
+//         checkpoint_initializing = checkpoint_id;
+// 
+//         curr_ckpt = new checkpoint_ctx(checkpoint_id, thread_count);
+//         VERIFY(checkpoint_info.insert(std::pair<size_t, checkpoint_ctx*>(
+//                         checkpoint_id, curr_ckpt)).second);
+//     }
+//     curr_ckpt = (curr_ckpt ? curr_ckpt :
+//             checkpoint_info.at((size_t)checkpoint_initializing));
+// 
+//     // Returns the number of threads so far, including this one.
+//     curr_ckpt->incr_threads_in_checkpoint();
+// 
+//     if (entry_ptr) {
+//         const unsigned tid = get_my_tid();
+//         curr_ckpt->add_entry_time(tid, *entry_ptr);
+//     }
+// 
+//     while (checkpoint_initializing == curr_ckpt->get_id() && (regions_initializing ||
+//             curr_ckpt->get_threads_in_checkpoint() != active_thread_count)) {
+//         VERIFY(pthread_cond_wait(&thread_count_cond, &thread_count_mutex) == 0);
+//     }
+// 
+// 
+//     bool checkpointing_thread = false;
+//     if (curr_ckpt->is_checkpoint_in_progress()) {
+//         checkpoint_initializing = 0;
+//         checkpointing_thread = true;
+//         if (active_thread_count != thread_count) {
+//             curr_ckpt->set_should_abort_this_checkpoint(true);
+//         }
+//     }
+// 
+//     if (out) {
+//         *out = curr_ckpt;
+//     }
+//     if (should_abort) {
+//         *should_abort = curr_ckpt->should_abort_this_checkpoint();
+//     }
+// 
+// #ifdef __CHIMES_PROFILE
+//     pp.add_time(WAIT_FOR_ALL_THREADS, __start_time);
+// #endif
+//     return (checkpointing_thread);
+// }
 
 // static bool compare_entry_times(std::pair<unsigned, clock_t> i,
 //         std::pair<unsigned, clock_t> j) {
@@ -4424,8 +4302,8 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
     thread_ctx *ctx = get_my_context();
 
     ctx->get_stack_tracker().push(lbl);
@@ -4464,7 +4342,7 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
     VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     const int my_tid = get_my_tid();
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(ENTERING_OMP_PARALLEL, __start_time);
 #endif
@@ -4734,8 +4612,8 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ns();
     unsigned parent = get_my_tid();
     thread_ctx *my_ctx = get_my_context();
     /*
@@ -4824,7 +4702,7 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
     VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(LEAVING_OMP_PARALLEL, __start_time);
 #endif

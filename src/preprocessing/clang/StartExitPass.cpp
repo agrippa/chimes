@@ -99,7 +99,7 @@ void StartExitPass::VisitTopLevel(clang::FunctionDecl *func) {
             if (curr_func == "main") {
                 ss << " init_chimes(); ";
             }
-            ss << "const int " << *current_disable_varname << " = new_stack((void *)(&" <<
+            ss << "new_stack((void *)(&" <<
                 curr_func << "), \"" << curr_func << "\", " <<
                 /* address_of_cond_varname << ", " << */
                 funcAliases->nargs() /* << ", " << nCheckpointedArgs */ ;
@@ -189,12 +189,12 @@ std::string StartExitPass::constructFunctionEndingStmts(bool inserting_rm,
         std::string is_allocator_str = (insertions->isAllocator(curr_func) ? "true" : "false");
         if (info->get_return_alias() == 0) {
             ss << "rm_stack(false, 0UL, \"" << curr_func << "\", " <<
-                /* address_of_cond_varname << ", " << loc_id << ", " << */
-                *current_disable_varname << ", " << is_allocator_str << "); ";
+                /* address_of_cond_varname << ", " << loc_id << ", " <<
+                *current_disable_varname << ", " << */ is_allocator_str << "); ";
         } else {
             ss << "rm_stack(true, " << info->get_return_alias() << "UL, \"" <<
                 curr_func << "\", " << /* address_of_cond_varname << ", " <<
-                loc_id << ", " << */ *current_disable_varname << ", " << is_allocator_str << "); ";
+                loc_id << ", " << *current_disable_varname << ", " << */ is_allocator_str << "); ";
         }
     } else {
         if (groups_changed.size() > 0 ||

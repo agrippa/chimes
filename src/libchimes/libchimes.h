@@ -5,43 +5,43 @@
 // #include <stdio.h>
 
 extern void init_chimes();
-extern void checkpoint_transformed(int lbl, unsigned loc_id);
+// extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+extern void *translate_fptr(void *fptr, int lbl, /* unsigned loc_id, */
         size_t return_alias, int n_params, ...);
 extern void calling_npm(const char *name /* , unsigned loc_id */);
 extern void calling(void *func_ptr, int lbl, /* unsigned loc_id, */
         size_t set_return_alias, unsigned naliases, ...);
-extern int get_next_call();
-extern int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
+// extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
         unsigned n_local_arg_aliases, /* unsigned nargs, */ ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         int nvars, /* int n_change_locs, */ int n_provided_npm_functions,
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, int nlatencies, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, /* int *conditional, unsigned loc_id, */ int disabled, bool is_allocator);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_stack_vars(int nvars, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(unsigned loc_id);
-extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void realloc_helper(const void *new_ptr, const void *old_ptr,
-        void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
-        ...);
-extern void free_helper(const void *ptr, size_t group);
-extern bool disable_current_thread();
-extern void reenable_current_thread(bool was_disabled);
-extern void thread_leaving();
+        const char *funcname, /* int *conditional, unsigned loc_id, int disabled, */ bool is_allocator);
+// extern void register_stack_var(const char *mangled_name, int *cond_registration,
+//         const char *full_type, void *ptr, size_t size, int is_ptr,
+//         int is_struct, int n_ptr_fields, ...);
+// extern void register_stack_vars(int nvars, ...);
+// extern void register_global_var(const char *mangled_name, const char *full_type,
+//         void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
+//         ...);
+// extern void register_constant(size_t const_id, void *address,
+//         size_t length);
+// extern int alias_group_changed(unsigned loc_id);
+// extern void malloc_helper(const void *ptr, size_t nbytes, size_t group, int is_ptr,
+//         int is_struct, ...);
+// extern void calloc_helper(const void *ptr, size_t num, size_t size, size_t group, int is_ptr,
+//         int is_struct, ...);
+// extern void realloc_helper(const void *new_ptr, const void *old_ptr,
+//         void *header, size_t nbytes, size_t group, int is_ptr, int is_struct,
+//         ...);
+// extern void free_helper(const void *ptr, size_t group);
+// extern bool disable_current_thread();
+// extern void reenable_current_thread(bool was_disabled);
+// extern void thread_leaving();
 extern void *get_thread_ctx();
 extern bool any_aliased(int ngroups, ...);
 
@@ -77,6 +77,6 @@ inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 #endif
 
-extern int ____chimes_replaying;
+// extern int ____chimes_replaying;
 
 #endif

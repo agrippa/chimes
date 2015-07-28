@@ -260,14 +260,14 @@ std::string CallingAndOMPPass::constructStartingRegistrations(
             }
         }
 
-        if (!gen_quick) {
-            if (n_hoisted == vars->size() && !has_callbacks) {
-                complete << " if (____chimes_replaying) { " <<
-                    *transition_str_ptr << " } ";
-            } else {
-                complete << " if (____chimes_replaying) { goto lbl_0; } ";
-            }
-        }
+        // if (!gen_quick) {
+        //     if (n_hoisted == vars->size() && !has_callbacks) {
+        //         complete << " if (____chimes_replaying) { " <<
+        //             *transition_str_ptr << " } ";
+        //     } else {
+        //         complete << " if (____chimes_replaying) { goto lbl_0; } ";
+        //     }
+        // }
         return complete.str();
     } else {
         return "";
@@ -333,12 +333,12 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
 
         std::stringstream ss2;
         if (!gen_quick) {
-            if (force != NULL) {
-                ss2 << " if (____chimes_replaying) { " << *force << " } ";
-            } else {
-                ss2 << " if (____chimes_replaying) { goto lbl_" << (lbl + 1) <<
-                    "; } ";
-            }
+            // if (force != NULL) {
+            //     ss2 << " if (____chimes_replaying) { " << *force << " } ";
+            // } else {
+            //     ss2 << " if (____chimes_replaying) { goto lbl_" << (lbl + 1) <<
+            //         "; } ";
+            // }
         }
 
         InsertTextBefore(start, ss.str());
@@ -1023,7 +1023,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
              * eventually call extern functions), where the direct callee is
              * something that we may want to run in NPM mode.
              */
-            if (call->getDirectCallee()) {
+            if (call->getDirectCallee() && !is_locally_converted_to_npm) {
                 std::string npm_call = generateNPMCall(loc, callsite, call,
                         npm_functions.find(loc.get_funcname()) ==
                         npm_functions.end());

@@ -528,9 +528,9 @@ std::string ParentTransform::generateNormalCall(const CallExpr *call,
     std::stringstream replace_func_call;
     replace_func_call << "(" << func_symbol << ")(";
 
-    if (count_args_with_side_effects > 0) {
-        ss << " if (!____chimes_replaying) { ";
-    }
+    // if (count_args_with_side_effects > 0) {
+    //     ss << " if (!____chimes_replaying) { ";
+    // }
     for (int i = 0; i < nargs; i++) {
         const Expr *arg = call->getArg(i);
         if (needsToBeHoisted(callee_name, arg, gen_quick)) {
@@ -541,9 +541,9 @@ std::string ParentTransform::generateNormalCall(const CallExpr *call,
         if (i > 0) replace_func_call << ", ";
         replace_func_call << arg_varnames[i];
     }
-    if (count_args_with_side_effects > 0) {
-        ss << " } ";
-    }
+    // if (count_args_with_side_effects > 0) {
+    //     ss << " } ";
+    // }
     replace_func_call << ")";
 
     // std::string loc_arg = get_loc_arg(call, callee_name);

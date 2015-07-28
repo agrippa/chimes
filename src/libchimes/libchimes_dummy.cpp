@@ -175,10 +175,10 @@ int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
     return 1;
 }
 
-void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
+void *translate_fptr(void *fptr, int lbl, /* unsigned loc_id, */ size_t return_alias,
         int n_params, ...) {
 #ifdef VERBOSE
-    fprintf(stderr, "translate_fptr: %u\n", loc_id);
+    fprintf(stderr, "translate_fptr: %d\n", lbl);
 #endif
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_translate_fptr, 1);
@@ -196,7 +196,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, int nlatencies, ...) {
     va_list vl;
-    va_start(vl, nstructs);
+    va_start(vl, nlatencies);
 
     // Generate unique IDs for each change location
     // for (int i = 0; i < n_change_locs; i++) {
@@ -223,8 +223,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     //     }
     // }
 
-    void *app_handle = dlopen(NULL, RTLD_LAZY);
-    assert(app_handle != NULL);
+    // void *app_handle = dlopen(NULL, RTLD_LAZY);
+    // assert(app_handle != NULL);
 
     // Iterate over the NPM functions defined inside this compilation unit.
     // for (int i = 0; i < n_provided_npm_functions; i++) {
@@ -306,7 +306,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     //     }
     // }
 
-    VERIFY(dlclose(app_handle) == 0);
+    // VERIFY(dlclose(app_handle) == 0);
 
     // Iterate over the NPM functions that this compilation unit depends on
     /* 
@@ -339,7 +339,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, /* int *conditional, unsigned loc_id, */ int disabled, bool is_allocator) {
+        const char *funcname, /* int *conditional, unsigned loc_id, int disabled, */ bool is_allocator) {
 #ifdef VERBOSE
     fprintf(stderr, "rm_stack: %s\n", funcname);
 #endif

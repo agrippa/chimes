@@ -35,7 +35,7 @@ class thread_ctx {
     public:
         thread_ctx(pthread_t set_pthread, unsigned n_change_locs) :
                 pthread(set_pthread), stack_nesting(0),
-                changed_groups(n_change_locs), calling_label(-1), func_ptr(NULL),
+                changed_groups(n_change_locs), /* calling_label(-1), */ func_ptr(NULL),
                 disabled_nesting(0),
                 parent_aliases_capacity(PARENT_ALIASES_INIT_SIZE),
                 parent_aliases_length(0), printed_func_ptr_mismatch(false),
@@ -154,8 +154,8 @@ class thread_ctx {
             changed_groups.add_alias(alias);
         }
 
-        void set_calling_label(int label) { calling_label = label; }
-        int get_calling_label() { return calling_label; }
+        // void set_calling_label(int label) { calling_label = label; }
+        // int get_calling_label() { return calling_label; }
 
         void set_func_ptr(void *ptr) { func_ptr = ptr; }
         void *get_func_ptr() { return func_ptr; }
@@ -179,7 +179,7 @@ class thread_ctx {
         vector<thread_relation> parents;
         int stack_nesting;
         set_of_aliases changed_groups;
-        int calling_label;
+        // int calling_label;
         void *func_ptr;
 
         /*
