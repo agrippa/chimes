@@ -14,8 +14,12 @@ set style data histogram
 set style fill solid border
 # set yrange [:32]
 
+set linetype 1 lc rgb 'black'
+set linetype 2 lc rgb '#999999'
+
+
 set xlabel "Benchmark"
-set ylabel "Median Checkpoint Efficiency"
+set ylabel "Median Checkpoint Efficiency (%)"
 set title full_title
 
 # set label "46.16%" at 4.5,31 # RodiniaBackprop
@@ -27,7 +31,7 @@ plot 'data' using 2:xticlabels(1) title columnheader, \
      'data' using 3:xticlabels(1) title columnheader
 # plot for [COL=2:4] 'data' using COL:xticlabels(1) title columnheader
 
-set term png size 1280,960
+set term png size 1280,960 enhanced font 'Verdana,14'
 set output output_file
 replot
 set term x11
