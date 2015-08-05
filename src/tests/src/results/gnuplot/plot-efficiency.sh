@@ -16,8 +16,8 @@ for FILE in $OMP_FILE $CPP_FILE; do
         echo Missing input file $FILE
         exit 1
     fi
-    if [[ $(wc -l $FILE | awk '{ print $1 }') != 23 ]]; then
-        echo Invalid file $FILE, expected 23 tests
+    if [[ $(wc -l $FILE | awk '{ print $1 }') != 21 ]]; then
+        echo Invalid file $FILE, expected 21 tests
         exit 1
     fi
 done
