@@ -3,8 +3,7 @@ Lulesh-OMP - added 6.16536826537% overhead for 202.5 checkpoint files, median ef
 CoMD - added -0.0245845215852% overhead for 11.0 checkpoint files, median efficiency=99.7059747074%, mean efficiency=99.8215387124%
 UTS - added -0.195991091314% overhead for 1.0 checkpoint files, median efficiency=100.003439427%, mean efficiency=100.003439427%
 RodiniaBackprop - added 80.2117091417% overhead for 1.0 checkpoint files, median efficiency=100.000017791%, mean efficiency=100.000017791%
-RodiniaBfs - added 3.23283778123% overhead for 1.0 checkpoint files, median efficiency=100.00003519%, mean efficiency=100.00003519%
-RodiniaBfs_refactored - added 3.98146386764% overhead for 1.0 checkpoint files, median efficiency=100.000040654%, mean efficiency=100.000040654%
+RodiniaBfs - added 3.98146386764% overhead for 1.0 checkpoint files, median efficiency=100.000040654%, mean efficiency=100.000040654%
 RodiniaB+tree - added 5.72266837203% overhead for 1.0 checkpoint files, median efficiency=173.071239581%, mean efficiency=173.071239581%
 RodiniaHeartwall - added 98.0473291798% overhead for 54.0 checkpoint files, median efficiency=100.149185777%, mean efficiency=100.149182273%
 RodiniaHotspot - added 6.26659090805% overhead for 2.5 checkpoint files, median efficiency=66.6670232171%, mean efficiency=80.0003081053%
@@ -13,8 +12,7 @@ RodiniaLavamd - added -5.73101658152% overhead for 2.0 checkpoint files, median 
 RodiniaLud - added 4.22415035836% overhead for 51.5 checkpoint files, median efficiency=100.008171374%, mean efficiency=100.008164777%
 RodiniaMyocyte - added -8.96688615391% overhead for 2.0 checkpoint files, median efficiency=100.00429584%, mean efficiency=100.00429584%
 RodiniaNn - added 10.1523355016% overhead for 317.0 checkpoint files, median efficiency=0.0353704539845%, mean efficiency=6.34253465647%
-RodiniaNw - added 110.274284225% overhead for 1.0 checkpoint files, median efficiency=100.000003437%, mean efficiency=100.000003437%
-RodiniaNw_refactored - added 50.1050578441% overhead for 1.0 checkpoint files, median efficiency=100.000003596%, mean efficiency=100.000003596%
+RodiniaNw - added 50.1050578441% overhead for 1.0 checkpoint files, median efficiency=100.000003596%, mean efficiency=100.000003596%
 RodiniaParticlefilter - added -14.7467695783% overhead for 2.0 checkpoint files, median efficiency=100.001112336%, mean efficiency=100.001112336%
 RodiniaSrad - added 13.4259468928% overhead for 12.5 checkpoint files, median efficiency=83.5188207855%, mean efficiency=86.1561123126%
 SPECBotsAlgn - added 9.69352504198% overhead for 1.0 checkpoint files, median efficiency=107.97068805%, mean efficiency=107.97068805%

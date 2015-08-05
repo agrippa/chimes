@@ -3,8 +3,7 @@ Lulesh - added -0.620097192646% overhead
 CoMD - added -0.0246950165457% overhead
 UTS - added -0.257381176001% overhead
 RodiniaBackprop - added 26.2373006634% overhead
-RodiniaBfs - added 14.669297032% overhead
-RodiniaBfs_refactored - added 4.04935600617% overhead
+RodiniaBfs - added 4.04935600617% overhead
 RodiniaB+tree - added 1.87387482245% overhead
 RodiniaHeartwall - added 0.11372922295% overhead
 RodiniaHotspot - added 0.608896921303% overhead
@@ -13,8 +12,7 @@ RodiniaLavamd - added -0.0812747671778% overhead
 RodiniaLud - added 0.0223474612266% overhead
 RodiniaMyocyte - added 0.228287124396% overhead
 RodiniaNn - added 0.20760544725% overhead
-RodiniaNw - added 13.1758575457% overhead
-RodiniaNw_refactored - added -0.666397250597% overhead
+RodiniaNw - added -0.666397250597% overhead
 RodiniaParticlefilter - added 1.39082531816% overhead
 RodiniaSrad - added 0.282218759887% overhead
 SPECBotsAlgn - added 0.000862522533396% overhead
