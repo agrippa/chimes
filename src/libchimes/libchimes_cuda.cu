@@ -8,10 +8,10 @@
 
 using namespace std;
 
-extern void malloc_impl(const void *new_ptr, size_t nbytes, size_t group,
+extern void malloc_impl(void *new_ptr, size_t nbytes, size_t group,
         int is_cuda_alloc, int is_ptr, int is_struct, int elem_size,
         int *ptr_field_offsets, int n_ptr_field_offsets, bool filled);
-extern void free_impl(const void *ptr);
+extern heap_allocation *free_impl(const void *ptr, heap_allocation *alloc);
 extern map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
 
 __global__ void translate_pointers_kernel(void *arr, int nelems, int elem_size,
