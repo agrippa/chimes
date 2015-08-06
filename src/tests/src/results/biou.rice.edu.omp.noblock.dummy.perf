@@ -1,7 +1,7 @@
 Iso3D - added -3.16213205392% overhead
 Lulesh-OMP - added -0.237714388019% overhead
 CoMD - added 51.2938331318% overhead
-UTS - added 17.4674556213% overhead
+UTS - added -1.44736842105% overhead
 RodiniaBackprop - added -2.76384957374% overhead
 RodiniaBfs - added -1.57651496572% overhead
 RodiniaB+tree - added -1.24687660066% overhead
@@ -14,8 +14,8 @@ RodiniaMyocyte - added 7.59812913574% overhead
 RodiniaNn - added 7.80125321825% overhead
 RodiniaNw - added -0.365252104137% overhead
 RodiniaParticlefilter - added 2.59913591767% overhead
-RodiniaSrad - added -13.8569113064% overhead
-SPECBotsAlgn - added 40.7295957267% overhead
+RodiniaSrad - added 0.561891992432% overhead
+SPECBotsAlgn - added -3.91383927862% overhead
 SPECBotsSpar - added 0.275973819238% overhead
 SPECSmithwa - added -4.21378788672% overhead
 SPECKDTree - added 0.328785669378% overhead

@@ -21,7 +21,7 @@ set linetype 2 lc rgb '#555555'
 set linetype 3 lc rgb '#999999'
 
 set xlabel "Benchmark"
-set ylabel "Percent Overhead"
+set ylabel "% Overhead"
 set title full_title
 
 # set label "46.16%" at 4.5,31 # RodiniaBackprop
