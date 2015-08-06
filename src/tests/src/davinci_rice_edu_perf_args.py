@@ -52,12 +52,13 @@ if is_spec_supported():
     SPEC_PERF_CLI_ARGS = \
             {
              'SPECBotsAlgn':          '-f ' + path.join(SPEC_BOTSALGN_ROOT, '..',
-                                                        'run', 'run_base_test_davinci.0000',
+                                                        'run', 'run_base_ref_davinci.0000',
                                                         'botsalgn'),
              'SPECBotsSpar':          '-n 200 -m 100',
              'SPECSmithwa':           '34',
              # 'SPECKDTree':            '3000000 10 2'
-             'SPECKDTree':            '200000 10 2'
+             # 'SPECKDTree':            '200000 10 2'
+             'SPECKDTree':            '700000 10 2'
             }
 
     PERF_CLI_ARGS.update(SPEC_PERF_CLI_ARGS)
