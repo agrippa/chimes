@@ -12,7 +12,7 @@ set grid xtics lc rgb "#bbbbbb" lw 1 lt 0
 set style data histogram
 # Give the bars a plain fill pattern, and draw a solid line around them.
 set style fill solid border
-# set yrange [:32]
+set yrange [0.1:]
 
 set linetype 1 lc rgb 'black'
 set linetype 2 lc rgb '#999999'
