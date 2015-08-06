@@ -39,7 +39,8 @@ if is_rodinia_supported():
              'RodiniaNn':             path.join(RODINIA_DATA, 'nn',
                                                 'list320k_32.txt') + ' 5 30 90',
              'RodiniaNw':             '40960 10 ' + CORES,
-             'RodiniaNw_refactored':  '40960 10 ' + CORES,
+             # 'RodiniaNw_refactored':  '40960 10 ' + CORES,
+             'RodiniaNw_refactored':  '16384 10 ' + CORES,
              'RodiniaParticlefilter': '-x 512 -y 512 -z 200 -np 1000',
              'RodiniaSrad':           '400 0.5 2008 1832 ' + CORES,
             }
