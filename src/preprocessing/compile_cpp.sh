@@ -434,7 +434,7 @@ else
     COMPILE_CMD="${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -ldl -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
         -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
         ${LINKER_FLAGS}"
-    # [[ ! $VERBOSE ]] || echo $COMPILE_CMD
+    [[ ! $VERBOSE ]] || echo $COMPILE_CMD
     $COMPILE_CMD
 
     if [[ $KEEP == 0 ]]; then
