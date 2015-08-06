@@ -11,7 +11,7 @@ RodiniaKmeans - added 3.84155410079% overhead for 20.0 checkpoint files, median 
 RodiniaLavamd - added 0.34784218422% overhead for 2.0 checkpoint files, median efficiency=74.5464522978%, mean efficiency=74.5464522978%
 RodiniaLud - added 2.01086206453% overhead for 199.0 checkpoint files, median efficiency=100.008183294%, mean efficiency=100.008184462%
 RodiniaMyocyte - added 1.38107049499% overhead for 100.0 checkpoint files, median efficiency=20.6238805895%, mean efficiency=21.2531148944%
-RodiniaNn - added 25.3130490967% overhead for 328.0 checkpoint files, median efficiency=0.0348350096891%, mean efficiency=6.13047842352%
+RodiniaNn - added 9.54036128574% overhead for 212 checkpoint files, median efficiency=0.0348350096891%, mean efficiency=8.05118045473%
 RodiniaNw - added 4.54705782135% overhead for 2 checkpoint files, median efficiency=66.6667190419%, mean efficiency=66.6667190419%
 RodiniaParticlefilter - added 6.18768102832% overhead for 17.5 checkpoint files, median efficiency=0.166665004465%, mean efficiency=11.5763139654%
 RodiniaSrad - added 5.25541475891% overhead for 111.0 checkpoint files, median efficiency=83.5188241461%, mean efficiency=83.9643127588%
