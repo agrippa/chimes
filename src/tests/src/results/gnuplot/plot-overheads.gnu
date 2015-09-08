@@ -24,13 +24,15 @@ set title full_title
 # set label "34.71%" at 16.5,31 # RodiniaNw_refactored
 
 set style histogram clustered
+
+set term png size 1280,960
+set output output_file
+# replot
+# set term x11
+
 plot 'data' using 2:xticlabels(1) title columnheader, \
      'data' using 3:xticlabels(1) title columnheader, \
      'data' using 4:xticlabels(1) title columnheader
 # plot for [COL=2:4] 'data' using COL:xticlabels(1) title columnheader
 
-set term png size 1280,960
-set output output_file
-replot
-set term x11
 
