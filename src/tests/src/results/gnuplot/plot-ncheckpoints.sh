@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $# != 1 ]]; then
-    echo usage: plot-overheads.sh machine
+    echo usage: plot-ncheckpoints.sh machine
     exit 1
 fi
 
@@ -31,16 +31,12 @@ for TEST in $(cat $CPP_FILE | awk '{ print $1 }'); do
     TESTS+=($TEST)
 done
 
-for PERC in $(cat $CPP_FILE | awk '{ print $11 }'); do
-    PERC=${PERC:11}
-    PERC=${PERC:0:$(echo ${#PERC} - 2 | bc)}
-    CPP_RESULTS+=($PERC)
+for N in $(cat $CPP_FILE | awk '{ print $7 }'); do
+    CPP_RESULTS+=($N)
 done
 
-for token in $(cat $OMP_FILE | awk '{ print $11 }'); do
-    token=${token:11}
-    token=${token:0:$(echo ${#token} - 2 | bc)}
-    OMP_RESULTS+=($token)
+for N in $(cat $OMP_FILE | awk '{ print $7 }'); do
+    OMP_RESULTS+=($N)
 done
 
 for ((i=0;i<${#CPP_RESULTS[@]};++i)); do
@@ -48,11 +44,10 @@ for ((i=0;i<${#CPP_RESULTS[@]};++i)); do
 done
 
 CUSTOM_MACHINE=$MACHINE
-if [[ $MACHINE == "davinci.rice.edu" ]]; then
+if [[ $MACHINE == "davinci.rice.edu" ]] ; then
     CUSTOM_MACHINE="Platform A"
 elif [[ $MACHINE == "biou.rice.edu" ]]; then
     CUSTOM_MACHINE="Platform B"
 fi
 
-gnuplot -e "output_file=\"efficiency.$MACHINE.png\"" \
-            -e "full_title=\"$CUSTOM_MACHINE\"" plot-efficiency.gnu
+gnuplot -e "output_file=\"ncheckpoints.$MACHINE.png\"" -e "full_title=\"$CUSTOM_MACHINE\"" plot-ncheckpoints.gnu
