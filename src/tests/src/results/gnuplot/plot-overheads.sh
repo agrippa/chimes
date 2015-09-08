@@ -23,15 +23,31 @@ for FILE in $DUMMY_FILE $BLOCK_FILE $CHECKPOINT_FILE; do
         echo Missing input file $FILE
         exit 1
     fi
-    if [[ $(wc -l $FILE | awk '{ print $1 }') != 23 ]]; then
-        echo Invalid file $FILE, expected 23 tests
+    if [[ $(wc -l $FILE | awk '{ print $1 }') != 21 ]]; then
+        echo Invalid file $FILE, expected 21 tests
         exit 1
     fi
 done
 
+CUSTOM_MACHINE=$MACHINE
+if [[ $MACHINE == "davinci.rice.edu" ]]; then
+    CUSTOM_MACHINE="Platform A"
+elif [[ $MACHINE == "biou.rice.edu" ]]; then
+    CUSTOM_MACHINE="Platform B"
+fi
+
+CUSTOM_MODEL=$MODEL
+if [[ $MODEL == "cpp" ]]; then
+    CUSTOM_MODEL="Single-Threaded"
+elif [[ $MODEL == "omp" ]]; then
+    CUSTOM_MODEL="OpenMP"
+fi
+
 echo -e 'Test\tEmpty\tNo-Checkpoint\tCheckpoint' > data
-awk 'NR==FNR{a[FNR]=$4; next} NR<=46{b[FNR]=$4; next} {print $1,"\t",a[FNR],"\t",b[FNR],"\t",$4}' \
+awk 'NR==FNR{a[FNR]=$4; next} NR<=42{b[FNR]=$4; next} {print $1,"\t",a[FNR],"\t",b[FNR],"\t",$4}' \
         $DUMMY_FILE $BLOCK_FILE $CHECKPOINT_FILE >> data
 MEDIAN=$(cat $CHECKPOINT_FILE | awk '{ print $4 }' | python ./get_median.py)
-gnuplot -e "output_file=\"overheads.$MACHINE.$MODEL.png\"" -e "full_title=\"$MACHINE $MODEL\"" -e "full_median=$MEDIAN" plot-overheads.gnu
+gnuplot -e "output_file=\"overheads.$MACHINE.$MODEL.png\"" \
+            -e "full_title=\"$CUSTOM_MACHINE, ${CUSTOM_MODEL}\"" -e "full_median=$MEDIAN" \
+            -e "full_median_str=\"Median overhead = ${MEDIAN:0:3}%\"" plot-overheads.gnu
 echo $MEDIAN

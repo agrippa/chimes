@@ -39,7 +39,8 @@ if is_rodinia_supported():
              'RodiniaNn':             path.join(RODINIA_DATA, 'nn',
                                                 'list320k_32.txt') + ' 5 30 90',
              'RodiniaNw':             '40960 10 ' + CORES,
-             'RodiniaNw_refactored':  '40960 10 ' + CORES,
+             # 'RodiniaNw_refactored':  '40960 10 ' + CORES,
+             'RodiniaNw_refactored':  '16384 10 ' + CORES,
              'RodiniaParticlefilter': '-x 512 -y 512 -z 200 -np 1000',
              'RodiniaSrad':           '400 0.5 2008 1832 ' + CORES,
             }
@@ -51,12 +52,13 @@ if is_spec_supported():
     SPEC_PERF_CLI_ARGS = \
             {
              'SPECBotsAlgn':          '-f ' + path.join(SPEC_BOTSALGN_ROOT, '..',
-                                                        'run', 'run_base_test_davinci.0000',
+                                                        'run', 'run_base_ref_davinci.0000',
                                                         'botsalgn'),
              'SPECBotsSpar':          '-n 200 -m 100',
              'SPECSmithwa':           '34',
              # 'SPECKDTree':            '3000000 10 2'
-             'SPECKDTree':            '200000 10 2'
+             # 'SPECKDTree':            '200000 10 2'
+             'SPECKDTree':            '700000 10 2'
             }
 
     PERF_CLI_ARGS.update(SPEC_PERF_CLI_ARGS)

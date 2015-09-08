@@ -42,6 +42,10 @@ CHIMES_DUMMY_CPP_LIB=libchimes_dummy_cpp.so
 all: ${CHIMES_CPP_LIB} ${CHIMES_LIB} ${CHIMES_STATIC_LIB} ${CHIMES_DUMMY_LIB} \
 		${CHIMES_DUMMY_STATIC_LIB} ${CHIMES_PROFILE_LIB} benchmark_timers \
 		parse_checkpoint_util
+all_but_cuda: ${CHIMES_CPP_LIB} ${CHIMES_STATIC_LIB} ${CHIMES_DUMMY_LIB} \
+		${CHIMES_DUMMY_STATIC_LIB} ${CHIMES_PROFILE_LIB} benchmark_timers \
+		parse_checkpoint_util
+
 cpp: ${CHIMES_CPP_LIB} ${CHIMES_PROFILE_LIB} ${CHIMES_DUMMY_LIB} ${CHIMES_PROFILE_DUMMY_LIB}
 
 benchmark_timers: benchmark_timers.cpp
