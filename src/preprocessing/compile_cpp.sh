@@ -6,7 +6,8 @@ script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
 source ${CHIMES_HOME}/src/common.conf
 
-INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info constants.info tree.info"
+INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info \
+    exit.info reachable.info globals.info constants.info tree.info"
 ENABLE_OMP=1
 KEEP=0
 PROFILE=0
@@ -97,7 +98,8 @@ while getopts ":kci:I:L:l:o:w:vpx:y:sD:dnf:bg" opt; do
 done
 
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
-    echo usage: compile_cpp.sh [-c] [-k] [-p] [-v] [-s] [-I include-path] [-l libname] [-L lib-path] -i input.cpp
+    echo usage: compile_cpp.sh [-c] [-k] [-p] [-v] [-s] [-I include-path] \
+        [-l libname] [-L lib-path] -i input.cpp
     exit 1
 fi
 
@@ -184,10 +186,14 @@ else
 fi
 
 if [[ $PROFILE == 1 && $DUMMY == 1 ]]; then
-    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes_dummy.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash ${LINKER_FLAGS}"
+    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes_dummy.a \
+        -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart \
+        -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash ${LINKER_FLAGS}"
     GXX_FLAGS="${GXX_FLAGS} -pg"
 elif [[ $PROFILE == 1 ]]; then
-    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash ${LINKER_FLAGS}"
+    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib \
+        -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash \
+        -lxxhash ${LINKER_FLAGS}"
     GXX_FLAGS="${GXX_FLAGS} -pg"
 else
     LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes ${LCHIMES} ${LINKER_FLAGS}"
@@ -233,7 +239,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${CHIMES_DEF} ${DEFINES}"
     cd ${WORK_DIR} && ${FIND_ALLOCATORS_CMD}
 
-    echo Looking for non-checkpointing allocators in ${PREPROCESS_FILE}
+    echo Looking for non-checkpointing functions in ${PREPROCESS_FILE}
     FIND_NONCHKPTING_CMD="${FIND_NONCHKPTING} \
         -n ${INFO_FILE_PREFIX}.non_chkpting.info ${PREPROCESS_FILE} -- \
         -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \

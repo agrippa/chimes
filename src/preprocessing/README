@@ -1,0 +1,49 @@
+This folder contains a collection of scripts and compiler plugins that are run
+as part of the CHIMES frontend. Each stage of the CHIMES frontend pipeline is
+described briefly below, in the order in which they are invoked on each input
+file.
+
+openmp/openmp_finder.py searches a source file for OpenMP pragmas and outputs
+information on them, including their line number and the pragma itself.
+
+find_allocators/ contains code for identifying functions that have been
+explicitly marked by the programmer as an "allocator", i.e. a function whose
+primary purpose is to allocation regions of memory and which will always return
+a unique memory allocation.
+
+find_nonchkpting_fptrs/ looks for functions that have been explcitly marked by
+the programmer as not checkpointing, allowing the compiler to make more
+aggressive optimizations using this hint.
+
+insert_line_numbers.py ensures that every line in a preprocessed source file is
+explicitly marked by a line number pragma.
+
+brace_insert/ contains a libtool plugin for inserting braces around composite
+blocks of code where they may not already be present, such as single-line for or
+if blocks. This simplifies later code transformations.
+
+return_unroll/ introduces temporary variables for all function return values.
+
+function_unroll/ introduces temporary variables for all function parameters.
+
+The Play/ directory contains the core analysis of the CHIMES frontend,
+implemented as a clang plugin.
+
+register_stack_var_cond.py inserts variable declarations for conditional stack
+registration in the input source file. These variables will be used to determine
+at runtime if a stack variable can be live at a checkpoint, and therefore
+whether it needs to be registered with the runtime.
+
+transform is the main transformation utility for the CHIMES frontend.
+
+add_quick_versions.py inserts SCM functions for faster execution paths.
+
+openmp_appender.py and openmp_inserter.py add CHIMES runtime callbacks specific to
+OpenMP parallel regions.
+
+firstprivate_appender.py inserts firstprivate() clauses on parallel for OpenMP
+pragmas where necessary for the OpenMP runtime callbacks to function properly.
+
+module_init.py generates the module initialization function that is called once
+for each source file to register global information about that compilation
+module with the CHIMES runtime (e.g. constants, globals, etc).
