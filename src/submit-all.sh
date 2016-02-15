@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# Script for submitting all performance tests to a Sun Grid Engine cluster
+# manager, relying on submit-job.sh for the actual submission.
+
 set -e
 
 ENABLE_ON=

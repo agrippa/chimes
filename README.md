@@ -34,6 +34,11 @@ environment variables. For example, on my Mac:
         CC=/usr/local/bin/gcc CXX=/usr/local/bin/g++ CPP=/usr/local/bin/cpp \
             ../llvm-src/configure --enable-optimized=no --enable-profiling=yes
 
+You will also need to create a file at num-debug/src/common.conf that contains a
+pointer to the desired C/C++ compiler for your system. For example, mine
+contains:
+
+        GXX=/usr/local/bin/g++
 
 Adding New Attributes to clang:
 =============================

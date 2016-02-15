@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Script for submitting a single performance test to a Sun Grid Engine cluster
+# manager.
+
 set -e
 
 if [[ $# < 2 || $# > 6 ]]; then
