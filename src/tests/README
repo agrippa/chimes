@@ -1,0 +1,11 @@
+This folder contains reference outputs for all runtime and frontend tests, as
+well as the infrastructure to actually run them.
+
+The frontend/ folder includes reference final and intermediate outputs from
+compiling unit tests using the CHIMES frontend.
+
+The runtime/ folder includes reference warnings emitted by CHIMES during
+execution of tests.
+
+The src/ folder contains the testing infrastructure for verifying the current
+version of CHIMES against the reference outputs.
