@@ -19,7 +19,7 @@ work on all systems).
 1. Download LLVM 3.5.1 from http://llvm.org/releases/3.5.1/llvm-3.5.1.src.tar.xz and extract to llvm-src
 2. Download Clang 3.5.1 from http://llvm.org/releases/3.5.1/cfe-3.5.1.src.tar.xz and extract to llvm-src/tools/clang
 3. Download Compiler RT 3.5.1 from http://llvm.org/releases/3.5.1/compiler-rt-3.5.1.src.tar.xz and extract to llvm-src/projects/compiler-rt
-4. git clone git@github.com:agrippa/num-debug.git
+4. git clone git@github.com:agrippa/chimes.git
 5. cd llvm-src/lib/Transforms && ln -s ${CHIMES_HOME}/src/preprocessing/Play
 6. Edit llvm-src/lib/Transforms/Makefile to add the Play/ directory to the PARALLEL_DIRS list
 7. Edit llvm-src/lib/Transforms/CMakeLists.txt, appending the line add_subdirectory(Play)
@@ -34,7 +34,7 @@ environment variables. For example, on my Mac:
         CC=/usr/local/bin/gcc CXX=/usr/local/bin/g++ CPP=/usr/local/bin/cpp \
             ../llvm-src/configure --enable-optimized=no --enable-profiling=yes
 
-You will also need to create a file at num-debug/src/common.conf that contains a
+You will also need to create a file at chimes/src/common.conf that contains a
 pointer to the desired C/C++ compiler for your system. For example, mine
 contains:
 

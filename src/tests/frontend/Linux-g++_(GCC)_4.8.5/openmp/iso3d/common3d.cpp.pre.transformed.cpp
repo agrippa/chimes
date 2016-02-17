@@ -32,11 +32,11 @@ static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
-# 1 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 1 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -45,7 +45,7 @@ static unsigned ____alias_loc_id_5;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -101,7 +101,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -115,8 +115,8 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 1 "/home/jmg3/num-debug/src/examples/cpp/include/common3d.h" 1
+# 1 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 1 "/home/jmg3/chimes/src/examples/cpp/include/common3d.h" 1
 
 
 
@@ -1064,7 +1064,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 5 "/home/jmg3/num-debug/src/examples/cpp/include/common3d.h" 2
+# 5 "/home/jmg3/chimes/src/examples/cpp/include/common3d.h" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2240,7 +2240,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 6 "/home/jmg3/num-debug/src/examples/cpp/include/common3d.h" 2
+# 6 "/home/jmg3/chimes/src/examples/cpp/include/common3d.h" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -2716,7 +2716,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 7 "/home/jmg3/num-debug/src/examples/cpp/include/common3d.h" 2
+# 7 "/home/jmg3/chimes/src/examples/cpp/include/common3d.h" 2
 # 1 "/usr/include/unistd.h" 1 3 4
 # 28 "/usr/include/unistd.h" 3 4
 extern "C" {
@@ -4048,10 +4048,10 @@ extern void swab (__const void *__restrict __from, void *__restrict __to,
 extern char *ctermid (char *__s) throw ();
 # 1160 "/usr/include/unistd.h" 3 4
 }
-# 8 "/home/jmg3/num-debug/src/examples/cpp/include/common3d.h" 2
-# 1 "/home/jmg3/num-debug/src/examples/cpp/include/common.h" 1
-# 29 "/home/jmg3/num-debug/src/examples/cpp/include/common.h"
-# 1 "/home/jmg3/num-debug/src/examples/cpp/include/common_cuda.h" 1
+# 8 "/home/jmg3/chimes/src/examples/cpp/include/common3d.h" 2
+# 1 "/home/jmg3/chimes/src/examples/cpp/include/common.h" 1
+# 29 "/home/jmg3/chimes/src/examples/cpp/include/common.h"
+# 1 "/home/jmg3/chimes/src/examples/cpp/include/common_cuda.h" 1
 
 
 
@@ -4063,7 +4063,7 @@ extern int getNumCUDADevices();
 
 
 }
-# 30 "/home/jmg3/num-debug/src/examples/cpp/include/common.h" 2
+# 30 "/home/jmg3/chimes/src/examples/cpp/include/common.h" 2
 
 typedef struct _source {
     int x, y;
@@ -4081,7 +4081,7 @@ extern float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt);
 extern void init_progress(int length, int goal, int disabled);
 extern void update_progress(int progress);
 extern void finish_progress();
-# 9 "/home/jmg3/num-debug/src/examples/cpp/include/common3d.h" 2
+# 9 "/home/jmg3/chimes/src/examples/cpp/include/common3d.h" 2
 
 typedef struct _config {
     int nx, ny, nz;
@@ -4097,7 +4097,7 @@ typedef struct _config {
     int progress_width;
     int progress_disabled;
 } config;
-# 39 "/home/jmg3/num-debug/src/examples/cpp/include/common3d.h"
+# 39 "/home/jmg3/chimes/src/examples/cpp/include/common3d.h"
 extern void save_layer_text(float *field, int z, const int dimx, const int dimy,
         const int ny, const int nx, const char *filename, int radius);
 extern void init_data(float *curr, float *next, float *vsq,
@@ -4107,718 +4107,718 @@ extern void init_data(float *curr, float *next, float *vsq,
 extern void usage(char **argv);
 extern void default_config(config *conf);
 extern void setup_config(config *conf, int argc, char **argv);
-# 2 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp" 2
-# 2 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 3 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 4 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 5 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 6 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 7 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 2 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp" 2
+# 2 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 3 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 4 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 5 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 6 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 7 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void save_layer_text_npm(float *field, int z, const int dimx, const int dimy, const int ny, const int nx, const char *filename, int radius);
 void save_layer_text_quick(float *field, int z, const int dimx, const int dimy, const int ny, const int nx, const char *filename, int radius); void save_layer_text(float *field, int z, const int dimx, const int dimy, const int ny, const int nx, const char *filename, int radius);
 void save_layer_text_resumable(float *field, int z, const int dimx, const int dimy,
-# 8 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 8 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         const int ny, const int nx, const char *filename, int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&save_layer_text), "save_layer_text", &____must_manage_save_layer_text, 8, 0, (size_t)(75241783173009432UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(75241783173009438UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 9 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 9 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
      FILE *fp; fp = (fopen(filename, "wb")) ;
-# 10 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 10 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     if (fp == __null) {
-# 11 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 11 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         fprintf(stderr, "Failed to open output file %s\n", filename);
-# 12 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 12 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         exit(1);
-# 13 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 13 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 14 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 15 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 14 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 15 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     { int y; for ( y = (0) ; y < ny; y++) {
-# 16 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 16 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         { int x; for ( x = (0) ; x < nx; x++) {
-# 17 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 17 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             fprintf(fp, "%d %d %.20f\n", y, x,
-# 18 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 18 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                     field[(((radius) + (z)) * (dimy) * (dimx) + ((radius) + (y)) * (dimx) + ((radius) + (x)))]);
-# 19 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 19 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         } }
-# 20 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 20 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         fprintf(fp, "\n");
-# 21 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 21 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     } }
-# 22 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 23 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 22 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 23 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     fclose(fp);
-# 24 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 24 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2, ____chimes_did_disable0, false); }
-# 25 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 26 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 25 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 26 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void init_data_npm(float *curr, float *next, float *vsq, float *h_coeff, const int dimx, const int dimy, const int dimz, const float dx, const float dt);
 void init_data_quick(float *curr, float *next, float *vsq, float *h_coeff, const int dimx, const int dimy, const int dimz, const float dx, const float dt); void init_data(float *curr, float *next, float *vsq, float *h_coeff, const int dimx, const int dimy, const int dimz, const float dx, const float dt);
 void init_data_resumable(float *curr, float *next, float *vsq,
-# 27 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 27 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 float *h_coeff,
-# 28 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 28 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 const int dimx, const int dimy, const int dimz,
-# 29 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 29 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 const float dx, const float dt) {const int ____chimes_did_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(75241783173009579UL), (size_t)(75241783173009580UL), (size_t)(75241783173009581UL), (size_t)(75241783173009582UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 30 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 31 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 30 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 31 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
      size_t len; len = ((size_t)dimx * (size_t)dimy * (size_t)dimz) ;
-# 32 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 32 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     { size_t i; for ( i = (0) ; i < len; i++) {
-# 33 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 33 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         vsq[i] = 2500. * 2500. * dt * dt;
-# 34 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 34 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     } }
-# 35 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 36 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 37 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 35 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 36 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 37 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     { size_t i; for ( i = (0) ; i < len; i++) {
-# 38 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 38 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         curr[i] = next[i] = 0;
-# 39 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 39 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     } }
-# 40 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 41 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 40 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 41 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     memset(h_coeff, 0, 20 * sizeof(float));
-# 42 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 42 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
      float scale; scale = (1. / (dx * dx)) ;
-# 43 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 43 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[0] = -8.541666 * scale;
-# 44 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 44 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[1] = 1.600000 * scale;
-# 45 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 45 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[2] = -0.200000 * scale;
-# 46 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 46 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[3] = 0.025397 * scale;
-# 47 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 47 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[4] = -0.001785 * scale;
-# 48 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 48 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1, false); }
-# 49 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 50 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 49 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 50 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void usage_npm(char **argv);
 void usage_quick(char **argv); void usage(char **argv);
 void usage_resumable(char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(75241783173009604UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 51 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 51 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     fprintf(stderr, "usage: %s [-v] [-s] [-x nx] [-y ny] [-z nz] [-i iters] "
-# 52 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 52 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
-# 53 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 53 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             argv[0]);
-# 54 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 54 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     exit(1);
-# 55 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 55 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable2, false); }
-# 56 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 57 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 56 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 57 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void default_config_npm(config *conf);
 void default_config_quick(config *conf); void default_config(config *conf);
 void default_config_resumable(config *conf) {const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(75241783173009645UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 58 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 58 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nx = 2 * 256;
-# 59 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 59 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->ny = 2 * 256;
-# 60 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 60 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nz = 2 * 256;
-# 61 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 61 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nsteps = 100;
-# 62 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 62 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->save_text = -1;
-# 63 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 63 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->verbose = 0;
-# 64 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 64 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->radius = 4;
-# 65 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 65 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->ngpus = -1;
-# 66 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 67 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 66 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 67 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->srcs = __null;
-# 68 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 68 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nsrcs = 0;
-# 69 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 70 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 69 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 70 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->progress_width = 80;
-# 71 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 71 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->progress_disabled = 0;
-# 72 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 72 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_4, ____chimes_did_disable3, false); }
-# 73 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 74 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 73 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 74 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void setup_config_npm(config *conf, int argc, char **argv);static int (*____chimes_extern_func_getNumCUDADevices)(void) = getNumCUDADevices;static void (*____chimes_extern_func_parse_source)(char *, struct _source *) = parse_source;
 void setup_config_quick(config *conf, int argc, char **argv); void setup_config(config *conf, int argc, char **argv);
 void setup_config_resumable(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(75241783173009775UL), (size_t)(0UL), (size_t)(75241783173009777UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
-# 75 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 75 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     int c; ;
-# 76 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 76 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     opterr = 0;
-# 77 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 78 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 77 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 78 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
      call_lbl_0: ({ calling_npm("default_config", 0); default_config_npm(conf); });
-# 79 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 80 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 79 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 80 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
-# 81 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 81 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         switch (c) {
-# 82 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 82 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'x':
-# 83 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 83 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nx = atoi(optarg);
-# 84 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 84 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 85 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 85 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'y':
-# 86 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 86 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->ny = atoi(optarg);
-# 87 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 87 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 88 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 88 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'z':
-# 89 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 89 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nz = atoi(optarg);
-# 90 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 90 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 91 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 91 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'i':
-# 92 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 92 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nsteps = atoi(optarg);
-# 93 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 93 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 94 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 94 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'v':
-# 95 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 95 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->verbose = 1;
-# 96 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 96 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 97 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 97 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 't':
-# 98 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 98 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->save_text = atoi(optarg);
-# 99 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 99 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 100 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 100 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'p':
-# 101 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 101 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->srcs = (source *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (conf->srcs) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), ____chimes_tmp_header, sizeof(source) *
-# 102 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 102 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                         (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 103 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 103 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                  call_lbl_1: ({ source * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(75241783173009669UL), (size_t)(75241783173009705UL)); (parse_source)(optarg, ____chimes_arg1); }) ;
-# 104 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 104 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nsrcs++;
-# 105 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 105 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 106 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 106 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'r':
-# 107 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 107 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->radius = atoi(optarg);
-# 108 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 108 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 109 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 109 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'g':
-# 110 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 110 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->ngpus = atoi(optarg);
-# 111 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 111 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 112 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 112 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'w':
-# 113 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 113 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->progress_width = atoi(optarg);
-# 114 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 114 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 115 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 115 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'd':
-# 116 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 116 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->progress_disabled = 1;
-# 117 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 117 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 118 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 118 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case '?':
-# 119 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 119 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 fprintf(stderr, "Missing argument to option %c\n", optopt);
-# 120 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 120 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
              call_lbl_2: default:
-# 121 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 121 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 ({ calling_npm("usage", 0); usage_npm(argv); });
-# 122 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 122 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         }
-# 123 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 123 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 124 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 125 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 124 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 125 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     if (conf->ngpus == -1) {
-# 126 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 126 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
          call_lbl_3: conf->ngpus = ({ calling((void*)getNumCUDADevices, 3, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
-# 127 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 127 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 128 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 128 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_5, ____chimes_did_disable4, false); }
-# 7 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 7 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void save_layer_text_quick(float *field, int z, const int dimx, const int dimy,
-# 8 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 8 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         const int ny, const int nx, const char *filename, int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&save_layer_text), "save_layer_text", &____must_manage_save_layer_text, 8, 0, (size_t)(75241783173009432UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(75241783173009438UL), (size_t)(0UL)) ; ; ;
-# 9 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 9 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
      FILE *fp; fp = (fopen(filename, "wb")) ;
-# 10 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 10 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     if (fp == __null) {
-# 11 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 11 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         fprintf(stderr, "Failed to open output file %s\n", filename);
-# 12 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 12 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         exit(1);
-# 13 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 13 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 14 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 15 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 14 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 15 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     { int y; for ( y = (0) ; y < ny; y++) {
-# 16 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 16 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         { int x; for ( x = (0) ; x < nx; x++) {
-# 17 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 17 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             fprintf(fp, "%d %d %.20f\n", y, x,
-# 18 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 18 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                     field[(((radius) + (z)) * (dimy) * (dimx) + ((radius) + (y)) * (dimx) + ((radius) + (x)))]);
-# 19 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 19 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         } }
-# 20 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 20 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         fprintf(fp, "\n");
-# 21 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 21 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     } }
-# 22 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 23 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 22 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 23 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     fclose(fp);
-# 24 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 24 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 
 void save_layer_text(float *field, int z, const int dimx, const int dimy,
-# 8 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 8 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         const int ny, const int nx, const char *filename, int radius) { (____chimes_replaying ? save_layer_text_resumable(field, z, dimx, dimy, ny, nx, filename, radius) : save_layer_text_quick(field, z, dimx, dimy, ny, nx, filename, radius)); }
-# 26 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 26 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void init_data_quick(float *curr, float *next, float *vsq,
-# 27 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 27 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 float *h_coeff,
-# 28 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 28 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 const int dimx, const int dimy, const int dimz,
-# 29 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 29 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 const float dx, const float dt) {const int ____chimes_did_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(75241783173009579UL), (size_t)(75241783173009580UL), (size_t)(75241783173009581UL), (size_t)(75241783173009582UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 30 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 31 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 30 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 31 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
      size_t len; len = ((size_t)dimx * (size_t)dimy * (size_t)dimz) ;
-# 32 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 32 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     { size_t i; for ( i = (0) ; i < len; i++) {
-# 33 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 33 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         vsq[i] = 2500. * 2500. * dt * dt;
-# 34 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 34 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     } }
-# 35 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 36 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 37 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 35 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 36 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 37 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     { size_t i; for ( i = (0) ; i < len; i++) {
-# 38 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 38 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         curr[i] = next[i] = 0;
-# 39 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 39 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     } }
-# 40 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 41 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 40 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 41 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     memset(h_coeff, 0, 20 * sizeof(float));
-# 42 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 42 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
      float scale; scale = (1. / (dx * dx)) ;
-# 43 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 43 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[0] = -8.541666 * scale;
-# 44 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 44 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[1] = 1.600000 * scale;
-# 45 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 45 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[2] = -0.200000 * scale;
-# 46 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 46 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[3] = 0.025397 * scale;
-# 47 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 47 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[4] = -0.001785 * scale;
-# 48 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 48 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1, false); }
 
 void init_data(float *curr, float *next, float *vsq,
-# 27 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 27 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 float *h_coeff,
-# 28 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 28 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 const int dimx, const int dimy, const int dimz,
-# 29 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 29 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 const float dx, const float dt) { (____chimes_replaying ? init_data_resumable(curr, next, vsq, h_coeff, dimx, dimy, dimz, dx, dt) : init_data_quick(curr, next, vsq, h_coeff, dimx, dimy, dimz, dx, dt)); }
-# 50 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 50 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void usage_quick(char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(75241783173009604UL)) ; ; ;
-# 51 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 51 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     fprintf(stderr, "usage: %s [-v] [-s] [-x nx] [-y ny] [-z nz] [-i iters] "
-# 52 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 52 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
-# 53 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 53 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             argv[0]);
-# 54 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 54 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     exit(1);
-# 55 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 55 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable2, false); }
 
 void usage(char **argv) { (____chimes_replaying ? usage_resumable(argv) : usage_quick(argv)); }
-# 57 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 57 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void default_config_quick(config *conf) {const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(75241783173009645UL)) ; ; ;
-# 58 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 58 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nx = 2 * 256;
-# 59 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 59 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->ny = 2 * 256;
-# 60 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 60 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nz = 2 * 256;
-# 61 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 61 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nsteps = 100;
-# 62 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 62 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->save_text = -1;
-# 63 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 63 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->verbose = 0;
-# 64 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 64 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->radius = 4;
-# 65 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 65 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->ngpus = -1;
-# 66 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 67 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 66 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 67 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->srcs = __null;
-# 68 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 68 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nsrcs = 0;
-# 69 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 70 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 69 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 70 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->progress_width = 80;
-# 71 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 71 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->progress_disabled = 0;
-# 72 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 72 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_4, ____chimes_did_disable3, false); }
 
 void default_config(config *conf) { (____chimes_replaying ? default_config_resumable(conf) : default_config_quick(conf)); }
-# 74 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 74 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void setup_config_quick(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(75241783173009775UL), (size_t)(0UL), (size_t)(75241783173009777UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; ; ;
-# 75 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 75 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     int c; ;
-# 76 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 76 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     opterr = 0;
-# 77 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 78 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 77 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 78 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
      call_lbl_0: ({ calling_npm("default_config", 0); default_config_npm(conf); });
-# 79 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 80 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 79 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 80 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
-# 81 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 81 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         switch (c) {
-# 82 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 82 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'x':
-# 83 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 83 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nx = atoi(optarg);
-# 84 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 84 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 85 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 85 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'y':
-# 86 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 86 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->ny = atoi(optarg);
-# 87 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 87 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 88 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 88 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'z':
-# 89 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 89 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nz = atoi(optarg);
-# 90 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 90 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 91 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 91 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'i':
-# 92 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 92 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nsteps = atoi(optarg);
-# 93 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 93 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 94 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 94 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'v':
-# 95 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 95 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->verbose = 1;
-# 96 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 96 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 97 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 97 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 't':
-# 98 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 98 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->save_text = atoi(optarg);
-# 99 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 99 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 100 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 100 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'p':
-# 101 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 101 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->srcs = (source *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (conf->srcs) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), ____chimes_tmp_header, sizeof(source) *
-# 102 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 102 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                         (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 103 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 103 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                  call_lbl_1: ({ calling((void*)parse_source, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(75241783173009669UL), (size_t)(75241783173009705UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) ;
-# 104 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 104 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nsrcs++;
-# 105 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 105 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 106 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 106 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'r':
-# 107 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 107 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->radius = atoi(optarg);
-# 108 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 108 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 109 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 109 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'g':
-# 110 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 110 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->ngpus = atoi(optarg);
-# 111 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 111 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 112 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 112 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'w':
-# 113 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 113 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->progress_width = atoi(optarg);
-# 114 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 114 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 115 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 115 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'd':
-# 116 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 116 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->progress_disabled = 1;
-# 117 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 117 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 118 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 118 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case '?':
-# 119 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 119 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 fprintf(stderr, "Missing argument to option %c\n", optopt);
-# 120 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 120 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
              call_lbl_2: default:
-# 121 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 121 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 ({ calling_npm("usage", 0); usage_npm(argv); });
-# 122 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 122 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         }
-# 123 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 123 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 124 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 125 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 124 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 125 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     if (conf->ngpus == -1) {
-# 126 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 126 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
          call_lbl_3: conf->ngpus = ({ calling((void*)getNumCUDADevices, 3, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
-# 127 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 127 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 128 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 128 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 
 void setup_config(config *conf, int argc, char **argv) { (____chimes_replaying ? setup_config_resumable(conf, argc, argv) : setup_config_quick(conf, argc, argv)); }
-# 7 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 7 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void save_layer_text_npm(float *field, int z, const int dimx, const int dimy,
-# 8 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 8 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         const int ny, const int nx, const char *filename, int radius) {
-# 9 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 9 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     FILE *fp = fopen(filename, "wb");
-# 10 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 10 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     if (fp == __null) {
-# 11 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 11 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         fprintf(stderr, "Failed to open output file %s\n", filename);
-# 12 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 12 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         exit(1);
-# 13 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 13 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 14 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 15 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 14 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 15 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     for (int y = 0; y < ny; y++) {
-# 16 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 16 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         for (int x = 0; x < nx; x++) {
-# 17 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 17 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             fprintf(fp, "%d %d %.20f\n", y, x,
-# 18 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 18 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                     field[(((radius) + (z)) * (dimy) * (dimx) + ((radius) + (y)) * (dimx) + ((radius) + (x)))]);
-# 19 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 19 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         }
-# 20 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 20 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         fprintf(fp, "\n");
-# 21 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 21 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 22 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 23 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 22 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 23 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     fclose(fp);
-# 24 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 24 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 }
-# 26 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 26 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void init_data_npm(float *curr, float *next, float *vsq,
-# 27 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 27 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 float *h_coeff,
-# 28 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 28 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 const int dimx, const int dimy, const int dimz,
-# 29 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 29 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 const float dx, const float dt) {
-# 30 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 31 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 30 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 31 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     size_t len = (size_t)dimx * (size_t)dimy * (size_t)dimz;
-# 32 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 32 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     for (size_t i = 0; i < len; i++) {
-# 33 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 33 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         vsq[i] = 2500. * 2500. * dt * dt;
-# 34 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 34 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 35 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 36 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 37 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 35 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 36 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 37 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     for (size_t i = 0; i < len; i++) {
-# 38 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 38 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         curr[i] = next[i] = 0;
-# 39 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 39 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 40 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 41 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 40 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 41 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     memset(h_coeff, 0, 20 * sizeof(float));
-# 42 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 42 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     float scale = 1. / (dx * dx);
-# 43 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 43 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[0] = -8.541666 * scale;
-# 44 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 44 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[1] = 1.600000 * scale;
-# 45 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 45 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[2] = -0.200000 * scale;
-# 46 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 46 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[3] = 0.025397 * scale;
-# 47 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 47 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[4] = -0.001785 * scale;
-# 48 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 48 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 }
-# 50 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 50 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void usage_npm(char **argv) {
-# 51 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 51 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     fprintf(stderr, "usage: %s [-v] [-s] [-x nx] [-y ny] [-z nz] [-i iters] "
-# 52 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 52 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
-# 53 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 53 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             argv[0]);
-# 54 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 54 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     exit(1);
-# 55 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 55 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 }
-# 57 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 57 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void default_config_npm(config *conf) {
-# 58 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 58 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nx = 2 * 256;
-# 59 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 59 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->ny = 2 * 256;
-# 60 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 60 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nz = 2 * 256;
-# 61 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 61 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nsteps = 100;
-# 62 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 62 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->save_text = -1;
-# 63 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 63 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->verbose = 0;
-# 64 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 64 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->radius = 4;
-# 65 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 65 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->ngpus = -1;
-# 66 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 67 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 66 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 67 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->srcs = __null;
-# 68 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 68 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->nsrcs = 0;
-# 69 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 70 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 69 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 70 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->progress_width = 80;
-# 71 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 71 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     conf->progress_disabled = 0;
-# 72 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 72 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 }
-# 74 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 74 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 void setup_config_npm(config *conf, int argc, char **argv) {
-# 75 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 75 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     int c;
-# 76 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 76 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     opterr = 0;
-# 77 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 78 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 77 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 78 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     default_config_npm(conf);
-# 79 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 80 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 79 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 80 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
-# 81 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 81 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         switch (c) {
-# 82 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 82 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'x':
-# 83 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 83 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nx = atoi(optarg);
-# 84 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 84 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 85 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 85 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'y':
-# 86 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 86 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->ny = atoi(optarg);
-# 87 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 87 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 88 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 88 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'z':
-# 89 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 89 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nz = atoi(optarg);
-# 90 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 90 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 91 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 91 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'i':
-# 92 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 92 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nsteps = atoi(optarg);
-# 93 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 93 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 94 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 94 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'v':
-# 95 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 95 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->verbose = 1;
-# 96 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 96 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 97 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 97 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 't':
-# 98 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 98 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->save_text = atoi(optarg);
-# 99 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 99 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 100 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 100 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'p':
-# 101 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 101 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->srcs = (source *) ({ void *____chimes_tmp_header = conf->srcs; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, (conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), ____chimes_tmp_header, sizeof(source) *
-# 102 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 102 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                         (conf->nsrcs + 1), 75241783173009705UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 103 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 103 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 (*____chimes_extern_func_parse_source)(optarg, conf->srcs + conf->nsrcs);
-# 104 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 104 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->nsrcs++;
-# 105 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 105 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 106 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 106 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'r':
-# 107 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 107 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->radius = atoi(optarg);
-# 108 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 108 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 109 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 109 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'g':
-# 110 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 110 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->ngpus = atoi(optarg);
-# 111 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 111 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 112 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 112 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'w':
-# 113 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 113 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->progress_width = atoi(optarg);
-# 114 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 114 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 115 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 115 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case 'd':
-# 116 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 116 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 conf->progress_disabled = 1;
-# 117 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 117 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 break;
-# 118 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 118 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             case '?':
-# 119 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 119 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 fprintf(stderr, "Missing argument to option %c\n", optopt);
-# 120 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 120 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
             default:
-# 121 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 121 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
                 usage_npm(argv);
-# 122 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 122 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         }
-# 123 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 123 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 124 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-# 125 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 124 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
+# 125 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     if (conf->ngpus == -1) {
-# 126 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 126 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
         conf->ngpus = (*____chimes_extern_func_getNumCUDADevices)();
-# 127 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 127 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
     }
-# 128 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
+# 128 "/home/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp"
 }
 
 

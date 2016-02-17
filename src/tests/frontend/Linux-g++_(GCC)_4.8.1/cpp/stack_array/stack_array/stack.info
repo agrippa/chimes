@@ -1,4 +1,4 @@
-/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp main|argc|0 " i32 " 32 0 0 0
-/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp main|argv|0 " i8** " 64 1 0 0
-/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp main|a|0 " [5 x i32] " 160 0 0 1 main
-/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/home/jmg3/chimes/src/examples/cpp/./stack_array.cpp main|argc|0 " i32 " 32 0 0 0
+/home/jmg3/chimes/src/examples/cpp/./stack_array.cpp main|argv|0 " i8** " 64 1 0 0
+/home/jmg3/chimes/src/examples/cpp/./stack_array.cpp main|a|0 " [5 x i32] " 160 0 0 1 main
+/home/jmg3/chimes/src/examples/cpp/./stack_array.cpp main|____chimes_ret_var_0|0 " i32 " 32 0 0 0

@@ -55,11 +55,11 @@ static unsigned ____alias_loc_id_7;
 static unsigned ____alias_loc_id_8;
 static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 1 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -68,7 +68,7 @@ static unsigned ____alias_loc_id_10;
 typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes();
@@ -122,7 +122,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -136,24 +136,24 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 2 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 3 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 4 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 5 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 6 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 7 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 1 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 1 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 2 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 3 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 4 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 5 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 6 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 7 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h" 1
-
-
+# 1 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.h" 1
 
 
 
 
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
-# 13 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h"
+
+
+# 1 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
+# 13 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h"
 typedef double real_t;
 
 
@@ -167,7 +167,7 @@ static void zeroReal3(real3 a)
    a[1] = 0.0;
    a[2] = 0.0;
 }
-# 8 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h" 2
+# 8 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.h" 2
 
 
 typedef struct RankReduceDataSt
@@ -224,12 +224,12 @@ void bcastParallel(void* buf, int len, int root);
 
 
 int builtWithMpi(void);
-# 9 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
-# 9 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 10 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 11 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 12 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 13 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 9 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
+# 9 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 10 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 11 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 12 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 13 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
@@ -670,7 +670,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 15 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
+# 15 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
 # 1 "/usr/include/time.h" 1 3 4
 # 67 "/usr/include/time.h" 3 4
 # 1 "/usr/include/sys/_types/_clock_t.h" 1 3 4
@@ -753,7 +753,7 @@ time_t timegm(struct tm * const);
 int nanosleep(const struct timespec *, struct timespec *) __asm("_" "nanosleep" );
 
 }
-# 16 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
+# 16 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 69 "/usr/include/string.h" 3 4
 extern "C" {
@@ -874,7 +874,7 @@ int flsll(long long) ;
 # 1 "/usr/include/string.h" 1 3 4
 # 93 "/usr/include/strings.h" 2 3 4
 # 177 "/usr/include/string.h" 2 3 4
-# 17 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
+# 17 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 44 "/usr/include/assert.h" 3 4
 # 1 "/usr/include/stdlib.h" 1 3 4
@@ -2047,449 +2047,449 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 
 
 }
-# 18 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
-# 18 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 19 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 18 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
+# 18 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 19 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 static int myRank = 0;
-# 20 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 20 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 static int nRanks = 1;
-# 31 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 31 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 31 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 31 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 int getNRanks_npm();
 int getNRanks_quick(); int getNRanks();
 int getNRanks_resumable()
-# 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 32 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&getNRanks), "getNRanks", &____must_manage_getNRanks, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 33 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    rm_stack(false, 0UL, "getNRanks", &____must_manage_getNRanks, 0, ____chimes_did_disable0); return nRanks;
-# 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 34 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
-# 35 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 36 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 35 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 36 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 int getMyRank_npm();
 int getMyRank_quick(); int getMyRank();
 int getMyRank_resumable()
-# 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 37 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&getMyRank), "getMyRank", &____must_manage_getMyRank, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 38 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    rm_stack(false, 0UL, "getMyRank", &____must_manage_getMyRank, 0, ____chimes_did_disable1); return myRank;
-# 39 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 39 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
-# 40 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 41 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 42 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 43 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 44 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 45 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 40 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 41 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 42 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 43 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 44 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 45 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 int printRank_npm();
 int printRank_quick(); int printRank();
 int printRank_resumable()
-# 46 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 46 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&printRank), "printRank", &____must_manage_printRank, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 47 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    if (myRank == 0) {rm_stack(false, 0UL, "printRank", &____must_manage_printRank, ____alias_loc_id_0, ____chimes_did_disable2); return 1; };
-# 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 48 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    rm_stack(false, 0UL, "printRank", &____must_manage_printRank, ____alias_loc_id_0, ____chimes_did_disable2); return 0;
-# 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 49 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
-# 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 50 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 51 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void timestampBarrier_npm(const char* msg);void barrierParallel_npm();
 void timestampBarrier_quick(const char* msg); void timestampBarrier(const char* msg);
 void timestampBarrier_resumable(const char* msg)
-# 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 52 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&timestampBarrier), "timestampBarrier", &____must_manage_timestampBarrier, 1, 0, (size_t)(2720369932807153891UL)) ; time_t t;
  if (____must_checkpoint_timestampBarrier_t_0) { register_stack_vars(1, "timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 53 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    ({ calling_npm("barrierParallel", 0); barrierParallel_npm(); });
-# 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 54 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    if (! ({ calling_npm("printRank", 0); printRank_npm(); })) {rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_1, ____chimes_did_disable3); return; };
-# 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 56 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       t = (time(__null)) ;
-# 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 57 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
     char *timeString; timeString = (ctime(&t)) ;
-# 58 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 58 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    timeString[24] = '\0';
-# 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 59 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    fprintf(__stdoutp, "%s: %s\n", timeString, msg);
-# 60 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 60 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    fflush(__stdoutp);
-# 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 61 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_1, ____chimes_did_disable3); }
-# 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 62 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 63 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void initParallel_npm(int* argc, char*** argv);
 void initParallel(int* argc, char*** argv)
-# 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 64 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 68 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 69 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 70 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 65 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 66 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 67 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 68 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 69 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 70 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
-# 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 72 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 71 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 72 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void destroyParallel_npm();
 void destroyParallel()
-# 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 73 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 74 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 75 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 76 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 77 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 74 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 75 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 76 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 77 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
-# 78 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 79 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 78 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 79 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void barrierParallel()
-# 80 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 80 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 81 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 82 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 83 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 84 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 81 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 82 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 83 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 84 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
-# 93 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 93 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 93 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 93 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 int sendReceiveParallel_npm(void* sendBuf, int sendLen, int dest, void* recvBuf, int recvLen, int source);
 int sendReceiveParallel_quick(void* sendBuf, int sendLen, int dest, void* recvBuf, int recvLen, int source); int sendReceiveParallel(void* sendBuf, int sendLen, int dest, void* recvBuf, int recvLen, int source);
 int sendReceiveParallel_resumable(void* sendBuf, int sendLen, int dest,
-# 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 94 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
                         void* recvBuf, int recvLen, int source)
-# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 95 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&sendReceiveParallel), "sendReceiveParallel", &____must_manage_sendReceiveParallel, 6, 0, (size_t)(2720369932807153941UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2720369932807153940UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   (__builtin_expect(!(source == dest), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c", 106, "source == dest") : (void)0);
-# 107 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 106 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 106 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+   (__builtin_expect(!(source == dest), 0) ? __assert_rtn(__func__, "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c", 106, "source == dest") : (void)0);
+# 107 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    memcpy(recvBuf, sendBuf, sendLen);
-# 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 108 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 109 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    rm_stack(false, 0UL, "sendReceiveParallel", &____must_manage_sendReceiveParallel, ____alias_loc_id_3, ____chimes_did_disable7); return sendLen;
-# 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 110 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 111 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
-# 112 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 113 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 112 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 113 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void addIntParallel_npm(int* sendBuf, int* recvBuf, int count);
 void addIntParallel_quick(int* sendBuf, int* recvBuf, int count); void addIntParallel(int* sendBuf, int* recvBuf, int count);
 void addIntParallel_resumable(int* sendBuf, int* recvBuf, int count)
-# 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 114 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&addIntParallel), "addIntParallel", &____must_manage_addIntParallel, 3, 0, (size_t)(2720369932807153997UL), (size_t)(2720369932807153998UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 115 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 116 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 118 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 115 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 116 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 117 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 118 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
-# 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 120 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 121 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "addIntParallel", &____must_manage_addIntParallel, ____alias_loc_id_4, ____chimes_did_disable8); }
-# 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 122 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 123 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void addRealParallel_npm(real_t* sendBuf, real_t* recvBuf, int count);
 void addRealParallel_quick(real_t* sendBuf, real_t* recvBuf, int count); void addRealParallel(real_t* sendBuf, real_t* recvBuf, int count);
 void addRealParallel_resumable(real_t* sendBuf, real_t* recvBuf, int count)
-# 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 124 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&addRealParallel), "addRealParallel", &____must_manage_addRealParallel, 3, 0, (size_t)(2720369932807154033UL), (size_t)(2720369932807154034UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 125 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 126 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 127 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 128 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
-# 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 130 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 131 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "addRealParallel", &____must_manage_addRealParallel, ____alias_loc_id_5, ____chimes_did_disable9); }
-# 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 132 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 133 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void addDoubleParallel_npm(double* sendBuf, double* recvBuf, int count);
 void addDoubleParallel_quick(double* sendBuf, double* recvBuf, int count); void addDoubleParallel(double* sendBuf, double* recvBuf, int count);
 void addDoubleParallel_resumable(double* sendBuf, double* recvBuf, int count)
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 134 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&addDoubleParallel), "addDoubleParallel", &____must_manage_addDoubleParallel, 3, 0, (size_t)(2720369932807154069UL), (size_t)(2720369932807154070UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 135 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 136 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 137 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 138 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
-# 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 140 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 141 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "addDoubleParallel", &____must_manage_addDoubleParallel, ____alias_loc_id_6, ____chimes_did_disable10); }
-# 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 142 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 143 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void maxIntParallel_npm(int* sendBuf, int* recvBuf, int count);
 void maxIntParallel_quick(int* sendBuf, int* recvBuf, int count); void maxIntParallel(int* sendBuf, int* recvBuf, int count);
 void maxIntParallel_resumable(int* sendBuf, int* recvBuf, int count)
-# 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 144 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable11 = new_stack((void *)(&maxIntParallel), "maxIntParallel", &____must_manage_maxIntParallel, 3, 0, (size_t)(2720369932807154105UL), (size_t)(2720369932807154106UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 145 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 146 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 147 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 148 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
-# 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 150 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 151 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "maxIntParallel", &____must_manage_maxIntParallel, ____alias_loc_id_7, ____chimes_did_disable11); }
-# 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 154 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 152 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 153 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 154 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void minRankDoubleParallel_npm(RankReduceData* sendBuf, RankReduceData* recvBuf, int count);
 void minRankDoubleParallel_quick(RankReduceData* sendBuf, RankReduceData* recvBuf, int count); void minRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int count);
 void minRankDoubleParallel_resumable(RankReduceData* sendBuf, RankReduceData* recvBuf, int count)
-# 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 155 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable12 = new_stack((void *)(&minRankDoubleParallel), "minRankDoubleParallel", &____must_manage_minRankDoubleParallel, 3, 0, (size_t)(2720369932807154155UL), (size_t)(2720369932807154156UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 157 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 158 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 159 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 156 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 157 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 158 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 159 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ; ii<count; ++ii)
-# 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 160 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    {
-# 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 161 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].val = sendBuf[ii].val;
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 162 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].rank = sendBuf[ii].rank;
-# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 163 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    } }
-# 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 164 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 165 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "minRankDoubleParallel", &____must_manage_minRankDoubleParallel, ____alias_loc_id_8, ____chimes_did_disable12); }
-# 166 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 166 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 167 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void maxRankDoubleParallel_npm(RankReduceData* sendBuf, RankReduceData* recvBuf, int count);
 void maxRankDoubleParallel_quick(RankReduceData* sendBuf, RankReduceData* recvBuf, int count); void maxRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int count);
 void maxRankDoubleParallel_resumable(RankReduceData* sendBuf, RankReduceData* recvBuf, int count)
-# 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 168 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable13 = new_stack((void *)(&maxRankDoubleParallel), "maxRankDoubleParallel", &____must_manage_maxRankDoubleParallel, 3, 0, (size_t)(2720369932807154205UL), (size_t)(2720369932807154206UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 169 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 170 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 171 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 172 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ; ii<count; ++ii)
-# 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 173 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    {
-# 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 174 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].val = sendBuf[ii].val;
-# 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 175 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].rank = sendBuf[ii].rank;
-# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 176 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    } }
-# 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 177 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 178 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "maxRankDoubleParallel", &____must_manage_maxRankDoubleParallel, ____alias_loc_id_9, ____chimes_did_disable13); }
-# 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 179 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 180 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 181 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void bcastParallel_npm(void* buf, int count, int root);
 void bcastParallel(void* buf, int count, int root)
-# 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 182 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 183 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 183 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 184 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 185 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 186 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
-# 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 187 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 188 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 int builtWithMpi_npm(void);
 int builtWithMpi_quick(void); int builtWithMpi(void);
 int builtWithMpi_resumable(void)
-# 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 189 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable15 = new_stack((void *)(&builtWithMpi), "builtWithMpi", &____must_manage_builtWithMpi, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 190 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 191 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 192 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 193 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    rm_stack(false, 0UL, "builtWithMpi", &____must_manage_builtWithMpi, 0, ____chimes_did_disable15); return 0;
-# 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 194 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 195 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 int getNRanks_quick()
-# 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 32 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&getNRanks), "getNRanks", &____must_manage_getNRanks, 0, 0) ; ; ;
-# 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 33 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    rm_stack(false, 0UL, "getNRanks", &____must_manage_getNRanks, 0, ____chimes_did_disable0); return nRanks;
-# 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 34 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 int getNRanks() { return (____chimes_replaying ? getNRanks_resumable() : getNRanks_quick()); }
 
 int getMyRank_quick()
-# 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 37 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&getMyRank), "getMyRank", &____must_manage_getMyRank, 0, 0) ; ; ;
-# 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 38 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    rm_stack(false, 0UL, "getMyRank", &____must_manage_getMyRank, 0, ____chimes_did_disable1); return myRank;
-# 39 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 39 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 int getMyRank() { return (____chimes_replaying ? getMyRank_resumable() : getMyRank_quick()); }
 
 int printRank_quick()
-# 46 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 46 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&printRank), "printRank", &____must_manage_printRank, 0, 0) ; ; ;
-# 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 47 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    if (myRank == 0) {rm_stack(false, 0UL, "printRank", &____must_manage_printRank, ____alias_loc_id_0, ____chimes_did_disable2); return 1; };
-# 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 48 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    rm_stack(false, 0UL, "printRank", &____must_manage_printRank, ____alias_loc_id_0, ____chimes_did_disable2); return 0;
-# 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 49 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 int printRank() { return (____chimes_replaying ? printRank_resumable() : printRank_quick()); }
 
 void timestampBarrier_quick(const char* msg)
-# 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 52 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&timestampBarrier), "timestampBarrier", &____must_manage_timestampBarrier, 1, 0, (size_t)(2720369932807153891UL)) ; time_t t;
  if (____must_checkpoint_timestampBarrier_t_0) { register_stack_vars(1, "timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0); } ; ;
-# 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 53 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    ({ calling_npm("barrierParallel", 0); barrierParallel_npm(); });
-# 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 54 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    if (! ({ calling_npm("printRank", 0); printRank_npm(); })) {rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_1, ____chimes_did_disable3); return; };
-# 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 56 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       t = (time(__null)) ;
-# 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 57 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
     char *timeString; timeString = (ctime(&t)) ;
-# 58 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 58 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    timeString[24] = '\0';
-# 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 59 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    fprintf(__stdoutp, "%s: %s\n", timeString, msg);
-# 60 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 60 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    fflush(__stdoutp);
-# 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 61 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_1, ____chimes_did_disable3); }
 
 void timestampBarrier(const char* msg) { (____chimes_replaying ? timestampBarrier_resumable(msg) : timestampBarrier_quick(msg)); }
 
 int sendReceiveParallel_quick(void* sendBuf, int sendLen, int dest,
-# 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 94 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
                         void* recvBuf, int recvLen, int source)
-# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 95 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&sendReceiveParallel), "sendReceiveParallel", &____must_manage_sendReceiveParallel, 6, 0, (size_t)(2720369932807153941UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2720369932807153940UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   (__builtin_expect(!(source == dest), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c", 106, "source == dest") : (void)0);
-# 107 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 106 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 106 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+   (__builtin_expect(!(source == dest), 0) ? __assert_rtn(__func__, "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c", 106, "source == dest") : (void)0);
+# 107 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    memcpy(recvBuf, sendBuf, sendLen);
-# 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 108 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 109 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    rm_stack(false, 0UL, "sendReceiveParallel", &____must_manage_sendReceiveParallel, ____alias_loc_id_3, ____chimes_did_disable7); return sendLen;
-# 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 110 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 111 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 int sendReceiveParallel(void* sendBuf, int sendLen, int dest,
-# 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 94 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
                         void* recvBuf, int recvLen, int source) { return (____chimes_replaying ? sendReceiveParallel_resumable(sendBuf, sendLen, dest, recvBuf, recvLen, source) : sendReceiveParallel_quick(sendBuf, sendLen, dest, recvBuf, recvLen, source)); }
 
 void addIntParallel_quick(int* sendBuf, int* recvBuf, int count)
-# 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 114 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&addIntParallel), "addIntParallel", &____must_manage_addIntParallel, 3, 0, (size_t)(2720369932807153997UL), (size_t)(2720369932807153998UL), (size_t)(0UL)) ; ; ;
-# 115 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 116 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 118 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 115 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 116 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 117 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 118 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
-# 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 120 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 121 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "addIntParallel", &____must_manage_addIntParallel, ____alias_loc_id_4, ____chimes_did_disable8); }
 
 void addIntParallel(int* sendBuf, int* recvBuf, int count) { (____chimes_replaying ? addIntParallel_resumable(sendBuf, recvBuf, count) : addIntParallel_quick(sendBuf, recvBuf, count)); }
 
 void addRealParallel_quick(real_t* sendBuf, real_t* recvBuf, int count)
-# 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 124 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&addRealParallel), "addRealParallel", &____must_manage_addRealParallel, 3, 0, (size_t)(2720369932807154033UL), (size_t)(2720369932807154034UL), (size_t)(0UL)) ; ; ;
-# 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 125 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 126 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 127 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 128 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
-# 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 130 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 131 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "addRealParallel", &____must_manage_addRealParallel, ____alias_loc_id_5, ____chimes_did_disable9); }
 
 void addRealParallel(real_t* sendBuf, real_t* recvBuf, int count) { (____chimes_replaying ? addRealParallel_resumable(sendBuf, recvBuf, count) : addRealParallel_quick(sendBuf, recvBuf, count)); }
 
 void addDoubleParallel_quick(double* sendBuf, double* recvBuf, int count)
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 134 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&addDoubleParallel), "addDoubleParallel", &____must_manage_addDoubleParallel, 3, 0, (size_t)(2720369932807154069UL), (size_t)(2720369932807154070UL), (size_t)(0UL)) ; ; ;
-# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 135 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 136 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 137 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 138 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
-# 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 140 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 141 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "addDoubleParallel", &____must_manage_addDoubleParallel, ____alias_loc_id_6, ____chimes_did_disable10); }
 
 void addDoubleParallel(double* sendBuf, double* recvBuf, int count) { (____chimes_replaying ? addDoubleParallel_resumable(sendBuf, recvBuf, count) : addDoubleParallel_quick(sendBuf, recvBuf, count)); }
 
 void maxIntParallel_quick(int* sendBuf, int* recvBuf, int count)
-# 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 144 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable11 = new_stack((void *)(&maxIntParallel), "maxIntParallel", &____must_manage_maxIntParallel, 3, 0, (size_t)(2720369932807154105UL), (size_t)(2720369932807154106UL), (size_t)(0UL)) ; ; ;
-# 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 145 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 146 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 147 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 148 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
-# 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 150 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 151 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "maxIntParallel", &____must_manage_maxIntParallel, ____alias_loc_id_7, ____chimes_did_disable11); }
 
 void maxIntParallel(int* sendBuf, int* recvBuf, int count) { (____chimes_replaying ? maxIntParallel_resumable(sendBuf, recvBuf, count) : maxIntParallel_quick(sendBuf, recvBuf, count)); }
 
 void minRankDoubleParallel_quick(RankReduceData* sendBuf, RankReduceData* recvBuf, int count)
-# 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 155 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable12 = new_stack((void *)(&minRankDoubleParallel), "minRankDoubleParallel", &____must_manage_minRankDoubleParallel, 3, 0, (size_t)(2720369932807154155UL), (size_t)(2720369932807154156UL), (size_t)(0UL)) ; ; ;
-# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 157 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 158 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 159 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 156 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 157 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 158 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 159 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ; ii<count; ++ii)
-# 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 160 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    {
-# 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 161 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].val = sendBuf[ii].val;
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 162 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].rank = sendBuf[ii].rank;
-# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 163 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    } }
-# 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 164 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 165 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "minRankDoubleParallel", &____must_manage_minRankDoubleParallel, ____alias_loc_id_8, ____chimes_did_disable12); }
 
 void minRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int count) { (____chimes_replaying ? minRankDoubleParallel_resumable(sendBuf, recvBuf, count) : minRankDoubleParallel_quick(sendBuf, recvBuf, count)); }
 
 void maxRankDoubleParallel_quick(RankReduceData* sendBuf, RankReduceData* recvBuf, int count)
-# 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 168 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable13 = new_stack((void *)(&maxRankDoubleParallel), "maxRankDoubleParallel", &____must_manage_maxRankDoubleParallel, 3, 0, (size_t)(2720369932807154205UL), (size_t)(2720369932807154206UL), (size_t)(0UL)) ; ; ;
-# 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 169 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 170 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 171 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 172 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    { int ii; for ( ii = (0) ; ii<count; ++ii)
-# 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 173 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    {
-# 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 174 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].val = sendBuf[ii].val;
-# 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 175 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].rank = sendBuf[ii].rank;
-# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 176 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    } }
-# 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 177 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 178 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 rm_stack(false, 0UL, "maxRankDoubleParallel", &____must_manage_maxRankDoubleParallel, ____alias_loc_id_9, ____chimes_did_disable13); }
 
 void maxRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int count) { (____chimes_replaying ? maxRankDoubleParallel_resumable(sendBuf, recvBuf, count) : maxRankDoubleParallel_quick(sendBuf, recvBuf, count)); }
 
 int builtWithMpi_quick(void)
-# 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 189 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {const int ____chimes_did_disable15 = new_stack((void *)(&builtWithMpi), "builtWithMpi", &____must_manage_builtWithMpi, 0, 0) ; ; ;
-# 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 190 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 191 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 192 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 193 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    rm_stack(false, 0UL, "builtWithMpi", &____must_manage_builtWithMpi, 0, ____chimes_did_disable15); return 0;
-# 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 194 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 195 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 int builtWithMpi(void) { return (____chimes_replaying ? builtWithMpi_resumable() : builtWithMpi_quick()); }
@@ -2497,204 +2497,204 @@ int builtWithMpi(void) { return (____chimes_replaying ? builtWithMpi_resumable()
 
 
 int getNRanks_npm()
-# 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 32 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 33 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    return nRanks;
-# 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 34 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 int getMyRank_npm()
-# 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 37 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 38 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    return myRank;
-# 39 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 39 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 int printRank_npm()
-# 46 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 46 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 47 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    if (myRank == 0) {return 1; };
-# 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 48 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    return 0;
-# 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 49 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 void timestampBarrier_npm(const char* msg)
-# 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 52 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 53 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    barrierParallel_npm();
-# 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 54 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    if (! printRank_npm()) {return; };
-# 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 56 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    time_t t= time(__null);
-# 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 57 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    char* timeString = ctime(&t);
-# 58 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 58 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    timeString[24] = '\0';
-# 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 59 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    fprintf(__stdoutp, "%s: %s\n", timeString, msg);
-# 60 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 60 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    fflush(__stdoutp);
-# 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 61 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 void initParallel_npm(int* argc, char*** argv)
-# 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 64 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 68 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 69 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 70 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 65 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 66 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 67 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 68 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 69 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 70 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 void destroyParallel_npm()
-# 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 73 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 74 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 75 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 76 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 77 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 74 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 75 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 76 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 77 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 void barrierParallel_npm()
-# 80 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 80 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 81 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 82 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 83 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 84 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 81 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 82 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 83 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 84 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 int sendReceiveParallel_npm(void* sendBuf, int sendLen, int dest,
-# 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 94 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
                         void* recvBuf, int recvLen, int source)
-# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 95 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   (__builtin_expect(!(source == dest), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c", 106, "source == dest") : (void)0);
-# 107 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 106 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 106 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+   (__builtin_expect(!(source == dest), 0) ? __assert_rtn(__func__, "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c", 106, "source == dest") : (void)0);
+# 107 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    memcpy(recvBuf, sendBuf, sendLen);
-# 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 108 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 109 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    return sendLen;
-# 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 110 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 111 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 void addIntParallel_npm(int* sendBuf, int* recvBuf, int count)
-# 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 114 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 115 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 116 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 118 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 115 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 116 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 117 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 118 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    for (int ii=0;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; };
-# 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 120 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 121 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 void addRealParallel_npm(real_t* sendBuf, real_t* recvBuf, int count)
-# 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 124 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 125 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 126 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 127 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 128 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    for (int ii=0;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; };
-# 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 130 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 131 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 void addDoubleParallel_npm(double* sendBuf, double* recvBuf, int count)
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 134 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 135 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 136 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 137 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 138 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    for (int ii=0;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; };
-# 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 140 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 141 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 void maxIntParallel_npm(int* sendBuf, int* recvBuf, int count)
-# 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 144 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 145 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 146 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 147 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 148 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    for (int ii=0;ii<count; ++ii) { recvBuf[ii] = sendBuf[ii]; };
-# 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 150 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 151 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 void minRankDoubleParallel_npm(RankReduceData* sendBuf, RankReduceData* recvBuf, int count)
-# 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 155 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 157 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 158 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 159 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 156 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 157 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 158 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 159 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    for (int ii=0; ii<count; ++ii)
-# 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 160 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    {
-# 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 161 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].val = sendBuf[ii].val;
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 162 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].rank = sendBuf[ii].rank;
-# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 163 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    }
-# 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 164 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 165 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 void maxRankDoubleParallel_npm(RankReduceData* sendBuf, RankReduceData* recvBuf, int count)
-# 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 168 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 169 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 170 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 171 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 172 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    for (int ii=0; ii<count; ++ii)
-# 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 173 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    {
-# 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 174 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].val = sendBuf[ii].val;
-# 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 175 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
       recvBuf[ii].rank = sendBuf[ii].rank;
-# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 176 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    }
-# 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 177 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 178 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 void bcastParallel_npm(void* buf, int count, int root)
-# 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 182 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 183 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 183 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 184 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 185 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 186 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 int builtWithMpi_npm(void)
-# 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 189 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {
-# 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 190 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 191 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 192 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 193 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
    return 0;
-# 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 194 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 195 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 

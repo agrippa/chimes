@@ -16,11 +16,11 @@ static int ____must_manage_haha_this_sux_part_canc = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 1 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -29,7 +29,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes();
@@ -83,14 +83,14 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 1 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 61 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
@@ -1447,51 +1447,51 @@ void *valloc(size_t);
 
 
 }
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 2 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp" 2
+# 1 "/Users/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/Users/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*fp)(void *));
-# 3 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp" 2
-# 3 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
-# 4 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 3 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp" 2
+# 3 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
+# 4 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
 int a = 3;
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
-# 6 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
+# 6 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
 void haha_this_sux_part_canc_npm();
 void haha_this_sux_part_canc_quick(); void haha_this_sux_part_canc();
 void haha_this_sux_part_canc_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux_part_canc), "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 7 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 7 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
     a = 4;
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
 rm_stack(false, 0UL, "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, ____alias_loc_id_0, ____chimes_did_disable0); }
-# 9 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
-# 10 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 9 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
+# 10 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(8770349349353183512UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 11 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 11 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
     ({ calling_npm("haha_this_sux_part_canc", 0); haha_this_sux_part_canc_npm(); });
-# 12 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 12 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
     rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable1); return 0;
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 13 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
 }
 void haha_this_sux_part_canc_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux_part_canc), "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, 0, 0) ; ; ;
-# 7 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 7 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
     a = 4;
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
 rm_stack(false, 0UL, "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, ____alias_loc_id_0, ____chimes_did_disable0); }
 
 void haha_this_sux_part_canc() { (____chimes_replaying ? haha_this_sux_part_canc_resumable() : haha_this_sux_part_canc_quick()); }
 
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(8770349349353183512UL)) ; ; ;
-# 11 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 11 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
     ({ calling_npm("haha_this_sux_part_canc", 0); haha_this_sux_part_canc_npm(); });
-# 12 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 12 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
     rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable1); return 0;
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 13 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
 }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -1499,9 +1499,9 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 void haha_this_sux_part_canc_npm() {
-# 7 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 7 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
     a = 4;
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./func_with_no_return.cpp"
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./func_with_no_return.cpp"
 }
 
 

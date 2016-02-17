@@ -28,10 +28,10 @@ static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
 static unsigned ____alias_loc_id_6;
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
+# 1 "/Users/jmg3/chimes/src/examples/cuda/dim3.cu"
+# 1 "/Users/jmg3/chimes/src/examples/cuda/dim3.cu"
 static char __nv_inited_managed_rt = 0; static void **__nv_fatbinhandle_for_managed_rt; static void __nv_save_fatbinhandle_for_managed_rt(void **in){__nv_fatbinhandle_for_managed_rt = in;} static char __nv_init_managed_rt_with_module(void **); static inline void __nv_init_managed_rt(void) { __nv_inited_managed_rt = (__nv_inited_managed_rt ? __nv_inited_managed_rt : __nv_init_managed_rt_with_module(__nv_fatbinhandle_for_managed_rt));}
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
+# 1 "/Users/jmg3/chimes/src/examples/cuda/dim3.cu"
 # 61 "/Developer/NVIDIA/CUDA-6.5/bin/../include/device_types.h"
 # 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3
 typedef long ptrdiff_t;
@@ -26751,84 +26751,84 @@ extern "C" int vasprintf(char **, const char *, va_list) __attribute((__format__
 extern "C" FILE *zopen(const char *, const char *, int);
 # 469 "/usr/include/stdio.h" 3
 extern "C" FILE *funopen(const void *, int (*)(void *, char *, int), int (*)(void *, const char *, int), fpos_t (*)(void *, fpos_t, int), int (*)(void *));
-# 7 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 7 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void init_chimes();
-# 8 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 8 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
-# 9 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 9 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void calling(void * func_ptr, int lbl, size_t set_return_alias, unsigned loc_id, unsigned naliases, ...);
-# 11 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 11 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern int get_next_call();
-# 12 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 12 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern int new_stack(void * func_ptr, const char * funcname, int * conditional, unsigned n_local_arg_aliases, unsigned nargs, ...);
-# 14 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 14 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
-# 16 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 16 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void rm_stack(bool has_return_alias, size_t returned_alias, const char * funcname, int * conditional, unsigned loc_id, int disabled);
-# 18 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 18 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void register_stack_var(const char * mangled_name, int * cond_registration, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 21 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 21 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void register_stack_vars(int nvars, ...);
-# 22 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 22 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void register_global_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 25 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 25 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void register_constant(size_t const_id, void * address, size_t length);
-# 27 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 27 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void register_functions(int nfunctions, const char * module_name, ...);
-# 28 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 28 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern int alias_group_changed(unsigned loc_id);
-# 29 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 29 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
-# 31 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 31 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 33 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 33 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
-# 35 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 35 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void free_wrapper(void * ptr, size_t group);
-# 36 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 36 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern bool disable_current_thread();
-# 37 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 37 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void reenable_current_thread(bool was_disabled);
-# 39 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 39 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern unsigned entering_omp_parallel(unsigned lbl, size_t * region_id, unsigned nlocals, ...);
-# 41 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 41 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void register_thread_local_stack_vars(unsigned relation, unsigned parent, unsigned threads_in_region, unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
-# 45 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 45 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth, size_t region_id);
-# 47 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 47 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern unsigned get_parent_vars_stack_depth();
-# 48 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 48 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern unsigned get_thread_stack_depth();
-# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 50 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern void chimes_error();
-# 54 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 54 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 56 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 56 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-# 68 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-# 71 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 71 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern int ____chimes_replaying;
-# 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 11 "/Users/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
-# 13 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 13 "/Users/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void wait_for_checkpoint();
-# 14 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 14 "/Users/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void register_custom_init_handler(const char * obj_name, void (* fp)(void *));
-# 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-# 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
+# 4 "/Users/jmg3/chimes/src/examples/cuda/dim3.cu"
+# 4 "/Users/jmg3/chimes/src/examples/cuda/dim3.cu"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(3859550638466940446UL)) ; dim3 blocks;
  register_stack_vars(1, "main|blocks|0", (int *)0x0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 5 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
+# 5 "/Users/jmg3/chimes/src/examples/cuda/dim3.cu"
  blocks = dim3(4, 256) ;
-# 6 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
+# 6 "/Users/jmg3/chimes/src/examples/cuda/dim3.cu"
  call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
-# 7 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
+# 7 "/Users/jmg3/chimes/src/examples/cuda/dim3.cu"
 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
-# 8 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
+# 8 "/Users/jmg3/chimes/src/examples/cuda/dim3.cu"
 }
 # 1 "dim3.cudafe1.stub.c"
 # 1 "dim3.cudafe1.stub.c"

@@ -72,7 +72,7 @@ static unsigned ____alias_loc_id_19;
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -81,7 +81,7 @@ static unsigned ____alias_loc_id_19;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -137,7 +137,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3964,8 +3964,8 @@ extern bots_verbose_mode_t bots_verbose_mode;
 # 32 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 33 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 
-# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();

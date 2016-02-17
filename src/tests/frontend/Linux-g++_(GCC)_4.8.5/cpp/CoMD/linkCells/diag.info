@@ -1,321 +1,321 @@
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 83 11 len=13 initLinkCells_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 30  ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 53 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 23  ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 13307200203520302136UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 57 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 113 6 len=16 destroyLinkCells_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 4  ({ free_helper((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)), 13307200203520302195UL);free((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)));  }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 25 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 4  ({ free_helper((((unsigned char *)*boxes) - sizeof(void *)), 13307200203520302188UL);free((((unsigned char *)*boxes) - sizeof(void *)));  }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 15 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 131 5 len=16 getNeighborBoxes_npm
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 159 6 len=12 putAtomInBox_npm
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 193 5 len=15 getBoxFromTuple_npm
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 246 6 len=8 moveAtom_npm
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 277 6 len=15 updateLinkCells_npm
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 297 5 len=12 maxOccupancy_npm
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 315 6 len=8 copyAtom_npm
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 337 5 len=15 getBoxFromCoord_npm
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 6 len=14 emptyHaloCells_npm
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 387 6 len=8 getTuple_npm
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 30  ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 53 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 23  ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 13307200203520302136UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 57 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 4  ({ free_helper((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)), 13307200203520302195UL);free((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)));  }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 25 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 4  ({ free_helper((((unsigned char *)*boxes) - sizeof(void *)), 13307200203520302188UL);free((((unsigned char *)*boxes) - sizeof(void *)));  }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 15 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 110 67 rm_stack(true, 13307200203520301970UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 1 const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302171UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 111 1 rm_stack(true, 13307200203520301970UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0, false); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 115 18 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1, false); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 116 19 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1, false); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 122 4 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 1 const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(13307200203520302206UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 145 63 rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_4, ____chimes_did_disable2, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 1 const int ____chimes_did_disable2 = new_stack((void *)(&getNeighborBoxes), "getNeighborBoxes", &____must_manage_getNeighborBoxes, 3, 0, (size_t)(13307200203520302295UL), (size_t)(0UL), (size_t)(13307200203520302297UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 146 1 rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_4, ____chimes_did_disable2, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 1 const int ____chimes_did_disable3 = new_stack((void *)(&putAtomInBox), "putAtomInBox", &____must_manage_putAtomInBox, 10, 0, (size_t)(13307200203520303004UL), (size_t)(13307200203520303005UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 185 1 rm_stack(false, 0UL, "putAtomInBox", &____must_manage_putAtomInBox, ____alias_loc_id_7, ____chimes_did_disable3, false); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 239 62 rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_6, ____chimes_did_disable4, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 1 const int ____chimes_did_disable4 = new_stack((void *)(&getBoxFromTuple), "getBoxFromTuple", &____must_manage_getBoxFromTuple, 4, 0, (size_t)(13307200203520302832UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 240 1 rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_6, ____chimes_did_disable4, false); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 261 4 rm_stack(false, 0UL, "moveAtom", &____must_manage_moveAtom, ____alias_loc_id_9, ____chimes_did_disable5, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 1 const int ____chimes_did_disable5 = new_stack((void *)(&moveAtom), "moveAtom", &____must_manage_moveAtom, 5, 0, (size_t)(13307200203520303240UL), (size_t)(13307200203520303281UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 1 const int ____chimes_did_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(13307200203520303485UL), (size_t)(13307200203520303486UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 294 1 rm_stack(false, 0UL, "updateLinkCells", &____must_manage_updateLinkCells, ____alias_loc_id_11, ____chimes_did_disable6, false); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 309 67 rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, ____alias_loc_id_13, ____chimes_did_disable7, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 1 const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303549UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 310 1 rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, ____alias_loc_id_13, ____chimes_did_disable7, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 1 const int ____chimes_did_disable8 = new_stack((void *)(&copyAtom), "copyAtom", &____must_manage_copyAtom, 6, 0, (size_t)(13307200203520303406UL), (size_t)(13307200203520303407UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 325 1 rm_stack(false, 0UL, "copyAtom", &____must_manage_copyAtom, ____alias_loc_id_10, ____chimes_did_disable8, false); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 369 64 rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_8, ____chimes_did_disable9, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 1 const int ____chimes_did_disable9 = new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(13307200203520303181UL), (size_t)(13307200203520303182UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 370 1 rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_8, ____chimes_did_disable9, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 1 const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(13307200203520303516UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 377 1 rm_stack(false, 0UL, "emptyHaloCells", &____must_manage_emptyHaloCells, ____alias_loc_id_12, ____chimes_did_disable10, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 388 1 const int ____chimes_did_disable11 = new_stack((void *)(&getTuple), "getTuple", &____must_manage_getTuple, 5, 0, (size_t)(13307200203520302575UL), (size_t)(0UL), (size_t)(13307200203520302577UL), (size_t)(13307200203520302578UL), (size_t)(13307200203520302579UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 459 1 rm_stack(false, 0UL, "getTuple", &____must_manage_getTuple, ____alias_loc_id_5, ____chimes_did_disable11, false); 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 2 const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302171UL), (size_t)(0UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 177 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 4  LinkCell *ll;  ll = ((LinkCell*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 389 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 4 {  int i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 95 4  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 9  i = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 27 void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 110 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 4 {  int iBox; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 74  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 9  iBox = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 19 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 110 5 LinkCell *____chimes_ret_var_0; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 110 36 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 2 const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(13307200203520302206UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 171 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 2 const int ____chimes_did_disable2 = new_stack((void *)(&getNeighborBoxes), "getNeighborBoxes", &____must_manage_getNeighborBoxes, 3, 0, (size_t)(13307200203520302295UL), (size_t)(0UL), (size_t)(13307200203520302297UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 220 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 4 int ix; int iy; int iz; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 136 4  int count;  count = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 136 17 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 137 4 {  int i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 143 4  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 137 9  i = (ix-1) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 137 19 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 138 7 {  int j; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 142 7  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 138 12  j = (iy-1) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 138 22 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 139 10 {  int k; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 141 10  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 139 15  k = (iz-1) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 139 25 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 145 5 int ____chimes_ret_var_1; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 145 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 2 const int ____chimes_did_disable3 = new_stack((void *)(&putAtomInBox), "putAtomInBox", &____must_manage_putAtomInBox, 10, 0, (size_t)(13307200203520303004UL), (size_t)(13307200203520303005UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 314 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 4 real_t xyz[3]; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 4  int iBox;  iBox = (getBoxFromCoord(boxes, xyz)) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 42 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 168 4  int iOff;  iOff = (iBox*64) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 168 22 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 2 const int ____chimes_did_disable4 = new_stack((void *)(&getBoxFromTuple), "getBoxFromTuple", &____must_manage_getBoxFromTuple, 4, 0, (size_t)(13307200203520302832UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 213 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 195 4  int iBox;  iBox = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 195 16 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 196 4  const int *gridSize;  gridSize = (boxes->gridSize) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 196 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 239 5 int ____chimes_ret_var_2; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 239 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 2 const int ____chimes_did_disable5 = new_stack((void *)(&moveAtom), "moveAtom", &____must_manage_moveAtom, 5, 0, (size_t)(13307200203520303240UL), (size_t)(13307200203520303281UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 226 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 248 4  int nj;  nj = (boxes->nAtoms[jBox]) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 248 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 255 4  int ni;  ni = (boxes->nAtoms[iBox]) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 255 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 2 const int ____chimes_did_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(13307200203520303485UL), (size_t)(13307200203520303486UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 202 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 281 4 {  int iBox; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 293 4  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 281 9  iBox = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 281 19 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 283 7  int iOff;  iOff = (iBox*64) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 283 25 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 284 7  int ii;  ii = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 284 15 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 10  int jBox;  jBox = (getBoxFromCoord(boxes, atoms->r[iOff+ii])) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 62 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 2 const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303549UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 159 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 4  int localMax;  localMax = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 20 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 300 4 {  int ii; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 300 131  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 300 9  ii = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 300 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 4 int globalMax; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 309 5 int ____chimes_ret_var_3; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 309 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 2 const int ____chimes_did_disable8 = new_stack((void *)(&copyAtom), "copyAtom", &____must_manage_copyAtom, 6, 0, (size_t)(13307200203520303406UL), (size_t)(13307200203520303407UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 241 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 317 4  int iOff;  iOff = (64*iBox+iAtom) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 317 28 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 318 4  int jOff;  jOff = (64*jBox+jAtom) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 318 28 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 2 const int ____chimes_did_disable9 = new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(13307200203520303181UL), (size_t)(13307200203520303182UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 202 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 339 4  const real_t *localMin;  localMin = (boxes->localMin) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 339 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 340 4  const real_t *localMax;  localMax = (boxes->localMax) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 340 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 341 4  const int *gridSize;  gridSize = (boxes->gridSize) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 341 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 4  int ix;  ix = ((int)(floor((rr[0] - localMin[0])*boxes->invBoxSize[0]))) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 69 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 4  int iy;  iy = ((int)(floor((rr[1] - localMin[1])*boxes->invBoxSize[1]))) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 69 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 4  int iz;  iz = ((int)(floor((rr[2] - localMin[2])*boxes->invBoxSize[2]))) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 69 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 4  int result;  result = (getBoxFromTuple(boxes, ix, iy, iz)) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 51 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 369 5 int ____chimes_ret_var_4; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 369 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 2 const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(13307200203520303516UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 166 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 375 4 {  int ii; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 375 89  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 375 9  ii = (boxes->nLocalBoxes) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 375 34 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 388 2 const int ____chimes_did_disable11 = new_stack((void *)(&getTuple), "getTuple", &____must_manage_getTuple, 5, 0, (size_t)(13307200203520302575UL), (size_t)(0UL), (size_t)(13307200203520302577UL), (size_t)(13307200203520302578UL), (size_t)(13307200203520302579UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 388 265 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 389 4 int ix; int iy; int iz; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 389 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 390 4  const int *gridSize;  gridSize = (boxes->gridSize) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 390 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 403 7 int ink; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 403 14 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 4  call_lbl_0: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 13  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 16  call_lbl_0: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 4  call_lbl_0: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 13  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 4  call_lbl_0: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 22  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 29  call_lbl_2: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 9  call_lbl_0: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 4  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 9  call_lbl_2: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 18  call_lbl_0: 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 83 11 len=13 initLinkCells_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 176  ; 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 113 6 len=16 destroyLinkCells_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 170  ; 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 131 5 len=16 getNeighborBoxes_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 17 ({ calling_npm("getTuple", 0); getTuple_npm(boxes, iBox, &ix, &iy, &iz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 52 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 46 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, i, j, k); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 73 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 4 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 10 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 219  ; int ix;
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 83 11 len=13 initLinkCells_npm
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 30  ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 53 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 23  ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 13307200203520302136UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 57 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 113 6 len=16 destroyLinkCells_npm
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 4  ({ free_helper((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)), 13307200203520302195UL);free((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 25 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 4  ({ free_helper((((unsigned char *)*boxes) - sizeof(void *)), 13307200203520302188UL);free((((unsigned char *)*boxes) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 15 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 131 5 len=16 getNeighborBoxes_npm
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 159 6 len=12 putAtomInBox_npm
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 193 5 len=15 getBoxFromTuple_npm
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 246 6 len=8 moveAtom_npm
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 277 6 len=15 updateLinkCells_npm
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 297 5 len=12 maxOccupancy_npm
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 315 6 len=8 copyAtom_npm
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 337 5 len=15 getBoxFromCoord_npm
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 6 len=14 emptyHaloCells_npm
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 387 6 len=8 getTuple_npm
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 30  ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 53 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 23  ({ void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, ll->nTotalBoxes*sizeof(int), 13307200203520302136UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 57 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 4  ({ free_helper((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)), 13307200203520302195UL);free((((unsigned char *)(*boxes)->nAtoms) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 25 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 4  ({ free_helper((((unsigned char *)*boxes) - sizeof(void *)), 13307200203520302188UL);free((((unsigned char *)*boxes) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 15 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 110 67 rm_stack(true, 13307200203520301970UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 1 const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302171UL), (size_t)(0UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 111 1 rm_stack(true, 13307200203520301970UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 115 18 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1, false); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 116 19 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1, false); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 122 4 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 1 const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(13307200203520302206UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 145 63 rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_4, ____chimes_did_disable2, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 1 const int ____chimes_did_disable2 = new_stack((void *)(&getNeighborBoxes), "getNeighborBoxes", &____must_manage_getNeighborBoxes, 3, 0, (size_t)(13307200203520302295UL), (size_t)(0UL), (size_t)(13307200203520302297UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 146 1 rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_4, ____chimes_did_disable2, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 1 const int ____chimes_did_disable3 = new_stack((void *)(&putAtomInBox), "putAtomInBox", &____must_manage_putAtomInBox, 10, 0, (size_t)(13307200203520303004UL), (size_t)(13307200203520303005UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 185 1 rm_stack(false, 0UL, "putAtomInBox", &____must_manage_putAtomInBox, ____alias_loc_id_7, ____chimes_did_disable3, false); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 239 62 rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_6, ____chimes_did_disable4, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 1 const int ____chimes_did_disable4 = new_stack((void *)(&getBoxFromTuple), "getBoxFromTuple", &____must_manage_getBoxFromTuple, 4, 0, (size_t)(13307200203520302832UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 240 1 rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_6, ____chimes_did_disable4, false); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 261 4 rm_stack(false, 0UL, "moveAtom", &____must_manage_moveAtom, ____alias_loc_id_9, ____chimes_did_disable5, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 1 const int ____chimes_did_disable5 = new_stack((void *)(&moveAtom), "moveAtom", &____must_manage_moveAtom, 5, 0, (size_t)(13307200203520303240UL), (size_t)(13307200203520303281UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 1 const int ____chimes_did_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(13307200203520303485UL), (size_t)(13307200203520303486UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 294 1 rm_stack(false, 0UL, "updateLinkCells", &____must_manage_updateLinkCells, ____alias_loc_id_11, ____chimes_did_disable6, false); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 309 67 rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, ____alias_loc_id_13, ____chimes_did_disable7, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 1 const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303549UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 310 1 rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, ____alias_loc_id_13, ____chimes_did_disable7, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 1 const int ____chimes_did_disable8 = new_stack((void *)(&copyAtom), "copyAtom", &____must_manage_copyAtom, 6, 0, (size_t)(13307200203520303406UL), (size_t)(13307200203520303407UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 325 1 rm_stack(false, 0UL, "copyAtom", &____must_manage_copyAtom, ____alias_loc_id_10, ____chimes_did_disable8, false); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 369 64 rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_8, ____chimes_did_disable9, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 1 const int ____chimes_did_disable9 = new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(13307200203520303181UL), (size_t)(13307200203520303182UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 370 1 rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_8, ____chimes_did_disable9, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 1 const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(13307200203520303516UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 377 1 rm_stack(false, 0UL, "emptyHaloCells", &____must_manage_emptyHaloCells, ____alias_loc_id_12, ____chimes_did_disable10, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 388 1 const int ____chimes_did_disable11 = new_stack((void *)(&getTuple), "getTuple", &____must_manage_getTuple, 5, 0, (size_t)(13307200203520302575UL), (size_t)(0UL), (size_t)(13307200203520302577UL), (size_t)(13307200203520302578UL), (size_t)(13307200203520302579UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 459 1 rm_stack(false, 0UL, "getTuple", &____must_manage_getTuple, ____alias_loc_id_5, ____chimes_did_disable11, false); 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 2 const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302171UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 177 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 4  LinkCell *ll;  ll = ((LinkCell*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LinkCell)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 389 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 4 {  int i; 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 95 4  }
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 9  i = (0) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 18 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 27 void *____chimes_tmp_ptr = malloc((ll->nTotalBoxes * sizeof(int)) + sizeof(void *)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 110 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 4 {  int iBox; 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 74  }
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 9  iBox = (0) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 19 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 110 5 LinkCell *____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 110 36 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 2 const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(13307200203520302206UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 171 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 2 const int ____chimes_did_disable2 = new_stack((void *)(&getNeighborBoxes), "getNeighborBoxes", &____must_manage_getNeighborBoxes, 3, 0, (size_t)(13307200203520302295UL), (size_t)(0UL), (size_t)(13307200203520302297UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 220 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 4 int ix; int iy; int iz; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 18 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 136 4  int count;  count = (0) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 136 17 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 137 4 {  int i; 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 143 4  }
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 137 9  i = (ix-1) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 137 19 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 138 7 {  int j; 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 142 7  }
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 138 12  j = (iy-1) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 138 22 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 139 10 {  int k; 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 141 10  }
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 139 15  k = (iz-1) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 139 25 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 145 5 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 145 29 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 2 const int ____chimes_did_disable3 = new_stack((void *)(&putAtomInBox), "putAtomInBox", &____must_manage_putAtomInBox, 10, 0, (size_t)(13307200203520303004UL), (size_t)(13307200203520303005UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 314 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 4 real_t xyz[3]; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 17 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 4  int iBox;  iBox = (getBoxFromCoord(boxes, xyz)) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 42 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 168 4  int iOff;  iOff = (iBox*64) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 168 22 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 2 const int ____chimes_did_disable4 = new_stack((void *)(&getBoxFromTuple), "getBoxFromTuple", &____must_manage_getBoxFromTuple, 4, 0, (size_t)(13307200203520302832UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 213 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 195 4  int iBox;  iBox = (0) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 195 16 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 196 4  const int *gridSize;  gridSize = (boxes->gridSize) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 196 41 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 239 5 int ____chimes_ret_var_2; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 239 29 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 2 const int ____chimes_did_disable5 = new_stack((void *)(&moveAtom), "moveAtom", &____must_manage_moveAtom, 5, 0, (size_t)(13307200203520303240UL), (size_t)(13307200203520303281UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 226 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 248 4  int nj;  nj = (boxes->nAtoms[jBox]) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 248 32 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 255 4  int ni;  ni = (boxes->nAtoms[iBox]) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 255 32 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 2 const int ____chimes_did_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(13307200203520303485UL), (size_t)(13307200203520303486UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 202 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 281 4 {  int iBox; 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 293 4  }
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 281 9  iBox = (0) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 281 19 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 283 7  int iOff;  iOff = (iBox*64) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 283 25 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 284 7  int ii;  ii = (0) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 284 15 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 10  int jBox;  jBox = (getBoxFromCoord(boxes, atoms->r[iOff+ii])) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 62 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 2 const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303549UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 159 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 4  int localMax;  localMax = (0) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 20 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 300 4 {  int ii; 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 300 131  }
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 300 9  ii = (0) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 300 17 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 4 int globalMax; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 17 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 309 5 int ____chimes_ret_var_3; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 309 29 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 2 const int ____chimes_did_disable8 = new_stack((void *)(&copyAtom), "copyAtom", &____must_manage_copyAtom, 6, 0, (size_t)(13307200203520303406UL), (size_t)(13307200203520303407UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 241 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 317 4  int iOff;  iOff = (64*iBox+iAtom) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 317 28 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 318 4  int jOff;  jOff = (64*jBox+jAtom) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 318 28 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 2 const int ____chimes_did_disable9 = new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(13307200203520303181UL), (size_t)(13307200203520303182UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 202 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 339 4  const real_t *localMin;  localMin = (boxes->localMin) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 339 44 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 340 4  const real_t *localMax;  localMax = (boxes->localMax) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 340 44 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 341 4  const int *gridSize;  gridSize = (boxes->gridSize) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 341 41 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 4  int ix;  ix = ((int)(floor((rr[0] - localMin[0])*boxes->invBoxSize[0]))) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 69 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 4  int iy;  iy = ((int)(floor((rr[1] - localMin[1])*boxes->invBoxSize[1]))) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 69 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 4  int iz;  iz = ((int)(floor((rr[2] - localMin[2])*boxes->invBoxSize[2]))) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 69 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 4  int result;  result = (getBoxFromTuple(boxes, ix, iy, iz)) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 51 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 369 5 int ____chimes_ret_var_4; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 369 29 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 2 const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(13307200203520303516UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 166 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 375 4 {  int ii; 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 375 89  }
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 375 9  ii = (boxes->nLocalBoxes) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 375 34 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 388 2 const int ____chimes_did_disable11 = new_stack((void *)(&getTuple), "getTuple", &____must_manage_getTuple, 5, 0, (size_t)(13307200203520302575UL), (size_t)(0UL), (size_t)(13307200203520302577UL), (size_t)(13307200203520302578UL), (size_t)(13307200203520302579UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 388 265 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 389 4 int ix; int iy; int iz; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 389 18 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 390 4  const int *gridSize;  gridSize = (boxes->gridSize) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 390 41 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 403 7 int ink; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 403 14 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 4  call_lbl_0: 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 13  call_lbl_1: 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 16  call_lbl_0: 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 4  call_lbl_0: 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 13  call_lbl_1: 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 4  call_lbl_0: 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 22  call_lbl_1: 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 29  call_lbl_2: 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 9  call_lbl_0: 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 4  call_lbl_1: 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 9  call_lbl_2: 
+InsertText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 18  call_lbl_0: 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 83 11 len=13 initLinkCells_quick
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 176  ; 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 113 6 len=16 destroyLinkCells_quick
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 170  ; 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 131 5 len=16 getNeighborBoxes_quick
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 17 ({ calling_npm("getTuple", 0); getTuple_npm(boxes, iBox, &ix, &iy, &iz); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 52 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 46 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, i, j, k); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 73 
+RemoveTextBegin /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 4 
+RemoveTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 10 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 219  ; int ix;
 # 132
  if (____must_checkpoint_getNeighborBoxes_ix_0) { register_stack_vars(1, "getNeighborBoxes|ix|0", &____must_checkpoint_getNeighborBoxes_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0);  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 159 6 len=12 putAtomInBox_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 37 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, xyz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 63 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 4 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 17 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 313  ; real_t xyz[3];
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 159 6 len=12 putAtomInBox_quick
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 37 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, xyz); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 63 
+RemoveTextBegin /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 4 
+RemoveTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 17 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 313  ; real_t xyz[3];
 # 163
  if (____must_checkpoint_putAtomInBox_xyz_0) { register_stack_vars(1, "putAtomInBox|xyz|0", &____must_checkpoint_putAtomInBox_xyz_0, "[3 x double]", (void *)(xyz), (size_t)24, 0, 0, 0);  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 193 5 len=15 getBoxFromTuple_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 212  ; 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 246 6 len=8 moveAtom_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 17 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 26 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 68 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 225  ; 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 277 6 len=15 updateLinkCells_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 17 ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 37 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 43 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, atoms->r[iOff+ii]); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 83 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 42 ({ calling_npm("moveAtom", 0); moveAtom_npm(boxes, atoms, ii, iBox, jBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 79 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 201  ; 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 297 5 len=12 maxOccupancy_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 22  ({  calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 50 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 17  ({  calling((void*)maxIntParallel, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(13307200203520303518UL), (size_t)(13307200203520303520UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 22  ({  calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 49 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 4 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 17 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 158  ; int globalMax;
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 193 5 len=15 getBoxFromTuple_quick
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 212  ; 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 246 6 len=8 moveAtom_quick
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 17 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 59 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 26 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 68 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 225  ; 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 277 6 len=15 updateLinkCells_quick
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 17 ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 37 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 43 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, atoms->r[iOff+ii]); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 83 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 42 ({ calling_npm("moveAtom", 0); moveAtom_npm(boxes, atoms, ii, iBox, jBox); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 79 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 201  ; 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 297 5 len=12 maxOccupancy_quick
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 22  ({  calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 50 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 17  ({  calling((void*)maxIntParallel, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(13307200203520303518UL), (size_t)(13307200203520303520UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 56 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 22  ({  calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 49 
+RemoveTextBegin /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 5 
+RemoveTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 17 
+RemoveTextBegin /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 4 
+RemoveTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 17 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 158  ; int globalMax;
 # 298
 int localMax;
 # 298
  if (____must_checkpoint_maxOccupancy_globalMax_0 || ____must_checkpoint_maxOccupancy_localMax_0) { register_stack_vars(2, "maxOccupancy|globalMax|0", &____must_checkpoint_maxOccupancy_globalMax_0, "i32", (void *)(&globalMax), (size_t)4, 0, 0, 0, "maxOccupancy|localMax|0", &____must_checkpoint_maxOccupancy_localMax_0, "i32", (void *)(&localMax), (size_t)4, 0, 0, 0);  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 315 6 len=8 copyAtom_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 240  ; 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 337 5 len=15 getBoxFromCoord_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 41 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 74 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 201  ; 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 6 len=14 emptyHaloCells_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 165  ; 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 387 6 len=8 getTuple_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 388 264  ; 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 83 11 len=13 initLinkCells_resumable
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 176  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 113 6 len=16 destroyLinkCells_resumable
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 170  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 131 5 len=16 getNeighborBoxes_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 17 ({ calling_npm("getTuple", 0); getTuple_npm(boxes, iBox, &ix, &iy, &iz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 52 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 46 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, i, j, k); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 73 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 4 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 10 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 219  ; int ix;
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 315 6 len=8 copyAtom_quick
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 240  ; 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 337 5 len=15 getBoxFromCoord_quick
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 41 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 74 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 201  ; 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 6 len=14 emptyHaloCells_quick
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 165  ; 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 387 6 len=8 getTuple_quick
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 388 264  ; 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 83 11 len=13 initLinkCells_resumable
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 176  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 113 6 len=16 destroyLinkCells_resumable
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 170  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 131 5 len=16 getNeighborBoxes_resumable
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 17 ({ calling_npm("getTuple", 0); getTuple_npm(boxes, iBox, &ix, &iy, &iz); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 52 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 46 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, i, j, k); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 73 
+RemoveTextBegin /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 4 
+RemoveTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 10 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 219  ; int ix;
 # 132
  if (____must_checkpoint_getNeighborBoxes_ix_0) { register_stack_vars(1, "getNeighborBoxes|ix|0", &____must_checkpoint_getNeighborBoxes_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 159 6 len=12 putAtomInBox_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 37 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, xyz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 63 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 4 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 17 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 313  ; real_t xyz[3];
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 159 6 len=12 putAtomInBox_resumable
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 37 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, xyz); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 63 
+RemoveTextBegin /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 4 
+RemoveTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 17 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 313  ; real_t xyz[3];
 # 163
  if (____must_checkpoint_putAtomInBox_xyz_0) { register_stack_vars(1, "putAtomInBox|xyz|0", &____must_checkpoint_putAtomInBox_xyz_0, "[3 x double]", (void *)(xyz), (size_t)24, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 193 5 len=15 getBoxFromTuple_resumable
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 212  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 246 6 len=8 moveAtom_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 17 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 59 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 26 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 68 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 225  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 277 6 len=15 updateLinkCells_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 17 ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 37 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 43 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, atoms->r[iOff+ii]); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 83 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 42 ({ calling_npm("moveAtom", 0); moveAtom_npm(boxes, atoms, ii, iBox, jBox); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 79 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 201  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 297 5 len=12 maxOccupancy_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 22  ({  calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 50 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 17  ({  calling((void*)maxIntParallel, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(13307200203520303518UL), (size_t)(13307200203520303520UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 56 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 22  ({  calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 49 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 5 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 17 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 4 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 17 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 158  ; int globalMax;
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 193 5 len=15 getBoxFromTuple_resumable
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 212  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 246 6 len=8 moveAtom_resumable
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 17 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 59 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 26 ({ calling_npm("copyAtom", 0); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 68 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 225  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 277 6 len=15 updateLinkCells_resumable
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 17 ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 37 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 43 ({ calling_npm("getBoxFromCoord", 0); getBoxFromCoord_npm(boxes, atoms->r[iOff+ii]); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 83 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 42 ({ calling_npm("moveAtom", 0); moveAtom_npm(boxes, atoms, ii, iBox, jBox); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 79 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 201  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 297 5 len=12 maxOccupancy_resumable
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 22  ({  calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 50 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 17  ({  calling((void*)maxIntParallel, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(13307200203520303518UL), (size_t)(13307200203520303520UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 56 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 22  ({  calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) 
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 49 
+RemoveTextBegin /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 5 
+RemoveTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 17 
+RemoveTextBegin /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 4 
+RemoveTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 17 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 158  ; int globalMax;
 # 298
 int localMax;
 # 298
  if (____must_checkpoint_maxOccupancy_globalMax_0 || ____must_checkpoint_maxOccupancy_localMax_0) { register_stack_vars(2, "maxOccupancy|globalMax|0", &____must_checkpoint_maxOccupancy_globalMax_0, "i32", (void *)(&globalMax), (size_t)4, 0, 0, 0, "maxOccupancy|localMax|0", &____must_checkpoint_maxOccupancy_localMax_0, "i32", (void *)(&localMax), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 315 6 len=8 copyAtom_resumable
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 240  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 337 5 len=15 getBoxFromCoord_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 41 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 74 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 201  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 6 len=14 emptyHaloCells_resumable
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 165  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 387 6 len=8 getTuple_resumable
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 388 264  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 315 6 len=8 copyAtom_resumable
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 240  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 337 5 len=15 getBoxFromCoord_resumable
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 41 ({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 74 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 201  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 6 len=14 emptyHaloCells_resumable
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 165  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 387 6 len=8 getTuple_resumable
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.c 388 264  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

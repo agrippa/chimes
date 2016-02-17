@@ -1,5 +1,5 @@
-/home/jmg3/num-debug/src/examples/cpp/./struct.cpp main|argc|0 " i32 " 32 0 0 0
-/home/jmg3/num-debug/src/examples/cpp/./struct.cpp main|argv|0 " i8** " 64 1 0 0
-/home/jmg3/num-debug/src/examples/cpp/./struct.cpp main|test|0 " %struct._foo = type { i32, i32*, i32** } " 192 0 1 _foo 2 b c 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./struct.cpp main|test2|0 " %struct._foo* " 64 1 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./struct.cpp main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/home/jmg3/chimes/src/examples/cpp/./struct.cpp main|argc|0 " i32 " 32 0 0 0
+/home/jmg3/chimes/src/examples/cpp/./struct.cpp main|argv|0 " i8** " 64 1 0 0
+/home/jmg3/chimes/src/examples/cpp/./struct.cpp main|test|0 " %struct._foo = type { i32, i32*, i32** } " 192 0 1 _foo 2 b c 1 checkpoint
+/home/jmg3/chimes/src/examples/cpp/./struct.cpp main|test2|0 " %struct._foo* " 64 1 0 1 checkpoint
+/home/jmg3/chimes/src/examples/cpp/./struct.cpp main|____chimes_ret_var_0|0 " i32 " 32 0 0 0

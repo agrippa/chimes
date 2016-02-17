@@ -1,6 +1,6 @@
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 51 1 : { 1, 2, 3, 5, 6, 7, 8, 9, 13, 14, 38, 44 } prop:call:checkpoint
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 69 : { 1, 2, 3, 5, 6, 7, 8, 9, 13, 14, 38, 44 } prop:call:kernel
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2 : { 232, 233, 234, 235 } direct:call:__device_stub__Z6kernelPiS_S_i
+/Users/jmg3/chimes/src/examples/cuda/vector_sum.cu 51 1 : { 1, 2, 3, 5, 6, 7, 8, 9, 13, 14, 38, 44 } prop:call:checkpoint
+/Users/jmg3/chimes/src/examples/cuda/vector_sum.cu 47 69 : { 1, 2, 3, 5, 6, 7, 8, 9, 13, 14, 38, 44 } prop:call:kernel
+/Users/jmg3/chimes/src/examples/cuda/vector_sum.cu 13 2 : { 232, 233, 234, 235 } direct:call:__device_stub__Z6kernelPiS_S_i
 /tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c 9 88 : { 260, 261, 262, 263 } direct:call:cudaSetupArgument
 /tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c 9 226 : { 394 } direct:call:cudaError
 /Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h 1510 8 : { 303 } direct:call:cudaLaunch

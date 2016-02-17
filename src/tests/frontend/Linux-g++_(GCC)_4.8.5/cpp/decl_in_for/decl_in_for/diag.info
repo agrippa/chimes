@@ -1,30 +1,30 @@
-InsertText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 13 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868869UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 14 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868869UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 170 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 5 5  int a;  a = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 5 14 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 6 5 {  int i; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 8 5  }
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 6 10  i = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 6 19 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 13 6 int ____chimes_ret_var_0; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 13 30 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 10 5  call_lbl_0: 
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 10 18 checkpoint_transformed(0, ____alias_loc_id_0)
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 10 29 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 5 6 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 5 11 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 167  ; int a;
+InsertText /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 13 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 4 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868869UL)); 
+InsertText /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 14 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 4 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868869UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 4 170 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 5 5  int a;  a = (0) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 5 14 
+InsertText /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 6 5 {  int i; 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 8 5  }
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 6 10  i = (0) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 6 19 
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 13 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 13 30 
+InsertText /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 10 5  call_lbl_0: 
+ReplaceText /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 4 5 len=4 main_quick
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 10 18 checkpoint_transformed(0, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 10 29 
+RemoveTextBegin /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 5 6 
+RemoveTextEnd /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 5 11 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 4 167  ; int a;
 # 4
  register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0);  
-ReplaceText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 10 18 checkpoint_transformed(0, ____alias_loc_id_0)
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 10 29 
-RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 5 6 
-RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 5 11 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 167  ; int a;
+ReplaceText /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 4 5 len=4 main_resumable
+ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 10 18 checkpoint_transformed(0, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 10 29 
+RemoveTextBegin /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 5 6 
+RemoveTextEnd /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 5 11 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/./decl_in_for.cpp 4 167  ; int a;
 # 4
  register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  

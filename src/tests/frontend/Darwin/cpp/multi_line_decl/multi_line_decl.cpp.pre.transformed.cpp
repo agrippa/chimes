@@ -15,11 +15,11 @@ static int ____must_manage_foo = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 1 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -28,7 +28,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes();
@@ -82,16 +82,16 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 9 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 1 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
+# 1 "/Users/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 9 "/Users/jmg3/chimes/src/libchimes/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 61 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
@@ -1448,47 +1448,47 @@ void *valloc(size_t);
 
 
 }
-# 10 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 2
+# 10 "/Users/jmg3/chimes/src/libchimes/checkpoint.h" 2
 
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*fp)(void *));
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp" 2
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-# 3 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 2 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp" 2
+# 2 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
+# 3 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
 int foo_npm(int a, int b);
 int foo_quick(int a, int b); int foo(int a, int b);
 int foo_resumable(int a, int b) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 4 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 4 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
     rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); return a + b;
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
 }
-# 6 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-# 7 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 6 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
+# 7 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11640126453143258355UL)) ; int *ptr;
 int a;
  register_stack_vars(2, "main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
        a = (3 + 4 + 5 + 6) ;
-# 11 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 11 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
        ptr = ((int *)malloc_wrapper(100, 11640126453143258341UL, 0, 0)) ;
-# 12 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 12 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
     ptr[0] = 42;
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-# 14 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 13 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
+# 14 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
-# 15 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-# 16 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 15 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
+# 16 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return ({ calling_npm("foo", 0); foo_npm(ptr[0], a); });
-# 17 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 17 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
 }
 int foo_quick(int a, int b) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 4 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 4 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
     rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); return a + b;
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
 }
 
 int foo(int a, int b) { return (____chimes_replaying ? foo_resumable(a, b) : foo_quick(a, b)); }
@@ -1496,19 +1496,19 @@ int foo(int a, int b) { return (____chimes_replaying ? foo_resumable(a, b) : foo
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11640126453143258355UL)) ; int *ptr;
 int a;
  register_stack_vars(2, "main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); ; ;
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
        a = (3 + 4 + 5 + 6) ;
-# 11 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 11 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
        ptr = ((int *)malloc_wrapper(100, 11640126453143258341UL, 0, 0)) ;
-# 12 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 12 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
     ptr[0] = 42;
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-# 14 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 13 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
+# 14 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
-# 15 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-# 16 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 15 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
+# 16 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return ({ calling_npm("foo", 0); foo_npm(ptr[0], a); });
-# 17 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 17 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
 }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -1516,9 +1516,9 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 int foo_npm(int a, int b) {
-# 4 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 4 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
     return a + b;
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp"
 }
 
 

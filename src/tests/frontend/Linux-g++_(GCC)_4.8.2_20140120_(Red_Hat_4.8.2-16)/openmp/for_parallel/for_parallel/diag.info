@@ -1,28 +1,28 @@
-InsertText /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 17 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 5 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(13948596507383518717UL)); 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 18 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 5 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13948596507383518717UL)); ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 5 171 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 6 5  int a;  a = (3) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 6 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 7 5  int b;  b = (4) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 7 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 8 5  int c;  c = (5) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 8 14 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 11 9  int inside;  inside = (6) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 11 23 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 17 6 int ____chimes_ret_var_0; ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 17 30 
-InsertText /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 15 5  call_lbl_0: 
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 5 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 15 18 checkpoint_transformed(0, ____alias_loc_id_0)
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 15 29 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 10 34  { 
-InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 13 5  } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 5 168  ; 
-ReplaceText /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 5 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 15 18 checkpoint_transformed(0, ____alias_loc_id_0)
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 15 29 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 10 34  { 
-InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 13 5  } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./for_parallel.cpp 5 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
+InsertText /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 17 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 5 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(13948596507383518717UL)); 
+InsertText /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 18 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 5 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13948596507383518717UL)); ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 5 171 
+ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 6 5  int a;  a = (3) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 6 14 
+ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 7 5  int b;  b = (4) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 7 14 
+ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 8 5  int c;  c = (5) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 8 14 
+ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 11 9  int inside;  inside = (6) ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 11 23 
+ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 17 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 17 30 
+InsertText /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 15 5  call_lbl_0: 
+ReplaceText /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 5 5 len=4 main_quick
+ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 15 18 checkpoint_transformed(0, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 15 29 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 10 34  { 
+InsertTextBefore /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 13 5  } 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 5 168  ; 
+ReplaceText /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 5 5 len=4 main_resumable
+ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 15 18 checkpoint_transformed(0, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 15 29 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 10 34  { 
+InsertTextBefore /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 13 5  } 
+InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp 5 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  

@@ -45,10 +45,10 @@ static unsigned ____alias_loc_id_16;
 static unsigned ____alias_loc_id_17;
 static unsigned ____alias_loc_id_18;
 static unsigned ____alias_loc_id_19;
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -57,7 +57,7 @@ static unsigned ____alias_loc_id_19;
 typedef long int ptrdiff_t;
 # 212 "/gpfs-biou/jmg3/gcc-install/lib/gcc/powerpc64-unknown-linux-gnu/4.8.1/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -113,19 +113,19 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 2 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 3 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 2 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 3 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.h" 1
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.h" 1
 
 
 
@@ -1076,7 +1076,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 8 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.h" 2
+# 8 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.h" 2
 
 
 
@@ -1105,8 +1105,8 @@ Command parseCommandLine(int argc, char** argv);
 
 
 void printCmdYaml(FILE* file, Command* cmd);
-# 5 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
-# 5 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 5 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
+# 5 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
@@ -1609,7 +1609,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 7 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
+# 7 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/gpfs-biou/jmg3/gcc-install/lib/gcc/powerpc64-unknown-linux-gnu/4.8.1/include/stddef.h" 1 3 4
@@ -2757,11 +2757,11 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 8 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
-# 8 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 8 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
+# 8 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.h" 1
-# 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.h"
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/cmdLineParser.h" 1
+# 28 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/cmdLineParser.h"
 int addArg(const char *longOption, const char shortOption,
            int has_arg, const char type, void *dataPtr, int dataSize,
            const char *help);
@@ -2773,16 +2773,16 @@ void processArgs(int argc, char **argv);
 void printArgs(void);
 
 void freeArgs(void);
-# 10 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.h" 1
+# 10 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h" 1
 
 
 
 
 
 
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mytype.h" 1
-# 13 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mytype.h"
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h" 1
+# 13 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h"
 typedef double real_t;
 
 
@@ -2796,7 +2796,7 @@ static void zeroReal3(real3 a)
    a[1] = 0.0;
    a[2] = 0.0;
 }
-# 8 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.h" 2
+# 8 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h" 2
 
 
 typedef struct RankReduceDataSt
@@ -2853,600 +2853,600 @@ void bcastParallel(void* buf, int len, int root);
 
 
 int builtWithMpi(void);
-# 11 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
-# 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 11 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
+# 186 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 186 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 Command parseCommandLine_npm(int argc, char** argv);static int (*____chimes_extern_func_addArg)(const char *, char, int, char, void *, int, const char *) = addArg;static void (*____chimes_extern_func_freeArgs)(void) = freeArgs;static void (*____chimes_extern_func_printArgs)(void) = printArgs;static void (*____chimes_extern_func_processArgs)(int, char **) = processArgs;
 Command parseCommandLine_quick(int argc, char** argv); Command parseCommandLine(int argc, char** argv);
 Command parseCommandLine_resumable(int argc, char** argv)
-# 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&parseCommandLine), "parseCommandLine", &____must_manage_parseCommandLine, 3, 2, (size_t)(12022527874929792621UL), (size_t)(0UL), (size_t)(12022527874929792623UL), "parseCommandLine|argc|0", &____must_checkpoint_parseCommandLine_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parseCommandLine|argv|0", &____must_checkpoint_parseCommandLine_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int help;
-# 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 Command cmd;
-# 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
  if (____must_checkpoint_parseCommandLine_help_0 || ____must_checkpoint_parseCommandLine_cmd_0) { register_stack_vars(2, "parseCommandLine|help|0", &____must_checkpoint_parseCommandLine_help_0, "i32", (void *)(&help), (size_t)4, 0, 0, 0, "parseCommandLine|cmd|0", &____must_checkpoint_parseCommandLine_cmd_0, "%struct.CommandSt = type { [1024 x i8], [1024 x i8], [1024 x i8], i32, i32, i32, i32, i32, i32, i32, i32, i32, double, double, double, double }", (void *)(&cmd), (size_t)3144, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } ; ;
-# 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 188 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
      ;
-# 189 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 190 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 189 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 190 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    memset(cmd.potDir, 0, 1024);
-# 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 191 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    memset(cmd.potName, 0, 1024);
-# 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 192 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    memset(cmd.potType, 0, 1024);
-# 193 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 193 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    strcpy(cmd.potDir, "pots");
-# 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 194 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    strcpy(cmd.potName, "\0");
-# 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 195 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    strcpy(cmd.potType, "funcfl");
-# 196 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 196 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.doeam = 0;
-# 197 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 197 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.nx = 20;
-# 198 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 198 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.ny = 20;
-# 199 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 199 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.nz = 20;
-# 200 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 200 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.xproc = 1;
-# 201 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 201 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.yproc = 1;
-# 202 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 202 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.zproc = 1;
-# 203 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 203 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.nSteps = 100;
-# 204 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 204 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.printRate = 10;
-# 205 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 205 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.dt = 1.0;
-# 206 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 206 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.lat = -1.0;
-# 207 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 207 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.temperature = 600.0;
-# 208 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 208 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.initialDelta = 0.0;
-# 209 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 210 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 209 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 210 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       help = (0) ;
-# 211 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 212 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 211 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 212 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_0: ({ char ____chimes_arg1; char ____chimes_arg3; void * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg1 = ('h'); ____chimes_arg3 = ('i'); ____chimes_arg4 = (&(help)); } calling((void*)addArg, 0, ____alias_loc_id_18, 0UL, 7, (size_t)(12022527874929792720UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792479UL), (size_t)(0UL), (size_t)(12022527874929792724UL)); (addArg)("help", ____chimes_arg1, 0, ____chimes_arg3, ____chimes_arg4, 0, "print this message"); }) ;
-# 213 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 213 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_1: ({ char ____chimes_arg8; char ____chimes_arg10; void * ____chimes_arg11; int ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg8 = ('d'); ____chimes_arg10 = ('s'); ____chimes_arg11 = (cmd.potDir); ____chimes_arg12 = (sizeof (cmd.potDir)); } calling((void*)addArg, 1, ____alias_loc_id_17, 0UL, 7, (size_t)(12022527874929792722UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792726UL)); (addArg)("potDir", ____chimes_arg8, 1, ____chimes_arg10, ____chimes_arg11, ____chimes_arg12, "potential directory"); }) ;
-# 214 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 214 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_2: ({ char ____chimes_arg15; char ____chimes_arg17; void * ____chimes_arg18; int ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg15 = ('p'); ____chimes_arg17 = ('s'); ____chimes_arg18 = (cmd.potName); ____chimes_arg19 = (sizeof (cmd.potName)); } calling((void*)addArg, 2, ____alias_loc_id_16, 0UL, 7, (size_t)(12022527874929792727UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792728UL)); (addArg)("potName", ____chimes_arg15, 1, ____chimes_arg17, ____chimes_arg18, ____chimes_arg19, "potential name"); }) ;
-# 215 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 215 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_3: ({ char ____chimes_arg22; char ____chimes_arg24; void * ____chimes_arg25; int ____chimes_arg26; if (!____chimes_replaying) { ____chimes_arg22 = ('t'); ____chimes_arg24 = ('s'); ____chimes_arg25 = (cmd.potType); ____chimes_arg26 = (sizeof (cmd.potType)); } calling((void*)addArg, 3, ____alias_loc_id_15, 0UL, 7, (size_t)(12022527874929792727UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792730UL)); (addArg)("potType", ____chimes_arg22, 1, ____chimes_arg24, ____chimes_arg25, ____chimes_arg26, "potential type (funcfl or setfl)"); }) ;
-# 216 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 216 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_4: ({ char ____chimes_arg29; char ____chimes_arg31; void * ____chimes_arg32; if (!____chimes_replaying) { ____chimes_arg29 = ('e'); ____chimes_arg31 = ('i'); ____chimes_arg32 = (&(cmd.doeam)); } calling((void*)addArg, 4, ____alias_loc_id_14, 0UL, 7, (size_t)(12022527874929792731UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792732UL)); (addArg)("doeam", ____chimes_arg29, 0, ____chimes_arg31, ____chimes_arg32, 0, "compute eam potentials"); }) ;
-# 217 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 217 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_5: ({ char ____chimes_arg36; char ____chimes_arg38; void * ____chimes_arg39; if (!____chimes_replaying) { ____chimes_arg36 = ('x'); ____chimes_arg38 = ('i'); ____chimes_arg39 = (&(cmd.nx)); } calling((void*)addArg, 5, ____alias_loc_id_13, 0UL, 7, (size_t)(12022527874929792733UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("nx", ____chimes_arg36, 1, ____chimes_arg38, ____chimes_arg39, 0, "number of unit cells in x"); }) ;
-# 218 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 218 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_6: ({ char ____chimes_arg43; char ____chimes_arg45; void * ____chimes_arg46; if (!____chimes_replaying) { ____chimes_arg43 = ('y'); ____chimes_arg45 = ('i'); ____chimes_arg46 = (&(cmd.ny)); } calling((void*)addArg, 6, ____alias_loc_id_12, 0UL, 7, (size_t)(12022527874929792733UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("ny", ____chimes_arg43, 1, ____chimes_arg45, ____chimes_arg46, 0, "number of unit cells in y"); }) ;
-# 219 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 219 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_7: ({ char ____chimes_arg50; char ____chimes_arg52; void * ____chimes_arg53; if (!____chimes_replaying) { ____chimes_arg50 = ('z'); ____chimes_arg52 = ('i'); ____chimes_arg53 = (&(cmd.nz)); } calling((void*)addArg, 7, ____alias_loc_id_11, 0UL, 7, (size_t)(12022527874929792733UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("nz", ____chimes_arg50, 1, ____chimes_arg52, ____chimes_arg53, 0, "number of unit cells in z"); }) ;
-# 220 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 220 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_8: ({ char ____chimes_arg57; char ____chimes_arg59; void * ____chimes_arg60; if (!____chimes_replaying) { ____chimes_arg57 = ('i'); ____chimes_arg59 = ('i'); ____chimes_arg60 = (&(cmd.xproc)); } calling((void*)addArg, 8, ____alias_loc_id_10, 0UL, 7, (size_t)(12022527874929792731UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("xproc", ____chimes_arg57, 1, ____chimes_arg59, ____chimes_arg60, 0, "processors in x direction"); }) ;
-# 221 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 221 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_9: ({ char ____chimes_arg64; char ____chimes_arg66; void * ____chimes_arg67; if (!____chimes_replaying) { ____chimes_arg64 = ('j'); ____chimes_arg66 = ('i'); ____chimes_arg67 = (&(cmd.yproc)); } calling((void*)addArg, 9, ____alias_loc_id_9, 0UL, 7, (size_t)(12022527874929792731UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("yproc", ____chimes_arg64, 1, ____chimes_arg66, ____chimes_arg67, 0, "processors in y direction"); }) ;
-# 222 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 222 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_10: ({ char ____chimes_arg71; char ____chimes_arg73; void * ____chimes_arg74; if (!____chimes_replaying) { ____chimes_arg71 = ('k'); ____chimes_arg73 = ('i'); ____chimes_arg74 = (&(cmd.zproc)); } calling((void*)addArg, 10, ____alias_loc_id_8, 0UL, 7, (size_t)(12022527874929792731UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("zproc", ____chimes_arg71, 1, ____chimes_arg73, ____chimes_arg74, 0, "processors in z direction"); }) ;
-# 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 223 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_11: ({ char ____chimes_arg78; char ____chimes_arg80; void * ____chimes_arg81; if (!____chimes_replaying) { ____chimes_arg78 = ('N'); ____chimes_arg80 = ('i'); ____chimes_arg81 = (&(cmd.nSteps)); } calling((void*)addArg, 11, ____alias_loc_id_7, 0UL, 7, (size_t)(12022527874929792722UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792746UL)); (addArg)("nSteps", ____chimes_arg78, 1, ____chimes_arg80, ____chimes_arg81, 0, "number of time steps"); }) ;
-# 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 224 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_12: ({ char ____chimes_arg85; char ____chimes_arg87; void * ____chimes_arg88; if (!____chimes_replaying) { ____chimes_arg85 = ('n'); ____chimes_arg87 = ('i'); ____chimes_arg88 = (&(cmd.printRate)); } calling((void*)addArg, 12, ____alias_loc_id_6, 0UL, 7, (size_t)(12022527874929792747UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792748UL)); (addArg)("printRate", ____chimes_arg85, 1, ____chimes_arg87, ____chimes_arg88, 0, "number of steps between output"); }) ;
-# 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 225 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_13: ({ char ____chimes_arg92; char ____chimes_arg94; void * ____chimes_arg95; if (!____chimes_replaying) { ____chimes_arg92 = ('D'); ____chimes_arg94 = ('d'); ____chimes_arg95 = (&(cmd.dt)); } calling((void*)addArg, 13, ____alias_loc_id_5, 0UL, 7, (size_t)(12022527874929792733UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792750UL)); (addArg)("dt", ____chimes_arg92, 1, ____chimes_arg94, ____chimes_arg95, 0, "time step (in fs)"); }) ;
-# 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 226 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_14: ({ char ____chimes_arg99; char ____chimes_arg101; void * ____chimes_arg102; if (!____chimes_replaying) { ____chimes_arg99 = ('l'); ____chimes_arg101 = ('d'); ____chimes_arg102 = (&(cmd.lat)); } calling((void*)addArg, 14, ____alias_loc_id_4, 0UL, 7, (size_t)(12022527874929792751UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792752UL)); (addArg)("lat", ____chimes_arg99, 1, ____chimes_arg101, ____chimes_arg102, 0, "lattice parameter (Angstroms)"); }) ;
-# 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 227 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_15: ({ char ____chimes_arg106; char ____chimes_arg108; void * ____chimes_arg109; if (!____chimes_replaying) { ____chimes_arg106 = ('T'); ____chimes_arg108 = ('d'); ____chimes_arg109 = (&(cmd.temperature)); } calling((void*)addArg, 15, ____alias_loc_id_3, 0UL, 7, (size_t)(12022527874929792720UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792754UL)); (addArg)("temp", ____chimes_arg106, 1, ____chimes_arg108, ____chimes_arg109, 0, "initial temperature (K)"); }) ;
-# 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 228 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_16: ({ char ____chimes_arg113; char ____chimes_arg115; void * ____chimes_arg116; if (!____chimes_replaying) { ____chimes_arg113 = ('r'); ____chimes_arg115 = ('d'); ____chimes_arg116 = (&(cmd.initialDelta)); } calling((void*)addArg, 16, ____alias_loc_id_2, 0UL, 7, (size_t)(12022527874929792731UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("delta", ____chimes_arg113, 1, ____chimes_arg115, ____chimes_arg116, 0, "initial delta (Angstroms)"); }) ;
-# 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 230 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 229 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 230 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_17: ({ calling((void*)processArgs, 17, ____alias_loc_id_1, 0UL, 2, (size_t)(0UL), (size_t)(12022527874929792623UL)); (processArgs)(argc, argv); }) ;
-# 231 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 232 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 233 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 231 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 232 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 233 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    if (strlen(cmd.potName) == 0)
-# 234 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 234 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    {
-# 235 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 235 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       if (strcmp(cmd.potType, "setfl" ) == 0) {strcpy(cmd.potName, "Cu01.eam.alloy"); };
-# 237 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 237 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       if (strcmp(cmd.potType, "funcfl") == 0) {strcpy(cmd.potName, "Cu_u6.eam"); };
-# 239 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 239 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    }
-# 240 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 241 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 240 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 241 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    if (help)
-# 242 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 242 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    {
-# 243 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 243 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
        call_lbl_18: ({ calling((void*)printArgs, 18, 0, 0UL, 0); (printArgs)(); }) ;
-# 244 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 244 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
        call_lbl_19: ({ calling((void*)freeArgs, 19, 0, 0UL, 0); (freeArgs)(); }) ;
-# 245 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 245 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       exit(2);
-# 246 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 246 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    }
-# 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 247 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_20: ({ calling((void*)freeArgs, 20, ____alias_loc_id_0, 0UL, 0); (freeArgs)(); }) ;
-# 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 248 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 249 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
      Command ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (cmd); rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 250 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0, false); }
-# 251 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 252 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 251 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 252 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 void printCmdYaml_npm(FILE* file, Command* cmd);static int (*____chimes_extern_func_printRank)(void) = printRank;
 void printCmdYaml_quick(FILE* file, Command* cmd); void printCmdYaml(FILE* file, Command* cmd);
 void printCmdYaml_resumable(FILE* file, Command* cmd)
-# 253 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 253 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(12022527874929792715UL), (size_t)(12022527874929792716UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 254 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 254 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    alias_group_changed(____alias_loc_id_19); call_lbl_0: if (! ({ calling((void*)printRank, 0, ____alias_loc_id_19, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1, false); return; };
-# 256 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 256 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    fprintf(file,
-# 257 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 257 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "Command Line Parameters:\n"
-# 258 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 258 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  doeam: %d\n"
-# 259 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 259 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  potDir: %s\n"
-# 260 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 260 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  potName: %s\n"
-# 261 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 261 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  potType: %s\n"
-# 262 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 262 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  nx: %d\n"
-# 263 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 263 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  ny: %d\n"
-# 264 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 264 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  nz: %d\n"
-# 265 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  xproc: %d\n"
-# 266 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 266 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  yproc: %d\n"
-# 267 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 267 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  zproc: %d\n"
-# 268 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 268 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Lattice constant: %g Angstroms\n"
-# 269 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 269 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  nSteps: %d\n"
-# 270 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 270 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  printRate: %d\n"
-# 271 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 271 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Time step: %g fs\n"
-# 272 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 272 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Initial Temperature: %g K\n"
-# 273 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 273 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Initial Delta: %g Angstroms\n"
-# 274 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 274 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "\n",
-# 275 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 275 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->doeam,
-# 276 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 276 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->potDir,
-# 277 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 277 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->potName,
-# 278 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 278 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->potType,
-# 279 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 279 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->nx, cmd->ny, cmd->nz,
-# 280 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 280 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->xproc, cmd->yproc, cmd->zproc,
-# 281 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 281 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->lat,
-# 282 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 282 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->nSteps,
-# 283 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 283 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->printRate,
-# 284 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 284 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->dt,
-# 285 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 285 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->temperature,
-# 286 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 286 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->initialDelta
-# 287 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 287 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    );
-# 288 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 288 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    fflush(file);
-# 289 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 289 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1, false); }
-# 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 186 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 Command parseCommandLine_quick(int argc, char** argv)
-# 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&parseCommandLine), "parseCommandLine", &____must_manage_parseCommandLine, 3, 2, (size_t)(12022527874929792621UL), (size_t)(0UL), (size_t)(12022527874929792623UL), "parseCommandLine|argc|0", &____must_checkpoint_parseCommandLine_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parseCommandLine|argv|0", &____must_checkpoint_parseCommandLine_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int help;
-# 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 Command cmd;
-# 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
  if (____must_checkpoint_parseCommandLine_help_0 || ____must_checkpoint_parseCommandLine_cmd_0) { register_stack_vars(2, "parseCommandLine|help|0", &____must_checkpoint_parseCommandLine_help_0, "i32", (void *)(&help), (size_t)4, 0, 0, 0, "parseCommandLine|cmd|0", &____must_checkpoint_parseCommandLine_cmd_0, "%struct.CommandSt = type { [1024 x i8], [1024 x i8], [1024 x i8], i32, i32, i32, i32, i32, i32, i32, i32, i32, double, double, double, double }", (void *)(&cmd), (size_t)3144, 0, 1, 0); } ; ;
-# 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 188 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
      ;
-# 189 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 190 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 189 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 190 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    memset(cmd.potDir, 0, 1024);
-# 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 191 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    memset(cmd.potName, 0, 1024);
-# 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 192 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    memset(cmd.potType, 0, 1024);
-# 193 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 193 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    strcpy(cmd.potDir, "pots");
-# 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 194 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    strcpy(cmd.potName, "\0");
-# 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 195 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    strcpy(cmd.potType, "funcfl");
-# 196 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 196 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.doeam = 0;
-# 197 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 197 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.nx = 20;
-# 198 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 198 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.ny = 20;
-# 199 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 199 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.nz = 20;
-# 200 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 200 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.xproc = 1;
-# 201 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 201 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.yproc = 1;
-# 202 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 202 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.zproc = 1;
-# 203 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 203 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.nSteps = 100;
-# 204 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 204 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.printRate = 10;
-# 205 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 205 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.dt = 1.0;
-# 206 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 206 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.lat = -1.0;
-# 207 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 207 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.temperature = 600.0;
-# 208 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 208 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.initialDelta = 0.0;
-# 209 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 210 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 209 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 210 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       help = (0) ;
-# 211 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 212 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 211 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 212 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_0: ({ calling((void*)addArg, 0, ____alias_loc_id_18, 0UL, 7, (size_t)(12022527874929792720UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792479UL), (size_t)(0UL), (size_t)(12022527874929792724UL)); (addArg)("help", 'h', 0, 'i', &(help), 0, "print this message"); }) ;
-# 213 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 213 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_1: ({ calling((void*)addArg, 1, ____alias_loc_id_17, 0UL, 7, (size_t)(12022527874929792722UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792726UL)); (addArg)("potDir", 'd', 1, 's', cmd.potDir, sizeof (cmd.potDir), "potential directory"); }) ;
-# 214 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 214 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_2: ({ calling((void*)addArg, 2, ____alias_loc_id_16, 0UL, 7, (size_t)(12022527874929792727UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792728UL)); (addArg)("potName", 'p', 1, 's', cmd.potName, sizeof (cmd.potName), "potential name"); }) ;
-# 215 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 215 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_3: ({ calling((void*)addArg, 3, ____alias_loc_id_15, 0UL, 7, (size_t)(12022527874929792727UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792730UL)); (addArg)("potType", 't', 1, 's', cmd.potType, sizeof (cmd.potType), "potential type (funcfl or setfl)"); }) ;
-# 216 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 216 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_4: ({ calling((void*)addArg, 4, ____alias_loc_id_14, 0UL, 7, (size_t)(12022527874929792731UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792732UL)); (addArg)("doeam", 'e', 0, 'i', &(cmd.doeam), 0, "compute eam potentials"); }) ;
-# 217 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 217 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_5: ({ calling((void*)addArg, 5, ____alias_loc_id_13, 0UL, 7, (size_t)(12022527874929792733UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("nx", 'x', 1, 'i', &(cmd.nx), 0, "number of unit cells in x"); }) ;
-# 218 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 218 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_6: ({ calling((void*)addArg, 6, ____alias_loc_id_12, 0UL, 7, (size_t)(12022527874929792733UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("ny", 'y', 1, 'i', &(cmd.ny), 0, "number of unit cells in y"); }) ;
-# 219 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 219 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_7: ({ calling((void*)addArg, 7, ____alias_loc_id_11, 0UL, 7, (size_t)(12022527874929792733UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("nz", 'z', 1, 'i', &(cmd.nz), 0, "number of unit cells in z"); }) ;
-# 220 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 220 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_8: ({ calling((void*)addArg, 8, ____alias_loc_id_10, 0UL, 7, (size_t)(12022527874929792731UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("xproc", 'i', 1, 'i', &(cmd.xproc), 0, "processors in x direction"); }) ;
-# 221 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 221 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_9: ({ calling((void*)addArg, 9, ____alias_loc_id_9, 0UL, 7, (size_t)(12022527874929792731UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("yproc", 'j', 1, 'i', &(cmd.yproc), 0, "processors in y direction"); }) ;
-# 222 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 222 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_10: ({ calling((void*)addArg, 10, ____alias_loc_id_8, 0UL, 7, (size_t)(12022527874929792731UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("zproc", 'k', 1, 'i', &(cmd.zproc), 0, "processors in z direction"); }) ;
-# 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 223 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_11: ({ calling((void*)addArg, 11, ____alias_loc_id_7, 0UL, 7, (size_t)(12022527874929792722UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792746UL)); (addArg)("nSteps", 'N', 1, 'i', &(cmd.nSteps), 0, "number of time steps"); }) ;
-# 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 224 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_12: ({ calling((void*)addArg, 12, ____alias_loc_id_6, 0UL, 7, (size_t)(12022527874929792747UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792748UL)); (addArg)("printRate", 'n', 1, 'i', &(cmd.printRate), 0, "number of steps between output"); }) ;
-# 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 225 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_13: ({ calling((void*)addArg, 13, ____alias_loc_id_5, 0UL, 7, (size_t)(12022527874929792733UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792750UL)); (addArg)("dt", 'D', 1, 'd', &(cmd.dt), 0, "time step (in fs)"); }) ;
-# 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 226 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_14: ({ calling((void*)addArg, 14, ____alias_loc_id_4, 0UL, 7, (size_t)(12022527874929792751UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792752UL)); (addArg)("lat", 'l', 1, 'd', &(cmd.lat), 0, "lattice parameter (Angstroms)"); }) ;
-# 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 227 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_15: ({ calling((void*)addArg, 15, ____alias_loc_id_3, 0UL, 7, (size_t)(12022527874929792720UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792754UL)); (addArg)("temp", 'T', 1, 'd', &(cmd.temperature), 0, "initial temperature (K)"); }) ;
-# 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 228 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_16: ({ calling((void*)addArg, 16, ____alias_loc_id_2, 0UL, 7, (size_t)(12022527874929792731UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12022527874929792478UL), (size_t)(0UL), (size_t)(12022527874929792734UL)); (addArg)("delta", 'r', 1, 'd', &(cmd.initialDelta), 0, "initial delta (Angstroms)"); }) ;
-# 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 230 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 229 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 230 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_17: ({ calling((void*)processArgs, 17, ____alias_loc_id_1, 0UL, 2, (size_t)(0UL), (size_t)(12022527874929792623UL)); (processArgs)(argc, argv); }) ;
-# 231 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 232 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 233 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 231 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 232 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 233 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    if (strlen(cmd.potName) == 0)
-# 234 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 234 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    {
-# 235 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 235 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       if (strcmp(cmd.potType, "setfl" ) == 0) {strcpy(cmd.potName, "Cu01.eam.alloy"); };
-# 237 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 237 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       if (strcmp(cmd.potType, "funcfl") == 0) {strcpy(cmd.potName, "Cu_u6.eam"); };
-# 239 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 239 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    }
-# 240 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 241 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 240 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 241 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    if (help)
-# 242 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 242 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    {
-# 243 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 243 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
        call_lbl_18: ({ calling((void*)printArgs, 18, 0, 0UL, 0); (printArgs)(); }) ;
-# 244 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 244 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
        call_lbl_19: ({ calling((void*)freeArgs, 19, 0, 0UL, 0); (freeArgs)(); }) ;
-# 245 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 245 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       exit(2);
-# 246 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 246 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    }
-# 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 247 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     call_lbl_20: ({ calling((void*)freeArgs, 20, ____alias_loc_id_0, 0UL, 0); (freeArgs)(); }) ;
-# 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 248 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 249 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
      Command ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (cmd); rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 250 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0, false); }
 
 Command parseCommandLine(int argc, char** argv) { return (____chimes_replaying ? parseCommandLine_resumable(argc, argv) : parseCommandLine_quick(argc, argv)); }
-# 252 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 252 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 void printCmdYaml_quick(FILE* file, Command* cmd)
-# 253 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 253 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(12022527874929792715UL), (size_t)(12022527874929792716UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0) ; ; ;
-# 254 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 254 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    alias_group_changed(____alias_loc_id_19); call_lbl_0: if (! ({ calling((void*)printRank, 0, ____alias_loc_id_19, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1, false); return; };
-# 256 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 256 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    fprintf(file,
-# 257 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 257 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "Command Line Parameters:\n"
-# 258 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 258 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  doeam: %d\n"
-# 259 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 259 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  potDir: %s\n"
-# 260 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 260 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  potName: %s\n"
-# 261 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 261 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  potType: %s\n"
-# 262 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 262 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  nx: %d\n"
-# 263 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 263 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  ny: %d\n"
-# 264 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 264 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  nz: %d\n"
-# 265 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  xproc: %d\n"
-# 266 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 266 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  yproc: %d\n"
-# 267 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 267 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  zproc: %d\n"
-# 268 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 268 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Lattice constant: %g Angstroms\n"
-# 269 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 269 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  nSteps: %d\n"
-# 270 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 270 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  printRate: %d\n"
-# 271 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 271 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Time step: %g fs\n"
-# 272 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 272 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Initial Temperature: %g K\n"
-# 273 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 273 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Initial Delta: %g Angstroms\n"
-# 274 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 274 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "\n",
-# 275 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 275 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->doeam,
-# 276 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 276 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->potDir,
-# 277 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 277 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->potName,
-# 278 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 278 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->potType,
-# 279 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 279 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->nx, cmd->ny, cmd->nz,
-# 280 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 280 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->xproc, cmd->yproc, cmd->zproc,
-# 281 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 281 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->lat,
-# 282 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 282 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->nSteps,
-# 283 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 283 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->printRate,
-# 284 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 284 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->dt,
-# 285 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 285 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->temperature,
-# 286 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 286 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->initialDelta
-# 287 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 287 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    );
-# 288 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 288 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    fflush(file);
-# 289 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 289 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1, false); }
 
 void printCmdYaml(FILE* file, Command* cmd) { (____chimes_replaying ? printCmdYaml_resumable(file, cmd) : printCmdYaml_quick(file, cmd)); }
-# 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 186 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 Command parseCommandLine_npm(int argc, char** argv)
-# 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {
-# 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 188 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    Command cmd;
-# 189 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 190 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 189 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 190 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    memset(cmd.potDir, 0, 1024);
-# 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 191 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    memset(cmd.potName, 0, 1024);
-# 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 192 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    memset(cmd.potType, 0, 1024);
-# 193 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 193 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    strcpy(cmd.potDir, "pots");
-# 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 194 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    strcpy(cmd.potName, "\0");
-# 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 195 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    strcpy(cmd.potType, "funcfl");
-# 196 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 196 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.doeam = 0;
-# 197 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 197 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.nx = 20;
-# 198 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 198 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.ny = 20;
-# 199 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 199 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.nz = 20;
-# 200 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 200 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.xproc = 1;
-# 201 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 201 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.yproc = 1;
-# 202 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 202 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.zproc = 1;
-# 203 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 203 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.nSteps = 100;
-# 204 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 204 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.printRate = 10;
-# 205 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 205 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.dt = 1.0;
-# 206 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 206 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.lat = -1.0;
-# 207 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 207 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.temperature = 600.0;
-# 208 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 208 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    cmd.initialDelta = 0.0;
-# 209 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 210 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 209 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 210 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    int help=0;
-# 211 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 212 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 211 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 212 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("help", 'h', 0, 'i', &(help), 0, "print this message");
-# 213 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 213 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("potDir", 'd', 1, 's', cmd.potDir, sizeof(cmd.potDir), "potential directory");
-# 214 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 214 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("potName", 'p', 1, 's', cmd.potName, sizeof(cmd.potName), "potential name");
-# 215 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 215 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("potType", 't', 1, 's', cmd.potType, sizeof(cmd.potType), "potential type (funcfl or setfl)");
-# 216 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 216 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("doeam", 'e', 0, 'i', &(cmd.doeam), 0, "compute eam potentials");
-# 217 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 217 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("nx", 'x', 1, 'i', &(cmd.nx), 0, "number of unit cells in x");
-# 218 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 218 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("ny", 'y', 1, 'i', &(cmd.ny), 0, "number of unit cells in y");
-# 219 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 219 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("nz", 'z', 1, 'i', &(cmd.nz), 0, "number of unit cells in z");
-# 220 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 220 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("xproc", 'i', 1, 'i', &(cmd.xproc), 0, "processors in x direction");
-# 221 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 221 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("yproc", 'j', 1, 'i', &(cmd.yproc), 0, "processors in y direction");
-# 222 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 222 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("zproc", 'k', 1, 'i', &(cmd.zproc), 0, "processors in z direction");
-# 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 223 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("nSteps", 'N', 1, 'i', &(cmd.nSteps), 0, "number of time steps");
-# 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 224 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("printRate", 'n', 1, 'i', &(cmd.printRate), 0, "number of steps between output");
-# 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 225 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("dt", 'D', 1, 'd', &(cmd.dt), 0, "time step (in fs)");
-# 226 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 226 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("lat", 'l', 1, 'd', &(cmd.lat), 0, "lattice parameter (Angstroms)");
-# 227 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 227 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("temp", 'T', 1, 'd', &(cmd.temperature), 0, "initial temperature (K)");
-# 228 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 228 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_addArg)("delta", 'r', 1, 'd', &(cmd.initialDelta), 0, "initial delta (Angstroms)");
-# 229 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 230 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 229 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 230 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_processArgs)(argc, argv);
-# 231 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 232 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 233 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 231 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 232 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 233 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    if (strlen(cmd.potName) == 0)
-# 234 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 234 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    {
-# 235 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 235 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       if (strcmp(cmd.potType, "setfl" ) == 0) {strcpy(cmd.potName, "Cu01.eam.alloy"); };
-# 237 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 237 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       if (strcmp(cmd.potType, "funcfl") == 0) {strcpy(cmd.potName, "Cu_u6.eam"); };
-# 239 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 239 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    }
-# 240 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 241 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 240 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 241 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    if (help)
-# 242 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 242 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    {
-# 243 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 243 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       (*____chimes_extern_func_printArgs)();
-# 244 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 244 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       (*____chimes_extern_func_freeArgs)();
-# 245 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 245 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
       exit(2);
-# 246 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 246 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    }
-# 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 247 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    (*____chimes_extern_func_freeArgs)();
-# 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-# 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 248 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 249 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
     Command ____chimes_ret_var_0; ____chimes_ret_var_0 = (cmd); return ____chimes_ret_var_0; ;
-# 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 250 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 }
-# 252 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 252 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 void printCmdYaml_npm(FILE* file, Command* cmd)
-# 253 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 253 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {
-# 254 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 254 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    if (! (*____chimes_extern_func_printRank)()) {return; };
-# 256 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 256 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    fprintf(file,
-# 257 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 257 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "Command Line Parameters:\n"
-# 258 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 258 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  doeam: %d\n"
-# 259 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 259 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  potDir: %s\n"
-# 260 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 260 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  potName: %s\n"
-# 261 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 261 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  potType: %s\n"
-# 262 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 262 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  nx: %d\n"
-# 263 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 263 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  ny: %d\n"
-# 264 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 264 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  nz: %d\n"
-# 265 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  xproc: %d\n"
-# 266 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 266 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  yproc: %d\n"
-# 267 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 267 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  zproc: %d\n"
-# 268 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 268 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Lattice constant: %g Angstroms\n"
-# 269 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 269 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  nSteps: %d\n"
-# 270 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 270 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  printRate: %d\n"
-# 271 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 271 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Time step: %g fs\n"
-# 272 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 272 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Initial Temperature: %g K\n"
-# 273 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 273 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "  Initial Delta: %g Angstroms\n"
-# 274 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 274 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            "\n",
-# 275 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 275 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->doeam,
-# 276 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 276 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->potDir,
-# 277 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 277 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->potName,
-# 278 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 278 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->potType,
-# 279 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 279 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->nx, cmd->ny, cmd->nz,
-# 280 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 280 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->xproc, cmd->yproc, cmd->zproc,
-# 281 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 281 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->lat,
-# 282 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 282 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->nSteps,
-# 283 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 283 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->printRate,
-# 284 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 284 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->dt,
-# 285 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 285 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->temperature,
-# 286 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 286 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
            cmd->initialDelta
-# 287 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 287 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    );
-# 288 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 288 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    fflush(file);
-# 289 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
+# 289 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 }
 
 

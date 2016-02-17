@@ -1,10 +1,10 @@
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 190 8 : { 1, 2, 3, 4, 26 } prop:call:getMyRank {  }
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 226 28 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:initForceHaloExchange { initForceHaloExchange { 661 }, interpolate { 115, 116, 117, 118, 123, 124, 661 }, zeroReal3 { 661 } }
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 320 9 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:profileStart { initForceHaloExchange { 661 }, interpolate { 115, 116, 117, 118, 123, 124, 661 }, zeroReal3 { 661 } }
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 396 4 : { 896, 897 } prop:call:destroyHaloExchange { destroyHaloExchange { 907 }, destroyInterpolationObject { 907 } }
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 418 8 : { 1461 } prop:call:getMyRank {  }
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 427 4 : { 1462 } prop:call:bcastParallel { bcastParallel { 1462 } }
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 435 4 : { 1557 } direct:call:bcastInterpolationObject { bcastInterpolationObject { 1557 }, bcastParallel { 1462 } }
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 553 8 : { 1955 } direct:call:getMyRank {  }
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 559 4 : { 1956 } prop:call:bcastParallel { bcastParallel { 1956 } }
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 573 4 : { 1957, 2000, 2002 } prop:call:bcastParallel { bcastParallel { 2027 } }
+/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/eam.c 190 8 : { 1, 2, 3, 4, 26 } prop:call:getMyRank {  }
+/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/eam.c 226 28 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:initForceHaloExchange { initForceHaloExchange { 661 }, interpolate { 115, 116, 117, 118, 123, 124, 661 }, zeroReal3 { 661 } }
+/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/eam.c 320 9 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:profileStart { initForceHaloExchange { 661 }, interpolate { 115, 116, 117, 118, 123, 124, 661 }, zeroReal3 { 661 } }
+/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/eam.c 396 4 : { 896, 897 } prop:call:destroyHaloExchange { destroyHaloExchange { 907 }, destroyInterpolationObject { 907 } }
+/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/eam.c 418 8 : { 1461 } prop:call:getMyRank {  }
+/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/eam.c 427 4 : { 1462 } prop:call:bcastParallel { bcastParallel { 1462 } }
+/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/eam.c 435 4 : { 1557 } direct:call:bcastInterpolationObject { bcastInterpolationObject { 1557 }, bcastParallel { 1462 } }
+/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/eam.c 553 8 : { 1955 } direct:call:getMyRank {  }
+/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/eam.c 559 4 : { 1956 } prop:call:bcastParallel { bcastParallel { 1956 } }
+/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/eam.c 573 4 : { 1957, 2000, 2002 } prop:call:bcastParallel { bcastParallel { 2027 } }
