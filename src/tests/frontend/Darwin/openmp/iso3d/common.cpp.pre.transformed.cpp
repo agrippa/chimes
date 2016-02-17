@@ -35,11 +35,11 @@ static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
 static unsigned ____alias_loc_id_6;
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 1 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -48,7 +48,7 @@ static unsigned ____alias_loc_id_6;
 typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes();
@@ -102,7 +102,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -116,8 +116,8 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 33 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 1 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 33 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 67 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -503,9 +503,9 @@ int setitimer(int, const struct itimerval * ,
 int utimes(const char *, const struct timeval *);
 
 }
-# 34 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 1
-# 26 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h"
+# 34 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
+# 1 "/Users/jmg3/chimes/src/examples/cpp/include/common.h" 1
+# 26 "/Users/jmg3/chimes/src/examples/cpp/include/common.h"
 # 1 "/usr/include/string.h" 1 3 4
 # 69 "/usr/include/string.h" 3 4
 extern "C" {
@@ -629,7 +629,7 @@ int flsll(long long) ;
 # 1 "/usr/include/string.h" 1 3 4
 # 93 "/usr/include/strings.h" 2 3 4
 # 177 "/usr/include/string.h" 2 3 4
-# 27 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 2
+# 27 "/Users/jmg3/chimes/src/examples/cpp/include/common.h" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 71 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
@@ -871,7 +871,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 28 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 2
+# 28 "/Users/jmg3/chimes/src/examples/cpp/include/common.h" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -2019,8 +2019,8 @@ void *valloc(size_t);
 
 
 }
-# 29 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/include/common_cuda.h" 1
+# 29 "/Users/jmg3/chimes/src/examples/cpp/include/common.h" 2
+# 1 "/Users/jmg3/chimes/src/examples/cpp/include/common_cuda.h" 1
 
 
 
@@ -2032,7 +2032,7 @@ extern int getNumCUDADevices();
 
 
 }
-# 30 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 2
+# 30 "/Users/jmg3/chimes/src/examples/cpp/include/common.h" 2
 
 typedef struct _source {
     int x, y;
@@ -2050,7 +2050,7 @@ extern float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt);
 extern void init_progress(int length, int goal, int disabled);
 extern void update_progress(int progress);
 extern void finish_progress();
-# 35 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp" 2
+# 35 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
 # 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/math.h" 1 3 4
 # 48 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/math.h" 3 4
 extern "C" {
@@ -2469,7 +2469,7 @@ extern double gamma(double) __attribute__((deprecated));
 extern double significand(double) __attribute__((deprecated));
 # 752 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/math.h" 3 4
 }
-# 36 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp" 2
+# 36 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 75 "/usr/include/assert.h" 3 4
 extern "C" {
@@ -2478,716 +2478,716 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 
 
 }
-# 37 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp" 2
-# 37 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 38 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 37 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
+# 37 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 38 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 static char *progress_buffer = __null;
-# 39 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 39 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 static int progress_length = -1;
-# 40 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 40 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 static int progress_goal = -1;
-# 41 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 41 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 static int progress_num_ticks = -1;
-# 42 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 42 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 static int progress_disabled = 0;
-# 43 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 44 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 43 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 44 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 double seconds_npm();
 double seconds_quick(); double seconds();
 double seconds_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; struct timeval tp;
  if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i32 }", (void *)(&tp), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 45 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 45 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
       ;
-# 46 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 46 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      struct timezone tzp; ;
-# 47 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 47 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 48 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 48 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
-# 49 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 49 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
-# 50 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 51 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 50 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 51 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void ricker_wavelet_npm(float *source, int nsteps, float dt, float freq);
 void ricker_wavelet_quick(float *source, int nsteps, float dt, float freq); void ricker_wavelet(float *source, int nsteps, float dt, float freq);
 void ricker_wavelet_resumable(float *source, int nsteps, float dt, float freq) {const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(10936679055482064935UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 52 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 52 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      float shift; shift = (-1.55939996F / freq) ;
-# 53 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 54 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 53 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 54 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < nsteps; i++) {
-# 55 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 55 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float time; time = (i * dt + shift) ;
-# 56 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 56 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float pi_freq_t; pi_freq_t = (3.14151692F * freq * time) ;
-# 57 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 57 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float sqr_pi_freq_t; sqr_pi_freq_t = (pi_freq_t * pi_freq_t) ;
-# 58 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 58 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         source[i] = 1e5f * (1.f - 2 * sqr_pi_freq_t) * exp(-sqr_pi_freq_t);
-# 59 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 59 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 60 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 60 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alias_loc_id_1, ____chimes_did_disable1); }
-# 61 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 62 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 61 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 62 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void parse_source_npm(char *optarg, source *out);
 void parse_source_quick(char *optarg, source *out); void parse_source(char *optarg, source *out);
 void parse_source_resumable(char *optarg, source *out) {const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(10936679055482065029UL), (size_t)(10936679055482065030UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 63 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 63 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *x_str; x_str = (optarg) ;
-# 64 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 64 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *first_comma; first_comma = (strchr(x_str, ',')) ;
-# 65 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 65 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (first_comma == __null) {
-# 66 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 66 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Improperly formatted argument to -p, must "
-# 67 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 67 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 68 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 68 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 69 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 69 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 70 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 70 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *y_str; y_str = (first_comma + 1) ;
-# 71 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 71 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *second_comma; second_comma = (strchr(y_str, ',')) ;
-# 72 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 72 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (second_comma == __null) {
-# 73 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 73 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Improperly formatted argument to -p, must "
-# 74 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 74 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 75 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 75 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 76 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 76 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 77 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 77 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *freq_str; freq_str = (second_comma + 1) ;
-# 78 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 78 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *third_comma; third_comma = (strchr(freq_str, ',')) ;
-# 79 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 79 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (third_comma == __null) {
-# 80 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 80 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Improperly formatted argument to -p, must "
-# 81 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 81 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 82 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 82 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 83 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 83 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 84 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 84 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *time_str; time_str = (third_comma + 1) ;
-# 85 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 85 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *first_comma = '\0';
-# 86 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 86 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *second_comma = '\0';
-# 87 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 87 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *third_comma = '\0';
-# 88 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 89 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 88 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 89 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->x = atoi(x_str);
-# 90 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 90 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->y = atoi(y_str);
-# 91 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 91 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->freq = atof(freq_str);
-# 92 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 92 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->t = atoi(time_str);
-# 93 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 93 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_loc_id_2, ____chimes_did_disable2); }
-# 94 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 95 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 94 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 95 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void config_sources_npm(source **srcs, int *nsrcs, int nx, int ny, int nsteps);
 void config_sources_quick(source **srcs, int *nsrcs, int nx, int ny, int nsteps); void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps);
 void config_sources_resumable(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(10936679055482065160UL), (size_t)(10936679055482065161UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 96 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 96 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (*nsrcs == 0) {
-# 97 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 97 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         *srcs = (source *)malloc_wrapper(sizeof(source), 10936679055482065104UL, 0, 1, (int)sizeof(struct _source), 0);
-# 98 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 98 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (*srcs == __null) {
-# 99 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 99 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Allocation failed\n");
-# 100 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 100 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 101 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 101 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 102 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 102 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->x = nx / 2;
-# 103 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 103 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->y = ny / 2;
-# 104 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 104 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->freq = 15.0f;
-# 105 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 105 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->t = 0;
-# 106 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 106 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         *nsrcs = 1;
-# 107 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 107 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 108 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 109 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 110 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 108 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 109 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 110 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < *nsrcs; i++) {
-# 111 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 111 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          source *curr; curr = ((*srcs) + i) ;
-# 112 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 112 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->x < 0 || curr->x >= nx) {
-# 113 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 113 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Invalid x value for source\n");
-# 114 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 114 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 115 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 115 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 116 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 116 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->y < 0 || curr->y >= ny) {
-# 117 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 117 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Invalid y value for source\n");
-# 118 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 118 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 119 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 119 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 120 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 120 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->t < 0 || curr->t >= nsteps) {
-# 121 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 121 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Invalid t value for source\n");
-# 122 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 122 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 123 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 123 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 124 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 124 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 125 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 125 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alias_loc_id_3, ____chimes_did_disable3); }
-# 126 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 127 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 126 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 127 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 float **sample_sources_npm(source *srcs, int nsrcs, int nsteps, float dt);
 float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt); float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt);
 float **sample_sources_resumable(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(10936679055482065243UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 128 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 128 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      float **src_samples; src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 10936679055482065184UL, 1, 0)) ;
-# 129 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 129 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (src_samples == __null) {
-# 130 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 130 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Allocation failed\n");
-# 131 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 131 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 132 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 132 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 133 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 133 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 134 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < nsrcs; i++) {
-# 135 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 135 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 10936679055482065204UL, 0, 0);
-# 136 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 136 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (src_samples[i] == __null) {
-# 137 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 137 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Allocation failed\n");
-# 138 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 138 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 139 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 139 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 140 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 140 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
-# 141 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 141 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 142 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 142 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     rm_stack(true, 10936679055482065184UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4); return src_samples;
-# 143 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 143 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
-# 144 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 145 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 144 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 145 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void init_progress_npm(int length, int goal, int disabled);
 void init_progress_quick(int length, int goal, int disabled); void init_progress(int length, int goal, int disabled);
 void init_progress_resumable(int length, int goal, int disabled) {const int ____chimes_did_disable5 = new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 146 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 146 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i; ;
-# 147 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 147 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer != __null) {
-# 148 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 148 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Progress initialized multiple times\n");
-# 149 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 149 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 150 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 150 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 151 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 152 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 151 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 152 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (length > 100) {
-# 153 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 153 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Invalid progress length, must be <= 100\n");
-# 154 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 154 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 155 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 155 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 156 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 157 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 156 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 157 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_disabled = disabled;
-# 158 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 159 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 158 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 159 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (disabled) {rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5); return; };
-# 160 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 161 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 160 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 161 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 10936679055482065300UL, 0, 0);
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-    (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
-# 163 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 162 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+    (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
+# 163 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_length = length;
-# 164 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 164 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_goal = goal;
-# 165 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 165 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = 0;
-# 166 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 167 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 166 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 167 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[0] = '|';
-# 168 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 168 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 1] = '|';
-# 169 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 169 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 2] = '\0';
-# 170 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 171 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 170 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 171 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (i = 1; i <= length; i++) {
-# 172 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 172 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         progress_buffer[i] = '-';
-# 173 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 173 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 174 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 175 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 174 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 175 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(__stderrp, "%s", progress_buffer);
-# 176 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 176 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5); }
-# 177 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 178 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 177 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 178 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void update_progress_npm(int progress);
 void update_progress_quick(int progress); void update_progress(int progress);
 void update_progress_resumable(int progress) {const int ____chimes_did_disable6 = new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 179 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 179 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i; ;
-# 180 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 181 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 180 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 181 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 182 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 182 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6); return;
-# 183 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 183 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 184 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 184 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 185 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer == __null) {
-# 186 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 186 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Calling update_progress without having called "
-# 187 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 187 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "init_progress\n");
-# 188 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 188 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 189 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 189 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 190 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 191 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 190 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 191 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      double perc_progress; perc_progress = ((double)progress / (double)progress_goal) ;
-# 192 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 192 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      int ticks; ticks = ((int)(perc_progress * progress_length)) ;
-# 193 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 193 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_length) {
-# 194 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 194 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         ticks = progress_length;
-# 195 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 195 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 196 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 197 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 196 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 197 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks < progress_num_ticks) {
-# 198 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 198 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Ticks went backwards?\n");
-# 199 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 199 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 200 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 200 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 201 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 202 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 201 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 202 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_num_ticks) {
-# 203 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 203 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 1; i < 1 + ticks; i++) {
-# 204 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 204 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             progress_buffer[i] = '=';
-# 205 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 205 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 206 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 207 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 206 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 207 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 0; i < progress_length + 2; i++) {
-# 208 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 208 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "\b");
-# 209 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 209 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 210 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 211 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 210 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 211 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "%s", progress_buffer);
-# 212 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 212 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 213 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 214 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 213 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 214 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = ticks;
-# 215 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 215 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6); }
-# 216 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 217 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 216 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 217 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void finish_progress_npm();
 void finish_progress_quick(); void finish_progress();
 void finish_progress_resumable() {const int ____chimes_did_disable7 = new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 218 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 218 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 219 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 219 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7); return;
-# 220 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 220 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 221 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 222 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 221 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 222 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); });
-# 223 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 223 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(__stderrp, "\n");
-# 224 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 225 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 224 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 225 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     free_wrapper(progress_buffer, 10936679055482065300UL);
-# 226 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 226 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7); }
 double seconds_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; struct timeval tp;
  if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i32 }", (void *)(&tp), (size_t)16, 0, 1, 0); } ; ;
-# 45 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 45 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
       ;
-# 46 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 46 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      struct timezone tzp; ;
-# 47 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 47 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 48 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 48 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
-# 49 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 49 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
 
 double seconds() { return (____chimes_replaying ? seconds_resumable() : seconds_quick()); }
 
 void ricker_wavelet_quick(float *source, int nsteps, float dt, float freq) {const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(10936679055482064935UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 52 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 52 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      float shift; shift = (-1.55939996F / freq) ;
-# 53 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 54 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 53 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 54 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < nsteps; i++) {
-# 55 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 55 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float time; time = (i * dt + shift) ;
-# 56 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 56 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float pi_freq_t; pi_freq_t = (3.14151692F * freq * time) ;
-# 57 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 57 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float sqr_pi_freq_t; sqr_pi_freq_t = (pi_freq_t * pi_freq_t) ;
-# 58 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 58 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         source[i] = 1e5f * (1.f - 2 * sqr_pi_freq_t) * exp(-sqr_pi_freq_t);
-# 59 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 59 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 60 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 60 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alias_loc_id_1, ____chimes_did_disable1); }
 
 void ricker_wavelet(float *source, int nsteps, float dt, float freq) { (____chimes_replaying ? ricker_wavelet_resumable(source, nsteps, dt, freq) : ricker_wavelet_quick(source, nsteps, dt, freq)); }
 
 void parse_source_quick(char *optarg, source *out) {const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(10936679055482065029UL), (size_t)(10936679055482065030UL)) ; ; ;
-# 63 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 63 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *x_str; x_str = (optarg) ;
-# 64 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 64 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *first_comma; first_comma = (strchr(x_str, ',')) ;
-# 65 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 65 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (first_comma == __null) {
-# 66 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 66 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Improperly formatted argument to -p, must "
-# 67 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 67 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 68 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 68 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 69 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 69 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 70 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 70 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *y_str; y_str = (first_comma + 1) ;
-# 71 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 71 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *second_comma; second_comma = (strchr(y_str, ',')) ;
-# 72 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 72 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (second_comma == __null) {
-# 73 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 73 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Improperly formatted argument to -p, must "
-# 74 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 74 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 75 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 75 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 76 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 76 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 77 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 77 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *freq_str; freq_str = (second_comma + 1) ;
-# 78 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 78 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *third_comma; third_comma = (strchr(freq_str, ',')) ;
-# 79 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 79 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (third_comma == __null) {
-# 80 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 80 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Improperly formatted argument to -p, must "
-# 81 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 81 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 82 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 82 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 83 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 83 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 84 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 84 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *time_str; time_str = (third_comma + 1) ;
-# 85 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 85 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *first_comma = '\0';
-# 86 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 86 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *second_comma = '\0';
-# 87 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 87 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *third_comma = '\0';
-# 88 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 89 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 88 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 89 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->x = atoi(x_str);
-# 90 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 90 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->y = atoi(y_str);
-# 91 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 91 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->freq = atof(freq_str);
-# 92 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 92 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->t = atoi(time_str);
-# 93 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 93 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_loc_id_2, ____chimes_did_disable2); }
 
 void parse_source(char *optarg, source *out) { (____chimes_replaying ? parse_source_resumable(optarg, out) : parse_source_quick(optarg, out)); }
 
 void config_sources_quick(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(10936679055482065160UL), (size_t)(10936679055482065161UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 96 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 96 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (*nsrcs == 0) {
-# 97 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 97 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         *srcs = (source *)malloc_wrapper(sizeof(source), 10936679055482065104UL, 0, 1, (int)sizeof(struct _source), 0);
-# 98 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 98 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (*srcs == __null) {
-# 99 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 99 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Allocation failed\n");
-# 100 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 100 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 101 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 101 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 102 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 102 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->x = nx / 2;
-# 103 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 103 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->y = ny / 2;
-# 104 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 104 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->freq = 15.0f;
-# 105 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 105 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->t = 0;
-# 106 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 106 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         *nsrcs = 1;
-# 107 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 107 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 108 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 109 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 110 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 108 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 109 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 110 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < *nsrcs; i++) {
-# 111 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 111 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          source *curr; curr = ((*srcs) + i) ;
-# 112 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 112 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->x < 0 || curr->x >= nx) {
-# 113 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 113 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Invalid x value for source\n");
-# 114 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 114 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 115 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 115 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 116 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 116 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->y < 0 || curr->y >= ny) {
-# 117 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 117 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Invalid y value for source\n");
-# 118 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 118 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 119 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 119 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 120 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 120 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->t < 0 || curr->t >= nsteps) {
-# 121 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 121 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Invalid t value for source\n");
-# 122 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 122 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 123 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 123 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 124 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 124 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 125 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 125 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alias_loc_id_3, ____chimes_did_disable3); }
 
 void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) { (____chimes_replaying ? config_sources_resumable(srcs, nsrcs, nx, ny, nsteps) : config_sources_quick(srcs, nsrcs, nx, ny, nsteps)); }
 
 float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(10936679055482065243UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 128 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 128 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      float **src_samples; src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 10936679055482065184UL, 1, 0)) ;
-# 129 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 129 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (src_samples == __null) {
-# 130 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 130 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Allocation failed\n");
-# 131 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 131 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 132 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 132 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 133 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 133 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 134 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < nsrcs; i++) {
-# 135 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 135 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 10936679055482065204UL, 0, 0);
-# 136 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 136 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (src_samples[i] == __null) {
-# 137 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 137 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Allocation failed\n");
-# 138 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 138 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 139 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 139 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 140 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 140 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
-# 141 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 141 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 142 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 142 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     rm_stack(true, 10936679055482065184UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4); return src_samples;
-# 143 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 143 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
 
 float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) { return (____chimes_replaying ? sample_sources_resumable(srcs, nsrcs, nsteps, dt) : sample_sources_quick(srcs, nsrcs, nsteps, dt)); }
 
 void init_progress_quick(int length, int goal, int disabled) {const int ____chimes_did_disable5 = new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 146 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 146 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i; ;
-# 147 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 147 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer != __null) {
-# 148 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 148 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Progress initialized multiple times\n");
-# 149 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 149 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 150 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 150 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 151 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 152 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 151 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 152 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (length > 100) {
-# 153 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 153 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Invalid progress length, must be <= 100\n");
-# 154 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 154 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 155 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 155 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 156 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 157 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 156 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 157 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_disabled = disabled;
-# 158 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 159 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 158 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 159 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (disabled) {rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5); return; };
-# 160 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 161 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 160 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 161 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 10936679055482065300UL, 0, 0);
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-    (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
-# 163 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 162 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+    (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
+# 163 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_length = length;
-# 164 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 164 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_goal = goal;
-# 165 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 165 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = 0;
-# 166 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 167 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 166 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 167 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[0] = '|';
-# 168 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 168 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 1] = '|';
-# 169 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 169 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 2] = '\0';
-# 170 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 171 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 170 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 171 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (i = 1; i <= length; i++) {
-# 172 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 172 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         progress_buffer[i] = '-';
-# 173 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 173 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 174 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 175 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 174 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 175 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(__stderrp, "%s", progress_buffer);
-# 176 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 176 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5); }
 
 void init_progress(int length, int goal, int disabled) { (____chimes_replaying ? init_progress_resumable(length, goal, disabled) : init_progress_quick(length, goal, disabled)); }
 
 void update_progress_quick(int progress) {const int ____chimes_did_disable6 = new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)) ; ; ;
-# 179 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 179 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i; ;
-# 180 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 181 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 180 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 181 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 182 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 182 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6); return;
-# 183 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 183 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 184 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 184 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 185 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer == __null) {
-# 186 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 186 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Calling update_progress without having called "
-# 187 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 187 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "init_progress\n");
-# 188 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 188 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 189 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 189 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 190 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 191 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 190 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 191 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      double perc_progress; perc_progress = ((double)progress / (double)progress_goal) ;
-# 192 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 192 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      int ticks; ticks = ((int)(perc_progress * progress_length)) ;
-# 193 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 193 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_length) {
-# 194 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 194 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         ticks = progress_length;
-# 195 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 195 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 196 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 197 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 196 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 197 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks < progress_num_ticks) {
-# 198 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 198 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Ticks went backwards?\n");
-# 199 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 199 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 200 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 200 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 201 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 202 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 201 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 202 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_num_ticks) {
-# 203 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 203 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 1; i < 1 + ticks; i++) {
-# 204 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 204 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             progress_buffer[i] = '=';
-# 205 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 205 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 206 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 207 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 206 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 207 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 0; i < progress_length + 2; i++) {
-# 208 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 208 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "\b");
-# 209 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 209 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 210 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 211 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 210 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 211 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "%s", progress_buffer);
-# 212 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 212 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 213 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 214 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 213 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 214 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = ticks;
-# 215 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 215 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6); }
 
 void update_progress(int progress) { (____chimes_replaying ? update_progress_resumable(progress) : update_progress_quick(progress)); }
 
 void finish_progress_quick() {const int ____chimes_did_disable7 = new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0) ; ; ;
-# 218 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 218 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 219 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 219 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7); return;
-# 220 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 220 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 221 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 222 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 221 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 222 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); });
-# 223 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 223 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(__stderrp, "\n");
-# 224 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 225 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 224 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 225 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     free_wrapper(progress_buffer, 10936679055482065300UL);
-# 226 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 226 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7); }
 
 void finish_progress() { (____chimes_replaying ? finish_progress_resumable() : finish_progress_quick()); }
@@ -3195,333 +3195,333 @@ void finish_progress() { (____chimes_replaying ? finish_progress_resumable() : f
 
 
 double seconds_npm() {
-# 45 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 45 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     struct timeval tp;
-# 46 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 46 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     struct timezone tzp;
-# 47 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 47 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i = gettimeofday(&tp, &tzp);
-# 48 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 48 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
-# 49 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 49 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
 
 void ricker_wavelet_npm(float *source, int nsteps, float dt, float freq) {
-# 52 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 52 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     float shift = -1.5594f / freq;
-# 53 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 54 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 53 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 54 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (int i = 0; i < nsteps; i++) {
-# 55 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 55 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         float time = i*dt + shift;
-# 56 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 56 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         float pi_freq_t = 3.141517f * freq * time;
-# 57 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 57 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         float sqr_pi_freq_t = pi_freq_t * pi_freq_t;
-# 58 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 58 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         source[i] = 1e5f * (1.f - 2 * sqr_pi_freq_t) * exp(-sqr_pi_freq_t);
-# 59 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 59 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 60 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 60 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
 
 void parse_source_npm(char *optarg, source *out) {
-# 63 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 63 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *x_str = optarg;
-# 64 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 64 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *first_comma = strchr(x_str, ',');
-# 65 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 65 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (first_comma == __null) {
-# 66 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 66 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Improperly formatted argument to -p, must "
-# 67 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 67 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 68 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 68 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 69 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 69 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 70 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 70 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *y_str = first_comma + 1;
-# 71 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 71 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *second_comma = strchr(y_str, ',');
-# 72 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 72 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (second_comma == __null) {
-# 73 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 73 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Improperly formatted argument to -p, must "
-# 74 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 74 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 75 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 75 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 76 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 76 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 77 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 77 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *freq_str = second_comma + 1;
-# 78 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 78 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *third_comma = strchr(freq_str, ',');
-# 79 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 79 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (third_comma == __null) {
-# 80 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 80 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Improperly formatted argument to -p, must "
-# 81 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 81 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 82 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 82 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 83 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 83 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 84 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 84 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *time_str = third_comma + 1;
-# 85 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 85 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *first_comma = '\0';
-# 86 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 86 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *second_comma = '\0';
-# 87 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 87 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *third_comma = '\0';
-# 88 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 89 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 88 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 89 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->x = atoi(x_str);
-# 90 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 90 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->y = atoi(y_str);
-# 91 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 91 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->freq = atof(freq_str);
-# 92 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 92 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->t = atoi(time_str);
-# 93 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 93 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
 
 void config_sources_npm(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
-# 96 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 96 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (*nsrcs == 0) {
-# 97 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 97 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         *srcs = (source *)malloc_wrapper(sizeof(source), 10936679055482065104UL, 0, 1, (int)sizeof(struct _source), 0);
-# 98 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 98 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (*srcs == __null) {
-# 99 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 99 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Allocation failed\n");
-# 100 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 100 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 101 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 101 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 102 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 102 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->x = nx / 2;
-# 103 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 103 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->y = ny / 2;
-# 104 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 104 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->freq = 15.0f;
-# 105 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 105 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->t = 0;
-# 106 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 106 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         *nsrcs = 1;
-# 107 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 107 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 108 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 109 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 110 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 108 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 109 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 110 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (int i = 0; i < *nsrcs; i++) {
-# 111 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 111 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         source *curr = (*srcs) + i;
-# 112 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 112 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->x < 0 || curr->x >= nx) {
-# 113 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 113 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Invalid x value for source\n");
-# 114 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 114 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 115 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 115 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 116 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 116 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->y < 0 || curr->y >= ny) {
-# 117 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 117 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Invalid y value for source\n");
-# 118 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 118 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 119 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 119 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 120 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 120 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->t < 0 || curr->t >= nsteps) {
-# 121 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 121 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Invalid t value for source\n");
-# 122 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 122 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 123 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 123 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 124 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 124 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 125 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 125 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
 
 float **sample_sources_npm(source *srcs, int nsrcs, int nsteps, float dt) {
-# 128 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 128 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     float **src_samples = (float **)malloc_wrapper(nsrcs * sizeof(float *), 10936679055482065184UL, 1, 0);
-# 129 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 129 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (src_samples == __null) {
-# 130 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 130 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Allocation failed\n");
-# 131 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 131 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 132 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 132 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 133 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 133 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 134 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (int i = 0; i < nsrcs; i++) {
-# 135 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 135 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 10936679055482065204UL, 0, 0);
-# 136 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 136 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (src_samples[i] == __null) {
-# 137 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 137 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "Allocation failed\n");
-# 138 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 138 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 139 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 139 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 140 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 140 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq);
-# 141 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 141 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 142 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 142 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     return src_samples;
-# 143 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 143 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
 
 void init_progress_npm(int length, int goal, int disabled) {
-# 146 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 146 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i;
-# 147 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 147 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer != __null) {
-# 148 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 148 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Progress initialized multiple times\n");
-# 149 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 149 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 150 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 150 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 151 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 152 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 151 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 152 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (length > 100) {
-# 153 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 153 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Invalid progress length, must be <= 100\n");
-# 154 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 154 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 155 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 155 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 156 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 157 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 156 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 157 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_disabled = disabled;
-# 158 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 159 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 158 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 159 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (disabled) {return; };
-# 160 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 161 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 160 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 161 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 10936679055482065300UL, 0, 0);
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-    (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
-# 163 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 162 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+    (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
+# 163 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_length = length;
-# 164 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 164 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_goal = goal;
-# 165 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 165 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = 0;
-# 166 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 167 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 166 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 167 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[0] = '|';
-# 168 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 168 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 1] = '|';
-# 169 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 169 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 2] = '\0';
-# 170 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 171 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 170 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 171 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (i = 1; i <= length; i++) {
-# 172 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 172 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         progress_buffer[i] = '-';
-# 173 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 173 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 174 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 175 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 174 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 175 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(__stderrp, "%s", progress_buffer);
-# 176 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 176 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
 
 void update_progress_npm(int progress) {
-# 179 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 179 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i;
-# 180 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 181 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 180 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 181 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 182 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 182 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         return;
-# 183 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 183 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 184 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 184 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 185 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer == __null) {
-# 186 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 186 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Calling update_progress without having called "
-# 187 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 187 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "init_progress\n");
-# 188 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 188 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 189 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 189 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 190 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 191 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 190 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 191 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     double perc_progress = (double)progress / (double)progress_goal;
-# 192 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 192 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int ticks = (int)(perc_progress * progress_length);
-# 193 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 193 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_length) {
-# 194 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 194 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         ticks = progress_length;
-# 195 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 195 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 196 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 197 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 196 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 197 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks < progress_num_ticks) {
-# 198 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 198 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "Ticks went backwards?\n");
-# 199 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 199 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 200 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 200 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 201 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 202 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 201 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 202 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_num_ticks) {
-# 203 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 203 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 1; i < 1 + ticks; i++) {
-# 204 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 204 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             progress_buffer[i] = '=';
-# 205 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 205 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 206 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 207 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 206 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 207 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 0; i < progress_length + 2; i++) {
-# 208 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 208 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(__stderrp, "\b");
-# 209 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 209 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 210 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 211 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 210 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 211 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(__stderrp, "%s", progress_buffer);
-# 212 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 212 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 213 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 214 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 213 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 214 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = ticks;
-# 215 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 215 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
 
 void finish_progress_npm() {
-# 218 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 218 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 219 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 219 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         return;
-# 220 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 220 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 221 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 222 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 221 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 222 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     update_progress_npm(progress_goal);
-# 223 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 223 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(__stderrp, "\n");
-# 224 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
-# 225 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 224 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 225 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     free_wrapper(progress_buffer, 10936679055482065300UL);
-# 226 "/Users/jmg3/num-debug/src/examples/openmp/./lib/common.cpp"
+# 226 "/Users/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
 
 

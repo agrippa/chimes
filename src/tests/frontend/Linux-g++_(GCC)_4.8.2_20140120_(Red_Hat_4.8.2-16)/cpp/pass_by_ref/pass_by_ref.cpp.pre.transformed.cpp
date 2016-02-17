@@ -16,12 +16,12 @@ static int ____must_checkpoint_main_b_0 = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 1 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -30,7 +30,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -86,14 +86,14 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 1 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 27 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1035,7 +1035,7 @@ __attribute__ ((__leaf__)) ferror_unlocked (FILE *__stream) throw ()
 # 935 "/usr/include/stdio.h" 2 3 4
 # 943 "/usr/include/stdio.h" 3 4
 }
-# 2 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp" 2
+# 2 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 32 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/stddef.h" 1 3 4
@@ -2249,50 +2249,50 @@ __attribute__ ((__leaf__)) atof (const char *__nptr) throw ()
 # 952 "/usr/include/stdlib.h" 2 3 4
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 3 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp" 2
-# 3 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 3 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp" 2
+# 3 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
 
-# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp" 2
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
-# 6 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 5 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp" 2
+# 5 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
+# 6 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
 extern void foo(int *A);
-# 7 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 7 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
 static void (*____chimes_extern_func_foo)(int *) = foo;
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11918420205256332568UL)) ; int b;
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
  register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 9 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 9 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
      ;
-# 10 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 10 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
      call_lbl_0: (____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(11918420205256332552UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })));
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
      call_lbl_1: checkpoint_transformed(1, 0);
-# 12 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 12 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (b); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 13 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 13 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11918420205256332568UL)) ; int b;
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
  register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); ; ;
-# 9 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 9 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
      ;
-# 10 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 10 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
      call_lbl_0: (____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(11918420205256332552UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })));
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
      call_lbl_1: checkpoint_transformed(1, 0);
-# 12 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 12 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (b); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 13 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
+# 13 "/home/jmg3/chimes/src/examples/cpp/./pass_by_ref.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }

@@ -15,11 +15,11 @@ static int ____must_manage_foo = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 1 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -28,7 +28,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes();
@@ -82,14 +82,14 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 1 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 61 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
@@ -1446,76 +1446,76 @@ void *valloc(size_t);
 
 
 }
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 2 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp" 2
+# 1 "/Users/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/Users/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*fp)(void *));
-# 3 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp" 2
-# 3 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-# 4 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 3 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp" 2
+# 3 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
+# 4 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
 void *foo_npm();
 void *foo_quick(); void *foo();
 void *foo_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
      int *A; A = ((int *)malloc_wrapper(sizeof(int) * 10, 608094051474199378UL, 0, 0)) ;
-# 6 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 6 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     A[0] = 1;
-# 7 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 7 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     if (A[0] == 3) {
-# 9 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 9 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
         rm_stack(true, 608094051474199378UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); return A;
-# 10 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 10 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     }
-# 11 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-# 12 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 11 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
+# 12 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     rm_stack(true, 608094051474199378UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); return __null;
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 13 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
 }
-# 14 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-# 15 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 14 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
+# 15 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(608094051474199377UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 16 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 16 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
      void *tmp; tmp = (({ calling_npm("foo", 0); foo_npm(); })) ;
-# 17 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 17 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
-# 18 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 18 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return 0;
-# 19 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 19 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
 }
 void *foo_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 0, 0) ; ; ;
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
      int *A; A = ((int *)malloc_wrapper(sizeof(int) * 10, 608094051474199378UL, 0, 0)) ;
-# 6 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 6 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     A[0] = 1;
-# 7 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 7 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     if (A[0] == 3) {
-# 9 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 9 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
         rm_stack(true, 608094051474199378UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); return A;
-# 10 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 10 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     }
-# 11 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-# 12 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 11 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
+# 12 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     rm_stack(true, 608094051474199378UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); return __null;
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 13 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
 }
 
 void *foo() { return (____chimes_replaying ? foo_resumable() : foo_quick()); }
 
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(608094051474199377UL)) ; ; ;
-# 16 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 16 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
      void *tmp; tmp = (({ calling_npm("foo", 0); foo_npm(); })) ;
-# 17 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 17 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
-# 18 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 18 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return 0;
-# 19 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 19 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
 }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -1523,21 +1523,21 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 void *foo_npm() {
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     int *A = (int *)malloc_wrapper(sizeof(int) * 10, 608094051474199378UL, 0, 0);
-# 6 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 6 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     A[0] = 1;
-# 7 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 7 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     if (A[0] == 3) {
-# 9 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 9 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
         return A;
-# 10 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 10 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     }
-# 11 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
-# 12 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 11 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
+# 12 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
     return __null;
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp"
+# 13 "/Users/jmg3/chimes/src/examples/cpp/./cond_ptr_return.cpp"
 }
 
 

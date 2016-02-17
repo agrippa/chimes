@@ -48,11 +48,11 @@ static unsigned ____alias_loc_id_7;
 static unsigned ____alias_loc_id_8;
 static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
-# 1 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 1 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -61,7 +61,7 @@ static unsigned ____alias_loc_id_10;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -117,7 +117,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -131,8 +131,8 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 36 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 1 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 36 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 # 1 "/usr/include/string.h" 1 3 4
 # 27 "/usr/include/string.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -657,7 +657,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 37 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c" 2
+# 37 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -1579,11 +1579,11 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 38 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c" 2
-# 38 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 38 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c" 2
+# 38 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 
-# 1 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.h" 1
-# 36 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.h"
+# 1 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h" 1
+# 36 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2737,9 +2737,9 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 37 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.h" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_types.h" 1
-# 48 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_types.h"
+# 37 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h" 1
+# 48 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
 extern "C" {
 
 
@@ -2780,18 +2780,18 @@ extern "C" {
 # 169 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
 # 8 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 2 3 4
 # 35 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
-# 52 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_types.h" 2
-# 70 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_types.h"
+# 52 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h" 2
+# 70 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
      typedef unsigned char uint_8t;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_types.h"
+# 79 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
      typedef unsigned short uint_16t;
-# 89 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_types.h"
+# 89 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
      typedef unsigned int uint_32t;
-# 123 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_types.h"
+# 123 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
        typedef unsigned long uint_64t;
-# 197 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_types.h"
+# 197 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
 }
-# 38 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.h" 2
+# 38 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h" 2
 
 
 
@@ -2799,7 +2799,7 @@ extern "C" {
 
 extern "C"
 {
-# 54 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.h"
+# 54 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
 typedef u_int8_t RNG_state;
 typedef u_int8_t uint8;
 typedef u_int32_t uint32;
@@ -2833,7 +2833,7 @@ struct sha1_ctx_s
 };
 
 typedef struct sha1_ctx_s sha1_ctx;
-# 95 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.h"
+# 95 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
 void sha1_compile(sha1_ctx ctx[1]);
 
 void sha1_begin(sha1_ctx ctx[1]);
@@ -2843,1062 +2843,1062 @@ void sha1(unsigned char hval[], const unsigned char data[], unsigned long len);
 
 
 }
-# 40 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_endian.h" 1
-# 49 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_endian.h"
+# 40 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_endian.h" 1
+# 49 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_endian.h"
 # 1 "/usr/include/byteswap.h" 1 3 4
 # 23 "/usr/include/byteswap.h" 3 4
 # 1 "/usr/include/bits/byteswap.h" 1 3 4
 # 24 "/usr/include/byteswap.h" 2 3 4
-# 50 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_endian.h" 2
-# 41 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c" 2
-# 41 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 42 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 43 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 50 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_endian.h" 2
+# 41 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c" 2
+# 41 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 42 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 43 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 extern "C"
-# 44 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 44 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {
-# 45 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 46 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 47 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 48 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 49 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 45 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 46 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 47 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 48 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 49 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void rng_init_npm(RNG_state *newstate, int seed);void sha1_begin_npm(sha1_ctx ctx[1]);void sha1_hash_npm(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]);void sha1_end_npm(unsigned char hval[], sha1_ctx ctx[1]);
 void rng_init_quick(RNG_state *newstate, int seed); void rng_init(RNG_state *newstate, int seed);void sha1_begin_quick(sha1_ctx ctx[1]); void sha1_begin(sha1_ctx ctx[1]);void sha1_hash_quick(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]); void sha1_hash(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]);void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1]); void sha1_end(unsigned char hval[], sha1_ctx ctx[1]);
 void rng_init_resumable(RNG_state *newstate, int seed)
-# 50 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 50 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&rng_init), "rng_init", &____must_manage_rng_init, 2, 0, (size_t)(4025409710155506101UL), (size_t)(0UL)) ; struct sha1_ctx_s ctx;
-# 50 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 50 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_init_ctx_0) { register_stack_vars(1, "rng_init|ctx|0", &____must_checkpoint_rng_init_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 51 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 51 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ;
-# 52 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 52 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    struct state_t gen; ;
-# 53 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 53 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   int i; ;
-# 54 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 55 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 54 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 55 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   for (i=0; i < 16; i++) { gen.state[i] = 0; };
-# 57 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 57 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[16] = 0xFF & (seed >> 24);
-# 58 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 58 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[17] = 0xFF & (seed >> 16);
-# 59 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 59 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[18] = 0xFF & (seed >> 8);
-# 60 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 60 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[19] = 0xFF & (seed >> 0);
-# 61 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 62 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 61 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 62 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 63 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 63 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
-# 64 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 64 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
-# 65 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 65 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0, false); }
-# 66 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 67 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 66 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 67 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void rng_spawn_npm(RNG_state *mystate, RNG_state *newstate, int spawnnumber);
 void rng_spawn_quick(RNG_state *mystate, RNG_state *newstate, int spawnnumber); void rng_spawn(RNG_state *mystate, RNG_state *newstate, int spawnnumber);
 void rng_spawn_resumable(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
-# 68 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&rng_spawn), "rng_spawn", &____must_manage_rng_spawn, 3, 0, (size_t)(4025409710155506517UL), (size_t)(4025409710155506518UL), (size_t)(0UL)) ; uint8 bytes[4];
-# 68 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 struct sha1_ctx_s ctx;
-# 68 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_spawn_ctx_0) { register_stack_vars(1, "rng_spawn|ctx|0", &____must_checkpoint_rng_spawn_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 69 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 69 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    ;
-# 70 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 70 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   ;
-# 71 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 72 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 71 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 72 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[0] = 0xFF & (spawnnumber >> 24);
-# 73 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 73 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[1] = 0xFF & (spawnnumber >> 16);
-# 74 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 74 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[2] = 0xFF & (spawnnumber >> 8);
-# 75 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 75 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[3] = 0xFF & spawnnumber;
-# 76 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 77 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 76 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 77 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 78 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 78 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
-# 79 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_2: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
-# 80 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 80 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_3: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
-# 81 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 81 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1, false); }
-# 82 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 83 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 82 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 83 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 int rng_rand_npm(RNG_state *mystate);
 int rng_rand_quick(RNG_state *mystate); int rng_rand(RNG_state *mystate);
 int rng_rand_resumable(RNG_state *mystate){const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(4025409710155506562UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 84 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 84 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         int r; ;
-# 85 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 85 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   uint32 b; b = ((mystate[16] << 24) | (mystate[17] << 16)
-# 86 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 86 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0)) ;
-# 87 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 87 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 88 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 89 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 88 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 89 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 90 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 91 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 90 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 91 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (r); rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
-# 92 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 92 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); }
-# 93 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 94 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 93 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 94 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 int rng_nextrand_npm(RNG_state *mystate);
 int rng_nextrand_quick(RNG_state *mystate); int rng_nextrand(RNG_state *mystate);
 int rng_nextrand_resumable(RNG_state *mystate){const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(4025409710155506612UL)) ; struct sha1_ctx_s ctx;
-# 94 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 94 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_nextrand_ctx_0) { register_stack_vars(1, "rng_nextrand|ctx|0", &____must_checkpoint_rng_nextrand_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 95 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    ;
-# 96 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 96 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  int r; ;
-# 97 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 97 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  uint32 b; ;
-# 98 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 99 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 98 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 99 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 100 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 100 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
-# 101 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 101 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
-# 102 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 102 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  b = (mystate[16] << 24) | (mystate[17] << 16)
-# 103 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 103 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0);
-# 104 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 104 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 105 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 106 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 105 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 106 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 107 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 107 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (r); rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
-# 108 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 108 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); }
-# 109 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 110 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 111 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 110 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 111 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 char * rng_showstate_npm(RNG_state *state, char *s);
 char * rng_showstate_quick(RNG_state *state, char *s); char * rng_showstate(RNG_state *state, char *s);
 char * rng_showstate_resumable(RNG_state *state, char *s){const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(4025409710155506635UL), (size_t)(4025409710155506636UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 112 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 112 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   sprintf(s,"%.2X%.2X...", state[0],state[1]);
-# 113 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 113 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    char *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (s); rm_stack(true, 4025409710155506636UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
-# 114 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 114 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(true, 4025409710155506636UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); }
-# 115 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 116 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 117 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 115 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 116 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 117 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 int rng_showtype_npm(char *strBuf, int ind);
 int rng_showtype_quick(char *strBuf, int ind); int rng_showtype(char *strBuf, int ind);
 int rng_showtype_resumable(char *strBuf, int ind) {const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(4025409710155506659UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 118 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 118 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
-# 119 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 119 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
                  sizeof(struct state_t));
-# 120 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 120 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (ind); rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); return ____chimes_ret_var_3; ;
-# 121 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 121 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); }
-# 195 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 195 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 195 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 195 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_compile_npm(sha1_ctx ctx[1]);
 void sha1_compile_quick(sha1_ctx ctx[1]); void sha1_compile(sha1_ctx ctx[1]);
 void sha1_compile_resumable(sha1_ctx ctx[1])
-# 196 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 196 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(4025409710155510973UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t *w; w = (ctx->wbuf) ;
-# 197 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 198 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 199 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 200 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 201 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 202 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 197 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 198 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 199 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 200 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 201 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 202 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     uint_32t v0; uint_32t v1; uint_32t v2; uint_32t v3; uint_32t v4; ;
-# 203 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 203 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v0 = ctx->hash[0]; v1 = ctx->hash[1];
-# 204 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 204 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v2 = ctx->hash[2]; v3 = ctx->hash[3];
-# 205 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 = ctx->hash[4];
-# 206 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 207 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 208 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 209 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 210 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 207 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 208 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 209 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 210 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[0]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[0 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[0 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[0 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[0 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 211 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 211 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[5]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[5 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[5 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[5 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[5 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 212 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 212 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[10]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[10 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[10 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[10 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[10 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 213 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 213 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[15]; v1 = (((v1) >> 2) | ((v1) << (32 - 2)));
-# 214 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 215 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 216 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 217 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 218 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 219 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 220 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 214 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 215 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 216 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 217 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 218 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 219 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 220 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + (w[(16) & 15] = (((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) << 1) | ((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2)));
-# 221 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 221 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + (w[(17) & 15] = (((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) << 1) | ((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2)));
-# 222 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 222 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + (w[(18) & 15] = (((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) << 1) | ((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2)));
-# 223 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 223 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + (w[(19) & 15] = (((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) << 1) | ((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 224 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 225 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 224 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 225 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(20) & 15] = (((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) << 1) | ((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(20 +1) & 15] = (((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) << 1) | ((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(20 +2) & 15] = (((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) << 1) | ((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(20 +3) & 15] = (((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) << 1) | ((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(20 +4) & 15] = (((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) << 1) | ((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 226 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 226 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(25) & 15] = (((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) << 1) | ((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(25 +1) & 15] = (((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) << 1) | ((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(25 +2) & 15] = (((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) << 1) | ((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(25 +3) & 15] = (((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) << 1) | ((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(25 +4) & 15] = (((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) << 1) | ((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 227 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 227 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(30) & 15] = (((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) << 1) | ((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(30 +1) & 15] = (((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) << 1) | ((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(30 +2) & 15] = (((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) << 1) | ((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(30 +3) & 15] = (((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) << 1) | ((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(30 +4) & 15] = (((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) << 1) | ((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 228 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 228 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(35) & 15] = (((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) << 1) | ((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(35 +1) & 15] = (((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) << 1) | ((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(35 +2) & 15] = (((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) << 1) | ((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(35 +3) & 15] = (((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) << 1) | ((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(35 +4) & 15] = (((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) << 1) | ((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 229 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 229 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(40) & 15] = (((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) << 1) | ((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(40 +1) & 15] = (((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) << 1) | ((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(40 +2) & 15] = (((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) << 1) | ((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(40 +3) & 15] = (((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) << 1) | ((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(40 +4) & 15] = (((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) << 1) | ((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 231 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 231 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(45) & 15] = (((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) << 1) | ((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(45 +1) & 15] = (((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) << 1) | ((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(45 +2) & 15] = (((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) << 1) | ((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(45 +3) & 15] = (((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) << 1) | ((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(45 +4) & 15] = (((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) << 1) | ((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 232 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 232 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(50) & 15] = (((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) << 1) | ((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(50 +1) & 15] = (((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) << 1) | ((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(50 +2) & 15] = (((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) << 1) | ((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(50 +3) & 15] = (((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) << 1) | ((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(50 +4) & 15] = (((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) << 1) | ((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 233 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 233 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(55) & 15] = (((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) << 1) | ((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(55 +1) & 15] = (((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) << 1) | ((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(55 +2) & 15] = (((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) << 1) | ((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(55 +3) & 15] = (((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) << 1) | ((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(55 +4) & 15] = (((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) << 1) | ((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 234 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 235 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 234 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 235 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(60) & 15] = (((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) << 1) | ((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(60 +1) & 15] = (((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) << 1) | ((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(60 +2) & 15] = (((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) << 1) | ((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(60 +3) & 15] = (((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) << 1) | ((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(60 +4) & 15] = (((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) << 1) | ((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 236 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 236 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(65) & 15] = (((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) << 1) | ((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(65 +1) & 15] = (((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) << 1) | ((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(65 +2) & 15] = (((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) << 1) | ((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(65 +3) & 15] = (((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) << 1) | ((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(65 +4) & 15] = (((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) << 1) | ((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 237 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 237 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(70) & 15] = (((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) << 1) | ((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(70 +1) & 15] = (((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) << 1) | ((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(70 +2) & 15] = (((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) << 1) | ((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(70 +3) & 15] = (((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) << 1) | ((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(70 +4) & 15] = (((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) << 1) | ((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 238 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 238 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(75) & 15] = (((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) << 1) | ((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(75 +1) & 15] = (((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) << 1) | ((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(75 +2) & 15] = (((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) << 1) | ((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(75 +3) & 15] = (((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) << 1) | ((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(75 +4) & 15] = (((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) << 1) | ((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 239 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 240 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 241 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 242 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 243 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 244 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 245 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 239 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 240 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 241 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 242 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 243 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 244 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 245 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[0] += v0; ctx->hash[1] += v1;
-# 246 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 246 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[2] += v2; ctx->hash[3] += v3;
-# 247 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 247 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[4] += v4;
-# 248 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 249 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 248 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 249 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_compile", &____must_manage_sha1_compile, ____alias_loc_id_9, ____chimes_did_disable6, false); }
-# 250 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 251 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 250 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 251 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_begin_resumable(sha1_ctx ctx[1])
-# 252 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 252 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&sha1_begin), "sha1_begin", &____must_manage_sha1_begin, 1, 0, (size_t)(4025409710155506137UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 253 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 253 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->count[0] = ctx->count[1] = 0;
-# 254 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 254 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[0] = 0x67452301;
-# 255 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 255 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[1] = 0xefcdab89;
-# 256 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 256 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[2] = 0x98badcfe;
-# 257 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 257 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[3] = 0x10325476;
-# 258 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 258 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[4] = 0xc3d2e1f0;
-# 259 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 259 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_begin", &____must_manage_sha1_begin, ____alias_loc_id_1, ____chimes_did_disable7, false); }
-# 260 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 261 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 262 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 263 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 264 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 260 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 261 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 262 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 263 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 264 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_hash_resumable(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
-# 265 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 265 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&sha1_hash), "sha1_hash", &____must_manage_sha1_hash, 3, 0, (size_t)(4025409710155506281UL), (size_t)(0UL), (size_t)(4025409710155506283UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t pos; uint_32t space; pos = ((uint_32t)(ctx->count[0] & (64 - 1))) ; space = (64 - pos) ;
-# 267 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 267 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
      const unsigned char *sp; sp = (data) ;
-# 268 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 269 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 268 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 269 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     if ((ctx->count[0] += len) < len) {++(ctx->count[1]); };
-# 271 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 272 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 271 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 272 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     while(len >= space)
-# 273 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 273 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     {
-# 274 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 274 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         memcpy(((unsigned char*)ctx->wbuf) + pos, sp, space);
-# 275 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 275 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         sp += space; len -= space; space = 64; pos = 0;
-# 276 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 276 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         { int _i; _i = ((64 >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 277 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 277 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
          call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 278 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 278 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     }
-# 279 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 280 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 279 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 280 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
-# 281 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 281 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_hash", &____must_manage_sha1_hash, ____alias_loc_id_2, ____chimes_did_disable8, false); }
-# 282 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 283 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 284 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 285 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 282 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 283 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 284 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 285 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_end_resumable(unsigned char hval[], sha1_ctx ctx[1])
-# 286 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 286 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&sha1_end), "sha1_end", &____must_manage_sha1_end, 2, 0, (size_t)(4025409710155506471UL), (size_t)(4025409710155506472UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t i; i = ((uint_32t)(ctx->count[0] & (64 - 1))) ;
-# 287 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 288 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 289 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 290 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 291 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 287 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 288 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 289 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 290 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 291 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     { int _i; _i = (((i + 3) >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 292 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 293 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 294 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 295 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 296 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 297 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 292 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 293 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 294 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 295 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 296 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 297 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] &= 0xffffff80 << 8 * (~i & 3);
-# 298 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 298 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] |= 0x00000080 << 8 * (~i & 3);
-# 299 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 300 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 301 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 302 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 303 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 299 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 300 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 301 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 302 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 303 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     if (i > 64 - 9) {{
-# 305 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 305 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         if (i < 60) {ctx->wbuf[15] = 0; };
-# 306 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 306 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
          call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 307 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 307 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         i = 0;
-# 308 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 308 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     }; } else {i = (i >> 2) + 1; } ;
-# 311 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 312 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 311 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 312 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     while(i < 14)
-# 313 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 313 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         ctx->wbuf[i++] = 0;
-# 314 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 315 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 316 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 317 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 318 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 319 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 314 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 315 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 316 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 317 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 318 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 319 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[14] = (ctx->count[1] << 3) | (ctx->count[0] >> 29);
-# 320 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 320 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[15] = ctx->count[0] << 3;
-# 321 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 321 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
      call_lbl_1: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 322 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 323 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 324 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 325 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 322 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 323 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 324 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 325 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
-# 327 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 327 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_end", &____must_manage_sha1_end, ____alias_loc_id_3, ____chimes_did_disable9, false); }
-# 328 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 329 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 328 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 329 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_npm(unsigned char hval[], const unsigned char data[], unsigned long len);
 void sha1_quick(unsigned char hval[], const unsigned char data[], unsigned long len); void sha1(unsigned char hval[], const unsigned char data[], unsigned long len);
 void sha1_resumable(unsigned char hval[], const unsigned char data[], unsigned long len)
-# 330 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 330 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(4025409710155511000UL), (size_t)(4025409710155511001UL), (size_t)(0UL)) ; sha1_ctx cx[1];
-# 330 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 330 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; ;
-# 331 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 332 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 331 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 332 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
      call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
-# 333 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 333 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10, false); }
-# 334 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 335 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 336 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 334 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 335 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 336 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
-# 49 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 49 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void rng_init_quick(RNG_state *newstate, int seed)
-# 50 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 50 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&rng_init), "rng_init", &____must_manage_rng_init, 2, 0, (size_t)(4025409710155506101UL), (size_t)(0UL)) ; struct sha1_ctx_s ctx;
-# 50 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 50 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_init_ctx_0) { register_stack_vars(1, "rng_init|ctx|0", &____must_checkpoint_rng_init_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
-# 51 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 51 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ;
-# 52 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 52 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    struct state_t gen; ;
-# 53 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 53 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   int i; ;
-# 54 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 55 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 54 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 55 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   for (i=0; i < 16; i++) { gen.state[i] = 0; };
-# 57 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 57 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[16] = 0xFF & (seed >> 24);
-# 58 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 58 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[17] = 0xFF & (seed >> 16);
-# 59 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 59 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[18] = 0xFF & (seed >> 8);
-# 60 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 60 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[19] = 0xFF & (seed >> 0);
-# 61 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 62 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 61 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 62 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 63 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 63 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
-# 64 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 64 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
-# 65 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 65 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 void rng_init(RNG_state *newstate, int seed) { (____chimes_replaying ? rng_init_resumable(newstate, seed) : rng_init_quick(newstate, seed)); }
-# 67 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 67 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void rng_spawn_quick(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
-# 68 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&rng_spawn), "rng_spawn", &____must_manage_rng_spawn, 3, 0, (size_t)(4025409710155506517UL), (size_t)(4025409710155506518UL), (size_t)(0UL)) ; uint8 bytes[4];
-# 68 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 struct sha1_ctx_s ctx;
-# 68 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_spawn_ctx_0) { register_stack_vars(1, "rng_spawn|ctx|0", &____must_checkpoint_rng_spawn_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
-# 69 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 69 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    ;
-# 70 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 70 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   ;
-# 71 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 72 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 71 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 72 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[0] = 0xFF & (spawnnumber >> 24);
-# 73 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 73 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[1] = 0xFF & (spawnnumber >> 16);
-# 74 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 74 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[2] = 0xFF & (spawnnumber >> 8);
-# 75 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 75 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[3] = 0xFF & spawnnumber;
-# 76 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 77 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 76 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 77 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 78 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 78 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
-# 79 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_2: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
-# 80 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 80 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_3: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
-# 81 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 81 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1, false); }
 
 void rng_spawn(RNG_state *mystate, RNG_state *newstate, int spawnnumber) { (____chimes_replaying ? rng_spawn_resumable(mystate, newstate, spawnnumber) : rng_spawn_quick(mystate, newstate, spawnnumber)); }
-# 83 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 83 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 int rng_rand_quick(RNG_state *mystate){const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(4025409710155506562UL)) ; ; ;
-# 84 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 84 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         int r; ;
-# 85 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 85 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   uint32 b; b = ((mystate[16] << 24) | (mystate[17] << 16)
-# 86 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 86 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0)) ;
-# 87 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 87 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 88 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 89 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 88 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 89 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 90 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 91 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 90 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 91 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (r); rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
-# 92 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 92 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); }
 
 int rng_rand(RNG_state *mystate) { return (____chimes_replaying ? rng_rand_resumable(mystate) : rng_rand_quick(mystate)); }
-# 94 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 94 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 int rng_nextrand_quick(RNG_state *mystate){const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(4025409710155506612UL)) ; struct sha1_ctx_s ctx;
-# 94 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 94 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_nextrand_ctx_0) { register_stack_vars(1, "rng_nextrand|ctx|0", &____must_checkpoint_rng_nextrand_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
-# 95 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    ;
-# 96 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 96 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  int r; ;
-# 97 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 97 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  uint32 b; ;
-# 98 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 99 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 98 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 99 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 100 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 100 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
-# 101 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 101 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
-# 102 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 102 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  b = (mystate[16] << 24) | (mystate[17] << 16)
-# 103 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 103 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0);
-# 104 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 104 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 105 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 106 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 105 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 106 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 107 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 107 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (r); rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
-# 108 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 108 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); }
 
 int rng_nextrand(RNG_state *mystate) { return (____chimes_replaying ? rng_nextrand_resumable(mystate) : rng_nextrand_quick(mystate)); }
-# 111 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 111 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 char * rng_showstate_quick(RNG_state *state, char *s){const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(4025409710155506635UL), (size_t)(4025409710155506636UL)) ; ; ;
-# 112 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 112 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   sprintf(s,"%.2X%.2X...", state[0],state[1]);
-# 113 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 113 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    char *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (s); rm_stack(true, 4025409710155506636UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
-# 114 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 114 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(true, 4025409710155506636UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); }
 
 char * rng_showstate(RNG_state *state, char *s) { return (____chimes_replaying ? rng_showstate_resumable(state, s) : rng_showstate_quick(state, s)); }
-# 117 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 117 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 int rng_showtype_quick(char *strBuf, int ind) {const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(4025409710155506659UL), (size_t)(0UL)) ; ; ;
-# 118 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 118 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
-# 119 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 119 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
                  sizeof(struct state_t));
-# 120 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 120 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (ind); rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); return ____chimes_ret_var_3; ;
-# 121 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 121 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); }
 
 int rng_showtype(char *strBuf, int ind) { return (____chimes_replaying ? rng_showtype_resumable(strBuf, ind) : rng_showtype_quick(strBuf, ind)); }
-# 195 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 195 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_compile_quick(sha1_ctx ctx[1])
-# 196 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 196 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(4025409710155510973UL)) ; ; ; uint_32t *w; w = (ctx->wbuf) ;
-# 197 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 198 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 199 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 200 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 201 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 202 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 197 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 198 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 199 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 200 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 201 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 202 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     uint_32t v0; uint_32t v1; uint_32t v2; uint_32t v3; uint_32t v4; ;
-# 203 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 203 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v0 = ctx->hash[0]; v1 = ctx->hash[1];
-# 204 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 204 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v2 = ctx->hash[2]; v3 = ctx->hash[3];
-# 205 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 = ctx->hash[4];
-# 206 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 207 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 208 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 209 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 210 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 207 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 208 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 209 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 210 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[0]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[0 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[0 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[0 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[0 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 211 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 211 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[5]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[5 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[5 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[5 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[5 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 212 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 212 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[10]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[10 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[10 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[10 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[10 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 213 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 213 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[15]; v1 = (((v1) >> 2) | ((v1) << (32 - 2)));
-# 214 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 215 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 216 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 217 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 218 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 219 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 220 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 214 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 215 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 216 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 217 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 218 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 219 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 220 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + (w[(16) & 15] = (((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) << 1) | ((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2)));
-# 221 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 221 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + (w[(17) & 15] = (((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) << 1) | ((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2)));
-# 222 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 222 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + (w[(18) & 15] = (((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) << 1) | ((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2)));
-# 223 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 223 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + (w[(19) & 15] = (((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) << 1) | ((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 224 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 225 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 224 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 225 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(20) & 15] = (((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) << 1) | ((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(20 +1) & 15] = (((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) << 1) | ((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(20 +2) & 15] = (((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) << 1) | ((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(20 +3) & 15] = (((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) << 1) | ((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(20 +4) & 15] = (((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) << 1) | ((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 226 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 226 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(25) & 15] = (((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) << 1) | ((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(25 +1) & 15] = (((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) << 1) | ((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(25 +2) & 15] = (((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) << 1) | ((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(25 +3) & 15] = (((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) << 1) | ((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(25 +4) & 15] = (((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) << 1) | ((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 227 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 227 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(30) & 15] = (((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) << 1) | ((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(30 +1) & 15] = (((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) << 1) | ((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(30 +2) & 15] = (((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) << 1) | ((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(30 +3) & 15] = (((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) << 1) | ((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(30 +4) & 15] = (((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) << 1) | ((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 228 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 228 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(35) & 15] = (((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) << 1) | ((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(35 +1) & 15] = (((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) << 1) | ((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(35 +2) & 15] = (((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) << 1) | ((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(35 +3) & 15] = (((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) << 1) | ((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(35 +4) & 15] = (((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) << 1) | ((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 229 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 229 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(40) & 15] = (((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) << 1) | ((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(40 +1) & 15] = (((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) << 1) | ((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(40 +2) & 15] = (((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) << 1) | ((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(40 +3) & 15] = (((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) << 1) | ((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(40 +4) & 15] = (((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) << 1) | ((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 231 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 231 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(45) & 15] = (((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) << 1) | ((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(45 +1) & 15] = (((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) << 1) | ((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(45 +2) & 15] = (((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) << 1) | ((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(45 +3) & 15] = (((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) << 1) | ((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(45 +4) & 15] = (((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) << 1) | ((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 232 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 232 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(50) & 15] = (((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) << 1) | ((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(50 +1) & 15] = (((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) << 1) | ((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(50 +2) & 15] = (((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) << 1) | ((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(50 +3) & 15] = (((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) << 1) | ((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(50 +4) & 15] = (((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) << 1) | ((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 233 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 233 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(55) & 15] = (((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) << 1) | ((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(55 +1) & 15] = (((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) << 1) | ((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(55 +2) & 15] = (((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) << 1) | ((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(55 +3) & 15] = (((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) << 1) | ((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(55 +4) & 15] = (((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) << 1) | ((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 234 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 235 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 234 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 235 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(60) & 15] = (((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) << 1) | ((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(60 +1) & 15] = (((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) << 1) | ((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(60 +2) & 15] = (((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) << 1) | ((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(60 +3) & 15] = (((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) << 1) | ((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(60 +4) & 15] = (((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) << 1) | ((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 236 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 236 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(65) & 15] = (((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) << 1) | ((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(65 +1) & 15] = (((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) << 1) | ((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(65 +2) & 15] = (((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) << 1) | ((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(65 +3) & 15] = (((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) << 1) | ((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(65 +4) & 15] = (((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) << 1) | ((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 237 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 237 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(70) & 15] = (((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) << 1) | ((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(70 +1) & 15] = (((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) << 1) | ((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(70 +2) & 15] = (((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) << 1) | ((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(70 +3) & 15] = (((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) << 1) | ((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(70 +4) & 15] = (((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) << 1) | ((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 238 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 238 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(75) & 15] = (((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) << 1) | ((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(75 +1) & 15] = (((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) << 1) | ((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(75 +2) & 15] = (((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) << 1) | ((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(75 +3) & 15] = (((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) << 1) | ((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(75 +4) & 15] = (((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) << 1) | ((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 239 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 240 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 241 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 242 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 243 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 244 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 245 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 239 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 240 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 241 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 242 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 243 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 244 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 245 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[0] += v0; ctx->hash[1] += v1;
-# 246 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 246 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[2] += v2; ctx->hash[3] += v3;
-# 247 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 247 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[4] += v4;
-# 248 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 249 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 248 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 249 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_compile", &____must_manage_sha1_compile, ____alias_loc_id_9, ____chimes_did_disable6, false); }
 
 void sha1_compile(sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_compile_resumable(ctx) : sha1_compile_quick(ctx)); }
-# 251 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 251 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_begin_quick(sha1_ctx ctx[1])
-# 252 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 252 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&sha1_begin), "sha1_begin", &____must_manage_sha1_begin, 1, 0, (size_t)(4025409710155506137UL)) ; ; ;
-# 253 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 253 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->count[0] = ctx->count[1] = 0;
-# 254 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 254 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[0] = 0x67452301;
-# 255 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 255 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[1] = 0xefcdab89;
-# 256 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 256 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[2] = 0x98badcfe;
-# 257 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 257 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[3] = 0x10325476;
-# 258 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 258 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[4] = 0xc3d2e1f0;
-# 259 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 259 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_begin", &____must_manage_sha1_begin, ____alias_loc_id_1, ____chimes_did_disable7, false); }
 
 void sha1_begin(sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_begin_resumable(ctx) : sha1_begin_quick(ctx)); }
-# 264 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 264 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_hash_quick(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
-# 265 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 265 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&sha1_hash), "sha1_hash", &____must_manage_sha1_hash, 3, 0, (size_t)(4025409710155506281UL), (size_t)(0UL), (size_t)(4025409710155506283UL)) ; ; ; uint_32t pos; uint_32t space; pos = ((uint_32t)(ctx->count[0] & (64 - 1))) ; space = (64 - pos) ;
-# 267 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 267 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
      const unsigned char *sp; sp = (data) ;
-# 268 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 269 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 268 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 269 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     if ((ctx->count[0] += len) < len) {++(ctx->count[1]); };
-# 271 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 272 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 271 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 272 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     while(len >= space)
-# 273 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 273 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     {
-# 274 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 274 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         memcpy(((unsigned char*)ctx->wbuf) + pos, sp, space);
-# 275 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 275 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         sp += space; len -= space; space = 64; pos = 0;
-# 276 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 276 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         { int _i; _i = ((64 >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 277 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 277 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
          call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 278 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 278 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     }
-# 279 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 280 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 279 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 280 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
-# 281 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 281 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_hash", &____must_manage_sha1_hash, ____alias_loc_id_2, ____chimes_did_disable8, false); }
 
 void sha1_hash(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_hash_resumable(data, len, ctx) : sha1_hash_quick(data, len, ctx)); }
-# 285 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 285 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1])
-# 286 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 286 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&sha1_end), "sha1_end", &____must_manage_sha1_end, 2, 0, (size_t)(4025409710155506471UL), (size_t)(4025409710155506472UL)) ; ; ; uint_32t i; i = ((uint_32t)(ctx->count[0] & (64 - 1))) ;
-# 287 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 288 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 289 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 290 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 291 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 287 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 288 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 289 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 290 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 291 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     { int _i; _i = (((i + 3) >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 292 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 293 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 294 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 295 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 296 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 297 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 292 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 293 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 294 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 295 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 296 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 297 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] &= 0xffffff80 << 8 * (~i & 3);
-# 298 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 298 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] |= 0x00000080 << 8 * (~i & 3);
-# 299 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 300 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 301 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 302 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 303 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 299 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 300 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 301 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 302 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 303 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     if (i > 64 - 9) {{
-# 305 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 305 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         if (i < 60) {ctx->wbuf[15] = 0; };
-# 306 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 306 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
          call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 307 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 307 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         i = 0;
-# 308 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 308 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     }; } else {i = (i >> 2) + 1; } ;
-# 311 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 312 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 311 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 312 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     while(i < 14)
-# 313 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 313 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         ctx->wbuf[i++] = 0;
-# 314 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 315 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 316 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 317 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 318 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 319 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 314 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 315 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 316 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 317 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 318 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 319 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[14] = (ctx->count[1] << 3) | (ctx->count[0] >> 29);
-# 320 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 320 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[15] = ctx->count[0] << 3;
-# 321 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 321 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
      call_lbl_1: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 322 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 323 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 324 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 325 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 322 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 323 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 324 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 325 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
-# 327 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 327 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_end", &____must_manage_sha1_end, ____alias_loc_id_3, ____chimes_did_disable9, false); }
 
 void sha1_end(unsigned char hval[], sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_end_resumable(hval, ctx) : sha1_end_quick(hval, ctx)); }
-# 329 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 329 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_quick(unsigned char hval[], const unsigned char data[], unsigned long len)
-# 330 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 330 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(4025409710155511000UL), (size_t)(4025409710155511001UL), (size_t)(0UL)) ; sha1_ctx cx[1];
-# 330 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 330 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } ; ; ;
-# 331 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 332 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 331 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 332 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
      call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
-# 333 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 333 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 
 void sha1(unsigned char hval[], const unsigned char data[], unsigned long len) { (____chimes_replaying ? sha1_resumable(hval, data, len) : sha1_quick(hval, data, len)); }
-# 49 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 49 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void rng_init_npm(RNG_state *newstate, int seed)
-# 50 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 50 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {
-# 51 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 51 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   struct sha1_ctx_s ctx;
-# 52 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 52 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   struct state_t gen;
-# 53 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 53 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   int i;
-# 54 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 55 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 54 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 55 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   for (i=0; i < 16; i++) { gen.state[i] = 0; };
-# 57 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 57 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[16] = 0xFF & (seed >> 24);
-# 58 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 58 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[17] = 0xFF & (seed >> 16);
-# 59 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 59 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[18] = 0xFF & (seed >> 8);
-# 60 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 60 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   gen.state[19] = 0xFF & (seed >> 0);
-# 61 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 62 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 61 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 62 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   sha1_begin_npm(&ctx);
-# 63 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 63 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   sha1_hash_npm(gen.state, 20, &ctx);
-# 64 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 64 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   sha1_end_npm(newstate, &ctx);
-# 65 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 65 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
-# 67 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 67 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void rng_spawn_npm(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
-# 68 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {
-# 69 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 69 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  struct sha1_ctx_s ctx;
-# 70 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 70 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  uint8 bytes[4];
-# 71 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 72 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 71 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 72 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[0] = 0xFF & (spawnnumber >> 24);
-# 73 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 73 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[1] = 0xFF & (spawnnumber >> 16);
-# 74 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 74 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[2] = 0xFF & (spawnnumber >> 8);
-# 75 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 75 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  bytes[3] = 0xFF & spawnnumber;
-# 76 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 77 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 76 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 77 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  sha1_begin_npm(&ctx);
-# 78 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 78 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  sha1_hash_npm(mystate, 20, &ctx);
-# 79 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  sha1_hash_npm(bytes, 4, &ctx);
-# 80 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 80 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  sha1_end_npm(newstate, &ctx);
-# 81 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 81 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
-# 83 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 83 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 int rng_rand_npm(RNG_state *mystate){
-# 84 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 84 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         int r;
-# 85 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 85 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  uint32 b = (mystate[16] << 24) | (mystate[17] << 16)
-# 86 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 86 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0);
-# 87 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 87 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 88 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 89 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 88 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 89 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 90 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 91 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 90 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 91 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_0; ____chimes_ret_var_0 = (r); return ____chimes_ret_var_0; ;
-# 92 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 92 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
-# 94 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 94 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 int rng_nextrand_npm(RNG_state *mystate){
-# 95 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  struct sha1_ctx_s ctx;
-# 96 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 96 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  int r;
-# 97 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 97 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  uint32 b;
-# 98 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 99 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 98 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 99 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  sha1_begin_npm(&ctx);
-# 100 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 100 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  sha1_hash_npm(mystate, 20, &ctx);
-# 101 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 101 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  sha1_end_npm(mystate, &ctx);
-# 102 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 102 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  b = (mystate[16] << 24) | (mystate[17] << 16)
-# 103 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 103 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0);
-# 104 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 104 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 105 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 106 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 105 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 106 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 107 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 107 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_1; ____chimes_ret_var_1 = (r); return ____chimes_ret_var_1; ;
-# 108 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 108 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
-# 111 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 111 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 char * rng_showstate_npm(RNG_state *state, char *s){
-# 112 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 112 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   sprintf(s,"%.2X%.2X...", state[0],state[1]);
-# 113 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 113 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    char * ____chimes_ret_var_2; ____chimes_ret_var_2 = (s); return ____chimes_ret_var_2; ;
-# 114 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 114 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
-# 117 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 117 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 int rng_showtype_npm(char *strBuf, int ind) {
-# 118 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 118 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
   ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
-# 119 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 119 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
                  sizeof(struct state_t));
-# 120 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 120 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
    int ____chimes_ret_var_3; ____chimes_ret_var_3 = (ind); return ____chimes_ret_var_3; ;
-# 121 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 121 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
-# 195 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 195 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_compile_npm(sha1_ctx ctx[1])
-# 196 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 196 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 { uint_32t *w = ctx->wbuf;
-# 197 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 198 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 199 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 200 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 201 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 202 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 197 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 198 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 199 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 200 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 201 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 202 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     uint_32t v0, v1, v2, v3, v4;
-# 203 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 203 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v0 = ctx->hash[0]; v1 = ctx->hash[1];
-# 204 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 204 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v2 = ctx->hash[2]; v3 = ctx->hash[3];
-# 205 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 = ctx->hash[4];
-# 206 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 207 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 208 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 209 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 210 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 207 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 208 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 209 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 210 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[0]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[0 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[0 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[0 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[0 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 211 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 211 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[5]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[5 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[5 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[5 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[5 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 212 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 212 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[10]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[10 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[10 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[10 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[10 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 213 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 213 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[15]; v1 = (((v1) >> 2) | ((v1) << (32 - 2)));
-# 214 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 215 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 216 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 217 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 218 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 219 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 220 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 214 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 215 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 216 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 217 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 218 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 219 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 220 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + (w[(16) & 15] = (((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) << 1) | ((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2)));
-# 221 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 221 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + (w[(17) & 15] = (((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) << 1) | ((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2)));
-# 222 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 222 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + (w[(18) & 15] = (((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) << 1) | ((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2)));
-# 223 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 223 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + (w[(19) & 15] = (((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) << 1) | ((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 224 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 225 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 224 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 225 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(20) & 15] = (((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) << 1) | ((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(20 +1) & 15] = (((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) << 1) | ((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(20 +2) & 15] = (((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) << 1) | ((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(20 +3) & 15] = (((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) << 1) | ((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(20 +4) & 15] = (((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) << 1) | ((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 226 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 226 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(25) & 15] = (((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) << 1) | ((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(25 +1) & 15] = (((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) << 1) | ((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(25 +2) & 15] = (((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) << 1) | ((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(25 +3) & 15] = (((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) << 1) | ((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(25 +4) & 15] = (((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) << 1) | ((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 227 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 227 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(30) & 15] = (((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) << 1) | ((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(30 +1) & 15] = (((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) << 1) | ((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(30 +2) & 15] = (((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) << 1) | ((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(30 +3) & 15] = (((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) << 1) | ((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(30 +4) & 15] = (((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) << 1) | ((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 228 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 228 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(35) & 15] = (((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) << 1) | ((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(35 +1) & 15] = (((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) << 1) | ((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(35 +2) & 15] = (((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) << 1) | ((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(35 +3) & 15] = (((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) << 1) | ((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(35 +4) & 15] = (((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) << 1) | ((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 229 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 229 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(40) & 15] = (((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) << 1) | ((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(40 +1) & 15] = (((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) << 1) | ((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(40 +2) & 15] = (((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) << 1) | ((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(40 +3) & 15] = (((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) << 1) | ((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(40 +4) & 15] = (((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) << 1) | ((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 231 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 231 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(45) & 15] = (((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) << 1) | ((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(45 +1) & 15] = (((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) << 1) | ((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(45 +2) & 15] = (((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) << 1) | ((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(45 +3) & 15] = (((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) << 1) | ((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(45 +4) & 15] = (((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) << 1) | ((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 232 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 232 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(50) & 15] = (((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) << 1) | ((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(50 +1) & 15] = (((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) << 1) | ((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(50 +2) & 15] = (((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) << 1) | ((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(50 +3) & 15] = (((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) << 1) | ((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(50 +4) & 15] = (((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) << 1) | ((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 233 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 233 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(55) & 15] = (((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) << 1) | ((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(55 +1) & 15] = (((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) << 1) | ((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(55 +2) & 15] = (((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) << 1) | ((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(55 +3) & 15] = (((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) << 1) | ((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(55 +4) & 15] = (((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) << 1) | ((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 234 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 235 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 234 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 235 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(60) & 15] = (((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) << 1) | ((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(60 +1) & 15] = (((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) << 1) | ((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(60 +2) & 15] = (((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) << 1) | ((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(60 +3) & 15] = (((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) << 1) | ((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(60 +4) & 15] = (((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) << 1) | ((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 236 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 236 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(65) & 15] = (((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) << 1) | ((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(65 +1) & 15] = (((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) << 1) | ((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(65 +2) & 15] = (((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) << 1) | ((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(65 +3) & 15] = (((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) << 1) | ((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(65 +4) & 15] = (((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) << 1) | ((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 237 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 237 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(70) & 15] = (((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) << 1) | ((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(70 +1) & 15] = (((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) << 1) | ((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(70 +2) & 15] = (((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) << 1) | ((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(70 +3) & 15] = (((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) << 1) | ((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(70 +4) & 15] = (((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) << 1) | ((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 238 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 238 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(75) & 15] = (((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) << 1) | ((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(75 +1) & 15] = (((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) << 1) | ((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(75 +2) & 15] = (((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) << 1) | ((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(75 +3) & 15] = (((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) << 1) | ((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(75 +4) & 15] = (((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) << 1) | ((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 239 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 240 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 241 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 242 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 243 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 244 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 245 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 239 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 240 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 241 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 242 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 243 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 244 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 245 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[0] += v0; ctx->hash[1] += v1;
-# 246 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 246 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[2] += v2; ctx->hash[3] += v3;
-# 247 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 247 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[4] += v4;
-# 248 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 249 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 248 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 249 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
-# 251 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 251 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_begin_npm(sha1_ctx ctx[1])
-# 252 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 252 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 {
-# 253 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 253 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->count[0] = ctx->count[1] = 0;
-# 254 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 254 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[0] = 0x67452301;
-# 255 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 255 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[1] = 0xefcdab89;
-# 256 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 256 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[2] = 0x98badcfe;
-# 257 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 257 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[3] = 0x10325476;
-# 258 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 258 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->hash[4] = 0xc3d2e1f0;
-# 259 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 259 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
-# 264 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 264 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_hash_npm(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
-# 265 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 265 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 { uint_32t pos = (uint_32t)(ctx->count[0] & (64 - 1)),
-# 266 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 266 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
             space = 64 - pos;
-# 267 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 267 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     const unsigned char *sp = data;
-# 268 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 269 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 268 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 269 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     if ((ctx->count[0] += len) < len) {++(ctx->count[1]); };
-# 271 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 272 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 271 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 272 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     while(len >= space)
-# 273 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 273 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     {
-# 274 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 274 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         memcpy(((unsigned char*)ctx->wbuf) + pos, sp, space);
-# 275 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 275 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         sp += space; len -= space; space = 64; pos = 0;
-# 276 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 276 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         { int _i = (64 >> 2); while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 277 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 277 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         sha1_compile_npm(ctx);
-# 278 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 278 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     }
-# 279 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 280 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 279 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 280 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
-# 281 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 281 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
-# 285 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 285 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_end_npm(unsigned char hval[], sha1_ctx ctx[1])
-# 286 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 286 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 { uint_32t i = (uint_32t)(ctx->count[0] & (64 - 1));
-# 287 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 288 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 289 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 290 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 291 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 287 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 288 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 289 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 290 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 291 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     { int _i = ((i + 3) >> 2); while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 292 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 293 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 294 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 295 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 296 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 297 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 292 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 293 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 294 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 295 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 296 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 297 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] &= 0xffffff80 << 8 * (~i & 3);
-# 298 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 298 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] |= 0x00000080 << 8 * (~i & 3);
-# 299 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 300 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 301 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 302 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 303 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 299 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 300 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 301 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 302 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 303 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     if (i > 64 - 9) {{
-# 305 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 305 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         if (i < 60) {ctx->wbuf[15] = 0; };
-# 306 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 306 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         sha1_compile_npm(ctx);
-# 307 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 307 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         i = 0;
-# 308 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 308 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     }; } else {i = (i >> 2) + 1; } ;
-# 311 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 312 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 311 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 312 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     while(i < 14)
-# 313 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 313 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
         ctx->wbuf[i++] = 0;
-# 314 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 315 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 316 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 317 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 318 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 319 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 314 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 315 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 316 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 317 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 318 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 319 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[14] = (ctx->count[1] << 3) | (ctx->count[0] >> 29);
-# 320 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 320 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     ctx->wbuf[15] = ctx->count[0] << 3;
-# 321 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 321 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     sha1_compile_npm(ctx);
-# 322 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 323 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 324 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 325 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 322 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 323 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 324 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 325 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
-# 327 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 327 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
-# 329 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 329 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 void sha1_npm(unsigned char hval[], const unsigned char data[], unsigned long len)
-# 330 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 330 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 { sha1_ctx cx[1];
-# 331 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 332 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 331 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
+# 332 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
     sha1_begin_npm(cx); sha1_hash_npm(data, len, cx); sha1_end_npm(hval, cx);
-# 333 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 333 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.c"
 }
 
 

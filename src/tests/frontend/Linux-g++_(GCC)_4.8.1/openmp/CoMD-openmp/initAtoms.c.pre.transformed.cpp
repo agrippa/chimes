@@ -98,10 +98,10 @@ static unsigned ____alias_loc_id_20;
 static unsigned ____alias_loc_id_21;
 static unsigned ____alias_loc_id_22;
 static unsigned ____alias_loc_id_23;
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -110,7 +110,7 @@ static unsigned ____alias_loc_id_23;
 typedef long int ptrdiff_t;
 # 211 "/usr/lib/gcc/ppc64-redhat-linux/4.4.4/include/stddef.h"
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -166,7 +166,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -180,10 +180,10 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 2 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 3 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 2 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 3 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
@@ -1502,16 +1502,16 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 5 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.h" 1
+# 5 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.h" 1
 
 
 
 
 
 
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
-# 13 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h"
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
+# 13 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h"
 typedef double real_t;
 
 
@@ -1525,7 +1525,7 @@ static void zeroReal3(real3 a)
    a[1] = 0.0;
    a[2] = 0.0;
 }
-# 8 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.h" 2
+# 8 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.h" 2
 
 struct SimFlatSt;
 struct LinkCellSt;
@@ -1556,8 +1556,8 @@ void createFccLattice(int nx, int ny, int nz, real_t lat, struct SimFlatSt* s);
 void setVcm(struct SimFlatSt* s, real_t vcm[3]);
 void setTemperature(struct SimFlatSt* s, real_t temperature);
 void randomDisplacements(struct SimFlatSt* s, real_t delta);
-# 6 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
-# 6 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 6 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
+# 6 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
@@ -2558,7 +2558,7 @@ fdimf (float __x, float __y) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 8 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
+# 8 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 66 "/usr/include/assert.h" 3 4
 extern "C" {
@@ -2582,11 +2582,11 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 
 
 }
-# 9 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
-# 9 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 9 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
+# 9 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/constants.h" 1
-# 28 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/constants.h"
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/constants.h" 1
+# 28 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/constants.h"
 static const double amuToInternalMass =
          1.660538921e-27 * 1.0e-10 * 1.0e-10
          / (1.0e-15 * 1.0e-15 * 1.602176565e-19);
@@ -2599,9 +2599,9 @@ static const double hartreeToEv = 27.21138505;
 
 
 static const double bohrToAngs = 0.52917721092;
-# 11 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.h" 1
-# 10 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.h"
+# 11 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.h" 1
+# 10 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.h"
 typedef struct DomainSt
 {
 
@@ -2624,9 +2624,9 @@ struct DomainSt* initDecomposition(int xproc, int yproc, int zproc,
 
 
 int processorNum(Domain* domain, int dix, int diy, int dik);
-# 12 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h" 1
-# 10 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h"
+# 12 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.h" 1
+# 10 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.h"
 typedef struct RankReduceDataSt
 {
    double val;
@@ -2681,9 +2681,9 @@ void bcastParallel(void* buf, int len, int root);
 
 
 int builtWithMpi(void);
-# 13 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.h" 1
-# 9 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.h"
+# 13 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.h" 1
+# 9 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.h"
 # 1 "/gpfs-biou/jmg3/gcc-install/lib/gcc/powerpc64-unknown-linux-gnu/4.8.1/include/stdint.h" 1 3 4
 # 9 "/gpfs-biou/jmg3/gcc-install/lib/gcc/powerpc64-unknown-linux-gnu/4.8.1/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
@@ -2739,7 +2739,7 @@ typedef unsigned long int uintptr_t;
 typedef long int intmax_t;
 typedef unsigned long int uintmax_t;
 # 10 "/gpfs-biou/jmg3/gcc-install/lib/gcc/powerpc64-unknown-linux-gnu/4.8.1/include/stdint.h" 2 3 4
-# 10 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.h" 2
+# 10 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.h" 2
 
 
 real_t gasdev(uint64_t* seed);
@@ -2749,9 +2749,9 @@ double lcg61(uint64_t* seed);
 
 
 uint64_t mkSeed(uint32_t id, uint32_t callSite);
-# 14 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.h" 1
-# 12 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.h"
+# 14 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/linkCells.h" 1
+# 12 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/linkCells.h"
 struct DomainSt;
 struct AtomsSt;
 
@@ -2789,15 +2789,15 @@ void moveAtom(LinkCell* boxes, struct AtomsSt* atoms, int iId, int iBox, int jBo
 void updateLinkCells(LinkCell* boxes, struct AtomsSt* atoms);
 
 int maxOccupancy(LinkCell* boxes);
-# 15 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.h" 1
+# 15 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.h" 1
 
 
 
 
 
 
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 1
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 1
 
 
 
@@ -3611,9 +3611,9 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 8 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
+# 8 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
 
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h" 1
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/haloExchange.h" 1
 
 
 
@@ -3624,7 +3624,7 @@ ferror_unlocked (FILE *__stream) throw ()
 struct AtomsSt;
 struct LinkCellSt;
 struct DomainSt;
-# 26 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
+# 26 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
 typedef struct HaloExchangeSt
 {
 
@@ -3633,9 +3633,9 @@ typedef struct HaloExchangeSt
 
 
    int bufCapacity;
-# 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
+# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
    int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
-# 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
+# 61 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
    void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
@@ -3660,13 +3660,13 @@ void haloExchange(HaloExchange* haloExchange, void* data);
 
 
 void sortAtomsInCell(struct AtomsSt* atoms, struct LinkCellSt* boxes, int iBox);
-# 10 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
+# 10 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
 
 
 
 
 struct SimFlatSt;
-# 28 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h"
+# 28 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h"
 typedef struct BasePotentialSt
 {
    real_t cutoff;
@@ -3723,7 +3723,7 @@ typedef struct SimFlatSt
    HaloExchange* atomExchange;
 
 } SimFlat;
-# 8 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.h" 2
+# 8 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.h" 2
 
 double timestep(SimFlat* s, int n, real_t dt);
 void computeForce(SimFlat* s);
@@ -3731,9 +3731,9 @@ void kineticEnergy(SimFlat* s);
 
 
 void redistributeAtoms(struct SimFlatSt* sim);
-# 16 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.h" 1
-# 9 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.h"
+# 16 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.h" 1
+# 9 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.h"
 enum TimerHandle{
    totalTimer,
    loopTimer,
@@ -3747,7 +3747,7 @@ enum TimerHandle{
    commHaloTimer,
    commReduceTimer,
    numberOfTimers};
-# 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.h"
+# 57 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.h"
 void profileStart(const enum TimerHandle handle);
 void profileStop(const enum TimerHandle handle);
 
@@ -3759,1363 +3759,1363 @@ void printPerformanceResults(int nGlobalAtoms, int printRate);
 
 
 void printPerformanceResultsYaml(FILE* file);
-# 17 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
-# 17 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 18 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 17 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c" 2
+# 17 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 18 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 static void computeVcm(SimFlat* s, real_t vcm[3]);
-# 19 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 20 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 21 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 22 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 23 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 19 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 20 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 21 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 22 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 23 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 Atoms* initAtoms_npm(LinkCell* boxes);static void (*____chimes_extern_func_zeroReal3)(double *) = zeroReal3;
 Atoms* initAtoms_quick(LinkCell* boxes); Atoms* initAtoms(LinkCell* boxes);
 Atoms* initAtoms_resumable(LinkCell* boxes)
-# 24 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 24 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&initAtoms), "initAtoms", &____must_manage_initAtoms, 1, 0, (size_t)(2774474540883984445UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 25 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 25 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     Atoms *atoms; atoms = ((Atoms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Atoms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Atoms), 2774474540883984320UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 26 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 27 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 26 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 27 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     int maxTotalAtoms; maxTotalAtoms = (64*boxes->nTotalBoxes) ;
-# 28 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 29 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 28 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 29 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->gid = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 30 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 30 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->iSpecies = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 31 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 31 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->r = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 32 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 32 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->p = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 33 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 33 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->f = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 34 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 34 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->U = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 35 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 36 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 35 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 36 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->nLocal = 0;
-# 37 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 37 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->nGlobal = 0;
-# 38 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 39 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 38 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 39 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { int iOff; for ( iOff = (0) ; iOff < maxTotalAtoms; iOff++)
-# 40 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 40 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    {
-# 41 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       atoms->gid[iOff] = 0;
-# 42 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 42 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       atoms->iSpecies[iOff] = 0;
-# 43 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 43 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
        call_lbl_0: ({ calling((void*)zeroReal3, 0, 0, 0UL, 1, (size_t)(2774474540883984332UL)); (zeroReal3)(atoms->r[iOff]); }) ;
-# 44 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 44 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
        call_lbl_1: ({ calling((void*)zeroReal3, 1, 0, 0UL, 1, (size_t)(2774474540883984332UL)); (zeroReal3)(atoms->p[iOff]); }) ;
-# 45 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 45 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
        call_lbl_2: ({ calling((void*)zeroReal3, 2, 0, 0UL, 1, (size_t)(2774474540883984332UL)); (zeroReal3)(atoms->f[iOff]); }) ;
-# 46 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       atoms->U[iOff] = 0.;
-# 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } }
-# 48 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 49 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 48 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 49 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     Atoms *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (atoms); rm_stack(true, 2774474540883984320UL, "initAtoms", &____must_manage_initAtoms, ____alias_loc_id_17, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 50 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 50 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(true, 2774474540883984320UL, "initAtoms", &____must_manage_initAtoms, ____alias_loc_id_17, ____chimes_did_disable0, false); }
-# 51 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 52 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 51 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 52 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void destroyAtoms_npm(Atoms *atoms);
 void destroyAtoms_quick(Atoms *atoms); void destroyAtoms(Atoms *atoms);
 void destroyAtoms_resumable(Atoms *atoms)
-# 53 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 53 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&destroyAtoms), "destroyAtoms", &____must_manage_destroyAtoms, 1, 0, (size_t)(2774474540883984554UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 54 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 54 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->gid) { ({ free_helper((((unsigned char *)atoms->gid) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->gid) - sizeof(void *))); }) ; };
-# 55 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 55 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->gid = __null;
-# 56 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 56 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 57 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->iSpecies) { ({ free_helper((((unsigned char *)atoms->iSpecies) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->iSpecies) - sizeof(void *))); }) ; };
-# 58 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 58 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->iSpecies = __null;
-# 59 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 60 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 59 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 60 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->r) { ({ free_helper((((unsigned char *)atoms->r) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->r) - sizeof(void *))); }) ; };
-# 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 61 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->r = __null;
-# 62 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 63 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 62 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 63 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->p) { ({ free_helper((((unsigned char *)atoms->p) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->p) - sizeof(void *))); }) ; };
-# 64 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 64 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->p = __null;
-# 65 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 66 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 66 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->f) { ({ free_helper((((unsigned char *)atoms->f) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->f) - sizeof(void *))); }) ; };
-# 67 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 67 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->f = __null;
-# 68 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 69 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 69 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->U) { ({ free_helper((((unsigned char *)atoms->U) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->U) - sizeof(void *))); }) ; };
-# 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 70 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->U = __null;
-# 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 71 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 72 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ({ free_helper((((unsigned char *)atoms) - sizeof(void *)), 2774474540883984554UL);free((((unsigned char *)atoms) - sizeof(void *))); }) ;
-# 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 73 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_loc_id_19, ____chimes_did_disable1, false); }
-# 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 75 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 76 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 77 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 78 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 74 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 75 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 76 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 77 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 78 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void createFccLattice_npm(int nx, int ny, int nz, real_t lat, SimFlat* s);static void (*____chimes_extern_func_addIntParallel)(int *, int *, int) = addIntParallel;static void (*____chimes_extern_func_profileStart)(enum TimerHandle) = profileStart;static void (*____chimes_extern_func_profileStop)(enum TimerHandle) = profileStop;static void (*____chimes_extern_func_putAtomInBox)(struct LinkCellSt *, struct AtomsSt *, int, int, double, double, double, double, double, double) = putAtomInBox;
 void createFccLattice_quick(int nx, int ny, int nz, real_t lat, SimFlat* s); void createFccLattice(int nx, int ny, int nz, real_t lat, SimFlat* s);
 void createFccLattice_resumable(int nx, int ny, int nz, real_t lat, SimFlat* s)
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&createFccLattice), "createFccLattice", &____must_manage_createFccLattice, 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2774474540883984817UL), "createFccLattice|nx|0", &____must_checkpoint_createFccLattice_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", &____must_checkpoint_createFccLattice_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", &____must_checkpoint_createFccLattice_nz_0, "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", &____must_checkpoint_createFccLattice_lat_0, "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", &____must_checkpoint_createFccLattice_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int ib;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int iz;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int iy;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int ix;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t pz;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t py;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t px;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int end[3];
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int begin[3];
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real3 basis[4] = { { 0.25, 0.25, 0.25 }, { 0.25, 0.75, 0.75 }, { 0.75, 0.25, 0.75 }, { 0.75, 0.75, 0.25 } };
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int nb;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 const real_t *localMax;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 const real_t *localMin;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
  if (____must_checkpoint_createFccLattice_ib_0 || ____must_checkpoint_createFccLattice_iz_0 || ____must_checkpoint_createFccLattice_iy_0 || ____must_checkpoint_createFccLattice_ix_0 || ____must_checkpoint_createFccLattice_pz_0 || ____must_checkpoint_createFccLattice_py_0 || ____must_checkpoint_createFccLattice_px_0 || ____must_checkpoint_createFccLattice_end_0 || ____must_checkpoint_createFccLattice_begin_0 || ____must_checkpoint_createFccLattice_basis_0 || ____must_checkpoint_createFccLattice_nb_0 || ____must_checkpoint_createFccLattice_localMax_0 || ____must_checkpoint_createFccLattice_localMin_0) { register_stack_vars(13, "createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0, "createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0, "createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0, "createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0, "createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0, "createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0, "createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
-# 80 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 80 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       localMin = (s->domain->localMin) ;
-# 81 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 81 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       localMax = (s->domain->localMax) ;
-# 82 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 83 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 82 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 83 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       nb = (4) ;
-# 84 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 84 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 88 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 89 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 90 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 88 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 89 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 90 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 91 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 91 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 92 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 92 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { int ii; for ( ii = (0) ; ii<3; ++ii)
-# 93 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 93 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    {
-# 94 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 94 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       begin[ii] = floor(localMin[ii]/lat);
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       end[ii] = ceil (localMax[ii]/lat);
-# 96 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 96 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } }
-# 97 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 98 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 97 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 98 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       ;
-# 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 99 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    px=py=pz=0.0;
-# 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 100 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { for ( ix = (begin[0]) ;ix<end[0]; ++ix) { { for ( iy = (begin[1]) ;iy<end[1]; ++iy) { { for ( iz = (begin[2]) ;iz<end[2]; ++iz) { { for ( ib = (0) ; ib<nb; ++ib)
-# 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 104 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             {
-# 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 105 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 real_t rx; rx = ((ix+basis[ib][0]) * lat) ;
-# 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 106 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 real_t ry; ry = ((iy+basis[ib][1]) * lat) ;
-# 107 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 107 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 real_t rz; rz = ((iz+basis[ib][2]) * lat) ;
-# 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 108 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (rx < localMin[0] || rx >= localMax[0]) {continue; };
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (ry < localMin[1] || ry >= localMax[1]) {continue; };
-# 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 110 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (rz < localMin[2] || rz >= localMax[2]) {continue; };
-# 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 111 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 int id; id = (ib+nb*(iz+nz*(iy+ny*(ix)))) ;
-# 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 112 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 call_lbl_0: ({ LinkCell * ____chimes_arg3; Atoms * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); ____chimes_arg4 = (s->atoms); } calling((void*)putAtomInBox, 0, ____alias_loc_id_2, 0UL, 10, (size_t)(2774474540883984819UL), (size_t)(2774474540883984819UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg3, ____chimes_arg4, id, 0, rx, ry, rz, px, py, pz); }) ;
-# 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 113 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             } }; } }; } }; } }
-# 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 114 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 115 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 116 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
-# 117 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 117 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_2: ({ int * ____chimes_arg14; int * ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg14 = (&s->atoms->nLocal); ____chimes_arg15 = (&s->atoms->nGlobal); } calling((void*)addIntParallel, 2, ____alias_loc_id_0, 0UL, 3, (size_t)(2774474540883984819UL), (size_t)(2774474540883984819UL), (size_t)(0UL)); (addIntParallel)(____chimes_arg14, ____chimes_arg15, 1); }) ;
-# 118 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 118 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
-# 119 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 120 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   ((s->atoms->nGlobal == nb*nx*ny*nz) ? static_cast<void> (0) : __assert_fail ("s->atoms->nGlobal == nb*nx*ny*nz", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c", 120, __PRETTY_FUNCTION__));
-# 121 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 119 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 120 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   ((s->atoms->nGlobal == nb*nx*ny*nz) ? static_cast<void> (0) : __assert_fail ("s->atoms->nGlobal == nb*nx*ny*nz", "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c", 120, __PRETTY_FUNCTION__));
+# 121 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "createFccLattice", &____must_manage_createFccLattice, 0, ____chimes_did_disable2, false); }
-# 122 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 123 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 124 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 125 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 122 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 123 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 124 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 125 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void setVcm_npm(SimFlat* s, real_t newVcm[3]);void computeVcm_npm(SimFlat* s, real_t vcm[3]);
 void setVcm_quick(SimFlat* s, real_t newVcm[3]); void setVcm(SimFlat* s, real_t newVcm[3]);void computeVcm_quick(SimFlat* s, real_t vcm[3]); void computeVcm(SimFlat* s, real_t vcm[3]);
 void setVcm_resumable(SimFlat* s, real_t newVcm[3])
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&setVcm), "setVcm", &____must_manage_setVcm, 2, 2, (size_t)(2774474540883985034UL), (size_t)(2774474540883985035UL), "setVcm|s|0", &____must_checkpoint_setVcm_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setVcm|newVcm|0", &____must_checkpoint_setVcm_newVcm_0, "double*", (void *)(&newVcm), (size_t)8, 1, 0, 0) ; real_t vShift[3];
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t oldVcm[3];
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
  if (____must_checkpoint_setVcm_oldVcm_0) { register_stack_vars(1, "setVcm|oldVcm|0", &____must_checkpoint_setVcm_oldVcm_0, "[3 x double]", (void *)(oldVcm), (size_t)24, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 127 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 128 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_0: ({ calling((void*)computeVcm, 0, ____alias_loc_id_3, 0UL, 2, (size_t)(2774474540883985034UL), (size_t)(2774474540883984881UL)); (computeVcm)(s, oldVcm); }) ;
-# 129 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 129 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 130 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vShift[0] = (newVcm[0] - oldVcm[0]);
-# 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 132 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vShift[1] = (newVcm[1] - oldVcm[1]);
-# 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 133 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vShift[2] = (newVcm[2] - oldVcm[2]);
-# 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 134 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 { call_lbl_1: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(1, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1;
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter0)
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 136 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 136 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 137 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 137 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; } {
-# 138 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 138 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 139 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 139 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 140 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 140 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
-# 141 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 141 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           real_t mass; mass = (s->species[iSpecies].mass) ;
-# 142 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 143 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 142 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 143 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][0] += mass * vShift[0];
-# 144 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 144 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][1] += mass * vShift[1];
-# 145 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 145 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][2] += mass * vShift[2];
-# 146 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 146 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
-# 147 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 147 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
-# 148 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 148 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "setVcm", &____must_manage_setVcm, ____alias_loc_id_20, ____chimes_did_disable3, false); }
-# 160 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 160 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 160 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 160 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void setTemperature_npm(SimFlat* s, real_t temperature);static double (*____chimes_extern_func_gasdev)(unsigned long *) = gasdev;static void (*____chimes_extern_func_kineticEnergy)(struct SimFlatSt *) = kineticEnergy;static unsigned long (*____chimes_extern_func_mkSeed)(unsigned int, unsigned int) = mkSeed;
 void setTemperature_quick(SimFlat* s, real_t temperature); void setTemperature(SimFlat* s, real_t temperature);
 void setTemperature_resumable(SimFlat* s, real_t temperature)
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(2774474540883985498UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0) ; real_t vZero[3] = { 0., 0., 0. };
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 uint64_t seed;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t sigma;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t mass;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
  if (____must_checkpoint_setTemperature_vZero_0 || ____must_checkpoint_setTemperature_seed_0 || ____must_checkpoint_setTemperature_sigma_0 || ____must_checkpoint_setTemperature_mass_0) { register_stack_vars(4, "setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0, "setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0, "setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
-# 162 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 162 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 { call_lbl_7: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(7, &____chimes_region_id1, 3, &mass, &seed, &sigma); int ____chimes_first_iter1 = 1;
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter1) firstprivate(mass) firstprivate(sigma) firstprivate(seed)
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 164 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 164 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 165 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 165 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 3, &mass, &seed, &sigma); ____chimes_first_iter1 = 0; } {
-# 166 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 166 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 167 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 167 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 168 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 168 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           int iType; iType = (s->atoms->iSpecies[iOff]) ;
-# 169 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 169 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             mass = (s->species[iType].mass) ;
-# 170 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 170 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             sigma = (sqrt(kB_eV * temperature/mass)) ;
-# 171 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 171 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
              call_lbl_0: seed = (mkSeed(s->atoms->gid[iOff], 123)) ;
-# 172 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 172 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_1: s->atoms->p[iOff][0] = mass * sigma * gasdev(&seed);
-# 173 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 173 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_2: s->atoms->p[iOff][1] = mass * sigma * gasdev(&seed);
-# 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 174 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_3: s->atoms->p[iOff][2] = mass * sigma * gasdev(&seed);
-# 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 175 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
-# 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 178 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 177 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 178 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 179 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (temperature == 0.0) {rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_22, ____chimes_did_disable4, false); return; };
-# 180 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 180 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 181 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 181 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_4: ({ calling((void*)setVcm, 4, ____alias_loc_id_10, 0UL, 2, (size_t)(2774474540883985498UL), (size_t)(2774474540883985229UL)); (setVcm)(s, vZero); }) ;
-# 182 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 182 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_5: ({ calling((void*)kineticEnergy, 5, ____alias_loc_id_8, 0UL, 1, (size_t)(2774474540883985498UL)); (kineticEnergy)(s); }) ;
-# 183 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 183 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t temp; temp = ((s->eKinetic/s->atoms->nGlobal)/kB_eV/1.5) ;
-# 184 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 185 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 184 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 185 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t scaleFactor; scaleFactor = (sqrt(temperature/temp)) ;
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 { call_lbl_8: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(8, &____chimes_region_id2, 3, &mass, &seed, &sigma); int ____chimes_first_iter2 = 1;
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter2)
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 187 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 187 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 188 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 188 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 3, &mass, &seed, &sigma); ____chimes_first_iter2 = 0; } {
-# 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 189 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 190 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 191 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][0] *= scaleFactor;
-# 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 192 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][1] *= scaleFactor;
-# 193 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 193 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][2] *= scaleFactor;
-# 194 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 194 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
-# 195 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 195 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
-# 196 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 196 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_6: ({ calling((void*)kineticEnergy, 6, ____alias_loc_id_6, 0UL, 1, (size_t)(2774474540883985498UL)); (kineticEnergy)(s); }) ;
-# 197 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 197 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    temp = s->eKinetic/s->atoms->nGlobal/kB_eV/1.5;
-# 198 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 198 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_22, ____chimes_did_disable4, false); }
-# 199 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 200 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 201 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 202 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 203 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 204 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 199 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 200 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 201 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 202 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 203 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 204 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void randomDisplacements_npm(SimFlat* s, real_t delta);static double (*____chimes_extern_func_lcg61)(unsigned long *) = lcg61;
 void randomDisplacements_quick(SimFlat* s, real_t delta); void randomDisplacements(SimFlat* s, real_t delta);
 void randomDisplacements_resumable(SimFlat* s, real_t delta)
-# 205 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&randomDisplacements), "randomDisplacements", &____must_manage_randomDisplacements, 2, 2, (size_t)(2774474540883985627UL), (size_t)(0UL), "randomDisplacements|s|0", &____must_checkpoint_randomDisplacements_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "randomDisplacements|delta|0", &____must_checkpoint_randomDisplacements_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0) ; uint64_t seed;
-# 205 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int ii;
-# 205 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int iOff;
-# 205 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
  if (____must_checkpoint_randomDisplacements_seed_0 || ____must_checkpoint_randomDisplacements_ii_0 || ____must_checkpoint_randomDisplacements_iOff_0) { register_stack_vars(3, "randomDisplacements|seed|0", &____must_checkpoint_randomDisplacements_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "randomDisplacements|ii|0", &____must_checkpoint_randomDisplacements_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "randomDisplacements|iOff|0", &____must_checkpoint_randomDisplacements_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 { call_lbl_4: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(4, &____chimes_region_id3, 3, &iOff, &ii, &seed); int ____chimes_first_iter3 = 1;
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter3) firstprivate(iOff) firstprivate(ii) firstprivate(seed)
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 207 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 207 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 208 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 208 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { { if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 3, &iOff, &ii, &seed); ____chimes_first_iter3 = 0; } {
-# 209 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 209 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 210 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 210 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 211 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 211 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
              call_lbl_0: seed = (mkSeed(s->atoms->gid[iOff], 457)) ;
-# 212 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 212 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_1: s->atoms->r[iOff][0] += (2.0*lcg61(&seed)-1.0) * delta;
-# 213 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 213 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_2: s->atoms->r[iOff][1] += (2.0*lcg61(&seed)-1.0) * delta;
-# 214 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 214 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_3: s->atoms->r[iOff][2] += (2.0*lcg61(&seed)-1.0) * delta;
-# 215 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 215 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
-# 216 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 216 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); }
-# 217 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 217 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "randomDisplacements", &____must_manage_randomDisplacements, ____alias_loc_id_23, ____chimes_did_disable5, false); }
-# 218 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 219 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 220 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 218 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 219 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 220 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 static void (*____chimes_extern_func_addRealParallel)(double *, double *, int) = addRealParallel;
 void computeVcm_resumable(SimFlat* s, real_t vcm[3])
-# 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 221 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&computeVcm), "computeVcm", &____must_manage_computeVcm, 2, 1, (size_t)(2774474540883985218UL), (size_t)(2774474540883985200UL), "computeVcm|vcm|0", &____must_checkpoint_computeVcm_vcm_0, "double*", (void *)(&vcm), (size_t)8, 1, 0, 0) ; real_t vcmSum[4] = { 0., 0., 0., 0. };
-# 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 221 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t vcmLocal[4] = { 0., 0., 0., 0. };
-# 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 221 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
  if (____must_checkpoint_computeVcm_vcmSum_0 || ____must_checkpoint_computeVcm_vcmLocal_0) { register_stack_vars(2, "computeVcm|vcmSum|0", &____must_checkpoint_computeVcm_vcmSum_0, "[4 x double]", (void *)(vcmSum), (size_t)32, 0, 0, 0, "computeVcm|vcmLocal|0", &____must_checkpoint_computeVcm_vcmLocal_0, "[4 x double]", (void *)(vcmLocal), (size_t)32, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 222 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 222 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 223 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 224 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 224 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t v0; v0 = (0.0) ;
-# 225 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 225 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t v1; v1 = (0.0) ;
-# 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 226 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t v2; v2 = (0.0) ;
-# 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 227 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t v3; v3 = (0.0) ;
-# 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 229 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 228 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 229 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 { call_lbl_3: bool ____chimes_disable4 = disable_current_thread(); void *____chimes_parent_ctx5 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth4 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth4 = get_thread_stack_depth(); size_t ____chimes_region_id4; unsigned ____chimes_parent_thread4 = entering_omp_parallel(3, &____chimes_region_id4, 0); int ____chimes_first_iter4 = 1;
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for reduction(+:v0) reduction(+:v1) reduction(+:v2) reduction(+:v3) firstprivate(____chimes_first_iter4)
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 231 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 231 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 232 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 232 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { { if (____chimes_first_iter4) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread4, ____chimes_parent_ctx5, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth4, ____chimes_region_id4, 0); ____chimes_first_iter4 = 0; } {
-# 233 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 233 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 234 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 234 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 235 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 235 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v0 += s->atoms->p[iOff][0];
-# 236 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 236 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v1 += s->atoms->p[iOff][1];
-# 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 237 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v2 += s->atoms->p[iOff][2];
-# 238 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 239 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 238 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 239 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
-# 240 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 240 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v3 += s->species[iSpecies].mass;
-# 241 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 241 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
-# 242 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 242 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth4, ____chimes_region_id4, 1); reenable_current_thread(____chimes_disable4); }
-# 243 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 244 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 243 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 244 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[0] = v0;
-# 245 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 245 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[1] = v1;
-# 246 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 246 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[2] = v2;
-# 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 247 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[3] = v3;
-# 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 248 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 249 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_0: ({ calling((void*)profileStart, 0, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
-# 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 250 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_1: ({ calling((void*)addRealParallel, 1, ____alias_loc_id_4, 0UL, 3, (size_t)(2774474540883985038UL), (size_t)(2774474540883985039UL), (size_t)(0UL)); (addRealParallel)(vcmLocal, vcmSum, 4); }) ;
-# 251 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 251 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_2: ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
-# 252 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 253 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 252 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 253 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t totalMass; totalMass = (vcmSum[3]) ;
-# 254 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 254 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[0] = vcmSum[0]/totalMass;
-# 255 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 255 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[1] = vcmSum[1]/totalMass;
-# 256 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 256 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[2] = vcmSum[2]/totalMass;
-# 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 257 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "computeVcm", &____must_manage_computeVcm, ____alias_loc_id_21, ____chimes_did_disable6, false); }
-# 23 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 23 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 Atoms* initAtoms_quick(LinkCell* boxes)
-# 24 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 24 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&initAtoms), "initAtoms", &____must_manage_initAtoms, 1, 0, (size_t)(2774474540883984445UL)) ; ; ;
-# 25 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 25 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     Atoms *atoms; atoms = ((Atoms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Atoms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Atoms), 2774474540883984320UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 26 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 27 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 26 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 27 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     int maxTotalAtoms; maxTotalAtoms = (64*boxes->nTotalBoxes) ;
-# 28 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 29 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 28 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 29 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->gid = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 30 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 30 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->iSpecies = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 31 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 31 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->r = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 32 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 32 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->p = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 33 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 33 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->f = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 34 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 34 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->U = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 35 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 36 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 35 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 36 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->nLocal = 0;
-# 37 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 37 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->nGlobal = 0;
-# 38 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 39 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 38 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 39 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { int iOff; for ( iOff = (0) ; iOff < maxTotalAtoms; iOff++)
-# 40 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 40 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    {
-# 41 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       atoms->gid[iOff] = 0;
-# 42 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 42 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       atoms->iSpecies[iOff] = 0;
-# 43 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 43 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
        call_lbl_0: ({ calling((void*)zeroReal3, 0, 0, 0UL, 1, (size_t)(2774474540883984332UL)); (zeroReal3)(atoms->r[iOff]); }) ;
-# 44 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 44 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
        call_lbl_1: ({ calling((void*)zeroReal3, 1, 0, 0UL, 1, (size_t)(2774474540883984332UL)); (zeroReal3)(atoms->p[iOff]); }) ;
-# 45 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 45 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
        call_lbl_2: ({ calling((void*)zeroReal3, 2, 0, 0UL, 1, (size_t)(2774474540883984332UL)); (zeroReal3)(atoms->f[iOff]); }) ;
-# 46 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       atoms->U[iOff] = 0.;
-# 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } }
-# 48 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 49 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 48 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 49 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     Atoms *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (atoms); rm_stack(true, 2774474540883984320UL, "initAtoms", &____must_manage_initAtoms, ____alias_loc_id_17, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 50 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 50 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(true, 2774474540883984320UL, "initAtoms", &____must_manage_initAtoms, ____alias_loc_id_17, ____chimes_did_disable0, false); }
 
 Atoms* initAtoms(LinkCell* boxes) { return (____chimes_replaying ? initAtoms_resumable(boxes) : initAtoms_quick(boxes)); }
-# 52 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 52 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void destroyAtoms_quick(Atoms *atoms)
-# 53 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 53 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&destroyAtoms), "destroyAtoms", &____must_manage_destroyAtoms, 1, 0, (size_t)(2774474540883984554UL)) ; ; ;
-# 54 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 54 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->gid) { ({ free_helper((((unsigned char *)atoms->gid) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->gid) - sizeof(void *))); }) ; };
-# 55 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 55 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->gid = __null;
-# 56 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 56 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 57 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->iSpecies) { ({ free_helper((((unsigned char *)atoms->iSpecies) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->iSpecies) - sizeof(void *))); }) ; };
-# 58 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 58 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->iSpecies = __null;
-# 59 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 60 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 59 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 60 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->r) { ({ free_helper((((unsigned char *)atoms->r) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->r) - sizeof(void *))); }) ; };
-# 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 61 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->r = __null;
-# 62 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 63 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 62 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 63 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->p) { ({ free_helper((((unsigned char *)atoms->p) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->p) - sizeof(void *))); }) ; };
-# 64 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 64 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->p = __null;
-# 65 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 66 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 66 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->f) { ({ free_helper((((unsigned char *)atoms->f) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->f) - sizeof(void *))); }) ; };
-# 67 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 67 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->f = __null;
-# 68 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 69 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 69 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->U) { ({ free_helper((((unsigned char *)atoms->U) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->U) - sizeof(void *))); }) ; };
-# 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 70 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->U = __null;
-# 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 71 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 72 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ({ free_helper((((unsigned char *)atoms) - sizeof(void *)), 2774474540883984554UL);free((((unsigned char *)atoms) - sizeof(void *))); }) ;
-# 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 73 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_loc_id_19, ____chimes_did_disable1, false); }
 
 void destroyAtoms(Atoms *atoms) { (____chimes_replaying ? destroyAtoms_resumable(atoms) : destroyAtoms_quick(atoms)); }
-# 78 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 78 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void createFccLattice_quick(int nx, int ny, int nz, real_t lat, SimFlat* s)
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&createFccLattice), "createFccLattice", &____must_manage_createFccLattice, 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2774474540883984817UL), "createFccLattice|nx|0", &____must_checkpoint_createFccLattice_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", &____must_checkpoint_createFccLattice_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", &____must_checkpoint_createFccLattice_nz_0, "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", &____must_checkpoint_createFccLattice_lat_0, "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", &____must_checkpoint_createFccLattice_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int ib;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int iz;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int iy;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int ix;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t pz;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t py;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t px;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int end[3];
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int begin[3];
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real3 basis[4] = { { 0.25, 0.25, 0.25 }, { 0.25, 0.75, 0.75 }, { 0.75, 0.25, 0.75 }, { 0.75, 0.75, 0.25 } };
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int nb;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 const real_t *localMax;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 const real_t *localMin;
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
  if (____must_checkpoint_createFccLattice_ib_0 || ____must_checkpoint_createFccLattice_iz_0 || ____must_checkpoint_createFccLattice_iy_0 || ____must_checkpoint_createFccLattice_ix_0 || ____must_checkpoint_createFccLattice_pz_0 || ____must_checkpoint_createFccLattice_py_0 || ____must_checkpoint_createFccLattice_px_0 || ____must_checkpoint_createFccLattice_end_0 || ____must_checkpoint_createFccLattice_begin_0 || ____must_checkpoint_createFccLattice_basis_0 || ____must_checkpoint_createFccLattice_nb_0 || ____must_checkpoint_createFccLattice_localMax_0 || ____must_checkpoint_createFccLattice_localMin_0) { register_stack_vars(13, "createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0, "createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0, "createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0, "createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0, "createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0, "createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0, "createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0, "createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0, "createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0, "createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0, "createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); } ; ;
-# 80 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 80 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       localMin = (s->domain->localMin) ;
-# 81 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 81 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       localMax = (s->domain->localMax) ;
-# 82 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 83 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 82 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 83 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       nb = (4) ;
-# 84 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 84 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 88 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 89 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 90 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 88 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 89 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 90 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 91 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 91 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 92 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 92 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { int ii; for ( ii = (0) ; ii<3; ++ii)
-# 93 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 93 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    {
-# 94 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 94 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       begin[ii] = floor(localMin[ii]/lat);
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       end[ii] = ceil (localMax[ii]/lat);
-# 96 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 96 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } }
-# 97 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 98 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 97 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 98 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       ;
-# 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 99 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    px=py=pz=0.0;
-# 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 100 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { for ( ix = (begin[0]) ;ix<end[0]; ++ix) { { for ( iy = (begin[1]) ;iy<end[1]; ++iy) { { for ( iz = (begin[2]) ;iz<end[2]; ++iz) { { for ( ib = (0) ; ib<nb; ++ib)
-# 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 104 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             {
-# 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 105 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 real_t rx; rx = ((ix+basis[ib][0]) * lat) ;
-# 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 106 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 real_t ry; ry = ((iy+basis[ib][1]) * lat) ;
-# 107 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 107 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 real_t rz; rz = ((iz+basis[ib][2]) * lat) ;
-# 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 108 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (rx < localMin[0] || rx >= localMax[0]) {continue; };
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (ry < localMin[1] || ry >= localMax[1]) {continue; };
-# 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 110 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (rz < localMin[2] || rz >= localMax[2]) {continue; };
-# 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 111 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 int id; id = (ib+nb*(iz+nz*(iy+ny*(ix)))) ;
-# 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 112 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                 call_lbl_0: ({ calling((void*)putAtomInBox, 0, ____alias_loc_id_2, 0UL, 10, (size_t)(2774474540883984819UL), (size_t)(2774474540883984819UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); }) ;
-# 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 113 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             } }; } }; } }; } }
-# 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 114 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 115 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 116 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
-# 117 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 117 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_2: ({ calling((void*)addIntParallel, 2, ____alias_loc_id_0, 0UL, 3, (size_t)(2774474540883984819UL), (size_t)(2774474540883984819UL), (size_t)(0UL)); (addIntParallel)(&s->atoms->nLocal, &s->atoms->nGlobal, 1); }) ;
-# 118 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 118 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
-# 119 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 120 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   ((s->atoms->nGlobal == nb*nx*ny*nz) ? static_cast<void> (0) : __assert_fail ("s->atoms->nGlobal == nb*nx*ny*nz", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c", 120, __PRETTY_FUNCTION__));
-# 121 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 119 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 120 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   ((s->atoms->nGlobal == nb*nx*ny*nz) ? static_cast<void> (0) : __assert_fail ("s->atoms->nGlobal == nb*nx*ny*nz", "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c", 120, __PRETTY_FUNCTION__));
+# 121 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "createFccLattice", &____must_manage_createFccLattice, 0, ____chimes_did_disable2, false); }
 
 void createFccLattice(int nx, int ny, int nz, real_t lat, SimFlat* s) { (____chimes_replaying ? createFccLattice_resumable(nx, ny, nz, lat, s) : createFccLattice_quick(nx, ny, nz, lat, s)); }
-# 125 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 125 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void setVcm_quick(SimFlat* s, real_t newVcm[3])
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&setVcm), "setVcm", &____must_manage_setVcm, 2, 2, (size_t)(2774474540883985034UL), (size_t)(2774474540883985035UL), "setVcm|s|0", &____must_checkpoint_setVcm_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setVcm|newVcm|0", &____must_checkpoint_setVcm_newVcm_0, "double*", (void *)(&newVcm), (size_t)8, 1, 0, 0) ; real_t vShift[3];
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t oldVcm[3];
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
  if (____must_checkpoint_setVcm_oldVcm_0) { register_stack_vars(1, "setVcm|oldVcm|0", &____must_checkpoint_setVcm_oldVcm_0, "[3 x double]", (void *)(oldVcm), (size_t)24, 0, 0, 0); } ; ;
-# 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 127 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 128 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_0: ({ calling((void*)computeVcm, 0, ____alias_loc_id_3, 0UL, 2, (size_t)(2774474540883985034UL), (size_t)(2774474540883984881UL)); computeVcm_quick(s, oldVcm); }) ;
-# 129 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 129 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 130 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vShift[0] = (newVcm[0] - oldVcm[0]);
-# 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 132 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vShift[1] = (newVcm[1] - oldVcm[1]);
-# 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 133 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vShift[2] = (newVcm[2] - oldVcm[2]);
-# 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 134 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 { call_lbl_1: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(1, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1;
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter0)
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 136 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 136 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 137 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 137 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; } {
-# 138 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 138 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 139 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 139 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 140 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 140 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
-# 141 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 141 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           real_t mass; mass = (s->species[iSpecies].mass) ;
-# 142 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 143 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 142 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 143 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][0] += mass * vShift[0];
-# 144 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 144 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][1] += mass * vShift[1];
-# 145 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 145 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][2] += mass * vShift[2];
-# 146 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 146 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
-# 147 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 147 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
-# 148 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 148 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "setVcm", &____must_manage_setVcm, ____alias_loc_id_20, ____chimes_did_disable3, false); }
 
 void setVcm(SimFlat* s, real_t newVcm[3]) { (____chimes_replaying ? setVcm_resumable(s, newVcm) : setVcm_quick(s, newVcm)); }
-# 160 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 160 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void setTemperature_quick(SimFlat* s, real_t temperature)
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(2774474540883985498UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0) ; real_t vZero[3] = { 0., 0., 0. };
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 uint64_t seed;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t sigma;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t mass;
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
  if (____must_checkpoint_setTemperature_vZero_0 || ____must_checkpoint_setTemperature_seed_0 || ____must_checkpoint_setTemperature_sigma_0 || ____must_checkpoint_setTemperature_mass_0) { register_stack_vars(4, "setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0, "setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0, "setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0); } ; ;
-# 162 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 162 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 { call_lbl_7: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(7, &____chimes_region_id1, 3, &mass, &seed, &sigma); int ____chimes_first_iter1 = 1;
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter1) firstprivate(mass) firstprivate(sigma) firstprivate(seed)
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 164 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 164 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 165 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 165 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 3, &mass, &seed, &sigma); ____chimes_first_iter1 = 0; } {
-# 166 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 166 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 167 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 167 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 168 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 168 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           int iType; iType = (s->atoms->iSpecies[iOff]) ;
-# 169 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 169 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             mass = (s->species[iType].mass) ;
-# 170 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 170 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             sigma = (sqrt(kB_eV * temperature/mass)) ;
-# 171 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 171 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
              call_lbl_0: seed = (mkSeed(s->atoms->gid[iOff], 123)) ;
-# 172 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 172 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_1: s->atoms->p[iOff][0] = mass * sigma * gasdev(&seed);
-# 173 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 173 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_2: s->atoms->p[iOff][1] = mass * sigma * gasdev(&seed);
-# 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 174 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_3: s->atoms->p[iOff][2] = mass * sigma * gasdev(&seed);
-# 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 175 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
-# 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 178 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 177 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 178 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 179 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (temperature == 0.0) {rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_22, ____chimes_did_disable4, false); return; };
-# 180 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 180 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 181 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 181 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_4: ({ calling((void*)setVcm, 4, ____alias_loc_id_10, 0UL, 2, (size_t)(2774474540883985498UL), (size_t)(2774474540883985229UL)); setVcm_quick(s, vZero); }) ;
-# 182 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 182 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_5: ({ calling((void*)kineticEnergy, 5, ____alias_loc_id_8, 0UL, 1, (size_t)(2774474540883985498UL)); (kineticEnergy)(s); }) ;
-# 183 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 183 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t temp; temp = ((s->eKinetic/s->atoms->nGlobal)/kB_eV/1.5) ;
-# 184 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 185 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 184 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 185 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t scaleFactor; scaleFactor = (sqrt(temperature/temp)) ;
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 { call_lbl_8: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(8, &____chimes_region_id2, 3, &mass, &seed, &sigma); int ____chimes_first_iter2 = 1;
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter2)
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 187 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 187 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 188 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 188 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 3, &mass, &seed, &sigma); ____chimes_first_iter2 = 0; } {
-# 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 189 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 190 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 191 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][0] *= scaleFactor;
-# 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 192 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][1] *= scaleFactor;
-# 193 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 193 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][2] *= scaleFactor;
-# 194 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 194 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
-# 195 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 195 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
-# 196 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 196 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_6: ({ calling((void*)kineticEnergy, 6, ____alias_loc_id_6, 0UL, 1, (size_t)(2774474540883985498UL)); (kineticEnergy)(s); }) ;
-# 197 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 197 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    temp = s->eKinetic/s->atoms->nGlobal/kB_eV/1.5;
-# 198 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 198 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_22, ____chimes_did_disable4, false); }
 
 void setTemperature(SimFlat* s, real_t temperature) { (____chimes_replaying ? setTemperature_resumable(s, temperature) : setTemperature_quick(s, temperature)); }
-# 204 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 204 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void randomDisplacements_quick(SimFlat* s, real_t delta)
-# 205 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&randomDisplacements), "randomDisplacements", &____must_manage_randomDisplacements, 2, 2, (size_t)(2774474540883985627UL), (size_t)(0UL), "randomDisplacements|s|0", &____must_checkpoint_randomDisplacements_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "randomDisplacements|delta|0", &____must_checkpoint_randomDisplacements_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0) ; uint64_t seed;
-# 205 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int ii;
-# 205 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 int iOff;
-# 205 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
  if (____must_checkpoint_randomDisplacements_seed_0 || ____must_checkpoint_randomDisplacements_ii_0 || ____must_checkpoint_randomDisplacements_iOff_0) { register_stack_vars(3, "randomDisplacements|seed|0", &____must_checkpoint_randomDisplacements_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0, "randomDisplacements|ii|0", &____must_checkpoint_randomDisplacements_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "randomDisplacements|iOff|0", &____must_checkpoint_randomDisplacements_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } ; ;
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 { call_lbl_4: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(4, &____chimes_region_id3, 3, &iOff, &ii, &seed); int ____chimes_first_iter3 = 1;
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter3) firstprivate(iOff) firstprivate(ii) firstprivate(seed)
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 207 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 207 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 208 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 208 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { { if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 3, &iOff, &ii, &seed); ____chimes_first_iter3 = 0; } {
-# 209 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 209 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 210 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 210 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 211 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 211 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
              call_lbl_0: seed = (mkSeed(s->atoms->gid[iOff], 457)) ;
-# 212 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 212 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_1: s->atoms->r[iOff][0] += (2.0*lcg61(&seed)-1.0) * delta;
-# 213 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 213 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_2: s->atoms->r[iOff][1] += (2.0*lcg61(&seed)-1.0) * delta;
-# 214 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 214 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           call_lbl_3: s->atoms->r[iOff][2] += (2.0*lcg61(&seed)-1.0) * delta;
-# 215 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 215 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
-# 216 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 216 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); }
-# 217 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 217 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "randomDisplacements", &____must_manage_randomDisplacements, ____alias_loc_id_23, ____chimes_did_disable5, false); }
 
 void randomDisplacements(SimFlat* s, real_t delta) { (____chimes_replaying ? randomDisplacements_resumable(s, delta) : randomDisplacements_quick(s, delta)); }
-# 220 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 220 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void computeVcm_quick(SimFlat* s, real_t vcm[3])
-# 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 221 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&computeVcm), "computeVcm", &____must_manage_computeVcm, 2, 1, (size_t)(2774474540883985218UL), (size_t)(2774474540883985200UL), "computeVcm|vcm|0", &____must_checkpoint_computeVcm_vcm_0, "double*", (void *)(&vcm), (size_t)8, 1, 0, 0) ; real_t vcmSum[4] = { 0., 0., 0., 0. };
-# 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 221 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 real_t vcmLocal[4] = { 0., 0., 0., 0. };
-# 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 221 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
  if (____must_checkpoint_computeVcm_vcmSum_0 || ____must_checkpoint_computeVcm_vcmLocal_0) { register_stack_vars(2, "computeVcm|vcmSum|0", &____must_checkpoint_computeVcm_vcmSum_0, "[4 x double]", (void *)(vcmSum), (size_t)32, 0, 0, 0, "computeVcm|vcmLocal|0", &____must_checkpoint_computeVcm_vcmLocal_0, "[4 x double]", (void *)(vcmLocal), (size_t)32, 0, 0, 0); } ; ;
-# 222 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 222 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 223 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
-# 224 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 224 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t v0; v0 = (0.0) ;
-# 225 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 225 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t v1; v1 = (0.0) ;
-# 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 226 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t v2; v2 = (0.0) ;
-# 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 227 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t v3; v3 = (0.0) ;
-# 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 229 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 228 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 229 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 { call_lbl_3: bool ____chimes_disable4 = disable_current_thread(); void *____chimes_parent_ctx5 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth4 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth4 = get_thread_stack_depth(); size_t ____chimes_region_id4; unsigned ____chimes_parent_thread4 = entering_omp_parallel(3, &____chimes_region_id4, 0); int ____chimes_first_iter4 = 1;
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for reduction(+:v0) reduction(+:v1) reduction(+:v2) reduction(+:v3) firstprivate(____chimes_first_iter4)
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 231 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 231 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 232 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 232 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    { { if (____chimes_first_iter4) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread4, ____chimes_parent_ctx5, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth4, ____chimes_region_id4, 0); ____chimes_first_iter4 = 0; } {
-# 233 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 233 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 234 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 234 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 235 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 235 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v0 += s->atoms->p[iOff][0];
-# 236 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 236 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v1 += s->atoms->p[iOff][1];
-# 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 237 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v2 += s->atoms->p[iOff][2];
-# 238 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 239 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 238 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 239 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
-# 240 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 240 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v3 += s->species[iSpecies].mass;
-# 241 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 241 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
-# 242 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 242 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth4, ____chimes_region_id4, 1); reenable_current_thread(____chimes_disable4); }
-# 243 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 244 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 243 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 244 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[0] = v0;
-# 245 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 245 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[1] = v1;
-# 246 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 246 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[2] = v2;
-# 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 247 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[3] = v3;
-# 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 248 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 249 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_0: ({ calling((void*)profileStart, 0, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
-# 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 250 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_1: ({ calling((void*)addRealParallel, 1, ____alias_loc_id_4, 0UL, 3, (size_t)(2774474540883985038UL), (size_t)(2774474540883985039UL), (size_t)(0UL)); (addRealParallel)(vcmLocal, vcmSum, 4); }) ;
-# 251 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 251 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_2: ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
-# 252 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 253 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 252 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 253 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t totalMass; totalMass = (vcmSum[3]) ;
-# 254 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 254 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[0] = vcmSum[0]/totalMass;
-# 255 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 255 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[1] = vcmSum[1]/totalMass;
-# 256 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 256 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[2] = vcmSum[2]/totalMass;
-# 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 257 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 rm_stack(false, 0UL, "computeVcm", &____must_manage_computeVcm, ____alias_loc_id_21, ____chimes_did_disable6, false); }
 
 void computeVcm(SimFlat* s, real_t vcm[3]) { (____chimes_replaying ? computeVcm_resumable(s, vcm) : computeVcm_quick(s, vcm)); }
-# 23 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 23 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 Atoms* initAtoms_npm(LinkCell* boxes)
-# 24 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 24 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {
-# 25 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 25 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    Atoms* atoms = (Atoms*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Atoms)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Atoms), 2774474540883984320UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 26 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 27 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 26 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 27 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    int maxTotalAtoms = 64*boxes->nTotalBoxes;
-# 28 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 29 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 28 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 29 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->gid = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 30 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 30 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->iSpecies = (int*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(int), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 31 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 31 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->r = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 32 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 32 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->p = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 33 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 33 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->f = (real3*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real3), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 34 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 34 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->U = (real_t*) ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 2774474540883984332UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 35 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 36 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 35 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 36 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->nLocal = 0;
-# 37 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 37 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->nGlobal = 0;
-# 38 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 39 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 38 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 39 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iOff = 0; iOff < maxTotalAtoms; iOff++)
-# 40 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 40 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    {
-# 41 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       atoms->gid[iOff] = 0;
-# 42 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 42 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       atoms->iSpecies[iOff] = 0;
-# 43 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 43 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       (*____chimes_extern_func_zeroReal3)(atoms->r[iOff]);
-# 44 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 44 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       (*____chimes_extern_func_zeroReal3)(atoms->p[iOff]);
-# 45 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 45 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       (*____chimes_extern_func_zeroReal3)(atoms->f[iOff]);
-# 46 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       atoms->U[iOff] = 0.;
-# 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    }
-# 48 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 49 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 48 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 49 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     Atoms * ____chimes_ret_var_0; ____chimes_ret_var_0 = (atoms); return ____chimes_ret_var_0; ;
-# 50 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 50 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 }
-# 52 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 52 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void destroyAtoms_npm(Atoms *atoms)
-# 53 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 53 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {
-# 54 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 54 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->gid) { ({ free_helper((((unsigned char *)atoms->gid) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->gid) - sizeof(void *))); }) ; };
-# 55 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 55 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->gid = __null;
-# 56 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 56 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 57 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->iSpecies) { ({ free_helper((((unsigned char *)atoms->iSpecies) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->iSpecies) - sizeof(void *))); }) ; };
-# 58 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 58 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->iSpecies = __null;
-# 59 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 60 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 59 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 60 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->r) { ({ free_helper((((unsigned char *)atoms->r) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->r) - sizeof(void *))); }) ; };
-# 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 61 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->r = __null;
-# 62 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 63 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 62 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 63 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->p) { ({ free_helper((((unsigned char *)atoms->p) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->p) - sizeof(void *))); }) ; };
-# 64 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 64 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->p = __null;
-# 65 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 66 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 66 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->f) { ({ free_helper((((unsigned char *)atoms->f) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->f) - sizeof(void *))); }) ; };
-# 67 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 67 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->f = __null;
-# 68 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 69 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 69 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (atoms->U) { ({ free_helper((((unsigned char *)atoms->U) - sizeof(void *)), 2774474540883984468UL);free((((unsigned char *)atoms->U) - sizeof(void *))); }) ; };
-# 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 70 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    atoms->U = __null;
-# 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 71 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 72 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ({ free_helper((((unsigned char *)atoms) - sizeof(void *)), 2774474540883984554UL);free((((unsigned char *)atoms) - sizeof(void *))); }) ;
-# 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 73 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 }
-# 78 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 78 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void createFccLattice_npm(int nx, int ny, int nz, real_t lat, SimFlat* s)
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {
-# 80 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 80 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    const real_t* localMin = s->domain->localMin;
-# 81 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 81 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    const real_t* localMax = s->domain->localMax;
-# 82 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 83 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 82 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 83 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    int nb = 4;
-# 84 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 84 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real3 basis[4] = { {0.25, 0.25, 0.25},
-# 85 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 85 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {0.25, 0.75, 0.75},
-# 86 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 86 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {0.75, 0.25, 0.75},
-# 87 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 87 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {0.75, 0.75, 0.25} };
-# 88 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 89 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 90 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 88 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 89 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 90 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    int begin[3];
-# 91 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 91 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    int end[3];
-# 92 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 92 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int ii=0; ii<3; ++ii)
-# 93 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 93 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    {
-# 94 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 94 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       begin[ii] = floor(localMin[ii]/lat);
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       end[ii] = ceil (localMax[ii]/lat);
-# 96 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 96 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    }
-# 97 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 98 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 97 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 98 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t px,py,pz;
-# 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 99 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    px=py=pz=0.0;
-# 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 100 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int ix=begin[0];ix<end[0]; ++ix) { for (int iy=begin[1];iy<end[1]; ++iy) { for (int iz=begin[2];iz<end[2]; ++iz) { for (int ib=0; ib<nb; ++ib)
-# 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 104 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             {
-# 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 105 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                real_t rx = (ix+basis[ib][0]) * lat;
-# 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 106 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                real_t ry = (iy+basis[ib][1]) * lat;
-# 107 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 107 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                real_t rz = (iz+basis[ib][2]) * lat;
-# 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 108 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (rx < localMin[0] || rx >= localMax[0]) {continue; };
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (ry < localMin[1] || ry >= localMax[1]) {continue; };
-# 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 110 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                if (rz < localMin[2] || rz >= localMax[2]) {continue; };
-# 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 111 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                int id = ib+nb*(iz+nz*(iy+ny*(ix)));
-# 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 112 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                (*____chimes_extern_func_putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz);
-# 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 113 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             }; }; }; }
-# 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 114 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 115 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 116 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { (*____chimes_extern_func_profileStart)(commReduceTimer); } while(0);
-# 117 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 117 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    (*____chimes_extern_func_addIntParallel)(&s->atoms->nLocal, &s->atoms->nGlobal, 1);
-# 118 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 118 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { (*____chimes_extern_func_profileStop)(commReduceTimer); } while(0);
-# 119 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 120 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   ((s->atoms->nGlobal == nb*nx*ny*nz) ? static_cast<void> (0) : __assert_fail ("s->atoms->nGlobal == nb*nx*ny*nz", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c", 120, __PRETTY_FUNCTION__));
-# 121 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 119 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 120 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   ((s->atoms->nGlobal == nb*nx*ny*nz) ? static_cast<void> (0) : __assert_fail ("s->atoms->nGlobal == nb*nx*ny*nz", "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c", 120, __PRETTY_FUNCTION__));
+# 121 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 }
-# 125 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 125 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void setVcm_npm(SimFlat* s, real_t newVcm[3])
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {
-# 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 127 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t oldVcm[3];
-# 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 128 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    computeVcm_npm(s, oldVcm);
-# 129 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 129 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 130 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t vShift[3];
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vShift[0] = (newVcm[0] - oldVcm[0]);
-# 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 132 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vShift[1] = (newVcm[1] - oldVcm[1]);
-# 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 133 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vShift[2] = (newVcm[2] - oldVcm[2]);
-# 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 134 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 136 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 136 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 137 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 137 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    {
-# 138 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 138 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       for (int iOff=64*iBox, ii=0; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 139 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 139 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 140 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 140 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          int iSpecies = s->atoms->iSpecies[iOff];
-# 141 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 141 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          real_t mass = s->species[iSpecies].mass;
-# 142 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 143 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 142 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 143 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][0] += mass * vShift[0];
-# 144 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 144 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][1] += mass * vShift[1];
-# 145 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 145 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][2] += mass * vShift[2];
-# 146 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 146 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       }
-# 147 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 147 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    }
-# 148 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 148 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 }
-# 160 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 160 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void setTemperature_npm(SimFlat* s, real_t temperature)
-# 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {
-# 162 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 162 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 164 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 164 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 165 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 165 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    {
-# 166 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 166 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       for (int iOff=64*iBox, ii=0; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 167 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 167 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 168 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 168 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          int iType = s->atoms->iSpecies[iOff];
-# 169 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 169 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          real_t mass = s->species[iType].mass;
-# 170 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 170 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          real_t sigma = sqrt(kB_eV * temperature/mass);
-# 171 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 171 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          uint64_t seed = (*____chimes_extern_func_mkSeed)(s->atoms->gid[iOff], 123);
-# 172 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 172 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][0] = mass * sigma * (*____chimes_extern_func_gasdev)(&seed);
-# 173 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 173 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][1] = mass * sigma * (*____chimes_extern_func_gasdev)(&seed);
-# 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 174 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][2] = mass * sigma * (*____chimes_extern_func_gasdev)(&seed);
-# 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 175 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       }
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    }
-# 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 178 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 177 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 178 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 179 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    if (temperature == 0.0) {return; };
-# 180 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 180 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t vZero[3] = {0., 0., 0.};
-# 181 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 181 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    setVcm_npm(s, vZero);
-# 182 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 182 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    (*____chimes_extern_func_kineticEnergy)(s);
-# 183 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 183 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t temp = (s->eKinetic/s->atoms->nGlobal)/kB_eV/1.5;
-# 184 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 185 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 184 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 185 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t scaleFactor = sqrt(temperature/temp);
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 187 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 187 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 188 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 188 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    {
-# 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 189 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       for (int iOff=64*iBox, ii=0; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 190 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 191 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][0] *= scaleFactor;
-# 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 192 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][1] *= scaleFactor;
-# 193 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 193 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][2] *= scaleFactor;
-# 194 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 194 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       }
-# 195 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 195 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    }
-# 196 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 196 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    (*____chimes_extern_func_kineticEnergy)(s);
-# 197 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 197 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    temp = s->eKinetic/s->atoms->nGlobal/kB_eV/1.5;
-# 198 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 198 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 }
-# 204 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 204 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void randomDisplacements_npm(SimFlat* s, real_t delta)
-# 205 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 206 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 207 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 207 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 208 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 208 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    {
-# 209 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 209 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       for (int iOff=64*iBox, ii=0; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 210 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 210 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 211 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 211 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          uint64_t seed = (*____chimes_extern_func_mkSeed)(s->atoms->gid[iOff], 457);
-# 212 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 212 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->r[iOff][0] += (2.0*(*____chimes_extern_func_lcg61)(&seed)-1.0) * delta;
-# 213 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 213 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->r[iOff][1] += (2.0*(*____chimes_extern_func_lcg61)(&seed)-1.0) * delta;
-# 214 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 214 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->r[iOff][2] += (2.0*(*____chimes_extern_func_lcg61)(&seed)-1.0) * delta;
-# 215 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 215 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       }
-# 216 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 216 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    }
-# 217 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 217 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 }
-# 220 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 220 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void computeVcm_npm(SimFlat* s, real_t vcm[3])
-# 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 221 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {
-# 222 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 222 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t vcmLocal[4] = {0., 0., 0., 0.};
-# 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 223 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t vcmSum[4] = {0., 0., 0., 0.};
-# 224 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 224 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t v0 = 0.0;
-# 225 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 225 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t v1 = 0.0;
-# 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 226 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t v2 = 0.0;
-# 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 227 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t v3 = 0.0;
-# 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 229 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 228 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 229 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for reduction(+:v0) reduction(+:v1) reduction(+:v2) reduction(+:v3)
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 231 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 231 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
-# 232 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 232 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    {
-# 233 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 233 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       for (int iOff=64*iBox, ii=0; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
-# 234 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 234 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
-# 235 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 235 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v0 += s->atoms->p[iOff][0];
-# 236 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 236 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v1 += s->atoms->p[iOff][1];
-# 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 237 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v2 += s->atoms->p[iOff][2];
-# 238 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 239 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 238 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 239 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          int iSpecies = s->atoms->iSpecies[iOff];
-# 240 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 240 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v3 += s->species[iSpecies].mass;
-# 241 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 241 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       }
-# 242 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 242 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    }
-# 243 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 244 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 243 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 244 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[0] = v0;
-# 245 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 245 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[1] = v1;
-# 246 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 246 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[2] = v2;
-# 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 247 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[3] = v3;
-# 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 248 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 249 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { (*____chimes_extern_func_profileStart)(commReduceTimer); } while(0);
-# 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 250 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    (*____chimes_extern_func_addRealParallel)(vcmLocal, vcmSum, 4);
-# 251 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 251 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { (*____chimes_extern_func_profileStop)(commReduceTimer); } while(0);
-# 252 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 253 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 252 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 253 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t totalMass = vcmSum[3];
-# 254 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 254 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[0] = vcmSum[0]/totalMass;
-# 255 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 255 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[1] = vcmSum[1]/totalMass;
-# 256 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 256 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[2] = vcmSum[2]/totalMass;
-# 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 257 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 }
 
 

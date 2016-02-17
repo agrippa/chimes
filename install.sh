@@ -21,7 +21,7 @@ rm -rf $LLVM_INSTALL
 rm -rf $LLVM_HOME
 
 if [[ ! -d $CHIMES_HOME ]]; then
-    git clone git@github.com:agrippa/num-debug.git $CHIMES_HOME
+    git clone git@github.com:agrippa/chimes.git $CHIMES_HOME
 fi
 
 LLVM_HOME_DIR=$(dirname $LLVM_HOME)

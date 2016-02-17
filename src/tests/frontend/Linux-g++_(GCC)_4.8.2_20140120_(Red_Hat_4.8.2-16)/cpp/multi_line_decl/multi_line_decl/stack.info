@@ -1,8 +1,8 @@
-/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp foo|a|0 " i32 " 32 0 0 0
-/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp foo|b|0 " i32 " 32 0 0 0
-/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp foo|____chimes_ret_var_0|0 " i32 " 32 0 0 0
-/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp main|argc|0 " i32 " 32 0 0 0
-/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp main|argv|0 " i8** " 64 1 0 0
-/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp main|a|0 " i32 " 32 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp main|ptr|0 " i32* " 64 1 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp main|____chimes_ret_var_1|0 " i32 " 32 0 0 0
+/home/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp foo|a|0 " i32 " 32 0 0 0
+/home/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp foo|b|0 " i32 " 32 0 0 0
+/home/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp foo|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/home/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp main|argc|0 " i32 " 32 0 0 0
+/home/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp main|argv|0 " i8** " 64 1 0 0
+/home/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp main|a|0 " i32 " 32 0 0 1 checkpoint
+/home/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp main|ptr|0 " i32* " 64 1 0 1 checkpoint
+/home/jmg3/chimes/src/examples/cpp/./multi_line_decl.cpp main|____chimes_ret_var_1|0 " i32 " 32 0 0 0

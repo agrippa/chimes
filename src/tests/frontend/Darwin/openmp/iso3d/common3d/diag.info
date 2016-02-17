@@ -1,95 +1,95 @@
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 7 6 len=15 save_layer_text_npm
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 26 6 len=9 init_data_npm
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 49 6 len=5 usage_npm
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 56 6 len=14 default_config_npm
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 73 6 len=12 setup_config_npm
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 100 40 len=7 realloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 101 41 , 17601631303471283709UL, 0, 1, (int)sizeof(struct _source), 0
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 100 40 len=7 realloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 101 41 , 17601631303471283709UL, 0, 1, (int)sizeof(struct _source), 0
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 8 71 const int ____chimes_did_disable0 = new_stack((void *)(&save_layer_text), "save_layer_text", &____must_manage_save_layer_text, 8, 0, (size_t)(17601631303471283437UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17601631303471283443UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 24 1 rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2, ____chimes_did_disable0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 29 49 const int ____chimes_did_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(17601631303471283583UL), (size_t)(17601631303471283584UL), (size_t)(17601631303471283585UL), (size_t)(17601631303471283586UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 47 1 rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 49 25 const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17601631303471283608UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 54 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_did_disable2); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 56 35 const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17601631303471283649UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 71 1 rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_did_disable3); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 73 56 const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17601631303471283779UL), (size_t)(0UL), (size_t)(17601631303471283781UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 127 1 rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_did_disable4); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 8 72 const int ____chimes_did_disable0 = new_stack((void *)(&save_layer_text), "save_layer_text", &____must_manage_save_layer_text, 8, 0, (size_t)(17601631303471283437UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17601631303471283443UL), (size_t)(0UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 8 362 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 9 5  FILE *fp;  fp = (fopen(filename, "wb")) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 9 37 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 15 5 {  int y; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 21 5  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 15 10  y = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 15 19 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 16 9 {  int x; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 19 9  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 16 14  x = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 16 23 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 29 50 const int ____chimes_did_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(17601631303471283583UL), (size_t)(17601631303471283584UL), (size_t)(17601631303471283585UL), (size_t)(17601631303471283586UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 29 375 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 31 5 {  size_t i; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 33 5  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 31 10  i = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 31 22 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 36 5 {  size_t i; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 38 5  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 36 10  i = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 36 22 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 41 5  float scale;  scale = (1. / (dx * dx)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 41 33 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 49 26 const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17601631303471283608UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 49 162 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 56 36 const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17601631303471283649UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 56 199 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 73 57 const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17601631303471283779UL), (size_t)(0UL), (size_t)(17601631303471283781UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 73 604 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 74 5 int c; ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 74 10 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 102 17  call_lbl_8: 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 125 9  call_lbl_13: 
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 7 6 len=15 save_layer_text_quick
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 8 361  ;  
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 26 6 len=9 init_data_quick
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 29 374  ;  
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 49 6 len=5 usage_quick
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 49 161  ;  
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 56 6 len=14 default_config_quick
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 56 198  ;  
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 73 6 len=12 setup_config_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 77 5 ({ calling_npm("default_config", 0); default_config_npm(conf); })
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 77 24 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 102 30  ({  calling((void*)parse_source, 8, ____alias_loc_id_0, 0UL, 2, (size_t)(17601631303471283673UL), (size_t)(17601631303471283709UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 102 75 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 120 17 ({ calling_npm("usage", 0); usage_npm(argv); })
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 120 27 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 125 37  ({  calling((void*)getNumCUDADevices, 13, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 125 55 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 74 5 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 74 10 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 73 603  ; int c;
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 7 6 len=15 save_layer_text_npm
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 26 6 len=9 init_data_npm
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 49 6 len=5 usage_npm
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 56 6 len=14 default_config_npm
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 73 6 len=12 setup_config_npm
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 100 40 len=7 realloc_wrapper
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 101 41 , 17601631303471283709UL, 0, 1, (int)sizeof(struct _source), 0
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 100 40 len=7 realloc_wrapper
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 101 41 , 17601631303471283709UL, 0, 1, (int)sizeof(struct _source), 0
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 8 71 const int ____chimes_did_disable0 = new_stack((void *)(&save_layer_text), "save_layer_text", &____must_manage_save_layer_text, 8, 0, (size_t)(17601631303471283437UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17601631303471283443UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 24 1 rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2, ____chimes_did_disable0); 
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 29 49 const int ____chimes_did_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(17601631303471283583UL), (size_t)(17601631303471283584UL), (size_t)(17601631303471283585UL), (size_t)(17601631303471283586UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 47 1 rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1); 
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 49 25 const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17601631303471283608UL)); 
+InsertText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 54 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_did_disable2); 
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 56 35 const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17601631303471283649UL)); 
+InsertText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 71 1 rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_did_disable3); 
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 73 56 const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17601631303471283779UL), (size_t)(0UL), (size_t)(17601631303471283781UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 127 1 rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_did_disable4); 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 8 72 const int ____chimes_did_disable0 = new_stack((void *)(&save_layer_text), "save_layer_text", &____must_manage_save_layer_text, 8, 0, (size_t)(17601631303471283437UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17601631303471283443UL), (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 8 362 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 9 5  FILE *fp;  fp = (fopen(filename, "wb")) ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 9 37 
+InsertText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 15 5 {  int y; 
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 21 5  }
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 15 10  y = (0) ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 15 19 
+InsertText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 16 9 {  int x; 
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 19 9  }
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 16 14  x = (0) ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 16 23 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 29 50 const int ____chimes_did_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(17601631303471283583UL), (size_t)(17601631303471283584UL), (size_t)(17601631303471283585UL), (size_t)(17601631303471283586UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 29 375 
+InsertText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 31 5 {  size_t i; 
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 33 5  }
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 31 10  i = (0) ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 31 22 
+InsertText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 36 5 {  size_t i; 
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 38 5  }
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 36 10  i = (0) ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 36 22 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 41 5  float scale;  scale = (1. / (dx * dx)) ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 41 33 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 49 26 const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17601631303471283608UL)); ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 49 162 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 56 36 const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17601631303471283649UL)); ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 56 199 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 73 57 const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17601631303471283779UL), (size_t)(0UL), (size_t)(17601631303471283781UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 73 604 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 74 5 int c; ;
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 74 10 
+InsertText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 102 17  call_lbl_8: 
+InsertText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 125 9  call_lbl_13: 
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 7 6 len=15 save_layer_text_quick
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 8 361  ;  
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 26 6 len=9 init_data_quick
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 29 374  ;  
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 49 6 len=5 usage_quick
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 49 161  ;  
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 56 6 len=14 default_config_quick
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 56 198  ;  
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 73 6 len=12 setup_config_quick
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 77 5 ({ calling_npm("default_config", 0); default_config_npm(conf); })
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 77 24 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 102 30  ({  calling((void*)parse_source, 8, ____alias_loc_id_0, 0UL, 2, (size_t)(17601631303471283673UL), (size_t)(17601631303471283709UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) 
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 102 75 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 120 17 ({ calling_npm("usage", 0); usage_npm(argv); })
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 120 27 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 125 37  ({  calling((void*)getNumCUDADevices, 13, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 125 55 
+RemoveTextBegin /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 74 5 
+RemoveTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 74 10 
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 73 603  ; int c;
  if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0);  }  
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 7 6 len=15 save_layer_text_resumable
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 8 361  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 26 6 len=9 init_data_resumable
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 29 374  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 49 6 len=5 usage_resumable
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 49 161  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 56 6 len=14 default_config_resumable
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 56 198  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 73 6 len=12 setup_config_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 77 5 ({ calling_npm("default_config", 0); default_config_npm(conf); })
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 77 24 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 102 30  ({  source * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 8, ____alias_loc_id_0, 0UL, 2, (size_t)(17601631303471283673UL), (size_t)(17601631303471283709UL)); (parse_source)(optarg, ____chimes_arg1); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 102 75 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 120 17 ({ calling_npm("usage", 0); usage_npm(argv); })
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 120 27 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 125 37  ({  calling((void*)getNumCUDADevices, 13, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 125 55 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 74 5 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 74 10 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 73 603  ; int c;
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 7 6 len=15 save_layer_text_resumable
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 8 361  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 26 6 len=9 init_data_resumable
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 29 374  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 49 6 len=5 usage_resumable
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 49 161  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 56 6 len=14 default_config_resumable
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 56 198  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 73 6 len=12 setup_config_resumable
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 77 5 ({ calling_npm("default_config", 0); default_config_npm(conf); })
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 77 24 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 102 30  ({  source * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 8, ____alias_loc_id_0, 0UL, 2, (size_t)(17601631303471283673UL), (size_t)(17601631303471283709UL)); (parse_source)(optarg, ____chimes_arg1); }) 
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 102 75 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 120 17 ({ calling_npm("usage", 0); usage_npm(argv); })
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 120 27 
+ReplaceTextStart /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 125 37  ({  calling((void*)getNumCUDADevices, 13, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
+ReplaceTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 125 55 
+RemoveTextBegin /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 74 5 
+RemoveTextEnd /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 74 10 
+InsertTextAfterToken /Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 73 603  ; int c;
  if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(8): { goto call_lbl_8; } case(13): { goto call_lbl_13; } default: { chimes_error(); } }  }  

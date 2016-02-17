@@ -14,12 +14,12 @@ typedef long unsigned int size_t;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 1 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -28,7 +28,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -84,14 +84,14 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 1 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 27 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1033,7 +1033,7 @@ __attribute__ ((__leaf__)) ferror_unlocked (FILE *__stream) throw ()
 # 935 "/usr/include/stdio.h" 2 3 4
 # 943 "/usr/include/stdio.h" 3 4
 }
-# 2 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp" 2
+# 2 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 32 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/stddef.h" 1 3 4
@@ -2247,15 +2247,15 @@ __attribute__ ((__leaf__)) atof (const char *__nptr) throw ()
 # 952 "/usr/include/stdlib.h" 2 3 4
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 3 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp" 2
-# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 3 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp" 2
+# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 4 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp" 2
+# 4 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 65 "/usr/include/assert.h" 3 4
 extern "C" {
@@ -2278,93 +2278,93 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 
 
 }
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp" 2
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-# 6 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 5 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp" 2
+# 5 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+# 6 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
 typedef struct _foo {
-# 7 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 7 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     int a;
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     int *b;
-# 9 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 9 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     int **c;
-# 10 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 10 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
 } foo;
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-# 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+# 12 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13553023217757812097UL)) ; foo *test2;
-# 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 12 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
 foo test;
-# 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 12 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
  register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 13 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 13 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
       ;
-# 14 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 14 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     test.a = 3;
-# 15 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 15 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     test.b = __null;
-# 16 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 16 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     test.c = __null;
-# 17 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 17 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
        test2 = ((foo *) ({ void *____chimes_tmp_ptr = malloc((sizeof(foo) * 3) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(foo) * 3, 13553023217757812082UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 18 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 18 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     test2[0].a = 3;
-# 19 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 19 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     fprintf(stderr, "Hello before checkpointing\n");
-# 20 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-# 21 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 20 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+# 21 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
      call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
-# 22 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-# 23 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-    ((test.a == 3) ? static_cast<void> (0) : __assert_fail ("test.a == 3", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 23, __PRETTY_FUNCTION__));
-# 24 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-    ((test.b == __null) ? static_cast<void> (0) : __assert_fail ("test.b == __null", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 24, __PRETTY_FUNCTION__));
-# 25 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-    ((test.c == __null) ? static_cast<void> (0) : __assert_fail ("test.c == __null", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 25, __PRETTY_FUNCTION__));
-# 26 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-    ((test2[0].a == 3) ? static_cast<void> (0) : __assert_fail ("test2[0].a == 3", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 26, __PRETTY_FUNCTION__));
-# 27 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-# 28 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 22 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+# 23 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+    ((test.a == 3) ? static_cast<void> (0) : __assert_fail ("test.a == 3", "/home/jmg3/chimes/src/examples/cpp/./struct.cpp", 23, __PRETTY_FUNCTION__));
+# 24 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+    ((test.b == __null) ? static_cast<void> (0) : __assert_fail ("test.b == __null", "/home/jmg3/chimes/src/examples/cpp/./struct.cpp", 24, __PRETTY_FUNCTION__));
+# 25 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+    ((test.c == __null) ? static_cast<void> (0) : __assert_fail ("test.c == __null", "/home/jmg3/chimes/src/examples/cpp/./struct.cpp", 25, __PRETTY_FUNCTION__));
+# 26 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+    ((test2[0].a == 3) ? static_cast<void> (0) : __assert_fail ("test2[0].a == 3", "/home/jmg3/chimes/src/examples/cpp/./struct.cpp", 26, __PRETTY_FUNCTION__));
+# 27 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+# 28 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 29 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 29 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 12 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13553023217757812097UL)) ; foo *test2;
-# 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 12 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
 foo test;
-# 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 12 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
  register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); ; ;
-# 13 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 13 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
       ;
-# 14 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 14 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     test.a = 3;
-# 15 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 15 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     test.b = __null;
-# 16 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 16 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     test.c = __null;
-# 17 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 17 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
        test2 = ((foo *) ({ void *____chimes_tmp_ptr = malloc((sizeof(foo) * 3) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(foo) * 3, 13553023217757812082UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 18 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 18 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     test2[0].a = 3;
-# 19 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 19 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
     fprintf(stderr, "Hello before checkpointing\n");
-# 20 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-# 21 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 20 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+# 21 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
      call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
-# 22 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-# 23 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-    ((test.a == 3) ? static_cast<void> (0) : __assert_fail ("test.a == 3", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 23, __PRETTY_FUNCTION__));
-# 24 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-    ((test.b == __null) ? static_cast<void> (0) : __assert_fail ("test.b == __null", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 24, __PRETTY_FUNCTION__));
-# 25 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-    ((test.c == __null) ? static_cast<void> (0) : __assert_fail ("test.c == __null", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 25, __PRETTY_FUNCTION__));
-# 26 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-    ((test2[0].a == 3) ? static_cast<void> (0) : __assert_fail ("test2[0].a == 3", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 26, __PRETTY_FUNCTION__));
-# 27 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-# 28 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 22 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+# 23 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+    ((test.a == 3) ? static_cast<void> (0) : __assert_fail ("test.a == 3", "/home/jmg3/chimes/src/examples/cpp/./struct.cpp", 23, __PRETTY_FUNCTION__));
+# 24 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+    ((test.b == __null) ? static_cast<void> (0) : __assert_fail ("test.b == __null", "/home/jmg3/chimes/src/examples/cpp/./struct.cpp", 24, __PRETTY_FUNCTION__));
+# 25 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+    ((test.c == __null) ? static_cast<void> (0) : __assert_fail ("test.c == __null", "/home/jmg3/chimes/src/examples/cpp/./struct.cpp", 25, __PRETTY_FUNCTION__));
+# 26 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+    ((test2[0].a == 3) ? static_cast<void> (0) : __assert_fail ("test2[0].a == 3", "/home/jmg3/chimes/src/examples/cpp/./struct.cpp", 26, __PRETTY_FUNCTION__));
+# 27 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
+# 28 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 29 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
+# 29 "/home/jmg3/chimes/src/examples/cpp/./struct.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }

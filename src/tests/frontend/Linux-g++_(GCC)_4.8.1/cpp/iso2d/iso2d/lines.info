@@ -1,8 +1,8 @@
-/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 131 5 : { 21 } {  } call:finish_progress {  }
-/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 138 9 : { 22 } {  } call:save_text { save_text { 225, 612 } }
-/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 77 5 : { 1, 2, 3 } {  } call:setup_config { setup_config { 4, 350 } }
-/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 129 24 : { 16, 17 } {  } call:seconds {  }
-/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 106 5 : { 15 } {  } call:init_data { init_data { 225, 227, 228 } }
-/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 124 9 : { 11, 12, 16, 17, 18, 19, 20, 225 } {  } call:checkpoint {  }
-/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 104 20 : {  } {  } call:sample_sources { sample_sources { 170, 329 } }
-/home/jmg3/num-debug/src/examples/cpp/./iso2d.cpp 103 5 : {  } {  } call:config_sources { config_sources { 4 } }
+/home/jmg3/chimes/src/examples/cpp/./iso2d.cpp 131 5 : { 21 } {  } call:finish_progress {  }
+/home/jmg3/chimes/src/examples/cpp/./iso2d.cpp 138 9 : { 22 } {  } call:save_text { save_text { 225, 612 } }
+/home/jmg3/chimes/src/examples/cpp/./iso2d.cpp 77 5 : { 1, 2, 3 } {  } call:setup_config { setup_config { 4, 350 } }
+/home/jmg3/chimes/src/examples/cpp/./iso2d.cpp 129 24 : { 16, 17 } {  } call:seconds {  }
+/home/jmg3/chimes/src/examples/cpp/./iso2d.cpp 106 5 : { 15 } {  } call:init_data { init_data { 225, 227, 228 } }
+/home/jmg3/chimes/src/examples/cpp/./iso2d.cpp 124 9 : { 11, 12, 16, 17, 18, 19, 20, 225 } {  } call:checkpoint {  }
+/home/jmg3/chimes/src/examples/cpp/./iso2d.cpp 104 20 : {  } {  } call:sample_sources { sample_sources { 170, 329 } }
+/home/jmg3/chimes/src/examples/cpp/./iso2d.cpp 103 5 : {  } {  } call:config_sources { config_sources { 4 } }

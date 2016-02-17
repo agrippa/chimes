@@ -34,11 +34,11 @@ static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
 static unsigned ____alias_loc_id_6;
 static unsigned ____alias_loc_id_7;
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 1 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -47,7 +47,7 @@ static unsigned ____alias_loc_id_7;
 typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes();
@@ -101,14 +101,14 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 1 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -548,7 +548,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp" 2
+# 2 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -1711,7 +1711,7 @@ void *valloc(size_t);
 
 
 }
-# 3 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp" 2
+# 3 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp" 2
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 75 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/sys/_types/_fd_def.h" 1 3 4
@@ -1897,7 +1897,7 @@ int setitimer(int, const struct itimerval * ,
 int utimes(const char *, const struct timeval *);
 
 }
-# 4 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp" 2
+# 4 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 75 "/usr/include/assert.h" 3 4
 extern "C" {
@@ -1906,220 +1906,220 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 
 
 }
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp" 2
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 6 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp" 2
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 6 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 
-# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 1 "/Users/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/Users/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*fp)(void *));
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp" 2
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 9 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 10 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 11 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 12 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 14 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 15 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp" 2
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 9 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 10 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 11 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 12 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 13 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 14 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 15 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 signed char* string_1;
-# 16 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 16 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 signed char* string_2;
-# 17 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 18 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 17 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 18 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 enum Nucleotide {GAP=0, ADENINE, CYTOSINE, GUANINE, THYMINE};
-# 19 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 20 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 19 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 20 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 signed char char_mapping_npm ( char c );
 signed char char_mapping_quick ( char c ); signed char char_mapping ( char c );
 signed char char_mapping_resumable ( char c ) {const int ____chimes_did_disable0 = new_stack((void *)(&char_mapping), "char_mapping", &____must_manage_char_mapping, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 21 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 21 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
      signed char to_be_returned; to_be_returned = (-1) ;
-# 22 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 22 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     switch(c) {
-# 23 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 23 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case '_': to_be_returned = GAP; break;
-# 24 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 24 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'A': to_be_returned = ADENINE; break;
-# 25 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 25 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'C': to_be_returned = CYTOSINE; break;
-# 26 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 26 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'G': to_be_returned = GUANINE; break;
-# 27 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 27 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'T': to_be_returned = THYMINE; break;
-# 28 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 28 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 29 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 29 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     rm_stack(false, 0UL, "char_mapping", &____must_manage_char_mapping, ____alias_loc_id_1, ____chimes_did_disable0); return to_be_returned;
-# 30 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 30 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
-# 31 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 32 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 31 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 32 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 void print_matrix_npm ( int** matrix, int n_rows, int n_columns );
 void print_matrix_quick ( int** matrix, int n_rows, int n_columns ); void print_matrix ( int** matrix, int n_rows, int n_columns );
 void print_matrix_resumable ( int** matrix, int n_rows, int n_columns ) {const int ____chimes_did_disable1 = new_stack((void *)(&print_matrix), "print_matrix", &____must_manage_print_matrix, 3, 0, (size_t)(1402129255373297726UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 33 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 33 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     int i; int j; ;
-# 34 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 34 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     for ( i = 0; i < n_rows; ++i ) {
-# 35 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 35 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         for ( j = 0; j < n_columns; ++j ) {
-# 36 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 36 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             fprintf(__stdoutp, "%d ", matrix[i][j]);
-# 37 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 37 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         }
-# 38 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 38 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         fprintf(__stdoutp, "\n");
-# 39 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 39 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 40 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 40 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fprintf(__stdoutp,"--------------------------------\n");
-# 41 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 41 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 rm_stack(false, 0UL, "print_matrix", &____must_manage_print_matrix, ____alias_loc_id_2, ____chimes_did_disable1); }
-# 42 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 43 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 42 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 43 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 static char alignment_score_matrix[5][5] =
-# 44 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 44 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 {
-# 45 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 45 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     {-1,-1,-1,-1,-1},
-# 46 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 46 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     {-1,2,-4,-2,-4},
-# 47 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 47 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     {-1,-4, 2,-4,-2},
-# 48 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 48 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     {-1,-2,-4, 2,-4},
-# 49 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 49 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     {-1,-4,-2,-4, 2}
-# 50 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 50 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 };
-# 51 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 52 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 51 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 52 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 size_t clear_whitespaces_do_mapping_npm ( signed char* buffer, long size );
 size_t clear_whitespaces_do_mapping_quick ( signed char* buffer, long size ); size_t clear_whitespaces_do_mapping ( signed char* buffer, long size );
 size_t clear_whitespaces_do_mapping_resumable ( signed char* buffer, long size ) {const int ____chimes_did_disable2 = new_stack((void *)(&clear_whitespaces_do_mapping), "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, 2, 0, (size_t)(1402129255373297773UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 53 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 53 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
      size_t non_ws_index; size_t traverse_index; non_ws_index = (0) ; traverse_index = (0) ;
-# 54 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 55 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 54 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 55 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     while ( traverse_index < size ) {
-# 56 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 56 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
          char curr_char; curr_char = (buffer[traverse_index]) ;
-# 57 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 57 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         switch ( curr_char ) {
-# 58 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 58 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             case 'A': case 'C': case 'G': case 'T':
-# 59 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 60 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 59 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 60 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
                 buffer[non_ws_index++] = ({ calling_npm("char_mapping", 0); char_mapping_npm(curr_char); });
-# 61 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 61 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
                 break;
-# 62 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 62 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         }
-# 63 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 63 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         ++traverse_index;
-# 64 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 64 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 65 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 65 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     rm_stack(false, 0UL, "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, ____alias_loc_id_3, ____chimes_did_disable2); return non_ws_index;
-# 66 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 66 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
-# 67 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 68 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 67 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 68 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 signed char* read_file_npm( FILE* file, size_t* n_chars );
 signed char* read_file_quick( FILE* file, size_t* n_chars ); signed char* read_file( FILE* file, size_t* n_chars );
 signed char* read_file_resumable( FILE* file, size_t* n_chars ) {const int ____chimes_did_disable3 = new_stack((void *)(&read_file), "read_file", &____must_manage_read_file, 2, 0, (size_t)(1402129255373297815UL), (size_t)(1402129255373297816UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 69 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 69 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fseek (file, 0L, 2);
-# 70 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 70 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
      long file_size; file_size = (ftell(file)) ;
-# 71 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 71 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fseek (file, 0L, 0);
-# 72 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 73 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 72 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 73 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
      signed char *file_buffer; file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 1402129255373297796UL, 0, 0)) ;
-# 74 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 75 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 74 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 75 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
      size_t n_read_from_file; n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)) ;
-# 76 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 76 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     file_buffer[file_size] = '\n';
-# 77 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 78 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 79 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 77 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 78 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 79 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     *n_chars = ({ calling_npm("clear_whitespaces_do_mapping", 0); clear_whitespaces_do_mapping_npm(file_buffer, file_size); });
-# 80 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 80 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     rm_stack(true, 1402129255373297796UL, "read_file", &____must_manage_read_file, ____alias_loc_id_4, ____chimes_did_disable3); return file_buffer;
-# 81 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 81 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
-# 82 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 83 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 82 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 83 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 static void random_init_npm(signed char *s, unsigned long long len);
 static void random_init_quick(signed char *s, unsigned long long len); static void random_init(signed char *s, unsigned long long len);
 static void random_init_resumable(signed char *s, unsigned long long len) {const int ____chimes_did_disable4 = new_stack((void *)(&random_init), "random_init", &____must_manage_random_init, 2, 0, (size_t)(1402129255373298273UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 84 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 84 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     { unsigned long long i; for ( i = (0) ; i < len; i++) {
-# 85 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 85 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
          int r; r = (rand() % 5) ;
-# 86 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-        (__builtin_expect(!(r >= 0 && r < 5), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp", 86, "r >= 0 && r < 5") : (void)0);
-# 87 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 86 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+        (__builtin_expect(!(r >= 0 && r < 5), 0) ? __assert_rtn(__func__, "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp", 86, "r >= 0 && r < 5") : (void)0);
+# 87 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         s[i] = r;
-# 88 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 88 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     } }
-# 89 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 89 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 rm_stack(false, 0UL, "random_init", &____must_manage_random_init, ____alias_loc_id_7, ____chimes_did_disable4); }
-# 90 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 91 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 90 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 91 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 void kernel_npm(const unsigned long long c, const unsigned long long chunking, int *current, int *prev, unsigned long long n_char_in_file_1, unsigned long long n_char_in_file_2);
 void kernel_quick(const unsigned long long c, const unsigned long long chunking, int *current, int *prev, unsigned long long n_char_in_file_1, unsigned long long n_char_in_file_2); void kernel(const unsigned long long c, const unsigned long long chunking, int *current, int *prev, unsigned long long n_char_in_file_1, unsigned long long n_char_in_file_2);
 void kernel_resumable(const unsigned long long c, const unsigned long long chunking, int *current,
-# 92 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 92 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         int *prev, unsigned long long n_char_in_file_1,
-# 93 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 93 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         unsigned long long n_char_in_file_2) {const int ____chimes_did_disable5 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(1402129255373297983UL), (size_t)(1402129255373297983UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 94 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 94 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     unsigned long long i; unsigned long long j; ;
-# 95 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 95 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     for (i = 1 + (c * chunking); i < 1 + ((c + 1) * chunking); i++) {
-# 96 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 96 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         current[0] = -1*i;
-# 97 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 97 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         for ( j = 1; j < n_char_in_file_1+1; ++j ) {
-# 98 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 98 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              signed char char_from_1; char_from_1 = (string_1[j - 1]) ;
-# 99 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 99 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              signed char char_from_2; char_from_2 = (string_2[i - 1]) ;
-# 100 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 101 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 100 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 101 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              int diag_score; diag_score = (prev[j - 1] + alignment_score_matrix[char_from_2][char_from_1]) ;
-# 102 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 102 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              int left_score; left_score = (current[j - 1] + alignment_score_matrix[char_from_1][GAP]) ;
-# 103 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 103 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              int top_score; top_score = (prev[j] + alignment_score_matrix[GAP][char_from_2]) ;
-# 104 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 105 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 104 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 105 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              int bigger_of_left_top; bigger_of_left_top = ((left_score > top_score) ? left_score : top_score) ;
-# 106 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 106 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             current[j] = (bigger_of_left_top > diag_score) ? bigger_of_left_top : diag_score;
-# 107 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 107 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         }
-# 108 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 109 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 108 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 109 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
          int *temp; temp = (prev) ;
-# 110 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 110 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         prev = current;
-# 111 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 111 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         current = temp;
-# 112 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 112 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 113 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 113 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_5, ____chimes_did_disable5); }
-# 114 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 115 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 114 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 115 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 int main_quick ( int argc, char* argv[] ); int main ( int argc, char* argv[] );
 int main_resumable ( int argc, char* argv[] ) {const int ____chimes_did_disable6 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1402129255373298222UL)) ; unsigned long long estimate;
 unsigned long long elapsed;
@@ -2135,282 +2135,282 @@ unsigned long long n_char_in_file_2;
 unsigned long long n_char_in_file_1;
 int *result_array[2];
  register_stack_vars(13, "main|estimate|0", (int *)0x0, "i64", (void *)(&estimate), (size_t)8, 0, 0, 0, "main|elapsed|0", (int *)0x0, "i64", (void *)(&elapsed), (size_t)8, 0, 0, 0, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i32 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i32 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i32 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(20): { goto call_lbl_20; } default: { chimes_error(); } } } ; ;
-# 116 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 116 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     int i; int j; ;
-# 117 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 117 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
   ;
-# 118 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 119 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 118 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 119 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
  if ( argc != 4 ) {
-# 120 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 120 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
   fprintf(__stderrp, "Usage: %s length1 length2 chunking\n", argv[0]);
-# 121 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 121 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
   exit(1);
-# 122 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 122 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
  }
-# 123 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 124 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 123 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 124 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
        n_char_in_file_1 = (strtoull(argv[1], __null, 10)) ;
-# 125 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 125 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
        n_char_in_file_2 = (strtoull(argv[2], __null, 10)) ;
-# 126 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 126 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
        chunking = (strtoull(argv[3], __null, 10)) ;
-# 127 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-    (__builtin_expect(!(chunking % 2 == 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp", 127, "chunking % 2 == 0") : (void)0);
-# 128 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 129 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 127 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+    (__builtin_expect(!(chunking % 2 == 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp", 127, "chunking % 2 == 0") : (void)0);
+# 128 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 129 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     if (n_char_in_file_2 % chunking != 0) {
-# 130 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 130 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         fprintf(__stderrp, "length2 (%llu) must be evenly divisible by chunking "
-# 131 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 131 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
                 "(%llu)\n", n_char_in_file_2, chunking);
-# 132 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 132 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6); return 1;
-# 133 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 133 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 134 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 134 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     printf("Processing length1=%llu length2=%llu\n", n_char_in_file_1,
-# 135 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 135 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             n_char_in_file_2);
-# 136 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 137 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 136 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 137 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
        nchunks = (n_char_in_file_2 / chunking) ;
-# 138 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 138 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     srand(123);
-# 139 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 140 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 139 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 140 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     string_1 = (signed char *)malloc_wrapper(n_char_in_file_1, 1402129255373297885UL, 0, 0);
-# 141 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 141 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     string_2 = (signed char *)malloc_wrapper(n_char_in_file_2, 1402129255373297885UL, 0, 0);
-# 142 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 142 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     ({ calling_npm("random_init", 0); random_init_npm(string_1, n_char_in_file_1); });
-# 143 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 143 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     ({ calling_npm("random_init", 0); random_init_npm(string_2, n_char_in_file_2); });
-# 144 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 145 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 144 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 145 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
  result_array[0] = (int *)malloc_wrapper(sizeof(int)*(n_char_in_file_1+1), 1402129255373298123UL, 0, 0);
-# 146 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 146 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
  result_array[1] = (int *)malloc_wrapper(sizeof(int)*(n_char_in_file_1+1), 1402129255373298123UL, 0, 0);
-# 147 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 148 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 147 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 148 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     prev = (0) ;
-# 149 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 149 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     current = (1) ;
-# 150 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 151 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 150 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 151 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fprintf(__stderrp, "Starting...\n");
-# 152 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 152 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
           ;
-# 153 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 153 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     gettimeofday(&begin,0);
-# 154 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 155 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 154 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 155 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     for ( i = 0; i < n_char_in_file_1+1; ++i ) {
-# 156 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 156 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
   result_array[prev][i] = -1*i;
-# 157 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 157 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 158 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 159 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 158 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 159 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     { for ( c = (0) ; c < nchunks; c++) {
-# 160 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 160 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         ({ calling_npm("kernel", 0); kernel_npm(c, chunking, result_array[current], result_array[prev], n_char_in_file_1, n_char_in_file_2); });
-# 162 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 163 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 162 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 163 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         gettimeofday(&intermediate, 0);
-# 164 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 164 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
            elapsed = (((intermediate.tv_sec - begin.tv_sec) * 1000) + ((intermediate.tv_usec - begin.tv_usec) / 1000)) ;
-# 166 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 166 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
            estimate = (elapsed / (c + 1)) ;
-# 167 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 167 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         fprintf(__stderrp, "%llu / %llu: %llu ms elapsed, %llu estimated total\n",
-# 168 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 168 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
                 c + 1, nchunks, elapsed, estimate * nchunks);
-# 169 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 170 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 171 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 169 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 170 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 171 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
          call_lbl_20: checkpoint_transformed(20, ____alias_loc_id_0);
-# 172 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 173 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 172 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 173 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     } }
-# 174 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 175 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 174 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 175 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     gettimeofday(&end,0);
-# 176 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 176 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fprintf(__stdoutp, "The computation took %f seconds\n",
-# 177 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 177 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             ((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*1.0/1000000);
-# 178 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 178 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
  fprintf(__stdoutp, "score: %d\n", result_array[prev][n_char_in_file_1]);
-# 179 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 179 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6); return 0;
-# 180 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 180 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
 signed char char_mapping_quick ( char c ) {const int ____chimes_did_disable0 = new_stack((void *)(&char_mapping), "char_mapping", &____must_manage_char_mapping, 1, 0, (size_t)(0UL)) ; ; ;
-# 21 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 21 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
      signed char to_be_returned; to_be_returned = (-1) ;
-# 22 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 22 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     switch(c) {
-# 23 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 23 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case '_': to_be_returned = GAP; break;
-# 24 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 24 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'A': to_be_returned = ADENINE; break;
-# 25 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 25 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'C': to_be_returned = CYTOSINE; break;
-# 26 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 26 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'G': to_be_returned = GUANINE; break;
-# 27 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 27 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'T': to_be_returned = THYMINE; break;
-# 28 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 28 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 29 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 29 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     rm_stack(false, 0UL, "char_mapping", &____must_manage_char_mapping, ____alias_loc_id_1, ____chimes_did_disable0); return to_be_returned;
-# 30 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 30 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
 
 signed char char_mapping ( char c ) { return (____chimes_replaying ? char_mapping_resumable(c) : char_mapping_quick(c)); }
 
 void print_matrix_quick ( int** matrix, int n_rows, int n_columns ) {const int ____chimes_did_disable1 = new_stack((void *)(&print_matrix), "print_matrix", &____must_manage_print_matrix, 3, 0, (size_t)(1402129255373297726UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 33 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 33 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     int i; int j; ;
-# 34 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 34 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     for ( i = 0; i < n_rows; ++i ) {
-# 35 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 35 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         for ( j = 0; j < n_columns; ++j ) {
-# 36 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 36 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             fprintf(__stdoutp, "%d ", matrix[i][j]);
-# 37 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 37 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         }
-# 38 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 38 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         fprintf(__stdoutp, "\n");
-# 39 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 39 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 40 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 40 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fprintf(__stdoutp,"--------------------------------\n");
-# 41 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 41 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 rm_stack(false, 0UL, "print_matrix", &____must_manage_print_matrix, ____alias_loc_id_2, ____chimes_did_disable1); }
 
 void print_matrix ( int** matrix, int n_rows, int n_columns ) { (____chimes_replaying ? print_matrix_resumable(matrix, n_rows, n_columns) : print_matrix_quick(matrix, n_rows, n_columns)); }
 
 size_t clear_whitespaces_do_mapping_quick ( signed char* buffer, long size ) {const int ____chimes_did_disable2 = new_stack((void *)(&clear_whitespaces_do_mapping), "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, 2, 0, (size_t)(1402129255373297773UL), (size_t)(0UL)) ; ; ;
-# 53 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 53 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
      size_t non_ws_index; size_t traverse_index; non_ws_index = (0) ; traverse_index = (0) ;
-# 54 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 55 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 54 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 55 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     while ( traverse_index < size ) {
-# 56 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 56 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
          char curr_char; curr_char = (buffer[traverse_index]) ;
-# 57 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 57 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         switch ( curr_char ) {
-# 58 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 58 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             case 'A': case 'C': case 'G': case 'T':
-# 59 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 60 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 59 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 60 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
                 buffer[non_ws_index++] = ({ calling_npm("char_mapping", 0); char_mapping_npm(curr_char); });
-# 61 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 61 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
                 break;
-# 62 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 62 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         }
-# 63 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 63 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         ++traverse_index;
-# 64 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 64 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 65 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 65 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     rm_stack(false, 0UL, "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, ____alias_loc_id_3, ____chimes_did_disable2); return non_ws_index;
-# 66 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 66 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
 
 size_t clear_whitespaces_do_mapping ( signed char* buffer, long size ) { return (____chimes_replaying ? clear_whitespaces_do_mapping_resumable(buffer, size) : clear_whitespaces_do_mapping_quick(buffer, size)); }
 
 signed char* read_file_quick( FILE* file, size_t* n_chars ) {const int ____chimes_did_disable3 = new_stack((void *)(&read_file), "read_file", &____must_manage_read_file, 2, 0, (size_t)(1402129255373297815UL), (size_t)(1402129255373297816UL)) ; ; ;
-# 69 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 69 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fseek (file, 0L, 2);
-# 70 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 70 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
      long file_size; file_size = (ftell(file)) ;
-# 71 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 71 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fseek (file, 0L, 0);
-# 72 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 73 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 72 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 73 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
      signed char *file_buffer; file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 1402129255373297796UL, 0, 0)) ;
-# 74 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 75 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 74 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 75 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
      size_t n_read_from_file; n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)) ;
-# 76 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 76 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     file_buffer[file_size] = '\n';
-# 77 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 78 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 79 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 77 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 78 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 79 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     *n_chars = ({ calling_npm("clear_whitespaces_do_mapping", 0); clear_whitespaces_do_mapping_npm(file_buffer, file_size); });
-# 80 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 80 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     rm_stack(true, 1402129255373297796UL, "read_file", &____must_manage_read_file, ____alias_loc_id_4, ____chimes_did_disable3); return file_buffer;
-# 81 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 81 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
 
 signed char* read_file( FILE* file, size_t* n_chars ) { return (____chimes_replaying ? read_file_resumable(file, n_chars) : read_file_quick(file, n_chars)); }
 
 static void random_init_quick(signed char *s, unsigned long long len) {const int ____chimes_did_disable4 = new_stack((void *)(&random_init), "random_init", &____must_manage_random_init, 2, 0, (size_t)(1402129255373298273UL), (size_t)(0UL)) ; ; ;
-# 84 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 84 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     { unsigned long long i; for ( i = (0) ; i < len; i++) {
-# 85 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 85 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
          int r; r = (rand() % 5) ;
-# 86 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-        (__builtin_expect(!(r >= 0 && r < 5), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp", 86, "r >= 0 && r < 5") : (void)0);
-# 87 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 86 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+        (__builtin_expect(!(r >= 0 && r < 5), 0) ? __assert_rtn(__func__, "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp", 86, "r >= 0 && r < 5") : (void)0);
+# 87 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         s[i] = r;
-# 88 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 88 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     } }
-# 89 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 89 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 rm_stack(false, 0UL, "random_init", &____must_manage_random_init, ____alias_loc_id_7, ____chimes_did_disable4); }
 
 static void random_init(signed char *s, unsigned long long len) { (____chimes_replaying ? random_init_resumable(s, len) : random_init_quick(s, len)); }
 
 void kernel_quick(const unsigned long long c, const unsigned long long chunking, int *current,
-# 92 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 92 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         int *prev, unsigned long long n_char_in_file_1,
-# 93 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 93 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         unsigned long long n_char_in_file_2) {const int ____chimes_did_disable5 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(1402129255373297983UL), (size_t)(1402129255373297983UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 94 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 94 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     unsigned long long i; unsigned long long j; ;
-# 95 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 95 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     for (i = 1 + (c * chunking); i < 1 + ((c + 1) * chunking); i++) {
-# 96 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 96 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         current[0] = -1*i;
-# 97 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 97 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         for ( j = 1; j < n_char_in_file_1+1; ++j ) {
-# 98 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 98 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              signed char char_from_1; char_from_1 = (string_1[j - 1]) ;
-# 99 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 99 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              signed char char_from_2; char_from_2 = (string_2[i - 1]) ;
-# 100 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 101 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 100 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 101 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              int diag_score; diag_score = (prev[j - 1] + alignment_score_matrix[char_from_2][char_from_1]) ;
-# 102 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 102 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              int left_score; left_score = (current[j - 1] + alignment_score_matrix[char_from_1][GAP]) ;
-# 103 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 103 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              int top_score; top_score = (prev[j] + alignment_score_matrix[GAP][char_from_2]) ;
-# 104 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 105 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 104 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 105 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
              int bigger_of_left_top; bigger_of_left_top = ((left_score > top_score) ? left_score : top_score) ;
-# 106 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 106 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             current[j] = (bigger_of_left_top > diag_score) ? bigger_of_left_top : diag_score;
-# 107 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 107 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         }
-# 108 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 109 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 108 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 109 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
          int *temp; temp = (prev) ;
-# 110 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 110 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         prev = current;
-# 111 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 111 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         current = temp;
-# 112 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 112 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 113 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 113 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_5, ____chimes_did_disable5); }
 
 void kernel(const unsigned long long c, const unsigned long long chunking, int *current,
-# 92 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 92 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         int *prev, unsigned long long n_char_in_file_1,
-# 93 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 93 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         unsigned long long n_char_in_file_2) { (____chimes_replaying ? kernel_resumable(c, chunking, current, prev, n_char_in_file_1, n_char_in_file_2) : kernel_quick(c, chunking, current, prev, n_char_in_file_1, n_char_in_file_2)); }
 
 int main_quick ( int argc, char* argv[] ) {const int ____chimes_did_disable6 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1402129255373298222UL)) ; unsigned long long estimate;
@@ -2427,116 +2427,116 @@ unsigned long long n_char_in_file_2;
 unsigned long long n_char_in_file_1;
 int *result_array[2];
  register_stack_vars(13, "main|estimate|0", (int *)0x0, "i64", (void *)(&estimate), (size_t)8, 0, 0, 0, "main|elapsed|0", (int *)0x0, "i64", (void *)(&elapsed), (size_t)8, 0, 0, 0, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i32 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i32 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i32 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0); ; ;
-# 116 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 116 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     int i; int j; ;
-# 117 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 117 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
   ;
-# 118 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 119 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 118 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 119 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
  if ( argc != 4 ) {
-# 120 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 120 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
   fprintf(__stderrp, "Usage: %s length1 length2 chunking\n", argv[0]);
-# 121 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 121 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
   exit(1);
-# 122 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 122 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
  }
-# 123 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 124 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 123 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 124 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
        n_char_in_file_1 = (strtoull(argv[1], __null, 10)) ;
-# 125 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 125 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
        n_char_in_file_2 = (strtoull(argv[2], __null, 10)) ;
-# 126 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 126 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
        chunking = (strtoull(argv[3], __null, 10)) ;
-# 127 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-    (__builtin_expect(!(chunking % 2 == 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp", 127, "chunking % 2 == 0") : (void)0);
-# 128 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 129 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 127 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+    (__builtin_expect(!(chunking % 2 == 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp", 127, "chunking % 2 == 0") : (void)0);
+# 128 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 129 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     if (n_char_in_file_2 % chunking != 0) {
-# 130 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 130 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         fprintf(__stderrp, "length2 (%llu) must be evenly divisible by chunking "
-# 131 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 131 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
                 "(%llu)\n", n_char_in_file_2, chunking);
-# 132 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 132 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6); return 1;
-# 133 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 133 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 134 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 134 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     printf("Processing length1=%llu length2=%llu\n", n_char_in_file_1,
-# 135 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 135 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             n_char_in_file_2);
-# 136 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 137 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 136 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 137 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
        nchunks = (n_char_in_file_2 / chunking) ;
-# 138 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 138 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     srand(123);
-# 139 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 140 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 139 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 140 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     string_1 = (signed char *)malloc_wrapper(n_char_in_file_1, 1402129255373297885UL, 0, 0);
-# 141 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 141 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     string_2 = (signed char *)malloc_wrapper(n_char_in_file_2, 1402129255373297885UL, 0, 0);
-# 142 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 142 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     ({ calling_npm("random_init", 0); random_init_npm(string_1, n_char_in_file_1); });
-# 143 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 143 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     ({ calling_npm("random_init", 0); random_init_npm(string_2, n_char_in_file_2); });
-# 144 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 145 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 144 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 145 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
  result_array[0] = (int *)malloc_wrapper(sizeof(int)*(n_char_in_file_1+1), 1402129255373298123UL, 0, 0);
-# 146 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 146 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
  result_array[1] = (int *)malloc_wrapper(sizeof(int)*(n_char_in_file_1+1), 1402129255373298123UL, 0, 0);
-# 147 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 148 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 147 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 148 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     prev = (0) ;
-# 149 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 149 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     current = (1) ;
-# 150 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 151 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 150 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 151 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fprintf(__stderrp, "Starting...\n");
-# 152 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 152 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
           ;
-# 153 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 153 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     gettimeofday(&begin,0);
-# 154 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 155 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 154 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 155 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     for ( i = 0; i < n_char_in_file_1+1; ++i ) {
-# 156 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 156 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
   result_array[prev][i] = -1*i;
-# 157 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 157 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 158 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 159 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 158 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 159 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     { for ( c = (0) ; c < nchunks; c++) {
-# 160 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 160 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         ({ calling_npm("kernel", 0); kernel_npm(c, chunking, result_array[current], result_array[prev], n_char_in_file_1, n_char_in_file_2); });
-# 162 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 163 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 162 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 163 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         gettimeofday(&intermediate, 0);
-# 164 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 164 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
            elapsed = (((intermediate.tv_sec - begin.tv_sec) * 1000) + ((intermediate.tv_usec - begin.tv_usec) / 1000)) ;
-# 166 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 166 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
            estimate = (elapsed / (c + 1)) ;
-# 167 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 167 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         fprintf(__stderrp, "%llu / %llu: %llu ms elapsed, %llu estimated total\n",
-# 168 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 168 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
                 c + 1, nchunks, elapsed, estimate * nchunks);
-# 169 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 170 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 171 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 169 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 170 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 171 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
          call_lbl_20: checkpoint_transformed(20, ____alias_loc_id_0);
-# 172 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 173 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 172 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 173 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     } }
-# 174 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 175 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 174 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 175 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     gettimeofday(&end,0);
-# 176 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 176 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fprintf(__stdoutp, "The computation took %f seconds\n",
-# 177 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 177 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             ((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*1.0/1000000);
-# 178 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 178 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
  fprintf(__stdoutp, "score: %d\n", result_array[prev][n_char_in_file_1]);
-# 179 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 179 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6); return 0;
-# 180 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 180 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
 
 int main ( int argc, char* argv[] ) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -2544,154 +2544,154 @@ int main ( int argc, char* argv[] ) { init_chimes(); return (____chimes_replayin
 
 
 signed char char_mapping_npm ( char c ) {
-# 21 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 21 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     signed char to_be_returned = -1;
-# 22 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 22 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     switch(c) {
-# 23 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 23 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case '_': to_be_returned = GAP; break;
-# 24 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 24 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'A': to_be_returned = ADENINE; break;
-# 25 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 25 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'C': to_be_returned = CYTOSINE; break;
-# 26 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 26 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'G': to_be_returned = GUANINE; break;
-# 27 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 27 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         case 'T': to_be_returned = THYMINE; break;
-# 28 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 28 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 29 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 29 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     return to_be_returned;
-# 30 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 30 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
 
 void print_matrix_npm ( int** matrix, int n_rows, int n_columns ) {
-# 33 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 33 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     int i, j;
-# 34 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 34 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     for ( i = 0; i < n_rows; ++i ) {
-# 35 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 35 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         for ( j = 0; j < n_columns; ++j ) {
-# 36 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 36 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             fprintf(__stdoutp, "%d ", matrix[i][j]);
-# 37 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 37 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         }
-# 38 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 38 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         fprintf(__stdoutp, "\n");
-# 39 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 39 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 40 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 40 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fprintf(__stdoutp,"--------------------------------\n");
-# 41 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 41 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
 
 size_t clear_whitespaces_do_mapping_npm ( signed char* buffer, long size ) {
-# 53 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 53 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     size_t non_ws_index = 0, traverse_index = 0;
-# 54 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 55 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 54 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 55 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     while ( traverse_index < size ) {
-# 56 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 56 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         char curr_char = buffer[traverse_index];
-# 57 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 57 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         switch ( curr_char ) {
-# 58 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 58 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             case 'A': case 'C': case 'G': case 'T':
-# 59 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 60 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 59 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 60 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
                 buffer[non_ws_index++] = char_mapping_npm(curr_char);
-# 61 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 61 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
                 break;
-# 62 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 62 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         }
-# 63 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 63 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         ++traverse_index;
-# 64 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 64 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 65 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 65 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     return non_ws_index;
-# 66 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 66 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
 
 signed char* read_file_npm( FILE* file, size_t* n_chars ) {
-# 69 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 69 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fseek (file, 0L, 2);
-# 70 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 70 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     long file_size = ftell (file);
-# 71 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 71 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     fseek (file, 0L, 0);
-# 72 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 73 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 72 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 73 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     signed char *file_buffer = (signed char *)malloc_wrapper((1+file_size)*sizeof(signed char), 1402129255373297796UL, 0, 0);
-# 74 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 75 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 74 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 75 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     size_t n_read_from_file = fread(file_buffer, sizeof(signed char), file_size, file);
-# 76 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 76 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     file_buffer[file_size] = '\n';
-# 77 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 78 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 79 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 77 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 78 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 79 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     *n_chars = clear_whitespaces_do_mapping_npm(file_buffer, file_size);
-# 80 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 80 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     return file_buffer;
-# 81 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 81 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
 
 static void random_init_npm(signed char *s, unsigned long long len) {
-# 84 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 84 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     for (unsigned long long i = 0; i < len; i++) {
-# 85 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 85 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         int r = rand() % 5;
-# 86 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-        (__builtin_expect(!(r >= 0 && r < 5), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp", 86, "r >= 0 && r < 5") : (void)0);
-# 87 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 86 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+        (__builtin_expect(!(r >= 0 && r < 5), 0) ? __assert_rtn(__func__, "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp", 86, "r >= 0 && r < 5") : (void)0);
+# 87 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         s[i] = r;
-# 88 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 88 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 89 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 89 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
 
 void kernel_npm(const unsigned long long c, const unsigned long long chunking, int *current,
-# 92 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 92 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         int *prev, unsigned long long n_char_in_file_1,
-# 93 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 93 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         unsigned long long n_char_in_file_2) {
-# 94 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 94 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     unsigned long long i, j;
-# 95 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 95 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     for (i = 1 + (c * chunking); i < 1 + ((c + 1) * chunking); i++) {
-# 96 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 96 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         current[0] = -1*i;
-# 97 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 97 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         for ( j = 1; j < n_char_in_file_1+1; ++j ) {
-# 98 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 98 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             signed char char_from_1 = string_1[j-1];
-# 99 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 99 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             signed char char_from_2 = string_2[i-1];
-# 100 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 101 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 100 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 101 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             int diag_score = prev[j-1] + alignment_score_matrix[char_from_2][char_from_1];
-# 102 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 102 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             int left_score = current[j-1] + alignment_score_matrix[char_from_1][GAP];
-# 103 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 103 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             int top_score = prev[j ] + alignment_score_matrix[GAP][char_from_2];
-# 104 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 105 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 104 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 105 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             int bigger_of_left_top = (left_score > top_score) ? left_score : top_score;
-# 106 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 106 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
             current[j] = (bigger_of_left_top > diag_score) ? bigger_of_left_top : diag_score;
-# 107 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 107 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         }
-# 108 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
-# 109 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 108 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 109 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         int *temp = prev;
-# 110 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 110 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         prev = current;
-# 111 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 111 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
         current = temp;
-# 112 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 112 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
     }
-# 113 "/Users/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
+# 113 "/Users/jmg3/chimes/src/examples/cpp/./smithWaterman/smith_waterman.cpp"
 }
 
 

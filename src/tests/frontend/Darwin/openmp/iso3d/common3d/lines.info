@@ -1,2 +1,2 @@
-/Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 102 17 : { 308, 309, 310, 311, 437, 454 } prop:call:parse_source { default_config { 437 }, parse_source { 331, 367 }, usage { 439 } }
-/Users/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp 125 23 : { 308, 309, 310, 311, 437, 454 } prop:call:getNumCUDADevices { default_config { 437 }, parse_source { 331, 367 }, usage { 439 } }
+/Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 102 17 : { 308, 309, 310, 311, 437, 454 } prop:call:parse_source { default_config { 437 }, parse_source { 331, 367 }, usage { 439 } }
+/Users/jmg3/chimes/src/examples/openmp/./lib/common3d.cpp 125 23 : { 308, 309, 310, 311, 437, 454 } prop:call:getNumCUDADevices { default_config { 437 }, parse_source { 331, 367 }, usage { 439 } }

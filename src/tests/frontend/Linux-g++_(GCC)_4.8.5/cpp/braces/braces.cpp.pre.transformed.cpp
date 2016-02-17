@@ -13,11 +13,11 @@ typedef long unsigned int size_t;
 static int ____must_manage_main = 2;
 
 static unsigned ____alias_loc_id_0;
-# 1 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 1 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -26,7 +26,7 @@ static unsigned ____alias_loc_id_0;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -82,16 +82,16 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 9 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 1 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
+# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 9 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1415,14 +1415,14 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 10 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 2
+# 10 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 2
 
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 2 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp" 2
+# 2 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -2230,38 +2230,38 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 3 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp" 2
-# 3 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-# 4 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 3 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp" 2
+# 3 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
+# 4 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(13383618805175514630UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 5 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
     if (argc == 0) {printf("hello there\n"); };
-# 7 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 7 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
     if (argc > 0) {printf("hello again\n"); };
-# 10 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 10 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
     { int i; for ( i = (0) ;i < argc; i++) { printf("ha\n"); } };
-# 13 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-# 14 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 13 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
+# 14 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 15 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 15 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); }
-# 4 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 4 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(13383618805175514630UL)) ; ; ;
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 5 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
     if (argc == 0) {printf("hello there\n"); };
-# 7 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 7 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
     if (argc > 0) {printf("hello again\n"); };
-# 10 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 10 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
     { int i; for ( i = (0) ;i < argc; i++) { printf("ha\n"); } };
-# 13 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-# 14 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 13 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
+# 14 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 15 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
+# 15 "/home/jmg3/chimes/src/examples/cpp/./braces.cpp"
 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }

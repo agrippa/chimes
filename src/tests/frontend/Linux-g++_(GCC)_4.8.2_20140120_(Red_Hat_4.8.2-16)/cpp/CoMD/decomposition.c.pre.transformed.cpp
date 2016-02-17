@@ -27,12 +27,12 @@ static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -41,7 +41,7 @@ static unsigned ____alias_loc_id_3;
 typedef long int ptrdiff_t;
 # 212 "/usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -97,20 +97,20 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 2 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 3 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 4 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 5 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 6 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 2 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 3 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 4 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 5 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 6 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 24 "/usr/include/stdlib.h" 3 4
@@ -1473,16 +1473,16 @@ __attribute__ ((__leaf__)) atof (const char *__nptr) throw ()
 # 952 "/usr/include/stdlib.h" 2 3 4
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 8 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c" 2
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.h" 1
+# 8 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c" 2
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.h" 1
 
 
 
 
 
 
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mytype.h" 1
-# 13 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mytype.h"
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h" 1
+# 13 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h"
 typedef double real_t;
 
 
@@ -1496,7 +1496,7 @@ static void zeroReal3(real3 a)
    a[1] = 0.0;
    a[2] = 0.0;
 }
-# 8 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.h" 2
+# 8 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.h" 2
 
 
 typedef struct DomainSt
@@ -1521,8 +1521,8 @@ struct DomainSt* initDecomposition(int xproc, int yproc, int zproc,
 
 
 int processorNum(Domain* domain, int dix, int diy, int dik);
-# 9 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c" 2
-# 9 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 9 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c" 2
+# 9 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 
 # 1 "/usr/include/assert.h" 1 3 4
 # 65 "/usr/include/assert.h" 3 4
@@ -1546,11 +1546,11 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 
 
 }
-# 11 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c" 2
-# 11 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 11 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c" 2
+# 11 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 
-# 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.h" 1
-# 10 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.h"
+# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h" 1
+# 10 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h"
 typedef struct RankReduceDataSt
 {
    double val;
@@ -1605,263 +1605,263 @@ void bcastParallel(void* buf, int len, int root);
 
 
 int builtWithMpi(void);
-# 13 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c" 2
-# 13 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 14 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 15 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 16 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 17 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 18 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 13 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c" 2
+# 13 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 14 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 15 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 16 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 17 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 18 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 Domain* initDecomposition_npm(int xproc, int yproc, int zproc, real3 globalExtent);static int (*____chimes_extern_func_getMyRank)(void) = getMyRank;static int (*____chimes_extern_func_getNRanks)(void) = getNRanks;
 Domain* initDecomposition_quick(int xproc, int yproc, int zproc, real3 globalExtent); Domain* initDecomposition(int xproc, int yproc, int zproc, real3 globalExtent);
 Domain* initDecomposition_resumable(int xproc, int yproc, int zproc, real3 globalExtent)
-# 19 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 19 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&initDecomposition), "initDecomposition", &____must_manage_initDecomposition, 4, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(5688163497316386757UL), "initDecomposition|xproc|0", &____must_checkpoint_initDecomposition_xproc_0, "i32", (void *)(&xproc), (size_t)4, 0, 0, 0, "initDecomposition|yproc|0", &____must_checkpoint_initDecomposition_yproc_0, "i32", (void *)(&yproc), (size_t)4, 0, 0, 0, "initDecomposition|zproc|0", &____must_checkpoint_initDecomposition_zproc_0, "i32", (void *)(&zproc), (size_t)4, 0, 0, 0, "initDecomposition|globalExtent|0", &____must_checkpoint_initDecomposition_globalExtent_0, "double*", (void *)(&globalExtent), (size_t)8, 1, 0, 0) ; Domain *dd;
-# 19 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 19 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
  if (____must_checkpoint_initDecomposition_dd_0) { register_stack_vars(1, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 20 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-    call_lbl_0: ((xproc * yproc * zproc == ({ calling((void*)getNRanks, 0, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) ) ? static_cast<void> (0) : __assert_fail ("xproc * yproc * zproc == getNRanks()", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c", 20, __PRETTY_FUNCTION__));
-# 21 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 22 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 20 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+    call_lbl_0: ((xproc * yproc * zproc == ({ calling((void*)getNRanks, 0, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) ) ? static_cast<void> (0) : __assert_fail ("xproc * yproc * zproc == getNRanks()", "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c", 20, __PRETTY_FUNCTION__));
+# 21 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 22 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd = ((Domain*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Domain)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 5688163497316386558UL, 0, 1, (int)sizeof(struct DomainSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 23 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 23 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procGrid[0] = xproc;
-# 24 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 24 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procGrid[1] = yproc;
-# 25 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 25 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procGrid[2] = zproc;
-# 26 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 27 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 26 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 27 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     int myRank; call_lbl_1: myRank = ( ({ calling((void*)getMyRank, 1, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) ) ;
-# 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 28 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procCoord[0] = myRank % dd->procGrid[0];
-# 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 29 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    myRank /= dd->procGrid[0];
-# 30 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 30 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procCoord[1] = myRank % dd->procGrid[1];
-# 31 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 31 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procCoord[2] = myRank / dd->procGrid[1];
-# 32 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 33 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 34 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 32 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 33 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 34 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    { int i; for ( i = (0) ; i < 3; i++)
-# 35 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 35 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    {
-# 36 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 36 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->globalMin[i] = 0;
-# 37 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 37 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->globalMax[i] = globalExtent[i];
-# 38 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 38 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->globalExtent[i] = dd->globalMax[i] - dd->globalMin[i];
-# 39 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 39 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    } }
-# 40 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 41 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 42 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 40 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 41 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 42 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    { int i; for ( i = (0) ; i < 3; i++)
-# 43 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 43 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    {
-# 44 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 44 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->localExtent[i] = dd->globalExtent[i] / dd->procGrid[i];
-# 45 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 45 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->localMin[i] = dd->globalMin[i] + dd->procCoord[i] * dd->localExtent[i];
-# 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 46 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->localMax[i] = dd->globalMin[i] + (dd->procCoord[i]+1) * dd->localExtent[i];
-# 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 47 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    } }
-# 48 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 49 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 48 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 49 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     Domain *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (dd); rm_stack(true, 5688163497316386558UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 50 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 50 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 rm_stack(true, 5688163497316386558UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0, false); }
-# 51 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 52 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 53 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 54 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 55 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 56 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 57 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 51 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 52 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 53 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 54 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 55 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 56 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 57 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 int processorNum_npm(Domain* domain, int dix, int diy, int diz);
 int processorNum_quick(Domain* domain, int dix, int diy, int diz); int processorNum(Domain* domain, int dix, int diy, int diz);
 int processorNum_resumable(Domain* domain, int dix, int diy, int diz)
-# 58 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 58 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&processorNum), "processorNum", &____must_manage_processorNum, 4, 0, (size_t)(5688163497316386855UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 59 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 59 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     const int *procCoord; procCoord = (domain->procCoord) ;
-# 60 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 60 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     const int *procGrid; procGrid = (domain->procGrid) ;
-# 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 61 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     int ix; ix = ((procCoord[0] + dix + procGrid[0]) % procGrid[0]) ;
-# 62 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 62 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     int iy; iy = ((procCoord[1] + diy + procGrid[1]) % procGrid[1]) ;
-# 63 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 63 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     int iz; iz = ((procCoord[2] + diz + procGrid[2]) % procGrid[2]) ;
-# 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 65 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 64 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 65 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (ix + procGrid[0] *(iy + procGrid[1]*iz)); rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 66 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 66 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1, false); }
-# 18 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 18 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 Domain* initDecomposition_quick(int xproc, int yproc, int zproc, real3 globalExtent)
-# 19 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 19 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&initDecomposition), "initDecomposition", &____must_manage_initDecomposition, 4, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(5688163497316386757UL), "initDecomposition|xproc|0", &____must_checkpoint_initDecomposition_xproc_0, "i32", (void *)(&xproc), (size_t)4, 0, 0, 0, "initDecomposition|yproc|0", &____must_checkpoint_initDecomposition_yproc_0, "i32", (void *)(&yproc), (size_t)4, 0, 0, 0, "initDecomposition|zproc|0", &____must_checkpoint_initDecomposition_zproc_0, "i32", (void *)(&zproc), (size_t)4, 0, 0, 0, "initDecomposition|globalExtent|0", &____must_checkpoint_initDecomposition_globalExtent_0, "double*", (void *)(&globalExtent), (size_t)8, 1, 0, 0) ; Domain *dd;
-# 19 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 19 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
  if (____must_checkpoint_initDecomposition_dd_0) { register_stack_vars(1, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); } ; ;
-# 20 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-    call_lbl_0: ((xproc * yproc * zproc == ({ calling((void*)getNRanks, 0, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) ) ? static_cast<void> (0) : __assert_fail ("xproc * yproc * zproc == getNRanks()", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c", 20, __PRETTY_FUNCTION__));
-# 21 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 22 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 20 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+    call_lbl_0: ((xproc * yproc * zproc == ({ calling((void*)getNRanks, 0, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) ) ? static_cast<void> (0) : __assert_fail ("xproc * yproc * zproc == getNRanks()", "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c", 20, __PRETTY_FUNCTION__));
+# 21 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 22 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd = ((Domain*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Domain)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 5688163497316386558UL, 0, 1, (int)sizeof(struct DomainSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 23 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 23 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procGrid[0] = xproc;
-# 24 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 24 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procGrid[1] = yproc;
-# 25 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 25 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procGrid[2] = zproc;
-# 26 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 27 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 26 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 27 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     int myRank; call_lbl_1: myRank = ( ({ calling((void*)getMyRank, 1, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) ) ;
-# 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 28 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procCoord[0] = myRank % dd->procGrid[0];
-# 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 29 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    myRank /= dd->procGrid[0];
-# 30 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 30 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procCoord[1] = myRank % dd->procGrid[1];
-# 31 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 31 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procCoord[2] = myRank / dd->procGrid[1];
-# 32 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 33 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 34 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 32 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 33 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 34 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    { int i; for ( i = (0) ; i < 3; i++)
-# 35 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 35 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    {
-# 36 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 36 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->globalMin[i] = 0;
-# 37 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 37 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->globalMax[i] = globalExtent[i];
-# 38 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 38 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->globalExtent[i] = dd->globalMax[i] - dd->globalMin[i];
-# 39 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 39 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    } }
-# 40 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 41 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 42 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 40 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 41 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 42 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    { int i; for ( i = (0) ; i < 3; i++)
-# 43 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 43 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    {
-# 44 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 44 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->localExtent[i] = dd->globalExtent[i] / dd->procGrid[i];
-# 45 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 45 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->localMin[i] = dd->globalMin[i] + dd->procCoord[i] * dd->localExtent[i];
-# 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 46 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->localMax[i] = dd->globalMin[i] + (dd->procCoord[i]+1) * dd->localExtent[i];
-# 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 47 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    } }
-# 48 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 49 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 48 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 49 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     Domain *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (dd); rm_stack(true, 5688163497316386558UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 50 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 50 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 rm_stack(true, 5688163497316386558UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 
 Domain* initDecomposition(int xproc, int yproc, int zproc, real3 globalExtent) { return (____chimes_replaying ? initDecomposition_resumable(xproc, yproc, zproc, globalExtent) : initDecomposition_quick(xproc, yproc, zproc, globalExtent)); }
-# 57 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 57 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 int processorNum_quick(Domain* domain, int dix, int diy, int diz)
-# 58 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 58 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&processorNum), "processorNum", &____must_manage_processorNum, 4, 0, (size_t)(5688163497316386855UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 59 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 59 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     const int *procCoord; procCoord = (domain->procCoord) ;
-# 60 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 60 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     const int *procGrid; procGrid = (domain->procGrid) ;
-# 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 61 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     int ix; ix = ((procCoord[0] + dix + procGrid[0]) % procGrid[0]) ;
-# 62 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 62 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     int iy; iy = ((procCoord[1] + diy + procGrid[1]) % procGrid[1]) ;
-# 63 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 63 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     int iz; iz = ((procCoord[2] + diz + procGrid[2]) % procGrid[2]) ;
-# 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 65 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 64 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 65 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (ix + procGrid[0] *(iy + procGrid[1]*iz)); rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 66 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 66 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1, false); }
 
 int processorNum(Domain* domain, int dix, int diy, int diz) { return (____chimes_replaying ? processorNum_resumable(domain, dix, diy, diz) : processorNum_quick(domain, dix, diy, diz)); }
-# 18 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 18 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 Domain* initDecomposition_npm(int xproc, int yproc, int zproc, real3 globalExtent)
-# 19 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 19 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 {
-# 20 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-   ((xproc * yproc * zproc == (*____chimes_extern_func_getNRanks)()) ? static_cast<void> (0) : __assert_fail ("xproc * yproc * zproc == getNRanks()", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c", 20, __PRETTY_FUNCTION__));
-# 21 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 22 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 20 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+   ((xproc * yproc * zproc == (*____chimes_extern_func_getNRanks)()) ? static_cast<void> (0) : __assert_fail ("xproc * yproc * zproc == getNRanks()", "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c", 20, __PRETTY_FUNCTION__));
+# 21 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 22 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    Domain* dd = (Domain*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Domain)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 5688163497316386558UL, 0, 1, (int)sizeof(struct DomainSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 23 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 23 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procGrid[0] = xproc;
-# 24 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 24 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procGrid[1] = yproc;
-# 25 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 25 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procGrid[2] = zproc;
-# 26 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 27 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 26 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 27 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    int myRank = (*____chimes_extern_func_getMyRank)();
-# 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 28 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procCoord[0] = myRank % dd->procGrid[0];
-# 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 29 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    myRank /= dd->procGrid[0];
-# 30 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 30 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procCoord[1] = myRank % dd->procGrid[1];
-# 31 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 31 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procCoord[2] = myRank / dd->procGrid[1];
-# 32 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 33 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 34 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 32 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 33 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 34 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    for (int i = 0; i < 3; i++)
-# 35 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 35 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    {
-# 36 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 36 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->globalMin[i] = 0;
-# 37 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 37 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->globalMax[i] = globalExtent[i];
-# 38 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 38 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->globalExtent[i] = dd->globalMax[i] - dd->globalMin[i];
-# 39 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 39 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    }
-# 40 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 41 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 42 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 40 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 41 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 42 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    for (int i = 0; i < 3; i++)
-# 43 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 43 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    {
-# 44 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 44 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->localExtent[i] = dd->globalExtent[i] / dd->procGrid[i];
-# 45 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 45 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->localMin[i] = dd->globalMin[i] + dd->procCoord[i] * dd->localExtent[i];
-# 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 46 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
       dd->localMax[i] = dd->globalMin[i] + (dd->procCoord[i]+1) * dd->localExtent[i];
-# 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 47 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    }
-# 48 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 49 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 48 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 49 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     Domain * ____chimes_ret_var_0; ____chimes_ret_var_0 = (dd); return ____chimes_ret_var_0; ;
-# 50 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 50 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 }
-# 57 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 57 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 int processorNum_npm(Domain* domain, int dix, int diy, int diz)
-# 58 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 58 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 {
-# 59 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 59 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    const int* procCoord = domain->procCoord;
-# 60 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 60 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    const int* procGrid = domain->procGrid;
-# 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 61 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    int ix = (procCoord[0] + dix + procGrid[0]) % procGrid[0];
-# 62 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 62 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    int iy = (procCoord[1] + diy + procGrid[1]) % procGrid[1];
-# 63 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 63 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    int iz = (procCoord[2] + diz + procGrid[2]) % procGrid[2];
-# 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-# 65 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 64 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 65 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
     int ____chimes_ret_var_1; ____chimes_ret_var_1 = (ix + procGrid[0] *(iy + procGrid[1]*iz)); return ____chimes_ret_var_1; ;
-# 66 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
+# 66 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 }
 
 

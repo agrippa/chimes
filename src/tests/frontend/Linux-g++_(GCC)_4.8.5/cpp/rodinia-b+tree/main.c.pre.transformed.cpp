@@ -297,7 +297,7 @@ static unsigned ____alias_loc_id_96;
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -306,7 +306,7 @@ static unsigned ____alias_loc_id_96;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -362,7 +362,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3076,8 +3076,8 @@ extern int futimesat (int __fd, __const char *__file,
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 
-# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 9 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 9 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -4131,7 +4131,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 10 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 2
+# 10 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 2
 
 extern void checkpoint();
 

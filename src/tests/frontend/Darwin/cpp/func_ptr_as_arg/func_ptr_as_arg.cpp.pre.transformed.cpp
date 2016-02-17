@@ -17,11 +17,11 @@ static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 1 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -30,7 +30,7 @@ static unsigned ____alias_loc_id_3;
 typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes();
@@ -84,16 +84,16 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 9 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 1 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 1 "/Users/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 9 "/Users/jmg3/chimes/src/libchimes/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 61 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
@@ -1450,75 +1450,75 @@ void *valloc(size_t);
 
 
 }
-# 10 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 2
+# 10 "/Users/jmg3/chimes/src/libchimes/checkpoint.h" 2
 
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*fp)(void *));
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp" 2
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-# 3 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 2 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp" 2
+# 2 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 3 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
 int bar_npm(int a);
 int bar_quick(int a); int bar(int a);
 int bar_resumable(int a) {const int ____chimes_did_disable0 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 4 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 4 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
     rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_3, ____chimes_did_disable0); return a + 4;
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
 }
-# 6 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-# 7 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 6 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 7 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
 int foo_quick(int (*fptr)(int)); int foo(int (*fptr)(int));
 int foo_resumable(int (*fptr)(int)) {const int ____chimes_did_disable1 = new_stack((void *)(&foo), "foo", (int *)0, 1, 0, (size_t)(9670520367941102545UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
     rm_stack(false, 0UL, "foo", (int *)0x0, 0, ____chimes_did_disable1); call_lbl_2: return ((int (*)(int))(translate_fptr((void *)(*fptr), 2, 0, 0UL, 1, 0UL)))(3);
-# 9 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 9 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
 }
-# 10 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-# 11 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 10 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 11 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9670520367941102562UL)) ; int c;
  register_stack_vars(1, "main|c|0", (int *)0x0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 12 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 12 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 13 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
         call_lbl_1: c = ( ({ calling((void*)foo, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(9670520367941102563UL)); (foo)(bar); }) ) ;
-# 14 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-# 15 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 14 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 15 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_2);
-# 16 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-# 17 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 16 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 17 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable2); return c;
-# 18 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 18 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
 }
 int bar_quick(int a) {const int ____chimes_did_disable0 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)) ; ; ;
-# 4 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 4 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
     rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_3, ____chimes_did_disable0); return a + 4;
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
 }
 
 int bar(int a) { return (____chimes_replaying ? bar_resumable(a) : bar_quick(a)); }
 
 int foo_quick(int (*fptr)(int)) {const int ____chimes_did_disable1 = new_stack((void *)(&foo), "foo", (int *)0, 1, 0, (size_t)(9670520367941102545UL)) ; ; ;
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 8 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
     rm_stack(false, 0UL, "foo", (int *)0x0, 0, ____chimes_did_disable1); call_lbl_2: return ((int (*)(int))(translate_fptr((void *)(*fptr), 2, 0, 0UL, 1, 0UL)))(3);
-# 9 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 9 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
 }
 
 int foo(int (*fptr)(int)) { return (____chimes_replaying ? foo_resumable(fptr) : foo_quick(fptr)); }
 
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9670520367941102562UL)) ; int c;
  register_stack_vars(1, "main|c|0", (int *)0x0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); ; ;
-# 12 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 12 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 13 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
         call_lbl_1: c = ( ({ calling((void*)foo, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(9670520367941102563UL)); foo_quick(bar); }) ) ;
-# 14 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-# 15 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 14 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 15 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_2);
-# 16 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-# 17 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 16 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 17 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable2); return c;
-# 18 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 18 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
 }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -1526,9 +1526,9 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 int bar_npm(int a) {
-# 4 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 4 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
     return a + 4;
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
+# 5 "/Users/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp"
 }
 
 

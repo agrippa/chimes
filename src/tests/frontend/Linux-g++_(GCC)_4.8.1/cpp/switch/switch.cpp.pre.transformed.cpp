@@ -18,10 +18,10 @@ static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
-# 1 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 1 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -30,7 +30,7 @@ static unsigned ____alias_loc_id_3;
 typedef long int ptrdiff_t;
 # 212 "/gpfs-biou/jmg3/gcc-install/lib/gcc/powerpc64-unknown-linux-gnu/4.8.1/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -86,16 +86,16 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
-# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 9 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 1 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
+# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 9 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1413,127 +1413,127 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 10 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 2
+# 10 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 2
 
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 2 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp" 2
-# 2 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
-# 3 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 2 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp" 2
+# 2 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
+# 3 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 int foo_npm(int a);
 int foo_quick(int a); int foo(int a);
 int foo_resumable(int a) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 4 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 4 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (a + 3); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 5 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 6 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
-# 7 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 6 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
+# 7 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 int bar_npm(int b);
 int bar_quick(int b); int bar(int b);
 int bar_resumable(int b) {const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (b + 5); rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 9 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 9 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1, false); }
-# 10 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 10 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13584542934340882764UL)) ; int d;
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
  register_stack_vars(1, "main|d|0", (int *)0x0, "i32", (void *)(&d), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 12 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 12 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      ;
-# 13 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 13 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
     switch(argc) {
-# 14 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 14 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
         case 0:
-# 15 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 15 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
              call_lbl_0: d = ({ calling_npm("foo", 0); foo_npm(argc); });
-# 16 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 16 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
             break;
-# 17 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 17 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
         case 1:
-# 18 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 18 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
              call_lbl_1: d = ({ calling_npm("bar", 0); bar_npm(argc); });
-# 19 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 19 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
             break;
-# 20 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 20 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
         default:
-# 21 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 21 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
             d = 5;
-# 22 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 22 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
     }
-# 23 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 23 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
-# 24 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 24 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (d); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
-# 25 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 25 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2, false); }
-# 3 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 3 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 int foo_quick(int a) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)) ; ; ;
-# 4 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 4 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (a + 3); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 5 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int foo(int a) { return (____chimes_replaying ? foo_resumable(a) : foo_quick(a)); }
-# 7 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 7 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 int bar_quick(int b) {const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)) ; ; ;
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (b + 5); rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 9 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 9 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
 int bar(int b) { return (____chimes_replaying ? bar_resumable(b) : bar_quick(b)); }
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13584542934340882764UL)) ; int d;
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
  register_stack_vars(1, "main|d|0", (int *)0x0, "i32", (void *)(&d), (size_t)4, 0, 0, 0); ; ;
-# 12 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 12 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      ;
-# 13 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 13 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
     switch(argc) {
-# 14 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 14 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
         case 0:
-# 15 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 15 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
              call_lbl_0: d = ({ calling_npm("foo", 0); foo_npm(argc); });
-# 16 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 16 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
             break;
-# 17 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 17 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
         case 1:
-# 18 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 18 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
              call_lbl_1: d = ({ calling_npm("bar", 0); bar_npm(argc); });
-# 19 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 19 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
             break;
-# 20 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 20 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
         default:
-# 21 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 21 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
             d = 5;
-# 22 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 22 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
     }
-# 23 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 23 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
-# 24 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 24 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (d); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
-# 25 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 25 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2, false); }
 
 int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-# 3 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 3 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 int foo_npm(int a) {
-# 4 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 4 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      int ____chimes_ret_var_0; ____chimes_ret_var_0 = (a + 3); return ____chimes_ret_var_0; ;
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 5 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 }
-# 7 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 7 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 int bar_npm(int b) {
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
      int ____chimes_ret_var_1; ____chimes_ret_var_1 = (b + 5); return ____chimes_ret_var_1; ;
-# 9 "/home/jmg3/num-debug/src/examples/cpp/./switch.cpp"
+# 9 "/home/jmg3/chimes/src/examples/cpp/./switch.cpp"
 }
 
 

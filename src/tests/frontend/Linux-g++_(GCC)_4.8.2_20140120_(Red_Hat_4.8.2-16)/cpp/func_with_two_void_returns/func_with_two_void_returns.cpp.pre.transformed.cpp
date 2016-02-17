@@ -16,12 +16,12 @@ static int ____must_manage_haha_this_sux2 = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 1 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -30,7 +30,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -86,16 +86,16 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
-# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 9 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 1 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 9 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 24 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1457,87 +1457,87 @@ __attribute__ ((__leaf__)) atof (const char *__nptr) throw ()
 # 952 "/usr/include/stdlib.h" 2 3 4
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 10 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 2
+# 10 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 2
 
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 2 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp" 2
-# 2 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
-# 3 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 2 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp" 2
+# 2 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 3 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 int a = 3;
-# 4 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 4 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 5 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 void haha_this_sux2_npm();
 void haha_this_sux2_quick(); void haha_this_sux2();
 void haha_this_sux2_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux2), "haha_this_sux2", &____must_manage_haha_this_sux2, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 6 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 6 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
     if (a) {
-# 7 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 7 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
         rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____chimes_did_disable0, false); return;
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
     } else {
-# 9 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 9 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
         rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____chimes_did_disable0, false); return;
-# 10 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 10 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
     }
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____chimes_did_disable0, false); }
-# 12 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
-# 13 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 12 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 13 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(18305889038884447165UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 14 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 14 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
      call_lbl_0: ({ calling_npm("haha_this_sux2", 0); haha_this_sux2_npm(); });
-# 15 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 15 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
-# 16 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 16 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
-# 17 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 17 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable1, false); }
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 5 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 void haha_this_sux2_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux2), "haha_this_sux2", &____must_manage_haha_this_sux2, 0, 0) ; ; ;
-# 6 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 6 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
     if (a) {
-# 7 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 7 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
         rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____chimes_did_disable0, false); return;
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
     } else {
-# 9 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 9 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
         rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____chimes_did_disable0, false); return;
-# 10 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 10 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
     }
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____chimes_did_disable0, false); }
 
 void haha_this_sux2() { (____chimes_replaying ? haha_this_sux2_resumable() : haha_this_sux2_quick()); }
-# 13 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 13 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(18305889038884447165UL)) ; ; ;
-# 14 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 14 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
      call_lbl_0: ({ calling_npm("haha_this_sux2", 0); haha_this_sux2_npm(); });
-# 15 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 15 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
-# 16 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 16 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
-# 17 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 17 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable1, false); }
 
 int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-# 5 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 5 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 void haha_this_sux2_npm() {
-# 6 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 6 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
     if (a) {
-# 7 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 7 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
         return;
-# 8 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 8 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
     } else {
-# 9 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 9 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
         return;
-# 10 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 10 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
     }
-# 11 "/home/jmg3/num-debug/src/examples/cpp/./func_with_two_void_returns.cpp"
+# 11 "/home/jmg3/chimes/src/examples/cpp/./func_with_two_void_returns.cpp"
 }
 
 

@@ -45,12 +45,12 @@ static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
 static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -59,7 +59,7 @@ static unsigned ____alias_loc_id_12;
 typedef long int ptrdiff_t;
 # 212 "/usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -115,7 +115,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -129,19 +129,19 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 2 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 3 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 2 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 3 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.h" 1
-
-
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.h" 1
 
 
 
 
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 1
+
+
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 1
 
 
 
@@ -1089,9 +1089,9 @@ __attribute__ ((__leaf__)) ferror_unlocked (FILE *__stream) throw ()
 # 935 "/usr/include/stdio.h" 2 3 4
 # 943 "/usr/include/stdio.h" 3 4
 }
-# 8 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
-# 13 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h"
+# 8 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
+# 13 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h"
 typedef double real_t;
 
 
@@ -1105,8 +1105,8 @@ static void zeroReal3(real3 a)
    a[1] = 0.0;
    a[2] = 0.0;
 }
-# 9 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h" 1
+# 9 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/haloExchange.h" 1
 
 
 
@@ -1117,7 +1117,7 @@ static void zeroReal3(real3 a)
 struct AtomsSt;
 struct LinkCellSt;
 struct DomainSt;
-# 26 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
+# 26 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
 typedef struct HaloExchangeSt
 {
 
@@ -1126,9 +1126,9 @@ typedef struct HaloExchangeSt
 
 
    int bufCapacity;
-# 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
+# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
    int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
-# 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
+# 61 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/haloExchange.h"
    void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
@@ -1153,9 +1153,9 @@ void haloExchange(HaloExchange* haloExchange, void* data);
 
 
 void sortAtomsInCell(struct AtomsSt* atoms, struct LinkCellSt* boxes, int iBox);
-# 10 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.h" 1
-# 12 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.h"
+# 10 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/linkCells.h" 1
+# 12 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/linkCells.h"
 struct DomainSt;
 struct AtomsSt;
 
@@ -1193,9 +1193,9 @@ void moveAtom(LinkCell* boxes, struct AtomsSt* atoms, int iId, int iBox, int jBo
 void updateLinkCells(LinkCell* boxes, struct AtomsSt* atoms);
 
 int maxOccupancy(LinkCell* boxes);
-# 11 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.h" 1
-# 10 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.h"
+# 11 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.h" 1
+# 10 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.h"
 typedef struct DomainSt
 {
 
@@ -1218,9 +1218,9 @@ struct DomainSt* initDecomposition(int xproc, int yproc, int zproc,
 
 
 int processorNum(Domain* domain, int dix, int diy, int dik);
-# 12 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.h" 1
-# 9 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.h"
+# 12 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.h" 1
+# 9 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.h"
 struct SimFlatSt;
 struct LinkCellSt;
 
@@ -1250,10 +1250,10 @@ void createFccLattice(int nx, int ny, int nz, real_t lat, struct SimFlatSt* s);
 void setVcm(struct SimFlatSt* s, real_t vcm[3]);
 void setTemperature(struct SimFlatSt* s, real_t temperature);
 void randomDisplacements(struct SimFlatSt* s, real_t delta);
-# 13 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
+# 13 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
 
 struct SimFlatSt;
-# 28 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h"
+# 28 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h"
 typedef struct BasePotentialSt
 {
    real_t cutoff;
@@ -1310,7 +1310,7 @@ typedef struct SimFlatSt
    HaloExchange* atomExchange;
 
 } SimFlat;
-# 8 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.h" 2
+# 8 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.h" 2
 
 double timestep(SimFlat* s, int n, real_t dt);
 void computeForce(SimFlat* s);
@@ -1318,8 +1318,8 @@ void kineticEnergy(SimFlat* s);
 
 
 void redistributeAtoms(struct SimFlatSt* sim);
-# 5 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c" 2
-# 5 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 5 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c" 2
+# 5 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 
 # 1 "/usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/omp.h" 1 3 4
 # 34 "/usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/omp.h" 3 4
@@ -1394,13 +1394,13 @@ int omp_in_final (void) throw ();
 
 
 }
-# 7 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c" 2
-# 7 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 8 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 9 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 7 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c" 2
+# 7 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 8 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 9 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h" 1
-# 10 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h"
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.h" 1
+# 10 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.h"
 typedef struct RankReduceDataSt
 {
    double val;
@@ -1455,9 +1455,9 @@ void bcastParallel(void* buf, int len, int root);
 
 
 int builtWithMpi(void);
-# 11 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c" 2
-# 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.h" 1
-# 9 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.h"
+# 11 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c" 2
+# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.h" 1
+# 9 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.h"
 enum TimerHandle{
    totalTimer,
    loopTimer,
@@ -1471,7 +1471,7 @@ enum TimerHandle{
    commHaloTimer,
    commReduceTimer,
    numberOfTimers};
-# 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.h"
+# 57 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.h"
 void profileStart(const enum TimerHandle handle);
 void profileStop(const enum TimerHandle handle);
 
@@ -1483,12 +1483,12 @@ void printPerformanceResults(int nGlobalAtoms, int printRate);
 
 
 void printPerformanceResultsYaml(FILE* file);
-# 12 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c" 2
-# 12 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 13 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 12 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c" 2
+# 12 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 13 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 
-# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-# 9 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 9 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 32 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/stddef.h" 1 3 4
@@ -2702,691 +2702,691 @@ __attribute__ ((__leaf__)) atof (const char *__nptr) throw ()
 # 952 "/usr/include/stdlib.h" 2 3 4
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 10 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 2
+# 10 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 2
 
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 15 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c" 2
-# 15 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 16 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 17 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 15 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c" 2
+# 15 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 16 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 17 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 static void advanceVelocity(SimFlat* s, int nBoxes, real_t dt);
-# 18 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 18 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 static void advancePosition(SimFlat* s, int nBoxes, real_t dt);
-# 37 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 37 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 37 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 37 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void computeForce_npm(SimFlat* s);void advanceVelocity_npm(SimFlat* s, int nBoxes, real_t dt);void advancePosition_npm(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_npm(SimFlat* s);void redistributeAtoms_npm(SimFlat* sim);static void (*____chimes_extern_func_profileStart)(enum TimerHandle) = profileStart;static void (*____chimes_extern_func_profileStop)(enum TimerHandle) = profileStop;
 double timestep_quick(SimFlat* s, int nSteps, real_t dt); double timestep(SimFlat* s, int nSteps, real_t dt);void computeForce_quick(SimFlat* s); void computeForce(SimFlat* s);void advanceVelocity_quick(SimFlat* s, int nBoxes, real_t dt); void advanceVelocity(SimFlat* s, int nBoxes, real_t dt);void advancePosition_quick(SimFlat* s, int nBoxes, real_t dt); void advancePosition(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_quick(SimFlat* s); void kineticEnergy(SimFlat* s);void redistributeAtoms_quick(SimFlat* sim); void redistributeAtoms(SimFlat* sim);
 double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
-# 38 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 38 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&timestep), "timestep", (int *)0, 3, 3, (size_t)(12369560726904678488UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", (int *)0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", (int *)0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", (int *)0, "double", (void *)(&dt), (size_t)8, 0, 0, 0) ; int ii;
-# 38 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 38 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
  register_stack_vars(1, "timestep|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } ; ;
-# 39 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 39 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    { for ( ii = (0) ; ii<nSteps; ++ii)
-# 40 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 40 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    {
-# 41 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_0: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ) : (({ calling_npm("profileStart", ____alias_loc_id_1); (*____chimes_extern_func_profileStart)(velocityTimer); }))); } while(0);
-# 42 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 42 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_1: ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
-# 43 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 43 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_2: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(velocityTimer); }))); } while(0);
-# 44 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 45 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 46 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 44 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 45 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_3: checkpoint_transformed(3, 0);
-# 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 48 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 49 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 48 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 49 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_4: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(positionTimer); }))); } while(0);
-# 50 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 50 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_5: ({ calling_npm("advancePosition", 0); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
-# 51 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 51 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_6: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 6, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(positionTimer); }))); } while(0);
-# 52 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 53 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 54 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 52 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 53 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 54 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_7: checkpoint_transformed(7, 0);
-# 55 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 56 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 55 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 56 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 57 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_8: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 8, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(redistributeTimer); }))); } while(0);
-# 58 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 58 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_9: (____chimes_does_checkpoint_redistributeAtoms_npm ? ( ({ calling((void*)redistributeAtoms, 9, 0, 0UL, 1, (size_t)(12369560726904678488UL)); (redistributeAtoms)(s); }) ) : (({ calling_npm("redistributeAtoms", 0); redistributeAtoms_npm(s); })));
-# 59 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 59 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_10: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 10, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(redistributeTimer); }))); } while(0);
-# 60 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 62 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 60 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 61 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 62 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_11: checkpoint_transformed(11, 0);
-# 63 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 64 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 65 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 63 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 64 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_12: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 12, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(computeForceTimer); }))); } while(0);
-# 66 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 66 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_13: ({ calling((void*)computeForce, 13, 0, 0UL, 1, (size_t)(12369560726904678488UL)); (computeForce)(s); }) ;
-# 67 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 67 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_14: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 14, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(computeForceTimer); }))); } while(0);
-# 68 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 69 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 69 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 70 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_15: checkpoint_transformed(15, 0);
-# 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 71 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 72 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 73 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_16: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 16, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(velocityTimer); }))); } while(0);
-# 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 74 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_17: ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
-# 75 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 75 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_18: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 18, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(velocityTimer); }))); } while(0);
-# 76 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 77 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 78 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 76 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 77 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 78 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_19: checkpoint_transformed(19, 0);
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 80 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 80 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    } }
-# 81 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 82 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 81 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 82 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     call_lbl_20: (____chimes_does_checkpoint_kineticEnergy_npm ? ( ({ calling((void*)kineticEnergy, 20, ____alias_loc_id_0, 0UL, 1, (size_t)(12369560726904678488UL)); (kineticEnergy)(s); }) ) : (({ calling_npm("kineticEnergy", ____alias_loc_id_0); kineticEnergy_npm(s); })));
-# 83 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 84 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 83 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 84 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     real_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (s->ePotential); rm_stack(false, 0UL, "timestep", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 85 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 85 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "timestep", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0, false); }
-# 86 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 87 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 86 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 87 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void computeForce_resumable(SimFlat* s)
-# 88 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 88 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&computeForce), "computeForce", (int *)0, 1, 0, (size_t)(12369560726904678915UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 89 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 89 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     call_lbl_0: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 0, 0, 0UL, 1, 12369560726904678915UL)))(s);
-# 90 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 90 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1, false); }
-# 91 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 92 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 93 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 91 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 92 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 93 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void advanceVelocity_resumable(SimFlat* s, int nBoxes, real_t dt)
-# 94 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 94 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&advanceVelocity), "advanceVelocity", &____must_manage_advanceVelocity, 3, 0, (size_t)(12369560726904678694UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 { call_lbl_0: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(0, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1;
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter0)
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 96 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 96 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int iBox=0; iBox<nBoxes; iBox++)
-# 97 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 97 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; } {
-# 98 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 98 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
-# 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 99 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       {
-# 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 100 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][0] += dt*s->atoms->f[iOff][0];
-# 101 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 101 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][1] += dt*s->atoms->f[iOff][1];
-# 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 102 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][2] += dt*s->atoms->f[iOff][2];
-# 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 103 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       } }
-# 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 104 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
-# 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 105 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "advanceVelocity", &____must_manage_advanceVelocity, ____alias_loc_id_9, ____chimes_did_disable2, false); }
-# 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 107 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 106 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 107 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void advancePosition_resumable(SimFlat* s, int nBoxes, real_t dt)
-# 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 108 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&advancePosition), "advancePosition", &____must_manage_advancePosition, 3, 0, (size_t)(12369560726904678852UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 { call_lbl_0: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(0, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1;
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter1)
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 110 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int iBox=0; iBox<nBoxes; iBox++)
-# 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 111 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 0); ____chimes_first_iter1 = 0; } {
-# 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 112 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
-# 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 113 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       {
-# 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 114 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
           int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
-# 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 115 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
           real_t invMass; invMass = (1.0/s->species[iSpecies].mass) ;
-# 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 116 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->r[iOff][0] += dt*s->atoms->p[iOff][0]*invMass;
-# 117 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 117 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->r[iOff][1] += dt*s->atoms->p[iOff][1]*invMass;
-# 118 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 118 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->r[iOff][2] += dt*s->atoms->p[iOff][2]*invMass;
-# 119 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 119 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       } }
-# 120 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 120 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
-# 121 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 121 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "advancePosition", &____must_manage_advancePosition, ____alias_loc_id_10, ____chimes_did_disable3, false); }
-# 122 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 123 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 124 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 125 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 122 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 123 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 124 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 125 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 static void (*____chimes_extern_func_addRealParallel)(double *, double *, int) = addRealParallel;
 void kineticEnergy_resumable(SimFlat* s)
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&kineticEnergy), "kineticEnergy", &____must_manage_kineticEnergy, 1, 1, (size_t)(12369560726904679087UL), "kineticEnergy|s|0", &____must_checkpoint_kineticEnergy_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; real_t eSum[2];
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 real_t eLocal[2];
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
  if (____must_checkpoint_kineticEnergy_eSum_0 || ____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(2, "kineticEnergy|eSum|0", &____must_checkpoint_kineticEnergy_eSum_0, "[2 x double]", (void *)(eSum), (size_t)16, 0, 0, 0, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 127 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     ;
-# 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 128 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     real_t kenergy; kenergy = (0.0) ;
-# 129 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 129 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    eLocal[0] = s->ePotential;
-# 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 130 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    eLocal[1] = 0;
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 { call_lbl_3: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(3, &____chimes_region_id2, 0); int ____chimes_first_iter2 = 1;
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for reduction(+:kenergy) firstprivate(____chimes_first_iter2)
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 132 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
-# 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 133 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    { { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 0); ____chimes_first_iter2 = 0; } {
-# 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 134 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       {
-# 136 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 136 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
           int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
-# 137 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 137 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
           real_t invMass; invMass = (0.5/s->species[iSpecies].mass) ;
-# 138 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 138 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          kenergy += ( s->atoms->p[iOff][0] * s->atoms->p[iOff][0] +
-# 139 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 139 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][1] * s->atoms->p[iOff][1] +
-# 140 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 140 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][2] * s->atoms->p[iOff][2] )*invMass;
-# 141 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 141 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       } }
-# 142 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 142 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
-# 143 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 144 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 143 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 144 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    eLocal[1] = kenergy;
-# 145 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 146 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 145 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 146 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     ;
-# 147 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 147 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { call_lbl_0: ({ calling((void*)profileStart, 0, ____alias_loc_id_7, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
-# 148 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 148 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     call_lbl_1: ({ calling((void*)addRealParallel, 1, ____alias_loc_id_6, 0UL, 3, (size_t)(12369560726904678917UL), (size_t)(12369560726904678924UL), (size_t)(0UL)); (addRealParallel)(eLocal, eSum, 2); }) ;
-# 149 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 149 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { call_lbl_2: ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
-# 150 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 151 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 150 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 151 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    s->ePotential = eSum[0];
-# 152 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 152 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    s->eKinetic = eSum[1];
-# 153 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 153 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "kineticEnergy", &____must_manage_kineticEnergy, ____alias_loc_id_12, ____chimes_did_disable4, false); }
-# 168 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 168 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 168 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 168 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 static void (*____chimes_extern_func_haloExchange)(struct HaloExchangeSt *, void *) = haloExchange;static void (*____chimes_extern_func_sortAtomsInCell)(struct AtomsSt *, struct LinkCellSt *, int) = sortAtomsInCell;static void (*____chimes_extern_func_updateLinkCells)(struct LinkCellSt *, struct AtomsSt *) = updateLinkCells;
 void redistributeAtoms_resumable(SimFlat* sim)
-# 169 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 169 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&redistributeAtoms), "redistributeAtoms", &____must_manage_redistributeAtoms, 1, 1, (size_t)(12369560726904678869UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
-# 170 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 170 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     call_lbl_0: ({ LinkCell * ____chimes_arg18; Atoms * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (sim->boxes); ____chimes_arg19 = (sim->atoms); } calling((void*)updateLinkCells, 0, ____alias_loc_id_4, 0UL, 2, (size_t)(12369560726904678871UL), (size_t)(12369560726904678871UL)); (updateLinkCells)(____chimes_arg18, ____chimes_arg19); }) ;
-# 171 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 172 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 171 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 172 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { call_lbl_1: ({ calling((void*)profileStart, 1, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
-# 173 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 173 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     call_lbl_2: ({ HaloExchange * ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg21 = (sim->atomExchange); } calling((void*)haloExchange, 2, ____alias_loc_id_3, 0UL, 2, (size_t)(12369560726904678871UL), (size_t)(12369560726904678869UL)); (haloExchange)(____chimes_arg21, sim); }) ;
-# 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 174 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
-# 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 175 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 { call_lbl_5: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(5, &____chimes_region_id3, 0); int ____chimes_first_iter3 = 1;
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter3)
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 177 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int ii=0;ii<sim->boxes->nTotalBoxes; ++ii) { { if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 0); ____chimes_first_iter3 = 0; } { call_lbl_4: sortAtomsInCell(sim->atoms, sim->boxes, ii); } } } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); } ;
-# 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 179 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_11, ____chimes_did_disable5, false); }
-# 37 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 37 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 double timestep_quick(SimFlat* s, int nSteps, real_t dt)
-# 38 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 38 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&timestep), "timestep", (int *)0, 3, 3, (size_t)(12369560726904678488UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", (int *)0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", (int *)0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", (int *)0, "double", (void *)(&dt), (size_t)8, 0, 0, 0) ; int ii;
-# 38 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 38 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
  register_stack_vars(1, "timestep|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); ; ;
-# 39 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 39 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    { for ( ii = (0) ; ii<nSteps; ++ii)
-# 40 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 40 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    {
-# 41 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_0: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 0, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ) : (({ calling_npm("profileStart", ____alias_loc_id_1); (*____chimes_extern_func_profileStart)(velocityTimer); }))); } while(0);
-# 42 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 42 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_1: ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
-# 43 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 43 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_2: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(velocityTimer); }))); } while(0);
-# 44 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 45 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 46 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 44 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 45 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_3: checkpoint_transformed(3, 0);
-# 47 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 48 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 49 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 48 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 49 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_4: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(positionTimer); }))); } while(0);
-# 50 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 50 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_5: ({ calling_npm("advancePosition", 0); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
-# 51 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 51 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_6: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 6, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(positionTimer); }))); } while(0);
-# 52 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 53 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 54 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 52 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 53 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 54 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_7: checkpoint_transformed(7, 0);
-# 55 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 56 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 57 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 55 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 56 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 57 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_8: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 8, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(redistributeTimer); }))); } while(0);
-# 58 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 58 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_9: (____chimes_does_checkpoint_redistributeAtoms_npm ? ( ({ calling((void*)redistributeAtoms, 9, 0, 0UL, 1, (size_t)(12369560726904678488UL)); redistributeAtoms_quick(s); }) ) : (({ calling_npm("redistributeAtoms", 0); redistributeAtoms_npm(s); })));
-# 59 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 59 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_10: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 10, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(redistributeTimer); }))); } while(0);
-# 60 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 61 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 62 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 60 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 61 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 62 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_11: checkpoint_transformed(11, 0);
-# 63 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 64 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 65 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 63 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 64 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_12: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 12, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(computeForceTimer); }))); } while(0);
-# 66 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 66 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_13: ({ calling((void*)computeForce, 13, 0, 0UL, 1, (size_t)(12369560726904678488UL)); computeForce_quick(s); }) ;
-# 67 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 67 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_14: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 14, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(computeForceTimer); }))); } while(0);
-# 68 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 69 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 68 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 69 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 70 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_15: checkpoint_transformed(15, 0);
-# 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 71 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 72 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 73 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_16: (____chimes_does_checkpoint_profileStart_npm ? ( ({ calling((void*)profileStart, 16, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(velocityTimer); }))); } while(0);
-# 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 74 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_17: ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
-# 75 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 75 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { call_lbl_18: (____chimes_does_checkpoint_profileStop_npm ? ( ({ calling((void*)profileStop, 18, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ) : (({ calling_npm("profileStop", 0); (*____chimes_extern_func_profileStop)(velocityTimer); }))); } while(0);
-# 76 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 77 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 78 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 76 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 77 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 78 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
        call_lbl_19: checkpoint_transformed(19, 0);
-# 79 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 80 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 80 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    } }
-# 81 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 82 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 81 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 82 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     call_lbl_20: (____chimes_does_checkpoint_kineticEnergy_npm ? ( ({ calling((void*)kineticEnergy, 20, ____alias_loc_id_0, 0UL, 1, (size_t)(12369560726904678488UL)); kineticEnergy_quick(s); }) ) : (({ calling_npm("kineticEnergy", ____alias_loc_id_0); kineticEnergy_npm(s); })));
-# 83 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 84 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 83 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 84 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     real_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (s->ePotential); rm_stack(false, 0UL, "timestep", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 85 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 85 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "timestep", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0, false); }
 
 double timestep(SimFlat* s, int nSteps, real_t dt) { return (____chimes_replaying ? timestep_resumable(s, nSteps, dt) : timestep_quick(s, nSteps, dt)); }
-# 87 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 87 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void computeForce_quick(SimFlat* s)
-# 88 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 88 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&computeForce), "computeForce", (int *)0, 1, 0, (size_t)(12369560726904678915UL)) ; ; ;
-# 89 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 89 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     call_lbl_0: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 0, 0, 0UL, 1, 12369560726904678915UL)))(s);
-# 90 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 90 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1, false); }
 
 void computeForce(SimFlat* s) { (____chimes_replaying ? computeForce_resumable(s) : computeForce_quick(s)); }
-# 93 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 93 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void advanceVelocity_quick(SimFlat* s, int nBoxes, real_t dt)
-# 94 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 94 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&advanceVelocity), "advanceVelocity", &____must_manage_advanceVelocity, 3, 0, (size_t)(12369560726904678694UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 { call_lbl_0: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(0, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1;
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter0)
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 96 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 96 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int iBox=0; iBox<nBoxes; iBox++)
-# 97 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 97 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; } {
-# 98 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 98 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
-# 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 99 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       {
-# 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 100 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][0] += dt*s->atoms->f[iOff][0];
-# 101 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 101 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][1] += dt*s->atoms->f[iOff][1];
-# 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 102 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][2] += dt*s->atoms->f[iOff][2];
-# 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 103 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       } }
-# 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 104 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
-# 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 105 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "advanceVelocity", &____must_manage_advanceVelocity, ____alias_loc_id_9, ____chimes_did_disable2, false); }
 
 void advanceVelocity(SimFlat* s, int nBoxes, real_t dt) { (____chimes_replaying ? advanceVelocity_resumable(s, nBoxes, dt) : advanceVelocity_quick(s, nBoxes, dt)); }
-# 107 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 107 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void advancePosition_quick(SimFlat* s, int nBoxes, real_t dt)
-# 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 108 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&advancePosition), "advancePosition", &____must_manage_advancePosition, 3, 0, (size_t)(12369560726904678852UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 { call_lbl_0: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(0, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1;
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter1)
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 110 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int iBox=0; iBox<nBoxes; iBox++)
-# 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 111 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 0); ____chimes_first_iter1 = 0; } {
-# 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 112 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
-# 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 113 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       {
-# 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 114 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
           int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
-# 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 115 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
           real_t invMass; invMass = (1.0/s->species[iSpecies].mass) ;
-# 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 116 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->r[iOff][0] += dt*s->atoms->p[iOff][0]*invMass;
-# 117 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 117 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->r[iOff][1] += dt*s->atoms->p[iOff][1]*invMass;
-# 118 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 118 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->r[iOff][2] += dt*s->atoms->p[iOff][2]*invMass;
-# 119 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 119 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       } }
-# 120 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 120 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
-# 121 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 121 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "advancePosition", &____must_manage_advancePosition, ____alias_loc_id_10, ____chimes_did_disable3, false); }
 
 void advancePosition(SimFlat* s, int nBoxes, real_t dt) { (____chimes_replaying ? advancePosition_resumable(s, nBoxes, dt) : advancePosition_quick(s, nBoxes, dt)); }
-# 125 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 125 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void kineticEnergy_quick(SimFlat* s)
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&kineticEnergy), "kineticEnergy", &____must_manage_kineticEnergy, 1, 1, (size_t)(12369560726904679087UL), "kineticEnergy|s|0", &____must_checkpoint_kineticEnergy_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; real_t eSum[2];
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 real_t eLocal[2];
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
  if (____must_checkpoint_kineticEnergy_eSum_0 || ____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(2, "kineticEnergy|eSum|0", &____must_checkpoint_kineticEnergy_eSum_0, "[2 x double]", (void *)(eSum), (size_t)16, 0, 0, 0, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); } ; ;
-# 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 127 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     ;
-# 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 128 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     real_t kenergy; kenergy = (0.0) ;
-# 129 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 129 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    eLocal[0] = s->ePotential;
-# 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 130 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    eLocal[1] = 0;
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 { call_lbl_3: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(3, &____chimes_region_id2, 0); int ____chimes_first_iter2 = 1;
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for reduction(+:kenergy) firstprivate(____chimes_first_iter2)
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 132 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
-# 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 133 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    { { if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 0); ____chimes_first_iter2 = 0; } {
-# 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 134 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       { int iOff; int ii; for ( iOff = (64*iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       {
-# 136 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 136 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
           int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
-# 137 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 137 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
           real_t invMass; invMass = (0.5/s->species[iSpecies].mass) ;
-# 138 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 138 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          kenergy += ( s->atoms->p[iOff][0] * s->atoms->p[iOff][0] +
-# 139 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 139 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][1] * s->atoms->p[iOff][1] +
-# 140 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 140 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][2] * s->atoms->p[iOff][2] )*invMass;
-# 141 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 141 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       } }
-# 142 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 142 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     } } } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
-# 143 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 144 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 143 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 144 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    eLocal[1] = kenergy;
-# 145 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 146 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 145 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 146 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     ;
-# 147 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 147 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { call_lbl_0: ({ calling((void*)profileStart, 0, ____alias_loc_id_7, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
-# 148 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 148 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     call_lbl_1: ({ calling((void*)addRealParallel, 1, ____alias_loc_id_6, 0UL, 3, (size_t)(12369560726904678917UL), (size_t)(12369560726904678924UL), (size_t)(0UL)); (addRealParallel)(eLocal, eSum, 2); }) ;
-# 149 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 149 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { call_lbl_2: ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
-# 150 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 151 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 150 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 151 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    s->ePotential = eSum[0];
-# 152 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 152 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    s->eKinetic = eSum[1];
-# 153 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 153 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "kineticEnergy", &____must_manage_kineticEnergy, ____alias_loc_id_12, ____chimes_did_disable4, false); }
 
 void kineticEnergy(SimFlat* s) { (____chimes_replaying ? kineticEnergy_resumable(s) : kineticEnergy_quick(s)); }
-# 168 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 168 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void redistributeAtoms_quick(SimFlat* sim)
-# 169 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 169 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&redistributeAtoms), "redistributeAtoms", &____must_manage_redistributeAtoms, 1, 1, (size_t)(12369560726904678869UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0) ; ; ;
-# 170 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 170 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     call_lbl_0: ({ calling((void*)updateLinkCells, 0, ____alias_loc_id_4, 0UL, 2, (size_t)(12369560726904678871UL), (size_t)(12369560726904678871UL)); (updateLinkCells)(sim->boxes, sim->atoms); }) ;
-# 171 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 172 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 171 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 172 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { call_lbl_1: ({ calling((void*)profileStart, 1, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
-# 173 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 173 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
     call_lbl_2: ({ calling((void*)haloExchange, 2, ____alias_loc_id_3, 0UL, 2, (size_t)(12369560726904678871UL), (size_t)(12369560726904678869UL)); (haloExchange)(sim->atomExchange, sim); }) ;
-# 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 174 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
-# 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 175 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 { call_lbl_5: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(5, &____chimes_region_id3, 0); int ____chimes_first_iter3 = 1;
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for firstprivate(____chimes_first_iter3)
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 177 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int ii=0;ii<sim->boxes->nTotalBoxes; ++ii) { { if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 0); ____chimes_first_iter3 = 0; } { call_lbl_4: sortAtomsInCell(sim->atoms, sim->boxes, ii); } } } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); } ;
-# 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 179 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_11, ____chimes_did_disable5, false); }
 
 void redistributeAtoms(SimFlat* sim) { (____chimes_replaying ? redistributeAtoms_resumable(sim) : redistributeAtoms_quick(sim)); }
-# 87 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 87 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void computeForce_npm(SimFlat* s)
-# 88 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 88 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {
-# 89 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 89 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, -1, 0, 0UL, 1, 12369560726904678915UL)))(s);
-# 90 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 90 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 }
-# 93 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 93 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void advanceVelocity_npm(SimFlat* s, int nBoxes, real_t dt)
-# 94 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 94 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 95 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 96 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 96 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int iBox=0; iBox<nBoxes; iBox++)
-# 97 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 97 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    {
-# 98 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 98 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       for (int iOff=64*iBox,ii=0; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
-# 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 99 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       {
-# 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 100 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][0] += dt*s->atoms->f[iOff][0];
-# 101 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 101 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][1] += dt*s->atoms->f[iOff][1];
-# 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 102 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][2] += dt*s->atoms->f[iOff][2];
-# 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 103 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       }
-# 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 104 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    }
-# 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 105 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 }
-# 107 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 107 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void advancePosition_npm(SimFlat* s, int nBoxes, real_t dt)
-# 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 108 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 110 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int iBox=0; iBox<nBoxes; iBox++)
-# 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 111 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    {
-# 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 112 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       for (int iOff=64*iBox,ii=0; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
-# 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 113 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       {
-# 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 114 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          int iSpecies = s->atoms->iSpecies[iOff];
-# 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 115 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          real_t invMass = 1.0/s->species[iSpecies].mass;
-# 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 116 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->r[iOff][0] += dt*s->atoms->p[iOff][0]*invMass;
-# 117 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 117 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->r[iOff][1] += dt*s->atoms->p[iOff][1]*invMass;
-# 118 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 118 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->r[iOff][2] += dt*s->atoms->p[iOff][2]*invMass;
-# 119 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 119 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       }
-# 120 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 120 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    }
-# 121 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 121 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 }
-# 125 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 125 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void kineticEnergy_npm(SimFlat* s)
-# 126 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {
-# 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 127 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    real_t eLocal[2];
-# 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 128 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    real_t kenergy = 0.0;
-# 129 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 129 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    eLocal[0] = s->ePotential;
-# 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 130 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    eLocal[1] = 0;
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for reduction(+:kenergy)
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 132 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
-# 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 133 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    {
-# 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 134 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       for (int iOff=64*iBox,ii=0; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
-# 135 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       {
-# 136 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 136 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          int iSpecies = s->atoms->iSpecies[iOff];
-# 137 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 137 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          real_t invMass = 0.5/s->species[iSpecies].mass;
-# 138 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 138 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          kenergy += ( s->atoms->p[iOff][0] * s->atoms->p[iOff][0] +
-# 139 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 139 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][1] * s->atoms->p[iOff][1] +
-# 140 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 140 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
          s->atoms->p[iOff][2] * s->atoms->p[iOff][2] )*invMass;
-# 141 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 141 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
       }
-# 142 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 142 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    }
-# 143 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 144 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 143 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 144 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    eLocal[1] = kenergy;
-# 145 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 146 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 145 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 146 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    real_t eSum[2];
-# 147 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 147 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { (*____chimes_extern_func_profileStart)(commReduceTimer); } while(0);
-# 148 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 148 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    (*____chimes_extern_func_addRealParallel)(eLocal, eSum, 2);
-# 149 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 149 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { (*____chimes_extern_func_profileStop)(commReduceTimer); } while(0);
-# 150 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 151 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 150 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 151 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    s->ePotential = eSum[0];
-# 152 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 152 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    s->eKinetic = eSum[1];
-# 153 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 153 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 }
-# 168 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 168 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void redistributeAtoms_npm(SimFlat* sim)
-# 169 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 169 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {
-# 170 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 170 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    (*____chimes_extern_func_updateLinkCells)(sim->boxes, sim->atoms);
-# 171 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 172 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 171 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 172 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { (*____chimes_extern_func_profileStart)(atomHaloTimer); } while(0);
-# 173 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 173 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    (*____chimes_extern_func_haloExchange)(sim->atomExchange, sim);
-# 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 174 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { (*____chimes_extern_func_profileStop)(atomHaloTimer); } while(0);
-# 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 175 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 #pragma omp parallel for
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-# 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 177 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
    for (int ii=0;ii<sim->boxes->nTotalBoxes; ++ii) { (*____chimes_extern_func_sortAtomsInCell)(sim->atoms, sim->boxes, ii); };
-# 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 179 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/timestep.c"
 }
 
 

@@ -1,3 +1,3 @@
-/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 8 56 : { 14 } {  } call:NULL {  }
-/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 15 5 : { 28 } {  } call:checkpoint {  }
-/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 13 13 : { 25, 26, 27 } {  } call:foo {  }
+/home/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp 8 56 : { 14 } {  } call:NULL {  }
+/home/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp 15 5 : { 28 } {  } call:checkpoint {  }
+/home/jmg3/chimes/src/examples/cpp/./func_ptr_as_arg.cpp 13 13 : { 25, 26, 27 } {  } call:foo {  }

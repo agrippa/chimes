@@ -79,11 +79,11 @@ static unsigned ____alias_loc_id_18;
 static unsigned ____alias_loc_id_19;
 static unsigned ____alias_loc_id_20;
 static unsigned ____alias_loc_id_21;
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 1 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
+# 1 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -92,7 +92,7 @@ static unsigned ____alias_loc_id_21;
 typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+# 5 "/Users/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes();
@@ -146,7 +146,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/Users/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -160,9 +160,9 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 29 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.h" 1
+# 1 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 29 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 1 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.h" 1
 
 
 
@@ -607,7 +607,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 7 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.h" 2
+# 7 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.h" 2
 
 
 enum TimerHandle{
@@ -623,7 +623,7 @@ enum TimerHandle{
    commHaloTimer,
    commReduceTimer,
    numberOfTimers};
-# 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.h"
+# 57 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.h"
 void profileStart(const enum TimerHandle handle);
 void profileStop(const enum TimerHandle handle);
 
@@ -635,9 +635,9 @@ void printPerformanceResults(int nGlobalAtoms, int printRate);
 
 
 void printPerformanceResultsYaml(FILE* file);
-# 30 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
-# 30 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 31 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 30 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
+# 30 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 31 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 75 "/usr/include/sys/time.h" 3 4
@@ -831,7 +831,7 @@ int setitimer(int, const struct itimerval * ,
 int utimes(const char *, const struct timeval *);
 
 }
-# 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
+# 33 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 69 "/usr/include/string.h" 3 4
 extern "C" {
@@ -952,7 +952,7 @@ int flsll(long long) ;
 # 1 "/usr/include/string.h" 1 3 4
 # 93 "/usr/include/strings.h" 2 3 4
 # 177 "/usr/include/string.h" 2 3 4
-# 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
+# 34 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
 # 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 1 3 4
 # 9 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 3 4
 # 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 1 3 4
@@ -1036,7 +1036,7 @@ typedef long int intmax_t;
 typedef long unsigned int uintmax_t;
 # 69 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 10 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 2 3 4
-# 35 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
+# 35 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
 # 1 "/usr/include/inttypes.h" 1 3 4
 # 227 "/usr/include/inttypes.h" 3 4
 # 1 "/usr/include/sys/_types/_wchar_t.h" 1 3 4
@@ -1093,7 +1093,7 @@ wcstoumax(const wchar_t * __nptr,
 
 
 }
-# 36 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
+# 36 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
 # 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/math.h" 1 3 4
 # 48 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/math.h" 3 4
 extern "C" {
@@ -1512,12 +1512,12 @@ extern double gamma(double) __attribute__((deprecated));
 extern double significand(double) __attribute__((deprecated));
 # 752 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/math.h" 3 4
 }
-# 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
-# 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 37 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
+# 37 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 38 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
-# 13 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h"
+# 1 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
+# 13 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h"
 typedef double real_t;
 
 
@@ -1531,9 +1531,9 @@ static void zeroReal3(real3 a)
    a[1] = 0.0;
    a[2] = 0.0;
 }
-# 40 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h" 1
-# 10 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h"
+# 40 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
+# 1 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.h" 1
+# 10 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/parallel.h"
 typedef struct RankReduceDataSt
 {
    double val;
@@ -1588,408 +1588,408 @@ void bcastParallel(void* buf, int len, int root);
 
 
 int builtWithMpi(void);
-# 41 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.h" 1
-# 12 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.h"
+# 41 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
+# 1 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/yamlOutput.h" 1
+# 12 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/yamlOutput.h"
 void yamlBegin(void);
 void yamlEnd(void);
 
 void yamlAppInfo(FILE* file);
 
 void printSeparator(FILE* file);
-# 42 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
-# 42 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 43 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 42 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
+# 42 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 43 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 static uint64_t getTime(void);
-# 44 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 44 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 static double getTick(void);
-# 45 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 45 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 static void timerStats(void);
-# 46 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 46 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 47 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 48 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 49 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 char* timerName[numberOfTimers] = {
-# 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 50 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    "total",
-# 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 51 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    "loop",
-# 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 52 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    "timestep",
-# 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 53 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    "  position",
-# 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 54 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    "  velocity",
-# 55 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 55 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    "  redistribute",
-# 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 56 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    "    atomHalo",
-# 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 57 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    "  force",
-# 58 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 58 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    "    eamHalo",
-# 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 59 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    "commHalo",
-# 60 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 60 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    "commReduce"
-# 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 61 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 };
-# 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 62 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 63 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 64 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 65 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 typedef struct TimersSt
-# 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 66 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {
-# 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 67 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    uint64_t start;
-# 68 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 68 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    uint64_t total;
-# 69 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 69 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    uint64_t count;
-# 70 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 70 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    uint64_t elapsed;
-# 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 72 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 71 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 72 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    int minRank;
-# 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 73 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    int maxRank;
-# 74 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 75 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 74 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 75 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double minValue;
-# 76 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 76 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double maxValue;
-# 77 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 77 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double average;
-# 78 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 78 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double stdev;
-# 79 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 79 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 } Timers;
-# 80 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 81 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 82 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 80 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 81 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 82 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 typedef struct TimerGlobalSt
-# 83 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 83 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {
-# 84 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 84 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double atomRate;
-# 85 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 85 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double atomAllRate;
-# 86 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 86 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double atomsPerUSec;
-# 87 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 87 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 } TimerGlobal;
-# 88 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 88 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 89 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 static Timers perfTimer[numberOfTimers];
-# 90 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 90 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 static TimerGlobal perfGlobal;
-# 91 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 92 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 91 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 92 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 void profileStart_npm(const enum TimerHandle handle);static uint64_t getTime_npm(void);
 void profileStart_quick(const enum TimerHandle handle); void profileStart(const enum TimerHandle handle);static uint64_t getTime_quick(void); static uint64_t getTime(void);
 void profileStart_resumable(const enum TimerHandle handle)
-# 93 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 93 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&profileStart), "profileStart", &____must_manage_profileStart, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 94 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].start = ({ calling_npm("getTime", 0); getTime_npm(); });
-# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 95 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 rm_stack(false, 0UL, "profileStart", &____must_manage_profileStart, ____alias_loc_id_14, ____chimes_did_disable0); }
-# 96 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 97 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 96 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 97 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 void profileStop_npm(const enum TimerHandle handle);
 void profileStop_quick(const enum TimerHandle handle); void profileStop(const enum TimerHandle handle);
 void profileStop_resumable(const enum TimerHandle handle)
-# 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 98 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&profileStop), "profileStop", &____must_manage_profileStop, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 99 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].count += 1;
-# 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 100 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     uint64_t delta; delta = (({ calling_npm("getTime", 0); getTime_npm(); }) - perfTimer[handle].start) ;
-# 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 101 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].total += delta;
-# 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 102 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].elapsed += delta;
-# 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 103 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 rm_stack(false, 0UL, "profileStop", &____must_manage_profileStop, ____alias_loc_id_16, ____chimes_did_disable1); }
-# 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 107 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 104 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 105 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 106 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 107 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 108 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 double getElapsedTime_npm(const enum TimerHandle handle);static double getTick_npm(void);
 double getElapsedTime_quick(const enum TimerHandle handle); double getElapsedTime(const enum TimerHandle handle);static double getTick_quick(void); static double getTick(void);
 double getElapsedTime_resumable(const enum TimerHandle handle)
-# 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 109 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&getElapsedTime), "getElapsedTime", &____must_manage_getElapsedTime, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 110 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     double etime; etime = (({ calling_npm("getTick", 0); getTick_npm(); }) * (double)perfTimer[handle].elapsed) ;
-# 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 111 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].elapsed = 0;
-# 112 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 113 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 112 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 113 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2); return etime;
-# 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 114 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
-# 115 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 116 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 118 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 119 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 115 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 116 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 117 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 118 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 119 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 120 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 void printPerformanceResults_npm(int nGlobalAtoms, int printRate);void timerStats_npm(void);static int (*____chimes_extern_func_getMyRank)(void) = getMyRank;static int (*____chimes_extern_func_getNRanks)(void) = getNRanks;static int (*____chimes_extern_func_printRank)(void) = printRank;
 void printPerformanceResults_quick(int nGlobalAtoms, int printRate); void printPerformanceResults(int nGlobalAtoms, int printRate);void timerStats_quick(void); void timerStats(void);
 void printPerformanceResults_resumable(int nGlobalAtoms, int printRate)
-# 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 121 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&printPerformanceResults), "printPerformanceResults", &____must_manage_printPerformanceResults, 2, 2, (size_t)(0UL), (size_t)(0UL), "printPerformanceResults|nGlobalAtoms|0", &____must_checkpoint_printPerformanceResults_nGlobalAtoms_0, "i32", (void *)(&nGlobalAtoms), (size_t)4, 0, 0, 0, "printPerformanceResults|printRate|0", &____must_checkpoint_printPerformanceResults_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0) ; int ____chimes_unroll_var_1;
 double totalTime;
 int ____chimes_unroll_var_0;
 double loopTime;
 double tick;
  if (____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0 || ____must_checkpoint_printPerformanceResults_totalTime_0 || ____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0 || ____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(5, "printPerformanceResults|____chimes_unroll_var_1|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0, "i32", (void *)(&____chimes_unroll_var_1), (size_t)4, 0, 0, 0, "printPerformanceResults|totalTime|0", &____must_checkpoint_printPerformanceResults_totalTime_0, "double", (void *)(&totalTime), (size_t)8, 0, 0, 0, "printPerformanceResults|____chimes_unroll_var_0|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_0; } ; ;
-# 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 122 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 123 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_1: ({ calling((void*)timerStats, 1, ____alias_loc_id_0, 0UL, 0); (timerStats)(); }) ;
-# 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 124 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 125 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_2: if (! ({ calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3); return; };
-# 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 127 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 128 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 129 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       tick = (({ calling_npm("getTick", 0); getTick_npm(); })) ;
-# 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 130 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       loopTime = (perfTimer[loopTimer].total * tick) ;
-# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 131 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 132 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
         call_lbl_4: ____chimes_unroll_var_0 = ( ({ calling((void*)getMyRank, 4, ____alias_loc_id_1, 0UL, 0); (getMyRank)(); }) ) ; fprintf(__stdoutp, "\n\nTimings for Rank %d\n", ____chimes_unroll_var_0);
-# 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 133 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "        Timer        # Calls    Avg/Call (s)   Total (s)    %% Loop\n");
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 134 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "___________________________________________________________________\n");
-# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 135 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_0: int ii; if (____must_checkpoint_printPerformanceResults_ii_0 != 0) { register_stack_var("printPerformanceResults|ii|0", &____must_checkpoint_printPerformanceResults_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } for ( ii = (0) ; ii<numberOfTimers; ++ii)
-# 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 136 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 137 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          totalTime = (perfTimer[ii].total * tick) ;
-# 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 138 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(__stdoutp, "%-16s%12%lu     %8.4f      %8.4f    %8.2f\n",
-# 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 140 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  timerName[ii],
-# 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 141 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  perfTimer[ii].count,
-# 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 142 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  totalTime/(double)perfTimer[ii].count,
-# 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 143 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  totalTime,
-# 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 144 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  totalTime/loopTime*100.0); };
-# 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 145 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 146 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 147 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
         call_lbl_9: ____chimes_unroll_var_1 = ( ({ calling((void*)getNRanks, 9, ____alias_loc_id_2, 0UL, 0); (getNRanks)(); }) ) ; fprintf(__stdoutp, "\nTiming Statistics Across %d Ranks:\n", ____chimes_unroll_var_1);
-# 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 148 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "        Timer        Rank: Min(s)       Rank: Max(s)      Avg(s)    Stdev(s)\n");
-# 149 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 149 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "_____________________________________________________________________________\n");
-# 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 150 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 151 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_1: int ii; if (____must_checkpoint_printPerformanceResults_ii_1 != 0) { register_stack_var("printPerformanceResults|ii|1", &____must_checkpoint_printPerformanceResults_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(9): { goto call_lbl_9; } case(15): { goto call_lbl_15; } default: { chimes_error(); } } } for ( ii = (0) ; ii < numberOfTimers; ++ii)
-# 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 152 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 153 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(__stdoutp, "%-16s%6d:%10.4f  %6d:%10.4f  %10.4f  %10.4f\n",
-# 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 155 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             timerName[ii],
-# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 156 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             perfTimer[ii].minRank, perfTimer[ii].minValue*tick,
-# 157 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 157 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             perfTimer[ii].maxRank, perfTimer[ii].maxValue*tick,
-# 158 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 158 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             perfTimer[ii].average*tick, perfTimer[ii].stdev*tick); };
-# 159 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 159 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 160 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    alias_group_changed(____alias_loc_id_3); double atomsPerTask; call_lbl_15: atomsPerTask = (nGlobalAtoms / (real_t) ({ calling((void*)getNRanks, 15, ____alias_loc_id_3, 0UL, 0); (getNRanks)(); }) ) ;
-# 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 161 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfGlobal.atomRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 162 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       (atomsPerTask * perfTimer[timestepTimer].count * printRate);
-# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 163 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfGlobal.atomAllRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 164 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       (nGlobalAtoms * perfTimer[timestepTimer].count * printRate);
-# 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 165 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfGlobal.atomsPerUSec = 1.0 / perfGlobal.atomAllRate;
-# 166 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 166 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 167 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "\n---------------------------------------------------\n");
-# 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 168 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, " Average atom update rate:     %6.2f us/atom/task\n", perfGlobal.atomRate);
-# 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 169 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "---------------------------------------------------\n\n");
-# 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 170 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 171 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "\n---------------------------------------------------\n");
-# 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 172 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, " Average all atom update rate: %6.2f us/atom\n", perfGlobal.atomAllRate);
-# 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 173 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "---------------------------------------------------\n\n");
-# 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 174 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 175 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "\n---------------------------------------------------\n");
-# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 176 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, " Average atom rate:            %6.2f atoms/us\n", perfGlobal.atomsPerUSec);
-# 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 177 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "---------------------------------------------------\n\n");
-# 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 178 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3); }
-# 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 179 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 180 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 void printPerformanceResultsYaml_npm(FILE* file);
 void printPerformanceResultsYaml_quick(FILE* file); void printPerformanceResultsYaml(FILE* file);
 void printPerformanceResultsYaml_resumable(FILE* file)
-# 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 181 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(10568076854246273744UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; int ____chimes_unroll_var_2;
 double loopTime;
 double tick;
  if (____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0 || ____must_checkpoint_printPerformanceResultsYaml_loopTime_0 || ____must_checkpoint_printPerformanceResultsYaml_tick_0) { register_stack_vars(3, "printPerformanceResultsYaml|____chimes_unroll_var_2|0", &____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0, "i32", (void *)(&____chimes_unroll_var_2), (size_t)4, 0, 0, 0, "printPerformanceResultsYaml|loopTime|0", &____must_checkpoint_printPerformanceResultsYaml_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResultsYaml|tick|0", &____must_checkpoint_printPerformanceResultsYaml_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } ; ;
-# 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 182 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    alias_group_changed(____alias_loc_id_11); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_11, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4); return; };
-# 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 184 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 185 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       tick = (({ calling_npm("getTick", 0); getTick_npm(); })) ;
-# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 186 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       loopTime = (perfTimer[loopTimer].total * tick) ;
-# 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 187 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 188 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file,"\nPerformance Results:\n");
-# 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 189 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
         call_lbl_5: ____chimes_unroll_var_2 = ( ({ calling((void*)getNRanks, 5, ____alias_loc_id_12, 0UL, 0); (getNRanks)(); }) ) ; fprintf(file, "  TotalRanks: %d\n", ____chimes_unroll_var_2);
-# 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 190 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  ReportingTimeUnits: seconds\n");
-# 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 191 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
      int ____chimes_unroll_var_3; call_lbl_8: ____chimes_unroll_var_3 = ( ({ calling((void*)getMyRank, 8, ____alias_loc_id_13, 0UL, 0); (getMyRank)(); }) ) ; fprintf(file, "Performance Results For Rank %d:\n", ____chimes_unroll_var_3);
-# 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 192 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 193 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 194 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 195 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       {
-# 196 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 196 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
           double totalTime; totalTime = (perfTimer[ii].total * tick) ;
-# 197 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 197 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 198 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    CallCount:  %lu\n", perfTimer[ii].count);
-# 199 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 199 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    AvgPerCall: %8.4f\n", totalTime/(double)perfTimer[ii].count);
-# 200 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 200 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    Total:      %8.4f\n", totalTime);
-# 201 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 201 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    PercentLoop: %8.2f\n", totalTime/loopTime*100);
-# 202 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 202 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       }
-# 203 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 203 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 204 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 204 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 205 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "Performance Results Across Ranks:\n");
-# 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 206 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 207 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 207 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 208 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 208 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 209 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 209 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       {
-# 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 210 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 211 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MinRank: %d\n", perfTimer[ii].minRank);
-# 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 212 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MinTime: %8.4f\n", perfTimer[ii].minValue*tick);
-# 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 213 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MaxRank: %d\n", perfTimer[ii].maxRank);
-# 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 214 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MaxTime: %8.4f\n", perfTimer[ii].maxValue*tick);
-# 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 215 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    AvgTime: %8.4f\n", perfTimer[ii].average*tick);
-# 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 216 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    StdevTime: %8.4f\n", perfTimer[ii].stdev*tick);
-# 217 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 217 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       }
-# 218 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 218 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 219 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 220 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 219 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 220 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file,"Performance Global Update Rates:\n");
-# 221 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 221 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  AtomUpdateRate:\n");
-# 222 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 222 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomRate);
-# 223 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 223 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    Units: us/atom/task\n");
-# 224 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 224 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  AllAtomUpdateRate:\n");
-# 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 225 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomAllRate);
-# 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 226 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    Units: us/atom\n");
-# 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 227 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  AtomRate:\n");
-# 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 228 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomsPerUSec);
-# 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 229 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    Units: atoms/us\n");
-# 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 231 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 230 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 231 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "\n");
-# 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 232 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4); }
-# 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 243 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 243 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 static uint64_t getTime_resumable(void)
-# 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 244 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&getTime), "getTime", &____must_manage_getTime, 0, 0) ; struct timeval ptime;
  if (____must_checkpoint_getTime_ptime_0) { register_stack_vars(1, "getTime|ptime|0", &____must_checkpoint_getTime_ptime_0, "%struct.timeval = type { i64, i32 }", (void *)(&ptime), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 245 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
      ;
-# 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 246 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     uint64_t t; t = (0) ;
-# 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 247 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    gettimeofday(&ptime, (struct timezone *)__null);
-# 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 248 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    t = ((uint64_t)1000000)*(uint64_t)ptime.tv_sec + (uint64_t)ptime.tv_usec;
-# 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 249 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 250 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5); return t;
-# 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 251 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
-# 252 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 253 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 254 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 255 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 256 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 257 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 252 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 253 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 254 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 255 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 256 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 257 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 static double getTick_resumable(void)
-# 258 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 258 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&getTick), "getTick", &____must_manage_getTick, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 259 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 259 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     double seconds_per_cycle; seconds_per_cycle = (9.9999999999999995E-7) ;
-# 260 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 260 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6); return seconds_per_cycle;
-# 261 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 261 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
-# 262 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 263 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 264 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 262 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 263 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 264 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 static void (*____chimes_extern_func_addDoubleParallel)(double *, double *, int) = addDoubleParallel;static void (*____chimes_extern_func_maxRankDoubleParallel)(struct RankReduceDataSt *, struct RankReduceDataSt *, int) = maxRankDoubleParallel;static void (*____chimes_extern_func_minRankDoubleParallel)(struct RankReduceDataSt *, struct RankReduceDataSt *, int) = minRankDoubleParallel;
 void timerStats_resumable(void)
-# 265 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 265 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&timerStats), "timerStats", &____must_manage_timerStats, 0, 0) ; int ____chimes_unroll_var_4;
 double temp;
 RankReduceData reduceRecvBuf[11];
@@ -1997,368 +1997,368 @@ RankReduceData reduceSendBuf[11];
 double recvBuf[11];
 double sendBuf[11];
  if (____must_checkpoint_timerStats_____chimes_unroll_var_4_0 || ____must_checkpoint_timerStats_temp_0 || ____must_checkpoint_timerStats_reduceSendBuf_0 || ____must_checkpoint_timerStats_sendBuf_0) { register_stack_vars(4, "timerStats|____chimes_unroll_var_4|0", &____must_checkpoint_timerStats_____chimes_unroll_var_4_0, "i32", (void *)(&____chimes_unroll_var_4), (size_t)4, 0, 0, 0, "timerStats|temp|0", &____must_checkpoint_timerStats_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0, "timerStats|reduceSendBuf|0", &____must_checkpoint_timerStats_reduceSendBuf_0, "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0, "timerStats|sendBuf|0", &____must_checkpoint_timerStats_sendBuf_0, "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0); } if (____chimes_replaying) { goto lbl_0; } ; ;
-# 266 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 266 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
      ;
-# 267 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 268 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 269 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 267 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 268 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 269 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { int ii; for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
-# 271 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 271 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_1: ({ calling((void*)addDoubleParallel, 1, ____alias_loc_id_4, 0UL, 3, (size_t)(10568076854246273315UL), (size_t)(10568076854246273316UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
-# 272 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 273 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 272 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 273 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_0: int ii; if (____must_checkpoint_timerStats_ii_1 != 0) { register_stack_var("timerStats|ii|1", &____must_checkpoint_timerStats_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(____alias_loc_id_5); call_lbl_3: perfTimer[ii].average = recvBuf[ii] / (double) ({ calling((void*)getNRanks, 3, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) ; } };
-# 275 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 276 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 277 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 278 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 275 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 276 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 277 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 278 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
        ;
-# 279 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 279 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_1: int ii; if (____must_checkpoint_timerStats_ii_2 != 0) { register_stack_var("timerStats|ii|2", &____must_checkpoint_timerStats_ii_2, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_2; } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 280 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 280 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 281 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 281 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       reduceSendBuf[ii].val = (double)perfTimer[ii].total;
-# 282 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 282 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
        call_lbl_4: reduceSendBuf[ii].rank = ({ calling((void*)getMyRank, 4, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) ;
-# 283 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 283 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 284 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 284 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_5: ({ calling((void*)minRankDoubleParallel, 5, ____alias_loc_id_7, 0UL, 3, (size_t)(10568076854246273319UL), (size_t)(10568076854246273320UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
-# 285 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 285 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_2: int ii; if (____must_checkpoint_timerStats_ii_3 != 0) { register_stack_var("timerStats|ii|3", &____must_checkpoint_timerStats_ii_3, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_3; } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 286 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 286 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 287 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 287 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].minValue = reduceRecvBuf[ii].val;
-# 288 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 288 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].minRank = reduceRecvBuf[ii].rank;
-# 289 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 289 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 290 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 290 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_6: ({ calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_8, 0UL, 3, (size_t)(10568076854246273319UL), (size_t)(10568076854246273320UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
-# 291 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 291 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_3: int ii; if (____must_checkpoint_timerStats_ii_4 != 0) { register_stack_var("timerStats|ii|4", &____must_checkpoint_timerStats_ii_4, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_4; } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 292 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 292 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 293 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 293 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].maxValue = reduceRecvBuf[ii].val;
-# 294 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 294 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].maxRank = reduceRecvBuf[ii].rank;
-# 295 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 295 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 296 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 297 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 298 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 296 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 297 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 298 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_4: int ii; if (____must_checkpoint_timerStats_ii_5 != 0) { register_stack_var("timerStats|ii|5", &____must_checkpoint_timerStats_ii_5, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_5; } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 299 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 299 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 300 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 300 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          temp = ((double)perfTimer[ii].total - perfTimer[ii].average) ;
-# 301 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 301 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       sendBuf[ii] = temp * temp;
-# 302 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 302 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 303 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 303 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_7: ({ calling((void*)addDoubleParallel, 7, ____alias_loc_id_9, 0UL, 3, (size_t)(10568076854246273315UL), (size_t)(10568076854246273316UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
-# 304 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 304 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_5: int ii; if (____must_checkpoint_timerStats_ii_6 != 0) { register_stack_var("timerStats|ii|6", &____must_checkpoint_timerStats_ii_6, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 305 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 305 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 306 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 306 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
            call_lbl_8: ____chimes_unroll_var_4 = ( ({ calling((void*)getNRanks, 8, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) ) ; perfTimer[ii].stdev = sqrt(recvBuf[ii] / (double) ____chimes_unroll_var_4);
-# 307 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 307 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 308 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 308 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 rm_stack(false, 0UL, "timerStats", &____must_manage_timerStats, ____alias_loc_id_20, ____chimes_did_disable7); }
 void profileStart_quick(const enum TimerHandle handle)
-# 93 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 93 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&profileStart), "profileStart", &____must_manage_profileStart, 1, 0, (size_t)(0UL)) ; ; ;
-# 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 94 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].start = ({ calling_npm("getTime", 0); getTime_npm(); });
-# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 95 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 rm_stack(false, 0UL, "profileStart", &____must_manage_profileStart, ____alias_loc_id_14, ____chimes_did_disable0); }
 
 void profileStart(const enum TimerHandle handle) { (____chimes_replaying ? profileStart_resumable(handle) : profileStart_quick(handle)); }
 
 void profileStop_quick(const enum TimerHandle handle)
-# 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 98 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&profileStop), "profileStop", &____must_manage_profileStop, 1, 0, (size_t)(0UL)) ; ; ;
-# 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 99 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].count += 1;
-# 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 100 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     uint64_t delta; delta = (({ calling_npm("getTime", 0); getTime_npm(); }) - perfTimer[handle].start) ;
-# 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 101 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].total += delta;
-# 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 102 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].elapsed += delta;
-# 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 103 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 rm_stack(false, 0UL, "profileStop", &____must_manage_profileStop, ____alias_loc_id_16, ____chimes_did_disable1); }
 
 void profileStop(const enum TimerHandle handle) { (____chimes_replaying ? profileStop_resumable(handle) : profileStop_quick(handle)); }
 
 double getElapsedTime_quick(const enum TimerHandle handle)
-# 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 109 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&getElapsedTime), "getElapsedTime", &____must_manage_getElapsedTime, 1, 0, (size_t)(0UL)) ; ; ;
-# 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 110 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     double etime; etime = (({ calling_npm("getTick", 0); getTick_npm(); }) * (double)perfTimer[handle].elapsed) ;
-# 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 111 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].elapsed = 0;
-# 112 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 113 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 112 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 113 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2); return etime;
-# 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 114 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
 
 double getElapsedTime(const enum TimerHandle handle) { return (____chimes_replaying ? getElapsedTime_resumable(handle) : getElapsedTime_quick(handle)); }
 
 void printPerformanceResults_quick(int nGlobalAtoms, int printRate)
-# 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 121 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&printPerformanceResults), "printPerformanceResults", &____must_manage_printPerformanceResults, 2, 2, (size_t)(0UL), (size_t)(0UL), "printPerformanceResults|nGlobalAtoms|0", &____must_checkpoint_printPerformanceResults_nGlobalAtoms_0, "i32", (void *)(&nGlobalAtoms), (size_t)4, 0, 0, 0, "printPerformanceResults|printRate|0", &____must_checkpoint_printPerformanceResults_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0) ; int ____chimes_unroll_var_1;
 double totalTime;
 int ____chimes_unroll_var_0;
 double loopTime;
 double tick;
  if (____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0 || ____must_checkpoint_printPerformanceResults_totalTime_0 || ____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0 || ____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(5, "printPerformanceResults|____chimes_unroll_var_1|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0, "i32", (void *)(&____chimes_unroll_var_1), (size_t)4, 0, 0, 0, "printPerformanceResults|totalTime|0", &____must_checkpoint_printPerformanceResults_totalTime_0, "double", (void *)(&totalTime), (size_t)8, 0, 0, 0, "printPerformanceResults|____chimes_unroll_var_0|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } ; ;
-# 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 122 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 123 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_1: ({ calling((void*)timerStats, 1, ____alias_loc_id_0, 0UL, 0); timerStats_quick(); }) ;
-# 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 124 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 125 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_2: if (! ({ calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3); return; };
-# 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 127 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 128 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 129 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       tick = (({ calling_npm("getTick", 0); getTick_npm(); })) ;
-# 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 130 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       loopTime = (perfTimer[loopTimer].total * tick) ;
-# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 131 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 132 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
         call_lbl_4: ____chimes_unroll_var_0 = ( ({ calling((void*)getMyRank, 4, ____alias_loc_id_1, 0UL, 0); (getMyRank)(); }) ) ; fprintf(__stdoutp, "\n\nTimings for Rank %d\n", ____chimes_unroll_var_0);
-# 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 133 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "        Timer        # Calls    Avg/Call (s)   Total (s)    %% Loop\n");
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 134 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "___________________________________________________________________\n");
-# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 135 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_0: int ii; if (____must_checkpoint_printPerformanceResults_ii_0 != 0) { register_stack_var("printPerformanceResults|ii|0", &____must_checkpoint_printPerformanceResults_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii<numberOfTimers; ++ii)
-# 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 136 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 137 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          totalTime = (perfTimer[ii].total * tick) ;
-# 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 138 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(__stdoutp, "%-16s%12%lu     %8.4f      %8.4f    %8.2f\n",
-# 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 140 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  timerName[ii],
-# 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 141 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  perfTimer[ii].count,
-# 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 142 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  totalTime/(double)perfTimer[ii].count,
-# 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 143 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  totalTime,
-# 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 144 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  totalTime/loopTime*100.0); };
-# 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 145 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 146 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 147 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
         call_lbl_9: ____chimes_unroll_var_1 = ( ({ calling((void*)getNRanks, 9, ____alias_loc_id_2, 0UL, 0); (getNRanks)(); }) ) ; fprintf(__stdoutp, "\nTiming Statistics Across %d Ranks:\n", ____chimes_unroll_var_1);
-# 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 148 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "        Timer        Rank: Min(s)       Rank: Max(s)      Avg(s)    Stdev(s)\n");
-# 149 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 149 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "_____________________________________________________________________________\n");
-# 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 150 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 151 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_1: int ii; if (____must_checkpoint_printPerformanceResults_ii_1 != 0) { register_stack_var("printPerformanceResults|ii|1", &____must_checkpoint_printPerformanceResults_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ++ii)
-# 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 152 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 153 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(__stdoutp, "%-16s%6d:%10.4f  %6d:%10.4f  %10.4f  %10.4f\n",
-# 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 155 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             timerName[ii],
-# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 156 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             perfTimer[ii].minRank, perfTimer[ii].minValue*tick,
-# 157 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 157 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             perfTimer[ii].maxRank, perfTimer[ii].maxValue*tick,
-# 158 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 158 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             perfTimer[ii].average*tick, perfTimer[ii].stdev*tick); };
-# 159 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 159 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 160 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    alias_group_changed(____alias_loc_id_3); double atomsPerTask; call_lbl_15: atomsPerTask = (nGlobalAtoms / (real_t) ({ calling((void*)getNRanks, 15, ____alias_loc_id_3, 0UL, 0); (getNRanks)(); }) ) ;
-# 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 161 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfGlobal.atomRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 162 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       (atomsPerTask * perfTimer[timestepTimer].count * printRate);
-# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 163 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfGlobal.atomAllRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 164 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       (nGlobalAtoms * perfTimer[timestepTimer].count * printRate);
-# 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 165 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfGlobal.atomsPerUSec = 1.0 / perfGlobal.atomAllRate;
-# 166 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 166 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 167 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "\n---------------------------------------------------\n");
-# 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 168 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, " Average atom update rate:     %6.2f us/atom/task\n", perfGlobal.atomRate);
-# 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 169 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "---------------------------------------------------\n\n");
-# 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 170 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 171 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "\n---------------------------------------------------\n");
-# 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 172 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, " Average all atom update rate: %6.2f us/atom\n", perfGlobal.atomAllRate);
-# 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 173 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "---------------------------------------------------\n\n");
-# 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 174 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 175 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "\n---------------------------------------------------\n");
-# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 176 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, " Average atom rate:            %6.2f atoms/us\n", perfGlobal.atomsPerUSec);
-# 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 177 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "---------------------------------------------------\n\n");
-# 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 178 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3); }
 
 void printPerformanceResults(int nGlobalAtoms, int printRate) { (____chimes_replaying ? printPerformanceResults_resumable(nGlobalAtoms, printRate) : printPerformanceResults_quick(nGlobalAtoms, printRate)); }
 
 void printPerformanceResultsYaml_quick(FILE* file)
-# 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 181 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(10568076854246273744UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; int ____chimes_unroll_var_2;
 double loopTime;
 double tick;
  if (____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0 || ____must_checkpoint_printPerformanceResultsYaml_loopTime_0 || ____must_checkpoint_printPerformanceResultsYaml_tick_0) { register_stack_vars(3, "printPerformanceResultsYaml|____chimes_unroll_var_2|0", &____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0, "i32", (void *)(&____chimes_unroll_var_2), (size_t)4, 0, 0, 0, "printPerformanceResultsYaml|loopTime|0", &____must_checkpoint_printPerformanceResultsYaml_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResultsYaml|tick|0", &____must_checkpoint_printPerformanceResultsYaml_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } ; ;
-# 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 182 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    alias_group_changed(____alias_loc_id_11); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_11, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4); return; };
-# 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 184 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 185 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       tick = (({ calling_npm("getTick", 0); getTick_npm(); })) ;
-# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 186 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       loopTime = (perfTimer[loopTimer].total * tick) ;
-# 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 187 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 188 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file,"\nPerformance Results:\n");
-# 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 189 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
         call_lbl_5: ____chimes_unroll_var_2 = ( ({ calling((void*)getNRanks, 5, ____alias_loc_id_12, 0UL, 0); (getNRanks)(); }) ) ; fprintf(file, "  TotalRanks: %d\n", ____chimes_unroll_var_2);
-# 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 190 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  ReportingTimeUnits: seconds\n");
-# 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 191 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
      int ____chimes_unroll_var_3; call_lbl_8: ____chimes_unroll_var_3 = ( ({ calling((void*)getMyRank, 8, ____alias_loc_id_13, 0UL, 0); (getMyRank)(); }) ) ; fprintf(file, "Performance Results For Rank %d:\n", ____chimes_unroll_var_3);
-# 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 192 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 193 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 194 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 195 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       {
-# 196 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 196 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
           double totalTime; totalTime = (perfTimer[ii].total * tick) ;
-# 197 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 197 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 198 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    CallCount:  %lu\n", perfTimer[ii].count);
-# 199 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 199 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    AvgPerCall: %8.4f\n", totalTime/(double)perfTimer[ii].count);
-# 200 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 200 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    Total:      %8.4f\n", totalTime);
-# 201 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 201 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    PercentLoop: %8.2f\n", totalTime/loopTime*100);
-# 202 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 202 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       }
-# 203 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 203 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 204 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 204 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 205 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "Performance Results Across Ranks:\n");
-# 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 206 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 207 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 207 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 208 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 208 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 209 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 209 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       {
-# 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 210 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 211 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MinRank: %d\n", perfTimer[ii].minRank);
-# 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 212 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MinTime: %8.4f\n", perfTimer[ii].minValue*tick);
-# 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 213 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MaxRank: %d\n", perfTimer[ii].maxRank);
-# 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 214 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MaxTime: %8.4f\n", perfTimer[ii].maxValue*tick);
-# 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 215 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    AvgTime: %8.4f\n", perfTimer[ii].average*tick);
-# 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 216 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    StdevTime: %8.4f\n", perfTimer[ii].stdev*tick);
-# 217 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 217 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       }
-# 218 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 218 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 219 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 220 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 219 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 220 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file,"Performance Global Update Rates:\n");
-# 221 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 221 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  AtomUpdateRate:\n");
-# 222 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 222 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomRate);
-# 223 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 223 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    Units: us/atom/task\n");
-# 224 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 224 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  AllAtomUpdateRate:\n");
-# 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 225 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomAllRate);
-# 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 226 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    Units: us/atom\n");
-# 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 227 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  AtomRate:\n");
-# 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 228 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomsPerUSec);
-# 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 229 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    Units: atoms/us\n");
-# 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 231 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 230 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 231 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "\n");
-# 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 232 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4); }
 
 void printPerformanceResultsYaml(FILE* file) { (____chimes_replaying ? printPerformanceResultsYaml_resumable(file) : printPerformanceResultsYaml_quick(file)); }
 
 static uint64_t getTime_quick(void)
-# 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 244 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&getTime), "getTime", &____must_manage_getTime, 0, 0) ; struct timeval ptime;
  if (____must_checkpoint_getTime_ptime_0) { register_stack_vars(1, "getTime|ptime|0", &____must_checkpoint_getTime_ptime_0, "%struct.timeval = type { i64, i32 }", (void *)(&ptime), (size_t)16, 0, 1, 0); } ; ;
-# 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 245 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
      ;
-# 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 246 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     uint64_t t; t = (0) ;
-# 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 247 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    gettimeofday(&ptime, (struct timezone *)__null);
-# 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 248 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    t = ((uint64_t)1000000)*(uint64_t)ptime.tv_sec + (uint64_t)ptime.tv_usec;
-# 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 249 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 250 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5); return t;
-# 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 251 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
 
 static uint64_t getTime(void) { return (____chimes_replaying ? getTime_resumable() : getTime_quick()); }
 
 static double getTick_quick(void)
-# 258 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 258 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&getTick), "getTick", &____must_manage_getTick, 0, 0) ; ; ;
-# 259 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 259 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     double seconds_per_cycle; seconds_per_cycle = (9.9999999999999995E-7) ;
-# 260 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 260 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6); return seconds_per_cycle;
-# 261 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 261 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
 
 static double getTick(void) { return (____chimes_replaying ? getTick_resumable() : getTick_quick()); }
 
 void timerStats_quick(void)
-# 265 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 265 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&timerStats), "timerStats", &____must_manage_timerStats, 0, 0) ; int ____chimes_unroll_var_4;
 double temp;
 RankReduceData reduceRecvBuf[11];
@@ -2366,79 +2366,79 @@ RankReduceData reduceSendBuf[11];
 double recvBuf[11];
 double sendBuf[11];
  if (____must_checkpoint_timerStats_____chimes_unroll_var_4_0 || ____must_checkpoint_timerStats_temp_0 || ____must_checkpoint_timerStats_reduceSendBuf_0 || ____must_checkpoint_timerStats_sendBuf_0) { register_stack_vars(4, "timerStats|____chimes_unroll_var_4|0", &____must_checkpoint_timerStats_____chimes_unroll_var_4_0, "i32", (void *)(&____chimes_unroll_var_4), (size_t)4, 0, 0, 0, "timerStats|temp|0", &____must_checkpoint_timerStats_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0, "timerStats|reduceSendBuf|0", &____must_checkpoint_timerStats_reduceSendBuf_0, "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0, "timerStats|sendBuf|0", &____must_checkpoint_timerStats_sendBuf_0, "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0); } ; ;
-# 266 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 266 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
      ;
-# 267 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 268 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 269 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 267 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 268 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 269 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { int ii; for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
-# 271 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 271 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_1: ({ calling((void*)addDoubleParallel, 1, ____alias_loc_id_4, 0UL, 3, (size_t)(10568076854246273315UL), (size_t)(10568076854246273316UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
-# 272 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 273 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 272 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 273 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_0: int ii; if (____must_checkpoint_timerStats_ii_1 != 0) { register_stack_var("timerStats|ii|1", &____must_checkpoint_timerStats_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(____alias_loc_id_5); call_lbl_3: perfTimer[ii].average = recvBuf[ii] / (double) ({ calling((void*)getNRanks, 3, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) ; } };
-# 275 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 276 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 277 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 278 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 275 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 276 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 277 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 278 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
        ;
-# 279 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 279 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_1: int ii; if (____must_checkpoint_timerStats_ii_2 != 0) { register_stack_var("timerStats|ii|2", &____must_checkpoint_timerStats_ii_2, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 280 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 280 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 281 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 281 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       reduceSendBuf[ii].val = (double)perfTimer[ii].total;
-# 282 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 282 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
        call_lbl_4: reduceSendBuf[ii].rank = ({ calling((void*)getMyRank, 4, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) ;
-# 283 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 283 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 284 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 284 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_5: ({ calling((void*)minRankDoubleParallel, 5, ____alias_loc_id_7, 0UL, 3, (size_t)(10568076854246273319UL), (size_t)(10568076854246273320UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
-# 285 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 285 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_2: int ii; if (____must_checkpoint_timerStats_ii_3 != 0) { register_stack_var("timerStats|ii|3", &____must_checkpoint_timerStats_ii_3, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 286 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 286 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 287 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 287 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].minValue = reduceRecvBuf[ii].val;
-# 288 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 288 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].minRank = reduceRecvBuf[ii].rank;
-# 289 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 289 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 290 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 290 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_6: ({ calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_8, 0UL, 3, (size_t)(10568076854246273319UL), (size_t)(10568076854246273320UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
-# 291 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 291 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_3: int ii; if (____must_checkpoint_timerStats_ii_4 != 0) { register_stack_var("timerStats|ii|4", &____must_checkpoint_timerStats_ii_4, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 292 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 292 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 293 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 293 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].maxValue = reduceRecvBuf[ii].val;
-# 294 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 294 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].maxRank = reduceRecvBuf[ii].rank;
-# 295 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 295 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 296 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 297 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 298 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 296 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 297 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 298 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_4: int ii; if (____must_checkpoint_timerStats_ii_5 != 0) { register_stack_var("timerStats|ii|5", &____must_checkpoint_timerStats_ii_5, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 299 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 299 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 300 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 300 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          temp = ((double)perfTimer[ii].total - perfTimer[ii].average) ;
-# 301 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 301 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       sendBuf[ii] = temp * temp;
-# 302 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 302 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 303 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 303 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_7: ({ calling((void*)addDoubleParallel, 7, ____alias_loc_id_9, 0UL, 3, (size_t)(10568076854246273315UL), (size_t)(10568076854246273316UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
-# 304 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 304 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_5: int ii; if (____must_checkpoint_timerStats_ii_6 != 0) { register_stack_var("timerStats|ii|6", &____must_checkpoint_timerStats_ii_6, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 305 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 305 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 306 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 306 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
            call_lbl_8: ____chimes_unroll_var_4 = ( ({ calling((void*)getNRanks, 8, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) ) ; perfTimer[ii].stdev = sqrt(recvBuf[ii] / (double) ____chimes_unroll_var_4);
-# 307 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 307 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
-# 308 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 308 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 rm_stack(false, 0UL, "timerStats", &____must_manage_timerStats, ____alias_loc_id_20, ____chimes_did_disable7); }
 
 void timerStats(void) { (____chimes_replaying ? timerStats_resumable() : timerStats_quick()); }
@@ -2446,344 +2446,344 @@ void timerStats(void) { (____chimes_replaying ? timerStats_resumable() : timerSt
 
 
 void profileStart_npm(const enum TimerHandle handle)
-# 93 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 93 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {
-# 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 94 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].start = getTime_npm();
-# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 95 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
 
 void profileStop_npm(const enum TimerHandle handle)
-# 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 98 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {
-# 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 99 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].count += 1;
-# 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 100 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    uint64_t delta = getTime_npm() - perfTimer[handle].start;
-# 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 101 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].total += delta;
-# 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 102 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].elapsed += delta;
-# 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 103 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
 
 double getElapsedTime_npm(const enum TimerHandle handle)
-# 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 109 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {
-# 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 110 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double etime = getTick_npm() * (double)perfTimer[handle].elapsed;
-# 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 111 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].elapsed = 0;
-# 112 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 113 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 112 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 113 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    return etime;
-# 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 114 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
 
 void printPerformanceResults_npm(int nGlobalAtoms, int printRate)
-# 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 121 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {
-# 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 122 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 123 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    timerStats_npm();
-# 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 124 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 125 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    if (!(*____chimes_extern_func_printRank)()) {return; };
-# 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 127 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 128 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 129 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double tick = getTick_npm();
-# 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 130 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double loopTime = perfTimer[loopTimer].total*tick;
-# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 131 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 132 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     int ____chimes_unroll_var_0 = (*____chimes_extern_func_getMyRank)(); fprintf(__stdoutp, "\n\nTimings for Rank %d\n", ____chimes_unroll_var_0);
-# 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 133 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "        Timer        # Calls    Avg/Call (s)   Total (s)    %% Loop\n");
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 134 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "___________________________________________________________________\n");
-# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 135 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    for (int ii=0; ii<numberOfTimers; ++ii)
-# 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 136 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 137 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       double totalTime = perfTimer[ii].total*tick;
-# 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 138 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(__stdoutp, "%-16s%12%lu     %8.4f      %8.4f    %8.2f\n",
-# 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 140 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  timerName[ii],
-# 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 141 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  perfTimer[ii].count,
-# 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 142 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  totalTime/(double)perfTimer[ii].count,
-# 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 143 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  totalTime,
-# 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 144 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
                  totalTime/loopTime*100.0); };
-# 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 145 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    }
-# 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 146 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 147 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     int ____chimes_unroll_var_1 = (*____chimes_extern_func_getNRanks)(); fprintf(__stdoutp, "\nTiming Statistics Across %d Ranks:\n", ____chimes_unroll_var_1);
-# 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 148 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "        Timer        Rank: Min(s)       Rank: Max(s)      Avg(s)    Stdev(s)\n");
-# 149 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 149 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "_____________________________________________________________________________\n");
-# 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 150 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 151 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ++ii)
-# 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 152 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 153 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(__stdoutp, "%-16s%6d:%10.4f  %6d:%10.4f  %10.4f  %10.4f\n",
-# 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 155 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             timerName[ii],
-# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 156 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             perfTimer[ii].minRank, perfTimer[ii].minValue*tick,
-# 157 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 157 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             perfTimer[ii].maxRank, perfTimer[ii].maxValue*tick,
-# 158 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 158 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
             perfTimer[ii].average*tick, perfTimer[ii].stdev*tick); };
-# 159 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 159 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    }
-# 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 160 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double atomsPerTask = nGlobalAtoms/(real_t)(*____chimes_extern_func_getNRanks)();
-# 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 161 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfGlobal.atomRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 162 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       (atomsPerTask * perfTimer[timestepTimer].count * printRate);
-# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 163 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfGlobal.atomAllRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 164 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       (nGlobalAtoms * perfTimer[timestepTimer].count * printRate);
-# 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 165 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfGlobal.atomsPerUSec = 1.0 / perfGlobal.atomAllRate;
-# 166 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 166 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 167 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "\n---------------------------------------------------\n");
-# 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 168 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, " Average atom update rate:     %6.2f us/atom/task\n", perfGlobal.atomRate);
-# 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 169 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "---------------------------------------------------\n\n");
-# 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 170 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 171 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "\n---------------------------------------------------\n");
-# 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 172 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, " Average all atom update rate: %6.2f us/atom\n", perfGlobal.atomAllRate);
-# 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 173 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "---------------------------------------------------\n\n");
-# 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 174 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 175 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "\n---------------------------------------------------\n");
-# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 176 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, " Average atom rate:            %6.2f atoms/us\n", perfGlobal.atomsPerUSec);
-# 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 177 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "---------------------------------------------------\n\n");
-# 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 178 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
 
 void printPerformanceResultsYaml_npm(FILE* file)
-# 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 181 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {
-# 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 182 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    if (! (*____chimes_extern_func_printRank)()) {return; };
-# 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 184 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 185 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double tick = getTick_npm();
-# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 186 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double loopTime = perfTimer[loopTimer].total*tick;
-# 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 187 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 188 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file,"\nPerformance Results:\n");
-# 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 189 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     int ____chimes_unroll_var_2 = (*____chimes_extern_func_getNRanks)(); fprintf(file, "  TotalRanks: %d\n", ____chimes_unroll_var_2);
-# 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 190 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  ReportingTimeUnits: seconds\n");
-# 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 191 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     int ____chimes_unroll_var_3 = (*____chimes_extern_func_getMyRank)(); fprintf(file, "Performance Results For Rank %d:\n", ____chimes_unroll_var_3);
-# 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 192 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 193 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 194 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 195 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       {
-# 196 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 196 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          double totalTime = perfTimer[ii].total*tick;
-# 197 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 197 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 198 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    CallCount:  %lu\n", perfTimer[ii].count);
-# 199 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 199 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    AvgPerCall: %8.4f\n", totalTime/(double)perfTimer[ii].count);
-# 200 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 200 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    Total:      %8.4f\n", totalTime);
-# 201 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 201 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    PercentLoop: %8.2f\n", totalTime/loopTime*100);
-# 202 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 202 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       }
-# 203 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 203 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    }
-# 204 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 204 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 205 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "Performance Results Across Ranks:\n");
-# 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 206 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 207 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 207 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 208 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 208 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 209 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 209 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       {
-# 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 210 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 211 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MinRank: %d\n", perfTimer[ii].minRank);
-# 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 212 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MinTime: %8.4f\n", perfTimer[ii].minValue*tick);
-# 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 213 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MaxRank: %d\n", perfTimer[ii].maxRank);
-# 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 214 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    MaxTime: %8.4f\n", perfTimer[ii].maxValue*tick);
-# 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 215 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    AvgTime: %8.4f\n", perfTimer[ii].average*tick);
-# 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 216 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
          fprintf(file, "    StdevTime: %8.4f\n", perfTimer[ii].stdev*tick);
-# 217 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 217 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       }
-# 218 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 218 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    }
-# 219 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 220 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 219 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 220 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file,"Performance Global Update Rates:\n");
-# 221 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 221 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  AtomUpdateRate:\n");
-# 222 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 222 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomRate);
-# 223 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 223 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    Units: us/atom/task\n");
-# 224 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 224 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  AllAtomUpdateRate:\n");
-# 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 225 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomAllRate);
-# 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 226 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    Units: us/atom\n");
-# 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 227 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  AtomRate:\n");
-# 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 228 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomsPerUSec);
-# 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 229 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "    Units: atoms/us\n");
-# 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 231 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 230 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 231 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "\n");
-# 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 232 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
 
 static uint64_t getTime_npm(void)
-# 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 244 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {
-# 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 245 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    struct timeval ptime;
-# 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 246 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    uint64_t t = 0;
-# 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 247 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    gettimeofday(&ptime, (struct timezone *)__null);
-# 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 248 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    t = ((uint64_t)1000000)*(uint64_t)ptime.tv_sec + (uint64_t)ptime.tv_usec;
-# 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 249 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 250 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    return t;
-# 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 251 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
 
 static double getTick_npm(void)
-# 258 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 258 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {
-# 259 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 259 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double seconds_per_cycle = 1.0e-6;
-# 260 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 260 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    return seconds_per_cycle;
-# 261 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 261 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
 
 void timerStats_npm(void)
-# 265 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 265 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {
-# 266 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 266 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    double sendBuf[numberOfTimers], recvBuf[numberOfTimers];
-# 267 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 268 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 269 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 267 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 268 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 269 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    for (int ii = 0;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; };
-# 271 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 271 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    (*____chimes_extern_func_addDoubleParallel)(sendBuf, recvBuf, numberOfTimers);
-# 272 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 273 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 272 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 273 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    for (int ii = 0;ii < numberOfTimers; ii++) { perfTimer[ii].average = recvBuf[ii] / (double)(*____chimes_extern_func_getNRanks)(); };
-# 275 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 276 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 277 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 278 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 275 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 276 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 277 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 278 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    RankReduceData reduceSendBuf[numberOfTimers], reduceRecvBuf[numberOfTimers];
-# 279 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 279 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 280 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 280 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 281 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 281 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       reduceSendBuf[ii].val = (double)perfTimer[ii].total;
-# 282 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 282 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       reduceSendBuf[ii].rank = (*____chimes_extern_func_getMyRank)();
-# 283 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 283 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    }
-# 284 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 284 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    (*____chimes_extern_func_minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers);
-# 285 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 285 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 286 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 286 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 287 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 287 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].minValue = reduceRecvBuf[ii].val;
-# 288 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 288 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].minRank = reduceRecvBuf[ii].rank;
-# 289 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 289 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    }
-# 290 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 290 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    (*____chimes_extern_func_maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers);
-# 291 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 291 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 292 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 292 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 293 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 293 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].maxValue = reduceRecvBuf[ii].val;
-# 294 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 294 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       perfTimer[ii].maxRank = reduceRecvBuf[ii].rank;
-# 295 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 295 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    }
-# 296 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 297 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-# 298 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 296 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 297 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 298 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 299 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 299 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 300 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 300 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       double temp = (double)perfTimer[ii].total - perfTimer[ii].average;
-# 301 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 301 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       sendBuf[ii] = temp * temp;
-# 302 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 302 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    }
-# 303 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 303 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    (*____chimes_extern_func_addDoubleParallel)(sendBuf, recvBuf, numberOfTimers);
-# 304 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 304 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 305 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 305 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
-# 306 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 306 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
        int ____chimes_unroll_var_4 = (*____chimes_extern_func_getNRanks)(); perfTimer[ii].stdev = sqrt(recvBuf[ii] / (double) ____chimes_unroll_var_4);
-# 307 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 307 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    }
-# 308 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
+# 308 "/Users/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 }
 
 
