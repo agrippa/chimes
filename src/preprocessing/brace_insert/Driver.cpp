@@ -20,8 +20,7 @@ using namespace clang::driver;
 using namespace clang::tooling;
 
 static llvm::cl::OptionCategory ToolingSampleCategory("chimes options");
-static llvm::cl::opt<std::string> output_file("o",
-        llvm::cl::desc("Output file"), llvm::cl::value_desc("output_file"));
+static llvm::cl::opt<std::string> output_file("o");
 
 static BraceInserter *transform = NULL;
 
@@ -74,9 +73,15 @@ private:
 template <class c> class NumDebugFrontendAction : public ASTFrontendAction {
 public:
   NumDebugFrontendAction() {
+#if LLVM_VERSION_MAJOR == 3 && LLVM_VERSION_MINOR == 8
+      std::error_code EC; 
+      out = new llvm::raw_fd_ostream(output_file.c_str(), EC, 
+              llvm::sys::fs::OpenFlags::F_None);
+#else
       std::string code;
       out = new llvm::raw_fd_ostream(output_file.c_str(), code,
               llvm::sys::fs::OpenFlags::F_None);
+#endif
   }
 
   void EndSourceFileAction() override {
@@ -85,10 +90,19 @@ public:
     out->close();
   }
 
-  clang::ASTConsumer *CreateASTConsumer(CompilerInstance &CI,
-                                                 StringRef file) override {
+#if LLVM_VERSION_MAJOR == 3 && LLVM_VERSION_MINOR == 8
+  std::unique_ptr<clang::ASTConsumer> CreateASTConsumer(
+#else
+  clang::ASTConsumer *CreateASTConsumer(
+#endif
+      CompilerInstance &CI, StringRef file) override {
     rewriter.setSourceMgr(CI.getSourceManager(), CI.getLangOpts());
-    return new TransformASTConsumer(rewriter, CI.getASTContext());
+    clang::ASTConsumer *result = new TransformASTConsumer(rewriter, CI.getASTContext());
+#if LLVM_VERSION_MAJOR == 3 && LLVM_VERSION_MINOR == 8
+    return std::unique_ptr<clang::ASTConsumer>(result);
+#else
+    return result;
+#endif
   }
 
 private:
@@ -96,7 +110,7 @@ private:
   Rewriter rewriter;
 };
 
-static void check_opt(llvm::cl::opt<std::string> s, const char *msg) {
+static void check_opt(llvm::cl::opt<std::string> &s, const char *msg) {
     if (s.size() == 0) {
         llvm::errs() << std::string(msg) << " is required\n";
         exit(1);

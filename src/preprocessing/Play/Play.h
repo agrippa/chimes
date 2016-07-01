@@ -283,7 +283,7 @@ struct Play : public ModulePass {
     bool runOnModule(Module &M) override;
 
     void getAnalysisUsage(AnalysisUsage &AU) const override {
-        AU.addRequired<AliasAnalysis>();
+        // AU.addRequired<AliasAnalysis>();
     }
 
     public:

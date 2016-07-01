@@ -96,17 +96,26 @@ public:
     SourceManager &SM = rewriter.getSourceMgr();
   }
 
-  clang::ASTConsumer *CreateASTConsumer(CompilerInstance &CI,
-                                                 StringRef file) override {
+#if LLVM_VERSION_MAJOR == 3 && LLVM_VERSION_MINOR == 8
+  std::unique_ptr<clang::ASTConsumer> CreateASTConsumer(
+#else
+  clang::ASTConsumer *CreateASTConsumer(
+#endif
+      CompilerInstance &CI, StringRef file) override {
     rewriter.setSourceMgr(CI.getSourceManager(), CI.getLangOpts());
-    return new TransformASTConsumer(rewriter, CI.getASTContext());
+    clang::ASTConsumer *result = new TransformASTConsumer(rewriter, CI.getASTContext());
+#if LLVM_VERSION_MAJOR == 3 && LLVM_VERSION_MINOR == 8
+    return std::unique_ptr<clang::ASTConsumer>(result);
+#else
+    return result;
+#endif
   }
 
 private:
   Rewriter rewriter;
 };
 
-static void check_opt(llvm::cl::opt<std::string> s, const char *msg) {
+static void check_opt(llvm::cl::opt<std::string> &s, const char *msg) {
     if (s.size() == 0) {
         llvm::errs() << std::string(msg) << " is required\n";
         exit(1);
