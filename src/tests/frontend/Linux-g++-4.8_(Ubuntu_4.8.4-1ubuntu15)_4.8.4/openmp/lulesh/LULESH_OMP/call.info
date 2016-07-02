@@ -1,0 +1,277 @@
+malloc AllocateNodalPersistent 376 24 9 0
+malloc AllocateNodalPersistent 377 24 9 0
+malloc AllocateNodalPersistent 378 24 9 0
+malloc AllocateNodalPersistent 380 25 9 0
+malloc AllocateNodalPersistent 381 25 9 0
+malloc AllocateNodalPersistent 382 25 9 0
+memset AllocateNodalPersistent 383 5 0 9 0 0
+memset AllocateNodalPersistent 384 5 0 9 0 0
+memset AllocateNodalPersistent 385 5 0 9 0 0
+malloc AllocateNodalPersistent 387 26 9 0
+malloc AllocateNodalPersistent 388 26 9 0
+malloc AllocateNodalPersistent 389 26 9 0
+memset AllocateNodalPersistent 390 5 0 9 0 0
+memset AllocateNodalPersistent 391 5 0 9 0 0
+memset AllocateNodalPersistent 392 5 0 9 0 0
+malloc AllocateNodalPersistent 394 25 9 0
+malloc AllocateNodalPersistent 395 25 9 0
+malloc AllocateNodalPersistent 396 25 9 0
+malloc AllocateNodalPersistent 398 32 9 0
+memset AllocateNodalPersistent 399 5 0 9 0 0
+malloc AllocateElemPersistent 404 35 167 0
+malloc AllocateElemPersistent 405 32 167 0
+malloc AllocateElemPersistent 407 28 167 0
+malloc AllocateElemPersistent 408 28 167 0
+malloc AllocateElemPersistent 409 29 167 0
+malloc AllocateElemPersistent 410 29 167 0
+malloc AllocateElemPersistent 411 30 167 0
+malloc AllocateElemPersistent 412 30 167 0
+malloc AllocateElemPersistent 414 28 167 0
+malloc AllocateElemPersistent 416 24 167 0
+memset AllocateElemPersistent 417 5 0 167 0 0
+malloc AllocateElemPersistent 419 24 167 0
+memset AllocateElemPersistent 420 5 0 167 0 0
+malloc AllocateElemPersistent 421 24 167 0
+malloc AllocateElemPersistent 422 25 167 0
+malloc AllocateElemPersistent 423 25 167 0
+malloc AllocateElemPersistent 425 24 167 0
+malloc AllocateElemPersistent 427 27 167 0
+malloc AllocateElemPersistent 428 27 167 0
+malloc AllocateElemPersistent 429 27 167 0
+malloc AllocateElemPersistent 431 29 167 0
+malloc AllocateElemPersistent 433 25 167 0
+malloc AllocateElemPersistent 435 31 167 0
+malloc AllocateElemTemporary 442 26 357 0
+malloc AllocateElemTemporary 443 26 357 0
+malloc AllocateElemTemporary 444 26 357 0
+malloc AllocateElemTemporary 446 30 357 0
+malloc AllocateElemTemporary 447 31 357 0
+malloc AllocateElemTemporary 448 32 357 0
+malloc AllocateElemTemporary 450 30 357 0
+malloc AllocateElemTemporary 451 31 357 0
+malloc AllocateElemTemporary 452 32 357 0
+malloc AllocateElemTemporary 454 27 357 0
+malloc AllocateNodesets 459 29 436 0
+malloc AllocateNodesets 460 29 436 0
+malloc AllocateNodesets 461 29 436 0
+malloc AllocateNodeElemIndexes 471 37 541 0
+malloc AllocateNodeElemIndexes 484 37 541 0
+malloc AllocateNodeElemIndexes 494 42 541 0
+fprintf AllocateNodeElemIndexes 516 13 0 768 14914
+exit AllocateNodeElemIndexes 518 13 0 0
+gettimeofday main 3013 2 0 785 14961
+atoi main 3015 23 0 848
+AllocateElemPersistent main 3043 2 0 14912 0
+AllocateElemTemporary main 3044 2 0 14912 0
+AllocateNodalPersistent main 3046 2 0 14912 0
+AllocateNodesets main 3047 2 0 14912 0
+AllocateNodeElemIndexes main 3097 2 0 14912
+CalcElemVolume main 3155 19 0 804 805 806
+TimeIncrement main 3231 3 0
+LagrangeLeapFrog main 3232 3 0
+checkpoint main 3241 9 0
+gettimeofday main 3246 2 0 786 14961
+printf main 3250 2 0 14915 0
+printf main 3253 2 0 14916
+printf main 3254 2 0 14917 0
+printf main 3255 2 0 14917 0
+printf main 3256 2 0 14919 0
+FABS main 3264 21 0 0
+printf main 3275 2 0 14920
+printf main 3276 2 0 14917 0
+printf main 3277 2 0 14917 0
+printf main 3278 2 0 14923 0
+CalcElemVolumeScalar CalcElemVolume 1797 56 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+LagrangeNodal LagrangeLeapFrog 2999 2 0
+LagrangeElements LagrangeLeapFrog 3003 2 0
+CalcTimeConstraintsForElems LagrangeLeapFrog 3005 2 0
+fabs FABS 107 86 0 0
+CalcForceForNodes LagrangeNodal 1696 2 0
+CalcAccelerationForNodes LagrangeNodal 1698 2 0
+ApplyAccelerationBoundaryConditionsForNodes LagrangeNodal 1700 2 0
+CalcVelocityForNodes LagrangeNodal 1702 2 0 0 0
+CalcPositionForNodes LagrangeNodal 1704 2 0 0
+CalcLagrangeElements LagrangeElements 2813 2 0 0
+CalcQForElems LagrangeElements 2816 2 0
+ApplyMaterialPropertiesForElems LagrangeElements 2818 2 0
+UpdateVolumesForElems LagrangeElements 2820 2 0
+CalcCourantConstraintForElems CalcTimeConstraintsForElems 2988 2 0
+CalcHydroConstraintForElems CalcTimeConstraintsForElems 2991 2 0
+get_num_threads CalcCourantConstraintForElems 2846 27 0
+SQRT CalcCourantConstraintForElems 2877 9 0 0
+omp_get_thread_num CalcCourantConstraintForElems 2885 26 0
+get_num_threads CalcHydroConstraintForElems 2930 20 0
+FABS CalcHydroConstraintForElems 2951 52 0 0
+omp_get_thread_num CalcHydroConstraintForElems 2954 46 0
+omp_get_num_threads get_num_threads 2829 24 0
+sqrt SQRT 103 86 0 0
+CalcKinematicsForElems CalcLagrangeElements 2011 3 0 0 0
+exit CalcLagrangeElements 2031 5 0 0
+CalcMonotonicQGradientsForElems CalcQForElems 2365 2 0
+CalcMonotonicQForElems CalcQForElems 2369 2 0
+exit CalcQForElems 2382 4 0 0
+malloc ApplyMaterialPropertiesForElems 2731 28 2593 0
+__assert_fail ApplyMaterialPropertiesForElems 2732 44 0 14924 14925 0 14926
+exit ApplyMaterialPropertiesForElems 2775 6 0 0
+EvalEOSForElems ApplyMaterialPropertiesForElems 2780 3 0 2593 0
+free ApplyMaterialPropertiesForElems 2782 3 0 2593
+FABS UpdateVolumesForElems 2799 8 0 0
+malloc EvalEOSForElems 2581 27 2856 0
+malloc EvalEOSForElems 2582 27 2957 0
+malloc EvalEOSForElems 2583 27 2964 0
+malloc EvalEOSForElems 2584 27 2971 0
+malloc EvalEOSForElems 2585 33 2978 0
+malloc EvalEOSForElems 2586 34 2985 0
+malloc EvalEOSForElems 2587 24 2992 0
+malloc EvalEOSForElems 2588 24 2999 0
+malloc EvalEOSForElems 2589 26 3006 0
+malloc EvalEOSForElems 2590 27 3013 0
+malloc EvalEOSForElems 2591 27 3020 0
+malloc EvalEOSForElems 2592 27 3027 0
+malloc EvalEOSForElems 2593 25 3034 0
+malloc EvalEOSForElems 2594 26 3041 0
+__assert_fail EvalEOSForElems 2595 40 0 14924 14925 0 14928
+__assert_fail EvalEOSForElems 2595 191 0 14924 14925 0 14928
+__assert_fail EvalEOSForElems 2595 0 0 14924 14925 0 14928
+__assert_fail EvalEOSForElems 2595 0 0 14924 14925 0 14928
+__assert_fail EvalEOSForElems 2596 46 0 14932 14925 0 14928
+__assert_fail EvalEOSForElems 2596 210 0 14933 14925 0 14928
+__assert_fail EvalEOSForElems 2596 0 0 14934 14925 0 14928
+__assert_fail EvalEOSForElems 2597 37 0 14934 14925 0 14928
+__assert_fail EvalEOSForElems 2597 184 0 14936 14925 0 14928
+__assert_fail EvalEOSForElems 2597 0 0 14924 14925 0 14928
+__assert_fail EvalEOSForElems 2597 0 0 14924 14925 0 14928
+__assert_fail EvalEOSForElems 2598 40 0 14924 14925 0 14928
+__assert_fail EvalEOSForElems 2598 189 0 14940 14925 0 14928
+__assert_fail EvalEOSForElems 2598 0 0 14936 14925 0 14928
+CalcEnergyForElems EvalEOSForElems 2672 2 0 3013 3020 3027 3034 3041 2964 2856 2971 2978 2985 3492 3006 2957 0 0 0 0 0 2992 2999 0 0 0
+CalcSoundSpeedForElems EvalEOSForElems 2703 2 0 3492 0 3020 3013 3041 3034 0 0
+free EvalEOSForElems 2706 2 0 3041
+free EvalEOSForElems 2707 2 0 3034
+free EvalEOSForElems 2708 2 0 3027
+free EvalEOSForElems 2709 2 0 3020
+free EvalEOSForElems 2710 2 0 3013
+free EvalEOSForElems 2711 2 0 3006
+free EvalEOSForElems 2712 2 0 2999
+free EvalEOSForElems 2713 2 0 2992
+free EvalEOSForElems 2714 2 0 2985
+free EvalEOSForElems 2715 2 0 2978
+free EvalEOSForElems 2716 2 0 2971
+free EvalEOSForElems 2717 2 0 2964
+free EvalEOSForElems 2718 2 0 2957
+free EvalEOSForElems 2719 2 0 2856
+malloc CalcEnergyForElems 2430 31 3580 0
+__assert_fail CalcEnergyForElems 2431 44 0 14942 14925 0 14943
+CalcPressureForElems CalcEnergyForElems 2443 2 0 3580 4154 4155 4152 4160 4161 0 0 0 0
+SQRT CalcEnergyForElems 2460 11 0 0
+FABS CalcEnergyForElems 2476 7 0 0
+CalcPressureForElems CalcEnergyForElems 2484 2 0 4151 4154 4155 4152 4159 4161 0 0 0 0
+SQRT CalcEnergyForElems 2502 11 0 0
+FABS CalcEnergyForElems 2512 7 0 0
+CalcPressureForElems CalcEnergyForElems 2520 2 0 4151 4154 4155 4152 4159 4161 0 0 0 0
+SQRT CalcEnergyForElems 2533 11 0 0
+FABS CalcEnergyForElems 2538 8 0 0
+free CalcEnergyForElems 2542 2 0 3580
+SQRT CalcSoundSpeedForElems 2561 12 0 0
+FABS CalcPressureForElems 2407 7 0 0
+SQRT CalcMonotonicQGradientsForElems 2134 31 0 0
+SQRT CalcMonotonicQGradientsForElems 2152 29 0 0
+SQRT CalcMonotonicQGradientsForElems 2170 30 0 0
+CalcMonotonicQRegionForElems CalcMonotonicQForElems 2342 3 0 0 0 0 0 0 0
+CalcElemVolume CalcKinematicsForElems 1961 12 0 6042 6043 6044
+CalcElemCharacteristicLength CalcKinematicsForElems 1967 22 0 6042 6043 6044 0
+CalcElemShapeFunctionDerivatives CalcKinematicsForElems 1989 3 0 6042 6043 6044 6040 6048
+CalcElemVelocityGrandient CalcKinematicsForElems 1994 3 0 6045 6046 6047 6040 0 6041
+AreaFace CalcElemCharacteristicLength 1832 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax CalcElemCharacteristicLength 1835 15 0 0 0
+AreaFace CalcElemCharacteristicLength 1837 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax CalcElemCharacteristicLength 1840 15 0 0 0
+AreaFace CalcElemCharacteristicLength 1842 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax CalcElemCharacteristicLength 1845 15 0 0 0
+AreaFace CalcElemCharacteristicLength 1847 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax CalcElemCharacteristicLength 1850 15 0 0 0
+AreaFace CalcElemCharacteristicLength 1852 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax CalcElemCharacteristicLength 1855 15 0 0 0
+AreaFace CalcElemCharacteristicLength 1857 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax CalcElemCharacteristicLength 1860 15 0 0 0
+SQRT CalcElemCharacteristicLength 1862 38 0 0
+CalcVolumeForceForElems CalcForceForNodes 1606 2 0
+FABS CalcVelocityForNodes 1661 7 0 0
+FABS CalcVelocityForNodes 1665 7 0 0
+FABS CalcVelocityForNodes 1669 7 0 0
+malloc CalcVolumeForceForElems 1565 28 8390 0
+malloc CalcVolumeForceForElems 1566 28 8368 0
+malloc CalcVolumeForceForElems 1567 28 8375 0
+malloc CalcVolumeForceForElems 1568 29 8382 0
+__assert_fail CalcVolumeForceForElems 1569 44 0 14924 14925 0 14917
+__assert_fail CalcVolumeForceForElems 1569 195 0 14924 14925 0 14917
+__assert_fail CalcVolumeForceForElems 1569 0 0 14924 14925 0 14917
+__assert_fail CalcVolumeForceForElems 1569 0 0 14948 14925 0 14917
+InitStressTermsForElems CalcVolumeForceForElems 1572 3 0 0 8390 8368 8375
+IntegrateStressForElems CalcVolumeForceForElems 1576 3 0 0 8390 8368 8375 8382
+exit CalcVolumeForceForElems 1582 5 0 0
+CalcHourglassControlForElems CalcVolumeForceForElems 1586 3 0 8382 0
+free CalcVolumeForceForElems 1588 3 0 8382
+free CalcVolumeForceForElems 1589 3 0 8375
+free CalcVolumeForceForElems 1590 3 0 8368
+free CalcVolumeForceForElems 1591 3 0 8390
+malloc IntegrateStressForElems 854 29 8539 0
+malloc IntegrateStressForElems 855 29 8563 0
+malloc IntegrateStressForElems 856 29 8570 0
+__assert_fail IntegrateStressForElems 857 42 0 14956 14925 0 14960
+__assert_fail IntegrateStressForElems 857 196 0 14956 14925 0 14960
+__assert_fail IntegrateStressForElems 857 0 0 14956 14925 0 14960
+CalcElemShapeFunctionDerivatives IntegrateStressForElems 880 3 0 8506 8507 8508 8505 8808
+CalcElemNodeNormals IntegrateStressForElems 883 3 0 8505 8505 8505 8506 8507 8508
+SumElemStressesToNodeForces IntegrateStressForElems 886 3 0 8505 0 0 0 8539 8563 8570
+free IntegrateStressForElems 924 2 0 8570
+free IntegrateStressForElems 925 2 0 8563
+free IntegrateStressForElems 926 2 0 8539
+malloc CalcHourglassControlForElems 1505 26 8844 0
+malloc CalcHourglassControlForElems 1506 26 8889 0
+malloc CalcHourglassControlForElems 1507 26 8896 0
+malloc CalcHourglassControlForElems 1508 25 8903 0
+malloc CalcHourglassControlForElems 1509 25 8910 0
+malloc CalcHourglassControlForElems 1510 25 8917 0
+__assert_fail CalcHourglassControlForElems 1511 39 0 14936 14925 0 14950
+__assert_fail CalcHourglassControlForElems 1511 188 0 14936 14925 0 14950
+__assert_fail CalcHourglassControlForElems 1511 0 0 14936 14925 0 14950
+__assert_fail CalcHourglassControlForElems 1512 38 0 14940 14925 0 14950
+__assert_fail CalcHourglassControlForElems 1512 185 0 14940 14925 0 14950
+__assert_fail CalcHourglassControlForElems 1512 0 0 14940 14925 0 14950
+CollectDomainNodesToElemNodes CalcHourglassControlForElems 1521 3 0 2514 8820 8821 8822
+CalcElemVolumeDerivative CalcHourglassControlForElems 1523 3 0 8823 8824 8825 8820 8821 8822
+exit CalcHourglassControlForElems 1541 4 0 0
+CalcFBHourglassForceForElems CalcHourglassControlForElems 1546 3 0 9089 8903 8910 8917 8844 8889 8896 0
+free CalcHourglassControlForElems 1549 2 0 8917
+free CalcHourglassControlForElems 1550 2 0 8910
+free CalcHourglassControlForElems 1551 2 0 8903
+free CalcHourglassControlForElems 1552 2 0 8896
+free CalcHourglassControlForElems 1553 2 0 8889
+free CalcHourglassControlForElems 1554 2 0 8844
+VoluDer CalcElemVolumeDerivative 1012 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9855 9856 9857
+VoluDer CalcElemVolumeDerivative 1016 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9855 9856 9857
+VoluDer CalcElemVolumeDerivative 1020 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9855 9856 9857
+VoluDer CalcElemVolumeDerivative 1024 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9855 9856 9857
+VoluDer CalcElemVolumeDerivative 1028 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9855 9856 9857
+VoluDer CalcElemVolumeDerivative 1032 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9855 9856 9857
+VoluDer CalcElemVolumeDerivative 1036 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9855 9856 9857
+VoluDer CalcElemVolumeDerivative 1040 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9855 9856 9857
+malloc CalcFBHourglassForceForElems 1244 29 9948 0
+malloc CalcFBHourglassForceForElems 1245 29 9972 0
+malloc CalcFBHourglassForceForElems 1246 29 9979 0
+__assert_fail CalcFBHourglassForceForElems 1247 42 0 14956 14925 0 14957
+__assert_fail CalcFBHourglassForceForElems 1247 197 0 14956 14925 0 14957
+__assert_fail CalcFBHourglassForceForElems 1247 0 0 14956 14925 0 14957
+CBRT CalcFBHourglassForceForElems 1362 12 0 0
+CalcElemFBHourglassForce CalcFBHourglassForceForElems 1402 3 0 9891 9892 9893 9883 9884 9885 9886 9887 9888 9889 9890 0 9879 9880 9881
+free CalcFBHourglassForceForElems 1495 2 0 9979
+free CalcFBHourglassForceForElems 1496 2 0 9972
+free CalcFBHourglassForceForElems 1497 2 0 9948
+cbrt CBRT 105 86 0 0
+SumElemFaceNormal CalcElemNodeNormals 753 2 0 13850 13851 13852 13850 13851 13852 13850 13851 13852 13850 13851 13852 0 0 0 0 0 0 0 0 0 0 0 0
+SumElemFaceNormal CalcElemNodeNormals 760 2 0 13850 13851 13852 13850 13851 13852 13850 13851 13852 13850 13851 13852 0 0 0 0 0 0 0 0 0 0 0 0
+SumElemFaceNormal CalcElemNodeNormals 767 2 0 13850 13851 13852 13850 13851 13852 13850 13851 13852 13850 13851 13852 0 0 0 0 0 0 0 0 0 0 0 0
+SumElemFaceNormal CalcElemNodeNormals 774 2 0 13850 13851 13852 13850 13851 13852 13850 13851 13852 13850 13851 13852 0 0 0 0 0 0 0 0 0 0 0 0
+SumElemFaceNormal CalcElemNodeNormals 781 2 0 13850 13851 13852 13850 13851 13852 13850 13851 13852 13850 13851 13852 0 0 0 0 0 0 0 0 0 0 0 0
+SumElemFaceNormal CalcElemNodeNormals 788 2 0 13850 13851 13852 13850 13851 13852 13850 13851 13852 13850 13851 13852 0 0 0 0 0 0 0 0 0 0 0 0

@@ -1,0 +1,4 @@
+95 95 #pragma omp parallel for
+109 109 #pragma omp parallel for
+131 131 #pragma omp parallel for reduction(+:kenergy)
+176 176 #pragma omp parallel for

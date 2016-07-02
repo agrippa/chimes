@@ -1,0 +1,47 @@
+InsertTextAfterToken /home/mg1/chimes/src/examples/openmp/./critical.cpp 5 12 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", (int *)0x0, 0, 0); 
+InsertText /home/mg1/chimes/src/examples/openmp/./critical.cpp 7 1 rm_stack(false, 0UL, "foo", (int *)0x0, 0, ____chimes_did_disable0, false); 
+InsertText /home/mg1/chimes/src/examples/openmp/./critical.cpp 27 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/openmp/./critical.cpp 9 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(3867866831455303438UL)); 
+InsertText /home/mg1/chimes/src/examples/openmp/./critical.cpp 28 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 5 13 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", (int *)0, 0, 0); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 5 99 
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 9 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(3867866831455303438UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 9 170 
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 10 5  int a;  a = (3) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 10 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 11 5  int b;  b = (4) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 11 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 12 5  int c;  c = (5) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 12 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 13 5  int d;  d = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 13 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 16 9  int inside;  inside = (6) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 16 23 
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 27 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 27 30 
+InsertText /home/mg1/chimes/src/examples/openmp/./critical.cpp 6 5  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/openmp/./critical.cpp 24 9  call_lbl_0: 
+ReplaceText /home/mg1/chimes/src/examples/openmp/./critical.cpp 5 6 len=3 foo_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 6 18 checkpoint_transformed(0, 0)
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 6 29 
+InsertTextAfterToken /home/mg1/chimes/src/examples/openmp/./critical.cpp 5 96  ; 
+ReplaceText /home/mg1/chimes/src/examples/openmp/./critical.cpp 9 5 len=4 main_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 24 22  ({  calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 24 26 
+InsertTextAfterToken /home/mg1/chimes/src/examples/openmp/./critical.cpp 19 9  { 
+InsertTextBefore /home/mg1/chimes/src/examples/openmp/./critical.cpp 21 9  } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/openmp/./critical.cpp 15 5  { 
+InsertTextBefore /home/mg1/chimes/src/examples/openmp/./critical.cpp 25 5  } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/openmp/./critical.cpp 9 167  ; 
+ReplaceText /home/mg1/chimes/src/examples/openmp/./critical.cpp 5 6 len=3 foo_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 6 18 checkpoint_transformed(0, 0)
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 6 29 
+InsertTextAfterToken /home/mg1/chimes/src/examples/openmp/./critical.cpp 5 96  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/openmp/./critical.cpp 9 5 len=4 main_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/openmp/./critical.cpp 24 22  ({  calling((void*)foo, 0, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/openmp/./critical.cpp 24 26 
+InsertTextAfterToken /home/mg1/chimes/src/examples/openmp/./critical.cpp 19 9  { 
+InsertTextBefore /home/mg1/chimes/src/examples/openmp/./critical.cpp 21 9  } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/openmp/./critical.cpp 15 5  { 
+InsertTextBefore /home/mg1/chimes/src/examples/openmp/./critical.cpp 25 5  } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/openmp/./critical.cpp 9 167  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

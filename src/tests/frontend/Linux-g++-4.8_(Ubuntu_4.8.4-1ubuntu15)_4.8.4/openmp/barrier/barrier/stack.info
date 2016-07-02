@@ -1,0 +1,8 @@
+/home/mg1/chimes/src/examples/openmp/./barrier.cpp main|argc|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/openmp/./barrier.cpp main|argv|0 " i8** " 64 1 0 0
+/home/mg1/chimes/src/examples/openmp/./barrier.cpp main|a|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/openmp/./barrier.cpp main|b|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/openmp/./barrier.cpp main|c|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/openmp/./barrier.cpp main|d|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/openmp/./barrier.cpp main|inside|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/openmp/./barrier.cpp main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
