@@ -1,0 +1,61 @@
+ReplaceText /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 3 5 len=3 foo_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 11 23  ({ void *____chimes_tmp_ptr = malloc((100) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 100, 8477795446497532142UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 11 33 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 11 23  ({ void *____chimes_tmp_ptr = malloc((100) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 100, 8477795446497532142UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 11 33 
+InsertText /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 4 64 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 3 23 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 5 1 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 16 73 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 7 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(8477795446497532159UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 17 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 3 24 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 3 150 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 4 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 4 30 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 7 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(8477795446497532159UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 7 170 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 8 5  int a;  a = (3 +
+# 9
+        4 + 5 +
+# 10
+        6) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 10 10 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 11 5  int *ptr;  ptr = ((int *) ({ void *____chimes_tmp_ptr = malloc((100) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 100, 8477795446497532142UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 11 268 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 16 6 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 16 30 
+InsertText /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 14 5  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 16 34  call_lbl_1: 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 3 5 len=3 foo_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 3 149  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 7 5 len=4 main_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 14 18 checkpoint_transformed(0, ____alias_loc_id_0)
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 14 29 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 16 71 ({ calling_npm("foo", 0); foo_npm(ptr[0], a); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 16 84 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 8 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 8 11 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 11 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 11 14 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 7 167  ; int *ptr;
+# 7
+int a;
+# 7
+ register_stack_vars(2, "main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0);  
+ReplaceText /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 3 5 len=3 foo_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 3 149  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 7 5 len=4 main_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 14 18 checkpoint_transformed(0, ____alias_loc_id_0)
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 14 29 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 16 71 ({ calling_npm("foo", 0); foo_npm(ptr[0], a); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 16 84 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 8 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 8 11 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 11 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 11 14 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./multi_line_decl.cpp 7 167  ; int *ptr;
+# 7
+int a;
+# 7
+ register_stack_vars(2, "main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  

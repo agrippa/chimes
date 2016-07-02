@@ -1,0 +1,86 @@
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 11 24  ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 11926157222332788451UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 11 46 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 12 24  ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 11926157222332788451UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 12 46 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 35 5  ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 11926157222332788451UL);free((((unsigned char *)curr) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 35 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 36 5  ({ free_helper((((unsigned char *)next) - sizeof(void *)), 11926157222332788451UL);free((((unsigned char *)next) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 36 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 11 24  ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 11926157222332788451UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 11 46 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 12 24  ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 11926157222332788451UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 12 46 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 35 5  ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 11926157222332788451UL);free((((unsigned char *)curr) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 35 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 36 5  ({ free_helper((((unsigned char *)next) - sizeof(void *)), 11926157222332788451UL);free((((unsigned char *)next) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 36 14 
+InsertText /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 37 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 6 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(11926157222332788578UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 38 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 6 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11926157222332788578UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 6 171 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 7 5 int i; int iter; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 7 16 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 8 5  int N;  N = (1024) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 8 17 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 9 5  int niters;  niters = (10000) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 9 23 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 11 5  int *curr;  curr = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 11926157222332788451UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 11 294 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 12 5  int *next;  next = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 11926157222332788451UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 12 294 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 22 9  int *tmp;  tmp = (curr) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 22 24 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 29 5  FILE *fp;  fp = (fopen("dump.out", "w")) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 29 38 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 37 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 37 30 
+InsertText /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 26 9  call_lbl_0: 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 6 5 len=4 main_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 26 22 checkpoint_transformed(0, ____alias_loc_id_0)
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 26 33 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 7 12 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 7 20 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 8 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 8 11 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 9 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 9 16 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 11 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 11 15 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 12 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 12 15 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 6 168  ; int *next;
+# 6
+int *curr;
+# 6
+int niters;
+# 6
+int N;
+# 6
+int iter;
+# 6
+ register_stack_vars(5, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0);  
+ReplaceText /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 6 5 len=4 main_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 26 22 checkpoint_transformed(0, ____alias_loc_id_0)
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 26 33 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 7 12 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 7 20 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 8 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 8 11 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 9 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 9 16 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 11 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 11 15 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 12 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 12 15 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./simple_stencil.cpp 6 168  ; int *next;
+# 6
+int *curr;
+# 6
+int niters;
+# 6
+int N;
+# 6
+int iter;
+# 6
+ register_stack_vars(5, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } }  }  

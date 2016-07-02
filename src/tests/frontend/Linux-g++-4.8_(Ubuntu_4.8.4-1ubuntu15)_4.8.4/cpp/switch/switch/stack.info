@@ -1,0 +1,8 @@
+/home/mg1/chimes/src/examples/cpp/./switch.cpp foo|a|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./switch.cpp foo|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./switch.cpp bar|b|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./switch.cpp bar|____chimes_ret_var_1|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./switch.cpp main|argc|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./switch.cpp main|argv|0 " i8** " 64 1 0 0
+/home/mg1/chimes/src/examples/cpp/./switch.cpp main|d|0 " i32 " 32 0 0 1 checkpoint
+/home/mg1/chimes/src/examples/cpp/./switch.cpp main|____chimes_ret_var_2|0 " i32 " 32 0 0 0

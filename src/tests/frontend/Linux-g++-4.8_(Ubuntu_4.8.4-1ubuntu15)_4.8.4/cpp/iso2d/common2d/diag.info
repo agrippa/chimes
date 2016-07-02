@@ -1,0 +1,99 @@
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 7 6 len=9 save_text_npm
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 26 6 len=9 init_data_npm
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 48 6 len=5 usage_npm
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 55 6 len=14 default_config_npm
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 71 6 len=12 setup_config_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 95 40  ({ void *____chimes_tmp_header = conf->srcs; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, (conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), ____chimes_tmp_header, sizeof(source) *
+# 96
+                        (conf->nsrcs + 1), 10089786733829274029UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 96 42 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 95 40  ({ void *____chimes_tmp_header = conf->srcs; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, (conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), ____chimes_tmp_header, sizeof(source) *
+# 96
+                        (conf->nsrcs + 1), 10089786733829274029UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 96 42 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 8 71 const int ____chimes_did_disable0 = new_stack((void *)(&save_text), "save_text", &____must_manage_save_text, 7, 0, (size_t)(10089786733829273777UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10089786733829273782UL), (size_t)(0UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 24 1 rm_stack(false, 0UL, "save_text", &____must_manage_save_text, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 28 49 const int ____chimes_did_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 8, 0, (size_t)(10089786733829273915UL), (size_t)(10089786733829273916UL), (size_t)(10089786733829273917UL), (size_t)(10089786733829273918UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 46 1 rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 48 25 const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(10089786733829273939UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 53 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable2, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 55 35 const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(10089786733829273977UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 69 1 rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_4, ____chimes_did_disable3, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 71 56 const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(10089786733829274099UL), (size_t)(0UL), (size_t)(10089786733829274101UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 122 1 rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_5, ____chimes_did_disable4, false); 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 8 72 const int ____chimes_did_disable0 = new_stack((void *)(&save_text), "save_text", &____must_manage_save_text, 7, 0, (size_t)(10089786733829273777UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10089786733829273782UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 8 329 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 9 5  FILE *fp;  fp = (fopen(filename, "wb")) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 9 37 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 15 5 {  int y; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 21 5  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 15 10  y = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 15 19 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 16 9 {  int x; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 19 9  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 16 14  x = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 16 23 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 28 50 const int ____chimes_did_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 8, 0, (size_t)(10089786733829273915UL), (size_t)(10089786733829273916UL), (size_t)(10089786733829273917UL), (size_t)(10089786733829273918UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 28 360 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 30 5 {  size_t i; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 32 5  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 30 10  i = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 30 22 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 35 5 {  size_t i; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 37 5  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 35 10  i = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 35 22 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 40 5  float scale;  scale = (1. / (dx * dx)) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 40 33 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 48 26 const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(10089786733829273939UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 48 162 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 55 36 const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(10089786733829273977UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 55 199 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 71 57 const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(10089786733829274099UL), (size_t)(0UL), (size_t)(10089786733829274101UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 71 604 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 72 5 int c; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 72 10 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 95 44  void *____chimes_tmp_header;  ____chimes_tmp_header = (conf->srcs) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 95 84 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 95 214 void *____chimes_tmp_ptr = realloc((conf->srcs ? (((unsigned char *)conf->srcs) - sizeof(void *)) : (unsigned char *)(conf->srcs)), (sizeof(source) * (conf->nsrcs + 1)) + sizeof(void *)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 95 400 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 75 5  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 97 17  call_lbl_1: 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 114 13  call_lbl_2: 
+InsertText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 120 9  call_lbl_3: 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 7 6 len=9 save_text_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 8 328  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 26 6 len=9 init_data_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 28 359  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 48 6 len=5 usage_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 48 161  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 55 6 len=14 default_config_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 55 198  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 71 6 len=12 setup_config_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 75 18 ({ calling_npm("default_config", 0); default_config_npm(conf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 75 37 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 97 30  ({  calling((void*)parse_source, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(10089786733829274001UL), (size_t)(10089786733829274029UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 97 75 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 115 17 ({ calling_npm("usage", 0); usage_npm(argv); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 115 27 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 120 36  ({  calling((void*)getNumCUDADevices, 3, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 120 54 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 71 603  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 7 6 len=9 save_text_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 8 328  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 26 6 len=9 init_data_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 28 359  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 48 6 len=5 usage_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 48 161  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 55 6 len=14 default_config_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 55 198  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 71 6 len=12 setup_config_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 75 18 ({ calling_npm("default_config", 0); default_config_npm(conf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 75 37 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 97 30  ({  source * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(10089786733829274001UL), (size_t)(10089786733829274029UL)); (parse_source)(optarg, ____chimes_arg1); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 97 75 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 115 17 ({ calling_npm("usage", 0); usage_npm(argv); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 115 27 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 120 36  ({  calling((void*)getNumCUDADevices, 3, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 120 54 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./lib/common2d.cpp 71 603  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  

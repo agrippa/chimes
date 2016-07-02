@@ -1,0 +1,8 @@
+/home/mg1/chimes/src/examples/cpp/./call_passed_directly_to_call.cpp foo|a|0 " i32* " 64 1 0 0
+/home/mg1/chimes/src/examples/cpp/./call_passed_directly_to_call.cpp foo|s|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./call_passed_directly_to_call.cpp bar|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./call_passed_directly_to_call.cpp main|argc|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./call_passed_directly_to_call.cpp main|argv|0 " i8** " 64 1 0 0
+/home/mg1/chimes/src/examples/cpp/./call_passed_directly_to_call.cpp main|b|0 " i32 " 32 0 0 1 main
+/home/mg1/chimes/src/examples/cpp/./call_passed_directly_to_call.cpp main|____chimes_unroll_var_0|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./call_passed_directly_to_call.cpp main|____chimes_ret_var_1|0 " i32 " 32 0 0 0

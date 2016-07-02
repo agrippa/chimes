@@ -1,0 +1,6 @@
+/home/mg1/chimes/src/examples/cpp/./if_elif_else_braces.cpp main|argc|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./if_elif_else_braces.cpp main|argv|0 " i8** " 64 1 0 0
+/home/mg1/chimes/src/examples/cpp/./if_elif_else_braces.cpp main|a|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./if_elif_else_braces.cpp main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./if_elif_else_braces.cpp main|____chimes_ret_var_1|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/./if_elif_else_braces.cpp main|____chimes_ret_var_2|0 " i32 " 32 0 0 0

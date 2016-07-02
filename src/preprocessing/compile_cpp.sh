@@ -27,6 +27,13 @@ DEFINES=
 ADDED_INCLUDES=
 CHIMES_PROFILE=0
 
+if [[ -z "${EXPORT_DYNAMIC_FLAG}" ]]; then
+    echo "Missing EXPORT_DYNAMIC_FLAG from the environment. For example, when \
+        using the GNU toolchain set:"
+    echo "    export EXPORT_DYNAMIC_FLAG=-export-dynamic"
+    exit 1
+fi
+
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:dnf:bg" opt; do
     case $opt in 
         g)
@@ -163,10 +170,15 @@ CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
 echo Using GXX ${GXX}
+[[ $VERBOSE -eq 0 ]] || echo "Verbose output ($VERBOSE)"
 
-if [[ $COMPILE == 1 && ${#INPUTS[@]} != 1 ]]; then
-    echo 'You cannot specify -c with multiple input files'
-    exit 1
+if [[ $COMPILE == 1 ]]; then
+    [[ $VERBOSE -eq 0 ]] || echo Compiling only, not linking
+
+    if [[ ${#INPUTS[@]} != 1 ]]; then
+        echo 'You cannot specify -c with multiple input files'
+        exit 1
+    fi
 fi
 
 LCHIMES=
@@ -188,15 +200,15 @@ fi
 if [[ $PROFILE == 1 && $DUMMY == 1 ]]; then
     LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes_dummy.a \
         -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart \
-        -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash ${LINKER_FLAGS}"
+        -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash -lrt ${LINKER_FLAGS}"
     GXX_FLAGS="${GXX_FLAGS} -pg"
 elif [[ $PROFILE == 1 ]]; then
     LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib \
         -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash \
-        -lxxhash ${LINKER_FLAGS}"
+        -lxxhash -lrt ${LINKER_FLAGS}"
     GXX_FLAGS="${GXX_FLAGS} -pg"
 else
-    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes ${LCHIMES} ${LINKER_FLAGS}"
+    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes ${LCHIMES} -lrt ${LINKER_FLAGS}"
 fi
 
 if [[ $ENABLE_OMP == 1 ]]; then
@@ -221,8 +233,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
            -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -E ${INPUT} \
            -o ${PREPROCESS_FILE} -g ${GXX_FLAGS} \
            -include ${CHIMES_HOME}/src/libchimes/libchimes.h \
-           ${CHIMES_DEF} ${DEFINES} ${ADDED_INCLUDES}"
-    [[ ! $VERBOSE ]] || echo $PREPROC_CMD
+           ${CHIMES_DEF} ${DEFINES} ${ADDED_INCLUDES} -D_FORTIFY_SOURCE=0"
+    [[ $VERBOSE -eq 0 ]] || echo $PREPROC_CMD
     cd ${WORK_DIR} && ${PREPROC_CMD}
 
     if [[ $ENABLE_OMP == 1 ]]; then
@@ -327,7 +339,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -z ${INFO_FILE_PREFIX}.non_chkpting.info \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}"
-    [[ ! $VERBOSE ]] || echo $TRANSFORM_CMD
+    [[ $VERBOSE -eq 0 ]] || echo $TRANSFORM_CMD
     echo Running main transformation kernel on ${PREPROCESS_FILE}
     $TRANSFORM_CMD
 
@@ -417,7 +429,7 @@ if [[ $COMPILE == 1 ]]; then
     # Last files must only have one entry, checked by a conditional above
     FINAL_FILE=${LAST_FILES[0]}
     OBJ_FILE=${FINAL_FILE}.o
-    if [[ "$OUTPUT_FILE" -ne "a.out" ]]; then
+    if [[ "$OUTPUT_FILE" != "a.out" ]]; then
         # If user specified output file, use that one
         OBJ_FILE=$OUTPUT_FILE
     fi
@@ -437,10 +449,10 @@ else
         FILES_STR="${FILES_STR} $f"
     done
 
-    COMPILE_CMD="${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -ldl -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
+    COMPILE_CMD="${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -Wl,--no-as-needed -ldl -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
         -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
         ${LINKER_FLAGS}"
-    [[ ! $VERBOSE ]] || echo $COMPILE_CMD
+    [[ $VERBOSE -eq 0 ]] || echo $COMPILE_CMD
     $COMPILE_CMD
 
     if [[ $KEEP == 0 ]]; then

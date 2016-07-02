@@ -1,0 +1,809 @@
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 170 16 len=10 initEamPot_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 172 39  ({ void *____chimes_tmp_ptr = malloc((sizeof(EamPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 11956382072823074869UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 172 66 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 214 5 len=8 eamForce_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 223 31  ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 11956382072823075007UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 223 66 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 224 30  ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 11956382072823075007UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 224 65 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 226 52  ({ void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeData)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 11956382072823075007UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 226 84 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 376 6 len=8 eamPrint_npm
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 388 6 len=10 eamDestroy_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 397 4  ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 11956382072823075887UL);free((((unsigned char *)pot) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 397 12 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 413 6 len=17 eamBcastPotential_npm
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 452 22 len=23 initInterpolationObject_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 456 30  ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 11956382072823076809UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 456 64 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 459 29  ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + (n + 3) * sizeof(real_t) - 1) / (n + 3) * sizeof(real_t)), (n + 3) * sizeof(real_t)); calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 11956382072823076807UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 459 59 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 476 6 len=26 destroyInterpolationObject_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 483 7  ({ free_helper((((unsigned char *)(*a)->values) - sizeof(void *)), 11956382072823076721UL);free((((unsigned char *)(*a)->values) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 483 24 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 485 4  ({ free_helper((((unsigned char *)*a) - sizeof(void *)), 11956382072823076714UL);free((((unsigned char *)*a) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 485 11 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 512 6 len=11 interpolate_npm
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 549 6 len=24 bcastInterpolationObject_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 564 38  ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 11956382072823076962UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 564 72 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 568 35  ({ void *____chimes_tmp_ptr = malloc((sizeof(real_t) * (buf.n + 3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 11956382072823076989UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 568 69 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 635 6 len=12 eamReadSetfl_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 678 27  ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 11956382072823076036UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 678 58 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 702 4  ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 11956382072823076036UL);free((((unsigned char *)buf) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 702 12 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 753 6 len=13 eamReadFuncfl_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 789 27  ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 11956382072823076283UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 789 58 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 813 4  ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 11956382072823076283UL);free((((unsigned char *)buf) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 813 12 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 820 6 len=12 fileNotFound_npm
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 827 6 len=13 notAlloyReady_npm
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 835 6 len=16 typeNotSupported_npm
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 189 8 alias_group_changed(____alias_loc_id_0) || 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 418 8 alias_group_changed(____alias_loc_id_9) || 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 553 8 alias_group_changed(____alias_loc_id_12) || 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 172 39  ({ void *____chimes_tmp_ptr = malloc((sizeof(EamPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 11956382072823074869UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 172 66 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 223 31  ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 11956382072823075007UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 223 66 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 224 30  ({ void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxTotalAtoms*sizeof(real_t), 11956382072823075007UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 224 65 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 226 52  ({ void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeData)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(ForceExchangeData), 11956382072823075007UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 226 84 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 397 4  ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 11956382072823075887UL);free((((unsigned char *)pot) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 397 12 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 456 30  ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 11956382072823076809UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 456 64 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 459 29  ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + (n + 3) * sizeof(real_t) - 1) / (n + 3) * sizeof(real_t)), (n + 3) * sizeof(real_t)); calloc_helper(____chimes_tmp_ptr, 1, (n+3)*sizeof(real_t), 11956382072823076807UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 459 59 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 483 7  ({ free_helper((((unsigned char *)(*a)->values) - sizeof(void *)), 11956382072823076721UL);free((((unsigned char *)(*a)->values) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 483 24 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 485 4  ({ free_helper((((unsigned char *)*a) - sizeof(void *)), 11956382072823076714UL);free((((unsigned char *)*a) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 485 11 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 564 38  ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 11956382072823076962UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 564 72 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 568 35  ({ void *____chimes_tmp_ptr = malloc((sizeof(real_t) * (buf.n + 3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(real_t) * (buf.n+3), 11956382072823076989UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 568 69 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 678 27  ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 11956382072823076036UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 678 58 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 702 4  ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 11956382072823076036UL);free((((unsigned char *)buf) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 702 12 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 789 27  ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 11956382072823076283UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 789 58 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 813 4  ({ free_helper((((unsigned char *)buf) - sizeof(void *)), 11956382072823076283UL);free((((unsigned char *)buf) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 813 12 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 200 90 rm_stack(true, 11956382072823074869UL, "initEamPot", &____must_manage_initEamPot, ____alias_loc_id_13, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 171 1 const int ____chimes_did_disable0 = new_stack((void *)(&initEamPot), "initEamPot", &____must_manage_initEamPot, 3, 3, (size_t)(11956382072823074930UL), (size_t)(11956382072823074931UL), (size_t)(11956382072823074932UL), "initEamPot|dir|0", &____must_checkpoint_initEamPot_dir_0, "i8*", (void *)(&dir), (size_t)8, 1, 0, 0, "initEamPot|file|0", &____must_checkpoint_initEamPot_file_0, "i8*", (void *)(&file), (size_t)8, 1, 0, 0, "initEamPot|type|0", &____must_checkpoint_initEamPot_type_0, "i8*", (void *)(&type), (size_t)8, 1, 0, 0); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 201 1 rm_stack(true, 11956382072823074869UL, "initEamPot", &____must_manage_initEamPot, ____alias_loc_id_13, ____chimes_did_disable0, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 373 59 rm_stack(false, 0UL, "eamForce", &____must_manage_eamForce, ____alias_loc_id_14, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 215 1 const int ____chimes_did_disable1 = new_stack((void *)(&eamForce), "eamForce", &____must_manage_eamForce, 1, 1, (size_t)(11956382072823075828UL), "eamForce|s|0", &____must_checkpoint_eamForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 374 1 rm_stack(false, 0UL, "eamForce", &____must_manage_eamForce, ____alias_loc_id_14, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 377 1 const int ____chimes_did_disable2 = new_stack((void *)(&eamPrint), "eamPrint", &____must_manage_eamPrint, 2, 0, (size_t)(11956382072823075874UL), (size_t)(11956382072823075875UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 386 1 rm_stack(false, 0UL, "eamPrint", &____must_manage_eamPrint, ____alias_loc_id_15, ____chimes_did_disable2, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 390 17 rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_16, ____chimes_did_disable3, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 392 16 rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_16, ____chimes_did_disable3, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 400 4 rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_16, ____chimes_did_disable3, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 389 1 const int ____chimes_did_disable3 = new_stack((void *)(&eamDestroy), "eamDestroy", &____must_manage_eamDestroy, 1, 1, (size_t)(11956382072823075912UL), "eamDestroy|pPot|0", &____must_checkpoint_eamDestroy_pPot_0, "%struct.BasePotentialSt**", (void *)(&pPot), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 414 1 const int ____chimes_did_disable4 = new_stack((void *)(&eamBcastPotential), "eamBcastPotential", &____must_manage_eamBcastPotential, 1, 1, (size_t)(11956382072823076533UL), "eamBcastPotential|pot|0", &____must_checkpoint_eamBcastPotential_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 438 1 rm_stack(false, 0UL, "eamBcastPotential", &____must_manage_eamBcastPotential, 0, ____chimes_did_disable4, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 473 81 rm_stack(true, 11956382072823076809UL, "initInterpolationObject", &____must_manage_initInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable5, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 454 1 const int ____chimes_did_disable5 = new_stack((void *)(&initInterpolationObject), "initInterpolationObject", &____must_manage_initInterpolationObject, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(11956382072823076904UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 474 1 rm_stack(true, 11956382072823076809UL, "initInterpolationObject", &____must_manage_initInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable5, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 478 14 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_20, ____chimes_did_disable6, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 479 15 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_20, ____chimes_did_disable6, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 488 4 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_20, ____chimes_did_disable6, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 477 1 const int ____chimes_did_disable6 = new_stack((void *)(&destroyInterpolationObject), "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, 1, 0, (size_t)(11956382072823076745UL)); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 513 1 const int ____chimes_did_disable7 = new_stack((void *)(&interpolate), "interpolate", &____must_manage_interpolate, 4, 0, (size_t)(11956382072823076696UL), (size_t)(0UL), (size_t)(11956382072823076698UL), (size_t)(11956382072823076699UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 534 1 rm_stack(false, 0UL, "interpolate", &____must_manage_interpolate, ____alias_loc_id_19, ____chimes_did_disable7, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 550 1 const int ____chimes_did_disable8 = new_stack((void *)(&bcastInterpolationObject), "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 1, 1, (size_t)(11956382072823076964UL), "bcastInterpolationObject|table|0", &____must_checkpoint_bcastInterpolationObject_table_0, "%struct.InterpolationObjectSt**", (void *)(&table), (size_t)8, 1, 0, 0); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 574 1 rm_stack(false, 0UL, "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 0, ____chimes_did_disable8, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 636 1 const int ____chimes_did_disable10 = new_stack((void *)(&eamReadSetfl), "eamReadSetfl", &____must_manage_eamReadSetfl, 3, 0, (size_t)(11956382072823076165UL), (size_t)(11956382072823076166UL), (size_t)(11956382072823076167UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 708 1 rm_stack(false, 0UL, "eamReadSetfl", &____must_manage_eamReadSetfl, ____alias_loc_id_17, ____chimes_did_disable10, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 754 1 const int ____chimes_did_disable11 = new_stack((void *)(&eamReadFuncfl), "eamReadFuncfl", &____must_manage_eamReadFuncfl, 3, 0, (size_t)(11956382072823076423UL), (size_t)(11956382072823076424UL), (size_t)(11956382072823076425UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 818 1 rm_stack(false, 0UL, "eamReadFuncfl", &____must_manage_eamReadFuncfl, ____alias_loc_id_18, ____chimes_did_disable11, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 821 1 const int ____chimes_did_disable12 = new_stack((void *)(&fileNotFound), "fileNotFound", &____must_manage_fileNotFound, 2, 0, (size_t)(11956382072823076766UL), (size_t)(11956382072823076767UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 825 1 rm_stack(false, 0UL, "fileNotFound", &____must_manage_fileNotFound, 0, ____chimes_did_disable12, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 828 1 const int ____chimes_did_disable13 = new_stack((void *)(&notAlloyReady), "notAlloyReady", &____must_manage_notAlloyReady, 1, 0, (size_t)(11956382072823076916UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 833 1 rm_stack(false, 0UL, "notAlloyReady", &____must_manage_notAlloyReady, 0, ____chimes_did_disable13, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 836 1 const int ____chimes_did_disable14 = new_stack((void *)(&typeNotSupported), "typeNotSupported", &____must_manage_typeNotSupported, 2, 0, (size_t)(11956382072823076439UL), (size_t)(11956382072823076440UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 840 1 rm_stack(false, 0UL, "typeNotSupported", &____must_manage_typeNotSupported, 0, ____chimes_did_disable14, false); 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 171 2 const int ____chimes_did_disable0 = new_stack((void *)(&initEamPot), "initEamPot", &____must_manage_initEamPot, 3, 3, (size_t)(11956382072823074930UL), (size_t)(11956382072823074931UL), (size_t)(11956382072823074932UL), "initEamPot|dir|0", &____must_checkpoint_initEamPot_dir_0, "i8*", (void *)(&dir), (size_t)8, 1, 0, 0, "initEamPot|file|0", &____must_checkpoint_initEamPot_file_0, "i8*", (void *)(&file), (size_t)8, 1, 0, 0, "initEamPot|type|0", &____must_checkpoint_initEamPot_type_0, "i8*", (void *)(&type), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 171 533 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 172 4  EamPotential *pot;  pot = ((EamPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(EamPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(EamPotential), 11956382072823074869UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 172 926 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 200 5 BasePotential *____chimes_ret_var_0; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 200 41 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 215 2 const int ____chimes_did_disable1 = new_stack((void *)(&eamForce), "eamForce", &____must_manage_eamForce, 1, 1, (size_t)(11956382072823075828UL), "eamForce|s|0", &____must_checkpoint_eamForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 215 254 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 216 4  EamPotential *pot;  pot = ((EamPotential*) s->pot) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 216 46 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 222 7  int maxTotalAtoms;  maxTotalAtoms = (64*s->boxes->nTotalBoxes) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 222 51 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 223 35 void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 223 119 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 224 34 void *____chimes_tmp_ptr = malloc((maxTotalAtoms * sizeof(real_t)) + sizeof(void *)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 224 118 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 226 56 void *____chimes_tmp_ptr = malloc((sizeof(ForceExchangeData)) + sizeof(void *)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 226 135 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 231 4  real_t rCut2;  rCut2 = (pot->cutoff*pot->cutoff) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 231 42 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 234 4  real_t etot;  etot = (0.0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 234 21 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 240 4 int nbrBoxes[27]; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 240 20 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 242 4 {  int iBox; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 300 4  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 242 9  iBox = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 242 19 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 244 7  int nIBox;  nIBox = (s->boxes->nAtoms[iBox]) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 244 41 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 245 7  int nNbrBoxes;  nNbrBoxes = (getNeighborBoxes(s->boxes, iBox, nbrBoxes)) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 245 65 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 247 7 {  int jTmp; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 299 7  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 247 12  jTmp = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 247 22 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 249 10  int jBox;  jBox = (nbrBoxes[jTmp]) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 249 35 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 252 10  int nJBox;  nJBox = (s->boxes->nAtoms[jBox]) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 252 44 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 254 10 {  int iOff;  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 298 10  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 254 15  iOff = (64*iBox)  , ii = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 254 36 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 257 13 {  int jOff;  int ij; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 297 13  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 257 18  jOff = (64*jBox)  , ij = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 257 39 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 261 16  double r2;  r2 = (0.0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 261 31 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 262 16 real3 dr; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 262 24 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 263 16 {  int k; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 267 16  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 263 21  k = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 263 28 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 270 16  double r;  r = (sqrt(r2)) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 270 35 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 16 real_t phiTmp; real_t dPhi; real_t rhoTmp; real_t dRho; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 49 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 276 16 {  int k; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 280 16  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 276 21  k = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 276 28 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 304 4 {  int iBox; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 318 4  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 304 9  iBox = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 304 19 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 306 7 int iOff; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 306 15 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 307 7  int nIBox;  nIBox = (s->boxes->nAtoms[iBox]) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 307 41 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 310 7 {  int iOff;  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 317 7  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 310 12  iOff = (64*iBox)  , ii = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 310 33 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 312 10 real_t fEmbed; real_t dfEmbed; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 312 32 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 327 4 {  int iBox; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 369 4  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 327 9  iBox = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 327 19 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 329 7  int nIBox;  nIBox = (s->boxes->nAtoms[iBox]) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 329 41 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 330 7  int nNbrBoxes;  nNbrBoxes = (getNeighborBoxes(s->boxes, iBox, nbrBoxes)) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 330 65 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 332 7 {  int jTmp; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 368 7  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 332 12  jTmp = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 332 22 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 334 10  int jBox;  jBox = (nbrBoxes[jTmp]) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 334 35 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 337 10  int nJBox;  nJBox = (s->boxes->nAtoms[jBox]) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 337 44 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 339 10 {  int iOff;  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 367 10  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 339 15  iOff = (64*iBox)  , ii = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 339 36 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 342 13 {  int jOff;  int ij; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 366 13  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 342 18  jOff = (64*jBox)  , ij = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 342 39 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 346 16  double r2;  r2 = (0.0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 346 31 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 347 16 real3 dr; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 347 24 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 348 16 {  int k; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 352 16  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 348 21  k = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 348 28 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 355 16  real_t r;  r = (sqrt(r2)) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 355 35 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 16 real_t rhoTmp; real_t dRho; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 35 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 360 16 {  int k; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 364 16  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 360 21  k = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 360 28 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 373 5 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 373 29 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 377 2 const int ____chimes_did_disable2 = new_stack((void *)(&eamPrint), "eamPrint", &____must_manage_eamPrint, 2, 0, (size_t)(11956382072823075874UL), (size_t)(11956382072823075875UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 377 181 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 378 4  EamPotential *eamPot;  eamPot = ((EamPotential*) pot) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 378 46 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 389 2 const int ____chimes_did_disable3 = new_stack((void *)(&eamDestroy), "eamDestroy", &____must_manage_eamDestroy, 1, 1, (size_t)(11956382072823075912UL), "eamDestroy|pPot|0", &____must_checkpoint_eamDestroy_pPot_0, "%struct.BasePotentialSt**", (void *)(&pPot), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 389 280 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 391 4  EamPotential *pot;  pot = (*(EamPotential**)pPot) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 391 45 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 414 2 const int ____chimes_did_disable4 = new_stack((void *)(&eamBcastPotential), "eamBcastPotential", &____must_manage_eamBcastPotential, 1, 1, (size_t)(11956382072823076533UL), "eamBcastPotential|pot|0", &____must_checkpoint_eamBcastPotential_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 414 310 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 416 4  buf_t buf; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 416 13 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 454 2 const int ____chimes_did_disable5 = new_stack((void *)(&initInterpolationObject), "initInterpolationObject", &____must_manage_initInterpolationObject, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(11956382072823076904UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 454 237 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 455 4  InterpolationObject *table;  table = ((InterpolationObject *) ({ void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(InterpolationObject), 11956382072823076809UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 456 434 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 459 33 void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + (n + 3) * sizeof(real_t) - 1) / (n + 3) * sizeof(real_t)), (n + 3) * sizeof(real_t)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 459 176 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 467 4 {  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 467 62  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 467 9  ii = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 467 17 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 473 5 InterpolationObject *____chimes_ret_var_2; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 473 47 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 477 2 const int ____chimes_did_disable6 = new_stack((void *)(&destroyInterpolationObject), "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, 1, 0, (size_t)(11956382072823076745UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 477 201 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 513 2 const int ____chimes_did_disable7 = new_stack((void *)(&interpolate), "interpolate", &____must_manage_interpolate, 4, 0, (size_t)(11956382072823076696UL), (size_t)(0UL), (size_t)(11956382072823076698UL), (size_t)(11956382072823076699UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 513 239 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 514 4  const real_t *tt;  tt = (table->values) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 514 36 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 519 4  int ii;  ii = ((int)floor(r)) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 519 26 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 528 4  real_t g1;  g1 = (tt[ii+1] - tt[ii-1]) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 528 35 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 529 4  real_t g2;  g2 = (tt[ii+2] - tt[ii]) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 529 33 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 550 2 const int ____chimes_did_disable8 = new_stack((void *)(&bcastInterpolationObject), "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 1, 1, (size_t)(11956382072823076964UL), "bcastInterpolationObject|table|0", &____must_checkpoint_bcastInterpolationObject_table_0, "%struct.InterpolationObjectSt**", (void *)(&table), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 550 359 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 551 3  buf_2_t buf; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 551 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 564 42 void *____chimes_tmp_ptr = malloc((sizeof(InterpolationObject)) + sizeof(void *)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 564 123 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 568 39 void *____chimes_tmp_ptr = malloc((sizeof(real_t) * (buf.n + 3)) + sizeof(void *)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 568 121 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 572 4  int valuesSize;  valuesSize = (sizeof(real_t) * ((*table)->n+3)) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 572 53 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 580 4 FILE *potData; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 580 17 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 582 4  real_t dR;  dR = (1.0/table->invDx) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 582 32 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 583 4 {  int i; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 587 4  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 583 9  i = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 583 18 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 585 7  real_t r;  r = (table->x0+i*dR) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 585 32 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 636 2 const int ____chimes_did_disable10 = new_stack((void *)(&eamReadSetfl), "eamReadSetfl", &____must_manage_eamReadSetfl, 3, 0, (size_t)(11956382072823076165UL), (size_t)(11956382072823076166UL), (size_t)(11956382072823076167UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 636 228 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 637 4 char tmp[4096]; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 637 18 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 640 4  FILE *potFile;  potFile = (fopen(tmp, "r")) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 640 35 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 651 4 int nElems; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 651 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 657 4 int nRho; int nR; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 657 16 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 658 4 double dRho; double dR; double cutoff; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 658 27 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 667 4 int nAtomic; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 667 15 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 668 4 double mass; double lat; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 668 20 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 669 4 char latticeType[8]; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 669 23 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 677 4  int bufSize;  bufSize = (((nRho) > (nR) ? (nRho) : (nR))) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 677 49 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 678 4  real_t *buf;  buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 11956382072823076036UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 678 315 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 679 4  real_t x0;  x0 = (0.0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 679 19 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 682 4 {  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 682 67  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 682 9  ii = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 682 17 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 687 4 {  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 687 65  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 687 9  ii = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 687 17 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 692 4 {  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 692 65  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 692 9  ii = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 692 17 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 694 4 {  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 698 4  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 694 9  ii = (1) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 694 17 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 696 7  real_t r;  r = (x0 + ii*dR) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 696 28 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 754 2 const int ____chimes_did_disable11 = new_stack((void *)(&eamReadFuncfl), "eamReadFuncfl", &____must_manage_eamReadFuncfl, 3, 0, (size_t)(11956382072823076423UL), (size_t)(11956382072823076424UL), (size_t)(11956382072823076425UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 754 231 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 755 4 char tmp[4096]; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 755 18 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 758 4  FILE *potFile;  potFile = (fopen(tmp, "r")) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 758 35 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 764 4 char name[3]; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 764 16 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 769 4 int nAtomic; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 769 15 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 770 4 double mass; double lat; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 770 20 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 771 4 char latticeType[8]; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 771 23 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 780 4 int nRho; int nR; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 780 16 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 781 4 double dRho; double dR; double cutoff; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 781 27 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 785 4  real_t x0;  x0 = (0.0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 785 19 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 788 4  int bufSize;  bufSize = (((nRho) > (nR) ? (nRho) : (nR))) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 788 49 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 789 4  real_t *buf;  buf = ((real_t*) ({ void *____chimes_tmp_ptr = malloc((bufSize * sizeof(real_t)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bufSize * sizeof(real_t), 11956382072823076283UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 789 315 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 792 4 {  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 792 67  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 792 9  ii = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 792 17 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 797 4 {  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 797 65  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 797 9  ii = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 797 17 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 799 4 {  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 804 4  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 799 9  ii = (1) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 799 17 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 801 7  real_t r;  r = (x0 + ii*dR) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 801 28 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 809 4 {  int ii; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 809 65  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 809 9  ii = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 809 17 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 821 2 const int ____chimes_did_disable12 = new_stack((void *)(&fileNotFound), "fileNotFound", &____must_manage_fileNotFound, 2, 0, (size_t)(11956382072823076766UL), (size_t)(11956382072823076767UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 821 194 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 828 2 const int ____chimes_did_disable13 = new_stack((void *)(&notAlloyReady), "notAlloyReady", &____must_manage_notAlloyReady, 1, 0, (size_t)(11956382072823076916UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 828 163 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 836 2 const int ____chimes_did_disable14 = new_stack((void *)(&typeNotSupported), "typeNotSupported", &____must_manage_typeNotSupported, 2, 0, (size_t)(11956382072823076439UL), (size_t)(11956382072823076440UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 836 206 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 189 4  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 41  call_lbl_1: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 111  call_lbl_2: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 151  call_lbl_3: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 198 4  call_lbl_4: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 225 7  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 245 24  call_lbl_1: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 273 16  call_lbl_2: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 274 16  call_lbl_3: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 313 10  call_lbl_4: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 321 9  call_lbl_5: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 322 4  call_lbl_6: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 323 9  call_lbl_7: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 330 24  call_lbl_8: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 358 16  call_lbl_9: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 393 4  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 394 4  call_lbl_1: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 395 4  call_lbl_2: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 396 4  call_lbl_3: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 418 4  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 427 4  call_lbl_1: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 435 4  call_lbl_2: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 436 4  call_lbl_3: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 437 4  call_lbl_4: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 553 4  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 559 4  call_lbl_1: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 561 4  call_lbl_2: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 573 4  call_lbl_3: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 641 28  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 653 22  call_lbl_1: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 684 4  call_lbl_2: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 689 4  call_lbl_3: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 700 4  call_lbl_4: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 759 28  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 794 4  call_lbl_1: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 806 4  call_lbl_2: 
+InsertText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 811 4  call_lbl_3: 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 170 16 len=10 initEamPot_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 189 64  ({  calling((void*)getMyRank, 0, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 189 74 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 54 ({ calling_npm("eamReadSetfl", 0); eamReadSetfl_npm(pot, dir, file); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 81 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 137 ({ calling_npm("eamReadFuncfl", 0); eamReadFuncfl_npm(pot, dir, file); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 165 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 190 ({ calling_npm("typeNotSupported", 0); typeNotSupported_npm("initEamPot", type); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 225 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 198 17  ({  calling((void*)eamBcastPotential, 4, 0, 0UL, 1, (size_t)(11956382072823074869UL)); (eamBcastPotential)(pot); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 198 38 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 172 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 172 22 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 171 532  ; EamPotential *pot;
+# 171
+ if (____must_checkpoint_initEamPot_pot_0) { register_stack_vars(1, "initEamPot|pot|0", &____must_checkpoint_initEamPot_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 214 5 len=8 eamForce_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 225 41  ({  calling((void*)initForceHaloExchange, 0, ____alias_loc_id_4, 11956382072823075007UL, 2, (size_t)(11956382072823075007UL), (size_t)(11956382072823075007UL)); (initForceHaloExchange)(s->domain, s->boxes); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 225 82 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 245 50  ({  calling((void*)getNeighborBoxes, 1, ____alias_loc_id_5, 0UL, 3, (size_t)(11956382072823075007UL), (size_t)(0UL), (size_t)(11956382072823074945UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 245 91 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 273 29 ({ calling_npm("interpolate", 0); interpolate_npm(pot->phi, r, &phiTmp, &dPhi); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 273 68 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 274 29 ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 274 68 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 313 23 ({ calling_npm("interpolate", 0); interpolate_npm(pot->f, pot->rhobar[iOff], &fEmbed, &dfEmbed); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 313 79 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 321 22  ({  calling((void*)profileStart, 5, ____alias_loc_id_3, 0UL, 1, (size_t)(0UL)); (profileStart)(eamHaloTimer); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 321 47 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 322 17  ({  calling((void*)haloExchange, 6, ____alias_loc_id_2, 0UL, 2, (size_t)(11956382072823075007UL), (size_t)(11956382072823075007UL)); (haloExchange)(pot->forceExchange, pot->forceExchangeData); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 322 72 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 323 22  ({  calling((void*)profileStop, 7, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 323 46 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 330 50  ({  calling((void*)getNeighborBoxes, 8, ____alias_loc_id_1, 0UL, 3, (size_t)(11956382072823075007UL), (size_t)(0UL), (size_t)(11956382072823074945UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 330 91 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 358 29 ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 358 68 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 216 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 216 22 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 231 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 231 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 234 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 234 16 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 240 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 240 20 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 16 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 29 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 31 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 42 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 312 10 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 312 23 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 312 25 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 312 39 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 242 7  lbl_0: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 242 15  if (____must_checkpoint_eamForce_iBox_0 != 0) { register_stack_var("eamForce|iBox|0", &____must_checkpoint_eamForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 242 15 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 244 8  lbl_1: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 244 17  if (____must_checkpoint_eamForce_nIBox_0 != 0) { register_stack_var("eamForce|nIBox|0", &____must_checkpoint_eamForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 244 17 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 262 16  lbl_2: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 262 24  if (____must_checkpoint_eamForce_dr_0 != 0) { register_stack_var("eamForce|dr|0", &____must_checkpoint_eamForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 262 24 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 44  lbl_3: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 57  if (____must_checkpoint_eamForce_rhoTmp_0 != 0) { register_stack_var("eamForce|rhoTmp|0", &____must_checkpoint_eamForce_rhoTmp_0, "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 57 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 327 7  lbl_4: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  if (____must_checkpoint_eamForce_iBox_2 != 0) { register_stack_var("eamForce|iBox|2", &____must_checkpoint_eamForce_iBox_2, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 327 15 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 329 8  lbl_5: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  if (____must_checkpoint_eamForce_nIBox_2 != 0) { register_stack_var("eamForce|nIBox|2", &____must_checkpoint_eamForce_nIBox_2, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 329 17 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 347 16  lbl_6: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 347 24  if (____must_checkpoint_eamForce_dr_1 != 0) { register_stack_var("eamForce|dr|1", &____must_checkpoint_eamForce_dr_1, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 347 24 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 16  lbl_7: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  if (____must_checkpoint_eamForce_rhoTmp_1 != 0) { register_stack_var("eamForce|rhoTmp|1", &____must_checkpoint_eamForce_rhoTmp_1, "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 29 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 31  lbl_8: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 42  if (____must_checkpoint_eamForce_dRho_1 != 0) { register_stack_var("eamForce|dRho|1", &____must_checkpoint_eamForce_dRho_1, "double", (void *)(&dRho), (size_t)8, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 42 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 215 253  ; real_t dfEmbed;
+# 215
+real_t fEmbed;
+# 215
+real_t dPhi;
+# 215
+real_t phiTmp;
+# 215
+int nbrBoxes[27];
+# 215
+real_t etot;
+# 215
+real_t rCut2;
+# 215
+EamPotential *pot;
+# 215
+ if (____must_checkpoint_eamForce_dfEmbed_0 || ____must_checkpoint_eamForce_fEmbed_0 || ____must_checkpoint_eamForce_dPhi_0 || ____must_checkpoint_eamForce_phiTmp_0 || ____must_checkpoint_eamForce_nbrBoxes_0 || ____must_checkpoint_eamForce_etot_0 || ____must_checkpoint_eamForce_rCut2_0 || ____must_checkpoint_eamForce_pot_0) { register_stack_vars(8, "eamForce|dfEmbed|0", &____must_checkpoint_eamForce_dfEmbed_0, "double", (void *)(&dfEmbed), (size_t)8, 0, 0, 0, "eamForce|fEmbed|0", &____must_checkpoint_eamForce_fEmbed_0, "double", (void *)(&fEmbed), (size_t)8, 0, 0, 0, "eamForce|dPhi|0", &____must_checkpoint_eamForce_dPhi_0, "double", (void *)(&dPhi), (size_t)8, 0, 0, 0, "eamForce|phiTmp|0", &____must_checkpoint_eamForce_phiTmp_0, "double", (void *)(&phiTmp), (size_t)8, 0, 0, 0, "eamForce|nbrBoxes|0", &____must_checkpoint_eamForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "eamForce|etot|0", &____must_checkpoint_eamForce_etot_0, "double", (void *)(&etot), (size_t)8, 0, 0, 0, "eamForce|rCut2|0", &____must_checkpoint_eamForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "eamForce|pot|0", &____must_checkpoint_eamForce_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 376 6 len=8 eamPrint_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 377 180  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 388 6 len=10 eamDestroy_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 393 17 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->phi)); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 393 55 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 394 17 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->rho)); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 394 55 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 395 17 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->f)); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 395 53 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 396 17  ({  calling((void*)destroyHaloExchange, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(11956382072823075887UL)); (destroyHaloExchange)(&(pot->forceExchange)); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 396 58 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 391 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 391 22 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 389 279  ; EamPotential *pot;
+# 389
+ if (____must_checkpoint_eamDestroy_pot_0) { register_stack_vars(1, "eamDestroy|pot|0", &____must_checkpoint_eamDestroy_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 413 6 len=17 eamBcastPotential_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 418 64  ({  calling((void*)getMyRank, 0, ____alias_loc_id_9, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 418 74 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 427 17  ({  calling((void*)bcastParallel, 1, ____alias_loc_id_8, 0UL, 3, (size_t)(11956382072823076442UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 427 51 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 435 17  ({  calling((void*)bcastInterpolationObject, 2, ____alias_loc_id_7, 0UL, 1, (size_t)(11956382072823076533UL)); (bcastInterpolationObject)(&pot->phi); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 435 51 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 436 17  ({  calling((void*)bcastInterpolationObject, 3, 0, 0UL, 1, (size_t)(11956382072823076533UL)); (bcastInterpolationObject)(&pot->rho); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 436 51 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 437 17  ({  calling((void*)bcastInterpolationObject, 4, 0, 0UL, 1, (size_t)(11956382072823076533UL)); (bcastInterpolationObject)(&pot->f); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 437 49 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 416 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 416 14 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 414 309  ; buf_t buf;
+# 414
+ if (____must_checkpoint_eamBcastPotential_buf_0) { register_stack_vars(1, "eamBcastPotential|buf|0", &____must_checkpoint_eamBcastPotential_buf_0, "%struct._buf_t = type { double, double, double, [8 x i8], [3 x i8], i32 }", (void *)(&buf), (size_t)40, 0, 1, 0);  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 452 22 len=23 initInterpolationObject_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 454 236  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 476 6 len=26 destroyInterpolationObject_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 477 200  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 512 6 len=11 interpolate_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 513 238  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 549 6 len=24 bcastInterpolationObject_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 553 65  ({  calling((void*)getMyRank, 0, ____alias_loc_id_12, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 553 75 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 559 17  ({  calling((void*)bcastParallel, 1, ____alias_loc_id_11, 0UL, 3, (size_t)(11956382072823076922UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 559 51 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 561 21  ({  calling((void*)getMyRank, 2, 0, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 561 31 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 573 17  ({  calling((void*)bcastParallel, 3, ____alias_loc_id_10, 0UL, 3, (size_t)(11956382072823076989UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)((*table)->values - 1, valuesSize, 0); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 573 64 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 551 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 551 15 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 550 358  ; buf_2_t buf;
+# 550
+ if (____must_checkpoint_bcastInterpolationObject_buf_0) { register_stack_vars(1, "bcastInterpolationObject|buf|0", &____must_checkpoint_bcastInterpolationObject_buf_0, "%struct._buf_2_t = type { i32, double, double }", (void *)(&buf), (size_t)24, 0, 1, 0);  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 635 6 len=12 eamReadSetfl_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 641 41 ({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadSetfl", tmp); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 641 73 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 653 35 ({ calling_npm("notAlloyReady", 0); notAlloyReady_npm("eamReadSetfl"); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 653 63 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 684 26 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 684 69 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 689 28 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 689 67 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 700 28 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 700 67 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 637 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 637 18 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 669 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 669 23 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 636 227  ; char latticeType[8];
+# 636
+char tmp[4096];
+# 636
+ if (____must_checkpoint_eamReadSetfl_tmp_0) { register_stack_vars(1, "eamReadSetfl|tmp|0", &____must_checkpoint_eamReadSetfl_tmp_0, "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0);  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 753 6 len=13 eamReadFuncfl_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 759 41 ({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadFuncfl", tmp); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 759 74 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 794 26 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 794 69 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 806 28 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 806 67 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 811 28 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 811 67 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 755 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 755 18 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 764 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 764 16 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 771 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 771 23 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 754 230  ; char latticeType[8];
+# 754
+char name[3];
+# 754
+char tmp[4096];
+# 754
+ if (____must_checkpoint_eamReadFuncfl_tmp_0) { register_stack_vars(1, "eamReadFuncfl|tmp|0", &____must_checkpoint_eamReadFuncfl_tmp_0, "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0);  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 820 6 len=12 fileNotFound_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 821 193  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 827 6 len=13 notAlloyReady_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 828 162  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 835 6 len=16 typeNotSupported_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 836 205  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 170 16 len=10 initEamPot_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 189 64  ({  calling((void*)getMyRank, 0, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 189 74 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 54 ({ calling_npm("eamReadSetfl", 0); eamReadSetfl_npm(pot, dir, file); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 81 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 137 ({ calling_npm("eamReadFuncfl", 0); eamReadFuncfl_npm(pot, dir, file); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 165 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 190 ({ calling_npm("typeNotSupported", 0); typeNotSupported_npm("initEamPot", type); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 191 225 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 198 17  ({  calling((void*)eamBcastPotential, 4, 0, 0UL, 1, (size_t)(11956382072823074869UL)); (eamBcastPotential)(pot); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 198 38 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 172 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 172 22 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 171 532  ; EamPotential *pot;
+# 171
+ if (____must_checkpoint_initEamPot_pot_0) { register_stack_vars(1, "initEamPot|pot|0", &____must_checkpoint_initEamPot_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 214 5 len=8 eamForce_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 225 41  ({  Domain * ____chimes_arg1;  LinkCell * ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg1 = (s->domain); ____chimes_arg2 = (s->boxes);  }  calling((void*)initForceHaloExchange, 0, ____alias_loc_id_4, 11956382072823075007UL, 2, (size_t)(11956382072823075007UL), (size_t)(11956382072823075007UL)); (initForceHaloExchange)(____chimes_arg1, ____chimes_arg2); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 225 82 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 245 50  ({  LinkCell * ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes);  }  calling((void*)getNeighborBoxes, 1, ____alias_loc_id_5, 0UL, 3, (size_t)(11956382072823075007UL), (size_t)(0UL), (size_t)(11956382072823074945UL)); (getNeighborBoxes)(____chimes_arg3, iBox, nbrBoxes); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 245 91 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 273 29 ({ calling_npm("interpolate", 0); interpolate_npm(pot->phi, r, &phiTmp, &dPhi); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 273 68 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 274 29 ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 274 68 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 313 23 ({ calling_npm("interpolate", 0); interpolate_npm(pot->f, pot->rhobar[iOff], &fEmbed, &dfEmbed); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 313 79 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 321 22  ({  calling((void*)profileStart, 5, ____alias_loc_id_3, 0UL, 1, (size_t)(0UL)); (profileStart)(eamHaloTimer); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 321 47 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 322 17  ({  HaloExchange * ____chimes_arg7;  void * ____chimes_arg8;  if (!____chimes_replaying) { ____chimes_arg7 = (pot->forceExchange); ____chimes_arg8 = (pot->forceExchangeData);  }  calling((void*)haloExchange, 6, ____alias_loc_id_2, 0UL, 2, (size_t)(11956382072823075007UL), (size_t)(11956382072823075007UL)); (haloExchange)(____chimes_arg7, ____chimes_arg8); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 322 72 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 323 22  ({  calling((void*)profileStop, 7, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 323 46 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 330 50  ({  LinkCell * ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg10 = (s->boxes);  }  calling((void*)getNeighborBoxes, 8, ____alias_loc_id_1, 0UL, 3, (size_t)(11956382072823075007UL), (size_t)(0UL), (size_t)(11956382072823074945UL)); (getNeighborBoxes)(____chimes_arg10, iBox, nbrBoxes); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 330 91 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 358 29 ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 358 68 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 216 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 216 22 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 231 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 231 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 234 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 234 16 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 240 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 240 20 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 16 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 29 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 31 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 42 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 312 10 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 312 23 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 312 25 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 312 39 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 242 7  lbl_0: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 242 15  if (____must_checkpoint_eamForce_iBox_0 != 0) { register_stack_var("eamForce|iBox|0", &____must_checkpoint_eamForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 242 15  if (____chimes_replaying) { goto lbl_1; } 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 244 8  lbl_1: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 244 17  if (____must_checkpoint_eamForce_nIBox_0 != 0) { register_stack_var("eamForce|nIBox|0", &____must_checkpoint_eamForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 244 17  if (____chimes_replaying) { goto lbl_2; } 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 262 16  lbl_2: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 262 24  if (____must_checkpoint_eamForce_dr_0 != 0) { register_stack_var("eamForce|dr|0", &____must_checkpoint_eamForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 262 24  if (____chimes_replaying) { goto lbl_3; } 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 44  lbl_3: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 57  if (____must_checkpoint_eamForce_rhoTmp_0 != 0) { register_stack_var("eamForce|rhoTmp|0", &____must_checkpoint_eamForce_rhoTmp_0, "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 272 57  if (____chimes_replaying) { goto lbl_4; } 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 327 7  lbl_4: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  if (____must_checkpoint_eamForce_iBox_2 != 0) { register_stack_var("eamForce|iBox|2", &____must_checkpoint_eamForce_iBox_2, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  if (____chimes_replaying) { goto lbl_5; } 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 329 8  lbl_5: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  if (____must_checkpoint_eamForce_nIBox_2 != 0) { register_stack_var("eamForce|nIBox|2", &____must_checkpoint_eamForce_nIBox_2, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  if (____chimes_replaying) { goto lbl_6; } 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 347 16  lbl_6: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 347 24  if (____must_checkpoint_eamForce_dr_1 != 0) { register_stack_var("eamForce|dr|1", &____must_checkpoint_eamForce_dr_1, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 347 24  if (____chimes_replaying) { goto lbl_7; } 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 16  lbl_7: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  if (____must_checkpoint_eamForce_rhoTmp_1 != 0) { register_stack_var("eamForce|rhoTmp|1", &____must_checkpoint_eamForce_rhoTmp_1, "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  if (____chimes_replaying) { goto lbl_8; } 
+InsertTextBefore /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 31  lbl_8: 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 42  if (____must_checkpoint_eamForce_dRho_1 != 0) { register_stack_var("eamForce|dRho|1", &____must_checkpoint_eamForce_dRho_1, "double", (void *)(&dRho), (size_t)8, 0, 0, 0); } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 357 42  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 215 253  ; real_t dfEmbed;
+# 215
+real_t fEmbed;
+# 215
+real_t dPhi;
+# 215
+real_t phiTmp;
+# 215
+int nbrBoxes[27];
+# 215
+real_t etot;
+# 215
+real_t rCut2;
+# 215
+EamPotential *pot;
+# 215
+ if (____must_checkpoint_eamForce_dfEmbed_0 || ____must_checkpoint_eamForce_fEmbed_0 || ____must_checkpoint_eamForce_dPhi_0 || ____must_checkpoint_eamForce_phiTmp_0 || ____must_checkpoint_eamForce_nbrBoxes_0 || ____must_checkpoint_eamForce_etot_0 || ____must_checkpoint_eamForce_rCut2_0 || ____must_checkpoint_eamForce_pot_0) { register_stack_vars(8, "eamForce|dfEmbed|0", &____must_checkpoint_eamForce_dfEmbed_0, "double", (void *)(&dfEmbed), (size_t)8, 0, 0, 0, "eamForce|fEmbed|0", &____must_checkpoint_eamForce_fEmbed_0, "double", (void *)(&fEmbed), (size_t)8, 0, 0, 0, "eamForce|dPhi|0", &____must_checkpoint_eamForce_dPhi_0, "double", (void *)(&dPhi), (size_t)8, 0, 0, 0, "eamForce|phiTmp|0", &____must_checkpoint_eamForce_phiTmp_0, "double", (void *)(&phiTmp), (size_t)8, 0, 0, 0, "eamForce|nbrBoxes|0", &____must_checkpoint_eamForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "eamForce|etot|0", &____must_checkpoint_eamForce_etot_0, "double", (void *)(&etot), (size_t)8, 0, 0, 0, "eamForce|rCut2|0", &____must_checkpoint_eamForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "eamForce|pot|0", &____must_checkpoint_eamForce_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) { goto lbl_0; }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 376 6 len=8 eamPrint_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 377 180  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 388 6 len=10 eamDestroy_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 393 17 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->phi)); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 393 55 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 394 17 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->rho)); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 394 55 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 395 17 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->f)); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 395 53 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 396 17  ({  HaloExchange ** ____chimes_arg13;  if (!____chimes_replaying) { ____chimes_arg13 = (&(pot->forceExchange));  }  calling((void*)destroyHaloExchange, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(11956382072823075887UL)); (destroyHaloExchange)(____chimes_arg13); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 396 58 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 391 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 391 22 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 389 279  ; EamPotential *pot;
+# 389
+ if (____must_checkpoint_eamDestroy_pot_0) { register_stack_vars(1, "eamDestroy|pot|0", &____must_checkpoint_eamDestroy_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 413 6 len=17 eamBcastPotential_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 418 64  ({  calling((void*)getMyRank, 0, ____alias_loc_id_9, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 418 74 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 427 17  ({  void * ____chimes_arg14;  int ____chimes_arg15;  if (!____chimes_replaying) { ____chimes_arg14 = (&buf); ____chimes_arg15 = (sizeof (buf));  }  calling((void*)bcastParallel, 1, ____alias_loc_id_8, 0UL, 3, (size_t)(11956382072823076442UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg14, ____chimes_arg15, 0); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 427 51 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 435 17  ({  InterpolationObject ** ____chimes_arg17;  if (!____chimes_replaying) { ____chimes_arg17 = (&pot->phi);  }  calling((void*)bcastInterpolationObject, 2, ____alias_loc_id_7, 0UL, 1, (size_t)(11956382072823076533UL)); (bcastInterpolationObject)(____chimes_arg17); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 435 51 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 436 17  ({  InterpolationObject ** ____chimes_arg18;  if (!____chimes_replaying) { ____chimes_arg18 = (&pot->rho);  }  calling((void*)bcastInterpolationObject, 3, 0, 0UL, 1, (size_t)(11956382072823076533UL)); (bcastInterpolationObject)(____chimes_arg18); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 436 51 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 437 17  ({  InterpolationObject ** ____chimes_arg19;  if (!____chimes_replaying) { ____chimes_arg19 = (&pot->f);  }  calling((void*)bcastInterpolationObject, 4, 0, 0UL, 1, (size_t)(11956382072823076533UL)); (bcastInterpolationObject)(____chimes_arg19); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 437 49 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 416 5 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 416 14 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 414 309  ; buf_t buf;
+# 414
+ if (____must_checkpoint_eamBcastPotential_buf_0) { register_stack_vars(1, "eamBcastPotential|buf|0", &____must_checkpoint_eamBcastPotential_buf_0, "%struct._buf_t = type { double, double, double, [8 x i8], [3 x i8], i32 }", (void *)(&buf), (size_t)40, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 452 22 len=23 initInterpolationObject_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 454 236  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 476 6 len=26 destroyInterpolationObject_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 477 200  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 512 6 len=11 interpolate_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 513 238  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 549 6 len=24 bcastInterpolationObject_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 553 65  ({  calling((void*)getMyRank, 0, ____alias_loc_id_12, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 553 75 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 559 17  ({  void * ____chimes_arg20;  int ____chimes_arg21;  if (!____chimes_replaying) { ____chimes_arg20 = (&buf); ____chimes_arg21 = (sizeof (buf));  }  calling((void*)bcastParallel, 1, ____alias_loc_id_11, 0UL, 3, (size_t)(11956382072823076922UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg20, ____chimes_arg21, 0); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 559 51 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 561 21  ({  calling((void*)getMyRank, 2, 0, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 561 31 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 573 17  ({  void * ____chimes_arg23;  if (!____chimes_replaying) { ____chimes_arg23 = ((*table)->values - 1);  }  calling((void*)bcastParallel, 3, ____alias_loc_id_10, 0UL, 3, (size_t)(11956382072823076989UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg23, valuesSize, 0); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 573 64 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 551 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 551 15 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 550 358  ; buf_2_t buf;
+# 550
+ if (____must_checkpoint_bcastInterpolationObject_buf_0) { register_stack_vars(1, "bcastInterpolationObject|buf|0", &____must_checkpoint_bcastInterpolationObject_buf_0, "%struct._buf_2_t = type { i32, double, double }", (void *)(&buf), (size_t)24, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 635 6 len=12 eamReadSetfl_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 641 41 ({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadSetfl", tmp); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 641 73 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 653 35 ({ calling_npm("notAlloyReady", 0); notAlloyReady_npm("eamReadSetfl"); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 653 63 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 684 26 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 684 69 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 689 28 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 689 67 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 700 28 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 700 67 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 637 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 637 18 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 669 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 669 23 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 636 227  ; char latticeType[8];
+# 636
+char tmp[4096];
+# 636
+ if (____must_checkpoint_eamReadSetfl_tmp_0) { register_stack_vars(1, "eamReadSetfl|tmp|0", &____must_checkpoint_eamReadSetfl_tmp_0, "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 753 6 len=13 eamReadFuncfl_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 759 41 ({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadFuncfl", tmp); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 759 74 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 794 26 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 794 69 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 806 28 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 806 67 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 811 28 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 811 67 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 755 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 755 18 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 764 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 764 16 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 771 4 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 771 23 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 754 230  ; char latticeType[8];
+# 754
+char name[3];
+# 754
+char tmp[4096];
+# 754
+ if (____must_checkpoint_eamReadFuncfl_tmp_0) { register_stack_vars(1, "eamReadFuncfl|tmp|0", &____must_checkpoint_eamReadFuncfl_tmp_0, "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 820 6 len=12 fileNotFound_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 821 193  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 827 6 len=13 notAlloyReady_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 828 162  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 835 6 len=16 typeNotSupported_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/eam.c 836 205  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

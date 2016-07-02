@@ -1,0 +1,32 @@
+ReplaceText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 5 6 len=14 haha_this_sux2_npm
+InsertText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 7 9 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____chimes_did_disable0, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 9 9 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 5 23 const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux2), "haha_this_sux2", &____must_manage_haha_this_sux2, 0, 0); 
+InsertText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 11 1 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____chimes_did_disable0, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 16 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 13 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(10481021344506867506UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 17 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 5 24 const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux2), "haha_this_sux2", &____must_manage_haha_this_sux2, 0, 0); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 5 153 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 13 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10481021344506867506UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 13 171 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 16 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 16 30 
+InsertText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 14 5  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 15 5  call_lbl_1: 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 5 6 len=14 haha_this_sux2_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 5 152  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 13 5 len=4 main_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 14 18 ({ calling_npm("haha_this_sux2", 0); haha_this_sux2_npm(); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 14 33 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 15 18 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 15 29 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 13 168  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 5 6 len=14 haha_this_sux2_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 5 152  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 13 5 len=4 main_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 14 18 ({ calling_npm("haha_this_sux2", 0); haha_this_sux2_npm(); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 14 33 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 15 18 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 15 29 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./func_with_two_void_returns.cpp 13 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

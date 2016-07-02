@@ -1,0 +1,44 @@
+ReplaceText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 4 7 len=3 foo_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 5 21  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 15892507118538024802UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 5 44 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 5 21  ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 15892507118538024802UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 5 44 
+InsertText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 9 67 rm_stack(true, 15892507118538024802UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 12 68 rm_stack(true, 15892507118538024802UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 4 13 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 0, 0); 
+InsertText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 13 1 rm_stack(true, 15892507118538024802UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 18 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 15 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(15892507118538024801UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 19 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 4 14 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 0, 0); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 4 110 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 5 5  int *A;  A = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * 10) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int) * 10, 15892507118538024802UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 5 293 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 9 10 void *____chimes_ret_var_0; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 9 37 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 12 6 void *____chimes_ret_var_1; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 12 33 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 15 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(15892507118538024801UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 15 171 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 16 5  void *tmp;  tmp = (foo()) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 16 22 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 18 6 int ____chimes_ret_var_2; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 18 30 
+InsertText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 16 18  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 17 5  call_lbl_1: 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 4 7 len=3 foo_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 4 109  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 15 5 len=4 main_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 16 38 ({ calling_npm("foo", 0); foo_npm(); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 16 42 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 17 18 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 17 29 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 15 168  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 4 7 len=3 foo_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 4 109  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 15 5 len=4 main_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 16 38 ({ calling_npm("foo", 0); foo_npm(); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 16 42 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 17 18 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 17 29 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./cond_ptr_return.cpp 15 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

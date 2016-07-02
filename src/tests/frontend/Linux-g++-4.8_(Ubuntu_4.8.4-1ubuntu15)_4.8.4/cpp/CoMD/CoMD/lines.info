@@ -1,0 +1,52 @@
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 145 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1367 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 132 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1366 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 69 : { 12 } {  } call:printThings {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 128 4 : { 10 } {  } call:profileStop {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 113 4 : { 8, 9, 10 } {  } call:profileStart {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 107 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1365 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 123 7 : {  } {  } call:timestep { timestep { 67 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 105 4 : { 7 } {  } call:timestampBarrier { timestampBarrier { 1362 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 72 : { 11 } {  } call:printThings {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 102 4 : { 5 } {  } call:printSimulationDataYaml {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 98 4 : {  } {  } call:printCmdYaml { printCmdYaml { 4, 916 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 96 18 : {  } {  } call:parseCommandLine { parseCommandLine { 4, 132 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 116 12 : { 10 } {  } call:profileStart {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 94 4 : {  } {  } call:yamlAppInfo { yamlAppInfo { 916 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 91 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1362 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 88 4 : { 1, 2, 3 } {  } call:initParallel { initParallel { 2, 3 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 212 4 : {  } {  } call:kineticEnergy { kineticEnergy { 321 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 209 4 : {  } {  } call:computeForce { computeForce { 321 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 205 4 : {  } {  } call:redistributeAtoms { redistributeAtoms { 321 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 204 9 : { 321 } {  } call:profileStart {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 201 24 : {  } {  } call:initAtomHaloExchange { initAtomHaloExchange { 1407 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 199 4 : {  } {  } call:randomDisplacements { randomDisplacements { 321 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 198 4 : {  } {  } call:setTemperature { setTemperature { 321 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 197 4 : { 321 } {  } call:createFccLattice { createFccLattice { 321 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 194 17 : { 321 } {  } call:initAtoms { initAtoms { 1407 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 193 17 : { 321 } {  } call:initLinkCells { initLinkCells { 1407 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 190 18 : { 150, 321 } {  } call:initDecomposition { initDecomposition { 150, 1407 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 4 : { 148, 321 } {  } call:sanityChecks {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 175 15 : { 147, 321 } {  } call:initPotential {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 424 4 : { 350, 351, 352, 353, 354, 355, 356, 357 } {  } call:printSeparator { printSeparator { 684 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 10 : { 349 } {  } call:printRank {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 4 : {  } { , 365, 684 } call:NULL {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 17 : { 347, 348 } {  } call:maxOccupancy { maxOccupancy { 365 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 409 4 : {  } {  } call:printSeparator { printSeparator { 684 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 394 4 : {  } {  } call:printSeparator { printSeparator { 684 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 8 : { 687, 694 } {  } call:printRank {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 290 7 : {  } {  } call:printSeparator { printSeparator { 916 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 282 4 : { 686 } {  } call:sumAtoms {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 337 4 : {  } {  } call:addIntParallel { addIntParallel { 792 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 336 9 : { 746, 747, 792 } {  } call:profileStart {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 10 : { 806, 807, 808, 809, 1384 } {  } call:printRank {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 8 : { 938, 939 } {  } call:printRank {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 229 4 : {  } {  } call:destroyHaloExchange { destroyHaloExchange { 1033 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 228 4 : {  } {  } call:destroyAtoms { destroyAtoms { 1042 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 227 4 : { 1023, 1024 } {  } call:destroyLinkCells { destroyLinkCells { 1033 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 261 75 : { 1094, 1095, 1096, 1097, 1098 } {  } call:initLjPot { initLjPot { 1130 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 261 22 : { 1094, 1095, 1096, 1097, 1098 } {  } call:initEamPot { initEamPot { 1130, 1135, 1136, 1137 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 4 : { 1143, 1144, 1145, 1146, 1147, 1148, 1149 } {  } call:bcastParallel { bcastParallel { 1149 } }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 441 18 : { 1138, 1139, 1140, 1141, 1142 } {  } call:getNRanks {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 11 : { 1141 } {  } call:printRank {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 460 11 : { 1141, 1143, 1144, 1145, 1146, 1147, 1148 } {  } call:printRank {  }
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 11 : { 1141, 1143, 1144, 1145, 1146, 1147, 1148 } {  } call:printRank {  }

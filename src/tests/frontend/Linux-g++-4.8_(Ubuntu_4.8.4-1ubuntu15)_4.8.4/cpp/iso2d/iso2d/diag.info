@@ -1,0 +1,298 @@
+ReplaceText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 52 13 len=3 fwd_npm
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 94 31  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 20) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 20, 3170342584295441409UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 94 56 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 95 28  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 3170342584295441406UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 95 41 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 96 28  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 3170342584295441406UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 96 41 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 97 27  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 3170342584295441408UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 97 40 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 141 5  ({ free_helper((((unsigned char *)c_coeff) - sizeof(void *)), 3170342584295441409UL);free((((unsigned char *)c_coeff) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 141 17 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 142 5  ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 3170342584295441406UL);free((((unsigned char *)curr) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 142 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 143 5  ({ free_helper((((unsigned char *)next) - sizeof(void *)), 3170342584295441406UL);free((((unsigned char *)next) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 143 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 144 5  ({ free_helper((((unsigned char *)vsq) - sizeof(void *)), 3170342584295441408UL);free((((unsigned char *)vsq) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 144 13 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 146 9  ({ free_helper((((unsigned char *)srcs[i]) - sizeof(void *)), 3170342584295441512UL);free((((unsigned char *)srcs[i]) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 146 21 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 148 5  ({ free_helper((((unsigned char *)srcs) - sizeof(void *)), 3170342584295441510UL);free((((unsigned char *)srcs) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 148 14 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 5 alias_group_changed(____alias_loc_id_3); 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 94 31  ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 20) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 20, 3170342584295441409UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 94 56 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 95 28  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 3170342584295441406UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 95 41 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 96 28  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 3170342584295441406UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 96 41 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 97 27  ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 3170342584295441408UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 97 40 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 141 5  ({ free_helper((((unsigned char *)c_coeff) - sizeof(void *)), 3170342584295441409UL);free((((unsigned char *)c_coeff) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 141 17 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 142 5  ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 3170342584295441406UL);free((((unsigned char *)curr) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 142 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 143 5  ({ free_helper((((unsigned char *)next) - sizeof(void *)), 3170342584295441406UL);free((((unsigned char *)next) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 143 14 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 144 5  ({ free_helper((((unsigned char *)vsq) - sizeof(void *)), 3170342584295441408UL);free((((unsigned char *)vsq) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 144 13 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 146 9  ({ free_helper((((unsigned char *)srcs[i]) - sizeof(void *)), 3170342584295441512UL);free((((unsigned char *)srcs[i]) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 146 21 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 148 5  ({ free_helper((((unsigned char *)srcs) - sizeof(void *)), 3170342584295441510UL);free((((unsigned char *)srcs) - sizeof(void *)));  }) 
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 148 14 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 53 73 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 9, 0, (size_t)(3170342584295441769UL), (size_t)(3170342584295441770UL), (size_t)(3170342584295441771UL), (size_t)(3170342584295441772UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 73 1 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_9, ____chimes_did_disable0, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 100 64 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1, false); 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 150 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 75 36 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(3170342584295441531UL)); 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 151 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1, false); 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 53 74 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 9, 0, (size_t)(3170342584295441769UL), (size_t)(3170342584295441770UL), (size_t)(3170342584295441771UL), (size_t)(3170342584295441772UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 53 377 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 55 5 {  int y; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 72 5  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 55 10  y = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 55 19 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 56 9 {  int x; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 71 9  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 56 14  x = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 56 23 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 57 13  int this_offset;  this_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x)))) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 57 77 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 59 13  float temp;  temp = (2.0f * curr[this_offset] - next[this_offset]) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 59 70 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 60 13  float div;  div = (c_coeff[0] * curr[this_offset]) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 60 55 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 61 13 {  int d; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 69 13  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 61 18  d = (1) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 61 27 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 62 17  int y_pos_offset;  y_pos_offset = ((((radius) + (y + d)) * (dimx) + ((radius) + (x)))) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 62 86 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 63 17  int y_neg_offset;  y_neg_offset = ((((radius) + (y - d)) * (dimx) + ((radius) + (x)))) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 63 86 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 64 17  int x_pos_offset;  x_pos_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x + d)))) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 64 86 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 65 17  int x_neg_offset;  x_neg_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x - d)))) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 65 86 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 75 37 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(3170342584295441531UL)); ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 75 173 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 76 5  config conf; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 76 16 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 80 5  float dx;  dx = (20.f) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 80 20 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 81 5  float dt;  dt = (0.002f) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 81 22 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 84 5  size_t dimx;  dimx = (conf.nx + 2*conf.radius) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 84 42 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 85 5  size_t dimy;  dimy = (conf.ny + 2*conf.radius) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 85 42 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 86 5  size_t nbytes;  nbytes = (dimx * dimy * sizeof(float)) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 86 48 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 94 5  float *c_coeff;  c_coeff = ((float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 20) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(float) * 20, 3170342584295441409UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 94 306 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 95 5  float *curr;  curr = ((float *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 3170342584295441406UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 95 279 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 96 5  float *next;  next = ((float *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 3170342584295441406UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 96 279 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 97 5  float *vsq;  vsq = ((float *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 3170342584295441408UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 97 278 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 100 10 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 100 34 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 104 5  float **srcs;  srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt)) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 104 74 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 108 5  double start;  start = (seconds()) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 108 29 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 109 5 {  int step; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 128 5  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 109 10  step = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 109 22 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 110 9 {  int src; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 114 9  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 110 14  src = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 110 25 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 112 13  int src_offset;  src_offset = ((((conf.radius) + (conf.srcs[src].y)) * (dimx) + ((conf.radius) + (conf.srcs[src].x)))) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 112 116 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 119 9  float *tmp;  tmp = (next) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 119 26 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 46  double elapsed_s;  elapsed_s = (seconds() - start) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 82 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 133 5  float point_rate;  point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps)) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 133 76 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 145 5 {  int i; 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 147 5  }
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 145 10  i = (0) ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 145 19 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 150 6 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 150 30 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 77 5  call_lbl_0: 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 78 5  call_lbl_1: 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 103 5  call_lbl_2: 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 104 21  call_lbl_3: 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 106 5  call_lbl_4: 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 108 21  call_lbl_5: 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 116 9  call_lbl_6: 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 124 9  call_lbl_7: 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 127 9  call_lbl_8: 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 66  call_lbl_9: 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 131 5  call_lbl_10: 
+InsertText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 138 9  call_lbl_11: 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 52 13 len=3 fwd_quick
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 53 376  ; 
+ReplaceText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 75 5 len=4 main_quick
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 77 18 (____chimes_does_checkpoint_setup_config_npm ? ( ({  calling((void*)setup_config, 0, ____alias_loc_id_2, 0UL, 3, (size_t)(3170342584295441185UL), (size_t)(0UL), (size_t)(3170342584295441531UL)); (setup_config)(&conf, argc, argv); }) ) : (({ calling_npm("setup_config", ____alias_loc_id_2); (*____chimes_extern_func_setup_config)(&conf, argc, argv); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 77 48 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 78 18 (____chimes_does_checkpoint_init_progress_npm ? ( ({  calling((void*)init_progress, 1, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); }) ) : (({ calling_npm("init_progress", 0); (*____chimes_extern_func_init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 78 88 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 103 18 (____chimes_does_checkpoint_config_sources_npm ? ( ({  calling((void*)config_sources, 2, ____alias_loc_id_7, 0UL, 5, (size_t)(3170342584295441185UL), (size_t)(3170342584295441185UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); }) ) : (({ calling_npm("config_sources", ____alias_loc_id_7); (*____chimes_extern_func_config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 103 87 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 104 42 (____chimes_does_checkpoint_sample_sources_npm ? ( ({  calling((void*)sample_sources, 3, ____alias_loc_id_6, 3170342584295441510UL, 4, (size_t)(3170342584295441351UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); }) ) : (({ calling_npm("sample_sources", ____alias_loc_id_6); (*____chimes_extern_func_sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 104 95 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 106 18 (____chimes_does_checkpoint_init_data_npm ? ( ({  calling((void*)init_data, 4, ____alias_loc_id_4, 0UL, 8, (size_t)(3170342584295441406UL), (size_t)(3170342584295441406UL), (size_t)(3170342584295441408UL), (size_t)(3170342584295441409UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dx, dt); }) ) : (({ calling_npm("init_data", ____alias_loc_id_4); (*____chimes_extern_func_init_data)(curr, next, vsq, c_coeff, dimx, dimy, dx, dt); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 106 72 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 108 43 (____chimes_does_checkpoint_seconds_npm ? ( ({  calling((void*)seconds, 5, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 108 51 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 116 22 ({ calling_npm("fwd", 0); fwd_npm(next, curr, vsq, c_coeff, conf.nx, conf.ny, dimx, dimy, conf.radius); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 117 28 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 124 22 checkpoint_transformed(7, ____alias_loc_id_5)
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 124 33 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 127 22 (____chimes_does_checkpoint_update_progress_npm ? ( ({  calling((void*)update_progress, 8, 0, 0UL, 1, (size_t)(0UL)); (update_progress)(step + 1); }) ) : (({ calling_npm("update_progress", 0); (*____chimes_extern_func_update_progress)(step + 1); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 127 46 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 92 (____chimes_does_checkpoint_seconds_npm ? ( ({  calling((void*)seconds, 9, ____alias_loc_id_3, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", ____alias_loc_id_3); (*____chimes_extern_func_seconds)(); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 100 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 131 19 (____chimes_does_checkpoint_finish_progress_npm ? ( ({  calling((void*)finish_progress, 10, ____alias_loc_id_0, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_0); (*____chimes_extern_func_finish_progress)(); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 131 35 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 138 23 (____chimes_does_checkpoint_save_text_npm ? ( ({  calling((void*)save_text, 11, ____alias_loc_id_1, 0UL, 7, (size_t)(3170342584295441406UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(3170342584295441793UL), (size_t)(0UL)); (save_text)(curr, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); }) ) : (({ calling_npm("save_text", ____alias_loc_id_1); (*____chimes_extern_func_save_text)(curr, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 138 93 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 76 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 76 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 80 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 80 14 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 81 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 81 14 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 84 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 84 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 85 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 85 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 94 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 94 20 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 95 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 95 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 96 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 96 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 97 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 97 16 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 104 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 104 18 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 108 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 108 18 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 109 8 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 109 16 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 47 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 63 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 75 170  ; double elapsed_s;
+# 75
+int step;
+# 75
+double start;
+# 75
+float **srcs;
+# 75
+float *vsq;
+# 75
+float *next;
+# 75
+float *curr;
+# 75
+float *c_coeff;
+# 75
+size_t dimy;
+# 75
+size_t dimx;
+# 75
+float dt;
+# 75
+float dx;
+# 75
+config conf;
+# 75
+ register_stack_vars(13, "main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0, "main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0, "main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0, "main|vsq|0", (int *)0x0, "float*", (void *)(&vsq), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "float*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "float*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|c_coeff|0", (int *)0x0, "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0, "main|dimy|0", (int *)0x0, "i64", (void *)(&dimy), (size_t)8, 0, 0, 0, "main|dimx|0", (int *)0x0, "i64", (void *)(&dimx), (size_t)8, 0, 0, 0, "main|dt|0", &____must_checkpoint_main_dt_0, "float", (void *)(&dt), (size_t)4, 0, 0, 0, "main|dx|0", &____must_checkpoint_main_dx_0, "float", (void *)(&dx), (size_t)4, 0, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs));  
+ReplaceText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 52 13 len=3 fwd_resumable
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 53 376  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 75 5 len=4 main_resumable
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 77 18 (____chimes_does_checkpoint_setup_config_npm ? ( ({  calling((void*)setup_config, 0, ____alias_loc_id_2, 0UL, 3, (size_t)(3170342584295441185UL), (size_t)(0UL), (size_t)(3170342584295441531UL)); (setup_config)(&conf, argc, argv); }) ) : (({ calling_npm("setup_config", ____alias_loc_id_2); (*____chimes_extern_func_setup_config)(&conf, argc, argv); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 77 48 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 78 18 (____chimes_does_checkpoint_init_progress_npm ? ( ({  int ____chimes_arg3;  int ____chimes_arg4;  int ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled);  }  calling((void*)init_progress, 1, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) ) : (({ calling_npm("init_progress", 0); (*____chimes_extern_func_init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 78 88 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 103 18 (____chimes_does_checkpoint_config_sources_npm ? ( ({  source ** ____chimes_arg6;  int * ____chimes_arg7;  int ____chimes_arg8;  int ____chimes_arg9;  int ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg6 = (&conf.srcs); ____chimes_arg7 = (&conf.nsrcs); ____chimes_arg8 = (conf.nx); ____chimes_arg9 = (conf.ny); ____chimes_arg10 = (conf.nsteps);  }  calling((void*)config_sources, 2, ____alias_loc_id_7, 0UL, 5, (size_t)(3170342584295441185UL), (size_t)(3170342584295441185UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) ) : (({ calling_npm("config_sources", ____alias_loc_id_7); (*____chimes_extern_func_config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 103 87 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 104 42 (____chimes_does_checkpoint_sample_sources_npm ? ( ({  source * ____chimes_arg11;  int ____chimes_arg12;  int ____chimes_arg13;  if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps);  }  calling((void*)sample_sources, 3, ____alias_loc_id_6, 3170342584295441510UL, 4, (size_t)(3170342584295441351UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) ) : (({ calling_npm("sample_sources", ____alias_loc_id_6); (*____chimes_extern_func_sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 104 95 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 106 18 (____chimes_does_checkpoint_init_data_npm ? ( ({  calling((void*)init_data, 4, ____alias_loc_id_4, 0UL, 8, (size_t)(3170342584295441406UL), (size_t)(3170342584295441406UL), (size_t)(3170342584295441408UL), (size_t)(3170342584295441409UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dx, dt); }) ) : (({ calling_npm("init_data", ____alias_loc_id_4); (*____chimes_extern_func_init_data)(curr, next, vsq, c_coeff, dimx, dimy, dx, dt); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 106 72 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 108 43 (____chimes_does_checkpoint_seconds_npm ? ( ({  calling((void*)seconds, 5, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 108 51 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 116 22 ({ calling_npm("fwd", 0); fwd_npm(next, curr, vsq, c_coeff, conf.nx, conf.ny, dimx, dimy, conf.radius); })
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 117 28 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 124 22 checkpoint_transformed(7, ____alias_loc_id_5)
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 124 33 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 127 22 (____chimes_does_checkpoint_update_progress_npm ? ( ({  int ____chimes_arg23;  if (!____chimes_replaying) { ____chimes_arg23 = (step + 1);  }  calling((void*)update_progress, 8, 0, 0UL, 1, (size_t)(0UL)); (update_progress)(____chimes_arg23); }) ) : (({ calling_npm("update_progress", 0); (*____chimes_extern_func_update_progress)(step + 1); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 127 46 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 92 (____chimes_does_checkpoint_seconds_npm ? ( ({  calling((void*)seconds, 9, ____alias_loc_id_3, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", ____alias_loc_id_3); (*____chimes_extern_func_seconds)(); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 100 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 131 19 (____chimes_does_checkpoint_finish_progress_npm ? ( ({  calling((void*)finish_progress, 10, ____alias_loc_id_0, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_0); (*____chimes_extern_func_finish_progress)(); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 131 35 
+ReplaceTextStart /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 138 23 (____chimes_does_checkpoint_save_text_npm ? ( ({  int ____chimes_arg27;  int ____chimes_arg28;  int ____chimes_arg30;  if (!____chimes_replaying) { ____chimes_arg27 = (conf.ny); ____chimes_arg28 = (conf.nx); ____chimes_arg30 = (conf.radius);  }  calling((void*)save_text, 11, ____alias_loc_id_1, 0UL, 7, (size_t)(3170342584295441406UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(3170342584295441793UL), (size_t)(0UL)); (save_text)(curr, dimx, dimy, ____chimes_arg27, ____chimes_arg28, "snap.text", ____chimes_arg30); }) ) : (({ calling_npm("save_text", ____alias_loc_id_1); (*____chimes_extern_func_save_text)(curr, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); })))
+ReplaceTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 138 93 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 76 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 76 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 80 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 80 14 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 81 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 81 14 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 84 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 84 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 85 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 85 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 94 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 94 20 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 95 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 95 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 96 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 96 17 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 97 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 97 16 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 104 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 104 18 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 108 6 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 108 18 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 109 8 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 109 16 
+RemoveTextBegin /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 47 
+RemoveTextEnd /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 129 63 
+InsertTextAfterToken /home/mg1/chimes/src/examples/cpp/./iso2d.cpp 75 170  ; double elapsed_s;
+# 75
+int step;
+# 75
+double start;
+# 75
+float **srcs;
+# 75
+float *vsq;
+# 75
+float *next;
+# 75
+float *curr;
+# 75
+float *c_coeff;
+# 75
+size_t dimy;
+# 75
+size_t dimx;
+# 75
+float dt;
+# 75
+float dx;
+# 75
+config conf;
+# 75
+ register_stack_vars(13, "main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0, "main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0, "main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0, "main|vsq|0", (int *)0x0, "float*", (void *)(&vsq), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "float*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "float*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|c_coeff|0", (int *)0x0, "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0, "main|dimy|0", (int *)0x0, "i64", (void *)(&dimy), (size_t)8, 0, 0, 0, "main|dimx|0", (int *)0x0, "i64", (void *)(&dimx), (size_t)8, 0, 0, 0, "main|dt|0", &____must_checkpoint_main_dt_0, "float", (void *)(&dt), (size_t)4, 0, 0, 0, "main|dx|0", &____must_checkpoint_main_dx_0, "float", (void *)(&dx), (size_t)4, 0, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs));  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { chimes_error(); } }  }  

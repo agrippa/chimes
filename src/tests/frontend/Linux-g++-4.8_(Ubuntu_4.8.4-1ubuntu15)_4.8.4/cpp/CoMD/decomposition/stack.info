@@ -1,0 +1,19 @@
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c initDecomposition|xproc|0 " i32 " 32 0 0 1 getNRanks
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c initDecomposition|yproc|0 " i32 " 32 0 0 1 getNRanks
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c initDecomposition|zproc|0 " i32 " 32 0 0 1 getNRanks
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c initDecomposition|globalExtent|0 " double* " 64 1 0 1 getMyRank getNRanks
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c initDecomposition|dd|0 " %struct.DomainSt* " 64 1 0 1 getMyRank
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c initDecomposition|myRank|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c initDecomposition|i|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c initDecomposition|i|1 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c initDecomposition|____chimes_ret_var_0|0 " %struct.DomainSt* " 64 1 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c processorNum|domain|0 " %struct.DomainSt* " 64 1 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c processorNum|dix|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c processorNum|diy|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c processorNum|diz|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c processorNum|procCoord|0 " i32* " 64 1 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c processorNum|procGrid|0 " i32* " 64 1 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c processorNum|ix|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c processorNum|iy|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c processorNum|iz|0 " i32 " 32 0 0 0
+/home/mg1/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.c processorNum|____chimes_ret_var_1|0 " i32 " 32 0 0 0
